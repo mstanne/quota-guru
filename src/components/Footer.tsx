@@ -85,7 +85,22 @@ export function Footer() {
             </p>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-slate-500 text-sm">© 2024 Quota Guru. Tutti i diritti riservati.</p>
+            <div className="text-center md:text-left space-y-1">
+              <p className="text-slate-500 text-sm">© 2024 Quota Guru. Tutti i diritti riservati.</p>
+              {/* Required by the football-data.org terms of use (section 7, Attribution) – do not remove. */}
+              <p className="text-slate-400 text-sm">
+                Football data provided by the{" "}
+                <a
+                  href="https://www.football-data.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-white transition-colors"
+                >
+                  Football-Data.org
+                </a>{" "}
+                API
+              </p>
+            </div>
             <div className="flex items-center gap-4">
               <a href="#" className="text-slate-400 hover:text-white transition-colors">
                 <Facebook className="w-5 h-5" />
