@@ -402,7 +402,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                       const isBestHome = row.home === getBestOdds(winnerOdds, "home");
                       const isBestAway = row.away === getBestOdds(winnerOdds, "away");
                       return (
-                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800">
+                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800/40">
                           <TableCell className="text-white">
                             <div className="flex items-center gap-2">
                               <span className="text-2xl">{row.logo}</span>
@@ -453,7 +453,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                       const isBestOver = row.home === getBestOdds(overUnderOdds, "home");
                       const isBestUnder = row.away === getBestOdds(overUnderOdds, "away");
                       return (
-                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800">
+                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800/40">
                           <TableCell className="text-white">
                             <div className="flex items-center gap-2">
                               <span className="text-2xl">{row.logo}</span>

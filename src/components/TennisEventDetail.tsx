@@ -333,7 +333,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                       const isBestPlayer1 = row.player1 === getBestOdds(winnerOdds, "player1");
                       const isBestPlayer2 = row.player2 === getBestOdds(winnerOdds, "player2");
                       return (
-                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800">
+                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800/40">
                           <TableCell className="text-white">
                             <div className="flex items-center gap-2">
                               <span className="text-2xl">{row.logo}</span>
@@ -390,7 +390,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                       const isBestPlayer1 = row.player1 === getBestOdds(setBettingOdds, "player1");
                       const isBestPlayer2 = row.player2 === getBestOdds(setBettingOdds, "player2");
                       return (
-                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800">
+                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800/40">
                           <TableCell className="text-white">
                             <div className="flex items-center gap-2">
                               <span className="text-2xl">{row.logo}</span>

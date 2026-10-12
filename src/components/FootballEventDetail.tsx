@@ -416,7 +416,7 @@ export function FootballEventDetail({ onBack }: { onBack?: () => void }) {
                       const isBestDraw = row.draw === getBestOdds(winnerOdds, "draw");
                       const isBestAway = row.away === getBestOdds(winnerOdds, "away");
                       return (
-                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800">
+                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800/40">
                           <TableCell className="text-white">
                             <div className="flex items-center gap-2">
                               <span className="text-2xl">{row.logo}</span>
@@ -475,7 +475,7 @@ export function FootballEventDetail({ onBack }: { onBack?: () => void }) {
                       const isBestOver = row.home === getBestOdds(overUnderOdds, "home");
                       const isBestUnder = row.away === getBestOdds(overUnderOdds, "away");
                       return (
-                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800">
+                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800/40">
                           <TableCell className="text-white">
                             <div className="flex items-center gap-2">
                               <span className="text-2xl">{row.logo}</span>
@@ -526,7 +526,7 @@ export function FootballEventDetail({ onBack }: { onBack?: () => void }) {
                       const isBestYes = row.home === getBestOdds(bttsOdds, "home");
                       const isBestNo = row.away === getBestOdds(bttsOdds, "away");
                       return (
-                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800">
+                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800/40">
                           <TableCell className="text-white">
                             <div className="flex items-center gap-2">
                               <span className="text-2xl">{row.logo}</span>

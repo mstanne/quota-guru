@@ -582,7 +582,7 @@ export function FootballPage({ onMatchClick }: { onMatchClick?: (matchId: string
                           const isBestDraw = odds.draw === getBestOdd(match, "draw");
                           const isBestAway = odds.away === getBestOdd(match, "away");
                           return (
-                            <TableRow key={bookmaker} className="border-slate-800 hover:bg-slate-800">
+                            <TableRow key={bookmaker} className="border-slate-800 hover:bg-slate-800/40">
                               <TableCell className="text-white capitalize">
                                 {bookmaker.replace("sport888", "888sport")}
                               </TableCell>

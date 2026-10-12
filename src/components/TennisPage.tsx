@@ -563,7 +563,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                           const isBestPlayer1 = odds.player1 === getBestOdd(match, "player1");
                           const isBestPlayer2 = odds.player2 === getBestOdd(match, "player2");
                           return (
-                            <TableRow key={bookmaker} className="border-slate-800 hover:bg-slate-800">
+                            <TableRow key={bookmaker} className="border-slate-800 hover:bg-slate-800/40">
                               <TableCell className="text-white capitalize">
                                 {bookmaker.replace("sport888", "888sport")}
                               </TableCell>
