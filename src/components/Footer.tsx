@@ -1,5 +1,7 @@
 import { Facebook, Instagram, Mail, Twitter } from "lucide-react";
+import { Link } from "react-router";
 import logo from "../assets/logo.png";
+import { paths } from "../routes";
 
 export function Footer() {
   return (
@@ -8,7 +10,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src={logo} alt="Quota Guru" className="w-10 h-10" />
+              <img src={logo} alt="" className="w-10 h-10" />
               <span className="text-white text-xl">Quota Guru</span>
             </div>
             <p className="text-slate-400 text-sm">Confronta le migliori quote sportive in tempo reale</p>
@@ -17,19 +19,19 @@ export function Footer() {
             <h3 className="text-white mb-4">Sport</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
+                <Link to={paths.calcio} className="text-slate-400 hover:text-white transition-colors">
                   Calcio
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
+                <Link to={paths.tennis} className="text-slate-400 hover:text-white transition-colors">
                   Tennis
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
+                <Link to={paths.basket} className="text-slate-400 hover:text-white transition-colors">
                   Basket
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -37,19 +39,19 @@ export function Footer() {
             <h3 className="text-white mb-4">Risorse</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
+                <Link to={paths.sitiScommesse} className="text-slate-400 hover:text-white transition-colors">
                   Siti Scommesse
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
+                <Link to={paths.bonus} className="text-slate-400 hover:text-white transition-colors">
                   Bonus
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
+                <Link to={paths.guide} className="text-slate-400 hover:text-white transition-colors">
                   Guide
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -32,8 +32,10 @@ Altri comandi:
 
 ```
 src/
-├── App.tsx                  # navigazione tra le pagine (stato interno, come nel prototipo)
-├── main.tsx                 # entry point
+├── App.tsx                  # rotte (React Router) e layout con header/footer
+├── routes.ts                # elenco URL con title e description di ogni pagina
+├── main.tsx                 # entry point del browser
+├── entry-server.tsx         # render lato server usato solo in build (pre-rendering)
 ├── assets/logo.png
 ├── context/BetSlipContext.tsx  # stato della schedina (selezioni, puntata)
 ├── styles/globals.css       # Tailwind + token di tema
@@ -64,11 +66,31 @@ Poi su GitHub: **Settings → Pages → Build and deployment → Source: GitHub 
 Il workflow `.github/workflows/deploy.yml` builda e pubblica il sito a ogni push su `main`
 all'indirizzo `https://<utente>.github.io/<repo>/`.
 
-Il percorso base viene impostato automaticamente con la variabile `BASE_PATH` (= nome del repo). Se usi un dominio
-personalizzato o un repo `<utente>.github.io`, imposta `BASE_PATH: /` nel workflow.
+Il percorso base viene impostato automaticamente con la variabile `BASE_PATH` (= nome del repo) e l'indirizzo
+pubblico con `SITE_URL` (usato per canonical e sitemap). Se usi un dominio
+personalizzato o un repo `<utente>.github.io`, imposta nel workflow `BASE_PATH: /` e `SITE_URL` con il tuo dominio.
+
+## URL del sito
+
+| URL | Pagina |
+| --- | --- |
+| `/` | Home |
+| `/calcio`, `/tennis`, `/basket` | Quote per sport |
+| `/calcio/arsenal-liverpool`, `/tennis/djokovic-alcaraz`, `/basket/lakers-celtics` | Scheda partita (esempio) |
+| `/siti-scommesse` | Bookmaker a confronto |
+| `/bonus` | Bonus |
+| `/guide`, `/guide/guida-completa-scommesse-sportive` | Guide |
+| `/accedi`, `/registrati`, `/password-dimenticata` | Account (nascoste dal menu, `noindex`) |
+
+Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e description) e la `<Route>` in
+`src/App.tsx`; il pre-rendering e la sitemap la includono automaticamente.
 
 ## Note
 
-- Il sito è un'app a pagina singola senza router: la navigazione cambia vista senza modificare l'URL.
+- Ogni pagina ha un proprio URL (vedi tabella sotto). In build `scripts/prerender.mjs` genera un file HTML statico
+  per ogni URL con title, description, canonical e contenuto già visibile ai motori di ricerca, più `404.html`,
+  `sitemap.xml` e `robots.txt`. Nel browser React prende il controllo e la navigazione resta istantanea.
+- Le schede partita e il dettaglio guida mostrano per ora un solo esempio per sport: tutte le partite di una lista
+  portano allo stesso URL di esempio.
 - I contenuti riguardano il gioco con vincita in denaro: prima di una pubblicazione reale verifica i requisiti
   normativi (licenze ADM, messaggi di gioco responsabile, divieti di pubblicità vigenti in Italia).
