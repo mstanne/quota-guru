@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { Sheet, SheetHeader, SheetContent, SheetTitle } from "./ui/sheet";
 import logo from "../assets/logo.png";
 import { paths } from "../routes";
+import { ResponsibleBar } from "./responsible/ResponsibleGambling";
 
 // Login/registrazione temporaneamente nascosti: metti true per mostrare di nuovo "Accedi" e "Registrati".
 const SHOW_AUTH = false;
@@ -31,6 +32,7 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-50 bg-slate-900 border-b border-slate-800">
+        <ResponsibleBar />
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-8">

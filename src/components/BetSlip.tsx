@@ -5,27 +5,27 @@ import { Card } from "./ui/card";
 import { Input } from "./ui/input";
 import { Sheet, SheetHeader, SheetContent, SheetTitle } from "./ui/sheet";
 import { useBetSlip } from "../context/BetSlipContext";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { getOperator, oddsOperators } from "../data/operators";
+import { formatOdd, productOfOdds } from "../lib/odds";
+import { OperatorCta, OperatorLogo } from "./operator/OperatorUi";
 
 export function BetSlip() {
   const { selections, isOpen, closeBetSlip, openBetSlip, removeSelection, clearAll, stake, setStake } = useBetSlip();
-  const totalOdds = selections.reduce((product, selection) => product * selection.selectedOdds, 1);
-  const potentialWin = stake * totalOdds;
+  // Accumulator odds: null while any odd is still a placeholder (template mode).
+  const totalOdds = productOfOdds(selections.map((s) => s.selectedOdds));
+  const totalLabel = totalOdds === null ? "[QUOTA_TOT]" : totalOdds.toFixed(2);
+  const winLabel = (total: number | null) =>
+    total === null ? "[VINCITA]" : `${(stake * total).toFixed(0)}€`;
 
-  // Accumulator odds for the whole slip on each bookmaker (only bookmakers offering every pick), best first.
-  const bookmakerTotals = ["bet365", "betway", "sport888", "unibet", "williamhill"]
-    .map((name) => {
-      let product = 1;
-      let offersAll = true;
-      for (const selection of selections) {
-        const bookmaker = selection.allBookmakers.find((b) => b.name === name);
-        if (bookmaker) product *= bookmaker.odds;
-        else offersAll = false;
-      }
-      return { name, totalOdds: offersAll ? product : 0, winnings: offersAll ? stake * product : 0 };
+  // Accumulator odds for the whole slip on each operator (only operators offering every pick), best first.
+  const bookmakerTotals = oddsOperators
+    .map((operator) => {
+      const picks = selections.map((s) => s.allBookmakers.find((b) => b.operatorId === operator.id));
+      const offersAll = picks.every(Boolean);
+      return { operator, offersAll, total: offersAll ? productOfOdds(picks.map((p) => p!.odds)) : null };
     })
-    .filter((total) => total.totalOdds > 0)
-    .sort((a, b) => b.totalOdds - a.totalOdds);
+    .filter((t) => t.offersAll)
+    .sort((a, b) => (b.total ?? 0) - (a.total ?? 0));
   return (
     <>
       {!isOpen && selections.length > 0 && (
@@ -36,7 +36,7 @@ export function BetSlip() {
             size="lg"
           >
             <ShoppingCart className="w-5 h-5 mr-2" />
-            Schedina ({selections.length})<Badge className="ml-2 bg-white text-green-600">{totalOdds.toFixed(2)}</Badge>
+            Schedina ({selections.length})<Badge className="ml-2 bg-white text-green-600">{totalLabel}</Badge>
           </Button>
         </div>
       )}
@@ -49,7 +49,7 @@ export function BetSlip() {
           >
             <ShoppingCart className="w-4 h-4 mr-2" />
             {selections.length}
-            {!isOpen && <Badge className="ml-2 bg-white text-green-600 text-xs">{totalOdds.toFixed(2)}</Badge>}
+            {!isOpen && <Badge className="ml-2 bg-white text-green-600 text-xs">{totalLabel}</Badge>}
           </Button>
         </div>
       )}
@@ -74,7 +74,7 @@ export function BetSlip() {
               <div className="grid grid-cols-3 gap-3 mt-4 text-center">
                 <div className="bg-slate-800 rounded-lg p-2">
                   <div className="text-slate-400 text-xs">Quota:</div>
-                  <div className="text-green-500">{totalOdds.toFixed(2)}</div>
+                  <div className="text-green-500">{totalLabel}</div>
                 </div>
                 <div className="bg-slate-800 rounded-lg p-2">
                   <div className="text-slate-400 text-xs">Puntata:</div>
@@ -82,7 +82,7 @@ export function BetSlip() {
                 </div>
                 <div className="bg-slate-800 rounded-lg p-2">
                   <div className="text-slate-400 text-xs">Vincita:</div>
-                  <div className="text-orange-500">{potentialWin.toFixed(0)}€</div>
+                  <div className="text-orange-500">{winLabel(totalOdds)}</div>
                 </div>
               </div>
             )}
@@ -90,11 +90,9 @@ export function BetSlip() {
           <div className="mt-6">
             {selections.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-12 px-4">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&q=80"
-                  alt="Empty bet slip"
-                  className="w-48 h-48 mb-6 opacity-50"
-                />
+                <div className="w-48 h-48 mb-6 opacity-50 rounded-full bg-slate-800 flex items-center justify-center">
+                  <ShoppingCart className="w-20 h-20 text-slate-500" aria-hidden="true" />
+                </div>
 
                 <p className="text-slate-400 text-center mb-6">La tua schedina è vuota</p>
                 <Button className="w-full bg-green-500 hover:bg-green-600 text-slate-950">Schedina del Giorno</Button>
@@ -126,30 +124,31 @@ export function BetSlip() {
                         {" \u2022 "}
                         {selection.time}
                       </div>
-                      <div className="text-green-500">{selection.selectedOdds.toFixed(2)}</div>
+                      <div className="text-green-500">{formatOdd(selection.selectedOdds)}</div>
                     </div>
                   </Card>
                 ))}
                 <Card className="bg-slate-800 border-slate-700 p-4">
                   <div className="text-slate-300 mb-3">Confronto Quote Totali:</div>
                   <div className="space-y-2">
-                    {bookmakerTotals.map((total, index) => {
+                    {bookmakerTotals.map(({ operator, total }, index) => {
                       const isBest = index === 0;
                       return (
                         <div
-                          key={total.name}
+                          key={operator.id}
                           className={`flex items-center justify-between p-3 rounded-lg border ${isBest ? "bg-green-900/20 border-green-500" : "bg-slate-900 border-slate-700"}`}
                         >
-                          <div className="flex items-center gap-3 flex-1">
-                            <div
-                              className={`w-10 h-10 rounded flex items-center justify-center text-xs ${isBest ? "bg-green-600" : "bg-slate-700"}`}
-                            >
-                              {total.name.slice(0, 3).toUpperCase()}
-                            </div>
+                          <div className="flex items-center gap-3 flex-1 min-w-0 [&>div]:min-w-0 [&>div>div]:truncate">
+                            <OperatorLogo
+                              operator={operator}
+                              width={40}
+                              height={40}
+                              className={`rounded ${isBest ? "border-green-500" : ""}`}
+                            />
                             <div>
                               <div className="text-slate-400 text-xs">Quota Totale:</div>
                               <div className={isBest ? "text-green-500" : "text-white"}>
-                                {total.totalOdds.toFixed(2)}
+                                {total === null ? "[QUOTA_TOT]" : total.toFixed(2)}
                               </div>
                             </div>
                             <div>
@@ -158,22 +157,21 @@ export function BetSlip() {
                             </div>
                             <div>
                               <div className="text-slate-400 text-xs">Vincita:</div>
-                              <div className="text-orange-500 text-sm">{total.winnings.toFixed(0)}€</div>
+                              <div className="text-orange-500 text-sm">{winLabel(total)}</div>
                             </div>
                           </div>
-                          <Button
+                          <OperatorCta
+                            operator={getOperator(operator.id)}
+                            label="Vai"
                             size="sm"
                             variant={isBest ? "default" : "outline"}
                             className={
                               isBest
                                 ? "bg-green-600 hover:bg-green-700 text-slate-950"
-                                : "border-slate-600 text-slate-300 hover:bg-green-600 hover:text-slate-950 hover:border-green-600"
+                                : "bg-slate-900 border-slate-600 text-slate-300 hover:bg-green-600 hover:text-slate-950 hover:border-green-600"
                             }
-                            onClick={() => window.open("https://" + total.name + ".com", "_blank")}
-                          >
-                            <ExternalLink className="w-3 h-3 mr-1" />
-                            Vai
-                          </Button>
+                            icon={<ExternalLink className="w-3 h-3 mr-1" />}
+                          />
                         </div>
                       );
                     })}

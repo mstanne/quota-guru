@@ -1,0 +1,130 @@
+// Reusable, data-driven operator UI: logo slot and outbound CTA.
+import type { ReactNode } from "react";
+import { Button } from "../ui/button";
+import { cn } from "../ui/utils";
+import { isPlaceholder, type OperatorData } from "../../data/operators";
+
+interface OperatorLogoProps {
+  operator: Pick<OperatorData, "logoUrl" | "logoAlt" | "name">;
+  /** Slot size in px – must match the original layout (e.g. 48 × 48). */
+  width: number;
+  height: number;
+  className?: string;
+}
+
+/**
+ * Operator logo. When `logoUrl` is not set, renders a neutral box of exactly `width × height`
+ * labelled [PLACEHOLDER_LOGO_WxH], so replacing it with a real image never shifts the layout.
+ */
+export function OperatorLogo({ operator, width, height, className }: OperatorLogoProps) {
+  const token = `[PLACEHOLDER_LOGO_${width}x${height}]`;
+  if (operator.logoUrl) {
+    return (
+      <img
+        src={operator.logoUrl}
+        alt={operator.logoAlt}
+        width={width}
+        height={height}
+        loading="lazy"
+        className={cn("shrink-0 object-contain", className)}
+        style={{ width, height }}
+      />
+    );
+  }
+  return (
+    <div
+      role="img"
+      aria-label={operator.logoAlt}
+      title={token}
+      data-placeholder={token}
+      className={cn(
+        "shrink-0 rounded-md border border-dashed border-slate-600 bg-slate-800/60 flex items-center justify-center overflow-hidden text-slate-500 leading-none text-center select-none",
+        className,
+      )}
+      style={{ width, height }}
+    >
+      {width >= 40 && (
+        <span className="text-[9px] px-0.5">
+          LOGO
+          <br />
+          {width}×{height}
+        </span>
+      )}
+    </div>
+  );
+}
+
+interface OperatorCtaProps {
+  operator: Pick<OperatorData, "name" | "affiliateUrl">;
+  /** Neutral, informational label (no invitation to gamble). */
+  label?: string;
+  /** Override the destination (e.g. offer terms page). Defaults to the operator's affiliate URL. */
+  href?: string;
+  className?: string;
+  size?: "default" | "sm" | "lg" | "icon";
+  variant?: "default" | "outline" | "ghost" | "secondary" | "link" | "destructive";
+  icon?: ReactNode;
+  iconPosition?: "start" | "end";
+}
+
+/**
+ * Outbound link to an operator, styled as the original button.
+ * Links are marked rel="sponsored nofollow" and open in a new tab. While the URL is still a placeholder
+ * ([URL_AFFILIAZIONE_OPERATORE]) the link is inert, so the mock-up never navigates to a broken page.
+ */
+export function OperatorCta({
+  operator,
+  label = "Vai al sito",
+  href,
+  className,
+  size,
+  variant,
+  icon,
+  iconPosition = "start",
+}: OperatorCtaProps) {
+  const url = href ?? operator.affiliateUrl;
+  const pending = isPlaceholder(url);
+  return (
+    <Button asChild size={size} variant={variant} className={className}>
+      <a
+        href={pending ? undefined : url}
+        target="_blank"
+        rel="sponsored nofollow noopener noreferrer"
+        aria-label={`${label}: ${operator.name} (si apre in una nuova scheda)`}
+        aria-disabled={pending || undefined}
+        title={pending ? url : undefined}
+        data-placeholder={pending ? url : undefined}
+        role={pending ? "link" : undefined}
+        tabIndex={0}
+        onClick={pending ? (e) => e.preventDefault() : undefined}
+      >
+        {iconPosition === "start" && icon}
+        {label}
+        {iconPosition === "end" && icon}
+      </a>
+    </Button>
+  );
+}
+
+/** Legal line under offers/CTAs. */
+export function OfferDisclaimer({ className, termsUrl }: { className?: string; termsUrl?: string }) {
+  return (
+    <p className={cn("text-slate-500 text-xs", className)}>
+      18+ · Si applicano i termini dell'operatore
+      {termsUrl && (
+        <>
+          {" · "}
+          <a
+            href={isPlaceholder(termsUrl) ? undefined : termsUrl}
+            title={isPlaceholder(termsUrl) ? termsUrl : undefined}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            className="underline underline-offset-2 hover:text-slate-300"
+          >
+            termini
+          </a>
+        </>
+      )}
+    </p>
+  );
+}

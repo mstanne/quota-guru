@@ -1,8 +1,10 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
+import type { OddValue } from "../lib/odds";
 
 export interface BookmakerOdds {
-  name: string;
-  odds: number;
+  /** References OperatorData.id (src/data/operators.ts). */
+  operatorId: string;
+  odds: OddValue;
 }
 
 /** A single pick added to the bet slip ("schedina"). */
@@ -17,8 +19,9 @@ export interface BetSelection {
   time: string;
   betType: string;
   betTypeLabel: string;
+  /** OperatorData.id of the operator chosen for this pick. */
   selectedBookmaker: string;
-  selectedOdds: number;
+  selectedOdds: OddValue;
   /** Odds of the same pick on every bookmaker, used for the comparison table. */
   allBookmakers: BookmakerOdds[];
 }

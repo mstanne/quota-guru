@@ -2,6 +2,7 @@ import { Facebook, Instagram, Mail, Twitter } from "lucide-react";
 import { Link } from "react-router";
 import logo from "../assets/logo.png";
 import { paths } from "../routes";
+import { ResponsibleFooterBlock } from "./responsible/ResponsibleGambling";
 
 export function Footer() {
   return (
@@ -77,13 +78,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-slate-800 mt-8 pt-8">
-          <div className="bg-slate-800 rounded-lg p-4 mb-6">
-            <h4 className="text-orange-500 mb-2">⚠️ Gioco Responsabile</h4>
-            <p className="text-slate-400 text-sm">
-              Il gioco può causare dipendenza. Gioca responsabilmente. Vietato ai minori di 18 anni. Le quote possono
-              variare. Verifica sempre sui siti ufficiali degli operatori.
-            </p>
-          </div>
+          <ResponsibleFooterBlock />
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-center md:text-left space-y-1">
               <p className="text-slate-500 text-sm">© 2024 Quota Guru. Tutti i diritti riservati.</p>

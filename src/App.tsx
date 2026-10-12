@@ -22,6 +22,7 @@ import { TennisPage } from "./components/TennisPage";
 import { BasketPage } from "./components/BasketPage";
 import { SitiScommessePage } from "./components/SitiScommessePage";
 import { BetSlip } from "./components/BetSlip";
+import { AgeGate } from "./components/responsible/ResponsibleGambling";
 import { findRoute, fullTitle, paths } from "./routes";
 
 /** On every navigation: scroll to top and update <title> / meta description. */
@@ -47,6 +48,7 @@ function SiteLayout() {
         </main>
         <Footer />
         <BetSlip />
+        <AgeGate />
       </div>
     </BetSlipProvider>
   );

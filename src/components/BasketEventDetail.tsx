@@ -5,6 +5,12 @@ import { Card } from "./ui/card";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "./ui/table";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import { useBetSlip } from "../context/BetSlipContext";
+import { getOperator } from "../data/operators";
+import { bestValue, formatOdd, isBestAt, type OddValue } from "../lib/odds";
+import { OperatorLogo } from "./operator/OperatorUi";
+
+/** One row of an odds comparison table: operator + value per outcome (number or placeholder). */
+type OddsRow = { operatorId: string } & Record<string, OddValue>;
 
 export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
   const { addSelection } = useBetSlip();
@@ -18,70 +24,20 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
     venue: "Crypto.com Arena",
     capacity: "18,997",
   };
-  const winnerOdds = [
-    {
-      bookmaker: "bet365",
-      logo: "\u{1F3AF}",
-      home: 1.95,
-      away: 1.9,
-    },
-    {
-      bookmaker: "Betway",
-      logo: "\u26A1",
-      home: 2.02,
-      away: 1.87,
-    },
-    {
-      bookmaker: "888sport",
-      logo: "\u{1F3B0}",
-      home: 1.93,
-      away: 1.98,
-    },
-    {
-      bookmaker: "Unibet",
-      logo: "\u{1F537}",
-      home: 1.96,
-      away: 1.89,
-    },
-    {
-      bookmaker: "William Hill",
-      logo: "\u{1F3B2}",
-      home: 1.94,
-      away: 1.91,
-    },
+  const winnerOdds: OddsRow[] = [
+    { operatorId: "operatore-1", home: "[QUOTA_1]", away: "[QUOTA_2]" },
+    { operatorId: "operatore-2", home: "[QUOTA_1]", away: "[QUOTA_2]" },
+    { operatorId: "operatore-3", home: "[QUOTA_1]", away: "[QUOTA_2]" },
+    { operatorId: "operatore-4", home: "[QUOTA_1]", away: "[QUOTA_2]" },
+    { operatorId: "operatore-5", home: "[QUOTA_1]", away: "[QUOTA_2]" },
   ];
 
-  const overUnderOdds = [
-    {
-      bookmaker: "bet365",
-      logo: "\u{1F3AF}",
-      home: 1.9,
-      away: 1.95,
-    },
-    {
-      bookmaker: "Betway",
-      logo: "\u26A1",
-      home: 1.93,
-      away: 1.92,
-    },
-    {
-      bookmaker: "888sport",
-      logo: "\u{1F3B0}",
-      home: 1.88,
-      away: 1.97,
-    },
-    {
-      bookmaker: "Unibet",
-      logo: "\u{1F537}",
-      home: 1.91,
-      away: 1.94,
-    },
-    {
-      bookmaker: "William Hill",
-      logo: "\u{1F3B2}",
-      home: 1.89,
-      away: 1.96,
-    },
+  const overUnderOdds: OddsRow[] = [
+    { operatorId: "operatore-1", home: "[QUOTA_OVER]", away: "[QUOTA_UNDER]" },
+    { operatorId: "operatore-2", home: "[QUOTA_OVER]", away: "[QUOTA_UNDER]" },
+    { operatorId: "operatore-3", home: "[QUOTA_OVER]", away: "[QUOTA_UNDER]" },
+    { operatorId: "operatore-4", home: "[QUOTA_OVER]", away: "[QUOTA_UNDER]" },
+    { operatorId: "operatore-5", home: "[QUOTA_OVER]", away: "[QUOTA_UNDER]" },
   ];
 
   const homeForm = ["W", "W", "L", "W", "W"];
@@ -212,8 +168,14 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
     tipoff: "02:00",
     commentary: "Telecronaca di Flavio Tranquillo e commento tecnico di Davide Pessina",
   };
-  const getBestOdds = (rows, outcome) => Math.max(...rows.map((row) => row[outcome]));
-  const handleAddToBetSlip = (bookmaker, betType, odds, market) => {
+  // Odds may be numbers or placeholders ("[QUOTA_1]"): see src/lib/odds.ts.
+  const getBestOdds = (rows: OddsRow[], outcome: string) => bestValue(rows.map((row) => row[outcome] as OddValue));
+  const isBest = (rows: OddsRow[], outcome: string, index: number) =>
+    isBestAt(
+      rows.map((row) => row[outcome] as OddValue),
+      index,
+    );
+  const handleAddToBetSlip = (operatorId: string, betType: string, odds: OddValue, market: string) => {
     addSelection({
       matchId: match.id,
       homeTeam: match.homeTeam,
@@ -223,7 +185,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
       time: match.time,
       betType: betType,
       betTypeLabel: `${market} - ${betType}`,
-      selectedBookmaker: bookmaker,
+      selectedBookmaker: operatorId,
       selectedOdds: odds,
       allBookmakers: [],
     });
@@ -336,7 +298,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
               <div className="text-slate-400 text-sm mb-1">Quota Migliore</div>
               <div className="text-green-500 text-2xl flex items-center gap-1">
                 <TrendingUp className="w-5 h-5" />
-                {getBestOdds(winnerOdds, "home").toFixed(2)}
+                {formatOdd(getBestOdds(winnerOdds, "home"))}
               </div>
             </Card>
           </div>
@@ -398,31 +360,31 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {winnerOdds.map((row) => {
-                      const isBestHome = row.home === getBestOdds(winnerOdds, "home");
-                      const isBestAway = row.away === getBestOdds(winnerOdds, "away");
+                    {winnerOdds.map((row, rowIndex) => {
+                      const isBestHome = isBest(winnerOdds, "home", rowIndex);
+                      const isBestAway = isBest(winnerOdds, "away", rowIndex);
                       return (
-                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800/40">
+                        <TableRow key={row.operatorId} className="border-slate-800 hover:bg-slate-800/40">
                           <TableCell className="text-white">
                             <div className="flex items-center gap-2">
-                              <span className="text-2xl">{row.logo}</span>
-                              <span>{row.bookmaker}</span>
+                              <OperatorLogo operator={getOperator(row.operatorId)} width={24} height={24} />
+                              <span>{getOperator(row.operatorId).name}</span>
                             </div>
                           </TableCell>
                           <TableCell>
                             <button
-                              onClick={() => handleAddToBetSlip(row.bookmaker, match.homeTeam, row.home, "Vincente")}
+                              onClick={() => handleAddToBetSlip(row.operatorId, match.homeTeam, row.home, "Vincente")}
                               className={`w-full px-4 py-3 rounded text-center transition-all ${isBestHome ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
-                              {row.home.toFixed(2)}
+                              {formatOdd(row.home)}
                             </button>
                           </TableCell>
                           <TableCell>
                             <button
-                              onClick={() => handleAddToBetSlip(row.bookmaker, match.awayTeam, row.away, "Vincente")}
+                              onClick={() => handleAddToBetSlip(row.operatorId, match.awayTeam, row.away, "Vincente")}
                               className={`w-full px-4 py-3 rounded text-center transition-all ${isBestAway ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
-                              {row.away.toFixed(2)}
+                              {formatOdd(row.away)}
                             </button>
                           </TableCell>
                         </TableRow>
@@ -449,31 +411,31 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {overUnderOdds.map((row) => {
-                      const isBestOver = row.home === getBestOdds(overUnderOdds, "home");
-                      const isBestUnder = row.away === getBestOdds(overUnderOdds, "away");
+                    {overUnderOdds.map((row, rowIndex) => {
+                      const isBestOver = isBest(overUnderOdds, "home", rowIndex);
+                      const isBestUnder = isBest(overUnderOdds, "away", rowIndex);
                       return (
-                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800/40">
+                        <TableRow key={row.operatorId} className="border-slate-800 hover:bg-slate-800/40">
                           <TableCell className="text-white">
                             <div className="flex items-center gap-2">
-                              <span className="text-2xl">{row.logo}</span>
-                              <span>{row.bookmaker}</span>
+                              <OperatorLogo operator={getOperator(row.operatorId)} width={24} height={24} />
+                              <span>{getOperator(row.operatorId).name}</span>
                             </div>
                           </TableCell>
                           <TableCell>
                             <button
-                              onClick={() => handleAddToBetSlip(row.bookmaker, "Over 225.5", row.home, "Over/Under")}
+                              onClick={() => handleAddToBetSlip(row.operatorId, "Over 225.5", row.home, "Over/Under")}
                               className={`w-full px-4 py-3 rounded text-center transition-all ${isBestOver ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
-                              {row.home.toFixed(2)}
+                              {formatOdd(row.home)}
                             </button>
                           </TableCell>
                           <TableCell>
                             <button
-                              onClick={() => handleAddToBetSlip(row.bookmaker, "Under 225.5", row.away, "Over/Under")}
+                              onClick={() => handleAddToBetSlip(row.operatorId, "Under 225.5", row.away, "Over/Under")}
                               className={`w-full px-4 py-3 rounded text-center transition-all ${isBestUnder ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
-                              {row.away.toFixed(2)}
+                              {formatOdd(row.away)}
                             </button>
                           </TableCell>
                         </TableRow>
@@ -815,7 +777,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                   <div className="text-slate-400 text-xs mb-1">La nostra scelta</div>
                   <div className="text-green-500 flex items-center gap-2">
                     <Target className="w-4 h-4" />
-                    <span>Over 225.5 Punti @ 1.91</span>
+                    <span>[PRONOSTICO] @ [QUOTA_PRONOSTICO]</span>
                   </div>
                 </div>
               </div>

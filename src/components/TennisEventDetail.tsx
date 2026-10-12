@@ -5,6 +5,12 @@ import { Card } from "./ui/card";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "./ui/table";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import { useBetSlip } from "../context/BetSlipContext";
+import { getOperator } from "../data/operators";
+import { bestValue, formatOdd, isBestAt, type OddValue } from "../lib/odds";
+import { OperatorLogo } from "./operator/OperatorUi";
+
+/** One row of an odds comparison table: operator + value per outcome (number or placeholder). */
+type OddsRow = { operatorId: string } & Record<string, OddValue>;
 
 export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
   const { addSelection } = useBetSlip();
@@ -19,70 +25,20 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
     surface: "Terra Battuta",
     round: "Finale",
   };
-  const winnerOdds = [
-    {
-      bookmaker: "bet365",
-      logo: "\u{1F3AF}",
-      player1: 2.1,
-      player2: 1.75,
-    },
-    {
-      bookmaker: "Betway",
-      logo: "\u26A1",
-      player1: 2.22,
-      player2: 1.72,
-    },
-    {
-      bookmaker: "888sport",
-      logo: "\u{1F3B0}",
-      player1: 2.08,
-      player2: 1.8,
-    },
-    {
-      bookmaker: "Unibet",
-      logo: "\u{1F537}",
-      player1: 2.12,
-      player2: 1.74,
-    },
-    {
-      bookmaker: "William Hill",
-      logo: "\u{1F3B2}",
-      player1: 2.15,
-      player2: 1.76,
-    },
+  const winnerOdds: OddsRow[] = [
+    { operatorId: "operatore-1", player1: "[QUOTA_1]", player2: "[QUOTA_2]" },
+    { operatorId: "operatore-2", player1: "[QUOTA_1]", player2: "[QUOTA_2]" },
+    { operatorId: "operatore-3", player1: "[QUOTA_1]", player2: "[QUOTA_2]" },
+    { operatorId: "operatore-4", player1: "[QUOTA_1]", player2: "[QUOTA_2]" },
+    { operatorId: "operatore-5", player1: "[QUOTA_1]", player2: "[QUOTA_2]" },
   ];
 
-  const setBettingOdds = [
-    {
-      bookmaker: "bet365",
-      logo: "\u{1F3AF}",
-      player1: 3.2,
-      player2: 2.9,
-    },
-    {
-      bookmaker: "Betway",
-      logo: "\u26A1",
-      player1: 3.35,
-      player2: 2.85,
-    },
-    {
-      bookmaker: "888sport",
-      logo: "\u{1F3B0}",
-      player1: 3.18,
-      player2: 2.95,
-    },
-    {
-      bookmaker: "Unibet",
-      logo: "\u{1F537}",
-      player1: 3.25,
-      player2: 2.88,
-    },
-    {
-      bookmaker: "William Hill",
-      logo: "\u{1F3B2}",
-      player1: 3.22,
-      player2: 2.92,
-    },
+  const setBettingOdds: OddsRow[] = [
+    { operatorId: "operatore-1", player1: "[QUOTA_SET_2-0_G1]", player2: "[QUOTA_SET_2-0_G2]" },
+    { operatorId: "operatore-2", player1: "[QUOTA_SET_2-0_G1]", player2: "[QUOTA_SET_2-0_G2]" },
+    { operatorId: "operatore-3", player1: "[QUOTA_SET_2-0_G1]", player2: "[QUOTA_SET_2-0_G2]" },
+    { operatorId: "operatore-4", player1: "[QUOTA_SET_2-0_G1]", player2: "[QUOTA_SET_2-0_G2]" },
+    { operatorId: "operatore-5", player1: "[QUOTA_SET_2-0_G1]", player2: "[QUOTA_SET_2-0_G2]" },
   ];
 
   const player1Form = ["W", "W", "L", "W", "W"];
@@ -147,8 +103,14 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
     matchStart: "14:00",
     commentary: "Telecronaca di Stefano Pescosolido e commento tecnico di Paolo Bertolucci",
   };
-  const getBestOdds = (rows, outcome) => Math.max(...rows.map((row) => row[outcome]));
-  const handleAddToBetSlip = (bookmaker, betType, odds, market) => {
+  // Odds may be numbers or placeholders ("[QUOTA_1]"): see src/lib/odds.ts.
+  const getBestOdds = (rows: OddsRow[], outcome: string) => bestValue(rows.map((row) => row[outcome] as OddValue));
+  const isBest = (rows: OddsRow[], outcome: string, index: number) =>
+    isBestAt(
+      rows.map((row) => row[outcome] as OddValue),
+      index,
+    );
+  const handleAddToBetSlip = (operatorId: string, betType: string, odds: OddValue, market: string) => {
     addSelection({
       matchId: match.id,
       homeTeam: match.player1,
@@ -158,7 +120,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
       time: match.time,
       betType: betType,
       betTypeLabel: `${market} - ${betType}`,
-      selectedBookmaker: bookmaker,
+      selectedBookmaker: operatorId,
       selectedOdds: odds,
       allBookmakers: [],
     });
@@ -273,7 +235,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
               <div className="text-slate-400 text-sm mb-1">Quota Migliore</div>
               <div className="text-green-500 text-2xl flex items-center gap-1">
                 <TrendingUp className="w-5 h-5" />
-                {getBestOdds(winnerOdds, "player1").toFixed(2)}
+                {formatOdd(getBestOdds(winnerOdds, "player1"))}
               </div>
             </Card>
           </div>
@@ -329,31 +291,31 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {winnerOdds.map((row) => {
-                      const isBestPlayer1 = row.player1 === getBestOdds(winnerOdds, "player1");
-                      const isBestPlayer2 = row.player2 === getBestOdds(winnerOdds, "player2");
+                    {winnerOdds.map((row, rowIndex) => {
+                      const isBestPlayer1 = isBest(winnerOdds, "player1", rowIndex);
+                      const isBestPlayer2 = isBest(winnerOdds, "player2", rowIndex);
                       return (
-                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800/40">
+                        <TableRow key={row.operatorId} className="border-slate-800 hover:bg-slate-800/40">
                           <TableCell className="text-white">
                             <div className="flex items-center gap-2">
-                              <span className="text-2xl">{row.logo}</span>
-                              <span>{row.bookmaker}</span>
+                              <OperatorLogo operator={getOperator(row.operatorId)} width={24} height={24} />
+                              <span>{getOperator(row.operatorId).name}</span>
                             </div>
                           </TableCell>
                           <TableCell>
                             <button
-                              onClick={() => handleAddToBetSlip(row.bookmaker, match.player1, row.player1, "Vincente")}
+                              onClick={() => handleAddToBetSlip(row.operatorId, match.player1, row.player1, "Vincente")}
                               className={`w-full px-4 py-3 rounded text-center transition-all ${isBestPlayer1 ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
-                              {row.player1.toFixed(2)}
+                              {formatOdd(row.player1)}
                             </button>
                           </TableCell>
                           <TableCell>
                             <button
-                              onClick={() => handleAddToBetSlip(row.bookmaker, match.player2, row.player2, "Vincente")}
+                              onClick={() => handleAddToBetSlip(row.operatorId, match.player2, row.player2, "Vincente")}
                               className={`w-full px-4 py-3 rounded text-center transition-all ${isBestPlayer2 ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
-                              {row.player2.toFixed(2)}
+                              {formatOdd(row.player2)}
                             </button>
                           </TableCell>
                         </TableRow>
@@ -386,35 +348,35 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {setBettingOdds.map((row) => {
-                      const isBestPlayer1 = row.player1 === getBestOdds(setBettingOdds, "player1");
-                      const isBestPlayer2 = row.player2 === getBestOdds(setBettingOdds, "player2");
+                    {setBettingOdds.map((row, rowIndex) => {
+                      const isBestPlayer1 = isBest(setBettingOdds, "player1", rowIndex);
+                      const isBestPlayer2 = isBest(setBettingOdds, "player2", rowIndex);
                       return (
-                        <TableRow key={row.bookmaker} className="border-slate-800 hover:bg-slate-800/40">
+                        <TableRow key={row.operatorId} className="border-slate-800 hover:bg-slate-800/40">
                           <TableCell className="text-white">
                             <div className="flex items-center gap-2">
-                              <span className="text-2xl">{row.logo}</span>
-                              <span>{row.bookmaker}</span>
+                              <OperatorLogo operator={getOperator(row.operatorId)} width={24} height={24} />
+                              <span>{getOperator(row.operatorId).name}</span>
                             </div>
                           </TableCell>
                           <TableCell>
                             <button
                               onClick={() =>
-                                handleAddToBetSlip(row.bookmaker, `${match.player1} 2-0`, row.player1, "Set Betting")
+                                handleAddToBetSlip(row.operatorId, `${match.player1} 2-0`, row.player1, "Set Betting")
                               }
                               className={`w-full px-4 py-3 rounded text-center transition-all ${isBestPlayer1 ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
-                              {row.player1.toFixed(2)}
+                              {formatOdd(row.player1)}
                             </button>
                           </TableCell>
                           <TableCell>
                             <button
                               onClick={() =>
-                                handleAddToBetSlip(row.bookmaker, `${match.player2} 2-0`, row.player2, "Set Betting")
+                                handleAddToBetSlip(row.operatorId, `${match.player2} 2-0`, row.player2, "Set Betting")
                               }
                               className={`w-full px-4 py-3 rounded text-center transition-all ${isBestPlayer2 ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
-                              {row.player2.toFixed(2)}
+                              {formatOdd(row.player2)}
                             </button>
                           </TableCell>
                         </TableRow>
@@ -634,7 +596,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                   <div className="text-slate-400 text-xs mb-1">La nostra scelta</div>
                   <div className="text-green-500 flex items-center gap-2">
                     <Target className="w-4 h-4" />
-                    <span>Alcaraz Vincente @ 1.80</span>
+                    <span>[PRONOSTICO] @ [QUOTA_PRONOSTICO]</span>
                   </div>
                 </div>
               </div>

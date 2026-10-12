@@ -8,6 +8,9 @@ import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from ".
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "./ui/table";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import { useBetSlip } from "../context/BetSlipContext";
+import { getOperator } from "../data/operators";
+import { bestEntry, bestValue, formatOdd, isBestAt, placeholderOdds, type OddsByOperator } from "../lib/odds";
+import { OperatorCta } from "./operator/OperatorUi";
 
 // Mock data – replace with a real odds feed/API.
 const matches: any[] = [
@@ -20,28 +23,7 @@ const matches: any[] = [
     tournament: "ATP Masters 1000 - Roma",
     surface: "Terra",
     round: "Finale",
-    odds: {
-      bet365: {
-        player1: 2.1,
-        player2: 1.75,
-      },
-      betway: {
-        player1: 2.22,
-        player2: 1.72,
-      },
-      sport888: {
-        player1: 2.08,
-        player2: 1.8,
-      },
-      unibet: {
-        player1: 2.12,
-        player2: 1.74,
-      },
-      williamhill: {
-        player1: 2.15,
-        player2: 1.76,
-      },
-    },
+    odds: placeholderOdds({ player1: "[QUOTA_1]", player2: "[QUOTA_2]" }),
   },
   {
     id: "2",
@@ -52,28 +34,7 @@ const matches: any[] = [
     tournament: "ATP Masters 1000 - Roma",
     surface: "Terra",
     round: "Semifinale",
-    odds: {
-      bet365: {
-        player1: 1.65,
-        player2: 2.25,
-      },
-      betway: {
-        player1: 1.62,
-        player2: 2.35,
-      },
-      sport888: {
-        player1: 1.72,
-        player2: 2.2,
-      },
-      unibet: {
-        player1: 1.64,
-        player2: 2.27,
-      },
-      williamhill: {
-        player1: 1.66,
-        player2: 2.22,
-      },
-    },
+    odds: placeholderOdds({ player1: "[QUOTA_1]", player2: "[QUOTA_2]" }),
   },
   {
     id: "3",
@@ -85,28 +46,7 @@ const matches: any[] = [
     surface: "Terra",
     round: "Finale",
     isLive: false,
-    odds: {
-      bet365: {
-        player1: 1.55,
-        player2: 2.5,
-      },
-      betway: {
-        player1: 1.62,
-        player2: 2.45,
-      },
-      sport888: {
-        player1: 1.53,
-        player2: 2.62,
-      },
-      unibet: {
-        player1: 1.56,
-        player2: 2.48,
-      },
-      williamhill: {
-        player1: 1.57,
-        player2: 2.47,
-      },
-    },
+    odds: placeholderOdds({ player1: "[QUOTA_1]", player2: "[QUOTA_2]" }),
   },
   {
     id: "4",
@@ -117,28 +57,7 @@ const matches: any[] = [
     tournament: "WTA 1000 - Roma",
     surface: "Terra",
     round: "Semifinale",
-    odds: {
-      bet365: {
-        player1: 1.9,
-        player2: 1.95,
-      },
-      betway: {
-        player1: 1.88,
-        player2: 2.02,
-      },
-      sport888: {
-        player1: 1.98,
-        player2: 1.93,
-      },
-      unibet: {
-        player1: 1.89,
-        player2: 1.96,
-      },
-      williamhill: {
-        player1: 1.91,
-        player2: 1.94,
-      },
-    },
+    odds: placeholderOdds({ player1: "[QUOTA_1]", player2: "[QUOTA_2]" }),
   },
   {
     id: "5",
@@ -149,28 +68,7 @@ const matches: any[] = [
     tournament: "ATP Masters 1000 - Roma",
     surface: "Terra",
     round: "Quarti",
-    odds: {
-      bet365: {
-        player1: 2.05,
-        player2: 1.8,
-      },
-      betway: {
-        player1: 2.08,
-        player2: 1.78,
-      },
-      sport888: {
-        player1: 2.03,
-        player2: 1.88,
-      },
-      unibet: {
-        player1: 2.15,
-        player2: 1.79,
-      },
-      williamhill: {
-        player1: 2.1,
-        player2: 1.81,
-      },
-    },
+    odds: placeholderOdds({ player1: "[QUOTA_1]", player2: "[QUOTA_2]" }),
   },
   {
     id: "6",
@@ -181,28 +79,7 @@ const matches: any[] = [
     tournament: "ATP Masters 1000 - Roma",
     surface: "Terra",
     round: "Quarti",
-    odds: {
-      bet365: {
-        player1: 1.7,
-        player2: 2.15,
-      },
-      betway: {
-        player1: 1.73,
-        player2: 2.12,
-      },
-      sport888: {
-        player1: 1.68,
-        player2: 2.25,
-      },
-      unibet: {
-        player1: 1.78,
-        player2: 2.14,
-      },
-      williamhill: {
-        player1: 1.72,
-        player2: 2.13,
-      },
-    },
+    odds: placeholderOdds({ player1: "[QUOTA_1]", player2: "[QUOTA_2]" }),
   },
 ];
 
@@ -277,19 +154,16 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
   const [selectedTournament, setSelectedTournament] = useState("all");
   const [selectedSurface, setSelectedSurface] = useState("all");
   const { addSelection } = useBetSlip();
-  const bookmakerNames = ["bet365", "betway", "sport888", "unibet", "williamhill"];
-  const getBookmakerName = (index) => bookmakerNames[index % bookmakerNames.length];
   const handleOddsClick = (match, betType, bookmaker, odds) => {
     const betTypeLabels = {
       1: `Vincente ${match.player1}`,
       2: `Vincente ${match.player2}`,
     };
-    const allBookmakers = Object.entries<any>(match.odds)
-      .map(([name, bookmakerOdds]) => ({
-        name: name,
-        odds: betType === "1" ? bookmakerOdds.player1 : bookmakerOdds.player2,
-      }))
-      .sort((a, b) => b.odds - a.odds);
+    const outcome = betType === "1" ? "player1" : "player2";
+    const allBookmakers = Object.entries(match.odds as OddsByOperator).map(([operatorId, o]) => ({
+      operatorId,
+      odds: o[outcome],
+    }));
     addSelection({
       id: `${match.id}-${betType}`,
       matchId: match.id,
@@ -304,29 +178,14 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
       allBookmakers: allBookmakers,
     });
   };
-  const getBestOdd = (match, outcome) => {
-    const allOdds = Object.values(match.odds);
-    return Math.max(...allOdds.map((odds) => odds[outcome]));
+  // Odds may be numbers or placeholders ("[QUOTA_1]"): see src/lib/odds.ts.
+  const oddsList = (match, outcome: string) => Object.values(match.odds as OddsByOperator).map((o) => o[outcome]);
+  const getBestOdd = (match, outcome: string) => bestValue(oddsList(match, outcome));
+  const getBestBookmaker = (match, outcome: string) => {
+    const best = bestEntry(match.odds, outcome);
+    return { operatorId: best.operatorId, name: getOperator(best.operatorId).name, value: best.value };
   };
-  const getBestBookmaker = (match, outcome) =>
-    Object.entries<any>(match.odds).reduce(
-      (best, [name, odds]) =>
-        odds[outcome] > best.value
-          ? {
-              name: name,
-              value: odds[outcome],
-            }
-          : best,
-      {
-        name: "",
-        value: 0,
-      },
-    );
-  const getBestBookmakerName = (match, outcome) => {
-    const bestOdd = getBestOdd(match, outcome);
-    const entry = Object.entries<any>(match.odds).find(([_name, odds]) => odds[outcome] === bestOdd);
-    return entry ? entry[0] : "";
-  };
+  const getBestBookmakerName = (match, outcome: string) => getOperator(bestEntry(match.odds, outcome).operatorId).name;
   return (
     <div className="min-h-screen bg-slate-950">
       <div className="bg-slate-900 py-12">
@@ -559,20 +418,18 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                         </TableRow>
                       </TableHeader>
                       <TableBody>
-                        {Object.entries<any>(match.odds).map(([bookmaker, odds]) => {
-                          const isBestPlayer1 = odds.player1 === getBestOdd(match, "player1");
-                          const isBestPlayer2 = odds.player2 === getBestOdd(match, "player2");
+                        {Object.entries<any>(match.odds).map(([bookmaker, odds], rowIndex) => {
+                          const isBestPlayer1 = isBestAt(oddsList(match, "player1"), rowIndex);
+                          const isBestPlayer2 = isBestAt(oddsList(match, "player2"), rowIndex);
                           return (
                             <TableRow key={bookmaker} className="border-slate-800 hover:bg-slate-800/40">
-                              <TableCell className="text-white capitalize">
-                                {bookmaker.replace("sport888", "888sport")}
-                              </TableCell>
+                              <TableCell className="text-white capitalize">{getOperator(bookmaker).name}</TableCell>
                               <TableCell className="text-center">
                                 <div
                                   className={`inline-block px-3 py-1.5 rounded cursor-pointer hover:opacity-80 transition-opacity ${isBestPlayer1 ? "bg-green-500 text-slate-950 font-bold" : "text-slate-300"}`}
                                   onClick={() => handleOddsClick(match, "1", bookmaker, odds.player1)}
                                 >
-                                  {odds.player1.toFixed(2)}
+                                  {formatOdd(odds.player1)}
                                 </div>
                               </TableCell>
                               <TableCell className="text-center">
@@ -580,16 +437,16 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                                   className={`inline-block px-3 py-1.5 rounded cursor-pointer hover:opacity-80 transition-opacity ${isBestPlayer2 ? "bg-green-500 text-slate-950 font-bold" : "text-slate-300"}`}
                                   onClick={() => handleOddsClick(match, "2", bookmaker, odds.player2)}
                                 >
-                                  {odds.player2.toFixed(2)}
+                                  {formatOdd(odds.player2)}
                                 </div>
                               </TableCell>
                               <TableCell>
-                                <Button
+                                <OperatorCta
+                                  operator={getOperator(bookmaker)}
+                                  label="Vai al sito"
                                   size="sm"
-                                  className="bg-orange-500 hover:bg-orange-600 text-white cursor-pointer"
-                                >
-                                  Scommetti
-                                </Button>
+                                  className="bg-orange-700 hover:bg-orange-800 text-white cursor-pointer"
+                                />
                               </TableCell>
                             </TableRow>
                           );
@@ -605,9 +462,9 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                               {match.player1}
                             </div>
                             <div className="text-green-500">
-                              {getBestOdd(match, "player1").toFixed(2)}
+                              {formatOdd(getBestOdd(match, "player1"))}
                               <span className="text-slate-500 text-xs ml-1">
-                                ({getBestBookmakerName(match, "player1").replace("sport888", "888sport")})
+                                ({getBestBookmakerName(match, "player1")})
                               </span>
                             </div>
                           </div>
@@ -617,9 +474,9 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                               {match.player2}
                             </div>
                             <div className="text-green-500">
-                              {getBestOdd(match, "player2").toFixed(2)}
+                              {formatOdd(getBestOdd(match, "player2"))}
                               <span className="text-slate-500 text-xs ml-1">
-                                ({getBestBookmakerName(match, "player2").replace("sport888", "888sport")})
+                                ({getBestBookmakerName(match, "player2")})
                               </span>
                             </div>
                           </div>
@@ -672,11 +529,11 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                           onClick={(e) => {
                             e.stopPropagation();
                             const best = getBestBookmaker(match, "player1");
-                            handleOddsClick(match, "1", best.name, best.value);
+                            handleOddsClick(match, "1", best.operatorId, best.value);
                           }}
                         >
                           <div className="text-slate-400 text-xs mb-1 truncate">{match.player1}</div>
-                          <div className="text-green-500">{getBestBookmaker(match, "player1").value.toFixed(2)}</div>
+                          <div className="text-green-500">{formatOdd(getBestBookmaker(match, "player1").value)}</div>
                           <div className="text-slate-500 text-xs mt-1">{getBestBookmaker(match, "player1").name}</div>
                         </div>
                         <div
@@ -684,11 +541,11 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                           onClick={(e) => {
                             e.stopPropagation();
                             const best = getBestBookmaker(match, "player2");
-                            handleOddsClick(match, "2", best.name, best.value);
+                            handleOddsClick(match, "2", best.operatorId, best.value);
                           }}
                         >
                           <div className="text-slate-400 text-xs mb-1 truncate">{match.player2}</div>
-                          <div className="text-green-500">{getBestBookmaker(match, "player2").value.toFixed(2)}</div>
+                          <div className="text-green-500">{formatOdd(getBestBookmaker(match, "player2").value)}</div>
                           <div className="text-slate-500 text-xs mt-1">{getBestBookmaker(match, "player2").name}</div>
                         </div>
                       </div>

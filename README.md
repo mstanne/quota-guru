@@ -70,6 +70,28 @@ Il percorso base viene impostato automaticamente con la variabile `BASE_PATH` (=
 pubblico con `SITE_URL` (usato per canonical e sitemap). Se usi un dominio
 personalizzato o un repo `<utente>.github.io`, imposta nel workflow `BASE_PATH: /` e `SITE_URL` con il tuo dominio.
 
+## Template operatori (segnaposto)
+
+Il sito è un **template neutro**: nessun nome, logo, bonus o quota di un operatore reale è scritto nei componenti.
+Tutti i dati degli operatori stanno in un solo file, **`src/data/operators.ts`**, e arrivano ai componenti come props
+strutturate (`operator.name`, `operator.logoUrl`, `offer.amount`, …), quindi possono essere sostituiti da un JSON,
+un CMS o un'API senza toccare il layout.
+
+| Dato | Dove | Segnaposto |
+| --- | --- | --- |
+| Operatore (nome, sigla, logo, link, concessione ADM, valutazione, pagamenti, pro/contro) | `operators` | `[NOME_OPERATORE_1]`, `[URL_AFFILIAZIONE_OPERATORE]`, `[NUMERO_CONCESSIONE_ADM]`, `[VALUTAZIONE]`… |
+| Offerte (titolo, importo, descrizione, requisiti, termini) | `offers` | `[TITOLO_PROMO]`, `[BONUS_BENVENUTO]`, `[DESCRIZIONE_PROMO]`, `[REQUISITI_SCOMMESSA]`… |
+| Quote | dati di ogni pagina, creati con `placeholderOdds()` (`src/lib/odds.ts`) | `[QUOTA_1]`, `[QUOTA_X]`, `[QUOTA_2]`, `[QUOTA_OVER]`… |
+| Gioco responsabile (numero verde, ADM, logo ADM) | `responsibleGambling` | — |
+
+- **Loghi:** imposta `logoUrl`. Finché è `null` viene mostrato un riquadro neutro con la misura esatta dello slot
+  (`[PLACEHOLDER_LOGO_48x48]`, `64x64`, `40x40`, `24x24`, logo ADM `120x40`), così il layout non cambia.
+- **Link:** `OperatorCta` (`src/components/operator/OperatorUi.tsx`) mantiene lo stile del bottone originale e aggiunge
+  `rel="sponsored nofollow"`. Finché l'URL è un segnaposto il link è inattivo.
+- **Quote:** accettano numeri o segnaposto. Con i numeri il sito calcola da solo quota migliore, quota totale e vincita
+  della schedina; con i segnaposto mostra `[QUOTA_TOTALE]` e `[VINCITA_POTENZIALE]`.
+- **Immagini editoriali** (guide): `ImageSlot` mostra `[PLACEHOLDER_IMMAGINE_GUIDA_800x450]` finché non imposti l'URL.
+
 ## Dati calcio (football-data.org)
 
 Calendario, risultati, classifiche e precedenti del calcio arrivano dall'API gratuita di

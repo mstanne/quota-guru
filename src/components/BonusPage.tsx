@@ -1,159 +1,32 @@
-import { CircleAlert, CircleCheckBig, Funnel, Gift, Info, Star } from "lucide-react";
+import { useState } from "react";
+import { CircleAlert, CircleCheckBig, Funnel, Gift, Info, Phone, Star } from "lucide-react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./ui/accordion";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+import {
+  getOperator,
+  offerCategories,
+  offers as defaultOffers,
+  operators,
+  responsibleGambling as rg,
+  type OfferData,
+  type OperatorData,
+} from "../data/operators";
+import { OfferDisclaimer, OperatorCta, OperatorLogo } from "./operator/OperatorUi";
 
-const bonuses = [
-  {
-    id: "1",
-    bookmaker: "Bet365",
-    logo: "\u{1F3AF}",
-    title: "Bonus di Benvenuto",
-    offerType: "Deposito",
-    bonusAmount: "\u20AC100",
-    description: "Fino a \u20AC100 in Crediti Scommessa per i nuovi clienti",
-    highlights: ["Crediti scommessa fino a \u20AC100", "Quote minime 1.20", "Valido per 30 giorni"],
-    termsAndConditions: [
-      "Solo per nuovi clienti maggiorenni",
-      "Deposito minimo \u20AC5",
-      "Le vincite escludono l'importo dei Crediti Scommessa",
-      "Si applicano limiti di tempo e termini e condizioni",
-    ],
+interface BonusPageProps {
+  /** Offers to list (defaults to src/data/operators.ts). */
+  offers?: OfferData[];
+  resolveOperator?: (id: string) => OperatorData;
+}
 
-    minDeposit: "\u20AC5",
-    wageringRequirement: "1x",
-    rating: 4.8,
-    isFeatured: true,
-    promoCode: "GURU100",
-  },
-  {
-    id: "2",
-    bookmaker: "Betway",
-    logo: "\u26A1",
-    title: "Bonus Primo Deposito",
-    offerType: "Match Bonus",
-    bonusAmount: "\u20AC50",
-    description: "100% fino a \u20AC50 sul primo deposito",
-    highlights: ["Match del 100% sul deposito", "Bonus fino a \u20AC50", "Processo semplice e veloce"],
-    termsAndConditions: [
-      "Nuovi clienti maggiorenni",
-      "Deposito minimo \u20AC10",
-      "Requisiti di scommessa 3x",
-      "Quote minime 1.75",
-    ],
+/** /bonus – informational comparison of offer conditions (no ranking, no "claim" language). */
+export function BonusPage({ offers = defaultOffers, resolveOperator = getOperator }: BonusPageProps) {
+  const [category, setCategory] = useState<string>("all");
+  const visible = offers.filter((o) => category === "all" || o.category === category);
+  const countFor = (id: string) => (id === "all" ? offers.length : offers.filter((o) => o.category === id).length);
 
-    minDeposit: "\u20AC10",
-    wageringRequirement: "3x",
-    rating: 4.6,
-    isFeatured: true,
-  },
-  {
-    id: "3",
-    bookmaker: "888sport",
-    logo: "\u{1F3C6}",
-    title: "Offerta Nuovi Clienti",
-    offerType: "Free Bet",
-    bonusAmount: "\u20AC30",
-    description: "Scommetti \u20AC10 e ricevi \u20AC30 in Free Bet",
-    highlights: ["Free Bet del valore di \u20AC30", "Prima scommessa \u20AC10", "Bonus automatico"],
-    termsAndConditions: [
-      "Solo nuovi clienti",
-      "Prima scommessa minimo \u20AC10",
-      "Quote minime 1.50",
-      "Free Bet valide 7 giorni",
-    ],
-
-    minDeposit: "\u20AC10",
-    wageringRequirement: "1x",
-    rating: 4.5,
-    isFeatured: true,
-  },
-  {
-    id: "4",
-    bookmaker: "William Hill",
-    logo: "\u{1F3B2}",
-    title: "Bonus di Benvenuto Sport",
-    offerType: "Match Bonus",
-    bonusAmount: "\u20AC40",
-    description: "Match del 100% fino a \u20AC40 + \u20AC10 Casino",
-    highlights: ["Bonus Sport \u20AC40", "Bonus Casino \u20AC10", "Doppio bonus"],
-    termsAndConditions: ["Nuovi clienti UK e Irlanda", "Deposito minimo \u20AC10", "Quote minime 1.40", "Rollover 3x"],
-    minDeposit: "\u20AC10",
-    wageringRequirement: "3x",
-    rating: 4.4,
-  },
-  {
-    id: "5",
-    bookmaker: "Unibet",
-    logo: "\u{1F48E}",
-    title: "Bonus Scommessa Sicura",
-    offerType: "Risk Free",
-    bonusAmount: "\u20AC20",
-    description: "Prima scommessa senza rischio fino a \u20AC20",
-    highlights: ["Rimborso fino a \u20AC20", "Prima scommessa protetta", "Nessun codice richiesto"],
-    termsAndConditions: [
-      "Solo per nuovi clienti",
-      "Scommessa minima \u20AC5",
-      "Rimborso come free bet",
-      "Valido per 7 giorni",
-    ],
-
-    minDeposit: "\u20AC5",
-    wageringRequirement: "1x",
-    rating: 4.7,
-  },
-  {
-    id: "6",
-    bookmaker: "Ladbrokes",
-    logo: "\u{1F3AA}",
-    title: "Offerta Speciale Sport",
-    offerType: "Free Bet",
-    bonusAmount: "\u20AC25",
-    description: "Scommetti \u20AC5 e ricevi \u20AC25 in Free Bet",
-    highlights: ["\u20AC25 in Free Bet", "Scommessa minima \u20AC5", "Quote competitive"],
-    termsAndConditions: [
-      "Nuovi clienti maggiorenni",
-      "Prima scommessa \u20AC5",
-      "Quote minime 1.50",
-      "Free Bet valide 4 giorni",
-    ],
-
-    minDeposit: "\u20AC5",
-    wageringRequirement: "1x",
-    rating: 4.3,
-  },
-];
-
-const bonusCategories = [
-  {
-    id: "all",
-    name: "Tutti i Bonus",
-    count: bonuses.length,
-  },
-  {
-    id: "welcome",
-    name: "Bonus Benvenuto",
-    count: 4,
-  },
-  {
-    id: "no-deposit",
-    name: "Senza Deposito",
-    count: 0,
-  },
-  {
-    id: "free-bet",
-    name: "Free Bet",
-    count: 3,
-  },
-  {
-    id: "cashback",
-    name: "Cashback",
-    count: 0,
-  },
-];
-
-export function BonusPage() {
   return (
     <div className="min-h-screen bg-slate-950">
       <div className="bg-slate-900 py-16">
@@ -161,24 +34,24 @@ export function BonusPage() {
           <div className="text-center max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Gift className="w-10 h-10 text-orange-500" />
-              <h1 className="text-white text-4xl md:text-5xl">Bonus Scommesse</h1>
+              <h1 className="text-white text-4xl md:text-5xl">Offerte a confronto</h1>
             </div>
             <p className="text-slate-400 text-lg mb-6">
-              Scopri i migliori bonus e promozioni dei bookmaker online. Confronta le offerte e scegli quella più
-              vantaggiosa per te.
+              Le condizioni delle offerte degli operatori autorizzati, una accanto all'altra: deposito minimo, requisiti
+              di giocata, scadenze e termini.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <div className="bg-slate-800 rounded-lg px-6 py-3">
-                <div className="text-green-500 text-2xl">€370+</div>
-                <div className="text-slate-400 text-sm">Bonus Totali Disponibili</div>
+                <div className="text-green-500 text-2xl">{offers.length}</div>
+                <div className="text-slate-400 text-sm">Offerte confrontate</div>
               </div>
               <div className="bg-slate-800 rounded-lg px-6 py-3">
-                <div className="text-green-500 text-2xl">6</div>
-                <div className="text-slate-400 text-sm">Bookmaker Verificati</div>
+                <div className="text-green-500 text-2xl">{operators.length}</div>
+                <div className="text-slate-400 text-sm">Operatori</div>
               </div>
               <div className="bg-slate-800 rounded-lg px-6 py-3">
-                <div className="text-green-500 text-2xl">100%</div>
-                <div className="text-slate-400 text-sm">Sicuri e Regolamentati</div>
+                <div className="text-green-500 text-2xl">ADM</div>
+                <div className="text-slate-400 text-sm">Solo concessionari autorizzati</div>
               </div>
             </div>
           </div>
@@ -190,14 +63,14 @@ export function BonusPage() {
             <div className="flex items-start gap-3">
               <Info className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-blue-400 mb-2">Come Funzionano i Bonus?</h3>
+                <h3 className="text-blue-400 mb-2">Come leggere le condizioni</h3>
                 <p className="text-slate-300 text-sm mb-3">
-                  I bonus scommesse sono offerte promozionali dei bookmaker per attrarre nuovi clienti. Possono
-                  includere crediti gratuiti, scommesse senza rischio, o match bonus sul deposito.
+                  Le offerte degli operatori sono soggette a requisiti precisi: importo minimo di deposito, numero di
+                  volte in cui l'importo va giocato prima del prelievo, quote minime e scadenza.
                 </p>
                 <p className="text-slate-400 text-sm">
-                  Leggi sempre i Termini e Condizioni prima di attivare un bonus. Verifica requisiti di scommessa, quote
-                  minime e scadenze.
+                  Leggi sempre i termini completi sul sito dell'operatore. Un'offerta non è un motivo per giocare: gioca
+                  solo somme che puoi permetterti di perdere.
                 </p>
               </div>
             </div>
@@ -206,23 +79,25 @@ export function BonusPage() {
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-4">
             <Funnel className="w-5 h-5 text-slate-400" />
-            <h2 className="text-white text-xl">Filtra per Categoria</h2>
+            <h2 className="text-white text-xl">Filtra per categoria</h2>
           </div>
           <div className="flex flex-wrap gap-3">
-            {bonusCategories.map((category) => (
+            {offerCategories.map((c) => (
               <Button
-                key={category.id}
-                variant={category.id === "all" ? "default" : "outline"}
+                key={c.id}
+                variant={category === c.id ? "default" : "outline"}
+                aria-pressed={category === c.id}
+                onClick={() => setCategory(c.id)}
                 className={
-                  category.id === "all"
-                    ? "bg-green-500 hover:bg-green-600 text-slate-950"
-                    : "bg-slate-900 border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white"
+                  category === c.id
+                    ? "bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer"
+                    : "bg-slate-900 border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white cursor-pointer"
                 }
               >
-                {category.name}
-                {category.count > 0 && (
+                {c.name}
+                {countFor(c.id) > 0 && (
                   <Badge variant="secondary" className="ml-2 bg-slate-800 text-slate-300">
-                    {category.count}
+                    {countFor(c.id)}
                   </Badge>
                 )}
               </Button>
@@ -230,148 +105,153 @@ export function BonusPage() {
           </div>
         </div>
         <div className="mb-12">
-          <h2 className="text-white text-2xl mb-6">Bonus in Evidenza</h2>
+          <h2 className="text-white text-2xl mb-6">Offerte in primo piano</h2>
           <div className="grid grid-cols-1 gap-6">
-            {bonuses
-              .filter((bonus) => bonus.isFeatured)
-              .map((bonus, index) => (
-                <Card
-                  key={bonus.id}
-                  className="bg-slate-900 border-slate-700 hover:border-orange-500 transition-all overflow-hidden"
-                >
-                  <div className="p-6">
-                    <div className="flex flex-col lg:flex-row gap-6">
-                      <div className="lg:w-1/4">
-                        <div className="flex items-start gap-4">
-                          <div className="w-16 h-16 bg-slate-800 rounded-lg flex items-center justify-center text-3xl flex-shrink-0">
-                            {bonus.logo}
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="text-white text-xl mb-1">{bonus.bookmaker}</h3>
-                            <div className="flex items-center gap-1 mb-2">
-                              <Star className="w-4 h-4 fill-yellow-500 text-yellow-500" />
-                              <span className="text-slate-300">{bonus.rating}</span>
+            {visible
+              .filter((offer) => offer.featured)
+              .map((offer) => {
+                const operator = resolveOperator(offer.operatorId);
+                return (
+                  <Card key={offer.id} className="bg-slate-900 border-slate-700 transition-all overflow-hidden">
+                    <div className="p-6">
+                      <div className="flex flex-col lg:flex-row gap-6">
+                        <div className="lg:w-1/4">
+                          <div className="flex items-start gap-4">
+                            <OperatorLogo operator={operator} width={64} height={64} className="rounded-lg" />
+                            <div className="flex-1">
+                              <h3 className="text-white text-xl mb-1">{operator.name}</h3>
+                              <div className="flex items-center gap-1 mb-2">
+                                <Star className="w-4 h-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
+                                <span className="text-slate-300">{operator.rating}</span>
+                              </div>
+                              <p className="text-slate-500 text-xs">Concessione ADM {operator.admLicense}</p>
                             </div>
-                            <Badge className="bg-orange-500 text-white text-xs">
-                              #{index + 1}
-                              {" Consigliato"}
+                          </div>
+                        </div>
+                        <div className="lg:w-1/2 lg:border-l lg:border-r border-slate-800 lg:px-6">
+                          <div className="mb-4">
+                            <Badge variant="secondary" className="bg-slate-800 text-slate-300 mb-2">
+                              {offer.offerType}
                             </Badge>
+                            <h4 className="text-white text-lg mb-2">{offer.title}</h4>
+                            <p className="text-slate-400 text-sm mb-4">{offer.description}</p>
                           </div>
-                        </div>
-                      </div>
-                      <div className="lg:w-1/2 lg:border-l lg:border-r border-slate-800 lg:px-6">
-                        <div className="mb-4">
-                          <Badge variant="secondary" className="bg-slate-800 text-slate-300 mb-2">
-                            {bonus.offerType}
-                          </Badge>
-                          <h4 className="text-white text-lg mb-2">{bonus.title}</h4>
-                          <p className="text-slate-400 text-sm mb-4">{bonus.description}</p>
-                        </div>
-                        <div className="grid grid-cols-2 gap-4 mb-4">
-                          <div>
-                            <div className="text-slate-400 text-xs mb-1">Deposito Minimo</div>
-                            <div className="text-white">{bonus.minDeposit}</div>
+                          <div className="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                              <div className="text-slate-400 text-xs mb-1">Deposito minimo</div>
+                              <div className="text-white">{offer.minDeposit}</div>
+                            </div>
+                            <div>
+                              <div className="text-slate-400 text-xs mb-1">Requisiti di giocata</div>
+                              <div className="text-white">{offer.wageringRequirement}</div>
+                            </div>
                           </div>
                           <div>
-                            <div className="text-slate-400 text-xs mb-1">Requisiti</div>
-                            <div className="text-white">{bonus.wageringRequirement}</div>
-                          </div>
-                        </div>
-                        <div>
-                          <div className="text-slate-400 text-xs mb-2">Punti Salienti:</div>
-                          <ul className="space-y-1">
-                            {bonus.highlights.map((highlight, i) => (
-                              <li key={i} className="flex items-start gap-2 text-slate-300 text-sm">
-                                <CircleCheckBig className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                                <span>{highlight}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="lg:w-1/4 flex flex-col justify-center items-center text-center">
-                        <div className="bg-orange-500 rounded-lg p-4 mb-4 w-full">
-                          <div className="text-white text-xs mb-1">Bonus Disponibile</div>
-                          <div className="text-white text-4xl">{bonus.bonusAmount}</div>
-                        </div>
-                        {bonus.promoCode && (
-                          <div className="bg-slate-800 rounded px-4 py-2 mb-3 w-full">
-                            <div className="text-slate-400 text-xs mb-1">Codice Promo</div>
-                            <div className="text-green-500 font-mono">{bonus.promoCode}</div>
-                          </div>
-                        )}
-                        <Button className="w-full bg-green-500 hover:bg-green-600 text-slate-950 mb-2">
-                          Ottieni Bonus
-                        </Button>
-                        <p className="text-slate-500 text-xs">T&C Apply • 18+</p>
-                      </div>
-                    </div>
-                    <div className="mt-6 border-t border-slate-800 pt-4">
-                      <Accordion type="single" collapsible>
-                        <AccordionItem value="terms" className="border-slate-800">
-                          <AccordionTrigger className="text-slate-300 hover:text-white">
-                            Termini e Condizioni
-                          </AccordionTrigger>
-                          <AccordionContent>
-                            <ul className="space-y-2 text-slate-400 text-sm">
-                              {bonus.termsAndConditions.map((term, i) => (
-                                <li key={i} className="flex items-start gap-2">
-                                  <CircleAlert className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
-                                  <span>{term}</span>
+                            <div className="text-slate-400 text-xs mb-2">Condizioni principali:</div>
+                            <ul className="space-y-1">
+                              {offer.highlights.map((highlight, i) => (
+                                <li key={i} className="flex items-start gap-2 text-slate-300 text-sm">
+                                  <CircleCheckBig className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                                  <span>{highlight}</span>
                                 </li>
                               ))}
                             </ul>
-                          </AccordionContent>
-                        </AccordionItem>
-                      </Accordion>
+                          </div>
+                        </div>
+                        <div className="lg:w-1/4 flex flex-col justify-center items-center text-center">
+                          <div className="bg-slate-800 border border-slate-700 rounded-lg p-4 mb-4 w-full">
+                            <div className="text-slate-400 text-xs mb-1">Importo dell'offerta</div>
+                            <div className="text-white text-2xl leading-tight [overflow-wrap:anywhere]">
+                              {offer.amount}
+                            </div>
+                          </div>
+                          {offer.promoCode && (
+                            <div className="bg-slate-800 rounded px-4 py-2 mb-3 w-full">
+                              <div className="text-slate-400 text-xs mb-1">Codice promo</div>
+                              <div className="text-green-500 font-mono">{offer.promoCode}</div>
+                            </div>
+                          )}
+                          <OperatorCta
+                            operator={operator}
+                            label="Vai al sito"
+                            className="w-full bg-green-500 hover:bg-green-600 text-slate-950 mb-2"
+                          />
+                          <OfferDisclaimer termsUrl={offer.termsUrl} />
+                        </div>
+                      </div>
+                      <div className="mt-6 border-t border-slate-800 pt-4">
+                        <Accordion type="single" collapsible>
+                          <AccordionItem value="terms" className="border-slate-800">
+                            <AccordionTrigger className="text-slate-300 hover:text-white">
+                              Termini e condizioni
+                            </AccordionTrigger>
+                            <AccordionContent>
+                              <ul className="space-y-2 text-slate-400 text-sm">
+                                {offer.terms.map((term, i) => (
+                                  <li key={i} className="flex items-start gap-2">
+                                    <CircleAlert className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
+                                    <span>{term}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </AccordionContent>
+                          </AccordionItem>
+                        </Accordion>
+                      </div>
                     </div>
-                  </div>
-                </Card>
-              ))}
+                  </Card>
+                );
+              })}
           </div>
         </div>
         <div className="mb-12">
-          <h2 className="text-white text-2xl mb-6">Altri Bonus Disponibili</h2>
+          <h2 className="text-white text-2xl mb-6">Altre offerte</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {bonuses
-              .filter((bonus) => !bonus.isFeatured)
-              .map((bonus) => (
-                <Card key={bonus.id} className="bg-slate-900 border-slate-700 hover:border-green-500 transition-all">
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-2xl">
-                          {bonus.logo}
-                        </div>
-                        <div>
-                          <h3 className="text-white">{bonus.bookmaker}</h3>
-                          <div className="flex items-center gap-1">
-                            <Star className="w-3 h-3 fill-yellow-500 text-yellow-500" />
-                            <span className="text-slate-400 text-sm">{bonus.rating}</span>
+            {visible
+              .filter((offer) => !offer.featured)
+              .map((offer) => {
+                const operator = resolveOperator(offer.operatorId);
+                return (
+                  <Card key={offer.id} className="bg-slate-900 border-slate-700 transition-all">
+                    <div className="p-6">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                          <OperatorLogo operator={operator} width={48} height={48} className="rounded-lg" />
+                          <div>
+                            <h3 className="text-white">{operator.name}</h3>
+                            <div className="flex items-center gap-1">
+                              <Star className="w-3 h-3 fill-yellow-500 text-yellow-500" aria-hidden="true" />
+                              <span className="text-slate-400 text-sm">{operator.rating}</span>
+                            </div>
                           </div>
                         </div>
+                        <div className="bg-slate-800 border border-slate-700 text-slate-200 px-3 py-1 rounded text-sm">
+                          {offer.amount}
+                        </div>
                       </div>
-                      <div className="bg-orange-500 text-white px-3 py-1 rounded text-sm">{bonus.bonusAmount}</div>
+                      <h4 className="text-white mb-2">{offer.title}</h4>
+                      <p className="text-slate-400 text-sm mb-4">{offer.description}</p>
+                      <div className="grid grid-cols-2 gap-3 mb-4">
+                        <div className="bg-slate-800 rounded p-2">
+                          <div className="text-slate-400 text-xs mb-1">Deposito minimo</div>
+                          <div className="text-white text-sm">{offer.minDeposit}</div>
+                        </div>
+                        <div className="bg-slate-800 rounded p-2">
+                          <div className="text-slate-400 text-xs mb-1">Requisiti di giocata</div>
+                          <div className="text-white text-sm">{offer.wageringRequirement}</div>
+                        </div>
+                      </div>
+                      <OperatorCta
+                        operator={operator}
+                        label="Vai al sito"
+                        className="w-full bg-green-500 hover:bg-green-600 text-slate-950 mb-2"
+                      />
+                      <OfferDisclaimer className="text-center" termsUrl={offer.termsUrl} />
                     </div>
-                    <h4 className="text-white mb-2">{bonus.title}</h4>
-                    <p className="text-slate-400 text-sm mb-4">{bonus.description}</p>
-                    <div className="grid grid-cols-2 gap-3 mb-4">
-                      <div className="bg-slate-800 rounded p-2">
-                        <div className="text-slate-400 text-xs mb-1">Min. Deposito</div>
-                        <div className="text-white text-sm">{bonus.minDeposit}</div>
-                      </div>
-                      <div className="bg-slate-800 rounded p-2">
-                        <div className="text-slate-400 text-xs mb-1">Requisiti</div>
-                        <div className="text-white text-sm">{bonus.wageringRequirement}</div>
-                      </div>
-                    </div>
-                    <Button className="w-full bg-green-500 hover:bg-green-600 text-slate-950 mb-2">
-                      Richiedi Bonus
-                    </Button>
-                    <p className="text-slate-500 text-xs text-center">T&C Apply • 18+</p>
-                  </div>
-                </Card>
-              ))}
+                  </Card>
+                );
+              })}
+            {visible.length === 0 && <p className="text-slate-400">Nessuna offerta in questa categoria.</p>}
           </div>
         </div>
         <Card className="bg-slate-900 border-slate-800">
@@ -436,15 +316,19 @@ export function BonusPage() {
             <div className="flex items-start gap-3">
               <CircleAlert className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-orange-400 mb-2">Gioco Responsabile</h3>
+                <h3 className="text-orange-400 mb-2">Gioco responsabile</h3>
                 <p className="text-slate-300 text-sm mb-3">
-                  I bonus scommesse sono un ottimo modo per provare nuovi bookmaker, ma ricorda sempre di giocare in
-                  modo responsabile. Non scommettere mai più di quanto puoi permetterti di perdere e non inseguire le
-                  perdite.
+                  Il gioco con vincita in denaro è vietato ai minori di {rg.minAge} anni e può causare dipendenza
+                  patologica. Stabilisci un limite, non giocare mai più di quanto puoi permetterti di perdere e non
+                  inseguire le perdite.
                 </p>
-                <p className="text-slate-400 text-sm">
-                  Se ritieni di avere un problema con il gioco, contatta BeGambleAware.org o chiama il numero verde 800
-                  558 822. Gioco vietato ai minori di 18 anni.
+                <p className="text-slate-400 text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <Phone className="w-4 h-4 text-orange-400" aria-hidden="true" />
+                  {rg.helplineName} ({rg.helplineOrg}):
+                  <a href={rg.helplineHref} className="text-white underline underline-offset-2">
+                    {rg.helplineNumber}
+                  </a>
+                  · gratuito e anonimo
                 </p>
               </div>
             </div>

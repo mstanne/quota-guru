@@ -8,6 +8,9 @@ import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from ".
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "./ui/table";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import { useBetSlip } from "../context/BetSlipContext";
+import { getOperator } from "../data/operators";
+import { bestEntry, bestValue, formatOdd, isBestAt, placeholderOdds, type OddsByOperator } from "../lib/odds";
+import { OperatorCta } from "./operator/OperatorUi";
 
 // Mock data – replace with a real odds feed/API.
 const matches: any[] = [
@@ -18,38 +21,9 @@ const matches: any[] = [
     date: "Oggi",
     time: "02:00",
     competition: "NBA",
-    odds: {
-      bet365: {
-        home: 1.95,
-        away: 1.9,
-      },
-      betway: {
-        home: 2.02,
-        away: 1.87,
-      },
-      sport888: {
-        home: 1.93,
-        away: 1.98,
-      },
-      unibet: {
-        home: 1.96,
-        away: 1.89,
-      },
-      williamhill: {
-        home: 1.94,
-        away: 1.91,
-      },
-    },
-    handicap: {
-      line: -2.5,
-      home: 1.9,
-      away: 1.95,
-    },
-    overUnder: {
-      line: 225.5,
-      over: 1.9,
-      under: 1.95,
-    },
+    odds: placeholderOdds({ home: "[QUOTA_1]", away: "[QUOTA_2]" }),
+    handicap: { line: "[LINEA_HANDICAP]", home: "[QUOTA_HANDICAP_1]", away: "[QUOTA_HANDICAP_2]" },
+    overUnder: { line: "[LINEA_OVER_UNDER]", over: "[QUOTA_OVER]", under: "[QUOTA_UNDER]" },
   },
   {
     id: "2",
@@ -58,38 +32,9 @@ const matches: any[] = [
     date: "Oggi",
     time: "03:30",
     competition: "NBA",
-    odds: {
-      bet365: {
-        home: 1.75,
-        away: 2.1,
-      },
-      betway: {
-        home: 1.82,
-        away: 2.07,
-      },
-      sport888: {
-        home: 1.73,
-        away: 2.22,
-      },
-      unibet: {
-        home: 1.76,
-        away: 2.09,
-      },
-      williamhill: {
-        home: 1.77,
-        away: 2.08,
-      },
-    },
-    handicap: {
-      line: -4.5,
-      home: 1.9,
-      away: 1.95,
-    },
-    overUnder: {
-      line: 230.5,
-      over: 1.85,
-      under: 2,
-    },
+    odds: placeholderOdds({ home: "[QUOTA_1]", away: "[QUOTA_2]" }),
+    handicap: { line: "[LINEA_HANDICAP]", home: "[QUOTA_HANDICAP_1]", away: "[QUOTA_HANDICAP_2]" },
+    overUnder: { line: "[LINEA_OVER_UNDER]", over: "[QUOTA_OVER]", under: "[QUOTA_UNDER]" },
   },
   {
     id: "3",
@@ -98,38 +43,9 @@ const matches: any[] = [
     date: "Oggi",
     time: "20:45",
     competition: "Euroleague",
-    odds: {
-      bet365: {
-        home: 1.65,
-        away: 2.25,
-      },
-      betway: {
-        home: 1.68,
-        away: 2.2,
-      },
-      sport888: {
-        home: 1.63,
-        away: 2.35,
-      },
-      unibet: {
-        home: 1.72,
-        away: 2.23,
-      },
-      williamhill: {
-        home: 1.67,
-        away: 2.22,
-      },
-    },
-    handicap: {
-      line: -5.5,
-      home: 1.9,
-      away: 1.95,
-    },
-    overUnder: {
-      line: 165.5,
-      over: 1.9,
-      under: 1.95,
-    },
+    odds: placeholderOdds({ home: "[QUOTA_1]", away: "[QUOTA_2]" }),
+    handicap: { line: "[LINEA_HANDICAP]", home: "[QUOTA_HANDICAP_1]", away: "[QUOTA_HANDICAP_2]" },
+    overUnder: { line: "[LINEA_OVER_UNDER]", over: "[QUOTA_OVER]", under: "[QUOTA_UNDER]" },
   },
   {
     id: "4",
@@ -138,38 +54,9 @@ const matches: any[] = [
     date: "Oggi",
     time: "20:30",
     competition: "Serie A",
-    odds: {
-      bet365: {
-        home: 1.55,
-        away: 2.5,
-      },
-      betway: {
-        home: 1.62,
-        away: 2.45,
-      },
-      sport888: {
-        home: 1.53,
-        away: 2.62,
-      },
-      unibet: {
-        home: 1.56,
-        away: 2.48,
-      },
-      williamhill: {
-        home: 1.57,
-        away: 2.47,
-      },
-    },
-    handicap: {
-      line: -6.5,
-      home: 1.9,
-      away: 1.95,
-    },
-    overUnder: {
-      line: 170.5,
-      over: 1.9,
-      under: 1.95,
-    },
+    odds: placeholderOdds({ home: "[QUOTA_1]", away: "[QUOTA_2]" }),
+    handicap: { line: "[LINEA_HANDICAP]", home: "[QUOTA_HANDICAP_1]", away: "[QUOTA_HANDICAP_2]" },
+    overUnder: { line: "[LINEA_OVER_UNDER]", over: "[QUOTA_OVER]", under: "[QUOTA_UNDER]" },
   },
   {
     id: "5",
@@ -178,38 +65,9 @@ const matches: any[] = [
     date: "Domani",
     time: "02:30",
     competition: "NBA",
-    odds: {
-      bet365: {
-        home: 2.05,
-        away: 1.8,
-      },
-      betway: {
-        home: 2.08,
-        away: 1.78,
-      },
-      sport888: {
-        home: 2.03,
-        away: 1.88,
-      },
-      unibet: {
-        home: 2.18,
-        away: 1.79,
-      },
-      williamhill: {
-        home: 2.12,
-        away: 1.81,
-      },
-    },
-    handicap: {
-      line: 3.5,
-      home: 1.9,
-      away: 1.95,
-    },
-    overUnder: {
-      line: 228.5,
-      over: 1.9,
-      under: 1.95,
-    },
+    odds: placeholderOdds({ home: "[QUOTA_1]", away: "[QUOTA_2]" }),
+    handicap: { line: "[LINEA_HANDICAP]", home: "[QUOTA_HANDICAP_1]", away: "[QUOTA_HANDICAP_2]" },
+    overUnder: { line: "[LINEA_OVER_UNDER]", over: "[QUOTA_OVER]", under: "[QUOTA_UNDER]" },
   },
   {
     id: "6",
@@ -218,38 +76,9 @@ const matches: any[] = [
     date: "Domani",
     time: "19:00",
     competition: "Euroleague",
-    odds: {
-      bet365: {
-        home: 1.9,
-        away: 1.95,
-      },
-      betway: {
-        home: 1.93,
-        away: 1.92,
-      },
-      sport888: {
-        home: 1.88,
-        away: 2.05,
-      },
-      unibet: {
-        home: 1.98,
-        away: 1.94,
-      },
-      williamhill: {
-        home: 1.95,
-        away: 1.98,
-      },
-    },
-    handicap: {
-      line: -1.5,
-      home: 1.9,
-      away: 1.95,
-    },
-    overUnder: {
-      line: 162.5,
-      over: 1.9,
-      under: 1.95,
-    },
+    odds: placeholderOdds({ home: "[QUOTA_1]", away: "[QUOTA_2]" }),
+    handicap: { line: "[LINEA_HANDICAP]", home: "[QUOTA_HANDICAP_1]", away: "[QUOTA_HANDICAP_2]" },
+    overUnder: { line: "[LINEA_OVER_UNDER]", over: "[QUOTA_OVER]", under: "[QUOTA_UNDER]" },
   },
 ];
 
@@ -296,19 +125,16 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
   const [selectedCompetition, setSelectedCompetition] = useState("all");
   const [selectedDate, setSelectedDate] = useState("all");
   const { addSelection } = useBetSlip();
-  const bookmakerNames = ["bet365", "betway", "sport888", "unibet", "williamhill"];
-  const getBookmakerName = (index) => bookmakerNames[index % bookmakerNames.length];
   const handleOddsClick = (match, betType, bookmaker, odds) => {
     const betTypeLabels = {
       1: `Vincente ${match.homeTeam}`,
       2: `Vincente ${match.awayTeam}`,
     };
-    const allBookmakers = Object.entries<any>(match.odds)
-      .map(([name, bookmakerOdds]) => ({
-        name: name,
-        odds: betType === "1" ? bookmakerOdds.home : bookmakerOdds.away,
-      }))
-      .sort((a, b) => b.odds - a.odds);
+    const outcome = betType === "1" ? "home" : "away";
+    const allBookmakers = Object.entries(match.odds as OddsByOperator).map(([operatorId, o]) => ({
+      operatorId,
+      odds: o[outcome],
+    }));
     addSelection({
       id: `${match.id}-${betType}`,
       matchId: match.id,
@@ -323,29 +149,14 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
       allBookmakers: allBookmakers,
     });
   };
-  const getBestOdd = (match, outcome) => {
-    const allOdds = Object.values(match.odds);
-    return Math.max(...allOdds.map((odds) => odds[outcome]));
+  // Odds may be numbers or placeholders ("[QUOTA_1]"): see src/lib/odds.ts.
+  const oddsList = (match, outcome: string) => Object.values(match.odds as OddsByOperator).map((o) => o[outcome]);
+  const getBestOdd = (match, outcome: string) => bestValue(oddsList(match, outcome));
+  const getBestBookmaker = (match, outcome: string) => {
+    const best = bestEntry(match.odds, outcome);
+    return { operatorId: best.operatorId, name: getOperator(best.operatorId).name, value: best.value };
   };
-  const getBestBookmaker = (match, outcome) =>
-    Object.entries<any>(match.odds).reduce(
-      (best, [name, odds]) =>
-        odds[outcome] > best.value
-          ? {
-              name: name,
-              value: odds[outcome],
-            }
-          : best,
-      {
-        name: "",
-        value: 0,
-      },
-    );
-  const getBestBookmakerName = (match, outcome) => {
-    const bestOdd = getBestOdd(match, outcome);
-    const entry = Object.entries<any>(match.odds).find(([_name, odds]) => odds[outcome] === bestOdd);
-    return entry ? entry[0] : "";
-  };
+  const getBestBookmakerName = (match, outcome: string) => getOperator(bestEntry(match.odds, outcome).operatorId).name;
   return (
     <div className="min-h-screen bg-slate-950">
       <div className="bg-slate-900 py-12">
@@ -586,20 +397,18 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                         </TableRow>
                       </TableHeader>
                       <TableBody>
-                        {Object.entries<any>(match.odds).map(([bookmaker, odds]) => {
-                          const isBestHome = odds.home === getBestOdd(match, "home");
-                          const isBestAway = odds.away === getBestOdd(match, "away");
+                        {Object.entries<any>(match.odds).map(([bookmaker, odds], rowIndex) => {
+                          const isBestHome = isBestAt(oddsList(match, "home"), rowIndex);
+                          const isBestAway = isBestAt(oddsList(match, "away"), rowIndex);
                           return (
                             <TableRow key={bookmaker} className="border-slate-800 hover:bg-slate-800/40">
-                              <TableCell className="text-white capitalize">
-                                {bookmaker.replace("sport888", "888sport")}
-                              </TableCell>
+                              <TableCell className="text-white capitalize">{getOperator(bookmaker).name}</TableCell>
                               <TableCell className="text-center">
                                 <div
                                   className={`inline-block px-3 py-1.5 rounded cursor-pointer hover:opacity-80 transition-opacity ${isBestHome ? "bg-green-500 text-slate-950 font-bold" : "text-slate-300"}`}
                                   onClick={() => handleOddsClick(match, "1", bookmaker, odds.home)}
                                 >
-                                  {odds.home.toFixed(2)}
+                                  {formatOdd(odds.home)}
                                 </div>
                               </TableCell>
                               <TableCell className="text-center">
@@ -607,16 +416,16 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                                   className={`inline-block px-3 py-1.5 rounded cursor-pointer hover:opacity-80 transition-opacity ${isBestAway ? "bg-green-500 text-slate-950 font-bold" : "text-slate-300"}`}
                                   onClick={() => handleOddsClick(match, "2", bookmaker, odds.away)}
                                 >
-                                  {odds.away.toFixed(2)}
+                                  {formatOdd(odds.away)}
                                 </div>
                               </TableCell>
                               <TableCell>
-                                <Button
+                                <OperatorCta
+                                  operator={getOperator(bookmaker)}
+                                  label="Vai al sito"
                                   size="sm"
-                                  className="bg-orange-500 hover:bg-orange-600 text-white cursor-pointer"
-                                >
-                                  Scommetti
-                                </Button>
+                                  className="bg-orange-700 hover:bg-orange-800 text-white cursor-pointer"
+                                />
                               </TableCell>
                             </TableRow>
                           );
@@ -629,18 +438,18 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                           <div className="text-center">
                             <div className="text-slate-400 mb-1">Migliore Quota 1</div>
                             <div className="text-green-500">
-                              {getBestOdd(match, "home").toFixed(2)}
+                              {formatOdd(getBestOdd(match, "home"))}
                               <span className="text-slate-500 text-xs ml-1">
-                                ({getBestBookmakerName(match, "home").replace("sport888", "888sport")})
+                                ({getBestBookmakerName(match, "home")})
                               </span>
                             </div>
                           </div>
                           <div className="text-center">
                             <div className="text-slate-400 mb-1">Migliore Quota 2</div>
                             <div className="text-green-500">
-                              {getBestOdd(match, "away").toFixed(2)}
+                              {formatOdd(getBestOdd(match, "away"))}
                               <span className="text-slate-500 text-xs ml-1">
-                                ({getBestBookmakerName(match, "away").replace("sport888", "888sport")})
+                                ({getBestBookmakerName(match, "away")})
                               </span>
                             </div>
                           </div>
@@ -688,22 +497,22 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                           className="bg-slate-800 rounded p-2 text-center cursor-pointer hover:bg-slate-700 transition-colors"
                           onClick={() => {
                             const best = getBestBookmaker(match, "home");
-                            handleOddsClick(match, "1", best.name, best.value);
+                            handleOddsClick(match, "1", best.operatorId, best.value);
                           }}
                         >
                           <div className="text-slate-400 text-xs mb-1">1</div>
-                          <div className="text-green-500">{getBestBookmaker(match, "home").value.toFixed(2)}</div>
+                          <div className="text-green-500">{formatOdd(getBestBookmaker(match, "home").value)}</div>
                           <div className="text-slate-500 text-xs mt-1">{getBestBookmaker(match, "home").name}</div>
                         </div>
                         <div
                           className="bg-slate-800 rounded p-2 text-center cursor-pointer hover:bg-slate-700 transition-colors"
                           onClick={() => {
                             const best = getBestBookmaker(match, "away");
-                            handleOddsClick(match, "2", best.name, best.value);
+                            handleOddsClick(match, "2", best.operatorId, best.value);
                           }}
                         >
                           <div className="text-slate-400 text-xs mb-1">2</div>
-                          <div className="text-green-500">{getBestBookmaker(match, "away").value.toFixed(2)}</div>
+                          <div className="text-green-500">{formatOdd(getBestBookmaker(match, "away").value)}</div>
                           <div className="text-slate-500 text-xs mt-1">{getBestBookmaker(match, "away").name}</div>
                         </div>
                       </div>

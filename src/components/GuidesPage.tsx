@@ -1,7 +1,7 @@
 import { Award, BookOpen, Calculator, Clock, Shield, Target, Users } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Card } from "./ui/card";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageSlot } from "./media/ImageSlot";
 
 const guides = [
   {
@@ -11,8 +11,7 @@ const guides = [
       "Tutto quello che devi sapere per iniziare a scommettere in modo responsabile e informato. Dalle basi alle strategie avanzate.",
     category: "Per Principianti",
     readTime: "8 min",
-    image:
-      "https://images.unsplash.com/photo-1714865212999-a9817814b080?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBiZXR0aW5nJTIwc3RyYXRlZ3l8ZW58MXx8fHwxNzYwNjI0ODU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: null as string | null, // [URL_IMMAGINE_GUIDA] – own, sport-themed image (no casino imagery)
     featured: true,
   },
   {
@@ -22,8 +21,7 @@ const guides = [
       "Impara a interpretare le quote decimali, frazionarie e americane. Scopri come calcolare le probabilit\xE0 implicite.",
     category: "Quote e Probabilit\xE0",
     readTime: "5 min",
-    image:
-      "https://images.unsplash.com/photo-1605870445919-838d190e8e1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZXR0aW5nJTIwb2RkcyUyMHN0YXRpc3RpY3N8ZW58MXx8fHwxNzYwNjI0ODU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: null as string | null, // [URL_IMMAGINE_GUIDA] – own, sport-themed image (no casino imagery)
     featured: true,
   },
   {
@@ -32,8 +30,7 @@ const guides = [
     description: "Le migliori strategie per scommettere sul calcio: 1X2, Over/Under, Handicap asiatico e molto altro.",
     category: "Strategie",
     readTime: "10 min",
-    image:
-      "https://images.unsplash.com/photo-1587103365297-77661edc549d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NjZXIlMjBmb290YmFsbCUyMHRhY3RpY3N8ZW58MXx8fHwxNzYwNjI0ODU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: null as string | null, // [URL_IMMAGINE_GUIDA] – own, sport-themed image (no casino imagery)
     featured: true,
   },
   {
@@ -43,8 +40,7 @@ const guides = [
       "Come gestire il tuo budget di scommessa in modo efficace. Le regole d'oro per non perdere il controllo.",
     category: "Bankroll Management",
     readTime: "6 min",
-    image:
-      "https://images.unsplash.com/photo-1709540243431-eddad1a1c64d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBtb25leSUyMGZpbmFuY2V8ZW58MXx8fHwxNzYwNjI0ODYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: null as string | null, // [URL_IMMAGINE_GUIDA] – own, sport-themed image (no casino imagery)
   },
   {
     id: "5",
@@ -53,8 +49,7 @@ const guides = [
       "Tutto sul betting tennistico: superfici, head-to-head, mercati live e statistiche chiave da analizzare.",
     category: "Sport Specifici",
     readTime: "7 min",
-    image:
-      "https://images.unsplash.com/photo-1531315396756-905d68d21b56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZW5uaXMlMjBtYXRjaHxlbnwxfHx8fDE3NjA2MTQ5Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: null as string | null, // [URL_IMMAGINE_GUIDA] – own, sport-themed image (no casino imagery)
   },
   {
     id: "6",
@@ -63,8 +58,7 @@ const guides = [
       "Le particolarit\xE0 delle scommesse sul basket NBA ed europeo. Come sfruttare i quarti e gli handicap.",
     category: "Sport Specifici",
     readTime: "6 min",
-    image:
-      "https://images.unsplash.com/photo-1616353352910-15d970ac020b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXNrZXRiYWxsJTIwZ2FtZXxlbnwxfHx8fDE3NjA2MTUwOTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: null as string | null, // [URL_IMMAGINE_GUIDA] – own, sport-themed image (no casino imagery)
   },
 ];
 
@@ -148,7 +142,8 @@ export function GuidesPage({ onGuideClick }: { onGuideClick?: (guideId: string) 
                   onClick={() => onGuideClick?.(guide.id)}
                 >
                   <div className="relative h-48 overflow-hidden">
-                    <ImageWithFallback
+                    <ImageSlot
+                      placeholder="[PLACEHOLDER_IMMAGINE_GUIDA_800x450]"
                       src={guide.image}
                       alt={guide.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -189,7 +184,8 @@ export function GuidesPage({ onGuideClick }: { onGuideClick?: (guideId: string) 
                   onClick={() => onGuideClick?.(guide.id)}
                 >
                   <div className="relative h-48 overflow-hidden">
-                    <ImageWithFallback
+                    <ImageSlot
+                      placeholder="[PLACEHOLDER_IMMAGINE_GUIDA_800x450]"
                       src={guide.image}
                       alt={guide.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

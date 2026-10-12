@@ -2,7 +2,8 @@ import { ArrowLeft, BookOpen, Bookmark, Calendar, Clock, Share2 } from "lucide-r
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageSlot } from "./media/ImageSlot";
+import { responsibleGambling as rg } from "../data/operators";
 
 export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
   return (
@@ -52,8 +53,9 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
             </div>
           </div>
           <div className="mb-12 rounded-lg overflow-hidden">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1714865212999-a9817814b080?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBiZXR0aW5nJTIwc3RyYXRlZ3l8ZW58MXx8fHwxNzYwNjI0ODU3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+            <ImageSlot
+              placeholder="[PLACEHOLDER_IMMAGINE_COPERTINA_1200x384]"
+              src={null}
               alt="Guida Scommesse Sportive"
               className="w-full h-96 object-cover"
             />
@@ -287,7 +289,13 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                   <li>• Non scommettere mai denaro che non puoi permetterti di perdere</li>
                   <li>• Fai pause regolari</li>
                   <li>• Non usare il gioco per risolvere problemi finanziari</li>
-                  <li>• Contatta BeGambleAware.org se hai bisogno di supporto</li>
+                  <li>
+                    • Se hai bisogno di aiuto chiama il {rg.helplineName} ({rg.helplineOrg}):{" "}
+                    <a href={rg.helplineHref} className="text-white underline underline-offset-2">
+                      {rg.helplineNumber}
+                    </a>
+                    , gratuito e anonimo
+                  </li>
                 </ul>
               </Card>
             </section>

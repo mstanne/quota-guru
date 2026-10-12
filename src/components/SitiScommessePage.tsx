@@ -1,218 +1,73 @@
 import { useState } from "react";
-import { Check, ExternalLink, Funnel, Gift, Shield, Star, TrendingUp, X } from "lucide-react";
+import { Check, ExternalLink, Funnel, Shield, Star, TrendingUp, X } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "./ui/select";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
+import {
+  offers as defaultOffers,
+  operators as defaultOperators,
+  responsibleGambling as rg,
+  type OfferData,
+  type OperatorData,
+} from "../data/operators";
+import { OperatorCta, OperatorLogo } from "./operator/OperatorUi";
 
-const bookmakers = [
-  {
-    id: "1",
-    name: "Bet365",
-    logo: "\u{1F3AF}",
-    rating: 4.8,
-    bonus: "\u20AC30",
-    bonusDescription: "Scommetti \u20AC10 e Ricevi \u20AC30 in Free Bet",
-    minDeposit: "\u20AC10",
-    paymentMethods: ["Carta di Credito", "PayPal", "Skrill", "Neteller", "Bonifico"],
-    features: ["Live Streaming", "Cash Out", "Quote Maggiorate", "App Mobile"],
-    pros: ["Piattaforma completa e affidabile", "Ottimo live streaming", "Ampia copertura eventi", "Cash out veloce"],
-    cons: ["Interfaccia complessa per principianti", "Assistenza solo in inglese"],
-    isRecommended: true,
-    licenseInfo: "ADM - Licenza n. 15012",
-    withdrawalTime: "1-3 giorni",
-    liveStreaming: true,
-    cashOut: true,
-  },
-  {
-    id: "2",
-    name: "Betway",
-    logo: "\u26A1",
-    rating: 4.6,
-    bonus: "\u20AC50",
-    bonusDescription: "Bonus Primo Deposito 100% fino a \u20AC50",
-    minDeposit: "\u20AC10",
-    paymentMethods: ["Carta di Credito", "PayPal", "Skrill", "Paysafecard", "Bonifico"],
-    features: ["Cash Out", "Quote Competitive", "App Mobile", "Bonus Multipla"],
-    pros: ["Interfaccia intuitiva", "Ottimo bonus di benvenuto", "Quote competitive", "Assistenza in italiano"],
-    cons: ["Limitato live streaming", "Tempi di prelievo medio-lunghi"],
-    isRecommended: true,
-    licenseInfo: "ADM - Licenza n. 15216",
-    withdrawalTime: "2-5 giorni",
-    liveStreaming: false,
-    cashOut: true,
-  },
-  {
-    id: "3",
-    name: "888sport",
-    logo: "\u{1F3C6}",
-    rating: 4.5,
-    bonus: "\u20AC40",
-    bonusDescription: "Scommetti \u20AC10 e Ricevi \u20AC40 in Bonus",
-    minDeposit: "\u20AC10",
-    paymentMethods: ["Carta di Credito", "PayPal", "Skrill", "Neteller", "Apple Pay"],
-    features: ["Quote Maggiorate", "Cash Out", "App Mobile", "Statistiche Avanzate"],
-    pros: [
-      "Marchio storico e affidabile",
-      "Quote maggiorate frequenti",
-      "Buona app mobile",
-      "Processo di registrazione veloce",
-    ],
-
-    cons: ["Palinsesto meno ampio", "Nessun live streaming"],
-    licenseInfo: "ADM - Licenza n. 15006",
-    withdrawalTime: "1-4 giorni",
-    liveStreaming: false,
-    cashOut: true,
-  },
-  {
-    id: "4",
-    name: "Unibet",
-    logo: "\u{1F48E}",
-    rating: 4.7,
-    bonus: "\u20AC20",
-    bonusDescription: "Scommessa Senza Rischio fino a \u20AC20",
-    minDeposit: "\u20AC10",
-    paymentMethods: ["Carta di Credito", "PayPal", "Skrill", "Neteller", "Bonifico"],
-    features: ["Cash Out", "Live Streaming", "App Mobile", "Quote Boost"],
-    pros: ["Piattaforma user-friendly", "Ottimo servizio clienti", "Variet\xE0 di mercati", "Affidabilit\xE0 elevata"],
-    cons: ["Bonus meno generoso", "Quote non sempre competitive"],
-    isNew: false,
-    licenseInfo: "ADM - Licenza n. 15028",
-    withdrawalTime: "1-3 giorni",
-    liveStreaming: true,
-    cashOut: true,
-  },
-  {
-    id: "5",
-    name: "William Hill",
-    logo: "\u{1F451}",
-    rating: 4.4,
-    bonus: "\u20AC25",
-    bonusDescription: "Bonus Benvenuto \u20AC25 in Free Bet",
-    minDeposit: "\u20AC10",
-    paymentMethods: ["Carta di Credito", "PayPal", "Skrill", "Paysafecard"],
-    features: ["Cash Out", "Quote Maggiorate", "App Mobile", "Negozi Fisici"],
-    pros: [
-      "Marchio storico e affidabile",
-      "Presenza negozi fisici in Italia",
-      "Buone quote calcio",
-      "Cash out parziale",
-    ],
-
-    cons: ["Interfaccia datata", "Live streaming limitato", "Tempi prelievo lenti"],
-    licenseInfo: "ADM - Licenza n. 15214",
-    withdrawalTime: "3-7 giorni",
-    liveStreaming: false,
-    cashOut: true,
-  },
-  {
-    id: "6",
-    name: "Sisal",
-    logo: "\u{1F1EE}\u{1F1F9}",
-    rating: 4.3,
-    bonus: "\u20AC35",
-    bonusDescription: "Bonus Sport 100% fino a \u20AC35",
-    minDeposit: "\u20AC10",
-    paymentMethods: ["Carta di Credito", "PayPal", "Sisal Pay", "Bonifico"],
-    features: ["Cash Out", "App Mobile", "Negozi Fisici", "Matchpoint"],
-    pros: [
-      "Operatore 100% italiano",
-      "Ampia rete negozi fisici",
-      "Assistenza in italiano eccellente",
-      "Metodi pagamento locali",
-    ],
-
-    cons: ["Quote meno competitive", "Palinsetto limitato", "Nessun live streaming"],
-    licenseInfo: "ADM - Licenza n. 15001",
-    withdrawalTime: "2-4 giorni",
-    liveStreaming: false,
-    cashOut: true,
-  },
-];
-
+// Neutral, factual filters (no "recommended" / "best bonus" rankings).
 const filterCategories = [
-  {
-    id: "all",
-    name: "Tutti i Siti",
-    icon: "\u{1F3AF}",
-  },
-  {
-    id: "recommended",
-    name: "Consigliati",
-    icon: "\u2B50",
-  },
-  {
-    id: "bonus",
-    name: "Miglior Bonus",
-    icon: "\u{1F381}",
-  },
-  {
-    id: "streaming",
-    name: "Live Streaming",
-    icon: "\u{1F4FA}",
-  },
-  {
-    id: "cashout",
-    name: "Cash Out",
-    icon: "\u{1F4B0}",
-  },
+  { id: "all", name: "Tutti gli operatori", icon: "\u{1F3AF}" },
+  { id: "streaming", name: "Live Streaming", icon: "\u{1F4FA}" },
+  { id: "cashout", name: "Cash Out", icon: "\u{1F4B0}" },
 ];
 
-export function SitiScommessePage() {
+interface SitiScommessePageProps {
+  /** Operators to compare (defaults to src/data/operators.ts). */
+  operators?: OperatorData[];
+  /** Offers, used to show each operator's current offer. */
+  offers?: OfferData[];
+}
+
+const ratingValue = (o: OperatorData) => (typeof o.rating === "number" ? o.rating : 0);
+
+/** /siti-scommesse – factual comparison of authorised operators. */
+export function SitiScommessePage({ operators = defaultOperators, offers = defaultOffers }: SitiScommessePageProps) {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortBy, setSortBy] = useState("rating");
-  const filteredBookmakers = [
-    ...bookmakers.filter((bookmaker) =>
-      selectedCategory === "all"
-        ? true
-        : selectedCategory === "recommended"
-          ? bookmaker.isRecommended
-          : selectedCategory === "streaming"
-            ? bookmaker.liveStreaming
-            : selectedCategory === "cashout"
-              ? bookmaker.cashOut
-              : selectedCategory === "bonus"
-                ? parseInt(bookmaker.bonus.replace("\u20AC", "")) >= 30
-                : true,
-    ),
-  ].sort((a, b) => {
-    if (sortBy === "rating") return b.rating - a.rating;
-    if (sortBy === "bonus") {
-      const bonusA = parseInt(a.bonus.replace("\u20AC", ""));
-      return parseInt(b.bonus.replace("\u20AC", "")) - bonusA;
-    }
-    return 0;
-  });
+  const offerOf = (o: OperatorData) => offers.find((x) => x.operatorId === o.id);
+  const filteredBookmakers = operators
+    .filter((o) =>
+      selectedCategory === "streaming" ? o.liveStreaming : selectedCategory === "cashout" ? o.cashOut : true,
+    )
+    .sort((a, b) => (sortBy === "rating" ? ratingValue(b) - ratingValue(a) : a.name.localeCompare(b.name)));
   return (
     <div className="min-h-screen bg-slate-950">
       <div className="bg-slate-900 py-12">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-3 mb-4">
             <Shield className="w-8 h-8 text-green-500" />
-            <h1 className="text-white text-4xl">Migliori Siti di Scommesse</h1>
+            <h1 className="text-white text-4xl">Operatori a confronto</h1>
           </div>
           <p className="text-slate-400 text-lg mb-6">
-            Confronta i migliori bookmaker legali in Italia. Bonus, quote e recensioni verificate
+            Caratteristiche, metodi di pagamento, tempi di prelievo e condizioni degli operatori con concessione ADM
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <Card className="bg-slate-800 border-slate-700">
               <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1">{bookmakers.length}</div>
-                <div className="text-slate-400 text-sm">Bookmaker</div>
+                <div className="text-green-500 text-2xl mb-1">{operators.length}</div>
+                <div className="text-slate-400 text-sm">Operatori</div>
               </div>
             </Card>
             <Card className="bg-slate-800 border-slate-700">
               <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1">100%</div>
-                <div className="text-slate-400 text-sm">Legali ADM</div>
+                <div className="text-green-500 text-2xl mb-1">ADM</div>
+                <div className="text-slate-400 text-sm">Concessione verificata</div>
               </div>
             </Card>
             <Card className="bg-slate-800 border-slate-700">
               <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1">€185</div>
-                <div className="text-slate-400 text-sm">Bonus Totali</div>
+                <div className="text-green-500 text-2xl mb-1">{rg.minAge}+</div>
+                <div className="text-slate-400 text-sm">Gioco vietato ai minori</div>
               </div>
             </Card>
             <Card className="bg-slate-800 border-slate-700">
@@ -220,7 +75,7 @@ export function SitiScommessePage() {
                 <div className="text-green-500 text-2xl mb-1 flex items-center justify-center gap-1">
                   <Shield className="w-6 h-6" />
                 </div>
-                <div className="text-slate-400 text-sm">Sicuri e Verificati</div>
+                <div className="text-slate-400 text-sm">Metodologia trasparente</div>
               </div>
             </Card>
           </div>
@@ -231,7 +86,7 @@ export function SitiScommessePage() {
           <div className="p-6">
             <div className="flex items-center gap-2 mb-4">
               <Funnel className="w-5 h-5 text-slate-400" />
-              <h2 className="text-white text-xl">Filtra Bookmaker</h2>
+              <h2 className="text-white text-xl">Filtra operatori</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div>
@@ -259,8 +114,8 @@ export function SitiScommessePage() {
                     <SelectItem value="rating" className="text-white">
                       ⭐ Valutazione
                     </SelectItem>
-                    <SelectItem value="bonus" className="text-white">
-                      🎁 Bonus
+                    <SelectItem value="name" className="text-white">
+                      🔤 Nome
                     </SelectItem>
                   </SelectContent>
                 </Select>
@@ -286,30 +141,22 @@ export function SitiScommessePage() {
           </div>
         </Card>
         <div className="space-y-6">
-          {filteredBookmakers.map((bookmaker, index) => (
-            <Card key={bookmaker.id} className="bg-slate-900 border-slate-800 hover:border-green-500 transition-all">
+          {filteredBookmakers.map((bookmaker) => (
+            <Card key={bookmaker.id} className="bg-slate-900 border-slate-800 transition-all">
               <div className="p-6">
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="text-5xl">{bookmaker.logo}</div>
+                    <OperatorLogo operator={bookmaker} width={48} height={48} />
                     <div>
                       <div className="flex items-center gap-2 mb-2">
                         <h3 className="text-white text-2xl">{bookmaker.name}</h3>
-                        {bookmaker.isRecommended && <Badge className="bg-green-500 text-white">Consigliato</Badge>}
-                        {bookmaker.isNew && <Badge className="bg-orange-500 text-white">Nuovo</Badge>}
-                        {index === 0 && (
-                          <Badge className="bg-yellow-500 text-white">
-                            <Star className="w-3 h-3 mr-1" />
-                            #1
-                          </Badge>
-                        )}
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="flex items-center gap-1">
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
-                              className={`w-4 h-4 ${i < Math.floor(bookmaker.rating) ? "fill-yellow-500 text-yellow-500" : "text-slate-600"}`}
+                              className={`w-4 h-4 ${i < Math.floor(ratingValue(bookmaker)) ? "fill-yellow-500 text-yellow-500" : "text-slate-600"}`}
                             />
                           ))}
                         </div>
@@ -318,16 +165,15 @@ export function SitiScommessePage() {
                     </div>
                   </div>
                   <div className="text-center md:text-right">
-                    <div className="text-slate-400 text-sm mb-1">Bonus Benvenuto</div>
-                    <div className="text-green-500 text-3xl mb-2">{bookmaker.bonus}</div>
-                    <Button className="bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer">
-                      <Gift className="w-4 h-4 mr-2" />
-                      Richiedi Bonus
-                    </Button>
+                    <div className="text-slate-400 text-sm mb-1">Offerta attuale</div>
+                    <div className="text-white text-2xl mb-2 [overflow-wrap:anywhere]">
+                      {offerOf(bookmaker)?.amount ?? "[BONUS_BENVENUTO]"}
+                    </div>
+                    <p className="text-slate-500 text-xs">18+ · Si applicano i termini dell'operatore</p>
                   </div>
                 </div>
                 <div className="bg-slate-800 rounded-lg p-4 mb-6">
-                  <p className="text-white text-center">{bookmaker.bonusDescription}</p>
+                  <p className="text-white text-center">{offerOf(bookmaker)?.description ?? "[DESCRIZIONE_PROMO]"}</p>
                   <p className="text-slate-400 text-sm text-center mt-2">
                     {"Deposito minimo: "}
                     {bookmaker.minDeposit}
@@ -421,7 +267,7 @@ export function SitiScommessePage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div className="bg-slate-800 rounded-lg p-4">
                         <div className="text-slate-400 text-sm mb-1">Licenza</div>
-                        <div className="text-white">{bookmaker.licenseInfo}</div>
+                        <div className="text-white">ADM - Concessione n. {bookmaker.admLicense}</div>
                       </div>
                       <div className="bg-slate-800 rounded-lg p-4">
                         <div className="text-slate-400 text-sm mb-1">Tempo Prelievo</div>
@@ -437,20 +283,25 @@ export function SitiScommessePage() {
                 <div className="mt-6 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="text-slate-400 text-sm">
                     <Shield className="w-4 h-4 inline mr-1" />
-                    Bookmaker legale e autorizzato ADM
+                    Concessione ADM n. {bookmaker.admLicense}
                   </div>
                   <div className="flex gap-2">
-                    <Button
+                    <OperatorCta
+                      operator={bookmaker}
+                      href={bookmaker.reviewUrl}
+                      label="Scheda completa"
                       variant="outline"
                       className="bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white cursor-pointer"
-                    >
-                      Recensione Completa
-                      <ExternalLink className="w-4 h-4 ml-2" />
-                    </Button>
-                    <Button className="bg-orange-500 hover:bg-orange-600 text-white cursor-pointer">
-                      Visita Sito
-                      <ExternalLink className="w-4 h-4 ml-2" />
-                    </Button>
+                      icon={<ExternalLink className="w-4 h-4 ml-2" />}
+                      iconPosition="end"
+                    />
+                    <OperatorCta
+                      operator={bookmaker}
+                      label="Vai al sito"
+                      className="bg-orange-700 hover:bg-orange-800 text-white cursor-pointer"
+                      icon={<ExternalLink className="w-4 h-4 ml-2" />}
+                      iconPosition="end"
+                    />
                   </div>
                 </div>
               </div>
@@ -461,16 +312,27 @@ export function SitiScommessePage() {
           <div className="p-6">
             <h3 className="text-blue-400 mb-2 flex items-center gap-2">
               <Shield className="w-5 h-5" />
-              Gioca Responsabilmente
+              Gioca responsabilmente
             </h3>
             <p className="text-slate-300 text-sm mb-3">
-              Tutti i siti di scommesse presenti in questa pagina sono legali e autorizzati dall'Agenzia delle Dogane e
-              dei Monopoli (ADM). Il gioco è vietato ai minori di 18 anni e può causare dipendenza patologica.
+              In questa pagina compaiono solo operatori con concessione dell'{rg.regulatorName}: verifica il numero di
+              concessione sull'elenco ufficiale. Il gioco è vietato ai minori di {rg.minAge} anni e può causare
+              dipendenza patologica.
             </p>
             <p className="text-slate-400 text-sm">
-              {"Consulta le probabilit\xE0 di vincita sul sito del concessionario e su "}
-              <a href="#" className="text-blue-400 hover:text-blue-300 cursor-pointer">
+              {"Consulta le probabilità di vincita sul sito del concessionario e su "}
+              <a
+                href={rg.regulatorUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300"
+              >
                 www.adm.gov.it
+              </a>
+              {". Aiuto: "}
+              {rg.helplineName}{" "}
+              <a href={rg.helplineHref} className="text-white underline underline-offset-2">
+                {rg.helplineNumber}
               </a>
             </p>
           </div>
