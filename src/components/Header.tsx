@@ -4,6 +4,9 @@ import { Button } from "./ui/button";
 import { Sheet, SheetHeader, SheetContent, SheetTitle } from "./ui/sheet";
 import logo from "../assets/logo.png";
 
+// Login/registrazione temporaneamente nascosti: metti true per mostrare di nuovo "Accedi" e "Registrati".
+const SHOW_AUTH = false;
+
 interface HeaderProps {
   onMenuClick?: () => void;
   onLoginClick?: () => void;
@@ -84,21 +87,23 @@ export function Header({
               </nav>
             </div>
             <div className="flex items-center gap-4">
-              <div className="hidden sm:flex items-center gap-2">
-                <Button
-                  variant="ghost"
-                  className="text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer"
-                  onClick={onLoginClick}
-                >
-                  Accedi
-                </Button>
-                <Button
-                  className="bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer"
-                  onClick={onLoginClick}
-                >
-                  Registrati
-                </Button>
-              </div>
+              {SHOW_AUTH && (
+                <div className="hidden sm:flex items-center gap-2">
+                  <Button
+                    variant="ghost"
+                    className="text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer"
+                    onClick={onLoginClick}
+                  >
+                    Accedi
+                  </Button>
+                  <Button
+                    className="bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer"
+                    onClick={onLoginClick}
+                  >
+                    Registrati
+                  </Button>
+                </div>
+              )}
               <Button
                 variant="ghost"
                 size="icon"
@@ -156,22 +161,26 @@ export function Header({
             >
               📚 Guide
             </button>
-            <div className="h-px bg-slate-800 my-4" />
-            <div className="space-y-2 px-4">
-              <Button
-                variant="outline"
-                className="w-full bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white cursor-pointer"
-                onClick={() => handleMobileNav(onLoginClick)}
-              >
-                Accedi
-              </Button>
-              <Button
-                className="w-full bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer"
-                onClick={() => handleMobileNav(onLoginClick)}
-              >
-                Registrati
-              </Button>
-            </div>
+            {SHOW_AUTH && (
+              <>
+                <div className="h-px bg-slate-800 my-4" />
+                <div className="space-y-2 px-4">
+                  <Button
+                    variant="outline"
+                    className="w-full bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white cursor-pointer"
+                    onClick={() => handleMobileNav(onLoginClick)}
+                  >
+                    Accedi
+                  </Button>
+                  <Button
+                    className="w-full bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer"
+                    onClick={() => handleMobileNav(onLoginClick)}
+                  >
+                    Registrati
+                  </Button>
+                </div>
+              </>
+            )}
           </div>
         </SheetContent>
       </Sheet>
