@@ -1,10 +1,16 @@
-# Builds the site and publishes it to GitHub Pages on every push to main.
-# One-time setup: repo Settings -> Pages -> Source: "GitHub Actions".
+# Builds the site and publishes it to GitHub Pages on every push to main and every 3 hours
+# (to refresh fixtures, results and standings from football-data.org).
+# One-time setup:
+#   - repo Settings -> Pages -> Source: "GitHub Actions"
+#   - repo Settings -> Secrets and variables -> Actions -> New repository secret:
+#       FOOTBALL_DATA_TOKEN = <your football-data.org API token>
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "17 */3 * * *" # every 3 hours (UTC), at minute 17 to avoid the top-of-hour rush
   workflow_dispatch:
 
 permissions:
@@ -28,6 +34,14 @@ jobs:
           cache: npm
 
       - run: npm ci
+
+      - name: Download football data
+        # Uses the secret only here; without it the committed snapshot in src/data is used.
+        run: node scripts/fetch-football-data.mjs
+        # if the API is unreachable, publish anyway with the last committed snapshot
+        continue-on-error: true
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
 
       - name: Build
         run: npm run build

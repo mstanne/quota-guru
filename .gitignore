@@ -29,3 +29,4 @@ Thumbs.db
 # TypeScript incremental build info
 *.tsbuildinfo
 dist-ssr/
+.cache/

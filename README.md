@@ -70,13 +70,36 @@ Il percorso base viene impostato automaticamente con la variabile `BASE_PATH` (=
 pubblico con `SITE_URL` (usato per canonical e sitemap). Se usi un dominio
 personalizzato o un repo `<utente>.github.io`, imposta nel workflow `BASE_PATH: /` e `SITE_URL` con il tuo dominio.
 
+## Dati calcio (football-data.org)
+
+Calendario, risultati, classifiche e precedenti del calcio arrivano dall'API gratuita di
+[football-data.org](https://www.football-data.org) (10 competizioni del piano gratuito, risultati non in diretta).
+
+- `scripts/fetch-football-data.mjs` scarica i dati inviando il token nell'header HTTP `X-Auth-Token` e scrive
+  `src/data/football.json` (≈50 richieste, rispettando il limite di 10 al minuto: circa 5–6 minuti).
+- Il token **non va mai scritto nel codice**: su GitHub sta nel secret `FOOTBALL_DATA_TOKEN`
+  (Settings → Secrets and variables → Actions); in locale in un file `.env` (già escluso da git):
+
+  ```
+  FOOTBALL_DATA_TOKEN=il-tuo-token
+  ```
+
+  poi `npm run data` scarica i dati aggiornati.
+- Il workflow aggiorna i dati e ripubblica il sito ogni 3 ore. Senza token usa lo snapshot già presente nel repo.
+- I termini d'uso richiedono l'attribuzione "Football data provided by the Football-Data.org API", presente nel footer:
+  non rimuoverla.
+
 ## URL del sito
 
 | URL | Pagina |
 | --- | --- |
 | `/` | Home |
-| `/calcio`, `/tennis`, `/basket` | Quote per sport |
-| `/calcio/arsenal-liverpool`, `/tennis/djokovic-alcaraz`, `/basket/lakers-celtics` | Scheda partita (esempio) |
+| `/calcio` | Calendario e risultati di tutte le competizioni |
+| `/calcio/serie-a` (e `champions-league`, `premier-league`, `liga`, …) | Calendario di una competizione |
+| `/calcio/serie-a/classifica` | Classifica |
+| `/calcio/serie-a/inter-juventus-2026-10-18` | Scheda partita (generata per ogni partita) |
+| `/tennis`, `/basket` | Quote per sport (dati di esempio) |
+| `/tennis/djokovic-alcaraz`, `/basket/lakers-celtics` | Scheda partita (esempio) |
 | `/siti-scommesse` | Bookmaker a confronto |
 | `/bonus` | Bonus |
 | `/guide`, `/guide/guida-completa-scommesse-sportive` | Guide |
@@ -90,7 +113,7 @@ Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e 
 - Ogni pagina ha un proprio URL (vedi tabella sotto). In build `scripts/prerender.mjs` genera un file HTML statico
   per ogni URL con title, description, canonical e contenuto già visibile ai motori di ricerca, più `404.html`,
   `sitemap.xml` e `robots.txt`. Nel browser React prende il controllo e la navigazione resta istantanea.
-- Le schede partita e il dettaglio guida mostrano per ora un solo esempio per sport: tutte le partite di una lista
-  portano allo stesso URL di esempio.
+- Per tennis e basket e per il dettaglio guida c'è ancora un solo esempio: tutte le partite di quelle liste portano
+  allo stesso URL di esempio. Le quote mostrate in home, tennis e basket sono ancora dati di esempio.
 - I contenuti riguardano il gioco con vincita in denaro: prima di una pubblicazione reale verifica i requisiti
   normativi (licenze ADM, messaggi di gioco responsabile, divieti di pubblicità vigenti in Italia).

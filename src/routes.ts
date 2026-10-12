@@ -11,6 +11,8 @@ export interface RouteMeta {
   index?: boolean;
 }
 
+import { allMatches, competitionMeta, competitions, matchMeta, standingsMeta } from "./lib/football";
+
 export const SITE_NAME = "Quota Guru";
 
 export const paths = {
@@ -18,8 +20,7 @@ export const paths = {
   calcio: "/calcio",
   tennis: "/tennis",
   basket: "/basket",
-  // The event pages currently show a single sample match per sport.
-  calcioEvento: "/calcio/arsenal-liverpool",
+  // Tennis and basket event pages still show a single sample match (mock data).
   tennisEvento: "/tennis/djokovic-alcaraz",
   basketEvento: "/basket/lakers-celtics",
   sitiScommesse: "/siti-scommesse",
@@ -40,9 +41,9 @@ export const routes: RouteMeta[] = [
   },
   {
     path: paths.calcio,
-    title: "Quote Calcio – Confronto quote Serie A, Champions e Premier",
+    title: "Calcio: calendario, risultati e classifiche",
     description:
-      "Confronta le migliori quote calcio dai principali bookmaker: 1X2, Over/Under, Goal/No Goal e Handicap.",
+      "Partite in programma, risultati e classifiche di Serie A, Champions League, Premier League, LaLiga e degli altri principali campionati.",
   },
   {
     path: paths.tennis,
@@ -53,11 +54,6 @@ export const routes: RouteMeta[] = [
     path: paths.basket,
     title: "Quote Basket – Confronto quote NBA, Eurolega e Serie A",
     description: "Confronta le quote basket dei migliori bookmaker per NBA, Euroleague, Serie A e tutti i campionati.",
-  },
-  {
-    path: paths.calcioEvento,
-    title: "Arsenal – Liverpool: quote, formazioni e dove vederla",
-    description: "Quote a confronto, probabili formazioni, statistiche e dove vedere Arsenal – Liverpool.",
   },
   {
     path: paths.tennisEvento,
@@ -98,6 +94,14 @@ export const routes: RouteMeta[] = [
     index: false,
   },
 ];
+
+// Football pages generated from the football-data.org snapshot: one per competition,
+// one per standings table and one per match.
+routes.push(
+  ...competitions.map(competitionMeta),
+  ...competitions.filter((c) => c.standings.length > 0).map(standingsMeta),
+  ...allMatches.map(({ competition, match }) => matchMeta(competition, match)),
+);
 
 export const notFoundMeta: RouteMeta = {
   path: "/404",
