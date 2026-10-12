@@ -1,0 +1,246 @@
+import { Award, BookOpen, Calculator, Clock, Shield, Target, Users } from "lucide-react";
+import { Badge } from "./ui/badge";
+import { Card } from "./ui/card";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+
+const guides = [
+  {
+    id: "1",
+    title: "Guida Completa alle Scommesse Sportive",
+    description:
+      "Tutto quello che devi sapere per iniziare a scommettere in modo responsabile e informato. Dalle basi alle strategie avanzate.",
+    category: "Per Principianti",
+    readTime: "8 min",
+    image:
+      "https://images.unsplash.com/photo-1714865212999-a9817814b080?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBiZXR0aW5nJTIwc3RyYXRlZ3l8ZW58MXx8fHwxNzYwNjI0ODU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    featured: true,
+  },
+  {
+    id: "2",
+    title: "Come Leggere le Quote Sportive",
+    description:
+      "Impara a interpretare le quote decimali, frazionarie e americane. Scopri come calcolare le probabilit\xE0 implicite.",
+    category: "Quote e Probabilit\xE0",
+    readTime: "5 min",
+    image:
+      "https://images.unsplash.com/photo-1605870445919-838d190e8e1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZXR0aW5nJTIwb2RkcyUyMHN0YXRpc3RpY3N8ZW58MXx8fHwxNzYwNjI0ODU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    featured: true,
+  },
+  {
+    id: "3",
+    title: "Strategie di Betting sul Calcio",
+    description: "Le migliori strategie per scommettere sul calcio: 1X2, Over/Under, Handicap asiatico e molto altro.",
+    category: "Strategie",
+    readTime: "10 min",
+    image:
+      "https://images.unsplash.com/photo-1587103365297-77661edc549d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NjZXIlMjBmb290YmFsbCUyMHRhY3RpY3N8ZW58MXx8fHwxNzYwNjI0ODU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    featured: true,
+  },
+  {
+    id: "4",
+    title: "Gestione del Bankroll",
+    description:
+      "Come gestire il tuo budget di scommessa in modo efficace. Le regole d'oro per non perdere il controllo.",
+    category: "Bankroll Management",
+    readTime: "6 min",
+    image:
+      "https://images.unsplash.com/photo-1709540243431-eddad1a1c64d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBtb25leSUyMGZpbmFuY2V8ZW58MXx8fHwxNzYwNjI0ODYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+  },
+  {
+    id: "5",
+    title: "Scommesse sul Tennis: Guida Completa",
+    description:
+      "Tutto sul betting tennistico: superfici, head-to-head, mercati live e statistiche chiave da analizzare.",
+    category: "Sport Specifici",
+    readTime: "7 min",
+    image:
+      "https://images.unsplash.com/photo-1531315396756-905d68d21b56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZW5uaXMlMjBtYXRjaHxlbnwxfHx8fDE3NjA2MTQ5Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  },
+  {
+    id: "6",
+    title: "Betting sul Basket: Over/Under e Handicap",
+    description:
+      "Le particolarit\xE0 delle scommesse sul basket NBA ed europeo. Come sfruttare i quarti e gli handicap.",
+    category: "Sport Specifici",
+    readTime: "6 min",
+    image:
+      "https://images.unsplash.com/photo-1616353352910-15d970ac020b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXNrZXRiYWxsJTIwZ2FtZXxlbnwxfHx8fDE3NjA2MTUwOTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  },
+];
+
+const categories = [
+  {
+    name: "Per Principianti",
+    icon: BookOpen,
+    color: "text-blue-500",
+  },
+  {
+    name: "Quote e Probabilit\xE0",
+    icon: Calculator,
+    color: "text-green-500",
+  },
+  {
+    name: "Strategie",
+    icon: Target,
+    color: "text-orange-500",
+  },
+  {
+    name: "Bankroll Management",
+    icon: Shield,
+    color: "text-purple-500",
+  },
+  {
+    name: "Sport Specifici",
+    icon: Award,
+    color: "text-yellow-500",
+  },
+  {
+    name: "Scommesse Live",
+    icon: Clock,
+    color: "text-red-500",
+  },
+];
+
+export function GuidesPage({ onGuideClick }: { onGuideClick?: (guideId: string) => void }) {
+  return (
+    <div className="py-12 bg-slate-950">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <BookOpen className="w-8 h-8 text-green-500" />
+            <h2 className="text-white text-3xl">Guide alle Scommesse</h2>
+          </div>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            Impara le basi, scopri strategie avanzate e diventa un esperto di betting sportivo
+          </p>
+        </div>
+        <div className="mb-12">
+          <h3 className="text-white text-xl mb-6">Esplora per Categoria</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {categories.map((category) => {
+              const Icon = category.icon;
+              return (
+                <Card
+                  key={category.name}
+                  className="bg-slate-900 border-slate-800 hover:border-green-500 transition-all cursor-pointer group"
+                >
+                  <div className="p-4 text-center">
+                    <Icon
+                      className={`w-8 h-8 ${category.color} mx-auto mb-2 group-hover:scale-110 transition-transform`}
+                    />
+
+                    <p className="text-slate-300 text-sm group-hover:text-white transition-colors">{category.name}</p>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+        <div className="mb-8">
+          <h3 className="text-white text-xl mb-6">Guide in Evidenza</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {guides
+              .filter((guide) => guide.featured)
+              .map((guide) => (
+                <Card
+                  key={guide.id}
+                  className="bg-slate-900 border-slate-800 hover:border-green-500 transition-all overflow-hidden cursor-pointer group"
+                  onClick={() => onGuideClick?.(guide.id)}
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <ImageWithFallback
+                      src={guide.image}
+                      alt={guide.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-green-500 text-white">In Evidenza</Badge>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Badge variant="secondary" className="bg-slate-800 text-slate-300">
+                        {guide.category}
+                      </Badge>
+                      <div className="flex items-center gap-1 text-slate-400 text-sm">
+                        <Clock className="w-4 h-4" />
+                        <span>{guide.readTime}</span>
+                      </div>
+                    </div>
+                    <h4 className="text-white text-lg mb-2 group-hover:text-green-500 transition-colors">
+                      {guide.title}
+                    </h4>
+                    <p className="text-slate-400 text-sm line-clamp-2">{guide.description}</p>
+                  </div>
+                </Card>
+              ))}
+          </div>
+        </div>
+        <div>
+          <h3 className="text-white text-xl mb-6">Tutte le Guide</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {guides
+              .filter((guide) => !guide.featured)
+              .map((guide) => (
+                <Card
+                  key={guide.id}
+                  className="bg-slate-900 border-slate-800 hover:border-green-500 transition-all overflow-hidden cursor-pointer group"
+                  onClick={() => onGuideClick?.(guide.id)}
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <ImageWithFallback
+                      src={guide.image}
+                      alt={guide.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Badge variant="secondary" className="bg-slate-800 text-slate-300">
+                        {guide.category}
+                      </Badge>
+                      <div className="flex items-center gap-1 text-slate-400 text-sm">
+                        <Clock className="w-4 h-4" />
+                        <span>{guide.readTime}</span>
+                      </div>
+                    </div>
+                    <h4 className="text-white text-lg mb-2 group-hover:text-green-500 transition-colors">
+                      {guide.title}
+                    </h4>
+                    <p className="text-slate-400 text-sm line-clamp-2">{guide.description}</p>
+                  </div>
+                </Card>
+              ))}
+          </div>
+        </div>
+        <Card className="mt-12 bg-green-500/10 border-green-500/20">
+          <div className="p-8 text-center">
+            <Users className="w-12 h-12 text-green-500 mx-auto mb-4" />
+            <h3 className="text-white text-2xl mb-3">Hai Bisogno di Aiuto?</h3>
+            <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
+              Il nostro team di esperti è sempre disponibile per aiutarti a comprendere meglio il mondo delle scommesse
+              sportive. Contattaci per domande o approfondimenti.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-slate-950 rounded-lg transition-colors cursor-pointer"
+              >
+                <BookOpen className="w-5 h-5" />
+                Esplora Tutte le Guide
+              </a>
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors cursor-pointer"
+              >
+                <Shield className="w-5 h-5" />
+                Gioco Responsabile
+              </a>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </div>
+  );
+}
