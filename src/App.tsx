@@ -27,7 +27,12 @@ const TennisEventDetail = lazyPage(() => import("./components/TennisEventDetail"
 const SitiScommessePage = lazyPage(() => import("./components/SitiScommessePage").then((m) => m.SitiScommessePage));
 const BonusPage = lazyPage(() => import("./components/BonusPage").then((m) => m.BonusPage));
 const GuidesPage = lazyPage(() => import("./components/GuidesPage").then((m) => m.GuidesPage));
-const GuideDetailPage = lazyPage(() => import("./components/GuideDetailPage").then((m) => m.GuideDetailPage));
+const GuideArticlePage = lazyPage(() =>
+  import("./components/guides/GuideArticlePage").then((m) => m.GuideArticlePage),
+);
+const GuideCategoryPage = lazyPage(() =>
+  import("./components/guides/GuideCategoryPage").then((m) => m.GuideCategoryPage),
+);
 const LoginPage = lazyPage(() => import("./components/LoginPage").then((m) => m.LoginPage));
 const RegisterPage = lazyPage(() => import("./components/RegisterPage").then((m) => m.RegisterPage));
 const info = () => import("./components/info/InfoPages");
@@ -60,7 +65,8 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   [paths.sitiScommesse, [SitiScommessePage]],
   [paths.bonus, [BonusPage]],
   [paths.guide, [GuidesPage]],
-  [paths.guidaDettaglio, [GuideDetailPage]],
+  ["/guide/categoria/:categoria", [GuideCategoryPage, NotFoundPage]],
+  ["/guide/:slug", [GuideArticlePage, NotFoundPage]],
   [paths.chiSiamo, [ChiSiamoPage]],
   [paths.contatti, [ContattiPage]],
   [paths.faq, [FaqPage]],
@@ -175,7 +181,8 @@ export default function App() {
             <Route path={paths.sitiScommesse} element={<SitiScommessePage />} />
             <Route path={paths.bonus} element={<BonusPage />} />
             <Route path={paths.guide} element={<GuidesPage />} />
-            <Route path={paths.guidaDettaglio} element={<GuideDetailPage onBack={go(paths.guide)} />} />
+            <Route path="/guide/categoria/:categoria" element={<GuideCategoryPage />} />
+            <Route path="/guide/:slug" element={<GuideArticlePage />} />
             <Route path={paths.chiSiamo} element={<ChiSiamoPage />} />
             <Route path={paths.contatti} element={<ContattiPage />} />
             <Route path={paths.faq} element={<FaqPage />} />

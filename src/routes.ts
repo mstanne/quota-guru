@@ -23,6 +23,7 @@ export const paths = {
   sitiScommesse: "/siti-scommesse",
   bonus: "/bonus",
   guide: "/guide",
+  // first guide (used for #responsabile links); all guides: src/data/guides.ts
   guidaDettaglio: "/guide/guida-completa-scommesse-sportive",
   accedi: "/accedi",
   registrati: "/registrati",
@@ -80,11 +81,6 @@ export const routes: RouteMeta[] = [
     path: paths.guide,
     title: "Guide alle scommesse sportive",
     description: "Impara a leggere le quote, gestire il bankroll e scommettere in modo responsabile.",
-  },
-  {
-    path: paths.guidaDettaglio,
-    title: "Guida completa alle scommesse sportive",
-    description: "Tutto quello che devi sapere su quote, tipologie di scommessa, strategie e gioco responsabile.",
   },
   { path: paths.accedi, title: "Accedi", description: "Accedi al tuo account QuotaGuru.", index: false },
   { path: paths.registrati, title: "Registrati", description: "Crea il tuo account QuotaGuru.", index: false },
