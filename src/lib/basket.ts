@@ -43,6 +43,7 @@ export const nbaGames = data.nba.games;
 export const lbaStandings = data.lba.standings;
 export const seasonLabel = (s: number) => `${s}-${String(s + 1).slice(2)}`;
 export const nbaSeason = seasonLabel(data.nba.season);
+export const nbaSeasonYear = data.nba.season;
 export const lbaSeason = seasonLabel(data.lba.season);
 
 // ---------- URLs ----------

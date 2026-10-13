@@ -16,8 +16,11 @@ import {
   isGameFinished,
   isGameLive,
   nbaGames,
+  nbaSeasonYear,
 } from "../../lib/basket";
 import { usePageMeta } from "../../lib/pageMeta";
+import { nbaEditorial } from "../../lib/editorial";
+import { MatchEditorial } from "../editorial/MatchEditorial";
 import { placeholderOdds } from "../../lib/odds";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
@@ -122,6 +125,10 @@ export function BasketGamePage() {
             competition: "NBA",
             time: `${formatDay(game.utcDate)} ${formatTime(game.utcDate)}`,
           }}
+        />
+
+        <MatchEditorial
+          article={nbaEditorial({ game, games: nbaGames, season: nbaSeasonYear, generatedAt: basketUpdatedAt })}
         />
 
         {periods && periods.home.length > 0 && (

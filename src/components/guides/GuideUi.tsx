@@ -1,8 +1,8 @@
 // Shared building blocks for the guides section: category icons, guide cards and content blocks.
 import { Award, BookOpen, Calculator, ChevronRight, Clock, Info, Shield, Target, TriangleAlert } from "lucide-react";
-import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import { Link } from "react-router";
+import { Rich } from "../content/Rich";
 import { Badge } from "../ui/badge";
 import { Card } from "../ui/card";
 import { ImageSlot } from "../media/ImageSlot";
@@ -17,28 +17,7 @@ export const categoryIcons: Record<GuideCategory["icon"], LucideIcon> = {
   clock: Clock,
 };
 
-const LINK = /\[([^\]]+)\]\((\/[^)\s]*)\)/g;
-const linkClass = "text-action-text underline underline-offset-2 hover:text-action-text-hover";
-
-/** Renders text with inline links written as [testo](/percorso) – internal paths only. */
-export function Rich({ text }: { text: string }) {
-  const out: ReactNode[] = [];
-  let last = 0;
-  for (const m of text.matchAll(LINK)) {
-    if (m.index! > last) out.push(text.slice(last, m.index));
-    out.push(
-      <Link key={m.index} to={m[2]} className={linkClass}>
-        {m[1]}
-      </Link>,
-    );
-    last = m.index! + m[0].length;
-  }
-  if (last < text.length) out.push(text.slice(last));
-  return <>{out}</>;
-}
-
-/** Internal paths referenced by a text (used by the link check). */
-export const linksIn = (text: string) => [...text.matchAll(LINK)].map((m) => m[2]);
+export { Rich, linksIn } from "../content/Rich";
 
 export function GuideCard({ guide, featured = false }: { guide: Guide; featured?: boolean }) {
   const category = findCategory(guide.category);

@@ -24,6 +24,8 @@ import {
 } from "../../lib/football";
 import { generatedAt } from "../../lib/football";
 import { usePageMeta } from "../../lib/pageMeta";
+import { footballEditorial } from "../../lib/editorial";
+import { MatchEditorial } from "../editorial/MatchEditorial";
 import { MatchRow, TeamBadge } from "./MatchRow";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 import { NotFoundPage } from "../NotFoundPage";
@@ -280,6 +282,8 @@ export function CalcioMatchPage() {
 
       <div className="container mx-auto px-4 py-8 grid gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2 space-y-6">
+          <MatchEditorial article={footballEditorial({ comp: competition, match, h2h, generatedAt })} />
+
           <section className={card} aria-labelledby="confronto">
             <SectionTitle icon={TrendingUp}>
               <span id="confronto">Le squadre a confronto</span>

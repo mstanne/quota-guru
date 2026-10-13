@@ -200,3 +200,29 @@ Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e 
   la sua scena nello script oppure metti `image: null` per avere il segnaposto.
 - I contenuti riguardano il gioco con vincita in denaro: prima di una pubblicazione reale verifica i requisiti
   normativi (licenze ADM, messaggi di gioco responsabile, divieti di pubblicità vigenti in Italia).
+
+## Testi editoriali delle partite (agente)
+
+Ogni pagina partita di calcio e NBA mostra un testo: **anteprima** prima del fischio d'inizio (per le partite dei
+prossimi 14 giorni) e **resoconto** dopo, più alcune domande frequenti. Funziona in due livelli:
+
+1. **Testi a modelli** (sempre attivi, gratuiti): `src/lib/editorial/engine.mjs` costruisce ogni frase dai dati
+   scaricati (classifica, forma, bilancio casa/trasferta, precedenti, parziali). Se un dato manca la frase non compare.
+   Lo stesso codice gira nel sito (anche nel pre-render) e nell'agente.
+2. **Riscrittura con Claude** (facoltativa): `scripts/generate-editorial.mjs` gira a ogni aggiornamento in GitHub
+   Actions. Se è impostato il secret `ANTHROPIC_API_KEY`, chiede a Claude di riscrivere i testi a modelli in un
+   italiano più naturale usando solo i fatti presenti. Ogni riscrittura viene controllata in automatico (numeri e link
+   devono comparire nel testo a modelli, stessa struttura, nessuna espressione promozionale, lunghezza simile): se non
+   passa i controlli viene scartata e resta online il testo a modelli. Le riscritture accettate finiscono in
+   `src/data/editorial-ai.json` e restano valide finché i dati della partita non cambiano.
+
+Senza chiave l'agente controlla solo i testi a modelli: il sito funziona allo stesso modo.
+
+Per collegare Claude: repo **Settings → Secrets and variables → Actions → New repository secret**
+`ANTHROPIC_API_KEY`. Variabili facoltative (scheda *Variables*): `EDITORIAL_AI_MODEL` (modello, predefinito
+`claude-sonnet-4-5`), `EDITORIAL_AI_MAX` (nuove riscritture per esecuzione, predefinito 40), `EDITORIAL_AI=off` per
+sospendere la riscrittura. Le riscritture già accettate sono conservate nella cache di GitHub Actions e non vengono
+ripagate. Il riepilogo di ogni esecuzione (testi nuovi, riutilizzati, scartati) compare nella pagina del workflow.
+
+In locale: `npm run editorial` (legge la chiave da `.env` se presente). Il tennis è già previsto nel motore
+(`tennisArticle`) ma si attiverà quando ci sarà un feed dati reale per le partite.

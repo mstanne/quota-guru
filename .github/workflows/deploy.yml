@@ -5,6 +5,7 @@
 #   - repo Settings -> Secrets and variables -> Actions -> New repository secret:
 #       FOOTBALL_DATA_TOKEN = <your football-data.org API token>
 #       BALLDONTLIE_API_KEY = <your balldontlie.io API key> (basket)
+#       ANTHROPIC_API_KEY   = <Claude API key> (optional: rewrites the match texts; without it the template texts are used)
 name: Deploy to GitHub Pages
 
 on:
@@ -50,6 +51,25 @@ jobs:
         continue-on-error: true
         env:
           BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+
+      - name: Restore editorial cache
+        # Claude rewrites already accepted: unchanged texts are not rewritten (or paid for) again
+        uses: actions/cache@v4
+        with:
+          path: .cache/editorial-ai.json
+          key: editorial-${{ github.run_id }}
+          restore-keys: editorial-
+
+      - name: Editorial texts for match pages
+        # Template texts always; Claude rewrite only if the ANTHROPIC_API_KEY secret is set.
+        # On any error the site is published with the template texts.
+        run: node scripts/generate-editorial.mjs
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EDITORIAL_AI: ${{ vars.EDITORIAL_AI }}
+          EDITORIAL_AI_MODEL: ${{ vars.EDITORIAL_AI_MODEL }}
+          EDITORIAL_AI_MAX: ${{ vars.EDITORIAL_AI_MAX }}
 
       - name: Build
         run: npm run build

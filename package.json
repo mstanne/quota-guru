@@ -9,7 +9,8 @@
     "build": "node scripts/derive-football-home.mjs && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
     "typecheck": "tsc -b",
-    "data": "node scripts/fetch-football-data.mjs && node scripts/derive-football-home.mjs && node scripts/fetch-basket-data.mjs"
+    "data": "node scripts/fetch-football-data.mjs && node scripts/derive-football-home.mjs && node scripts/fetch-basket-data.mjs && node scripts/generate-editorial.mjs",
+    "editorial": "node scripts/generate-editorial.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.3",
