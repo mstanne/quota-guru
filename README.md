@@ -45,7 +45,7 @@ src/
     ├── FootballPage.tsx, TennisPage.tsx, BasketPage.tsx          # liste quote per sport
     ├── FootballEventDetail.tsx, TennisEventDetail.tsx, BasketEventDetail.tsx
     ├── SitiScommessePage.tsx, BonusPage.tsx
-    ├── GuidesPage.tsx, GuideDetailPage.tsx
+    ├── GuidesPage.tsx, guides/ (GuideArticlePage, GuideCategoryPage, GuideUi)   # contenuti in src/data/guides.ts
     ├── LoginPage.tsx, RegisterPage.tsx, ForgotPasswordPage.tsx
     ├── figma/ImageWithFallback.tsx
     └── ui/                  # componenti shadcn/ui
@@ -179,7 +179,7 @@ Calendario e risultati della Serie A e dell'EuroLeague richiedono il piano a pag
 | `/tennis`, `/tennis/djokovic-alcaraz` | Quote tennis e scheda partita (dati di esempio) |
 | `/siti-scommesse` | Bookmaker a confronto |
 | `/bonus` | Bonus |
-| `/guide`, `/guide/guida-completa-scommesse-sportive` | Guide |
+| `/guide`, `/guide/<slug>`, `/guide/categoria/<slug>` | Guide (indice, singola guida, categoria) |
 | `/accedi`, `/registrati`, `/password-dimenticata` | Account (nascoste dal menu, `noindex`) |
 
 Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e description) e la `<Route>` in
@@ -190,7 +190,10 @@ Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e 
 - Ogni pagina ha un proprio URL (vedi tabella sotto). In build `scripts/prerender.mjs` genera un file HTML statico
   per ogni URL con title, description, canonical e contenuto già visibile ai motori di ricerca, più `404.html`,
   `sitemap.xml` e `robots.txt`. Nel browser React prende il controllo e la navigazione resta istantanea.
-- Per tennis e basket e per il dettaglio guida c'è ancora un solo esempio: tutte le partite di quelle liste portano
-  allo stesso URL di esempio. Le quote mostrate in home, tennis e basket sono ancora dati di esempio.
+- Per il tennis c'è ancora un solo esempio: tutte le partite della lista portano allo stesso URL di esempio. Le quote
+  mostrate in home, tennis e basket sono ancora dati di esempio.
+- Guide: per aggiungerne una basta un nuovo elemento in `src/data/guides.ts` (slug, categoria, sezioni a blocchi);
+  pagina, indice, categoria e sitemap si aggiornano da soli. Le immagini di copertina restano segnaposto finché
+  non imposti `image`.
 - I contenuti riguardano il gioco con vincita in denaro: prima di una pubblicazione reale verifica i requisiti
   normativi (licenze ADM, messaggi di gioco responsabile, divieti di pubblicità vigenti in Italia).
