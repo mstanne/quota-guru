@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+<title>Carta di pagamento, frecce di deposito e prelievo e conto di gioco con documento verificato</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0F1A2C"/><stop offset="1" stop-color="#0A1220"/>
+  </linearGradient>
+  <radialGradient id="glowO"><stop offset="0" stop-color="#FB6801" stop-opacity=".22"/><stop offset="1" stop-color="#FB6801" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowG"><stop offset="0" stop-color="#06BA55" stop-opacity=".18"/><stop offset="1" stop-color="#06BA55" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#EEF0F3" fill-opacity=".07"/></pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="url(#dots)"/>
+<circle cx="1330" cy="170" r="520" fill="url(#glowO)"/>
+<circle cx="260" cy="780" r="520" fill="url(#glowG)"/>
+<g font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="700">
+<rect x="150" y="250" width="440" height="280" rx="30" fill="#BECED8"/><rect x="150" y="310" width="440" height="50" fill="#0F1A2C"/><rect x="190" y="400" width="70" height="52" rx="8" fill="#FBBF24"/><rect x="190" y="480" width="260" height="16" rx="8" fill="#7F93AE"/><text x="370" y="600" font-size="30" fill="#7F93AE" text-anchor="middle" font-weight="600" fill-opacity="1">il tuo metodo</text><line x1="640" y1="350" x2="900" y2="350" stroke="#06BA55" stroke-width="12" stroke-linecap="round"/><polygon points="900,326 940,350 900,374" fill="#06BA55"/><line x1="940" y1="450" x2="680" y2="450" stroke="#FB6801" stroke-width="12" stroke-linecap="round"/><polygon points="680,426 640,450 680,474" fill="#FB6801"/><text x="790" y="320" font-size="28" fill="#06BA55" text-anchor="middle" font-weight="700" fill-opacity="1">deposito</text><text x="790" y="510" font-size="28" fill="#FB6801" text-anchor="middle" font-weight="700" fill-opacity="1">prelievo</text><rect x="990" y="200" width="460" height="400" rx="28" fill="#16243B" stroke="#2A3D59" stroke-width="2"/><text x="1030" y="270" font-size="34" fill="#EEF0F3" text-anchor="start" font-weight="700" fill-opacity="1">Conto di gioco</text><rect x="1030" y="310" width="300" height="18" rx="9" fill="#BECED8" fill-opacity=".4"/><rect x="1030" y="358" width="240" height="18" rx="9" fill="#BECED8" fill-opacity=".4"/><rect x="1030" y="406" width="340" height="18" rx="9" fill="#BECED8" fill-opacity=".4"/><path d="M1065.0,470 L1100,481.76 L1100,508.64 C1100,531.32 1083.9,545.6 1065.0,554 C1046.1,545.6 1030,531.32 1030,508.64 L1030,481.76 Z" fill="#16243B" stroke="#06BA55" stroke-width="6"/><path d="M1050.6,512.0 L1061.0,522.4 L1081.0,500.8" fill="none" stroke="#06BA55" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><text x="1120" y="526" font-size="26" fill="#BECED8" text-anchor="start" font-weight="600" fill-opacity="1">documento verificato</text><rect x="990" y="640" width="460" height="64" rx="32.0" fill="#16243B"/><text x="1220.0" y="681.36" font-size="26" fill="#EEF0F3" text-anchor="middle" font-weight="700" fill-opacity="1">tempi: da subito a qualche giorno</text>
+</g>
+</svg>

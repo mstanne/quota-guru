@@ -1,11 +1,12 @@
 // Shared building blocks for the guides section: category icons, guide cards and content blocks.
-import { Award, BookOpen, Calculator, Clock, Info, Shield, Target, TriangleAlert } from "lucide-react";
+import { Award, BookOpen, Calculator, ChevronRight, Clock, Info, Shield, Target, TriangleAlert } from "lucide-react";
+import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import { Link } from "react-router";
 import { Badge } from "../ui/badge";
 import { Card } from "../ui/card";
 import { ImageSlot } from "../media/ImageSlot";
-import { findCategory, guidePath, type Guide, type GuideBlock, type GuideCategory } from "../../data/guides";
+import { findCategory, findGuide, guidePath, type Guide, type GuideBlock, type GuideCategory } from "../../data/guides";
 
 export const categoryIcons: Record<GuideCategory["icon"], LucideIcon> = {
   book: BookOpen,
@@ -15,6 +16,29 @@ export const categoryIcons: Record<GuideCategory["icon"], LucideIcon> = {
   award: Award,
   clock: Clock,
 };
+
+const LINK = /\[([^\]]+)\]\((\/[^)\s]*)\)/g;
+const linkClass = "text-action-text underline underline-offset-2 hover:text-action-text-hover";
+
+/** Renders text with inline links written as [testo](/percorso) – internal paths only. */
+export function Rich({ text }: { text: string }) {
+  const out: ReactNode[] = [];
+  let last = 0;
+  for (const m of text.matchAll(LINK)) {
+    if (m.index! > last) out.push(text.slice(last, m.index));
+    out.push(
+      <Link key={m.index} to={m[2]} className={linkClass}>
+        {m[1]}
+      </Link>,
+    );
+    last = m.index! + m[0].length;
+  }
+  if (last < text.length) out.push(text.slice(last));
+  return <>{out}</>;
+}
+
+/** Internal paths referenced by a text (used by the link check). */
+export const linksIn = (text: string) => [...text.matchAll(LINK)].map((m) => m[2]);
 
 export function GuideCard({ guide, featured = false }: { guide: Guide; featured?: boolean }) {
   const category = findCategory(guide.category);
@@ -60,7 +84,11 @@ export function GuideCard({ guide, featured = false }: { guide: Guide; featured?
 export function GuideBlockView({ block }: { block: GuideBlock }) {
   switch (block.type) {
     case "p":
-      return <p className="text-slate-300 leading-relaxed mb-4">{block.text}</p>;
+      return (
+        <p className="text-slate-300 leading-relaxed mb-4">
+          <Rich text={block.text} />
+        </p>
+      );
     case "list": {
       const List = block.ordered ? "ol" : "ul";
       return (
@@ -68,7 +96,9 @@ export function GuideBlockView({ block }: { block: GuideBlock }) {
           className={`${block.ordered ? "list-decimal" : "list-disc"} pl-6 mb-4 space-y-2 text-slate-300 marker:text-slate-500`}
         >
           {block.items.map((it) => (
-            <li key={it}>{it}</li>
+            <li key={it}>
+              <Rich text={it} />
+            </li>
           ))}
         </List>
       );
@@ -83,7 +113,9 @@ export function GuideBlockView({ block }: { block: GuideBlock }) {
           <Icon className={`w-5 h-5 shrink-0 mt-0.5 ${warn ? "text-warn" : "text-slate-300"}`} aria-hidden="true" />
           <div>
             <p className="text-white mb-1">{block.title}</p>
-            <p className="text-slate-300 text-sm leading-relaxed">{block.text}</p>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              <Rich text={block.text} />
+            </p>
           </div>
         </div>
       );
@@ -92,7 +124,9 @@ export function GuideBlockView({ block }: { block: GuideBlock }) {
       return (
         <div className="rounded-lg border-l-4 border-best bg-slate-900 p-4 mb-4">
           <p className="text-white text-sm mb-1">{block.title}</p>
-          <p className="text-slate-300 text-sm leading-relaxed">{block.text}</p>
+          <p className="text-slate-300 text-sm leading-relaxed">
+            <Rich text={block.text} />
+          </p>
         </div>
       );
     case "cards":
@@ -101,10 +135,38 @@ export function GuideBlockView({ block }: { block: GuideBlock }) {
           {block.items.map((c) => (
             <div key={c.title} className="rounded-lg border border-slate-800 bg-slate-900 p-4">
               <h3 className="text-white mb-1">{c.title}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{c.text}</p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                <Rich text={c.text} />
+              </p>
             </div>
           ))}
         </div>
+      );
+    case "guides":
+      return (
+        <ol className="mb-4 space-y-2">
+          {block.slugs.map((slug, i) => {
+            const g = findGuide(slug);
+            if (!g) return null;
+            return (
+              <li key={slug}>
+                <Link
+                  to={guidePath(g)}
+                  className="group flex items-center gap-4 rounded-lg border border-slate-800 bg-slate-900 p-4 hover:border-slate-500"
+                >
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-slate-800 text-white">
+                    {i + 1}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-white group-hover:underline underline-offset-2">{g.title}</span>
+                    <span className="block text-slate-400 text-sm line-clamp-1">{g.description}</span>
+                  </span>
+                  <ChevronRight className="w-5 h-5 text-slate-400 shrink-0" aria-hidden="true" />
+                </Link>
+              </li>
+            );
+          })}
+        </ol>
       );
     case "table":
       return (

@@ -6,7 +6,7 @@ import { categoryIcons, GuideCard } from "./guides/GuideUi";
 import { categoryPath, guideCategories, guides, guidesIn } from "../data/guides";
 import { paths } from "../routes";
 
-/** Guides index: categories (each with its own page), featured guides, all the others. */
+/** Guides index: categories (each with its own page), featured guides, then up to 3 guides per category. */
 export function GuidesPage() {
   const categories = guideCategories.filter((c) => guidesIn(c.slug).length);
   return (
@@ -57,19 +57,30 @@ export function GuidesPage() {
               ))}
           </div>
         </section>
-        <section aria-labelledby="all">
-          <h2 id="all" className="text-white text-xl mb-6">
-            Tutte le altre guide
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {guides
-              .filter((g) => !g.featured)
-              .map((g) => (
-                <GuideCard key={g.slug} guide={g} />
-              ))}
-          </div>
-        </section>
-        <Card className="mt-12 bg-slate-800/60 border-slate-700">
+        {categories.map((c) => (
+          <section key={c.slug} aria-labelledby={`cat-${c.slug}`} className="mb-12">
+            <div className="flex flex-wrap items-baseline justify-between gap-2 mb-6">
+              <h2 id={`cat-${c.slug}`} className="text-white text-xl">
+                {c.name}
+              </h2>
+              <Link
+                to={categoryPath(c)}
+                className="text-sm text-slate-300 hover:text-white underline underline-offset-2"
+              >
+                Vedi tutte le {guidesIn(c.slug).length} guide<span className="sr-only"> della categoria {c.name}</span>
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {guidesIn(c.slug)
+                .filter((g) => !g.featured)
+                .slice(0, 3)
+                .map((g) => (
+                  <GuideCard key={g.slug} guide={g} />
+                ))}
+            </div>
+          </section>
+        ))}
+        <Card className="bg-slate-800/60 border-slate-700">
           <div className="p-8 text-center">
             <Users className="w-12 h-12 text-slate-300 mx-auto mb-4" aria-hidden="true" />
             <h2 className="text-white text-2xl mb-3">Hai bisogno di aiuto?</h2>

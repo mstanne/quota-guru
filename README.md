@@ -192,7 +192,9 @@ Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e 
   `sitemap.xml` e `robots.txt`. Nel browser React prende il controllo e la navigazione resta istantanea.
 - Per il tennis c'è ancora un solo esempio: tutte le partite della lista portano allo stesso URL di esempio. Le quote
   mostrate in home, tennis e basket sono ancora dati di esempio.
-- Guide: per aggiungerne una basta un nuovo elemento in `src/data/guides.ts` (slug, categoria, sezioni a blocchi);
+- Guide (24): tipi, categorie e guide di base in `src/data/guides.ts`, le altre in `src/data/guides/<categoria>.ts`.
+  Ogni guida ha sezioni a blocchi, domande frequenti (`faq`), guide correlate (`related`) e link interni scritti
+  come `[testo](/percorso)`. Per aggiungerne una basta un nuovo elemento nel file della categoria;
   pagina, indice, categoria e sitemap si aggiornano da soli. Le illustrazioni (SVG originali, palette del brand) sono in
   `src/assets/guides/` e si rigenerano con `python3 scripts/generate-guide-images.py`; per una guida nuova aggiungi
   la sua scena nello script oppure metti `image: null` per avere il segnaposto.

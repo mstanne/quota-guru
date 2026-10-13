@@ -1,11 +1,11 @@
 // Single guide page: /guide/<slug>. Content comes from src/data/guides.ts.
-import { Calendar, Clock, ShieldCheck } from "lucide-react";
+import { Calendar, ChevronDown, Clock, ShieldCheck } from "lucide-react";
 import { Link, useParams } from "react-router";
 import { PageHeader, MetaItems } from "../layout/PageHeader";
 import { ImageSlot } from "../media/ImageSlot";
 import { NotFoundPage } from "../NotFoundPage";
-import { categoryIcons, GuideBlockView, GuideCard } from "./GuideUi";
-import { categoryPath, findCategory, findGuide, guideMeta, guides, type Guide } from "../../data/guides";
+import { categoryIcons, GuideBlockView, GuideCard, Rich } from "./GuideUi";
+import { categoryPath, findCategory, findGuide, guideMeta, relatedGuides, type Guide } from "../../data/guides";
 import { responsibleGambling as rg } from "../../data/operators";
 import { usePageMeta } from "../../lib/pageMeta";
 import { paths } from "../../routes";
@@ -16,11 +16,7 @@ export function GuideArticlePage() {
   usePageMeta(guide ? guideMeta(guide) : null);
   if (!guide) return <NotFoundPage />;
   const category = findCategory(guide.category)!;
-  // Related: same category first, then the others, max 3.
-  const related = [
-    ...guides.filter((g) => g.slug !== guide.slug && g.category === guide.category),
-    ...guides.filter((g) => g.slug !== guide.slug && g.category !== guide.category),
-  ].slice(0, 3);
+  const related = relatedGuides(guide);
 
   return (
     <div className="min-h-screen bg-slate-950">
@@ -80,6 +76,27 @@ export function GuideArticlePage() {
                 ))}
               </section>
             ))}
+            {guide.faq?.length ? (
+              <section id="domande" className="mb-10 scroll-mt-24">
+                <h2 className="text-white text-2xl mb-4">Domande frequenti</h2>
+                <div className="space-y-3">
+                  {guide.faq.map((f) => (
+                    <details key={f.q} className="group rounded-lg border border-slate-800 bg-slate-900">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-4 text-white [&::-webkit-details-marker]:hidden">
+                        <h3 className="text-base">{f.q}</h3>
+                        <ChevronDown
+                          className="w-5 h-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180"
+                          aria-hidden="true"
+                        />
+                      </summary>
+                      <p className="px-4 pb-4 text-slate-300 leading-relaxed">
+                        <Rich text={f.a} />
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+            ) : null}
             <aside aria-label="Gioco responsabile" className="rounded-lg border border-warn/30 bg-warn/10 p-5 flex gap-3">
               <ShieldCheck className="w-6 h-6 text-warn shrink-0" aria-hidden="true" />
               <p className="text-slate-300 text-sm leading-relaxed">
@@ -124,6 +141,13 @@ function Toc({ guide }: { guide: Guide }) {
           </a>
         </li>
       ))}
+      {guide.faq?.length ? (
+        <li>
+          <a href="#domande" className="text-slate-300 hover:text-white hover:underline underline-offset-2">
+            Domande frequenti
+          </a>
+        </li>
+      ) : null}
     </ol>
   );
 }

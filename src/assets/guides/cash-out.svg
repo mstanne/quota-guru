@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+<title>Giocata in corso con grafico del valore e pulsante di cash out totale, parziale e automatico</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0F1A2C"/><stop offset="1" stop-color="#0A1220"/>
+  </linearGradient>
+  <radialGradient id="glowO"><stop offset="0" stop-color="#FB6801" stop-opacity=".22"/><stop offset="1" stop-color="#FB6801" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowG"><stop offset="0" stop-color="#06BA55" stop-opacity=".18"/><stop offset="1" stop-color="#06BA55" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#EEF0F3" fill-opacity=".07"/></pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="url(#dots)"/>
+<circle cx="1330" cy="170" r="520" fill="url(#glowO)"/>
+<circle cx="260" cy="780" r="520" fill="url(#glowG)"/>
+<g font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="700">
+<rect x="150" y="170" width="700" height="560" rx="28" fill="#16243B" stroke="#2A3D59" stroke-width="2"/><text x="200" y="250" font-size="36" fill="#EEF0F3" text-anchor="start" font-weight="700" fill-opacity="1">La tua giocata</text><text x="800" y="250" font-size="30" fill="#7F93AE" text-anchor="end" font-weight="600" fill-opacity="1">10 € × 3,00</text><path d="M200,560 L300,540 L400,520 L480,470 L560,450 L650,420 L800,380" fill="none" stroke="#06BA55" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/><line x1="200" y1="600" x2="800" y2="600" stroke="#2A3D59" stroke-width="2"/><text x="200" y="660" font-size="28" fill="#7F93AE" text-anchor="start" font-weight="600" fill-opacity="1">valore attuale</text><text x="800" y="660" font-size="36" fill="#EEF0F3" text-anchor="end" font-weight="700" fill-opacity="1">19,80 €</text><rect x="980" y="250" width="470" height="96" rx="48.0" fill="#FB6801"/><text x="1215.0" y="312.4" font-size="40" fill="#0A1220" text-anchor="middle" font-weight="700" fill-opacity="1">Cash out 19,80 €</text><text x="1000" y="430" font-size="30" fill="#BECED8" text-anchor="start" font-weight="600" fill-opacity="1">Parziale</text><rect x="1000" y="460" width="430" height="16" rx="8" fill="#16243B"/><rect x="1000" y="460" width="230" height="16" rx="8" fill="#FB6801"/><circle cx="1230" cy="468" r="26" fill="#EEF0F3"/><text x="1000" y="580" font-size="30" fill="#BECED8" text-anchor="start" font-weight="600" fill-opacity="1">Automatico</text><rect x="1366" y="552" width="64" height="34" rx="17" fill="#06BA55"/><circle cx="1413" cy="569" r="13" fill="#EEF0F3"/><text x="1000" y="670" font-size="26" fill="#7F93AE" text-anchor="start" font-weight="600" fill-opacity="1">include il margine dell'operatore</text>
+</g>
+</svg>

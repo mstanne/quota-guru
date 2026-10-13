@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+<title>Libro aperto dalla A alla Z con alcuni termini delle scommesse</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0F1A2C"/><stop offset="1" stop-color="#0A1220"/>
+  </linearGradient>
+  <radialGradient id="glowO"><stop offset="0" stop-color="#FB6801" stop-opacity=".22"/><stop offset="1" stop-color="#FB6801" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowG"><stop offset="0" stop-color="#06BA55" stop-opacity=".18"/><stop offset="1" stop-color="#06BA55" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#EEF0F3" fill-opacity=".07"/></pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="url(#dots)"/>
+<circle cx="1330" cy="170" r="520" fill="url(#glowO)"/>
+<circle cx="260" cy="780" r="520" fill="url(#glowG)"/>
+<g font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="700">
+<path d="M180,250 Q430,200 680,260 L680,700 Q430,640 180,690 Z" fill="#16243B" stroke="#2A3D59" stroke-width="3"/><path d="M1180,250 Q930,200 680,260 L680,700 Q930,640 1180,690 Z" fill="#16243B" stroke="#2A3D59" stroke-width="3"/><line x1="680" y1="260" x2="680" y2="700" stroke="#BECED8" stroke-opacity=".5" stroke-width="4"/><text x="430" y="340" font-size="96" fill="#FB6801" text-anchor="middle" font-weight="700" fill-opacity="1">A</text><rect x="250" y="400" width="340" height="14" rx="7" fill="#BECED8" fill-opacity=".35"/><rect x="250" y="442" width="290" height="14" rx="7" fill="#BECED8" fill-opacity=".35"/><rect x="250" y="484" width="240" height="14" rx="7" fill="#BECED8" fill-opacity=".35"/><rect x="250" y="526" width="340" height="14" rx="7" fill="#BECED8" fill-opacity=".35"/><rect x="250" y="568" width="290" height="14" rx="7" fill="#BECED8" fill-opacity=".35"/><rect x="250" y="610" width="240" height="14" rx="7" fill="#BECED8" fill-opacity=".35"/><text x="930" y="340" font-size="96" fill="#06BA55" text-anchor="middle" font-weight="700" fill-opacity="1">Z</text><rect x="770" y="400" width="330" height="14" rx="7" fill="#BECED8" fill-opacity=".35"/><rect x="770" y="442" width="270" height="14" rx="7" fill="#BECED8" fill-opacity=".35"/><rect x="770" y="484" width="330" height="14" rx="7" fill="#BECED8" fill-opacity=".35"/><rect x="770" y="526" width="270" height="14" rx="7" fill="#BECED8" fill-opacity=".35"/><rect x="770" y="568" width="330" height="14" rx="7" fill="#BECED8" fill-opacity=".35"/><rect x="770" y="610" width="270" height="14" rx="7" fill="#BECED8" fill-opacity=".35"/><rect x="1250" y="230" width="135" height="62" rx="31.0" fill="#EEF0F3"/><text x="1317.5" y="271.8" font-size="30" fill="#0A1220" text-anchor="middle" font-weight="700" fill-opacity="1">Aggio</text><rect x="1230" y="330" width="192" height="62" rx="31.0" fill="#EEF0F3"/><text x="1326.0" y="371.8" font-size="30" fill="#0A1220" text-anchor="middle" font-weight="700" fill-opacity="1">Cash out</text><rect x="1270" y="430" width="192" height="62" rx="31.0" fill="#FB6801"/><text x="1366.0" y="471.8" font-size="30" fill="#0A1220" text-anchor="middle" font-weight="700" fill-opacity="1">Handicap</text><rect x="1220" y="530" width="192" height="62" rx="31.0" fill="#EEF0F3"/><text x="1316.0" y="571.8" font-size="30" fill="#0A1220" text-anchor="middle" font-weight="700" fill-opacity="1">Rollover</text><rect x="1260" y="630" width="173" height="62" rx="31.0" fill="#EEF0F3"/><text x="1346.5" y="671.8" font-size="30" fill="#0A1220" text-anchor="middle" font-weight="700" fill-opacity="1">Sistema</text>
+</g>
+</svg>
