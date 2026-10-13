@@ -193,11 +193,11 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
   const getFormColor = (result) => {
     switch (result) {
       case "W":
-        return "bg-best";
+        return "bg-best text-best-foreground";
       case "L":
-        return "bg-red-500";
+        return "bg-live text-white";
       default:
-        return "bg-slate-500";
+        return "bg-slate-600 text-white";
     }
   };
   return (
@@ -222,11 +222,11 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center mb-6">
               <div className="text-center md:text-right">
-                <div className="text-5xl mb-3">🏀</div>
+                <div className="text-5xl mb-3" aria-hidden="true">🏀</div>
                 <h1 className="text-white text-3xl mb-2">{match.homeTeam}</h1>
                 <div className="flex items-center justify-center md:justify-end gap-1">
                   {homeForm.map((result, index) => (
-                    <Badge key={index} className={`${getFormColor(result)} text-white text-xs`}>
+                    <Badge key={index} className={`${getFormColor(result)} text-xs`}>
                       {result}
                     </Badge>
                   ))}
@@ -236,11 +236,11 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                 <div className="text-slate-400 text-2xl">VS</div>
               </div>
               <div className="text-center md:text-left">
-                <div className="text-5xl mb-3">🏀</div>
+                <div className="text-5xl mb-3" aria-hidden="true">🏀</div>
                 <h1 className="text-white text-3xl mb-2">{match.awayTeam}</h1>
                 <div className="flex items-center justify-center md:justify-start gap-1">
                   {awayForm.map((result, index) => (
-                    <Badge key={index} className={`${getFormColor(result)} text-white text-xs`}>
+                    <Badge key={index} className={`${getFormColor(result)} text-xs`}>
                       {result}
                     </Badge>
                   ))}
@@ -685,7 +685,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                       <span className="text-slate-400">Punti Media a Partita</span>
                       <div className="flex items-center gap-4">
                         <span className="text-white">{teamStats.home.points}</span>
-                        <span className="text-slate-600">|</span>
+                        <span className="text-slate-500" aria-hidden="true">|</span>
                         <span className="text-white">{teamStats.away.points}</span>
                       </div>
                     </div>
@@ -710,7 +710,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                       <span className="text-slate-400">Assist Media a Partita</span>
                       <div className="flex items-center gap-4">
                         <span className="text-white">{teamStats.home.assists}</span>
-                        <span className="text-slate-600">|</span>
+                        <span className="text-slate-500" aria-hidden="true">|</span>
                         <span className="text-white">{teamStats.away.assists}</span>
                       </div>
                     </div>
@@ -735,7 +735,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                       <span className="text-slate-400">Rimbalzi Media a Partita</span>
                       <div className="flex items-center gap-4">
                         <span className="text-white">{teamStats.home.rebounds}</span>
-                        <span className="text-slate-600">|</span>
+                        <span className="text-slate-500" aria-hidden="true">|</span>
                         <span className="text-white">{teamStats.away.rebounds}</span>
                       </div>
                     </div>

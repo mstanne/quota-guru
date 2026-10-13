@@ -190,7 +190,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
               <div>
                 <label className="text-slate-400 text-sm mb-2 block">Competizione</label>
                 <Select value={selectedCompetition} onValueChange={setSelectedCompetition}>
-                  <SelectTrigger aria-label="Competizione" className="bg-slate-800 border-slate-700 text-white">
+                  <SelectTrigger aria-label="Competizione" className="bg-slate-800 border-slate-500 text-white">
                     <SelectValue placeholder="Seleziona competizione" />
                   </SelectTrigger>
                   <SelectContent className="bg-slate-800 border-slate-700">
@@ -205,7 +205,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
               <div>
                 <label className="text-slate-400 text-sm mb-2 block">Data</label>
                 <Select value={selectedDate} onValueChange={setSelectedDate}>
-                  <SelectTrigger aria-label="Data" className="bg-slate-800 border-slate-700 text-white">
+                  <SelectTrigger aria-label="Data" className="bg-slate-800 border-slate-500 text-white">
                     <SelectValue placeholder="Seleziona data" />
                   </SelectTrigger>
                   <SelectContent className="bg-slate-800 border-slate-700">
@@ -258,7 +258,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                   <div>
                     <label className="text-slate-400 text-sm mb-2 block">Competizione</label>
                     <Select value={selectedCompetition} onValueChange={setSelectedCompetition}>
-                      <SelectTrigger aria-label="Competizione" className="bg-slate-800 border-slate-700 text-white">
+                      <SelectTrigger aria-label="Competizione" className="bg-slate-800 border-slate-500 text-white">
                         <SelectValue placeholder="Seleziona competizione" />
                       </SelectTrigger>
                       <SelectContent className="bg-slate-800 border-slate-700">
@@ -273,7 +273,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                   <div>
                     <label className="text-slate-400 text-sm mb-2 block">Data</label>
                     <Select value={selectedDate} onValueChange={setSelectedDate}>
-                      <SelectTrigger aria-label="Data" className="bg-slate-800 border-slate-700 text-white">
+                      <SelectTrigger aria-label="Data" className="bg-slate-800 border-slate-500 text-white">
                         <SelectValue placeholder="Seleziona data" />
                       </SelectTrigger>
                       <SelectContent className="bg-slate-800 border-slate-700">
@@ -350,7 +350,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                             <Badge variant="secondary" className="bg-slate-800 text-slate-300">
                               {match.competition}
                             </Badge>
-                            {match.isLive && <Badge className="bg-red-500 text-white animate-pulse">LIVE</Badge>}
+                            {match.isLive && <Badge className="bg-live text-white animate-pulse">LIVE</Badge>}
                           </div>
                           <button
                             type="button"

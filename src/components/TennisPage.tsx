@@ -219,7 +219,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
               <div>
                 <label className="text-slate-400 text-sm mb-2 block">Torneo</label>
                 <Select value={selectedTournament} onValueChange={setSelectedTournament}>
-                  <SelectTrigger aria-label="Torneo" className="bg-slate-800 border-slate-700 text-white">
+                  <SelectTrigger aria-label="Torneo" className="bg-slate-800 border-slate-500 text-white">
                     <SelectValue placeholder="Seleziona torneo" />
                   </SelectTrigger>
                   <SelectContent className="bg-slate-800 border-slate-700">
@@ -234,7 +234,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
               <div>
                 <label className="text-slate-400 text-sm mb-2 block">Superficie</label>
                 <Select value={selectedSurface} onValueChange={setSelectedSurface}>
-                  <SelectTrigger aria-label="Superficie" className="bg-slate-800 border-slate-700 text-white">
+                  <SelectTrigger aria-label="Superficie" className="bg-slate-800 border-slate-500 text-white">
                     <SelectValue placeholder="Seleziona superficie" />
                   </SelectTrigger>
                   <SelectContent className="bg-slate-800 border-slate-700">
@@ -280,7 +280,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                   <div>
                     <label className="text-slate-400 text-sm mb-2 block">Torneo</label>
                     <Select value={selectedTournament} onValueChange={setSelectedTournament}>
-                      <SelectTrigger aria-label="Torneo" className="bg-slate-800 border-slate-700 text-white">
+                      <SelectTrigger aria-label="Torneo" className="bg-slate-800 border-slate-500 text-white">
                         <SelectValue placeholder="Seleziona torneo" />
                       </SelectTrigger>
                       <SelectContent className="bg-slate-800 border-slate-700">
@@ -295,7 +295,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                   <div>
                     <label className="text-slate-400 text-sm mb-2 block">Superficie</label>
                     <Select value={selectedSurface} onValueChange={setSelectedSurface}>
-                      <SelectTrigger aria-label="Superficie" className="bg-slate-800 border-slate-700 text-white">
+                      <SelectTrigger aria-label="Superficie" className="bg-slate-800 border-slate-500 text-white">
                         <SelectValue placeholder="Seleziona superficie" />
                       </SelectTrigger>
                       <SelectContent className="bg-slate-800 border-slate-700">
@@ -371,7 +371,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                             <Badge variant="secondary" className="bg-slate-800 text-slate-300">
                               {match.round}
                             </Badge>
-                            {match.isLive && <Badge className="bg-red-500 text-white animate-pulse">LIVE</Badge>}
+                            {match.isLive && <Badge className="bg-live text-white animate-pulse">LIVE</Badge>}
                           </div>
                           <button
                             type="button"

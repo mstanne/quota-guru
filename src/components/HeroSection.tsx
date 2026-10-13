@@ -109,7 +109,7 @@ export function HeroSection({ matches = defaultFeaturedMatches, resolveOperator 
                   <Badge variant="secondary" className="bg-slate-700 text-slate-300">
                     {match.competition}
                   </Badge>
-                  {match.isLive && <Badge className="bg-red-500 text-white animate-pulse">LIVE</Badge>}
+                  {match.isLive && <Badge className="bg-live text-white animate-pulse">LIVE</Badge>}
                 </div>
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">

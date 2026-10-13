@@ -128,11 +128,11 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
   const getFormColor = (result) => {
     switch (result) {
       case "W":
-        return "bg-best";
+        return "bg-best text-best-foreground";
       case "L":
-        return "bg-red-500";
+        return "bg-live text-white";
       default:
-        return "bg-slate-500";
+        return "bg-slate-600 text-white";
     }
   };
   return (
@@ -160,12 +160,12 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center mb-6">
               <div className="text-center md:text-right">
-                <div className="text-5xl mb-3">🎾</div>
+                <div className="text-5xl mb-3" aria-hidden="true">🎾</div>
                 <h1 className="text-white text-3xl mb-2">{match.player1}</h1>
                 <Badge className="bg-slate-700 text-white mb-2">Ranking #{playerStats.player1.ranking}</Badge>
                 <div className="flex items-center justify-center md:justify-end gap-1">
                   {player1Form.map((result, index) => (
-                    <Badge key={index} className={`${getFormColor(result)} text-white text-xs`}>
+                    <Badge key={index} className={`${getFormColor(result)} text-xs`}>
                       {result}
                     </Badge>
                   ))}
@@ -175,12 +175,12 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                 <div className="text-slate-400 text-2xl">VS</div>
               </div>
               <div className="text-center md:text-left">
-                <div className="text-5xl mb-3">🎾</div>
+                <div className="text-5xl mb-3" aria-hidden="true">🎾</div>
                 <h1 className="text-white text-3xl mb-2">{match.player2}</h1>
                 <Badge className="bg-slate-700 text-white mb-2">Ranking #{playerStats.player2.ranking}</Badge>
                 <div className="flex items-center justify-center md:justify-start gap-1">
                   {player2Form.map((result, index) => (
-                    <Badge key={index} className={`${getFormColor(result)} text-white text-xs`}>
+                    <Badge key={index} className={`${getFormColor(result)} text-xs`}>
                       {result}
                     </Badge>
                   ))}
@@ -503,7 +503,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                       <span className="text-slate-400">Percentuale Vittorie 2025</span>
                       <div className="flex items-center gap-4">
                         <span className="text-white">{playerStats.player1.winRate}%</span>
-                        <span className="text-slate-600">|</span>
+                        <span className="text-slate-500" aria-hidden="true">|</span>
                         <span className="text-white">{playerStats.player2.winRate}%</span>
                       </div>
                     </div>
@@ -528,7 +528,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                       <span className="text-slate-400">Aces Medi a Partita</span>
                       <div className="flex items-center gap-4">
                         <span className="text-white">{playerStats.player1.acesAvg}</span>
-                        <span className="text-slate-600">|</span>
+                        <span className="text-slate-500" aria-hidden="true">|</span>
                         <span className="text-white">{playerStats.player2.acesAvg}</span>
                       </div>
                     </div>
@@ -553,7 +553,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                       <span className="text-slate-400">% Punti Vinti con Primo Servizio</span>
                       <div className="flex items-center gap-4">
                         <span className="text-white">{playerStats.player1.firstServeWin}%</span>
-                        <span className="text-slate-600">|</span>
+                        <span className="text-slate-500" aria-hidden="true">|</span>
                         <span className="text-white">{playerStats.player2.firstServeWin}%</span>
                       </div>
                     </div>

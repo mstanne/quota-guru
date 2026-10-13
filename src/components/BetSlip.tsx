@@ -198,7 +198,7 @@ export function BetSlip() {
                 <div className="space-y-2 pt-2">
                   <Button
                     variant="outline"
-                    className="w-full border-slate-600 text-slate-300 hover:bg-slate-800"
+                    className="w-full bg-slate-900 border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white"
                     onClick={clearAll}
                   >
                     Svuota la schedina

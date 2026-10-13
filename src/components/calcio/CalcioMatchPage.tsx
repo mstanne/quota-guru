@@ -42,7 +42,7 @@ function SectionTitle({ icon: Icon, children }: { icon: typeof Info; children: R
 const FORM_STYLE = {
   V: "bg-best text-best-foreground",
   N: "bg-slate-500 text-white",
-  P: "bg-red-500 text-white",
+  P: "bg-live text-white",
 } as const;
 const FORM_TITLE = { V: "Vittoria", N: "Pareggio", P: "Sconfitta" } as const;
 

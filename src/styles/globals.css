@@ -17,7 +17,8 @@
   --secondary: oklch(0.95 0.0058 264.53);
   --secondary-foreground: #030213;
   --muted: #ececf0;
-  --muted-foreground: #717182;
+  /* site is dark: muted text must stay ≥4.5:1 on slate-800/900 (6.1) */
+  --muted-foreground: #90a1b9;
   --accent: #e9ebef;
   --accent-foreground: #030213;
   --destructive: #d4183d;

@@ -69,7 +69,7 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
               <div>
                 <label className="text-slate-400 text-sm mb-2 block">Categoria</label>
                 <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger aria-label="Categoria" className="bg-slate-800 border-slate-700 text-white">
+                  <SelectTrigger aria-label="Categoria" className="bg-slate-800 border-slate-500 text-white">
                     <SelectValue placeholder="Seleziona categoria" />
                   </SelectTrigger>
                   <SelectContent className="bg-slate-800 border-slate-700">
@@ -84,7 +84,7 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
               <div>
                 <label className="text-slate-400 text-sm mb-2 block">Ordina per</label>
                 <Select value={sortBy} onValueChange={setSortBy}>
-                  <SelectTrigger aria-label="Ordina per" className="bg-slate-800 border-slate-700 text-white">
+                  <SelectTrigger aria-label="Ordina per" className="bg-slate-800 border-slate-500 text-white">
                     <SelectValue placeholder="Ordina per" />
                   </SelectTrigger>
                   <SelectContent className="bg-slate-800 border-slate-700">
@@ -133,7 +133,7 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
-                              className={`w-4 h-4 ${i < Math.floor(ratingValue(bookmaker)) ? "fill-yellow-500 text-yellow-500" : "text-slate-600"}`}
+                              className={`w-4 h-4 ${i < Math.floor(ratingValue(bookmaker)) ? "fill-yellow-500 text-yellow-500" : "text-slate-500"}`}
                             />
                           ))}
                         </div>
