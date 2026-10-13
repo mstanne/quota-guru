@@ -70,6 +70,17 @@ Il percorso base viene impostato automaticamente con la variabile `BASE_PATH` (=
 pubblico con `SITE_URL` (usato per canonical e sitemap). Se usi un dominio
 personalizzato o un repo `<utente>.github.io`, imposta nel workflow `BASE_PATH: /` e `SITE_URL` con il tuo dominio.
 
+## Design system
+
+- **Colori semantici** (definiti in `src/styles/globals.css`, usali al posto dei colori Tailwind diretti):
+  `action` = azione principale e link verso gli operatori (arancione) · `action-text` = link testuali ·
+  `best` = quota migliore / esito positivo (l'unico uso del verde) · `live` = stati in corso ·
+  `warn` = avvisi e gioco responsabile · `selected` = filtro, tab o chip attivo (neutro).
+- **Intestazioni di pagina:** `src/components/layout/PageHeader.tsx` (breadcrumb, titolo con icona, sottotitolo,
+  riga di dati essenziali). Tutte le pagine di sezione la usano.
+- **Numeri:** le tabelle usano cifre a larghezza fissa (`tabular-nums`) e i nomi degli operatori sotto le quote sono a 14 px.
+- **Stemmi** delle squadre: arrivano da football-data.org (`crest`); se mancano o non si caricano viene mostrata la sigla.
+
 ## Template operatori (segnaposto)
 
 Il sito è un **template neutro**: nessun nome, logo, bonus o quota di un operatore reale è scritto nei componenti.

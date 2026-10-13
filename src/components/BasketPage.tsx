@@ -11,6 +11,8 @@ import { useBetSlip } from "../context/BetSlipContext";
 import { getOperator } from "../data/operators";
 import { bestEntry, bestValue, formatOdd, isBestAt, placeholderOdds, type OddsByOperator } from "../lib/odds";
 import { OperatorCta } from "./operator/OperatorUi";
+import { PageHeader, MetaItems } from "./layout/PageHeader";
+import { oddsOperators } from "../data/operators";
 
 // Mock data – replace with a real odds feed/API.
 const matches: any[] = [
@@ -85,7 +87,7 @@ const matches: any[] = [
 const competitions = [
   {
     id: "all",
-    name: "Tutte le Competizioni",
+    name: "Tutte le competizioni",
     icon: "\u{1F3C0}",
     count: matches.length,
   },
@@ -159,52 +161,27 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
   const getBestBookmakerName = (match, outcome: string) => getOperator(bestEntry(match.odds, outcome).operatorId).name;
   return (
     <div className="min-h-screen bg-slate-950">
-      <div className="bg-slate-900 py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-3 mb-4">
-            <Trophy className="w-8 h-8 text-green-500" />
-            <h1 className="text-white text-4xl">Quote Basket</h1>
-          </div>
-          <p className="text-slate-400 text-lg mb-6">
-            Confronta le quote basket dai migliori bookmaker per NBA, Euroleague, Serie A e tutti i campionati
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <Card className="bg-slate-800 border-slate-700">
-              <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1">{matches.length}</div>
-                <div className="text-slate-400 text-sm">Partite Oggi</div>
-              </div>
-            </Card>
-            <Card className="bg-slate-800 border-slate-700">
-              <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1">5</div>
-                <div className="text-slate-400 text-sm">Bookmaker</div>
-              </div>
-            </Card>
-            <Card className="bg-slate-800 border-slate-700">
-              <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1">6</div>
-                <div className="text-slate-400 text-sm">Competizioni</div>
-              </div>
-            </Card>
-            <Card className="bg-slate-800 border-slate-700">
-              <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1 flex items-center justify-center gap-1">
-                  <TrendingUp className="w-6 h-6" />
-                  Live
-                </div>
-                <div className="text-slate-400 text-sm">Quote in Tempo Reale</div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        icon={Trophy}
+        title="Quote basket"
+        subtitle="Le quote di NBA, Eurolega, Serie A e degli altri campionati a confronto tra gli operatori autorizzati"
+        breadcrumb={[{ label: "Basket" }]}
+        meta={
+          <MetaItems
+            items={[
+              `${matches.length} partite`,
+              `${oddsOperators.length} operatori`,
+              `${competitions.length - 1} competizioni`,
+            ]}
+          />
+        }
+      />
       <div className="container mx-auto px-4 py-8">
         <Card className="hidden md:block bg-slate-900 border-slate-800 mb-8">
           <div className="p-6">
             <div className="flex items-center gap-2 mb-4">
               <Funnel className="w-5 h-5 text-slate-400" />
-              <h2 className="text-white text-xl">Filtra Partite</h2>
+              <h2 className="text-white text-xl">Filtra partite</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div>
@@ -230,7 +207,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                   </SelectTrigger>
                   <SelectContent className="bg-slate-800 border-slate-700">
                     <SelectItem value="all" className="text-white">
-                      Tutte le Date
+                      Tutte le date
                     </SelectItem>
                     <SelectItem value="today" className="text-white">
                       Oggi
@@ -239,7 +216,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                       Domani
                     </SelectItem>
                     <SelectItem value="week" className="text-white">
-                      Questa Settimana
+                      Questa settimana
                     </SelectItem>
                   </SelectContent>
                 </Select>
@@ -254,7 +231,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                   onClick={() => setSelectedCompetition(competition.id)}
                   className={
                     selectedCompetition === competition.id
-                      ? "bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer"
+                      ? "bg-selected hover:bg-selected text-selected-foreground cursor-pointer"
                       : "bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white cursor-pointer"
                   }
                 >
@@ -270,7 +247,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
               <AccordionTrigger className="px-4 py-3 hover:no-underline">
                 <div className="flex items-center gap-2">
                   <Funnel className="w-5 h-5 text-slate-400" />
-                  <span className="text-white">Filtra Partite</span>
+                  <span className="text-white">Filtra partite</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="px-4 pb-4">
@@ -298,7 +275,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                       </SelectTrigger>
                       <SelectContent className="bg-slate-800 border-slate-700">
                         <SelectItem value="all" className="text-white">
-                          Tutte le Date
+                          Tutte le date
                         </SelectItem>
                         <SelectItem value="today" className="text-white">
                           Oggi
@@ -307,7 +284,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                           Domani
                         </SelectItem>
                         <SelectItem value="week" className="text-white">
-                          Questa Settimana
+                          Questa settimana
                         </SelectItem>
                       </SelectContent>
                     </Select>
@@ -321,7 +298,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                         onClick={() => setSelectedCompetition(competition.id)}
                         className={
                           selectedCompetition === competition.id
-                            ? "bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer"
+                            ? "bg-selected hover:bg-selected text-selected-foreground cursor-pointer"
                             : "bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white cursor-pointer"
                         }
                       >
@@ -338,19 +315,19 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
           <TabsList className="bg-slate-900 mb-6">
             <TabsTrigger
               value="winner"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950 data-[state=active]:font-bold"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground data-[state=active]:font-bold"
             >
               Vincente 1-2
             </TabsTrigger>
             <TabsTrigger
               value="handicap"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950 data-[state=active]:font-bold"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground data-[state=active]:font-bold"
             >
               Handicap
             </TabsTrigger>
             <TabsTrigger
               value="ou"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950 data-[state=active]:font-bold"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground data-[state=active]:font-bold"
             >
               Over/Under
             </TabsTrigger>
@@ -360,7 +337,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
               {matches.map((match) => (
                 <Card
                   key={match.id}
-                  className="bg-slate-900 border-slate-800 mb-4 hover:border-green-500 transition-all"
+                  className="bg-slate-900 border-slate-800 mb-4 hover:border-slate-500 transition-all"
                 >
                   <div className="p-4">
                     <div className="flex items-center justify-between mb-4 pb-4 border-b border-slate-800">
@@ -373,11 +350,11 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                             {match.isLive && <Badge className="bg-red-500 text-white animate-pulse">LIVE</Badge>}
                           </div>
                           <div
-                            className="text-white cursor-pointer hover:text-green-500 transition-colors"
+                            className="text-white cursor-pointer hover:text-white transition-colors"
                             onClick={() => onMatchClick?.(match.id)}
                           >
                             <span>{match.homeTeam}</span>
-                            <span className="text-slate-500 mx-2">vs</span>
+                            <span className="text-slate-400 mx-2">vs</span>
                             <span>{match.awayTeam}</span>
                           </div>
                         </div>
@@ -405,7 +382,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                               <TableCell className="text-white capitalize">{getOperator(bookmaker).name}</TableCell>
                               <TableCell className="text-center">
                                 <div
-                                  className={`inline-block px-3 py-1.5 rounded cursor-pointer hover:opacity-80 transition-opacity ${isBestHome ? "bg-green-500 text-slate-950 font-bold" : "text-slate-300"}`}
+                                  className={`inline-block px-3 py-1.5 rounded tabular-nums cursor-pointer hover:opacity-80 transition-opacity ${isBestHome ? "bg-best text-best-foreground font-bold" : "text-slate-300"}`}
                                   onClick={() => handleOddsClick(match, "1", bookmaker, odds.home)}
                                 >
                                   {formatOdd(odds.home)}
@@ -413,7 +390,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                               </TableCell>
                               <TableCell className="text-center">
                                 <div
-                                  className={`inline-block px-3 py-1.5 rounded cursor-pointer hover:opacity-80 transition-opacity ${isBestAway ? "bg-green-500 text-slate-950 font-bold" : "text-slate-300"}`}
+                                  className={`inline-block px-3 py-1.5 rounded tabular-nums cursor-pointer hover:opacity-80 transition-opacity ${isBestAway ? "bg-best text-best-foreground font-bold" : "text-slate-300"}`}
                                   onClick={() => handleOddsClick(match, "2", bookmaker, odds.away)}
                                 >
                                   {formatOdd(odds.away)}
@@ -424,7 +401,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                                   operator={getOperator(bookmaker)}
                                   label="Vai al sito"
                                   size="sm"
-                                  className="bg-orange-700 hover:bg-orange-800 text-white cursor-pointer"
+                                  className="bg-action hover:bg-action-hover text-action-foreground cursor-pointer"
                                 />
                               </TableCell>
                             </TableRow>
@@ -436,19 +413,19 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                       <div className="flex items-center justify-between">
                         <div className="grid grid-cols-2 gap-4 text-sm flex-1">
                           <div className="text-center">
-                            <div className="text-slate-400 mb-1">Migliore Quota 1</div>
-                            <div className="text-green-500">
+                            <div className="text-slate-400 mb-1">Migliore quota 1</div>
+                            <div className="text-best tabular-nums">
                               {formatOdd(getBestOdd(match, "home"))}
-                              <span className="text-slate-500 text-xs ml-1">
+                              <span className="text-slate-400 text-xs ml-1">
                                 ({getBestBookmakerName(match, "home")})
                               </span>
                             </div>
                           </div>
                           <div className="text-center">
-                            <div className="text-slate-400 mb-1">Migliore Quota 2</div>
-                            <div className="text-green-500">
+                            <div className="text-slate-400 mb-1">Migliore quota 2</div>
+                            <div className="text-best tabular-nums">
                               {formatOdd(getBestOdd(match, "away"))}
-                              <span className="text-slate-500 text-xs ml-1">
+                              <span className="text-slate-400 text-xs ml-1">
                                 ({getBestBookmakerName(match, "away")})
                               </span>
                             </div>
@@ -458,9 +435,9 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                           variant="outline"
                           size="sm"
                           onClick={() => onMatchClick?.(match.id)}
-                          className="bg-blue-500 hover:bg-blue-600 text-white border-0 cursor-pointer"
+                          className="bg-action hover:bg-action-hover text-action-foreground border-0 cursor-pointer"
                         >
-                          Vedi Dettagli
+                          Dettagli partita
                         </Button>
                       </div>
                     </div>
@@ -472,7 +449,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
               {matches.map((match) => (
                 <Card
                   key={match.id}
-                  className="bg-slate-900 border-slate-800 cursor-pointer hover:border-green-500 transition-all"
+                  className="bg-slate-900 border-slate-800 cursor-pointer hover:border-slate-500 transition-all"
                   onClick={() => onMatchClick?.(match.id)}
                 >
                   <div className="p-4">
@@ -490,7 +467,7 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Migliori Quote:</span>
+                        <span className="text-slate-400">Migliori quote:</span>
                       </div>
                       <div className="grid grid-cols-2 gap-2">
                         <div
@@ -501,8 +478,12 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                           }}
                         >
                           <div className="text-slate-400 text-xs mb-1">1</div>
-                          <div className="text-green-500">{formatOdd(getBestBookmaker(match, "home").value)}</div>
-                          <div className="text-slate-500 text-xs mt-1">{getBestBookmaker(match, "home").name}</div>
+                          <div className="text-best tabular-nums">
+                            {formatOdd(getBestBookmaker(match, "home").value)}
+                          </div>
+                          <div className="text-slate-400 text-sm mt-1 truncate">
+                            {getBestBookmaker(match, "home").name}
+                          </div>
                         </div>
                         <div
                           className="bg-slate-800 rounded p-2 text-center cursor-pointer hover:bg-slate-700 transition-colors"
@@ -512,16 +493,20 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                           }}
                         >
                           <div className="text-slate-400 text-xs mb-1">2</div>
-                          <div className="text-green-500">{formatOdd(getBestBookmaker(match, "away").value)}</div>
-                          <div className="text-slate-500 text-xs mt-1">{getBestBookmaker(match, "away").name}</div>
+                          <div className="text-best tabular-nums">
+                            {formatOdd(getBestBookmaker(match, "away").value)}
+                          </div>
+                          <div className="text-slate-400 text-sm mt-1 truncate">
+                            {getBestBookmaker(match, "away").name}
+                          </div>
                         </div>
                       </div>
                     </div>
                     <Button
-                      className="w-full mt-4 bg-orange-500 hover:bg-orange-600 text-white cursor-pointer"
+                      className="w-full mt-4 bg-action hover:bg-action-hover text-action-foreground cursor-pointer"
                       onClick={() => onMatchClick?.(match.id)}
                     >
-                      Confronta Tutte le Quote
+                      Confronta tutte le quote
                     </Button>
                   </div>
                 </Card>
@@ -530,20 +515,20 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
           </TabsContent>
           <TabsContent value="handicap">
             <Card className="bg-slate-900 border-slate-800 p-8 text-center">
-              <div className="text-slate-400 mb-2">Quote Handicap</div>
-              <p className="text-slate-500">Funzionalità in arrivo...</p>
+              <div className="text-slate-400 mb-2">Quote handicap</div>
+              <p className="text-slate-400">Funzionalità in arrivo...</p>
             </Card>
           </TabsContent>
           <TabsContent value="ou">
             <Card className="bg-slate-900 border-slate-800 p-8 text-center">
-              <div className="text-slate-400 mb-2">Quote Over/Under Punti Totali</div>
-              <p className="text-slate-500">Funzionalità in arrivo...</p>
+              <div className="text-slate-400 mb-2">Quote Over/Under punti totali</div>
+              <p className="text-slate-400">Funzionalità in arrivo...</p>
             </Card>
           </TabsContent>
         </Tabs>
         <Card className="bg-blue-500/10 border-blue-500/20">
           <div className="p-6">
-            <h3 className="text-blue-400 mb-2">Quote Basket in Tempo Reale</h3>
+            <h3 className="text-blue-400 mb-2">Quote basket a confronto</h3>
             <p className="text-slate-300 text-sm mb-3">
               Il basket offre numerose opportunità di scommessa con quote che variano durante il giorno. L'NBA è il
               campionato più seguito al mondo, mentre l'Euroleague rappresenta l'eccellenza europea.

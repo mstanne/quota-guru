@@ -13,11 +13,12 @@ import {
   type OperatorData,
 } from "../data/operators";
 import { OperatorCta, OperatorLogo } from "./operator/OperatorUi";
+import { PageHeader, MetaItems } from "./layout/PageHeader";
 
 // Neutral, factual filters (no "recommended" / "best bonus" rankings).
 const filterCategories = [
   { id: "all", name: "Tutti gli operatori", icon: "\u{1F3AF}" },
-  { id: "streaming", name: "Live Streaming", icon: "\u{1F4FA}" },
+  { id: "streaming", name: "Diretta streaming", icon: "\u{1F4FA}" },
   { id: "cashout", name: "Cash Out", icon: "\u{1F4B0}" },
 ];
 
@@ -42,45 +43,21 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
     .sort((a, b) => (sortBy === "rating" ? ratingValue(b) - ratingValue(a) : a.name.localeCompare(b.name)));
   return (
     <div className="min-h-screen bg-slate-950">
-      <div className="bg-slate-900 py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-3 mb-4">
-            <Shield className="w-8 h-8 text-green-500" />
-            <h1 className="text-white text-4xl">Operatori a confronto</h1>
-          </div>
-          <p className="text-slate-400 text-lg mb-6">
-            Caratteristiche, metodi di pagamento, tempi di prelievo e condizioni degli operatori con concessione ADM
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <Card className="bg-slate-800 border-slate-700">
-              <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1">{operators.length}</div>
-                <div className="text-slate-400 text-sm">Operatori</div>
-              </div>
-            </Card>
-            <Card className="bg-slate-800 border-slate-700">
-              <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1">ADM</div>
-                <div className="text-slate-400 text-sm">Concessione verificata</div>
-              </div>
-            </Card>
-            <Card className="bg-slate-800 border-slate-700">
-              <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1">{rg.minAge}+</div>
-                <div className="text-slate-400 text-sm">Gioco vietato ai minori</div>
-              </div>
-            </Card>
-            <Card className="bg-slate-800 border-slate-700">
-              <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1 flex items-center justify-center gap-1">
-                  <Shield className="w-6 h-6" />
-                </div>
-                <div className="text-slate-400 text-sm">Metodologia trasparente</div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        icon={Shield}
+        title="Operatori a confronto"
+        subtitle="Caratteristiche, metodi di pagamento, tempi di prelievo e condizioni degli operatori con concessione ADM"
+        breadcrumb={[{ label: "Siti scommesse" }]}
+        meta={
+          <MetaItems
+            items={[
+              `${operators.length} operatori`,
+              "Solo concessionari ADM",
+              `Vietato ai minori di ${rg.minAge} anni`,
+            ]}
+          />
+        }
+      />
       <div className="container mx-auto px-4 py-8">
         <Card className="bg-slate-900 border-slate-800 mb-8">
           <div className="p-6">
@@ -130,7 +107,7 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
                   onClick={() => setSelectedCategory(category.id)}
                   className={
                     selectedCategory === category.id
-                      ? "bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer"
+                      ? "bg-selected hover:bg-selected text-selected-foreground cursor-pointer"
                       : "bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white cursor-pointer"
                   }
                 >
@@ -169,7 +146,7 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
                     <div className="text-white text-2xl mb-2 [overflow-wrap:anywhere]">
                       {offerOf(bookmaker)?.amount ?? "[BONUS_BENVENUTO]"}
                     </div>
-                    <p className="text-slate-500 text-xs">18+ · Si applicano i termini dell'operatore</p>
+                    <p className="text-slate-400 text-xs">18+ · Si applicano i termini dell'operatore</p>
                   </div>
                 </div>
                 <div className="bg-slate-800 rounded-lg p-4 mb-6">
@@ -183,19 +160,19 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
                   <TabsList className="bg-slate-800 mb-4">
                     <TabsTrigger
                       value="overview"
-                      className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+                      className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
                     >
                       Panoramica
                     </TabsTrigger>
                     <TabsTrigger
                       value="pros"
-                      className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+                      className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
                     >
-                      Pro e Contro
+                      Pro e contro
                     </TabsTrigger>
                     <TabsTrigger
                       value="details"
-                      className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+                      className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
                     >
                       Dettagli
                     </TabsTrigger>
@@ -204,13 +181,13 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <h4 className="text-white mb-3 flex items-center gap-2">
-                          <TrendingUp className="w-5 h-5 text-green-500" />
-                          Caratteristiche Principali
+                          <TrendingUp className="w-5 h-5 text-slate-300" />
+                          Caratteristiche principali
                         </h4>
                         <div className="space-y-2">
                           {bookmaker.features.map((feature, i) => (
                             <div key={i} className="flex items-center gap-2 text-slate-300">
-                              <Check className="w-4 h-4 text-green-500" />
+                              <Check className="w-4 h-4 text-slate-300" />
                               <span>{feature}</span>
                             </div>
                           ))}
@@ -218,8 +195,8 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
                       </div>
                       <div>
                         <h4 className="text-white mb-3 flex items-center gap-2">
-                          <Shield className="w-5 h-5 text-green-500" />
-                          Metodi di Pagamento
+                          <Shield className="w-5 h-5 text-slate-300" />
+                          Metodi di pagamento
                         </h4>
                         <div className="flex flex-wrap gap-2">
                           {bookmaker.paymentMethods.map((method, i) => (
@@ -234,28 +211,28 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
                   <TabsContent value="pros">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="text-green-500 mb-3 flex items-center gap-2">
+                        <h4 className="text-best mb-3 flex items-center gap-2">
                           <Check className="w-5 h-5" />
                           Vantaggi
                         </h4>
                         <ul className="space-y-2">
                           {bookmaker.pros.map((pro, i) => (
                             <li key={i} className="flex items-start gap-2 text-slate-300">
-                              <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                              <Check className="w-4 h-4 text-slate-300 mt-0.5 flex-shrink-0" />
                               <span>{pro}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-orange-500 mb-3 flex items-center gap-2">
+                        <h4 className="text-red-400 mb-3 flex items-center gap-2">
                           <X className="w-5 h-5" />
                           Svantaggi
                         </h4>
                         <ul className="space-y-2">
                           {bookmaker.cons.map((con, i) => (
                             <li key={i} className="flex items-start gap-2 text-slate-300">
-                              <X className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
+                              <X className="w-4 h-4 text-slate-300 mt-0.5 flex-shrink-0" />
                               <span>{con}</span>
                             </li>
                           ))}
@@ -270,11 +247,11 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
                         <div className="text-white">ADM - Concessione n. {bookmaker.admLicense}</div>
                       </div>
                       <div className="bg-slate-800 rounded-lg p-4">
-                        <div className="text-slate-400 text-sm mb-1">Tempo Prelievo</div>
+                        <div className="text-slate-400 text-sm mb-1">Tempo di prelievo</div>
                         <div className="text-white">{bookmaker.withdrawalTime}</div>
                       </div>
                       <div className="bg-slate-800 rounded-lg p-4">
-                        <div className="text-slate-400 text-sm mb-1">Deposito Minimo</div>
+                        <div className="text-slate-400 text-sm mb-1">Deposito minimo</div>
                         <div className="text-white">{bookmaker.minDeposit}</div>
                       </div>
                     </div>
@@ -298,7 +275,7 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
                     <OperatorCta
                       operator={bookmaker}
                       label="Vai al sito"
-                      className="bg-orange-700 hover:bg-orange-800 text-white cursor-pointer"
+                      className="bg-action hover:bg-action-hover text-action-foreground cursor-pointer"
                       icon={<ExternalLink className="w-4 h-4 ml-2" />}
                       iconPosition="end"
                     />

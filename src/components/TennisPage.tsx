@@ -11,6 +11,8 @@ import { useBetSlip } from "../context/BetSlipContext";
 import { getOperator } from "../data/operators";
 import { bestEntry, bestValue, formatOdd, isBestAt, placeholderOdds, type OddsByOperator } from "../lib/odds";
 import { OperatorCta } from "./operator/OperatorUi";
+import { PageHeader, MetaItems } from "./layout/PageHeader";
+import { oddsOperators } from "../data/operators";
 
 // Mock data – replace with a real odds feed/API.
 const matches: any[] = [
@@ -86,7 +88,7 @@ const matches: any[] = [
 const tournaments = [
   {
     id: "all",
-    name: "Tutti i Tornei",
+    name: "Tutti i tornei",
     icon: "\u{1F3BE}",
     count: matches.length,
   },
@@ -125,7 +127,7 @@ const tournaments = [
 const surfaces = [
   {
     id: "all",
-    name: "Tutte le Superfici",
+    name: "Tutte le superfici",
     icon: "\u{1F3BE}",
   },
   {
@@ -188,52 +190,27 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
   const getBestBookmakerName = (match, outcome: string) => getOperator(bestEntry(match.odds, outcome).operatorId).name;
   return (
     <div className="min-h-screen bg-slate-950">
-      <div className="bg-slate-900 py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-3 mb-4">
-            <Trophy className="w-8 h-8 text-green-500" />
-            <h1 className="text-white text-4xl">Quote Tennis</h1>
-          </div>
-          <p className="text-slate-400 text-lg mb-6">
-            Confronta le quote tennis dai migliori bookmaker per ATP, WTA e tutti i tornei internazionali
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <Card className="bg-slate-800 border-slate-700">
-              <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1">{matches.length}</div>
-                <div className="text-slate-400 text-sm">Partite Oggi</div>
-              </div>
-            </Card>
-            <Card className="bg-slate-800 border-slate-700">
-              <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1">5</div>
-                <div className="text-slate-400 text-sm">Bookmaker</div>
-              </div>
-            </Card>
-            <Card className="bg-slate-800 border-slate-700">
-              <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1">6</div>
-                <div className="text-slate-400 text-sm">Tornei</div>
-              </div>
-            </Card>
-            <Card className="bg-slate-800 border-slate-700">
-              <div className="p-4 text-center">
-                <div className="text-green-500 text-2xl mb-1 flex items-center justify-center gap-1">
-                  <TrendingUp className="w-6 h-6" />
-                  Live
-                </div>
-                <div className="text-slate-400 text-sm">Quote in Tempo Reale</div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        icon={Trophy}
+        title="Quote tennis"
+        subtitle="Le quote dei tornei ATP, WTA e Grand Slam a confronto tra gli operatori autorizzati"
+        breadcrumb={[{ label: "Tennis" }]}
+        meta={
+          <MetaItems
+            items={[
+              `${matches.length} partite`,
+              `${oddsOperators.length} operatori`,
+              `${tournaments.length - 1} tornei`,
+            ]}
+          />
+        }
+      />
       <div className="container mx-auto px-4 py-8">
         <Card className="hidden md:block bg-slate-900 border-slate-800 mb-8">
           <div className="p-6">
             <div className="flex items-center gap-2 mb-4">
               <Funnel className="w-5 h-5 text-slate-400" />
-              <h2 className="text-white text-xl">Filtra Partite</h2>
+              <h2 className="text-white text-xl">Filtra partite</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div>
@@ -276,7 +253,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                   onClick={() => setSelectedTournament(tournament.id)}
                   className={
                     selectedTournament === tournament.id
-                      ? "bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer"
+                      ? "bg-selected hover:bg-selected text-selected-foreground cursor-pointer"
                       : "bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white cursor-pointer"
                   }
                 >
@@ -292,7 +269,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
               <AccordionTrigger className="px-4 py-3 hover:no-underline">
                 <div className="flex items-center gap-2">
                   <Funnel className="w-5 h-5 text-slate-400" />
-                  <span className="text-white">Filtra Partite</span>
+                  <span className="text-white">Filtra partite</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="px-4 pb-4">
@@ -336,7 +313,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                         onClick={() => setSelectedTournament(tournament.id)}
                         className={
                           selectedTournament === tournament.id
-                            ? "bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer"
+                            ? "bg-selected hover:bg-selected text-selected-foreground cursor-pointer"
                             : "bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white cursor-pointer"
                         }
                       >
@@ -353,19 +330,19 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
           <TabsList className="bg-slate-900 mb-6">
             <TabsTrigger
               value="winner"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950 data-[state=active]:font-bold"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground data-[state=active]:font-bold"
             >
               Vincente
             </TabsTrigger>
             <TabsTrigger
               value="sets"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950 data-[state=active]:font-bold"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground data-[state=active]:font-bold"
             >
               Totale Set
             </TabsTrigger>
             <TabsTrigger
               value="handicap"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950 data-[state=active]:font-bold"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground data-[state=active]:font-bold"
             >
               Handicap
             </TabsTrigger>
@@ -375,7 +352,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
               {matches.map((match) => (
                 <Card
                   key={match.id}
-                  className="bg-slate-900 border-slate-800 mb-4 hover:border-green-500 transition-all"
+                  className="bg-slate-900 border-slate-800 mb-4 hover:border-slate-500 transition-all"
                 >
                   <div className="p-4">
                     <div className="flex items-center justify-between mb-4 pb-4 border-b border-slate-800">
@@ -385,7 +362,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                             <Badge variant="secondary" className="bg-slate-800 text-slate-300">
                               {match.tournament}
                             </Badge>
-                            <Badge variant="secondary" className="bg-orange-500/20 text-orange-400">
+                            <Badge variant="secondary" className="bg-slate-800 text-slate-300">
                               {match.surface}
                             </Badge>
                             <Badge variant="secondary" className="bg-slate-800 text-slate-300">
@@ -394,11 +371,11 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                             {match.isLive && <Badge className="bg-red-500 text-white animate-pulse">LIVE</Badge>}
                           </div>
                           <div
-                            className="text-white cursor-pointer hover:text-green-500 transition-colors"
+                            className="text-white cursor-pointer hover:text-white transition-colors"
                             onClick={() => onMatchClick?.(match.id)}
                           >
                             <span className="font-medium">{match.player1}</span>
-                            <span className="text-slate-500 mx-2">vs</span>
+                            <span className="text-slate-400 mx-2">vs</span>
                             <span className="font-medium">{match.player2}</span>
                           </div>
                         </div>
@@ -426,7 +403,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                               <TableCell className="text-white capitalize">{getOperator(bookmaker).name}</TableCell>
                               <TableCell className="text-center">
                                 <div
-                                  className={`inline-block px-3 py-1.5 rounded cursor-pointer hover:opacity-80 transition-opacity ${isBestPlayer1 ? "bg-green-500 text-slate-950 font-bold" : "text-slate-300"}`}
+                                  className={`inline-block px-3 py-1.5 rounded tabular-nums cursor-pointer hover:opacity-80 transition-opacity ${isBestPlayer1 ? "bg-best text-best-foreground font-bold" : "text-slate-300"}`}
                                   onClick={() => handleOddsClick(match, "1", bookmaker, odds.player1)}
                                 >
                                   {formatOdd(odds.player1)}
@@ -434,7 +411,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                               </TableCell>
                               <TableCell className="text-center">
                                 <div
-                                  className={`inline-block px-3 py-1.5 rounded cursor-pointer hover:opacity-80 transition-opacity ${isBestPlayer2 ? "bg-green-500 text-slate-950 font-bold" : "text-slate-300"}`}
+                                  className={`inline-block px-3 py-1.5 rounded tabular-nums cursor-pointer hover:opacity-80 transition-opacity ${isBestPlayer2 ? "bg-best text-best-foreground font-bold" : "text-slate-300"}`}
                                   onClick={() => handleOddsClick(match, "2", bookmaker, odds.player2)}
                                 >
                                   {formatOdd(odds.player2)}
@@ -445,7 +422,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                                   operator={getOperator(bookmaker)}
                                   label="Vai al sito"
                                   size="sm"
-                                  className="bg-orange-700 hover:bg-orange-800 text-white cursor-pointer"
+                                  className="bg-action hover:bg-action-hover text-action-foreground cursor-pointer"
                                 />
                               </TableCell>
                             </TableRow>
@@ -458,24 +435,24 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                         <div className="grid grid-cols-2 gap-4 text-sm flex-1">
                           <div className="text-center">
                             <div className="text-slate-400 mb-1">
-                              {"Migliore Quota "}
+                              {"Migliore quota "}
                               {match.player1}
                             </div>
-                            <div className="text-green-500">
+                            <div className="text-best tabular-nums">
                               {formatOdd(getBestOdd(match, "player1"))}
-                              <span className="text-slate-500 text-xs ml-1">
+                              <span className="text-slate-400 text-xs ml-1">
                                 ({getBestBookmakerName(match, "player1")})
                               </span>
                             </div>
                           </div>
                           <div className="text-center">
                             <div className="text-slate-400 mb-1">
-                              {"Migliore Quota "}
+                              {"Migliore quota "}
                               {match.player2}
                             </div>
-                            <div className="text-green-500">
+                            <div className="text-best tabular-nums">
                               {formatOdd(getBestOdd(match, "player2"))}
-                              <span className="text-slate-500 text-xs ml-1">
+                              <span className="text-slate-400 text-xs ml-1">
                                 ({getBestBookmakerName(match, "player2")})
                               </span>
                             </div>
@@ -485,9 +462,9 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                           variant="outline"
                           size="sm"
                           onClick={() => onMatchClick?.(match.id)}
-                          className="bg-blue-500 hover:bg-blue-600 text-white border-0 cursor-pointer"
+                          className="bg-action hover:bg-action-hover text-action-foreground border-0 cursor-pointer"
                         >
-                          Vedi Dettagli
+                          Dettagli partita
                         </Button>
                       </div>
                     </div>
@@ -499,7 +476,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
               {matches.map((match) => (
                 <Card
                   key={match.id}
-                  className="bg-slate-900 border-slate-800 cursor-pointer hover:border-green-500 transition-all"
+                  className="bg-slate-900 border-slate-800 cursor-pointer hover:border-slate-500 transition-all"
                   onClick={() => onMatchClick?.(match.id)}
                 >
                   <div className="p-4">
@@ -507,7 +484,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                       <Badge variant="secondary" className="bg-slate-800 text-slate-300 text-xs">
                         {match.tournament}
                       </Badge>
-                      <Badge variant="secondary" className="bg-orange-500/20 text-orange-400 text-xs">
+                      <Badge variant="secondary" className="bg-slate-800 text-slate-300 text-xs">
                         {match.surface}
                       </Badge>
                       <div className="text-slate-400 text-sm ml-auto">
@@ -516,12 +493,12 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                     </div>
                     <div className="text-white mb-4">
                       <div className="mb-2">{match.player1}</div>
-                      <div className="text-slate-500 text-sm mb-2">vs</div>
+                      <div className="text-slate-400 text-sm mb-2">vs</div>
                       <div>{match.player2}</div>
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Migliori Quote:</span>
+                        <span className="text-slate-400">Migliori quote:</span>
                       </div>
                       <div className="grid grid-cols-2 gap-3">
                         <div
@@ -533,8 +510,12 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                           }}
                         >
                           <div className="text-slate-400 text-xs mb-1 truncate">{match.player1}</div>
-                          <div className="text-green-500">{formatOdd(getBestBookmaker(match, "player1").value)}</div>
-                          <div className="text-slate-500 text-xs mt-1">{getBestBookmaker(match, "player1").name}</div>
+                          <div className="text-best tabular-nums">
+                            {formatOdd(getBestBookmaker(match, "player1").value)}
+                          </div>
+                          <div className="text-slate-400 text-sm mt-1 truncate">
+                            {getBestBookmaker(match, "player1").name}
+                          </div>
                         </div>
                         <div
                           className="bg-slate-800 rounded p-3 text-center cursor-pointer hover:bg-slate-700 transition-colors"
@@ -545,19 +526,23 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
                           }}
                         >
                           <div className="text-slate-400 text-xs mb-1 truncate">{match.player2}</div>
-                          <div className="text-green-500">{formatOdd(getBestBookmaker(match, "player2").value)}</div>
-                          <div className="text-slate-500 text-xs mt-1">{getBestBookmaker(match, "player2").name}</div>
+                          <div className="text-best tabular-nums">
+                            {formatOdd(getBestBookmaker(match, "player2").value)}
+                          </div>
+                          <div className="text-slate-400 text-sm mt-1 truncate">
+                            {getBestBookmaker(match, "player2").name}
+                          </div>
                         </div>
                       </div>
                     </div>
                     <Button
-                      className="w-full mt-4 bg-orange-500 hover:bg-orange-600 text-white cursor-pointer"
+                      className="w-full mt-4 bg-action hover:bg-action-hover text-action-foreground cursor-pointer"
                       onClick={(e) => {
                         e.stopPropagation();
                         onMatchClick?.(match.id);
                       }}
                     >
-                      Confronta Tutte le Quote
+                      Confronta tutte le quote
                     </Button>
                   </div>
                 </Card>
@@ -567,19 +552,19 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
           <TabsContent value="sets">
             <Card className="bg-slate-900 border-slate-800 p-8 text-center">
               <div className="text-slate-400 mb-2">Quote Totale Set</div>
-              <p className="text-slate-500">Funzionalità in arrivo...</p>
+              <p className="text-slate-400">Funzionalità in arrivo...</p>
             </Card>
           </TabsContent>
           <TabsContent value="handicap">
             <Card className="bg-slate-900 border-slate-800 p-8 text-center">
-              <div className="text-slate-400 mb-2">Quote Handicap Set</div>
-              <p className="text-slate-500">Funzionalità in arrivo...</p>
+              <div className="text-slate-400 mb-2">Quote handicap set</div>
+              <p className="text-slate-400">Funzionalità in arrivo...</p>
             </Card>
           </TabsContent>
         </Tabs>
         <Card className="bg-blue-500/10 border-blue-500/20">
           <div className="p-6">
-            <h3 className="text-blue-400 mb-2">Quote Tennis in Tempo Reale</h3>
+            <h3 className="text-blue-400 mb-2">Quote tennis a confronto</h3>
             <p className="text-slate-300 text-sm mb-3">
               Il tennis offre ottime opportunità di scommessa con quote che variano significativamente tra i bookmaker.
               La superficie di gioco è un fattore cruciale: alcuni giocatori eccellono sulla terra battuta, altri sul

@@ -7,6 +7,8 @@ export interface Team {
   name: string;
   shortName: string;
   tla: string;
+  /** Club crest from the football-data.org CDN (null if not available). */
+  crest?: string | null;
 }
 export interface Score {
   home: number | null;

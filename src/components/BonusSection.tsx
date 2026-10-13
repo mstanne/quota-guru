@@ -23,7 +23,7 @@ export function BonusSection({
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
-            <Gift className="w-6 h-6 text-orange-500" />
+            <Gift className="w-6 h-6 text-slate-300" />
             <h2 className="text-white text-2xl">Offerte degli operatori</h2>
           </div>
           <Button
@@ -63,7 +63,7 @@ export function BonusSection({
                   <OperatorCta
                     operator={operator}
                     label="Vai al sito"
-                    className="w-full bg-green-500 hover:bg-green-600 text-slate-950"
+                    className="w-full bg-action hover:bg-action-hover text-action-foreground"
                   />
                   <OfferDisclaimer className="text-center mt-2" termsUrl={offer.termsUrl} />
                 </div>

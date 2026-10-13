@@ -33,13 +33,13 @@ export function ResponsibleFooterBlock() {
   return (
     <div className="bg-slate-800 rounded-lg p-4 mb-6 flex flex-col md:flex-row md:items-center gap-4">
       <div className="flex items-center gap-3 shrink-0">
-        <span className="inline-flex items-center justify-center rounded-full border-2 border-orange-500 w-10 h-10 text-sm font-bold text-orange-400">
+        <span className="inline-flex items-center justify-center rounded-full border-2 border-warn w-10 h-10 text-sm font-bold text-warn">
           {rg.minAge}+
         </span>
         <OperatorLogo operator={admLogo} width={120} height={40} />
       </div>
       <div className="flex-1">
-        <h4 className="text-orange-400 mb-2">Gioco responsabile</h4>
+        <h4 className="text-warn mb-2">Gioco responsabile</h4>
         <p className="text-slate-300 text-sm mb-2">
           Il gioco con vincita in denaro è vietato ai minori di {rg.minAge} anni e può causare dipendenza patologica.
           Gli operatori presentati sono concessionari dell'{rg.regulatorName}; le probabilità di vincita sono pubblicate
@@ -55,7 +55,7 @@ export function ResponsibleFooterBlock() {
           .
         </p>
         <p className="text-slate-400 text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
-          <Phone className="w-4 h-4 text-orange-400" aria-hidden="true" />
+          <Phone className="w-4 h-4 text-warn" aria-hidden="true" />
           {rg.helplineName} – {rg.helplineOrg}:
           <a href={rg.helplineHref} className="text-white font-semibold underline underline-offset-2">
             {rg.helplineNumber}
@@ -102,7 +102,7 @@ export function AgeGate() {
         aria-labelledby="age-gate-title"
         className="w-full max-w-md rounded-xl border border-slate-700 bg-slate-900 p-6 text-center"
       >
-        <ShieldCheck className="w-10 h-10 text-green-500 mx-auto mb-3" aria-hidden="true" />
+        <ShieldCheck className="w-10 h-10 text-slate-300 mx-auto mb-3" aria-hidden="true" />
         {state === "ask" ? (
           <>
             <h2 id="age-gate-title" className="text-white text-xl mb-2">
@@ -112,7 +112,7 @@ export function AgeGate() {
               Questo sito contiene informazioni su giochi con vincita in denaro, vietati ai minori di {rg.minAge} anni.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button autoFocus onClick={confirm} className="bg-green-500 hover:bg-green-600 text-slate-950">
+              <Button autoFocus onClick={confirm} className="bg-action hover:bg-action-hover text-action-foreground">
                 Sì, ho almeno {rg.minAge} anni
               </Button>
               <Button

@@ -4,6 +4,7 @@ import { competitionPath, findCompetition } from "../../lib/football";
 import { DataUpdatedNote } from "./CalcioPage";
 import { TeamBadge } from "./MatchRow";
 import { NotFoundPage } from "../NotFoundPage";
+import { PageHeader } from "../layout/PageHeader";
 
 /** /calcio/:competizione/classifica */
 export function StandingsPage() {
@@ -13,25 +14,16 @@ export function StandingsPage() {
 
   return (
     <div className="min-h-screen bg-slate-950">
-      <div className="bg-slate-900 py-10">
-        <div className="container mx-auto px-4">
-          <nav aria-label="Percorso" className="text-sm text-slate-400 mb-3">
-            <Link to="/calcio" className="hover:text-white">
-              Calcio
-            </Link>{" "}
-            <span aria-hidden="true">›</span>{" "}
-            <Link to={competitionPath(competition)} className="hover:text-white">
-              {competition.name}
-            </Link>{" "}
-            <span aria-hidden="true">›</span> <span className="text-slate-300">Classifica</span>
-          </nav>
-          <div className="flex items-center gap-3 mb-3">
-            <ListOrdered className="w-8 h-8 text-green-500" aria-hidden="true" />
-            <h1 className="text-white text-3xl sm:text-4xl">Classifica {competition.name}</h1>
-          </div>
-          <DataUpdatedNote />
-        </div>
-      </div>
+      <PageHeader
+        icon={ListOrdered}
+        title={`Classifica ${competition.name}`}
+        breadcrumb={[
+          { label: "Calcio", to: "/calcio" },
+          { label: competition.name, to: competitionPath(competition) },
+          { label: "Classifica" },
+        ]}
+        meta={<DataUpdatedNote />}
+      />
 
       <div className="container mx-auto px-4 py-8 space-y-8">
         {competition.standings.map((group) => (
@@ -80,7 +72,7 @@ export function StandingsPage() {
                       <td className="px-4 py-2.5 text-slate-400 tabular-nums">{r.position}</td>
                       <th scope="row" className="py-2.5 text-left font-normal">
                         <span className="flex items-center gap-2.5">
-                          <TeamBadge tla={r.team.tla} />
+                          <TeamBadge team={r.team} />
                           <span className="text-white">{r.team.shortName}</span>
                         </span>
                       </th>
@@ -101,7 +93,7 @@ export function StandingsPage() {
             </div>
           </section>
         ))}
-        <Link to={competitionPath(competition)} className="inline-block text-green-500 hover:text-green-400">
+        <Link to={competitionPath(competition)} className="inline-block text-action-text hover:text-action-text-hover">
           Calendario e risultati {competition.name} →
         </Link>
       </div>

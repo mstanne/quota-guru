@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu } from "lucide-react";
+import { BookOpen, CircleDot, Dribbble, Gift, Goal, Menu, Shield } from "lucide-react";
 import { Link, NavLink } from "react-router";
 import { Button } from "./ui/button";
 import { Sheet, SheetHeader, SheetContent, SheetTitle } from "./ui/sheet";
@@ -11,18 +11,18 @@ import { ResponsibleBar } from "./responsible/ResponsibleGambling";
 const SHOW_AUTH = false;
 
 const NAV = [
-  { to: paths.calcio, label: "Calcio", icon: "\u26BD" },
-  { to: paths.tennis, label: "Tennis", icon: "\u{1F3BE}" },
-  { to: paths.basket, label: "Basket", icon: "\u{1F3C0}" },
-  { to: paths.sitiScommesse, label: "Siti Scommesse", icon: "\u{1F6E1}\uFE0F" },
-  { to: paths.bonus, label: "Bonus", icon: "\u{1F381}" },
-  { to: paths.guide, label: "Guide", icon: "\u{1F4DA}" },
+  { to: paths.calcio, label: "Calcio", icon: Goal },
+  { to: paths.tennis, label: "Tennis", icon: CircleDot },
+  { to: paths.basket, label: "Basket", icon: Dribbble },
+  { to: paths.sitiScommesse, label: "Siti Scommesse", icon: Shield },
+  { to: paths.bonus, label: "Bonus", icon: Gift },
+  { to: paths.guide, label: "Guide", icon: BookOpen },
 ];
 
 const desktopLink = ({ isActive }: { isActive: boolean }) =>
   `transition-colors cursor-pointer ${isActive ? "text-white" : "text-slate-300 hover:text-white"}`;
 const mobileLink = ({ isActive }: { isActive: boolean }) =>
-  `block w-full text-left px-4 py-3 rounded-md transition-colors cursor-pointer ${
+  `flex items-center gap-3 w-full text-left px-4 py-3 min-h-11 rounded-md transition-colors cursor-pointer ${
     isActive ? "text-white bg-slate-800" : "text-slate-300 hover:text-white hover:bg-slate-800"
   }`;
 
@@ -61,7 +61,7 @@ export function Header() {
                   >
                     <Link to={paths.accedi}>Accedi</Link>
                   </Button>
-                  <Button asChild className="bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer">
+                  <Button asChild className="bg-action hover:bg-action-hover text-action-foreground cursor-pointer">
                     <Link to={paths.registrati}>Registrati</Link>
                   </Button>
                 </div>
@@ -70,7 +70,7 @@ export function Header() {
                 variant="ghost"
                 size="icon"
                 aria-label="Apri il menu"
-                className="lg:hidden text-slate-300 cursor-pointer"
+                className="lg:hidden size-11 text-slate-200 hover:text-white hover:bg-slate-800 cursor-pointer"
                 onClick={() => setIsMenuOpen(true)}
               >
                 <Menu className="w-5 h-5" />
@@ -90,7 +90,8 @@ export function Header() {
           <nav aria-label="Menu mobile" className="mt-8 space-y-1">
             {NAV.map((item) => (
               <NavLink key={item.to} to={item.to} className={mobileLink} onClick={closeMenu}>
-                {item.icon} {item.label}
+                <item.icon className="w-5 h-5 text-slate-400" aria-hidden="true" />
+                {item.label}
               </NavLink>
             ))}
             {SHOW_AUTH && (
@@ -106,7 +107,10 @@ export function Header() {
                       Accedi
                     </Link>
                   </Button>
-                  <Button asChild className="w-full bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer">
+                  <Button
+                    asChild
+                    className="w-full bg-action hover:bg-action-hover text-action-foreground cursor-pointer"
+                  >
                     <Link to={paths.registrati} onClick={closeMenu}>
                       Registrati
                     </Link>

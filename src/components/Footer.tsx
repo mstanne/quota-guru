@@ -14,7 +14,7 @@ export function Footer() {
               <img src={logo} alt="" className="w-10 h-10" />
               <span className="text-white text-xl">Quota Guru</span>
             </div>
-            <p className="text-slate-400 text-sm">Confronta le migliori quote sportive in tempo reale</p>
+            <p className="text-slate-400 text-sm">Confronta le quote sportive degli operatori autorizzati</p>
           </div>
           <div>
             <h3 className="text-white mb-4">Sport</h3>
@@ -81,7 +81,9 @@ export function Footer() {
           <ResponsibleFooterBlock />
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-center md:text-left space-y-1">
-              <p className="text-slate-500 text-sm">© 2024 Quota Guru. Tutti i diritti riservati.</p>
+              <p className="text-slate-400 text-sm">
+                © {new Date().getFullYear()} Quota Guru. Tutti i diritti riservati.
+              </p>
               {/* Required by the football-data.org terms of use (section 7, Attribution) – do not remove. */}
               <p className="text-slate-400 text-sm">
                 Football data provided by the{" "}

@@ -123,6 +123,29 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/*
+ * Semantic palette (U5) – use these instead of raw colours in components:
+ *   action    → primary action / outbound CTA (one colour for every "do something" button)
+ *   action-text → text links
+ *   best      → best odd / positive result (the ONLY use of green)
+ *   live      → in-play / live states
+ *   warn      → responsible-gambling notices and warnings
+ *   selected  → active filter, tab or chip (neutral, not a call to action)
+ */
+@theme inline {
+  --color-action: var(--color-orange-500);
+  --color-action-hover: var(--color-orange-600);
+  --color-action-foreground: var(--color-slate-950);
+  --color-action-text: var(--color-orange-400);
+  --color-action-text-hover: var(--color-orange-300);
+  --color-best: var(--color-green-500);
+  --color-best-foreground: var(--color-slate-950);
+  --color-live: var(--color-red-600);
+  --color-warn: var(--color-amber-400);
+  --color-selected: var(--color-slate-100);
+  --color-selected-foreground: var(--color-slate-900);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -130,6 +153,11 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* U7: fixed-width digits so odds and scores line up in columns */
+  table {
+    font-variant-numeric: tabular-nums;
   }
 }
 

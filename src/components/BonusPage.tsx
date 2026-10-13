@@ -14,6 +14,7 @@ import {
   type OperatorData,
 } from "../data/operators";
 import { OfferDisclaimer, OperatorCta, OperatorLogo } from "./operator/OperatorUi";
+import { PageHeader, MetaItems } from "./layout/PageHeader";
 
 interface BonusPageProps {
   /** Offers to list (defaults to src/data/operators.ts). */
@@ -29,34 +30,15 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
 
   return (
     <div className="min-h-screen bg-slate-950">
-      <div className="bg-slate-900 py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Gift className="w-10 h-10 text-orange-500" />
-              <h1 className="text-white text-4xl md:text-5xl">Offerte a confronto</h1>
-            </div>
-            <p className="text-slate-400 text-lg mb-6">
-              Le condizioni delle offerte degli operatori autorizzati, una accanto all'altra: deposito minimo, requisiti
-              di giocata, scadenze e termini.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <div className="bg-slate-800 rounded-lg px-6 py-3">
-                <div className="text-green-500 text-2xl">{offers.length}</div>
-                <div className="text-slate-400 text-sm">Offerte confrontate</div>
-              </div>
-              <div className="bg-slate-800 rounded-lg px-6 py-3">
-                <div className="text-green-500 text-2xl">{operators.length}</div>
-                <div className="text-slate-400 text-sm">Operatori</div>
-              </div>
-              <div className="bg-slate-800 rounded-lg px-6 py-3">
-                <div className="text-green-500 text-2xl">ADM</div>
-                <div className="text-slate-400 text-sm">Solo concessionari autorizzati</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        icon={Gift}
+        title="Offerte a confronto"
+        subtitle="Le condizioni delle offerte degli operatori autorizzati, una accanto all'altra: deposito minimo, requisiti di giocata, scadenze e termini."
+        breadcrumb={[{ label: "Offerte" }]}
+        meta={
+          <MetaItems items={[`${offers.length} offerte`, `${operators.length} operatori`, "Solo concessionari ADM"]} />
+        }
+      />
       <div className="container mx-auto px-4 py-12">
         <Card className="bg-blue-500/10 border-blue-500/20 mb-8">
           <div className="p-6">
@@ -90,7 +72,7 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
                 onClick={() => setCategory(c.id)}
                 className={
                   category === c.id
-                    ? "bg-green-500 hover:bg-green-600 text-slate-950 cursor-pointer"
+                    ? "bg-selected hover:bg-selected text-selected-foreground cursor-pointer"
                     : "bg-slate-900 border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white cursor-pointer"
                 }
               >
@@ -124,7 +106,7 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
                                 <Star className="w-4 h-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
                                 <span className="text-slate-300">{operator.rating}</span>
                               </div>
-                              <p className="text-slate-500 text-xs">Concessione ADM {operator.admLicense}</p>
+                              <p className="text-slate-400 text-xs">Concessione ADM {operator.admLicense}</p>
                             </div>
                           </div>
                         </div>
@@ -151,7 +133,7 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
                             <ul className="space-y-1">
                               {offer.highlights.map((highlight, i) => (
                                 <li key={i} className="flex items-start gap-2 text-slate-300 text-sm">
-                                  <CircleCheckBig className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                                  <CircleCheckBig className="w-4 h-4 text-slate-300 flex-shrink-0 mt-0.5" />
                                   <span>{highlight}</span>
                                 </li>
                               ))}
@@ -168,13 +150,13 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
                           {offer.promoCode && (
                             <div className="bg-slate-800 rounded px-4 py-2 mb-3 w-full">
                               <div className="text-slate-400 text-xs mb-1">Codice promo</div>
-                              <div className="text-green-500 font-mono">{offer.promoCode}</div>
+                              <div className="text-white font-mono">{offer.promoCode}</div>
                             </div>
                           )}
                           <OperatorCta
                             operator={operator}
                             label="Vai al sito"
-                            className="w-full bg-green-500 hover:bg-green-600 text-slate-950 mb-2"
+                            className="w-full bg-action hover:bg-action-hover text-action-foreground mb-2"
                           />
                           <OfferDisclaimer termsUrl={offer.termsUrl} />
                         </div>
@@ -189,7 +171,7 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
                               <ul className="space-y-2 text-slate-400 text-sm">
                                 {offer.terms.map((term, i) => (
                                   <li key={i} className="flex items-start gap-2">
-                                    <CircleAlert className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
+                                    <CircleAlert className="w-4 h-4 text-slate-300 flex-shrink-0 mt-0.5" />
                                     <span>{term}</span>
                                   </li>
                                 ))}
@@ -244,7 +226,7 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
                       <OperatorCta
                         operator={operator}
                         label="Vai al sito"
-                        className="w-full bg-green-500 hover:bg-green-600 text-slate-950 mb-2"
+                        className="w-full bg-action hover:bg-action-hover text-action-foreground mb-2"
                       />
                       <OfferDisclaimer className="text-center" termsUrl={offer.termsUrl} />
                     </div>
@@ -256,10 +238,10 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
         </div>
         <Card className="bg-slate-900 border-slate-800">
           <div className="p-8">
-            <h2 className="text-white text-2xl mb-6">Domande Frequenti</h2>
+            <h2 className="text-white text-2xl mb-6">Domande frequenti</h2>
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="faq-1" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-green-500">
+                <AccordionTrigger className="text-white hover:text-white">
                   Cosa sono i requisiti di scommessa?
                 </AccordionTrigger>
                 <AccordionContent className="text-slate-400">
@@ -269,7 +251,7 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="faq-2" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-green-500">
+                <AccordionTrigger className="text-white hover:text-white">
                   Posso prelevare immediatamente il bonus?
                 </AccordionTrigger>
                 <AccordionContent className="text-slate-400">
@@ -279,9 +261,7 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="faq-3" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-green-500">
-                  Cosa sono le quote minime?
-                </AccordionTrigger>
+                <AccordionTrigger className="text-white hover:text-white">Cosa sono le quote minime?</AccordionTrigger>
                 <AccordionContent className="text-slate-400">
                   Le quote minime sono un requisito comune per i bonus. Ad esempio, se un bonus richiede quote minime di
                   1.50, le tue scommesse devono essere piazzate su eventi con quota pari o superiore a 1.50 per contare
@@ -289,9 +269,7 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="faq-4" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-green-500">
-                  I bonus hanno una scadenza?
-                </AccordionTrigger>
+                <AccordionTrigger className="text-white hover:text-white">I bonus hanno una scadenza?</AccordionTrigger>
                 <AccordionContent className="text-slate-400">
                   Sì, tutti i bonus hanno una scadenza. Generalmente varia da 7 a 30 giorni dalla ricezione del bonus. È
                   importante utilizzare il bonus e completare i requisiti entro questo periodo, altrimenti il bonus e le
@@ -299,7 +277,7 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="faq-5" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-green-500">
+                <AccordionTrigger className="text-white hover:text-white">
                   Posso usare più bonus contemporaneamente?
                 </AccordionTrigger>
                 <AccordionContent className="text-slate-400">
@@ -311,19 +289,19 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
             </Accordion>
           </div>
         </Card>
-        <Card className="mt-8 bg-orange-500/10 border-orange-500/20">
+        <Card className="mt-8 bg-warn/10 border-warn/30">
           <div className="p-6">
             <div className="flex items-start gap-3">
-              <CircleAlert className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
+              <CircleAlert className="w-6 h-6 text-slate-300 flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-orange-400 mb-2">Gioco responsabile</h3>
+                <h3 className="text-warn mb-2">Gioco responsabile</h3>
                 <p className="text-slate-300 text-sm mb-3">
                   Il gioco con vincita in denaro è vietato ai minori di {rg.minAge} anni e può causare dipendenza
                   patologica. Stabilisci un limite, non giocare mai più di quanto puoi permetterti di perdere e non
                   inseguire le perdite.
                 </p>
                 <p className="text-slate-400 text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
-                  <Phone className="w-4 h-4 text-orange-400" aria-hidden="true" />
+                  <Phone className="w-4 h-4 text-warn" aria-hidden="true" />
                   {rg.helplineName} ({rg.helplineOrg}):
                   <a href={rg.helplineHref} className="text-white underline underline-offset-2">
                     {rg.helplineNumber}

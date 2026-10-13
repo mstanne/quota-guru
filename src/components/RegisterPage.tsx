@@ -47,7 +47,7 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
                   id="fullName"
                   type="text"
                   placeholder="Mario Rossi"
-                  className="pl-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-500"
+                  className="pl-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-400"
                   {...register("fullName", {
                     required: "Nome completo richiesto",
                     minLength: {
@@ -69,7 +69,7 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
                   id="email"
                   type="email"
                   placeholder="tua.email@esempio.com"
-                  className="pl-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-500"
+                  className="pl-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-400"
                   {...register("email", {
                     required: "Email richiesta",
                     pattern: {
@@ -90,7 +90,7 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
                 <Input
                   id="dateOfBirth"
                   type="date"
-                  className="pl-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-500"
+                  className="pl-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-400"
                   {...register("dateOfBirth", {
                     required: "Data di nascita richiesta",
                     validate: (value) => {
@@ -113,7 +113,7 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
                   id="password"
                   type={showPassword ? "text" : "password"}
                   placeholder="Minimo 8 caratteri"
-                  className="pl-10 pr-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-500"
+                  className="pl-10 pr-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-400"
                   {...register("password", {
                     required: "Password richiesta",
                     minLength: {
@@ -147,7 +147,7 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
                   id="confirmPassword"
                   type={showConfirmPassword ? "text" : "password"}
                   placeholder="Ripeti la password"
-                  className="pl-10 pr-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-500"
+                  className="pl-10 pr-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-400"
                   {...register("confirmPassword", {
                     required: "Conferma password richiesta",
                     validate: (value) => value === password || "Le password non corrispondono",
@@ -173,7 +173,7 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
                   {...register("acceptAge", {
                     required: true,
                   })}
-                  className="border-slate-600 data-[state=checked]:bg-green-500 data-[state=checked]:border-green-500 mt-0.5"
+                  className="border-slate-600 data-[state=checked]:bg-action data-[state=checked]:border-action mt-0.5"
                 />
 
                 <label htmlFor="acceptAge" className="text-sm text-slate-300 cursor-pointer">
@@ -187,16 +187,16 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
                   {...register("acceptTerms", {
                     required: true,
                   })}
-                  className="border-slate-600 data-[state=checked]:bg-green-500 data-[state=checked]:border-green-500 mt-0.5"
+                  className="border-slate-600 data-[state=checked]:bg-action data-[state=checked]:border-action mt-0.5"
                 />
 
                 <label htmlFor="acceptTerms" className="text-sm text-slate-300 cursor-pointer">
                   Accetto i{" "}
-                  <a href="#" className="text-green-500 hover:text-green-400">
+                  <a href="#" className="text-action-text hover:text-action-text-hover">
                     Termini e Condizioni
                   </a>{" "}
                   e la{" "}
-                  <a href="#" className="text-green-500 hover:text-green-400">
+                  <a href="#" className="text-action-text hover:text-action-text-hover">
                     Privacy Policy
                   </a>
                 </label>
@@ -206,7 +206,7 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
                 <Checkbox
                   id="newsletter"
                   {...register("newsletter")}
-                  className="border-slate-600 data-[state=checked]:bg-green-500 data-[state=checked]:border-green-500 mt-0.5"
+                  className="border-slate-600 data-[state=checked]:bg-action data-[state=checked]:border-action mt-0.5"
                 />
 
                 <label htmlFor="newsletter" className="text-sm text-slate-300 cursor-pointer">
@@ -214,7 +214,7 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
                 </label>
               </div>
             </div>
-            <Button type="submit" className="w-full bg-green-500 hover:bg-green-600 text-slate-950">
+            <Button type="submit" className="w-full bg-action hover:bg-action-hover text-action-foreground">
               Crea Account
             </Button>
             <div className="relative">

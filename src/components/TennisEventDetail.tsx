@@ -128,7 +128,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
   const getFormColor = (result) => {
     switch (result) {
       case "W":
-        return "bg-green-500";
+        return "bg-best";
       case "L":
         return "bg-red-500";
       default:
@@ -145,7 +145,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
           </Button>
           <div className="bg-slate-800 rounded-lg p-6 mb-6">
             <div className="flex items-center gap-2 mb-4">
-              <Badge variant="secondary" className="bg-green-500/20 text-green-400 border-green-500/30">
+              <Badge variant="secondary" className="bg-slate-800 text-slate-200 border-slate-700">
                 {match.tournament}
               </Badge>
               <Badge variant="secondary" className="bg-slate-700 text-slate-300">
@@ -162,7 +162,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
               <div className="text-center md:text-right">
                 <div className="text-5xl mb-3">🎾</div>
                 <h1 className="text-white text-3xl mb-2">{match.player1}</h1>
-                <Badge className="bg-blue-500 text-white mb-2">Ranking #{playerStats.player1.ranking}</Badge>
+                <Badge className="bg-slate-700 text-white mb-2">Ranking #{playerStats.player1.ranking}</Badge>
                 <div className="flex items-center justify-center md:justify-end gap-1">
                   {player1Form.map((result, index) => (
                     <Badge key={index} className={`${getFormColor(result)} text-white text-xs`}>
@@ -177,7 +177,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
               <div className="text-center md:text-left">
                 <div className="text-5xl mb-3">🎾</div>
                 <h1 className="text-white text-3xl mb-2">{match.player2}</h1>
-                <Badge className="bg-orange-500 text-white mb-2">Ranking #{playerStats.player2.ranking}</Badge>
+                <Badge className="bg-slate-700 text-white mb-2">Ranking #{playerStats.player2.ranking}</Badge>
                 <div className="flex items-center justify-center md:justify-start gap-1">
                   {player2Form.map((result, index) => (
                     <Badge key={index} className={`${getFormColor(result)} text-white text-xs`}>
@@ -232,8 +232,8 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
               </div>
             </Card>
             <Card className="bg-slate-800 border-slate-700 p-4">
-              <div className="text-slate-400 text-sm mb-1">Quota Migliore</div>
-              <div className="text-green-500 text-2xl flex items-center gap-1">
+              <div className="text-slate-400 text-sm mb-1">Quota migliore</div>
+              <div className="text-best text-2xl tabular-nums flex items-center gap-1">
                 <TrendingUp className="w-5 h-5" />
                 {formatOdd(getBestOdds(winnerOdds, "player1"))}
               </div>
@@ -246,41 +246,41 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
           <TabsList className="bg-slate-800 border-slate-700 grid grid-cols-2 md:grid-cols-5 gap-2">
             <TabsTrigger
               value="winner"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
             >
               Vincente
             </TabsTrigger>
             <TabsTrigger
               value="sets"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
             >
               Set Betting
             </TabsTrigger>
             <TabsTrigger
               value="broadcast"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
             >
-              Dove Vederla
+              Dove vederla
             </TabsTrigger>
             <TabsTrigger
               value="stats"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
             >
               Statistiche
             </TabsTrigger>
             <TabsTrigger
               value="h2h"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
             >
-              Testa a Testa
+              Precedenti
             </TabsTrigger>
           </TabsList>
           <TabsContent value="winner">
             <Card className="bg-slate-900 border-slate-800">
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <Target className="w-6 h-6 text-green-500" />
-                  <h2 className="text-white text-2xl">Quote Vincente</h2>
+                  <Target className="w-6 h-6 text-slate-300" />
+                  <h2 className="text-white text-2xl">Quote vincente</h2>
                 </div>
                 <Table>
                   <TableHeader>
@@ -305,7 +305,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                           <TableCell>
                             <button
                               onClick={() => handleAddToBetSlip(row.operatorId, match.player1, row.player1, "Vincente")}
-                              className={`w-full px-4 py-3 rounded text-center transition-all ${isBestPlayer1 ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestPlayer1 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.player1)}
                             </button>
@@ -313,7 +313,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                           <TableCell>
                             <button
                               onClick={() => handleAddToBetSlip(row.operatorId, match.player2, row.player2, "Vincente")}
-                              className={`w-full px-4 py-3 rounded text-center transition-all ${isBestPlayer2 ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestPlayer2 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.player2)}
                             </button>
@@ -330,8 +330,8 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
             <Card className="bg-slate-900 border-slate-800">
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <ChartColumn className="w-6 h-6 text-green-500" />
-                  <h2 className="text-white text-2xl">Set Betting - 2-0</h2>
+                  <ChartColumn className="w-6 h-6 text-slate-300" />
+                  <h2 className="text-white text-2xl">Risultato set 2-0</h2>
                 </div>
                 <Table>
                   <TableHeader>
@@ -362,9 +362,9 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                           <TableCell>
                             <button
                               onClick={() =>
-                                handleAddToBetSlip(row.operatorId, `${match.player1} 2-0`, row.player1, "Set Betting")
+                                handleAddToBetSlip(row.operatorId, `${match.player1} 2-0`, row.player1, "Risultato set")
                               }
-                              className={`w-full px-4 py-3 rounded text-center transition-all ${isBestPlayer1 ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestPlayer1 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.player1)}
                             </button>
@@ -372,9 +372,9 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                           <TableCell>
                             <button
                               onClick={() =>
-                                handleAddToBetSlip(row.operatorId, `${match.player2} 2-0`, row.player2, "Set Betting")
+                                handleAddToBetSlip(row.operatorId, `${match.player2} 2-0`, row.player2, "Risultato set")
                               }
-                              className={`w-full px-4 py-3 rounded text-center transition-all ${isBestPlayer2 ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestPlayer2 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.player2)}
                             </button>
@@ -391,13 +391,13 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
             <Card className="bg-slate-900 border-slate-800">
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <Tv className="w-6 h-6 text-green-500" />
-                  <h2 className="text-white text-2xl">Dove Vedere la Partita</h2>
+                  <Tv className="w-6 h-6 text-slate-300" />
+                  <h2 className="text-white text-2xl">Dove vedere la partita</h2>
                 </div>
                 <div className="space-y-6">
                   <div className="bg-slate-800 rounded-lg p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="bg-blue-500 rounded p-2">
+                      <div className="bg-slate-700 rounded p-2">
                         <Tv className="w-5 h-5 text-white" />
                       </div>
                       <div>
@@ -419,11 +419,11 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                   </div>
                   <div className="bg-slate-800 rounded-lg p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="bg-green-500 rounded p-2">
+                      <div className="bg-slate-700 rounded p-2">
                         <Target className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-white">Streaming Online</h3>
+                        <h3 className="text-white">Streaming online</h3>
                         <p className="text-slate-400 text-sm">Guarda in streaming</p>
                       </div>
                     </div>
@@ -442,9 +442,9 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                   <div className="bg-slate-800 rounded-lg p-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <div className="text-slate-400 text-sm mb-2">Orario Inizio Match</div>
+                        <div className="text-slate-400 text-sm mb-2">Orario di inizio</div>
                         <div className="flex items-center gap-2">
-                          <Clock className="w-5 h-5 text-green-500" />
+                          <Clock className="w-5 h-5 text-slate-300" />
                           <span className="text-white text-xl">{broadcast.matchStart}</span>
                         </div>
                       </div>
@@ -454,15 +454,15 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                       </div>
                     </div>
                   </div>
-                  <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-4">
+                  <div className="bg-warn/10 border border-warn/30 rounded-lg p-4">
                     <div className="flex items-start gap-3">
-                      <Info className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" />
+                      <Info className="w-5 h-5 text-warn flex-shrink-0 mt-0.5" />
                       <div className="text-slate-300 text-sm">
                         <p className="mb-2">
                           Le informazioni sulla trasmissione possono essere soggette a modifiche. Verifica sempre sui
                           canali ufficiali prima dell'inizio della partita.
                         </p>
-                        <p className="text-orange-400">
+                        <p className="text-warn">
                           Attenzione: utilizza solo piattaforme legali e autorizzate per guardare le partite. Lo
                           streaming illegale è un reato e danneggia il mondo dello sport.
                         </p>
@@ -476,7 +476,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
           <TabsContent value="stats">
             <Card className="bg-slate-900 border-slate-800">
               <div className="p-6">
-                <h2 className="text-white text-2xl mb-6">Statistiche Giocatori</h2>
+                <h2 className="text-white text-2xl mb-6">Statistiche dei giocatori</h2>
                 <div className="space-y-6">
                   <div>
                     <div className="flex justify-between items-center mb-2">
@@ -489,14 +489,14 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                     </div>
                     <div className="h-2 bg-slate-800 rounded-full overflow-hidden flex">
                       <div
-                        className="bg-blue-500"
+                        className="bg-slate-200"
                         style={{
                           width: `${(playerStats.player1.winRate / (playerStats.player1.winRate + playerStats.player2.winRate)) * 100}%`,
                         }}
                       />
 
                       <div
-                        className="bg-orange-500"
+                        className="bg-slate-500"
                         style={{
                           width: `${(playerStats.player2.winRate / (playerStats.player1.winRate + playerStats.player2.winRate)) * 100}%`,
                         }}
@@ -514,14 +514,14 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                     </div>
                     <div className="h-2 bg-slate-800 rounded-full overflow-hidden flex">
                       <div
-                        className="bg-green-500"
+                        className="bg-slate-200"
                         style={{
                           width: `${(playerStats.player1.acesAvg / (playerStats.player1.acesAvg + playerStats.player2.acesAvg)) * 100}%`,
                         }}
                       />
 
                       <div
-                        className="bg-orange-500"
+                        className="bg-slate-500"
                         style={{
                           width: `${(playerStats.player2.acesAvg / (playerStats.player1.acesAvg + playerStats.player2.acesAvg)) * 100}%`,
                         }}
@@ -539,14 +539,14 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                     </div>
                     <div className="h-2 bg-slate-800 rounded-full overflow-hidden flex">
                       <div
-                        className="bg-purple-500"
+                        className="bg-slate-400"
                         style={{
                           width: `${(playerStats.player1.firstServeWin / (playerStats.player1.firstServeWin + playerStats.player2.firstServeWin)) * 100}%`,
                         }}
                       />
 
                       <div
-                        className="bg-orange-500"
+                        className="bg-slate-500"
                         style={{
                           width: `${(playerStats.player2.firstServeWin / (playerStats.player1.firstServeWin + playerStats.player2.firstServeWin)) * 100}%`,
                         }}
@@ -560,7 +560,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
           <TabsContent value="h2h">
             <Card className="bg-slate-900 border-slate-800">
               <div className="p-6">
-                <h2 className="text-white text-2xl mb-6">Ultimi Scontri Diretti</h2>
+                <h2 className="text-white text-2xl mb-6">Ultimi scontri diretti</h2>
                 <div className="space-y-3">
                   {headToHead.map((game, index) => (
                     <div key={index} className="bg-slate-800 rounded-lg p-4 flex items-center justify-between">
@@ -571,7 +571,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                           {" vs "}
                           {game.player2}
                         </div>
-                        <div className="text-slate-500 text-sm">{game.tournament}</div>
+                        <div className="text-slate-400 text-sm">{game.tournament}</div>
                       </div>
                       <div className="text-2xl text-white font-bold">{game.score}</div>
                     </div>
@@ -586,15 +586,15 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
             <div className="flex items-start gap-3">
               <Info className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-blue-400 mb-2">Analisi degli Esperti</h3>
+                <h3 className="text-blue-400 mb-2">Analisi della redazione</h3>
                 <p className="text-slate-300 text-sm mb-3">
                   Finale da sogno tra due dei migliori tennisti al mondo. Djokovic cerca il suo ennesimo titolo Masters
                   1000, mentre Alcaraz vuole confermarsi sul rosso dopo la vittoria al Roland Garros. Match equilibrato
                   e spettacolare.
                 </p>
                 <div className="bg-slate-800 rounded p-3 inline-block">
-                  <div className="text-slate-400 text-xs mb-1">La nostra scelta</div>
-                  <div className="text-green-500 flex items-center gap-2">
+                  <div className="text-slate-400 text-xs mb-1">Il pronostico della redazione</div>
+                  <div className="text-white flex items-center gap-2">
                     <Target className="w-4 h-4" />
                     <span>[PRONOSTICO] @ [QUOTA_PRONOSTICO]</span>
                   </div>

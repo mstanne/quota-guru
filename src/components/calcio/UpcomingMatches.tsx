@@ -21,14 +21,14 @@ export function UpcomingMatches({ limit = 8 }: { limit?: number }) {
         <div className="flex flex-wrap items-end justify-between gap-3 mb-6">
           <div>
             <h2 id="prossime-partite" className="flex items-center gap-2 text-white text-2xl mb-1">
-              <CalendarDays className="w-6 h-6 text-green-500" aria-hidden="true" />
+              <CalendarDays className="w-6 h-6 text-slate-300" aria-hidden="true" />
               Prossime partite
             </h2>
             <DataUpdatedNote />
           </div>
           <Link
             to="/calcio"
-            className="px-4 py-2 rounded-md border border-slate-700 text-slate-200 hover:border-green-500 hover:text-white text-sm"
+            className="px-4 py-2 rounded-md border border-slate-700 text-slate-200 hover:border-slate-500 hover:text-white text-sm"
           >
             Tutto il calendario
           </Link>

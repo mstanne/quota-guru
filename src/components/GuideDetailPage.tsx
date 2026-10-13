@@ -20,7 +20,7 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <Badge className="bg-green-500 text-white">Per Principianti</Badge>
+              <Badge className="bg-slate-700 text-white">Per principianti</Badge>
               <div className="flex items-center gap-2 text-slate-400">
                 <Clock className="w-4 h-4" />
                 <span className="text-sm">8 min di lettura</span>
@@ -63,40 +63,40 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
           <div className="prose prose-invert prose-lg max-w-none">
             <Card className="bg-slate-900 border-slate-800 mb-8">
               <div className="p-6">
-                <h2 className="text-white text-2xl mb-4">Indice dei Contenuti</h2>
+                <h2 className="text-white text-2xl mb-4">Indice dei contenuti</h2>
                 <ul className="space-y-2 text-slate-300">
                   <li>
-                    <a href="#intro" className="hover:text-green-500 transition-colors cursor-pointer">
+                    <a href="#intro" className="hover:text-white transition-colors cursor-pointer">
                       1. Introduzione alle Scommesse Sportive
                     </a>
                   </li>
                   <li>
-                    <a href="#quote" className="hover:text-green-500 transition-colors cursor-pointer">
+                    <a href="#quote" className="hover:text-white transition-colors cursor-pointer">
                       2. Come Funzionano le Quote
                     </a>
                   </li>
                   <li>
-                    <a href="#tipologie" className="hover:text-green-500 transition-colors cursor-pointer">
+                    <a href="#tipologie" className="hover:text-white transition-colors cursor-pointer">
                       3. Tipologie di Scommesse
                     </a>
                   </li>
                   <li>
-                    <a href="#strategie" className="hover:text-green-500 transition-colors cursor-pointer">
+                    <a href="#strategie" className="hover:text-white transition-colors cursor-pointer">
                       4. Strategie di Base
                     </a>
                   </li>
                   <li>
-                    <a href="#bankroll" className="hover:text-green-500 transition-colors cursor-pointer">
-                      5. Gestione del Bankroll
+                    <a href="#bankroll" className="hover:text-white transition-colors cursor-pointer">
+                      5. Gestione del budget
                     </a>
                   </li>
                   <li>
-                    <a href="#errori" className="hover:text-green-500 transition-colors cursor-pointer">
+                    <a href="#errori" className="hover:text-white transition-colors cursor-pointer">
                       6. Errori Comuni da Evitare
                     </a>
                   </li>
                   <li>
-                    <a href="#responsabile" className="hover:text-green-500 transition-colors cursor-pointer">
+                    <a href="#responsabile" className="hover:text-white transition-colors cursor-pointer">
                       7. Gioco Responsabile
                     </a>
                   </li>
@@ -115,8 +115,8 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                 denaro su tale previsione. Se la previsione si rivela corretta, si vince un importo determinato dalla
                 quota associata alla scommessa.
               </p>
-              <Card className="bg-orange-500/10 border-orange-500/20 p-6 mb-4">
-                <p className="text-orange-400 mb-2">⚠️ Importante</p>
+              <Card className="bg-warn/10 border-warn/30 p-6 mb-4">
+                <p className="text-warn mb-2">⚠️ Importante</p>
                 <p className="text-slate-300 text-sm">
                   Le scommesse devono essere considerate un intrattenimento, non un modo per guadagnare denaro.
                   Scommetti solo ciò che puoi permetterti di perdere.
@@ -134,7 +134,7 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                   <h3 className="text-white mb-2">Quote Decimali</h3>
                   <p className="text-slate-400 text-sm mb-3">Le più utilizzate in Europa</p>
                   <div className="bg-slate-800 rounded p-3 text-center">
-                    <span className="text-green-500 text-2xl">2.50</span>
+                    <span className="text-best text-2xl">2.50</span>
                   </div>
                   <p className="text-slate-400 text-sm mt-3">Vincita = Puntata × Quota</p>
                 </Card>
@@ -142,7 +142,7 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                   <h3 className="text-white mb-2">Quote Frazionarie</h3>
                   <p className="text-slate-400 text-sm mb-3">Comuni nel Regno Unito</p>
                   <div className="bg-slate-800 rounded p-3 text-center">
-                    <span className="text-green-500 text-2xl">3/2</span>
+                    <span className="text-best text-2xl">3/2</span>
                   </div>
                   <p className="text-slate-400 text-sm mt-3">Per ogni 2€ vinci 3€</p>
                 </Card>
@@ -150,7 +150,7 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                   <h3 className="text-white mb-2">Quote Americane</h3>
                   <p className="text-slate-400 text-sm mb-3">Utilizzate negli USA</p>
                   <div className="bg-slate-800 rounded p-3 text-center">
-                    <span className="text-green-500 text-2xl">+150</span>
+                    <span className="text-best text-2xl">+150</span>
                   </div>
                   <p className="text-slate-400 text-sm mt-3">Basate su 100$ di puntata</p>
                 </Card>
@@ -205,28 +205,28 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
               </p>
               <ul className="space-y-3 text-slate-300 mb-4">
                 <li className="flex items-start gap-3">
-                  <span className="text-green-500 mt-1">✓</span>
+                  <span className="text-best mt-1">✓</span>
                   <span>
                     <strong className="text-white">Informati sempre:</strong>
                     {" Analizza statistiche, formazioni, infortuni e condizioni meteo prima di scommettere."}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-green-500 mt-1">✓</span>
+                  <span className="text-best mt-1">✓</span>
                   <span>
                     <strong className="text-white">Specializzati:</strong>
                     {" \xC8 meglio conoscere bene pochi campionati piuttosto che scommettere su tutto."}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-green-500 mt-1">✓</span>
+                  <span className="text-best mt-1">✓</span>
                   <span>
                     <strong className="text-white">Confronta le quote:</strong>
                     {" Usa sempre un comparatore per trovare le migliori quote disponibili."}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-green-500 mt-1">✓</span>
+                  <span className="text-best mt-1">✓</span>
                   <span>
                     <strong className="text-white">Value betting:</strong>
                     {" Cerca scommesse in cui la quota offerta \xE8 superiore alla probabilit\xE0 reale dell'evento."}
@@ -235,12 +235,12 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
               </ul>
             </section>
             <section id="bankroll" className="mb-8">
-              <h2 className="text-white text-3xl mb-4">5. Gestione del Bankroll</h2>
+              <h2 className="text-white text-3xl mb-4">5. Gestione del budget</h2>
               <p className="text-slate-300 mb-4">
                 La gestione del bankroll è forse l'aspetto più importante per avere successo nel lungo periodo:
               </p>
-              <Card className="bg-green-500/10 border-green-500/20 p-6 mb-4">
-                <h3 className="text-green-400 mb-3">Regola del 1-5%</h3>
+              <Card className="bg-slate-800/60 border-slate-700 p-6 mb-4">
+                <h3 className="text-white mb-3">Regola del 1-5%</h3>
                 <p className="text-slate-300 text-sm">
                   Non scommettere mai più dell'1-5% del tuo bankroll totale su una singola scommessa. Questo ti permette
                   di resistere a una serie di sconfitte senza esaurire il budget.
@@ -280,7 +280,7 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
             </section>
             <section id="responsabile" className="mb-8">
               <h2 className="text-white text-3xl mb-4">7. Gioco Responsabile</h2>
-              <Card className="bg-orange-500/10 border-orange-500/20 p-6">
+              <Card className="bg-warn/10 border-warn/30 p-6">
                 <p className="text-slate-300 mb-4">
                   Il gioco deve rimanere un divertimento. Se senti di perdere il controllo, chiedi aiuto.
                 </p>
@@ -302,13 +302,13 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
           </div>
           <Card className="bg-slate-900 border-slate-800 mt-12">
             <div className="p-6">
-              <h3 className="text-white text-xl mb-4">Guide Correlate</h3>
+              <h3 className="text-white text-xl mb-4">Guide correlate</h3>
               <div className="space-y-3">
                 <a
                   href="#"
                   className="flex items-center gap-3 p-3 rounded hover:bg-slate-800 transition-colors cursor-pointer"
                 >
-                  <BookOpen className="w-5 h-5 text-green-500" />
+                  <BookOpen className="w-5 h-5 text-slate-300" />
                   <div>
                     <p className="text-white text-sm">Come Leggere le Quote Sportive</p>
                     <p className="text-slate-400 text-xs">5 min di lettura</p>
@@ -318,9 +318,9 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                   href="#"
                   className="flex items-center gap-3 p-3 rounded hover:bg-slate-800 transition-colors cursor-pointer"
                 >
-                  <BookOpen className="w-5 h-5 text-green-500" />
+                  <BookOpen className="w-5 h-5 text-slate-300" />
                   <div>
-                    <p className="text-white text-sm">Strategie di Betting sul Calcio</p>
+                    <p className="text-white text-sm">Strategie per le scommesse sul calcio</p>
                     <p className="text-slate-400 text-xs">10 min di lettura</p>
                   </div>
                 </a>
@@ -328,9 +328,9 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                   href="#"
                   className="flex items-center gap-3 p-3 rounded hover:bg-slate-800 transition-colors cursor-pointer"
                 >
-                  <BookOpen className="w-5 h-5 text-green-500" />
+                  <BookOpen className="w-5 h-5 text-slate-300" />
                   <div>
-                    <p className="text-white text-sm">Gestione del Bankroll</p>
+                    <p className="text-white text-sm">Gestione del budget</p>
                     <p className="text-slate-400 text-xs">6 min di lettura</p>
                   </div>
                 </a>

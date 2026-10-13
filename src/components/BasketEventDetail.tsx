@@ -193,7 +193,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
   const getFormColor = (result) => {
     switch (result) {
       case "W":
-        return "bg-green-500";
+        return "bg-best";
       case "L":
         return "bg-red-500";
       default:
@@ -210,7 +210,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
           </Button>
           <div className="bg-slate-800 rounded-lg p-6 mb-6">
             <div className="flex items-center gap-2 mb-4">
-              <Badge variant="secondary" className="bg-orange-500/20 text-orange-400 border-orange-500/30">
+              <Badge variant="secondary" className="bg-slate-800 text-slate-300 border-slate-700">
                 {match.competition}
               </Badge>
               <Badge variant="secondary" className="bg-slate-700 text-slate-300">
@@ -295,8 +295,8 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
               </div>
             </Card>
             <Card className="bg-slate-800 border-slate-700 p-4">
-              <div className="text-slate-400 text-sm mb-1">Quota Migliore</div>
-              <div className="text-green-500 text-2xl flex items-center gap-1">
+              <div className="text-slate-400 text-sm mb-1">Quota migliore</div>
+              <div className="text-best text-2xl tabular-nums flex items-center gap-1">
                 <TrendingUp className="w-5 h-5" />
                 {formatOdd(getBestOdds(winnerOdds, "home"))}
               </div>
@@ -309,47 +309,47 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
           <TabsList className="bg-slate-800 border-slate-700 grid grid-cols-3 md:grid-cols-6 gap-2">
             <TabsTrigger
               value="winner"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
             >
               Vincente
             </TabsTrigger>
             <TabsTrigger
               value="ou"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
             >
               Over/Under
             </TabsTrigger>
             <TabsTrigger
               value="lineups"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
             >
               Formazioni
             </TabsTrigger>
             <TabsTrigger
               value="broadcast"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
             >
-              Dove Vederla
+              Dove vederla
             </TabsTrigger>
             <TabsTrigger
               value="stats"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
             >
               Statistiche
             </TabsTrigger>
             <TabsTrigger
               value="h2h"
-              className="text-white data-[state=active]:bg-green-500 data-[state=active]:text-slate-950"
+              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
             >
-              Testa a Testa
+              Precedenti
             </TabsTrigger>
           </TabsList>
           <TabsContent value="winner">
             <Card className="bg-slate-900 border-slate-800">
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <Target className="w-6 h-6 text-green-500" />
-                  <h2 className="text-white text-2xl">Quote Vincente</h2>
+                  <Target className="w-6 h-6 text-slate-300" />
+                  <h2 className="text-white text-2xl">Quote vincente</h2>
                 </div>
                 <Table>
                   <TableHeader>
@@ -374,7 +374,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                           <TableCell>
                             <button
                               onClick={() => handleAddToBetSlip(row.operatorId, match.homeTeam, row.home, "Vincente")}
-                              className={`w-full px-4 py-3 rounded text-center transition-all ${isBestHome ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestHome ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.home)}
                             </button>
@@ -382,7 +382,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                           <TableCell>
                             <button
                               onClick={() => handleAddToBetSlip(row.operatorId, match.awayTeam, row.away, "Vincente")}
-                              className={`w-full px-4 py-3 rounded text-center transition-all ${isBestAway ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestAway ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.away)}
                             </button>
@@ -399,7 +399,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
             <Card className="bg-slate-900 border-slate-800">
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <ChartColumn className="w-6 h-6 text-green-500" />
+                  <ChartColumn className="w-6 h-6 text-slate-300" />
                   <h2 className="text-white text-2xl">Over/Under 225.5 Punti</h2>
                 </div>
                 <Table>
@@ -425,7 +425,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                           <TableCell>
                             <button
                               onClick={() => handleAddToBetSlip(row.operatorId, "Over 225.5", row.home, "Over/Under")}
-                              className={`w-full px-4 py-3 rounded text-center transition-all ${isBestOver ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestOver ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.home)}
                             </button>
@@ -433,7 +433,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                           <TableCell>
                             <button
                               onClick={() => handleAddToBetSlip(row.operatorId, "Under 225.5", row.away, "Over/Under")}
-                              className={`w-full px-4 py-3 rounded text-center transition-all ${isBestUnder ? "bg-green-500 text-slate-950 hover:bg-green-600" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestUnder ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.away)}
                             </button>
@@ -450,14 +450,14 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
             <Card className="bg-slate-900 border-slate-800">
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <Shirt className="w-6 h-6 text-green-500" />
-                  <h2 className="text-white text-2xl">Probabili Formazioni</h2>
+                  <Shirt className="w-6 h-6 text-slate-300" />
+                  <h2 className="text-white text-2xl">Probabili formazioni</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-slate-800 rounded-lg p-6">
                     <div className="text-center mb-6">
                       <div className="text-white text-xl mb-2">{match.homeTeam}</div>
-                      <Badge className="bg-blue-500 text-white">Quintetto Base</Badge>
+                      <Badge className="bg-slate-700 text-white">Quintetto base</Badge>
                     </div>
                     <div className="space-y-3">
                       {lineups.home.starters.map((player, index) => (
@@ -477,7 +477,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {lineups.home.keyPlayers.map((player, index) => (
-                          <Badge key={index} className="bg-green-500/20 text-green-400 border-green-500/30">
+                          <Badge key={index} className="bg-slate-800 text-slate-200 border-slate-700">
                             {player}
                           </Badge>
                         ))}
@@ -489,7 +489,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                     </div>
                     {lineups.home.doubts.length > 0 && (
                       <div className="mt-4 pt-4 border-t border-slate-700">
-                        <div className="text-orange-400 text-sm mb-2 flex items-center gap-2">
+                        <div className="text-warn text-sm mb-2 flex items-center gap-2">
                           <Info className="w-4 h-4" />
                           Dubbi e Novità
                         </div>
@@ -507,7 +507,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                   <div className="bg-slate-800 rounded-lg p-6">
                     <div className="text-center mb-6">
                       <div className="text-white text-xl mb-2">{match.awayTeam}</div>
-                      <Badge className="bg-orange-500 text-white">Quintetto Base</Badge>
+                      <Badge className="bg-slate-700 text-white">Quintetto base</Badge>
                     </div>
                     <div className="space-y-3">
                       {lineups.away.starters.map((player, index) => (
@@ -527,7 +527,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {lineups.away.keyPlayers.map((player, index) => (
-                          <Badge key={index} className="bg-green-500/20 text-green-400 border-green-500/30">
+                          <Badge key={index} className="bg-slate-800 text-slate-200 border-slate-700">
                             {player}
                           </Badge>
                         ))}
@@ -539,7 +539,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                     </div>
                     {lineups.away.doubts.length > 0 && (
                       <div className="mt-4 pt-4 border-t border-slate-700">
-                        <div className="text-orange-400 text-sm mb-2 flex items-center gap-2">
+                        <div className="text-warn text-sm mb-2 flex items-center gap-2">
                           <Info className="w-4 h-4" />
                           Dubbi e Novità
                         </div>
@@ -573,13 +573,13 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
             <Card className="bg-slate-900 border-slate-800">
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <Tv className="w-6 h-6 text-green-500" />
-                  <h2 className="text-white text-2xl">Dove Vedere la Partita</h2>
+                  <Tv className="w-6 h-6 text-slate-300" />
+                  <h2 className="text-white text-2xl">Dove vedere la partita</h2>
                 </div>
                 <div className="space-y-6">
                   <div className="bg-slate-800 rounded-lg p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="bg-blue-500 rounded p-2">
+                      <div className="bg-slate-700 rounded p-2">
                         <Tv className="w-5 h-5 text-white" />
                       </div>
                       <div>
@@ -601,11 +601,11 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                   </div>
                   <div className="bg-slate-800 rounded-lg p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="bg-green-500 rounded p-2">
+                      <div className="bg-slate-700 rounded p-2">
                         <Target className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-white">Streaming Online</h3>
+                        <h3 className="text-white">Streaming online</h3>
                         <p className="text-slate-400 text-sm">Guarda in streaming</p>
                       </div>
                     </div>
@@ -626,7 +626,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                       <div>
                         <div className="text-slate-400 text-sm mb-2">Orario Palla a Due</div>
                         <div className="flex items-center gap-2">
-                          <Clock className="w-5 h-5 text-green-500" />
+                          <Clock className="w-5 h-5 text-slate-300" />
                           <span className="text-white text-xl">{broadcast.tipoff}</span>
                         </div>
                       </div>
@@ -636,15 +636,15 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                       </div>
                     </div>
                   </div>
-                  <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-4">
+                  <div className="bg-warn/10 border border-warn/30 rounded-lg p-4">
                     <div className="flex items-start gap-3">
-                      <Info className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" />
+                      <Info className="w-5 h-5 text-warn flex-shrink-0 mt-0.5" />
                       <div className="text-slate-300 text-sm">
                         <p className="mb-2">
                           Le informazioni sulla trasmissione possono essere soggette a modifiche. Verifica sempre sui
                           canali ufficiali prima dell'inizio della partita.
                         </p>
-                        <p className="text-orange-400">
+                        <p className="text-warn">
                           Attenzione: utilizza solo piattaforme legali e autorizzate per guardare le partite. Lo
                           streaming illegale è un reato e danneggia il mondo dello sport.
                         </p>
@@ -658,7 +658,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
           <TabsContent value="stats">
             <Card className="bg-slate-900 border-slate-800">
               <div className="p-6">
-                <h2 className="text-white text-2xl mb-6">Statistiche Squadre</h2>
+                <h2 className="text-white text-2xl mb-6">Statistiche delle squadre</h2>
                 <div className="space-y-6">
                   <div>
                     <div className="flex justify-between items-center mb-2">
@@ -671,14 +671,14 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                     </div>
                     <div className="h-2 bg-slate-800 rounded-full overflow-hidden flex">
                       <div
-                        className="bg-blue-500"
+                        className="bg-slate-200"
                         style={{
                           width: `${(teamStats.home.points / (teamStats.home.points + teamStats.away.points)) * 100}%`,
                         }}
                       />
 
                       <div
-                        className="bg-orange-500"
+                        className="bg-slate-500"
                         style={{
                           width: `${(teamStats.away.points / (teamStats.home.points + teamStats.away.points)) * 100}%`,
                         }}
@@ -696,14 +696,14 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                     </div>
                     <div className="h-2 bg-slate-800 rounded-full overflow-hidden flex">
                       <div
-                        className="bg-green-500"
+                        className="bg-slate-200"
                         style={{
                           width: `${(teamStats.home.assists / (teamStats.home.assists + teamStats.away.assists)) * 100}%`,
                         }}
                       />
 
                       <div
-                        className="bg-orange-500"
+                        className="bg-slate-500"
                         style={{
                           width: `${(teamStats.away.assists / (teamStats.home.assists + teamStats.away.assists)) * 100}%`,
                         }}
@@ -721,14 +721,14 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                     </div>
                     <div className="h-2 bg-slate-800 rounded-full overflow-hidden flex">
                       <div
-                        className="bg-purple-500"
+                        className="bg-slate-400"
                         style={{
                           width: `${(teamStats.home.rebounds / (teamStats.home.rebounds + teamStats.away.rebounds)) * 100}%`,
                         }}
                       />
 
                       <div
-                        className="bg-orange-500"
+                        className="bg-slate-500"
                         style={{
                           width: `${(teamStats.away.rebounds / (teamStats.home.rebounds + teamStats.away.rebounds)) * 100}%`,
                         }}
@@ -742,7 +742,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
           <TabsContent value="h2h">
             <Card className="bg-slate-900 border-slate-800">
               <div className="p-6">
-                <h2 className="text-white text-2xl mb-6">Ultimi Scontri Diretti</h2>
+                <h2 className="text-white text-2xl mb-6">Ultimi scontri diretti</h2>
                 <div className="space-y-3">
                   {headToHead.map((game, index) => (
                     <div key={index} className="bg-slate-800 rounded-lg p-4 flex items-center justify-between">
@@ -753,7 +753,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                           {" vs "}
                           {game.away}
                         </div>
-                        <div className="text-slate-500 text-sm">{game.competition}</div>
+                        <div className="text-slate-400 text-sm">{game.competition}</div>
                       </div>
                       <div className="text-2xl text-white font-bold">{game.score}</div>
                     </div>
@@ -768,14 +768,14 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
             <div className="flex items-start gap-3">
               <Info className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-blue-400 mb-2">Analisi degli Esperti</h3>
+                <h3 className="text-blue-400 mb-2">Analisi della redazione</h3>
                 <p className="text-slate-300 text-sm mb-3">
                   Sfida stellare tra due delle squadre più competitive della NBA. I Lakers fanno affidamento sulla
                   coppia LeBron-Davis, mentre i Celtics vantano un roster più profondo con Tatum e Brown.
                 </p>
                 <div className="bg-slate-800 rounded p-3 inline-block">
-                  <div className="text-slate-400 text-xs mb-1">La nostra scelta</div>
-                  <div className="text-green-500 flex items-center gap-2">
+                  <div className="text-slate-400 text-xs mb-1">Il pronostico della redazione</div>
+                  <div className="text-white flex items-center gap-2">
                     <Target className="w-4 h-4" />
                     <span>[PRONOSTICO] @ [QUOTA_PRONOSTICO]</span>
                   </div>

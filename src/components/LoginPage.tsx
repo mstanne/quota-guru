@@ -52,7 +52,7 @@ export function LoginPage({
                   id="email"
                   type="email"
                   placeholder="tua.email@esempio.com"
-                  className="pl-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-500"
+                  className="pl-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-400"
                   {...register("email", {
                     required: "Email richiesta",
                     pattern: {
@@ -74,7 +74,7 @@ export function LoginPage({
                   id="password"
                   type={showPassword ? "text" : "password"}
                   placeholder="Inserisci la tua password"
-                  className="pl-10 pr-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-500"
+                  className="pl-10 pr-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-400"
                   {...register("password", {
                     required: "Password richiesta",
                     minLength: {
@@ -99,7 +99,7 @@ export function LoginPage({
                 <Checkbox
                   id="rememberMe"
                   {...register("rememberMe")}
-                  className="border-slate-600 data-[state=checked]:bg-green-500 data-[state=checked]:border-green-500"
+                  className="border-slate-600 data-[state=checked]:bg-action data-[state=checked]:border-action"
                 />
 
                 <label htmlFor="rememberMe" className="text-sm text-slate-300 cursor-pointer">
@@ -109,12 +109,12 @@ export function LoginPage({
               <button
                 type="button"
                 onClick={onForgotPassword}
-                className="text-sm text-green-500 hover:text-green-400 transition-colors cursor-pointer"
+                className="text-sm text-action-text hover:text-action-text-hover transition-colors cursor-pointer"
               >
                 Password dimenticata?
               </button>
             </div>
-            <Button type="submit" className="w-full bg-green-500 hover:bg-green-600 text-slate-950">
+            <Button type="submit" className="w-full bg-action hover:bg-action-hover text-action-foreground">
               Accedi
             </Button>
             <div className="relative">
@@ -172,7 +172,7 @@ export function LoginPage({
             Non hai un account?{" "}
             <button
               onClick={onRegister}
-              className="text-green-500 hover:text-green-400 transition-colors cursor-pointer"
+              className="text-action-text hover:text-action-text-hover transition-colors cursor-pointer"
             >
               Registrati ora
             </button>

@@ -30,14 +30,14 @@ const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 function SectionTitle({ icon: Icon, children }: { icon: typeof Info; children: React.ReactNode }) {
   return (
     <h2 className="flex items-center gap-2 text-white text-xl mb-4">
-      <Icon className="w-5 h-5 text-green-500" aria-hidden="true" />
+      <Icon className="w-5 h-5 text-slate-300" aria-hidden="true" />
       {children}
     </h2>
   );
 }
 
 const FORM_STYLE = {
-  V: "bg-green-500 text-slate-950",
+  V: "bg-best text-best-foreground",
   N: "bg-slate-500 text-white",
   P: "bg-red-500 text-white",
 } as const;
@@ -155,15 +155,13 @@ function MiniStandings({ competition, match }: { competition: Competition; match
               <Fragment key={r.team.id}>
                 {gap && (
                   <tr aria-hidden="true">
-                    <td colSpan={5} className="py-1 text-center text-slate-500">
+                    <td colSpan={5} className="py-1 text-center text-slate-400">
                       ⋯
                     </td>
                   </tr>
                 )}
-                <tr className={`border-b border-slate-800 last:border-0 ${highlight ? "bg-green-500/10" : ""}`}>
-                  <td className={`py-2 tabular-nums ${highlight ? "text-green-500" : "text-slate-400"}`}>
-                    {r.position}
-                  </td>
+                <tr className={`border-b border-slate-800 last:border-0 ${highlight ? "bg-slate-700/50" : ""}`}>
+                  <td className={`py-2 tabular-nums ${highlight ? "text-white" : "text-slate-400"}`}>{r.position}</td>
                   <td className={`py-2 ${highlight ? "text-white font-medium" : "text-slate-300"}`}>
                     {r.team.shortName}
                   </td>
@@ -178,7 +176,10 @@ function MiniStandings({ competition, match }: { competition: Competition; match
           })}
         </tbody>
       </table>
-      <Link to={standingsPath(competition)} className="inline-block mt-4 text-green-500 hover:text-green-400 text-sm">
+      <Link
+        to={standingsPath(competition)}
+        className="inline-block mt-4 text-action-text hover:text-action-text-hover text-sm"
+      >
         Classifica completa {competition.name} →
       </Link>
     </section>
@@ -208,6 +209,10 @@ export function CalcioMatchPage() {
       <div className="bg-slate-900 border-b border-slate-800">
         <div className="container mx-auto px-4 py-6">
           <nav aria-label="Percorso" className="flex flex-wrap items-center gap-1.5 text-sm text-slate-400 mb-6">
+            <Link to="/" className="hover:text-white">
+              Home
+            </Link>
+            <span aria-hidden="true">›</span>
             <Link to="/calcio" className="hover:text-white">
               Calcio
             </Link>
@@ -238,14 +243,14 @@ export function CalcioMatchPage() {
           </h1>
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 max-w-3xl mx-auto">
             <div className="flex flex-col items-center text-center gap-3">
-              <TeamBadge tla={match.homeTeam.tla} size="lg" />
+              <TeamBadge team={match.homeTeam} size="lg" />
               <span className="text-white text-lg sm:text-2xl">{match.homeTeam.shortName}</span>
             </div>
             <div className="text-center">
               {finished || live ? (
                 <>
                   <div className="text-white text-4xl sm:text-5xl tabular-nums">
-                    {ft.home ?? 0} <span className="text-slate-500">–</span> {ft.away ?? 0}
+                    {ft.home ?? 0} <span className="text-slate-400">–</span> {ft.away ?? 0}
                   </div>
                   {ht.home !== null && (
                     <div className="text-slate-400 text-sm mt-1">
@@ -261,7 +266,7 @@ export function CalcioMatchPage() {
               )}
             </div>
             <div className="flex flex-col items-center text-center gap-3">
-              <TeamBadge tla={match.awayTeam.tla} size="lg" />
+              <TeamBadge team={match.awayTeam} size="lg" />
               <span className="text-white text-lg sm:text-2xl">{match.awayTeam.shortName}</span>
             </div>
           </div>
@@ -290,7 +295,7 @@ export function CalcioMatchPage() {
                 </div>
               ))}
             </div>
-            <p className="text-slate-500 text-xs mt-4">
+            <p className="text-slate-400 text-xs mt-4">
               Ultime partite di {competition.name} presenti nei dati, dalla più recente.
             </p>
           </section>
@@ -306,7 +311,7 @@ export function CalcioMatchPage() {
                     <span className="w-24 text-slate-400 tabular-nums">{formatShortDate(p.utcDate)}</span>
                     <span className="flex-1 text-white">
                       {p.homeTeam.shortName}{" "}
-                      <span className="tabular-nums text-green-500 mx-1">
+                      <span className="tabular-nums text-white mx-1">
                         {p.score.fullTime.home}–{p.score.fullTime.away}
                       </span>{" "}
                       {p.awayTeam.shortName}
@@ -357,7 +362,7 @@ export function CalcioMatchPage() {
         {sameRound.length > 0 && (
           <section className="lg:col-span-3" aria-labelledby="stesso-turno">
             <h2 id="stesso-turno" className="flex items-center gap-2 text-white text-xl mb-4">
-              <CalendarDays className="w-5 h-5 text-green-500" aria-hidden="true" />
+              <CalendarDays className="w-5 h-5 text-slate-300" aria-hidden="true" />
               Altre partite – {roundLabel(match) || competition.name}
             </h2>
             <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">

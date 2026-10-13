@@ -19,6 +19,7 @@ import {
 } from "../../lib/football";
 import { MatchRow } from "./MatchRow";
 import { NotFoundPage } from "../NotFoundPage";
+import { PageHeader } from "../layout/PageHeader";
 
 type Filter = "upcoming" | "today" | "tomorrow" | "week" | "results";
 const FILTERS: { id: Filter; label: string }[] = [
@@ -77,43 +78,30 @@ export function CalcioPage() {
   const chip = (active: boolean) =>
     `px-3 py-1.5 rounded-md text-sm border transition-colors ${
       active
-        ? "bg-green-500 border-green-500 text-slate-950"
-        : "border-slate-700 text-slate-300 hover:border-green-500 hover:text-white"
+        ? "bg-selected border-selected text-selected-foreground"
+        : "border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white"
     }`;
 
   return (
     <div className="min-h-screen bg-slate-950">
-      <div className="bg-slate-900 py-10">
-        <div className="container mx-auto px-4">
-          <nav aria-label="Percorso" className="text-sm text-slate-400 mb-3">
-            <Link to="/calcio" className="hover:text-white">
-              Calcio
-            </Link>
-            {competition && (
-              <>
-                {" "}
-                <span aria-hidden="true">›</span> <span className="text-slate-300">{competition.name}</span>
-              </>
-            )}
-          </nav>
-          <div className="flex items-center gap-3 mb-3">
-            <Trophy className="w-8 h-8 text-green-500" aria-hidden="true" />
-            <h1 className="text-white text-3xl sm:text-4xl">
-              {competition ? `${competition.name}: calendario e risultati` : "Calcio: calendario e risultati"}
-            </h1>
-          </div>
-          <DataUpdatedNote />
-          {competition && competition.standings.length > 0 && (
-            <Link
-              to={standingsPath(competition)}
-              className="inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-green-500"
-            >
-              <ListOrdered className="w-4 h-4 text-green-500" aria-hidden="true" />
-              Classifica {competition.name}
-            </Link>
-          )}
-        </div>
-      </div>
+      <PageHeader
+        icon={Trophy}
+        title={competition ? `${competition.name}: calendario e risultati` : "Calcio: calendario e risultati"}
+        breadcrumb={
+          competition ? [{ label: "Calcio", to: "/calcio" }, { label: competition.name }] : [{ label: "Calcio" }]
+        }
+        meta={<DataUpdatedNote />}
+      >
+        {competition && competition.standings.length > 0 && (
+          <Link
+            to={standingsPath(competition)}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
+          >
+            <ListOrdered className="w-4 h-4 text-slate-300" aria-hidden="true" />
+            Classifica {competition.name}
+          </Link>
+        )}
+      </PageHeader>
 
       <div className="container mx-auto px-4 py-8">
         <nav aria-label="Competizioni" className="flex flex-wrap gap-2 mb-4">
@@ -154,7 +142,7 @@ export function CalcioPage() {
 
         {limitedGroups.length === 0 ? (
           <div className="rounded-xl border border-slate-800 bg-slate-900 p-10 text-center">
-            <CalendarDays className="w-8 h-8 text-slate-500 mx-auto mb-3" aria-hidden="true" />
+            <CalendarDays className="w-8 h-8 text-slate-400 mx-auto mb-3" aria-hidden="true" />
             <p className="text-white mb-1">Nessuna partita per questo filtro</p>
             <p className="text-slate-400 text-sm">Prova un altro periodo o un'altra competizione.</p>
           </div>

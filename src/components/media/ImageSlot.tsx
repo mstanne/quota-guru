@@ -26,7 +26,7 @@ export function ImageSlot({
       title={placeholder}
       data-placeholder={placeholder}
       className={cn(
-        "flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-slate-800 to-slate-900 text-slate-500",
+        "flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-slate-800 to-slate-900 text-slate-400",
         className,
       )}
     >

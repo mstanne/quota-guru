@@ -84,17 +84,19 @@ export function HeroSection({ matches = defaultFeaturedMatches, resolveOperator 
     <div className="bg-slate-900 py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <TrendingUp className="w-6 h-6 text-green-500" />
-            <h1 className="text-white text-3xl sm:text-4xl">Le Migliori Quote Sportive</h1>
-          </div>
-          <p className="text-slate-400 text-lg">Confronta in tempo reale e trova sempre la quota più alta</p>
+          <h1 className="text-white text-3xl sm:text-4xl mb-3">
+            <TrendingUp className="inline-block w-7 h-7 text-slate-300 mr-2 align-[-0.1em]" aria-hidden="true" />
+            Le migliori quote sportive a confronto
+          </h1>
+          <p className="text-slate-400 text-lg">
+            Confronta le quote degli operatori autorizzati e trova la più alta per ogni esito
+          </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {matches.map((match) => (
             <Card
               key={match.id}
-              className="bg-slate-800 border-slate-700 hover:border-green-500 transition-all duration-300 cursor-pointer overflow-hidden"
+              className="bg-slate-800 border-slate-700 hover:border-slate-500 transition-all duration-300 cursor-pointer overflow-hidden"
             >
               <div className="p-5">
                 <div className="flex items-center justify-between mb-4">
@@ -114,37 +116,39 @@ export function HeroSection({ matches = defaultFeaturedMatches, resolveOperator 
                 <p className="text-slate-400 text-sm mb-4">{match.time}</p>
                 <div className="grid grid-cols-3 gap-2 mb-4">
                   <div
-                    className="bg-slate-900 rounded p-2 text-center border border-slate-700 hover:border-green-500 transition-colors cursor-pointer"
+                    className="bg-slate-900 rounded p-2 text-center border border-slate-700 hover:border-slate-500 transition-colors cursor-pointer"
                     onClick={() => handleOddsClick(match, "1")}
                   >
                     <div className="text-slate-400 text-xs mb-1">1</div>
-                    <div className="text-green-500">{formatOdd(bestEntry(match.odds, "home").value)}</div>
-                    <div className="text-slate-500 text-xs mt-1 truncate">
+                    <div className="text-best tabular-nums">{formatOdd(bestEntry(match.odds, "home").value)}</div>
+                    <div className="text-slate-400 text-sm mt-1 truncate">
                       {resolveOperator(bestEntry(match.odds, "home").operatorId).name}
                     </div>
                   </div>
                   <div
-                    className="bg-slate-900 rounded p-2 text-center border border-slate-700 hover:border-green-500 transition-colors cursor-pointer"
+                    className="bg-slate-900 rounded p-2 text-center border border-slate-700 hover:border-slate-500 transition-colors cursor-pointer"
                     onClick={() => handleOddsClick(match, "X")}
                   >
                     <div className="text-slate-400 text-xs mb-1">X</div>
-                    <div className="text-green-500">{formatOdd(bestEntry(match.odds, "draw").value)}</div>
-                    <div className="text-slate-500 text-xs mt-1 truncate">
+                    <div className="text-best tabular-nums">{formatOdd(bestEntry(match.odds, "draw").value)}</div>
+                    <div className="text-slate-400 text-sm mt-1 truncate">
                       {resolveOperator(bestEntry(match.odds, "draw").operatorId).name}
                     </div>
                   </div>
                   <div
-                    className="bg-slate-900 rounded p-2 text-center border border-slate-700 hover:border-green-500 transition-colors cursor-pointer"
+                    className="bg-slate-900 rounded p-2 text-center border border-slate-700 hover:border-slate-500 transition-colors cursor-pointer"
                     onClick={() => handleOddsClick(match, "2")}
                   >
                     <div className="text-slate-400 text-xs mb-1">2</div>
-                    <div className="text-green-500">{formatOdd(bestEntry(match.odds, "away").value)}</div>
-                    <div className="text-slate-500 text-xs mt-1 truncate">
+                    <div className="text-best tabular-nums">{formatOdd(bestEntry(match.odds, "away").value)}</div>
+                    <div className="text-slate-400 text-sm mt-1 truncate">
                       {resolveOperator(bestEntry(match.odds, "away").operatorId).name}
                     </div>
                   </div>
                 </div>
-                <Button className="w-full bg-green-500 hover:bg-green-600 text-slate-950">Vedi tutte le quote</Button>
+                <Button className="w-full bg-action hover:bg-action-hover text-action-foreground">
+                  Dettagli partita
+                </Button>
               </div>
             </Card>
           ))}

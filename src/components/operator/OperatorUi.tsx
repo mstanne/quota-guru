@@ -38,7 +38,7 @@ export function OperatorLogo({ operator, width, height, className }: OperatorLog
       title={token}
       data-placeholder={token}
       className={cn(
-        "shrink-0 rounded-md border border-dashed border-slate-600 bg-slate-800/60 flex items-center justify-center overflow-hidden text-slate-500 leading-none text-center select-none",
+        "shrink-0 rounded-md border border-dashed border-slate-600 bg-slate-800/60 flex items-center justify-center overflow-hidden text-slate-400 leading-none text-center select-none",
         className,
       )}
       style={{ width, height }}
@@ -109,7 +109,7 @@ export function OperatorCta({
 /** Legal line under offers/CTAs. */
 export function OfferDisclaimer({ className, termsUrl }: { className?: string; termsUrl?: string }) {
   return (
-    <p className={cn("text-slate-500 text-xs", className)}>
+    <p className={cn("text-slate-400 text-xs", className)}>
       18+ · Si applicano i termini dell'operatore
       {termsUrl && (
         <>

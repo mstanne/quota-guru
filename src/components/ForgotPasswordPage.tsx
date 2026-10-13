@@ -25,8 +25,8 @@ export function ForgotPasswordPage({ onBack, onLogin }: { onBack?: () => void; o
         <Card className="bg-slate-800 border-slate-700">
           <div className="p-8 text-center space-y-6">
             <div className="flex justify-center">
-              <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center">
-                <CircleCheckBig className="w-8 h-8 text-green-500" />
+              <div className="w-16 h-16 bg-best/20 rounded-full flex items-center justify-center">
+                <CircleCheckBig className="w-8 h-8 text-slate-300" />
               </div>
             </div>
             <div>
@@ -34,7 +34,7 @@ export function ForgotPasswordPage({ onBack, onLogin }: { onBack?: () => void; o
               <p className="text-slate-300">Ti abbiamo inviato un link per reimpostare la password all'indirizzo:</p>
               <p className="text-slate-400 text-sm mt-2">{getValues("email")}</p>
             </div>
-            <Button onClick={onLogin} className="w-full bg-green-500 hover:bg-green-600 text-slate-950">
+            <Button onClick={onLogin} className="w-full bg-action hover:bg-action-hover text-action-foreground">
               Torna al Login
             </Button>
           </div>
@@ -72,7 +72,7 @@ export function ForgotPasswordPage({ onBack, onLogin }: { onBack?: () => void; o
                   id="email"
                   type="email"
                   placeholder="tua.email@esempio.com"
-                  className="pl-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-500"
+                  className="pl-10 bg-slate-900 border-slate-700 text-white placeholder:text-slate-400"
                   {...register("email", {
                     required: "Email richiesta",
                     pattern: {
@@ -84,7 +84,7 @@ export function ForgotPasswordPage({ onBack, onLogin }: { onBack?: () => void; o
               </div>
               {errors.email && <p className="text-red-400 text-sm">{String(errors.email.message)}</p>}
             </div>
-            <Button type="submit" className="w-full bg-green-500 hover:bg-green-600 text-slate-950">
+            <Button type="submit" className="w-full bg-action hover:bg-action-hover text-action-foreground">
               Invia Link di Reset
             </Button>
             <div className="relative">
