@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+<title>Indicatore del budget mensile e scudo con i limiti di gioco attivi</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0F1A2C"/><stop offset="1" stop-color="#0A1220"/>
+  </linearGradient>
+  <radialGradient id="glowO"><stop offset="0" stop-color="#FB6801" stop-opacity=".22"/><stop offset="1" stop-color="#FB6801" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowG"><stop offset="0" stop-color="#06BA55" stop-opacity=".18"/><stop offset="1" stop-color="#06BA55" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#EEF0F3" fill-opacity=".07"/></pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="url(#dots)"/>
+<circle cx="1330" cy="170" r="520" fill="url(#glowO)"/>
+<circle cx="260" cy="780" r="520" fill="url(#glowG)"/>
+<g font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="700">
+<path d="M220.0,560.0 A300,300 0 0 1 427.3,274.7" fill="none" stroke="#06BA55" stroke-width="54" stroke-linecap="butt" stroke-opacity="1.0"/><path d="M437.3,271.6 A300,300 0 0 1 696.3,317.3" fill="none" stroke="#FBBF24" stroke-width="54" stroke-linecap="butt" stroke-opacity="1.0"/><path d="M704.7,323.6 A300,300 0 0 1 820.0,560.0" fill="none" stroke="#FB6801" stroke-width="54" stroke-linecap="butt" stroke-opacity="1.0"/><line x1="520" y1="560" x2="462.8" y2="337.2" stroke="#EEF0F3" stroke-width="14" stroke-linecap="round"/><circle cx="520" cy="560" r="26" fill="#EEF0F3"/><text x="520" y="670" font-size="52" fill="#EEF0F3" text-anchor="middle" font-weight="700" fill-opacity="1">12 € su 30 €</text><text x="520" y="720" font-size="30" fill="#7F93AE" text-anchor="middle" font-weight="600" fill-opacity="1">budget del mese</text><path d="M1160,200 L1310,256 L1310,390 C1310,500 1240,570 1160,610 C1080,570 1010,500 1010,390 L1010,256 Z" fill="#16243B" stroke="#06BA55" stroke-width="8"/><path d="M1100,405 L1145,450 L1230,360" fill="none" stroke="#06BA55" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/><rect x="970" y="650" width="380" height="50" rx="25" fill="#16243B" stroke="#2A3D59" stroke-width="2"/><text x="996" y="684" font-size="26" fill="#EEF0F3" text-anchor="start" font-weight="600" fill-opacity="1">Limite di deposito</text><rect x="1266" y="659" width="64" height="32" rx="16" fill="#06BA55"/><circle cx="1314" cy="675" r="12" fill="#EEF0F3"/><rect x="970" y="714" width="380" height="50" rx="25" fill="#16243B" stroke="#2A3D59" stroke-width="2"/><text x="996" y="748" font-size="26" fill="#EEF0F3" text-anchor="start" font-weight="600" fill-opacity="1">Promemoria tempo</text><rect x="1266" y="723" width="64" height="32" rx="16" fill="#06BA55"/><circle cx="1314" cy="739" r="12" fill="#EEF0F3"/>
+</g>
+</svg>

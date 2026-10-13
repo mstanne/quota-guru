@@ -1,0 +1,316 @@
+"""Generates the guide illustrations (src/assets/guides/<slug>.svg).
+
+Original vector artwork in the QuotaGuru palette, one per guide. Sport/education themed only:
+no casino imagery, no cash piles, no "big win" messages.
+
+Canvas 1600x900 (16:9). The pages crop it with object-cover (cover ~2.4:1, cards ~2:1, mobile ~1.6:1),
+so all important content stays inside the safe area x 120-1480, y 130-770.
+
+Usage:  python3 scripts/generate-guide-images.py        (writes only inside src/assets/guides)
+"""
+from math import cos, pi, sin
+from pathlib import Path
+
+OUT = Path(__file__).resolve().parent.parent / "src" / "assets" / "guides"
+W, H = 1600, 900
+
+NAVY = "#0F1A2C"
+DEEP = "#0A1220"
+PANEL = "#16243B"
+LINE = "#2A3D59"
+LIGHT = "#EEF0F3"
+GREY = "#BECED8"
+MUTED = "#7F93AE"
+ORANGE = "#FB6801"
+GREEN = "#06BA55"
+AMBER = "#FBBF24"
+RED = "#E5484D"
+FONT = "Inter, 'Segoe UI', Roboto, Arial, sans-serif"
+
+
+def frame(body: str, title: str) -> str:
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img">
+<title>{title}</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="{NAVY}"/><stop offset="1" stop-color="{DEEP}"/>
+  </linearGradient>
+  <radialGradient id="glowO"><stop offset="0" stop-color="{ORANGE}" stop-opacity=".22"/><stop offset="1" stop-color="{ORANGE}" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowG"><stop offset="0" stop-color="{GREEN}" stop-opacity=".18"/><stop offset="1" stop-color="{GREEN}" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="{LIGHT}" fill-opacity=".07"/></pattern>
+</defs>
+<rect width="{W}" height="{H}" fill="url(#bg)"/>
+<rect width="{W}" height="{H}" fill="url(#dots)"/>
+<circle cx="1330" cy="170" r="520" fill="url(#glowO)"/>
+<circle cx="260" cy="780" r="520" fill="url(#glowG)"/>
+<g font-family="{FONT}" font-weight="700">
+{body}
+</g>
+</svg>
+"""
+
+
+def panel(x, y, w, h, r=28, fill=PANEL, stroke=LINE):
+    return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}" stroke-width="2"/>'
+
+
+def text(x, y, s, size=40, fill=LIGHT, anchor="start", weight=700, opacity=1):
+    return (f'<text x="{x}" y="{y}" font-size="{size}" fill="{fill}" text-anchor="{anchor}" '
+            f'font-weight="{weight}" fill-opacity="{opacity}">{s}</text>')
+
+
+def chip(x, y, w, h, label, fill, color=DEEP, size=34):
+    return (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{h/2}" fill="{fill}"/>'
+            + text(x + w / 2, y + h / 2 + size * 0.36, label, size, color, "middle"))
+
+
+def football(cx, cy, r):
+    """Classic ball: white disc, central pentagon and five side patches."""
+    def pent(px, py, pr, rot):
+        pts = " ".join(f"{px + pr * cos(rot + k * 2 * pi / 5):.1f},{py + pr * sin(rot + k * 2 * pi / 5):.1f}" for k in range(5))
+        return f'<polygon points="{pts}" fill="{NAVY}"/>'
+    out = [f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{LIGHT}"/>', pent(cx, cy, r * 0.32, -pi / 2)]
+    for k in range(5):
+        a = -pi / 2 + k * 2 * pi / 5
+        ix, iy = cx + r * 0.32 * cos(a), cy + r * 0.32 * sin(a)
+        ox, oy = cx + r * 0.78 * cos(a), cy + r * 0.78 * sin(a)
+        out.append(f'<line x1="{ix:.1f}" y1="{iy:.1f}" x2="{ox:.1f}" y2="{oy:.1f}" stroke="{NAVY}" stroke-width="{r*0.05:.1f}"/>')
+        out.append(pent(cx + r * 1.0 * cos(a), cy + r * 1.0 * sin(a), r * 0.26, a + pi))
+    clip = f"ball{cx}{cy}"
+    return (f'<clipPath id="{clip}"><circle cx="{cx}" cy="{cy}" r="{r}"/></clipPath>'
+            f'<g clip-path="url(#{clip})">{"".join(out)}</g>'
+            f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{NAVY}" stroke-width="3"/>')
+
+
+def pitch(x, y, w, h, color=GREEN, op=0.55):
+    s = f'stroke="{color}" stroke-opacity="{op}" stroke-width="4" fill="none"'
+    bw, bh = w * 0.16, h * 0.56
+    sw, sh = w * 0.06, h * 0.28
+    return "".join([
+        f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" fill="{GREEN}" fill-opacity=".06" stroke="{color}" stroke-opacity="{op}" stroke-width="4"/>',
+        f'<line x1="{x+w/2}" y1="{y}" x2="{x+w/2}" y2="{y+h}" {s}/>',
+        f'<circle cx="{x+w/2}" cy="{y+h/2}" r="{h*0.17}" {s}/>',
+        f'<rect x="{x}" y="{y+(h-bh)/2}" width="{bw}" height="{bh}" {s}/>',
+        f'<rect x="{x+w-bw}" y="{y+(h-bh)/2}" width="{bw}" height="{bh}" {s}/>',
+        f'<rect x="{x}" y="{y+(h-sh)/2}" width="{sw}" height="{sh}" {s}/>',
+        f'<rect x="{x+w-sw}" y="{y+(h-sh)/2}" width="{sw}" height="{sh}" {s}/>',
+    ])
+
+
+def arc(cx, cy, r, a0, a1, color, width, cap="butt", op=1.0):
+    """Arc from a0 to a1 (degrees, 0 = right, clockwise)."""
+    x0, y0 = cx + r * cos(a0 * pi / 180), cy + r * sin(a0 * pi / 180)
+    x1, y1 = cx + r * cos(a1 * pi / 180), cy + r * sin(a1 * pi / 180)
+    large = 1 if (a1 - a0) % 360 > 180 else 0
+    return (f'<path d="M{x0:.1f},{y0:.1f} A{r},{r} 0 {large} 1 {x1:.1f},{y1:.1f}" fill="none" stroke="{color}" '
+            f'stroke-width="{width}" stroke-linecap="{cap}" stroke-opacity="{op}"/>')
+
+
+# ---------------------------------------------------------------------------------------------- scenes
+
+def guida_completa():
+    b = [pitch(130, 200, 700, 500), football(480, 450, 92)]
+    # dashed pass towards the slip
+    b.append(f'<path d="M590,410 C700,300 800,300 880,330" fill="none" stroke="{ORANGE}" stroke-width="6" stroke-dasharray="4 18" stroke-linecap="round"/>')
+    b.append(f'<polygon points="880,312 912,334 878,352" fill="{ORANGE}"/>')
+    # slip card
+    b.append(panel(930, 180, 520, 540))
+    b.append(f'<rect x="930" y="180" width="520" height="84" rx="28" fill="{ORANGE}"/><rect x="930" y="236" width="520" height="28" fill="{ORANGE}"/>')
+    b.append(text(970, 236, "1X2 · Esito finale", 34, DEEP))
+    rows = [("1", "Casa", "2,50", True), ("X", "Pareggio", "3,20", False), ("2", "Ospite", "2,90", False)]
+    for i, (k, lab, q, sel) in enumerate(rows):
+        y = 300 + i * 96
+        b.append(f'<rect x="960" y="{y}" width="460" height="76" rx="16" fill="{DEEP}" stroke="{GREEN if sel else LINE}" stroke-width="{4 if sel else 2}"/>')
+        b.append(text(990, y + 50, k, 34, GREY))
+        b.append(text(1040, y + 50, lab, 32, LIGHT, weight=600))
+        b.append(chip(1290, y + 14, 110, 48, q, GREEN if sel else LINE, DEEP if sel else LIGHT, 30))
+    b.append(f'<line x1="960" y1="606" x2="1420" y2="606" stroke="{LINE}" stroke-width="2"/>')
+    b.append(text(960, 664, "10 € × 2,50", 34, GREY, weight=600))
+    b.append(text(1420, 664, "= 25 €", 38, GREEN, "end"))
+    return frame("".join(b), "Pallone su un campo da calcio e schedina con quota 2,50")
+
+
+def come_leggere_quote():
+    b = []
+    tiles = [("1", "2,10", "47,6%"), ("X", "3,40", "29,4%"), ("2", "3,60", "27,8%")]
+    for i, (k, q, p) in enumerate(tiles):
+        x = 140 + i * 250
+        b.append(panel(x, 250, 220, 300, 26))
+        b.append(text(x + 110, 312, k, 40, MUTED, "middle"))
+        b.append(text(x + 110, 418, q, 76, LIGHT, "middle"))
+        b.append(f'<line x1="{x+30}" y1="458" x2="{x+190}" y2="458" stroke="{LINE}" stroke-width="2"/>')
+        b.append(text(x + 110, 512, p, 36, GREEN if i == 0 else GREY, "middle", 600))
+    b.append(text(140, 640, "1 ÷ quota = probabilità implicita", 38, GREY, weight=600))
+    # donut: segments proportional to 104.8 overall, margin highlighted
+    cx, cy, r = 1170, 440, 210
+    b.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{PANEL}" stroke-width="64"/>')
+    a = -90.0
+    for share, color in [(47.6, GREEN), (29.4, GREY), (23.0, MUTED)]:
+        span = share / 100 * 360
+        b.append(arc(cx, cy, r, a + 1.5, a + span - 1.5, color, 64))
+        a += span
+    b.append(arc(cx, cy, r + 58, -90 - 17.3, -90, ORANGE, 22, "round"))  # 4.8% of 360 ≈ 17.3°
+    b.append(text(cx, cy + 6, "104,8%", 66, LIGHT, "middle"))
+    b.append(text(cx, cy + 56, "somma delle probabilità", 26, MUTED, "middle", 600))
+    b.append(chip(cx - 260, 160, 220, 56, "margine 4,8%", ORANGE, DEEP, 28))
+    return frame("".join(b), "Tre quote 1X2 con le probabilità implicite e un grafico ad anello del margine")
+
+
+def analizzare_partita():
+    b = [pitch(130, 190, 760, 520, LIGHT, 0.35)]
+    home = [(260, 450), (390, 300), (390, 600), (540, 380), (540, 530)]
+    away = [(800, 450), (650, 300), (650, 600), (670, 450)]
+    for x, y in home:
+        b.append(f'<circle cx="{x}" cy="{y}" r="26" fill="{ORANGE}"/>')
+    for x, y in away:
+        b.append(f'<g stroke="{GREY}" stroke-width="10" stroke-linecap="round"><line x1="{x-20}" y1="{y-20}" x2="{x+20}" y2="{y+20}"/><line x1="{x+20}" y1="{y-20}" x2="{x-20}" y2="{y+20}"/></g>')
+    for d in ["M560,370 C620,300 700,250 790,260", "M410,610 C520,690 640,680 720,620"]:
+        b.append(f'<path d="{d}" fill="none" stroke="{GREEN}" stroke-width="6" stroke-dasharray="16 14" stroke-linecap="round"/>')
+    b.append(f'<polygon points="788,240 822,262 786,282" fill="{GREEN}"/>')
+    b.append(f'<polygon points="712,596 742,628 704,640" fill="{GREEN}"/>')
+    # stats panel
+    b.append(panel(960, 190, 490, 520))
+    b.append(text(1000, 258, "Ultime 5", 34, LIGHT))
+    form = [GREEN, GREEN, MUTED, ORANGE, GREEN]
+    for i, c in enumerate(form):
+        b.append(f'<rect x="{1000 + i*82}" y="286" width="64" height="64" rx="14" fill="{c}"/>')
+    b.append(text(1000, 430, "Gol fatti / subiti", 30, GREY, weight=600))
+    bars = [(150, 90), (110, 120), (170, 60), (130, 100)]
+    for i, (f, s) in enumerate(bars):
+        x = 1010 + i * 108
+        b.append(f'<rect x="{x}" y="{670-f}" width="38" height="{f}" rx="8" fill="{GREEN}"/>')
+        b.append(f'<rect x="{x+44}" y="{670-s}" width="38" height="{s}" rx="8" fill="{MUTED}"/>')
+    b.append(f'<line x1="1000" y1="672" x2="1420" y2="672" stroke="{LINE}" stroke-width="3"/>')
+    return frame("".join(b), "Lavagna tattica con schemi di gioco e pannello con forma e statistiche")
+
+
+def gestione_budget():
+    b = []
+    cx, cy, r = 520, 560, 300
+    b.append(arc(cx, cy, r, 180, 252, GREEN, 54))
+    b.append(arc(cx, cy, r, 254, 306, AMBER, 54))
+    b.append(arc(cx, cy, r, 308, 360, ORANGE, 54))
+    ang = 180 + 0.42 * 180
+    nx, ny = cx + (r - 70) * cos(ang * pi / 180), cy + (r - 70) * sin(ang * pi / 180)
+    b.append(f'<line x1="{cx}" y1="{cy}" x2="{nx:.1f}" y2="{ny:.1f}" stroke="{LIGHT}" stroke-width="14" stroke-linecap="round"/>')
+    b.append(f'<circle cx="{cx}" cy="{cy}" r="26" fill="{LIGHT}"/>')
+    b.append(text(cx, cy + 110, "12 € su 30 €", 52, LIGHT, "middle"))
+    b.append(text(cx, cy + 160, "budget del mese", 30, MUTED, "middle", 600))
+    # shield with check
+    sx, sy = 1010, 200
+    b.append(f'<path d="M{sx+150},{sy} L{sx+300},{sy+56} L{sx+300},{sy+190} C{sx+300},{sy+300} {sx+230},{sy+370} {sx+150},{sy+410} C{sx+70},{sy+370} {sx},{sy+300} {sx},{sy+190} L{sx},{sy+56} Z" fill="{PANEL}" stroke="{GREEN}" stroke-width="8"/>')
+    b.append(f'<path d="M{sx+90},{sy+205} L{sx+135},{sy+250} L{sx+220},{sy+160}" fill="none" stroke="{GREEN}" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>')
+    # limits list
+    for i, (lab, on) in enumerate([("Limite di deposito", True), ("Promemoria tempo", True)]):
+        y = 650 + i * 64
+        b.append(f'<rect x="{sx-40}" y="{y}" width="380" height="50" rx="25" fill="{PANEL}" stroke="{LINE}" stroke-width="2"/>')
+        b.append(text(sx - 14, y + 34, lab, 26, LIGHT, weight=600))
+        b.append(f'<rect x="{sx+256}" y="{y+9}" width="64" height="32" rx="16" fill="{GREEN if on else LINE}"/><circle cx="{sx+304}" cy="{y+25}" r="12" fill="{LIGHT}"/>')
+    return frame("".join(b), "Indicatore del budget mensile e scudo con i limiti di gioco attivi")
+
+
+def tennis():
+    b = []
+    courts = [("Terra", "#C2593A"), ("Erba", "#3E8E41"), ("Cemento", "#2B5DA8")]
+    for i, (lab, col) in enumerate(courts):
+        x, y, w, h = 150 + i * 300, 210, 250, 440
+        b.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="14" fill="{col}"/>')
+        s = f'stroke="{LIGHT}" stroke-width="4" fill="none" stroke-opacity=".9"'
+        b.append(f'<rect x="{x+22}" y="{y+22}" width="{w-44}" height="{h-44}" {s}/>')
+        b.append(f'<line x1="{x+48}" y1="{y+22}" x2="{x+48}" y2="{y+h-22}" {s}/><line x1="{x+w-48}" y1="{y+22}" x2="{x+w-48}" y2="{y+h-22}" {s}/>')
+        b.append(f'<line x1="{x+48}" y1="{y+130}" x2="{x+w-48}" y2="{y+130}" {s}/><line x1="{x+48}" y1="{y+h-130}" x2="{x+w-48}" y2="{y+h-130}" {s}/>')
+        b.append(f'<line x1="{x+w/2}" y1="{y+130}" x2="{x+w/2}" y2="{y+h-130}" {s}/>')
+        b.append(f'<line x1="{x+10}" y1="{y+h/2}" x2="{x+w-10}" y2="{y+h/2}" stroke="{DEEP}" stroke-width="8"/>')
+        b.append(text(x + w / 2, y + h + 66, lab, 36, GREY, "middle", 600))
+    # ball with trajectory
+    b.append(f'<path d="M1020,700 C1100,420 1180,330 1250,380" fill="none" stroke="{LIGHT}" stroke-opacity=".35" stroke-width="5" stroke-dasharray="3 16" stroke-linecap="round"/>')
+    bx, by, r = 1290, 420, 150
+    b.append(f'<circle cx="{bx}" cy="{by}" r="{r}" fill="#D4E34A"/>')
+    b.append(f'<path d="M{bx-r*0.92},{by-r*0.38} C{bx-r*0.2},{by-r*0.2} {bx-r*0.2},{by+r*0.2} {bx-r*0.92},{by+r*0.38}" fill="none" stroke="{LIGHT}" stroke-width="12" stroke-linecap="round"/>')
+    b.append(f'<path d="M{bx+r*0.92},{by-r*0.38} C{bx+r*0.2},{by-r*0.2} {bx+r*0.2},{by+r*0.2} {bx+r*0.92},{by+r*0.38}" fill="none" stroke="{LIGHT}" stroke-width="12" stroke-linecap="round"/>')
+    b.append(chip(1140, 620, 300, 60, "6-4 · 3-6 · 7-5", PANEL, LIGHT, 30))
+    return frame("".join(b), "Tre campi da tennis in terra, erba e cemento con una pallina")
+
+
+def basket():
+    b = []
+    s = f'stroke="{ORANGE}" stroke-opacity=".6" stroke-width="5" fill="none"'
+    b.append(f'<rect x="130" y="170" width="760" height="560" rx="12" fill="{ORANGE}" fill-opacity=".05" stroke="{ORANGE}" stroke-opacity=".6" stroke-width="5"/>')
+    b.append(f'<rect x="400" y="170" width="220" height="250" {s}/>')
+    b.append(f'<circle cx="510" cy="420" r="110" {s}/>')
+    b.append(f'<path d="M180,170 L180,330 A330,330 0 0 0 840,330 L840,170" {s}/>')
+    b.append(f'<line x1="450" y1="215" x2="570" y2="215" stroke="{LIGHT}" stroke-width="8"/>')
+    b.append(f'<circle cx="510" cy="250" r="30" fill="none" stroke="{ORANGE}" stroke-width="7"/>')
+    # ball
+    bx, by, r = 660, 560, 120
+    b.append(f'<circle cx="{bx}" cy="{by}" r="{r}" fill="{ORANGE}"/>')
+    seam = f'stroke="{DEEP}" stroke-width="7" fill="none"'
+    b.append(f'<line x1="{bx-r}" y1="{by}" x2="{bx+r}" y2="{by}" {seam}/><line x1="{bx}" y1="{by-r}" x2="{bx}" y2="{by+r}" {seam}/>')
+    b.append(f'<path d="M{bx-r*0.7},{by-r*0.71} C{bx-r*0.3},{by-r*0.3} {bx-r*0.3},{by+r*0.3} {bx-r*0.7},{by+r*0.71}" {seam}/>')
+    b.append(f'<path d="M{bx+r*0.7},{by-r*0.71} C{bx+r*0.3},{by-r*0.3} {bx+r*0.3},{by+r*0.3} {bx+r*0.7},{by+r*0.71}" {seam}/>')
+    # scoreboard
+    b.append(panel(960, 200, 490, 500))
+    b.append(text(1205, 270, "FINALE", 30, MUTED, "middle"))
+    b.append(text(1205, 380, "112 – 110", 92, LIGHT, "middle"))
+    b.append(f'<line x1="1000" y1="430" x2="1410" y2="430" stroke="{LINE}" stroke-width="2"/>')
+    b.append(text(1000, 500, "Totale punti", 32, GREY, weight=600))
+    b.append(text(1410, 500, "222", 38, LIGHT, "end"))
+    b.append(text(1000, 570, "Soglia", 32, GREY, weight=600))
+    b.append(text(1410, 570, "224,5", 38, LIGHT, "end"))
+    b.append(chip(1000, 610, 410, 64, "Under 224,5", GREEN, DEEP, 32))
+    return frame("".join(b), "Metà campo da basket con pallone e tabellone con totale punti e soglia Over/Under")
+
+
+def in_diretta():
+    b = []
+    b.append(panel(140, 160, 1320, 170))
+    b.append(chip(180, 214, 150, 62, "● LIVE", RED, LIGHT, 30))
+    b.append(text(380, 262, "Casa", 44, LIGHT))
+    b.append(text(800, 268, "1 – 0", 72, LIGHT, "middle"))
+    b.append(text(1040, 262, "Ospite", 44, LIGHT))
+    b.append(text(1420, 262, "67'", 48, GREEN, "end"))
+    # odds chart
+    b.append(panel(140, 370, 1320, 400))
+    x0, x1, y0, y1 = 200, 1400, 420, 720
+    for k in range(4):
+        y = y0 + k * (y1 - y0) / 3
+        b.append(f'<line x1="{x0}" y1="{y}" x2="{x1}" y2="{y}" stroke="{LINE}" stroke-width="2" stroke-dasharray="6 10"/>')
+    pts = [(200, 560), (300, 552), (400, 566), (500, 548), (600, 556), (700, 540), (760, 540)]
+    pts2 = [(860, 660), (960, 650), (1060, 664), (1160, 656), (1260, 670), (1400, 676)]
+    path = "M" + " L".join(f"{x},{y}" for x, y in pts)
+    path2 = "M" + " L".join(f"{x},{y}" for x, y in pts2)
+    b.append(f'<rect x="760" y="{y0}" width="100" height="{y1-y0}" fill="{AMBER}" fill-opacity=".12"/>')
+    b.append(f'<line x1="760" y1="{y0}" x2="760" y2="{y1}" stroke="{AMBER}" stroke-width="3"/>')
+    b.append(f'<g transform="translate(790,{y0+26})"><rect width="12" height="40" rx="3" fill="{AMBER}"/><rect x="24" width="12" height="40" rx="3" fill="{AMBER}"/></g>')
+    b.append(f'<path d="{path}" fill="none" stroke="{GREY}" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>')
+    b.append(f'<path d="{path2}" fill="none" stroke="{ORANGE}" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>')
+    b.append(chip(600, 470, 140, 50, "2,40", PANEL, LIGHT, 28))
+    b.append(chip(1250, 600, 140, 50, "1,55", ORANGE, DEEP, 28))
+    b.append(text(810, 752, "gol: mercato sospeso", 24, AMBER, "middle", 600))
+    return frame("".join(b), "Tabellone live al 67° minuto e grafico della quota che cambia dopo un gol")
+
+
+SCENES = {
+    "guida-completa-scommesse-sportive": guida_completa,
+    "come-leggere-le-quote": come_leggere_quote,
+    "analizzare-una-partita-di-calcio": analizzare_partita,
+    "gestione-del-budget": gestione_budget,
+    "scommesse-sul-tennis": tennis,
+    "basket-over-under-handicap": basket,
+    "scommesse-in-diretta": in_diretta,
+}
+
+
+def main():
+    OUT.mkdir(parents=True, exist_ok=True)
+    for slug, fn in SCENES.items():
+        target = OUT / f"{slug}.svg"
+        tmp = target.with_suffix(".svg.tmp")
+        with open(tmp, "w", encoding="utf-8", newline="\n") as fh:
+            fh.write(fn())
+        tmp.replace(target)
+        print(f"{target.relative_to(OUT.parent.parent.parent)}  {target.stat().st_size // 1024 + 1} KB")
+
+
+if __name__ == "__main__":
+    main()

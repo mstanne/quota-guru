@@ -193,7 +193,8 @@ Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e 
 - Per il tennis c'è ancora un solo esempio: tutte le partite della lista portano allo stesso URL di esempio. Le quote
   mostrate in home, tennis e basket sono ancora dati di esempio.
 - Guide: per aggiungerne una basta un nuovo elemento in `src/data/guides.ts` (slug, categoria, sezioni a blocchi);
-  pagina, indice, categoria e sitemap si aggiornano da soli. Le immagini di copertina restano segnaposto finché
-  non imposti `image`.
+  pagina, indice, categoria e sitemap si aggiornano da soli. Le illustrazioni (SVG originali, palette del brand) sono in
+  `src/assets/guides/` e si rigenerano con `python3 scripts/generate-guide-images.py`; per una guida nuova aggiungi
+  la sua scena nello script oppure metti `image: null` per avere il segnaposto.
 - I contenuti riguardano il gioco con vincita in denaro: prima di una pubblicazione reale verifica i requisiti
   normativi (licenze ADM, messaggi di gioco responsabile, divieti di pubblicità vigenti in Italia).
