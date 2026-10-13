@@ -544,13 +544,13 @@ export function BasketPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
           <TabsContent value="handicap">
             <Card className="bg-slate-900 border-slate-800 p-8 text-center">
               <div className="text-slate-400 mb-2">Quote handicap</div>
-              <p className="text-slate-400">Funzionalità in arrivo...</p>
+              <p className="text-slate-400">Mercato non ancora disponibile</p>
             </Card>
           </TabsContent>
           <TabsContent value="ou">
             <Card className="bg-slate-900 border-slate-800 p-8 text-center">
               <div className="text-slate-400 mb-2">Quote Over/Under punti totali</div>
-              <p className="text-slate-400">Funzionalità in arrivo...</p>
+              <p className="text-slate-400">Mercato non ancora disponibile</p>
             </Card>
           </TabsContent>
         </Tabs>

@@ -9,7 +9,7 @@ import { PageHeader } from "./layout/PageHeader";
 const guides = [
   {
     id: "1",
-    title: "Guida Completa alle Scommesse Sportive",
+    title: "Guida completa alle scommesse sportive",
     description:
       "Tutto quello che devi sapere per iniziare a scommettere in modo responsabile e informato. Dalle basi alle strategie avanzate.",
     category: "Per principianti",
@@ -19,7 +19,7 @@ const guides = [
   },
   {
     id: "2",
-    title: "Come Leggere le Quote Sportive",
+    title: "Come leggere le quote sportive",
     description:
       "Impara a interpretare le quote decimali, frazionarie e americane. Scopri come calcolare le probabilit\xE0 implicite.",
     category: "Quote e probabilità",
@@ -47,7 +47,7 @@ const guides = [
   },
   {
     id: "5",
-    title: "Scommesse sul Tennis: Guida Completa",
+    title: "Scommesse sul tennis: guida completa",
     description:
       "Tutto sul betting tennistico: superfici, head-to-head, mercati live e statistiche chiave da analizzare.",
     category: "Sport specifici",
@@ -221,24 +221,24 @@ export function GuidesPage({ guideHref = () => paths.guidaDettaglio }: GuidesPag
             <Users className="w-12 h-12 text-slate-300 mx-auto mb-4" />
             <h3 className="text-white text-2xl mb-3">Hai bisogno di aiuto?</h3>
             <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
-              Il nostro team di esperti è sempre disponibile per aiutarti a comprendere meglio il mondo delle scommesse
-              sportive. Contattaci per domande o approfondimenti.
+              Hai una domanda su quote, mercati o sul funzionamento del confronto? Scrivici: rispondiamo di solito entro
+              due giorni lavorativi.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <a
-                href="#"
+              <Link
+                to={paths.contatti}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-action hover:bg-action-hover text-action-foreground rounded-lg transition-colors cursor-pointer"
               >
-                <BookOpen className="w-5 h-5" />
-                Esplora Tutte le guide
-              </a>
-              <a
-                href="#"
+                <BookOpen className="w-5 h-5" aria-hidden="true" />
+                Scrivici
+              </Link>
+              <Link
+                to={`${paths.guidaDettaglio}#responsabile`}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors cursor-pointer"
               >
-                <Shield className="w-5 h-5" />
-                Gioco Responsabile
-              </a>
+                <Shield className="w-5 h-5" aria-hidden="true" />
+                Gioco responsabile
+              </Link>
             </div>
           </div>
         </Card>

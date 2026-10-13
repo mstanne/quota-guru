@@ -27,6 +27,15 @@ const GuidesPage = lazyPage(() => import("./components/GuidesPage").then((m) => 
 const GuideDetailPage = lazyPage(() => import("./components/GuideDetailPage").then((m) => m.GuideDetailPage));
 const LoginPage = lazyPage(() => import("./components/LoginPage").then((m) => m.LoginPage));
 const RegisterPage = lazyPage(() => import("./components/RegisterPage").then((m) => m.RegisterPage));
+const info = () => import("./components/info/InfoPages");
+const ChiSiamoPage = lazyPage(() => info().then((m) => m.ChiSiamoPage));
+const ContattiPage = lazyPage(() => info().then((m) => m.ContattiPage));
+const FaqPage = lazyPage(() => info().then((m) => m.FaqPage));
+const MetodologiaPage = lazyPage(() => info().then((m) => m.MetodologiaPage));
+const AffiliazionePage = lazyPage(() => info().then((m) => m.AffiliazionePage));
+const TerminiPage = lazyPage(() => info().then((m) => m.TerminiPage));
+const PrivacyPage = lazyPage(() => info().then((m) => m.PrivacyPage));
+const CookiePage = lazyPage(() => info().then((m) => m.CookiePage));
 const ForgotPasswordPage = lazyPage(() => import("./components/ForgotPasswordPage").then((m) => m.ForgotPasswordPage));
 
 /** Which lazy chunks a URL needs – preloaded before hydration (see main.tsx). */
@@ -47,6 +56,14 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   [paths.bonus, [BonusPage]],
   [paths.guide, [GuidesPage]],
   [paths.guidaDettaglio, [GuideDetailPage]],
+  [paths.chiSiamo, [ChiSiamoPage]],
+  [paths.contatti, [ContattiPage]],
+  [paths.faq, [FaqPage]],
+  [paths.metodologia, [MetodologiaPage]],
+  [paths.affiliazione, [AffiliazionePage]],
+  [paths.termini, [TerminiPage]],
+  [paths.privacy, [PrivacyPage]],
+  [paths.cookie, [CookiePage]],
 ];
 export function preloadForPath(pathname: string) {
   const clean = pathname !== "/" ? pathname.replace(/\/+$/, "") : "/";
@@ -64,14 +81,17 @@ function PageLoading() {
 
 /** On every navigation: scroll to top and update <title> / meta description. */
 function RouteEffects() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // go to the #anchor if there is one (e.g. /guide/...#responsabile), otherwise to the top
+    const target = hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
     const meta = findStaticRoute(pathname);
     if (!meta) return; // data-driven pages set their own title (usePageMeta)
     document.title = fullTitle(meta);
     document.querySelector('meta[name="description"]')?.setAttribute("content", meta.description);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 
@@ -149,6 +169,14 @@ export default function App() {
             <Route path={paths.bonus} element={<BonusPage />} />
             <Route path={paths.guide} element={<GuidesPage />} />
             <Route path={paths.guidaDettaglio} element={<GuideDetailPage onBack={go(paths.guide)} />} />
+            <Route path={paths.chiSiamo} element={<ChiSiamoPage />} />
+            <Route path={paths.contatti} element={<ContattiPage />} />
+            <Route path={paths.faq} element={<FaqPage />} />
+            <Route path={paths.metodologia} element={<MetodologiaPage />} />
+            <Route path={paths.affiliazione} element={<AffiliazionePage />} />
+            <Route path={paths.termini} element={<TerminiPage />} />
+            <Route path={paths.privacy} element={<PrivacyPage />} />
+            <Route path={paths.cookie} element={<CookiePage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

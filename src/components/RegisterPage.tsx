@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Calendar, Eye, EyeOff, Lock, Mail, User } from "lucide-react";
+import { Link } from "react-router";
+import { paths } from "../routes";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { Checkbox } from "./ui/checkbox";
@@ -26,7 +28,7 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
             <img src={logo} alt="Quota Guru" className="w-16 h-16" />
             <span className="text-white text-3xl">Quota Guru</span>
           </div>
-          <h1 className="text-white text-3xl mb-2">Crea il tuo Account</h1>
+          <h1 className="text-white text-3xl mb-2">Crea il tuo account</h1>
           <p className="text-slate-400">Inizia a confrontare le migliori quote sportive</p>
         </div>
         <Card className="bg-slate-800 border-slate-700">
@@ -39,7 +41,7 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
           >
             <div className="space-y-2">
               <Label htmlFor="fullName" className="text-slate-300">
-                Nome Completo
+                Nome e cognome
               </Label>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -139,7 +141,7 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
             </div>
             <div className="space-y-2">
               <Label htmlFor="confirmPassword" className="text-slate-300">
-                Conferma Password
+                Conferma password
               </Label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -192,13 +194,13 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
 
                 <label htmlFor="acceptTerms" className="text-sm text-slate-300 cursor-pointer">
                   Accetto i{" "}
-                  <a href="#" className="text-action-text hover:text-action-text-hover">
-                    Termini e Condizioni
-                  </a>{" "}
+                  <Link to={paths.termini} className="text-action-text hover:text-action-text-hover">
+                    Termini e condizioni
+                  </Link>{" "}
                   e la{" "}
-                  <a href="#" className="text-action-text hover:text-action-text-hover">
-                    Privacy Policy
-                  </a>
+                  <Link to={paths.privacy} className="text-action-text hover:text-action-text-hover">
+                    informativa privacy
+                  </Link>
                 </label>
               </div>
               {errors.acceptTerms && <p className="text-red-400 text-sm">Devi accettare i termini e condizioni</p>}
@@ -215,7 +217,7 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
               </div>
             </div>
             <Button type="submit" className="w-full bg-action hover:bg-action-hover text-action-foreground">
-              Crea Account
+              Crea account
             </Button>
             <div className="relative">
               <div className="absolute inset-0 flex items-center">

@@ -206,7 +206,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
         <div className="container mx-auto px-4 py-6">
           <Button variant="ghost" onClick={onBack} className="text-slate-400 hover:text-white mb-4">
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Torna alle Partite
+            Torna alle partite
           </Button>
           <div className="bg-slate-800 rounded-lg p-6 mb-6">
             <div className="flex items-center gap-2 mb-4">
@@ -222,7 +222,9 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center mb-6">
               <div className="text-center md:text-right">
-                <div className="text-5xl mb-3" aria-hidden="true">🏀</div>
+                <div className="text-5xl mb-3" aria-hidden="true">
+                  🏀
+                </div>
                 <h1 className="text-white text-3xl mb-2">{match.homeTeam}</h1>
                 <div className="flex items-center justify-center md:justify-end gap-1">
                   {homeForm.map((result, index) => (
@@ -236,7 +238,9 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                 <div className="text-slate-400 text-2xl">VS</div>
               </div>
               <div className="text-center md:text-left">
-                <div className="text-5xl mb-3" aria-hidden="true">🏀</div>
+                <div className="text-5xl mb-3" aria-hidden="true">
+                  🏀
+                </div>
                 <h1 className="text-white text-3xl mb-2">{match.awayTeam}</h1>
                 <div className="flex items-center justify-center md:justify-start gap-1">
                   {awayForm.map((result, index) => (
@@ -263,7 +267,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             <Card className="bg-slate-800 border-slate-700 p-4">
-              <div className="text-slate-400 text-sm mb-1">Punti Media</div>
+              <div className="text-slate-400 text-sm mb-1">Punti medi</div>
               <div className="text-white text-2xl">
                 {teamStats.home.points}
                 {" / "}
@@ -271,7 +275,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
               </div>
             </Card>
             <Card className="bg-slate-800 border-slate-700 p-4">
-              <div className="text-slate-400 text-sm mb-1">Assist Media</div>
+              <div className="text-slate-400 text-sm mb-1">Assist medi</div>
               <div className="text-white text-2xl">
                 {teamStats.home.assists}
                 {" / "}
@@ -279,7 +283,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
               </div>
             </Card>
             <Card className="bg-slate-800 border-slate-700 p-4">
-              <div className="text-slate-400 text-sm mb-1">Rimbalzi Media</div>
+              <div className="text-slate-400 text-sm mb-1">Rimbalzi medi</div>
               <div className="text-white text-2xl">
                 {teamStats.home.rebounds}
                 {" / "}
@@ -493,7 +497,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                     <div className="mt-6 pt-4 border-t border-slate-700">
                       <div className="text-slate-400 text-sm mb-2 flex items-center gap-2">
                         <Target className="w-4 h-4" />
-                        Giocatori Chiave
+                        Giocatori chiave
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {lineups.home.keyPlayers.map((player, index) => (
@@ -543,7 +547,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                     <div className="mt-6 pt-4 border-t border-slate-700">
                       <div className="text-slate-400 text-sm mb-2 flex items-center gap-2">
                         <Target className="w-4 h-4" />
-                        Giocatori Chiave
+                        Giocatori chiave
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {lineups.away.keyPlayers.map((player, index) => (
@@ -644,7 +648,7 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                   <div className="bg-slate-800 rounded-lg p-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <div className="text-slate-400 text-sm mb-2">Orario Palla a Due</div>
+                        <div className="text-slate-400 text-sm mb-2">Orario della palla a due</div>
                         <div className="flex items-center gap-2">
                           <Clock className="w-5 h-5 text-slate-300" />
                           <span className="text-white text-xl">{broadcast.tipoff}</span>
@@ -682,10 +686,12 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                 <div className="space-y-6">
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-slate-400">Punti Media a Partita</span>
+                      <span className="text-slate-400">Punti medi a partita</span>
                       <div className="flex items-center gap-4">
                         <span className="text-white">{teamStats.home.points}</span>
-                        <span className="text-slate-500" aria-hidden="true">|</span>
+                        <span className="text-slate-500" aria-hidden="true">
+                          |
+                        </span>
                         <span className="text-white">{teamStats.away.points}</span>
                       </div>
                     </div>
@@ -707,10 +713,12 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                   </div>
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-slate-400">Assist Media a Partita</span>
+                      <span className="text-slate-400">Assist medi a partita</span>
                       <div className="flex items-center gap-4">
                         <span className="text-white">{teamStats.home.assists}</span>
-                        <span className="text-slate-500" aria-hidden="true">|</span>
+                        <span className="text-slate-500" aria-hidden="true">
+                          |
+                        </span>
                         <span className="text-white">{teamStats.away.assists}</span>
                       </div>
                     </div>
@@ -732,10 +740,12 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                   </div>
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-slate-400">Rimbalzi Media a Partita</span>
+                      <span className="text-slate-400">Rimbalzi medi a partita</span>
                       <div className="flex items-center gap-4">
                         <span className="text-white">{teamStats.home.rebounds}</span>
-                        <span className="text-slate-500" aria-hidden="true">|</span>
+                        <span className="text-slate-500" aria-hidden="true">
+                          |
+                        </span>
                         <span className="text-white">{teamStats.away.rebounds}</span>
                       </div>
                     </div>

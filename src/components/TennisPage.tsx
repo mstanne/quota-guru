@@ -341,7 +341,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
               value="sets"
               className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground data-[state=active]:font-bold"
             >
-              Totale Set
+              Totale set
             </TabsTrigger>
             <TabsTrigger
               value="handicap"
@@ -579,14 +579,14 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
           </TabsContent>
           <TabsContent value="sets">
             <Card className="bg-slate-900 border-slate-800 p-8 text-center">
-              <div className="text-slate-400 mb-2">Quote Totale Set</div>
-              <p className="text-slate-400">Funzionalità in arrivo...</p>
+              <div className="text-slate-400 mb-2">Quote totale set</div>
+              <p className="text-slate-400">Mercato non ancora disponibile</p>
             </Card>
           </TabsContent>
           <TabsContent value="handicap">
             <Card className="bg-slate-900 border-slate-800 p-8 text-center">
               <div className="text-slate-400 mb-2">Quote handicap set</div>
-              <p className="text-slate-400">Funzionalità in arrivo...</p>
+              <p className="text-slate-400">Mercato non ancora disponibile</p>
             </Card>
           </TabsContent>
         </Tabs>

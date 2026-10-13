@@ -150,7 +150,7 @@ export function BetSlip() {
                               className={`rounded ${isBest ? "border-best" : ""}`}
                             />
                             <div>
-                              <div className="text-slate-400 text-xs">Quota Totale:</div>
+                              <div className="text-slate-400 text-xs">Quota totale:</div>
                               <div className={isBest ? "text-best" : "text-white"}>
                                 {total === null ? "[QUOTA_TOT]" : total.toFixed(2)}
                               </div>

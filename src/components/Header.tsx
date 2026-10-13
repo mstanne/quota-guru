@@ -14,7 +14,7 @@ const NAV = [
   { to: paths.calcio, label: "Calcio", icon: Goal },
   { to: paths.tennis, label: "Tennis", icon: CircleDot },
   { to: paths.basket, label: "Basket", icon: Dribbble },
-  { to: paths.sitiScommesse, label: "Siti Scommesse", icon: Shield },
+  { to: paths.sitiScommesse, label: "Siti scommesse", icon: Shield },
   { to: paths.bonus, label: "Bonus", icon: Gift },
   { to: paths.guide, label: "Guide", icon: BookOpen },
 ];

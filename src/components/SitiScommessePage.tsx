@@ -19,7 +19,7 @@ import { PageHeader, MetaItems } from "./layout/PageHeader";
 const filterCategories = [
   { id: "all", name: "Tutti gli operatori", icon: "\u{1F3AF}" },
   { id: "streaming", name: "Diretta streaming", icon: "\u{1F4FA}" },
-  { id: "cashout", name: "Cash Out", icon: "\u{1F4B0}" },
+  { id: "cashout", name: "Cash out", icon: "\u{1F4B0}" },
 ];
 
 interface SitiScommessePageProps {

@@ -86,6 +86,14 @@ personalizzato o un repo `<utente>.github.io`, imposta nel workflow `BASE_PATH: 
   anche un'icona ✓ (non solo il colore); focus da tastiera sempre visibile. Verificato con axe-core: 0 violazioni.
 - **Stemmi** delle squadre: arrivano da football-data.org (`crest`); se mancano o non si caricano viene mostrata la sigla.
 
+## Pagine istituzionali
+
+`/chi-siamo`, `/contatti`, `/faq`, `/metodologia`, `/affiliazione`, `/termini`, `/privacy`, `/cookie`
+(`src/components/info/InfoPages.tsx`). I dati societari (ragione sociale, P. IVA, email, PEC, data di aggiornamento,
+profili social) si compilano in **`src/data/site.ts`**; le icone social compaiono solo per i profili inseriti.
+I testi di termini, privacy e cookie sono **modelli**: vanno completati (segnaposto come `[FORNITORE_HOSTING]`,
+`[DURATA]`) e fatti verificare da un legale prima della pubblicazione.
+
 ## Statistiche e consenso cookie
 
 Le statistiche sono **spente per impostazione predefinita**: nessuno script esterno, nessun banner.

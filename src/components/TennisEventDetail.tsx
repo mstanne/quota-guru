@@ -141,7 +141,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
         <div className="container mx-auto px-4 py-6">
           <Button variant="ghost" onClick={onBack} className="text-slate-400 hover:text-white mb-4">
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Torna alle Partite
+            Torna alle partite
           </Button>
           <div className="bg-slate-800 rounded-lg p-6 mb-6">
             <div className="flex items-center gap-2 mb-4">
@@ -160,7 +160,9 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center mb-6">
               <div className="text-center md:text-right">
-                <div className="text-5xl mb-3" aria-hidden="true">🎾</div>
+                <div className="text-5xl mb-3" aria-hidden="true">
+                  🎾
+                </div>
                 <h1 className="text-white text-3xl mb-2">{match.player1}</h1>
                 <Badge className="bg-slate-700 text-white mb-2">Ranking #{playerStats.player1.ranking}</Badge>
                 <div className="flex items-center justify-center md:justify-end gap-1">
@@ -175,7 +177,9 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                 <div className="text-slate-400 text-2xl">VS</div>
               </div>
               <div className="text-center md:text-left">
-                <div className="text-5xl mb-3" aria-hidden="true">🎾</div>
+                <div className="text-5xl mb-3" aria-hidden="true">
+                  🎾
+                </div>
                 <h1 className="text-white text-3xl mb-2">{match.player2}</h1>
                 <Badge className="bg-slate-700 text-white mb-2">Ranking #{playerStats.player2.ranking}</Badge>
                 <div className="flex items-center justify-center md:justify-start gap-1">
@@ -216,7 +220,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
               </div>
             </Card>
             <Card className="bg-slate-800 border-slate-700 p-4">
-              <div className="text-slate-400 text-sm mb-1">Aces Medi</div>
+              <div className="text-slate-400 text-sm mb-1">Ace medi</div>
               <div className="text-white text-2xl">
                 {playerStats.player1.acesAvg}
                 {" / "}
@@ -224,7 +228,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
               </div>
             </Card>
             <Card className="bg-slate-800 border-slate-700 p-4">
-              <div className="text-slate-400 text-sm mb-1">1° Servizio %</div>
+              <div className="text-slate-400 text-sm mb-1">% prima di servizio</div>
               <div className="text-white text-2xl">
                 {playerStats.player1.firstServeWin}
                 {"% / "}
@@ -254,7 +258,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
               value="sets"
               className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
             >
-              Set Betting
+              Risultato set
             </TabsTrigger>
             <TabsTrigger
               value="broadcast"
@@ -500,10 +504,12 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                 <div className="space-y-6">
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-slate-400">Percentuale Vittorie 2025</span>
+                      <span className="text-slate-400">Percentuale di vittorie 2025</span>
                       <div className="flex items-center gap-4">
                         <span className="text-white">{playerStats.player1.winRate}%</span>
-                        <span className="text-slate-500" aria-hidden="true">|</span>
+                        <span className="text-slate-500" aria-hidden="true">
+                          |
+                        </span>
                         <span className="text-white">{playerStats.player2.winRate}%</span>
                       </div>
                     </div>
@@ -525,10 +531,12 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                   </div>
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-slate-400">Aces Medi a Partita</span>
+                      <span className="text-slate-400">Ace medi a partita</span>
                       <div className="flex items-center gap-4">
                         <span className="text-white">{playerStats.player1.acesAvg}</span>
-                        <span className="text-slate-500" aria-hidden="true">|</span>
+                        <span className="text-slate-500" aria-hidden="true">
+                          |
+                        </span>
                         <span className="text-white">{playerStats.player2.acesAvg}</span>
                       </div>
                     </div>
@@ -550,10 +558,12 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                   </div>
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-slate-400">% Punti Vinti con Primo Servizio</span>
+                      <span className="text-slate-400">% punti vinti con la prima di servizio</span>
                       <div className="flex items-center gap-4">
                         <span className="text-white">{playerStats.player1.firstServeWin}%</span>
-                        <span className="text-slate-500" aria-hidden="true">|</span>
+                        <span className="text-slate-500" aria-hidden="true">
+                          |
+                        </span>
                         <span className="text-white">{playerStats.player2.firstServeWin}%</span>
                       </div>
                     </div>

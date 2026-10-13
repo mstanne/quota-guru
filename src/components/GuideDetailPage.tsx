@@ -1,4 +1,6 @@
 import { ArrowLeft, BookOpen, Bookmark, Calendar, Clock, Share2 } from "lucide-react";
+import { Link } from "react-router";
+import { paths } from "../routes";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
@@ -12,7 +14,7 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
         <div className="container mx-auto px-4 py-4">
           <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-slate-800" onClick={onBack}>
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Torna alle Guide
+            Torna alle guide
           </Button>
         </div>
       </div>
@@ -30,7 +32,7 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                 <span className="text-sm">16 Ottobre 2025</span>
               </div>
             </div>
-            <h1 className="text-white text-4xl md:text-5xl mb-4">Guida Completa alle Scommesse Sportive</h1>
+            <h1 className="text-white text-4xl md:text-5xl mb-4">Guida completa alle scommesse sportive</h1>
             <p className="text-slate-400 text-xl mb-6">
               Tutto quello che devi sapere per iniziare a scommettere in modo responsabile e informato. Dalle basi alle
               strategie avanzate.
@@ -67,22 +69,22 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                 <ul className="space-y-2 text-slate-300">
                   <li>
                     <a href="#intro" className="hover:text-white transition-colors cursor-pointer">
-                      1. Introduzione alle Scommesse Sportive
+                      1. Introduzione alle scommesse sportive
                     </a>
                   </li>
                   <li>
                     <a href="#quote" className="hover:text-white transition-colors cursor-pointer">
-                      2. Come Funzionano le Quote
+                      2. Come funzionano le quote
                     </a>
                   </li>
                   <li>
                     <a href="#tipologie" className="hover:text-white transition-colors cursor-pointer">
-                      3. Tipologie di Scommesse
+                      3. Tipologie di scommesse
                     </a>
                   </li>
                   <li>
                     <a href="#strategie" className="hover:text-white transition-colors cursor-pointer">
-                      4. Strategie di Base
+                      4. Strategie di base
                     </a>
                   </li>
                   <li>
@@ -92,19 +94,19 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                   </li>
                   <li>
                     <a href="#errori" className="hover:text-white transition-colors cursor-pointer">
-                      6. Errori Comuni da Evitare
+                      6. Errori comuni da evitare
                     </a>
                   </li>
                   <li>
                     <a href="#responsabile" className="hover:text-white transition-colors cursor-pointer">
-                      7. Gioco Responsabile
+                      7. Gioco responsabile
                     </a>
                   </li>
                 </ul>
               </div>
             </Card>
             <section id="intro" className="mb-8">
-              <h2 className="text-white text-3xl mb-4">1. Introduzione alle Scommesse Sportive</h2>
+              <h2 className="text-white text-3xl mb-4">1. Introduzione alle scommesse sportive</h2>
               <p className="text-slate-300 mb-4">
                 Le scommesse sportive sono diventate sempre più popolari negli ultimi anni, offrendo agli appassionati
                 di sport un modo per rendere ancora più coinvolgente la visione delle partite. Tuttavia, è fondamentale
@@ -124,14 +126,14 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
               </Card>
             </section>
             <section id="quote" className="mb-8">
-              <h2 className="text-white text-3xl mb-4">2. Come Funzionano le Quote</h2>
+              <h2 className="text-white text-3xl mb-4">2. Come funzionano le quote</h2>
               <p className="text-slate-300 mb-4">
                 Le quote rappresentano la probabilità che un evento si verifichi e determinano la vincita potenziale.
                 Esistono tre formati principali di quote:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <Card className="bg-slate-900 border-slate-800 p-5">
-                  <h3 className="text-white mb-2">Quote Decimali</h3>
+                  <h3 className="text-white mb-2">Quote decimali</h3>
                   <p className="text-slate-400 text-sm mb-3">Le più utilizzate in Europa</p>
                   <div className="bg-slate-800 rounded p-3 text-center">
                     <span className="text-best text-2xl">2.50</span>
@@ -139,7 +141,7 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                   <p className="text-slate-400 text-sm mt-3">Vincita = Puntata × Quota</p>
                 </Card>
                 <Card className="bg-slate-900 border-slate-800 p-5">
-                  <h3 className="text-white mb-2">Quote Frazionarie</h3>
+                  <h3 className="text-white mb-2">Quote frazionarie</h3>
                   <p className="text-slate-400 text-sm mb-3">Comuni nel Regno Unito</p>
                   <div className="bg-slate-800 rounded p-3 text-center">
                     <span className="text-best text-2xl">3/2</span>
@@ -147,7 +149,7 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                   <p className="text-slate-400 text-sm mt-3">Per ogni 2€ vinci 3€</p>
                 </Card>
                 <Card className="bg-slate-900 border-slate-800 p-5">
-                  <h3 className="text-white mb-2">Quote Americane</h3>
+                  <h3 className="text-white mb-2">Quote americane</h3>
                   <p className="text-slate-400 text-sm mb-3">Utilizzate negli USA</p>
                   <div className="bg-slate-800 rounded p-3 text-center">
                     <span className="text-best text-2xl">+150</span>
@@ -163,13 +165,13 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
               </p>
             </section>
             <section id="tipologie" className="mb-8">
-              <h2 className="text-white text-3xl mb-4">3. Tipologie di Scommesse</h2>
+              <h2 className="text-white text-3xl mb-4">3. Tipologie di scommesse</h2>
               <p className="text-slate-300 mb-4">
                 Esistono diverse tipologie di scommesse, ognuna con le proprie caratteristiche:
               </p>
               <div className="space-y-4 mb-6">
                 <Card className="bg-slate-900 border-slate-800 p-5">
-                  <h3 className="text-white mb-2">1X2 (Esito Finale)</h3>
+                  <h3 className="text-white mb-2">1X2 (esito finale)</h3>
                   <p className="text-slate-300 text-sm">
                     La scommessa più semplice: si prevede se vince la squadra di casa (1), se c'è un pareggio (X) o se
                     vince la squadra ospite (2).
@@ -199,7 +201,7 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
               </div>
             </section>
             <section id="strategie" className="mb-8">
-              <h2 className="text-white text-3xl mb-4">4. Strategie di Base</h2>
+              <h2 className="text-white text-3xl mb-4">4. Strategie di base</h2>
               <p className="text-slate-300 mb-4">
                 Ecco alcune strategie fondamentali per approcciare le scommesse in modo intelligente:
               </p>
@@ -256,7 +258,7 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
               </div>
             </section>
             <section id="errori" className="mb-8">
-              <h2 className="text-white text-3xl mb-4">6. Errori Comuni da Evitare</h2>
+              <h2 className="text-white text-3xl mb-4">6. Errori comuni da evitare</h2>
               <div className="space-y-3 text-slate-300">
                 <Card className="bg-red-500/10 border-red-500/20 p-5">
                   <p className="text-red-400 mb-2">❌ Inseguire le perdite</p>
@@ -279,7 +281,7 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
               </div>
             </section>
             <section id="responsabile" className="mb-8">
-              <h2 className="text-white text-3xl mb-4">7. Gioco Responsabile</h2>
+              <h2 className="text-white text-3xl mb-4">7. Gioco responsabile</h2>
               <Card className="bg-warn/10 border-warn/30 p-6">
                 <p className="text-slate-300 mb-4">
                   Il gioco deve rimanere un divertimento. Se senti di perdere il controllo, chiedi aiuto.
@@ -304,18 +306,18 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
             <div className="p-6">
               <h3 className="text-white text-xl mb-4">Guide correlate</h3>
               <div className="space-y-3">
-                <a
-                  href="#"
+                <Link
+                  to={paths.guide}
                   className="flex items-center gap-3 p-3 rounded hover:bg-slate-800 transition-colors cursor-pointer"
                 >
                   <BookOpen className="w-5 h-5 text-slate-300" />
                   <div>
-                    <p className="text-white text-sm">Come Leggere le Quote Sportive</p>
+                    <p className="text-white text-sm">Come leggere le quote sportive</p>
                     <p className="text-slate-400 text-xs">5 min di lettura</p>
                   </div>
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to={paths.guide}
                   className="flex items-center gap-3 p-3 rounded hover:bg-slate-800 transition-colors cursor-pointer"
                 >
                   <BookOpen className="w-5 h-5 text-slate-300" />
@@ -323,9 +325,9 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                     <p className="text-white text-sm">Strategie per le scommesse sul calcio</p>
                     <p className="text-slate-400 text-xs">10 min di lettura</p>
                   </div>
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to={paths.guide}
                   className="flex items-center gap-3 p-3 rounded hover:bg-slate-800 transition-colors cursor-pointer"
                 >
                   <BookOpen className="w-5 h-5 text-slate-300" />
@@ -333,7 +335,7 @@ export function GuideDetailPage({ onBack }: { onBack?: () => void }) {
                     <p className="text-white text-sm">Gestione del budget</p>
                     <p className="text-slate-400 text-xs">6 min di lettura</p>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </Card>

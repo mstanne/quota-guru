@@ -30,7 +30,7 @@ export function ForgotPasswordPage({ onBack, onLogin }: { onBack?: () => void; o
               </div>
             </div>
             <div>
-              <h2 className="text-white text-2xl mb-2">Email Inviata!</h2>
+              <h2 className="text-white text-2xl mb-2">Email inviata</h2>
               <p className="text-slate-300">Ti abbiamo inviato un link per reimpostare la password all'indirizzo:</p>
               <p className="text-slate-400 text-sm mt-2">{getValues("email")}</p>
             </div>
@@ -57,7 +57,7 @@ export function ForgotPasswordPage({ onBack, onLogin }: { onBack?: () => void; o
             <img src={logo} alt="Quota Guru" className="w-16 h-16" />
             <span className="text-white text-3xl">Quota Guru</span>
           </div>
-          <h1 className="text-white text-3xl mb-2">Password Dimenticata?</h1>
+          <h1 className="text-white text-3xl mb-2">Password dimenticata?</h1>
           <p className="text-slate-400">Inserisci la tua email per ricevere il link di reset</p>
         </div>
         <Card className="bg-slate-800 border-slate-700">
@@ -85,7 +85,7 @@ export function ForgotPasswordPage({ onBack, onLogin }: { onBack?: () => void; o
               {errors.email && <p className="text-red-400 text-sm">{String(errors.email.message)}</p>}
             </div>
             <Button type="submit" className="w-full bg-action hover:bg-action-hover text-action-foreground">
-              Invia Link di Reset
+              Invia il link di reimpostazione
             </Button>
             <div className="relative">
               <div className="absolute inset-0 flex items-center">

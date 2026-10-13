@@ -28,6 +28,14 @@ export const paths = {
   accedi: "/accedi",
   registrati: "/registrati",
   passwordDimenticata: "/password-dimenticata",
+  chiSiamo: "/chi-siamo",
+  contatti: "/contatti",
+  faq: "/faq",
+  metodologia: "/metodologia",
+  affiliazione: "/affiliazione",
+  termini: "/termini",
+  privacy: "/privacy",
+  cookie: "/cookie",
 } as const;
 
 export const routes: RouteMeta[] = [
@@ -90,6 +98,46 @@ export const routes: RouteMeta[] = [
     title: "Password dimenticata",
     description: "Reimposta la password del tuo account Quota Guru.",
     index: false,
+  },
+  {
+    path: paths.chiSiamo,
+    title: "Chi siamo",
+    description: "Cos'è Quota Guru, come confronta quote e operatori autorizzati e chi gestisce il sito.",
+  },
+  {
+    path: paths.contatti,
+    title: "Contatti",
+    description: "Come contattare Quota Guru per segnalazioni, correzioni e collaborazioni.",
+  },
+  {
+    path: paths.faq,
+    title: "Domande frequenti",
+    description: "Risposte alle domande più comuni su quote, operatori, schedina e gioco responsabile.",
+  },
+  {
+    path: paths.metodologia,
+    title: "Metodologia",
+    description: "Come Quota Guru raccoglie, ordina e aggiorna quote, offerte e valutazioni degli operatori.",
+  },
+  {
+    path: paths.affiliazione,
+    title: "Dichiarazione di affiliazione",
+    description: "I rapporti commerciali tra Quota Guru e gli operatori e perché non influiscono sul confronto.",
+  },
+  {
+    path: paths.termini,
+    title: "Termini e condizioni d'uso",
+    description: "Condizioni di utilizzo del sito Quota Guru.",
+  },
+  {
+    path: paths.privacy,
+    title: "Informativa privacy",
+    description: "Come Quota Guru tratta i dati personali ai sensi del GDPR.",
+  },
+  {
+    path: paths.cookie,
+    title: "Cookie policy",
+    description: "Cookie e strumenti tecnici e statistici usati da Quota Guru.",
   },
 ];
 

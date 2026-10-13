@@ -2,14 +2,23 @@ import { Facebook, Instagram, Mail, Twitter } from "lucide-react";
 import { Link } from "react-router";
 import logo from "../assets/logo.png";
 import { paths } from "../routes";
+import { isFilled, site } from "../data/site";
 import { ResponsibleFooterBlock } from "./responsible/ResponsibleGambling";
 import { ConsentSettingsLink } from "./privacy/ConsentBanner";
+
+// Only profiles configured in src/data/site.ts are shown (no dead "#" links).
+const socialLinks = [
+  { href: site.social.facebook, label: "Facebook", Icon: Facebook },
+  { href: site.social.x, label: "X (Twitter)", Icon: Twitter },
+  { href: site.social.instagram, label: "Instagram", Icon: Instagram },
+  { href: isFilled(site.email) ? `mailto:${site.email}` : "", label: "Scrivici una email", Icon: Mail },
+].filter((l) => isFilled(l.href));
 
 export function Footer() {
   return (
     <footer className="bg-slate-900 border-t border-slate-800 mt-16">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img src={logo} alt="" className="w-10 h-10" />
@@ -42,7 +51,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link to={paths.sitiScommesse} className="text-slate-400 hover:text-white transition-colors">
-                  Siti Scommesse
+                  Siti scommesse
                 </Link>
               </li>
               <li>
@@ -61,19 +70,49 @@ export function Footer() {
             <h2 className="text-white text-base mb-4">Supporto</h2>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
+                <Link to={paths.contatti} className="text-slate-400 hover:text-white transition-colors">
                   Contatti
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
-                  FAQ
-                </a>
+                <Link to={paths.faq} className="text-slate-400 hover:text-white transition-colors">
+                  Domande frequenti
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
-                  Termini e Condizioni
-                </a>
+                <Link to={paths.chiSiamo} className="text-slate-400 hover:text-white transition-colors">
+                  Chi siamo
+                </Link>
+              </li>
+              <li>
+                <Link to={paths.metodologia} className="text-slate-400 hover:text-white transition-colors">
+                  Metodologia
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-white text-base mb-4">Note legali</h2>
+            <ul className="space-y-2">
+              <li>
+                <Link to={paths.termini} className="text-slate-400 hover:text-white transition-colors">
+                  Termini e condizioni
+                </Link>
+              </li>
+              <li>
+                <Link to={paths.privacy} className="text-slate-400 hover:text-white transition-colors">
+                  Informativa privacy
+                </Link>
+              </li>
+              <li>
+                <Link to={paths.cookie} className="text-slate-400 hover:text-white transition-colors">
+                  Cookie policy
+                </Link>
+              </li>
+              <li>
+                <Link to={paths.affiliazione} className="text-slate-400 hover:text-white transition-colors">
+                  Affiliazione
+                </Link>
               </li>
               <li>
                 <ConsentSettingsLink className="text-slate-400 hover:text-white transition-colors cursor-pointer" />
@@ -102,36 +141,22 @@ export function Footer() {
                 API
               </p>
             </div>
-            <div className="flex items-center gap-4">
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="inline-flex size-11 items-center justify-center rounded-md text-slate-400 hover:text-white transition-colors"
-              >
-                <Facebook className="w-5 h-5" aria-hidden="true" />
-              </a>
-              <a
-                href="#"
-                aria-label="X (Twitter)"
-                className="inline-flex size-11 items-center justify-center rounded-md text-slate-400 hover:text-white transition-colors"
-              >
-                <Twitter className="w-5 h-5" aria-hidden="true" />
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="inline-flex size-11 items-center justify-center rounded-md text-slate-400 hover:text-white transition-colors"
-              >
-                <Instagram className="w-5 h-5" aria-hidden="true" />
-              </a>
-              <a
-                href="#"
-                aria-label="Scrivici una email"
-                className="inline-flex size-11 items-center justify-center rounded-md text-slate-400 hover:text-white transition-colors"
-              >
-                <Mail className="w-5 h-5" aria-hidden="true" />
-              </a>
-            </div>
+            {socialLinks.length > 0 && (
+              <ul className="flex items-center gap-2" aria-label="Profili social e contatti">
+                {socialLinks.map(({ href, label, Icon }) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      aria-label={label}
+                      {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="inline-flex size-11 items-center justify-center rounded-md text-slate-400 hover:text-white transition-colors"
+                    >
+                      <Icon className="w-5 h-5" aria-hidden="true" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>
