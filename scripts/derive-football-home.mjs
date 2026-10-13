@@ -16,7 +16,9 @@ const data = JSON.parse(fs.readFileSync(src, "utf8"));
 const upcoming = (m) => ["SCHEDULED", "TIMED", "IN_PLAY", "PAUSED"].includes(m.status);
 const matches = data.competitions
   .filter((c) => PRIORITY.includes(c.code))
-  .flatMap((c) => c.matches.filter(upcoming).map((match) => ({ competition: { code: c.code, slug: c.slug, name: c.name }, match })))
+  .flatMap((c) =>
+    c.matches.filter(upcoming).map((match) => ({ competition: { code: c.code, slug: c.slug, name: c.name }, match })),
+  )
   .sort((a, b) => a.match.utcDate.localeCompare(b.match.utcDate))
   .slice(0, LIMIT);
 

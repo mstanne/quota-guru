@@ -4,6 +4,7 @@
 #   - repo Settings -> Pages -> Source: "GitHub Actions"
 #   - repo Settings -> Secrets and variables -> Actions -> New repository secret:
 #       FOOTBALL_DATA_TOKEN = <your football-data.org API token>
+#       BALLDONTLIE_API_KEY = <your balldontlie.io API key> (basket)
 name: Deploy to GitHub Pages
 
 on:
@@ -42,6 +43,13 @@ jobs:
         continue-on-error: true
         env:
           FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+
+      - name: Download basket data
+        # NBA calendar/results + Serie A standings; without the secret the committed snapshot is used.
+        run: node scripts/fetch-basket-data.mjs
+        continue-on-error: true
+        env:
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
 
       - name: Build
         run: npm run build

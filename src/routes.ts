@@ -18,9 +18,8 @@ export const paths = {
   calcio: "/calcio",
   tennis: "/tennis",
   basket: "/basket",
-  // Tennis and basket event pages still show a single sample match (mock data).
+  // The tennis event page still shows a single sample match (mock data).
   tennisEvento: "/tennis/djokovic-alcaraz",
-  basketEvento: "/basket/lakers-celtics",
   sitiScommesse: "/siti-scommesse",
   bonus: "/bonus",
   guide: "/guide",
@@ -58,18 +57,14 @@ export const routes: RouteMeta[] = [
   },
   {
     path: paths.basket,
-    title: "Quote Basket – Confronto quote NBA, Eurolega e Serie A",
-    description: "Confronta le quote basket dei migliori bookmaker per NBA, Euroleague, Serie A e tutti i campionati.",
+    title: "Basket: calendario NBA e classifica Serie A",
+    description:
+      "Calendario e risultati NBA in orario italiano, classifica della Serie A di basket e quote a confronto degli operatori autorizzati.",
   },
   {
     path: paths.tennisEvento,
     title: "Djokovic – Alcaraz: quote, statistiche e dove vederla",
     description: "Quote a confronto, statistiche dei giocatori e dove vedere Djokovic – Alcaraz.",
-  },
-  {
-    path: paths.basketEvento,
-    title: "Lakers – Celtics: quote, quintetti e dove vederla",
-    description: "Quote a confronto, quintetti base, statistiche e dove vedere Lakers – Celtics.",
   },
   {
     path: paths.sitiScommesse,

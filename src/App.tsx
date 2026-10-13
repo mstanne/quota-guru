@@ -18,9 +18,12 @@ const CalcioMatchPage = lazyPage(() => import("./components/calcio/CalcioMatchPa
 const StandingsPage = lazyPage(() => import("./components/calcio/StandingsPage").then((m) => m.StandingsPage));
 const NotFoundPage = lazyPage(() => import("./components/NotFoundPage").then((m) => m.NotFoundPage));
 const TennisPage = lazyPage(() => import("./components/TennisPage").then((m) => m.TennisPage));
-const BasketPage = lazyPage(() => import("./components/BasketPage").then((m) => m.BasketPage));
+const BasketPage = lazyPage(() => import("./components/basket/BasketPage").then((m) => m.BasketPage));
+const BasketGamePage = lazyPage(() => import("./components/basket/BasketGamePage").then((m) => m.BasketGamePage));
+const BasketStandingsPage = lazyPage(() =>
+  import("./components/basket/BasketStandingsPage").then((m) => m.BasketStandingsPage),
+);
 const TennisEventDetail = lazyPage(() => import("./components/TennisEventDetail").then((m) => m.TennisEventDetail));
-const BasketEventDetail = lazyPage(() => import("./components/BasketEventDetail").then((m) => m.BasketEventDetail));
 const SitiScommessePage = lazyPage(() => import("./components/SitiScommessePage").then((m) => m.SitiScommessePage));
 const BonusPage = lazyPage(() => import("./components/BonusPage").then((m) => m.BonusPage));
 const GuidesPage = lazyPage(() => import("./components/GuidesPage").then((m) => m.GuidesPage));
@@ -51,7 +54,9 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   [paths.tennis, [TennisPage]],
   [paths.basket, [BasketPage]],
   [paths.tennisEvento, [TennisEventDetail]],
-  [paths.basketEvento, [BasketEventDetail]],
+  ["/basket/nba", [BasketPage]],
+  ["/basket/serie-a/classifica", [BasketStandingsPage, NotFoundPage]],
+  ["/basket/nba/:partita", [BasketGamePage, NotFoundPage]],
   [paths.sitiScommesse, [SitiScommessePage]],
   [paths.bonus, [BonusPage]],
   [paths.guide, [GuidesPage]],
@@ -162,9 +167,11 @@ export default function App() {
             <Route path="/calcio/:competizione/classifica" element={<StandingsPage />} />
             <Route path="/calcio/:competizione/:partita" element={<CalcioMatchPage />} />
             <Route path={paths.tennis} element={<TennisPage onMatchClick={go(paths.tennisEvento)} />} />
-            <Route path={paths.basket} element={<BasketPage onMatchClick={go(paths.basketEvento)} />} />
+            <Route path={paths.basket} element={<BasketPage />} />
+            <Route path="/basket/nba" element={<BasketPage league="nba" />} />
+            <Route path="/basket/serie-a/classifica" element={<BasketStandingsPage />} />
+            <Route path="/basket/nba/:partita" element={<BasketGamePage />} />
             <Route path={paths.tennisEvento} element={<TennisEventDetail onBack={go(paths.tennis)} />} />
-            <Route path={paths.basketEvento} element={<BasketEventDetail onBack={go(paths.basket)} />} />
             <Route path={paths.sitiScommesse} element={<SitiScommessePage />} />
             <Route path={paths.bonus} element={<BonusPage />} />
             <Route path={paths.guide} element={<GuidesPage />} />

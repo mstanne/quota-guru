@@ -93,7 +93,13 @@ async function api(pathAndQuery, token, attempt = 1) {
 const isoDate = (d) => d.toISOString().slice(0, 10);
 // Only https crests from the football-data.org CDN are kept (anything else is dropped).
 const crestUrl = (u) => (typeof u === "string" && /^https:\/\/crests\.football-data\.org\/[\w.-]+$/.test(u) ? u : null);
-const team = (t) => ({ id: t.id, name: t.name, shortName: t.shortName || t.name, tla: t.tla || "", crest: crestUrl(t.crest) });
+const team = (t) => ({
+  id: t.id,
+  name: t.name,
+  shortName: t.shortName || t.name,
+  tla: t.tla || "",
+  crest: crestUrl(t.crest),
+});
 
 function compactMatch(m) {
   return {

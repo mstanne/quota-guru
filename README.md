@@ -154,6 +154,16 @@ Calendario, risultati, classifiche e precedenti del calcio arrivano dall'API gra
 - I termini d'uso richiedono l'attribuzione "Football data provided by the Football-Data.org API", presente nel footer:
   non rimuoverla.
 
+## Dati basket (BALLDONTLIE)
+
+Calendario e risultati **NBA** e classifica della **Serie A di basket** arrivano dal piano gratuito di
+[balldontlie.io](https://www.balldontlie.io) (5 richieste al minuto: il download richiede circa un minuto).
+Calendario e risultati della Serie A e dell'EuroLeague richiedono il piano a pagamento della stessa fonte.
+
+- Script: `scripts/fetch-basket-data.mjs` → `src/data/basket.json` (chiave nell'header `Authorization`).
+- Chiave: secret **`BALLDONTLIE_API_KEY`** su GitHub; in locale nel file `.env` (escluso da git).
+- Le condizioni d'uso della fonte non richiedono attribuzione e ammettono l'uso commerciale.
+
 ## URL del sito
 
 | URL | Pagina |
@@ -163,8 +173,10 @@ Calendario, risultati, classifiche e precedenti del calcio arrivano dall'API gra
 | `/calcio/serie-a` (e `champions-league`, `premier-league`, `liga`, …) | Calendario di una competizione |
 | `/calcio/serie-a/classifica` | Classifica |
 | `/calcio/serie-a/inter-juventus-2026-10-18` | Scheda partita (generata per ogni partita) |
-| `/tennis`, `/basket` | Quote per sport (dati di esempio) |
-| `/tennis/djokovic-alcaraz`, `/basket/lakers-celtics` | Scheda partita (esempio) |
+| `/basket`, `/basket/nba` | Calendario e risultati NBA |
+| `/basket/nba/pistons-celtics-2026-10-20` | Scheda partita NBA (generata per ogni partita, con quote a confronto) |
+| `/basket/serie-a/classifica` | Classifica Serie A basket |
+| `/tennis`, `/tennis/djokovic-alcaraz` | Quote tennis e scheda partita (dati di esempio) |
 | `/siti-scommesse` | Bookmaker a confronto |
 | `/bonus` | Bonus |
 | `/guide`, `/guide/guida-completa-scommesse-sportive` | Guide |
