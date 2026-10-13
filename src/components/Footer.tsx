@@ -1,6 +1,6 @@
 import { Facebook, Instagram, Mail, Twitter } from "lucide-react";
 import { Link } from "react-router";
-import logo from "../assets/logo.png";
+import { BrandLogo } from "./brand/BrandLogo";
 import { paths } from "../routes";
 import { isFilled, site } from "../data/site";
 import { ResponsibleFooterBlock } from "./responsible/ResponsibleGambling";
@@ -20,9 +20,8 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img src={logo} alt="" className="w-10 h-10" />
-              <span className="text-white text-xl">Quota Guru</span>
+            <div className="mb-4">
+              <BrandLogo height={44} />
             </div>
             <p className="text-slate-400 text-sm">Confronta le quote sportive degli operatori autorizzati</p>
           </div>
@@ -125,7 +124,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-center md:text-left space-y-1">
               <p className="text-slate-400 text-sm">
-                © {new Date().getFullYear()} Quota Guru. Tutti i diritti riservati.
+                © {new Date().getFullYear()} QuotaGuru. Tutti i diritti riservati.
               </p>
               {/* Required by the football-data.org terms of use (section 7, Attribution) – do not remove. */}
               <p className="text-slate-400 text-sm">

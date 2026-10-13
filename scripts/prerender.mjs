@@ -37,10 +37,14 @@ function page(meta, url, { prerendered }) {
     meta.index === false ? `<meta name="robots" content="noindex" />` : "",
     canonical && meta.index !== false ? `<link rel="canonical" href="${canonical}" />` : "",
     `<meta property="og:type" content="website" />`,
-    `<meta property="og:site_name" content="Quota Guru" />`,
+    `<meta property="og:site_name" content="QuotaGuru" />`,
     `<meta property="og:title" content="${title}" />`,
     `<meta property="og:description" content="${desc}" />`,
     canonical ? `<meta property="og:url" content="${canonical}" />` : "",
+    siteUrl ? `<meta property="og:image" content="${siteUrl}/og-image.png" />` : "",
+    siteUrl ? `<meta property="og:image:width" content="1200" />` : "",
+    siteUrl ? `<meta property="og:image:height" content="630" />` : "",
+    `<meta name="twitter:card" content="summary_large_image" />`,
   ]
     .filter(Boolean)
     .join("\n    ");

@@ -1,4 +1,4 @@
-# Quota Guru
+# QuotaGuru
 
 Comparatore di quote sportive (calcio, tennis, basket) con schedina, pagine bonus, siti di scommesse e guide.
 Il codice è ricostruito dal prototipo Figma Make **"Betting Affiliate Site UI"**

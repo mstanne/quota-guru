@@ -70,7 +70,7 @@ const Company = () => (
 
 export function ChiSiamoPage() {
   return (
-    <InfoLayout title="Chi siamo" icon={Info} crumb="Chi siamo" subtitle="Cos'è Quota Guru e come lavoriamo">
+    <InfoLayout title="Chi siamo" icon={Info} crumb="Chi siamo" subtitle="Cos'è QuotaGuru e come lavoriamo">
       <p>
         {site.name} è un servizio informativo che mette a confronto quote, condizioni delle offerte e caratteristiche
         degli operatori di gioco autorizzati in Italia, insieme a calendari, risultati e classifiche sportive.

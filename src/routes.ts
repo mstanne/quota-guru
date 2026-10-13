@@ -11,7 +11,7 @@ export interface RouteMeta {
   index?: boolean;
 }
 
-export const SITE_NAME = "Quota Guru";
+export const SITE_NAME = "QuotaGuru";
 
 export const paths = {
   home: "/",
@@ -41,7 +41,7 @@ export const paths = {
 export const routes: RouteMeta[] = [
   {
     path: paths.home,
-    title: "Quota Guru – Le migliori quote sportive a confronto",
+    title: "QuotaGuru – Le migliori quote sportive a confronto",
     description:
       "Confronta le quote di calcio, tennis e basket dei principali bookmaker e trova sempre la quota più alta.",
   },
@@ -91,23 +91,23 @@ export const routes: RouteMeta[] = [
     title: "Guida completa alle scommesse sportive",
     description: "Tutto quello che devi sapere su quote, tipologie di scommessa, strategie e gioco responsabile.",
   },
-  { path: paths.accedi, title: "Accedi", description: "Accedi al tuo account Quota Guru.", index: false },
-  { path: paths.registrati, title: "Registrati", description: "Crea il tuo account Quota Guru.", index: false },
+  { path: paths.accedi, title: "Accedi", description: "Accedi al tuo account QuotaGuru.", index: false },
+  { path: paths.registrati, title: "Registrati", description: "Crea il tuo account QuotaGuru.", index: false },
   {
     path: paths.passwordDimenticata,
     title: "Password dimenticata",
-    description: "Reimposta la password del tuo account Quota Guru.",
+    description: "Reimposta la password del tuo account QuotaGuru.",
     index: false,
   },
   {
     path: paths.chiSiamo,
     title: "Chi siamo",
-    description: "Cos'è Quota Guru, come confronta quote e operatori autorizzati e chi gestisce il sito.",
+    description: "Cos'è QuotaGuru, come confronta quote e operatori autorizzati e chi gestisce il sito.",
   },
   {
     path: paths.contatti,
     title: "Contatti",
-    description: "Come contattare Quota Guru per segnalazioni, correzioni e collaborazioni.",
+    description: "Come contattare QuotaGuru per segnalazioni, correzioni e collaborazioni.",
   },
   {
     path: paths.faq,
@@ -117,27 +117,27 @@ export const routes: RouteMeta[] = [
   {
     path: paths.metodologia,
     title: "Metodologia",
-    description: "Come Quota Guru raccoglie, ordina e aggiorna quote, offerte e valutazioni degli operatori.",
+    description: "Come QuotaGuru raccoglie, ordina e aggiorna quote, offerte e valutazioni degli operatori.",
   },
   {
     path: paths.affiliazione,
     title: "Dichiarazione di affiliazione",
-    description: "I rapporti commerciali tra Quota Guru e gli operatori e perché non influiscono sul confronto.",
+    description: "I rapporti commerciali tra QuotaGuru e gli operatori e perché non influiscono sul confronto.",
   },
   {
     path: paths.termini,
     title: "Termini e condizioni d'uso",
-    description: "Condizioni di utilizzo del sito Quota Guru.",
+    description: "Condizioni di utilizzo del sito QuotaGuru.",
   },
   {
     path: paths.privacy,
     title: "Informativa privacy",
-    description: "Come Quota Guru tratta i dati personali ai sensi del GDPR.",
+    description: "Come QuotaGuru tratta i dati personali ai sensi del GDPR.",
   },
   {
     path: paths.cookie,
     title: "Cookie policy",
-    description: "Cookie e strumenti tecnici e statistici usati da Quota Guru.",
+    description: "Cookie e strumenti tecnici e statistici usati da QuotaGuru.",
   },
 ];
 

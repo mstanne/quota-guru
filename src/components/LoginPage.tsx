@@ -6,7 +6,7 @@ import { Card } from "./ui/card";
 import { Checkbox } from "./ui/checkbox";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
-import logo from "../assets/logo.png";
+import { BrandLogo } from "./brand/BrandLogo";
 
 export function LoginPage({
   onForgotPassword,
@@ -27,9 +27,8 @@ export function LoginPage({
     <div className="min-h-screen bg-slate-900 flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <img src={logo} alt="Quota Guru" className="w-16 h-16" />
-            <span className="text-white text-3xl">Quota Guru</span>
+          <div className="inline-flex items-center mb-6">
+            <BrandLogo height={56} />
           </div>
           <h1 className="text-white text-3xl mb-2">Bentornato!</h1>
           <p className="text-slate-400">Continua con il tuo account</p>

@@ -4,7 +4,7 @@
  * (contacts, privacy, cookie policy, terms). Placeholders use the [UPPER_SNAKE_CASE] convention.
  */
 export const site = {
-  name: "Quota Guru",
+  name: "QuotaGuru",
   company: "[RAGIONE_SOCIALE]",
   vatNumber: "[PARTITA_IVA]",
   address: "[INDIRIZZO_SEDE_LEGALE]",

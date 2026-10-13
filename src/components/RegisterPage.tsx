@@ -8,7 +8,7 @@ import { Card } from "./ui/card";
 import { Checkbox } from "./ui/checkbox";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
-import logo from "../assets/logo.png";
+import { BrandLogo } from "./brand/BrandLogo";
 
 export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack?: () => void }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -24,9 +24,8 @@ export function RegisterPage({ onLogin, onBack }: { onLogin?: () => void; onBack
     <div className="min-h-screen bg-slate-900 flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <img src={logo} alt="Quota Guru" className="w-16 h-16" />
-            <span className="text-white text-3xl">Quota Guru</span>
+          <div className="inline-flex items-center mb-6">
+            <BrandLogo height={56} />
           </div>
           <h1 className="text-white text-3xl mb-2">Crea il tuo account</h1>
           <p className="text-slate-400">Inizia a confrontare le migliori quote sportive</p>

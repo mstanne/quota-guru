@@ -3,7 +3,7 @@ import { BookOpen, CircleDot, Dribbble, Gift, Goal, Menu, Shield } from "lucide-
 import { Link, NavLink } from "react-router";
 import { Button } from "./ui/button";
 import { Sheet, SheetHeader, SheetContent, SheetTitle } from "./ui/sheet";
-import logo from "../assets/logo.png";
+import { BrandLogo } from "./brand/BrandLogo";
 import { paths } from "../routes";
 import { ResponsibleBar } from "./responsible/ResponsibleGambling";
 
@@ -38,10 +38,10 @@ export function Header() {
             <div className="flex items-center gap-8">
               <Link
                 to={paths.home}
-                aria-label="Quota Guru – Home"
+                aria-label="QuotaGuru – Home"
                 className="flex items-center hover:opacity-80 transition-opacity cursor-pointer"
               >
-                <img src={logo} alt="Quota Guru" className="w-10 h-10" />
+                <BrandLogo height={44} alt="" />
               </Link>
               <nav aria-label="Principale" className="hidden lg:flex items-center gap-6">
                 {NAV.map((item) => (
@@ -82,9 +82,8 @@ export function Header() {
       <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
         <SheetContent side="right" className="bg-slate-900 border-slate-800 w-[300px] sm:w-[400px]">
           <SheetHeader>
-            <SheetTitle className="flex items-center gap-3">
-              <img src={logo} alt="Quota Guru" className="w-10 h-10" />
-              <span className="text-white">Quota Guru</span>
+            <SheetTitle className="flex items-center">
+              <BrandLogo height={36} />
             </SheetTitle>
           </SheetHeader>
           <nav aria-label="Menu mobile" className="mt-8 space-y-1">
