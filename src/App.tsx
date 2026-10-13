@@ -23,6 +23,12 @@ const BasketGamePage = lazyPage(() => import("./components/basket/BasketGamePage
 const BasketStandingsPage = lazyPage(() =>
   import("./components/basket/BasketStandingsPage").then((m) => m.BasketStandingsPage),
 );
+const TennisRankingPage = lazyPage(() =>
+  import("./components/tennis/TennisRankingPage").then((m) => m.TennisRankingPage),
+);
+const TennisCalendarPage = lazyPage(() =>
+  import("./components/tennis/TennisCalendarPage").then((m) => m.TennisCalendarPage),
+);
 const TennisEventDetail = lazyPage(() => import("./components/TennisEventDetail").then((m) => m.TennisEventDetail));
 const SitiScommessePage = lazyPage(() => import("./components/SitiScommessePage").then((m) => m.SitiScommessePage));
 const BonusPage = lazyPage(() => import("./components/BonusPage").then((m) => m.BonusPage));
@@ -59,6 +65,10 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   [paths.tennis, [TennisPage]],
   [paths.basket, [BasketPage]],
   [paths.tennisEvento, [TennisEventDetail]],
+  ["/tennis/classifica-atp", [TennisRankingPage, NotFoundPage]],
+  ["/tennis/classifica-wta", [TennisRankingPage, NotFoundPage]],
+  ["/tennis/calendario-atp", [TennisCalendarPage, NotFoundPage]],
+  ["/tennis/calendario-wta", [TennisCalendarPage, NotFoundPage]],
   ["/basket/nba", [BasketPage]],
   ["/basket/serie-a/classifica", [BasketStandingsPage, NotFoundPage]],
   ["/basket/nba/:partita", [BasketGamePage, NotFoundPage]],
@@ -177,6 +187,10 @@ export default function App() {
             <Route path="/basket/nba" element={<BasketPage league="nba" />} />
             <Route path="/basket/serie-a/classifica" element={<BasketStandingsPage />} />
             <Route path="/basket/nba/:partita" element={<BasketGamePage />} />
+            <Route path="/tennis/classifica-atp" element={<TennisRankingPage tour="atp" />} />
+            <Route path="/tennis/classifica-wta" element={<TennisRankingPage tour="wta" />} />
+            <Route path="/tennis/calendario-atp" element={<TennisCalendarPage tour="atp" />} />
+            <Route path="/tennis/calendario-wta" element={<TennisCalendarPage tour="wta" />} />
             <Route path={paths.tennisEvento} element={<TennisEventDetail onBack={go(paths.tennis)} />} />
             <Route path={paths.sitiScommesse} element={<SitiScommessePage />} />
             <Route path={paths.bonus} element={<BonusPage />} />

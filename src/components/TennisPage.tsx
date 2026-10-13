@@ -12,6 +12,7 @@ import { getOperator } from "../data/operators";
 import { bestEntry, bestValue, formatOdd, isBestAt, placeholderOdds, type OddsByOperator } from "../lib/odds";
 import { OperatorCta } from "./operator/OperatorUi";
 import { PageHeader, MetaItems } from "./layout/PageHeader";
+import { TennisOverview } from "./tennis/TennisOverview";
 import { oddsOperators } from "../data/operators";
 
 // Mock data – replace with a real odds feed/API.
@@ -209,6 +210,7 @@ export function TennisPage({ onMatchClick }: { onMatchClick?: (matchId: string) 
         }
       />
       <div className="container mx-auto px-4 py-8">
+        <TennisOverview />
         <Card className="hidden md:block bg-slate-900 border-slate-800 mb-8">
           <div className="p-6">
             <div className="flex items-center gap-2 mb-4">

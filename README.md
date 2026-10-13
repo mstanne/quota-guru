@@ -164,6 +164,16 @@ Calendario e risultati della Serie A e dell'EuroLeague richiedono il piano a pag
 - Chiave: secret **`BALLDONTLIE_API_KEY`** su GitHub; in locale nel file `.env` (escluso da git).
 - Le condizioni d'uso della fonte non richiedono attribuzione e ammettono l'uso commerciale.
 
+## Dati tennis (BALLDONTLIE)
+
+`scripts/fetch-tennis-data.mjs` scarica con la stessa chiave del basket (`BALLDONTLIE_API_KEY`) i dati inclusi nel
+piano gratuito: classifiche ATP e WTA (primi 100) e calendario dei tornei della stagione (da ottobre anche della
+successiva). Scrive `src/data/tennis.json`, normalizzando nomi e sedi in italiano. Pagine: `/tennis/classifica-atp`,
+`/tennis/classifica-wta`, `/tennis/calendario-atp`, `/tennis/calendario-wta`, più il riquadro "Classifiche e tornei"
+nella pagina Tennis. Partite, testa a testa e statistiche richiedono un piano a pagamento (ALL-STAR o GOAT): quando
+saranno disponibili si potranno collegare le schede partita e i testi editoriali (`tennisArticle` nel motore).
+
+
 ## URL del sito
 
 | URL | Pagina |
