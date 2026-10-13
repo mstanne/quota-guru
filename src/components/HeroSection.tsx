@@ -80,6 +80,12 @@ export function HeroSection({ matches = defaultFeaturedMatches, resolveOperator 
       allBookmakers,
     });
   };
+  const heroAria = (match: FeaturedMatch, betType: "1" | "X" | "2") => {
+    const best = bestEntry(match.odds, OUTCOME[betType]);
+    const what =
+      betType === "1" ? `${match.homeTeam} vincente` : betType === "2" ? `${match.awayTeam} vincente` : "pareggio";
+    return `Aggiungi alla schedina: ${what} a ${formatOdd(best.value)} su ${resolveOperator(best.operatorId).name} (quota migliore)`;
+  };
   return (
     <div className="bg-slate-900 py-12">
       <div className="container mx-auto px-4">
@@ -115,36 +121,48 @@ export function HeroSection({ matches = defaultFeaturedMatches, resolveOperator 
                 </div>
                 <p className="text-slate-400 text-sm mb-4">{match.time}</p>
                 <div className="grid grid-cols-3 gap-2 mb-4">
-                  <div
-                    className="bg-slate-900 rounded p-2 text-center border border-slate-700 hover:border-slate-500 transition-colors cursor-pointer"
+                  <button
+                    type="button"
+                    className="bg-slate-900 rounded p-2 text-center border border-slate-700 hover:border-slate-500 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action"
+                    aria-label={heroAria(match, "1")}
                     onClick={() => handleOddsClick(match, "1")}
                   >
-                    <div className="text-slate-400 text-xs mb-1">1</div>
-                    <div className="text-best tabular-nums">{formatOdd(bestEntry(match.odds, "home").value)}</div>
-                    <div className="text-slate-400 text-sm mt-1 truncate">
+                    <span className="block text-slate-400 text-xs mb-1">1</span>
+                    <span className="block text-best tabular-nums">
+                      {formatOdd(bestEntry(match.odds, "home").value)}
+                    </span>
+                    <span className="block text-slate-400 text-sm mt-1 truncate">
                       {resolveOperator(bestEntry(match.odds, "home").operatorId).name}
-                    </div>
-                  </div>
-                  <div
-                    className="bg-slate-900 rounded p-2 text-center border border-slate-700 hover:border-slate-500 transition-colors cursor-pointer"
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    className="bg-slate-900 rounded p-2 text-center border border-slate-700 hover:border-slate-500 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action"
+                    aria-label={heroAria(match, "X")}
                     onClick={() => handleOddsClick(match, "X")}
                   >
-                    <div className="text-slate-400 text-xs mb-1">X</div>
-                    <div className="text-best tabular-nums">{formatOdd(bestEntry(match.odds, "draw").value)}</div>
-                    <div className="text-slate-400 text-sm mt-1 truncate">
+                    <span className="block text-slate-400 text-xs mb-1">X</span>
+                    <span className="block text-best tabular-nums">
+                      {formatOdd(bestEntry(match.odds, "draw").value)}
+                    </span>
+                    <span className="block text-slate-400 text-sm mt-1 truncate">
                       {resolveOperator(bestEntry(match.odds, "draw").operatorId).name}
-                    </div>
-                  </div>
-                  <div
-                    className="bg-slate-900 rounded p-2 text-center border border-slate-700 hover:border-slate-500 transition-colors cursor-pointer"
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    className="bg-slate-900 rounded p-2 text-center border border-slate-700 hover:border-slate-500 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action"
+                    aria-label={heroAria(match, "2")}
                     onClick={() => handleOddsClick(match, "2")}
                   >
-                    <div className="text-slate-400 text-xs mb-1">2</div>
-                    <div className="text-best tabular-nums">{formatOdd(bestEntry(match.odds, "away").value)}</div>
-                    <div className="text-slate-400 text-sm mt-1 truncate">
+                    <span className="block text-slate-400 text-xs mb-1">2</span>
+                    <span className="block text-best tabular-nums">
+                      {formatOdd(bestEntry(match.odds, "away").value)}
+                    </span>
+                    <span className="block text-slate-400 text-sm mt-1 truncate">
                       {resolveOperator(bestEntry(match.odds, "away").operatorId).name}
-                    </div>
-                  </div>
+                    </span>
+                  </button>
                 </div>
                 <Button className="w-full bg-action hover:bg-action-hover text-action-foreground">
                   Dettagli partita

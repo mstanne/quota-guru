@@ -20,9 +20,12 @@ import {
   type Competition,
   type Match,
   type StandingRow,
+  matchMeta,
 } from "../../lib/football";
+import { generatedAt } from "../../lib/football";
+import { usePageMeta } from "../../lib/pageMeta";
 import { MatchRow, TeamBadge } from "./MatchRow";
-import { DataUpdatedNote } from "./CalcioPage";
+import { DataUpdatedNote } from "./DataUpdatedNote";
 import { NotFoundPage } from "../NotFoundPage";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
@@ -191,6 +194,7 @@ export function CalcioMatchPage() {
   const { competizione, partita } = useParams();
   const competition = findCompetition(competizione);
   const match = findMatch(competition, partita);
+  usePageMeta(competition && match ? matchMeta(competition, match) : null);
   if (!competition || !match) return <NotFoundPage />;
 
   const finished = isFinished(match);
@@ -270,7 +274,7 @@ export function CalcioMatchPage() {
               <span className="text-white text-lg sm:text-2xl">{match.awayTeam.shortName}</span>
             </div>
           </div>
-          <DataUpdatedNote className="justify-center mt-6" />
+          <DataUpdatedNote generatedAt={generatedAt} className="justify-center mt-6" />
         </div>
       </div>
 

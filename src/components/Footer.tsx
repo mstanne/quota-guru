@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import logo from "../assets/logo.png";
 import { paths } from "../routes";
 import { ResponsibleFooterBlock } from "./responsible/ResponsibleGambling";
+import { ConsentSettingsLink } from "./privacy/ConsentBanner";
 
 export function Footer() {
   return (
@@ -17,7 +18,7 @@ export function Footer() {
             <p className="text-slate-400 text-sm">Confronta le quote sportive degli operatori autorizzati</p>
           </div>
           <div>
-            <h3 className="text-white mb-4">Sport</h3>
+            <h2 className="text-white text-base mb-4">Sport</h2>
             <ul className="space-y-2">
               <li>
                 <Link to={paths.calcio} className="text-slate-400 hover:text-white transition-colors">
@@ -37,7 +38,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-white mb-4">Risorse</h3>
+            <h2 className="text-white text-base mb-4">Risorse</h2>
             <ul className="space-y-2">
               <li>
                 <Link to={paths.sitiScommesse} className="text-slate-400 hover:text-white transition-colors">
@@ -57,7 +58,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-white mb-4">Supporto</h3>
+            <h2 className="text-white text-base mb-4">Supporto</h2>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-slate-400 hover:text-white transition-colors">
@@ -73,6 +74,9 @@ export function Footer() {
                 <a href="#" className="text-slate-400 hover:text-white transition-colors">
                   Termini e Condizioni
                 </a>
+              </li>
+              <li>
+                <ConsentSettingsLink className="text-slate-400 hover:text-white transition-colors cursor-pointer" />
               </li>
             </ul>
           </div>
@@ -99,17 +103,33 @@ export function Footer() {
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">
-                <Facebook className="w-5 h-5" />
+              <a
+                href="#"
+                aria-label="Facebook"
+                className="inline-flex size-11 items-center justify-center rounded-md text-slate-400 hover:text-white transition-colors"
+              >
+                <Facebook className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">
-                <Twitter className="w-5 h-5" />
+              <a
+                href="#"
+                aria-label="X (Twitter)"
+                className="inline-flex size-11 items-center justify-center rounded-md text-slate-400 hover:text-white transition-colors"
+              >
+                <Twitter className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">
-                <Instagram className="w-5 h-5" />
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="inline-flex size-11 items-center justify-center rounded-md text-slate-400 hover:text-white transition-colors"
+              >
+                <Instagram className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">
-                <Mail className="w-5 h-5" />
+              <a
+                href="#"
+                aria-label="Scrivici una email"
+                className="inline-flex size-11 items-center justify-center rounded-md text-slate-400 hover:text-white transition-colors"
+              >
+                <Mail className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
           </div>

@@ -4,7 +4,14 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router";
 import App from "./App";
 
-export { routes, notFoundMeta, findRoute, fullTitle } from "./routes";
+import { routes as staticRoutes } from "./routes";
+import { footballRoutes } from "./lib/footballRoutes";
+import { preloadAllPages } from "./lib/lazyPage";
+
+export { notFoundMeta, fullTitle } from "./routes";
+export { preloadAllPages };
+/** Every URL to pre-render: static pages + one page per competition, standings table and match. */
+export const routes = [...staticRoutes, ...footballRoutes()];
 
 export function render(url: string, basename: string) {
   return renderToString(

@@ -1,7 +1,9 @@
 import { Award, BookOpen, Calculator, Clock, Shield, Target, Users } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Card } from "./ui/card";
+import { Link } from "react-router";
 import { ImageSlot } from "./media/ImageSlot";
+import { paths } from "../routes";
 import { PageHeader } from "./layout/PageHeader";
 
 const guides = [
@@ -96,7 +98,12 @@ const categories = [
   },
 ];
 
-export function GuidesPage({ onGuideClick }: { onGuideClick?: (guideId: string) => void }) {
+interface GuidesPageProps {
+  /** URL of a guide's page (all guides currently share the sample detail page). */
+  guideHref?: (guideId: string) => string;
+}
+
+export function GuidesPage({ guideHref = () => paths.guidaDettaglio }: GuidesPageProps) {
   return (
     <div className="min-h-screen bg-slate-950">
       <PageHeader
@@ -107,15 +114,12 @@ export function GuidesPage({ onGuideClick }: { onGuideClick?: (guideId: string) 
       />
       <div className="container mx-auto px-4 py-12">
         <div className="mb-12">
-          <h3 className="text-white text-xl mb-6">Esplora per categoria</h3>
+          <h2 className="text-white text-xl mb-6">Esplora per categoria</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {categories.map((category) => {
               const Icon = category.icon;
               return (
-                <Card
-                  key={category.name}
-                  className="bg-slate-900 border-slate-800 hover:border-slate-500 transition-all cursor-pointer group"
-                >
+                <Card key={category.name} className="bg-slate-900 border-slate-800 transition-all group">
                   <div className="p-4 text-center">
                     <Icon
                       className={`w-8 h-8 ${category.color} mx-auto mb-2 group-hover:scale-110 transition-transform`}
@@ -129,78 +133,86 @@ export function GuidesPage({ onGuideClick }: { onGuideClick?: (guideId: string) 
           </div>
         </div>
         <div className="mb-8">
-          <h3 className="text-white text-xl mb-6">Guide in evidenza</h3>
+          <h2 className="text-white text-xl mb-6">Guide in evidenza</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {guides
               .filter((guide) => guide.featured)
               .map((guide) => (
-                <Card
+                <Link
                   key={guide.id}
-                  className="bg-slate-900 border-slate-800 hover:border-slate-500 transition-all overflow-hidden cursor-pointer group"
-                  onClick={() => onGuideClick?.(guide.id)}
+                  to={guideHref(guide.id)}
+                  className="block group rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action"
                 >
-                  <div className="relative h-48 overflow-hidden">
-                    <ImageSlot
-                      placeholder="[PLACEHOLDER_IMMAGINE_GUIDA_800x450]"
-                      src={guide.image}
-                      alt={guide.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+                  <Card className="bg-slate-900 border-slate-800 hover:border-slate-500 transition-all overflow-hidden group h-full">
+                    <div className="relative h-48 overflow-hidden">
+                      <ImageSlot
+                        placeholder="[PLACEHOLDER_IMMAGINE_GUIDA_800x450]"
+                        src={guide.image}
+                        alt={guide.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
 
-                    <div className="absolute top-4 left-4">
-                      <Badge className="bg-slate-700 text-white">In evidenza</Badge>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <Badge variant="secondary" className="bg-slate-800 text-slate-300">
-                        {guide.category}
-                      </Badge>
-                      <div className="flex items-center gap-1 text-slate-400 text-sm">
-                        <Clock className="w-4 h-4" />
-                        <span>{guide.readTime}</span>
+                      <div className="absolute top-4 left-4">
+                        <Badge className="bg-slate-700 text-white">In evidenza</Badge>
                       </div>
                     </div>
-                    <h4 className="text-white text-lg mb-2 group-hover:text-white transition-colors">{guide.title}</h4>
-                    <p className="text-slate-400 text-sm line-clamp-2">{guide.description}</p>
-                  </div>
-                </Card>
+                    <div className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <Badge variant="secondary" className="bg-slate-800 text-slate-300">
+                          {guide.category}
+                        </Badge>
+                        <div className="flex items-center gap-1 text-slate-400 text-sm">
+                          <Clock className="w-4 h-4" />
+                          <span>{guide.readTime}</span>
+                        </div>
+                      </div>
+                      <h3 className="text-white text-lg mb-2 group-hover:text-white transition-colors">
+                        {guide.title}
+                      </h3>
+                      <p className="text-slate-400 text-sm line-clamp-2">{guide.description}</p>
+                    </div>
+                  </Card>
+                </Link>
               ))}
           </div>
         </div>
         <div>
-          <h3 className="text-white text-xl mb-6">Tutte le guide</h3>
+          <h2 className="text-white text-xl mb-6">Tutte le guide</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {guides
               .filter((guide) => !guide.featured)
               .map((guide) => (
-                <Card
+                <Link
                   key={guide.id}
-                  className="bg-slate-900 border-slate-800 hover:border-slate-500 transition-all overflow-hidden cursor-pointer group"
-                  onClick={() => onGuideClick?.(guide.id)}
+                  to={guideHref(guide.id)}
+                  className="block group rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action"
                 >
-                  <div className="relative h-48 overflow-hidden">
-                    <ImageSlot
-                      placeholder="[PLACEHOLDER_IMMAGINE_GUIDA_800x450]"
-                      src={guide.image}
-                      alt={guide.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <Badge variant="secondary" className="bg-slate-800 text-slate-300">
-                        {guide.category}
-                      </Badge>
-                      <div className="flex items-center gap-1 text-slate-400 text-sm">
-                        <Clock className="w-4 h-4" />
-                        <span>{guide.readTime}</span>
-                      </div>
+                  <Card className="bg-slate-900 border-slate-800 hover:border-slate-500 transition-all overflow-hidden group h-full">
+                    <div className="relative h-48 overflow-hidden">
+                      <ImageSlot
+                        placeholder="[PLACEHOLDER_IMMAGINE_GUIDA_800x450]"
+                        src={guide.image}
+                        alt={guide.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
-                    <h4 className="text-white text-lg mb-2 group-hover:text-white transition-colors">{guide.title}</h4>
-                    <p className="text-slate-400 text-sm line-clamp-2">{guide.description}</p>
-                  </div>
-                </Card>
+                    <div className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <Badge variant="secondary" className="bg-slate-800 text-slate-300">
+                          {guide.category}
+                        </Badge>
+                        <div className="flex items-center gap-1 text-slate-400 text-sm">
+                          <Clock className="w-4 h-4" />
+                          <span>{guide.readTime}</span>
+                        </div>
+                      </div>
+                      <h3 className="text-white text-lg mb-2 group-hover:text-white transition-colors">
+                        {guide.title}
+                      </h3>
+                      <p className="text-slate-400 text-sm line-clamp-2">{guide.description}</p>
+                    </div>
+                  </Card>
+                </Link>
               ))}
           </div>
         </div>

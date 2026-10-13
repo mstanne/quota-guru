@@ -1,7 +1,10 @@
 import { Link } from "react-router";
 import { Button } from "./ui/button";
+import { usePageMeta } from "../lib/pageMeta";
+import { notFoundMeta } from "../routes";
 
 export function NotFoundPage() {
+  usePageMeta(notFoundMeta);
   return (
     <div className="container mx-auto px-4 py-24 text-center">
       <p className="text-slate-400 text-6xl mb-4">404</p>

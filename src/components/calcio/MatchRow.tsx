@@ -8,10 +8,10 @@ import {
   matchPath,
   roundLabel,
   statusLabel,
-  type Competition,
+  type CompetitionRef,
   type Match,
   type Team,
-} from "../../lib/football";
+} from "../../lib/footballCore";
 
 /**
  * Team crest (football-data.org CDN). Falls back to the three-letter code if the crest is missing
@@ -63,7 +63,7 @@ export function MatchRow({
   match,
   showCompetition = false,
 }: {
-  competition: Competition;
+  competition: CompetitionRef;
   match: Match;
   showCompetition?: boolean;
 }) {

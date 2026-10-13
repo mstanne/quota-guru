@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
 import type { OddValue } from "../lib/odds";
+import { currentPage, track } from "../lib/analytics";
 
 export interface BookmakerOdds {
   /** References OperatorData.id (src/data/operators.ts). */
@@ -50,6 +51,7 @@ export function BetSlipProvider({ children }: { children: ReactNode }) {
     const withId = { ...selection, id: selection.id ?? `${selection.matchId}-${selection.betType}` };
     setSelections((prev) => [...prev.filter((s) => s.matchId !== withId.matchId), withId]);
     setIsOpen(true);
+    track("bet_slip_add", { operator: withId.selectedBookmaker, market: withId.betType, page: currentPage() });
   };
 
   const removeSelection = (id: string) => {

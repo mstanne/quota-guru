@@ -155,6 +155,11 @@
     @apply bg-background text-foreground;
   }
 
+  /* A3: always-visible keyboard focus on every interactive element */
+  :where(a, button, [role="button"], [role="link"], input, select, textarea, summary, [tabindex]):focus-visible {
+    @apply outline-2 outline-offset-2 outline-action;
+  }
+
   /* U7: fixed-width digits so odds and scores line up in columns */
   table {
     font-variant-numeric: tabular-nums;

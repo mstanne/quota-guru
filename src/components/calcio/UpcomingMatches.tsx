@@ -1,18 +1,16 @@
 import { Link } from "react-router";
 import { CalendarDays } from "lucide-react";
-import { allMatches, isLive, isUpcoming } from "../../lib/football";
+import home from "../../data/football-home.json";
+import type { CompetitionRef, Match } from "../../lib/footballCore";
 import { MatchRow } from "./MatchRow";
-import { DataUpdatedNote } from "./CalcioPage";
+import { DataUpdatedNote } from "./DataUpdatedNote";
 
-// Competitions shown first on the home page (Italian audience).
-const PRIORITY = ["SA", "CL", "PL", "PD"];
+// Small pre-computed list (scripts/derive-football-home.mjs) so the home page does not load the full snapshot.
+const data = home as unknown as { generatedAt: string; matches: { competition: CompetitionRef; match: Match }[] };
 
 /** Home page block: next real fixtures from football-data.org. */
 export function UpcomingMatches({ limit = 8 }: { limit?: number }) {
-  const next = allMatches
-    .filter(({ match }) => isUpcoming(match) || isLive(match))
-    .filter(({ competition }) => PRIORITY.includes(competition.code))
-    .slice(0, limit);
+  const next = data.matches.slice(0, limit);
   if (next.length === 0) return null;
 
   return (
@@ -24,7 +22,7 @@ export function UpcomingMatches({ limit = 8 }: { limit?: number }) {
               <CalendarDays className="w-6 h-6 text-slate-300" aria-hidden="true" />
               Prossime partite
             </h2>
-            <DataUpdatedNote />
+            <DataUpdatedNote generatedAt={data.generatedAt} />
           </div>
           <Link
             to="/calcio"

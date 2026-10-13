@@ -18,9 +18,11 @@ export default defineConfig({
     target: "es2020",
     rollupOptions: {
       output: {
-        // keep third-party code in a separate, long-cacheable chunk
+        // React + router in a long-cacheable chunk shared by every page; other libraries
+        // (Radix, react-hook-form, lucide icons) are split per page by Vite automatically.
         manualChunks(id) {
-          if (id.includes("node_modules")) return "vendor";
+          if (/node_modules\/(react|react-dom|scheduler|react-router)\//.test(id)) return "react";
+          if (id.includes("node_modules/lucide-react/")) return "icons"; // one request instead of one per icon
         },
       },
     },

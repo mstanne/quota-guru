@@ -45,7 +45,7 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
             <div className="flex items-start gap-3">
               <Info className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-blue-400 mb-2">Come leggere le condizioni</h3>
+                <h2 className="text-blue-400 text-lg mb-2">Come leggere le condizioni</h2>
                 <p className="text-slate-300 text-sm mb-3">
                   Le offerte degli operatori sono soggette a requisiti precisi: importo minimo di deposito, numero di
                   volte in cui l'importo va giocato prima del prelievo, quote minime e scadenza.
@@ -154,6 +154,7 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
                             </div>
                           )}
                           <OperatorCta
+                            placement="offer-featured"
                             operator={operator}
                             label="Vai al sito"
                             className="w-full bg-action hover:bg-action-hover text-action-foreground mb-2"
@@ -224,6 +225,7 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
                         </div>
                       </div>
                       <OperatorCta
+                        placement="offer-list"
                         operator={operator}
                         label="Vai al sito"
                         className="w-full bg-action hover:bg-action-hover text-action-foreground mb-2"

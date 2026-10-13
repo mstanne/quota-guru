@@ -165,6 +165,7 @@ export function BetSlip() {
                             </div>
                           </div>
                           <OperatorCta
+                            placement="bet-slip"
                             operator={getOperator(operator.id)}
                             label="Vai"
                             size="sm"

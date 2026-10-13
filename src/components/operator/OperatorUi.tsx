@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Button } from "../ui/button";
 import { cn } from "../ui/utils";
 import { isPlaceholder, type OperatorData } from "../../data/operators";
+import { currentPage, track } from "../../lib/analytics";
 
 interface OperatorLogoProps {
   operator: Pick<OperatorData, "logoUrl" | "logoAlt" | "name">;
@@ -55,7 +56,9 @@ export function OperatorLogo({ operator, width, height, className }: OperatorLog
 }
 
 interface OperatorCtaProps {
-  operator: Pick<OperatorData, "name" | "affiliateUrl">;
+  operator: Pick<OperatorData, "name" | "affiliateUrl"> & { id?: string };
+  /** Where the button is (for click statistics), e.g. "bonus-card", "comparison-table", "bet-slip". */
+  placement?: string;
   /** Neutral, informational label (no invitation to gamble). */
   label?: string;
   /** Override the destination (e.g. offer terms page). Defaults to the operator's affiliate URL. */
@@ -81,6 +84,7 @@ export function OperatorCta({
   variant,
   icon,
   iconPosition = "start",
+  placement = "unknown",
 }: OperatorCtaProps) {
   const url = href ?? operator.affiliateUrl;
   const pending = isPlaceholder(url);
@@ -96,7 +100,11 @@ export function OperatorCta({
         data-placeholder={pending ? url : undefined}
         role={pending ? "link" : undefined}
         tabIndex={0}
-        onClick={pending ? (e) => e.preventDefault() : undefined}
+        onClick={(e) => {
+          if (pending) e.preventDefault();
+          // T2: count outbound clicks per operator and position (only with consent, see lib/analytics.ts)
+          track("outbound_click", { operator: operator.id ?? operator.name, placement, page: currentPage() });
+        }}
       >
         {iconPosition === "start" && icon}
         {label}

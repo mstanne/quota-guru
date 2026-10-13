@@ -1,4 +1,4 @@
-import { ArrowLeft, ChartColumn, Clock, Info, MapPin, Target, TrendingUp, Tv } from "lucide-react";
+import { Check, ArrowLeft, ChartColumn, Clock, Info, MapPin, Target, TrendingUp, Tv } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
@@ -304,18 +304,28 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                           </TableCell>
                           <TableCell>
                             <button
+                              type="button"
                               onClick={() => handleAddToBetSlip(row.operatorId, match.player1, row.player1, "Vincente")}
-                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestPlayer1 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              aria-label={`Aggiungi alla schedina: Vincente ${match.player1} a ${formatOdd(row.player1)} su ${getOperator(row.operatorId).name}${isBestPlayer1 ? " (quota migliore)" : ""}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action ${isBestPlayer1 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.player1)}
+                              {isBestPlayer1 && (
+                                <Check className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5" aria-hidden="true" />
+                              )}
                             </button>
                           </TableCell>
                           <TableCell>
                             <button
+                              type="button"
                               onClick={() => handleAddToBetSlip(row.operatorId, match.player2, row.player2, "Vincente")}
-                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestPlayer2 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              aria-label={`Aggiungi alla schedina: Vincente ${match.player2} a ${formatOdd(row.player2)} su ${getOperator(row.operatorId).name}${isBestPlayer2 ? " (quota migliore)" : ""}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action ${isBestPlayer2 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.player2)}
+                              {isBestPlayer2 && (
+                                <Check className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5" aria-hidden="true" />
+                              )}
                             </button>
                           </TableCell>
                         </TableRow>
@@ -361,22 +371,32 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                           </TableCell>
                           <TableCell>
                             <button
+                              type="button"
                               onClick={() =>
                                 handleAddToBetSlip(row.operatorId, `${match.player1} 2-0`, row.player1, "Risultato set")
                               }
-                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestPlayer1 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              aria-label={`Aggiungi alla schedina: Risultato set ${`${match.player1} 2-0`} a ${formatOdd(row.player1)} su ${getOperator(row.operatorId).name}${isBestPlayer1 ? " (quota migliore)" : ""}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action ${isBestPlayer1 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.player1)}
+                              {isBestPlayer1 && (
+                                <Check className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5" aria-hidden="true" />
+                              )}
                             </button>
                           </TableCell>
                           <TableCell>
                             <button
+                              type="button"
                               onClick={() =>
                                 handleAddToBetSlip(row.operatorId, `${match.player2} 2-0`, row.player2, "Risultato set")
                               }
-                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestPlayer2 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              aria-label={`Aggiungi alla schedina: Risultato set ${`${match.player2} 2-0`} a ${formatOdd(row.player2)} su ${getOperator(row.operatorId).name}${isBestPlayer2 ? " (quota migliore)" : ""}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action ${isBestPlayer2 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.player2)}
+                              {isBestPlayer2 && (
+                                <Check className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5" aria-hidden="true" />
+                              )}
                             </button>
                           </TableCell>
                         </TableRow>

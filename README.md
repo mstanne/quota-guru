@@ -79,7 +79,31 @@ personalizzato o un repo `<utente>.github.io`, imposta nel workflow `BASE_PATH: 
 - **Intestazioni di pagina:** `src/components/layout/PageHeader.tsx` (breadcrumb, titolo con icona, sottotitolo,
   riga di dati essenziali). Tutte le pagine di sezione la usano.
 - **Numeri:** le tabelle usano cifre a larghezza fissa (`tabular-nums`) e i nomi degli operatori sotto le quote sono a 14 px.
+- **Caricamento a pezzi:** ogni pagina ha il suo file JavaScript (`src/lib/lazyPage.tsx`); i dati completi del calcio
+  si scaricano solo nelle pagine calcio, la home usa un estratto (`src/data/football-home.json`, rigenerato da
+  `scripts/derive-football-home.mjs` a ogni build).
+- **Accessibilità:** quote e card cliccabili sono veri pulsanti/link con etichetta descrittiva; la quota migliore ha
+  anche un'icona ✓ (non solo il colore); focus da tastiera sempre visibile. Verificato con axe-core: 0 violazioni.
 - **Stemmi** delle squadre: arrivano da football-data.org (`crest`); se mancano o non si caricano viene mostrata la sigla.
+
+## Statistiche e consenso cookie
+
+Le statistiche sono **spente per impostazione predefinita**: nessuno script esterno, nessun banner.
+Per attivarle, su GitHub → Settings → Secrets and variables → Actions → **Variables** aggiungi:
+
+| Variabile | Valore |
+| --- | --- |
+| `ANALYTICS_PROVIDER` | `plausible` oppure `ga4` |
+| `ANALYTICS_ID` | dominio del sito per Plausible (es. `mstanne.github.io`) oppure ID GA4 (`G-XXXXXXX`) |
+| `COOKIE_POLICY_URL` | indirizzo della cookie policy |
+
+Con il provider attivo compare il banner (Accetta statistiche / Rifiuta, modificabile da "Preferenze cookie" nel
+footer). Lo script del provider viene caricato **solo dopo il consenso**. Eventi registrati (`src/lib/analytics.ts`):
+
+- `outbound_click` – clic su "Vai al sito", con operatore, posizione del bottone (`placement`) e pagina;
+- `bet_slip_add` – quota aggiunta alla schedina, con operatore e mercato.
+
+Prima di attivarle prepara informativa privacy e cookie policy (GDPR e linee guida del Garante sui cookie).
 
 ## Template operatori (segnaposto)
 

@@ -69,7 +69,7 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
               <div>
                 <label className="text-slate-400 text-sm mb-2 block">Categoria</label>
                 <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger className="bg-slate-800 border-slate-700 text-white">
+                  <SelectTrigger aria-label="Categoria" className="bg-slate-800 border-slate-700 text-white">
                     <SelectValue placeholder="Seleziona categoria" />
                   </SelectTrigger>
                   <SelectContent className="bg-slate-800 border-slate-700">
@@ -84,7 +84,7 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
               <div>
                 <label className="text-slate-400 text-sm mb-2 block">Ordina per</label>
                 <Select value={sortBy} onValueChange={setSortBy}>
-                  <SelectTrigger className="bg-slate-800 border-slate-700 text-white">
+                  <SelectTrigger aria-label="Ordina per" className="bg-slate-800 border-slate-700 text-white">
                     <SelectValue placeholder="Ordina per" />
                   </SelectTrigger>
                   <SelectContent className="bg-slate-800 border-slate-700">
@@ -264,6 +264,7 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
                   </div>
                   <div className="flex gap-2">
                     <OperatorCta
+                      placement="operator-review"
                       operator={bookmaker}
                       href={bookmaker.reviewUrl}
                       label="Scheda completa"
@@ -273,6 +274,7 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
                       iconPosition="end"
                     />
                     <OperatorCta
+                      placement="operator-card"
                       operator={bookmaker}
                       label="Vai al sito"
                       className="bg-action hover:bg-action-hover text-action-foreground cursor-pointer"

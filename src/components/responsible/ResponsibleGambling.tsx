@@ -39,7 +39,7 @@ export function ResponsibleFooterBlock() {
         <OperatorLogo operator={admLogo} width={120} height={40} />
       </div>
       <div className="flex-1">
-        <h4 className="text-warn mb-2">Gioco responsabile</h4>
+        <h2 className="text-warn text-base mb-2">Gioco responsabile</h2>
         <p className="text-slate-300 text-sm mb-2">
           Il gioco con vincita in denaro è vietato ai minori di {rg.minAge} anni e può causare dipendenza patologica.
           Gli operatori presentati sono concessionari dell'{rg.regulatorName}; le probabilità di vincita sono pubblicate

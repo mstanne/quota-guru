@@ -18,7 +18,9 @@ const base = (process.env.BASE_PATH ?? "/").replace(/\/?$/, "/"); // always ends
 const basename = base.replace(/\/$/, ""); // "" or "/quota-guru"
 const siteUrl = (process.env.SITE_URL ?? "").replace(/\/$/, "");
 
-const { render, routes, notFoundMeta, fullTitle } = await import(pathToFileURL(ssrEntry).href);
+const { render, routes, notFoundMeta, fullTitle, preloadAllPages } = await import(pathToFileURL(ssrEntry).href);
+// lazy page chunks must be loaded before rendering synchronously with renderToString
+await preloadAllPages();
 const template = fs.readFileSync(path.join(dist, "index.html"), "utf8");
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");

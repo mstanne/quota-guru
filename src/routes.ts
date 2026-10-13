@@ -11,8 +11,6 @@ export interface RouteMeta {
   index?: boolean;
 }
 
-import { allMatches, competitionMeta, competitions, matchMeta, standingsMeta } from "./lib/football";
-
 export const SITE_NAME = "Quota Guru";
 
 export const paths = {
@@ -95,14 +93,6 @@ export const routes: RouteMeta[] = [
   },
 ];
 
-// Football pages generated from the football-data.org snapshot: one per competition,
-// one per standings table and one per match.
-routes.push(
-  ...competitions.map(competitionMeta),
-  ...competitions.filter((c) => c.standings.length > 0).map(standingsMeta),
-  ...allMatches.map(({ competition, match }) => matchMeta(competition, match)),
-);
-
 export const notFoundMeta: RouteMeta = {
   path: "/404",
   title: "Pagina non trovata",
@@ -110,9 +100,10 @@ export const notFoundMeta: RouteMeta = {
   index: false,
 };
 
-export function findRoute(pathname: string): RouteMeta {
+/** Static route metadata, or undefined for data-driven pages (they set their own title with usePageMeta). */
+export function findStaticRoute(pathname: string): RouteMeta | undefined {
   const clean = pathname !== "/" ? pathname.replace(/\/+$/, "") : pathname;
-  return routes.find((r) => r.path === clean) ?? notFoundMeta;
+  return routes.find((r) => r.path === clean);
 }
 
 export function fullTitle(meta: RouteMeta) {

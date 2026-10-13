@@ -1,4 +1,4 @@
-import { ArrowLeft, ChartColumn, Clock, Info, MapPin, Shirt, Target, TrendingUp, Tv, Users } from "lucide-react";
+import { Check, ArrowLeft, ChartColumn, Clock, Info, MapPin, Shirt, Target, TrendingUp, Tv, Users } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
@@ -373,18 +373,28 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                           </TableCell>
                           <TableCell>
                             <button
+                              type="button"
                               onClick={() => handleAddToBetSlip(row.operatorId, match.homeTeam, row.home, "Vincente")}
-                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestHome ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              aria-label={`Aggiungi alla schedina: Vincente ${match.homeTeam} a ${formatOdd(row.home)} su ${getOperator(row.operatorId).name}${isBestHome ? " (quota migliore)" : ""}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action ${isBestHome ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.home)}
+                              {isBestHome && (
+                                <Check className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5" aria-hidden="true" />
+                              )}
                             </button>
                           </TableCell>
                           <TableCell>
                             <button
+                              type="button"
                               onClick={() => handleAddToBetSlip(row.operatorId, match.awayTeam, row.away, "Vincente")}
-                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestAway ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              aria-label={`Aggiungi alla schedina: Vincente ${match.awayTeam} a ${formatOdd(row.away)} su ${getOperator(row.operatorId).name}${isBestAway ? " (quota migliore)" : ""}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action ${isBestAway ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.away)}
+                              {isBestAway && (
+                                <Check className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5" aria-hidden="true" />
+                              )}
                             </button>
                           </TableCell>
                         </TableRow>
@@ -424,18 +434,28 @@ export function BasketEventDetail({ onBack }: { onBack?: () => void }) {
                           </TableCell>
                           <TableCell>
                             <button
+                              type="button"
                               onClick={() => handleAddToBetSlip(row.operatorId, "Over 225.5", row.home, "Over/Under")}
-                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestOver ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              aria-label={`Aggiungi alla schedina: Over/Under ${"Over 225.5"} a ${formatOdd(row.home)} su ${getOperator(row.operatorId).name}${isBestOver ? " (quota migliore)" : ""}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action ${isBestOver ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.home)}
+                              {isBestOver && (
+                                <Check className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5" aria-hidden="true" />
+                              )}
                             </button>
                           </TableCell>
                           <TableCell>
                             <button
+                              type="button"
                               onClick={() => handleAddToBetSlip(row.operatorId, "Under 225.5", row.away, "Over/Under")}
-                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all ${isBestUnder ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
+                              aria-label={`Aggiungi alla schedina: Over/Under ${"Under 225.5"} a ${formatOdd(row.away)} su ${getOperator(row.operatorId).name}${isBestUnder ? " (quota migliore)" : ""}`}
+                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action ${isBestUnder ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
                             >
                               {formatOdd(row.away)}
+                              {isBestUnder && (
+                                <Check className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5" aria-hidden="true" />
+                              )}
                             </button>
                           </TableCell>
                         </TableRow>

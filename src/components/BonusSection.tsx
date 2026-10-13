@@ -61,6 +61,7 @@ export function BonusSection({
                   </div>
                   <p className="text-slate-300 text-sm mb-4 text-center">{offer.description}</p>
                   <OperatorCta
+                    placement="home-offers"
                     operator={operator}
                     label="Vai al sito"
                     className="w-full bg-action hover:bg-action-hover text-action-foreground"

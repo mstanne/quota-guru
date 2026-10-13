@@ -1,13 +1,12 @@
 import { useMemo, useState } from "react";
 import { Link, useParams } from "react-router";
-import { CalendarDays, Clock, ListOrdered, Trophy } from "lucide-react";
+import { CalendarDays, ListOrdered, Trophy } from "lucide-react";
 import {
   allMatches,
   competitions,
   competitionPath,
   findCompetition,
   formatDay,
-  formatUpdated,
   generatedAt,
   isFinished,
   isLive,
@@ -16,8 +15,11 @@ import {
   standingsPath,
   type Competition,
   type Match,
+  competitionMeta,
 } from "../../lib/football";
+import { usePageMeta } from "../../lib/pageMeta";
 import { MatchRow } from "./MatchRow";
+import { DataUpdatedNote } from "./DataUpdatedNote";
 import { NotFoundPage } from "../NotFoundPage";
 import { PageHeader } from "../layout/PageHeader";
 
@@ -42,20 +44,12 @@ function matchesFilter(m: Match, filter: Filter) {
   return d >= day(0) && d <= day(6);
 }
 
-export function DataUpdatedNote({ className = "" }: { className?: string }) {
-  return (
-    <p className={`flex items-center gap-1.5 text-slate-400 text-sm ${className}`}>
-      <Clock className="w-4 h-4" aria-hidden="true" />
-      Dati aggiornati al {formatUpdated(generatedAt)} · risultati non in diretta
-    </p>
-  );
-}
-
 /** /calcio (all competitions) and /calcio/:competizione */
 export function CalcioPage() {
   const { competizione } = useParams();
   const competition = competizione ? findCompetition(competizione) : undefined;
   const [filter, setFilter] = useState<Filter>("upcoming");
+  usePageMeta(competition ? competitionMeta(competition) : null);
 
   const rows = useMemo(() => {
     const source = competition ? competition.matches.map((m) => ({ competition, match: m })) : allMatches;
@@ -90,7 +84,7 @@ export function CalcioPage() {
         breadcrumb={
           competition ? [{ label: "Calcio", to: "/calcio" }, { label: competition.name }] : [{ label: "Calcio" }]
         }
-        meta={<DataUpdatedNote />}
+        meta={<DataUpdatedNote generatedAt={generatedAt} />}
       >
         {competition && competition.standings.length > 0 && (
           <Link

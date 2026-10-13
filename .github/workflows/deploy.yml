@@ -50,6 +50,10 @@ jobs:
           BASE_PATH: /${{ github.event.repository.name }}/
           # used for canonical URLs, sitemap.xml and robots.txt
           SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          # optional analytics (Settings -> Secrets and variables -> Actions -> Variables); empty = disabled
+          VITE_ANALYTICS_PROVIDER: ${{ vars.ANALYTICS_PROVIDER }}
+          VITE_ANALYTICS_ID: ${{ vars.ANALYTICS_ID }}
+          VITE_COOKIE_POLICY_URL: ${{ vars.COOKIE_POLICY_URL }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
