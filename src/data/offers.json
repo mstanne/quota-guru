@@ -21,12 +21,9 @@
       "sourceUrl": "https://www.eurobet.it/it/promo/nuovi-iscritti",
       "termsUrl": "https://www.eurobet.it/it/promo/nuovi-iscritti",
       "verifiedAt": "2026-10-24",
-      "status": "bozza",
+      "status": "approvata",
       "description": "Offerta unica con tre bonus separati sul primo deposito: uno per le scommesse sportive, uno per le slot e uno per il casinò, ciascuno con requisiti propri.",
-      "issues": [
-        "La pagina non indica una data di fine dell'offerta.",
-        "Non è presente un link a un regolamento specifico della promozione: i termini sono nella pagina stessa."
-      ],
+      "issues": [],
       "components": [
         {
           "id": "sport",
@@ -103,7 +100,7 @@
       "sourceUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-sport",
       "termsUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-sport",
       "verifiedAt": "2026-10-24",
-      "status": "bozza",
+      "status": "approvata",
       "description": "Il totale indicato dall'operatore comprende un bonus sport fino a 100 €, un bonus per le slot fino a 2.150 € e un rimborso settimanale sulle scommesse fino a 10 € per 10 settimane.",
       "issues": [],
       "components": [
@@ -183,7 +180,7 @@
       "sourceUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse",
       "termsUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse",
       "verifiedAt": "2026-10-24",
-      "status": "bozza",
+      "status": "approvata",
       "description": "Il totale indicato dall'operatore comprende un bonus sport fino a 100 € e un bonus per le slot fino a 2.000 €.",
       "issues": [],
       "components": [
@@ -326,7 +323,7 @@
       "sourceUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
       "termsUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
       "verifiedAt": "2026-10-24",
-      "status": "bozza",
+      "status": "approvata",
       "description": "Un bonus real del 10% del primo deposito fino a 50 € sui giochi IGT e un bonus slot del 100% fino a 5.000 €, diviso in quattro parti da usare entro 3 giorni ciascuna.",
       "issues": [],
       "components": [
@@ -385,7 +382,7 @@
       "sourceUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
       "termsUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
       "verifiedAt": "2026-10-24",
-      "status": "bozza",
+      "status": "approvata",
       "description": "Un bonus real del 10% del primo deposito fino a 50 € sui giochi IGT e un bonus slot del 100% fino a 5.000 € sulle slot Inspired, da usare entro 3 giorni.",
       "issues": [],
       "components": [
