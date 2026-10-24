@@ -142,9 +142,8 @@ const goldbet: OperatorData = {
   id: "goldbet",
   name: "Goldbet",
   shortName: "GB",
-  // public/operators/logo_goldbet.png is currently a 1×1 px image: replace the file, then set
-  // logoUrl: "operators/logo_goldbet.png"
-  logoUrl: null,
+  // Square "GB" mark (fits the square logo slots); full wordmark: operators/logo_goldbet-full.png
+  logoUrl: "operators/logo_goldbet.png",
   logoAlt: "Logo Goldbet",
   affiliateUrl: "https://www.goldbet.it",
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
@@ -184,12 +183,46 @@ const planetwin365: OperatorData = {
   cashOut: true,
 };
 
+// Data from help.bet365.it (deposit and withdrawal methods) and the footer of bet365.it, 24/10/2026.
+// The welcome offer is shown only to logged-in users, so it is not in offers.json.
+const bet365: OperatorData = {
+  id: "bet365",
+  name: "bet365",
+  shortName: "B365",
+  logoUrl: "operators/bet365_Logo_Inline.svg",
+  logoAlt: "Logo bet365",
+  affiliateUrl: "https://www.bet365.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "Hillside (New Media Malta) Plc ... Concessione n° 16030": verify on the ADM list.
+  admLicense: "16030",
+  description:
+    "Concessionario ADM gestito da Hillside (New Media Malta) Plc, con scommesse sportive pre-partita e live e casinò online.",
+  minDeposit: "5 €",
+  withdrawalTime: "1-4 ore (carta o bonifico)",
+  paymentMethods: [
+    "Carte di debito",
+    "Carte di credito",
+    "Apple Pay",
+    "Google Pay",
+    "PayPal",
+    "Voucher prepagati",
+    "Skrill",
+    "Neteller",
+    "Bonifico bancario",
+  ],
+  features: ["Scommesse sportive pre-partita e live", "Cash out", "Bet Builder", "Casinò"],
+  pros: ["[PUNTO_DI_FORZA_1]", "[PUNTO_DI_FORZA_2]", "[PUNTO_DI_FORZA_3]"],
+  cons: ["[PUNTO_DEBOLE_1]", "[PUNTO_DEBOLE_2]"],
+  liveStreaming: false,
+  cashOut: true,
+};
+
 /** Operators shown across the site (comparison tables, offers, bet slip). Order = display order. */
 export const operators: OperatorData[] = [
   eurobet,
   goldbet,
   planetwin365,
-  placeholderOperator(4),
+  bet365,
   placeholderOperator(5, { liveStreaming: false }),
   placeholderOperator(6, { liveStreaming: false }),
 ];
