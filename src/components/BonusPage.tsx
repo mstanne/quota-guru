@@ -1,291 +1,155 @@
-import { useState } from "react";
-import { CircleAlert, CircleCheckBig, Funnel, Gift, Info, Phone, Star } from "lucide-react";
+import { CircleAlert, FileText, Gift, Info, Phone } from "lucide-react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./ui/accordion";
 import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+import { getOperator, isPlaceholder, responsibleGambling as rg, type OperatorData } from "../data/operators";
 import {
-  getOperator,
-  offerCategories,
-  offers as defaultOffers,
-  operators,
-  responsibleGambling as rg,
-  type OfferData,
-  type OperatorData,
-} from "../data/operators";
+  amountFor,
+  componentKindLabels,
+  formatDate,
+  formatEuro,
+  offersInSection,
+  productLabels,
+  productSections,
+  visibleOffers,
+  type OfferComponent,
+  type OfferProduct,
+  type WelcomeOffer,
+} from "../data/offers";
 import { OfferDisclaimer, OperatorCta, OperatorLogo } from "./operator/OperatorUi";
 import { PageHeader, MetaItems } from "./layout/PageHeader";
 
 interface BonusPageProps {
-  /** Offers to list (defaults to src/data/operators.ts). */
-  offers?: OfferData[];
+  /** Offers to list. Default: approved offers from src/data/offers.json (plus drafts in `npm run dev`). */
+  offers?: WelcomeOffer[];
   resolveOperator?: (id: string) => OperatorData;
 }
 
-/** /bonus – informational comparison of offer conditions (no ranking, no "claim" language). */
-export function BonusPage({ offers = defaultOffers, resolveOperator = getOperator }: BonusPageProps) {
-  const [category, setCategory] = useState<string>("all");
-  const visible = offers.filter((o) => category === "all" || o.category === category);
-  const countFor = (id: string) => (id === "all" ? offers.length : offers.filter((o) => o.category === id).length);
+/** Drafts are previewed only on the local dev server, never in the built site. */
+const SHOW_DRAFTS = import.meta.env.DEV;
+
+/**
+ * /bonus – informational comparison of welcome-offer conditions, grouped by product.
+ * No ranking, no ratings, no "claim" language. The headline total of an offer is broken down into its
+ * components, so a "sport" offer that is mostly a slot bonus is shown as such.
+ */
+export function BonusPage({
+  offers = visibleOffers({ includeDrafts: SHOW_DRAFTS }),
+  resolveOperator = getOperator,
+}: BonusPageProps) {
+  const sections = productSections.filter((s) => s.visible);
+  const operatorCount = new Set(offers.map((o) => o.operatorId)).size;
 
   return (
     <div className="min-h-screen bg-slate-950">
       <PageHeader
         icon={Gift}
-        title="Offerte a confronto"
-        subtitle="Le condizioni delle offerte degli operatori autorizzati, una accanto all'altra: deposito minimo, requisiti di giocata, scadenze e termini."
+        title="Offerte di benvenuto a confronto"
+        subtitle="Le condizioni delle offerte per i nuovi iscritti degli operatori autorizzati, divise per prodotto: importi reali di ogni componente, requisiti di giocata, scadenze e termini."
         breadcrumb={[{ label: "Offerte" }]}
-        meta={
-          <MetaItems items={[`${offers.length} offerte`, `${operators.length} operatori`, "Solo concessionari ADM"]} />
-        }
+        meta={<MetaItems items={[`${offers.length} offerte`, `${operatorCount} operatori`, "Solo concessionari ADM"]} />}
       />
       <div className="container mx-auto px-4 py-12">
         <Card className="bg-blue-500/10 border-blue-500/20 mb-8">
           <div className="p-6">
             <div className="flex items-start gap-3">
-              <Info className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+              <Info className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" aria-hidden="true" />
               <div>
                 <h2 className="text-blue-400 text-lg mb-2">Come leggere le condizioni</h2>
                 <p className="text-slate-300 text-sm mb-3">
-                  Le offerte degli operatori sono soggette a requisiti precisi: importo minimo di deposito, numero di
-                  volte in cui l'importo va giocato prima del prelievo, quote minime e scadenza.
+                  Il totale che un operatore indica per un'offerta è spesso la somma di più bonus su prodotti diversi.
+                  Per ogni offerta mostriamo quanto vale ciascuna parte, dove si può usare, quante volte va giocata
+                  prima di poter prelevare e entro quanti giorni.
                 </p>
                 <p className="text-slate-400 text-sm">
-                  Leggi sempre i termini completi sul sito dell'operatore. Un'offerta non è un motivo per giocare: gioca
-                  solo somme che puoi permetterti di perdere.
+                  I dati sono ricavati dai termini pubblicati dagli operatori e riportano la data dell'ultima verifica.
+                  In caso di differenze valgono i termini sul sito dell'operatore. Un'offerta non è un motivo per
+                  giocare: gioca solo somme che puoi permetterti di perdere.
                 </p>
               </div>
             </div>
           </div>
         </Card>
-        <div className="mb-8">
-          <div className="flex items-center gap-2 mb-4">
-            <Funnel className="w-5 h-5 text-slate-400" />
-            <h2 className="text-white text-xl">Filtra per categoria</h2>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {offerCategories.map((c) => (
-              <Button
-                key={c.id}
-                variant={category === c.id ? "default" : "outline"}
-                aria-pressed={category === c.id}
-                onClick={() => setCategory(c.id)}
-                className={
-                  category === c.id
-                    ? "bg-selected hover:bg-selected text-selected-foreground cursor-pointer"
-                    : "bg-slate-900 border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white cursor-pointer"
-                }
+
+        {sections.length > 1 && (
+          <nav aria-label="Sezioni" className="flex flex-wrap gap-3 mb-10">
+            {sections.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                className="px-4 py-2 rounded-md border border-slate-700 bg-slate-900 text-slate-300 hover:text-white hover:border-slate-500 text-sm"
               >
-                {c.name}
-                {countFor(c.id) > 0 && (
-                  <Badge variant="secondary" className="ml-2 bg-slate-800 text-slate-300">
-                    {countFor(c.id)}
-                  </Badge>
-                )}
-              </Button>
+                {s.label}
+                <span className="ml-2 text-slate-500">{offersInSection(offers, s.id).length}</span>
+              </a>
             ))}
-          </div>
-        </div>
-        <div className="mb-12">
-          <h2 className="text-white text-2xl mb-6">Offerte in primo piano</h2>
-          <div className="grid grid-cols-1 gap-6">
-            {visible
-              .filter((offer) => offer.featured)
-              .map((offer) => {
-                const operator = resolveOperator(offer.operatorId);
-                return (
-                  <Card key={offer.id} className="bg-slate-900 border-slate-700 transition-all overflow-hidden">
-                    <div className="p-6">
-                      <div className="flex flex-col lg:flex-row gap-6">
-                        <div className="lg:w-1/4">
-                          <div className="flex items-start gap-4">
-                            <OperatorLogo operator={operator} width={64} height={64} className="rounded-lg" />
-                            <div className="flex-1">
-                              <h3 className="text-white text-xl mb-1">{operator.name}</h3>
-                              <div className="flex items-center gap-1 mb-2">
-                                <Star className="w-4 h-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
-                                <span className="text-slate-300">{operator.rating}</span>
-                              </div>
-                              <p className="text-slate-400 text-xs">Concessione ADM {operator.admLicense}</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="lg:w-1/2 lg:border-l lg:border-r border-slate-800 lg:px-6">
-                          <div className="mb-4">
-                            <Badge variant="secondary" className="bg-slate-800 text-slate-300 mb-2">
-                              {offer.offerType}
-                            </Badge>
-                            <h4 className="text-white text-lg mb-2">{offer.title}</h4>
-                            <p className="text-slate-400 text-sm mb-4">{offer.description}</p>
-                          </div>
-                          <div className="grid grid-cols-2 gap-4 mb-4">
-                            <div>
-                              <div className="text-slate-400 text-xs mb-1">Deposito minimo</div>
-                              <div className="text-white">{offer.minDeposit}</div>
-                            </div>
-                            <div>
-                              <div className="text-slate-400 text-xs mb-1">Requisiti di giocata</div>
-                              <div className="text-white">{offer.wageringRequirement}</div>
-                            </div>
-                          </div>
-                          <div>
-                            <div className="text-slate-400 text-xs mb-2">Condizioni principali:</div>
-                            <ul className="space-y-1">
-                              {offer.highlights.map((highlight, i) => (
-                                <li key={i} className="flex items-start gap-2 text-slate-300 text-sm">
-                                  <CircleCheckBig className="w-4 h-4 text-slate-300 flex-shrink-0 mt-0.5" />
-                                  <span>{highlight}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="lg:w-1/4 flex flex-col justify-center items-center text-center">
-                          <div className="bg-slate-800 border border-slate-700 rounded-lg p-4 mb-4 w-full">
-                            <div className="text-slate-400 text-xs mb-1">Importo dell'offerta</div>
-                            <div className="text-white text-2xl leading-tight [overflow-wrap:anywhere]">
-                              {offer.amount}
-                            </div>
-                          </div>
-                          {offer.promoCode && (
-                            <div className="bg-slate-800 rounded px-4 py-2 mb-3 w-full">
-                              <div className="text-slate-400 text-xs mb-1">Codice promo</div>
-                              <div className="text-white font-mono">{offer.promoCode}</div>
-                            </div>
-                          )}
-                          <OperatorCta
-                            placement="offer-featured"
-                            operator={operator}
-                            label="Vai al sito"
-                            className="w-full bg-action hover:bg-action-hover text-action-foreground mb-2"
-                          />
-                          <OfferDisclaimer termsUrl={offer.termsUrl} />
-                        </div>
-                      </div>
-                      <div className="mt-6 border-t border-slate-800 pt-4">
-                        <Accordion type="single" collapsible>
-                          <AccordionItem value="terms" className="border-slate-800">
-                            <AccordionTrigger className="text-slate-300 hover:text-white">
-                              Termini e condizioni
-                            </AccordionTrigger>
-                            <AccordionContent>
-                              <ul className="space-y-2 text-slate-400 text-sm">
-                                {offer.terms.map((term, i) => (
-                                  <li key={i} className="flex items-start gap-2">
-                                    <CircleAlert className="w-4 h-4 text-slate-300 flex-shrink-0 mt-0.5" />
-                                    <span>{term}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </AccordionContent>
-                          </AccordionItem>
-                        </Accordion>
-                      </div>
-                    </div>
-                  </Card>
-                );
-              })}
-          </div>
-        </div>
-        <div className="mb-12">
-          <h2 className="text-white text-2xl mb-6">Altre offerte</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {visible
-              .filter((offer) => !offer.featured)
-              .map((offer) => {
-                const operator = resolveOperator(offer.operatorId);
-                return (
-                  <Card key={offer.id} className="bg-slate-900 border-slate-700 transition-all">
-                    <div className="p-6">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex items-center gap-3">
-                          <OperatorLogo operator={operator} width={48} height={48} className="rounded-lg" />
-                          <div>
-                            <h3 className="text-white">{operator.name}</h3>
-                            <div className="flex items-center gap-1">
-                              <Star className="w-3 h-3 fill-yellow-500 text-yellow-500" aria-hidden="true" />
-                              <span className="text-slate-400 text-sm">{operator.rating}</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="bg-slate-800 border border-slate-700 text-slate-200 px-3 py-1 rounded text-sm">
-                          {offer.amount}
-                        </div>
-                      </div>
-                      <h4 className="text-white mb-2">{offer.title}</h4>
-                      <p className="text-slate-400 text-sm mb-4">{offer.description}</p>
-                      <div className="grid grid-cols-2 gap-3 mb-4">
-                        <div className="bg-slate-800 rounded p-2">
-                          <div className="text-slate-400 text-xs mb-1">Deposito minimo</div>
-                          <div className="text-white text-sm">{offer.minDeposit}</div>
-                        </div>
-                        <div className="bg-slate-800 rounded p-2">
-                          <div className="text-slate-400 text-xs mb-1">Requisiti di giocata</div>
-                          <div className="text-white text-sm">{offer.wageringRequirement}</div>
-                        </div>
-                      </div>
-                      <OperatorCta
-                        placement="offer-list"
-                        operator={operator}
-                        label="Vai al sito"
-                        className="w-full bg-action hover:bg-action-hover text-action-foreground mb-2"
-                      />
-                      <OfferDisclaimer className="text-center" termsUrl={offer.termsUrl} />
-                    </div>
-                  </Card>
-                );
-              })}
-            {visible.length === 0 && <p className="text-slate-400">Nessuna offerta in questa categoria.</p>}
-          </div>
-        </div>
+          </nav>
+        )}
+
+        {sections.map((section) => {
+          const list = offersInSection(offers, section.id);
+          return (
+            <section key={section.id} id={section.id} className="mb-14 scroll-mt-24" aria-labelledby={`h-${section.id}`}>
+              <h2 id={`h-${section.id}`} className="text-white text-2xl mb-2">
+                {section.label}
+              </h2>
+              <p className="text-slate-400 text-sm mb-6">{section.intro}</p>
+              {list.length === 0 ? (
+                <p className="text-slate-400 text-sm border border-dashed border-slate-700 rounded-lg p-6">
+                  Nessuna offerta verificata da mostrare in questo momento.
+                </p>
+              ) : (
+                <div className="grid grid-cols-1 gap-6">
+                  {list.map((offer) => (
+                    <OfferCard
+                      key={offer.id}
+                      offer={offer}
+                      section={section.id}
+                      operator={resolveOperator(offer.operatorId)}
+                    />
+                  ))}
+                </div>
+              )}
+            </section>
+          );
+        })}
+
         <Card className="bg-slate-900 border-slate-800">
           <div className="p-8">
             <h2 className="text-white text-2xl mb-6">Domande frequenti</h2>
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="faq-1" className="border-slate-800">
                 <AccordionTrigger className="text-white hover:text-white">
-                  Cosa sono i requisiti di scommessa?
+                  Cosa sono i requisiti di giocata?
                 </AccordionTrigger>
                 <AccordionContent className="text-slate-400">
-                  I requisiti di scommessa (wagering requirements) indicano quante volte devi scommettere l'importo del
-                  bonus prima di poter prelevare le vincite. Ad esempio, un requisito 3x su un bonus di €30 significa
-                  che devi piazzare scommesse per un totale di €90.
+                  Indicano quante volte va giocato l'importo del bonus prima che diventi prelevabile. Un requisito di
+                  5 volte su un bonus di 100 € significa giocate per 500 €; un requisito di 40 volte su 1.000 € significa
+                  giocate per 40.000 €, spesso da completare in pochi giorni.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="faq-2" className="border-slate-800">
                 <AccordionTrigger className="text-white hover:text-white">
-                  Posso prelevare immediatamente il bonus?
+                  Perché un'offerta sport contiene un bonus slot?
                 </AccordionTrigger>
                 <AccordionContent className="text-slate-400">
-                  No, i bonus non possono essere prelevati immediatamente. Devi soddisfare i requisiti di scommessa
-                  specificati nei termini e condizioni. Solo le vincite generate dal bonus possono essere prelevate dopo
-                  aver completato i requisiti.
+                  Molti operatori uniscono nella stessa offerta di benvenuto bonus per prodotti diversi e ne indicano
+                  la somma. Per questo mostriamo separatamente la parte utilizzabile sulle scommesse sportive e le
+                  parti che valgono solo su altri giochi.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="faq-3" className="border-slate-800">
                 <AccordionTrigger className="text-white hover:text-white">Cosa sono le quote minime?</AccordionTrigger>
                 <AccordionContent className="text-slate-400">
-                  Le quote minime sono un requisito comune per i bonus. Ad esempio, se un bonus richiede quote minime di
-                  1.50, le tue scommesse devono essere piazzate su eventi con quota pari o superiore a 1.50 per contare
-                  verso il completamento dei requisiti del bonus.
+                  Molti bonus sport valgono solo su scommesse multiple con un numero minimo di eventi, ciascuno con una
+                  quota pari o superiore a un valore minimo (ad esempio 5 eventi a quota 1,70).
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="faq-4" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-white">I bonus hanno una scadenza?</AccordionTrigger>
+                <AccordionTrigger className="text-white hover:text-white">Posso usare più offerte insieme?</AccordionTrigger>
                 <AccordionContent className="text-slate-400">
-                  Sì, tutti i bonus hanno una scadenza. Generalmente varia da 7 a 30 giorni dalla ricezione del bonus. È
-                  importante utilizzare il bonus e completare i requisiti entro questo periodo, altrimenti il bonus e le
-                  eventuali vincite verranno annullati.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="faq-5" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-white">
-                  Posso usare più bonus contemporaneamente?
-                </AccordionTrigger>
-                <AccordionContent className="text-slate-400">
-                  Generalmente no. La maggior parte dei bookmaker permette di attivare un solo bonus alla volta. Devi
-                  completare i requisiti del primo bonus prima di poterne attivare un altro. Alcuni siti potrebbero
-                  avere regole diverse, quindi leggi sempre i T&C.
+                  In genere no: l'offerta di benvenuto si sceglie una sola volta in fase di registrazione e vale una
+                  sola volta per persona e nucleo familiare.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -294,7 +158,7 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
         <Card className="mt-8 bg-warn/10 border-warn/30">
           <div className="p-6">
             <div className="flex items-start gap-3">
-              <CircleAlert className="w-6 h-6 text-slate-300 flex-shrink-0 mt-1" />
+              <CircleAlert className="w-6 h-6 text-slate-300 flex-shrink-0 mt-1" aria-hidden="true" />
               <div>
                 <h3 className="text-warn mb-2">Gioco responsabile</h3>
                 <p className="text-slate-300 text-sm mb-3">
@@ -315,6 +179,185 @@ export function BonusPage({ offers = defaultOffers, resolveOperator = getOperato
           </div>
         </Card>
       </div>
+    </div>
+  );
+}
+
+function OfferCard({ offer, section, operator }: { offer: WelcomeOffer; section: OfferProduct; operator: OperatorData }) {
+  const name = isPlaceholder(operator.name) ? offer.operatorName : operator.name;
+  const op = { ...operator, name, logoAlt: `Logo ${name}` };
+  const own = offer.components.filter((c) => c.product === section);
+  const other = offer.components.filter((c) => c.product !== section);
+  const isDraft = offer.status !== "approvata";
+
+  return (
+    <Card className={`bg-slate-900 overflow-hidden ${isDraft ? "border-amber-500/60 border-dashed" : "border-slate-700"}`}>
+      <div className="p-6">
+        {isDraft && (
+          <div className="mb-4 rounded-md bg-amber-500/10 border border-amber-500/30 p-3 text-sm text-amber-200">
+            <strong>Bozza da approvare</strong> (visibile solo in sviluppo).
+            {offer.issues.length > 0 && (
+              <ul className="mt-2 list-disc pl-5 space-y-1">
+                {offer.issues.map((issue, i) => (
+                  <li key={i}>{issue}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="lg:w-1/4">
+            <div className="flex items-start gap-4">
+              <OperatorLogo operator={op} width={64} height={64} className="rounded-lg" />
+              <div className="flex-1 min-w-0">
+                <h3 className="text-white text-xl mb-1">{name}</h3>
+                {!isPlaceholder(operator.admLicense) && (
+                  <p className="text-slate-400 text-xs">Concessione ADM {operator.admLicense}</p>
+                )}
+              </div>
+            </div>
+            <div className="mt-4 bg-slate-800 border border-slate-700 rounded-lg p-4">
+              <div className="text-slate-400 text-xs mb-1">
+                Utilizzabile su {productLabels[section].toLowerCase()}
+              </div>
+              <div className="text-white text-2xl leading-tight">fino a {formatEuro(amountFor(offer, section))}</div>
+              {offer.advertisedTotal !== null && offer.advertisedTotal !== amountFor(offer, section) && (
+                <div className="text-slate-400 text-xs mt-2">
+                  Totale indicato dall'operatore: {formatEuro(offer.advertisedTotal)}
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="lg:w-3/4 lg:border-l border-slate-800 lg:pl-6">
+            <Badge variant="secondary" className="bg-slate-800 text-slate-300 mb-2">
+              {offer.title}
+            </Badge>
+            <p className="text-slate-300 text-sm mb-4">{offer.description}</p>
+
+            <ComponentTable components={own} />
+
+            {other.length > 0 && (
+              <div className="mt-4">
+                <h4 className="text-slate-300 text-sm mb-2">Nella stessa offerta, su altri prodotti</h4>
+                <ComponentTable components={other} showProduct />
+              </div>
+            )}
+
+            <dl className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5 text-sm">
+              <Fact label="Deposito minimo" value={offer.minDeposit !== null ? formatEuro(offer.minDeposit) : "Non indicato"} />
+              <Fact
+                label="Deposito entro"
+                value={offer.depositWithinDays !== null ? `${offer.depositWithinDays} giorni dalla registrazione` : "Non indicato"}
+              />
+              <Fact label="Offerta valida fino al" value={offer.validUntil ? formatDate(offer.validUntil) : "Non indicato"} />
+              <Fact label="Condizioni verificate il" value={formatDate(offer.verifiedAt)} />
+            </dl>
+
+            <Accordion type="single" collapsible className="mt-4">
+              <AccordionItem value="terms" className="border-slate-800">
+                <AccordionTrigger className="text-slate-300 hover:text-white">Requisiti ed esclusioni</AccordionTrigger>
+                <AccordionContent>
+                  <ul className="space-y-2 text-slate-400 text-sm">
+                    {offer.requirements.map((r, i) => (
+                      <li key={`r${i}`} className="flex items-start gap-2">
+                        <FileText className="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                        <span>{r}</span>
+                      </li>
+                    ))}
+                    {offer.excludedPaymentMethods.length > 0 && (
+                      <li className="flex items-start gap-2">
+                        <FileText className="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                        <span>Metodi di deposito esclusi: {offer.excludedPaymentMethods.join(", ")}</span>
+                      </li>
+                    )}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 mt-4">
+              <OperatorCta
+                placement={`offer-${section}`}
+                operator={op}
+                label="Vai al sito"
+                className="bg-action hover:bg-action-hover text-action-foreground"
+              />
+              <OfferDisclaimer termsUrl={offer.termsUrl} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </Card>
+  );
+}
+
+function Fact({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="bg-slate-800/60 rounded p-2">
+      <dt className="text-slate-400 text-xs mb-1">{label}</dt>
+      <dd className="text-white">{value}</dd>
+    </div>
+  );
+}
+
+const times = (n: number | null) => (n === null ? "—" : `${n} volte`);
+
+function conditions(c: OfferComponent) {
+  const parts = [c.usableOn];
+  if (c.minOddsPerEvent !== null) parts.push(`quota minima ${c.minOddsPerEvent.toFixed(2).replace(".", ",")} per evento`);
+  return parts.join(" · ");
+}
+
+function deadline(c: OfferComponent) {
+  const d = c.wageringDays ?? c.validityDays;
+  return d === null ? "—" : `${d} giorni`;
+}
+
+function ComponentTable({ components, showProduct = false }: { components: OfferComponent[]; showProduct?: boolean }) {
+  return (
+    <div className="overflow-x-auto rounded-lg border border-slate-800">
+      <table className="w-full text-sm">
+        <thead className="bg-slate-800/60 text-slate-400 text-xs text-left">
+          <tr>
+            {showProduct && <th className="p-2 font-normal">Prodotto</th>}
+            <th className="p-2 font-normal">Tipo</th>
+            <th className="p-2 font-normal">Importo massimo</th>
+            <th className="p-2 font-normal">Da giocare</th>
+            <th className="p-2 font-normal">Entro</th>
+            <th className="p-2 font-normal">Dove si usa</th>
+          </tr>
+        </thead>
+        <tbody className="text-slate-200">
+          {components.map((c) => (
+            <tr key={c.id} className="border-t border-slate-800 align-top">
+              {showProduct && <td className="p-2">{productLabels[c.product]}</td>}
+              <td className="p-2">
+                {componentKindLabels[c.kind]}
+                {c.percent !== null && <span className="text-slate-400"> ({c.percent}%)</span>}
+              </td>
+              <td className="p-2 whitespace-nowrap">
+                {formatEuro(c.maxAmount)}
+                {c.maxConvertible !== null && c.maxConvertible < c.maxAmount && (
+                  <div className="text-slate-400 text-xs">convertibili max {formatEuro(c.maxConvertible)}</div>
+                )}
+              </td>
+              <td className="p-2 whitespace-nowrap">{times(c.wagering)}</td>
+              <td className="p-2 whitespace-nowrap">{deadline(c)}</td>
+              <td className="p-2">
+                {conditions(c)}
+                {c.notes.length > 0 && (
+                  <ul className="text-slate-400 text-xs mt-1 space-y-0.5">
+                    {c.notes.map((n, i) => (
+                      <li key={i}>{n}</li>
+                    ))}
+                  </ul>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

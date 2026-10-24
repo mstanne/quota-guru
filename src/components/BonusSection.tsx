@@ -1,4 +1,4 @@
-import { Gift, Star } from "lucide-react";
+import { Gift } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { getOperator, offers as defaultOffers, type OfferData, type OperatorData } from "../data/operators";
@@ -12,7 +12,7 @@ interface BonusSectionProps {
   onViewAllClick?: () => void;
 }
 
-/** Home page block: operator offers, informational (no ranking, no "popular" badges). */
+/** Home page block: operator offers, informational (no ranking, no ratings, no "popular" badges). */
 export function BonusSection({
   offers = defaultOffers.slice(0, 4),
   resolveOperator = getOperator,
@@ -43,17 +43,9 @@ export function BonusSection({
                 className="bg-slate-800 border-slate-700 transition-all duration-300 overflow-hidden"
               >
                 <div className="p-5">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <OperatorLogo operator={operator} width={48} height={48} className="rounded-lg" />
-                      <div>
-                        <h3 className="text-white">{operator.name}</h3>
-                        <div className="flex items-center gap-1">
-                          <Star className="w-3 h-3 fill-yellow-500 text-yellow-500" aria-hidden="true" />
-                          <span className="text-slate-400 text-sm">{operator.rating}</span>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <OperatorLogo operator={operator} width={48} height={48} className="rounded-lg" />
+                    <h3 className="text-white">{operator.name}</h3>
                   </div>
                   <div className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-4 text-center">
                     <div className="text-slate-400 text-xs mb-1">{offer.title}</div>

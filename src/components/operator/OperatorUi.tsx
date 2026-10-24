@@ -5,6 +5,15 @@ import { cn } from "../ui/utils";
 import { isPlaceholder, type OperatorData } from "../../data/operators";
 import { currentPage, track } from "../../lib/analytics";
 
+/**
+ * Logo paths in operators.ts are relative to public/ ("operators/eurobet.svg"). The site can be served under a
+ * base path (GitHub Pages: "/quota-guru/"), so the base is prepended here; absolute URLs and data URIs are kept.
+ */
+export function assetUrl(path: string) {
+  if (/^(https?:|data:|\/)/.test(path)) return path;
+  return `${import.meta.env.BASE_URL.replace(/\/?$/, "/")}${path}`;
+}
+
 interface OperatorLogoProps {
   operator: Pick<OperatorData, "logoUrl" | "logoAlt" | "name">;
   /** Slot size in px – must match the original layout (e.g. 48 × 48). */
@@ -22,7 +31,7 @@ export function OperatorLogo({ operator, width, height, className }: OperatorLog
   if (operator.logoUrl) {
     return (
       <img
-        src={operator.logoUrl}
+        src={assetUrl(operator.logoUrl)}
         alt={operator.logoAlt}
         width={width}
         height={height}

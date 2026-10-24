@@ -5,12 +5,16 @@ import { Card } from "./ui/card";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "./ui/table";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import { useBetSlip } from "../context/BetSlipContext";
-import { getOperator } from "../data/operators";
+import { getOperator, oddsOperators } from "../data/operators";
 import { bestValue, formatOdd, isBestAt, type OddValue } from "../lib/odds";
 import { OperatorLogo } from "./operator/OperatorUi";
 
 /** One row of an odds comparison table: operator + value per outcome (number or placeholder). */
 type OddsRow = { operatorId: string } & Record<string, OddValue>;
+
+/** Placeholder rows for every comparison operator (src/data/operators.ts), same order as the other tables. */
+const placeholderRows = (player1: string, player2: string): OddsRow[] =>
+  oddsOperators.map((o) => ({ operatorId: o.id, player1, player2 }));
 
 export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
   const { addSelection } = useBetSlip();
@@ -25,21 +29,9 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
     surface: "Terra Battuta",
     round: "Finale",
   };
-  const winnerOdds: OddsRow[] = [
-    { operatorId: "operatore-1", player1: "[QUOTA_1]", player2: "[QUOTA_2]" },
-    { operatorId: "operatore-2", player1: "[QUOTA_1]", player2: "[QUOTA_2]" },
-    { operatorId: "operatore-3", player1: "[QUOTA_1]", player2: "[QUOTA_2]" },
-    { operatorId: "operatore-4", player1: "[QUOTA_1]", player2: "[QUOTA_2]" },
-    { operatorId: "operatore-5", player1: "[QUOTA_1]", player2: "[QUOTA_2]" },
-  ];
+  const winnerOdds: OddsRow[] = placeholderRows("[QUOTA_1]", "[QUOTA_2]");
 
-  const setBettingOdds: OddsRow[] = [
-    { operatorId: "operatore-1", player1: "[QUOTA_SET_2-0_G1]", player2: "[QUOTA_SET_2-0_G2]" },
-    { operatorId: "operatore-2", player1: "[QUOTA_SET_2-0_G1]", player2: "[QUOTA_SET_2-0_G2]" },
-    { operatorId: "operatore-3", player1: "[QUOTA_SET_2-0_G1]", player2: "[QUOTA_SET_2-0_G2]" },
-    { operatorId: "operatore-4", player1: "[QUOTA_SET_2-0_G1]", player2: "[QUOTA_SET_2-0_G2]" },
-    { operatorId: "operatore-5", player1: "[QUOTA_SET_2-0_G1]", player2: "[QUOTA_SET_2-0_G2]" },
-  ];
+  const setBettingOdds: OddsRow[] = placeholderRows("[QUOTA_SET_2-0_G1]", "[QUOTA_SET_2-0_G2]");
 
   const player1Form = ["W", "W", "L", "W", "W"];
   const player2Form = ["W", "W", "W", "L", "W"];

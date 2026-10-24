@@ -7,8 +7,11 @@
  * To add or replace an operator, fill in the fields below (or load the same shape from a JSON file / CMS / API).
  * Placeholder values use the [UPPER_SNAKE_CASE] convention so that missing data is obvious on screen.
  *
- * Logos: set `logoUrl` to an image path/URL. While it is `null`, a neutral box with the exact slot size
- * (e.g. [PLACEHOLDER_LOGO_48x48]) is rendered instead, so the layout never changes.
+ * Logos: put the file in public/ (e.g. public/operators/eurobet.svg) and set `logoUrl` to its path relative to
+ * public/ ("operators/eurobet.svg"): the site base path is added automatically. While it is `null`, a neutral box
+ * with the exact slot size (e.g. [PLACEHOLDER_LOGO_48x48]) is rendered instead, so the layout never changes.
+ *
+ * Welcome offers are no longer here: see src/data/offers.ts and offers.json.
  */
 
 /** A value not filled in yet, e.g. "[NOME_OPERATORE_1]". */
@@ -16,23 +19,21 @@ export type Placeholder = `[${string}]`;
 export const isPlaceholder = (v: unknown): v is Placeholder => typeof v === "string" && /^\[[^\]]+\]$/.test(v.trim());
 
 export interface OperatorData {
-  /** Stable id used to link odds and offers to the operator (no spaces). */
+  /** Stable id used to link odds and offers to the operator (no spaces). Must match `operatorId` in offers.json. */
   id: string;
   /** Display name, e.g. "Operatore Alfa". */
   name: string;
   /** 2–4 character abbreviation used where there is no room for the logo text. */
   shortName: string;
-  /** Logo image URL (SVG/PNG, transparent background). `null` = layout placeholder. */
+  /** Logo path relative to public/ (or absolute URL). SVG/PNG, transparent background. `null` = layout placeholder. */
   logoUrl: string | null;
   logoAlt: string;
-  /** Tracked outbound link (affiliate/referral URL). */
+  /** Outbound link ("Vai al sito"): affiliate/referral URL or the operator's public site. */
   affiliateUrl: string;
   /** Internal or external review page. */
   reviewUrl: string;
-  /** ADM concession number, shown next to the operator. */
+  /** ADM concession number, shown next to the operator (check it on the official ADM list). */
   admLicense: string;
-  /** Editorial rating 0–5 (number) or placeholder. */
-  rating: number | string;
   /** Short neutral description (no promotional claims). */
   description: string;
   minDeposit: string;
@@ -78,7 +79,6 @@ const placeholderOperator = (n: number, overrides: Partial<OperatorData> = {}): 
   affiliateUrl: AFFILIATE_URL_PLACEHOLDER,
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
   admLicense: "[NUMERO_CONCESSIONE_ADM]",
-  rating: "[VALUTAZIONE]",
   description: "[DESCRIZIONE_OPERATORE]",
   minDeposit: "[DEPOSITO_MINIMO]",
   withdrawalTime: "[TEMPI_PRELIEVO]",
@@ -91,11 +91,104 @@ const placeholderOperator = (n: number, overrides: Partial<OperatorData> = {}): 
   ...overrides,
 });
 
+const eurobet: OperatorData = {
+  id: "eurobet",
+  name: "Eurobet",
+  shortName: "EB",
+  logoUrl: "operators/Eurobet-logo-light.svg",
+  logoAlt: "Logo Eurobet",
+  affiliateUrl: "https://www.eurobet.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // From the footer of eurobet.it ("Eurobet Italia S.r.l. Unipersonale"), 24/10/2026: verify on the ADM list.
+  admLicense: "GAD 16012",
+  description:
+    "Concessionario ADM gestito da Eurobet Italia S.r.l., con scommesse sportive pre-partita e live, casinò, slot, poker e bingo online.",
+  minDeposit: "10 €",
+  withdrawalTime: "24 ore",
+  paymentMethods: [
+    "Carte di credito/debito",
+    "Postepay",
+    "PayPal",
+    "Skrill",
+    "Neteller",
+    "Apple Pay",
+    "Ricarica Eurobet (voucher)",
+    "Paysafecard",
+    "Bollettino postale",
+    "Bonifico bancario",
+  ],
+  features: [
+    "Scommesse sportive pre-partita e live",
+    "Streaming di eventi sportivi",
+    "Cash out",
+    "Casinò, slot, poker e bingo",
+  ],
+  pros: [
+    "Deposito minimo di 10 €",
+    "Tempo di prelievo indicato in 24 ore",
+    "Dieci metodi di pagamento, tra cui PayPal, Postepay e Apple Pay",
+  ],
+  cons: [
+    "Il bonus sport di benvenuto vale solo su multiple con almeno 5 eventi a quota 1,50",
+    "I depositi con Skrill, Neteller e Paysafecard sono esclusi dall'offerta di benvenuto",
+  ],
+  liveStreaming: true,
+  cashOut: true,
+};
+
+// Goldbet and Planetwin365 belong to the same group (same platform and offer structure).
+// Fields still to fill in are left as [PLACEHOLDER]; liveStreaming is false until verified on the operator's site.
+const goldbet: OperatorData = {
+  id: "goldbet",
+  name: "Goldbet",
+  shortName: "GB",
+  // public/operators/logo_goldbet.png is currently a 1×1 px image: replace the file, then set
+  // logoUrl: "operators/logo_goldbet.png"
+  logoUrl: null,
+  logoAlt: "Logo Goldbet",
+  affiliateUrl: "https://www.goldbet.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // From the footer of goldbet.it ("GBO Italy S.p.A."), 24/10/2026: verify on the ADM list.
+  admLicense: "GAD 16009",
+  description:
+    "Concessionario ADM gestito da GBO Italy S.p.A., con scommesse sportive, casinò, casinò live, slot, poker, bingo, giochi di carte e lotterie online.",
+  minDeposit: "[DEPOSITO_MINIMO]",
+  withdrawalTime: "[TEMPI_PRELIEVO]",
+  paymentMethods: ["[METODO_PAGAMENTO_1]", "[METODO_PAGAMENTO_2]", "[METODO_PAGAMENTO_3]", "[METODO_PAGAMENTO_4]"],
+  features: ["Scommesse sportive", "Cash out", "Casinò, casinò live e slot", "Poker, bingo e lotterie"],
+  pros: ["[PUNTO_DI_FORZA_1]", "[PUNTO_DI_FORZA_2]", "[PUNTO_DI_FORZA_3]"],
+  cons: ["[PUNTO_DEBOLE_1]", "[PUNTO_DEBOLE_2]"],
+  liveStreaming: false,
+  cashOut: true,
+};
+
+const planetwin365: OperatorData = {
+  id: "planetwin365",
+  name: "Planetwin365",
+  shortName: "PW",
+  logoUrl: "operators/logo-planetwin-yellow.svg",
+  logoAlt: "Logo Planetwin365",
+  affiliateUrl: "https://www.planetwin365.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // From the footer of planetwin365.it ("PWO S.p.A."), 24/10/2026: verify on the ADM list.
+  admLicense: "GAD 16007",
+  description:
+    "Concessionario ADM gestito da PWO S.p.A., con scommesse sportive, casinò, casinò live, slot, poker, bingo, giochi di carte e lotterie online, e una rete di punti vendita.",
+  minDeposit: "[DEPOSITO_MINIMO]",
+  withdrawalTime: "[TEMPI_PRELIEVO]",
+  paymentMethods: ["[METODO_PAGAMENTO_1]", "[METODO_PAGAMENTO_2]", "[METODO_PAGAMENTO_3]", "[METODO_PAGAMENTO_4]"],
+  features: ["Scommesse sportive", "Cash out", "Casinò, casinò live e slot", "Punti vendita sul territorio"],
+  pros: ["[PUNTO_DI_FORZA_1]", "[PUNTO_DI_FORZA_2]", "[PUNTO_DI_FORZA_3]"],
+  cons: ["[PUNTO_DEBOLE_1]", "[PUNTO_DEBOLE_2]"],
+  liveStreaming: false,
+  cashOut: true,
+};
+
 /** Operators shown across the site (comparison tables, offers, bet slip). Order = display order. */
 export const operators: OperatorData[] = [
-  placeholderOperator(1),
-  placeholderOperator(2, { liveStreaming: false }),
-  placeholderOperator(3),
+  eurobet,
+  goldbet,
+  planetwin365,
   placeholderOperator(4),
   placeholderOperator(5, { liveStreaming: false }),
   placeholderOperator(6, { liveStreaming: false }),
@@ -122,6 +215,7 @@ const placeholderOffer = (n: number, overrides: Partial<OfferData> = {}): OfferD
   ...overrides,
 });
 
+/** Legacy placeholder offers, still used by the home block and the Siti Scommesse page. */
 export const offers: OfferData[] = [
   placeholderOffer(1, { featured: true, promoCode: "[CODICE_PROMO]" }),
   placeholderOffer(2, { featured: true }),

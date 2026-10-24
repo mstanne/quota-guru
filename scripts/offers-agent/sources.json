@@ -1,0 +1,44 @@
+{
+  "note": "Pagine controllate dall'agente offerte. 'listing' = elenco delle offerte di benvenuto dell'operatore; 'pages' = pagina di dettaglio di ciascuna offerta seguita (product = sezione del sito). Le lotterie sono nello schema ma nascoste: l'agente ne segnala solo la presenza.",
+  "operators": [
+    {
+      "operatorId": "eurobet",
+      "operatorName": "Eurobet",
+      "listing": "https://www.eurobet.it/it/promo/nuovi-iscritti",
+      "pages": [
+        { "offerId": "eurobet-welcombonus", "sections": ["sport", "casino"], "url": "https://www.eurobet.it/it/promo/nuovi-iscritti" }
+      ],
+      "notes": "Pagina statica: tutti i termini sono nella pagina stessa."
+    },
+    {
+      "operatorId": "planetwin365",
+      "operatorName": "Planetwin365",
+      "listing": "https://www.planetwin365.it/bonus/bonus-di-benvenuto",
+      "pages": [
+        { "offerId": "planetwin365-sport", "sections": ["sport"], "url": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-sport" },
+        { "offerId": "planetwin365-casino", "sections": ["casino"], "url": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino" }
+      ],
+      "notes": "Pagina caricata via JavaScript: serve il browser. I termini sono in sezioni a scomparsa: leggere il testo con textContent dell'elemento <main>, non solo il testo visibile. Banner cookie: 'Continua senza accettare'."
+    },
+    {
+      "operatorId": "goldbet",
+      "operatorName": "Goldbet",
+      "listing": "https://www.goldbet.it/bonus/bonus-di-benvenuto",
+      "pages": [
+        { "offerId": "goldbet-sport", "sections": ["sport"], "url": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse" },
+        { "offerId": "goldbet-casino", "sections": ["casino"], "url": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino" }
+      ],
+      "notes": "Stessa piattaforma di Planetwin365 (stesse indicazioni)."
+    },
+    {
+      "operatorId": "snai",
+      "operatorName": "Snai",
+      "listing": "https://www.snai.it/bonus/bonus-benvenuto",
+      "pages": [
+        { "offerId": "snai-sport", "sections": ["sport"], "url": "https://www.snai.it/bonus/bonus-benvenuto/sport" },
+        { "offerId": "snai-casino", "sections": ["casino"], "url": "https://www.snai.it/bonus/bonus-benvenuto/casino" }
+      ],
+      "notes": "Caricata via JavaScript: attendere qualche secondo. Nell'elenco compaiono due offerte scommesse (1.500 € e 2.000 €): verificare quale corrisponde a /sport e se l'altra (/bonus-benvenuto/ab0926) è un'offerta distinta."
+    }
+  ]
+}

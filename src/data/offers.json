@@ -1,0 +1,486 @@
+{
+  "updatedAt": "2026-10-24",
+  "offers": [
+    {
+      "id": "eurobet-welcombonus",
+      "operatorId": "eurobet",
+      "operatorName": "Eurobet",
+      "sections": ["sport", "casino"],
+      "title": "WelCOMBOnus",
+      "advertisedTotal": null,
+      "minDeposit": 20,
+      "depositWithinDays": 7,
+      "requirements": [
+        "Validazione del documento d'identità",
+        "Riservata a maggiorenni residenti in Italia",
+        "Una sola adesione per nucleo familiare, indirizzo IP, dispositivo, email o carta"
+      ],
+      "excludedPaymentMethods": ["Skrill", "Paysafecard", "Neteller", "OnShop", "Admiral Pay"],
+      "validFrom": "2026-06-08",
+      "validUntil": null,
+      "sourceUrl": "https://www.eurobet.it/it/promo/nuovi-iscritti",
+      "termsUrl": "https://www.eurobet.it/it/promo/nuovi-iscritti",
+      "verifiedAt": "2026-10-24",
+      "status": "bozza",
+      "description": "Offerta unica con tre bonus separati sul primo deposito: uno per le scommesse sportive, uno per le slot e uno per il casinò, ciascuno con requisiti propri.",
+      "issues": [
+        "La pagina non indica una data di fine dell'offerta.",
+        "Non è presente un link a un regolamento specifico della promozione: i termini sono nella pagina stessa."
+      ],
+      "components": [
+        {
+          "id": "sport",
+          "product": "sport",
+          "kind": "bonus-deposito",
+          "percent": 50,
+          "maxAmount": 100,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": null,
+          "validityDays": 7,
+          "minEvents": 5,
+          "minOddsPerEvent": 1.5,
+          "usableOn": "Scommesse multiple con almeno 5 eventi",
+          "notes": [
+            "Non valido su singole, sistemi con meno di 5 eventi, virtuali e cash out",
+            "Bonus non prelevabile; il residuo scade all'ottavo giorno",
+            "Massimo 100 € di bonus per singola scommessa"
+          ]
+        },
+        {
+          "id": "slot",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "percent": null,
+          "maxAmount": 2000,
+          "maxConvertible": 400,
+          "wagering": 60,
+          "wageringDays": 2,
+          "validityDays": 5,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Slot indicate per ciascun gruppo",
+          "notes": [
+            "Erogato come 8 bonus da 250 €, ciascuno convertibile fino a 50 €",
+            "Il bonus convertito va usato entro 5 giorni"
+          ]
+        },
+        {
+          "id": "casino",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "percent": 100,
+          "maxAmount": 5000,
+          "maxConvertible": null,
+          "wagering": 35,
+          "wageringDays": 60,
+          "validityDays": 60,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Giochi da casinò",
+          "notes": [
+            "Contributo al requisito: slot 100%, roulette proprietaria Eurobet 30%, giochi di carte e video poker 10%, altre roulette 1%"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planetwin365-sport",
+      "operatorId": "planetwin365",
+      "operatorName": "Planetwin365",
+      "sections": ["sport"],
+      "title": "Bonus Benvenuto Sport",
+      "advertisedTotal": 2350,
+      "minDeposit": 20,
+      "depositWithinDays": 7,
+      "requirements": [
+        "Selezione del Bonus Benvenuto Sport in fase di registrazione",
+        "Validazione del documento d'identità"
+      ],
+      "excludedPaymentMethods": ["Skrill", "Neteller", "OnShop", "Titolo di Ricarica"],
+      "validFrom": "2026-09-17",
+      "validUntil": "2026-11-01",
+      "sourceUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-sport",
+      "termsUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-sport",
+      "verifiedAt": "2026-10-24",
+      "status": "bozza",
+      "description": "Il totale indicato dall'operatore comprende un bonus sport fino a 100 €, un bonus per le slot fino a 2.150 € e un rimborso settimanale sulle scommesse fino a 10 € per 10 settimane.",
+      "issues": [],
+      "components": [
+        {
+          "id": "sport",
+          "product": "sport",
+          "kind": "bonus-deposito",
+          "percent": 25,
+          "maxAmount": 100,
+          "maxConvertible": null,
+          "wagering": 5,
+          "wageringDays": 7,
+          "validityDays": 7,
+          "minEvents": 5,
+          "minOddsPerEvent": 1.7,
+          "usableOn": "Scommesse multiple con almeno 5 eventi",
+          "notes": [
+            "Escluse: live, sistemi, cash out, marcatori, antepost, Under/Over e Gol/NoGol",
+            "Massimo 100 € di bonus per singola scommessa"
+          ]
+        },
+        {
+          "id": "rimborso",
+          "product": "sport",
+          "kind": "rimborso",
+          "percent": 50,
+          "maxAmount": 100,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": null,
+          "validityDays": 7,
+          "minEvents": 3,
+          "minOddsPerEvent": 1.5,
+          "usableOn": "Scommesse con almeno 3 eventi e quota totale almeno 10,00",
+          "notes": [
+            "50% delle scommesse valide della settimana, fino a 10 € a settimana per 10 settimane dalla registrazione",
+            "Accreditato il lunedì successivo; non conta il gioco con saldo bonus"
+          ]
+        },
+        {
+          "id": "slot",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "percent": 100,
+          "maxAmount": 2150,
+          "maxConvertible": 1075,
+          "wagering": null,
+          "wageringDays": 3,
+          "validityDays": 3,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Slot dei provider Capecod, Games Global, Playson, Inspired",
+          "notes": [
+            "Erogato in 4 bonus fino a 537,50 €, uno per provider, convertibili al 50%",
+            "Ogni euro giocato conta al 75% del requisito",
+            "Il bonus convertito resta valido 1 giorno"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "goldbet-sport",
+      "operatorId": "goldbet",
+      "operatorName": "Goldbet",
+      "sections": ["sport"],
+      "title": "Bonus Benvenuto Scommesse",
+      "advertisedTotal": 2100,
+      "minDeposit": 20,
+      "depositWithinDays": 7,
+      "requirements": [
+        "Selezione del Bonus Benvenuto Sport in fase di registrazione",
+        "Validazione del documento d'identità"
+      ],
+      "excludedPaymentMethods": ["Skrill", "Neteller", "OnShop", "Titolo di Ricarica"],
+      "validFrom": "2026-09-17",
+      "validUntil": "2026-11-01",
+      "sourceUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse",
+      "termsUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse",
+      "verifiedAt": "2026-10-24",
+      "status": "bozza",
+      "description": "Il totale indicato dall'operatore comprende un bonus sport fino a 100 € e un bonus per le slot fino a 2.000 €.",
+      "issues": [],
+      "components": [
+        {
+          "id": "sport",
+          "product": "sport",
+          "kind": "bonus-deposito",
+          "percent": 25,
+          "maxAmount": 100,
+          "maxConvertible": null,
+          "wagering": 5,
+          "wageringDays": 7,
+          "validityDays": 7,
+          "minEvents": 5,
+          "minOddsPerEvent": 1.7,
+          "usableOn": "Scommesse multiple con almeno 5 eventi",
+          "notes": [
+            "Escluse: live, sistemi, cash out, marcatori, antepost, Under/Over e Gol/NoGol",
+            "Massimo 100 € di bonus per singola scommessa"
+          ]
+        },
+        {
+          "id": "slot",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "percent": 100,
+          "maxAmount": 2000,
+          "maxConvertible": 1000,
+          "wagering": 40,
+          "wageringDays": 3,
+          "validityDays": 3,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Slot del provider Games Global",
+          "notes": [
+            "Ogni euro giocato conta al 75% del requisito",
+            "Convertibile fino al 50% del bonus; il bonus convertito resta valido 1 giorno"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snai-sport",
+      "operatorId": "snai",
+      "operatorName": "Snai",
+      "sections": ["sport"],
+      "title": "Bonus Benvenuto Sport",
+      "advertisedTotal": 2000,
+      "minDeposit": 10,
+      "depositWithinDays": 7,
+      "requirements": [
+        "Selezione del Bonus Benvenuto Sport in fase di registrazione",
+        "Validazione del documento d'identità",
+        "Solo per chi non ha mai avuto un conto gioco Snai; una adesione per persona e nucleo familiare"
+      ],
+      "excludedPaymentMethods": [],
+      "validFrom": null,
+      "validUntil": null,
+      "sourceUrl": "https://www.snai.it/bonus/bonus-benvenuto/sport",
+      "termsUrl": "https://www.snai.it/bonus/bonus-benvenuto/sport",
+      "verifiedAt": "2026-10-24",
+      "status": "bozza",
+      "description": "Il totale indicato dall'operatore comprende un bonus sport fino a 500 € erogato in cinque tranche settimanali, un rimborso del 20% delle perdite nelle prime quattro settimane fino a 1.000 € e un bonus per le slot fino a 500 €.",
+      "issues": [
+        "Il titolo della pagina indica 2.000 €, il titolo dei termini e condizioni indica 1.500 €.",
+        "Le FAQ dicono che il bonus sport va usato entro 3 giorni, i termini entro 7 giorni.",
+        "I termini dicono che il bonus complessivo non può superare l'importo del primo deposito.",
+        "Date di inizio e fine dell'offerta non indicate."
+      ],
+      "components": [
+        {
+          "id": "sport",
+          "product": "sport",
+          "kind": "bonus-deposito",
+          "percent": 50,
+          "maxAmount": 500,
+          "maxConvertible": null,
+          "wagering": 9,
+          "wageringDays": null,
+          "validityDays": 7,
+          "minEvents": 3,
+          "minOddsPerEvent": 1.5,
+          "usableOn": "Scommesse multiple con almeno 3 eventi",
+          "notes": [
+            "Erogato in 5 tranche settimanali del 20% ciascuna",
+            "Esclusi cash out, sistemi e My Combo"
+          ]
+        },
+        {
+          "id": "rimborso",
+          "product": "sport",
+          "kind": "rimborso",
+          "percent": 20,
+          "maxAmount": 1000,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": null,
+          "validityDays": 7,
+          "minEvents": 3,
+          "minOddsPerEvent": 1.5,
+          "usableOn": "Calcolato sulle perdite nette delle prime 4 settimane",
+          "notes": [
+            "Valgono solo multiple giocate con saldo reale, almeno 3 eventi a quota 1,50 e quota totale almeno 4,50",
+            "Esclusi cash out, sistemi e My Combo"
+          ]
+        },
+        {
+          "id": "slot",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "percent": 50,
+          "maxAmount": 500,
+          "maxConvertible": 500,
+          "wagering": 45,
+          "wageringDays": 5,
+          "validityDays": 5,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Sette slot indicate nel regolamento",
+          "notes": ["Il bonus convertito va usato entro 5 giorni"]
+        }
+      ]
+    },
+    {
+      "id": "planetwin365-casino",
+      "operatorId": "planetwin365",
+      "operatorName": "Planetwin365",
+      "sections": ["casino"],
+      "title": "Bonus Benvenuto Casino",
+      "advertisedTotal": 5050,
+      "minDeposit": 20,
+      "depositWithinDays": 7,
+      "requirements": [
+        "Selezione del Bonus Benvenuto Casinò in fase di registrazione",
+        "Validazione del documento d'identità"
+      ],
+      "excludedPaymentMethods": ["Skrill", "Neteller", "OnShop", "Titolo di Ricarica", "Movimentazione bancaria"],
+      "validFrom": "2026-07-20",
+      "validUntil": "2026-11-01",
+      "sourceUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
+      "termsUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
+      "verifiedAt": "2026-10-24",
+      "status": "bozza",
+      "description": "Un bonus real del 10% del primo deposito fino a 50 € sui giochi IGT e un bonus slot del 100% fino a 5.000 €, diviso in quattro parti da usare entro 3 giorni ciascuna.",
+      "issues": [],
+      "components": [
+        {
+          "id": "real",
+          "product": "casino",
+          "kind": "bonus-real",
+          "percent": 10,
+          "maxAmount": 50,
+          "maxConvertible": null,
+          "wagering": 1,
+          "wageringDays": null,
+          "validityDays": null,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Giochi IGT",
+          "notes": ["Va giocato una volta per intero prima di diventare prelevabile"]
+        },
+        {
+          "id": "slot",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "percent": 100,
+          "maxAmount": 5000,
+          "maxConvertible": 2500,
+          "wagering": 40,
+          "wageringDays": 3,
+          "validityDays": 3,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Slot dei provider Games Global, Capecod, Playson, Inspired",
+          "notes": [
+            "Erogato in 4 tranche fino a 1.250 €, una per provider, ciascuna convertibile fino a 625 €",
+            "Ogni euro giocato conta al 75% del requisito",
+            "Il bonus convertito resta valido 1 giorno"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "goldbet-casino",
+      "operatorId": "goldbet",
+      "operatorName": "Goldbet",
+      "sections": ["casino"],
+      "title": "Bonus Benvenuto Casinò",
+      "advertisedTotal": 5050,
+      "minDeposit": 20,
+      "depositWithinDays": 7,
+      "requirements": [
+        "Selezione del Bonus Benvenuto Casinò in fase di registrazione",
+        "Validazione del documento d'identità"
+      ],
+      "excludedPaymentMethods": ["Skrill", "Neteller", "OnShop", "Titolo di Ricarica", "Movimentazione bancaria"],
+      "validFrom": "2026-07-20",
+      "validUntil": "2026-11-01",
+      "sourceUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
+      "termsUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
+      "verifiedAt": "2026-10-24",
+      "status": "bozza",
+      "description": "Un bonus real del 10% del primo deposito fino a 50 € sui giochi IGT e un bonus slot del 100% fino a 5.000 € sulle slot Inspired, da usare entro 3 giorni.",
+      "issues": [],
+      "components": [
+        {
+          "id": "real",
+          "product": "casino",
+          "kind": "bonus-real",
+          "percent": 10,
+          "maxAmount": 50,
+          "maxConvertible": null,
+          "wagering": 1,
+          "wageringDays": null,
+          "validityDays": null,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Giochi IGT",
+          "notes": ["Va giocato una volta per intero prima di diventare prelevabile"]
+        },
+        {
+          "id": "slot",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "percent": 100,
+          "maxAmount": 5000,
+          "maxConvertible": 2500,
+          "wagering": 40,
+          "wageringDays": 3,
+          "validityDays": 3,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Slot del provider Inspired",
+          "notes": [
+            "Accreditato entro 72 ore dal deposito",
+            "Ogni euro giocato conta al 75% del requisito",
+            "Il bonus convertito resta valido 1 giorno"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snai-casino",
+      "operatorId": "snai",
+      "operatorName": "Snai",
+      "sections": ["casino"],
+      "title": "Bonus Benvenuto Casinò",
+      "advertisedTotal": 5000,
+      "minDeposit": null,
+      "depositWithinDays": null,
+      "requirements": [
+        "Solo per chi non ha mai avuto un conto gioco Snai; una adesione per persona e nucleo familiare"
+      ],
+      "excludedPaymentMethods": [],
+      "validFrom": null,
+      "validUntil": null,
+      "sourceUrl": "https://www.snai.it/bonus/bonus-benvenuto/casino",
+      "termsUrl": "https://www.snai.it/bonus/bonus-benvenuto/casino",
+      "verifiedAt": "2026-10-24",
+      "status": "bozza",
+      "description": "Un bonus slot di 500 € alla registrazione, senza deposito, e un bonus slot del 100% del primo deposito fino a 4.500 €.",
+      "issues": [
+        "I termini del casinò non indicano il deposito minimo.",
+        "Date di inizio e fine dell'offerta non indicate."
+      ],
+      "components": [
+        {
+          "id": "senza-deposito",
+          "product": "casino",
+          "kind": "senza-deposito",
+          "percent": null,
+          "maxAmount": 500,
+          "maxConvertible": 500,
+          "wagering": 60,
+          "wageringDays": 2,
+          "validityDays": 2,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Slot indicate nel regolamento",
+          "notes": ["Il bonus convertito va usato entro 7 giorni"]
+        },
+        {
+          "id": "deposito",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "percent": 100,
+          "maxAmount": 4500,
+          "maxConvertible": 4500,
+          "wagering": 45,
+          "wageringDays": 5,
+          "validityDays": 5,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Sette slot indicate nel regolamento",
+          "notes": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Check, ExternalLink, Funnel, Shield, Star, TrendingUp, X } from "lucide-react";
+import { Check, ExternalLink, Funnel, Shield, TrendingUp, X } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "./ui/select";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import {
+  isPlaceholder,
   offers as defaultOffers,
   operators as defaultOperators,
   responsibleGambling as rg,
@@ -15,7 +16,7 @@ import {
 import { OperatorCta, OperatorLogo } from "./operator/OperatorUi";
 import { PageHeader, MetaItems } from "./layout/PageHeader";
 
-// Neutral, factual filters (no "recommended" / "best bonus" rankings).
+// Neutral, factual filters (no "recommended" / "best bonus" rankings, no ratings).
 const filterCategories = [
   { id: "all", name: "Tutti gli operatori", icon: "\u{1F3AF}" },
   { id: "streaming", name: "Diretta streaming", icon: "\u{1F4FA}" },
@@ -29,18 +30,19 @@ interface SitiScommessePageProps {
   offers?: OfferData[];
 }
 
-const ratingValue = (o: OperatorData) => (typeof o.rating === "number" ? o.rating : 0);
-
-/** /siti-scommesse – factual comparison of authorised operators. */
+/** /siti-scommesse – factual comparison of authorised operators, in alphabetical order. */
 export function SitiScommessePage({ operators = defaultOperators, offers = defaultOffers }: SitiScommessePageProps) {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [sortBy, setSortBy] = useState("rating");
   const offerOf = (o: OperatorData) => offers.find((x) => x.operatorId === o.id);
   const filteredBookmakers = operators
     .filter((o) =>
       selectedCategory === "streaming" ? o.liveStreaming : selectedCategory === "cashout" ? o.cashOut : true,
     )
-    .sort((a, b) => (sortBy === "rating" ? ratingValue(b) - ratingValue(a) : a.name.localeCompare(b.name)));
+    // alphabetical; operators still to be filled in ([NOME_OPERATORE_n]) go last
+    .sort(
+      (a, b) =>
+        Number(isPlaceholder(a.name)) - Number(isPlaceholder(b.name)) || a.name.localeCompare(b.name, "it"),
+    );
   return (
     <div className="min-h-screen bg-slate-950">
       <PageHeader
@@ -53,6 +55,7 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
             items={[
               `${operators.length} operatori`,
               "Solo concessionari ADM",
+              "In ordine alfabetico",
               `Vietato ai minori di ${rg.minAge} anni`,
             ]}
           />
@@ -65,38 +68,20 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
               <Funnel className="w-5 h-5 text-slate-400" />
               <h2 className="text-white text-xl">Filtra operatori</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div>
-                <label className="text-slate-400 text-sm mb-2 block">Categoria</label>
-                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger aria-label="Categoria" className="bg-slate-800 border-slate-500 text-white">
-                    <SelectValue placeholder="Seleziona categoria" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-slate-800 border-slate-700">
-                    {filterCategories.map((category) => (
-                      <SelectItem key={category.id} value={category.id} className="text-white">
-                        {category.icon} {category.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <label className="text-slate-400 text-sm mb-2 block">Ordina per</label>
-                <Select value={sortBy} onValueChange={setSortBy}>
-                  <SelectTrigger aria-label="Ordina per" className="bg-slate-800 border-slate-500 text-white">
-                    <SelectValue placeholder="Ordina per" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-slate-800 border-slate-700">
-                    <SelectItem value="rating" className="text-white">
-                      ⭐ Valutazione
+            <div className="max-w-md mb-6">
+              <label className="text-slate-400 text-sm mb-2 block">Categoria</label>
+              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                <SelectTrigger aria-label="Categoria" className="bg-slate-800 border-slate-500 text-white">
+                  <SelectValue placeholder="Seleziona categoria" />
+                </SelectTrigger>
+                <SelectContent className="bg-slate-800 border-slate-700">
+                  {filterCategories.map((category) => (
+                    <SelectItem key={category.id} value={category.id} className="text-white">
+                      {category.icon} {category.name}
                     </SelectItem>
-                    <SelectItem value="name" className="text-white">
-                      🔤 Nome
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
             <div className="flex flex-wrap gap-2">
               {filterCategories.map((category) => (
@@ -124,22 +109,7 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
                   <div className="flex items-center gap-4">
                     <OperatorLogo operator={bookmaker} width={48} height={48} />
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <h3 className="text-white text-2xl">{bookmaker.name}</h3>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="flex items-center gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className={`w-4 h-4 ${i < Math.floor(ratingValue(bookmaker)) ? "fill-yellow-500 text-yellow-500" : "text-slate-500"}`}
-                            />
-                          ))}
-                        </div>
-                        <span className="text-slate-400 text-sm">{bookmaker.rating}/5</span>
-                      </div>
-                    </div>
+                    <h3 className="text-white text-2xl">{bookmaker.name}</h3>
                   </div>
                   <div className="text-center md:text-right">
                     <div className="text-slate-400 text-sm mb-1">Offerta attuale</div>
@@ -150,7 +120,7 @@ export function SitiScommessePage({ operators = defaultOperators, offers = defau
                   </div>
                 </div>
                 <div className="bg-slate-800 rounded-lg p-4 mb-6">
-                  <p className="text-white text-center">{offerOf(bookmaker)?.description ?? "[DESCRIZIONE_PROMO]"}</p>
+                  <p className="text-white text-center">{bookmaker.description}</p>
                   <p className="text-slate-400 text-sm text-center mt-2">
                     {"Deposito minimo: "}
                     {bookmaker.minDeposit}

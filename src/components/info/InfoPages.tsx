@@ -227,8 +227,12 @@ export function MetodologiaPage() {
       <h2>Da dove arrivano i dati</h2>
       <ul>
         <li>
-          <strong>Quote, offerte e schede degli operatori:</strong> forniti dagli operatori stessi tramite feed, e
-          controllati automaticamente (formato, scadenza, coerenza) prima della pubblicazione.
+          <strong>Quote:</strong> fornite dagli operatori stessi tramite feed, e controllate automaticamente (formato,
+          scadenza, coerenza) prima della pubblicazione.
+        </li>
+        <li>
+          <strong>Offerte di benvenuto:</strong> rilevate dalla redazione sulle pagine ufficiali degli operatori e
+          ricontrollate periodicamente; ogni offerta riporta la data dell'ultima verifica.
         </li>
         <li>
           <strong>Calendario, risultati e classifiche del calcio:</strong> API di football-data.org.
@@ -247,14 +251,15 @@ export function MetodologiaPage() {
       </p>
       <h2>Offerte</h2>
       <p>
-        Le condizioni delle offerte (deposito minimo, requisiti di giocata, scadenza) sono riportate in campi separati
-        per permettere un confronto oggettivo. I testi forniti dagli operatori sono rivisti per eliminare espressioni
-        promozionali non consentite.
+        Le condizioni delle offerte (importo di ciascuna parte, deposito minimo, requisiti di giocata, scadenze) sono
+        riportate in campi separati per permettere un confronto oggettivo. Quando un operatore indica un totale che somma
+        bonus su prodotti diversi, mostriamo separatamente la parte utilizzabile su ciascun prodotto. Le offerte non
+        verificate di recente o scadute non vengono mostrate.
       </p>
-      <h2>Valutazioni</h2>
+      <h2>Operatori</h2>
       <p>
-        Le valutazioni degli operatori sono editoriali e non vengono fornite né influenzate dagli operatori. Criteri:
-        [CRITERI_VALUTAZIONE]. Ultima revisione: {site.legalUpdatedAt}.
+        Non assegniamo voti o classifiche agli operatori: nella pagina degli operatori compaiono in ordine alfabetico,
+        con caratteristiche, metodi di pagamento e condizioni rilevate dai loro siti.
       </p>
       <h2>Errori</h2>
       <p>
@@ -273,9 +278,10 @@ export function AffiliazionePage() {
         non cambia nulla e non comporta alcun costo.
       </p>
       <p>
-        Il compenso <strong>non influisce</strong> sull'ordine delle quote, sull'evidenza della quota migliore né sulle
-        valutazioni, che seguono i criteri descritti nella pagina <Link to={paths.metodologia}>Metodologia</Link>. I
-        link di affiliazione sono marcati come sponsorizzati per i motori di ricerca.
+        Il compenso <strong>non influisce</strong> sull'ordine delle quote, sull'evidenza della quota migliore né sul
+        modo in cui presentiamo operatori e offerte, che seguono i criteri descritti nella pagina{" "}
+        <Link to={paths.metodologia}>Metodologia</Link>. I link di affiliazione sono marcati come sponsorizzati per i
+        motori di ricerca.
       </p>
       <p>Operatori con cui esiste un accordo: [ELENCO_OPERATORI_CON_ACCORDO].</p>
     </InfoLayout>
