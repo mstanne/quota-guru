@@ -33,6 +33,7 @@ import { PredictionPanel } from "../predictions/PredictionUi";
 import { MatchRow, TeamBadge } from "./MatchRow";
 import { FootballBoxScore } from "./FootballBoxScore";
 import { TeamName } from "../teams/TeamLink";
+import { hasResults, resultsPath } from "../../lib/results";
 import { FootballMatchDetails } from "./FootballMatchDetails";
 import { footballDetailsFor } from "../../lib/footballDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
@@ -417,6 +418,11 @@ export function CalcioMatchPage() {
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             Tutte le partite di {competition.name}
           </Link>
+          {hasResults(competition.slug) && (
+            <Link to={resultsPath(competition.slug)} className="inline-flex items-center gap-2 ml-6 text-slate-300 hover:text-white">
+              Tutti i risultati di {competition.name}
+            </Link>
+          )}
         </div>
       </div>
     </div>

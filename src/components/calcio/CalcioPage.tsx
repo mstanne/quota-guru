@@ -25,6 +25,8 @@ import { MatchRow } from "./MatchRow";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 import { NotFoundPage } from "../NotFoundPage";
 import { PageHeader } from "../layout/PageHeader";
+import { ListChecks } from "lucide-react";
+import { hasResults, resultsPath } from "../../lib/results";
 
 type Filter = "upcoming" | "today" | "tomorrow" | "week" | "results";
 const FILTERS: { id: Filter; label: string }[] = [
@@ -97,6 +99,15 @@ export function CalcioPage() {
           >
             <ListOrdered className="w-4 h-4 text-slate-300" aria-hidden="true" />
             Classifica {competition.name}
+          </Link>
+        )}
+        {competition && hasResults(competition.slug) && (
+          <Link
+            to={resultsPath(competition.slug)}
+            className="inline-flex items-center gap-2 px-4 py-2 ml-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
+          >
+            <ListChecks className="w-4 h-4 text-slate-300" aria-hidden="true" />
+            Tutti i risultati
           </Link>
         )}
       </PageHeader>

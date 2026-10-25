@@ -73,6 +73,8 @@ const colours = (s) =>
         .join(" / ")
     : s;
 
+const romeDay = (iso) => new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Rome" }).format(new Date(iso));
+
 // ---------- football ----------
 /** Season start year of a result: European seasons start in July, the Brasileirão follows the calendar year. */
 const seasonOf = (date, code) => {
@@ -183,6 +185,7 @@ for (const comp of football.competitions) {
             opponent: (m.homeTeam.id === id ? m.awayTeam : m.homeTeam).shortName,
             gf: m.homeTeam.id === id ? m.score.fullTime.home : m.score.fullTime.away,
             ga: m.homeTeam.id === id ? m.score.fullTime.away : m.score.fullTime.home,
+            path: `/calcio/${comp.slug}/${slugify(m.homeTeam.shortName)}-${slugify(m.awayTeam.shortName)}-${romeDay(m.utcDate)}`,
           })),
         players: players(current),
       });

@@ -1,6 +1,7 @@
 // /calcio/squadre/:squadra — club details, squad and season-by-season statistics.
 import { useParams } from "react-router";
-import { Building2, CalendarDays, ListOrdered, Shield, Users } from "lucide-react";
+import { Building2, CalendarDays, ListChecks, ListOrdered, Shield, Users } from "lucide-react";
+import { hasResults, resultsPath } from "../../lib/results";
 import { Link } from "../../lib/links";
 import { PageHeader } from "../layout/PageHeader";
 import { TeamBadge } from "../calcio/MatchRow";
@@ -144,9 +145,15 @@ function Season({ s, open }: { s: FootballSeason; open: boolean }) {
                   <span className="flex-1 text-slate-200">
                     {m.home ? "vs" : "@"} {m.opponent}
                   </span>
-                  <span className="tabular-nums text-white">
-                    {m.gf}–{m.ga}
-                  </span>
+                  {m.path ? (
+                    <Link to={m.path} className="tabular-nums text-white hover:underline underline-offset-4" aria-label={`${m.gf}-${m.ga} contro ${m.opponent}: scheda della partita`}>
+                      {m.gf}–{m.ga}
+                    </Link>
+                  ) : (
+                    <span className="tabular-nums text-white">
+                      {m.gf}–{m.ga}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -235,6 +242,12 @@ export function FootballTeamPage() {
             <Shield className="w-4 h-4" aria-hidden="true" />
             Partite di {t.competition.name}
           </Link>
+          {hasResults(t.competition.slug) && (
+            <Link to={resultsPath(t.competition.slug)} className="inline-flex items-center gap-2 text-action-text hover:text-action-text-hover">
+              <ListChecks className="w-4 h-4" aria-hidden="true" />
+              Risultati {t.competition.name}
+            </Link>
+          )}
         </div>
       </div>
     </div>
