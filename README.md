@@ -291,6 +291,19 @@ Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e 
   illustrazioni con `npm run og` (da rilanciare quando aggiungi o cambi un'illustrazione). Senza PNG si usa
   `og-image.png`.
 
+## Tabellino delle partite finite
+
+In cima alla pagina di ogni partita finita compare il **tabellino**, calcolato dai dati scaricati: risultato
+(anche dopo supplementari e rigori), primo e secondo tempo, esito, eventuale rimonta, gol totali (Over/Under 2,5)
+e "entrambe a segno" sui 90', arbitro (calcio); risultato, intervallo, secondo tempo, supplementari, parziale più
+largo, punti totali e tabella dei quarti (NBA). Componenti: `FootballBoxScore.tsx`, `BasketBoxScore.tsx`.
+
+- **Marcatori e cartellini (calcio)**: `scripts/fetch-football-data.mjs` li chiede a football-data.org per le partite
+  finite negli ultimi giorni (una richiesta per partita, salvata in `.cache/match-details`). Se il piano non li
+  fornisce lo registra e riprova dopo 7 giorni; quando arrivano compaiono nel tabellino senza altre modifiche.
+- Formazioni, statistiche di squadra, migliore in campo e cronaca richiedono fonti a pagamento (componenti aggiuntivi
+  di football-data.org per il calcio, piano GOAT di BALLDONTLIE per l'NBA).
+
 ## Testi editoriali delle partite (agente)
 
 Ogni pagina partita di calcio e NBA mostra un testo: **anteprima** prima del fischio d'inizio (per le partite dei

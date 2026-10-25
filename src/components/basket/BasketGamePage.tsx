@@ -7,6 +7,7 @@ import { ArchivedOrNotFound } from "../../lib/archive";
 import { BasketPredictionPanel } from "./BasketPrediction";
 import { basketPredictionFor } from "../../lib/basketPredict";
 import { BasketGameRow } from "./BasketGameRow";
+import { BasketBoxScore } from "./BasketBoxScore";
 import { formatDay, formatTime, romeDay } from "../../lib/footballCore";
 import {
   basketPaths,
@@ -37,8 +38,6 @@ export function BasketGamePage() {
   const finished = isGameFinished(game);
   const live = isGameLive(game);
   const sameDay = nbaGames.filter((g) => g.id !== game.id && romeDay(g.utcDate) === romeDay(game.utcDate));
-  const periods = game.periods;
-  const periodLabel = (i: number) => (i < 4 ? `${i + 1}º` : `OT${i - 3}`);
   const prediction = basketPredictionFor(game.id);
 
   return (
@@ -105,6 +104,8 @@ export function BasketGamePage() {
       </div>
 
       <div className="container mx-auto px-4 py-8 space-y-6">
+        {finished && <BasketBoxScore game={game} />}
+
         {prediction && (!finished || prediction.pre) && (
           <BasketPredictionPanel
             prediction={prediction}
@@ -117,51 +118,6 @@ export function BasketGamePage() {
         <MatchEditorial
           article={nbaEditorial({ game, games: nbaGames, season: nbaSeasonYear, generatedAt: basketUpdatedAt })}
         />
-
-        {periods && periods.home.length > 0 && (
-          <section className={card} aria-labelledby="parziali">
-            <h2 id="parziali" className="text-white text-xl mb-4">
-              Parziali
-            </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="text-slate-400 border-b border-slate-800">
-                    <th scope="col" className="text-left font-normal py-2">
-                      Squadra
-                    </th>
-                    {periods.home.map((_, i) => (
-                      <th key={i} scope="col" className="text-right font-normal py-2 px-2">
-                        {periodLabel(i)}
-                      </th>
-                    ))}
-                    <th scope="col" className="text-right font-normal py-2 px-2">
-                      Totale
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { t: game.home, p: periods.home, s: game.score.home },
-                    { t: game.away, p: periods.away, s: game.score.away },
-                  ].map(({ t, p, s }) => (
-                    <tr key={t.id} className="border-b border-slate-800 last:border-0">
-                      <th scope="row" className="text-left font-normal py-2 text-white">
-                        {t.name}
-                      </th>
-                      {p.map((v, i) => (
-                        <td key={i} className="text-right px-2 text-slate-300 tabular-nums">
-                          {v}
-                        </td>
-                      ))}
-                      <td className="text-right px-2 text-white font-semibold tabular-nums">{s}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-        )}
 
         <section className={card} aria-labelledby="info">
           <h2 id="info" className="flex items-center gap-2 text-white text-xl mb-4">

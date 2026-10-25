@@ -31,6 +31,7 @@ import { MatchEditorial } from "../editorial/MatchEditorial";
 import { predictionFor } from "../../lib/predictions";
 import { PredictionPanel } from "../predictions/PredictionUi";
 import { MatchRow, TeamBadge } from "./MatchRow";
+import { FootballBoxScore } from "./FootballBoxScore";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 import { ArchivedOrNotFound } from "../../lib/archive";
 
@@ -286,6 +287,11 @@ export function CalcioMatchPage() {
       </div>
 
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        {finished && (
+          <div className="lg:col-span-3 min-w-0">
+            <FootballBoxScore match={match} />
+          </div>
+        )}
         <div className="lg:col-span-2 space-y-6 min-w-0">
           {prediction && (!finished || prediction.pre) && (
             <PredictionPanel

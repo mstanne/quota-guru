@@ -37,8 +37,35 @@ export interface Match {
   group: string | null;
   homeTeam: Team;
   awayTeam: Team;
-  score: { winner: "HOME_TEAM" | "AWAY_TEAM" | "DRAW" | null; fullTime: Score; halfTime: Score };
+  score: {
+    winner: "HOME_TEAM" | "AWAY_TEAM" | "DRAW" | null;
+    fullTime: Score;
+    halfTime: Score;
+    /** Only for matches that did not end after 90 minutes. */
+    duration?: "EXTRA_TIME" | "PENALTY_SHOOTOUT";
+    regularTime?: Score | null;
+    extraTime?: Score | null;
+    penalties?: Score | null;
+  };
   referee: string | null;
+  /** Goals and cards: only when the data plan provides them (scripts/fetch-football-data.mjs). */
+  goals?: MatchGoal[];
+  cards?: MatchCard[];
+}
+export interface MatchGoal {
+  minute: number;
+  injuryTime: number | null;
+  type: "REGULAR" | "OWN" | "PENALTY";
+  /** Team credited with the goal. */
+  team: number;
+  scorer: string | null;
+  assist: string | null;
+}
+export interface MatchCard {
+  minute: number;
+  team: number;
+  player: string | null;
+  card: "YELLOW" | "YELLOW_RED" | "RED";
 }
 export interface StandingRow {
   position: number;

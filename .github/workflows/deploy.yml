@@ -37,6 +37,22 @@ jobs:
 
       - run: npm ci
 
+      - name: Restore state between runs
+        # Kept between builds (scripts/prerender.mjs, scripts/fetch-football-data.mjs):
+        #   .cache/seo            date of the last real change of every page (sitemap <lastmod>) and the archive of
+        #                         finished match pages, published even after the matches leave the data window;
+        #   .cache/match-details  goals and cards already downloaded for finished matches (when the plan has them).
+        # A new entry is saved at every run; restore-keys picks the most recent one.
+        uses: actions/cache@v6
+        with:
+          path: |
+            .cache/seo
+            .cache/match-details
+          key: state-${{ github.run_id }}
+          restore-keys: |
+            state-
+            seo-
+
       - name: Download football data
         # Uses the secret only here; without it the committed snapshot in src/data is used.
         run: node scripts/fetch-football-data.mjs
@@ -77,16 +93,6 @@ jobs:
           EDITORIAL_AI: ${{ vars.EDITORIAL_AI }}
           EDITORIAL_AI_MODEL: ${{ vars.EDITORIAL_AI_MODEL }}
           EDITORIAL_AI_MAX: ${{ vars.EDITORIAL_AI_MAX }}
-
-      - name: Restore SEO state
-        # Kept between builds: date of the last real change of every page (sitemap <lastmod>) and the archive of
-        # finished match pages, published even after the matches leave the data window (scripts/prerender.mjs).
-        # A new entry is saved at every run; restore-keys picks the most recent one.
-        uses: actions/cache@v6
-        with:
-          path: .cache/seo
-          key: seo-${{ github.run_id }}
-          restore-keys: seo-
 
       - name: Build
         run: npm run build

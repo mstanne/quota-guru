@@ -104,7 +104,32 @@ const team = (t) => ({
   crest: crestUrl(t.crest),
 });
 
+// Match events (goals, cards) as returned by /matches/{id} or, when included, by the match lists.
+const events = (m) => {
+  const goals = (m.goals || [])
+    .filter((g) => g?.team?.id != null && Number.isFinite(g.minute))
+    .map((g) => ({
+      minute: g.minute,
+      injuryTime: g.injuryTime ?? null,
+      type: g.type === "OWN" || g.type === "PENALTY" ? g.type : "REGULAR",
+      team: g.team.id,
+      scorer: g.scorer?.name ?? null,
+      assist: g.assist?.name ?? null,
+    }));
+  const cards = (m.bookings || [])
+    .filter((b) => b?.team?.id != null && Number.isFinite(b.minute))
+    .map((b) => ({
+      minute: b.minute,
+      team: b.team.id,
+      player: b.player?.name ?? null,
+      card: b.card === "RED" || b.card === "YELLOW_RED" ? b.card : "YELLOW",
+    }));
+  return { goals, cards };
+};
+
 function compactMatch(m) {
+  const duration = m.score?.duration ?? "REGULAR";
+  const { goals, cards } = events(m);
   return {
     id: m.id,
     utcDate: m.utcDate,
@@ -118,9 +143,76 @@ function compactMatch(m) {
       winner: m.score?.winner ?? null,
       fullTime: m.score?.fullTime ?? { home: null, away: null },
       halfTime: m.score?.halfTime ?? { home: null, away: null },
+      // extra time / penalties: kept only when the match did not end after 90 minutes
+      ...(duration !== "REGULAR"
+        ? {
+            duration,
+            regularTime: m.score?.regularTime ?? null,
+            extraTime: m.score?.extraTime ?? null,
+            penalties: m.score?.penalties ?? null,
+          }
+        : {}),
     },
     referee: m.referees?.find((r) => r.type === "REFEREE")?.name ?? null,
+    ...(goals.length ? { goals } : {}),
+    ...(cards.length ? { cards } : {}),
   };
+}
+
+// ---------- events of finished matches (goals, cards) ----------
+// The free plan may not include them: the first request tells. If a finished match with goals comes back without
+// scorers, the plan does not provide them and the check is repeated only after DETAILS_RETRY_DAYS.
+// Details are kept in .cache/match-details (restored between workflow runs), so each match costs one request.
+const DETAILS_FILE = path.join(root, ".cache", "match-details", "football.json");
+const DETAILS_DAYS = 4; // matches finished in the last N days are checked...
+const DETAILS_MAX = 12; // ...at most this many per run (1 request each)
+const DETAILS_RETRY_DAYS = 7;
+
+async function addMatchDetails(token, competitions, now) {
+  const store = fs.existsSync(DETAILS_FILE)
+    ? JSON.parse(fs.readFileSync(DETAILS_FILE, "utf8"))
+    : { unsupportedUntil: null, matches: {} };
+  const all = competitions.flatMap((c) => c.matches);
+  const finished = (m) => m.status === "FINISHED" && m.score.fullTime.home != null;
+  const hasGoals = (m) => m.score.fullTime.home + m.score.fullTime.away > 0;
+  const unsupported = store.unsupportedUntil && Date.parse(store.unsupportedUntil) > now.getTime();
+  if (unsupported) {
+    console.log(`Marcatori e cartellini: non inclusi nel piano (nuovo controllo dopo il ${store.unsupportedUntil.slice(0, 10)})`);
+  } else {
+    const todo = all
+      .filter((m) => finished(m) && !m.goals && !store.matches[m.id])
+      .filter((m) => now.getTime() - Date.parse(m.utcDate) < DETAILS_DAYS * 86400000)
+      .sort((a, b) => b.utcDate.localeCompare(a.utcDate))
+      .slice(0, DETAILS_MAX);
+    for (const m of todo) {
+      try {
+        const d = await api(`/matches/${m.id}`, token);
+        const ev = events(d);
+        if (hasGoals(m) && ev.goals.length === 0) {
+          store.unsupportedUntil = new Date(now.getTime() + DETAILS_RETRY_DAYS * 86400000).toISOString();
+          console.log("Marcatori e cartellini: non inclusi nel piano attuale di football-data.org");
+          break;
+        }
+        store.matches[m.id] = { ...ev, savedAt: now.toISOString() };
+      } catch (err) {
+        console.warn(`  dettagli non disponibili per ${m.id}: ${err.message.slice(0, 80)}`);
+      }
+    }
+  }
+  // merge into the snapshot and forget matches no longer in it
+  const ids = new Set(all.map((m) => String(m.id)));
+  for (const id of Object.keys(store.matches)) if (!ids.has(id)) delete store.matches[id];
+  let merged = 0;
+  for (const m of all) {
+    const d = store.matches[m.id];
+    if (!d || m.goals) continue;
+    if (d.goals.length) m.goals = d.goals;
+    if (d.cards.length) m.cards = d.cards;
+    merged++;
+  }
+  fs.mkdirSync(path.dirname(DETAILS_FILE), { recursive: true });
+  fs.writeFileSync(DETAILS_FILE, JSON.stringify(store));
+  if (merged) console.log(`Marcatori e cartellini: ${merged} partite`);
 }
 
 function compactStanding(row) {
@@ -207,6 +299,7 @@ async function main() {
   }
   console.log(`Precedenti scaricati: ${Object.keys(headToHead).length}`);
 
+  await addMatchDetails(token, competitions, now);
   await updateHistory(token, competitions);
 
   const snapshot = { generatedAt: now.toISOString(), source: "football-data.org", competitions, headToHead };
