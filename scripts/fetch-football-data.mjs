@@ -19,6 +19,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "data", "football.json");
 // Full results history used only by the prediction model (scripts/predict-football.mjs); not bundled in the site.
 const HISTORY = path.join(root, "data", "football-history.json");
+// Club details and squads (team pages, scripts/derive-teams.mjs); kept from the previous run if a request fails.
+const TEAMS = path.join(root, "data", "football-teams.json");
 
 // Competitions included in the free plan, in display order. Slugs become URLs: /calcio/<slug>.
 export const COMPETITIONS = [
@@ -215,6 +217,35 @@ async function addMatchDetails(token, competitions, now) {
   if (merged) console.log(`Marcatori e cartellini: ${merged} partite`);
 }
 
+/** Club details and squad from /competitions/{code}/teams (fields the plan does not provide stay null). */
+function compactTeam(t, now) {
+  const person = (p) => ({
+    name: p.name ?? "",
+    position: p.position ?? null,
+    born: p.dateOfBirth ?? null,
+    nationality: p.nationality ?? null,
+    number: p.shirtNumber ?? null,
+  });
+  return {
+    id: t.id,
+    name: t.name,
+    shortName: t.shortName || t.name,
+    tla: t.tla || "",
+    crest: crestUrl(t.crest),
+    area: t.area?.name ?? null,
+    address: t.address ?? null,
+    website: typeof t.website === "string" && /^https?:\/\//.test(t.website) ? t.website : null,
+    founded: Number.isFinite(t.founded) ? t.founded : null,
+    colors: t.clubColors ?? null,
+    venue: t.venue ?? null,
+    coach: t.coach?.name
+      ? { name: t.coach.name, nationality: t.coach.nationality ?? null, since: t.coach.contract?.start ?? null }
+      : null,
+    squad: (t.squad || []).map(person),
+    updatedAt: now.toISOString(),
+  };
+}
+
 function compactStanding(row) {
   return {
     position: row.position,
@@ -267,6 +298,22 @@ async function main() {
       standings,
     });
   }
+
+  // Club details and squads: 1 request per competition.
+  const teamsFile = fs.existsSync(TEAMS) ? JSON.parse(fs.readFileSync(TEAMS, "utf8")) : { teams: {}, competitions: {} };
+  for (const c of competitions) {
+    try {
+      const t = await api(`/competitions/${c.code}/teams`, token);
+      teamsFile.competitions[c.slug] = (t.teams || []).map((x) => x.id);
+      for (const x of t.teams || []) teamsFile.teams[x.id] = compactTeam(x, now);
+    } catch (err) {
+      console.warn(`  squadre di ${c.name} non disponibili: ${err.message.slice(0, 80)}`);
+    }
+  }
+  teamsFile.updatedAt = now.toISOString();
+  fs.mkdirSync(path.dirname(TEAMS), { recursive: true });
+  fs.writeFileSync(TEAMS, JSON.stringify(teamsFile) + "\n");
+  console.log(`Squadre: ${Object.keys(teamsFile.teams).length}`);
 
   // Head-to-head for the next upcoming matches (1 request per match).
   const soon = now.getTime() + H2H_DAYS * 86400000;

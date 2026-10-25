@@ -24,6 +24,12 @@ const OUT_FOOTBALL = path.join(root, "src", "data", "football-details.json");
 const OUT_BASKET = path.join(root, "src", "data", "basket-details.json");
 const STATUS = path.join(root, "public", "stato-dati.json");
 const STORE = path.join(root, ".cache", "match-details", "api-sports.json");
+// Season statistics for the team pages (players, venue): built up over days, see seasonRun functions below.
+const SEASONS_STORE = path.join(root, ".cache", "match-details", "api-sports-seasons.json");
+const OUT_SEASONS = path.join(root, "data", "team-seasons-api.json");
+const TEAMS = path.join(root, "data", "football-teams.json");
+const SEASONS_BACK = 2; // current season + the 2 before it (football); NBA: current + 1
+const DAY = 86400000;
 
 const DAYS_BACK = 3; // finished matches of the last N days are looked up
 const RESERVE = 4; // requests left unused each day (manual checks)
@@ -70,7 +76,7 @@ function client(host, key, status) {
   let last = 0;
   let remaining = Infinity;
   let used = 0;
-  async function get(pathAndQuery) {
+  async function request(pathAndQuery) {
     if (remaining <= RESERVE) throw new BudgetError("richieste del giorno esaurite");
     const wait = last + MIN_GAP_MS - Date.now();
     if (wait > 0) await sleep(wait);
@@ -90,10 +96,11 @@ function client(host, key, status) {
     if (errors.requests || errors.rateLimit) throw new BudgetError(msg);
     if (errors.token) throw new Error(`chiave non valida: ${errors.token}`);
     if (msg) throw new Error(msg);
-    return json.response ?? [];
+    return json;
   }
   return {
-    get,
+    get: async (p) => (await request(p)).response ?? [],
+    raw: request,
     report: () => Object.assign(status, { requests: used, remainingToday: Number.isFinite(remaining) ? remaining : null }),
   };
 }
@@ -289,6 +296,161 @@ async function nbaRun(api, store, data, now) {
   }
 }
 
+// ---------- season statistics for the team pages ----------
+// Past seasons never change: downloaded once. The current season is refreshed every few days.
+const fresh = (entry, days) => entry && (entry.final || Date.now() - Date.parse(entry.fetchedAt) < days * DAY);
+
+/** Players' season totals over all competitions (API-Football /players). */
+function compactPlayers(rows) {
+  return rows
+    .map((r) => {
+      const st = r.statistics ?? [];
+      const sum = (f) => st.reduce((t, x) => t + (num(f(x)) ?? 0), 0);
+      const apps = sum((x) => x.games?.appearences);
+      if (!apps) return null;
+      const rated = st.filter((x) => num(x.games?.rating) != null && num(x.games?.appearences));
+      const rating = rated.length
+        ? rated.reduce((t, x) => t + num(x.games.rating) * num(x.games.appearences), 0) /
+          rated.reduce((t, x) => t + num(x.games.appearences), 0)
+        : null;
+      return {
+        name: r.player?.name ?? "",
+        age: r.player?.age ?? null,
+        nationality: r.player?.nationality ?? null,
+        pos: st.find((x) => x.games?.position)?.games?.position ?? null,
+        apps,
+        starts: sum((x) => x.games?.lineups),
+        min: sum((x) => x.games?.minutes),
+        goals: sum((x) => x.goals?.total),
+        assists: sum((x) => x.goals?.assists),
+        yellow: sum((x) => x.cards?.yellow),
+        red: sum((x) => x.cards?.red) + sum((x) => x.cards?.yellowred),
+        rating: rating == null ? null : Math.round(rating * 100) / 100,
+        comps: [...new Set(st.filter((x) => num(x.games?.appearences)).map((x) => x.league?.name).filter(Boolean))],
+      };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.min - a.min);
+}
+
+async function footballSeasonsRun(api, seasons, data, now) {
+  const teamsFile = readJson(TEAMS, { teams: {}, competitions: {} });
+  seasons.football ??= {};
+  seasons.afTeams ??= {};
+  for (const [slug, league] of LEAGUES) {
+    const comp = data.competitions.find((c) => c.slug === slug);
+    if (!comp || slug === "champions-league") continue; // team pages follow the domestic league
+    const season = Number(comp.season?.startDate?.slice(0, 4));
+    if (!season) continue;
+    // API-Football ids, venue and founding year of the league's clubs (1 request, refreshed monthly)
+    const key = `${league}-${season}`;
+    if (!fresh(seasons.afTeams[key], 30)) {
+      const list = await api.get(`/teams?league=${league}&season=${season}`);
+      seasons.afTeams[key] = {
+        fetchedAt: new Date(now).toISOString(),
+        teams: list.map((t) => ({
+          id: t.team?.id,
+          name: t.team?.name ?? "",
+          founded: t.team?.founded ?? null,
+          venue: t.venue?.name
+            ? { name: t.venue.name, city: t.venue.city ?? null, capacity: t.venue.capacity ?? null, surface: t.venue.surface ?? null }
+            : null,
+        })),
+      };
+    }
+    const afList = seasons.afTeams[key].teams;
+    const ids = teamsFile.competitions[slug] ?? comp.standings[0]?.table.map((r) => r.team.id) ?? [];
+    for (const id of ids) {
+      const fd = teamsFile.teams[id] ?? comp.standings[0]?.table.find((r) => r.team.id === id)?.team;
+      if (!fd) continue;
+      const af = afList.find((t) => sameTeam(t.name, team(fd)));
+      if (!af) continue;
+      seasons.footballInfo ??= {};
+      seasons.footballInfo[id] = { founded: af.founded, venue: af.venue };
+      for (let y = season; y >= season - SEASONS_BACK; y--) {
+        const k = `${id}-${y}`;
+        if (fresh(seasons.football[k], 4)) continue;
+        const players = [];
+        for (let page = 1, total = 1; page <= total && page <= 6; page++) {
+          const res = await api.raw(`/players?team=${af.id}&season=${y}&page=${page}`);
+          players.push(...(res.response ?? []));
+          total = res.paging?.total ?? 1;
+        }
+        seasons.football[k] = {
+          fetchedAt: new Date(now).toISOString(),
+          final: y < season, // past seasons: never downloaded again
+          afTeam: af.id,
+          players: compactPlayers(players),
+        };
+        console.log(`  rosa ${fd.shortName ?? fd.name} ${y}/${String(y + 1).slice(2)}: ${seasons.football[k].players.length} giocatori`);
+      }
+    }
+  }
+}
+
+/** Per-game box scores of a team-season (API-NBA /players/statistics) → each player's averages. */
+function nbaAverages(rows) {
+  const by = new Map();
+  for (const r of rows) {
+    const id = r.player?.id;
+    const min = parseFloat(String(r.min ?? "0").split(":")[0]) || 0;
+    if (id == null || !min) continue;
+    const p = by.get(id) ?? {
+      name: [r.player?.firstname, r.player?.lastname].filter(Boolean).join(" "),
+      g: 0, min: 0, pts: 0, reb: 0, ast: 0, stl: 0, blk: 0, tov: 0, fgm: 0, fga: 0, tpm: 0, tpa: 0, ftm: 0, fta: 0,
+    };
+    p.g++;
+    p.min += min;
+    for (const [k, src] of [["pts", "points"], ["reb", "totReb"], ["ast", "assists"], ["stl", "steals"], ["blk", "blocks"], ["tov", "turnovers"], ["fgm", "fgm"], ["fga", "fga"], ["tpm", "tpm"], ["tpa", "tpa"], ["ftm", "ftm"], ["fta", "fta"]]) {
+      p[k] += num(r[src]) ?? 0;
+    }
+    by.set(id, p);
+  }
+  return [...by.values()].sort((a, b) => b.pts - a.pts);
+}
+
+async function nbaSeasonsRun(api, seasons, data, now) {
+  seasons.nba ??= {};
+  const season = data.nba.season;
+  if (!fresh(seasons.nbaTeams, 60)) {
+    const list = await api.get(`/teams`);
+    seasons.nbaTeams = {
+      fetchedAt: new Date(now).toISOString(),
+      teams: list.filter((t) => t.nbaFranchise && !t.allStar).map((t) => ({ id: t.id, name: t.name, city: t.city ?? null })),
+    };
+  }
+  const ours = new Map();
+  for (const g of data.nba.games) for (const t of [g.home, g.away]) ours.set(t.id, t);
+  for (const t of ours.values()) {
+    const af = seasons.nbaTeams.teams.find((x) => sameTeam(x.name, team({ name: t.name, shortName: t.shortName, tla: t.abbr })));
+    if (!af) continue;
+    const rk = `${t.id}-roster`;
+    if (!fresh(seasons.nba[rk], 7)) {
+      const list = await api.get(`/players?team=${af.id}&season=${season}`);
+      seasons.nba[rk] = {
+        fetchedAt: new Date(now).toISOString(),
+        players: list.map((p) => ({
+          name: [p.firstname, p.lastname].filter(Boolean).join(" "),
+          number: p.leagues?.standard?.jersey ?? null,
+          pos: p.leagues?.standard?.pos ?? null,
+          born: p.birth?.date ?? null,
+          country: p.birth?.country ?? null,
+          height: num(p.height?.meters),
+          weight: num(p.weight?.kilograms),
+          college: p.college ?? null,
+        })),
+      };
+    }
+    for (let y = season; y >= season - 1; y--) {
+      const k = `${t.id}-${y}`;
+      if (fresh(seasons.nba[k], 3)) continue;
+      const rows = await api.get(`/players/statistics?team=${af.id}&season=${y}`);
+      seasons.nba[k] = { fetchedAt: new Date(now).toISOString(), final: y < season, players: nbaAverages(rows) };
+      console.log(`  NBA ${t.shortName} ${y}-${String(y + 1).slice(2)}: ${seasons.nba[k].players.length} giocatori`);
+    }
+  }
+}
+
 // ---------- main ----------
 loadDotEnv();
 const key = process.env.API_FOOTBALL_KEY;
@@ -297,6 +459,7 @@ const store = readJson(STORE, {});
 store.football ??= {};
 store.nba ??= {};
 store.blocked ??= {};
+const seasons = readJson(SEASONS_STORE, {});
 const status = { updatedAt: new Date(now).toISOString(), football: {}, nba: {} };
 
 async function run(sport, host, fn, data) {
@@ -328,8 +491,25 @@ async function run(sport, host, fn, data) {
 if (!key) {
   console.log("API_FOOTBALL_KEY non impostata: dettagli partite invariati.");
 } else {
-  await run("football", "v3.football.api-sports.io", footballRun, readJson(FOOTBALL, { competitions: [] }));
-  await run("nba", "v2.nba.api-sports.io", nbaRun, readJson(BASKET, { nba: { games: [] } }));
+  // match details first, then the season statistics with what is left of the day
+  await run(
+    "football",
+    "v3.football.api-sports.io",
+    async (api, st, data, t) => {
+      await footballRun(api, st, data, t);
+      await footballSeasonsRun(api, seasons, data, t);
+    },
+    readJson(FOOTBALL, { competitions: [] }),
+  );
+  await run(
+    "nba",
+    "v2.nba.api-sports.io",
+    async (api, st, data, t) => {
+      await nbaRun(api, st, data, t);
+      await nbaSeasonsRun(api, seasons, data, t);
+    },
+    readJson(BASKET, { nba: { games: [] } }),
+  );
 
   // keep only matches still in the data; the archived pages keep the details in their saved HTML
   const fIds = new Set(readJson(FOOTBALL, { competitions: [] }).competitions.flatMap((c) => c.matches.map((m) => String(m.id))));
@@ -345,6 +525,21 @@ if (!key) {
   status.football.matches = Object.keys(store.football).length;
   status.nba.games = Object.keys(store.nba).length;
   console.log(`Dettagli partite: calcio ${status.football.matches}, NBA ${status.nba.games}`);
+
+  fs.writeFileSync(SEASONS_STORE, JSON.stringify(seasons));
+  const pick = (o, f) => Object.fromEntries(Object.entries(o ?? {}).map(([k, v]) => [k, f(v)]));
+  fs.mkdirSync(path.dirname(OUT_SEASONS), { recursive: true });
+  fs.writeFileSync(
+    OUT_SEASONS,
+    JSON.stringify({
+      updatedAt: new Date(now).toISOString(),
+      footballInfo: seasons.footballInfo ?? {},
+      football: pick(seasons.football, (v) => v.players),
+      nba: pick(seasons.nba, (v) => v.players),
+    }) + "\n",
+  );
+  status.football.teamSeasons = Object.keys(seasons.football ?? {}).length;
+  status.nba.teamSeasons = Object.keys(seasons.nba ?? {}).filter((k) => !k.endsWith("-roster")).length;
 }
 fs.mkdirSync(path.dirname(STATUS), { recursive: true });
 fs.writeFileSync(STATUS, JSON.stringify(status, null, 2) + "\n");

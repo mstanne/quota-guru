@@ -8,6 +8,7 @@ import { DataUpdatedNote } from "./DataUpdatedNote";
 import { TeamBadge } from "./MatchRow";
 import { NotFoundPage } from "../NotFoundPage";
 import { PageHeader } from "../layout/PageHeader";
+import { TeamName } from "../teams/TeamLink";
 
 /** /calcio/:competizione/classifica */
 export function StandingsPage() {
@@ -77,7 +78,7 @@ export function StandingsPage() {
                       <th scope="row" className="py-2.5 text-left font-normal">
                         <span className="flex items-center gap-2.5">
                           <TeamBadge team={r.team} />
-                          <span className="text-white">{r.team.shortName}</span>
+                          <TeamName id={r.team.id} name={r.team.shortName} />
                         </span>
                       </th>
                       <td className="text-right px-2 text-white font-semibold tabular-nums">{r.points}</td>

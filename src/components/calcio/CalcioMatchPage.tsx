@@ -32,6 +32,7 @@ import { predictionFor } from "../../lib/predictions";
 import { PredictionPanel } from "../predictions/PredictionUi";
 import { MatchRow, TeamBadge } from "./MatchRow";
 import { FootballBoxScore } from "./FootballBoxScore";
+import { TeamName } from "../teams/TeamLink";
 import { FootballMatchDetails } from "./FootballMatchDetails";
 import { footballDetailsFor } from "../../lib/footballDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
@@ -262,7 +263,7 @@ export function CalcioMatchPage() {
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 max-w-3xl mx-auto">
             <div className="flex flex-col items-center text-center gap-3">
               <TeamBadge team={match.homeTeam} size="lg" />
-              <span className="text-white text-lg sm:text-2xl">{match.homeTeam.shortName}</span>
+              <TeamName id={match.homeTeam.id} name={match.homeTeam.shortName} className="text-white text-lg sm:text-2xl" />
             </div>
             <div className="text-center">
               {finished || live ? (
@@ -285,7 +286,7 @@ export function CalcioMatchPage() {
             </div>
             <div className="flex flex-col items-center text-center gap-3">
               <TeamBadge team={match.awayTeam} size="lg" />
-              <span className="text-white text-lg sm:text-2xl">{match.awayTeam.shortName}</span>
+              <TeamName id={match.awayTeam.id} name={match.awayTeam.shortName} className="text-white text-lg sm:text-2xl" />
             </div>
           </div>
           <DataUpdatedNote generatedAt={generatedAt} className="justify-center mt-6" />
