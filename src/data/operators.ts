@@ -262,12 +262,126 @@ const bet365: OperatorData = {
   cashOut: true,
 };
 
+// Betsson, bwin and Sisal: data from the footers, promotions and help pages of the official sites, 25/10/2026.
+// Betsson's payment pages need a login: deposit, withdrawal and payment fields stay to be filled in.
+const betsson: OperatorData = {
+  id: "betsson",
+  name: "Betsson",
+  shortName: "BS",
+  logoUrl: "operators/betsson-logo-white.svg",
+  logoAlt: "Logo Betsson",
+  affiliateUrl: "https://www.betsson.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "Azzurri Ltd ... Titolare della concessione GAD 16027" (footer of betsson.it): verify on the ADM list.
+  admLicense: "GAD 16027",
+  description:
+    "Concessionario ADM gestito da Azzurri Ltd (Malta), con scommesse sportive pre-partita e live, virtuali, casinò, casinò live, giochi di carte, bingo e ippica.",
+  minDeposit: "[DEPOSITO_MINIMO]",
+  withdrawalTime: "[TEMPI_PRELIEVO]",
+  paymentMethods: ["[METODO_PAGAMENTO_1]", "[METODO_PAGAMENTO_2]", "[METODO_PAGAMENTO_3]", "[METODO_PAGAMENTO_4]"],
+  features: ["Scommesse sportive pre-partita e live", "Cash out", "Virtuali e ippica", "Casinò, casinò live, carte e bingo"],
+  pros: [
+    "Offerta di benvenuto sport attivabile con un primo deposito da 5 €",
+    "Le vincite ottenute con il real bonus sport vanno nel saldo prelevabile",
+  ],
+  cons: [
+    "Skrill e Neteller sono esclusi dalle offerte di benvenuto",
+    "Il real bonus sport non vale su scommesse live, sistemi e bet builder",
+  ],
+  liveStreaming: false,
+  cashOut: true,
+};
+
+const bwin: OperatorData = {
+  id: "bwin",
+  name: "bwin",
+  shortName: "BW",
+  logoUrl: "operators/bwin-logo-white.svg",
+  logoAlt: "Logo bwin",
+  affiliateUrl: "https://www.bwin.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "bwin è una piattaforma di gaming online di Eurobet Italia srl unipersonale concessione GAD 16013 (ex 15026)".
+  admLicense: "GAD 16013",
+  description:
+    "Piattaforma di gioco online di Eurobet Italia S.r.l. (concessione distinta da quella di Eurobet), con scommesse sportive, casinò, poker, bingo e giochi di carte.",
+  minDeposit: "10 € (Postepay)",
+  withdrawalTime: "PayPal entro 12 ore; Postepay e bonifico 3-5 giorni lavorativi",
+  paymentMethods: [
+    "Visa",
+    "Mastercard",
+    "Maestro",
+    "Postepay",
+    "Apple Pay",
+    "PayPal",
+    "Paysafecard",
+    "Voucher epay",
+    "Mooney",
+    "Revolut e Hype",
+    "Bonifico bancario (solo prelievi)",
+  ],
+  features: ["Scommesse sportive", "Cash out", "Casinò e slot", "Poker, bingo e giochi di carte"],
+  pros: [
+    "Prelievo con PayPal indicato entro 12 ore",
+    "Undici metodi di pagamento, tra cui PayPal, Postepay e Apple Pay",
+  ],
+  cons: [
+    "Il primo deposito valido per il bonus di benvenuto è solo con Visa, Mastercard, Postepay o Apple Pay",
+    "Il bonus scommesse di benvenuto viene accreditato 33 giorni dopo la registrazione",
+  ],
+  liveStreaming: false,
+  cashOut: true,
+};
+
+const sisal: OperatorData = {
+  id: "sisal",
+  name: "Sisal",
+  shortName: "SI",
+  // Official logo, wordmark turned white for the dark background (colour mark: operators/sisal-mark.svg).
+  logoUrl: "operators/sisal-logo-white.png",
+  logoAlt: "Logo Sisal",
+  affiliateUrl: "https://www.sisal.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "Sisal Italia S.p.A. - Via Ugo Bassi 6, 20159 Milano - Conc. GAD: 16020" (footer of sisal.it).
+  admLicense: "GAD 16020",
+  description:
+    "Concessionario ADM gestito da Sisal Italia S.p.A., con scommesse sportive, lotterie, casinò, casinò live, poker, giochi di carte, bingo e una rete di punti vendita.",
+  minDeposit: "10 € (1 € nei punti vendita)",
+  withdrawalTime: "Generalmente immediato con carta, PayPal, Skrill e Neteller; bonifico 1-2 giorni lavorativi",
+  paymentMethods: [
+    "Visa",
+    "Mastercard",
+    "Postepay",
+    "Apple Pay",
+    "PayPal",
+    "Skrill",
+    "Neteller",
+    "Paysafecard",
+    "MyBank",
+    "Bonifico bancario",
+    "Ricarica nei punti vendita e istituti di pagamento",
+  ],
+  features: ["Scommesse sportive e live", "Lotterie", "Casinò, casinò live e slot", "Poker, carte e bingo"],
+  pros: [
+    "Prelievi gratuiti, generalmente immediati con carta, PayPal, Skrill e Neteller",
+    "Ricarica anche in contanti nei punti vendita, da 1 €",
+  ],
+  cons: [
+    "Il bonifico bancario non vale come primo deposito per le offerte di benvenuto",
+    "Il bonus di benvenuto scelto alla registrazione non può essere cambiato",
+  ],
+  liveStreaming: false,
+  cashOut: false,
+};
+
 /** Operators shown across the site (comparison tables, offers, bet slip). Order = display order. */
 export const operators: OperatorData[] = [
   eurobet,
   goldbet,
   planetwin365,
   bet365,
+  betsson,
+  bwin,
+  sisal,
   placeholderOperator(5, { liveStreaming: false }),
   placeholderOperator(6, { liveStreaming: false }),
 ];

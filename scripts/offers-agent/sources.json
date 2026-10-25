@@ -6,7 +6,14 @@
       "operatorName": "Eurobet",
       "listing": "https://www.eurobet.it/it/promo/nuovi-iscritti",
       "pages": [
-        { "offerId": "eurobet-welcombonus", "sections": ["sport", "casino"], "url": "https://www.eurobet.it/it/promo/nuovi-iscritti" }
+        {
+          "offerId": "eurobet-welcombonus",
+          "sections": [
+            "sport",
+            "casino"
+          ],
+          "url": "https://www.eurobet.it/it/promo/nuovi-iscritti"
+        }
       ],
       "notes": "Pagina statica: tutti i termini sono nella pagina stessa."
     },
@@ -15,8 +22,20 @@
       "operatorName": "Planetwin365",
       "listing": "https://www.planetwin365.it/bonus/bonus-di-benvenuto",
       "pages": [
-        { "offerId": "planetwin365-sport", "sections": ["sport"], "url": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-sport" },
-        { "offerId": "planetwin365-casino", "sections": ["casino"], "url": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino" }
+        {
+          "offerId": "planetwin365-sport",
+          "sections": [
+            "sport"
+          ],
+          "url": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-sport"
+        },
+        {
+          "offerId": "planetwin365-casino",
+          "sections": [
+            "casino"
+          ],
+          "url": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino"
+        }
       ],
       "notes": "Pagina caricata via JavaScript: serve il browser. I termini sono in sezioni a scomparsa: leggere il testo con textContent dell'elemento <main>, non solo il testo visibile. Banner cookie: 'Continua senza accettare'."
     },
@@ -25,8 +44,20 @@
       "operatorName": "Goldbet",
       "listing": "https://www.goldbet.it/bonus/bonus-di-benvenuto",
       "pages": [
-        { "offerId": "goldbet-sport", "sections": ["sport"], "url": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse" },
-        { "offerId": "goldbet-casino", "sections": ["casino"], "url": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino" }
+        {
+          "offerId": "goldbet-sport",
+          "sections": [
+            "sport"
+          ],
+          "url": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse"
+        },
+        {
+          "offerId": "goldbet-casino",
+          "sections": [
+            "casino"
+          ],
+          "url": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino"
+        }
       ],
       "notes": "Stessa piattaforma di Planetwin365 (stesse indicazioni)."
     },
@@ -35,10 +66,91 @@
       "operatorName": "Snai",
       "listing": "https://www.snai.it/bonus/bonus-benvenuto",
       "pages": [
-        { "offerId": "snai-sport", "sections": ["sport"], "url": "https://www.snai.it/bonus/bonus-benvenuto/sport" },
-        { "offerId": "snai-casino", "sections": ["casino"], "url": "https://www.snai.it/bonus/bonus-benvenuto/casino" }
+        {
+          "offerId": "snai-sport",
+          "sections": [
+            "sport"
+          ],
+          "url": "https://www.snai.it/bonus/bonus-benvenuto/sport"
+        },
+        {
+          "offerId": "snai-casino",
+          "sections": [
+            "casino"
+          ],
+          "url": "https://www.snai.it/bonus/bonus-benvenuto/casino"
+        }
       ],
       "notes": "Caricata via JavaScript: attendere qualche secondo. Nell'elenco compaiono due offerte scommesse (1.500 € e 2.000 €): verificare quale corrisponde a /sport e se l'altra (/bonus-benvenuto/ab0926) è un'offerta distinta."
+    },
+    {
+      "operatorId": "betsson",
+      "operatorName": "Betsson",
+      "listing": "https://www.betsson.it/promozioni",
+      "pages": [
+        {
+          "offerId": "betsson-sport",
+          "sections": [
+            "sport"
+          ],
+          "url": "https://offerte.betsson.it/welcome-offer-sport-100-2000e-26-27"
+        },
+        {
+          "offerId": "betsson-registrazione",
+          "sections": [
+            "sport",
+            "casino"
+          ],
+          "url": "https://offerte.betsson.it/kyc-spid-e-cie-2000e-26-27"
+        },
+        {
+          "offerId": "betsson-casino",
+          "sections": [
+            "casino"
+          ],
+          "url": "https://offerte.betsson.it/offerta-di-benvenuto-casino"
+        }
+      ],
+      "notes": "Le schede sono nella scheda 'Nuovi Giocatori' di /promozioni e aprono pagine su offerte.betsson.it (l'URL cambia con la stagione, es. '26-27'). Il testo è dentro uno shadow DOM: leggerlo attraversando gli shadowRoot, non con innerText della pagina."
+    },
+    {
+      "operatorId": "bwin",
+      "operatorName": "bwin",
+      "listing": "https://www.bwin.it/it/p/promozioni",
+      "pages": [
+        {
+          "offerId": "bwin-sport",
+          "sections": [
+            "sport",
+            "casino"
+          ],
+          "url": "https://www.bwin.it/it/p/promozioni/sports/bonus-benvenuto"
+        }
+      ],
+      "notes": "Pagina caricata via JavaScript: attendere qualche secondo. Termini completi nella stessa pagina."
+    },
+    {
+      "operatorId": "sisal",
+      "operatorName": "Sisal",
+      "listing": "https://www.sisal.it/bonus/bonus-benvenuto",
+      "pages": [
+        {
+          "offerId": "sisal-scommesse",
+          "sections": [
+            "sport",
+            "casino"
+          ],
+          "url": "https://www.sisal.it/bonus/bonus-benvenuto/scommesse"
+        },
+        {
+          "offerId": "sisal-casino",
+          "sections": [
+            "casino"
+          ],
+          "url": "https://www.sisal.it/bonus/bonus-benvenuto/casino"
+        }
+      ],
+      "notes": "Usare innerText dopo il caricamento (textContent contiene i template non compilati). Esistono anche le varianti casino-real-funbonus, tutti-giochi, poker, giochi-di-carte, bingo e lotterie: non seguite."
     }
   ]
 }

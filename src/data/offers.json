@@ -5,7 +5,10 @@
       "id": "eurobet-welcombonus",
       "operatorId": "eurobet",
       "operatorName": "Eurobet",
-      "sections": ["sport", "casino"],
+      "sections": [
+        "sport",
+        "casino"
+      ],
       "title": "WelCOMBOnus",
       "advertisedTotal": null,
       "minDeposit": 20,
@@ -15,7 +18,13 @@
         "Riservata a maggiorenni residenti in Italia",
         "Una sola adesione per nucleo familiare, indirizzo IP, dispositivo, email o carta"
       ],
-      "excludedPaymentMethods": ["Skrill", "Paysafecard", "Neteller", "OnShop", "Admiral Pay"],
+      "excludedPaymentMethods": [
+        "Skrill",
+        "Paysafecard",
+        "Neteller",
+        "OnShop",
+        "Admiral Pay"
+      ],
       "validFrom": "2026-06-08",
       "validUntil": null,
       "sourceUrl": "https://www.eurobet.it/it/promo/nuovi-iscritti",
@@ -85,7 +94,9 @@
       "id": "planetwin365-sport",
       "operatorId": "planetwin365",
       "operatorName": "Planetwin365",
-      "sections": ["sport"],
+      "sections": [
+        "sport"
+      ],
       "title": "Bonus Benvenuto Sport",
       "advertisedTotal": 2350,
       "minDeposit": 20,
@@ -94,7 +105,12 @@
         "Selezione del Bonus Benvenuto Sport in fase di registrazione",
         "Validazione del documento d'identità"
       ],
-      "excludedPaymentMethods": ["Skrill", "Neteller", "OnShop", "Titolo di Ricarica"],
+      "excludedPaymentMethods": [
+        "Skrill",
+        "Neteller",
+        "OnShop",
+        "Titolo di Ricarica"
+      ],
       "validFrom": "2026-09-17",
       "validUntil": "2026-11-01",
       "sourceUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-sport",
@@ -165,7 +181,9 @@
       "id": "goldbet-sport",
       "operatorId": "goldbet",
       "operatorName": "Goldbet",
-      "sections": ["sport"],
+      "sections": [
+        "sport"
+      ],
       "title": "Bonus Benvenuto Scommesse",
       "advertisedTotal": 2100,
       "minDeposit": 20,
@@ -174,7 +192,12 @@
         "Selezione del Bonus Benvenuto Sport in fase di registrazione",
         "Validazione del documento d'identità"
       ],
-      "excludedPaymentMethods": ["Skrill", "Neteller", "OnShop", "Titolo di Ricarica"],
+      "excludedPaymentMethods": [
+        "Skrill",
+        "Neteller",
+        "OnShop",
+        "Titolo di Ricarica"
+      ],
       "validFrom": "2026-09-17",
       "validUntil": "2026-11-01",
       "sourceUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse",
@@ -226,7 +249,9 @@
       "id": "snai-sport",
       "operatorId": "snai",
       "operatorName": "Snai",
-      "sections": ["sport"],
+      "sections": [
+        "sport"
+      ],
       "title": "Bonus Benvenuto Sport",
       "advertisedTotal": 2000,
       "minDeposit": 10,
@@ -300,7 +325,9 @@
           "minEvents": null,
           "minOddsPerEvent": null,
           "usableOn": "Sette slot indicate nel regolamento",
-          "notes": ["Il bonus convertito va usato entro 5 giorni"]
+          "notes": [
+            "Il bonus convertito va usato entro 5 giorni"
+          ]
         }
       ]
     },
@@ -308,7 +335,9 @@
       "id": "planetwin365-casino",
       "operatorId": "planetwin365",
       "operatorName": "Planetwin365",
-      "sections": ["casino"],
+      "sections": [
+        "casino"
+      ],
       "title": "Bonus Benvenuto Casino",
       "advertisedTotal": 5050,
       "minDeposit": 20,
@@ -317,7 +346,13 @@
         "Selezione del Bonus Benvenuto Casinò in fase di registrazione",
         "Validazione del documento d'identità"
       ],
-      "excludedPaymentMethods": ["Skrill", "Neteller", "OnShop", "Titolo di Ricarica", "Movimentazione bancaria"],
+      "excludedPaymentMethods": [
+        "Skrill",
+        "Neteller",
+        "OnShop",
+        "Titolo di Ricarica",
+        "Movimentazione bancaria"
+      ],
       "validFrom": "2026-07-20",
       "validUntil": "2026-11-01",
       "sourceUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
@@ -340,7 +375,9 @@
           "minEvents": null,
           "minOddsPerEvent": null,
           "usableOn": "Giochi IGT",
-          "notes": ["Va giocato una volta per intero prima di diventare prelevabile"]
+          "notes": [
+            "Va giocato una volta per intero prima di diventare prelevabile"
+          ]
         },
         {
           "id": "slot",
@@ -367,7 +404,9 @@
       "id": "goldbet-casino",
       "operatorId": "goldbet",
       "operatorName": "Goldbet",
-      "sections": ["casino"],
+      "sections": [
+        "casino"
+      ],
       "title": "Bonus Benvenuto Casinò",
       "advertisedTotal": 5050,
       "minDeposit": 20,
@@ -376,7 +415,13 @@
         "Selezione del Bonus Benvenuto Casinò in fase di registrazione",
         "Validazione del documento d'identità"
       ],
-      "excludedPaymentMethods": ["Skrill", "Neteller", "OnShop", "Titolo di Ricarica", "Movimentazione bancaria"],
+      "excludedPaymentMethods": [
+        "Skrill",
+        "Neteller",
+        "OnShop",
+        "Titolo di Ricarica",
+        "Movimentazione bancaria"
+      ],
       "validFrom": "2026-07-20",
       "validUntil": "2026-11-01",
       "sourceUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
@@ -399,7 +444,9 @@
           "minEvents": null,
           "minOddsPerEvent": null,
           "usableOn": "Giochi IGT",
-          "notes": ["Va giocato una volta per intero prima di diventare prelevabile"]
+          "notes": [
+            "Va giocato una volta per intero prima di diventare prelevabile"
+          ]
         },
         {
           "id": "slot",
@@ -426,7 +473,9 @@
       "id": "snai-casino",
       "operatorId": "snai",
       "operatorName": "Snai",
-      "sections": ["casino"],
+      "sections": [
+        "casino"
+      ],
       "title": "Bonus Benvenuto Casinò",
       "advertisedTotal": 5000,
       "minDeposit": null,
@@ -460,7 +509,9 @@
           "minEvents": null,
           "minOddsPerEvent": null,
           "usableOn": "Slot indicate nel regolamento",
-          "notes": ["Il bonus convertito va usato entro 7 giorni"]
+          "notes": [
+            "Il bonus convertito va usato entro 7 giorni"
+          ]
         },
         {
           "id": "deposito",
@@ -476,6 +527,412 @@
           "minOddsPerEvent": null,
           "usableOn": "Sette slot indicate nel regolamento",
           "notes": []
+        }
+      ]
+    },
+    {
+      "id": "betsson-sport",
+      "operatorId": "betsson",
+      "operatorName": "Betsson",
+      "sections": [
+        "sport"
+      ],
+      "title": "Welcome Offer Sport 100% fino a 2.000 €",
+      "advertisedTotal": 2000,
+      "minDeposit": 5,
+      "depositWithinDays": 7,
+      "requirements": [
+        "Conto aperto dal 1 settembre 2026 e convalidato con CIE, SPID o documento d'identità",
+        "Puntare 7 volte l'importo del primo deposito entro 30 giorni dalla registrazione, su scommesse pre-partita o live con almeno 3 selezioni a quota 1,50 o superiore (esclusi sistemi e bet builder)",
+        "Una sola adesione per persona, indirizzo IP, conto e domicilio"
+      ],
+      "excludedPaymentMethods": [
+        "Skrill",
+        "Neteller"
+      ],
+      "validFrom": "2026-09-01",
+      "validUntil": null,
+      "sourceUrl": "https://offerte.betsson.it/welcome-offer-sport-100-2000e-26-27",
+      "termsUrl": "https://offerte.betsson.it/welcome-offer-sport-100-2000e-26-27",
+      "verifiedAt": "2026-10-25",
+      "status": "approvata",
+      "description": "Real bonus pari al 100% del primo deposito, fino a 2.000 €, accreditato dopo aver puntato 7 volte l'importo depositato su scommesse con almeno 3 selezioni.",
+      "issues": [],
+      "components": [
+        {
+          "id": "sport",
+          "product": "sport",
+          "kind": "bonus-real",
+          "percent": 100,
+          "maxAmount": 2000,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": null,
+          "validityDays": 7,
+          "minEvents": 3,
+          "minOddsPerEvent": 1.5,
+          "usableOn": "Scommesse pre-partita con almeno 3 selezioni (esclusi live, sistemi e bet builder)",
+          "notes": [
+            "Bonus minimo 5 €",
+            "Puntata massima con real bonus: 100 € per scommessa",
+            "Le vincite sono accreditate nel saldo prelevabile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "betsson-registrazione",
+      "operatorId": "betsson",
+      "operatorName": "Betsson",
+      "sections": [
+        "sport",
+        "casino"
+      ],
+      "title": "Bonus alla registrazione con CIE, SPID o documento",
+      "advertisedTotal": 2000,
+      "minDeposit": null,
+      "depositWithinDays": null,
+      "requirements": [
+        "Conto aperto dalle 12:00 del 1 settembre 2026",
+        "Importo in base al tipo di registrazione: 2.000 € con CIE, 1.000 € con SPID, 200 € con documento d'identità",
+        "Bonus distribuiti in 5 tranche: alla convalida e dopo 7, 14, 21 e 28 giorni",
+        "Una sola adesione per persona, nucleo familiare, indirizzo IP e conto"
+      ],
+      "excludedPaymentMethods": [],
+      "validFrom": "2026-09-01",
+      "validUntil": null,
+      "sourceUrl": "https://offerte.betsson.it/kyc-spid-e-cie-2000e-26-27",
+      "termsUrl": "https://offerte.betsson.it/kyc-spid-e-cie-2000e-26-27",
+      "verifiedAt": "2026-10-25",
+      "status": "bozza",
+      "description": "Fun bonus sport e casinò senza deposito, distribuiti in cinque settimane; l'importo dipende dal metodo di registrazione (CIE, SPID o documento).",
+      "issues": [
+        "Per il fun bonus casinò i termini indicano un importo extra da 80 € sia per SPID sia per CIE, mentre la tranche CIE è descritta come 180 €: da chiarire prima di pubblicare"
+      ],
+      "components": [
+        {
+          "id": "sport",
+          "product": "sport",
+          "kind": "senza-deposito",
+          "percent": null,
+          "maxAmount": 1000,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": null,
+          "validityDays": 5,
+          "minEvents": 8,
+          "minOddsPerEvent": 1.5,
+          "usableOn": "Multiple pre-partita da almeno 20 € con almeno 8 selezioni",
+          "notes": [
+            "Importo massimo con CIE (5 tranche da 200 €); 500 € con SPID, 100 € con documento",
+            "Conversione in real bonus: massimo 20 € per la tranche da 20 € e 80 € per quella da 80 € o 180 €",
+            "Il real bonus convertito vale 5 giorni su scommesse con almeno 3 selezioni a quota 1,50"
+          ]
+        },
+        {
+          "id": "casino",
+          "product": "casino",
+          "kind": "senza-deposito",
+          "percent": null,
+          "maxAmount": 1000,
+          "maxConvertible": null,
+          "wagering": 50,
+          "wageringDays": null,
+          "validityDays": 1,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "25 slot indicate nei termini",
+          "notes": [
+            "Importo massimo con CIE (5 tranche da 200 €); 500 € con SPID, 100 € con documento",
+            "Ogni fun bonus casinò vale 24 ore",
+            "Il real bonus convertito è utilizzabile su tutti i giochi del casinò"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "betsson-casino",
+      "operatorId": "betsson",
+      "operatorName": "Betsson",
+      "sections": [
+        "casino"
+      ],
+      "title": "Welcome Offer Casinò: cashback fino a 1.000 €",
+      "advertisedTotal": 1000,
+      "minDeposit": 5,
+      "depositWithinDays": 7,
+      "requirements": [
+        "Conto aperto dalle 12:00 del 19 agosto 2025 e convalidato",
+        "Gioco con saldo reale sulle 25 slot in promozione",
+        "Una sola adesione per persona, indirizzo IP, conto e domicilio"
+      ],
+      "excludedPaymentMethods": [
+        "Skrill",
+        "Neteller"
+      ],
+      "validFrom": "2025-08-19",
+      "validUntil": null,
+      "sourceUrl": "https://offerte.betsson.it/offerta-di-benvenuto-casino",
+      "termsUrl": "https://offerte.betsson.it/offerta-di-benvenuto-casino",
+      "verifiedAt": "2026-10-25",
+      "status": "approvata",
+      "description": "Quattro rimborsi settimanali pari al 50% delle perdite nette sulle slot in promozione, fino a 250 € a settimana e 1.000 € in totale, erogati come fun bonus.",
+      "issues": [],
+      "components": [
+        {
+          "id": "casino",
+          "product": "casino",
+          "kind": "rimborso",
+          "percent": 50,
+          "maxAmount": 1000,
+          "maxConvertible": 500,
+          "wagering": 35,
+          "wageringDays": 3,
+          "validityDays": 3,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "25 slot indicate nei termini",
+          "notes": [
+            "Massimo 250 € a settimana per 4 settimane; minimo 5 € (perdita netta di almeno 10 €)",
+            "Il real bonus convertito va giocato 1 volta sulle slot entro 3 giorni",
+            "Il fun bonus non vale per l'acquisto di free spin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bwin-sport",
+      "operatorId": "bwin",
+      "operatorName": "bwin",
+      "sections": [
+        "sport",
+        "casino"
+      ],
+      "title": "Offerta di Benvenuto Sport",
+      "advertisedTotal": 3010,
+      "minDeposit": 20,
+      "depositWithinDays": 7,
+      "requirements": [
+        "Nuovi clienti con conto aperto dalle 11:00 del 19 febbraio 2026",
+        "Primo deposito solo con Mastercard, Visa, Postepay o Apple Pay (circuito Maestro escluso)",
+        "Per il bonus scommesse: puntare 6 volte il primo deposito entro 30 giorni dalla registrazione, su multiple con quota totale minima 4,00 (escluse singole e sistemi, bonus e cash out)",
+        "Non cumulabile con altre offerte di registrazione"
+      ],
+      "excludedPaymentMethods": [
+        "Maestro"
+      ],
+      "validFrom": "2026-02-19",
+      "validUntil": null,
+      "sourceUrl": "https://www.bwin.it/it/p/promozioni/sports/bonus-benvenuto",
+      "termsUrl": "https://www.bwin.it/it/p/promozioni/sports/bonus-benvenuto",
+      "verifiedAt": "2026-10-25",
+      "status": "approvata",
+      "description": "Bonus scommesse pari al 100% del primo deposito fino a 3.000 € e 10 € dopo la prima scommessa (totale sport indicato: 3.010 €), più 30 free spin su Pirots 4 e 5 € su Aviator.",
+      "issues": [],
+      "components": [
+        {
+          "id": "sport",
+          "product": "sport",
+          "kind": "bonus-deposito",
+          "percent": 100,
+          "maxAmount": 3000,
+          "maxConvertible": null,
+          "wagering": 1,
+          "wageringDays": 7,
+          "validityDays": 7,
+          "minEvents": 4,
+          "minOddsPerEvent": 1.5,
+          "usableOn": "Multiple con almeno 4 selezioni (escluse singole e sistemi)",
+          "notes": [
+            "Accreditato 33 giorni dopo la registrazione, se maturato, e da accettare",
+            "Bonus non prelevabile; prelevare prima di aver completato il requisito annulla bonus e vincite"
+          ]
+        },
+        {
+          "id": "prima-scommessa",
+          "product": "sport",
+          "kind": "bonus-real",
+          "percent": null,
+          "maxAmount": 10,
+          "maxConvertible": null,
+          "wagering": 1,
+          "wageringDays": null,
+          "validityDays": null,
+          "minEvents": 1,
+          "minOddsPerEvent": 2.0,
+          "usableOn": "Scommesse sportive con quota complessiva minima 2,00",
+          "notes": [
+            "Prima scommessa entro 7 giorni dalla registrazione, di 10 € a quota 2,00 o superiore",
+            "Accreditato a esito della prima scommessa, vincente o perdente"
+          ]
+        },
+        {
+          "id": "free-spin",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "percent": null,
+          "maxAmount": 6,
+          "maxConvertible": null,
+          "wagering": 30,
+          "wageringDays": null,
+          "validityDays": 2,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Slot Pirots 4",
+          "notes": [
+            "30 free spin da 0,20 €",
+            "Vincite con requisito di puntata 30 volte e validità 7 giorni"
+          ]
+        },
+        {
+          "id": "aviator",
+          "product": "casino",
+          "kind": "bonus-real",
+          "percent": null,
+          "maxAmount": 5,
+          "maxConvertible": null,
+          "wagering": 1,
+          "wageringDays": null,
+          "validityDays": 7,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Aviator",
+          "notes": [
+            "Accreditato 48 ore dopo il primo deposito"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sisal-scommesse",
+      "operatorId": "sisal",
+      "operatorName": "Sisal",
+      "sections": [
+        "sport",
+        "casino"
+      ],
+      "title": "Bonus di benvenuto Scommesse",
+      "advertisedTotal": 7150,
+      "minDeposit": 20,
+      "depositWithinDays": 7,
+      "requirements": [
+        "Selezionare il bonus \"Scommesse\" durante la registrazione online",
+        "Validazione del documento d'identità e dell'indirizzo email",
+        "Primo deposito con carta, Postepay, BancoPosta, PayPal, Skrill, Neteller, Paysafecard o in ricevitoria (escluso bonifico)",
+        "Una sola adesione per persona, nucleo familiare, email, telefono e indirizzo IP"
+      ],
+      "excludedPaymentMethods": [
+        "Bonifico bancario"
+      ],
+      "validFrom": null,
+      "validUntil": null,
+      "sourceUrl": "https://www.sisal.it/bonus/bonus-benvenuto/scommesse",
+      "termsUrl": "https://www.sisal.it/bonus/bonus-benvenuto/scommesse",
+      "verifiedAt": "2026-10-25",
+      "status": "approvata",
+      "description": "Real bonus del 30% del primo deposito fino a 100 €, 50 € in freebet e fun bonus slot del 50% fino a 2.000 €. Il totale di 7.150 € indicato dall'operatore include 5.000 € virtuali del gioco Salva il Bottino.",
+      "issues": [],
+      "components": [
+        {
+          "id": "real-bonus",
+          "product": "sport",
+          "kind": "bonus-real",
+          "percent": 30,
+          "maxAmount": 100,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": null,
+          "validityDays": 3,
+          "minEvents": 4,
+          "minOddsPerEvent": 1.9,
+          "usableOn": "Scommesse sportive con almeno 4 eventi",
+          "notes": [
+            "20% entro 24 ore dal deposito, il resto la settimana successiva",
+            "Ogni tranche vale 3 giorni"
+          ]
+        },
+        {
+          "id": "freebet",
+          "product": "sport",
+          "kind": "bonus-real",
+          "percent": null,
+          "maxAmount": 50,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": null,
+          "validityDays": 3,
+          "minEvents": 4,
+          "minOddsPerEvent": 1.9,
+          "usableOn": "Scommesse sportive con almeno 4 eventi",
+          "notes": [
+            "Erogata in due tranche: 10 € entro 24 ore e 40 € la settimana successiva",
+            "Ulteriori 5 € in freebet collegando un account Fantacalcio entro 7 giorni (almeno 5 eventi a quota 2,50, quota totale 6,00)"
+          ]
+        },
+        {
+          "id": "fun-bonus",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "percent": 50,
+          "maxAmount": 2000,
+          "maxConvertible": 2000,
+          "wagering": 45,
+          "wageringDays": null,
+          "validityDays": 2,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "15 slot indicate nei termini",
+          "notes": [
+            "Il real bonus convertito è utilizzabile su 15 slot indicate nei termini"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sisal-casino",
+      "operatorId": "sisal",
+      "operatorName": "Sisal",
+      "sections": [
+        "casino"
+      ],
+      "title": "Bonus di benvenuto Casinò",
+      "advertisedTotal": 7000,
+      "minDeposit": 20,
+      "depositWithinDays": 7,
+      "requirements": [
+        "Selezionare il bonus \"Casinò\" durante la registrazione online",
+        "Validazione del documento d'identità e dell'indirizzo email",
+        "Primo deposito con carta, Postepay, BancoPosta, PayPal, Skrill, Neteller, Paysafecard o in ricevitoria (escluso bonifico)",
+        "Una sola adesione per persona, nucleo familiare, email, telefono e indirizzo IP"
+      ],
+      "excludedPaymentMethods": [
+        "Bonifico bancario"
+      ],
+      "validFrom": null,
+      "validUntil": null,
+      "sourceUrl": "https://www.sisal.it/bonus/bonus-benvenuto/casino",
+      "termsUrl": "https://www.sisal.it/bonus/bonus-benvenuto/casino",
+      "verifiedAt": "2026-10-25",
+      "status": "approvata",
+      "description": "Fun bonus pari al 50% del primo deposito, fino a 7.000 €, da usare entro 2 giorni su 15 slot con requisito di puntata di 45 volte.",
+      "issues": [],
+      "components": [
+        {
+          "id": "casino",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "percent": 50,
+          "maxAmount": 7000,
+          "maxConvertible": 7000,
+          "wagering": 45,
+          "wageringDays": null,
+          "validityDays": 2,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "15 slot indicate nei termini",
+          "notes": [
+            "Il real bonus convertito vale 7 giorni su 15 slot indicate nei termini"
+          ]
         }
       ]
     }

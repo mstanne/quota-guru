@@ -25,6 +25,9 @@ const DOMAINS = {
   planetwin365: ["planetwin365.it"],
   goldbet: ["goldbet.it"],
   snai: ["snai.it"],
+  betsson: ["betsson.it"],
+  bwin: ["bwin.it"],
+  sisal: ["sisal.it"],
 };
 
 // Promotional wording that must not appear in text written for the site (D.L. 87/2018, art. 9;
