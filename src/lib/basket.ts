@@ -1,6 +1,7 @@
 // Basketball data from the BALLDONTLIE snapshot (src/data/basket.json, refreshed by scripts/fetch-basket-data.mjs):
 // NBA calendar/results and Lega Basket Serie A standings.
 import raw from "../data/basket.json";
+import { sportsEvent } from "./schema";
 import { formatDay, formatTime, referenceTime, romeDay, slugify } from "./footballCore";
 import { isOverdue } from "./eventTiming.mjs";
 
@@ -89,16 +90,32 @@ export const gameRoundLabel = (g: BasketGame) => (g.postseason ? "Playoff" : "St
 const teams = (g: BasketGame) => `${g.home.name} – ${g.away.name}`;
 export function gameMeta(g: BasketGame) {
   const when = `${formatDay(g.utcDate)} ore ${formatTime(g.utcDate)}`;
+  const path = gamePath(g);
+  const description = isGameFinished(g)
+    ? `Risultato finale e parziali di ${teams(g)} (NBA), giocata ${when}.`
+    : isGamePending(g)
+      ? `${teams(g)} (NBA), giocata ${when} (ora italiana): risultato in arrivo.`
+      : `${teams(g)}, NBA: si gioca ${when} (ora italiana). Orario e pronostico con le probabilità di vittoria.`;
   return {
-    path: gamePath(g),
+    path,
     title: isGameFinished(g)
       ? `${teams(g)} ${g.score.home}-${g.score.away}: risultato NBA`
       : `${teams(g)}: pronostico e orario NBA`,
-    description: isGameFinished(g)
-      ? `Risultato finale e parziali di ${teams(g)} (NBA), giocata ${when}.`
-      : isGamePending(g)
-        ? `${teams(g)} (NBA), giocata ${when} (ora italiana): risultato in arrivo.`
-        : `${teams(g)}, NBA: si gioca ${when} (ora italiana). Orario e pronostico con le probabilità di vittoria.`,
+    description,
+    archive: isGameFinished(g),
+    jsonLd: [
+      sportsEvent({
+        path,
+        name: `${teams(g)} (NBA)`,
+        description,
+        startDate: g.utcDate,
+        sport: "Pallacanestro",
+        league: "NBA",
+        home: { name: g.home.name },
+        away: { name: g.away.name },
+        status: g.status === "postponed" ? "postponed" : "scheduled",
+      }),
+    ],
   };
 }
 export const nbaMeta = {

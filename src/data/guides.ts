@@ -19,6 +19,9 @@ import { analisiGuides } from "./guides/analisi";
 import { budgetGuides } from "./guides/budget";
 import { sportGuides } from "./guides/sport";
 import { direttaGuides } from "./guides/diretta";
+import { site } from "./site";
+import type { RouteMeta } from "../routes";
+import { isoFromItalianDate, plainText } from "../lib/schema";
 
 export type GuideBlock =
   | { type: "p"; text: string }
@@ -621,7 +624,43 @@ export const findGuide = (slug?: string) => guides.find((g) => g.slug === slug);
 export const findCategory = (slug?: string) => guideCategories.find((c) => c.slug === slug);
 export const guidesIn = (cat: string) => guides.filter((g) => g.category === cat);
 
-export const guideMeta = (g: Guide) => ({ path: guidePath(g), title: g.title, description: g.description });
+/** Social preview of a guide: its illustration as PNG (public/og/guide, scripts/generate-og-images.mjs). */
+export const guideOgImage = (g: Pick<Guide, "slug" | "image">) =>
+  g.image ? { path: `/og/guide/${g.slug}.png`, width: 1200, height: 630 } : undefined;
+
+export const guideMeta = (g: Guide): RouteMeta => {
+  const path = guidePath(g);
+  const image = guideOgImage(g);
+  const date = isoFromItalianDate(g.updatedAt);
+  const category = findCategory(g.category);
+  const article = {
+    "@type": "Article",
+    "@id": `${path}#articolo`,
+    mainEntityOfPage: path,
+    headline: g.title,
+    description: g.description,
+    inLanguage: "it-IT",
+    ...(category ? { articleSection: category.name } : {}),
+    ...(image ? { image: image.path } : {}),
+    ...(date ? { datePublished: date, dateModified: date } : {}),
+    author: { "@type": "Person", name: site.company },
+    publisher: { "@id": "/#organizzazione" },
+  };
+  const faq = g.faq?.length
+    ? [
+        {
+          "@type": "FAQPage",
+          "@id": `${path}#domande`,
+          mainEntity: g.faq.map((f) => ({
+            "@type": "Question",
+            name: plainText(f.q),
+            acceptedAnswer: { "@type": "Answer", text: plainText(f.a) },
+          })),
+        },
+      ]
+    : [];
+  return { path, title: g.title, description: g.description, image, jsonLd: [article, ...faq] };
+};
 export const categoryMeta = (c: GuideCategory) => ({
   path: categoryPath(c),
   title: `Guide: ${c.name.toLowerCase()}`,

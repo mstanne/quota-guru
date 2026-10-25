@@ -31,7 +31,7 @@ import { predictionFor } from "../../lib/predictions";
 import { PredictionPanel } from "../predictions/PredictionUi";
 import { MatchRow, TeamBadge } from "./MatchRow";
 import { DataUpdatedNote } from "./DataUpdatedNote";
-import { NotFoundPage } from "../NotFoundPage";
+import { ArchivedOrNotFound } from "../../lib/archive";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 
@@ -200,7 +200,7 @@ export function CalcioMatchPage() {
   const competition = findCompetition(competizione);
   const match = findMatch(competition, partita);
   usePageMeta(competition && match ? matchMeta(competition, match) : null);
-  if (!competition || !match) return <NotFoundPage />;
+  if (!competition || !match) return <ArchivedOrNotFound />;
 
   const finished = isFinished(match);
   const live = isLive(match);

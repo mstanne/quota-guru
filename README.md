@@ -256,8 +256,8 @@ Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e 
 ## Note
 
 - Ogni pagina ha un proprio URL (vedi tabella sotto). In build `scripts/prerender.mjs` genera un file HTML statico
-  per ogni URL con title, description, canonical e contenuto già visibile ai motori di ricerca, più `404.html`,
-  `sitemap.xml` e `robots.txt`. Nel browser React prende il controllo e la navigazione resta istantanea.
+  per ogni URL con title, description, canonical, dati strutturati e contenuto già visibile ai motori di ricerca, più
+  `404.html`, `sitemap.xml` e `robots.txt`. Nel browser React prende il controllo e la navigazione resta istantanea.
 - Per il tennis c'è ancora un solo esempio: tutte le partite della lista portano allo stesso URL di esempio. Le quote
   mostrate in home, tennis e basket sono ancora dati di esempio.
 - Guide (24): tipi, categorie e guide di base in `src/data/guides.ts`, le altre in `src/data/guides/<categoria>.ts`.
@@ -268,6 +268,24 @@ Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e 
   la sua scena nello script oppure metti `image: null` per avere il segnaposto.
 - I contenuti riguardano il gioco con vincita in denaro: prima di una pubblicazione reale verifica i requisiti
   normativi (licenze ADM, messaggi di gioco responsabile, divieti di pubblicità vigenti in Italia).
+
+## SEO: dati strutturati, lastmod e archivio delle partite
+
+- **Dati strutturati (JSON-LD)**, generati dal pre-render in ogni pagina: `Organization` (tutte), `WebSite` (home),
+  `BreadcrumbList` (ricavato dal percorso visibile in pagina, così coincidono), `SportsEvent` (schede partita di calcio
+  e NBA), `Article` + `FAQPage` (guide). I dati di ogni pagina stanno nel campo `jsonLd` dei metadati
+  (`src/routes.ts`, `matchMeta`, `gameMeta`, `guideMeta`); i percorsi che iniziano con `/` diventano URL assoluti.
+- **`<lastmod>` della sitemap**: è la data in cui il contenuto della pagina è cambiato davvero, non quella della build.
+  Il pre-render confronta un'impronta del contenuto (`<main>`) con quella della build precedente; le parti che
+  cambiano a ogni aggiornamento (es. "Dati aggiornati al…") hanno l'attributo `data-volatile` e non contano.
+- **Archivio delle partite**: la pagina di ogni partita finita viene salvata e continua a essere pubblicata (con lo
+  stesso URL, nella sitemap) anche quando la partita esce dalla finestra dei dati scaricati
+  (`src/lib/archive.tsx`). Stato e archivio stanno in `.cache/seo`, conservato tra un'esecuzione e l'altra del
+  workflow con la cache di GitHub Actions (passo "Restore SEO state"): se la cache venisse persa, le partite ancora
+  nei dati si riarchiviano subito, quelle più vecchie no.
+- **Immagini di anteprima delle guide** (`og:image`, 1200×630): `public/og/guide/<slug>.png`, ricavate dalle
+  illustrazioni con `npm run og` (da rilanciare quando aggiungi o cambi un'illustrazione). Senza PNG si usa
+  `og-image.png`.
 
 ## Testi editoriali delle partite (agente)
 

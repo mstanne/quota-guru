@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router";
 import { ArrowLeft, CalendarDays, Info } from "lucide-react";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";
 import { TeamBadge } from "../calcio/MatchRow";
-import { NotFoundPage } from "../NotFoundPage";
+import { ArchivedOrNotFound } from "../../lib/archive";
 import { BasketPredictionPanel } from "./BasketPrediction";
 import { basketPredictionFor } from "../../lib/basketPredict";
 import { BasketGameRow } from "./BasketGameRow";
@@ -31,7 +31,7 @@ export function BasketGamePage() {
   const { partita } = useParams();
   const game = findGame(partita);
   usePageMeta(game ? gameMeta(game) : null);
-  if (!game) return <NotFoundPage />;
+  if (!game) return <ArchivedOrNotFound />;
 
   const finished = isGameFinished(game);
   const live = isGameLive(game);

@@ -9,6 +9,13 @@ export interface RouteMeta {
   description: string;
   /** false = reachable but excluded from sitemap and marked noindex  */
   index?: boolean;
+  /** schema.org objects for this page (JSON-LD); BreadcrumbList is added by the pre-render from the visible trail. */
+  jsonLd?: Record<string, unknown>[];
+  /** Social preview image, path from the site root (e.g. "/og/guide/cash-out.png"); default /og-image.png. */
+  image?: { path: string; width: number; height: number };
+  /** true = the page is final (finished match): the pre-render archives it and keeps publishing it after the
+   *  match leaves the data window. */
+  archive?: boolean;
 }
 
 export const SITE_NAME = "QuotaGuru";
