@@ -1,5 +1,5 @@
 // /tennis/classifica-atp and /tennis/classifica-wta – top 100 of the world rankings.
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 import { ListOrdered } from "lucide-react";
 import { PageHeader } from "../layout/PageHeader";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";

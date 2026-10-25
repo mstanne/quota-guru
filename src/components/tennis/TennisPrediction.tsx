@@ -1,7 +1,7 @@
 // Tennis predictions: result panel (win probability, set scores, total sets) and the head-to-head calculator
 // on the tennis page. Model: src/lib/tennis/model.mjs; ratings: src/data/tennis-ratings.json.
 import { useId, useMemo, useState } from "react";
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 import { ChartColumn, Info } from "lucide-react";
 import { paths } from "../../routes";
 import { tourData, tourLabel, tours, type Tour } from "../../lib/tennis";

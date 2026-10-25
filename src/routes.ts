@@ -9,6 +9,13 @@ export interface RouteMeta {
   description: string;
   /** false = reachable but excluded from sitemap and marked noindex  */
   index?: boolean;
+  /** schema.org objects for this page (JSON-LD); BreadcrumbList is added by the pre-render from the visible trail. */
+  jsonLd?: Record<string, unknown>[];
+  /** Social preview image, path from the site root (e.g. "/og/guide/cash-out.png"); default /og-image.png. */
+  image?: { path: string; width: number; height: number };
+  /** true = the page is final (finished match): the pre-render archives it and keeps publishing it after the
+   *  match leaves the data window. */
+  archive?: boolean;
 }
 
 export const SITE_NAME = "QuotaGuru";
@@ -36,15 +43,15 @@ export const paths = {
 export const routes: RouteMeta[] = [
   {
     path: paths.home,
-    title: "QuotaGuru – Le migliori quote sportive a confronto",
+    title: "QuotaGuru – Pronostici calcio, tennis e NBA basati sui dati",
     description:
-      "Confronta le quote di calcio, tennis e basket dei principali bookmaker e trova sempre la quota più alta.",
+      "Probabilità di ogni esito calcolate da modelli statistici per calcio, tennis e NBA, con calendario, risultati, classifiche e guide alle scommesse.",
   },
   {
     path: paths.calcio,
-    title: "Calcio: calendario, risultati e classifiche",
+    title: "Pronostici calcio: calendario, risultati e classifiche",
     description:
-      "Partite in programma, risultati e classifiche di Serie A, Champions League, Premier League, LaLiga e degli altri principali campionati.",
+      "Pronostici con le probabilità 1X2, partite in programma, risultati e classifiche di Serie A, Champions League, Premier League, LaLiga e degli altri principali campionati.",
   },
   {
     path: paths.tennis,
@@ -76,7 +83,7 @@ export const routes: RouteMeta[] = [
   {
     path: paths.chiSiamo,
     title: "Chi siamo",
-    description: "Cos'è QuotaGuru, come confronta quote e operatori autorizzati e chi gestisce il sito.",
+    description: "Cos'è QuotaGuru, come calcola i pronostici, come confronta le offerte degli operatori autorizzati e chi gestisce il sito.",
   },
   {
     path: paths.contatti,
@@ -86,12 +93,12 @@ export const routes: RouteMeta[] = [
   {
     path: paths.faq,
     title: "Domande frequenti",
-    description: "Risposte alle domande più comuni su quote, operatori, dati e gioco responsabile.",
+    description: "Risposte alle domande più comuni su pronostici, operatori, dati e gioco responsabile.",
   },
   {
     path: paths.metodologia,
     title: "Metodologia",
-    description: "Come QuotaGuru raccoglie, ordina e aggiorna quote, offerte e valutazioni degli operatori.",
+    description: "Come QuotaGuru calcola i pronostici di calcio, tennis e NBA, da dove arrivano i dati e come aggiorna le offerte degli operatori.",
   },
   {
     path: paths.affiliazione,

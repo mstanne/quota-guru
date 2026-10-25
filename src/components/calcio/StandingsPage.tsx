@@ -1,4 +1,5 @@
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
+import { Link } from "../../lib/links";
 import { ListOrdered } from "lucide-react";
 import { competitionPath, findCompetition, standingsMeta } from "../../lib/football";
 import { generatedAt } from "../../lib/football";

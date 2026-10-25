@@ -1,7 +1,7 @@
 // U6: one page-header component used by every section page (title, subtitle, breadcrumb, meta line).
 // Always left-aligned; the icon stays on the same line as the title, also on mobile.
 import type { ReactNode } from "react";
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 import type { LucideIcon } from "lucide-react";
 
 export interface Crumb {

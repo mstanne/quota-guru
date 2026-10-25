@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 import { CalendarDays } from "lucide-react";
 import home from "../../data/football-home.json";
 import type { CompetitionRef, Match } from "../../lib/footballCore";

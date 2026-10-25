@@ -1,5 +1,5 @@
 import { BookOpen, Shield, Users } from "lucide-react";
-import { Link } from "react-router";
+import { Link } from "../lib/links";
 import { Card } from "./ui/card";
 import { PageHeader } from "./layout/PageHeader";
 import { categoryIcons, GuideCard } from "./guides/GuideUi";

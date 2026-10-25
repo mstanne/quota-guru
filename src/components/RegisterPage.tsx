@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Calendar, Eye, EyeOff, Lock, Mail, User } from "lucide-react";
-import { Link } from "react-router";
+import { Link } from "../lib/links";
 import { paths } from "../routes";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";

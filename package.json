@@ -15,7 +15,8 @@
     "predict": "node scripts/predict-football.mjs && node scripts/derive-football-home.mjs && node scripts/predict-basket.mjs && node scripts/predict-tennis.mjs",
     "predict:backtest": "node scripts/predict-football.mjs --backtest && node scripts/predict-basket.mjs --backtest",
     "history": "node scripts/fetch-football-data.mjs --history",
-    "history:basket": "node scripts/fetch-basket-data.mjs --history"
+    "history:basket": "node scripts/fetch-basket-data.mjs --history",
+    "og": "node scripts/generate-og-images.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.3",
@@ -35,6 +36,7 @@
     "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "4.1.3",
     "@types/node": "^22.13.0",
     "@types/react": "^18.3.18",

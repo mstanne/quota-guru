@@ -1,5 +1,6 @@
 // Guides of one category: /guide/categoria/<slug>.
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
+import { Link } from "../../lib/links";
 import { PageHeader } from "../layout/PageHeader";
 import { NotFoundPage } from "../NotFoundPage";
 import { categoryIcons, GuideCard } from "./GuideUi";

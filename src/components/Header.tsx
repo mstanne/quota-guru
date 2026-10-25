@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BookOpen, CircleDot, Dribbble, Gift, Goal, Menu, Shield } from "lucide-react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink } from "../lib/links";
 import { Button } from "./ui/button";
 import { Sheet, SheetHeader, SheetContent, SheetTitle } from "./ui/sheet";
 import { BrandLogo } from "./brand/BrandLogo";

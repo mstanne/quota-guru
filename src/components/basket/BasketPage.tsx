@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 import { CalendarDays, ListOrdered, Trophy } from "lucide-react";
 import { PageHeader } from "../layout/PageHeader";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";

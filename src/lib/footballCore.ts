@@ -2,6 +2,7 @@
 // No data import here, so components that only format matches do not pull the full snapshot into their JS chunk.
 
 import { isOverdue } from "./eventTiming.mjs";
+import { sportsEvent } from "./schema";
 
 export interface Team {
   id: number;
@@ -187,8 +188,8 @@ export function recentForm(c: Competition, teamId: number, limit = 5) {
 export function competitionMeta(c: Competition) {
   return {
     path: competitionPath(c),
-    title: `${c.name}: calendario e risultati`,
-    description: `Calendario, orari e risultati delle partite di ${c.name}${c.area ? ` (${c.area})` : ""}, con classifica aggiornata.`,
+    title: `Pronostici ${c.name}: calendario e risultati`,
+    description: `Pronostici con le probabilità 1X2, calendario, orari e risultati delle partite di ${c.name}${c.area ? ` (${c.area})` : ""}, con classifica aggiornata.`,
   };
 }
 export function standingsMeta(c: Competition) {
@@ -198,18 +199,35 @@ export function standingsMeta(c: Competition) {
     description: `Classifica aggiornata di ${c.name}: punti, partite giocate, vittorie, pareggi, sconfitte e differenza reti.`,
   };
 }
-export function matchMeta(c: Competition, m: Match) {
+/** `predicted`: the model has a prediction for this match (title and description mention it only then). */
+export function matchMeta(c: Competition, m: Match, predicted = false) {
   const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
   const when = `${formatDay(m.utcDate)} ore ${formatTime(m.utcDate)}`;
+  const path = matchPath(c, m);
+  const description = isFinished(m)
+    ? `Risultato finale di ${teams} (${c.name}), giocata ${when}.`
+    : isResultPending(m)
+      ? `${teams} (${c.name}), giocata ${when}: risultato in arrivo. Classifica, forma recente e precedenti delle due squadre.`
+      : `${teams}, ${c.name}: si gioca ${when}. ${predicted ? "Pronostico con le probabilità 1X2, classifica" : "Classifica"}, forma recente e precedenti delle due squadre.`;
   return {
-    path: matchPath(c, m),
+    path,
     title: isFinished(m)
       ? `${teams} ${m.score.fullTime.home}-${m.score.fullTime.away}: risultato ${c.name}`
-      : `${teams}: orario, classifica e precedenti`,
-    description: isFinished(m)
-      ? `Risultato finale di ${teams} (${c.name}), giocata ${when}.`
-      : isResultPending(m)
-        ? `${teams} (${c.name}), giocata ${when}: risultato in arrivo. Classifica, forma recente e precedenti delle due squadre.`
-        : `${teams}, ${c.name}: si gioca ${when}. Classifica, forma recente e precedenti delle due squadre.`,
+      : `${teams}: ${predicted ? "pronostico, orario e precedenti" : "orario, classifica e precedenti"}`,
+    description,
+    archive: isFinished(m),
+    jsonLd: [
+      sportsEvent({
+        path,
+        name: `${m.homeTeam.shortName} – ${m.awayTeam.shortName} (${c.name})`,
+        description,
+        startDate: m.utcDate,
+        sport: "Calcio",
+        league: c.name,
+        home: { name: m.homeTeam.name, logo: m.homeTeam.crest },
+        away: { name: m.awayTeam.name, logo: m.awayTeam.crest },
+        status: m.status === "POSTPONED" ? "postponed" : m.status === "CANCELLED" ? "cancelled" : "scheduled",
+      }),
+    ],
   };
 }

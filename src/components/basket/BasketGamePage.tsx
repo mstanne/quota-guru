@@ -1,8 +1,9 @@
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
+import { Link } from "../../lib/links";
 import { ArrowLeft, CalendarDays, Info } from "lucide-react";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";
 import { TeamBadge } from "../calcio/MatchRow";
-import { NotFoundPage } from "../NotFoundPage";
+import { ArchivedOrNotFound } from "../../lib/archive";
 import { BasketPredictionPanel } from "./BasketPrediction";
 import { basketPredictionFor } from "../../lib/basketPredict";
 import { BasketGameRow } from "./BasketGameRow";
@@ -30,8 +31,8 @@ const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 export function BasketGamePage() {
   const { partita } = useParams();
   const game = findGame(partita);
-  usePageMeta(game ? gameMeta(game) : null);
-  if (!game) return <NotFoundPage />;
+  usePageMeta(game ? gameMeta(game, !!basketPredictionFor(game.id)) : null);
+  if (!game) return <ArchivedOrNotFound />;
 
   const finished = isGameFinished(game);
   const live = isGameLive(game);

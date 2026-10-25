@@ -78,6 +78,16 @@ jobs:
           EDITORIAL_AI_MODEL: ${{ vars.EDITORIAL_AI_MODEL }}
           EDITORIAL_AI_MAX: ${{ vars.EDITORIAL_AI_MAX }}
 
+      - name: Restore SEO state
+        # Kept between builds: date of the last real change of every page (sitemap <lastmod>) and the archive of
+        # finished match pages, published even after the matches leave the data window (scripts/prerender.mjs).
+        # A new entry is saved at every run; restore-keys picks the most recent one.
+        uses: actions/cache@v6
+        with:
+          path: .cache/seo
+          key: seo-${{ github.run_id }}
+          restore-keys: seo-
+
       - name: Build
         run: npm run build
         env:

@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Mail, Twitter } from "lucide-react";
-import { Link } from "react-router";
+import { Link } from "../lib/links";
 import { BrandLogo } from "./brand/BrandLogo";
 import { paths } from "../routes";
 import { isFilled, site } from "../data/site";

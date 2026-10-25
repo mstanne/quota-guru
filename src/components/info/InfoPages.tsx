@@ -2,7 +2,7 @@
 // Texts are TEMPLATES: company data come from src/data/site.ts, and the legal pages (terms, privacy, cookies)
 // must be reviewed by a lawyer before publishing.
 import type { ReactNode } from "react";
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 import { BookOpen, Cookie, FileText, HelpCircle, Info, Mail, Scale, ShieldCheck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { PageHeader } from "../layout/PageHeader";
@@ -13,6 +13,9 @@ import { responsibleGambling as rg } from "../../data/operators";
 import { analyticsConfigured, analyticsProvider } from "../../lib/analytics";
 import { paths } from "../../routes";
 import footballHome from "../../data/football-home.json";
+
+/** Metodologia: sections about how bookmaker odds are ordered and updated. Hidden until the odds feeds are live. */
+const SHOW_ODDS_METHOD = false;
 
 // Model summary written by scripts/derive-football-home.mjs (from football-predictions.json)
 const model = (
@@ -340,17 +343,21 @@ export function MetodologiaPage() {
         I pronostici non sono consigli di gioco e non garantiscono alcuna vincita. Il gioco è vietato ai minori e può
         causare dipendenza.
       </p>
-      <h2>Come ordiniamo le quote</h2>
-      <p>
-        Per ogni esito la quota più alta è evidenziata come <strong>quota migliore</strong>. Le righe sono ordinate per
-        valore; a parità di valore l'ordine è alfabetico. Gli operatori non possono acquistare posizioni, colori o
-        etichette. Le quote non aggiornate di recente o sospese non partecipano al calcolo della migliore.
-      </p>
-      <h2>Aggiornamento</h2>
-      <p>
-        Ogni quota riporta l'orario dell'ultimo aggiornamento ricevuto. Le quote cambiano di continuo: il valore valido
-        è sempre quello mostrato sul sito dell'operatore al momento della giocata.
-      </p>
+      {SHOW_ODDS_METHOD && (
+        <>
+          <h2>Come ordiniamo le quote</h2>
+          <p>
+            Per ogni esito la quota più alta è evidenziata come <strong>quota migliore</strong>. Le righe sono ordinate
+            per valore; a parità di valore l'ordine è alfabetico. Gli operatori non possono acquistare posizioni, colori
+            o etichette. Le quote non aggiornate di recente o sospese non partecipano al calcolo della migliore.
+          </p>
+          <h2>Aggiornamento</h2>
+          <p>
+            Ogni quota riporta l'orario dell'ultimo aggiornamento ricevuto. Le quote cambiano di continuo: il valore
+            valido è sempre quello mostrato sul sito dell'operatore al momento della giocata.
+          </p>
+        </>
+      )}
       <h2>Offerte</h2>
       <p>
         Le condizioni delle offerte (importo di ciascuna parte, deposito minimo, requisiti di giocata, scadenze) sono

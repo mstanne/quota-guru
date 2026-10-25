@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import App, { preloadForPath } from "./App";
+import { captureArchivedPage } from "./lib/archive";
 import "./styles/globals.css";
 
 // Vite's BASE_URL ends with "/" (e.g. "/quota-guru/"); the router wants it without the trailing slash.
@@ -19,6 +20,8 @@ const root = document.getElementById("root")!;
 // Pre-rendered pages are hydrated; the 404 fallback (and `npm run dev`) render from scratch.
 // The JS chunk of the current page is loaded first, so hydration renders exactly the pre-rendered HTML.
 const path = window.location.pathname.slice(basename.length) || "/";
+// archived match pages: keep their stored HTML for hydration (see src/lib/archive.tsx)
+captureArchivedPage(path);
 preloadForPath(path)
   .catch(() => undefined)
   .then(() => {
