@@ -8,3 +8,6 @@ interface ImportMetaEnv {
   /** Cookie policy URL shown in the consent banner. */
   readonly VITE_COOKIE_POLICY_URL?: string;
 }
+
+/** ISO time of the build (vite.config.ts): reference for "upcoming / live / result pending". */
+declare const __BUILD_TIME__: string;

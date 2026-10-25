@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { ChevronRight } from "lucide-react";
 import { formatTime } from "../../lib/footballCore";
-import { gamePath, gameRoundLabel, isGameFinished, isGameLive, type BasketGame } from "../../lib/basket";
+import { gamePath, gameRoundLabel, isGameFinished, isGameLive, isGamePending, type BasketGame } from "../../lib/basket";
 import { TeamBadge } from "../calcio/MatchRow";
 import { basketPredictionFor } from "../../lib/basketPredict";
 import { BasketPredictionMini } from "./BasketPrediction";
@@ -10,10 +10,11 @@ import { BasketPredictionMini } from "./BasketPrediction";
 export function BasketGameRow({ game }: { game: BasketGame }) {
   const finished = isGameFinished(game);
   const live = isGameLive(game);
-  const label = `${game.home.name} – ${game.away.name}, ${finished ? `risultato ${game.score.home}-${game.score.away}` : `ore ${formatTime(game.utcDate)}`}`;
+  const pending = isGamePending(game);
+  const label = `${game.home.name} – ${game.away.name}, ${finished ? `risultato ${game.score.home}-${game.score.away}` : pending ? "risultato in arrivo" : `ore ${formatTime(game.utcDate)}`}`;
   const homeWin = finished && (game.score.home ?? 0) > (game.score.away ?? 0);
   const awayWin = finished && (game.score.away ?? 0) > (game.score.home ?? 0);
-  const prediction = !finished && !live ? basketPredictionFor(game.id) : undefined;
+  const prediction = !finished && !live && !pending ? basketPredictionFor(game.id) : undefined;
   return (
     <Link
       to={gamePath(game)}
@@ -25,6 +26,8 @@ export function BasketGameRow({ game }: { game: BasketGame }) {
           <span className="text-slate-400 text-xs uppercase tracking-wide">Finale</span>
         ) : live ? (
           <span className="text-red-400 text-xs font-semibold uppercase">In corso</span>
+        ) : pending ? (
+          <span className="block text-warn text-[11px] leading-tight">Risultato in arrivo</span>
         ) : (
           <span className="text-white tabular-nums">{formatTime(game.utcDate)}</span>
         )}

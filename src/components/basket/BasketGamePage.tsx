@@ -16,6 +16,7 @@ import {
   gameStatusLabel,
   isGameFinished,
   isGameLive,
+  isGamePending,
   nbaGames,
   nbaSeasonYear,
 } from "../../lib/basket";
@@ -63,7 +64,9 @@ export function BasketGamePage() {
           <div className="flex flex-wrap items-center justify-center gap-2 mb-6 text-sm">
             <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300">NBA</span>
             <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300">{gameRoundLabel(game)}</span>
-            <span className={`px-2 py-0.5 rounded-md ${live ? "bg-live text-white" : "bg-slate-800 text-slate-300"}`}>
+            <span
+              className={`px-2 py-0.5 rounded-md ${live ? "bg-live text-white" : isGamePending(game) ? "bg-slate-800 text-warn" : "bg-slate-800 text-slate-300"}`}
+            >
               {gameStatusLabel(game)}
             </span>
           </div>

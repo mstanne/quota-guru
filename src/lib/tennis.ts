@@ -1,7 +1,7 @@
 // Tennis data from the BALLDONTLIE snapshot (src/data/tennis.json, refreshed by scripts/fetch-tennis-data.mjs):
 // ATP/WTA rankings (top 100) and tournament calendar. Matches are not included in the free plan.
 import raw from "../data/tennis.json";
-import { romeDay } from "./footballCore";
+import { referenceTime, romeDay } from "./footballCore";
 
 export type Tour = "atp" | "wta";
 export interface TennisPlayer {
@@ -81,8 +81,10 @@ export const dateRange = (t: Tournament) =>
 export const formatPrize = (t: Tournament) =>
   t.prizeMoney ? `${new Intl.NumberFormat("it-IT").format(t.prizeMoney)} ${t.prizeCurrency ?? ""}`.trim() : null;
 
-// ---------- status (relative to the data snapshot, so server and browser agree) ----------
-const today = romeDay(data.generatedAt);
+// ---------- status (relative to the build time, so server and browser agree) ----------
+// The build time, not the snapshot date: if the source stops updating, a tournament whose end date has
+// passed still shows as "Concluso". A tournament lasts from its start to its end date (the source's dates).
+const today = romeDay(new Date(Math.max(referenceTime, Date.parse(data.generatedAt) || 0)).toISOString());
 export type TournamentStatus = "live" | "upcoming" | "finished";
 export function tournamentStatus(t: Tournament): TournamentStatus {
   if (t.start && t.start > today) return "upcoming";

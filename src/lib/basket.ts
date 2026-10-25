@@ -1,7 +1,8 @@
 // Basketball data from the BALLDONTLIE snapshot (src/data/basket.json, refreshed by scripts/fetch-basket-data.mjs):
 // NBA calendar/results and Lega Basket Serie A standings.
 import raw from "../data/basket.json";
-import { formatDay, formatTime, romeDay, slugify } from "./footballCore";
+import { formatDay, formatTime, referenceTime, romeDay, slugify } from "./footballCore";
+import { isOverdue } from "./eventTiming.mjs";
 
 export interface BasketTeam {
   id: number;
@@ -10,7 +11,8 @@ export interface BasketTeam {
   city?: string;
   abbr: string;
 }
-export type BasketStatus = "scheduled" | "live" | "final" | "postponed";
+/** "pending" is set by the site, not by the API: past its expected end but not yet final at the source. */
+export type BasketStatus = "scheduled" | "live" | "final" | "postponed" | "pending";
 export interface BasketGame {
   id: number;
   utcDate: string;
@@ -36,7 +38,19 @@ interface Snapshot {
   nba: { season: number; games: BasketGame[] };
   lba: { season: number; standings: BasketStanding[] };
 }
-const data = raw as unknown as Snapshot;
+const raw0 = raw as unknown as Snapshot;
+
+/**
+ * The source is not live and can leave a game "scheduled" or "live" after it ended. Past its expected end
+ * (src/lib/eventTiming.mjs, same reference time as the football pages) the game becomes "pending":
+ * it leaves "Prossime", is listed with the results and shows "Risultato in arrivo".
+ */
+export function settleGame(g: BasketGame, refMs = referenceTime): BasketGame {
+  const open = g.status === "scheduled" || g.status === "live";
+  return open && isOverdue(g.utcDate, "basket", refMs) ? { ...g, status: "pending" } : g;
+}
+
+const data: Snapshot = { ...raw0, nba: { ...raw0.nba, games: raw0.nba.games.map((g) => settleGame(g)) } };
 
 export const basketUpdatedAt = data.generatedAt;
 export const nbaGames = data.nba.games;
@@ -60,8 +74,15 @@ export const findGame = (slug?: string) => nbaGames.find((g) => gameSlug(g) === 
 export const isGameFinished = (g: BasketGame) => g.status === "final";
 export const isGameUpcoming = (g: BasketGame) => g.status === "scheduled";
 export const isGameLive = (g: BasketGame) => g.status === "live";
+export const isGamePending = (g: BasketGame) => g.status === "pending";
 export const gameStatusLabel = (g: BasketGame) =>
-  ({ scheduled: "In programma", live: "In corso", final: "Finita", postponed: "Rinviata" })[g.status];
+  ({
+    scheduled: "In programma",
+    live: "In corso",
+    final: "Finita",
+    postponed: "Rinviata",
+    pending: "Risultato in arrivo",
+  })[g.status];
 export const gameRoundLabel = (g: BasketGame) => (g.postseason ? "Playoff" : "Stagione regolare");
 
 // ---------- SEO metadata ----------
@@ -75,7 +96,9 @@ export function gameMeta(g: BasketGame) {
       : `${teams(g)}: pronostico e orario NBA`,
     description: isGameFinished(g)
       ? `Risultato finale e parziali di ${teams(g)} (NBA), giocata ${when}.`
-      : `${teams(g)}, NBA: si gioca ${when} (ora italiana). Orario e pronostico con le probabilità di vittoria.`,
+      : isGamePending(g)
+        ? `${teams(g)} (NBA), giocata ${when} (ora italiana): risultato in arrivo.`
+        : `${teams(g)}, NBA: si gioca ${when} (ora italiana). Orario e pronostico con le probabilità di vittoria.`,
   };
 }
 export const nbaMeta = {

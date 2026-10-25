@@ -1,6 +1,8 @@
 // Football types and pure helpers (URLs, formatting, standings maths).
 // No data import here, so components that only format matches do not pull the full snapshot into their JS chunk.
 
+import { isOverdue } from "./eventTiming.mjs";
+
 export interface Team {
   id: number;
   name: string;
@@ -14,7 +16,17 @@ export interface Score {
   away: number | null;
 }
 export type MatchStatus =
-  "SCHEDULED" | "TIMED" | "IN_PLAY" | "PAUSED" | "FINISHED" | "SUSPENDED" | "POSTPONED" | "CANCELLED" | "AWARDED";
+  | "SCHEDULED"
+  | "TIMED"
+  | "IN_PLAY"
+  | "PAUSED"
+  | "FINISHED"
+  | "SUSPENDED"
+  | "POSTPONED"
+  | "CANCELLED"
+  | "AWARDED"
+  /** Set by the site, not by the API: past its expected end but not yet marked as finished by the source. */
+  | "RESULT_PENDING";
 export interface Match {
   id: number;
   utcDate: string;
@@ -90,6 +102,21 @@ export const matchPath = (c: CompetitionRef, m: Match) => `/calcio/${c.slug}/${m
 export const isFinished = (m: Match) => m.status === "FINISHED" || m.status === "AWARDED";
 export const isUpcoming = (m: Match) => m.status === "SCHEDULED" || m.status === "TIMED";
 export const isLive = (m: Match) => m.status === "IN_PLAY" || m.status === "PAUSED";
+/** Played (by the clock) but the source has not published the final result yet. */
+export const isResultPending = (m: Match) => m.status === "RESULT_PENDING";
+
+/** Reference time of this build (vite.config.ts), the same for pre-rendered pages and the browser. */
+export const referenceTime = typeof __BUILD_TIME__ === "string" ? Date.parse(__BUILD_TIME__) : Date.now();
+
+/**
+ * The source is not live and sometimes leaves a match "scheduled" or "in play" long after it ended.
+ * Past its expected end (src/lib/eventTiming.mjs) such a match becomes RESULT_PENDING: it leaves
+ * "Prossime", is listed with the results and shows "Risultato in arrivo" instead of a time or "In corso".
+ */
+export function settleMatch<M extends Pick<Match, "status" | "utcDate">>(m: M, refMs = referenceTime): M {
+  const open = m.status === "SCHEDULED" || m.status === "TIMED" || m.status === "IN_PLAY" || m.status === "PAUSED";
+  return open && isOverdue(m.utcDate, "football", refMs) ? { ...m, status: "RESULT_PENDING" } : m;
+}
 
 const STATUS_LABEL: Record<MatchStatus, string> = {
   SCHEDULED: "Da programmare",
@@ -101,6 +128,7 @@ const STATUS_LABEL: Record<MatchStatus, string> = {
   POSTPONED: "Rinviata",
   CANCELLED: "Annullata",
   AWARDED: "A tavolino",
+  RESULT_PENDING: "Risultato in arrivo",
 };
 export const statusLabel = (m: Match) => STATUS_LABEL[m.status] ?? m.status;
 
@@ -180,6 +208,8 @@ export function matchMeta(c: Competition, m: Match) {
       : `${teams}: orario, classifica e precedenti`,
     description: isFinished(m)
       ? `Risultato finale di ${teams} (${c.name}), giocata ${when}.`
-      : `${teams}, ${c.name}: si gioca ${when}. Classifica, forma recente e precedenti delle due squadre.`,
+      : isResultPending(m)
+        ? `${teams} (${c.name}), giocata ${when}: risultato in arrivo. Classifica, forma recente e precedenti delle due squadre.`
+        : `${teams}, ${c.name}: si gioca ${when}. Classifica, forma recente e precedenti delle due squadre.`,
   };
 }

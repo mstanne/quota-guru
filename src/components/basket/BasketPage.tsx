@@ -10,6 +10,7 @@ import {
   basketUpdatedAt,
   isGameFinished,
   isGameLive,
+  isGamePending,
   isGameUpcoming,
   lbaStandings,
   nbaGames,
@@ -31,7 +32,8 @@ const FILTERS: { id: Filter; label: string }[] = [
 // Date filters use the visitor's clock and run only after a click (pre-rendered HTML = "Prossime").
 function matches(g: BasketGame, f: Filter) {
   if (f === "upcoming") return isGameUpcoming(g) || isGameLive(g);
-  if (f === "results") return isGameFinished(g);
+  // played games whose final score the source has not published yet are listed with the results
+  if (f === "results") return isGameFinished(g) || isGamePending(g);
   const day = (o: number) => romeDay(new Date(Date.now() + o * 86400000).toISOString());
   const d = romeDay(g.utcDate);
   if (f === "today") return d === day(0);

@@ -10,6 +10,7 @@ import {
   generatedAt,
   isFinished,
   isLive,
+  isResultPending,
   isUpcoming,
   romeDay,
   standingsPath,
@@ -37,7 +38,8 @@ const FILTERS: { id: Filter; label: string }[] = [
 // (the pre-rendered HTML always shows the status-based "Prossime" view).
 function matchesFilter(m: Match, filter: Filter) {
   if (filter === "upcoming") return isUpcoming(m) || isLive(m);
-  if (filter === "results") return isFinished(m);
+  // played matches whose final result the source has not published yet are listed with the results
+  if (filter === "results") return isFinished(m) || isResultPending(m);
   const day = (offset: number) => romeDay(new Date(Date.now() + offset * 86400000).toISOString());
   const d = romeDay(m.utcDate);
   if (filter === "today") return d === day(0);

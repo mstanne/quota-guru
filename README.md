@@ -150,6 +150,12 @@ Calendario, risultati, classifiche e precedenti del calcio arrivano dall'API gra
   ```
 
   poi `npm run data` scarica i dati aggiornati.
+- **Partite "scadute":** le fonti non sono in diretta e a volte lasciano una partita "in programma" o "in corso"
+  anche dopo la fine. Il sito non si fida solo dello stato: passata la durata media più un margine
+  (`src/lib/eventTiming.mjs`: calcio 115′, NBA 150′, più 60′ di ritardo della fonte) la partita esce da "Prossime",
+  finisce in "Risultati" e mostra "Risultato in arrivo" finché la fonte non pubblica il finale. Il riferimento è
+  l'ora della build (`scripts/stamp-build-time.mjs`), uguale per le pagine pre-renderizzate e il browser; per i tornei
+  di tennis vale la data di fine del torneo.
 - Il workflow aggiorna i dati e ripubblica il sito ogni 3 ore. Senza token usa lo snapshot già presente nel repo.
 - I termini d'uso richiedono l'attribuzione "Football data provided by the Football-Data.org API", presente nel footer:
   non rimuoverla.

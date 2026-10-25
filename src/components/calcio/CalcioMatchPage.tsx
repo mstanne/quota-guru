@@ -11,6 +11,7 @@ import {
   headToHead,
   isFinished,
   isLive,
+  isResultPending,
   mainTable,
   recentForm,
   roundLabel,
@@ -241,7 +242,7 @@ export function CalcioMatchPage() {
               <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300">{roundLabel(match)}</span>
             )}
             <span
-              className={`px-2 py-0.5 rounded-md ${live ? "bg-red-600 text-white" : "bg-slate-800 text-slate-300"}`}
+              className={`px-2 py-0.5 rounded-md ${live ? "bg-red-600 text-white" : isResultPending(match) ? "bg-slate-800 text-warn" : "bg-slate-800 text-slate-300"}`}
             >
               {statusLabel(match)}
             </span>

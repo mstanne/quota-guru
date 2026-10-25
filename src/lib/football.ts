@@ -2,7 +2,7 @@
 // The snapshot is refreshed by scripts/fetch-football-data.mjs (scheduled GitHub Action).
 // Importing this module includes the whole snapshot in the JS chunk: use ./footballCore for pure helpers.
 import raw from "../data/football.json";
-import { matchSlug, type Competition, type HeadToHead, type Match } from "./footballCore";
+import { matchSlug, settleMatch, type Competition, type HeadToHead, type Match } from "./footballCore";
 
 export * from "./footballCore";
 
@@ -13,7 +13,12 @@ interface Snapshot {
   headToHead: Record<string, HeadToHead>;
 }
 
-const data = raw as unknown as Snapshot;
+const raw0 = raw as unknown as Snapshot;
+// Matches past their expected end but not yet finished at the source become RESULT_PENDING (see settleMatch).
+const data: Snapshot = {
+  ...raw0,
+  competitions: raw0.competitions.map((c) => ({ ...c, matches: c.matches.map((m) => settleMatch(m)) })),
+};
 
 export const generatedAt = data.generatedAt;
 export const competitions: Competition[] = data.competitions.filter(

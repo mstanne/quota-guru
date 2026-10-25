@@ -5,6 +5,7 @@ import {
   formatTime,
   isFinished,
   isLive,
+  isResultPending,
   matchPath,
   roundLabel,
   statusLabel,
@@ -73,8 +74,9 @@ export function MatchRow({
 }) {
   const finished = isFinished(match);
   const live = isLive(match);
+  const pending = isResultPending(match);
   const ft = match.score.fullTime;
-  const label = `${match.homeTeam.shortName} – ${match.awayTeam.shortName}, ${finished ? `risultato ${ft.home}-${ft.away}` : `ore ${formatTime(match.utcDate)}`}`;
+  const label = `${match.homeTeam.shortName} – ${match.awayTeam.shortName}, ${finished ? `risultato ${ft.home}-${ft.away}` : pending ? "risultato in arrivo" : `ore ${formatTime(match.utcDate)}`}`;
 
   return (
     <Link
@@ -87,6 +89,8 @@ export function MatchRow({
           <span className="text-slate-400 text-xs uppercase tracking-wide">Finale</span>
         ) : live ? (
           <span className="text-red-400 text-xs font-semibold uppercase">{statusLabel(match)}</span>
+        ) : pending ? (
+          <span className="block text-warn text-[11px] leading-tight">{statusLabel(match)}</span>
         ) : (
           <span className="text-white tabular-nums">{formatTime(match.utcDate)}</span>
         )}
@@ -110,7 +114,7 @@ export function MatchRow({
         ))}
       </div>
 
-      {prediction && !finished && !live && (
+      {prediction && !finished && !live && !pending && (
         <div className="shrink-0">
           <PredictionMini prediction={prediction} home={match.homeTeam.shortName} away={match.awayTeam.shortName} />
         </div>

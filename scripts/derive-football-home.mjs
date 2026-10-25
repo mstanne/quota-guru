@@ -6,6 +6,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { isOverdue } from "../src/lib/eventTiming.mjs";
+import { readBuildTime } from "./lib/build-time.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const src = path.join(root, "src", "data", "football.json");
@@ -22,7 +24,11 @@ const predData = fs.existsSync(predFile) ? JSON.parse(fs.readFileSync(predFile, 
 const predictions = predData?.predictions ?? {};
 // model summary + track record, shown on the Metodologia page without loading every prediction
 const model = predData ? { ...predData.model, track: predData.track, generatedAt: predData.generatedAt } : null;
-const upcoming = (m) => ["SCHEDULED", "TIMED", "IN_PLAY", "PAUSED"].includes(m.status);
+// Same rule as the site (settleMatch in src/lib/footballCore.ts): a match past its expected end is not
+// "upcoming" any more, even if the source still lists it as scheduled or in play.
+const buildMs = Date.parse(readBuildTime(root));
+const upcoming = (m) =>
+  ["SCHEDULED", "TIMED", "IN_PLAY", "PAUSED"].includes(m.status) && !isOverdue(m.utcDate, "football", buildMs);
 const all = data.competitions
   .filter((c) => PRIORITY.includes(c.code))
   .flatMap((c) =>
