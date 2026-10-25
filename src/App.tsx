@@ -29,7 +29,6 @@ const TennisRankingPage = lazyPage(() =>
 const TennisCalendarPage = lazyPage(() =>
   import("./components/tennis/TennisCalendarPage").then((m) => m.TennisCalendarPage),
 );
-const TennisEventDetail = lazyPage(() => import("./components/TennisEventDetail").then((m) => m.TennisEventDetail));
 const SitiScommessePage = lazyPage(() => import("./components/SitiScommessePage").then((m) => m.SitiScommessePage));
 const BonusPage = lazyPage(() => import("./components/BonusPage").then((m) => m.BonusPage));
 const GuidesPage = lazyPage(() => import("./components/GuidesPage").then((m) => m.GuidesPage));
@@ -39,8 +38,6 @@ const GuideArticlePage = lazyPage(() =>
 const GuideCategoryPage = lazyPage(() =>
   import("./components/guides/GuideCategoryPage").then((m) => m.GuideCategoryPage),
 );
-const LoginPage = lazyPage(() => import("./components/LoginPage").then((m) => m.LoginPage));
-const RegisterPage = lazyPage(() => import("./components/RegisterPage").then((m) => m.RegisterPage));
 const info = () => import("./components/info/InfoPages");
 const ChiSiamoPage = lazyPage(() => info().then((m) => m.ChiSiamoPage));
 const ContattiPage = lazyPage(() => info().then((m) => m.ContattiPage));
@@ -50,21 +47,16 @@ const AffiliazionePage = lazyPage(() => info().then((m) => m.AffiliazionePage));
 const TerminiPage = lazyPage(() => info().then((m) => m.TerminiPage));
 const PrivacyPage = lazyPage(() => info().then((m) => m.PrivacyPage));
 const CookiePage = lazyPage(() => info().then((m) => m.CookiePage));
-const ForgotPasswordPage = lazyPage(() => import("./components/ForgotPasswordPage").then((m) => m.ForgotPasswordPage));
 
 /** Which lazy chunks a URL needs – preloaded before hydration (see main.tsx). */
 const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/", [UpcomingMatches]],
-  [paths.accedi, [LoginPage]],
-  [paths.registrati, [RegisterPage]],
-  [paths.passwordDimenticata, [ForgotPasswordPage]],
   [paths.calcio, [CalcioPage]],
   ["/calcio/:competizione", [CalcioPage, NotFoundPage]],
   ["/calcio/:competizione/classifica", [StandingsPage, NotFoundPage]],
   ["/calcio/:competizione/:partita", [CalcioMatchPage, NotFoundPage]],
   [paths.tennis, [TennisPage]],
   [paths.basket, [BasketPage]],
-  [paths.tennisEvento, [TennisEventDetail]],
   ["/tennis/classifica-atp", [TennisRankingPage, NotFoundPage]],
   ["/tennis/classifica-wta", [TennisRankingPage, NotFoundPage]],
   ["/tennis/calendario-atp", [TennisCalendarPage, NotFoundPage]],
@@ -148,41 +140,18 @@ function HomePage() {
 }
 
 export default function App() {
-  const navigate = useNavigate();
-  const go = (to: string) => () => navigate(to);
-
   return (
     <>
       <RouteEffects />
       <Suspense fallback={<PageLoading />}>
         <Routes>
-          {/* Full-screen pages without header/footer (currently hidden from the navigation) */}
-          <Route
-            path={paths.accedi}
-            element={
-              <LoginPage
-                onForgotPassword={go(paths.passwordDimenticata)}
-                onRegister={go(paths.registrati)}
-                onBack={go(paths.home)}
-              />
-            }
-          />
-          <Route
-            path={paths.registrati}
-            element={<RegisterPage onLogin={go(paths.accedi)} onBack={go(paths.home)} />}
-          />
-          <Route
-            path={paths.passwordDimenticata}
-            element={<ForgotPasswordPage onLogin={go(paths.accedi)} onBack={go(paths.home)} />}
-          />
-
           <Route element={<SiteLayout />}>
             <Route index element={<HomePage />} />
             <Route path={paths.calcio} element={<CalcioPage />} />
             <Route path="/calcio/:competizione" element={<CalcioPage />} />
             <Route path="/calcio/:competizione/classifica" element={<StandingsPage />} />
             <Route path="/calcio/:competizione/:partita" element={<CalcioMatchPage />} />
-            <Route path={paths.tennis} element={<TennisPage onMatchClick={go(paths.tennisEvento)} />} />
+            <Route path={paths.tennis} element={<TennisPage />} />
             <Route path={paths.basket} element={<BasketPage />} />
             <Route path="/basket/nba" element={<BasketPage league="nba" />} />
             <Route path="/basket/serie-a/classifica" element={<BasketStandingsPage />} />
@@ -191,7 +160,6 @@ export default function App() {
             <Route path="/tennis/classifica-wta" element={<TennisRankingPage tour="wta" />} />
             <Route path="/tennis/calendario-atp" element={<TennisCalendarPage tour="atp" />} />
             <Route path="/tennis/calendario-wta" element={<TennisCalendarPage tour="wta" />} />
-            <Route path={paths.tennisEvento} element={<TennisEventDetail onBack={go(paths.tennis)} />} />
             <Route path={paths.sitiScommesse} element={<SitiScommessePage />} />
             <Route path={paths.bonus} element={<BonusPage />} />
             <Route path={paths.guide} element={<GuidesPage />} />

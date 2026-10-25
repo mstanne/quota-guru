@@ -1,4 +1,5 @@
 // Single guide page: /guide/<slug>. Content comes from src/data/guides.ts.
+import { useEffect, useRef } from "react";
 import { Calendar, ChevronDown, Clock, ShieldCheck } from "lucide-react";
 import { Link, useParams } from "react-router";
 import { PageHeader, MetaItems } from "../layout/PageHeader";
@@ -8,6 +9,7 @@ import { categoryIcons, GuideBlockView, GuideCard, Rich } from "./GuideUi";
 import { categoryPath, findCategory, findGuide, guideMeta, relatedGuides, type Guide } from "../../data/guides";
 import { responsibleGambling as rg } from "../../data/operators";
 import { usePageMeta } from "../../lib/pageMeta";
+import { track } from "../../lib/analytics";
 import { paths } from "../../routes";
 
 export function GuideArticlePage() {
@@ -97,6 +99,7 @@ export function GuideArticlePage() {
                 </div>
               </section>
             ) : null}
+            <ReadMarker guide={guide.slug} category={guide.category} />
             <aside aria-label="Gioco responsabile" className="rounded-lg border border-warn/30 bg-warn/10 p-5 flex gap-3">
               <ShieldCheck className="w-6 h-6 text-warn shrink-0" aria-hidden="true" />
               <p className="text-slate-300 text-sm leading-relaxed">
@@ -150,4 +153,22 @@ function Toc({ guide }: { guide: Guide }) {
       ) : null}
     </ol>
   );
+}
+
+/** Invisible marker at the end of the article: sends guide_read once when the visitor scrolls to it. */
+function ReadMarker({ guide, category }: { guide: string; category: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        track("guide_read", { guide, category });
+        observer.disconnect();
+      }
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [guide, category]);
+  return <div ref={ref} aria-hidden="true" />;
 }

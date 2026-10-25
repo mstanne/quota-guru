@@ -137,7 +137,8 @@ const eurobet: OperatorData = {
 };
 
 // Goldbet and Planetwin365 belong to the same group (same platform and offer structure).
-// Fields still to fill in are left as [PLACEHOLDER]; liveStreaming is false until verified on the operator's site.
+// Payments: goldbet.it and planetwin365.it /guida/depositi and /guida/prelievi, 25/10/2026.
+// liveStreaming is false until verified on the operator's site.
 const goldbet: OperatorData = {
   id: "goldbet",
   name: "Goldbet",
@@ -151,12 +152,32 @@ const goldbet: OperatorData = {
   admLicense: "GAD 16009",
   description:
     "Concessionario ADM gestito da GBO Italy S.p.A., con scommesse sportive, casinò, casinò live, slot, poker, bingo, giochi di carte e lotterie online.",
-  minDeposit: "[DEPOSITO_MINIMO]",
-  withdrawalTime: "[TEMPI_PRELIEVO]",
-  paymentMethods: ["[METODO_PAGAMENTO_1]", "[METODO_PAGAMENTO_2]", "[METODO_PAGAMENTO_3]", "[METODO_PAGAMENTO_4]"],
+  minDeposit: "10 € (carte, Postepay e PayPal)",
+  withdrawalTime: "Entro 24 ore con PayPal, Skrill e Neteller; 24-48 ore lavorative con carta",
+  paymentMethods: [
+    "Carte di credito/debito",
+    "Postepay",
+    "PayPal",
+    "Apple Pay",
+    "Google Pay",
+    "Skrill",
+    "Neteller",
+    "MuchBetter",
+    "Paysafecard",
+    "Ricarica nei punti vendita",
+    "Bonifico bancario",
+    "Bonifico e bollettino postale",
+  ],
   features: ["Scommesse sportive", "Cash out", "Casinò, casinò live e slot", "Poker, bingo e lotterie"],
-  pros: ["[PUNTO_DI_FORZA_1]", "[PUNTO_DI_FORZA_2]", "[PUNTO_DI_FORZA_3]"],
-  cons: ["[PUNTO_DEBOLE_1]", "[PUNTO_DEBOLE_2]"],
+  pros: [
+    "Prelievo con bonifico istantaneo, indicato come accreditato subito",
+    "Nessuna spesa applicata dall'operatore su depositi e prelievi",
+    "Ricarica anche in contanti nei punti vendita",
+  ],
+  cons: [
+    "Deposito minimo di 30 € con Skrill, Neteller, Rapid Transfer e Paysafecard",
+    "Le vincite da bonus e promozioni possono essere pagate solo con bonifico bancario",
+  ],
   liveStreaming: false,
   cashOut: true,
 };
@@ -173,12 +194,32 @@ const planetwin365: OperatorData = {
   admLicense: "GAD 16007",
   description:
     "Concessionario ADM gestito da PWO S.p.A., con scommesse sportive, casinò, casinò live, slot, poker, bingo, giochi di carte e lotterie online, e una rete di punti vendita.",
-  minDeposit: "[DEPOSITO_MINIMO]",
-  withdrawalTime: "[TEMPI_PRELIEVO]",
-  paymentMethods: ["[METODO_PAGAMENTO_1]", "[METODO_PAGAMENTO_2]", "[METODO_PAGAMENTO_3]", "[METODO_PAGAMENTO_4]"],
+  minDeposit: "10 € (carte, Postepay e PayPal)",
+  withdrawalTime: "Entro 24 ore con PayPal, Skrill e Neteller; 24-48 ore lavorative con carta",
+  paymentMethods: [
+    "Carte di credito/debito",
+    "Postepay",
+    "PayPal",
+    "Apple Pay",
+    "Google Pay",
+    "Skrill",
+    "Neteller",
+    "MuchBetter",
+    "Paysafecard",
+    "Ricarica nei punti vendita",
+    "Bonifico bancario",
+    "Bonifico e bollettino postale",
+  ],
   features: ["Scommesse sportive", "Cash out", "Casinò, casinò live e slot", "Punti vendita sul territorio"],
-  pros: ["[PUNTO_DI_FORZA_1]", "[PUNTO_DI_FORZA_2]", "[PUNTO_DI_FORZA_3]"],
-  cons: ["[PUNTO_DEBOLE_1]", "[PUNTO_DEBOLE_2]"],
+  pros: [
+    "Prelievo con bonifico istantaneo, indicato come accreditato subito",
+    "Nessuna spesa applicata dall'operatore su depositi e prelievi",
+    "Ricarica anche in contanti nei punti vendita",
+  ],
+  cons: [
+    "Deposito minimo di 30 € con Skrill, Neteller, Rapid Transfer e Paysafecard",
+    "Le vincite da bonus e promozioni possono essere pagate solo con bonifico bancario",
+  ],
   liveStreaming: false,
   cashOut: true,
 };
@@ -211,8 +252,12 @@ const bet365: OperatorData = {
     "Bonifico bancario",
   ],
   features: ["Scommesse sportive pre-partita e live", "Cash out", "Bet Builder", "Casinò"],
-  pros: ["[PUNTO_DI_FORZA_1]", "[PUNTO_DI_FORZA_2]", "[PUNTO_DI_FORZA_3]"],
-  cons: ["[PUNTO_DEBOLE_1]", "[PUNTO_DEBOLE_2]"],
+  pros: [
+    "Deposito minimo di 5 €",
+    "Prelievo su carta o bonifico indicato in 1-4 ore",
+    "Nove metodi di pagamento, tra cui PayPal, Apple Pay e Google Pay",
+  ],
+  cons: ["L'offerta di benvenuto è visibile solo dopo l'accesso al sito"],
   liveStreaming: false,
   cashOut: true,
 };
@@ -281,7 +326,9 @@ export const responsibleGambling = {
   helplineHref: "tel:800558822",
   regulatorName: "Agenzia delle Dogane e dei Monopoli (ADM)",
   regulatorUrl: "https://www.adm.gov.it",
-  /** Official ADM "gioco sicuro e responsabile" logo (allowed by D.L. 87/2018, art. 9). */
-  admLogoUrl: null as string | null,
+  /** Official ADM logo, path relative to public/ (null hides it). */
+  admLogoUrl: "adm/logo-adm.png" as string | null,
+  /** "Gioca responsabile +18" badge, path relative to public/ (null shows a plain "18+" mark instead). */
+  responsibleBadgeUrl: "adm/gioca-responsabile-18.png" as string | null,
   minAge: 18,
 };

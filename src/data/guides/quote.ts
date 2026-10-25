@@ -102,7 +102,7 @@ export const quoteGuides: Guide[] = [
           },
           {
             type: "p",
-            text: "Puoi provare questi calcoli con la schedina del sito: aggiungendo le selezioni vedi la quota totale per ogni operatore. Le differenze tra tipi di giocata sono spiegate in [singola, multipla e sistema](/guide/singola-multipla-sistema).",
+            text: "Le differenze tra tipi di giocata sono spiegate in [singola, multipla e sistema](/guide/singola-multipla-sistema).",
           },
         ],
       },

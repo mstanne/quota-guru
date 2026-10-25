@@ -6,8 +6,15 @@
 //   VITE_ANALYTICS_ID       = site domain for Plausible (e.g. "example.com") or GA4 measurement id ("G-XXXXXXX")
 //
 // Events sent by the site:
-//   outbound_click  { operator, placement, page }   – click on a "Vai al sito" button (affiliate link)
-//   bet_slip_add    { operator, market, page }      – odd added to the bet slip
+//   outbound_click     { operator, placement, page }   – click on a "Vai al sito" button (affiliate link)
+//   bet_slip_add       { operator, market, page }      – odd added to the bet slip
+//   offer_terms_click  { operator, offer, placement, page } – click on "termini"/"condizioni" of a welcome offer
+//   filter_use         { filter, value, page }         – section/filter chosen (bonus sections, operator filters)
+//   guide_read         { guide, category }             – visitor reached the end of a guide
+//   helpline_click     { page }                        – click on the gambling helpline number (any tel: link)
+//
+// offer_terms_click and filter_use are declarative: put data-track="<event>" and data-track-<prop>="…"
+// on any clickable element and the click listener installed by initAnalytics() sends it.
 
 type Provider = "plausible" | "ga4";
 export type Consent = "granted" | "denied" | null;
@@ -89,10 +96,40 @@ function loadProvider() {
   document.head.appendChild(script);
 }
 
-/** Call once at start-up: loads the provider if consent was already given. */
+let listening = false;
+/** One document-level listener for declarative events (data-track) and helpline (tel:) links. */
+function listenForClicks() {
+  if (listening || typeof document === "undefined") return;
+  listening = true;
+  document.addEventListener(
+    "click",
+    (e) => {
+      const target = e.target instanceof Element ? e.target : null;
+      if (!target) return;
+      const tagged = target.closest<HTMLElement>("[data-track]");
+      if (tagged) {
+        const props: Record<string, string> = { page: currentPage() };
+        for (const [key, value] of Object.entries(tagged.dataset)) {
+          // data-track-operator="eurobet" -> dataset.trackOperator -> props.operator
+          if (key.startsWith("track") && key !== "track" && value) props[key[5].toLowerCase() + key.slice(6)] = value;
+        }
+        track(tagged.dataset.track!, props);
+        return;
+      }
+      if (target.closest('a[href^="tel:"]')) track("helpline_click", { page: currentPage() });
+    },
+    { capture: true },
+  );
+}
+
+/** Call once at start-up: loads the provider if consent was already given and starts listening for clicks. */
 export function initAnalytics() {
+  listenForClicks();
   if (getConsent() === "granted") loadProvider();
 }
+
+/** Human-readable name of the configured provider, for the cookie policy and privacy notice. */
+export const analyticsProvider: "plausible" | "ga4" | null = analyticsConfigured ? (PROVIDER as Provider) : null;
 
 /** Sends an event – silently ignored without consent or without a configured provider. */
 export function track(event: string, props: Record<string, string> = {}) {

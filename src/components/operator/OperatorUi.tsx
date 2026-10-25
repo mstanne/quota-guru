@@ -123,8 +123,20 @@ export function OperatorCta({
   );
 }
 
-/** Legal line under offers/CTAs. */
-export function OfferDisclaimer({ className, termsUrl }: { className?: string; termsUrl?: string }) {
+/** Legal line under offers/CTAs. With `operator`/`offer`, clicks on "termini" are counted (offer_terms_click). */
+export function OfferDisclaimer({
+  className,
+  termsUrl,
+  operator,
+  offer,
+  placement,
+}: {
+  className?: string;
+  termsUrl?: string;
+  operator?: string;
+  offer?: string;
+  placement?: string;
+}) {
   return (
     <p className={cn("text-slate-400 text-xs", className)}>
       18+ · Si applicano i termini dell'operatore
@@ -137,6 +149,10 @@ export function OfferDisclaimer({ className, termsUrl }: { className?: string; t
             target="_blank"
             rel="nofollow noopener noreferrer"
             className="underline underline-offset-2 hover:text-slate-300"
+            data-track={operator ? "offer_terms_click" : undefined}
+            data-track-operator={operator}
+            data-track-offer={offer}
+            data-track-placement={placement}
           >
             termini
           </a>

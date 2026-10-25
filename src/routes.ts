@@ -7,7 +7,7 @@ export interface RouteMeta {
   path: string;
   title: string;
   description: string;
-  /** false = reachable but excluded from sitemap and marked noindex (e.g. hidden login pages) */
+  /** false = reachable but excluded from sitemap and marked noindex  */
   index?: boolean;
 }
 
@@ -18,16 +18,11 @@ export const paths = {
   calcio: "/calcio",
   tennis: "/tennis",
   basket: "/basket",
-  // The tennis event page still shows a single sample match (mock data).
-  tennisEvento: "/tennis/djokovic-alcaraz",
   sitiScommesse: "/siti-scommesse",
   bonus: "/bonus",
   guide: "/guide",
   // first guide (used for #responsabile links); all guides: src/data/guides.ts
   guidaDettaglio: "/guide/guida-completa-scommesse-sportive",
-  accedi: "/accedi",
-  registrati: "/registrati",
-  passwordDimenticata: "/password-dimenticata",
   chiSiamo: "/chi-siamo",
   contatti: "/contatti",
   faq: "/faq",
@@ -64,11 +59,6 @@ export const routes: RouteMeta[] = [
       "Calendario e risultati NBA in orario italiano con il pronostico di ogni partita, e classifica della Serie A di basket.",
   },
   {
-    path: paths.tennisEvento,
-    title: "Djokovic – Alcaraz: pronostico, statistiche e dove vederla",
-    description: "Probabilità di vittoria e risultato in set, statistiche dei giocatori e dove vedere Djokovic – Alcaraz.",
-  },
-  {
     path: paths.sitiScommesse,
     title: "Siti di scommesse legali in Italia a confronto",
     description: "Confronta i bookmaker autorizzati ADM: caratteristiche, metodi di pagamento, pro e contro.",
@@ -83,14 +73,6 @@ export const routes: RouteMeta[] = [
     title: "Guide alle scommesse sportive",
     description: "Impara a leggere le quote, gestire il bankroll e scommettere in modo responsabile.",
   },
-  { path: paths.accedi, title: "Accedi", description: "Accedi al tuo account QuotaGuru.", index: false },
-  { path: paths.registrati, title: "Registrati", description: "Crea il tuo account QuotaGuru.", index: false },
-  {
-    path: paths.passwordDimenticata,
-    title: "Password dimenticata",
-    description: "Reimposta la password del tuo account QuotaGuru.",
-    index: false,
-  },
   {
     path: paths.chiSiamo,
     title: "Chi siamo",
@@ -104,7 +86,7 @@ export const routes: RouteMeta[] = [
   {
     path: paths.faq,
     title: "Domande frequenti",
-    description: "Risposte alle domande più comuni su quote, operatori, schedina e gioco responsabile.",
+    description: "Risposte alle domande più comuni su quote, operatori, dati e gioco responsabile.",
   },
   {
     path: paths.metodologia,

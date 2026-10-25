@@ -10,7 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 import { ConsentSettingsLink } from "../privacy/ConsentBanner";
 import { site, isFilled } from "../../data/site";
 import { responsibleGambling as rg } from "../../data/operators";
-import { analyticsConfigured } from "../../lib/analytics";
+import { analyticsConfigured, analyticsProvider } from "../../lib/analytics";
 import { paths } from "../../routes";
 import footballHome from "../../data/football-home.json";
 
@@ -70,7 +70,9 @@ const Mailto = ({ email }: { email: string }) =>
 
 const Company = () => (
   <>
-    <strong>{site.company}</strong>, {site.address}, P. IVA {site.vatNumber}
+    <strong>{site.company}</strong>
+    {isFilled(site.address) && <>, {site.address}</>}
+    {isFilled(site.vatNumber) && <>, P. IVA {site.vatNumber}</>}
   </>
 );
 
@@ -122,9 +124,11 @@ export function ContattiPage() {
         <li>
           <strong>Privacy e dati personali:</strong> <Mailto email={site.privacyEmail} />.
         </li>
-        <li>
-          <strong>PEC:</strong> {site.pec}.
-        </li>
+        {isFilled(site.pec) && (
+          <li>
+            <strong>PEC:</strong> {site.pec}.
+          </li>
+        )}
       </ul>
       <p>
         Non possiamo intervenire su conti di gioco, depositi, prelievi o giocate: per questi casi contatta direttamente
@@ -188,10 +192,6 @@ const FAQ: { q: string; a: ReactNode }[] = [
   {
     q: "Da dove arrivano calendario, risultati e classifiche del calcio?",
     a: "Dall'API di football-data.org, aggiornata più volte al giorno. I risultati non sono in diretta.",
-  },
-  {
-    q: "Come funziona la schedina?",
-    a: "Raccoglie le selezioni che aggiungi cliccando sulle quote e calcola la quota totale per ciascun operatore che le offre tutte. È solo un promemoria: la giocata va fatta sul sito dell'operatore.",
   },
   {
     q: "Ho bisogno di aiuto con il gioco: a chi posso rivolgermi?",
@@ -385,7 +385,6 @@ export function AffiliazionePage() {
         <Link to={paths.metodologia}>Metodologia</Link>. I link di affiliazione sono marcati come sponsorizzati per i
         motori di ricerca.
       </p>
-      <p>Operatori con cui esiste un accordo: [ELENCO_OPERATORI_CON_ACCORDO].</p>
     </InfoLayout>
   );
 }
@@ -427,13 +426,46 @@ export function TerminiPage() {
       <h2>7. Limitazione di responsabilità</h2>
       <p>
         Nei limiti consentiti dalla legge, il Gestore non risponde di decisioni di gioco prese sulla base delle
-        informazioni del sito, né di interruzioni o errori del servizio. [CLAUSOLE_DA_VALIDARE_CON_LEGALE]
+        informazioni del sito, né di interruzioni o errori del servizio.
       </p>
       <h2>8. Modifiche</h2>
       <p>I presenti termini possono essere aggiornati; la data dell'ultima modifica è indicata in alto.</p>
       <h2>9. Legge applicabile</h2>
-      <p>Si applica la legge italiana. Foro competente: [FORO_COMPETENTE], salvo diversa previsione inderogabile.</p>
+      <p>
+        Si applica la legge italiana. Per le controversie con i consumatori è competente il foro del luogo di
+        residenza o di domicilio del consumatore.
+      </p>
     </InfoLayout>
+  );
+}
+
+/** Statistics provider as named in the legal pages (from the build configuration, see lib/analytics.ts). */
+const STATS = {
+  ga4: {
+    name: "Google Analytics 4",
+    company: "Google Ireland Limited (Gordon House, Barrow Street, Dublino 4, Irlanda)",
+    outsideEu:
+      "Google Analytics 4 può trasferire dati verso server di Google LLC negli Stati Uniti. Il trasferimento si basa sulla decisione di adeguatezza della Commissione europea del 10 luglio 2023 (EU-US Data Privacy Framework), a cui Google LLC aderisce, e sulle clausole contrattuali standard previste dai termini di Google.",
+    retention: "14 mesi (impostazione di conservazione dei dati di Google Analytics)",
+  },
+  plausible: {
+    name: "Plausible Analytics",
+    company: "Plausible Insights OÜ (Estonia)",
+    outsideEu: "Plausible Analytics conserva i dati su server nell'Unione europea.",
+    retention: "per la durata del servizio, solo in forma aggregata",
+  },
+} as const;
+const stats = analyticsProvider ? STATS[analyticsProvider] : null;
+
+/** What the statistics tool records, in plain words (keep in sync with the events in lib/analytics.ts). */
+function StatsEvents() {
+  return (
+    <ul>
+      <li>pagine visitate, pagina di provenienza, tipo di dispositivo e browser, paese e città approssimativi;</li>
+      <li>clic sui pulsanti verso i siti degli operatori e sui link a termini e condizioni delle offerte;</li>
+      <li>filtri e sezioni scelti, guide lette fino in fondo;</li>
+      <li>clic sul numero del servizio di aiuto per il gioco problematico, contati senza altri dati.</li>
+    </ul>
   );
 }
 
@@ -452,12 +484,12 @@ export function PrivacyPage() {
           ospitano il sito per garantirne il funzionamento e la sicurezza.
         </li>
         <li>
-          <strong>Preferenze salvate nel browser</strong>: conferma della maggiore età, scelte sui cookie, contenuto
-          della schedina. Restano sul tuo dispositivo.
+          <strong>Preferenze salvate nel browser</strong>: conferma della maggiore età e scelte sui cookie. Restano sul tuo dispositivo.
         </li>
         <li>
-          <strong>Statistiche di utilizzo</strong> (pagine visitate, clic sui link verso gli operatori), solo se hai
-          dato il consenso. Vedi la <Link to={paths.cookie}>cookie policy</Link>.
+          <strong>Statistiche di utilizzo</strong>, solo se hai dato il consenso
+          {stats ? <> e tramite {stats.name}</> : null}. Vedi la <Link to={paths.cookie}>cookie policy</Link>.
+          {stats && <StatsEvents />}
         </li>
         <li>
           <strong>Dati che ci invii</strong> scrivendoci (indirizzo email e contenuto del messaggio).
@@ -472,16 +504,25 @@ export function PrivacyPage() {
       </ul>
       <h2>Destinatari</h2>
       <p>
-        Fornitori che trattano dati per conto del Titolare come responsabili del trattamento: hosting
-        ([FORNITORE_HOSTING]) e, se attivo, statistiche ([FORNITORE_STATISTICHE]). Non vendiamo dati a terzi e non li
-        condividiamo con gli operatori di gioco.
+        Fornitori che trattano dati per conto del Titolare come responsabili del trattamento: hosting del sito (GitHub
+        Pages, servizio di GitHub, Inc.), dominio e posta elettronica (OVH SAS, Francia)
+        {stats ? <> e statistiche ({stats.name}, fornito da {stats.company})</> : null}. Non vendiamo dati a terzi e
+        non li condividiamo con gli operatori di gioco.
       </p>
       <h2>Trasferimenti fuori dall'UE</h2>
-      <p>[DESCRIVERE_EVENTUALI_TRASFERIMENTI_E_GARANZIE]</p>
+      <p>
+        GitHub, Inc. ha sede negli Stati Uniti: i dati tecnici di navigazione possono essere trattati su server fuori
+        dall'Unione europea, sulla base della decisione di adeguatezza della Commissione europea del 10 luglio 2023
+        (EU-US Data Privacy Framework) e delle clausole contrattuali standard.
+        {stats ? <> {stats.outsideEu}</> : null}
+      </p>
       <h2>Conservazione</h2>
       <p>
-        Dati tecnici: [DURATA]. Statistiche: in forma aggregata, [DURATA]. Richieste via email: per il tempo necessario
-        a gestirle e comunque non oltre [DURATA].
+        Dati tecnici: il Gestore non li conserva; restano nei registri dei server di GitHub, per finalità di
+        sicurezza, per il tempo indicato nell'informativa privacy di GitHub.
+        {stats ? <> Statistiche: {stats.retention}.</> : null} Richieste via email: per il tempo necessario a
+        gestirle e comunque non oltre 12 mesi dalla loro chiusura, salvo obblighi di legge o necessità di difesa in
+        giudizio.
       </p>
       <h2>I tuoi diritti</h2>
       <p>
@@ -514,11 +555,39 @@ export function CookiePage() {
         </li>
       </ul>
       <h2>Statistiche (solo con consenso)</h2>
-      {analyticsConfigured ? (
-        <p>
-          Con il tuo consenso usiamo [FORNITORE_STATISTICHE] per misurare in forma aggregata le pagine visitate e i clic
-          sui link verso gli operatori. Lo strumento viene caricato solo dopo che hai accettato.
-        </p>
+      {stats ? (
+        <>
+          <p>
+            Con il tuo consenso usiamo <strong>{stats.name}</strong>, fornito da {stats.company}, per capire come viene
+            usato il sito. Lo strumento viene caricato solo dopo che hai cliccato «Accetta statistiche»; se rifiuti, non
+            viene caricato nulla. Non usiamo questi dati per pubblicità né li condividiamo con gli operatori di gioco.
+          </p>
+          <p>Cosa viene misurato:</p>
+          <StatsEvents />
+          {analyticsProvider === "ga4" ? (
+            <ul>
+              <li>
+                <strong>_ga</strong> (cookie di Google Analytics, durata 2 anni): distingue i visitatori con un
+                identificativo casuale.
+              </li>
+              <li>
+                <strong>_ga_&lt;ID&gt;</strong> (cookie di Google Analytics, durata 2 anni): mantiene lo stato della
+                sessione.
+              </li>
+            </ul>
+          ) : (
+            <p>{stats.name} non usa cookie e non salva dati sul tuo dispositivo.</p>
+          )}
+          <p>
+            {analyticsProvider === "ga4" && (
+              <>
+                Google Analytics 4 non registra l'indirizzo IP: lo usa solo al momento della raccolta per ricavare il
+                paese e la città approssimativi.{" "}
+              </>
+            )}
+            Conservazione dei dati: {stats.retention}. {stats.outsideEu}
+          </p>
+        </>
       ) : (
         <p>Al momento il sito non usa strumenti di statistica né cookie di terze parti.</p>
       )}

@@ -1,18 +1,18 @@
 /**
  * SITE / COMPANY DATA (template)
- * Fill in these values before publishing: they appear in the footer and in the institutional pages
- * (contacts, privacy, cookie policy, terms). Placeholders use the [UPPER_SNAKE_CASE] convention.
+ * Shown in the footer and in the institutional pages (contacts, privacy, cookie policy, terms).
+ * Empty strings ("") hide the corresponding detail (address, VAT number, PEC).
  */
 export const site = {
   name: "QuotaGuru",
-  company: "[RAGIONE_SOCIALE]",
-  vatNumber: "[PARTITA_IVA]",
-  address: "[INDIRIZZO_SEDE_LEGALE]",
-  email: "[EMAIL_CONTATTO]",
-  privacyEmail: "[EMAIL_PRIVACY]",
-  pec: "[PEC]",
+  company: "Francesco Torcè",
+  vatNumber: "",
+  address: "",
+  email: "francescotorce@gmail.com",
+  privacyEmail: "francescotorce@gmail.com",
+  pec: "",
   /** Date of the last review of the legal pages, e.g. "13 ottobre 2026". */
-  legalUpdatedAt: "[DATA_AGGIORNAMENTO]",
+  legalUpdatedAt: "25 ottobre 2026",
   /** Social profiles: leave empty ("") to hide the icon. */
   social: {
     facebook: "",

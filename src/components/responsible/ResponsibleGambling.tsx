@@ -3,10 +3,9 @@
 import { useEffect, useState } from "react";
 import { Phone, ShieldCheck } from "lucide-react";
 import { responsibleGambling as rg } from "../../data/operators";
-import { OperatorLogo } from "../operator/OperatorUi";
+import { assetUrl } from "../operator/OperatorUi";
 import { Button } from "../ui/button";
 
-const admLogo = { logoUrl: rg.admLogoUrl, logoAlt: "Logo ADM – Gioco sicuro e responsabile", name: "ADM" };
 
 /** Slim, always-visible bar at the top of every page. */
 export function ResponsibleBar() {
@@ -33,10 +32,38 @@ export function ResponsibleFooterBlock() {
   return (
     <div className="bg-slate-800 rounded-lg p-4 mb-6 flex flex-col md:flex-row md:items-center gap-4">
       <div className="flex items-center gap-3 shrink-0">
-        <span className="inline-flex items-center justify-center rounded-full border-2 border-warn w-10 h-10 text-sm font-bold text-warn">
-          {rg.minAge}+
-        </span>
-        <OperatorLogo operator={admLogo} width={120} height={40} />
+        {rg.responsibleBadgeUrl ? (
+          <img
+            src={assetUrl(rg.responsibleBadgeUrl)}
+            alt={`Gioca responsabile – vietato ai minori di ${rg.minAge} anni`}
+            width={130}
+            height={48}
+            loading="lazy"
+            className="block h-12 w-auto"
+          />
+        ) : (
+          <span className="inline-flex items-center justify-center rounded-full border-2 border-warn w-10 h-10 text-sm font-bold text-warn">
+            {rg.minAge}+
+          </span>
+        )}
+        {rg.admLogoUrl && (
+          <a
+            href={rg.regulatorUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded-md bg-white px-2 py-1.5"
+            title={rg.regulatorName}
+          >
+            <img
+              src={assetUrl(rg.admLogoUrl)}
+              alt="Logo ADM – Agenzia delle Dogane e dei Monopoli"
+              width={146}
+              height={45}
+              loading="lazy"
+              className="block h-[45px] w-auto"
+            />
+          </a>
+        )}
       </div>
       <div className="flex-1">
         <h2 className="text-warn text-base mb-2">Gioco responsabile</h2>

@@ -77,6 +77,9 @@ export function BonusPage({
               <a
                 key={s.id}
                 href={`#${s.id}`}
+                data-track="filter_use"
+                data-track-filter="bonus-section"
+                data-track-value={s.id}
                 className="px-4 py-2 rounded-md border border-slate-700 bg-slate-900 text-slate-300 hover:text-white hover:border-slate-500 text-sm"
               >
                 {s.label}
@@ -283,7 +286,12 @@ function OfferCard({ offer, section, operator }: { offer: WelcomeOffer; section:
                 label="Vai al sito"
                 className="bg-action hover:bg-action-hover text-action-foreground"
               />
-              <OfferDisclaimer termsUrl={offer.termsUrl} />
+              <OfferDisclaimer
+                termsUrl={offer.termsUrl}
+                operator={offer.operatorId}
+                offer={offer.id}
+                placement={`bonus-${section}`}
+              />
             </div>
           </div>
         </div>

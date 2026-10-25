@@ -7,8 +7,6 @@ import { BrandLogo } from "./brand/BrandLogo";
 import { paths } from "../routes";
 import { ResponsibleBar } from "./responsible/ResponsibleGambling";
 
-// Login/registrazione temporaneamente nascosti: metti true per mostrare di nuovo "Accedi" e "Registrati".
-const SHOW_AUTH = false;
 
 const NAV = [
   { to: paths.calcio, label: "Calcio", icon: Goal },
@@ -52,20 +50,6 @@ export function Header() {
               </nav>
             </div>
             <div className="flex items-center gap-4">
-              {SHOW_AUTH && (
-                <div className="hidden sm:flex items-center gap-2">
-                  <Button
-                    asChild
-                    variant="ghost"
-                    className="text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer"
-                  >
-                    <Link to={paths.accedi}>Accedi</Link>
-                  </Button>
-                  <Button asChild className="bg-action hover:bg-action-hover text-action-foreground cursor-pointer">
-                    <Link to={paths.registrati}>Registrati</Link>
-                  </Button>
-                </div>
-              )}
               <Button
                 variant="ghost"
                 size="icon"
@@ -93,30 +77,6 @@ export function Header() {
                 {item.label}
               </NavLink>
             ))}
-            {SHOW_AUTH && (
-              <>
-                <div className="h-px bg-slate-800 my-4" />
-                <div className="space-y-2 px-4">
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="w-full bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white cursor-pointer"
-                  >
-                    <Link to={paths.accedi} onClick={closeMenu}>
-                      Accedi
-                    </Link>
-                  </Button>
-                  <Button
-                    asChild
-                    className="w-full bg-action hover:bg-action-hover text-action-foreground cursor-pointer"
-                  >
-                    <Link to={paths.registrati} onClick={closeMenu}>
-                      Registrati
-                    </Link>
-                  </Button>
-                </div>
-              </>
-            )}
           </nav>
         </SheetContent>
       </Sheet>

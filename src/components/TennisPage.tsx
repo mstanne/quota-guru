@@ -8,7 +8,7 @@ import { tourData } from "../lib/tennis";
 // The tennis match list with operator odds will return when a fixtures/odds feed is connected
 // (the BALLDONTLIE free plan has rankings and calendar only). Meanwhile the page offers the
 // head-to-head predictor built on the ATP/WTA rankings.
-export function TennisPage(_props: { onMatchClick?: (matchId: string) => void }) {
+export function TennisPage() {
   const players = tourData("atp").rankings.length + tourData("wta").rankings.length;
   return (
     <div className="min-h-screen bg-slate-950">

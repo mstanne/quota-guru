@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { analyticsConfigured, getConsent, initAnalytics, onConsentOpen, setConsent } from "../../lib/analytics";
 
-const POLICY_URL = import.meta.env.VITE_COOKIE_POLICY_URL || "[URL_COOKIE_POLICY]";
+// Defaults to the site's own cookie page (/cookie), under the configured base path.
+const POLICY_URL = import.meta.env.VITE_COOKIE_POLICY_URL || `${import.meta.env.BASE_URL.replace(/\/?$/, "/")}cookie`;
 const policyIsPlaceholder = /^\[.*\]$/.test(POLICY_URL);
 
 export function ConsentBanner() {
