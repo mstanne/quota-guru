@@ -26,6 +26,8 @@ import { generatedAt } from "../../lib/football";
 import { usePageMeta } from "../../lib/pageMeta";
 import { footballEditorial } from "../../lib/editorial";
 import { MatchEditorial } from "../editorial/MatchEditorial";
+import { predictionFor } from "../../lib/predictions";
+import { PredictionPanel } from "../predictions/PredictionUi";
 import { MatchRow, TeamBadge } from "./MatchRow";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 import { NotFoundPage } from "../NotFoundPage";
@@ -206,6 +208,7 @@ export function CalcioMatchPage() {
   const home = standingOf(competition, match.homeTeam.id);
   const away = standingOf(competition, match.awayTeam.id);
   const h2h = headToHead(match);
+  const prediction = predictionFor(match.id);
   const sameRound = competition.matches.filter(
     (m) => m.matchday === match.matchday && m.stage === match.stage && m.id !== match.id,
   );
@@ -280,8 +283,16 @@ export function CalcioMatchPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8 grid gap-6 lg:grid-cols-3">
-        <div className="lg:col-span-2 space-y-6">
+      <div className="container mx-auto px-4 py-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="lg:col-span-2 space-y-6 min-w-0">
+          {prediction && (!finished || prediction.pre) && (
+            <PredictionPanel
+              prediction={prediction}
+              home={match.homeTeam.shortName}
+              away={match.awayTeam.shortName}
+              result={finished && ft.home !== null && ft.away !== null ? { home: ft.home, away: ft.away } : null}
+            />
+          )}
           <MatchEditorial article={footballEditorial({ comp: competition, match, h2h, generatedAt })} />
 
           <section className={card} aria-labelledby="confronto">
@@ -332,7 +343,7 @@ export function CalcioMatchPage() {
           )}
         </div>
 
-        <aside className="space-y-6">
+        <aside className="space-y-6 min-w-0">
           <section className={card} aria-labelledby="info">
             <SectionTitle icon={Info}>
               <span id="info">Informazioni</span>
@@ -375,7 +386,7 @@ export function CalcioMatchPage() {
             </h2>
             <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
               {sameRound.map((m) => (
-                <MatchRow key={m.id} competition={competition} match={m} />
+                <MatchRow key={m.id} competition={competition} match={m} prediction={predictionFor(m.id)} />
               ))}
             </div>
           </section>

@@ -132,6 +132,7 @@
  *   live      → in-play / live states
  *   warn      → responsible-gambling notices and warnings
  *   selected  → active filter, tab or chip (neutral, not a call to action)
+ *   predict   → model estimates (prediction probabilities, most likely outcome); never used for odds or CTAs
  */
 @theme inline {
   --color-action: var(--color-orange-500);
@@ -145,6 +146,8 @@
   --color-warn: var(--color-amber-400);
   --color-selected: var(--color-slate-100);
   --color-selected-foreground: var(--color-slate-900);
+  --color-predict: var(--color-sky-400);
+  --color-predict-foreground: var(--color-slate-950);
 }
 
 @layer base {

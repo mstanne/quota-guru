@@ -17,6 +17,8 @@ import { fileURLToPath } from "node:url";
 const API = "https://api.football-data.org/v4";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "data", "football.json");
+// Full results history used only by the prediction model (scripts/predict-football.mjs); not bundled in the site.
+const HISTORY = path.join(root, "data", "football-history.json");
 
 // Competitions included in the free plan, in display order. Slugs become URLs: /calcio/<slug>.
 export const COMPETITIONS = [
@@ -36,6 +38,7 @@ const DAYS_BACK = 45; // finished matches kept for results and recent form
 const DAYS_AHEAD = 14; // upcoming matches
 const H2H_DAYS = 7; // head-to-head is fetched only for matches in the next N days...
 const H2H_MAX = 30; // ...and for at most this many matches (1 request each)
+const HISTORY_SEASONS = 2; // previous seasons kept for the model (fetched once, then reused from the file)
 const MIN_GAP_MS = 6500; // ~9 requests/minute, under the free limit of 10
 // Responses are cached on disk for a short time, so an interrupted run can be resumed
 // without spending the request budget again. The cache folder is git-ignored.
@@ -204,6 +207,8 @@ async function main() {
   }
   console.log(`Precedenti scaricati: ${Object.keys(headToHead).length}`);
 
+  await updateHistory(token, competitions);
+
   const snapshot = { generatedAt: now.toISOString(), source: "football-data.org", competitions, headToHead };
   // Write atomically: temp file in the same folder, then rename.
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
@@ -214,6 +219,127 @@ async function main() {
   console.log(`Salvato ${path.relative(root, OUT)}: ${competitions.length} competizioni, ${total} partite.`);
 }
 
+// Results of the current season (refreshed every run) and of the previous seasons (downloaded once and kept in
+// data/football-history.json, so later runs do not spend requests on them). One request per competition-season.
+// Past seasons come from football-data.org when the plan allows it, otherwise from openfootball
+// (github.com/openfootball/football.json, public domain), whose team names are the same as football-data.org's.
+// Teams not found in our data (e.g. relegated sides) get a stable negative id derived from the name.
+const OPENFOOTBALL = "https://raw.githubusercontent.com/openfootball/football.json/master";
+const OPENFOOTBALL_FILES = {
+  SA: "it.1",
+  PL: "en.1",
+  PD: "es.1",
+  BL1: "de.1",
+  FL1: "fr.1",
+  DED: "nl.1",
+  PPL: "pt.1",
+  ELC: "en.2",
+  BSA: "br.1", // calendar-year season: folder "2025" instead of "2025-26"
+};
+
+const nameId = (name) => {
+  let h = 0;
+  for (const ch of name) h = (h * 31 + ch.codePointAt(0)) | 0;
+  return -Math.abs(h || 1);
+};
+
+async function openfootballSeason(code, year, teamIds) {
+  const file = OPENFOOTBALL_FILES[code];
+  if (!file) throw new Error("competizione non coperta");
+  const folder = code === "BSA" ? `${year}` : `${year}-${String(year + 1).slice(2)}`;
+  const res = await fetch(`${OPENFOOTBALL}/${folder}/${file}.json`);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const json = await res.json();
+  const id = (n) => teamIds.get(n) ?? nameId(n);
+  return (json.matches || [])
+    .filter((m) => Array.isArray(m.score?.ft))
+    .map((m) => ({
+      id: `of-${code}-${m.date}-${id(m.team1)}-${id(m.team2)}`,
+      date: `${m.date}T${(m.time || "15:00").slice(0, 5)}:00Z`,
+      comp: code,
+      home: id(m.team1),
+      away: id(m.team2),
+      hg: m.score.ft[0],
+      ag: m.score.ft[1],
+    }));
+}
+
+async function updateHistory(token, competitions) {
+  const old = fs.existsSync(HISTORY) ? JSON.parse(fs.readFileSync(HISTORY, "utf8")) : { seasons: {}, results: [] };
+  const seasons = old.seasons || {}; // "SA-2025": { n, source }
+  const keep = new Map((old.results || []).map((r) => [r.id, r]));
+  const compact = (code) => (m) => ({
+    id: m.id,
+    date: m.utcDate,
+    comp: code,
+    home: m.homeTeam.id,
+    away: m.awayTeam.id,
+    hg: m.score.fullTime.home,
+    ag: m.score.fullTime.away,
+  });
+  const played = (m) => ["FINISHED", "AWARDED"].includes(m.status) && m.score?.fullTime?.home != null;
+
+  // football-data.org team ids by full name, from everything we have
+  const teamIds = new Map();
+  for (const c of competitions) for (const m of c.matches) for (const t of [m.homeTeam, m.awayTeam]) teamIds.set(t.name, t.id);
+
+  for (const c of competitions) {
+    const start = c.season?.startDate ? Number(c.season.startDate.slice(0, 4)) : null;
+    if (!start) continue;
+    for (let y = start; y >= start - HISTORY_SEASONS; y--) {
+      const key = `${c.code}-${y}`;
+      if (y !== start && seasons[key]?.n > 0) continue; // past season already stored
+      let list = null;
+      let source = "football-data.org";
+      if (token) {
+        try {
+          const res = await api(`/competitions/${c.code}/matches?season=${y}&status=FINISHED`, token);
+          list = (res.matches || []).filter(played).map(compact(c.code));
+        } catch (err) {
+          console.warn(`  storico ${key} da football-data.org non disponibile: ${err.message.slice(0, 80)}`);
+        }
+      }
+      if (y !== start && !list?.length) {
+        try {
+          list = await openfootballSeason(c.code, y, teamIds);
+          source = "openfootball";
+        } catch (err) {
+          console.warn(`  storico ${key} da openfootball non disponibile: ${err.message}`);
+        }
+      }
+      if (!list) continue;
+      // a season comes from one source only: drop what the other source left for it
+      for (const [id, r] of keep) if (r.comp === c.code && seasonOf(r, c.code) === y) keep.delete(id);
+      for (const r of list) keep.set(r.id, r);
+      seasons[key] = { n: list.length, source };
+      console.log(`  storico ${key}: ${list.length} risultati (${source})`);
+    }
+  }
+  // drop anything older than the oldest season we keep
+  const oldest = Math.min(...competitions.map((c) => Number(c.season?.startDate?.slice(0, 4)) || 9999)) - HISTORY_SEASONS;
+  const results = [...keep.values()].filter((r) => Number(r.date.slice(0, 4)) >= oldest).sort((a, b) => a.date.localeCompare(b.date));
+  fs.mkdirSync(path.dirname(HISTORY), { recursive: true });
+  fs.writeFileSync(HISTORY, JSON.stringify({ updatedAt: new Date().toISOString(), seasons, results }) + "\n");
+  console.log(`Storico per il modello: ${results.length} risultati (${path.relative(root, HISTORY)})`);
+}
+
+// Season start year of a result: European seasons start in July, Brasileirão follows the calendar year.
+function seasonOf(r, code) {
+  const y = Number(r.date.slice(0, 4));
+  if (code === "BSA") return y;
+  return Number(r.date.slice(5, 7)) >= 7 ? y : y - 1;
+}
+
+// `node scripts/fetch-football-data.mjs --history` updates only the history (token optional: without it
+// past seasons come from openfootball), using the competitions of the current snapshot.
+if (process.argv.includes("--history")) {
+  loadDotEnv();
+  const snap = JSON.parse(fs.readFileSync(OUT, "utf8"));
+  updateHistory(process.env.FOOTBALL_DATA_TOKEN, snap.competitions).catch((err) => {
+    console.error("Storico non aggiornato:", err.message);
+    process.exit(1);
+  });
+} else
 main().catch((err) => {
   console.error("Download dati non riuscito:", err.message);
   process.exit(1);

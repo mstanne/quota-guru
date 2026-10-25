@@ -12,6 +12,8 @@ import {
   type Match,
   type Team,
 } from "../../lib/footballCore";
+import type { Prediction } from "../../lib/predictionsCore";
+import { PredictionMini } from "../predictions/PredictionUi";
 
 /**
  * Team crest (football-data.org CDN). Falls back to the three-letter code if the crest is missing
@@ -57,15 +59,17 @@ export function TeamBadge({
   );
 }
 
-/** One fixture/result row, linking to the match page. */
+/** One fixture/result row, linking to the match page. Upcoming matches show the model's 1X2 probabilities. */
 export function MatchRow({
   competition,
   match,
   showCompetition = false,
+  prediction,
 }: {
   competition: CompetitionRef;
   match: Match;
   showCompetition?: boolean;
+  prediction?: Prediction | null;
 }) {
   const finished = isFinished(match);
   const live = isLive(match);
@@ -106,7 +110,13 @@ export function MatchRow({
         ))}
       </div>
 
-      <div className="hidden sm:block w-40 shrink-0 text-right text-xs text-slate-400">
+      {prediction && !finished && !live && (
+        <div className="shrink-0">
+          <PredictionMini prediction={prediction} home={match.homeTeam.shortName} away={match.awayTeam.shortName} />
+        </div>
+      )}
+
+      <div className="hidden md:block w-40 shrink-0 text-right text-xs text-slate-400">
         {showCompetition && <div className="text-slate-300 text-sm">{competition.name}</div>}
         <div>{roundLabel(match)}</div>
       </div>

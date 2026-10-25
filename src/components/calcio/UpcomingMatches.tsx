@@ -2,13 +2,17 @@ import { Link } from "react-router";
 import { CalendarDays } from "lucide-react";
 import home from "../../data/football-home.json";
 import type { CompetitionRef, Match } from "../../lib/footballCore";
+import type { Prediction } from "../../lib/predictionsCore";
 import { MatchRow } from "./MatchRow";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 
 // Small pre-computed list (scripts/derive-football-home.mjs) so the home page does not load the full snapshot.
-const data = home as unknown as { generatedAt: string; matches: { competition: CompetitionRef; match: Match }[] };
+const data = home as unknown as {
+  generatedAt: string;
+  matches: { competition: CompetitionRef; match: Match; prediction?: Prediction }[];
+};
 
-/** Home page block: next real fixtures from football-data.org. */
+/** Home page block: next real fixtures from football-data.org, with the model's 1X2 probabilities. */
 export function UpcomingMatches({ limit = 8 }: { limit?: number }) {
   const next = data.matches.slice(0, limit);
   if (next.length === 0) return null;
@@ -32,8 +36,8 @@ export function UpcomingMatches({ limit = 8 }: { limit?: number }) {
           </Link>
         </div>
         <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
-          {next.map(({ competition, match }) => (
-            <MatchRow key={match.id} competition={competition} match={match} showCompetition />
+          {next.map(({ competition, match, prediction }) => (
+            <MatchRow key={match.id} competition={competition} match={match} prediction={prediction} showCompetition />
           ))}
         </div>
       </div>

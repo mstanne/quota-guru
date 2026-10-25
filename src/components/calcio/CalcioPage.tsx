@@ -18,6 +18,7 @@ import {
   competitionMeta,
 } from "../../lib/football";
 import { usePageMeta } from "../../lib/pageMeta";
+import { predictionFor } from "../../lib/predictions";
 import { MatchRow } from "./MatchRow";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 import { NotFoundPage } from "../NotFoundPage";
@@ -152,7 +153,13 @@ export function CalcioPage() {
                 </h2>
                 <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
                   {g.items.map(({ competition: c, match }) => (
-                    <MatchRow key={match.id} competition={c} match={match} showCompetition={!competition} />
+                    <MatchRow
+                      key={match.id}
+                      competition={c}
+                      match={match}
+                      showCompetition={!competition}
+                      prediction={predictionFor(match.id)}
+                    />
                   ))}
                 </div>
               </section>
