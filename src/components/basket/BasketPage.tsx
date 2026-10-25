@@ -19,6 +19,7 @@ import {
   type BasketGame,
 } from "../../lib/basket";
 import { usePageMeta } from "../../lib/pageMeta";
+import { nbaResultsPath } from "../../lib/results";
 
 type Filter = "upcoming" | "today" | "tomorrow" | "week" | "results";
 const FILTERS: { id: Filter; label: string }[] = [
@@ -88,6 +89,9 @@ export function BasketPage({ league }: { league?: "nba" }) {
         <nav aria-label="Campionati" className="flex flex-wrap gap-2 mb-4">
           <Link to={basketPaths.nba} className={chip(true)} aria-current={league ? "page" : undefined}>
             NBA
+          </Link>
+          <Link to={nbaResultsPath()} className={chip(false)}>
+            NBA · risultati
           </Link>
           {lbaStandings.length > 0 && (
             <Link to={basketPaths.lbaStandings} className={chip(false)}>

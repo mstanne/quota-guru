@@ -48,7 +48,7 @@ export interface FootballSeason {
   /** Past season whose results are incomplete in the data: the table is approximate. */
   partial?: { played: number; expected: number } | null;
   record: SeasonRecord | null;
-  recent: { date: string; home: boolean; opponent: string; gf: number | null; ga: number | null }[];
+  recent: { date: string; home: boolean; opponent: string; gf: number | null; ga: number | null; path?: string }[];
   players: FootballPlayerSeason[] | null;
 }
 export interface FootballTeam {

@@ -85,7 +85,9 @@ function client(host, key, status) {
     const base = process.env.API_SPORTS_TEST_URL ? `${process.env.API_SPORTS_TEST_URL}/${host}` : `https://${host}`;
     const res = await fetch(`${base}${pathAndQuery}`, { headers: { "x-apisports-key": key } });
     used++;
-    const left = Number(res.headers.get("x-ratelimit-requests-remaining"));
+    // header missing → keep the previous value (Number(null) would be 0 and stop everything)
+    const header = res.headers.get("x-ratelimit-requests-remaining");
+    const left = header == null || header === "" ? NaN : Number(header);
     if (Number.isFinite(left)) remaining = left;
     if (res.status === 429) throw new BudgetError("limite di richieste raggiunto");
     if (!res.ok) throw new Error(`HTTP ${res.status} su ${pathAndQuery}`);
@@ -261,7 +263,15 @@ async function nbaRun(api, store, data, now) {
   // API-NBA dates may follow US time: if a game is not on its UTC day it is looked up on the day before
   const byDay = new Map();
   const gamesOn = async (day) => {
-    if (!byDay.has(day)) byDay.set(day, await api.get(`/games?date=${day}`));
+    if (!byDay.has(day)) {
+      try {
+        byDay.set(day, await api.get(`/games?date=${day}`));
+      } catch (err) {
+        // the free plan covers only a few days around today: other dates are skipped, not a reason to stop
+        if (!(err instanceof PlanError) || !/date/i.test(err.message)) throw err;
+        byDay.set(day, []);
+      }
+    }
     return byDay.get(day);
   };
   for (const g of todo) {
@@ -333,7 +343,7 @@ function compactPlayers(rows) {
     .sort((a, b) => b.min - a.min);
 }
 
-async function footballSeasonsRun(api, seasons, data, now) {
+async function footballSeasonsRun(api, seasons, data, now, allowed) {
   const teamsFile = readJson(TEAMS, { teams: {}, competitions: {} });
   seasons.football ??= {};
   seasons.afTeams ??= {};
@@ -342,10 +352,16 @@ async function footballSeasonsRun(api, seasons, data, now) {
     if (!comp || slug === "champions-league") continue; // team pages follow the domestic league
     const season = Number(comp.season?.startDate?.slice(0, 4));
     if (!season) continue;
+    // a plan limited to some seasons (e.g. "from 2022 to 2024"): only those, with the latest for the club list
+    const inPlan = (y) => !allowed || (y >= allowed[0] && y <= allowed[1]);
+    const listSeason = allowed ? Math.min(season, allowed[1]) : season;
+    const wanted = [];
+    for (let y = season; y >= season - SEASONS_BACK; y--) if (inPlan(y)) wanted.push(y);
+    if (!wanted.length) continue;
     // API-Football ids, venue and founding year of the league's clubs (1 request, refreshed monthly)
-    const key = `${league}-${season}`;
+    const key = `${league}-${listSeason}`;
     if (!fresh(seasons.afTeams[key], 30)) {
-      const list = await api.get(`/teams?league=${league}&season=${season}`);
+      const list = await api.get(`/teams?league=${league}&season=${listSeason}`);
       seasons.afTeams[key] = {
         fetchedAt: new Date(now).toISOString(),
         teams: list.map((t) => ({
@@ -367,7 +383,7 @@ async function footballSeasonsRun(api, seasons, data, now) {
       if (!af) continue;
       seasons.footballInfo ??= {};
       seasons.footballInfo[id] = { founded: af.founded, venue: af.venue };
-      for (let y = season; y >= season - SEASONS_BACK; y--) {
+      for (const y of wanted) {
         const k = `${id}-${y}`;
         if (fresh(seasons.football[k], 4)) continue;
         const players = [];
@@ -409,7 +425,7 @@ function nbaAverages(rows) {
   return [...by.values()].sort((a, b) => b.pts - a.pts);
 }
 
-async function nbaSeasonsRun(api, seasons, data, now) {
+async function nbaSeasonsRun(api, seasons, data, now, allowed) {
   seasons.nba ??= {};
   const season = data.nba.season;
   if (!fresh(seasons.nbaTeams, 60)) {
@@ -425,7 +441,8 @@ async function nbaSeasonsRun(api, seasons, data, now) {
     const af = seasons.nbaTeams.teams.find((x) => sameTeam(x.name, team({ name: t.name, shortName: t.shortName, tla: t.abbr })));
     if (!af) continue;
     const rk = `${t.id}-roster`;
-    if (!fresh(seasons.nba[rk], 7)) {
+    const rosterInPlan = !allowed || (season >= allowed[0] && season <= allowed[1]);
+    if (rosterInPlan && !fresh(seasons.nba[rk], 7)) {
       const list = await api.get(`/players?team=${af.id}&season=${season}`);
       seasons.nba[rk] = {
         fetchedAt: new Date(now).toISOString(),
@@ -442,6 +459,7 @@ async function nbaSeasonsRun(api, seasons, data, now) {
       };
     }
     for (let y = season; y >= season - 1; y--) {
+      if (allowed && (y < allowed[0] || y > allowed[1])) continue;
       const k = `${t.id}-${y}`;
       if (fresh(seasons.nba[k], 3)) continue;
       const rows = await api.get(`/players/statistics?team=${af.id}&season=${y}`);
@@ -459,32 +477,62 @@ const store = readJson(STORE, {});
 store.football ??= {};
 store.nba ??= {};
 store.blocked ??= {};
+store.allowed ??= {}; // seasons the plan covers, learnt from its error messages
+// pauses saved by the previous version of this script (one per sport) are dropped: steps now pause on their own
+for (const k of Object.keys(store.blocked)) if (!k.includes(":")) delete store.blocked[k];
 const seasons = readJson(SEASONS_STORE, {});
 const status = { updatedAt: new Date(now).toISOString(), football: {}, nba: {} };
 
-async function run(sport, host, fn, data) {
+/** Range of seasons a plan error allows, e.g. "try from 2022 to 2024" → [2022, 2024]. */
+const allowedRange = (msg) => {
+  const m = String(msg).match(/from (\d{4}) to (\d{4})/);
+  return m ? [Number(m[1]), Number(m[2])] : null;
+};
+
+/**
+ * One sport: match details first, then season statistics, sharing the day's requests. A step the plan refuses is
+ * paused for RETRY_HOURS on its own, so the other step keeps working.
+ */
+async function run(sport, host, steps, data) {
   const st = status[sport];
-  if (store.blocked[sport] && Date.parse(store.blocked[sport].until) > now) {
-    Object.assign(st, { ok: false, message: `piano: ${store.blocked[sport].message}` });
-    console.log(`${sport}: in pausa fino al ${store.blocked[sport].until} (${store.blocked[sport].message})`);
-    return;
-  }
   const api = client(host, key, st);
-  try {
-    await fn(api, store, data, now);
-    Object.assign(st, { ok: true });
-    delete store.blocked[sport];
-  } catch (err) {
-    Object.assign(st, { ok: false, message: err.message.slice(0, 200) });
-    if (err instanceof PlanError) {
-      store.blocked[sport] = { until: new Date(now + RETRY_HOURS * 3600000).toISOString(), message: err.message };
-      console.log(`${sport}: il piano non copre questi dati (${err.message})`);
-    } else if (err instanceof BudgetError) {
-      console.log(`${sport}: ${err.message}, continuo al prossimo aggiornamento`);
-    } else {
-      console.warn(`${sport}: errore (${err.message})`);
+  for (const [name, fn] of steps) {
+    const id = `${sport}:${name}`;
+    const out = (st[name] = {});
+    if (store.blocked[id] && Date.parse(store.blocked[id].until) > now) {
+      Object.assign(out, { ok: false, message: `piano: ${store.blocked[id].message}` });
+      console.log(`${id}: in pausa fino al ${store.blocked[id].until} (${store.blocked[id].message})`);
+      continue;
+    }
+    try {
+      try {
+        await fn(api, data);
+      } catch (err) {
+        // the plan names the seasons it covers: learn them and try once more within them
+        const range = err instanceof PlanError && /season/i.test(err.message) ? allowedRange(err.message) : null;
+        if (!range || String(store.allowed[sport]) === String(range)) throw err;
+        store.allowed[sport] = range;
+        console.log(`${id}: il piano copre le stagioni ${range[0]}-${range[1]}, riprovo con quelle`);
+        await fn(api, data);
+      }
+      out.ok = true;
+      delete store.blocked[id];
+    } catch (err) {
+      Object.assign(out, { ok: false, message: err.message.slice(0, 200) });
+      if (err instanceof PlanError) {
+        store.blocked[id] = { until: new Date(now + RETRY_HOURS * 3600000).toISOString(), message: err.message };
+        const range = allowedRange(err.message);
+        if (range) store.allowed[sport] = range;
+        console.log(`${id}: il piano non copre questi dati (${err.message})`);
+      } else if (err instanceof BudgetError) {
+        console.log(`${id}: ${err.message}, continuo al prossimo aggiornamento`);
+        break;
+      } else {
+        console.warn(`${id}: errore (${err.message})`);
+      }
     }
   }
+  st.ok = steps.every(([name]) => st[name]?.ok);
   api.report();
 }
 
@@ -495,19 +543,19 @@ if (!key) {
   await run(
     "football",
     "v3.football.api-sports.io",
-    async (api, st, data, t) => {
-      await footballRun(api, st, data, t);
-      await footballSeasonsRun(api, seasons, data, t);
-    },
+    [
+      ["details", (api, data) => footballRun(api, store, data, now)],
+      ["seasons", (api, data) => footballSeasonsRun(api, seasons, data, now, store.allowed.football)],
+    ],
     readJson(FOOTBALL, { competitions: [] }),
   );
   await run(
     "nba",
     "v2.nba.api-sports.io",
-    async (api, st, data, t) => {
-      await nbaRun(api, st, data, t);
-      await nbaSeasonsRun(api, seasons, data, t);
-    },
+    [
+      ["details", (api, data) => nbaRun(api, store, data, now)],
+      ["seasons", (api, data) => nbaSeasonsRun(api, seasons, data, now, store.allowed.nba)],
+    ],
     readJson(BASKET, { nba: { games: [] } }),
   );
 

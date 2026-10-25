@@ -41,6 +41,9 @@ const GuideCategoryPage = lazyPage(() =>
 const FootballTeamPage = lazyPage(() => import("./components/teams/FootballTeamPage").then((m) => m.FootballTeamPage));
 const NbaTeamPage = lazyPage(() => import("./components/teams/NbaTeamPage").then((m) => m.NbaTeamPage));
 const TeamsIndexPage = lazyPage(() => import("./components/teams/TeamsIndexPage").then((m) => m.TeamsIndexPage));
+const results = () => import("./components/results/ResultsPages");
+const FootballResultsPage = lazyPage(() => results().then((m) => m.FootballResultsPage));
+const NbaResultsPage = lazyPage(() => results().then((m) => m.NbaResultsPage));
 const info = () => import("./components/info/InfoPages");
 const ChiSiamoPage = lazyPage(() => info().then((m) => m.ChiSiamoPage));
 const ContattiPage = lazyPage(() => info().then((m) => m.ContattiPage));
@@ -59,6 +62,9 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/calcio/squadre/:squadra", [FootballTeamPage, NotFoundPage]],
   ["/basket/nba/squadre", [TeamsIndexPage]],
   ["/basket/nba/squadre/:squadra", [NbaTeamPage, NotFoundPage]],
+  ["/calcio/:competizione/risultati", [FootballResultsPage, NotFoundPage]],
+  ["/basket/nba/risultati", [NbaResultsPage]],
+  ["/basket/nba/risultati/:mese", [NbaResultsPage, NotFoundPage]],
   ["/calcio/:competizione", [CalcioPage, NotFoundPage]],
   ["/calcio/:competizione/classifica", [StandingsPage, NotFoundPage]],
   ["/calcio/:competizione/:partita", [CalcioMatchPage, NotFoundPage]],
@@ -92,7 +98,10 @@ export function preloadForPath(pathname: string) {
   const team = /^\/(calcio|basket\/nba)\/squadre\/[^/]+$/.test(clean)
     ? import("./lib/teams").then((m) => m.preloadTeamData(clean))
     : null;
-  return Promise.all([...(hit ? hit[1] : [NotFoundPage]).map((p) => p.preload()), team]);
+  const results = /^\/(calcio\/[^/]+|basket\/nba)\/risultati(\/[^/]+)?$/.test(clean)
+    ? import("./lib/results").then((m) => m.preloadResultsData(clean))
+    : null;
+  return Promise.all([...(hit ? hit[1] : [NotFoundPage]).map((p) => p.preload()), team, results]);
 }
 
 function PageLoading() {
@@ -163,6 +172,9 @@ export default function App() {
             <Route path="/calcio/squadre/:squadra" element={<FootballTeamPage />} />
             <Route path="/basket/nba/squadre" element={<TeamsIndexPage sport="nba" />} />
             <Route path="/basket/nba/squadre/:squadra" element={<NbaTeamPage />} />
+            <Route path="/calcio/:competizione/risultati" element={<FootballResultsPage />} />
+            <Route path="/basket/nba/risultati" element={<NbaResultsPage />} />
+            <Route path="/basket/nba/risultati/:mese" element={<NbaResultsPage />} />
             <Route path="/calcio/:competizione" element={<CalcioPage />} />
             <Route path="/calcio/:competizione/classifica" element={<StandingsPage />} />
             <Route path="/calcio/:competizione/:partita" element={<CalcioMatchPage />} />

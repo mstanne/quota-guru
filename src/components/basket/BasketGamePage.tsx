@@ -9,6 +9,7 @@ import { basketPredictionFor } from "../../lib/basketPredict";
 import { BasketGameRow } from "./BasketGameRow";
 import { BasketBoxScore } from "./BasketBoxScore";
 import { TeamName } from "../teams/TeamLink";
+import { nbaResultsPath } from "../../lib/results";
 import { BasketPlayerStats } from "./BasketPlayerStats";
 import { nbaDetailsFor } from "../../lib/basketDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
@@ -170,6 +171,9 @@ export function BasketGamePage() {
         <Link to={basketPaths.nba} className="inline-flex items-center gap-2 text-slate-300 hover:text-white">
           <ArrowLeft className="w-4 h-4" aria-hidden="true" />
           Tutte le partite NBA
+        </Link>
+        <Link to={nbaResultsPath()} className="inline-flex items-center gap-2 ml-6 text-slate-300 hover:text-white">
+          Tutti i risultati NBA
         </Link>
       </div>
     </div>
