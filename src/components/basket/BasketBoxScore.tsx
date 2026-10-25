@@ -2,6 +2,7 @@
 // decided and the points per quarter. Everything is computed from the downloaded data.
 import { ClipboardList } from "lucide-react";
 import type { BasketGame } from "../../lib/basket";
+import { nbaTopPlayer, type NbaDetails } from "../../lib/matchDetails";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 const periodLabel = (i: number) => (i < 4 ? `${i + 1}º quarto` : `${i - 3}º supplementare`);
@@ -61,9 +62,17 @@ export function basketReportRows(g: BasketGame): Row[] {
   return rows;
 }
 
-export function BasketBoxScore({ game }: { game: BasketGame }) {
+export function BasketBoxScore({ game, details }: { game: BasketGame; details?: NbaDetails }) {
   const rows = basketReportRows(game);
   if (rows.length === 0) return null;
+  const { home: hs, away: as } = game.score;
+  const top = details ? nbaTopPlayer(details, hs! > as! ? "home" : "away") : null;
+  if (top) {
+    const p = top.line;
+    const team = top.side === "home" ? (game.home.shortName ?? game.home.name) : (game.away.shortName ?? game.away.name);
+    rows.push({ label: "Migliore in campo", value: `${p.name} (${team}) · ${p.pts} punti, ${p.reb} rimbalzi, ${p.ast} assist` });
+  }
+  if (details?.arena) rows.push({ label: "Arena", value: details.city ? `${details.arena}, ${details.city}` : details.arena });
   const p = game.periods;
   return (
     <section className={card} aria-labelledby="tabellino">
@@ -79,6 +88,13 @@ export function BasketBoxScore({ game }: { game: BasketGame }) {
           </div>
         ))}
       </dl>
+
+      {top && (
+        <p className="text-slate-400 text-xs mt-4">
+          Migliore in campo: il giocatore con il Game Score più alto, un indice che pesa punti, tiri, rimbalzi, assist,
+          recuperi, stoppate, palle perse e falli (nostro calcolo sulle statistiche della partita).
+        </p>
+      )}
 
       {p && p.home.length > 0 && (
         <>

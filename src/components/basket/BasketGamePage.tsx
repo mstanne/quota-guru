@@ -8,6 +8,8 @@ import { BasketPredictionPanel } from "./BasketPrediction";
 import { basketPredictionFor } from "../../lib/basketPredict";
 import { BasketGameRow } from "./BasketGameRow";
 import { BasketBoxScore } from "./BasketBoxScore";
+import { BasketPlayerStats } from "./BasketPlayerStats";
+import { nbaDetailsFor } from "../../lib/basketDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
 import { highlightFor } from "../../lib/highlights";
 import { formatDay, formatTime, romeDay } from "../../lib/footballCore";
@@ -42,6 +44,7 @@ export function BasketGamePage() {
   const sameDay = nbaGames.filter((g) => g.id !== game.id && romeDay(g.utcDate) === romeDay(game.utcDate));
   const prediction = basketPredictionFor(game.id);
   const highlight = finished ? highlightFor("nba", game.id) : undefined;
+  const details = finished ? nbaDetailsFor(game.id) : undefined;
 
   return (
     <div className="min-h-screen bg-slate-950">
@@ -107,8 +110,9 @@ export function BasketGamePage() {
       </div>
 
       <div className="container mx-auto px-4 py-8 space-y-6">
-        {finished && <BasketBoxScore game={game} />}
+        {finished && <BasketBoxScore game={game} details={details} />}
         {highlight && <HighlightVideo highlight={highlight} channel={highlight.channel ?? "NBA"} />}
+        {details && <BasketPlayerStats game={game} details={details} />}
 
         {prediction && (!finished || prediction.pre) && (
           <BasketPredictionPanel

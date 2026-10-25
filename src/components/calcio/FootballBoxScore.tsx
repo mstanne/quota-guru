@@ -2,6 +2,7 @@
 // and, when the data plan provides them, scorers and cards. Everything is computed from the downloaded data.
 import { ClipboardList } from "lucide-react";
 import type { Match, MatchCard, MatchGoal, Score, Team } from "../../lib/footballCore";
+import { goalsWithScore, type FootballDetails } from "../../lib/matchDetails";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 
@@ -117,11 +118,47 @@ function TeamEvents({ team, goals, cards }: { team: Team; goals: MatchGoal[]; ca
   );
 }
 
-export function FootballBoxScore({ match }: { match: Match }) {
+/** Goals and cards from the API-Sports timeline, in the same shape as football-data.org's. */
+function eventsFromDetails(match: Match, d: FootballDetails): { goals: MatchGoal[]; cards: MatchCard[] } {
+  const id = (side: "home" | "away") => (side === "home" ? match.homeTeam.id : match.awayTeam.id);
+  const final = playedScore(match);
+  const goals = goalsWithScore(d, final).map(({ event: e, side }) => ({
+    minute: e.minute,
+    injuryTime: e.extra,
+    type: e.detail === "Own Goal" ? ("OWN" as const) : e.detail === "Penalty" ? ("PENALTY" as const) : ("REGULAR" as const),
+    team: id(side),
+    scorer: e.player,
+    assist: e.detail === "Own Goal" ? null : e.other,
+  }));
+  const cards = d.timeline
+    .filter((e) => e.type === "card")
+    .map((e) => ({
+      minute: e.minute,
+      team: id(e.side),
+      player: e.player,
+      card: /second yellow/i.test(e.detail) ? ("YELLOW_RED" as const) : /red/i.test(e.detail) ? ("RED" as const) : ("YELLOW" as const),
+    }));
+  return { goals, cards };
+}
+
+export function FootballBoxScore({ match, details }: { match: Match; details?: FootballDetails }) {
   const rows = footballReportRows(match);
   if (rows.length === 0) return null;
-  const goals = match.goals ?? [];
-  const cards = match.cards ?? [];
+  const fromDetails = !match.goals && details ? eventsFromDetails(match, details) : null;
+  const goals = match.goals ?? fromDetails?.goals ?? [];
+  const cards = match.cards ?? fromDetails?.cards ?? [];
+  if (details?.top) {
+    const t = details.top;
+    const who = t.side === "home" ? match.homeTeam.shortName : match.awayTeam.shortName;
+    const extra = [t.goals ? `${t.goals} gol` : "", t.assists ? `${t.assists} assist` : ""]
+      .filter(Boolean)
+      .join(", ");
+    rows.push({
+      label: "Migliore in campo",
+      value: `${t.name} (${who}) · voto ${t.rating.toFixed(1).replace(".", ",")}${extra ? ` · ${extra}` : ""}`,
+    });
+  }
+  if (details?.venue) rows.push({ label: "Stadio", value: details.city ? `${details.venue}, ${details.city}` : details.venue });
   const forTeam = (id: number) => ({
     goals: goals.filter((g) => g.team === id),
     cards: cards.filter((c) => c.team === id),
@@ -145,6 +182,12 @@ export function FootballBoxScore({ match }: { match: Match }) {
           <TeamEvents team={match.homeTeam} {...forTeam(match.homeTeam.id)} />
           <TeamEvents team={match.awayTeam} {...forTeam(match.awayTeam.id)} />
         </div>
+      )}
+      {details?.top && (
+        <p className="text-slate-400 text-xs mt-4">
+          Migliore in campo: giocatore con il voto più alto assegnato da API-Football in base alle statistiche della
+          partita.
+        </p>
       )}
     </section>
   );

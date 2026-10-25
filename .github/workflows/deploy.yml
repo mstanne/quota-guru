@@ -42,7 +42,7 @@ jobs:
         #   .cache/seo            date of the last real change of every page (sitemap <lastmod>) and the archive of
         #                         finished match pages, published even after the matches leave the data window;
         #   .cache/match-details  goals and cards already downloaded for finished matches (when the plan has them)
-        #                         and the YouTube highlights already found.
+        #                         the YouTube highlights already found and the API-Sports details (line-ups, stats…).
         # A new entry is saved at every run; restore-keys picks the most recent one.
         uses: actions/cache@v6
         with:
@@ -75,6 +75,14 @@ jobs:
         continue-on-error: true
         env:
           BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+
+      - name: Match details from API-Sports
+        # Line-ups, events, statistics and ratings (football), box scores (NBA) of finished matches;
+        # without the API_FOOTBALL_KEY secret the committed files are used. Results: /stato-dati.json on the site.
+        run: node scripts/fetch-match-details.mjs
+        continue-on-error: true
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
 
       - name: Find official highlights on YouTube
         # Official league / broadcaster channels; optional free YOUTUBE_API_KEY secret reads 50 uploads instead of 15.

@@ -309,8 +309,15 @@ largo, punti totali e tabella dei quarti (NBA). Componenti: `FootballBoxScore.ts
   e lo carica da youtube-nocookie.com solo al clic (prima non parte nessuna richiesta verso Google); i dati
   strutturati includono un `VideoObject`. Senza chiave legge gli ultimi 15 video di ogni canale; con il secret
   facoltativo `YOUTUBE_API_KEY` (chiave gratuita della YouTube Data API v3) ne legge 50, utile nelle notti NBA più piene.
-- Formazioni, statistiche di squadra, migliore in campo e cronaca richiedono fonti a pagamento (componenti aggiuntivi
-  di football-data.org per il calcio, piano GOAT di BALLDONTLIE per l'NBA).
+- **Formazioni, statistiche, migliore in campo e cronaca** (API-Sports, secret `API_FOOTBALL_KEY`):
+  `scripts/fetch-match-details.mjs` scarica per le partite finite degli ultimi 3 giorni eventi, formazioni, statistiche
+  e voti dei giocatori (API-Football) e le statistiche dei giocatori NBA (API-NBA, stessa chiave), e scrive
+  `src/data/football-details.json` e `src/data/basket-details.json`. Ogni partita costa 4 richieste (calcio) o 1
+  (NBA) una sola volta; il piano gratuito ne concede 100 al giorno per sport, usate nell'ordine dei campionati (prima
+  la Serie A). Prima di salvare controlla che il risultato coincida con quello dei nostri dati. Se il piano non copre
+  la stagione in corso lo registra e riprova il giorno dopo. L'esito dell'ultima esecuzione è in
+  `https://www.quotaguru.it/stato-dati.json`. Migliore in campo: voto più alto di API-Football (calcio), Game Score
+  più alto calcolato da noi (NBA). La cronaca è costruita solo dagli eventi.
 
 ## Testi editoriali delle partite (agente)
 

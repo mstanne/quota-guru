@@ -10,6 +10,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { sameTeam, team } from "./lib/teams.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "data", "highlights.json");
@@ -93,39 +94,6 @@ const CHANNELS = [
     },
   },
 ];
-
-// ---------- names ----------
-// Generic words in club names, ignored when comparing ("FC Bayern München" ~ "FC BAYERN").
-const STOP = new Set(
-  "FC AC AS SS SSC US ACF CFC BC CALCIO HELLAS SPA SC SV VFL VFB TSV FSV TSG BSC AFC CF CD UD RC RCD SD CA SE EC FR FBC FBPA AF CR GD CS SBV".split(
-    " ",
-  ),
-);
-// How broadcasters name a few clubs, by football-data.org short code (none needed so far).
-const ALIASES = {};
-
-const norm = (s) =>
-  s
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .toUpperCase()
-    .replace(/[^A-Z0-9 ]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-const tokens = (s) => new Set(norm(s).split(" ").filter((w) => w && !STOP.has(w) && !/^\d+$/.test(w)));
-const subset = (a, b) => a.size > 0 && [...a].every((w) => b.has(w));
-
-/** A team as the titles may name it: full name, short name, three-letter code and known aliases. */
-function team(t) {
-  const names = [t.name, t.shortName, t.tla, ...(ALIASES[t.tla] ?? [])].filter(Boolean);
-  const all = new Set(names.flatMap((n) => [...tokens(n)]));
-  return { all, names: names.map(tokens) };
-}
-/** The title names the team if its words all belong to the team's names, or it contains one of the names whole. */
-function sameTeam(titleSide, t) {
-  const words = tokens(titleSide);
-  return subset(words, t.all) || t.names.some((n) => subset(n, words));
-}
 
 // ---------- feeds ----------
 const decode = (s) =>
