@@ -301,8 +301,9 @@ largo, punti totali e tabella dei quarti (NBA). Componenti: `FootballBoxScore.ts
 - **Marcatori e cartellini (calcio)**: `scripts/fetch-football-data.mjs` li chiede a football-data.org per le partite
   finite negli ultimi giorni (una richiesta per partita, salvata in `.cache/match-details`). Se il piano non li
   fornisce lo registra e riprova dopo 7 giorni; quando arrivano compaiono nel tabellino senza altre modifiche.
-- **Highlights ufficiali** (Serie A, LaLiga, Bundesliga, Primeira Liga, Championship, Brasileirão, Eredivisie e NBA;
-  non Champions League, Premier League e Ligue 1, che su YouTube non pubblicano le sintesi delle partite):
+- **Highlights ufficiali** (Serie A, LaLiga, Bundesliga, Primeira Liga, Championship, Eredivisie e NBA;
+  non Champions League, Premier League e Ligue 1, che su YouTube non pubblicano le sintesi delle partite, né il
+  Brasileirão, le cui sintesi su YouTube sono bloccate in Italia):
   `scripts/fetch-highlights.mjs` cerca nei canali YouTube ufficiali delle leghe o delle emittenti titolari il video
   di sintesi di ogni partita finita e scrive `src/data/highlights.json`. La pagina mostra il video sotto il tabellino
   e lo carica da youtube-nocookie.com solo al clic (prima non parte nessuna richiesta verso Google); i dati

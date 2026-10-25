@@ -73,16 +73,6 @@ const CHANNELS = [
     },
   },
   {
-    // "VASCO 3 X 2 CORINTHIANS | MELHORES MOMENTOS | 32ª RODADA | BRASILEIRÃO 2026 | ge.globo"
-    key: "brasileirao",
-    channelId: "UCgCKagVhzGnZcuP9bSMgMCg",
-    channel: "ge tv (Globo)",
-    parse: (title) => {
-      const m = title.match(/^\s*(.+?)\s+\d+\s*X\s*\d+\s+(.+?)\s*\|\s*MELHORES MOMENTOS\b.*BRASILEIR/i);
-      return m && { home: m[1], away: m[2], rank: 0 };
-    },
-  },
-  {
     // "💫 OUAZANE met een BEAUTY ... 🏰 | Samenvatting Sparta - Ajax"
     key: "eredivisie",
     channelId: "UCXnPiEv1DoUCDAqDUXT9shQ",
@@ -111,8 +101,8 @@ const STOP = new Set(
     " ",
   ),
 );
-// How broadcasters name a few clubs, by football-data.org short code.
-const ALIASES = { CAM: ["Atlético-MG", "Atletico Mineiro"], CAP: ["Athletico-PR", "Athletico Paranaense"] };
+// How broadcasters name a few clubs, by football-data.org short code (none needed so far).
+const ALIASES = {};
 
 const norm = (s) =>
   s
