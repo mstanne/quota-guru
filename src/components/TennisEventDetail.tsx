@@ -1,23 +1,18 @@
-import { Check, ArrowLeft, ChartColumn, Clock, Info, MapPin, Target, TrendingUp, Tv } from "lucide-react";
+import { ArrowLeft, ChartColumn, Clock, Info, MapPin, Target, TrendingUp, Tv } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "./ui/table";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
-import { useBetSlip } from "../context/BetSlipContext";
-import { getOperator, oddsOperators } from "../data/operators";
-import { bestValue, formatOdd, isBestAt, type OddValue } from "../lib/odds";
-import { OperatorLogo } from "./operator/OperatorUi";
+import { tourData } from "../lib/tennis";
+import { modelSurface, tennisPrediction } from "../lib/tennisPredict";
+import { pct } from "../lib/predictionsCore";
+import { TennisModelNote, TennisPredictionResult } from "./tennis/TennisPrediction";
 
-/** One row of an odds comparison table: operator + value per outcome (number or placeholder). */
-type OddsRow = { operatorId: string } & Record<string, OddValue>;
-
-/** Placeholder rows for every comparison operator (src/data/operators.ts), same order as the other tables. */
-const placeholderRows = (player1: string, player2: string): OddsRow[] =>
-  oddsOperators.map((o) => ({ operatorId: o.id, player1, player2 }));
+// Sample match page (mock data until a fixtures feed is connected). The prediction is real: it uses the
+// current ATP ratings of the two players (src/lib/tennisPredict.ts).
+const playerId = (name: string) => tourData("atp").rankings.find((r) => r.player.name === name)?.player.id;
 
 export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
-  const { addSelection } = useBetSlip();
   const match = {
     id: "1",
     player1: "Novak Djokovic",
@@ -29,9 +24,10 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
     surface: "Terra Battuta",
     round: "Finale",
   };
-  const winnerOdds: OddsRow[] = placeholderRows("[QUOTA_1]", "[QUOTA_2]");
-
-  const setBettingOdds: OddsRow[] = placeholderRows("[QUOTA_SET_2-0_G1]", "[QUOTA_SET_2-0_G2]");
+  const ids = [playerId(match.player1), playerId(match.player2)];
+  const prediction =
+    ids[0] && ids[1] ? tennisPrediction("atp", ids[0], ids[1], { surface: modelSurface("Clay"), bestOf: 3 }) : null;
+  const favourite = prediction ? (prediction.p[0] >= prediction.p[1] ? 0 : 1) : null;
 
   const player1Form = ["W", "W", "L", "W", "W"];
   const player2Form = ["W", "W", "W", "L", "W"];
@@ -95,28 +91,6 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
     matchStart: "14:00",
     commentary: "Telecronaca di Stefano Pescosolido e commento tecnico di Paolo Bertolucci",
   };
-  // Odds may be numbers or placeholders ("[QUOTA_1]"): see src/lib/odds.ts.
-  const getBestOdds = (rows: OddsRow[], outcome: string) => bestValue(rows.map((row) => row[outcome] as OddValue));
-  const isBest = (rows: OddsRow[], outcome: string, index: number) =>
-    isBestAt(
-      rows.map((row) => row[outcome] as OddValue),
-      index,
-    );
-  const handleAddToBetSlip = (operatorId: string, betType: string, odds: OddValue, market: string) => {
-    addSelection({
-      matchId: match.id,
-      homeTeam: match.player1,
-      awayTeam: match.player2,
-      competition: match.tournament,
-      date: match.date,
-      time: match.time,
-      betType: betType,
-      betTypeLabel: `${market} - ${betType}`,
-      selectedBookmaker: operatorId,
-      selectedOdds: odds,
-      allBookmakers: [],
-    });
-  };
   const getFormColor = (result) => {
     switch (result) {
       case "W":
@@ -136,7 +110,7 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
             Torna alle partite
           </Button>
           <div className="bg-slate-800 rounded-lg p-6 mb-6">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
               <Badge variant="secondary" className="bg-slate-800 text-slate-200 border-slate-700">
                 {match.tournament}
               </Badge>
@@ -228,29 +202,28 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
               </div>
             </Card>
             <Card className="bg-slate-800 border-slate-700 p-4">
-              <div className="text-slate-400 text-sm mb-1">Quota migliore</div>
-              <div className="text-best text-2xl tabular-nums flex items-center gap-1">
-                <TrendingUp className="w-5 h-5" />
-                {formatOdd(getBestOdds(winnerOdds, "player1"))}
+              <div className="text-slate-400 text-sm mb-1">Favorito del modello</div>
+              <div className="text-predict text-2xl tabular-nums flex items-center gap-1">
+                <TrendingUp className="w-5 h-5" aria-hidden="true" />
+                {prediction && favourite !== null ? pct(prediction.p[favourite]) : "–"}
               </div>
+              {prediction && favourite !== null && (
+                <div className="text-slate-400 text-xs mt-1 truncate">
+                  {favourite === 0 ? match.player1 : match.player2}
+                </div>
+              )}
             </Card>
           </div>
         </div>
       </div>
       <div className="container mx-auto px-4 py-8">
         <Tabs defaultValue="winner" className="space-y-6">
-          <TabsList className="bg-slate-800 border-slate-700 grid grid-cols-2 md:grid-cols-5 gap-2">
+          <TabsList className="bg-slate-800 border-slate-700 grid grid-cols-2 md:grid-cols-4 gap-2">
             <TabsTrigger
               value="winner"
               className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
             >
-              Vincente
-            </TabsTrigger>
-            <TabsTrigger
-              value="sets"
-              className="text-white data-[state=active]:bg-selected data-[state=active]:text-selected-foreground"
-            >
-              Risultato set
+              Pronostico
             </TabsTrigger>
             <TabsTrigger
               value="broadcast"
@@ -275,131 +248,15 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
             <Card className="bg-slate-900 border-slate-800">
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <Target className="w-6 h-6 text-slate-300" />
-                  <h2 className="text-white text-2xl">Quote vincente</h2>
+                  <ChartColumn className="w-6 h-6 text-slate-300" aria-hidden="true" />
+                  <h2 className="text-white text-2xl">Pronostico del modello</h2>
                 </div>
-                <Table>
-                  <TableHeader>
-                    <TableRow className="border-slate-800 hover:bg-transparent">
-                      <TableHead className="text-slate-400">Bookmaker</TableHead>
-                      <TableHead className="text-center text-slate-400">{match.player1}</TableHead>
-                      <TableHead className="text-center text-slate-400">{match.player2}</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {winnerOdds.map((row, rowIndex) => {
-                      const isBestPlayer1 = isBest(winnerOdds, "player1", rowIndex);
-                      const isBestPlayer2 = isBest(winnerOdds, "player2", rowIndex);
-                      return (
-                        <TableRow key={row.operatorId} className="border-slate-800 hover:bg-slate-800/40">
-                          <TableCell className="text-white">
-                            <div className="flex items-center gap-2">
-                              <OperatorLogo operator={getOperator(row.operatorId)} width={24} height={24} />
-                              <span>{getOperator(row.operatorId).name}</span>
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <button
-                              type="button"
-                              onClick={() => handleAddToBetSlip(row.operatorId, match.player1, row.player1, "Vincente")}
-                              aria-label={`Aggiungi alla schedina: Vincente ${match.player1} a ${formatOdd(row.player1)} su ${getOperator(row.operatorId).name}${isBestPlayer1 ? " (quota migliore)" : ""}`}
-                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action ${isBestPlayer1 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
-                            >
-                              {formatOdd(row.player1)}
-                              {isBestPlayer1 && (
-                                <Check className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5" aria-hidden="true" />
-                              )}
-                            </button>
-                          </TableCell>
-                          <TableCell>
-                            <button
-                              type="button"
-                              onClick={() => handleAddToBetSlip(row.operatorId, match.player2, row.player2, "Vincente")}
-                              aria-label={`Aggiungi alla schedina: Vincente ${match.player2} a ${formatOdd(row.player2)} su ${getOperator(row.operatorId).name}${isBestPlayer2 ? " (quota migliore)" : ""}`}
-                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action ${isBestPlayer2 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
-                            >
-                              {formatOdd(row.player2)}
-                              {isBestPlayer2 && (
-                                <Check className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5" aria-hidden="true" />
-                              )}
-                            </button>
-                          </TableCell>
-                        </TableRow>
-                      );
-                    })}
-                  </TableBody>
-                </Table>
-              </div>
-            </Card>
-          </TabsContent>
-          <TabsContent value="sets">
-            <Card className="bg-slate-900 border-slate-800">
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-6">
-                  <ChartColumn className="w-6 h-6 text-slate-300" />
-                  <h2 className="text-white text-2xl">Risultato set 2-0</h2>
-                </div>
-                <Table>
-                  <TableHeader>
-                    <TableRow className="border-slate-800 hover:bg-transparent">
-                      <TableHead className="text-slate-400">Bookmaker</TableHead>
-                      <TableHead className="text-center text-slate-400">
-                        {match.player1}
-                        {" 2-0"}
-                      </TableHead>
-                      <TableHead className="text-center text-slate-400">
-                        {match.player2}
-                        {" 2-0"}
-                      </TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {setBettingOdds.map((row, rowIndex) => {
-                      const isBestPlayer1 = isBest(setBettingOdds, "player1", rowIndex);
-                      const isBestPlayer2 = isBest(setBettingOdds, "player2", rowIndex);
-                      return (
-                        <TableRow key={row.operatorId} className="border-slate-800 hover:bg-slate-800/40">
-                          <TableCell className="text-white">
-                            <div className="flex items-center gap-2">
-                              <OperatorLogo operator={getOperator(row.operatorId)} width={24} height={24} />
-                              <span>{getOperator(row.operatorId).name}</span>
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                handleAddToBetSlip(row.operatorId, `${match.player1} 2-0`, row.player1, "Risultato set")
-                              }
-                              aria-label={`Aggiungi alla schedina: Risultato set ${`${match.player1} 2-0`} a ${formatOdd(row.player1)} su ${getOperator(row.operatorId).name}${isBestPlayer1 ? " (quota migliore)" : ""}`}
-                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action ${isBestPlayer1 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
-                            >
-                              {formatOdd(row.player1)}
-                              {isBestPlayer1 && (
-                                <Check className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5" aria-hidden="true" />
-                              )}
-                            </button>
-                          </TableCell>
-                          <TableCell>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                handleAddToBetSlip(row.operatorId, `${match.player2} 2-0`, row.player2, "Risultato set")
-                              }
-                              aria-label={`Aggiungi alla schedina: Risultato set ${`${match.player2} 2-0`} a ${formatOdd(row.player2)} su ${getOperator(row.operatorId).name}${isBestPlayer2 ? " (quota migliore)" : ""}`}
-                              className={`w-full px-4 py-3 rounded text-center tabular-nums transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action ${isBestPlayer2 ? "bg-best text-best-foreground hover:opacity-90" : "bg-slate-800 text-white hover:bg-slate-700"}`}
-                            >
-                              {formatOdd(row.player2)}
-                              {isBestPlayer2 && (
-                                <Check className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5" aria-hidden="true" />
-                              )}
-                            </button>
-                          </TableCell>
-                        </TableRow>
-                      );
-                    })}
-                  </TableBody>
-                </Table>
+                {prediction ? (
+                  <TennisPredictionResult prediction={prediction} a={match.player1} b={match.player2} />
+                ) : (
+                  <p className="text-slate-400">Pronostico non disponibile: uno dei giocatori non è nella top 100.</p>
+                )}
+                <TennisModelNote />
               </div>
             </Card>
           </TabsContent>
@@ -615,10 +472,14 @@ export function TennisEventDetail({ onBack }: { onBack?: () => void }) {
                   e spettacolare.
                 </p>
                 <div className="bg-slate-800 rounded p-3 inline-block">
-                  <div className="text-slate-400 text-xs mb-1">Il pronostico della redazione</div>
+                  <div className="text-slate-400 text-xs mb-1">Il pronostico del modello</div>
                   <div className="text-white flex items-center gap-2">
-                    <Target className="w-4 h-4" />
-                    <span>[PRONOSTICO] @ [QUOTA_PRONOSTICO]</span>
+                    <Target className="w-4 h-4" aria-hidden="true" />
+                    <span>
+                      {prediction && favourite !== null
+                        ? `Vittoria ${favourite === 0 ? match.player1 : match.player2} (${pct(prediction.p[favourite])})`
+                        : "Non disponibile"}
+                    </span>
                   </div>
                 </div>
               </div>
