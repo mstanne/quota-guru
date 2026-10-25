@@ -13,6 +13,9 @@ import { fileURLToPath } from "node:url";
 const API = "https://api.balldontlie.io";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "data", "basket.json");
+// All NBA results of the current and previous season, used only by the prediction model
+// (scripts/predict-basket.mjs); not bundled in the site.
+const HISTORY = path.join(root, "data", "basket-history.json");
 const CACHE_DIR = path.join(root, ".cache", "balldontlie");
 const CACHE_TTL_MS = Number(process.env.BASKET_CACHE_MINUTES ?? 30) * 60000;
 const MIN_GAP_MS = 13000;
@@ -59,7 +62,7 @@ async function api(p, key, attempt = 1) {
 async function all(p, key) {
   const out = [];
   let cursor = null;
-  for (let page = 0; page < 20; page++) {
+  for (let page = 0; page < 25; page++) {
     const sep = p.includes("?") ? "&" : "?";
     const r = await api(`${p}${sep}per_page=100${cursor ? `&cursor=${cursor}` : ""}`, key);
     out.push(...(r.data ?? []));
@@ -127,6 +130,12 @@ async function main() {
     console.warn("  classifica non disponibile:", err.message);
   }
 
+  try {
+    await updateHistory(key, season);
+  } catch (err) {
+    console.warn("  storico NBA non aggiornato:", err.message);
+  }
+
   const snapshot = {
     generatedAt: now.toISOString(),
     source: "balldontlie.io",
@@ -141,7 +150,68 @@ async function main() {
   );
 }
 
-main().catch((err) => {
-  console.error("Download dati basket non riuscito:", err.message);
-  process.exit(1);
-});
+// NBA results for the model. The previous season is downloaded once (~15 requests, ~3 minutes on the free
+// plan) and kept in data/basket-history.json; the current season is updated incrementally (from a few days
+// before the last stored game), so a normal run costs 1-2 requests.
+async function updateHistory(key, season) {
+  const old = fs.existsSync(HISTORY) ? JSON.parse(fs.readFileSync(HISTORY, "utf8")) : { seasons: {}, games: [] };
+  const games = new Map((old.games || []).map((g) => [g.id, g]));
+  const seasons = old.seasons || {};
+  const compact = (g, s) => ({
+    id: g.id,
+    date: g.datetime ?? `${g.date}T00:00:00Z`,
+    season: s,
+    home: g.home_team.id,
+    away: g.visitor_team.id,
+    hp: g.home_team_score,
+    ap: g.visitor_team_score,
+    post: Boolean(g.postseason),
+  });
+  const isFinal = (g) =>
+    (String(g.status_state ?? "").toLowerCase() === "final" || /^final/i.test(String(g.status ?? ""))) &&
+    g.home_team_score > 0 &&
+    g.visitor_team_score > 0;
+
+  for (const s of [season - 1, season]) {
+    const stored = [...games.values()].filter((g) => g.season === s);
+    if (s < season && seasons[s]?.complete) continue;
+    let query = `/v1/games?seasons[]=${s}`;
+    if (s === season && stored.length) {
+      const last = stored.reduce((m, g) => (g.date > m ? g.date : m), "");
+      const from = new Date(Date.parse(last) - 3 * 86400000).toISOString().slice(0, 10);
+      query += `&start_date=${from}`;
+    }
+    const rows = await all(query, key);
+    let added = 0;
+    for (const g of rows.filter(isFinal)) {
+      if (!games.has(g.id)) added++;
+      games.set(g.id, compact(g, s));
+    }
+    const n = [...games.values()].filter((g) => g.season === s).length;
+    seasons[s] = { n, complete: s < season && n > 1000 };
+    console.log(`  storico NBA ${s}-${String(s + 1).slice(2)}: ${n} partite (+${added})`);
+  }
+  const keep = [...games.values()].filter((g) => g.season >= season - 1).sort((a, b) => a.date.localeCompare(b.date));
+  fs.mkdirSync(path.dirname(HISTORY), { recursive: true });
+  fs.writeFileSync(HISTORY, JSON.stringify({ updatedAt: new Date().toISOString(), seasons, games: keep }) + "\n");
+}
+
+// `node scripts/fetch-basket-data.mjs --history` updates only data/basket-history.json.
+if (process.argv.includes("--history")) {
+  loadDotEnv();
+  const key = process.env.BALLDONTLIE_API_KEY;
+  const now = new Date();
+  const season = now.getUTCMonth() >= 7 ? now.getUTCFullYear() : now.getUTCFullYear() - 1;
+  if (!key) {
+    console.error("BALLDONTLIE_API_KEY non impostata (nel file .env o nell'ambiente).");
+    process.exit(1);
+  }
+  updateHistory(key, season).catch((err) => {
+    console.error("Storico NBA non aggiornato:", err.message);
+    process.exit(1);
+  });
+} else
+  main().catch((err) => {
+    console.error("Download dati basket non riuscito:", err.message);
+    process.exit(1);
+  });

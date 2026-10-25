@@ -3,14 +3,17 @@ import { ChevronRight } from "lucide-react";
 import { formatTime } from "../../lib/footballCore";
 import { gamePath, gameRoundLabel, isGameFinished, isGameLive, type BasketGame } from "../../lib/basket";
 import { TeamBadge } from "../calcio/MatchRow";
+import { basketPredictionFor } from "../../lib/basketPredict";
+import { BasketPredictionMini } from "./BasketPrediction";
 
-/** One NBA game row (same look as the football rows), linking to the game page. */
+/** One NBA game row (same look as the football rows), linking to the game page; upcoming games show win %. */
 export function BasketGameRow({ game }: { game: BasketGame }) {
   const finished = isGameFinished(game);
   const live = isGameLive(game);
   const label = `${game.home.name} – ${game.away.name}, ${finished ? `risultato ${game.score.home}-${game.score.away}` : `ore ${formatTime(game.utcDate)}`}`;
   const homeWin = finished && (game.score.home ?? 0) > (game.score.away ?? 0);
   const awayWin = finished && (game.score.away ?? 0) > (game.score.home ?? 0);
+  const prediction = !finished && !live ? basketPredictionFor(game.id) : undefined;
   return (
     <Link
       to={gamePath(game)}
@@ -42,7 +45,12 @@ export function BasketGameRow({ game }: { game: BasketGame }) {
           </div>
         ))}
       </div>
-      <div className="hidden sm:block w-40 shrink-0 text-right text-xs text-slate-400">
+      {prediction && (
+        <div className="shrink-0">
+          <BasketPredictionMini prediction={prediction} home={game.home.name} away={game.away.name} />
+        </div>
+      )}
+      <div className="hidden md:block w-40 shrink-0 text-right text-xs text-slate-400">
         <div className="text-slate-300 text-sm">NBA</div>
         <div>{gameRoundLabel(game)}</div>
       </div>

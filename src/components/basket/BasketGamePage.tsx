@@ -3,7 +3,8 @@ import { ArrowLeft, CalendarDays, Info } from "lucide-react";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";
 import { TeamBadge } from "../calcio/MatchRow";
 import { NotFoundPage } from "../NotFoundPage";
-import { OddsComparison } from "../odds/OddsComparison";
+import { BasketPredictionPanel } from "./BasketPrediction";
+import { basketPredictionFor } from "../../lib/basketPredict";
 import { BasketGameRow } from "./BasketGameRow";
 import { formatDay, formatTime, romeDay } from "../../lib/footballCore";
 import {
@@ -21,7 +22,6 @@ import {
 import { usePageMeta } from "../../lib/pageMeta";
 import { nbaEditorial } from "../../lib/editorial";
 import { MatchEditorial } from "../editorial/MatchEditorial";
-import { placeholderOdds } from "../../lib/odds";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 
@@ -37,8 +37,7 @@ export function BasketGamePage() {
   const sameDay = nbaGames.filter((g) => g.id !== game.id && romeDay(g.utcDate) === romeDay(game.utcDate));
   const periods = game.periods;
   const periodLabel = (i: number) => (i < 4 ? `${i + 1}º` : `OT${i - 3}`);
-  // Odds: template placeholders until the operator feeds are connected (see src/lib/odds.ts).
-  const odds = placeholderOdds({ home: "[QUOTA_1]", away: "[QUOTA_2]" });
+  const prediction = basketPredictionFor(game.id);
 
   return (
     <div className="min-h-screen bg-slate-950">
@@ -102,30 +101,14 @@ export function BasketGamePage() {
       </div>
 
       <div className="container mx-auto px-4 py-8 space-y-6">
-        <OddsComparison
-          title="Quote vincente"
-          market="Vincente (supplementari inclusi)"
-          outcomes={[
-            {
-              key: "home",
-              label: `1 (${game.home.shortName ?? game.home.name})`,
-              selection: `${game.home.name} vincente`,
-            },
-            {
-              key: "away",
-              label: `2 (${game.away.shortName ?? game.away.name})`,
-              selection: `${game.away.name} vincente`,
-            },
-          ]}
-          odds={odds}
-          event={{
-            id: `nba-${game.id}`,
-            home: game.home.name,
-            away: game.away.name,
-            competition: "NBA",
-            time: `${formatDay(game.utcDate)} ${formatTime(game.utcDate)}`,
-          }}
-        />
+        {prediction && (!finished || prediction.pre) && (
+          <BasketPredictionPanel
+            prediction={prediction}
+            home={game.home.shortName ?? game.home.name}
+            away={game.away.shortName ?? game.away.name}
+            result={finished && game.score.home != null && game.score.away != null ? { home: game.score.home, away: game.score.away } : null}
+          />
+        )}
 
         <MatchEditorial
           article={nbaEditorial({ game, games: nbaGames, season: nbaSeasonYear, generatedAt: basketUpdatedAt })}

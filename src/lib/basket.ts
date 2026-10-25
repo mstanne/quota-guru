@@ -72,10 +72,10 @@ export function gameMeta(g: BasketGame) {
     path: gamePath(g),
     title: isGameFinished(g)
       ? `${teams(g)} ${g.score.home}-${g.score.away}: risultato NBA`
-      : `${teams(g)}: orario e quote NBA`,
+      : `${teams(g)}: pronostico e orario NBA`,
     description: isGameFinished(g)
       ? `Risultato finale e parziali di ${teams(g)} (NBA), giocata ${when}.`
-      : `${teams(g)}, NBA: si gioca ${when} (ora italiana). Orario, stato della partita e quote a confronto.`,
+      : `${teams(g)}, NBA: si gioca ${when} (ora italiana). Orario e pronostico con le probabilità di vittoria.`,
   };
 }
 export const nbaMeta = {
