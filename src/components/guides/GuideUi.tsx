@@ -1,7 +1,7 @@
 // Shared building blocks for the guides section: category icons, guide cards and content blocks.
 import { Award, BookOpen, Calculator, ChevronRight, Clock, Info, Shield, Target, TriangleAlert } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 import { Rich } from "../content/Rich";
 import { Badge } from "../ui/badge";
 import { Card } from "../ui/card";

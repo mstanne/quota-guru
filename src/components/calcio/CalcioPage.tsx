@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
+import { Link } from "../../lib/links";
 import { CalendarDays, ListOrdered, Trophy } from "lucide-react";
 import {
   allMatches,

@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "../lib/links";
 import { Button } from "./ui/button";
 import { usePageMeta } from "../lib/pageMeta";
 import { notFoundMeta } from "../routes";

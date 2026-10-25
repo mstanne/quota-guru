@@ -3,11 +3,12 @@
 // so that the football data is not part of the initial JavaScript bundle.
 import { allMatches, competitionMeta, competitions, matchMeta, standingsMeta } from "./football";
 import type { RouteMeta } from "../routes";
+import { predictionFor } from "./predictions";
 
 export function footballRoutes(): RouteMeta[] {
   return [
     ...competitions.map(competitionMeta),
     ...competitions.filter((c) => c.standings.length > 0).map(standingsMeta),
-    ...allMatches.map(({ competition, match }) => matchMeta(competition, match)),
+    ...allMatches.map(({ competition, match }) => matchMeta(competition, match, !!predictionFor(match.id))),
   ];
 }

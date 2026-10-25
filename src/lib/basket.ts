@@ -88,19 +88,20 @@ export const gameRoundLabel = (g: BasketGame) => (g.postseason ? "Playoff" : "St
 
 // ---------- SEO metadata ----------
 const teams = (g: BasketGame) => `${g.home.name} – ${g.away.name}`;
-export function gameMeta(g: BasketGame) {
+/** `predicted`: the model has a prediction for this game (title and description mention it only then). */
+export function gameMeta(g: BasketGame, predicted = false) {
   const when = `${formatDay(g.utcDate)} ore ${formatTime(g.utcDate)}`;
   const path = gamePath(g);
   const description = isGameFinished(g)
     ? `Risultato finale e parziali di ${teams(g)} (NBA), giocata ${when}.`
     : isGamePending(g)
       ? `${teams(g)} (NBA), giocata ${when} (ora italiana): risultato in arrivo.`
-      : `${teams(g)}, NBA: si gioca ${when} (ora italiana). Orario e pronostico con le probabilità di vittoria.`;
+      : `${teams(g)}, NBA: si gioca ${when} (ora italiana).${predicted ? " Orario e pronostico con le probabilità di vittoria." : ""}`;
   return {
     path,
     title: isGameFinished(g)
       ? `${teams(g)} ${g.score.home}-${g.score.away}: risultato NBA`
-      : `${teams(g)}: pronostico e orario NBA`,
+      : `${teams(g)}: ${predicted ? "pronostico e orario NBA" : "orario NBA"}`,
     description,
     archive: isGameFinished(g),
     jsonLd: [
@@ -120,9 +121,9 @@ export function gameMeta(g: BasketGame) {
 }
 export const nbaMeta = {
   path: basketPaths.nba,
-  title: `NBA ${nbaSeason}: calendario e risultati`,
+  title: `Pronostici NBA ${nbaSeason}: calendario e risultati`,
   description:
-    "Calendario e risultati delle partite NBA in orario italiano, con quote a confronto degli operatori autorizzati.",
+    "Calendario e risultati delle partite NBA in orario italiano, con il pronostico e le probabilità di vittoria di ogni partita.",
 };
 export const lbaMeta = {
   path: basketPaths.lbaStandings,
@@ -131,6 +132,7 @@ export const lbaMeta = {
     "Classifica aggiornata della Lega Basket Serie A: partite giocate, vittorie, sconfitte, punti fatti e subiti.",
 };
 
-export function basketRoutes() {
-  return [nbaMeta, ...(lbaStandings.length ? [lbaMeta] : []), ...nbaGames.map(gameMeta)];
+/** `predicted(id)`: whether a game has a prediction (passed in to keep the predictions out of this module). */
+export function basketRoutes(predicted: (gameId: number) => boolean = () => false) {
+  return [nbaMeta, ...(lbaStandings.length ? [lbaMeta] : []), ...nbaGames.map((g) => gameMeta(g, predicted(g.id)))];
 }

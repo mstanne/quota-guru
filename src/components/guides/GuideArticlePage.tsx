@@ -1,7 +1,8 @@
 // Single guide page: /guide/<slug>. Content comes from src/data/guides.ts.
 import { useEffect, useRef } from "react";
 import { Calendar, ChevronDown, Clock, ShieldCheck } from "lucide-react";
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
+import { Link } from "../../lib/links";
 import { PageHeader, MetaItems } from "../layout/PageHeader";
 import { ImageSlot } from "../media/ImageSlot";
 import { NotFoundPage } from "../NotFoundPage";

@@ -1,6 +1,7 @@
 // Build step: writes a static HTML file for every route (dist/<path>/index.html) so each page
 // has its own URL, <title>, description, structured data and content visible to search engines without JavaScript.
-// Also writes 404.html (GitHub Pages fallback), sitemap.xml and robots.txt.
+// Also writes 404.html (GitHub Pages fallback), robots.txt and the sitemaps (sitemap.xml is an index of
+// sitemap-pagine.xml and sitemap-partite.xml).
 //
 // Between builds it keeps a small state in .cache/seo (restored by the GitHub workflow with actions/cache):
 //   state.json   – for every URL a hash of its main content and the date it last changed (sitemap <lastmod>);
@@ -39,6 +40,13 @@ const template = fs.readFileSync(path.join(dist, "index.html"), "utf8");
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 const publicUrl = (p) => (siteUrl ? `${siteUrl}${p === "/" ? "/" : `${p}/`}` : "");
+/** URL the page is served at (GitHub Pages: "/calcio/" for dist/calcio/index.html). */
+const pageUrl = (p) => basename + (p === "/" ? "/" : `${p}/`);
+/** Same rule as src/lib/links.tsx: internal links end with "/" (used on archived HTML saved by older builds). */
+const slashLinks = (html) =>
+  html.replace(/href="(\/[^"?#]*?)([?#][^"]*)?"/g, (all, p, rest = "") =>
+    p === "/" || p.endsWith("/") || /\.[a-z0-9]{2,5}$/i.test(p) ? all : `href="${p}/${rest}"`,
+  );
 const sha1 = (s) => crypto.createHash("sha1").update(s).digest("hex");
 
 // ---------- state between builds ----------
@@ -194,6 +202,11 @@ function page(meta, appHtml, { prerendered }) {
     );
 }
 
+// Two sitemaps under one index: evergreen pages (home, sections, competitions, standings, tennis, guides,
+// information) and match pages, so that Search Console reports their indexing separately.
+const sitemapPages = [];
+const sitemapMatches = [];
+
 /** Writes one page and records when its content last changed (`main`: the page content, see mainContent). */
 function emit(meta, appHtml, main = mainContent(appHtml)) {
   const out = meta.path === "/" ? path.join(dist, "index.html") : path.join(dist, meta.path.slice(1), "index.html");
@@ -202,6 +215,10 @@ function emit(meta, appHtml, main = mainContent(appHtml)) {
   const hash = contentHash(main);
   const prev = prevState.pages[meta.path];
   nextState.pages[meta.path] = { hash, lastmod: prev?.hash === hash ? prev.lastmod : today };
+  if (meta.index !== false) {
+    const isMatch = (meta.jsonLd ?? []).some((n) => n["@type"] === "SportsEvent");
+    (isMatch ? sitemapMatches : sitemapPages).push(meta.path);
+  }
 }
 
 // ---------- live pages (from the current data) ----------
@@ -216,7 +233,7 @@ const metaOnly = ({ path: p, title, description, index, jsonLd: ld, image }) => 
 const live = new Set();
 let archivedNow = 0;
 for (const meta of routes) {
-  const appHtml = render(basename + meta.path, basename);
+  const appHtml = render(pageUrl(meta.path), basename);
   emit(meta, appHtml);
   live.add(meta.path);
   if (meta.archive) {
@@ -241,7 +258,7 @@ if (fs.existsSync(archiveDir)) {
       continue;
     }
     if (live.has(entry.meta.path)) continue;
-    const appHtml = render(basename + entry.meta.path, basename, entry.html);
+    const appHtml = render(pageUrl(entry.meta.path), basename, slashLinks(entry.html));
     if (!appHtml.includes("data-archived-page")) {
       // the URL no longer leads to a match page (route renamed or removed): do not publish it
       unreadable++;
@@ -261,16 +278,25 @@ fs.writeFileSync(
 );
 
 // ---------- sitemap and robots ----------
-const indexable = [...routes.filter((r) => r.index !== false).map((r) => r.path)];
-for (const p of live) if (!indexable.includes(p)) indexable.push(p); // archived matches
+const XML = '<?xml version="1.0" encoding="UTF-8"?>';
+const NS = 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"';
+const lastmodOf = (p) => nextState.pages[p]?.lastmod ?? today;
 if (siteUrl) {
-  const urls = indexable
-    .map((p) => `  <url><loc>${publicUrl(p)}</loc><lastmod>${nextState.pages[p]?.lastmod ?? today}</lastmod></url>`)
+  const files = [
+    ["sitemap-pagine.xml", sitemapPages],
+    ["sitemap-partite.xml", sitemapMatches],
+  ].filter(([, list]) => list.length);
+  for (const [file, list] of files) {
+    const urls = list.map((p) => `  <url><loc>${publicUrl(p)}</loc><lastmod>${lastmodOf(p)}</lastmod></url>`).join("\n");
+    fs.writeFileSync(path.join(dist, file), `${XML}\n<urlset ${NS}>\n${urls}\n</urlset>\n`);
+  }
+  const index = files
+    .map(([file, list]) => {
+      const newest = list.map(lastmodOf).sort().pop();
+      return `  <sitemap><loc>${siteUrl}/${file}</loc><lastmod>${newest}</lastmod></sitemap>`;
+    })
     .join("\n");
-  fs.writeFileSync(
-    path.join(dist, "sitemap.xml"),
-    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
-  );
+  fs.writeFileSync(path.join(dist, "sitemap.xml"), `${XML}\n<sitemapindex ${NS}>\n${index}\n</sitemapindex>\n`);
 }
 fs.writeFileSync(
   path.join(dist, "robots.txt"),
@@ -284,7 +310,7 @@ fs.rmSync(path.join(root, "dist-ssr"), { recursive: true, force: true });
 const changed = Object.values(nextState.pages).filter((p) => p.lastmod === today).length;
 console.log(
   `prerender: ${routes.length} pagine dai dati + ${restored} partite archiviate + 404.html` +
-    `${siteUrl ? " + sitemap.xml" : ""} (base "${base}")\n` +
+    `${siteUrl ? ` + sitemap (${sitemapPages.length} pagine, ${sitemapMatches.length} partite)` : ""} (base "${base}")\n` +
     `  archivio: ${archivedNow} partite finite salvate/aggiornate${unreadable ? `, ${unreadable} voci ignorate` : ""}; ` +
     `pagine con data di modifica di oggi: ${changed}`,
 );

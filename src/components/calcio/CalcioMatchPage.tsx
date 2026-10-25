@@ -1,5 +1,6 @@
 import { Fragment } from "react";
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
+import { Link } from "../../lib/links";
 import { ArrowLeft, CalendarDays, History, Info, ListOrdered, TrendingUp, Users } from "lucide-react";
 import {
   competitionPath,
@@ -199,7 +200,7 @@ export function CalcioMatchPage() {
   const { competizione, partita } = useParams();
   const competition = findCompetition(competizione);
   const match = findMatch(competition, partita);
-  usePageMeta(competition && match ? matchMeta(competition, match) : null);
+  usePageMeta(competition && match ? matchMeta(competition, match, !!predictionFor(match.id)) : null);
   if (!competition || !match) return <ArchivedOrNotFound />;
 
   const finished = isFinished(match);

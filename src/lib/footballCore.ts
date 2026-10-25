@@ -188,8 +188,8 @@ export function recentForm(c: Competition, teamId: number, limit = 5) {
 export function competitionMeta(c: Competition) {
   return {
     path: competitionPath(c),
-    title: `${c.name}: calendario e risultati`,
-    description: `Calendario, orari e risultati delle partite di ${c.name}${c.area ? ` (${c.area})` : ""}, con classifica aggiornata.`,
+    title: `Pronostici ${c.name}: calendario e risultati`,
+    description: `Pronostici con le probabilità 1X2, calendario, orari e risultati delle partite di ${c.name}${c.area ? ` (${c.area})` : ""}, con classifica aggiornata.`,
   };
 }
 export function standingsMeta(c: Competition) {
@@ -199,7 +199,8 @@ export function standingsMeta(c: Competition) {
     description: `Classifica aggiornata di ${c.name}: punti, partite giocate, vittorie, pareggi, sconfitte e differenza reti.`,
   };
 }
-export function matchMeta(c: Competition, m: Match) {
+/** `predicted`: the model has a prediction for this match (title and description mention it only then). */
+export function matchMeta(c: Competition, m: Match, predicted = false) {
   const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
   const when = `${formatDay(m.utcDate)} ore ${formatTime(m.utcDate)}`;
   const path = matchPath(c, m);
@@ -207,12 +208,12 @@ export function matchMeta(c: Competition, m: Match) {
     ? `Risultato finale di ${teams} (${c.name}), giocata ${when}.`
     : isResultPending(m)
       ? `${teams} (${c.name}), giocata ${when}: risultato in arrivo. Classifica, forma recente e precedenti delle due squadre.`
-      : `${teams}, ${c.name}: si gioca ${when}. Classifica, forma recente e precedenti delle due squadre.`;
+      : `${teams}, ${c.name}: si gioca ${when}. ${predicted ? "Pronostico con le probabilità 1X2, classifica" : "Classifica"}, forma recente e precedenti delle due squadre.`;
   return {
     path,
     title: isFinished(m)
       ? `${teams} ${m.score.fullTime.home}-${m.score.fullTime.away}: risultato ${c.name}`
-      : `${teams}: orario, classifica e precedenti`,
+      : `${teams}: ${predicted ? "pronostico, orario e precedenti" : "orario, classifica e precedenti"}`,
     description,
     archive: isFinished(m),
     jsonLd: [

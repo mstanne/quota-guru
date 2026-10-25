@@ -1,5 +1,5 @@
 // Real data block on the Tennis page: top of the ATP/WTA rankings and tournaments in progress / next.
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 import { CalendarDays, ListOrdered } from "lucide-react";
 import { Movement, StatusBadge, SurfaceChip } from "./TennisUi";
 import { categoryLabel, currentAndNext, dateRange, tennisPaths, tourData, tourLabel, tours } from "../../lib/tennis";

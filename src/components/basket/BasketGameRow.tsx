@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 import { ChevronRight } from "lucide-react";
 import { formatTime } from "../../lib/footballCore";
 import { gamePath, gameRoundLabel, isGameFinished, isGameLive, isGamePending, type BasketGame } from "../../lib/basket";

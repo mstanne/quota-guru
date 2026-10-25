@@ -1,6 +1,6 @@
 // /tennis/calendario-atp and /tennis/calendario-wta – tournaments of the season, grouped by month.
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 import { CalendarDays } from "lucide-react";
 import { PageHeader } from "../layout/PageHeader";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";

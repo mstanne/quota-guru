@@ -1,6 +1,6 @@
 // Text with inline links written as [testo](/percorso) – internal paths only (guides, match texts).
 import type { ReactNode } from "react";
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 
 const LINK = /\[([^\]]+)\]\((\/[^)\s]*)\)/g;
 const linkClass = "text-action-text underline underline-offset-2 hover:text-action-text-hover";

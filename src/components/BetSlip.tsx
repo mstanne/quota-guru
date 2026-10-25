@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "../lib/links";
 import { CircleCheck, ExternalLink, ShoppingCart, X } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";

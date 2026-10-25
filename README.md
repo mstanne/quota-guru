@@ -257,7 +257,11 @@ Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e 
 
 - Ogni pagina ha un proprio URL (vedi tabella sotto). In build `scripts/prerender.mjs` genera un file HTML statico
   per ogni URL con title, description, canonical, dati strutturati e contenuto già visibile ai motori di ricerca, più
-  `404.html`, `sitemap.xml` e `robots.txt`. Nel browser React prende il controllo e la navigazione resta istantanea.
+  `404.html`, `robots.txt` e le sitemap (`sitemap.xml` è l'indice di `sitemap-pagine.xml` e `sitemap-partite.xml`,
+  così Search Console mostra separatamente l'indicizzazione delle pagine stabili e delle schede partita).
+- **Link interni con la barra finale**: ogni pagina è pubblicata come `<percorso>/index.html` e il suo URL canonico
+  finisce con `/`. Per non far passare ogni link da un redirect usa `Link` e `NavLink` di `src/lib/links.tsx`
+  (aggiungono la barra da soli), non quelli di `react-router`. Nel browser React prende il controllo e la navigazione resta istantanea.
 - Per il tennis c'è ancora un solo esempio: tutte le partite della lista portano allo stesso URL di esempio. Le quote
   mostrate in home, tennis e basket sono ancora dati di esempio.
 - Guide (24): tipi, categorie e guide di base in `src/data/guides.ts`, le altre in `src/data/guides/<categoria>.ts`.

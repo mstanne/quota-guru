@@ -1,7 +1,7 @@
 // Prediction widgets (football): probability bar, compact 1X2 for match rows, full panel for match pages.
 // Numbers come from the Poisson / Dixon-Coles model (scripts/predict-football.mjs). They are statistical
 // estimates, shown with their reliability and never as a betting tip.
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 import { ChartColumn, Check, Info, X as XIcon } from "lucide-react";
 import { paths } from "../../routes";
 import {

@@ -1,5 +1,5 @@
 // NBA prediction widgets: compact win % for game rows and the full panel for the game page.
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 import { ChartColumn, Check, Info, X as XIcon } from "lucide-react";
 import { paths } from "../../routes";
 import { pct } from "../../lib/predictionsCore";

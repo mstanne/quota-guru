@@ -2,7 +2,7 @@
 // Texts are TEMPLATES: company data come from src/data/site.ts, and the legal pages (terms, privacy, cookies)
 // must be reviewed by a lawyer before publishing.
 import type { ReactNode } from "react";
-import { Link } from "react-router";
+import { Link } from "../../lib/links";
 import { BookOpen, Cookie, FileText, HelpCircle, Info, Mail, Scale, ShieldCheck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { PageHeader } from "../layout/PageHeader";

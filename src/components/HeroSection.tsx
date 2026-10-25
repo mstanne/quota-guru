@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "../lib/links";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Card } from "./ui/card";
