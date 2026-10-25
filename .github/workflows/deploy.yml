@@ -26,11 +26,11 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -61,7 +61,7 @@ jobs:
 
       - name: Restore editorial cache
         # Claude rewrites already accepted: unchanged texts are not rewritten (or paid for) again
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: .cache/editorial-ai.json
           key: editorial-${{ github.run_id }}
@@ -90,16 +90,16 @@ jobs:
           VITE_ANALYTICS_ID: ${{ vars.ANALYTICS_ID }}
           VITE_COOKIE_POLICY_URL: ${{ vars.COOKIE_POLICY_URL }}
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
