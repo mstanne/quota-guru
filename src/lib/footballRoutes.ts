@@ -7,9 +7,8 @@ import { predictionFor } from "./predictions";
 import { highlightFor } from "./highlights";
 import type { Competition, Match } from "./footballCore";
 
-/** Official highlights: only Serie A for now (scripts/fetch-highlights.mjs). */
-export const highlightOf = (c: Competition, m: Match) =>
-  c.slug === "serie-a" ? highlightFor("serie-a", m.id) : undefined;
+/** Official highlights from YouTube, for the competitions covered by scripts/fetch-highlights.mjs. */
+export const highlightOf = (c: Competition, m: Match) => highlightFor(c.slug, m.id);
 
 export function footballRoutes(): RouteMeta[] {
   return [

@@ -2,7 +2,7 @@
 // (match id → video). The pages embed the video from YouTube (click to load, youtube-nocookie.com):
 // nothing is downloaded or re-hosted.
 //
-// Sources: the official channels' public feeds (latest 15 uploads, no key needed). If YOUTUBE_API_KEY is set
+// Sources: the public feeds of the official channels (leagues or their official broadcasters) (latest 15 uploads, no key needed). If YOUTUBE_API_KEY is set
 // (free Google key, YouTube Data API v3) the latest 50 uploads are read instead, so busy nights are covered too.
 // Videos already found are kept in .cache/match-details/highlights.json (restored between workflow runs).
 //
@@ -18,32 +18,102 @@ const FOOTBALL = path.join(root, "src", "data", "football.json");
 const BASKET = path.join(root, "src", "data", "basket.json");
 const MAX_DELAY_DAYS = 4; // a video counts only if published within N days after kick-off
 
-/** Official channels and how their highlight titles name the two teams. */
+/** Official channels (leagues or their official broadcasters) and how their highlight titles name the teams.
+ *  `rank`: lower is preferred when a channel posts several versions of the same match. */
 const CHANNELS = [
   {
     // "Partita FOLLE a Bergamo! | ATALANTA-FROSINONE | HIGHLIGHTS | SERIE A ENILIVE 2026/27"
     key: "serie-a",
     channelId: "UCBJeMCIeLQos7wacox4hmLQ",
+    channel: "Serie A",
     parse: (title) => {
       const m = title.match(/\|\s*([^|]+?)\s*-\s*([^|]+?)\s*\|\s*HIGHLIGHTS\b/i);
-      if (!m) return null;
       // the channel posts an Italian and an English version: Italian preferred
-      return { home: m[1], away: m[2], rank: /ENILIVE/i.test(title) ? 0 : 1 };
+      return m && { home: m[1], away: m[2], rank: /ENILIVE/i.test(title) ? 0 : 1 };
+    },
+  },
+  {
+    // "REAL SOCIEDAD 2 - 1 LEVANTE UD | RESUMEN LALIGA EA SPORTS"
+    key: "liga",
+    channelId: "UCTv-XvfzLX3i4IGWAm4sbmA",
+    channel: "LALIGA EA SPORTS",
+    parse: (title) => {
+      const m = title.match(/^\s*(.+?)\s+\d+\s*-\s*\d+\s+(.+?)\s*\|\s*RESUMEN\b/i);
+      return m && { home: m[1], away: m[2], rank: 0 };
+    },
+  },
+  {
+    // "Olise Punishes Late Blunder! | SC FREIBURG - FC BAYERN | Highlights | MD 7 – Bundesliga 2026/27"
+    key: "bundesliga",
+    channelId: "UC6UL29enLNe4mqwTfAyeNuw",
+    channel: "Bundesliga",
+    parse: (title) => {
+      const m = title.match(/\|\s*([^|]+?)\s+-\s+([^|]+?)\s*\|\s*Highlights\b/i);
+      return m && !/Bundesliga 2\b/i.test(title) && { home: m[1], away: m[2], rank: 0 };
+    },
+  },
+  {
+    // "Resumo: Rio Ave 0-4 Famalicão (Liga 26/27 #9)"
+    key: "primeira-liga",
+    channelId: "UCuIlu5oGIj1RzHOYmeSV5Eg",
+    channel: "VSPORTS - Liga Portugal",
+    parse: (title) => {
+      const m = title.match(/^\s*Resumo:\s*(.+?)\s+\d+\s*-\s*\d+\s+(.+?)\s*\(Liga\b/i);
+      return m && { home: m[1], away: m[2], rank: 0 };
+    },
+  },
+  {
+    // "LATE DRAMA! | Luton Town v Leicester City extended highlights" / "West Ham United v Southampton Highlights"
+    key: "championship",
+    channelId: "UCCmo_NIuQR5eU4AvBa6sEQQ",
+    channel: "EFL",
+    parse: (title) => {
+      const m = title.match(/(?:^|\|)\s*([^|]+?)\s+v\s+([^|]+?)\s+(extended highlights|highlights)\s*$/i);
+      return m && { home: m[1], away: m[2], rank: /extended/i.test(m[3]) ? 0 : 1 };
+    },
+  },
+  {
+    // "VASCO 3 X 2 CORINTHIANS | MELHORES MOMENTOS | 32ª RODADA | BRASILEIRÃO 2026 | ge.globo"
+    key: "brasileirao",
+    channelId: "UCgCKagVhzGnZcuP9bSMgMCg",
+    channel: "ge tv (Globo)",
+    parse: (title) => {
+      const m = title.match(/^\s*(.+?)\s+\d+\s*X\s*\d+\s+(.+?)\s*\|\s*MELHORES MOMENTOS\b.*BRASILEIR/i);
+      return m && { home: m[1], away: m[2], rank: 0 };
+    },
+  },
+  {
+    // "💫 OUAZANE met een BEAUTY ... 🏰 | Samenvatting Sparta - Ajax"
+    key: "eredivisie",
+    channelId: "UCXnPiEv1DoUCDAqDUXT9shQ",
+    channel: "ESPN NL",
+    parse: (title) => {
+      const m = title.match(/Samenvatting\s+(.+?)\s+-\s+(.+?)\s*$/i);
+      return m && { home: m[1], away: m[2], rank: 0 };
     },
   },
   {
     // "WARRIORS at SUNS | FULL GAME HIGHLIGHTS | October 24, 2026"
     key: "nba",
     channelId: "UCWJ2lWNubArHWmf3FIHbfcQ",
+    channel: "NBA",
     parse: (title) => {
       const m = title.match(/^\s*(.+?)\s+at\s+(.+?)\s*\|\s*FULL GAME HIGHLIGHTS\b/i);
-      return m ? { home: m[2], away: m[1], rank: 0 } : null;
+      return m && { home: m[2], away: m[1], rank: 0 };
     },
   },
 ];
 
 // ---------- names ----------
-const STOP = new Set(["FC", "AC", "AS", "SS", "SSC", "US", "ACF", "CFC", "BC", "CALCIO", "HELLAS", "SPA"]);
+// Generic words in club names, ignored when comparing ("FC Bayern München" ~ "FC BAYERN").
+const STOP = new Set(
+  "FC AC AS SS SSC US ACF CFC BC CALCIO HELLAS SPA SC SV VFL VFB TSV FSV TSG BSC AFC CF CD UD RC RCD SD CA SE EC FR FBC FBPA AF CR GD CS SBV".split(
+    " ",
+  ),
+);
+// How broadcasters name a few clubs, by football-data.org short code.
+const ALIASES = { CAM: ["Atlético-MG", "Atletico Mineiro"], CAP: ["Athletico-PR", "Athletico Paranaense"] };
+
 const norm = (s) =>
   s
     .normalize("NFD")
@@ -52,21 +122,19 @@ const norm = (s) =>
     .replace(/[^A-Z0-9 ]+/g, " ")
     .replace(/\s+/g, " ")
     .trim();
-/** Words that identify a team: "FC Internazionale Milano" + "Inter" → INTER, INTERNAZIONALE, MILANO. */
-function teamKeys(...names) {
-  const keys = new Set();
-  for (const n of names.filter(Boolean)) {
-    const full = norm(n);
-    keys.add(full);
-    const words = full.split(" ").filter((w) => !STOP.has(w) && !/^\d+$/.test(w));
-    if (words.length) keys.add(words.join(" "));
-  }
-  return keys;
+const tokens = (s) => new Set(norm(s).split(" ").filter((w) => w && !STOP.has(w) && !/^\d+$/.test(w)));
+const subset = (a, b) => a.size > 0 && [...a].every((w) => b.has(w));
+
+/** A team as the titles may name it: full name, short name, three-letter code and known aliases. */
+function team(t) {
+  const names = [t.name, t.shortName, t.tla, ...(ALIASES[t.tla] ?? [])].filter(Boolean);
+  const all = new Set(names.flatMap((n) => [...tokens(n)]));
+  return { all, names: names.map(tokens) };
 }
-/** The side named in the title is the team's short name, or its full name without the generic words. */
-function sameTeam(titleSide, keys) {
-  const t = norm(titleSide);
-  return [...keys].some((k) => k === t || (k.length > 3 && (k.endsWith(` ${t}`) || k.startsWith(`${t} `))));
+/** The title names the team if its words all belong to the team's names, or it contains one of the names whole. */
+function sameTeam(titleSide, t) {
+  const words = tokens(titleSide);
+  return subset(words, t.all) || t.names.some((n) => subset(n, words));
 }
 
 // ---------- feeds ----------
@@ -103,18 +171,14 @@ async function latestVideos(channelId) {
 }
 
 // ---------- matches ----------
+let football;
 function finishedMatches(key) {
-  if (key === "serie-a") {
-    const data = JSON.parse(fs.readFileSync(FOOTBALL, "utf8"));
-    const comp = data.competitions.find((c) => c.slug === "serie-a");
+  if (key !== "nba") {
+    football ??= JSON.parse(fs.readFileSync(FOOTBALL, "utf8"));
+    const comp = football.competitions.find((c) => c.slug === key);
     return (comp?.matches ?? [])
       .filter((m) => m.status === "FINISHED")
-      .map((m) => ({
-        id: m.id,
-        kickoff: m.utcDate,
-        home: teamKeys(m.homeTeam.shortName, m.homeTeam.name),
-        away: teamKeys(m.awayTeam.shortName, m.awayTeam.name),
-      }));
+      .map((m) => ({ id: m.id, kickoff: m.utcDate, home: team(m.homeTeam), away: team(m.awayTeam) }));
   }
   const data = JSON.parse(fs.readFileSync(BASKET, "utf8"));
   return data.nba.games
@@ -122,8 +186,8 @@ function finishedMatches(key) {
     .map((g) => ({
       id: g.id,
       kickoff: g.utcDate,
-      home: teamKeys(g.home.shortName, g.home.name),
-      away: teamKeys(g.away.shortName, g.away.name),
+      home: team({ name: g.home.name, shortName: g.home.shortName, tla: g.home.abbr }),
+      away: team({ name: g.away.name, shortName: g.away.shortName, tla: g.away.abbr }),
     }));
 }
 
@@ -157,7 +221,7 @@ for (const ch of CHANNELS) {
   out[ch.key] = Object.fromEntries(
     Object.entries(known)
       .filter(([id]) => ids.has(id))
-      .map(([id, { id: video, title, published }]) => [id, { video, title, published }]),
+      .map(([id, { id: video, title, published }]) => [id, { video, title, published, channel: ch.channel }]),
   );
   // forget videos of matches that left the data long ago
   for (const [id, v] of Object.entries(known)) {

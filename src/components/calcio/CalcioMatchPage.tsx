@@ -293,7 +293,7 @@ export function CalcioMatchPage() {
         {finished && (
           <div className="lg:col-span-3 min-w-0 space-y-6">
             <FootballBoxScore match={match} />
-            {highlight && <HighlightVideo highlight={highlight} channel={competition.name} />}
+            {highlight && <HighlightVideo highlight={highlight} channel={highlight.channel ?? competition.name} />}
           </div>
         )}
         <div className="lg:col-span-2 space-y-6 min-w-0">

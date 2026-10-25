@@ -42,7 +42,7 @@ export function HighlightVideo({ highlight, channel }: { highlight: Highlight; c
         )}
       </div>
       <p className="text-slate-400 text-xs mt-3">
-        Video del canale YouTube ufficiale {channel}. Con il clic il video viene caricato da YouTube (Google), che può
+        Video del canale YouTube ufficiale «{channel}». Con il clic il video viene caricato da YouTube (Google), che può
         usare cookie: vedi la <Link to={paths.cookie}>cookie policy</Link>.{" "}
         <a
           href={`https://www.youtube.com/watch?v=${highlight.video}`}

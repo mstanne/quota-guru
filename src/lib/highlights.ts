@@ -7,10 +7,12 @@ export interface Highlight {
   title: string;
   /** ISO date the video was published. */
   published: string;
+  /** Official channel that published it. */
+  channel?: string;
 }
-type League = "serie-a" | "nba";
 
-const data = raw as unknown as Partial<Record<League, Record<string, Highlight>>>;
+/** Keyed by football competition slug ("serie-a", "liga", …) or "nba", then by match id. */
+const data = raw as unknown as Record<string, Record<string, Highlight> | undefined>;
 
-export const highlightFor = (league: League, matchId: number): Highlight | undefined =>
+export const highlightFor = (league: string, matchId: number): Highlight | undefined =>
   data[league]?.[String(matchId)];

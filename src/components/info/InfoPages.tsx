@@ -600,7 +600,7 @@ export function CookiePage() {
       )}
       <h2>Video di YouTube (solo se li avvii)</h2>
       <p>
-        Nelle pagine delle partite finite possono comparire gli highlights ufficiali pubblicati su YouTube dalle leghe.
+        Nelle pagine delle partite finite possono comparire gli highlights ufficiali pubblicati su YouTube dalle leghe o dalle emittenti titolari dei diritti.
         Finché non clicchi sul video non viene caricato nulla da YouTube. Quando lo avvii, il video viene caricato in
         modalità di privacy avanzata (youtube-nocookie.com) da Google Ireland Ltd, che può impostare cookie e
         trattare dati di navigazione secondo la propria informativa (policies.google.com/privacy). Avviare il video

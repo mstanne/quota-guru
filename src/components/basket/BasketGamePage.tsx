@@ -108,7 +108,7 @@ export function BasketGamePage() {
 
       <div className="container mx-auto px-4 py-8 space-y-6">
         {finished && <BasketBoxScore game={game} />}
-        {highlight && <HighlightVideo highlight={highlight} channel="NBA" />}
+        {highlight && <HighlightVideo highlight={highlight} channel={highlight.channel ?? "NBA"} />}
 
         {prediction && (!finished || prediction.pre) && (
           <BasketPredictionPanel

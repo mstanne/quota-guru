@@ -77,7 +77,7 @@ jobs:
           BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
 
       - name: Find official highlights on YouTube
-        # Serie A and NBA channels; optional free YOUTUBE_API_KEY secret reads 50 uploads instead of 15.
+        # Official league / broadcaster channels; optional free YOUTUBE_API_KEY secret reads 50 uploads instead of 15.
         run: node scripts/fetch-highlights.mjs
         continue-on-error: true
         env:
