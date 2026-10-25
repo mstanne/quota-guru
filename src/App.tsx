@@ -38,6 +38,9 @@ const GuideArticlePage = lazyPage(() =>
 const GuideCategoryPage = lazyPage(() =>
   import("./components/guides/GuideCategoryPage").then((m) => m.GuideCategoryPage),
 );
+const FootballTeamPage = lazyPage(() => import("./components/teams/FootballTeamPage").then((m) => m.FootballTeamPage));
+const NbaTeamPage = lazyPage(() => import("./components/teams/NbaTeamPage").then((m) => m.NbaTeamPage));
+const TeamsIndexPage = lazyPage(() => import("./components/teams/TeamsIndexPage").then((m) => m.TeamsIndexPage));
 const info = () => import("./components/info/InfoPages");
 const ChiSiamoPage = lazyPage(() => info().then((m) => m.ChiSiamoPage));
 const ContattiPage = lazyPage(() => info().then((m) => m.ContattiPage));
@@ -52,6 +55,10 @@ const CookiePage = lazyPage(() => info().then((m) => m.CookiePage));
 const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/", [UpcomingMatches]],
   [paths.calcio, [CalcioPage]],
+  ["/calcio/squadre", [TeamsIndexPage]],
+  ["/calcio/squadre/:squadra", [FootballTeamPage, NotFoundPage]],
+  ["/basket/nba/squadre", [TeamsIndexPage]],
+  ["/basket/nba/squadre/:squadra", [NbaTeamPage, NotFoundPage]],
   ["/calcio/:competizione", [CalcioPage, NotFoundPage]],
   ["/calcio/:competizione/classifica", [StandingsPage, NotFoundPage]],
   ["/calcio/:competizione/:partita", [CalcioMatchPage, NotFoundPage]],
@@ -81,7 +88,11 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
 export function preloadForPath(pathname: string) {
   const clean = pathname !== "/" ? pathname.replace(/\/+$/, "") : "/";
   const hit = PRELOAD.find(([pattern]) => matchPath({ path: pattern, end: true }, clean));
-  return Promise.all((hit ? hit[1] : [NotFoundPage]).map((p) => p.preload()));
+  // team pages also need their league's data (loaded with the team module, kept out of the main bundle)
+  const team = /^\/(calcio|basket\/nba)\/squadre\/[^/]+$/.test(clean)
+    ? import("./lib/teams").then((m) => m.preloadTeamData(clean))
+    : null;
+  return Promise.all([...(hit ? hit[1] : [NotFoundPage]).map((p) => p.preload()), team]);
 }
 
 function PageLoading() {
@@ -148,6 +159,10 @@ export default function App() {
           <Route element={<SiteLayout />}>
             <Route index element={<HomePage />} />
             <Route path={paths.calcio} element={<CalcioPage />} />
+            <Route path="/calcio/squadre" element={<TeamsIndexPage sport="football" />} />
+            <Route path="/calcio/squadre/:squadra" element={<FootballTeamPage />} />
+            <Route path="/basket/nba/squadre" element={<TeamsIndexPage sport="nba" />} />
+            <Route path="/basket/nba/squadre/:squadra" element={<NbaTeamPage />} />
             <Route path="/calcio/:competizione" element={<CalcioPage />} />
             <Route path="/calcio/:competizione/classifica" element={<StandingsPage />} />
             <Route path="/calcio/:competizione/:partita" element={<CalcioMatchPage />} />

@@ -319,6 +319,25 @@ largo, punti totali e tabella dei quarti (NBA). Componenti: `FootballBoxScore.ts
   `https://www.quotaguru.it/stato-dati.json`. Migliore in campo: voto più alto di API-Football (calcio), Game Score
   più alto calcolato da noi (NBA). La cronaca è costruita solo dagli eventi.
 
+## Pagine delle squadre
+
+`/calcio/squadre/<squadra>` (club dei campionati nazionali) e `/basket/nba/squadre/<squadra>`, con le pagine indice
+`/calcio/squadre` e `/basket/nba/squadre`. I nomi delle squadre in classifiche e schede partita portano alla pagina.
+
+- **Società e rosa (calcio)**: `scripts/fetch-football-data.mjs` scarica `/competitions/{code}/teams` (1 richiesta per
+  campionato) in `data/football-teams.json`: indirizzo, sito, fondazione, colori, stadio, allenatore e rosa. Stadio con
+  capienza e anno di fondazione arrivano anche da API-Football.
+- **Stagione per stagione**: classifica, punti, vittorie/pareggi/sconfitte, gol e rendimento in casa e in trasferta,
+  calcolati da `data/football-history.json` e `data/basket-history.json` (stagione in corso: classifica ufficiale).
+  Se lo storico di una stagione è incompleto la pagina lo segnala.
+- **Statistiche dei giocatori per stagione**: `scripts/fetch-match-details.mjs`, con le richieste API-Sports rimaste
+  dopo i dettagli delle partite. Calcio: presenze, minuti, gol, assist, cartellini e voto medio in tutte le
+  competizioni (stagione in corso e due precedenti, prima la Serie A); NBA: roster e medie a partita (stagione in corso
+  e precedente). Le stagioni passate si scaricano una volta sola (`.cache/match-details`), quella in corso ogni pochi
+  giorni: le pagine si completano nel giro di qualche settimana.
+- `scripts/derive-teams.mjs` (a ogni build) unisce tutto in `src/data/teams/` (un file per campionato, caricato solo
+  dalle pagine di quel campionato) e traduce in italiano nazionalità e colori sociali.
+
 ## Testi editoriali delle partite (agente)
 
 Ogni pagina partita di calcio e NBA mostra un testo: **anteprima** prima del fischio d'inizio (per le partite dei

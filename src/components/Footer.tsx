@@ -43,6 +43,16 @@ export function Footer() {
                   Basket
                 </Link>
               </li>
+              <li>
+                <Link to={paths.squadreCalcio} className="text-slate-400 hover:text-white transition-colors">
+                  Squadre di calcio
+                </Link>
+              </li>
+              <li>
+                <Link to={paths.squadreNba} className="text-slate-400 hover:text-white transition-colors">
+                  Squadre NBA
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

@@ -8,6 +8,7 @@ import { BasketPredictionPanel } from "./BasketPrediction";
 import { basketPredictionFor } from "../../lib/basketPredict";
 import { BasketGameRow } from "./BasketGameRow";
 import { BasketBoxScore } from "./BasketBoxScore";
+import { TeamName } from "../teams/TeamLink";
 import { BasketPlayerStats } from "./BasketPlayerStats";
 import { nbaDetailsFor } from "../../lib/basketDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
@@ -84,7 +85,7 @@ export function BasketGamePage() {
               t ? (
                 <div key={t.id} className="flex flex-col items-center text-center gap-3">
                   <TeamBadge team={{ tla: t.abbr, shortName: t.name, crest: null }} size="lg" />
-                  <span className="text-white text-lg sm:text-2xl">{t.name}</span>
+                  <TeamName id={t.id} name={t.name} sport="nba" className="text-white text-lg sm:text-2xl" />
                   <span className="text-slate-400 text-xs">{i === 0 ? "In casa" : "In trasferta"}</span>
                 </div>
               ) : (

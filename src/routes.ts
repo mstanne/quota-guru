@@ -30,6 +30,8 @@ export const paths = {
   guide: "/guide",
   // first guide (used for #responsabile links); all guides: src/data/guides.ts
   guidaDettaglio: "/guide/guida-completa-scommesse-sportive",
+  squadreCalcio: "/calcio/squadre",
+  squadreNba: "/basket/nba/squadre",
   chiSiamo: "/chi-siamo",
   contatti: "/contatti",
   faq: "/faq",
@@ -79,6 +81,17 @@ export const routes: RouteMeta[] = [
     path: paths.guide,
     title: "Guide alle scommesse sportive",
     description: "Impara a leggere le quote, gestire il bankroll e scommettere in modo responsabile.",
+  },
+  {
+    path: paths.squadreCalcio,
+    title: "Squadre di calcio: rose, statistiche e stagioni",
+    description:
+      "Le squadre di Serie A, Premier League, LaLiga, Bundesliga, Ligue 1 e degli altri campionati: società, rosa e statistiche stagione per stagione.",
+  },
+  {
+    path: paths.squadreNba,
+    title: "Squadre NBA: roster, statistiche e stagioni",
+    description: "Le 30 squadre NBA: roster, record e statistiche dei giocatori stagione per stagione.",
   },
   {
     path: paths.chiSiamo,

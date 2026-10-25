@@ -9,6 +9,18 @@ import { footballRoutes } from "./lib/footballRoutes";
 import { basketRoutes } from "./lib/basket";
 import { basketPredictionFor } from "./lib/basketPredict";
 import { highlightFor } from "./lib/highlights";
+import { loadAllTeamData, type FootballTeam, type NbaTeam } from "./lib/teams";
+import { footballTeamMeta, nbaTeamMeta } from "./lib/teamMeta";
+import nbaTeamsData from "./data/teams/nba.json";
+
+// team pages (server only: every league file is bundled here)
+const footballTeamFiles = import.meta.glob<{ default: Record<string, FootballTeam> }>("./data/teams/football-*.json", {
+  eager: true,
+});
+const teamRoutes = () => [
+  ...Object.values(footballTeamFiles).flatMap((f) => Object.values(f.default).map(footballTeamMeta)),
+  ...Object.values(nbaTeamsData as unknown as Record<string, NbaTeam>).map(nbaTeamMeta),
+];
 import { guideRoutes } from "./data/guides";
 import { tennisRoutes } from "./lib/tennis";
 import { preloadAllPages } from "./lib/lazyPage";
@@ -16,9 +28,11 @@ import { setArchivedHtml } from "./lib/archive";
 
 export { notFoundMeta, fullTitle } from "./routes";
 export { site } from "./data/site";
-export { preloadAllPages };
+/** Page chunks and the data loaded on demand (team pages) must all be ready before rendering synchronously. */
+const preloadAll = () => Promise.all([preloadAllPages(), loadAllTeamData()]);
+export { preloadAll as preloadAllPages };
 /** Every URL to pre-render: static pages + one page per competition, standings table and match. */
-export const routes = [...staticRoutes, ...footballRoutes(), ...basketRoutes((id) => !!basketPredictionFor(id), (id) => highlightFor("nba", id)), ...tennisRoutes(), ...guideRoutes()];
+export const routes = [...staticRoutes, ...footballRoutes(), ...basketRoutes((id) => !!basketPredictionFor(id), (id) => highlightFor("nba", id)), ...tennisRoutes(), ...guideRoutes(), ...teamRoutes()];
 
 /** `archivedHtml`: stored HTML of a finished match no longer in the data (see src/lib/archive.tsx). */
 export function render(url: string, basename: string, archivedHtml: string | null = null) {
