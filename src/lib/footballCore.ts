@@ -2,7 +2,7 @@
 // No data import here, so components that only format matches do not pull the full snapshot into their JS chunk.
 
 import { isOverdue } from "./eventTiming.mjs";
-import { sportsEvent } from "./schema";
+import { sportsEvent, videoObject } from "./schema";
 
 export interface Team {
   id: number;
@@ -227,7 +227,12 @@ export function standingsMeta(c: Competition) {
   };
 }
 /** `predicted`: the model has a prediction for this match (title and description mention it only then). */
-export function matchMeta(c: Competition, m: Match, predicted = false) {
+export function matchMeta(
+  c: Competition,
+  m: Match,
+  predicted = false,
+  video?: { video: string; title: string; published: string },
+) {
   const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
   const when = `${formatDay(m.utcDate)} ore ${formatTime(m.utcDate)}`;
   const path = matchPath(c, m);
@@ -255,6 +260,7 @@ export function matchMeta(c: Competition, m: Match, predicted = false) {
         away: { name: m.awayTeam.name, logo: m.awayTeam.crest },
         status: m.status === "POSTPONED" ? "postponed" : m.status === "CANCELLED" ? "cancelled" : "scheduled",
       }),
+      ...(video ? [videoObject(video, `Gli highlights ufficiali di ${teams} (${c.name}).`)] : []),
     ],
   };
 }

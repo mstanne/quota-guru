@@ -32,6 +32,8 @@ import { predictionFor } from "../../lib/predictions";
 import { PredictionPanel } from "../predictions/PredictionUi";
 import { MatchRow, TeamBadge } from "./MatchRow";
 import { FootballBoxScore } from "./FootballBoxScore";
+import { HighlightVideo } from "../media/HighlightVideo";
+import { highlightOf } from "../../lib/footballRoutes";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 import { ArchivedOrNotFound } from "../../lib/archive";
 
@@ -212,6 +214,7 @@ export function CalcioMatchPage() {
   const away = standingOf(competition, match.awayTeam.id);
   const h2h = headToHead(match);
   const prediction = predictionFor(match.id);
+  const highlight = finished ? highlightOf(competition, match) : undefined;
   const sameRound = competition.matches.filter(
     (m) => m.matchday === match.matchday && m.stage === match.stage && m.id !== match.id,
   );
@@ -288,8 +291,9 @@ export function CalcioMatchPage() {
 
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
         {finished && (
-          <div className="lg:col-span-3 min-w-0">
+          <div className="lg:col-span-3 min-w-0 space-y-6">
             <FootballBoxScore match={match} />
+            {highlight && <HighlightVideo highlight={highlight} channel={competition.name} />}
           </div>
         )}
         <div className="lg:col-span-2 space-y-6 min-w-0">

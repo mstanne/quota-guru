@@ -301,6 +301,11 @@ largo, punti totali e tabella dei quarti (NBA). Componenti: `FootballBoxScore.ts
 - **Marcatori e cartellini (calcio)**: `scripts/fetch-football-data.mjs` li chiede a football-data.org per le partite
   finite negli ultimi giorni (una richiesta per partita, salvata in `.cache/match-details`). Se il piano non li
   fornisce lo registra e riprova dopo 7 giorni; quando arrivano compaiono nel tabellino senza altre modifiche.
+- **Highlights ufficiali** (Serie A e NBA): `scripts/fetch-highlights.mjs` cerca nei canali YouTube ufficiali il video
+  di sintesi di ogni partita finita e scrive `src/data/highlights.json`. La pagina mostra il video sotto il tabellino
+  e lo carica da youtube-nocookie.com solo al clic (prima non parte nessuna richiesta verso Google); i dati
+  strutturati includono un `VideoObject`. Senza chiave legge gli ultimi 15 video di ogni canale; con il secret
+  facoltativo `YOUTUBE_API_KEY` (chiave gratuita della YouTube Data API v3) ne legge 50, utile nelle notti NBA più piene.
 - Formazioni, statistiche di squadra, migliore in campo e cronaca richiedono fonti a pagamento (componenti aggiuntivi
   di football-data.org per il calcio, piano GOAT di BALLDONTLIE per l'NBA).
 

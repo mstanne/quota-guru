@@ -596,8 +596,16 @@ export function CookiePage() {
           </p>
         </>
       ) : (
-        <p>Al momento il sito non usa strumenti di statistica né cookie di terze parti.</p>
+        <p>Al momento il sito non usa strumenti di statistica.</p>
       )}
+      <h2>Video di YouTube (solo se li avvii)</h2>
+      <p>
+        Nelle pagine delle partite finite possono comparire gli highlights ufficiali pubblicati su YouTube dalle leghe.
+        Finché non clicchi sul video non viene caricato nulla da YouTube. Quando lo avvii, il video viene caricato in
+        modalità di privacy avanzata (youtube-nocookie.com) da Google Ireland Ltd, che può impostare cookie e
+        trattare dati di navigazione secondo la propria informativa (policies.google.com/privacy). Avviare il video
+        equivale a richiederlo: se preferisci, usa il link "Apri su YouTube".
+      </p>
       <h2>Come cambiare le preferenze</h2>
       <p>
         {analyticsConfigured ? (

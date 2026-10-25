@@ -41,7 +41,8 @@ jobs:
         # Kept between builds (scripts/prerender.mjs, scripts/fetch-football-data.mjs):
         #   .cache/seo            date of the last real change of every page (sitemap <lastmod>) and the archive of
         #                         finished match pages, published even after the matches leave the data window;
-        #   .cache/match-details  goals and cards already downloaded for finished matches (when the plan has them).
+        #   .cache/match-details  goals and cards already downloaded for finished matches (when the plan has them)
+        #                         and the YouTube highlights already found.
         # A new entry is saved at every run; restore-keys picks the most recent one.
         uses: actions/cache@v6
         with:
@@ -74,6 +75,13 @@ jobs:
         continue-on-error: true
         env:
           BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+
+      - name: Find official highlights on YouTube
+        # Serie A and NBA channels; optional free YOUTUBE_API_KEY secret reads 50 uploads instead of 15.
+        run: node scripts/fetch-highlights.mjs
+        continue-on-error: true
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
       - name: Restore editorial cache
         # Claude rewrites already accepted: unchanged texts are not rewritten (or paid for) again

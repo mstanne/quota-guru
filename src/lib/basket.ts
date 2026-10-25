@@ -1,7 +1,7 @@
 // Basketball data from the BALLDONTLIE snapshot (src/data/basket.json, refreshed by scripts/fetch-basket-data.mjs):
 // NBA calendar/results and Lega Basket Serie A standings.
 import raw from "../data/basket.json";
-import { sportsEvent } from "./schema";
+import { sportsEvent, videoObject } from "./schema";
 import { formatDay, formatTime, referenceTime, romeDay, slugify } from "./footballCore";
 import { isOverdue } from "./eventTiming.mjs";
 
@@ -89,7 +89,11 @@ export const gameRoundLabel = (g: BasketGame) => (g.postseason ? "Playoff" : "St
 // ---------- SEO metadata ----------
 const teams = (g: BasketGame) => `${g.home.name} – ${g.away.name}`;
 /** `predicted`: the model has a prediction for this game (title and description mention it only then). */
-export function gameMeta(g: BasketGame, predicted = false) {
+export function gameMeta(
+  g: BasketGame,
+  predicted = false,
+  video?: { video: string; title: string; published: string },
+) {
   const when = `${formatDay(g.utcDate)} ore ${formatTime(g.utcDate)}`;
   const path = gamePath(g);
   const description = isGameFinished(g)
@@ -116,6 +120,7 @@ export function gameMeta(g: BasketGame, predicted = false) {
         away: { name: g.away.name },
         status: g.status === "postponed" ? "postponed" : "scheduled",
       }),
+      ...(video ? [videoObject(video, `Gli highlights ufficiali di ${teams(g)} (NBA).`)] : []),
     ],
   };
 }
@@ -133,6 +138,9 @@ export const lbaMeta = {
 };
 
 /** `predicted(id)`: whether a game has a prediction (passed in to keep the predictions out of this module). */
-export function basketRoutes(predicted: (gameId: number) => boolean = () => false) {
-  return [nbaMeta, ...(lbaStandings.length ? [lbaMeta] : []), ...nbaGames.map((g) => gameMeta(g, predicted(g.id)))];
+export function basketRoutes(
+  predicted: (gameId: number) => boolean = () => false,
+  video: (gameId: number) => { video: string; title: string; published: string } | undefined = () => undefined,
+) {
+  return [nbaMeta, ...(lbaStandings.length ? [lbaMeta] : []), ...nbaGames.map((g) => gameMeta(g, predicted(g.id), video(g.id)))];
 }
