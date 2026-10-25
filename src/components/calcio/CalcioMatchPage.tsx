@@ -31,6 +31,11 @@ import { MatchEditorial } from "../editorial/MatchEditorial";
 import { predictionFor } from "../../lib/predictions";
 import { PredictionPanel } from "../predictions/PredictionUi";
 import { MatchRow, TeamBadge } from "./MatchRow";
+import { FootballBoxScore } from "./FootballBoxScore";
+import { FootballMatchDetails } from "./FootballMatchDetails";
+import { footballDetailsFor } from "../../lib/footballDetails";
+import { HighlightVideo } from "../media/HighlightVideo";
+import { highlightOf } from "../../lib/footballRoutes";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 import { ArchivedOrNotFound } from "../../lib/archive";
 
@@ -211,6 +216,8 @@ export function CalcioMatchPage() {
   const away = standingOf(competition, match.awayTeam.id);
   const h2h = headToHead(match);
   const prediction = predictionFor(match.id);
+  const highlight = finished ? highlightOf(competition, match) : undefined;
+  const details = finished ? footballDetailsFor(match.id) : undefined;
   const sameRound = competition.matches.filter(
     (m) => m.matchday === match.matchday && m.stage === match.stage && m.id !== match.id,
   );
@@ -286,6 +293,13 @@ export function CalcioMatchPage() {
       </div>
 
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        {finished && (
+          <div className="lg:col-span-3 min-w-0 space-y-6">
+            <FootballBoxScore match={match} details={details} />
+            {highlight && <HighlightVideo highlight={highlight} channel={highlight.channel ?? competition.name} />}
+            {details && <FootballMatchDetails match={match} details={details} />}
+          </div>
+        )}
         <div className="lg:col-span-2 space-y-6 min-w-0">
           {prediction && (!finished || prediction.pre) && (
             <PredictionPanel

@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "offers:check": "node scripts/check-offers.mjs",
-    "data": "node scripts/fetch-football-data.mjs && node scripts/fetch-basket-data.mjs && node scripts/fetch-tennis-data.mjs && node scripts/predict-football.mjs && node scripts/derive-football-home.mjs && node scripts/predict-basket.mjs && node scripts/predict-tennis.mjs && node scripts/generate-editorial.mjs",
+    "data": "node scripts/fetch-football-data.mjs && node scripts/fetch-basket-data.mjs && node scripts/fetch-tennis-data.mjs && node scripts/fetch-highlights.mjs && node scripts/fetch-match-details.mjs && node scripts/predict-football.mjs && node scripts/derive-football-home.mjs && node scripts/predict-basket.mjs && node scripts/predict-tennis.mjs && node scripts/generate-editorial.mjs",
     "editorial": "node scripts/generate-editorial.mjs",
     "predict": "node scripts/predict-football.mjs && node scripts/derive-football-home.mjs && node scripts/predict-basket.mjs && node scripts/predict-tennis.mjs",
     "predict:backtest": "node scripts/predict-football.mjs --backtest && node scripts/predict-basket.mjs --backtest",

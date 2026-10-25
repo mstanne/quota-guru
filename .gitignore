@@ -31,3 +31,4 @@ Thumbs.db
 dist-ssr/
 .cache/
 scripts/offers-agent/rapporti/
+/public/stato-dati.json

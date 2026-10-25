@@ -2,7 +2,7 @@
 // No data import here, so components that only format matches do not pull the full snapshot into their JS chunk.
 
 import { isOverdue } from "./eventTiming.mjs";
-import { sportsEvent } from "./schema";
+import { sportsEvent, videoObject } from "./schema";
 
 export interface Team {
   id: number;
@@ -37,8 +37,35 @@ export interface Match {
   group: string | null;
   homeTeam: Team;
   awayTeam: Team;
-  score: { winner: "HOME_TEAM" | "AWAY_TEAM" | "DRAW" | null; fullTime: Score; halfTime: Score };
+  score: {
+    winner: "HOME_TEAM" | "AWAY_TEAM" | "DRAW" | null;
+    fullTime: Score;
+    halfTime: Score;
+    /** Only for matches that did not end after 90 minutes. */
+    duration?: "EXTRA_TIME" | "PENALTY_SHOOTOUT";
+    regularTime?: Score | null;
+    extraTime?: Score | null;
+    penalties?: Score | null;
+  };
   referee: string | null;
+  /** Goals and cards: only when the data plan provides them (scripts/fetch-football-data.mjs). */
+  goals?: MatchGoal[];
+  cards?: MatchCard[];
+}
+export interface MatchGoal {
+  minute: number;
+  injuryTime: number | null;
+  type: "REGULAR" | "OWN" | "PENALTY";
+  /** Team credited with the goal. */
+  team: number;
+  scorer: string | null;
+  assist: string | null;
+}
+export interface MatchCard {
+  minute: number;
+  team: number;
+  player: string | null;
+  card: "YELLOW" | "YELLOW_RED" | "RED";
 }
 export interface StandingRow {
   position: number;
@@ -200,7 +227,12 @@ export function standingsMeta(c: Competition) {
   };
 }
 /** `predicted`: the model has a prediction for this match (title and description mention it only then). */
-export function matchMeta(c: Competition, m: Match, predicted = false) {
+export function matchMeta(
+  c: Competition,
+  m: Match,
+  predicted = false,
+  video?: { video: string; title: string; published: string },
+) {
   const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
   const when = `${formatDay(m.utcDate)} ore ${formatTime(m.utcDate)}`;
   const path = matchPath(c, m);
@@ -228,6 +260,7 @@ export function matchMeta(c: Competition, m: Match, predicted = false) {
         away: { name: m.awayTeam.name, logo: m.awayTeam.crest },
         status: m.status === "POSTPONED" ? "postponed" : m.status === "CANCELLED" ? "cancelled" : "scheduled",
       }),
+      ...(video ? [videoObject(video, `Gli highlights ufficiali di ${teams} (${c.name}).`)] : []),
     ],
   };
 }

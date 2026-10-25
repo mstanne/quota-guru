@@ -291,6 +291,34 @@ Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e 
   illustrazioni con `npm run og` (da rilanciare quando aggiungi o cambi un'illustrazione). Senza PNG si usa
   `og-image.png`.
 
+## Tabellino delle partite finite
+
+In cima alla pagina di ogni partita finita compare il **tabellino**, calcolato dai dati scaricati: risultato
+(anche dopo supplementari e rigori), primo e secondo tempo, esito, eventuale rimonta, gol totali (Over/Under 2,5)
+e "entrambe a segno" sui 90', arbitro (calcio); risultato, intervallo, secondo tempo, supplementari, parziale più
+largo, punti totali e tabella dei quarti (NBA). Componenti: `FootballBoxScore.tsx`, `BasketBoxScore.tsx`.
+
+- **Marcatori e cartellini (calcio)**: `scripts/fetch-football-data.mjs` li chiede a football-data.org per le partite
+  finite negli ultimi giorni (una richiesta per partita, salvata in `.cache/match-details`). Se il piano non li
+  fornisce lo registra e riprova dopo 7 giorni; quando arrivano compaiono nel tabellino senza altre modifiche.
+- **Highlights ufficiali** (Serie A, LaLiga, Bundesliga, Primeira Liga, Championship, Eredivisie e NBA;
+  non Champions League, Premier League e Ligue 1, che su YouTube non pubblicano le sintesi delle partite, né il
+  Brasileirão, le cui sintesi su YouTube sono bloccate in Italia):
+  `scripts/fetch-highlights.mjs` cerca nei canali YouTube ufficiali delle leghe o delle emittenti titolari il video
+  di sintesi di ogni partita finita e scrive `src/data/highlights.json`. La pagina mostra il video sotto il tabellino
+  e lo carica da youtube-nocookie.com solo al clic (prima non parte nessuna richiesta verso Google); i dati
+  strutturati includono un `VideoObject`. Senza chiave legge gli ultimi 15 video di ogni canale; con il secret
+  facoltativo `YOUTUBE_API_KEY` (chiave gratuita della YouTube Data API v3) ne legge 50, utile nelle notti NBA più piene.
+- **Formazioni, statistiche, migliore in campo e cronaca** (API-Sports, secret `API_FOOTBALL_KEY`):
+  `scripts/fetch-match-details.mjs` scarica per le partite finite degli ultimi 3 giorni eventi, formazioni, statistiche
+  e voti dei giocatori (API-Football) e le statistiche dei giocatori NBA (API-NBA, stessa chiave), e scrive
+  `src/data/football-details.json` e `src/data/basket-details.json`. Ogni partita costa 4 richieste (calcio) o 1
+  (NBA) una sola volta; il piano gratuito ne concede 100 al giorno per sport, usate nell'ordine dei campionati (prima
+  la Serie A). Prima di salvare controlla che il risultato coincida con quello dei nostri dati. Se il piano non copre
+  la stagione in corso lo registra e riprova il giorno dopo. L'esito dell'ultima esecuzione è in
+  `https://www.quotaguru.it/stato-dati.json`. Migliore in campo: voto più alto di API-Football (calcio), Game Score
+  più alto calcolato da noi (NBA). La cronaca è costruita solo dagli eventi.
+
 ## Testi editoriali delle partite (agente)
 
 Ogni pagina partita di calcio e NBA mostra un testo: **anteprima** prima del fischio d'inizio (per le partite dei

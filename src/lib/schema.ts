@@ -42,6 +42,19 @@ export function sportsEvent(e: {
   };
 }
 
+/** VideoObject for an embedded YouTube video (Google video results). */
+export function videoObject(v: { video: string; title: string; published: string }, description: string) {
+  return {
+    "@type": "VideoObject",
+    name: v.title,
+    description,
+    thumbnailUrl: `https://i.ytimg.com/vi/${v.video}/hqdefault.jpg`,
+    uploadDate: v.published,
+    embedUrl: `https://www.youtube-nocookie.com/embed/${v.video}`,
+    contentUrl: `https://www.youtube.com/watch?v=${v.video}`,
+  };
+}
+
 /** "13 ottobre 2026" → "2026-10-13" (undefined if the text is not a date). */
 const MONTHS = [
   "gennaio",

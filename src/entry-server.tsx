@@ -8,6 +8,7 @@ import { routes as staticRoutes } from "./routes";
 import { footballRoutes } from "./lib/footballRoutes";
 import { basketRoutes } from "./lib/basket";
 import { basketPredictionFor } from "./lib/basketPredict";
+import { highlightFor } from "./lib/highlights";
 import { guideRoutes } from "./data/guides";
 import { tennisRoutes } from "./lib/tennis";
 import { preloadAllPages } from "./lib/lazyPage";
@@ -17,7 +18,7 @@ export { notFoundMeta, fullTitle } from "./routes";
 export { site } from "./data/site";
 export { preloadAllPages };
 /** Every URL to pre-render: static pages + one page per competition, standings table and match. */
-export const routes = [...staticRoutes, ...footballRoutes(), ...basketRoutes((id) => !!basketPredictionFor(id)), ...tennisRoutes(), ...guideRoutes()];
+export const routes = [...staticRoutes, ...footballRoutes(), ...basketRoutes((id) => !!basketPredictionFor(id), (id) => highlightFor("nba", id)), ...tennisRoutes(), ...guideRoutes()];
 
 /** `archivedHtml`: stored HTML of a finished match no longer in the data (see src/lib/archive.tsx). */
 export function render(url: string, basename: string, archivedHtml: string | null = null) {

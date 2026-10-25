@@ -37,6 +37,23 @@ jobs:
 
       - run: npm ci
 
+      - name: Restore state between runs
+        # Kept between builds (scripts/prerender.mjs, scripts/fetch-football-data.mjs):
+        #   .cache/seo            date of the last real change of every page (sitemap <lastmod>) and the archive of
+        #                         finished match pages, published even after the matches leave the data window;
+        #   .cache/match-details  goals and cards already downloaded for finished matches (when the plan has them)
+        #                         the YouTube highlights already found and the API-Sports details (line-ups, stats…).
+        # A new entry is saved at every run; restore-keys picks the most recent one.
+        uses: actions/cache@v6
+        with:
+          path: |
+            .cache/seo
+            .cache/match-details
+          key: state-${{ github.run_id }}
+          restore-keys: |
+            state-
+            seo-
+
       - name: Download football data
         # Uses the secret only here; without it the committed snapshot in src/data is used.
         run: node scripts/fetch-football-data.mjs
@@ -59,6 +76,21 @@ jobs:
         env:
           BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
 
+      - name: Match details from API-Sports
+        # Line-ups, events, statistics and ratings (football), box scores (NBA) of finished matches;
+        # without the API_FOOTBALL_KEY secret the committed files are used. Results: /stato-dati.json on the site.
+        run: node scripts/fetch-match-details.mjs
+        continue-on-error: true
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+
+      - name: Find official highlights on YouTube
+        # Official league / broadcaster channels; optional free YOUTUBE_API_KEY secret reads 50 uploads instead of 15.
+        run: node scripts/fetch-highlights.mjs
+        continue-on-error: true
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
       - name: Restore editorial cache
         # Claude rewrites already accepted: unchanged texts are not rewritten (or paid for) again
         uses: actions/cache@v6
@@ -77,16 +109,6 @@ jobs:
           EDITORIAL_AI: ${{ vars.EDITORIAL_AI }}
           EDITORIAL_AI_MODEL: ${{ vars.EDITORIAL_AI_MODEL }}
           EDITORIAL_AI_MAX: ${{ vars.EDITORIAL_AI_MAX }}
-
-      - name: Restore SEO state
-        # Kept between builds: date of the last real change of every page (sitemap <lastmod>) and the archive of
-        # finished match pages, published even after the matches leave the data window (scripts/prerender.mjs).
-        # A new entry is saved at every run; restore-keys picks the most recent one.
-        uses: actions/cache@v6
-        with:
-          path: .cache/seo
-          key: seo-${{ github.run_id }}
-          restore-keys: seo-
 
       - name: Build
         run: npm run build
