@@ -12,6 +12,14 @@ import { site, isFilled } from "../../data/site";
 import { responsibleGambling as rg } from "../../data/operators";
 import { analyticsConfigured } from "../../lib/analytics";
 import { paths } from "../../routes";
+import footballHome from "../../data/football-home.json";
+
+// Model summary written by scripts/derive-football-home.mjs (from football-predictions.json)
+const model = (
+  footballHome as unknown as {
+    model: { results: number; from: string | null; track: { n: number; hits: number; logLoss: number } } | null;
+  }
+).model;
 
 /** Readable long-form text on the dark theme (no typography plugin needed). */
 function Prose({ children }: { children: ReactNode }) {
@@ -167,6 +175,17 @@ const FAQ: { q: string; a: ReactNode }[] = [
     a: `Mostriamo solo operatori con concessione dell'${rg.regulatorName}; il numero di concessione è indicato nella scheda di ogni operatore e si può verificare sul sito adm.gov.it.`,
   },
   {
+    q: "Come vengono calcolati i pronostici?",
+    a: (
+      <>
+        Con un modello statistico (Poisson con correzione Dixon-Coles) che stima la forza in attacco e in difesa di
+        ogni squadra dai risultati delle ultime stagioni; per l'NBA da punti segnati e subiti; per il tennis la forza
+        dei giocatori parte dalle classifiche ATP e WTA. Sono probabilità, non certezze né consigli di gioco: i dettagli
+        sono nella pagina <Link to={`${paths.metodologia}#pronostici`}>Metodologia</Link>.
+      </>
+    ),
+  },
+  {
     q: "Da dove arrivano calendario, risultati e classifiche del calcio?",
     a: "Dall'API di football-data.org, aggiornata più volte al giorno. I risultati non sono in diretta.",
   },
@@ -235,9 +254,92 @@ export function MetodologiaPage() {
           ricontrollate periodicamente; ogni offerta riporta la data dell'ultima verifica.
         </li>
         <li>
-          <strong>Calendario, risultati e classifiche del calcio:</strong> API di football-data.org.
+          <strong>Calendario, risultati e classifiche del calcio:</strong> API di football-data.org; i risultati delle
+          stagioni passate usati dal modello dei pronostici arrivano da football-data.org o, se non disponibili, da
+          openfootball.
         </li>
       </ul>
+      <h2 id="pronostici">Pronostici del calcio</h2>
+      <p>
+        Le probabilità mostrate nelle pagine delle partite sono calcolate da un modello statistico, senza intervento
+        della redazione e senza alcun rapporto con gli operatori.
+      </p>
+      <ul>
+        <li>
+          <strong>Il modello:</strong> per ogni squadra stima una forza in attacco e una in difesa partendo dai gol
+          segnati e subiti nelle ultime due stagioni e in quella in corso; le partite recenti contano di più (il peso
+          di una partita si dimezza dopo un anno). Si aggiungono il fattore campo di ogni campionato e, per le coppe
+          europee, la differenza di livello fra i campionati.
+        </li>
+        <li>
+          <strong>Dai gol attesi alle probabilità:</strong> i gol attesi delle due squadre diventano una distribuzione
+          di Poisson per ciascuna, con la correzione di Dixon e Coles per i risultati con pochi gol. Da qui si
+          ricavano 1X2, doppia chance, over/under, goal/no goal e i risultati esatti più probabili.
+        </li>
+        <li>
+          <strong>Affidabilità:</strong> alta, media o bassa a seconda di quante partite recenti il modello ha sulle due
+          squadre. Se una squadra ha troppo pochi dati (per esempio un club alla prima partita europea contro squadre che
+          non seguiamo) il pronostico non viene pubblicato.
+        </li>
+        <li>
+          <strong>Cosa non sa:</strong> infortuni, squalifiche, turnover, motivazioni e meteo. Per questo le
+          probabilità vanno lette come un punto di partenza, non come una previsione certa.
+        </li>
+        <li>
+          <strong>Verifica:</strong> per le partite già giocate la pagina mostra il pronostico calcolato prima del
+          calcio d'inizio e se si è rivelato corretto.
+          {model && model.track.n > 0 && (
+            <>
+              {" "}
+              Sulle ultime {model.track.n} partite l'esito indicato come più probabile si è verificato{" "}
+              {Math.round((model.track.hits / model.track.n) * 100)} volte su 100.
+            </>
+          )}
+        </li>
+      </ul>
+      <h2 id="pronostici-basket">Pronostici del basket (NBA)</h2>
+      <ul>
+        <li>
+          <strong>Il modello:</strong> per ogni squadra stima quanti punti segna e quanti ne concede rispetto alla media,
+          dai punteggi della stagione in corso e di quella precedente (il peso di una partita si dimezza dopo tre mesi).
+          Si aggiungono il fattore campo e lo svantaggio di chi gioca la seconda partita in due giorni.
+        </li>
+        <li>
+          <strong>Dalle squadre al pronostico:</strong> lo scarto e il totale dei punti seguono una distribuzione normale
+          intorno ai valori attesi, con una variabilità misurata sui risultati reali. Da qui si ricavano la probabilità
+          di vittoria, lo scarto e i punti totali.
+        </li>
+        <li>
+          <strong>Cosa non sa:</strong> infortuni, assenze, turni di riposo programmati e cambi di roster: a inizio
+          stagione, quando contano molto le partite dell'anno prima, l'affidabilità è più bassa.
+        </li>
+        <li>
+          <strong>Verifica:</strong> sulle stagioni NBA 2018-2024 l'esito indicato come più probabile si è verificato
+          circa 65 volte su 100.
+        </li>
+      </ul>
+      <h2 id="pronostici-tennis">Pronostici del tennis</h2>
+      <ul>
+        <li>
+          <strong>Forza dei giocatori:</strong> ogni giocatore ha un punteggio di tipo Elo. Finché non sono disponibili i
+          risultati delle singole partite, il punteggio deriva dai punti della classifica ATP o WTA: con il doppio dei
+          punti dell'avversario si vince circa 2 partite su 3 al meglio dei 3 set. Quando i risultati saranno
+          disponibili, il punteggio verrà aggiornato partita per partita e separatamente per cemento, terra ed erba.
+        </li>
+        <li>
+          <strong>Dai giocatori ai set:</strong> dalla probabilità di vincere la partita si ricava quella di vincere un
+          set, che varia un po' da una partita all'altra (le giornate buone e quelle storte). Da qui si calcolano il
+          risultato in set, il numero di set e il formato al meglio dei 5, in cui il favorito vince più spesso.
+        </li>
+        <li>
+          <strong>Cosa non sa:</strong> forma recente, infortuni, stanchezza, precedenti diretti e, per ora, la
+          superficie.
+        </li>
+      </ul>
+      <p>
+        I pronostici non sono consigli di gioco e non garantiscono alcuna vincita. Il gioco è vietato ai minori e può
+        causare dipendenza.
+      </p>
       <h2>Come ordiniamo le quote</h2>
       <p>
         Per ogni esito la quota più alta è evidenziata come <strong>quota migliore</strong>. Le righe sono ordinate per

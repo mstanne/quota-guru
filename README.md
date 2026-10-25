@@ -154,6 +154,58 @@ Calendario, risultati, classifiche e precedenti del calcio arrivano dall'API gra
 - I termini d'uso richiedono l'attribuzione "Football data provided by the Football-Data.org API", presente nel footer:
   non rimuoverla.
 
+## Pronostici calcio (modello Poisson)
+
+Al posto delle quote (che arriveranno con i feed degli operatori) home, liste partite e pagine partita mostrano le
+**probabilità stimate da un modello statistico**: 1X2, doppia chance, over/under, goal/no goal, risultati esatti.
+
+- **Modello** (`scripts/lib/poisson-model.mjs`): Poisson con correzione Dixon-Coles. Ogni squadra ha una forza in
+  attacco e in difesa; ogni competizione un livello di gol e un fattore campo; per le coppe europee c'è anche la forza
+  del campionato di appartenenza. Stima a massima verosimiglianza penalizzata, partite pesate per recenza (il peso si
+  dimezza in un anno). Parametri tarati con un backtest su 2022-2026 (5 campionati maggiori, ~3.400 partite):
+  log-loss 1X2 ≈ 0,978, esito più probabile corretto ≈ 54%.
+- **Storico** (`data/football-history.json`, non incluso nel sito): stagione in corso da football-data.org a ogni
+  aggiornamento; le due stagioni precedenti si scaricano una sola volta, da football-data.org se il piano lo consente,
+  altrimenti da [openfootball](https://github.com/openfootball/football.json) (stessi nomi squadra). `npm run history`
+  aggiorna solo lo storico (anche senza token). Per riscaricare tutto da zero, cancella il file.
+- **Previsioni** (`npm run predict` → `src/data/football-predictions.json`): per le partite in programma e, per quelle
+  già giocate, il pronostico calcolato prima del calcio d'inizio (serve per il "Pronostico corretto/sbagliato" e per
+  il dato di affidabilità in `/metodologia#pronostici`). Se una squadra ha meno di 3 partite pesate il pronostico non
+  viene pubblicato (succede ai club esteri in Champions League finché non c'è storico europeo).
+- `npm run predict:backtest` stampa anche un backtest walk-forward sullo storico.
+- Le previsioni si ricalcolano dentro `npm run build` (quindi anche in GitHub Actions, dopo il download dei dati).
+
+## Pronostici tennis
+
+- **Modello** (`src/lib/tennis/model.mjs`, usato sia dal sito sia dagli script): forza dei giocatori su scala Elo.
+  Oggi deriva dai punti della classifica ATP/WTA (`R = 1800 + 170 · ln(punti/1000)`, 155 per la WTA): con il doppio
+  dei punti dell'avversario si vince ~66% al meglio dei 3. Dalla probabilità della partita si ricava quella del
+  singolo set (con una variabilità "di giornata", parametro `FORM`), e da lì risultato in set, numero di set,
+  scarto di set e formato al meglio dei 5.
+- **Rating** (`npm run build` / `npm run data` → `scripts/predict-tennis.mjs` → `src/data/tennis-ratings.json`).
+  Se esiste `data/tennis-matches.json` (risultati partita per partita: `{ date, tour, surface, winner, loser }` con
+  gli id giocatore di BALLDONTLIE) il rating diventa un **Elo per superficie** aggiornato partita per partita
+  (stile FiveThirtyEight/Tennis Abstract), e nel calcolatore compare la scelta della superficie. Il piano
+  gratuito BALLDONTLIE non include le partite: serve un piano a pagamento o un altro feed.
+- **Sul sito:** `/tennis` ha il calcolatore "Pronostico testa a testa" (top 100 ATP e WTA) al posto delle quote finte;
+  la pagina di esempio `/tennis/djokovic-alcaraz` mostra il pronostico del modello per quella sfida.
+- `SLOPE` e `FORM` sono valori iniziali da letteratura: vanno ritarati appena ci sono risultati reali.
+
+## Pronostici basket (NBA)
+
+- **Modello** (`scripts/lib/basket-model.mjs`): ogni squadra ha un rating di attacco e uno di difesa in punti; in più
+  livello medio di punti della lega, fattore campo e penalità per la seconda partita in due giorni. Minimi quadrati
+  pesati con priori (le squadre partono dalla media), peso delle partite dimezzato ogni 90 giorni. Scarto e totale
+  seguono una normale con deviazione stimata sui residui → probabilità di vittoria, scarto, punti totali.
+- **Backtest** (stagioni 2018-19 → 2023-24, previsione di ogni partita con i soli dati precedenti): esito corretto
+  65%, log-loss 0,628, errore medio sullo scarto 10,6 punti.
+- **Storico** (`data/basket-history.json`): stagione in corso + precedente, da BALLDONTLIE (endpoint `games`, gratuito).
+  La stagione precedente si scarica una volta sola (~15 richieste, ~4 minuti col piano gratuito), poi solo
+  aggiornamenti incrementali. **Prima volta:** `npm run history:basket` in locale e committa il file, così
+  GitHub Actions non lo riscarica a ogni build.
+- **Previsioni** (`scripts/predict-basket.mjs` → `src/data/basket-predictions.json`) girano dentro `npm run build`.
+  Senza storico il file resta vuoto e il sito non mostra pronostici NBA.
+
 ## Dati basket (BALLDONTLIE)
 
 Calendario e risultati **NBA** e classifica della **Serie A di basket** arrivano dal piano gratuito di

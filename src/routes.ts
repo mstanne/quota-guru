@@ -53,19 +53,20 @@ export const routes: RouteMeta[] = [
   },
   {
     path: paths.tennis,
-    title: "Quote Tennis – Confronto quote ATP, WTA e Grand Slam",
-    description: "Confronta le quote tennis dei migliori bookmaker per ATP, WTA e tutti i tornei internazionali.",
+    title: "Pronostici tennis: chi vince tra i top 100 ATP e WTA",
+    description:
+      "Probabilità di vittoria e risultato in set per ogni sfida tra i top 100 ATP e WTA, con classifiche aggiornate e calendario dei tornei.",
   },
   {
     path: paths.basket,
     title: "Basket: calendario NBA e classifica Serie A",
     description:
-      "Calendario e risultati NBA in orario italiano, classifica della Serie A di basket e quote a confronto degli operatori autorizzati.",
+      "Calendario e risultati NBA in orario italiano con il pronostico di ogni partita, e classifica della Serie A di basket.",
   },
   {
     path: paths.tennisEvento,
-    title: "Djokovic – Alcaraz: quote, statistiche e dove vederla",
-    description: "Quote a confronto, statistiche dei giocatori e dove vedere Djokovic – Alcaraz.",
+    title: "Djokovic – Alcaraz: pronostico, statistiche e dove vederla",
+    description: "Probabilità di vittoria e risultato in set, statistiche dei giocatori e dove vedere Djokovic – Alcaraz.",
   },
   {
     path: paths.sitiScommesse,
