@@ -132,6 +132,14 @@ jobs:
         with:
           path: dist
 
+      - name: Keep the list of new or changed pages for IndexNow
+        uses: actions/upload-artifact@v4
+        with:
+          name: indexnow-urls
+          path: .cache/seo/indexnow-urls.txt
+          if-no-files-found: ignore
+          retention-days: 1
+
   deploy:
     needs: build
     runs-on: ubuntu-26.04
@@ -141,3 +149,34 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+
+  indexnow:
+    # After the pages are live: tells Bing and the other IndexNow engines which pages are new or changed
+    # (scripts/indexnow.mjs). Never affects the published site.
+    needs: deploy
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            scripts/indexnow.mjs
+            .nvmrc
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: indexnow-urls
+          path: .cache/seo
+        continue-on-error: true
+
+      - name: Send changed pages to IndexNow
+        run: node scripts/indexnow.mjs
+        continue-on-error: true
+        env:
+          SITE_URL: https://www.quotaguru.it

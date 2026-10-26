@@ -149,6 +149,43 @@ function absolutize(node) {
   );
 }
 
+/** Element marked data-faq="q"|"a" starting at `start`: its inner HTML, closing tag found by counting same-name tags. */
+function elementAt(html, start) {
+  const tag = html.slice(start).match(/^<([a-z0-9]+)/i)?.[1];
+  if (!tag) return "";
+  const open = html.indexOf(">", start) + 1;
+  const re = new RegExp(`<(/?)${tag}\\b[^>]*>`, "gi");
+  re.lastIndex = open;
+  let depth = 1;
+  for (let m; (m = re.exec(html)); ) {
+    if (m[0].endsWith("/>")) continue;
+    depth += m[1] ? -1 : 1;
+    if (depth === 0) return html.slice(open, m.index);
+  }
+  return "";
+}
+
+/**
+ * FAQPage from the questions visible on the page (elements marked data-faq="q" and data-faq="a", in pairs),
+ * so the structured data always matches the text. Pages that already declare a FAQPage (guides) are skipped.
+ */
+function faqPage(meta, appHtml) {
+  if ((meta.jsonLd ?? []).some((n) => n["@type"] === "FAQPage")) return null;
+  const main = mainContent(appHtml);
+  const items = [];
+  let question = null;
+  for (const m of main.matchAll(/<[a-z0-9]+\b[^>]*\bdata-faq="(q|a)"[^>]*>/gi)) {
+    const text = decode(elementAt(main, m.index));
+    if (!text) continue;
+    if (m[1] === "q") question = text;
+    else if (question) {
+      items.push({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text } });
+      question = null;
+    }
+  }
+  return items.length ? { "@type": "FAQPage", mainEntity: items } : null;
+}
+
 function jsonLd(meta, appHtml) {
   if (meta.index === false) return "";
   const graph = [organization()];
@@ -156,6 +193,8 @@ function jsonLd(meta, appHtml) {
   const crumbs = breadcrumb(appHtml, meta.path);
   if (crumbs) graph.push(crumbs);
   graph.push(...(meta.jsonLd ?? []));
+  const faq = faqPage(meta, appHtml);
+  if (faq) graph.push(faq);
   const json = JSON.stringify(absolutize({ "@context": "https://schema.org", "@graph": graph }));
   // "<" is escaped so that the content can never close the script element
   return `<script type="application/ld+json">${json.replace(/</g, "\\u003c")}</script>`;
@@ -206,6 +245,8 @@ function page(meta, appHtml, { prerendered }) {
 // information) and match pages, so that Search Console reports their indexing separately.
 const sitemapPages = [];
 const sitemapMatches = [];
+/** Indexable pages that are new or whose content changed in this build (sent to IndexNow after the deploy). */
+const changedNow = [];
 
 /** Writes one page and records when its content last changed (`main`: the page content, see mainContent). */
 function emit(meta, appHtml, main = mainContent(appHtml)) {
@@ -215,6 +256,7 @@ function emit(meta, appHtml, main = mainContent(appHtml)) {
   const hash = contentHash(main);
   const prev = prevState.pages[meta.path];
   nextState.pages[meta.path] = { hash, lastmod: prev?.hash === hash ? prev.lastmod : today };
+  if (prev?.hash !== hash && meta.index !== false) changedNow.push(meta.path);
   if (meta.index !== false) {
     const isMatch = (meta.jsonLd ?? []).some((n) => n["@type"] === "SportsEvent");
     (isMatch ? sitemapMatches : sitemapPages).push(meta.path);
@@ -298,10 +340,43 @@ if (siteUrl) {
     .join("\n");
   fs.writeFileSync(path.join(dist, "sitemap.xml"), `${XML}\n<sitemapindex ${NS}>\n${index}\n</sitemapindex>\n`);
 }
+// AI search and assistant crawlers are named explicitly: the site wants to be read and cited by them.
+// (Allowed anyway by "User-agent: *"; listing them makes the choice visible and survives future rules for "*".)
+const AI_CRAWLERS = [
+  "OAI-SearchBot", // ChatGPT search
+  "ChatGPT-User", // pages opened by ChatGPT on a user's request
+  "GPTBot", // OpenAI training
+  "PerplexityBot",
+  "Perplexity-User",
+  "ClaudeBot",
+  "Claude-SearchBot",
+  "Claude-User",
+  "Google-Extended", // Gemini and Google AI products
+  "Applebot-Extended",
+  "Amazonbot",
+  "CCBot", // Common Crawl, used by many models
+  "meta-externalagent",
+  "MistralAI-User",
+  "DuckAssistBot",
+];
 fs.writeFileSync(
   path.join(dist, "robots.txt"),
-  `User-agent: *\nAllow: /\n${siteUrl ? `Sitemap: ${siteUrl}/sitemap.xml\n` : ""}`,
+  [
+    "User-agent: *",
+    "Allow: /",
+    "",
+    ...AI_CRAWLERS.map((ua) => `User-agent: ${ua}`),
+    "Allow: /",
+    "",
+    siteUrl ? `Sitemap: ${siteUrl}/sitemap.xml` : "",
+  ]
+    .filter((l, i, a) => l !== "" || a[i - 1] !== "")
+    .join("\n") + "\n",
 );
+
+fs.mkdirSync(cacheDir, { recursive: true });
+// URLs for IndexNow (scripts/indexnow.mjs runs after the deploy): only what is new or changed in this build.
+if (siteUrl) fs.writeFileSync(path.join(cacheDir, "indexnow-urls.txt"), changedNow.map(publicUrl).join("\n") + "\n");
 
 fs.mkdirSync(cacheDir, { recursive: true });
 fs.writeFileSync(stateFile, JSON.stringify(nextState) + "\n");
@@ -312,5 +387,5 @@ console.log(
   `prerender: ${routes.length} pagine dai dati + ${restored} partite archiviate + 404.html` +
     `${siteUrl ? ` + sitemap (${sitemapPages.length} pagine, ${sitemapMatches.length} partite)` : ""} (base "${base}")\n` +
     `  archivio: ${archivedNow} partite finite salvate/aggiornate${unreadable ? `, ${unreadable} voci ignorate` : ""}; ` +
-    `pagine con data di modifica di oggi: ${changed}`,
+    `pagine con data di modifica di oggi: ${changed}; nuove o cambiate in questa build: ${changedNow.length}`,
 );

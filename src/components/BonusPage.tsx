@@ -122,35 +122,31 @@ export function BonusPage({
             <h2 className="text-white text-2xl mb-6">Domande frequenti</h2>
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="faq-1" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-white">
-                  Cosa sono i requisiti di giocata?
-                </AccordionTrigger>
-                <AccordionContent className="text-slate-400">
+                <AccordionTrigger className="text-white hover:text-white"><span data-faq="q">Cosa sono i requisiti di giocata?</span></AccordionTrigger>
+                <AccordionContent data-faq="a" className="text-slate-400">
                   Indicano quante volte va giocato l'importo del bonus prima che diventi prelevabile. Un requisito di
                   5 volte su un bonus di 100 € significa giocate per 500 €; un requisito di 40 volte su 1.000 € significa
                   giocate per 40.000 €, spesso da completare in pochi giorni.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="faq-2" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-white">
-                  Perché un'offerta sport contiene un bonus slot?
-                </AccordionTrigger>
-                <AccordionContent className="text-slate-400">
+                <AccordionTrigger className="text-white hover:text-white"><span data-faq="q">Perché un'offerta sport contiene un bonus slot?</span></AccordionTrigger>
+                <AccordionContent data-faq="a" className="text-slate-400">
                   Molti operatori uniscono nella stessa offerta di benvenuto bonus per prodotti diversi e ne indicano
                   la somma. Per questo mostriamo separatamente la parte utilizzabile sulle scommesse sportive e le
                   parti che valgono solo su altri giochi.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="faq-3" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-white">Cosa sono le quote minime?</AccordionTrigger>
-                <AccordionContent className="text-slate-400">
+                <AccordionTrigger className="text-white hover:text-white"><span data-faq="q">Cosa sono le quote minime?</span></AccordionTrigger>
+                <AccordionContent data-faq="a" className="text-slate-400">
                   Molti bonus sport valgono solo su scommesse multiple con un numero minimo di eventi, ciascuno con una
                   quota pari o superiore a un valore minimo (ad esempio 5 eventi a quota 1,70).
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="faq-4" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-white">Posso usare più offerte insieme?</AccordionTrigger>
-                <AccordionContent className="text-slate-400">
+                <AccordionTrigger className="text-white hover:text-white"><span data-faq="q">Posso usare più offerte insieme?</span></AccordionTrigger>
+                <AccordionContent data-faq="a" className="text-slate-400">
                   In genere no: l'offerta di benvenuto si sceglie una sola volta in fase di registrazione e vale una
                   sola volta per persona e nucleo familiare.
                 </AccordionContent>

@@ -219,9 +219,9 @@ export function FaqPage() {
         {FAQ.map((f, i) => (
           <AccordionItem key={i} value={`faq-${i}`} className="border-slate-800">
             <AccordionTrigger className="text-white text-base hover:no-underline hover:text-white">
-              {f.q}
+              <span data-faq="q">{f.q}</span>
             </AccordionTrigger>
-            <AccordionContent className="text-slate-300 text-base">{f.a}</AccordionContent>
+            <AccordionContent data-faq="a" className="text-slate-300 text-base">{f.a}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>

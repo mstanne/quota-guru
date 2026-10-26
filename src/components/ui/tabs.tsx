@@ -35,8 +35,16 @@ function TabsTrigger({ className, ...props }: React.ComponentProps<typeof TabsPr
   );
 }
 
+// forceMount: inactive tabs stay in the HTML (hidden), so search engines and AI crawlers read them too.
 function TabsContent({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Content>) {
-  return <TabsPrimitive.Content data-slot="tabs-content" className={cn("flex-1 outline-none", className)} {...props} />;
+  return (
+    <TabsPrimitive.Content
+      data-slot="tabs-content"
+      forceMount
+      className={cn("flex-1 outline-none data-[state=inactive]:hidden", className)}
+      {...props}
+    />
+  );
 }
 
 export { Tabs, TabsList, TabsTrigger, TabsContent };

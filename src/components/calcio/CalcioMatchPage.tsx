@@ -28,6 +28,7 @@ import { generatedAt } from "../../lib/football";
 import { usePageMeta } from "../../lib/pageMeta";
 import { footballEditorial } from "../../lib/editorial";
 import { MatchEditorial } from "../editorial/MatchEditorial";
+import { MatchSummary, footballSummary } from "../editorial/MatchSummary";
 import { predictionFor } from "../../lib/predictions";
 import { PredictionPanel } from "../predictions/PredictionUi";
 import { MatchRow, TeamBadge } from "./MatchRow";
@@ -290,6 +291,7 @@ export function CalcioMatchPage() {
               <TeamName id={match.awayTeam.id} name={match.awayTeam.shortName} className="text-white text-lg sm:text-2xl" />
             </div>
           </div>
+          <MatchSummary text={footballSummary(match, competition.name, prediction, { finished, live })} />
           <DataUpdatedNote generatedAt={generatedAt} className="justify-center mt-6" />
         </div>
       </div>
