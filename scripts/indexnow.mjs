@@ -8,7 +8,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const INDEXNOW_KEY = "ce61d3d2d9357d356d6c9d492ee9e0f8";
+const INDEXNOW_KEY = "80c17b78cb1d4ca9a383c9fdebc6b298";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const siteUrl = (process.env.SITE_URL ?? "https://www.quotaguru.it").replace(/\/$/, "");
 const listFile = path.resolve(root, process.env.SEO_CACHE_DIR ?? path.join(".cache", "seo"), "indexnow-urls.txt");
