@@ -32,3 +32,4 @@ dist-ssr/
 .cache/
 scripts/offers-agent/rapporti/
 /public/stato-dati.json
+/public/registro-dati.json

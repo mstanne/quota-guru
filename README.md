@@ -319,6 +319,15 @@ largo, punti totali e tabella dei quarti (NBA). Componenti: `FootballBoxScore.ts
   `https://www.quotaguru.it/stato-dati.json`. Migliore in campo: voto più alto di API-Football (calcio), Game Score
   più alto calcolato da noi (NBA). La cronaca è costruita solo dagli eventi.
 
+## Registro delle aggiunte e report giornaliero
+
+A ogni aggiornamento del workflow `scripts/log-data-changes.mjs` confronta i dati appena scaricati con quelli del giro
+precedente (stato in `.cache/seo/data-log.json`, conservato tra un giro e l'altro) e pubblica
+`https://www.quotaguru.it/registro-dati.json` con le aggiunte degli ultimi 8 giorni: partite nuove in calendario,
+risultati, rinvii/annullamenti, dettagli API-Sports e highlights trovati. Il primo giro salva solo lo stato di partenza.
+Ogni mattina alle 08:00 un'attività pianificata di Claude legge il registro e manda il riepilogo delle ultime 24 ore
+per email.
+
 ## Pagine dei risultati
 
 `/calcio/<competizione>/risultati` (giornata per giornata) e `/basket/nba/risultati/<aaaa-mm>` (giorno per giorno, con
