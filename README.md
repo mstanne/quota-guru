@@ -381,3 +381,18 @@ ripagate. Il riepilogo di ogni esecuzione (testi nuovi, riutilizzati, scartati) 
 
 In locale: `npm run editorial` (legge la chiave da `.env` se presente). Il tennis è già previsto nel motore
 (`tennisArticle`) ma si attiverà quando ci sarà un feed dati reale per le partite.
+
+## Motori di ricerca e assistenti AI
+
+- **robots.txt** (scritto da `scripts/prerender.mjs`): oltre a `User-agent: *` elenca in modo esplicito i crawler
+  di ricerca e degli assistenti AI (OAI-SearchBot, GPTBot, PerplexityBot, ClaudeBot, Google-Extended…), tutti ammessi.
+- **IndexNow**: a ogni build il pre-rendering scrive in `.cache/seo/indexnow-urls.txt` le pagine nuove o cambiate;
+  dopo il deploy il job `indexnow` le invia con `scripts/indexnow.mjs` (Bing, da cui dipende la ricerca di ChatGPT,
+  e gli altri motori IndexNow). La chiave è pubblica per scelta e sta in `public/<chiave>.txt`.
+  Da fare una volta: registrare il sito su [Bing Webmaster Tools](https://www.bing.com/webmasters) (si può importare da Search Console).
+- **Contenuto sempre nell'HTML**: i pannelli a fisarmonica e a schede chiusi restano nella pagina (nascosti), così
+  crawler e assistenti AI leggono anche risposte delle FAQ, requisiti dei bonus, pro e contro degli operatori.
+- **Dati strutturati FAQPage**: generati dalle domande visibili, marcate con `data-faq="q"` e `data-faq="a"`
+  (schede partita, FAQ, bonus; le guide hanno già il loro).
+- **Frase di apertura** delle schede partita (`src/components/editorial/MatchSummary.tsx`): una o due frasi costruite
+  dai dati (quando si gioca o come è finita, cosa indica il modello) che si possono citare così come sono.

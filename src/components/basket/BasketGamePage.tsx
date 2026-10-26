@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 import { Link } from "../../lib/links";
 import { ArrowLeft, CalendarDays, Info } from "lucide-react";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";
+import { MatchSummary, basketSummary } from "../editorial/MatchSummary";
 import { TeamBadge } from "../calcio/MatchRow";
 import { ArchivedOrNotFound } from "../../lib/archive";
 import { BasketPredictionPanel } from "./BasketPrediction";
@@ -107,6 +108,7 @@ export function BasketGamePage() {
               ),
             )}
           </div>
+          <MatchSummary text={basketSummary(game, prediction, { finished, live })} />
           <DataUpdatedNote generatedAt={basketUpdatedAt} className="justify-center mt-6" />
         </div>
       </div>

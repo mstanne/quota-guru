@@ -43,13 +43,13 @@ export function MatchEditorial({ article, className = "" }: { article: Article |
               {article.faq.map((f) => (
                 <details key={f.q} className="group rounded-lg border border-slate-800 bg-slate-950/40">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 text-white [&::-webkit-details-marker]:hidden">
-                    <span>{f.q}</span>
+                    <span data-faq="q">{f.q}</span>
                     <ChevronDown
                       className="w-5 h-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180"
                       aria-hidden="true"
                     />
                   </summary>
-                  <p className="px-4 pb-3">
+                  <p className="px-4 pb-3" data-faq="a">
                     <Rich text={f.a} />
                   </p>
                 </details>
