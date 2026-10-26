@@ -110,6 +110,12 @@ jobs:
           EDITORIAL_AI_MODEL: ${{ vars.EDITORIAL_AI_MODEL }}
           EDITORIAL_AI_MAX: ${{ vars.EDITORIAL_AI_MAX }}
 
+      - name: Log of the data added by the APIs
+        # Compares the fresh data with the previous run (state in .cache/seo) and publishes /registro-dati.json,
+        # read by the daily e-mail report. Never blocks the deploy.
+        run: node scripts/log-data-changes.mjs
+        continue-on-error: true
+
       - name: Build
         run: npm run build
         env:
