@@ -6,10 +6,13 @@ import { ChartColumn, Check, Info, X as XIcon } from "lucide-react";
 import { paths } from "../../routes";
 import {
   CONFIDENCE_LABEL,
+  FOOTBALL_MARKETS,
+  marketCells,
   pct,
   pickHit,
   pickLabel,
   topOutcome,
+  type FootballMarket,
   type Prediction,
 } from "../../lib/predictionsCore";
 
@@ -76,6 +79,46 @@ export function PredictionMini({ prediction, home, away }: { prediction: Predict
         >
           <span className="block text-[10px] text-slate-400">{OUTCOMES[i]}</span>
           <span className="block text-xs tabular-nums font-medium">{pct(v)}</span>
+        </span>
+      ))}
+    </div>
+  );
+}
+
+/** Compact cells for the market chosen in the quick filter (1X2, doppia chance, U/O, GG/NG, combo). */
+export function MarketMini({
+  prediction,
+  market,
+  home,
+  away,
+}: {
+  prediction: Prediction;
+  market: FootballMarket;
+  home: string;
+  away: string;
+}) {
+  if (market === "1x2") return <PredictionMini prediction={prediction} home={home} away={away} />;
+  const cells = marketCells(prediction, market, home, away);
+  const name = FOOTBALL_MARKETS.find((m) => m.id === market)!.label;
+  const combo = market === "combo";
+  const wide = combo ? "w-[4.5rem]" : market === "gg" ? "w-14" : "w-12";
+  return (
+    <div
+      // combos are stacked on phones so the team names keep their room
+      className={`flex gap-1 ${combo ? "flex-col sm:flex-row" : ""}`}
+      role="img"
+      aria-label={`${name}, probabilità stimate dal modello: ${cells.map((c) => `${c.spoken} ${pct(c.value)}`).join(", ")}`}
+    >
+      {cells.map((c) => (
+        <span
+          key={c.label}
+          aria-hidden="true"
+          className={`${wide} rounded-md px-1 ${combo ? "py-0.5 sm:py-1" : "py-1"} text-center leading-tight ${
+            c.top ? "bg-predict/15 text-predict" : "bg-slate-800 text-slate-300"
+          }`}
+        >
+          <span className="block text-[10px] text-slate-400 whitespace-nowrap">{c.label}</span>
+          <span className="block text-xs tabular-nums font-medium">{pct(c.value)}</span>
         </span>
       ))}
     </div>

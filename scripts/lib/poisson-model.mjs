@@ -262,6 +262,9 @@ export function predict(model, f) {
   const m = scoreMatrix(xg.home, xg.away, model.rho, model.options.maxGoals);
   let p1 = 0, pX = 0, p2 = 0, btts = 0;
   const over = { "1.5": 0, "2.5": 0, "3.5": 0 };
+  // combo markets: [outcome 1/X/2][0 = Under 2.5 / No goal, 1 = Over 2.5 / Goal]
+  const ou = [[0, 0], [0, 0], [0, 0]];
+  const gg = [[0, 0], [0, 0], [0, 0]];
   const scores = [];
   for (let i = 0; i < m.length; i++) {
     for (let j = 0; j < m[i].length; j++) {
@@ -270,6 +273,9 @@ export function predict(model, f) {
       else if (i === j) pX += v;
       else p2 += v;
       if (i > 0 && j > 0) btts += v;
+      const o = i > j ? 0 : i === j ? 1 : 2;
+      ou[o][i + j > 2.5 ? 1 : 0] += v;
+      gg[o][i > 0 && j > 0 ? 1 : 0] += v;
       for (const k of Object.keys(over)) if (i + j > Number(k)) over[k] += v;
       scores.push([i, j, v]);
     }
@@ -296,6 +302,7 @@ export function predict(model, f) {
     dc: [r3(p1 + pX), r3(p1 + p2), r3(pX + p2)],
     over: Object.fromEntries(Object.entries(over).map(([k, v]) => [k, r3(v)])),
     btts: r3(btts),
+    combo: { ou: ou.map((r) => r.map(r3)), gg: gg.map((r) => r.map(r3)) },
     scores: scores.slice(0, 5).map(([h, a, v]) => [h, a, r3(v)]),
     pick,
     confidence,

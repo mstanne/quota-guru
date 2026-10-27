@@ -13,8 +13,8 @@ import {
   type Match,
   type Team,
 } from "../../lib/footballCore";
-import type { Prediction } from "../../lib/predictionsCore";
-import { PredictionMini } from "../predictions/PredictionUi";
+import type { FootballMarket, Prediction } from "../../lib/predictionsCore";
+import { MarketMini } from "../predictions/PredictionUi";
 
 /**
  * Team crest (football-data.org CDN). Falls back to the three-letter code if the crest is missing
@@ -66,11 +66,14 @@ export function MatchRow({
   match,
   showCompetition = false,
   prediction,
+  market = "1x2",
 }: {
   competition: CompetitionRef;
   match: Match;
   showCompetition?: boolean;
   prediction?: Prediction | null;
+  /** Market shown in the prediction cells (quick filter of the calendar page). */
+  market?: FootballMarket;
 }) {
   const finished = isFinished(match);
   const live = isLive(match);
@@ -116,7 +119,12 @@ export function MatchRow({
 
       {prediction && !finished && !live && !pending && (
         <div className="shrink-0">
-          <PredictionMini prediction={prediction} home={match.homeTeam.shortName} away={match.awayTeam.shortName} />
+          <MarketMini
+            prediction={prediction}
+            market={market}
+            home={match.homeTeam.shortName}
+            away={match.awayTeam.shortName}
+          />
         </div>
       )}
 

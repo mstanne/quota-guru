@@ -20,13 +20,17 @@ import {
   competitionMeta,
 } from "../../lib/football";
 import { usePageMeta } from "../../lib/pageMeta";
-import { predictionFor } from "../../lib/predictions";
+import { FOOTBALL_MARKETS, predictionFor, type FootballMarket } from "../../lib/predictions";
+import { useQueryChoice } from "../../lib/useQueryChoice";
+import { MarketFilter } from "../predictions/MarketFilter";
 import { MatchRow } from "./MatchRow";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 import { NotFoundPage } from "../NotFoundPage";
 import { PageHeader } from "../layout/PageHeader";
 import { ListChecks } from "lucide-react";
 import { hasResults, resultsPath } from "../../lib/results";
+
+const MARKET_IDS = FOOTBALL_MARKETS.map((m) => m.id);
 
 type Filter = "upcoming" | "today" | "tomorrow" | "week" | "results";
 const FILTERS: { id: Filter; label: string }[] = [
@@ -55,6 +59,7 @@ export function CalcioPage() {
   const { competizione } = useParams();
   const competition = competizione ? findCompetition(competizione) : undefined;
   const [filter, setFilter] = useState<Filter>("upcoming");
+  const [market, setMarket] = useQueryChoice<FootballMarket>("mercato", MARKET_IDS, "1x2");
   usePageMeta(competition ? competitionMeta(competition) : null);
 
   const rows = useMemo(() => {
@@ -74,6 +79,9 @@ export function CalcioPage() {
     g.items.push(r);
   }
   const limitedGroups = competition ? groups : groups.slice(0, 7);
+
+  // switching competition keeps the chosen market
+  const q = market === "1x2" ? "" : `?mercato=${market}`;
 
   const chip = (active: boolean) =>
     `px-3 py-1.5 rounded-md text-sm border transition-colors ${
@@ -114,13 +122,13 @@ export function CalcioPage() {
 
       <div className="container mx-auto px-4 py-8">
         <nav aria-label="Competizioni" className="flex flex-wrap gap-2 mb-4">
-          <Link to="/calcio" className={chip(!competition)} aria-current={!competition ? "page" : undefined}>
+          <Link to={`/calcio${q}`} className={chip(!competition)} aria-current={!competition ? "page" : undefined}>
             Tutte
           </Link>
           {competitions.map((c) => (
             <Link
               key={c.code}
-              to={competitionPath(c)}
+              to={`${competitionPath(c)}${q}`}
               className={chip(c === competition)}
               aria-current={c === competition ? "page" : undefined}
             >
@@ -132,7 +140,7 @@ export function CalcioPage() {
         <div
           role="group"
           aria-label="Filtra per data"
-          className="inline-flex flex-wrap gap-1 p-1 mb-6 rounded-lg bg-slate-900 border border-slate-800"
+          className="inline-flex flex-wrap gap-1 p-1 mb-3 rounded-lg bg-slate-900 border border-slate-800"
         >
           {FILTERS.map((f) => (
             <button
@@ -148,6 +156,12 @@ export function CalcioPage() {
             </button>
           ))}
         </div>
+
+        {filter !== "results" ? (
+          <MarketFilter options={FOOTBALL_MARKETS} value={market} onChange={setMarket} />
+        ) : (
+          <div className="mb-6" />
+        )}
 
         {limitedGroups.length === 0 ? (
           <div className="rounded-xl border border-slate-800 bg-slate-900 p-10 text-center">
@@ -173,6 +187,7 @@ export function CalcioPage() {
                       match={match}
                       showCompetition={!competition}
                       prediction={predictionFor(match.id)}
+                      market={market}
                     />
                   ))}
                 </div>

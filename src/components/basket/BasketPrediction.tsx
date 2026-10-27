@@ -29,6 +29,63 @@ export function BasketPredictionMini({ prediction, home, away }: { prediction: B
   );
 }
 
+export type BasketMarket = "win" | "spread" | "total";
+
+export const BASKET_MARKETS: { id: BasketMarket; label: string }[] = [
+  { id: "win", label: "Vincente" },
+  { id: "spread", label: "Handicap" },
+  { id: "total", label: "Totale punti" },
+];
+
+/** Row cells for the market chosen in the quick filter. Handicap and total use the model's middle line. */
+export function BasketMarketMini({
+  prediction: p,
+  market,
+  home,
+  away,
+}: {
+  prediction: BasketPrediction;
+  market: BasketMarket;
+  home: string;
+  away: string;
+}) {
+  if (market === "win" || (market === "spread" && !p.spread.length) || (market === "total" && !p.totals.length))
+    return <BasketPredictionMini prediction={p} home={home} away={away} />;
+  const favName = [home, away][p.fav];
+  const [line, prob] = market === "spread" ? p.spread[0] : p.totals[Math.floor(p.totals.length / 2)];
+  const cells =
+    market === "spread"
+      ? [
+          { label: `${p.fav === 0 ? "1" : "2"} −${fmtPts(line)}`, value: prob, spoken: `${favName} vince con più di ${fmtPts(line)} punti` },
+          { label: `${p.fav === 0 ? "2" : "1"} +${fmtPts(line)}`, value: 1 - prob, spoken: `${[home, away][1 - p.fav]} perde di meno o vince` },
+        ]
+      : [
+          { label: `U ${fmtPts(line)}`, value: 1 - prob, spoken: `meno di ${fmtPts(line)} punti totali` },
+          { label: `O ${fmtPts(line)}`, value: prob, spoken: `più di ${fmtPts(line)} punti totali` },
+        ];
+  const top = cells[0].value >= cells[1].value ? 0 : 1;
+  return (
+    <div
+      className="flex gap-1"
+      role="img"
+      aria-label={`Probabilità stimate dal modello: ${cells.map((c) => `${c.spoken} ${pct(c.value)}`).join(", ")}`}
+    >
+      {cells.map((c, i) => (
+        <span
+          key={c.label}
+          aria-hidden="true"
+          className={`w-16 rounded-md px-1 py-1 text-center leading-tight ${
+            i === top ? "bg-predict/15 text-predict" : "bg-slate-800 text-slate-300"
+          }`}
+        >
+          <span className="block text-[10px] text-slate-400 whitespace-nowrap tabular-nums">{c.label}</span>
+          <span className="block text-xs tabular-nums font-medium">{pct(c.value)}</span>
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function Row({ label, value, strong = false }: { label: string; value: string; strong?: boolean }) {
   return (
     <div className="flex items-baseline justify-between gap-3 py-1.5 border-b border-slate-800 last:border-0">

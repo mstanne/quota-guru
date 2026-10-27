@@ -4,10 +4,10 @@ import { formatTime } from "../../lib/footballCore";
 import { gamePath, gameRoundLabel, isGameFinished, isGameLive, isGamePending, type BasketGame } from "../../lib/basket";
 import { TeamBadge } from "../calcio/MatchRow";
 import { basketPredictionFor } from "../../lib/basketPredict";
-import { BasketPredictionMini } from "./BasketPrediction";
+import { BasketMarketMini, type BasketMarket } from "./BasketPrediction";
 
 /** One NBA game row (same look as the football rows), linking to the game page; upcoming games show win %. */
-export function BasketGameRow({ game }: { game: BasketGame }) {
+export function BasketGameRow({ game, market = "win" }: { game: BasketGame; market?: BasketMarket }) {
   const finished = isGameFinished(game);
   const live = isGameLive(game);
   const pending = isGamePending(game);
@@ -50,7 +50,7 @@ export function BasketGameRow({ game }: { game: BasketGame }) {
       </div>
       {prediction && (
         <div className="shrink-0">
-          <BasketPredictionMini prediction={prediction} home={game.home.name} away={game.away.name} />
+          <BasketMarketMini prediction={prediction} market={market} home={game.home.name} away={game.away.name} />
         </div>
       )}
       <div className="hidden md:block w-40 shrink-0 text-right text-xs text-slate-400">
