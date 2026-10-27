@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/stamp-build-time.mjs && node scripts/predict-football.mjs && node scripts/derive-football-home.mjs && node scripts/predict-tennis.mjs && node scripts/predict-basket.mjs && node scripts/archive-predictions.mjs && node scripts/check-offers.mjs && node scripts/derive-teams.mjs && node scripts/derive-results.mjs && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "build": "node scripts/stamp-build-time.mjs && node scripts/predict-football.mjs && node scripts/derive-football-home.mjs && node scripts/predict-tennis.mjs && node scripts/predict-basket.mjs && node scripts/archive-predictions.mjs && node scripts/split-football-data.mjs && node scripts/check-offers.mjs && node scripts/derive-teams.mjs && node scripts/derive-results.mjs && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "offers:check": "node scripts/check-offers.mjs",
@@ -16,7 +16,8 @@
     "predict:backtest": "node scripts/predict-football.mjs --backtest && node scripts/predict-basket.mjs --backtest",
     "history": "node scripts/fetch-football-data.mjs --history",
     "history:basket": "node scripts/fetch-basket-data.mjs --history",
-    "og": "node scripts/generate-og-images.mjs"
+    "og": "node scripts/generate-og-images.mjs",
+    "predev": "node scripts/split-football-data.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.3",

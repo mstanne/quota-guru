@@ -77,6 +77,14 @@ jobs:
         env:
           BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
 
+      - name: Serie B, Europa League and Conference League from API-Football
+        # Added to the football data; needs a paid API-Football plan (the free one does not cover the current
+        # season: the site stays unchanged and the state is shown in /stato-dati.json).
+        run: node scripts/fetch-extra-leagues.mjs
+        continue-on-error: true
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+
       - name: Match details from API-Sports
         # Line-ups, events, statistics and ratings (football), box scores (NBA) of finished matches;
         # without the API_FOOTBALL_KEY secret the committed files are used. Results: /stato-dati.json on the site.

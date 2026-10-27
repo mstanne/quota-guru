@@ -21,10 +21,10 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SNAPSHOT = path.join(root, "src", "data", "football.json");
 const HISTORY = path.join(root, "data", "football-history.json");
 const OUT = path.join(root, "src", "data", "football-predictions.json");
-const CUPS = ["CL"]; // competitions that are not domestic leagues
+const CUPS = ["CL", "EL", "ECL"]; // competitions that are not domestic leagues
 // Starting strength of each league (log scale; half the goal gap between two leagues), roughly in line with UEFA rankings.
 // Only a starting point: the model corrects it with the Champions League results between leagues.
-const LEAGUE_PRIORS = { PL: 0.08, SA: 0.05, PD: 0.05, BL1: 0.05, FL1: 0.03, PPL: -0.03, DED: -0.03, ELC: -0.08, BSA: -0.05 };
+const LEAGUE_PRIORS = { PL: 0.08, SA: 0.05, PD: 0.05, BL1: 0.05, FL1: 0.03, PPL: -0.03, DED: -0.03, ELC: -0.08, BSA: -0.05, SB: -0.15 };
 const FIT = { cups: CUPS, leaguePriors: LEAGUE_PRIORS };
 const PLAYED = new Set(["FINISHED", "AWARDED"]);
 const OPEN = new Set(["SCHEDULED", "TIMED", "IN_PLAY", "PAUSED", "POSTPONED"]);
@@ -43,8 +43,8 @@ for (const c of snapshot.competitions) {
   }
 }
 const results = [...byId.values()].sort((a, b) => a.date.localeCompare(b.date));
-// Champions League knockout finals are on neutral ground
-const neutral = (c, m) => c.code === "CL" && m.stage === "FINAL";
+// European cup finals are on neutral ground
+const neutral = (c, m) => CUPS.includes(c.code) && m.stage === "FINAL";
 
 const asOf = snapshot.generatedAt;
 console.log(`Risultati usati: ${results.length} (storico: ${(history.results || []).length})`);

@@ -1,4 +1,6 @@
 // NBA prediction widgets: compact win % for game rows and the full panel for the game page.
+import { useEffect, useRef } from "react";
+import { trackWhenVisible } from "../../lib/analytics";
 import { Link } from "../../lib/links";
 import { ChartColumn, Check, Info, X as XIcon } from "lucide-react";
 import { paths } from "../../routes";
@@ -115,11 +117,13 @@ export function BasketPredictionPanel({
 }) {
   const p = prediction;
   const names = [home, away];
+  const panelRef = useRef<HTMLElement>(null);
+  useEffect(() => trackWhenVisible(panelRef.current, "prediction_view", { sport: "nba" }), []);
   const favName = names[p.fav];
   const hit = result ? (result.home > result.away ? 0 : 1) === p.fav : null;
   const tired = names.filter((_, i) => p.b2b[i]);
   return (
-    <section className="rounded-xl border border-slate-800 bg-slate-900 p-5" aria-labelledby="pronostico">
+    <section ref={panelRef} className="rounded-xl border border-slate-800 bg-slate-900 p-5" aria-labelledby="pronostico">
       <div className="flex flex-wrap items-center justify-between gap-3 mb-1">
         <h2 id="pronostico" className="flex items-center gap-2 text-white text-xl">
           <ChartColumn className="w-5 h-5 text-slate-300" aria-hidden="true" />

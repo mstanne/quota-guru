@@ -1,15 +1,18 @@
 // Quick market selector above the match lists: switches the probabilities shown in every row,
 // client-side, without reloading the page.
 import { ChartColumn } from "lucide-react";
+import { currentPage, track } from "../../lib/analytics";
 
 export function MarketFilter<T extends string>({
   options,
   value,
   onChange,
+  sport = "calcio",
 }: {
   options: { id: T; label: string }[];
   value: T;
   onChange: (v: T) => void;
+  sport?: "calcio" | "nba";
 }) {
   return (
     <div className="flex flex-wrap items-center gap-2 mb-6">
@@ -26,7 +29,10 @@ export function MarketFilter<T extends string>({
           <button
             key={o.id}
             type="button"
-            onClick={() => onChange(o.id)}
+            onClick={() => {
+              onChange(o.id);
+              track("market_filter", { market: o.id, sport, page: currentPage() });
+            }}
             aria-pressed={value === o.id}
             className={`px-3 py-1.5 rounded-md text-sm whitespace-nowrap transition-colors cursor-pointer ${
               value === o.id ? "bg-predict/15 text-predict" : "text-slate-400 hover:text-white"

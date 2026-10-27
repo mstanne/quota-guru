@@ -13,7 +13,6 @@ import {
   competitionPath,
   formatDay,
   formatTime,
-  generatedAt,
   isFinished,
   isLive,
   isResultPending,
@@ -23,19 +22,20 @@ import {
   statusLabel,
   type Competition,
   type Match,
-} from "../../lib/football";
-import { archivedPredictionFor, predictionFor, pct, pickLabel, type Prediction } from "../../lib/predictions";
-import { findMatchday, matchdayDates, matchdayLabel, matchdayMeta, matchdaysOf, type Matchday } from "../../lib/matchdays";
+} from "../../lib/footballCore";
+import { pct, pickLabel, type Prediction } from "../../lib/predictionsCore";
+import { matchdayDates, matchdayLabel, matchdayMeta, matchdaysOf, type Matchday } from "../../lib/matchdaysCore";
+import { useCompetitionData, type CompetitionData } from "../../lib/footballData";
 import { footballReasons } from "../../lib/predictionReasons";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900";
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 /** Three data-based lines about the whole round (only from upcoming matches with a prediction). */
-function roundSummary(d: Matchday) {
+function roundSummary(d: Matchday, data: CompetitionData) {
   const open = d.matches
     .filter((m) => !isFinished(m) && !isLive(m) && !isResultPending(m))
-    .map((m) => ({ m, p: predictionFor(m.id) }))
+    .map((m) => ({ m, p: data.prediction(m.id) }))
     .filter((x): x is { m: Match; p: Prediction } => !!x.p);
   if (open.length < 2) return [];
   const name = (m: Match) => `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
@@ -55,10 +55,10 @@ function roundSummary(d: Matchday) {
   return out;
 }
 
-function MatchCard({ c, m }: { c: Competition; m: Match }) {
+function MatchCard({ c, m, data }: { c: Competition; m: Match; data: CompetitionData }) {
   // started matches: the prediction as it was published (archive), else the recalculated one
-  const archived = !isUpcoming(m) ? archivedPredictionFor(m.id) : undefined;
-  const p = archived ? { ...archived.prediction, pre: true } : predictionFor(m.id);
+  const archived = !isUpcoming(m) ? data.archived(m.id) : undefined;
+  const p = archived ? { ...archived.prediction, pre: true } : data.prediction(m.id);
   const finished = isFinished(m);
   const live = isLive(m);
   const pending = isResultPending(m);
@@ -160,16 +160,18 @@ function MatchCard({ c, m }: { c: Competition; m: Match }) {
 
 export function MatchdayPage() {
   const { competizione, numero } = useParams();
-  const { competition: c, matchday: d } = findMatchday(competizione, numero);
-  usePageMeta(c && d ? matchdayMeta(c, d) : null);
-  if (!c || !d) return <ArchivedOrNotFound />;
+  const data = useCompetitionData(competizione);
+  const c = data?.competition;
+  const d = c && /^\d+$/.test(numero ?? "") ? matchdaysOf(c).find((x) => x.n === Number(numero)) : undefined;
+  usePageMeta(c && d ? matchdayMeta(c, d, (id) => !!data.prediction(id)) : null);
+  if (!data || !c || !d) return <ArchivedOrNotFound />;
 
   const list = matchdaysOf(c);
   const i = list.indexOf(d);
   const prev = list[i - 1];
   const next = list[i + 1];
   const label = matchdayLabel(d);
-  const summary = roundSummary(d);
+  const summary = roundSummary(d, data);
   const done = d.matches.every(isFinished);
 
   const navBtn =
@@ -186,19 +188,31 @@ export function MatchdayPage() {
           { label: c.name, to: competitionPath(c) },
           { label: cap(label) },
         ]}
-        meta={<DataUpdatedNote generatedAt={generatedAt} />}
+        meta={<DataUpdatedNote generatedAt={data.generatedAt} />}
       />
 
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <nav aria-label="Altre giornate" className="flex flex-wrap items-center gap-2 mb-6">
           {prev && (
-            <Link to={matchdayPath(c, prev.n)} className={navBtn}>
+            <Link
+              to={matchdayPath(c, prev.n)}
+              className={navBtn}
+              data-track="matchday_nav"
+              data-track-competition={c.slug}
+              data-track-to={String(prev.n)}
+            >
               <ChevronLeft className="w-4 h-4" aria-hidden="true" />
               {prev.n}ª giornata
             </Link>
           )}
           {next && (
-            <Link to={matchdayPath(c, next.n)} className={navBtn}>
+            <Link
+              to={matchdayPath(c, next.n)}
+              className={navBtn}
+              data-track="matchday_nav"
+              data-track-competition={c.slug}
+              data-track-to={String(next.n)}
+            >
               {next.n}ª giornata
               <ChevronRight className="w-4 h-4" aria-hidden="true" />
             </Link>
@@ -220,7 +234,7 @@ export function MatchdayPage() {
 
         <div className="space-y-4">
           {d.matches.map((m) => (
-            <MatchCard key={m.id} c={c} m={m} />
+            <MatchCard key={m.id} c={c} m={m} data={data} />
           ))}
         </div>
 

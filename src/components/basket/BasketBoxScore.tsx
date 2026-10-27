@@ -75,12 +75,12 @@ export function BasketBoxScore({ game, details }: { game: BasketGame; details?: 
   if (details?.arena) rows.push({ label: "Arena", value: details.city ? `${details.arena}, ${details.city}` : details.arena });
   const p = game.periods;
   return (
-    <section className={card} aria-labelledby="tabellino">
+    <section className={`${card} @container`} aria-labelledby="tabellino">
       <h2 id="tabellino" className="flex items-center gap-2 text-white text-xl mb-4">
         <ClipboardList className="w-5 h-5 text-slate-300" aria-hidden="true" />
         Tabellino
       </h2>
-      <dl className="grid gap-x-8 sm:grid-cols-2 text-sm">
+      <dl className="grid gap-x-8 @lg:grid-cols-2 text-sm">
         {rows.map((r) => (
           <div key={r.label} className="flex justify-between gap-4 py-2 border-b border-slate-800">
             <dt className="text-slate-400">{r.label}</dt>

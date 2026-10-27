@@ -1,33 +1,9 @@
-// Football track record from the snapshot (see ./trackRecord.ts).
-import { allMatches, isFinished, matchPath } from "./football";
-import { predictionFor } from "./predictions";
-import { archivedTrackRecord, summarize, type TrackEntry, type TrackRecord } from "./trackRecord";
+// Football track record (see ./trackRecord.ts): the archive of published predictions when it is long enough,
+// otherwise the recalculation computed at build time by scripts/split-football-data.mjs (no data download).
+import { recalculatedFootballTrack } from "./footballData";
+import { archivedTrackRecord, type TrackRecord } from "./trackRecord";
 
 let football: TrackRecord | null = null;
 export function footballTrackRecord(): TrackRecord {
-  if (football) return football;
-  const fromArchive = archivedTrackRecord("calcio");
-  if (fromArchive) return (football = fromArchive);
-  const entries: TrackEntry[] = [];
-  for (const { competition: c, match: m } of allMatches) {
-    const p = predictionFor(m.id);
-    const ft = m.score.fullTime;
-    if (!p || !p.pre || p.confidence === "bassa" || !isFinished(m) || ft.home == null || ft.away == null) continue;
-    const top = p.p.indexOf(Math.max(...p.p));
-    const outcome = ft.home > ft.away ? 0 : ft.home === ft.away ? 1 : 2;
-    const names = [m.homeTeam.shortName, "pareggio", m.awayTeam.shortName];
-    entries.push({
-      key: `f${m.id}`,
-      path: matchPath(c, m),
-      label: `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`,
-      where: c.name,
-      utcDate: m.utcDate,
-      pick: `${["1", "X", "2"][top]} · ${names[top]}`,
-      prob: p.p[top],
-      result: `${ft.home}-${ft.away}`,
-      hit: top === outcome,
-    });
-  }
-  return (football = summarize(entries));
+  return (football ??= archivedTrackRecord("calcio") ?? { source: "ricalcolo", ...recalculatedFootballTrack });
 }
-

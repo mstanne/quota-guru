@@ -48,6 +48,10 @@ const LEAGUES = [
   ["primeira-liga", 94],
   ["championship", 40],
   ["brasileirao", 71],
+  // from API-Football itself (scripts/fetch-extra-leagues.mjs)
+  ["serie-b", 136],
+  ["europa-league", 3],
+  ["conference-league", 848],
 ];
 
 function loadDotEnv() {
@@ -349,7 +353,7 @@ async function footballSeasonsRun(api, seasons, data, now, allowed) {
   seasons.afTeams ??= {};
   for (const [slug, league] of LEAGUES) {
     const comp = data.competitions.find((c) => c.slug === slug);
-    if (!comp || slug === "champions-league") continue; // team pages follow the domestic league
+    if (!comp || ["champions-league", "europa-league", "conference-league"].includes(slug)) continue; // team pages follow the domestic league
     const season = Number(comp.season?.startDate?.slice(0, 4));
     if (!season) continue;
     // a plan limited to some seasons (e.g. "from 2022 to 2024"): only those, with the latest for the club list
@@ -589,5 +593,8 @@ if (!key) {
   status.football.teamSeasons = Object.keys(seasons.football ?? {}).length;
   status.nba.teamSeasons = Object.keys(seasons.nba ?? {}).filter((k) => !k.endsWith("-roster")).length;
 }
+// keep what scripts/fetch-extra-leagues.mjs wrote earlier in this run
+const previous = readJson(STATUS, {});
+if (previous.extraLeagues) status.extraLeagues = previous.extraLeagues;
 fs.mkdirSync(path.dirname(STATUS), { recursive: true });
 fs.writeFileSync(STATUS, JSON.stringify(status, null, 2) + "\n");

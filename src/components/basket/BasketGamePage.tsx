@@ -14,6 +14,7 @@ import { nbaResultsPath } from "../../lib/results";
 import { BasketPlayerStats } from "./BasketPlayerStats";
 import { nbaDetailsFor } from "../../lib/basketDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
+import { MatchOddsSlot } from "../odds/MatchOddsSlot";
 import { highlightFor } from "../../lib/highlights";
 import { formatDay, formatTime, romeDay } from "../../lib/footballCore";
 import {
@@ -117,8 +118,18 @@ export function BasketGamePage() {
       </div>
 
       <div className="container mx-auto px-4 py-8 space-y-6">
-        {finished && <BasketBoxScore game={game} details={details} />}
-        {highlight && <HighlightVideo highlight={highlight} channel={highlight.channel ?? "NBA"} />}
+        {/* box score and highlights side by side on wide screens, stacked otherwise */}
+        {finished && highlight ? (
+          <div className="grid gap-6 lg:grid-cols-2 items-start">
+            <BasketBoxScore game={game} details={details} />
+            <HighlightVideo highlight={highlight} channel={highlight.channel ?? "NBA"} />
+          </div>
+        ) : (
+          <>
+            {finished && <BasketBoxScore game={game} details={details} />}
+            {highlight && <HighlightVideo highlight={highlight} channel={highlight.channel ?? "NBA"} />}
+          </>
+        )}
         {details && <BasketPlayerStats game={game} details={details} />}
 
         {prediction && (!finished || prediction.pre) && (
@@ -129,6 +140,17 @@ export function BasketGamePage() {
             result={finished && game.score.home != null && game.score.away != null ? { home: game.score.home, away: game.score.away } : null}
             reasons={game.status === "scheduled" ? nbaReasonsFor(game, prediction) : []}
             publishedAt={archived?.published}
+          />
+        )}
+
+        {game.status === "scheduled" && (
+          <MatchOddsSlot
+            sport="nba"
+            id={game.id}
+            home={game.home.shortName ?? game.home.name}
+            away={game.away.shortName ?? game.away.name}
+            competition="NBA"
+            time={formatTime(game.utcDate)}
           />
         )}
 

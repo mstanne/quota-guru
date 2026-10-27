@@ -214,6 +214,28 @@ const inData = {
   calcio: new Set(football.competitions.flatMap((c) => c.matches.map((m) => String(m.id)))),
   nba: new Set(basket.nba.games.map((g) => String(g.id))),
 };
+/**
+ * Calibration: every outcome of every graded prediction (1, X, 2 for football; home and away for NBA) goes into a
+ * 10%-wide bin by its predicted probability; per bin, the average predicted probability and how often the outcome
+ * actually happened. A calibrated model has the two close.
+ */
+function calibration(sport, graded) {
+  const bins = Array.from({ length: 10 }, (_, i) => ({ lo: i / 10, hi: (i + 1) / 10, n: 0, pred: 0, hit: 0 }));
+  for (const e of graded) {
+    const probs = e.prediction?.p;
+    if (!probs) continue;
+    probs.forEach((p, i) => {
+      const b = bins[Math.min(9, Math.floor(p * 10))];
+      b.n++;
+      b.pred += p;
+      if (e.result.index === i) b.hit++;
+    });
+  }
+  return bins
+    .filter((b) => b.n > 0)
+    .map((b) => ({ lo: b.lo, hi: b.hi, n: b.n, pred: Math.round((b.pred / b.n) * 1000) / 1000, obs: Math.round((b.hit / b.n) * 1000) / 1000 }));
+}
+
 function summary(sport, log) {
   const graded = Object.values(log)
     .filter((e) => e.result)
@@ -225,6 +247,7 @@ function summary(sport, log) {
     since: first,
     all: count(graded),
     last30: count(graded.filter((e) => e.kickoff >= from)),
+    calibration: calibration(sport, graded),
     recent: graded.slice(0, 10).map((e) => ({
       key: `${sport}-${e.id}`,
       path: e.path,

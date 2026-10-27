@@ -120,6 +120,9 @@ export function BasketPage({ league }: { league?: "nba" }) {
               type="button"
               onClick={() => setFilter(f.id)}
               aria-pressed={filter === f.id}
+              data-track="filter_use"
+              data-track-filter="nba-data"
+              data-track-value={f.id}
               className={`px-3 py-1.5 rounded-md text-sm transition-colors cursor-pointer ${
                 filter === f.id ? "bg-slate-700 text-white" : "text-slate-400 hover:text-white"
               }`}
@@ -130,7 +133,7 @@ export function BasketPage({ league }: { league?: "nba" }) {
         </div>
 
         {filter !== "results" ? (
-          <MarketFilter options={BASKET_MARKETS} value={market} onChange={setMarket} />
+          <MarketFilter options={BASKET_MARKETS} value={market} onChange={setMarket} sport="nba" />
         ) : (
           <div className="mb-6" />
         )}

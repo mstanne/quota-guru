@@ -49,8 +49,28 @@ export function summarize(entries: TrackEntry[]): TrackRecord {
   };
 }
 
-type ArchiveSummary = Omit<TrackRecord, "source">;
+export interface CalibrationBin {
+  lo: number;
+  hi: number;
+  /** Outcomes in the bin. */
+  n: number;
+  /** Average predicted probability. */
+  pred: number;
+  /** Share that actually happened. */
+  obs: number;
+}
+type ArchiveSummary = Omit<TrackRecord, "source"> & { calibration?: CalibrationBin[] };
 const archived = archive as unknown as Record<"calcio" | "nba", ArchiveSummary>;
+
+/** Graded archived predictions needed before the calibration chart is shown. */
+export const MIN_CALIBRATION = { calcio: 200, nba: 150 } as const;
+
+/** Calibration of the archived predictions, or null while the archive is too short. */
+export function archivedCalibration(sport: "calcio" | "nba") {
+  const a = archived[sport];
+  if (!a || a.all.n < MIN_CALIBRATION[sport] || !a.calibration?.length) return null;
+  return { matches: a.all.n, since: a.since ?? null, bins: a.calibration.filter((b) => b.n >= 10) };
+}
 
 /** The archive of published predictions, or null while it is too short. */
 export function archivedTrackRecord(sport: "calcio" | "nba"): TrackRecord | null {

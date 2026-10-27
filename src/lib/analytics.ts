@@ -12,6 +12,12 @@
 //   filter_use         { filter, value, page }         – section/filter chosen (bonus sections, operator filters)
 //   guide_read         { guide, category }             – visitor reached the end of a guide
 //   helpline_click     { page }                        – click on the gambling helpline number (any tel: link)
+//   market_filter      { market, sport, page }         – market chosen in the quick filter of a match list
+//   prediction_view    { sport, page }                 – a prediction panel scrolled into view (once per page)
+//   track_record_click { sport, result, page }         – click on one of the last-10 predictions of the track record
+//   archive_download   { sport, page }                 – download of the archive of published predictions
+//   matchday_nav       { competition, to, page }       – move to another round from a matchday page
+//   day_switch         { to, page }                    – switch between "pronostici di oggi" and "di domani"
 //
 // offer_terms_click and filter_use are declarative: put data-track="<event>" and data-track-<prop>="…"
 // on any clickable element and the click listener installed by initAnalytics() sends it.
@@ -144,3 +150,19 @@ export const currentPage = () =>
   typeof window === "undefined"
     ? ""
     : window.location.pathname.slice(import.meta.env.BASE_URL.replace(/\/$/, "").length) || "/";
+
+/** Sends `event` once, the first time `el` is at least half visible (no-op without IntersectionObserver). */
+export function trackWhenVisible(el: Element | null, event: string, props: Record<string, string>) {
+  if (!el || typeof IntersectionObserver === "undefined") return () => {};
+  const io = new IntersectionObserver(
+    (entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        track(event, { ...props, page: currentPage() });
+        io.disconnect();
+      }
+    },
+    { threshold: 0.5 },
+  );
+  io.observe(el);
+  return () => io.disconnect();
+}

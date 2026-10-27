@@ -1,8 +1,8 @@
 import { useParams } from "react-router";
 import { Link } from "../../lib/links";
 import { ListOrdered } from "lucide-react";
-import { competitionPath, findCompetition, standingsMeta } from "../../lib/football";
-import { generatedAt } from "../../lib/football";
+import { competitionPath, standingsMeta } from "../../lib/footballCore";
+import { useCompetitionData } from "../../lib/footballData";
 import { usePageMeta } from "../../lib/pageMeta";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 import { TeamBadge } from "./MatchRow";
@@ -13,7 +13,8 @@ import { TeamName } from "../teams/TeamLink";
 /** /calcio/:competizione/classifica */
 export function StandingsPage() {
   const { competizione } = useParams();
-  const competition = findCompetition(competizione);
+  const data = useCompetitionData(competizione);
+  const competition = data?.competition;
   usePageMeta(competition ? standingsMeta(competition) : null);
   if (!competition || competition.standings.length === 0) return <NotFoundPage />;
 
@@ -27,7 +28,7 @@ export function StandingsPage() {
           { label: competition.name, to: competitionPath(competition) },
           { label: "Classifica" },
         ]}
-        meta={<DataUpdatedNote generatedAt={generatedAt} />}
+        meta={<DataUpdatedNote generatedAt={data!.generatedAt} />}
       />
 
       <div className="container mx-auto px-4 py-8 space-y-8">

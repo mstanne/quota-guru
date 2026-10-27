@@ -16,6 +16,9 @@ const UpcomingMatches = lazyPage(() => import("./components/calcio/UpcomingMatch
 const CalcioPage = lazyPage(() => import("./components/calcio/CalcioPage").then((m) => m.CalcioPage));
 const CalcioMatchPage = lazyPage(() => import("./components/calcio/CalcioMatchPage").then((m) => m.CalcioMatchPage));
 const MatchdayPage = lazyPage(() => import("./components/calcio/MatchdayPage").then((m) => m.MatchdayPage));
+const DayPredictionsPage = lazyPage(() =>
+  import("./components/predictions/DayPredictionsPage").then((m) => m.DayPredictionsPage),
+);
 const PronosticiPage = lazyPage(() => import("./components/predictions/PronosticiPage").then((m) => m.PronosticiPage));
 const StandingsPage = lazyPage(() => import("./components/calcio/StandingsPage").then((m) => m.StandingsPage));
 const NotFoundPage = lazyPage(() => import("./components/NotFoundPage").then((m) => m.NotFoundPage));
@@ -71,6 +74,8 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/calcio/:competizione/classifica", [StandingsPage, NotFoundPage]],
   ["/calcio/:competizione/giornata/:numero", [MatchdayPage, NotFoundPage]],
   [paths.pronostici, [PronosticiPage]],
+  ["/pronostici/oggi", [DayPredictionsPage]],
+  ["/pronostici/domani", [DayPredictionsPage]],
   ["/calcio/:competizione/:partita", [CalcioMatchPage, NotFoundPage]],
   [paths.tennis, [TennisPage]],
   [paths.basket, [BasketPage]],
@@ -105,7 +110,11 @@ export function preloadForPath(pathname: string) {
   const results = /^\/(calcio\/[^/]+|basket\/nba)\/risultati(\/[^/]+)?$/.test(clean)
     ? import("./lib/results").then((m) => m.preloadResultsData(clean))
     : null;
-  return Promise.all([...(hit ? hit[1] : [NotFoundPage]).map((p) => p.preload()), team, results]);
+  // football pages: the data of their competition (all of them for /calcio)
+  const football = /^\/calcio(\/|$)/.test(clean) && !/^\/calcio\/squadre/.test(clean)
+    ? import("./lib/footballData").then((m) => m.preloadFootballData(clean))
+    : null;
+  return Promise.all([...(hit ? hit[1] : [NotFoundPage]).map((p) => p.preload()), team, results, football]);
 }
 
 function PageLoading() {
@@ -183,6 +192,8 @@ export default function App() {
             <Route path="/calcio/:competizione/classifica" element={<StandingsPage />} />
             <Route path="/calcio/:competizione/giornata/:numero" element={<MatchdayPage />} />
             <Route path={paths.pronostici} element={<PronosticiPage />} />
+            <Route path="/pronostici/oggi" element={<DayPredictionsPage day="oggi" />} />
+            <Route path="/pronostici/domani" element={<DayPredictionsPage day="domani" />} />
             <Route path="/calcio/:competizione/:partita" element={<CalcioMatchPage />} />
             <Route path={paths.tennis} element={<TennisPage />} />
             <Route path={paths.basket} element={<BasketPage />} />
