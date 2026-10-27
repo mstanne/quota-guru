@@ -117,8 +117,18 @@ export function BasketGamePage() {
       </div>
 
       <div className="container mx-auto px-4 py-8 space-y-6">
-        {finished && <BasketBoxScore game={game} details={details} />}
-        {highlight && <HighlightVideo highlight={highlight} channel={highlight.channel ?? "NBA"} />}
+        {/* box score and highlights side by side on wide screens, stacked otherwise */}
+        {finished && highlight ? (
+          <div className="grid gap-6 lg:grid-cols-2 items-start">
+            <BasketBoxScore game={game} details={details} />
+            <HighlightVideo highlight={highlight} channel={highlight.channel ?? "NBA"} />
+          </div>
+        ) : (
+          <>
+            {finished && <BasketBoxScore game={game} details={details} />}
+            {highlight && <HighlightVideo highlight={highlight} channel={highlight.channel ?? "NBA"} />}
+          </>
+        )}
         {details && <BasketPlayerStats game={game} details={details} />}
 
         {prediction && (!finished || prediction.pre) && (

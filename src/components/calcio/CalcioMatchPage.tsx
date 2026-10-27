@@ -316,8 +316,11 @@ export function CalcioMatchPage() {
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
         {finished && (
           <div className="lg:col-span-3 min-w-0 space-y-6">
-            <FootballBoxScore match={match} details={details} />
-            {highlight && <HighlightVideo highlight={highlight} channel={highlight.channel ?? competition.name} />}
+            {/* box score and highlights side by side on wide screens, stacked otherwise */}
+            <div className={highlight ? "grid gap-6 lg:grid-cols-2 items-start" : ""}>
+              <FootballBoxScore match={match} details={details} />
+              {highlight && <HighlightVideo highlight={highlight} channel={highlight.channel ?? competition.name} />}
+            </div>
             {details && <FootballMatchDetails match={match} details={details} />}
           </div>
         )}
