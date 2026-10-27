@@ -153,9 +153,20 @@ for (const key of newHighlights) highlightIds.add(key);
 
 const cutoff = now.getTime() - KEEP_DAYS * 86400000;
 const kept = [...entries, ...added].filter((e) => new Date(e.at).getTime() >= cutoff);
+// running totals of the Claude rewrite since the counting started (kept in the state, not limited to the 8 days)
+const editorialTotals = { since: at, texts: 0, requests: 0, ...state?.editorialTotals };
+if (editorial) {
+  editorialTotals.texts += editorial.new ?? 0;
+  editorialTotals.requests += editorial.requests ?? editorial.new ?? 0;
+}
 const runs = [
   ...(state?.runs ?? []),
-  { at, added: added.length, baseline: !state?.matches, ...(editorial ? { editorial: editorial.new } : {}) },
+  {
+    at,
+    added: added.length,
+    baseline: !state?.matches,
+    ...(editorial ? { editorial: editorial.new, editorialRequests: editorial.requests ?? editorial.new } : {}),
+  },
 ]
   .filter((r) => new Date(r.at).getTime() >= cutoff)
   .slice(-MAX_RUNS);
@@ -176,6 +187,7 @@ fs.writeFileSync(
     matches: snapshot,
     details: detailIds,
     highlights: [...highlightIds],
+    editorialTotals,
     runs,
     entries: kept,
   }),
@@ -183,7 +195,16 @@ fs.writeFileSync(
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(
   OUT,
-  JSON.stringify({ updatedAt: at, ...(editorial ? { editorial } : {}), runs, entries: kept }, null, 1) + "\n",
+  JSON.stringify(
+    {
+      updatedAt: at,
+      ...(editorial ? { editorial: { ...editorial, totals: editorialTotals } } : {}),
+      runs,
+      entries: kept,
+    },
+    null,
+    1,
+  ) + "\n",
 );
 
 const byKind = added.reduce((o, e) => ((o[e.kind] = (o[e.kind] ?? 0) + 1), o), {});

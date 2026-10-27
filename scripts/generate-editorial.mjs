@@ -42,6 +42,8 @@ const DEFAULT_MODEL = "claude-haiku-5-5";
 const EFFORT = process.env.EDITORIAL_AI_EFFORT?.trim() || "low";
 const EFFORT_MODELS = /^claude-(haiku|sonnet|opus)-5|^claude-(fable|mythos)/;
 const WORKSPACE = process.env.ANTHROPIC_WORKSPACE_ID?.trim();
+// paid requests of this run (accepted, rejected or unreadable answers), for the cost estimate of the daily report
+let requests = 0;
 const RECAP_AI_DAYS = 3; // recaps are rewritten only for matches of the last few days
 
 function loadDotEnv() {
@@ -171,6 +173,7 @@ async function askClaude(art, { key, model, url }, attempt = 1) {
   }
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const body = await res.json();
+  requests++;
   const text = (body.content ?? []).filter((c) => c.type === "text").map((c) => c.text).join("");
   const json = text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1);
   return JSON.parse(json);
@@ -292,6 +295,7 @@ async function main() {
     rejected: stats.rejected,
     errors: stats.errors,
     pending: stats.skipped + stats.errors, // still to rewrite in the next runs
+    requests, // paid requests (the published registry has counts only, no costs)
   });
   console.log(`Salvato src/data/editorial-ai.json: ${Object.keys(items).length} testi riscritti.`);
 
