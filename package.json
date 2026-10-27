@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/stamp-build-time.mjs && node scripts/predict-football.mjs && node scripts/derive-football-home.mjs && node scripts/predict-tennis.mjs && node scripts/predict-basket.mjs && node scripts/check-offers.mjs && node scripts/derive-teams.mjs && node scripts/derive-results.mjs && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "build": "node scripts/stamp-build-time.mjs && node scripts/predict-football.mjs && node scripts/derive-football-home.mjs && node scripts/predict-tennis.mjs && node scripts/predict-basket.mjs && node scripts/archive-predictions.mjs && node scripts/check-offers.mjs && node scripts/derive-teams.mjs && node scripts/derive-results.mjs && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "offers:check": "node scripts/check-offers.mjs",

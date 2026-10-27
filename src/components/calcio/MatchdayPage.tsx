@@ -17,13 +17,14 @@ import {
   isFinished,
   isLive,
   isResultPending,
+  isUpcoming,
   matchdayPath,
   matchPath,
   statusLabel,
   type Competition,
   type Match,
 } from "../../lib/football";
-import { predictionFor, pct, pickLabel, type Prediction } from "../../lib/predictions";
+import { archivedPredictionFor, predictionFor, pct, pickLabel, type Prediction } from "../../lib/predictions";
 import { findMatchday, matchdayDates, matchdayLabel, matchdayMeta, matchdaysOf, type Matchday } from "../../lib/matchdays";
 import { footballReasons } from "../../lib/predictionReasons";
 
@@ -55,7 +56,9 @@ function roundSummary(d: Matchday) {
 }
 
 function MatchCard({ c, m }: { c: Competition; m: Match }) {
-  const p = predictionFor(m.id);
+  // started matches: the prediction as it was published (archive), else the recalculated one
+  const archived = !isUpcoming(m) ? archivedPredictionFor(m.id) : undefined;
+  const p = archived ? { ...archived.prediction, pre: true } : predictionFor(m.id);
   const finished = isFinished(m);
   const live = isLive(m);
   const pending = isResultPending(m);

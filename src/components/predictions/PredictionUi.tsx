@@ -150,6 +150,23 @@ export function ReasonList({ reasons, compact = false }: { reasons: string[]; co
   );
 }
 
+/** "Pubblicato il 24 ottobre alle 15:00, prima del calcio d'inizio (archivio)." */
+export function PublishedNote({ iso }: { iso: string }) {
+  return (
+    <span className="block text-slate-300 mb-1">
+      Pubblicato su QuotaGuru {formatUpdatedAt(iso)}, prima dell'inizio della partita, e conservato senza modifiche
+      nell'archivio dei pronostici.
+    </span>
+  );
+}
+
+const formatUpdatedAt = (iso: string) => {
+  const d = new Date(iso);
+  const day = new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", day: "numeric", month: "long" }).format(d);
+  const time = new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", hour: "2-digit", minute: "2-digit" }).format(d);
+  return `il ${day} alle ${time}`;
+};
+
 export function ConfidenceBadge({ confidence }: { confidence: Prediction["confidence"] }) {
   const dots = confidence === "alta" ? 3 : confidence === "media" ? 2 : 1;
   return (
@@ -183,6 +200,7 @@ export function PredictionPanel({
   away,
   result,
   reasons = [],
+  publishedAt,
 }: {
   prediction: Prediction;
   home: string;
@@ -191,6 +209,8 @@ export function PredictionPanel({
   result?: { home: number; away: number } | null;
   /** Data points behind the estimate (upcoming matches only). */
   reasons?: string[];
+  /** When the shown prediction was published (archive): the panel then says so. */
+  publishedAt?: string;
 }) {
   const p = prediction;
   const finished = !!result;
@@ -209,6 +229,7 @@ export function PredictionPanel({
         <ConfidenceBadge confidence={p.confidence} />
       </div>
       <p className="text-slate-400 text-sm mb-5">
+        {publishedAt ? <PublishedNote iso={publishedAt} /> : null}
         Probabilità stimate da un modello statistico sui risultati delle ultime stagioni. Non sono quote né consigli di
         gioco.
       </p>

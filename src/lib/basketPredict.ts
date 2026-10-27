@@ -1,5 +1,6 @@
 // NBA predictions written by scripts/predict-basket.mjs (points model, scripts/lib/basket-model.mjs).
 import raw from "../data/basket-predictions.json";
+import archivedRaw from "../data/archived-predictions-nba.json";
 
 export interface BasketPrediction {
   /** Win probability [home, away]. */
@@ -37,3 +38,7 @@ export const basketPredictionFor = (gameId: number): BasketPrediction | undefine
 
 /** "112,5" */
 export const fmtPts = (x: number) => x.toFixed(1).replace(".", ",");
+
+/** Prediction as archived when it was published, before tip-off (scripts/archive-predictions.mjs). */
+const archived = archivedRaw as unknown as Record<string, { published: string; prediction: Omit<BasketPrediction, "pre"> }>;
+export const archivedBasketPredictionFor = (gameId: number) => archived[String(gameId)];

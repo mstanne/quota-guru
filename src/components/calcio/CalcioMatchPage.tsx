@@ -12,6 +12,7 @@ import {
   headToHead,
   isFinished,
   isLive,
+  isUpcoming,
   isResultPending,
   mainTable,
   recentForm,
@@ -32,7 +33,7 @@ import { usePageMeta } from "../../lib/pageMeta";
 import { footballEditorial } from "../../lib/editorial";
 import { MatchEditorial } from "../editorial/MatchEditorial";
 import { MatchSummary, footballSummary } from "../editorial/MatchSummary";
-import { predictionFor } from "../../lib/predictions";
+import { archivedPredictionFor, predictionFor } from "../../lib/predictions";
 import { PredictionPanel } from "../predictions/PredictionUi";
 import { MatchRow, TeamBadge } from "./MatchRow";
 import { FootballBoxScore } from "./FootballBoxScore";
@@ -221,7 +222,9 @@ export function CalcioMatchPage() {
   const home = standingOf(competition, match.homeTeam.id);
   const away = standingOf(competition, match.awayTeam.id);
   const h2h = headToHead(match);
-  const prediction = predictionFor(match.id);
+  // once the match has started, show the prediction as it was published (archive), else the recalculated one
+  const archived = !isUpcoming(match) ? archivedPredictionFor(match.id) : undefined;
+  const prediction = archived ? { ...archived.prediction, pre: true } : predictionFor(match.id);
   const highlight = finished ? highlightOf(competition, match) : undefined;
   const details = finished ? footballDetailsFor(match.id) : undefined;
   const roundPage = isMatchdayStage(match)
@@ -325,7 +328,8 @@ export function CalcioMatchPage() {
               home={match.homeTeam.shortName}
               away={match.awayTeam.shortName}
               result={finished && ft.home !== null && ft.away !== null ? { home: ft.home, away: ft.away } : null}
-              reasons={finished ? [] : footballReasons(prediction, competition, match)}
+              reasons={isUpcoming(match) ? footballReasons(prediction, competition, match) : []}
+              publishedAt={archived?.published}
             />
           )}
           <MatchEditorial article={footballEditorial({ comp: competition, match, h2h, generatedAt })} />

@@ -1,11 +1,13 @@
 // Football track record from the snapshot (see ./trackRecord.ts).
 import { allMatches, isFinished, matchPath } from "./football";
 import { predictionFor } from "./predictions";
-import { summarize, type TrackEntry, type TrackRecord } from "./trackRecord";
+import { archivedTrackRecord, summarize, type TrackEntry, type TrackRecord } from "./trackRecord";
 
 let football: TrackRecord | null = null;
 export function footballTrackRecord(): TrackRecord {
   if (football) return football;
+  const fromArchive = archivedTrackRecord("calcio");
+  if (fromArchive) return (football = fromArchive);
   const entries: TrackEntry[] = [];
   for (const { competition: c, match: m } of allMatches) {
     const p = predictionFor(m.id);

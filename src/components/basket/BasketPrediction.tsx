@@ -4,7 +4,7 @@ import { ChartColumn, Check, Info, X as XIcon } from "lucide-react";
 import { paths } from "../../routes";
 import { pct } from "../../lib/predictionsCore";
 import { fmtPts, type BasketPrediction } from "../../lib/basketPredict";
-import { ConfidenceBadge, ReasonList } from "../predictions/PredictionUi";
+import { ConfidenceBadge, PublishedNote, ReasonList } from "../predictions/PredictionUi";
 
 const label = (p: BasketPrediction, home: string, away: string) =>
   `Probabilità di vittoria stimate dal modello: ${home} ${pct(p.p[0])}, ${away} ${pct(p.p[1])}`;
@@ -101,6 +101,7 @@ export function BasketPredictionPanel({
   away,
   result,
   reasons = [],
+  publishedAt,
 }: {
   prediction: BasketPrediction;
   home: string;
@@ -109,6 +110,8 @@ export function BasketPredictionPanel({
   result?: { home: number; away: number } | null;
   /** Data points behind the estimate (upcoming games only). */
   reasons?: string[];
+  /** When the shown prediction was published (archive). */
+  publishedAt?: string;
 }) {
   const p = prediction;
   const names = [home, away];
@@ -125,6 +128,7 @@ export function BasketPredictionPanel({
         <ConfidenceBadge confidence={p.confidence} />
       </div>
       <p className="text-slate-400 text-sm mb-5">
+        {publishedAt ? <PublishedNote iso={publishedAt} /> : null}
         Probabilità stimate da un modello statistico sui punteggi delle ultime due stagioni. Non sono quote né consigli
         di gioco.
       </p>

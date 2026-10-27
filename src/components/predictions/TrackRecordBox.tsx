@@ -35,8 +35,8 @@ export function TrackRecordBox({
             Come sono andati i pronostici {sport === "calcio" ? "del calcio" : "NBA"}
           </h2>
           <p className="text-slate-400 text-sm max-w-xl">
-            Quante volte l'esito indicato come più probabile si è verificato. Contano tutte le partite giocate, anche
-            quelle sbagliate. Con {outcomes}, tirare a caso indovina {chance}.
+            Quante volte l'esito indicato come più probabile si è verificato. Contano tutte le partite, anche quelle
+            sbagliate. Con {outcomes}, tirare a caso indovina {chance}.
           </p>
         </div>
         <dl className="flex gap-6">
@@ -67,7 +67,7 @@ export function TrackRecordBox({
           <li key={e.key}>
             <Link
               to={e.path}
-              title={`${e.label} (${e.where}, ${formatShortDate(e.utcDate)}): indicato ${e.pick} al ${pct(e.prob)}, finita ${e.result}`}
+              title={`${e.label} (${e.where}, ${formatShortDate(e.utcDate)}): indicato ${e.pick} al ${pct(e.prob)}${e.published ? ` (pubblicato il ${formatShortDate(e.published)})` : ""}, finita ${e.result}`}
               aria-label={`${e.label}, ${e.where}: indicato ${e.pick} al ${pct(e.prob)}, finita ${e.result}, ${e.hit ? "corretto" : "sbagliato"}`}
               className={`flex h-8 w-8 items-center justify-center rounded-md ${
                 e.hit ? "bg-best text-best-foreground" : "bg-red-500/90 text-white"
@@ -80,8 +80,27 @@ export function TrackRecordBox({
       </ol>
 
       <p className="mt-4 text-slate-400 text-xs">
-        Ogni pronostico è calcolato con i soli dati disponibili prima della partita
-        {sport === "calcio" ? "; sono escluse solo le partite che il modello stesso segnala ad affidabilità bassa" : ""}.
+        {record.source === "archivio" ? (
+          <>
+            Contano tutti i pronostici pubblicati sul sito
+            {record.since ? ` dal ${formatShortDate(record.since)}` : ""}: ognuno viene archiviato prima del calcio
+            d'inizio e non viene più modificato.{" "}
+            <a
+              href={`/dati/archivio-pronostici-${sport}.json`}
+              className="text-action-text hover:text-action-text-hover"
+              download
+            >
+              Scarica l'archivio completo
+            </a>
+            .{" "}
+          </>
+        ) : (
+          <>
+            Pronostici ricalcolati con i soli dati disponibili prima di ogni partita
+            {sport === "calcio" ? ", escluse le partite che il modello segnala ad affidabilità bassa" : ""}. Appena
+            l'archivio dei pronostici pubblicati avrà almeno 10 partite concluse, il bilancio userà quello.{" "}
+          </>
+        )}
         Sono stime statistiche, non consigli di gioco.{" "}
         <Link to={`${paths.metodologia}#${anchor}`} className="text-action-text hover:text-action-text-hover">
           Come lo calcoliamo

@@ -1,11 +1,13 @@
 // NBA track record from the snapshot (see ./trackRecord.ts).
 import { gamePath, nbaGames } from "./basket";
 import { basketPredictionFor } from "./basketPredict";
-import { summarize, type TrackEntry, type TrackRecord } from "./trackRecord";
+import { archivedTrackRecord, summarize, type TrackEntry, type TrackRecord } from "./trackRecord";
 
 let nba: TrackRecord | null = null;
 export function nbaTrackRecord(): TrackRecord {
   if (nba) return nba;
+  const fromArchive = archivedTrackRecord("nba");
+  if (fromArchive) return (nba = fromArchive);
   const entries: TrackEntry[] = [];
   for (const g of nbaGames) {
     const p = basketPredictionFor(g.id);
