@@ -12,6 +12,7 @@ import {
   headToHead,
   isFinished,
   isLive,
+  isUpcoming,
   isResultPending,
   mainTable,
   recentForm,
@@ -25,11 +26,14 @@ import {
   matchMeta,
 } from "../../lib/football";
 import { generatedAt } from "../../lib/football";
+import { footballReasons } from "../../lib/predictionReasons";
+import { matchdaysOf } from "../../lib/matchdays";
+import { isMatchdayStage, matchdayPath } from "../../lib/footballCore";
 import { usePageMeta } from "../../lib/pageMeta";
 import { footballEditorial } from "../../lib/editorial";
 import { MatchEditorial } from "../editorial/MatchEditorial";
 import { MatchSummary, footballSummary } from "../editorial/MatchSummary";
-import { predictionFor } from "../../lib/predictions";
+import { archivedPredictionFor, predictionFor } from "../../lib/predictions";
 import { PredictionPanel } from "../predictions/PredictionUi";
 import { MatchRow, TeamBadge } from "./MatchRow";
 import { FootballBoxScore } from "./FootballBoxScore";
@@ -218,9 +222,14 @@ export function CalcioMatchPage() {
   const home = standingOf(competition, match.homeTeam.id);
   const away = standingOf(competition, match.awayTeam.id);
   const h2h = headToHead(match);
-  const prediction = predictionFor(match.id);
+  // once the match has started, show the prediction as it was published (archive), else the recalculated one
+  const archived = !isUpcoming(match) ? archivedPredictionFor(match.id) : undefined;
+  const prediction = archived ? { ...archived.prediction, pre: true } : predictionFor(match.id);
   const highlight = finished ? highlightOf(competition, match) : undefined;
   const details = finished ? footballDetailsFor(match.id) : undefined;
+  const roundPage = isMatchdayStage(match)
+    ? matchdaysOf(competition).find((d) => d.n === match.matchday)
+    : undefined;
   const sameRound = competition.matches.filter(
     (m) => m.matchday === match.matchday && m.stage === match.stage && m.id !== match.id,
   );
@@ -249,9 +258,17 @@ export function CalcioMatchPage() {
 
           <div className="flex flex-wrap items-center justify-center gap-2 mb-6 text-sm">
             <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300">{competition.name}</span>
-            {roundLabel(match) && (
-              <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300">{roundLabel(match)}</span>
-            )}
+            {roundLabel(match) &&
+              (roundPage ? (
+                <Link
+                  to={matchdayPath(competition, roundPage.n)}
+                  className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 hover:text-white underline-offset-2 hover:underline"
+                >
+                  {roundLabel(match)} · tutti i pronostici
+                </Link>
+              ) : (
+                <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300">{roundLabel(match)}</span>
+              ))}
             <span
               className={`px-2 py-0.5 rounded-md ${live ? "bg-red-600 text-white" : isResultPending(match) ? "bg-slate-800 text-warn" : "bg-slate-800 text-slate-300"}`}
             >
@@ -311,6 +328,8 @@ export function CalcioMatchPage() {
               home={match.homeTeam.shortName}
               away={match.awayTeam.shortName}
               result={finished && ft.home !== null && ft.away !== null ? { home: ft.home, away: ft.away } : null}
+              reasons={isUpcoming(match) ? footballReasons(prediction, competition, match) : []}
+              publishedAt={archived?.published}
             />
           )}
           <MatchEditorial article={footballEditorial({ comp: competition, match, h2h, generatedAt })} />

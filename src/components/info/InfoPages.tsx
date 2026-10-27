@@ -299,6 +299,18 @@ export function MetodologiaPage() {
             </>
           )}
         </li>
+        <li>
+          <strong>Archivio dei pronostici pubblicati:</strong> a ogni aggiornamento del sito (ogni 3 ore) il pronostico
+          di ogni partita ancora da giocare viene salvato in un archivio. Fino al calcio d'inizio può essere sostituito
+          da una versione più recente; dal calcio d'inizio in poi resta bloccato e gli si aggiunge solo il risultato.
+          Le pagine delle partite giocate mostrano il pronostico archiviato con la data di pubblicazione, e il bilancio
+          dei pronostici si basa sull'archivio appena contiene abbastanza partite. L'archivio completo si può
+          scaricare in formato JSON:{" "}
+          <a href="/dati/archivio-pronostici-calcio.json" className="text-action-text hover:text-action-text-hover" download>
+            archivio dei pronostici del calcio
+          </a>
+          .
+        </li>
       </ul>
       <h2 id="pronostici-basket">Pronostici del basket (NBA)</h2>
       <ul>
@@ -319,6 +331,14 @@ export function MetodologiaPage() {
         <li>
           <strong>Verifica:</strong> sulle stagioni NBA 2018-2024 l'esito indicato come più probabile si è verificato
           circa 65 volte su 100.
+        </li>
+        <li>
+          <strong>Archivio:</strong> come per il calcio, ogni pronostico pubblicato viene archiviato prima della palla a
+          due e non viene più modificato. L'archivio completo si può scaricare in formato JSON:{" "}
+          <a href="/dati/archivio-pronostici-nba.json" className="text-action-text hover:text-action-text-hover" download>
+            archivio dei pronostici NBA
+          </a>
+          .
         </li>
       </ul>
       <h2 id="pronostici-tennis">Pronostici del tennis</h2>

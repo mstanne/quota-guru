@@ -4,6 +4,11 @@ import { CalendarDays, ListOrdered, Trophy } from "lucide-react";
 import { PageHeader } from "../layout/PageHeader";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";
 import { BasketGameRow } from "./BasketGameRow";
+import { BASKET_MARKETS, type BasketMarket } from "./BasketPrediction";
+import { MarketFilter } from "../predictions/MarketFilter";
+import { useQueryChoice } from "../../lib/useQueryChoice";
+import { TrackRecordBox } from "../predictions/TrackRecordBox";
+import { nbaTrackRecord } from "../../lib/trackRecordNba";
 import { formatDay, romeDay } from "../../lib/footballCore";
 import {
   basketPaths,
@@ -20,6 +25,8 @@ import {
 } from "../../lib/basket";
 import { usePageMeta } from "../../lib/pageMeta";
 import { nbaResultsPath } from "../../lib/results";
+
+const MARKET_IDS = BASKET_MARKETS.map((m) => m.id);
 
 type Filter = "upcoming" | "today" | "tomorrow" | "week" | "results";
 const FILTERS: { id: Filter; label: string }[] = [
@@ -45,6 +52,7 @@ function matches(g: BasketGame, f: Filter) {
 /** /basket and /basket/nba – NBA calendar and results (real data, BALLDONTLIE). */
 export function BasketPage({ league }: { league?: "nba" }) {
   const [filter, setFilter] = useState<Filter>("upcoming");
+  const [market, setMarket] = useQueryChoice<BasketMarket>("mercato", MARKET_IDS, "win");
   usePageMeta(league ? nbaMeta : null);
   const rows = useMemo(() => {
     const list = nbaGames.filter((g) => matches(g, filter));
@@ -86,6 +94,7 @@ export function BasketPage({ league }: { league?: "nba" }) {
       </PageHeader>
 
       <div className="container mx-auto px-4 py-8">
+        <TrackRecordBox record={nbaTrackRecord()} sport="nba" className="mb-8" />
         <nav aria-label="Campionati" className="flex flex-wrap gap-2 mb-4">
           <Link to={basketPaths.nba} className={chip(true)} aria-current={league ? "page" : undefined}>
             NBA
@@ -103,7 +112,7 @@ export function BasketPage({ league }: { league?: "nba" }) {
         <div
           role="group"
           aria-label="Filtra per data"
-          className="inline-flex flex-wrap gap-1 p-1 mb-6 rounded-lg bg-slate-900 border border-slate-800"
+          className="inline-flex flex-wrap gap-1 p-1 mb-3 rounded-lg bg-slate-900 border border-slate-800"
         >
           {FILTERS.map((f) => (
             <button
@@ -120,6 +129,12 @@ export function BasketPage({ league }: { league?: "nba" }) {
           ))}
         </div>
 
+        {filter !== "results" ? (
+          <MarketFilter options={BASKET_MARKETS} value={market} onChange={setMarket} />
+        ) : (
+          <div className="mb-6" />
+        )}
+
         {groups.length === 0 ? (
           <div className="rounded-xl border border-slate-800 bg-slate-900 p-10 text-center">
             <CalendarDays className="w-8 h-8 text-slate-400 mx-auto mb-3" aria-hidden="true" />
@@ -135,7 +150,7 @@ export function BasketPage({ league }: { league?: "nba" }) {
                 </h2>
                 <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
                   {g.items.map((game) => (
-                    <BasketGameRow key={game.id} game={game} />
+                    <BasketGameRow key={game.id} game={game} market={market} />
                   ))}
                 </div>
               </section>

@@ -6,7 +6,7 @@ import { MatchSummary, basketSummary } from "../editorial/MatchSummary";
 import { TeamBadge } from "../calcio/MatchRow";
 import { ArchivedOrNotFound } from "../../lib/archive";
 import { BasketPredictionPanel } from "./BasketPrediction";
-import { basketPredictionFor } from "../../lib/basketPredict";
+import { archivedBasketPredictionFor, basketPredictionFor } from "../../lib/basketPredict";
 import { BasketGameRow } from "./BasketGameRow";
 import { BasketBoxScore } from "./BasketBoxScore";
 import { TeamName } from "../teams/TeamLink";
@@ -30,6 +30,7 @@ import {
   nbaSeasonYear,
 } from "../../lib/basket";
 import { usePageMeta } from "../../lib/pageMeta";
+import { nbaReasonsFor } from "../../lib/basketReasons";
 import { nbaEditorial } from "../../lib/editorial";
 import { MatchEditorial } from "../editorial/MatchEditorial";
 
@@ -45,7 +46,9 @@ export function BasketGamePage() {
   const finished = isGameFinished(game);
   const live = isGameLive(game);
   const sameDay = nbaGames.filter((g) => g.id !== game.id && romeDay(g.utcDate) === romeDay(game.utcDate));
-  const prediction = basketPredictionFor(game.id);
+  // once the game has started, show the prediction as it was published (archive), else the recalculated one
+  const archived = game.status !== "scheduled" ? archivedBasketPredictionFor(game.id) : undefined;
+  const prediction = archived ? { ...archived.prediction, pre: true } : basketPredictionFor(game.id);
   const highlight = finished ? highlightFor("nba", game.id) : undefined;
   const details = finished ? nbaDetailsFor(game.id) : undefined;
 
@@ -124,6 +127,8 @@ export function BasketGamePage() {
             home={game.home.shortName ?? game.home.name}
             away={game.away.shortName ?? game.away.name}
             result={finished && game.score.home != null && game.score.away != null ? { home: game.score.home, away: game.score.away } : null}
+            reasons={game.status === "scheduled" ? nbaReasonsFor(game, prediction) : []}
+            publishedAt={archived?.published}
           />
         )}
 

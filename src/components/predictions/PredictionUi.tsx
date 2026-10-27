@@ -2,14 +2,17 @@
 // Numbers come from the Poisson / Dixon-Coles model (scripts/predict-football.mjs). They are statistical
 // estimates, shown with their reliability and never as a betting tip.
 import { Link } from "../../lib/links";
-import { ChartColumn, Check, Info, X as XIcon } from "lucide-react";
+import { ChartColumn, Check, Info, Lightbulb, X as XIcon } from "lucide-react";
 import { paths } from "../../routes";
 import {
   CONFIDENCE_LABEL,
+  FOOTBALL_MARKETS,
+  marketCells,
   pct,
   pickHit,
   pickLabel,
   topOutcome,
+  type FootballMarket,
   type Prediction,
 } from "../../lib/predictionsCore";
 
@@ -70,7 +73,7 @@ export function PredictionMini({ prediction, home, away }: { prediction: Predict
         <span
           key={i}
           aria-hidden="true"
-          className={`w-11 rounded-md px-1 py-1 text-center leading-tight ${
+          className={`w-10 sm:w-11 rounded-md px-0.5 sm:px-1 py-1 text-center leading-tight ${
             i === top ? "bg-predict/15 text-predict" : "bg-slate-800 text-slate-300"
           }`}
         >
@@ -81,6 +84,88 @@ export function PredictionMini({ prediction, home, away }: { prediction: Predict
     </div>
   );
 }
+
+/** Compact cells for the market chosen in the quick filter (1X2, doppia chance, U/O, GG/NG, combo). */
+export function MarketMini({
+  prediction,
+  market,
+  home,
+  away,
+}: {
+  prediction: Prediction;
+  market: FootballMarket;
+  home: string;
+  away: string;
+}) {
+  if (market === "1x2") return <PredictionMini prediction={prediction} home={home} away={away} />;
+  const cells = marketCells(prediction, market, home, away);
+  const name = FOOTBALL_MARKETS.find((m) => m.id === market)!.label;
+  const combo = market === "combo";
+  const wide = combo ? "w-[4.5rem]" : market === "gg" ? "w-14" : "w-12";
+  return (
+    <div
+      // combos are stacked on phones so the team names keep their room
+      className={`flex gap-1 ${combo ? "flex-col sm:flex-row" : ""}`}
+      role="img"
+      aria-label={`${name}, probabilità stimate dal modello: ${cells.map((c) => `${c.spoken} ${pct(c.value)}`).join(", ")}`}
+    >
+      {cells.map((c) => (
+        <span
+          key={c.label}
+          aria-hidden="true"
+          className={`${wide} rounded-md px-1 ${combo ? "py-0.5 sm:py-1" : "py-1"} text-center leading-tight ${
+            c.top ? "bg-predict/15 text-predict" : "bg-slate-800 text-slate-300"
+          }`}
+        >
+          <span className="block text-[10px] text-slate-400 whitespace-nowrap">{c.label}</span>
+          <span className="block text-xs tabular-nums font-medium">{pct(c.value)}</span>
+        </span>
+      ))}
+    </div>
+  );
+}
+
+/** "Perché questo pronostico": the data points behind the estimate (src/lib/predictionReasons.ts). */
+export function ReasonList({ reasons, compact = false }: { reasons: string[]; compact?: boolean }) {
+  if (!reasons.length) return null;
+  const list = (
+    <ul className={`space-y-1.5 ${compact ? "text-sm" : ""}`}>
+      {reasons.map((r) => (
+        <li key={r} className="flex gap-2 text-slate-300">
+          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-predict" aria-hidden="true" />
+          <span>{r}</span>
+        </li>
+      ))}
+    </ul>
+  );
+  if (compact) return list;
+  return (
+    <div className="mt-5">
+      <h3 className="flex items-center gap-2 text-white text-base mb-2">
+        <Lightbulb className="w-4 h-4 text-slate-300" aria-hidden="true" />
+        Perché questo pronostico
+      </h3>
+      {list}
+    </div>
+  );
+}
+
+/** "Pubblicato il 24 ottobre alle 15:00, prima del calcio d'inizio (archivio)." */
+export function PublishedNote({ iso }: { iso: string }) {
+  return (
+    <span className="block text-slate-300 mb-1">
+      Pubblicato su QuotaGuru {formatUpdatedAt(iso)}, prima dell'inizio della partita, e conservato senza modifiche
+      nell'archivio dei pronostici.
+    </span>
+  );
+}
+
+const formatUpdatedAt = (iso: string) => {
+  const d = new Date(iso);
+  const day = new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", day: "numeric", month: "long" }).format(d);
+  const time = new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", hour: "2-digit", minute: "2-digit" }).format(d);
+  return `il ${day} alle ${time}`;
+};
 
 export function ConfidenceBadge({ confidence }: { confidence: Prediction["confidence"] }) {
   const dots = confidence === "alta" ? 3 : confidence === "media" ? 2 : 1;
@@ -114,12 +199,18 @@ export function PredictionPanel({
   home,
   away,
   result,
+  reasons = [],
+  publishedAt,
 }: {
   prediction: Prediction;
   home: string;
   away: string;
   /** Final score, for finished matches: the panel then shows the pre-match estimate and whether it was right. */
   result?: { home: number; away: number } | null;
+  /** Data points behind the estimate (upcoming matches only). */
+  reasons?: string[];
+  /** When the shown prediction was published (archive): the panel then says so. */
+  publishedAt?: string;
 }) {
   const p = prediction;
   const finished = !!result;
@@ -138,6 +229,7 @@ export function PredictionPanel({
         <ConfidenceBadge confidence={p.confidence} />
       </div>
       <p className="text-slate-400 text-sm mb-5">
+        {publishedAt ? <PublishedNote iso={publishedAt} /> : null}
         Probabilità stimate da un modello statistico sui risultati delle ultime stagioni. Non sono quote né consigli di
         gioco.
       </p>
@@ -164,6 +256,8 @@ export function PredictionPanel({
           </p>
         )}
       </div>
+
+      {!finished && <ReasonList reasons={reasons} />}
 
       <div className="mt-5 grid gap-6 sm:grid-cols-3">
         <div>

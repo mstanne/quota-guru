@@ -15,6 +15,8 @@ import { findStaticRoute, fullTitle, paths } from "./routes";
 const UpcomingMatches = lazyPage(() => import("./components/calcio/UpcomingMatches").then((m) => m.UpcomingMatches));
 const CalcioPage = lazyPage(() => import("./components/calcio/CalcioPage").then((m) => m.CalcioPage));
 const CalcioMatchPage = lazyPage(() => import("./components/calcio/CalcioMatchPage").then((m) => m.CalcioMatchPage));
+const MatchdayPage = lazyPage(() => import("./components/calcio/MatchdayPage").then((m) => m.MatchdayPage));
+const PronosticiPage = lazyPage(() => import("./components/predictions/PronosticiPage").then((m) => m.PronosticiPage));
 const StandingsPage = lazyPage(() => import("./components/calcio/StandingsPage").then((m) => m.StandingsPage));
 const NotFoundPage = lazyPage(() => import("./components/NotFoundPage").then((m) => m.NotFoundPage));
 const TennisPage = lazyPage(() => import("./components/TennisPage").then((m) => m.TennisPage));
@@ -67,6 +69,8 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/basket/nba/risultati/:mese", [NbaResultsPage, NotFoundPage]],
   ["/calcio/:competizione", [CalcioPage, NotFoundPage]],
   ["/calcio/:competizione/classifica", [StandingsPage, NotFoundPage]],
+  ["/calcio/:competizione/giornata/:numero", [MatchdayPage, NotFoundPage]],
+  [paths.pronostici, [PronosticiPage]],
   ["/calcio/:competizione/:partita", [CalcioMatchPage, NotFoundPage]],
   [paths.tennis, [TennisPage]],
   [paths.basket, [BasketPage]],
@@ -177,6 +181,8 @@ export default function App() {
             <Route path="/basket/nba/risultati/:mese" element={<NbaResultsPage />} />
             <Route path="/calcio/:competizione" element={<CalcioPage />} />
             <Route path="/calcio/:competizione/classifica" element={<StandingsPage />} />
+            <Route path="/calcio/:competizione/giornata/:numero" element={<MatchdayPage />} />
+            <Route path={paths.pronostici} element={<PronosticiPage />} />
             <Route path="/calcio/:competizione/:partita" element={<CalcioMatchPage />} />
             <Route path={paths.tennis} element={<TennisPage />} />
             <Route path={paths.basket} element={<BasketPage />} />
