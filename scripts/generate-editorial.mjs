@@ -221,7 +221,9 @@ async function main() {
   const key = process.env.ANTHROPIC_API_KEY?.trim();
   const enabled = key && process.env.EDITORIAL_AI !== "off";
   const model = process.env.EDITORIAL_AI_MODEL?.trim() || DEFAULT_MODEL;
-  const max = Math.max(0, Number(process.env.EDITORIAL_AI_MAX ?? 40) || 0);
+  // GitHub passes an unset variable as an empty string: that means the default, not 0
+  const maxRaw = process.env.EDITORIAL_AI_MAX?.trim();
+  const max = maxRaw ? Math.max(0, Number(maxRaw) || 0) : 40;
   const cache = readJson(CACHE, {});
   const stats = { reused: 0, new: 0, rejected: 0, errors: 0, skipped: 0 };
   const items = {};
