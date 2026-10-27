@@ -9,6 +9,10 @@
 //   highlights – an official YouTube highlight found for a finished match
 // The previous snapshot and the log (last 8 days) live in .cache/seo/data-log.json, which the workflow keeps
 // between runs with actions/cache. The first run only records the baseline (no entries).
+// No duplicates: the providers sometimes flip a finished match back to "scheduled" for a few hours (football-data.org
+// did it with four Primeira Liga matches on 26/10), which also hides its highlight. So "final", the details and the
+// highlights already seen are sticky in the saved state, and every entry carries the match key: the same kind is
+// never recorded twice for the same match.
 // The daily e-mail report reads the published file and summarises the last 24 hours.
 import fs from "node:fs";
 import path from "node:path";
@@ -71,15 +75,6 @@ for (const g of basket.nba?.games ?? []) {
     score: s.home != null && s.away != null ? `${s.home}-${s.away}` : null,
   };
 }
-const detailIds = [
-  ...Object.keys(fDetails).map((id) => `calcio:${id}`),
-  ...Object.keys(bDetails).map((id) => `nba:${id}`),
-];
-const highlightIds = [];
-for (const [slug, list] of Object.entries(highlights)) {
-  if (slug === "generatedAt" || !list || typeof list !== "object") continue;
-  for (const id of Object.keys(list)) highlightIds.push(slug === "nba" ? `nba:${id}` : `calcio:${id}`);
-}
 
 // ---------- compare with the previous run ----------
 let state = null;
@@ -89,12 +84,49 @@ try {
   state = null;
 }
 
-const entries = state?.entries ?? [];
+// a match already seen as final stays final (the provider may flip it back for a while)
+for (const [key, m] of Object.entries(matches)) {
+  const prev = state?.matches?.[key];
+  if (prev?.final && !m.final) {
+    m.final = true;
+    m.score ??= prev.score;
+  }
+}
+// details and highlights already seen are kept while their match is in the snapshot
+const known = (ids) => (ids ?? []).filter((key) => matches[key] || state?.matches?.[key]);
+const detailIds = [
+  ...new Set([
+    ...known(state?.details),
+    ...Object.keys(fDetails).map((id) => `calcio:${id}`),
+    ...Object.keys(bDetails).map((id) => `nba:${id}`),
+  ]),
+];
+const highlightIds = new Set(known(state?.highlights));
+const newHighlights = [];
+for (const [slug, list] of Object.entries(highlights)) {
+  if (slug === "generatedAt" || !list || typeof list !== "object") continue;
+  for (const id of Object.keys(list)) newHighlights.push(slug === "nba" ? `nba:${id}` : `calcio:${id}`);
+}
+
 const added = [];
+// entries already in the log, by kind + match (older entries without "key" are matched on competition, teams, day);
+// duplicates logged before this check existed are dropped, keeping the first one
+const seenKey = (e) => `${e.kind}|${e.key ?? `${e.sport}|${e.competition}|${e.match}|${e.day}`}`;
+const seen = new Map();
+const entries = (state?.entries ?? []).filter((e) => {
+  const k = seenKey(e);
+  if (seen.has(k) && (e.kind !== "risultato" || seen.get(k).score === e.score)) return false;
+  seen.set(k, e);
+  return true;
+});
 const entry = (kind, key, extra = {}) => {
   const m = matches[key] ?? state?.matches?.[key];
   if (!m) return;
-  added.push({ at, kind, sport: m.sport, competition: m.competition, match: m.label, day: m.day, ...extra });
+  const e = { at, kind, key, sport: m.sport, competition: m.competition, match: m.label, day: m.day, ...extra };
+  const old = seen.get(seenKey(e)) ?? seen.get(seenKey({ ...e, key: undefined }));
+  if (old && (kind !== "risultato" || old.score === e.score)) return;
+  seen.set(seenKey(e), e);
+  added.push(e);
 };
 
 if (state?.matches) {
@@ -110,8 +142,9 @@ if (state?.matches) {
     }
   }
   for (const key of detailIds) if (!prevDetails.has(key)) entry("dettagli", key);
-  for (const key of highlightIds) if (!prevHighlights.has(key)) entry("highlights", key);
+  for (const key of newHighlights) if (!prevHighlights.has(key)) entry("highlights", key);
 }
+for (const key of newHighlights) highlightIds.add(key);
 
 const cutoff = now.getTime() - KEEP_DAYS * 86400000;
 const kept = [...entries, ...added].filter((e) => new Date(e.at).getTime() >= cutoff);
@@ -130,7 +163,14 @@ for (const key of Object.keys(snapshot)) {
 fs.mkdirSync(path.dirname(STATE), { recursive: true });
 fs.writeFileSync(
   STATE,
-  JSON.stringify({ updatedAt: at, matches: snapshot, details: detailIds, highlights: highlightIds, runs, entries: kept }),
+  JSON.stringify({
+    updatedAt: at,
+    matches: snapshot,
+    details: detailIds,
+    highlights: [...highlightIds],
+    runs,
+    entries: kept,
+  }),
 );
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, JSON.stringify({ updatedAt: at, runs, entries: kept }, null, 1) + "\n");
