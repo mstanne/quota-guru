@@ -14,9 +14,12 @@
 // the site works exactly the same, with the template texts.
 //
 // Environment (all optional):
-//   ANTHROPIC_API_KEY     Claude API key (GitHub secret). Sent only in the "x-api-key" header, never logged.
+//   ANTHROPIC_API_KEY     Claude API key (GitHub secret; a service account key scoped to a workspace is best).
+//                         Sent only in the "Authorization: Bearer" header, never logged.
+//   ANTHROPIC_WORKSPACE_ID workspace id (wrkspc_…), needed only when the key is not scoped to a workspace.
 //   EDITORIAL_AI          "off" to disable the rewrite even if the key is set.
 //   EDITORIAL_AI_MODEL    model id (default below).
+//   EDITORIAL_AI_EFFORT   reasoning effort for the 5.x models: low (default), medium, high.
 //   EDITORIAL_AI_MAX      max NEW rewrites per run (default 40) – caps cost and run time.
 //   ANTHROPIC_API_URL     API endpoint (default https://api.anthropic.com/v1/messages; used by tests).
 //
@@ -32,7 +35,11 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = path.join(root, "src", "data");
 const OUT = path.join(DATA, "editorial-ai.json");
 const CACHE = path.join(root, ".cache", "editorial-ai.json");
-const DEFAULT_MODEL = "claude-sonnet-4-5";
+const DEFAULT_MODEL = "claude-haiku-5-5";
+// a rewrite with strict rules needs little reasoning: "low" keeps it fast and cheap (EDITORIAL_AI_EFFORT to change it)
+const EFFORT = process.env.EDITORIAL_AI_EFFORT?.trim() || "low";
+const EFFORT_MODELS = /^claude-(haiku|sonnet|opus)-5|^claude-(fable|mythos)/;
+const WORKSPACE = process.env.ANTHROPIC_WORKSPACE_ID?.trim();
 const RECAP_AI_DAYS = 3; // recaps are rewritten only for matches of the last few days
 
 function loadDotEnv() {
@@ -133,11 +140,18 @@ async function askClaude(art, { key, model, url }, attempt = 1) {
     res = await fetch(url, {
       method: "POST",
       signal: ctrl.signal,
-      headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" },
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${key}`,
+        "anthropic-version": "2023-06-01",
+        ...(WORKSPACE ? { "anthropic-workspace-id": WORKSPACE } : {}),
+      },
       body: JSON.stringify({
         model,
-        max_tokens: 2000,
-        temperature: 0.4,
+        // the 5.x models think before answering and the thinking counts toward max_tokens
+        max_tokens: 4000,
+        // no temperature: the 5.x models reject it; effort only on the models that support it
+        ...(EFFORT_MODELS.test(model) ? { output_config: { effort: EFFORT } } : {}),
         system: SYSTEM,
         messages: [{ role: "user", content: JSON.stringify(payload) }],
       }),

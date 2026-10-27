@@ -374,8 +374,10 @@ prossimi 14 giorni) e **resoconto** dopo, più alcune domande frequenti. Funzion
 Senza chiave l'agente controlla solo i testi a modelli: il sito funziona allo stesso modo.
 
 Per collegare Claude: repo **Settings → Secrets and variables → Actions → New repository secret**
-`ANTHROPIC_API_KEY`. Variabili facoltative (scheda *Variables*): `EDITORIAL_AI_MODEL` (modello, predefinito
-`claude-sonnet-4-5`), `EDITORIAL_AI_MAX` (nuove riscritture per esecuzione, predefinito 40), `EDITORIAL_AI=off` per
+`ANTHROPIC_API_KEY` (meglio una chiave di un account di servizio limitata a un workspace). Variabili facoltative
+(scheda *Variables*): `ANTHROPIC_WORKSPACE_ID` (solo se la chiave non è limitata a un workspace), `EDITORIAL_AI_MODEL` (modello, predefinito
+`claude-haiku-5-5`), `EDITORIAL_AI_EFFORT` (ragionamento dei modelli 5.x: `low` predefinito, `medium`, `high`),
+`EDITORIAL_AI_MAX` (nuove riscritture per esecuzione, predefinito 40), `EDITORIAL_AI=off` per
 sospendere la riscrittura. Le riscritture già accettate sono conservate nella cache di GitHub Actions e non vengono
 ripagate. Il riepilogo di ogni esecuzione (testi nuovi, riutilizzati, scartati) compare nella pagina del workflow.
 
