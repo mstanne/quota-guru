@@ -133,7 +133,7 @@ jobs:
           path: dist
 
       - name: Keep the list of new or changed pages for IndexNow
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: indexnow-urls
           path: .cache/seo/indexnow-urls.txt
@@ -169,7 +169,7 @@ jobs:
         with:
           node-version-file: .nvmrc
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: indexnow-urls
           path: .cache/seo
