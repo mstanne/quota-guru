@@ -13,7 +13,8 @@
 // did it with four Primeira Liga matches on 26/10), which also hides its highlight. So "final", the details and the
 // highlights already seen are sticky in the saved state, and every entry carries the match key: the same kind is
 // never recorded twice for the same match.
-// The daily e-mail report reads the published file and summarises the last 24 hours.
+// "editorial" (top level) = latest numbers of the Claude rewrite of the match texts; runs[].editorial = texts rewritten in
+// that run. The daily e-mail report reads the published file and summarises the last 24 hours.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -39,6 +40,10 @@ const basket = readJson("src/data/basket.json", { nba: { games: [] } });
 const fDetails = readJson("src/data/football-details.json", {});
 const bDetails = readJson("src/data/basket-details.json", {});
 const highlights = readJson("src/data/highlights.json", {});
+// numbers of the Claude rewrite of this run (scripts/generate-editorial.mjs); stale files from other runs are ignored
+const editorialRaw = readJson(".cache/editorial-stats.json", null);
+const editorial =
+  editorialRaw && Math.abs(Date.parse(editorialRaw.at) - Date.now()) < 3 * 3600000 ? editorialRaw : null;
 
 const romeDay = (iso) =>
   new Date(iso).toLocaleDateString("it-IT", { timeZone: "Europe/Rome", day: "2-digit", month: "2-digit" });
@@ -148,7 +153,10 @@ for (const key of newHighlights) highlightIds.add(key);
 
 const cutoff = now.getTime() - KEEP_DAYS * 86400000;
 const kept = [...entries, ...added].filter((e) => new Date(e.at).getTime() >= cutoff);
-const runs = [...(state?.runs ?? []), { at, added: added.length, baseline: !state?.matches }]
+const runs = [
+  ...(state?.runs ?? []),
+  { at, added: added.length, baseline: !state?.matches, ...(editorial ? { editorial: editorial.new } : {}) },
+]
   .filter((r) => new Date(r.at).getTime() >= cutoff)
   .slice(-MAX_RUNS);
 
@@ -173,7 +181,10 @@ fs.writeFileSync(
   }),
 );
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
-fs.writeFileSync(OUT, JSON.stringify({ updatedAt: at, runs, entries: kept }, null, 1) + "\n");
+fs.writeFileSync(
+  OUT,
+  JSON.stringify({ updatedAt: at, ...(editorial ? { editorial } : {}), runs, entries: kept }, null, 1) + "\n",
+);
 
 const byKind = added.reduce((o, e) => ((o[e.kind] = (o[e.kind] ?? 0) + 1), o), {});
 console.log(
