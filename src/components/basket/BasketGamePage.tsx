@@ -14,6 +14,7 @@ import { nbaResultsPath } from "../../lib/results";
 import { BasketPlayerStats } from "./BasketPlayerStats";
 import { nbaDetailsFor } from "../../lib/basketDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
+import { MatchOddsSlot } from "../odds/MatchOddsSlot";
 import { highlightFor } from "../../lib/highlights";
 import { formatDay, formatTime, romeDay } from "../../lib/footballCore";
 import {
@@ -139,6 +140,17 @@ export function BasketGamePage() {
             result={finished && game.score.home != null && game.score.away != null ? { home: game.score.home, away: game.score.away } : null}
             reasons={game.status === "scheduled" ? nbaReasonsFor(game, prediction) : []}
             publishedAt={archived?.published}
+          />
+        )}
+
+        {game.status === "scheduled" && (
+          <MatchOddsSlot
+            sport="nba"
+            id={game.id}
+            home={game.home.shortName ?? game.home.name}
+            away={game.away.shortName ?? game.away.name}
+            competition="NBA"
+            time={formatTime(game.utcDate)}
           />
         )}
 

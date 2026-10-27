@@ -3,12 +3,8 @@ import { useParams } from "react-router";
 import { Link } from "../../lib/links";
 import { CalendarDays, ListOrdered, Trophy } from "lucide-react";
 import {
-  allMatches,
-  competitions,
   competitionPath,
-  findCompetition,
   formatDay,
-  generatedAt,
   isFinished,
   isLive,
   isResultPending,
@@ -18,9 +14,10 @@ import {
   type Competition,
   type Match,
   competitionMeta,
-} from "../../lib/football";
+} from "../../lib/footballCore";
+import { footballIndex, useAllCompetitionData, useCompetitionData, type CompetitionData } from "../../lib/footballData";
 import { usePageMeta } from "../../lib/pageMeta";
-import { FOOTBALL_MARKETS, predictionFor, type FootballMarket } from "../../lib/predictions";
+import { FOOTBALL_MARKETS, type FootballMarket } from "../../lib/predictionsCore";
 import { useQueryChoice } from "../../lib/useQueryChoice";
 import { MarketFilter } from "../predictions/MarketFilter";
 import { TrackRecordBox } from "../predictions/TrackRecordBox";
@@ -31,8 +28,8 @@ import { NotFoundPage } from "../NotFoundPage";
 import { PageHeader } from "../layout/PageHeader";
 import { ListChecks } from "lucide-react";
 import { hasResults, resultsPath } from "../../lib/results";
-import { featuredMatchday } from "../../lib/matchdays";
-import { matchdayPath } from "../../lib/football";
+import { featuredMatchday } from "../../lib/matchdaysCore";
+import { matchdayPath } from "../../lib/footballCore";
 
 const MARKET_IDS = FOOTBALL_MARKETS.map((m) => m.id);
 
@@ -61,16 +58,25 @@ function matchesFilter(m: Match, filter: Filter) {
 /** /calcio (all competitions) and /calcio/:competizione */
 export function CalcioPage() {
   const { competizione } = useParams();
-  const competition = competizione ? findCompetition(competizione) : undefined;
+  // one competition, or all of them for /calcio (downloaded on demand, see src/lib/footballData.ts)
+  const single = competizione ? useCompetitionData(competizione) : null;
+  const all: CompetitionData[] = competizione ? (single ? [single] : []) : useAllCompetitionData();
+  const competition = single?.competition;
+  const bySlug = new Map(all.map((d) => [d.competition.slug, d]));
+  const predictionOf = (c: Competition, m: Match) => bySlug.get(c.slug)?.prediction(m.id);
+  const generatedAt = all[0]?.generatedAt ?? "";
   const [filter, setFilter] = useState<Filter>("upcoming");
   const [market, setMarket] = useQueryChoice<FootballMarket>("mercato", MARKET_IDS, "1x2");
   usePageMeta(competition ? competitionMeta(competition) : null);
 
   const rows = useMemo(() => {
-    const source = competition ? competition.matches.map((m) => ({ competition, match: m })) : allMatches;
+    const source = all
+      .flatMap((d) => d.competition.matches.map((m) => ({ competition: d.competition, match: m })))
+      .sort((a, b) => a.match.utcDate.localeCompare(b.match.utcDate));
     const list = source.filter(({ match }) => matchesFilter(match, filter));
     return filter === "results" ? [...list].reverse() : list;
-  }, [competition, filter]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [competizione, all.length, filter]);
 
   if (competizione && !competition) return <NotFoundPage />;
   const round = competition ? featuredMatchday(competition) : undefined;
@@ -142,12 +148,12 @@ export function CalcioPage() {
           <Link to={`/calcio${q}`} className={chip(!competition)} aria-current={!competition ? "page" : undefined}>
             Tutte
           </Link>
-          {competitions.map((c) => (
+          {footballIndex.map((c) => (
             <Link
               key={c.code}
               to={`${competitionPath(c)}${q}`}
-              className={chip(c === competition)}
-              aria-current={c === competition ? "page" : undefined}
+              className={chip(c.slug === competition?.slug)}
+              aria-current={c.slug === competition?.slug ? "page" : undefined}
             >
               {c.name}
             </Link>
@@ -165,6 +171,9 @@ export function CalcioPage() {
               type="button"
               onClick={() => setFilter(f.id)}
               aria-pressed={filter === f.id}
+              data-track="filter_use"
+              data-track-filter="calcio-data"
+              data-track-value={f.id}
               className={`px-3 py-1.5 rounded-md text-sm transition-colors cursor-pointer ${
                 filter === f.id ? "bg-slate-700 text-white" : "text-slate-400 hover:text-white"
               }`}
@@ -203,7 +212,7 @@ export function CalcioPage() {
                       competition={c}
                       match={match}
                       showCompetition={!competition}
-                      prediction={predictionFor(match.id)}
+                      prediction={predictionOf(c, match)}
                       market={market}
                     />
                   ))}

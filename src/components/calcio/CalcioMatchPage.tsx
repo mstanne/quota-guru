@@ -4,12 +4,9 @@ import { Link } from "../../lib/links";
 import { ArrowLeft, CalendarDays, History, Info, ListOrdered, TrendingUp, Users } from "lucide-react";
 import {
   competitionPath,
-  findCompetition,
-  findMatch,
   formatDay,
   formatShortDate,
   formatTime,
-  headToHead,
   isFinished,
   isLive,
   isUpcoming,
@@ -24,16 +21,16 @@ import {
   type Match,
   type StandingRow,
   matchMeta,
-} from "../../lib/football";
-import { generatedAt } from "../../lib/football";
+} from "../../lib/footballCore";
+import { useCompetitionData } from "../../lib/footballData";
+import { highlightFor } from "../../lib/highlights";
 import { footballReasons } from "../../lib/predictionReasons";
-import { matchdaysOf } from "../../lib/matchdays";
+import { matchdaysOf } from "../../lib/matchdaysCore";
 import { isMatchdayStage, matchdayPath } from "../../lib/footballCore";
 import { usePageMeta } from "../../lib/pageMeta";
 import { footballEditorial } from "../../lib/editorial";
 import { MatchEditorial } from "../editorial/MatchEditorial";
 import { MatchSummary, footballSummary } from "../editorial/MatchSummary";
-import { archivedPredictionFor, predictionFor } from "../../lib/predictions";
 import { PredictionPanel } from "../predictions/PredictionUi";
 import { MatchRow, TeamBadge } from "./MatchRow";
 import { FootballBoxScore } from "./FootballBoxScore";
@@ -42,7 +39,7 @@ import { hasResults, resultsPath } from "../../lib/results";
 import { FootballMatchDetails } from "./FootballMatchDetails";
 import { footballDetailsFor } from "../../lib/footballDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
-import { highlightOf } from "../../lib/footballRoutes";
+import { MatchOddsSlot } from "../odds/MatchOddsSlot";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 import { ArchivedOrNotFound } from "../../lib/archive";
 
@@ -210,10 +207,12 @@ function MiniStandings({ competition, match }: { competition: Competition; match
 /** /calcio/:competizione/:partita */
 export function CalcioMatchPage() {
   const { competizione, partita } = useParams();
-  const competition = findCompetition(competizione);
-  const match = findMatch(competition, partita);
-  usePageMeta(competition && match ? matchMeta(competition, match, !!predictionFor(match.id)) : null);
-  if (!competition || !match) return <ArchivedOrNotFound />;
+  const data = useCompetitionData(competizione);
+  const competition = data?.competition;
+  const match = data?.findMatch(partita);
+  usePageMeta(competition && match ? matchMeta(competition, match, !!data.prediction(match.id)) : null);
+  if (!data || !competition || !match) return <ArchivedOrNotFound />;
+  const generatedAt = data.generatedAt;
 
   const finished = isFinished(match);
   const live = isLive(match);
@@ -221,11 +220,11 @@ export function CalcioMatchPage() {
   const ht = match.score.halfTime;
   const home = standingOf(competition, match.homeTeam.id);
   const away = standingOf(competition, match.awayTeam.id);
-  const h2h = headToHead(match);
+  const h2h = data.headToHead(match);
   // once the match has started, show the prediction as it was published (archive), else the recalculated one
-  const archived = !isUpcoming(match) ? archivedPredictionFor(match.id) : undefined;
-  const prediction = archived ? { ...archived.prediction, pre: true } : predictionFor(match.id);
-  const highlight = finished ? highlightOf(competition, match) : undefined;
+  const archived = !isUpcoming(match) ? data.archived(match.id) : undefined;
+  const prediction = archived ? { ...archived.prediction, pre: true } : data.prediction(match.id);
+  const highlight = finished ? highlightFor(competition.slug, match.id) : undefined;
   const details = finished ? footballDetailsFor(match.id) : undefined;
   const roundPage = isMatchdayStage(match)
     ? matchdaysOf(competition).find((d) => d.n === match.matchday)
@@ -335,6 +334,16 @@ export function CalcioMatchPage() {
               publishedAt={archived?.published}
             />
           )}
+          {isUpcoming(match) && (
+            <MatchOddsSlot
+              sport="football"
+              id={match.id}
+              home={match.homeTeam.shortName}
+              away={match.awayTeam.shortName}
+              competition={competition.name}
+              time={formatTime(match.utcDate)}
+            />
+          )}
           <MatchEditorial article={footballEditorial({ comp: competition, match, h2h, generatedAt })} />
 
           <section className={card} aria-labelledby="confronto">
@@ -428,7 +437,7 @@ export function CalcioMatchPage() {
             </h2>
             <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
               {sameRound.map((m) => (
-                <MatchRow key={m.id} competition={competition} match={m} prediction={predictionFor(m.id)} />
+                <MatchRow key={m.id} competition={competition} match={m} prediction={data.prediction(m.id)} />
               ))}
             </div>
           </section>

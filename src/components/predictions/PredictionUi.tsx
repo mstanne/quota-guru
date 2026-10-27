@@ -1,6 +1,8 @@
 // Prediction widgets (football): probability bar, compact 1X2 for match rows, full panel for match pages.
 // Numbers come from the Poisson / Dixon-Coles model (scripts/predict-football.mjs). They are statistical
 // estimates, shown with their reliability and never as a betting tip.
+import { useEffect, useRef } from "react";
+import { trackWhenVisible } from "../../lib/analytics";
 import { Link } from "../../lib/links";
 import { ChartColumn, Check, Info, Lightbulb, X as XIcon } from "lucide-react";
 import { paths } from "../../routes";
@@ -214,13 +216,15 @@ export function PredictionPanel({
 }) {
   const p = prediction;
   const finished = !!result;
+  const panelRef = useRef<HTMLElement>(null);
+  useEffect(() => trackWhenVisible(panelRef.current, "prediction_view", { sport: "calcio" }), []);
   const hit = finished ? pickHit(p, result.home, result.away) : null;
   const dcLabels = [`1X · ${home} o pareggio`, `12 · ${home} o ${away}`, `X2 · ${away} o pareggio`];
   // "12" (no draw) is almost always the highest double chance: highlight the best of 1X / X2 instead
   const dcTop = p.dc[0] >= p.dc[2] ? 0 : 2;
 
   return (
-    <section className="rounded-xl border border-slate-800 bg-slate-900 p-5" aria-labelledby="pronostico">
+    <section ref={panelRef} className="rounded-xl border border-slate-800 bg-slate-900 p-5" aria-labelledby="pronostico">
       <div className="flex flex-wrap items-center justify-between gap-3 mb-1">
         <h2 id="pronostico" className="flex items-center gap-2 text-white text-xl">
           <ChartColumn className="w-5 h-5 text-slate-300" aria-hidden="true" />

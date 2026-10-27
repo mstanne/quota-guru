@@ -1,6 +1,7 @@
 // F10: institutional pages (about, contacts, FAQ, methodology, affiliate disclosure, terms, privacy, cookies).
 // Texts are TEMPLATES: company data come from src/data/site.ts, and the legal pages (terms, privacy, cookies)
 // must be reviewed by a lawyer before publishing.
+import { CalibrationSection } from "../predictions/CalibrationChart";
 import type { ReactNode } from "react";
 import { Link } from "../../lib/links";
 import { BookOpen, Cookie, FileText, HelpCircle, Info, Mail, Scale, ShieldCheck } from "lucide-react";
@@ -341,6 +342,7 @@ export function MetodologiaPage() {
           .
         </li>
       </ul>
+      <CalibrationSection />
       <h2 id="pronostici-tennis">Pronostici del tennis</h2>
       <ul>
         <li>

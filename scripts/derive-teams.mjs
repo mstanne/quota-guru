@@ -139,7 +139,7 @@ for (const r of fHistory.results ?? []) {
 
 fs.mkdirSync(OUT, { recursive: true });
 for (const comp of football.competitions) {
-  if (comp.code === "CL") continue; // team pages follow the domestic leagues
+  if (["CL", "EL", "ECL"].includes(comp.code)) continue; // team pages follow the domestic leagues
   const current = Number(comp.season?.startDate?.slice(0, 4)) || null;
   const standing = comp.standings?.[0]?.table ?? [];
   const ids = fTeams.competitions?.[comp.slug]?.length ? fTeams.competitions[comp.slug] : standing.map((r) => r.team.id);

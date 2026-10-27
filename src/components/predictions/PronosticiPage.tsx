@@ -1,6 +1,7 @@
 // /pronostici – hub of the model's predictions: next football and NBA matches, the round pages,
 // the tennis predictor and the verifiable track record of both models.
-import { ChartColumn, ChevronRight, CircleDot, Goal, Dribbble } from "lucide-react";
+import { CalendarDays, ChartColumn, ChevronRight, CircleDot, Goal, Dribbble } from "lucide-react";
+import { dayPath } from "../../lib/dayPages";
 import type { ReactNode } from "react";
 import { Link } from "../../lib/links";
 import { PageHeader, MetaItems } from "../layout/PageHeader";
@@ -70,6 +71,18 @@ export function PronosticiPage() {
       />
 
       <div className="container mx-auto px-4 py-8">
+        <nav aria-label="Pronostici per giorno" className="flex flex-wrap gap-2 mb-8">
+          {(["oggi", "domani"] as const).map((d) => (
+            <Link
+              key={d}
+              to={dayPath(d)}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
+            >
+              <CalendarDays className="w-4 h-4 text-slate-300" aria-hidden="true" />
+              Pronostici di {d}
+            </Link>
+          ))}
+        </nav>
         <Section
           id="calcio"
           icon={Goal}

@@ -69,6 +69,9 @@ export function TrackRecordBox({
               to={e.path}
               title={`${e.label} (${e.where}, ${formatShortDate(e.utcDate)}): indicato ${e.pick} al ${pct(e.prob)}${e.published ? ` (pubblicato il ${formatShortDate(e.published)})` : ""}, finita ${e.result}`}
               aria-label={`${e.label}, ${e.where}: indicato ${e.pick} al ${pct(e.prob)}, finita ${e.result}, ${e.hit ? "corretto" : "sbagliato"}`}
+              data-track="track_record_click"
+              data-track-sport={sport}
+              data-track-result={e.hit ? "corretto" : "sbagliato"}
               className={`flex h-8 w-8 items-center justify-center rounded-md ${
                 e.hit ? "bg-best text-best-foreground" : "bg-red-500/90 text-white"
               } hover:opacity-80 focus-visible:outline-2 focus-visible:outline-action`}
@@ -88,6 +91,8 @@ export function TrackRecordBox({
             <a
               href={`/dati/archivio-pronostici-${sport}.json`}
               className="text-action-text hover:text-action-text-hover"
+              data-track="archive_download"
+              data-track-sport={sport}
               download
             >
               Scarica l'archivio completo
