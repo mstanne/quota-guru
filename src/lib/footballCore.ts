@@ -131,6 +131,11 @@ export const isFinished = (m: Match) => m.status === "FINISHED" || m.status === 
 export const isUpcoming = (m: Match) => m.status === "SCHEDULED" || m.status === "TIMED";
 export const isLive = (m: Match) => m.status === "IN_PLAY" || m.status === "PAUSED";
 /** Played (by the clock) but the source has not published the final result yet. */
+/** Matchday page, e.g. /calcio/serie-a/giornata/12 (league phases only, see src/lib/matchdays.ts). */
+export const matchdayPath = (c: CompetitionRef, n: number) => `/calcio/${c.slug}/giornata/${n}`;
+/** Stages whose matchdays get their own page. */
+export const isMatchdayStage = (m: Pick<Match, "stage" | "matchday">) =>
+  !!m.matchday && (m.stage === "REGULAR_SEASON" || m.stage === "LEAGUE_STAGE");
 export const isResultPending = (m: Match) => m.status === "RESULT_PENDING";
 
 /** Reference time of this build (vite.config.ts), the same for pre-rendered pages and the browser. */

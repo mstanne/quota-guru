@@ -69,6 +69,19 @@ export const basketPaths = {
 const teamSlug = (t: BasketTeam) => slugify(t.shortName || t.name);
 export const gameSlug = (g: BasketGame) => `${teamSlug(g.home)}-${teamSlug(g.away)}-${romeDay(g.utcDate)}`;
 export const gamePath = (g: BasketGame) => `${basketPaths.nba}/${gameSlug(g)}`;
+/** Wins in the last `n` finished games of a team before `beforeIso` (null with fewer than 5 games). */
+export function nbaRecentRecord(teamId: number, beforeIso: string, n = 10) {
+  const games = nbaGames
+    .filter((g) => g.status === "final" && g.utcDate < beforeIso && (g.home.id === teamId || g.away.id === teamId))
+    .sort((a, b) => b.utcDate.localeCompare(a.utcDate))
+    .slice(0, n);
+  if (games.length < 5) return null;
+  const won = games.filter((g) => {
+    const home = g.home.id === teamId;
+    return home ? (g.score.home ?? 0) > (g.score.away ?? 0) : (g.score.away ?? 0) > (g.score.home ?? 0);
+  }).length;
+  return { won, games: games.length };
+}
 export const findGame = (slug?: string) => nbaGames.find((g) => gameSlug(g) === slug);
 
 // ---------- status ----------

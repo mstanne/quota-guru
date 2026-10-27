@@ -4,7 +4,7 @@ import { ChartColumn, Check, Info, X as XIcon } from "lucide-react";
 import { paths } from "../../routes";
 import { pct } from "../../lib/predictionsCore";
 import { fmtPts, type BasketPrediction } from "../../lib/basketPredict";
-import { ConfidenceBadge } from "../predictions/PredictionUi";
+import { ConfidenceBadge, ReasonList } from "../predictions/PredictionUi";
 
 const label = (p: BasketPrediction, home: string, away: string) =>
   `Probabilità di vittoria stimate dal modello: ${home} ${pct(p.p[0])}, ${away} ${pct(p.p[1])}`;
@@ -100,12 +100,15 @@ export function BasketPredictionPanel({
   home,
   away,
   result,
+  reasons = [],
 }: {
   prediction: BasketPrediction;
   home: string;
   away: string;
   /** Final score, for finished games: the panel shows the pre-game estimate and whether it was right. */
   result?: { home: number; away: number } | null;
+  /** Data points behind the estimate (upcoming games only). */
+  reasons?: string[];
 }) {
   const p = prediction;
   const names = [home, away];
@@ -168,6 +171,8 @@ export function BasketPredictionPanel({
         )}
       </div>
 
+      {!result && <ReasonList reasons={reasons} />}
+
       <div className="mt-5 grid gap-6 sm:grid-cols-3">
         <div>
           <h3 className="text-white text-base mb-1">Scarto</h3>
@@ -196,7 +201,7 @@ export function BasketPredictionPanel({
         </div>
       </div>
 
-      {tired.length > 0 && (
+      {tired.length > 0 && (result || !reasons.length) && (
         <p className="mt-4 text-slate-300 text-sm">
           {tired.join(" e ")} {tired.length > 1 ? "giocano" : "gioca"} la seconda partita in due giorni: il modello ne
           tiene conto.

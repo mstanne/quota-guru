@@ -23,12 +23,16 @@ import { usePageMeta } from "../../lib/pageMeta";
 import { FOOTBALL_MARKETS, predictionFor, type FootballMarket } from "../../lib/predictions";
 import { useQueryChoice } from "../../lib/useQueryChoice";
 import { MarketFilter } from "../predictions/MarketFilter";
+import { TrackRecordBox } from "../predictions/TrackRecordBox";
+import { footballTrackRecord } from "../../lib/trackRecordFootball";
 import { MatchRow } from "./MatchRow";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 import { NotFoundPage } from "../NotFoundPage";
 import { PageHeader } from "../layout/PageHeader";
 import { ListChecks } from "lucide-react";
 import { hasResults, resultsPath } from "../../lib/results";
+import { featuredMatchday } from "../../lib/matchdays";
+import { matchdayPath } from "../../lib/football";
 
 const MARKET_IDS = FOOTBALL_MARKETS.map((m) => m.id);
 
@@ -69,6 +73,7 @@ export function CalcioPage() {
   }, [competition, filter]);
 
   if (competizione && !competition) return <NotFoundPage />;
+  const round = competition ? featuredMatchday(competition) : undefined;
 
   // Group by Italian calendar day
   const groups: { day: string; label: string; items: { competition: Competition; match: Match }[] }[] = [];
@@ -100,6 +105,7 @@ export function CalcioPage() {
         }
         meta={<DataUpdatedNote generatedAt={generatedAt} />}
       >
+        <div className="flex flex-wrap gap-2">
         {competition && competition.standings.length > 0 && (
           <Link
             to={standingsPath(competition)}
@@ -109,18 +115,29 @@ export function CalcioPage() {
             Classifica {competition.name}
           </Link>
         )}
+        {competition && round && (
+          <Link
+            to={matchdayPath(competition, round.n)}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
+          >
+            <CalendarDays className="w-4 h-4 text-slate-300" aria-hidden="true" />
+            Pronostici {round.n}ª giornata
+          </Link>
+        )}
         {competition && hasResults(competition.slug) && (
           <Link
             to={resultsPath(competition.slug)}
-            className="inline-flex items-center gap-2 px-4 py-2 ml-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
           >
             <ListChecks className="w-4 h-4 text-slate-300" aria-hidden="true" />
             Tutti i risultati
           </Link>
         )}
+        </div>
       </PageHeader>
 
       <div className="container mx-auto px-4 py-8">
+        <TrackRecordBox record={footballTrackRecord()} sport="calcio" className="mb-8" />
         <nav aria-label="Competizioni" className="flex flex-wrap gap-2 mb-4">
           <Link to={`/calcio${q}`} className={chip(!competition)} aria-current={!competition ? "page" : undefined}>
             Tutte

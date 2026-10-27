@@ -23,6 +23,7 @@ export const SITE_NAME = "QuotaGuru";
 export const paths = {
   home: "/",
   calcio: "/calcio",
+  pronostici: "/pronostici",
   tennis: "/tennis",
   basket: "/basket",
   sitiScommesse: "/siti-scommesse",
@@ -54,6 +55,12 @@ export const routes: RouteMeta[] = [
     title: "Pronostici calcio: calendario, risultati e classifiche",
     description:
       "Pronostici con le probabilità 1X2, partite in programma, risultati e classifiche di Serie A, Champions League, Premier League, LaLiga e degli altri principali campionati.",
+  },
+  {
+    path: paths.pronostici,
+    title: "Pronostici di oggi e della settimana: calcio, NBA e tennis",
+    description:
+      "Le prossime partite di calcio e NBA con le probabilità calcolate dal modello statistico, i dati che le spiegano e il bilancio verificabile dei pronostici passati.",
   },
   {
     path: paths.tennis,

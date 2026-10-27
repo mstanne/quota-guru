@@ -2,7 +2,7 @@
 // Numbers come from the Poisson / Dixon-Coles model (scripts/predict-football.mjs). They are statistical
 // estimates, shown with their reliability and never as a betting tip.
 import { Link } from "../../lib/links";
-import { ChartColumn, Check, Info, X as XIcon } from "lucide-react";
+import { ChartColumn, Check, Info, Lightbulb, X as XIcon } from "lucide-react";
 import { paths } from "../../routes";
 import {
   CONFIDENCE_LABEL,
@@ -73,7 +73,7 @@ export function PredictionMini({ prediction, home, away }: { prediction: Predict
         <span
           key={i}
           aria-hidden="true"
-          className={`w-11 rounded-md px-1 py-1 text-center leading-tight ${
+          className={`w-10 sm:w-11 rounded-md px-0.5 sm:px-1 py-1 text-center leading-tight ${
             i === top ? "bg-predict/15 text-predict" : "bg-slate-800 text-slate-300"
           }`}
         >
@@ -125,6 +125,31 @@ export function MarketMini({
   );
 }
 
+/** "Perché questo pronostico": the data points behind the estimate (src/lib/predictionReasons.ts). */
+export function ReasonList({ reasons, compact = false }: { reasons: string[]; compact?: boolean }) {
+  if (!reasons.length) return null;
+  const list = (
+    <ul className={`space-y-1.5 ${compact ? "text-sm" : ""}`}>
+      {reasons.map((r) => (
+        <li key={r} className="flex gap-2 text-slate-300">
+          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-predict" aria-hidden="true" />
+          <span>{r}</span>
+        </li>
+      ))}
+    </ul>
+  );
+  if (compact) return list;
+  return (
+    <div className="mt-5">
+      <h3 className="flex items-center gap-2 text-white text-base mb-2">
+        <Lightbulb className="w-4 h-4 text-slate-300" aria-hidden="true" />
+        Perché questo pronostico
+      </h3>
+      {list}
+    </div>
+  );
+}
+
 export function ConfidenceBadge({ confidence }: { confidence: Prediction["confidence"] }) {
   const dots = confidence === "alta" ? 3 : confidence === "media" ? 2 : 1;
   return (
@@ -157,12 +182,15 @@ export function PredictionPanel({
   home,
   away,
   result,
+  reasons = [],
 }: {
   prediction: Prediction;
   home: string;
   away: string;
   /** Final score, for finished matches: the panel then shows the pre-match estimate and whether it was right. */
   result?: { home: number; away: number } | null;
+  /** Data points behind the estimate (upcoming matches only). */
+  reasons?: string[];
 }) {
   const p = prediction;
   const finished = !!result;
@@ -207,6 +235,8 @@ export function PredictionPanel({
           </p>
         )}
       </div>
+
+      {!finished && <ReasonList reasons={reasons} />}
 
       <div className="mt-5 grid gap-6 sm:grid-cols-3">
         <div>

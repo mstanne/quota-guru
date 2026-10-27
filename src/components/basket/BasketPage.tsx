@@ -7,6 +7,8 @@ import { BasketGameRow } from "./BasketGameRow";
 import { BASKET_MARKETS, type BasketMarket } from "./BasketPrediction";
 import { MarketFilter } from "../predictions/MarketFilter";
 import { useQueryChoice } from "../../lib/useQueryChoice";
+import { TrackRecordBox } from "../predictions/TrackRecordBox";
+import { nbaTrackRecord } from "../../lib/trackRecordNba";
 import { formatDay, romeDay } from "../../lib/footballCore";
 import {
   basketPaths,
@@ -92,6 +94,7 @@ export function BasketPage({ league }: { league?: "nba" }) {
       </PageHeader>
 
       <div className="container mx-auto px-4 py-8">
+        <TrackRecordBox record={nbaTrackRecord()} sport="nba" className="mb-8" />
         <nav aria-label="Campionati" className="flex flex-wrap gap-2 mb-4">
           <Link to={basketPaths.nba} className={chip(true)} aria-current={league ? "page" : undefined}>
             NBA

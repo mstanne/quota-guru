@@ -30,6 +30,7 @@ import {
   nbaSeasonYear,
 } from "../../lib/basket";
 import { usePageMeta } from "../../lib/pageMeta";
+import { nbaReasonsFor } from "../../lib/basketReasons";
 import { nbaEditorial } from "../../lib/editorial";
 import { MatchEditorial } from "../editorial/MatchEditorial";
 
@@ -124,6 +125,7 @@ export function BasketGamePage() {
             home={game.home.shortName ?? game.home.name}
             away={game.away.shortName ?? game.away.name}
             result={finished && game.score.home != null && game.score.away != null ? { home: game.score.home, away: game.score.away } : null}
+            reasons={finished ? [] : nbaReasonsFor(game, prediction)}
           />
         )}
 

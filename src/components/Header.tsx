@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BookOpen, CircleDot, Dribbble, Gift, Goal, Menu, Shield } from "lucide-react";
+import { BookOpen, ChartColumn, CircleDot, Dribbble, Gift, Goal, Menu, Shield } from "lucide-react";
 import { Link, NavLink } from "../lib/links";
 import { Button } from "./ui/button";
 import { Sheet, SheetHeader, SheetContent, SheetTitle } from "./ui/sheet";
@@ -9,6 +9,7 @@ import { ResponsibleBar } from "./responsible/ResponsibleGambling";
 
 
 const NAV = [
+  { to: paths.pronostici, label: "Pronostici", icon: ChartColumn },
   { to: paths.calcio, label: "Calcio", icon: Goal },
   { to: paths.tennis, label: "Tennis", icon: CircleDot },
   { to: paths.basket, label: "Basket", icon: Dribbble },
