@@ -35,6 +35,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = path.join(root, "src", "data");
 const OUT = path.join(DATA, "editorial-ai.json");
 const CACHE = path.join(root, ".cache", "editorial-ai.json");
+// numbers of this run, read by scripts/log-data-changes.mjs for /registro-dati.json (daily e-mail report)
+const STATS = path.join(root, ".cache", "editorial-stats.json");
 const DEFAULT_MODEL = "claude-haiku-5-5";
 // a rewrite with strict rules needs little reasoning: "low" keeps it fast and cheap (EDITORIAL_AI_EFFORT to change it)
 const EFFORT = process.env.EDITORIAL_AI_EFFORT?.trim() || "low";
@@ -234,7 +236,9 @@ async function main() {
     const opts = { key, model, url: apiUrl() };
     let budget = max;
     let stop = false;
-    for (const { art } of aiCandidates(list)) {
+    const candidates = aiCandidates(list);
+    stats.candidates = candidates.length;
+    for (const { art } of candidates) {
       const hit = cache[art.key];
       if (hit && hit.fingerprint === art.fingerprint) {
         if (hit.rejected) stats.rejected++;
@@ -277,6 +281,18 @@ async function main() {
   }
 
   writeJson(OUT, { generatedAt: enabled ? new Date().toISOString() : null, model: enabled ? model : null, items });
+  writeJson(STATS, {
+    at: new Date().toISOString(),
+    enabled: Boolean(enabled),
+    model: enabled ? model : null,
+    templates: list.length, // all match texts on the site
+    candidates: stats.candidates ?? 0, // texts eligible for a rewrite (previews + recaps of the last days)
+    online: Object.keys(items).length, // rewritten texts published in this build
+    new: stats.new,
+    rejected: stats.rejected,
+    errors: stats.errors,
+    pending: stats.skipped + stats.errors, // still to rewrite in the next runs
+  });
   console.log(`Salvato src/data/editorial-ai.json: ${Object.keys(items).length} testi riscritti.`);
 
   if (process.env.GITHUB_STEP_SUMMARY) {
