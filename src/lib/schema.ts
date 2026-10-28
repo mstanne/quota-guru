@@ -9,22 +9,43 @@ const EVENT_STATUS: Record<Status, string> = {
   cancelled: "https://schema.org/EventCancelled",
 };
 
+/** Where a match is played, when the data says so (home team's stadium or arena). */
+export interface EventVenue {
+  name: string;
+  city?: string | null;
+  /** ISO country code or country name. */
+  country?: string | null;
+}
+
+/**
+ * SportsEvent for a match page. Google's event results want `location` and `startDate`; `location` is set only when
+ * the venue is known (never guessed). The league is the organizer (a nested SportsEvent without dates would be
+ * reported as an event with missing fields), the two teams are the performers, `endDate` is the expected end.
+ */
 export function sportsEvent(e: {
   path: string;
   name: string;
   description: string;
   startDate: string;
+  /** Expected duration, for endDate. */
+  durationMinutes: number;
   sport: string;
   league: string;
   home: { name: string; logo?: string | null };
   away: { name: string; logo?: string | null };
   status: Status;
+  venue?: EventVenue | null;
+  /** Image path from the site root; default the site's social image. */
+  image?: string;
 }) {
   const team = (t: { name: string; logo?: string | null }) => ({
     "@type": "SportsTeam",
     name: t.name,
     ...(t.logo ? { logo: t.logo } : {}),
   });
+  const end = new Date(Date.parse(e.startDate) + e.durationMinutes * 60000).toISOString().replace(".000Z", "Z");
+  const v = e.venue;
+  const address = v ? [v.city, v.country].filter(Boolean).join(", ") : "";
   return {
     "@type": "SportsEvent",
     "@id": `${e.path}#evento`,
@@ -32,13 +53,31 @@ export function sportsEvent(e: {
     name: e.name,
     description: e.description,
     startDate: e.startDate,
+    endDate: end,
     eventStatus: EVENT_STATUS[e.status],
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     sport: e.sport,
-    superEvent: { "@type": "SportsEvent", name: e.league },
+    image: e.image ?? "/og-image.png",
+    ...(v
+      ? {
+          location: {
+            "@type": "Place",
+            name: v.name,
+            address: address
+              ? {
+                  "@type": "PostalAddress",
+                  ...(v.city ? { addressLocality: v.city } : {}),
+                  ...(v.country ? { addressCountry: v.country } : {}),
+                }
+              : v.name,
+          },
+        }
+      : {}),
+    organizer: { "@type": "SportsOrganization", name: e.league },
     homeTeam: team(e.home),
     awayTeam: team(e.away),
     competitor: [team(e.home), team(e.away)],
+    performer: [team(e.home), team(e.away)],
   };
 }
 

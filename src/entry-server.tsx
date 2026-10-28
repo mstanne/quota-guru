@@ -9,7 +9,9 @@ import { footballRoutes } from "./lib/footballRoutes";
 import { matchdayRoutes } from "./lib/matchdays";
 import { loadAllCompetitionData } from "./lib/footballData";
 import { dayRoutes } from "./lib/dayPages";
-import { basketRoutes } from "./lib/basket";
+import { basketRoutes, nbaGames } from "./lib/basket";
+import { nbaDetailsFor } from "./lib/basketDetails";
+import type { EventVenue } from "./lib/schema";
 import { basketPredictionFor } from "./lib/basketPredict";
 import { highlightFor } from "./lib/highlights";
 import { loadAllTeamData, type FootballTeam, type NbaTeam } from "./lib/teams";
@@ -36,7 +38,17 @@ export { site } from "./data/site";
 const preloadAll = () => Promise.all([preloadAllPages(), loadAllTeamData(), loadAllResults(), loadAllCompetitionData()]);
 export { preloadAll as preloadAllPages };
 /** Every URL to pre-render: static pages + one page per competition, standings table and match. */
-export const routes = [...staticRoutes, ...footballRoutes(), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes((id) => !!basketPredictionFor(id), (id) => highlightFor("nba", id)), ...tennisRoutes(), ...guideRoutes(), ...teamRoutes(), ...resultsRoutes()];
+// venues for the events' structured data: football from the team pages' data, NBA arenas from the box scores
+const footballVenues = new Map<number, EventVenue>();
+for (const f of Object.values(footballTeamFiles))
+  for (const t of Object.values(f.default))
+    if (t.venue?.name) footballVenues.set(t.id, { name: t.venue.name, city: t.venue.city, country: t.area });
+const nbaVenues = new Map<number, EventVenue>();
+for (const g of nbaGames) {
+  const d = nbaDetailsFor(g.id);
+  if (d?.arena) nbaVenues.set(g.home.id, { name: d.arena, city: d.city, country: g.home.abbr === "TOR" ? "CA" : "US" });
+}
+export const routes = [...staticRoutes, ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes((id) => !!basketPredictionFor(id), (id) => highlightFor("nba", id), (g) => nbaVenues.get(g.home.id) ?? null), ...tennisRoutes(), ...guideRoutes(), ...teamRoutes(), ...resultsRoutes()];
 
 /** `archivedHtml`: stored HTML of a finished match no longer in the data (see src/lib/archive.tsx). */
 export function render(url: string, basename: string, archivedHtml: string | null = null) {
