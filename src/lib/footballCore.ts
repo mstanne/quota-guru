@@ -2,7 +2,7 @@
 // No data import here, so components that only format matches do not pull the full snapshot into their JS chunk.
 
 import { isOverdue } from "./eventTiming.mjs";
-import { sportsEvent, videoObject } from "./schema";
+import { sportsEvent, videoObject, type EventVenue } from "./schema";
 
 export interface Team {
   id: number;
@@ -237,6 +237,7 @@ export function matchMeta(
   m: Match,
   predicted = false,
   video?: { video: string; title: string; published: string },
+  venue?: EventVenue | null,
 ) {
   const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
   const when = `${formatDay(m.utcDate)} ore ${formatTime(m.utcDate)}`;
@@ -259,7 +260,9 @@ export function matchMeta(
         name: `${m.homeTeam.shortName} – ${m.awayTeam.shortName} (${c.name})`,
         description,
         startDate: m.utcDate,
+        durationMinutes: 115,
         sport: "Calcio",
+        venue,
         league: c.name,
         home: { name: m.homeTeam.name, logo: m.homeTeam.crest },
         away: { name: m.awayTeam.name, logo: m.awayTeam.crest },
