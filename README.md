@@ -242,6 +242,7 @@ saranno disponibili si potranno collegare le schede partita e i testi editoriali
 | `/calcio` | Calendario e risultati di tutte le competizioni |
 | `/calcio/squadre`, `/calcio/squadre/<squadra>` | Squadre di calcio |
 | `/calcio/serie-a/classifica`, `/calcio/serie-a/risultati` | Classifica e risultati di una competizione |
+| `/calcio/serie-a/statistiche-under-over` | Statistiche Under/Over e Goal di ogni squadra (totale, casa, trasferta, ultime 5) |
 | `/basket`, `/basket/serie-a/classifica` | Basket e classifica Serie A basket |
 | `/basket/nba/risultati`, `/basket/nba/squadre` | Risultati e squadre NBA |
 | `/tennis`, `/tennis/classifica-atp`, `/tennis/calendario-wta`, … | Tennis |
@@ -250,6 +251,16 @@ saranno disponibili si potranno collegare le schede partita e i testi editoriali
 | `/accedi`, `/registrati`, `/password-dimenticata` | Account (nascoste dal menu, `noindex`) |
 
 Le pagine dei pronostici seguono lo schema descritto sotto.
+
+## Statistiche Under/Over e Goal
+
+Percentuali Over 1,5 / 2,5 / 3,5, Goal, porta inviolata e partite a secco, calcolate solo dai risultati finali
+(`src/lib/goalStats.mjs`, usato sia dal sito sia dagli script). Compaiono nella pagina
+`/calcio/<lega>/statistiche-under-over` (tabella ordinabile, vista totale/casa/trasferta/ultime 5 con `?vista=`),
+nelle pagine squadra (stagione in corso e precedenti) e nelle pagine partita (squadra di casa in casa contro squadra
+ospite in trasferta, con le sole partite giocate prima). Lo snapshot contiene solo gli ultimi 45 giorni: la stagione
+completa arriva dallo storico scaricato a ogni aggiornamento (`scripts/lib/season-results.mjs`). Se mancano partite
+(build locale senza token) le pagine lo dicono e indicano su quante partite si basano i numeri.
 
 ## Schema degli URL dei pronostici
 

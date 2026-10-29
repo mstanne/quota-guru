@@ -1,9 +1,10 @@
 // /calcio/squadre/:squadra — club details, squad and season-by-season statistics.
 import { useParams } from "react-router";
-import { Building2, CalendarDays, ListChecks, ListOrdered, Shield, Users } from "lucide-react";
+import { BarChart3, Building2, CalendarDays, ListChecks, ListOrdered, Shield, Users } from "lucide-react";
 import { hasResults, resultsPath } from "../../lib/results";
 import { Link } from "../../lib/links";
-import { competitionPath } from "../../lib/footballCore";
+import { competitionPath, goalStatsPath } from "../../lib/footballCore";
+import { GOAL_COLUMNS, GoalStatsNote, PctCell, TeamGoalTable } from "../stats/GoalStats";
 import { PageHeader } from "../layout/PageHeader";
 import { TeamBadge } from "../calcio/MatchRow";
 import { NotFoundPage } from "../NotFoundPage";
@@ -224,6 +225,7 @@ export function FootballTeamPage() {
           <Facts rows={facts} />
         </Card>
         <Squad team={t} />
+        <TeamGoals team={t} />
         <Card id="stagioni">
           <SectionTitle id="stagioni-titolo" icon={CalendarDays}>
             Stagione per stagione
@@ -252,5 +254,67 @@ export function FootballTeamPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+/** Under/Over and Goal: current season split by venue, then one line per past season. */
+function TeamGoals({ team }: { team: FootballTeam }) {
+  const cur = team.seasons.find((s) => s.current && s.goals);
+  const past = team.seasons.filter((s) => !s.current && s.goals);
+  if (!cur && !past.length) return null;
+  return (
+    <Card id="under-over">
+      <SectionTitle id="under-over-titolo" icon={BarChart3}>
+        Under/Over e Goal
+      </SectionTitle>
+      {cur?.goals && (
+        <>
+          <h3 className="text-slate-300 text-sm mb-1">
+            {cur.competition} {cur.label}
+          </h3>
+          <TeamGoalTable stats={cur.goals} caption={`Under/Over e Goal di ${team.shortName}, ${cur.competition} ${cur.label}`} />
+        </>
+      )}
+      {past.length > 0 && (
+        <div className="overflow-x-auto mt-6">
+          <table className="w-full text-sm min-w-[640px]">
+            <caption className="text-left text-slate-300 text-sm mb-1">Stagioni precedenti</caption>
+            <thead>
+              <tr className="text-slate-400 border-b border-slate-800">
+                <th scope="col" className="text-left font-normal py-3 pr-2">
+                  Stagione
+                </th>
+                <th scope="col" className="text-right font-normal py-3 px-2">
+                  <abbr title="Partite giocate">G</abbr>
+                </th>
+                {GOAL_COLUMNS.map((c) => (
+                  <th key={c.key} scope="col" className="text-right font-normal py-3 px-2 whitespace-nowrap">
+                    <abbr title={c.label}>{c.abbr}</abbr>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {past.map((s) => (
+                <tr key={s.season} className="border-b border-slate-800 last:border-0">
+                  <th scope="row" className="text-left font-normal py-2.5 pr-2 text-slate-300 whitespace-nowrap">
+                    {s.label} <span className="text-slate-400 text-xs">{s.competition}</span>
+                  </th>
+                  <td className="text-right px-2 tabular-nums text-slate-300">{s.goals!.all.n}</td>
+                  {GOAL_COLUMNS.map((c) => (
+                    <PctCell key={c.key} s={s.goals!.all} col={c.key} />
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      <GoalStatsNote complete={cur?.goals?.complete ?? true}>
+        <Link to={goalStatsPath(team.competition)} className="text-action-text hover:text-action-text-hover">
+          Confronta con le altre squadre di {team.competition.name}
+        </Link>
+      </GoalStatsNote>
+    </Card>
   );
 }

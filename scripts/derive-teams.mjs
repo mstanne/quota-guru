@@ -8,6 +8,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { teamGoalStats } from "../src/lib/goalStats.mjs";
+import { seasonResults } from "./lib/season-results.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (rel, fallback) => {
@@ -120,6 +122,12 @@ function table(results) {
   return { rows: new Map(sorted.map((r) => [r.id, r])), size: sorted.length, played };
 }
 
+/** Under/Over and Goal counts of one team (total, home, away, last 5); null without matches. */
+function goalsOf(results, id, complete = true) {
+  const g = teamGoalStats(results ?? [], id);
+  return g.all.n ? { ...g, complete } : null;
+}
+
 const index = { football: [], nba: [] };
 const usedSlugs = new Set();
 const uniqueSlug = (base, extra) => {
@@ -150,6 +158,8 @@ for (const comp of football.competitions) {
     .filter((y) => y !== current)
     .sort((a, b) => b - a);
   const tables = new Map(seasonsAvailable.map((y) => [y, table(histBy.get(`${comp.code}-${y}`))]));
+  // Under/Over and Goal statistics of the current league season (src/lib/goalStats.mjs)
+  const { results: currentResults, complete: currentComplete } = seasonResults(comp, fHistory);
   const out = {};
   for (const id of ids) {
     const info = fTeams.teams?.[id];
@@ -170,6 +180,7 @@ for (const comp of football.competitions) {
         label: seasonLabel(current, comp.code),
         competition: comp.name,
         current: true,
+        goals: goalsOf(currentResults, id, currentComplete),
         record: st
           ? {
               position: st.position, size: standing.length, played: st.playedGames, won: st.won, draw: st.draw,
@@ -201,6 +212,7 @@ for (const comp of football.competitions) {
         current: false,
         // the history may miss a few results (e.g. a source not updated): the table is then approximate
         partial: t.played < t.size * (t.size - 1) ? { played: t.played, expected: t.size * (t.size - 1) } : null,
+        goals: r ? goalsOf(histBy.get(`${comp.code}-${y}`), id) : null,
         record: r
           ? {
               position: r.position, size: t.size, played: r.played, won: r.won, draw: r.draw, lost: r.lost,

@@ -1,3 +1,4 @@
+import type { TeamGoalStats } from "./goalStats.mjs";
 // Team pages: index of every team (small, bundled where team names are linked) and on-demand loading of the
 // per-league data (src/data/teams/*.json, built by scripts/derive-teams.mjs).
 import index from "../data/teams/index.json";
@@ -48,6 +49,8 @@ export interface FootballSeason {
   /** Past season whose results are incomplete in the data: the table is approximate. */
   partial?: { played: number; expected: number } | null;
   record: SeasonRecord | null;
+  /** Under/Over and Goal counts in the league (src/lib/goalStats.mjs); `complete` false when results are missing. */
+  goals?: (TeamGoalStats & { complete?: boolean }) | null;
   recent: { date: string; home: boolean; opponent: string; gf: number | null; ga: number | null; path?: string }[];
   players: FootballPlayerSeason[] | null;
 }

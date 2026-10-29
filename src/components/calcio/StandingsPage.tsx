@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import { Link } from "../../lib/links";
 import { ListOrdered } from "lucide-react";
-import { competitionPath, standingsMeta } from "../../lib/footballCore";
+import { competitionPath, goalStatsPath, standingsMeta } from "../../lib/footballCore";
 import { useCompetitionData } from "../../lib/footballData";
 import { usePageMeta } from "../../lib/pageMeta";
 import { DataUpdatedNote } from "./DataUpdatedNote";
@@ -99,9 +99,14 @@ export function StandingsPage() {
             </div>
           </section>
         ))}
-        <Link to={competitionPath(competition)} className="inline-block text-action-text hover:text-action-text-hover">
-          Calendario e risultati {competition.name} →
-        </Link>
+        <div className="flex flex-wrap gap-x-6 gap-y-2">
+          <Link to={competitionPath(competition)} className="text-action-text hover:text-action-text-hover">
+            Calendario e risultati {competition.name} →
+          </Link>
+          <Link to={goalStatsPath(competition)} className="text-action-text hover:text-action-text-hover">
+            Statistiche Under/Over e Goal {competition.name} →
+          </Link>
+        </div>
       </div>
     </div>
   );

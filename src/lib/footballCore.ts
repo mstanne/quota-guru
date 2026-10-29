@@ -200,6 +200,14 @@ export type CompetitionRef = Pick<Competition, "code" | "slug" | "name">;
 export const PRONOSTICI = "/pronostici";
 export const competitionPath = (c: Pick<CompetitionRef, "slug">) => `${PRONOSTICI}/${c.slug}`;
 export const standingsPath = (c: CompetitionRef) => `/calcio/${c.slug}/classifica`;
+/** Under/Over and Goal statistics of every team of a competition (src/components/stats/GoalStatsPage.tsx). */
+export const goalStatsPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slug}/statistiche-under-over`;
+/** "2026/27", or "2026" for calendar-year seasons (Brasileirão). */
+export function seasonName(c: Pick<Competition, "code" | "season">) {
+  const y = Number(c.season?.startDate?.slice(0, 4));
+  if (!y) return "";
+  return c.code === "BSA" ? String(y) : `${y}/${String(y + 1).slice(2)}`;
+}
 export const matchPath = (c: CompetitionRef, m: Match) => `/calcio/${c.slug}/${matchSlug(m)}`;
 export const eventPath = (c: Pick<CompetitionRef, "slug">, m: Pick<Match, "homeTeam" | "awayTeam">) =>
   `${PRONOSTICI}/${c.slug}/${pairSlug(m)}`;
@@ -348,6 +356,18 @@ export function competitionMeta(c: Competition) {
     path: competitionPath(c),
     title: `Pronostici ${c.name}: calendario e risultati`,
     description: `Pronostici con le probabilità 1X2, calendario, orari e risultati delle partite di ${c.name}${c.area ? ` (${c.area})` : ""}, con classifica aggiornata.`,
+  };
+}
+/** `league`: Under/Over counts of the whole season (src/lib/goalStats.mjs), for the description. */
+export function goalStatsMeta(c: Competition, league?: { n: number; gf: number; over: number[]; btts: number }) {
+  const season = seasonName(c);
+  const pc = (k: number) => (league?.n ? Math.round((k / league.n) * 100) : 0);
+  return {
+    path: goalStatsPath(c),
+    title: `Statistiche Under/Over ${c.name}${season ? ` ${season}` : ""}: Over 2,5 e Goal squadra per squadra`,
+    description: league?.n
+      ? `Percentuali Over 1,5, Over 2,5, Over 3,5 e Goal/No Goal di ogni squadra di ${c.name}, in casa e in trasferta. Finora il ${pc(league.over[1])}% delle partite è finito Over 2,5 e nel ${pc(league.btts)}% hanno segnato entrambe le squadre (${league.n} partite).`
+      : `Percentuali Over 1,5, Over 2,5, Over 3,5 e Goal/No Goal di ogni squadra di ${c.name}, in casa e in trasferta.`,
   };
 }
 export function standingsMeta(c: Competition) {
