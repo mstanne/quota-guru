@@ -28,6 +28,11 @@ const DOMAINS = {
   betsson: ["betsson.it"],
   bwin: ["bwin.it"],
   sisal: ["sisal.it"],
+  codere: ["codere.it"],
+  "888": ["888casino.it", "888sport.it"],
+  admiralbet: ["admiralbet.it"],
+  leovegas: ["leovegas.it"],
+  lottomatica: ["lottomatica.it"],
 };
 
 // Promotional wording that must not appear in text written for the site (D.L. 87/2018, art. 9;

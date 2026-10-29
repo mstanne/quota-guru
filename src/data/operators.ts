@@ -373,6 +373,134 @@ const sisal: OperatorData = {
   cashOut: false,
 };
 
+// Codere, 888, AdmiralBet, LeoVegas and Lottomatica: footers, payment and promotion pages of the official sites,
+// read on 29/10/2026. Logos are not in public/operators yet (layout placeholder until added).
+const codere: OperatorData = {
+  id: "codere",
+  name: "Codere",
+  shortName: "CO",
+  logoUrl: null,
+  logoAlt: "Logo Codere",
+  affiliateUrl: "https://www.codere.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "Codere.it s.r.l. - C.F. 14678721003 - P. IVA 16338101005 Conc. GAD 16018" (footer of codere.it)
+  admLicense: "GAD 16018",
+  description:
+    "Concessionario ADM gestito da Codere.it S.r.l., con scommesse sportive pre-partita e live, virtuali, ippica, slot, casinò live, poker, bingo, giochi di carte e lotterie.",
+  minDeposit: "[DEPOSITO_MINIMO]",
+  withdrawalTime: "PayPal 12-24 ore; carta e bonifico 1-3 giorni; Skrill immediato",
+  paymentMethods: ["Carte di credito (Visa, Mastercard, Maestro)", "PayPal", "Skrill", "Scratch card", "Bonifico bancario o postale"],
+  features: ["Scommesse sportive pre-partita e live", "Virtuali e ippica", "Slot e casinò live", "Poker, bingo e lotterie"],
+  pros: ["Prelievo con Skrill indicato come immediato", "Prelievo anche con bonifico domiciliato e voucher"],
+  cons: ["Cinque metodi di deposito, senza Postepay né Apple Pay", "Skrill escluso dall'offerta di benvenuto casinò"],
+  liveStreaming: false,
+  cashOut: true,
+};
+
+const eight88: OperatorData = {
+  id: "888",
+  name: "888",
+  shortName: "888",
+  logoUrl: null,
+  logoAlt: "Logo 888",
+  affiliateUrl: "https://sport.888casino.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "888 Italia Limited, società titolare della concessione ... n. 16045" (footer of sport.888casino.it)
+  admLicense: "16045",
+  description:
+    "Concessionario ADM gestito da 888 Italia Limited (Malta, gruppo Evoke), con scommesse sportive (888sport), casinò, casinò live e poker.",
+  minDeposit: "[DEPOSITO_MINIMO]",
+  withdrawalTime: "Elaborazione entro 24 ore lavorative; PayPal, Skrill e bonifico rapido in giornata",
+  paymentMethods: ["Visa", "Mastercard", "Apple Pay", "PayPal", "Skrill", "Neteller", "Bonifico rapido", "Paysafecard (solo depositi)"],
+  features: ["Scommesse sportive pre-partita e live", "Streaming di eventi sportivi", "Casinò e casinò live", "Poker"],
+  pros: ["Prelievo con PayPal, Skrill e bonifico rapido indicato in giornata", "Servizi di prelievo senza costi"],
+  cons: ["Nessuna offerta di benvenuto per le scommesse sportive al 29/10/2026", "Neteller, Skrill e OnShop esclusi dal bonus sulla prima ricarica"],
+  liveStreaming: true,
+  cashOut: false,
+};
+
+const admiralbet: OperatorData = {
+  id: "admiralbet",
+  name: "AdmiralBet",
+  shortName: "AB",
+  logoUrl: null,
+  logoAlt: "Logo AdmiralBet",
+  affiliateUrl: "https://www.admiralbet.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "Admiral Bet S.r.l., titolare della concessione GAD n. 16048" (footer of admiralbet.it)
+  admLicense: "GAD 16048",
+  description:
+    "Concessionario ADM gestito da Admiral Bet S.r.l. (gruppo Novomatic), con scommesse sportive, virtuali, ippica, slot, casinò, casinò live, poker, bingo e lotterie, e una rete di punti vendita.",
+  minDeposit: "5 € con la maggior parte dei metodi",
+  withdrawalTime: "2-5 giorni lavorativi secondo la tabella dell'operatore",
+  paymentMethods: ["Visa", "Mastercard", "Postepay", "PayPal", "Skrill", "Neteller", "Paysafecard", "Bonifico bancario"],
+  features: ["Scommesse sportive", "Virtuali e ippica", "Slot Novomatic, casinò e casinò live", "Poker, bingo e lotterie"],
+  pros: ["Deposito minimo di 5 € con la maggior parte dei metodi", "Nessuna commissione sui prelievi"],
+  cons: ["Skrill escluso dall'offerta di benvenuto scommesse", "Prelievo massimo di 1.000 € con carta e Postepay"],
+  liveStreaming: false,
+  cashOut: true,
+};
+
+const leovegas: OperatorData = {
+  id: "leovegas",
+  name: "LeoVegas",
+  shortName: "LV",
+  logoUrl: null,
+  logoAlt: "Logo LeoVegas",
+  affiliateUrl: "https://www.leovegas.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "LeoVegas Gaming Plc (P.IVA MT28686627) ... concessione numero 16019" (footer of leovegas.it)
+  admLicense: "16019",
+  description:
+    "Concessionario ADM gestito da LeoVegas Gaming Plc (Malta), con casinò, casinò live e scommesse sportive.",
+  minDeposit: "[DEPOSITO_MINIMO]",
+  withdrawalTime: "[TEMPI_PRELIEVO]",
+  paymentMethods: ["Visa", "Mastercard", "Postepay", "PayPal", "Apple Pay", "Google Pay"],
+  features: ["Scommesse sportive e live", "Casinò e slot", "Casinò live", "App"],
+  pros: ["Offerte di benvenuto distinte per casinò e casinò live", "Assistenza in italiano via chat ed email"],
+  cons: ["Nessuna offerta di benvenuto per le scommesse sportive al 29/10/2026"],
+  liveStreaming: false,
+  cashOut: false,
+};
+
+const lottomatica: OperatorData = {
+  id: "lottomatica",
+  name: "Lottomatica",
+  shortName: "LO",
+  logoUrl: null,
+  logoAlt: "Logo Lottomatica",
+  affiliateUrl: "https://www.lottomatica.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "Concessione GAD n° 16010. GBO Italy S.p.A." (footer of lottomatica.it); same company as Goldbet, separate concession.
+  admLicense: "GAD 16010",
+  description:
+    "Concessionario ADM gestito da GBO Italy S.p.A. (concessione distinta da quella di Goldbet), con scommesse sportive, lotterie, casinò, casinò live, poker, bingo, giochi di carte e una rete di punti vendita.",
+  minDeposit: "10 € (carte, Apple Pay, Google Pay, Postepay e PayPal)",
+  withdrawalTime: "Entro 24 ore con PayPal, Skrill e Neteller; 24-48 ore lavorative con carta; bonifico istantaneo immediato",
+  paymentMethods: [
+    "Carte di credito/debito",
+    "Postepay",
+    "PayPal",
+    "Apple Pay",
+    "Google Pay",
+    "Skrill",
+    "Neteller",
+    "MuchBetter",
+    "Paysafecard",
+    "Ricarica nei punti vendita",
+    "Bonifico bancario e postale",
+    "Bollettino postale",
+  ],
+  features: ["Scommesse sportive", "Lotterie", "Casinò, casinò live e slot", "Poker, bingo e giochi di carte"],
+  pros: ["Prelievo con bonifico istantaneo e Quick2Cash indicato come immediato", "Nessuna spesa applicata dall'operatore su depositi e prelievi"],
+  cons: [
+    "Deposito minimo di 30 € con Skrill, Neteller, Rapid Transfer e Paysafecard",
+    "Le vincite da bonus e promozioni possono essere pagate solo con bonifico bancario",
+  ],
+  liveStreaming: false,
+  cashOut: true,
+};
+
 /** Operators shown across the site (comparison tables, offers, bet slip). Order = display order. */
 export const operators: OperatorData[] = [
   eurobet,
@@ -382,8 +510,11 @@ export const operators: OperatorData[] = [
   betsson,
   bwin,
   sisal,
-  placeholderOperator(5, { liveStreaming: false }),
-  placeholderOperator(6, { liveStreaming: false }),
+  lottomatica,
+  admiralbet,
+  codere,
+  eight88,
+  leovegas,
 ];
 
 /** Operators used in odds comparison tables (subset, same order). */
