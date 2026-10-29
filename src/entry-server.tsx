@@ -73,7 +73,12 @@ export const routes = [...legacyRoutes, ...goalStatsRoutes(), ...staticRoutes, .
   (id) => highlightFor("nba", id),
   (g) => nbaVenues.get(g.home.id) ?? null,
   // the prediction the page shows: as published before tip-off once the game has started
-  (g) => (g.status === "scheduled" ? basketPredictionFor(g.id) : (archivedBasketPredictionFor(g.id)?.prediction ?? (basketPredictionFor(g.id)?.pre ? basketPredictionFor(g.id) : undefined))),
+  // (same rule as BasketGamePage: a final game shows only a prediction made before tip-off)
+  (g) => {
+    const archived = g.status !== "scheduled" ? archivedBasketPredictionFor(g.id)?.prediction : undefined;
+    const p = archived ?? basketPredictionFor(g.id);
+    return g.status === "final" && !archived && !basketPredictionFor(g.id)?.pre ? undefined : p;
+  },
 ), ...tennisRoutes(), ...guideRoutes(), ...teamRoutes(), ...resultsRoutes()];
 
 /** `archivedHtml`: stored HTML of a finished match no longer in the data (see src/lib/archive.tsx). */
