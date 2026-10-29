@@ -2,7 +2,7 @@
 // (when it is played, how it ended, what the model expects), so that search engines and AI assistants
 // can quote them as they are. Built only from the data already on the page; no betting language.
 import { formatDay, formatTime, roundLabel, type Match } from "../../lib/footballCore";
-import { pct, pickHit, pickLabel, type Prediction } from "../../lib/predictionsCore";
+import { pct, pickHit, pickLabel, pickProbability, type Prediction } from "../../lib/predictionsCore";
 import type { BasketPrediction } from "../../lib/basketPredict";
 
 const fmtProb = (x: number) => pct(x);
@@ -13,22 +13,6 @@ function pickInSentence(p: Prediction, home: string, away: string) {
   if (p.pick === "1") return `l'1 (vittoria ${home})`;
   if (p.pick === "2") return `il 2 (vittoria ${away})`;
   return pickLabel(p, home, away);
-}
-
-/** Probability of the model's pick (single outcome or double chance). */
-function pickProbability(p: Prediction) {
-  switch (p.pick) {
-    case "1":
-      return p.p[0];
-    case "X":
-      return p.p[1];
-    case "2":
-      return p.p[2];
-    case "1X":
-      return p.dc[0];
-    case "X2":
-      return p.dc[2];
-  }
 }
 
 export function footballSummary(

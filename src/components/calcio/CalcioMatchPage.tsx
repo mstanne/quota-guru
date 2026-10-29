@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { Link } from "../../lib/links";
 import { ArrowLeft, BarChart3, CalendarDays, History, Info, ListOrdered, TrendingUp, Users } from "lucide-react";
 import { GoalStatsNote, MatchGoalComparison } from "../stats/GoalStats";
+import { FootballQuickSummary } from "../predictions/QuickSummary";
 import {
   competitionPath,
   formatDay,
@@ -24,7 +25,7 @@ import {
   matchMeta,
 } from "../../lib/footballCore";
 import { useCompetitionData, type CompetitionData } from "../../lib/footballData";
-import { PRONOSTICI, eventPath, goalStatsPath, matchPath, nextOfPair, pairMatches, pairSlug } from "../../lib/footballCore";
+import { PRONOSTICI, eventPath, goalStatsPath, matchHeadline, matchPath, nextOfPair, pairMatches, pairSlug } from "../../lib/footballCore";
 import { highlightFor } from "../../lib/highlights";
 import { footballReasons } from "../../lib/predictionReasons";
 import { matchdaysOf } from "../../lib/matchdaysCore";
@@ -277,6 +278,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
             )}
           </nav>
 
+          <h1 className="text-white text-2xl sm:text-3xl leading-tight text-center mb-4">{matchHeadline(match)}</h1>
           <div className="flex flex-wrap items-center justify-center gap-2 mb-6 text-sm">
             <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300">{competition.name}</span>
             {roundLabel(match) &&
@@ -297,9 +299,6 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
             </span>
           </div>
 
-          <h1 className="sr-only">
-            {event ? `Pronostico ${teams}, ${competition.name}` : `${teams}, ${competition.name}, ${formatShortDate(match.utcDate)}`}
-          </h1>
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 max-w-3xl mx-auto">
             <div className="flex flex-col items-center text-center gap-3">
               <TeamBadge team={match.homeTeam} size="lg" />
@@ -329,6 +328,14 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               <TeamName id={match.awayTeam.id} name={match.awayTeam.shortName} className="text-white text-lg sm:text-2xl" />
             </div>
           </div>
+          {prediction && (!finished || prediction.pre) && !live && (
+            <FootballQuickSummary
+              prediction={prediction}
+              home={match.homeTeam.shortName}
+              away={match.awayTeam.shortName}
+              result={finished && ft.home !== null && ft.away !== null ? { home: ft.home, away: ft.away } : null}
+            />
+          )}
           <MatchSummary text={footballSummary(match, competition.name, prediction, { finished, live })} />
           <DataUpdatedNote generatedAt={generatedAt} className="justify-center mt-6" />
         </div>

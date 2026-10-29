@@ -42,6 +42,7 @@ jobs:
         # Kept between builds (scripts/prerender.mjs, scripts/fetch-football-data.mjs):
         #   .cache/seo            date of the last real change of every page (sitemap <lastmod>) and the archive of
         #                         finished match pages, published even after the matches leave the data window;
+        #   .cache/og             16:9 social images of the match pages already drawn (scripts/lib/og-cards.mjs)
         #   .cache/match-details  goals and cards already downloaded for finished matches (when the plan has them)
         #                         the YouTube highlights already found and the API-Sports details (line-ups, stats…).
         # A new entry is saved at every run; restore-keys picks the most recent one.
@@ -49,6 +50,7 @@ jobs:
         with:
           path: |
             .cache/seo
+            .cache/og
             .cache/match-details
           key: state-${{ github.run_id }}
           restore-keys: |

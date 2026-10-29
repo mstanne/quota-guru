@@ -15,7 +15,7 @@ import { dayRoutes } from "./lib/dayPages";
 import { basketRoutes, nbaGames } from "./lib/basket";
 import { nbaDetailsFor } from "./lib/basketDetails";
 import type { EventVenue } from "./lib/schema";
-import { basketPredictionFor } from "./lib/basketPredict";
+import { archivedBasketPredictionFor, basketPredictionFor } from "./lib/basketPredict";
 import { highlightFor } from "./lib/highlights";
 import { loadAllTeamData, type FootballTeam, type NbaTeam } from "./lib/teams";
 import { loadAllResults, resultsRoutes } from "./lib/results";
@@ -68,7 +68,13 @@ const goalStatsRoutes = () =>
     const league = leagueGoalStats(f.season?.results ?? []);
     return f.competition.standings.length && league.n ? [goalStatsMeta(f.competition, league)] : [];
   });
-export const routes = [...legacyRoutes, ...goalStatsRoutes(), ...staticRoutes, ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes((id) => !!basketPredictionFor(id), (id) => highlightFor("nba", id), (g) => nbaVenues.get(g.home.id) ?? null), ...tennisRoutes(), ...guideRoutes(), ...teamRoutes(), ...resultsRoutes()];
+export const routes = [...legacyRoutes, ...goalStatsRoutes(), ...staticRoutes, ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes(
+  (id) => !!basketPredictionFor(id),
+  (id) => highlightFor("nba", id),
+  (g) => nbaVenues.get(g.home.id) ?? null,
+  // the prediction the page shows: as published before tip-off once the game has started
+  (g) => (g.status === "scheduled" ? basketPredictionFor(g.id) : (archivedBasketPredictionFor(g.id)?.prediction ?? (basketPredictionFor(g.id)?.pre ? basketPredictionFor(g.id) : undefined))),
+), ...tennisRoutes(), ...guideRoutes(), ...teamRoutes(), ...resultsRoutes()];
 
 /** `archivedHtml`: stored HTML of a finished match no longer in the data (see src/lib/archive.tsx). */
 export function render(url: string, basename: string, archivedHtml: string | null = null) {

@@ -64,6 +64,34 @@ export function pickLabel(p: Prediction, home: string, away: string) {
   }
 }
 
+/** Probability of the model's pick (single outcome or double chance). */
+export function pickProbability(p: Prediction) {
+  switch (p.pick) {
+    case "1":
+      return p.p[0];
+    case "X":
+      return p.p[1];
+    case "2":
+      return p.p[2];
+    case "1X":
+      return p.dc[0];
+    case "X2":
+      return p.dc[2];
+  }
+}
+
+/** Most likely combination of 1X2 and Under/Over 2,5 (combo market), e.g. { label: "1 + Over 2,5", p: 0.31 }. */
+export function topCombo(p: Prediction): { label: string; p: number } | null {
+  if (!p.combo) return null;
+  let best: { label: string; p: number } | null = null;
+  p.combo.ou.forEach((pair, o) =>
+    pair.forEach((v, over) => {
+      if (!best || v > best.p) best = { label: `${["1", "X", "2"][o]} + ${over ? "Over" : "Under"} 2,5`, p: v };
+    }),
+  );
+  return best;
+}
+
 /** Outcome of a finished match as an index (0 = 1, 1 = X, 2 = 2). */
 export function outcomeIndex(home: number, away: number) {
   return home > away ? 0 : home === away ? 1 : 2;

@@ -3,6 +3,16 @@
  * Used by the client router (document title), by the pre-render script (static HTML per page)
  * and to generate sitemap.xml.
  */
+export interface OgCard {
+  competition: string;
+  when: string;
+  home: string;
+  away: string;
+  probs: { label: string; p: number }[];
+  pick: { label: string; p: number } | null;
+  result: { home: number; away: number; hit: boolean | null } | null;
+}
+
 export interface RouteMeta {
   path: string;
   title: string;
@@ -21,6 +31,10 @@ export interface RouteMeta {
   canonical?: string;
   /** Moved URL (bridge page): canonical to this path and immediate redirect, see src/lib/legacyUrls.ts. */
   redirect?: string;
+  /** Data of the 16:9 social image drawn by the pre-render (scripts/lib/og-cards.mjs). */
+  card?: OgCard;
+  /** Match analysis: the pre-render adds an Article (headline = visible H1, real publication dates). */
+  article?: { headline: string; section: string };
   /** Evergreen event page (listed with the matches in sitemap-partite.xml, also while it rests). */
   event?: boolean;
 }

@@ -2,7 +2,8 @@
 // NBA calendar/results and Lega Basket Serie A standings.
 import raw from "../data/basket.json";
 import { sportsEvent, videoObject, type EventVenue } from "./schema";
-import { formatDay, formatTime, referenceTime } from "./footballCore";
+import { formatDay, formatDayMonth, formatLongDate, formatTime, referenceTime } from "./footballCore";
+import type { OgCard } from "../routes";
 import { gamePairSlug, gamePath, gameSlug, NBA_HUB, nbaEventPath } from "./nbaPaths";
 import { isOverdue } from "./eventTiming.mjs";
 
@@ -144,6 +145,39 @@ function nbaEventLd(
   ];
 }
 
+/** Social image of a game page (src/routes.ts OgCard). `p`: the prediction the page shows, if any. */
+export function nbaCard(
+  g: BasketGame,
+  p: { p: [number, number]; fav: 0 | 1 } | undefined,
+): OgCard | null {
+  if (!p) return null;
+  const home = g.home.shortName ?? g.home.name;
+  const away = g.away.shortName ?? g.away.name;
+  const done = isGameFinished(g) && g.score.home != null && g.score.away != null;
+  const day = formatDay(g.utcDate);
+  const fav = p.fav === 0 ? home : away;
+  return {
+    competition: `NBA · ${gameRoundLabel(g)}`,
+    when: `${day.charAt(0).toUpperCase()}${day.slice(1)} · ${formatTime(g.utcDate)}`,
+    home,
+    away,
+    probs: [
+      { label: `${home} (casa)`, p: p.p[0] },
+      { label: `${away} (trasferta)`, p: p.p[1] },
+    ],
+    pick: { label: `Vittoria ${fav}`, p: p.p[p.fav] },
+    result: done ? { home: g.score.home!, away: g.score.away!, hit: (g.score.home! > g.score.away! ? 0 : 1) === p.fav } : null,
+  };
+}
+
+/** Visible H1 of a game page (same text as BasketGamePage). */
+export function gameHeadline(g: BasketGame) {
+  const t = `${g.home.shortName ?? g.home.name} – ${g.away.shortName ?? g.away.name}`;
+  return isGameFinished(g)
+    ? `${t} ${g.score.home}-${g.score.away}: risultato e pronostico (${formatLongDate(g.utcDate)})`
+    : `Pronostico ${t} (${formatLongDate(g.utcDate)})`;
+}
+
 /** `predicted`: the model has a prediction for this game (title and description mention it only then). */
 export function gameMeta(
   g: BasketGame,
@@ -168,6 +202,7 @@ export function gameMeta(
       : `${teams(g)}: ${predicted ? "pronostico e orario NBA" : "orario NBA"}`,
     description,
     archive: isGameFinished(g),
+    ...(canonical === path ? { article: { headline: gameHeadline(g), section: "NBA" } } : {}),
     jsonLd: canonical !== path ? [] : nbaEventLd(g, path, description, video, venue),
   };
 }
@@ -187,7 +222,8 @@ export function nbaEventMeta(slug: string, predicted = false, venue?: EventVenue
     return {
       path,
       event: true,
-      title: `Pronostico ${teams(next)}: ${predicted ? "probabilità e orario" : "orario"} NBA`,
+      article: { headline: gameHeadline(next), section: "NBA" },
+      title: `Pronostico ${teams(next)} (${formatDayMonth(next.utcDate)}): ${predicted ? "probabilità e orario" : "orario"} NBA`,
       description,
       archive: false,
       jsonLd: nbaEventLd(next, path, description, undefined, venue),
@@ -219,15 +255,21 @@ export function basketRoutes(
   predicted: (gameId: number) => boolean = () => false,
   video: (gameId: number) => { video: string; title: string; published: string } | undefined = () => undefined,
   venue: (g: BasketGame) => EventVenue | null = () => null,
+  shownPrediction: (g: BasketGame) => { p: [number, number]; fav: 0 | 1 } | undefined = () => undefined,
 ) {
+  const withCard = <M extends { article?: unknown }>(meta: M, g: BasketGame) => {
+    const card = meta.article ? nbaCard(g, shownPrediction(g)) : null;
+    return card ? { ...meta, card } : meta;
+  };
   return [
     nbaMeta,
     ...(lbaStandings.length ? [lbaMeta] : []),
-    ...nbaGames.map((g) => gameMeta(g, predicted(g.id), video(g.id), venue(g))),
+    ...nbaGames.map((g) => withCard(gameMeta(g, predicted(g.id), video(g.id), venue(g)), g)),
     ...nbaPairSlugs().map((slug) => {
       const next = nextOfNbaPair(nbaPairGames(slug));
       const g = next ?? nbaPairGames(slug).at(-1)!;
-      return nbaEventMeta(slug, !!next && predicted(next.id), venue(g))!;
+      const meta = nbaEventMeta(slug, !!next && predicted(next.id), venue(g))!;
+      return next ? withCard(meta, next) : meta;
     }),
   ];
 }
