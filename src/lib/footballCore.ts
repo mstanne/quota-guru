@@ -3,6 +3,8 @@
 
 import { isOverdue } from "./eventTiming.mjs";
 import { sportsEvent, videoObject, type EventVenue } from "./schema";
+import { pickHit, pickLabel, pickProbability, type Prediction } from "./predictionsCore";
+import type { OgCard } from "../routes";
 
 export interface Team {
   id: number;
@@ -200,6 +202,14 @@ export type CompetitionRef = Pick<Competition, "code" | "slug" | "name">;
 export const PRONOSTICI = "/pronostici";
 export const competitionPath = (c: Pick<CompetitionRef, "slug">) => `${PRONOSTICI}/${c.slug}`;
 export const standingsPath = (c: CompetitionRef) => `/calcio/${c.slug}/classifica`;
+/** Under/Over and Goal statistics of every team of a competition (src/components/stats/GoalStatsPage.tsx). */
+export const goalStatsPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slug}/statistiche-under-over`;
+/** "2026/27", or "2026" for calendar-year seasons (Brasileirão). */
+export function seasonName(c: Pick<Competition, "code" | "season">) {
+  const y = Number(c.season?.startDate?.slice(0, 4));
+  if (!y) return "";
+  return c.code === "BSA" ? String(y) : `${y}/${String(y + 1).slice(2)}`;
+}
 export const matchPath = (c: CompetitionRef, m: Match) => `/calcio/${c.slug}/${matchSlug(m)}`;
 export const eventPath = (c: Pick<CompetitionRef, "slug">, m: Pick<Match, "homeTeam" | "awayTeam">) =>
   `${PRONOSTICI}/${c.slug}/${pairSlug(m)}`;
@@ -297,6 +307,12 @@ export const formatDay = (iso: string) =>
   new Intl.DateTimeFormat("it-IT", { timeZone: TZ, weekday: "long", day: "numeric", month: "long" }).format(
     new Date(iso),
   );
+/** "17 ottobre" (page titles). */
+export const formatDayMonth = (iso: string) =>
+  new Intl.DateTimeFormat("it-IT", { timeZone: TZ, day: "numeric", month: "long" }).format(new Date(iso));
+/** "17 ottobre 2026" (headings of match pages). */
+export const formatLongDate = (iso: string) =>
+  new Intl.DateTimeFormat("it-IT", { timeZone: TZ, day: "numeric", month: "long", year: "numeric" }).format(new Date(iso));
 export const formatShortDate = (iso: string) =>
   new Intl.DateTimeFormat("it-IT", { timeZone: TZ, day: "2-digit", month: "2-digit", year: "numeric" }).format(
     new Date(iso),
@@ -350,6 +366,18 @@ export function competitionMeta(c: Competition) {
     description: `Pronostici con le probabilità 1X2, calendario, orari e risultati delle partite di ${c.name}${c.area ? ` (${c.area})` : ""}, con classifica aggiornata.`,
   };
 }
+/** `league`: Under/Over counts of the whole season (src/lib/goalStats.mjs), for the description. */
+export function goalStatsMeta(c: Competition, league?: { n: number; gf: number; over: number[]; btts: number }) {
+  const season = seasonName(c);
+  const pc = (k: number) => (league?.n ? Math.round((k / league.n) * 100) : 0);
+  return {
+    path: goalStatsPath(c),
+    title: `Statistiche Under/Over ${c.name}${season ? ` ${season}` : ""}: Over 2,5 e Goal squadra per squadra`,
+    description: league?.n
+      ? `Percentuali Over 1,5, Over 2,5, Over 3,5 e Goal/No Goal di ogni squadra di ${c.name}, in casa e in trasferta. Finora il ${pc(league.over[1])}% delle partite è finito Over 2,5 e nel ${pc(league.btts)}% hanno segnato entrambe le squadre (${league.n} partite).`
+      : `Percentuali Over 1,5, Over 2,5, Over 3,5 e Goal/No Goal di ogni squadra di ${c.name}, in casa e in trasferta.`,
+  };
+}
 export function standingsMeta(c: Competition) {
   return {
     path: standingsPath(c),
@@ -357,6 +385,39 @@ export function standingsMeta(c: Competition) {
     description: `Classifica aggiornata di ${c.name}: punti, partite giocate, vittorie, pareggi, sconfitte e differenza reti.`,
   };
 }
+/** Social image of a match page (src/routes.ts OgCard); null without a prediction to show. */
+export function footballCard(c: CompetitionRef, m: Match, p: Prediction | undefined): OgCard | null {
+  if (!p) return null;
+  const home = m.homeTeam.shortName;
+  const away = m.awayTeam.shortName;
+  const ft = m.score.fullTime;
+  const done = isFinished(m) && ft.home !== null && ft.away !== null;
+  const round = roundLabel(m);
+  const day = formatDay(m.utcDate);
+  return {
+    competition: round ? `${c.name} · ${round}` : c.name,
+    when: `${day.charAt(0).toUpperCase()}${day.slice(1)} · ${formatTime(m.utcDate)}`,
+    home,
+    away,
+    probs: [
+      { label: `1 · ${home}`, p: p.p[0] },
+      { label: "X · Pareggio", p: p.p[1] },
+      { label: `2 · ${away}`, p: p.p[2] },
+    ],
+    pick: { label: pickLabel(p, home, away), p: pickProbability(p) },
+    result: done ? { home: ft.home!, away: ft.away!, hit: pickHit(p, ft.home!, ft.away!) } : null,
+  };
+}
+
+/** Visible H1 of a match page: "Pronostico Juventus – Inter (22 novembre 2026)" / "Juventus – Inter 2-1: …". */
+export function matchHeadline(m: Match) {
+  const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
+  const date = formatLongDate(m.utcDate);
+  return isFinished(m)
+    ? `${teams} ${m.score.fullTime.home}-${m.score.fullTime.away}: risultato e pronostico (${date})`
+    : `Pronostico ${teams} (${date})`;
+}
+
 /** `predicted`: the model has a prediction for this match (title and description mention it only then). */
 export function matchMeta(
   c: Competition,
@@ -380,9 +441,10 @@ export function matchMeta(
     ...(canonical !== path ? { canonical } : {}),
     title: isFinished(m)
       ? `${teams} ${m.score.fullTime.home}-${m.score.fullTime.away}: risultato ${c.name}`
-      : `${teams}: ${predicted ? "pronostico, orario e precedenti" : "orario, classifica e precedenti"}`,
+      : `${teams} (${formatDayMonth(m.utcDate)}): ${predicted ? "pronostico, orario e precedenti" : "orario, classifica e precedenti"}`,
     description,
     archive: isFinished(m),
+    ...(canonical === path ? { article: { headline: matchHeadline(m), section: c.name } } : {}),
     // the event is described once, on its canonical page
     jsonLd: canonical !== path ? [] : footballEventLd(c, m, path, description, video, venue),
   };
@@ -441,7 +503,8 @@ export function eventMeta(
     return {
       path,
       event: true,
-      title: `Pronostico ${teams}: ${p ? "probabilità, orario e precedenti" : "orario e precedenti"} · ${c.name}`,
+      article: { headline: matchHeadline(next), section: c.name },
+      title: `Pronostico ${teams} (${formatDayMonth(next.utcDate)}): ${p ? "probabilità e statistiche" : "orario e precedenti"} · ${c.name}`,
       description,
       archive: false,
       jsonLd: footballEventLd(c, next, path, description, undefined, venue),

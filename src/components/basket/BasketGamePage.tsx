@@ -17,6 +17,7 @@ import { HighlightVideo } from "../media/HighlightVideo";
 import { MatchOddsSlot } from "../odds/MatchOddsSlot";
 import { highlightFor } from "../../lib/highlights";
 import { formatDay, formatShortDate, formatTime, PRONOSTICI, romeDay } from "../../lib/footballCore";
+import { BasketQuickSummary } from "../predictions/QuickSummary";
 import {
   basketPaths,
   basketUpdatedAt,
@@ -34,6 +35,7 @@ import {
   nbaEventPath,
   nbaPairGames,
   nextOfNbaPair,
+  gameHeadline,
   type BasketGame,
 } from "../../lib/basket";
 import { usePageMeta } from "../../lib/pageMeta";
@@ -98,6 +100,9 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
               </>
             )}
           </nav>
+          <h1 className="text-white text-2xl sm:text-3xl leading-tight text-center mb-4">
+            {gameHeadline(game)}
+          </h1>
           <div className="flex flex-wrap items-center justify-center gap-2 mb-6 text-sm">
             <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300">NBA</span>
             <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300">{gameRoundLabel(game)}</span>
@@ -107,9 +112,6 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
               {gameStatusLabel(game)}
             </span>
           </div>
-          <h1 className="sr-only">
-            {event ? `Pronostico ${game.home.name} – ${game.away.name}, NBA` : `${game.home.name} – ${game.away.name}, NBA, ${formatShortDate(game.utcDate)}`}
-          </h1>
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 max-w-3xl mx-auto">
             {[game.home, null, game.away].map((t, i) =>
               t ? (
@@ -136,6 +138,14 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
               ),
             )}
           </div>
+          {prediction && (!finished || prediction.pre) && !live && (
+            <BasketQuickSummary
+              prediction={prediction}
+              home={game.home.shortName ?? game.home.name}
+              away={game.away.shortName ?? game.away.name}
+              result={finished && game.score.home != null && game.score.away != null ? { home: game.score.home, away: game.score.away } : null}
+            />
+          )}
           <MatchSummary text={basketSummary(game, prediction, { finished, live })} />
           <DataUpdatedNote generatedAt={basketUpdatedAt} className="justify-center mt-6" />
         </div>
