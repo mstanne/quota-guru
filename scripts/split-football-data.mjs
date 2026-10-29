@@ -99,7 +99,11 @@ fs.writeFileSync(
     generatedAt: football.generatedAt,
     competitions: football.competitions
       .filter((c) => c.matches.length || c.standings.length)
-      .map(({ code, slug, name, area, season, standings }) => ({ code, slug, name, area, season, hasStandings: standings.length > 0 })),
+      .map(({ code, slug, name, area, season, standings, matches }) => ({
+        code, slug, name, area, season, hasStandings: standings.length > 0,
+        // rounds of the league phase of the cups are "fase-campionato-giornata-<n>" (src/lib/footballCore.ts)
+        leaguePhase: matches.some((m) => m.stage === "LEAGUE_STAGE"),
+      })),
     trackRecord: { all: count(entries), last30: count(entries.filter((e) => e.utcDate >= from)), recent: entries.slice(0, 10) },
   }) + "\n",
 );

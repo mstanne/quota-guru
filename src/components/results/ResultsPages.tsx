@@ -73,7 +73,7 @@ export function FootballResultsPage() {
         subtitle="Tutte le partite giocate, dalla giornata più recente. Clicca sul risultato per la scheda della partita."
         breadcrumb={[
           { label: "Calcio", to: "/calcio" },
-          { label: competition.name, to: `/calcio/${competition.slug}` },
+          { label: competition.name, to: `/pronostici/${competition.slug}` },
           { label: "Risultati" },
         ]}
         meta={<span>{total} partite</span>}
@@ -114,7 +114,7 @@ export function NbaResultsPage() {
           title="Risultati NBA"
           icon={ListChecks}
           subtitle="Le partite giocate mese per mese, in orario italiano, con il link alla scheda di ogni partita."
-          breadcrumb={[{ label: "Basket", to: "/basket" }, { label: "NBA", to: "/basket/nba" }, { label: "Risultati" }]}
+          breadcrumb={[{ label: "Basket", to: "/basket" }, { label: "NBA", to: "/pronostici/nba" }, { label: "Risultati" }]}
         />
         <div className="container mx-auto px-4 py-8">
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -145,7 +145,7 @@ export function NbaResultsPage() {
         subtitle="Le partite giocate, in orario italiano. Clicca sul risultato per la scheda della partita."
         breadcrumb={[
           { label: "Basket", to: "/basket" },
-          { label: "NBA", to: "/basket/nba" },
+          { label: "NBA", to: "/pronostici/nba" },
           { label: "Risultati", to: nbaResultsPath() },
           { label: monthLabel(month) },
         ]}

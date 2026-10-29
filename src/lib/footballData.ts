@@ -15,6 +15,8 @@ export interface CompetitionInfo {
   area: string | null;
   season: Competition["season"];
   hasStandings: boolean;
+  /** The competition has a league phase (Champions League): its rounds are "fase-campionato-giornata-<n>". */
+  leaguePhase?: boolean;
 }
 interface CompetitionFile {
   generatedAt: string;
@@ -90,7 +92,7 @@ export function useAllCompetitionData(): CompetitionData[] {
 /** Data a URL needs before hydration (see preloadForPath in App.tsx). */
 export function preloadFootballData(pathname: string): Promise<unknown> {
   if (/^\/calcio\/?$/.test(pathname)) return loadAllCompetitionData();
-  const m = pathname.match(/^\/calcio\/([^/]+)/);
+  const m = pathname.match(/^\/(?:calcio|pronostici)\/([^/]+)/);
   if (m && findCompetitionInfo(m[1])) return loadCompetitionData(m[1]);
   return Promise.resolve();
 }

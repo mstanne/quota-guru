@@ -94,7 +94,7 @@ export function PronosticiPage() {
               {rounds.map(({ c, d }) => (
                 <Link
                   key={c.slug}
-                  to={matchdayPath(c, d.n)}
+                  to={matchdayPath(c, d)}
                   className="px-3 py-1.5 rounded-md text-sm border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white"
                 >
                   {c.name} · {d.n}ª giornata

@@ -1,6 +1,6 @@
 // Matchday logic without data imports, shared by the pages (which load one competition, src/lib/footballData.ts)
 // and by the route list (src/lib/matchdays.ts, which has the whole snapshot).
-import { formatDay, isFinished, isMatchdayStage, matchdayPath, matchPath, type Competition, type Match } from "./footballCore";
+import { formatDay, isFinished, isMatchdayStage, matchdayPath, matchHref, type Competition, type Match } from "./footballCore";
 import type { RouteMeta } from "../routes";
 
 export interface Matchday {
@@ -58,7 +58,7 @@ export function matchdayMeta(c: Competition, d: Matchday, isPredicted: (id: numb
   const predicted = d.matches.filter((m) => isPredicted(m.id)).length;
   const label = matchdayLabel(d);
   return {
-    path: matchdayPath(c, d.n),
+    path: matchdayPath(c, d),
     title: done
       ? `${c.name}, ${label}: risultati e pronostici a confronto`
       : `Pronostici ${c.name}, ${label}: le probabilità di ogni partita`,
@@ -74,7 +74,7 @@ export function matchdayMeta(c: Competition, d: Matchday, isPredicted: (id: numb
           "@type": "ListItem",
           position: i + 1,
           name: `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`,
-          url: matchPath(c, m),
+          url: matchHref(c, m),
         })),
       },
     ],

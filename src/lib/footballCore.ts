@@ -115,24 +115,150 @@ const TZ = "Europe/Rome";
 /** Calendar day of the match in Italian time, e.g. "2026-10-18". */
 export const romeDay = (iso: string) => new Intl.DateTimeFormat("sv-SE", { timeZone: TZ }).format(new Date(iso));
 
-/** Stable slug per match, e.g. "inter-juventus-2026-10-18". */
+/** Stable slug per match, e.g. "inter-juventus-2026-10-18" (the dated page: permanent archive of one match).
+ *  Built from the source's short names and never changed, so published URLs keep working. */
 export function matchSlug(m: Match) {
   return `${slugify(m.homeTeam.shortName)}-${slugify(m.awayTeam.shortName)}-${romeDay(m.utcDate)}`;
+}
+
+/**
+ * One slug per club for the evergreen URLs, written the way Italians search for it ("pronostico siviglia
+ * barcellona", not "sevilla-fc-barca"). Every club not listed uses its short name. Add a line when a new club's
+ * short name makes a poor slug; never change a line already published (it would change live URLs).
+ */
+export const TEAM_SLUGS: Record<string, string> = {
+  // Serie A
+  "Como 1907": "como",
+  "Venezia FC": "venezia",
+  // LaLiga
+  "Barça": "barcellona",
+  Atleti: "atletico-madrid",
+  Athletic: "athletic-bilbao",
+  "Sevilla FC": "siviglia",
+  Celta: "celta-vigo",
+  Santander: "racing-santander",
+  // Bundesliga
+  Bayern: "bayern-monaco",
+  Dortmund: "borussia-dortmund",
+  "M'gladbach": "borussia-monchengladbach",
+  "1. FC Köln": "colonia",
+  Bremen: "werder-brema",
+  Frankfurt: "eintracht-francoforte",
+  HSV: "amburgo",
+  Mainz: "magonza",
+  "SC Paderborn": "paderborn",
+  // Premier League e Championship
+  "Man City": "manchester-city",
+  "Man United": "manchester-united",
+  "Brighton Hove": "brighton",
+  Nottingham: "nottingham-forest",
+  Newcastle: "newcastle",
+  "Preston NE": "preston",
+  "Sheffield Utd": "sheffield-united",
+  QPR: "queens-park-rangers",
+  // Ligue 1
+  PSG: "psg",
+  "Olympique Lyon": "lione",
+  Marseille: "marsiglia",
+  Nice: "nizza",
+  "RC Lens": "lens",
+  "Stade Rennais": "rennes",
+  "Angers SCO": "angers",
+  // Portogallo e Olanda
+  "SL Benfica": "benfica",
+  "Sporting CP": "sporting-lisbona",
+  "CD Nacional": "nacional",
+  "Acad. Viseu": "academico-viseu",
+  "Vitória SC": "vitoria-guimaraes",
+  AZ: "az-alkmaar",
+  // coppe europee
+  Shaktar: "shakhtar-donetsk",
+  "Sl. Bratislava": "slovan-bratislava",
+  "PAE AEK": "aek-atene",
+  "Slavia Praha": "slavia-praga",
+  "Sabah FK": "sabah",
+  // Brasileirão
+  Mineiro: "atletico-mineiro",
+  Paranaense: "athletico-paranaense",
+};
+/** Slug of a club in the evergreen URLs (see TEAM_SLUGS). */
+export const teamSlug = (t: Pick<Team, "shortName">) => TEAM_SLUGS[t.shortName] ?? slugify(t.shortName);
+
+/** Slug of a fixture without the date, home team first, e.g. "inter-juventus" (the evergreen event page). */
+export function pairSlug(m: Pick<Match, "homeTeam" | "awayTeam">) {
+  return `${teamSlug(m.homeTeam)}-${teamSlug(m.awayTeam)}`;
 }
 /** Minimal competition info needed to build URLs and labels. */
 export type CompetitionRef = Pick<Competition, "code" | "slug" | "name">;
 
-export const competitionPath = (c: CompetitionRef) => `/calcio/${c.slug}`;
+// URL schema (README, "Schema degli URL"):
+//   /pronostici/<lega>                         hub of a competition (calendar, predictions)
+//   /pronostici/<lega>/giornata-<n>            one round (league phase of the cups: fase-campionato-giornata-<n>)
+//   /pronostici/<lega>/<casa>-<trasferta>      evergreen event page: always the next meeting of that fixture
+//   /calcio/<lega>/<casa>-<trasferta>-<data>   one match, kept forever as the archive of its prediction
+//   /calcio/<lega>/classifica, /risultati      standings and results stay under /calcio
+export const PRONOSTICI = "/pronostici";
+export const competitionPath = (c: Pick<CompetitionRef, "slug">) => `${PRONOSTICI}/${c.slug}`;
 export const standingsPath = (c: CompetitionRef) => `/calcio/${c.slug}/classifica`;
 export const matchPath = (c: CompetitionRef, m: Match) => `/calcio/${c.slug}/${matchSlug(m)}`;
+export const eventPath = (c: Pick<CompetitionRef, "slug">, m: Pick<Match, "homeTeam" | "awayTeam">) =>
+  `${PRONOSTICI}/${c.slug}/${pairSlug(m)}`;
+
+/** Slug of a round page: "giornata-12", or "fase-campionato-giornata-3" for the league phase of the cups. */
+export const matchdaySlug = (d: { n: number; stage?: string | null }) =>
+  d.stage === "LEAGUE_STAGE" ? `fase-campionato-giornata-${d.n}` : `giornata-${d.n}`;
+/** Round number from a round slug, null if the slug is not a round. */
+export function parseMatchdaySlug(slug?: string): { n: number; leaguePhase: boolean } | null {
+  const m = slug?.match(/^(fase-campionato-)?giornata-(\d{1,3})$/);
+  return m ? { n: Number(m[2]), leaguePhase: !!m[1] } : null;
+}
+
+// ---------- evergreen event pages ----------
+// A fixture (home team, away team, competition) has one evergreen URL. It shows the next meeting that is not
+// finished; once every meeting in the data is finished the page "rests" (last result, history, reverse fixture)
+// and the dated page of the match becomes the canonical one.
+const isClosed = (m: Pick<Match, "status">) =>
+  m.status === "FINISHED" || m.status === "AWARDED" || m.status === "CANCELLED";
+
+const pairCache = new WeakMap<Competition, Map<string, Match[]>>();
+/** Meetings of one fixture in a competition (cancelled ones excluded), oldest first. */
+export function pairMatches(c: Competition, slug: string): Match[] {
+  let byPair = pairCache.get(c);
+  if (!byPair) {
+    byPair = new Map();
+    for (const m of [...c.matches].sort((a, b) => a.utcDate.localeCompare(b.utcDate))) {
+      if (m.status === "CANCELLED") continue;
+      const k = pairSlug(m);
+      byPair.set(k, [...(byPair.get(k) ?? []), m]);
+    }
+    pairCache.set(c, byPair);
+  }
+  return byPair.get(slug) ?? [];
+}
+/** The meeting the evergreen page shows: the first one not finished, undefined when the page is resting. */
+export const nextOfPair = (list: Match[]) => list.find((m) => !isClosed(m));
+
+/** True when `m` is the meeting shown by its evergreen page (its canonical URL is then the evergreen one). */
+export function isOnEventPage(c: CompetitionRef | Competition, m: Match) {
+  if (isClosed(m)) return false;
+  // without the whole competition (home page extract) the first open meeting in sight is assumed to be the next
+  if (!("matches" in c)) return true;
+  return nextOfPair(pairMatches(c, pairSlug(m)))?.id === m.id;
+}
+/** Where a link to a match points: the evergreen page while it shows the match, else the dated archive page. */
+export const matchHref = (c: CompetitionRef | Competition, m: Match) =>
+  isOnEventPage(c, m) ? eventPath(c, m) : matchPath(c, m);
+/** Canonical path of a dated match page. */
+export const matchCanonical = matchHref;
 
 // ---------- status & formatting ----------
 export const isFinished = (m: Match) => m.status === "FINISHED" || m.status === "AWARDED";
 export const isUpcoming = (m: Match) => m.status === "SCHEDULED" || m.status === "TIMED";
 export const isLive = (m: Match) => m.status === "IN_PLAY" || m.status === "PAUSED";
 /** Played (by the clock) but the source has not published the final result yet. */
-/** Matchday page, e.g. /calcio/serie-a/giornata/12 (league phases only, see src/lib/matchdays.ts). */
-export const matchdayPath = (c: CompetitionRef, n: number) => `/calcio/${c.slug}/giornata/${n}`;
+/** Round page, e.g. /pronostici/serie-a/giornata-12 (league phases only, see src/lib/matchdays.ts). */
+export const matchdayPath = (c: Pick<CompetitionRef, "slug">, d: { n: number; stage?: string | null }) =>
+  `${PRONOSTICI}/${c.slug}/${matchdaySlug(d)}`;
 /** Stages whose matchdays get their own page. */
 export const isMatchdayStage = (m: Pick<Match, "stage" | "matchday">) =>
   !!m.matchday && (m.stage === "REGULAR_SEASON" || m.stage === "LEAGUE_STAGE");
@@ -242,6 +368,8 @@ export function matchMeta(
   const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
   const when = `${formatDay(m.utcDate)} ore ${formatTime(m.utcDate)}`;
   const path = matchPath(c, m);
+  // while the evergreen page shows this match, it is the canonical URL (the dated page is its future archive)
+  const canonical = matchCanonical(c, m);
   const description = isFinished(m)
     ? `Risultato finale di ${teams} (${c.name}), giocata ${when}.`
     : isResultPending(m)
@@ -249,26 +377,82 @@ export function matchMeta(
       : `${teams}, ${c.name}: si gioca ${when}. ${predicted ? "Pronostico con le probabilità 1X2, classifica" : "Classifica"}, forma recente e precedenti delle due squadre.`;
   return {
     path,
+    ...(canonical !== path ? { canonical } : {}),
     title: isFinished(m)
       ? `${teams} ${m.score.fullTime.home}-${m.score.fullTime.away}: risultato ${c.name}`
       : `${teams}: ${predicted ? "pronostico, orario e precedenti" : "orario, classifica e precedenti"}`,
     description,
     archive: isFinished(m),
-    jsonLd: [
-      sportsEvent({
-        path,
-        name: `${m.homeTeam.shortName} – ${m.awayTeam.shortName} (${c.name})`,
-        description,
-        startDate: m.utcDate,
-        durationMinutes: 115,
-        sport: "Calcio",
-        venue,
-        league: c.name,
-        home: { name: m.homeTeam.name, logo: m.homeTeam.crest },
-        away: { name: m.awayTeam.name, logo: m.awayTeam.crest },
-        status: m.status === "POSTPONED" ? "postponed" : m.status === "CANCELLED" ? "cancelled" : "scheduled",
-      }),
-      ...(video ? [videoObject(video, `Gli highlights ufficiali di ${teams} (${c.name}).`)] : []),
-    ],
+    // the event is described once, on its canonical page
+    jsonLd: canonical !== path ? [] : footballEventLd(c, m, path, description, video, venue),
+  };
+}
+
+function footballEventLd(
+  c: Competition,
+  m: Match,
+  path: string,
+  description: string,
+  video?: { video: string; title: string; published: string },
+  venue?: EventVenue | null,
+) {
+  const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
+  return [
+    sportsEvent({
+      path,
+      name: `${teams} (${c.name})`,
+      description,
+      startDate: m.utcDate,
+      durationMinutes: 115,
+      sport: "Calcio",
+      venue,
+      league: c.name,
+      home: { name: m.homeTeam.name, logo: m.homeTeam.crest },
+      away: { name: m.awayTeam.name, logo: m.awayTeam.crest },
+      status: m.status === "POSTPONED" ? "postponed" : m.status === "CANCELLED" ? "cancelled" : "scheduled",
+    }),
+    ...(video ? [videoObject(video, `Gli highlights ufficiali di ${teams} (${c.name}).`)] : []),
+  ];
+}
+
+/**
+ * Evergreen event page /pronostici/<lega>/<casa>-<trasferta>. With a meeting still to play it describes that
+ * meeting (title aimed at "pronostico <casa> <trasferta>"); resting, it presents the last result and the history.
+ * Resting pages are archived by the pre-render, so the URL survives when the fixture leaves the data.
+ */
+export function eventMeta(
+  c: Competition,
+  slug: string,
+  predicted: (id: number) => boolean = () => false,
+  venue?: EventVenue | null,
+) {
+  const list = pairMatches(c, slug);
+  const last = list[list.length - 1];
+  if (!last) return null;
+  const next = nextOfPair(list);
+  const teams = `${last.homeTeam.shortName} – ${last.awayTeam.shortName}`;
+  const path = eventPath(c, last);
+  if (next) {
+    const when = `${formatDay(next.utcDate)} ore ${formatTime(next.utcDate)}`;
+    const p = predicted(next.id);
+    const description = isResultPending(next)
+      ? `${teams} (${c.name}), giocata ${when}: risultato in arrivo. Il pronostico pubblicato prima della partita, classifica e precedenti.`
+      : `Pronostico ${teams} (${c.name}), ${when}: ${p ? "probabilità 1X2, Under/Over e Goal calcolate dal modello statistico" : "orario"}, classifica, forma recente e precedenti.`;
+    return {
+      path,
+      event: true,
+      title: `Pronostico ${teams}: ${p ? "probabilità, orario e precedenti" : "orario e precedenti"} · ${c.name}`,
+      description,
+      archive: false,
+      jsonLd: footballEventLd(c, next, path, description, undefined, venue),
+    };
+  }
+  const ft = last.score.fullTime;
+  return {
+    path,
+    event: true,
+    title: `${teams} (${c.name}): ultimo risultato e precedenti`,
+    description: `${teams} in ${c.name}: l'ultima sfida è finita ${ft.home}-${ft.away} (${formatShortDate(last.utcDate)}). Il risultato, i precedenti tra le due squadre e la prossima sfida appena sarà in calendario.`,
+    archive: true,
   };
 }

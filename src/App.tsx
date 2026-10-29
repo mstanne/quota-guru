@@ -15,7 +15,11 @@ import { findStaticRoute, fullTitle, paths } from "./routes";
 const UpcomingMatches = lazyPage(() => import("./components/calcio/UpcomingMatches").then((m) => m.UpcomingMatches));
 const CalcioPage = lazyPage(() => import("./components/calcio/CalcioPage").then((m) => m.CalcioPage));
 const CalcioMatchPage = lazyPage(() => import("./components/calcio/CalcioMatchPage").then((m) => m.CalcioMatchPage));
-const MatchdayPage = lazyPage(() => import("./components/calcio/MatchdayPage").then((m) => m.MatchdayPage));
+const PronosticiLeagueChild = lazyPage(() =>
+  import("./components/calcio/PronosticiLeaguePage").then((m) => m.PronosticiLeagueChild),
+);
+const BasketEventPage = lazyPage(() => import("./components/basket/BasketEventPage").then((m) => m.BasketEventPage));
+const LegacyRedirect = lazyPage(() => import("./components/LegacyRedirect").then((m) => m.LegacyRedirect));
 const DayPredictionsPage = lazyPage(() =>
   import("./components/predictions/DayPredictionsPage").then((m) => m.DayPredictionsPage),
 );
@@ -70,12 +74,16 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/calcio/:competizione/risultati", [FootballResultsPage, NotFoundPage]],
   ["/basket/nba/risultati", [NbaResultsPage]],
   ["/basket/nba/risultati/:mese", [NbaResultsPage, NotFoundPage]],
-  ["/calcio/:competizione", [CalcioPage, NotFoundPage]],
+  ["/calcio/:competizione", [LegacyRedirect, NotFoundPage]],
   ["/calcio/:competizione/classifica", [StandingsPage, NotFoundPage]],
-  ["/calcio/:competizione/giornata/:numero", [MatchdayPage, NotFoundPage]],
+  ["/calcio/:competizione/giornata/:numero", [LegacyRedirect, NotFoundPage]],
   [paths.pronostici, [PronosticiPage]],
   ["/pronostici/oggi", [DayPredictionsPage]],
   ["/pronostici/domani", [DayPredictionsPage]],
+  ["/pronostici/nba", [BasketPage]],
+  ["/pronostici/nba/:evento", [BasketEventPage, NotFoundPage]],
+  ["/pronostici/:competizione", [CalcioPage, NotFoundPage]],
+  ["/pronostici/:competizione/:evento", [PronosticiLeagueChild, NotFoundPage]],
   ["/calcio/:competizione/:partita", [CalcioMatchPage, NotFoundPage]],
   [paths.tennis, [TennisPage]],
   [paths.basket, [BasketPage]],
@@ -83,7 +91,7 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/tennis/classifica-wta", [TennisRankingPage, NotFoundPage]],
   ["/tennis/calendario-atp", [TennisCalendarPage, NotFoundPage]],
   ["/tennis/calendario-wta", [TennisCalendarPage, NotFoundPage]],
-  ["/basket/nba", [BasketPage]],
+  ["/basket/nba", [LegacyRedirect]],
   ["/basket/serie-a/classifica", [BasketStandingsPage, NotFoundPage]],
   ["/basket/nba/:partita", [BasketGamePage, NotFoundPage]],
   [paths.sitiScommesse, [SitiScommessePage]],
@@ -111,7 +119,9 @@ export function preloadForPath(pathname: string) {
     ? import("./lib/results").then((m) => m.preloadResultsData(clean))
     : null;
   // football pages: the data of their competition (all of them for /calcio)
-  const football = /^\/calcio(\/|$)/.test(clean) && !/^\/calcio\/squadre/.test(clean)
+  const football =
+    (/^\/calcio(\/|$)/.test(clean) && !/^\/calcio\/squadre/.test(clean)) ||
+    /^\/pronostici\/(?!nba(\/|$)|oggi$|domani$)[^/]+/.test(clean)
     ? import("./lib/footballData").then((m) => m.preloadFootballData(clean))
     : null;
   return Promise.all([...(hit ? hit[1] : [NotFoundPage]).map((p) => p.preload()), team, results, football]);
@@ -188,16 +198,21 @@ export default function App() {
             <Route path="/calcio/:competizione/risultati" element={<FootballResultsPage />} />
             <Route path="/basket/nba/risultati" element={<NbaResultsPage />} />
             <Route path="/basket/nba/risultati/:mese" element={<NbaResultsPage />} />
-            <Route path="/calcio/:competizione" element={<CalcioPage />} />
+            {/* moved URLs (src/lib/legacyUrls.ts) */}
+            <Route path="/calcio/:competizione" element={<LegacyRedirect />} />
+            <Route path="/calcio/:competizione/giornata/:numero" element={<LegacyRedirect />} />
+            <Route path="/basket/nba" element={<LegacyRedirect />} />
             <Route path="/calcio/:competizione/classifica" element={<StandingsPage />} />
-            <Route path="/calcio/:competizione/giornata/:numero" element={<MatchdayPage />} />
             <Route path={paths.pronostici} element={<PronosticiPage />} />
             <Route path="/pronostici/oggi" element={<DayPredictionsPage day="oggi" />} />
             <Route path="/pronostici/domani" element={<DayPredictionsPage day="domani" />} />
+            <Route path="/pronostici/nba" element={<BasketPage league="nba" />} />
+            <Route path="/pronostici/nba/:evento" element={<BasketEventPage />} />
+            <Route path="/pronostici/:competizione" element={<CalcioPage />} />
+            <Route path="/pronostici/:competizione/:evento" element={<PronosticiLeagueChild />} />
             <Route path="/calcio/:competizione/:partita" element={<CalcioMatchPage />} />
             <Route path={paths.tennis} element={<TennisPage />} />
             <Route path={paths.basket} element={<BasketPage />} />
-            <Route path="/basket/nba" element={<BasketPage league="nba" />} />
             <Route path="/basket/serie-a/classifica" element={<BasketStandingsPage />} />
             <Route path="/basket/nba/:partita" element={<BasketGamePage />} />
             <Route path="/tennis/classifica-atp" element={<TennisRankingPage tour="atp" />} />

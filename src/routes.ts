@@ -16,6 +16,13 @@ export interface RouteMeta {
   /** true = the page is final (finished match): the pre-render archives it and keeps publishing it after the
    *  match leaves the data window. */
   archive?: boolean;
+  /** Canonical path when it is not the page itself (a dated match page while the evergreen page shows that match):
+   *  the page stays reachable and indexable by link, but is left out of the sitemap. */
+  canonical?: string;
+  /** Moved URL (bridge page): canonical to this path and immediate redirect, see src/lib/legacyUrls.ts. */
+  redirect?: string;
+  /** Evergreen event page (listed with the matches in sitemap-partite.xml, also while it rests). */
+  event?: boolean;
 }
 
 export const SITE_NAME = "QuotaGuru";
