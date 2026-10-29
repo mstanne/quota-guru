@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25",
+  "updatedAt": "2026-10-29",
   "offers": [
     {
       "id": "eurobet-welcombonus",
@@ -759,7 +759,7 @@
           "wageringDays": null,
           "validityDays": null,
           "minEvents": 1,
-          "minOddsPerEvent": 2.0,
+          "minOddsPerEvent": 2,
           "usableOn": "Scommesse sportive con quota complessiva minima 2,00",
           "notes": [
             "Prima scommessa entro 7 giorni dalla registrazione, di 10 € a quota 2,00 o superiore",
@@ -933,6 +933,671 @@
           "notes": [
             "Il real bonus convertito vale 7 giorni su 15 slot indicate nei termini"
           ]
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Conto con documento d'identità verificato",
+        "Primo deposito di almeno 20 € entro 28 giorni dalla registrazione",
+        "L'intero deposito va giocato su multiple pre-partita con almeno 4 eventi a quota superiore a 1,60 (esclusi sistemi e cash out)",
+        "Una sola adesione per persona, nucleo familiare, indirizzo email e indirizzo IP"
+      ],
+      "excludedPaymentMethods": [],
+      "validFrom": null,
+      "validUntil": null,
+      "verifiedAt": "2026-10-29",
+      "status": "bozza",
+      "issues": [],
+      "id": "codere-sport",
+      "operatorId": "codere",
+      "operatorName": "Codere",
+      "sections": [
+        "sport"
+      ],
+      "title": "Welcome Sport prima ricarica",
+      "advertisedTotal": 50,
+      "minDeposit": 20,
+      "depositWithinDays": 28,
+      "sourceUrl": "https://www.codere.it/promo/sport/WelcomeSportOnline",
+      "termsUrl": "https://www.codere.it/promo/sport/WelcomeSportOnline",
+      "description": "Fun bonus sport pari al 100% del primo deposito, fino a 50 €, accreditato dopo aver giocato il deposito su multiple. Si converte in bonus real giocandolo 3 volte.",
+      "components": [
+        {
+          "percent": 100,
+          "maxConvertible": 50,
+          "wagering": 3,
+          "wageringDays": null,
+          "validityDays": 7,
+          "minEvents": 4,
+          "minOddsPerEvent": 1.6,
+          "notes": [
+            "Massimo 10 € di fun bonus per schedina",
+            "Escluse scommesse live e sistemi",
+            "Il bonus real convertito vale sulle stesse multiple; le vincite sono prelevabili"
+          ],
+          "id": "fun-bonus-sport",
+          "product": "sport",
+          "kind": "bonus-deposito",
+          "maxAmount": 50,
+          "usableOn": "Multiple pre-partita con almeno 4 eventi a quota superiore a 1,60"
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Conto con documento d'identità verificato",
+        "Primo deposito di almeno 20 € entro 28 giorni dalla registrazione, con qualsiasi metodo tranne Skrill",
+        "L'intero deposito va giocato al casinò entro 7 giorni (esclusi casinò live e giochi da tavolo)",
+        "Una sola adesione per persona, nucleo familiare, indirizzo email e indirizzo IP"
+      ],
+      "excludedPaymentMethods": [
+        "Skrill"
+      ],
+      "validFrom": null,
+      "validUntil": null,
+      "verifiedAt": "2026-10-29",
+      "status": "bozza",
+      "issues": [],
+      "id": "codere-casino",
+      "operatorId": "codere",
+      "operatorName": "Codere",
+      "sections": [
+        "casino"
+      ],
+      "title": "Welcome Casinò prima ricarica",
+      "advertisedTotal": 50,
+      "minDeposit": 20,
+      "depositWithinDays": 28,
+      "sourceUrl": "https://www.codere.it/promo/casino/WelcomeCasinoPrimaRicarica",
+      "termsUrl": "https://www.codere.it/promo/casino/WelcomeCasinoPrimaRicarica",
+      "description": "Fun bonus del 200% del primo deposito, fino a 50 €, sulle slot Greentube, accreditato entro 48 ore dopo aver giocato il deposito.",
+      "components": [
+        {
+          "percent": null,
+          "maxConvertible": 50,
+          "wagering": 35,
+          "wageringDays": 7,
+          "validityDays": 7,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [
+            "Pari al 200% del deposito, fino a 50 €",
+            "Puntata massima di 5 € per giro con il fun bonus",
+            "Il bonus real convertito va giocato una volta entro 7 giorni (esclusi casinò live e giochi da tavolo)"
+          ],
+          "id": "fun-bonus-slot",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "maxAmount": 50,
+          "usableOn": "Slot Greentube"
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Nessun conto aperto in passato su 888poker.it, 888.it, 888casino.it e 888sport.it",
+        "Consenso a ricevere comunicazioni promozionali (per il bonus senza deposito)",
+        "Bonus sulla prima ricarica da accettare dal pulsante nell'email di conferma entro 14 giorni",
+        "Una sola adesione per nucleo familiare"
+      ],
+      "excludedPaymentMethods": [
+        "Neteller",
+        "Skrill",
+        "OnShop"
+      ],
+      "validFrom": null,
+      "validUntil": null,
+      "verifiedAt": "2026-10-29",
+      "status": "bozza",
+      "issues": [
+        "L'operatore non dichiara un totale unico: advertisedTotal lasciato vuoto",
+        "Nessuna offerta di benvenuto per le scommesse sportive nella pagina promozioni di 888sport (29/10/2026)"
+      ],
+      "id": "888-casino",
+      "operatorId": "888",
+      "operatorName": "888",
+      "sections": [
+        "casino"
+      ],
+      "title": "Bonus senza deposito e Bonus di benvenuto sulla prima ricarica",
+      "advertisedTotal": null,
+      "minDeposit": null,
+      "depositWithinDays": null,
+      "sourceUrl": "https://www.888casino.it/promozioni/",
+      "termsUrl": "https://www.888casino.it/promozioni/bonus-benvenuto/",
+      "description": "Alla registrazione un bonus casinò senza deposito di 50 € con SPID (20 € con registrazione classica) e 50 free spin; sulla prima ricarica un bonus del 100% fino a 1.000 €.",
+      "components": [
+        {
+          "percent": null,
+          "maxConvertible": null,
+          "wagering": 50,
+          "wageringDays": 90,
+          "validityDays": null,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [
+            "50 € con registrazione SPID, 20 € con registrazione classica",
+            "Da richiedere entro 48 ore dal link ricevuto via SMS",
+            "50 free spin da 0,10 € validi 7 giorni, vincite fino a 10 €"
+          ],
+          "id": "senza-deposito",
+          "product": "casino",
+          "kind": "senza-deposito",
+          "maxAmount": 50,
+          "usableOn": "Giochi di casinò, esclusi Live Roulette, Live Baccarat e i giochi elencati dall'operatore"
+        },
+        {
+          "percent": 100,
+          "maxConvertible": null,
+          "wagering": 35,
+          "wageringDays": 30,
+          "validityDays": null,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [
+            "Il contributo al requisito di puntata cambia da gioco a gioco",
+            "L'uso di un codice promozionale in registrazione esclude dall'offerta"
+          ],
+          "id": "prima-ricarica",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "maxAmount": 1000,
+          "usableOn": "Giochi di casinò, esclusi Live Roulette e Live Baccarat"
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Scegliere \"Bonus 1° Ricarica Scommesse 50% fino a 5.000€\" al primo deposito",
+        "Primo deposito di almeno 20 € entro 7 giorni dalla registrazione (escluso Skrill)",
+        "Scommesse refertate pari a 6 volte il deposito entro 15 giorni, con almeno 3 eventi a quota 2,00 (esclusi sistemi, rimborsi e cash out)",
+        "Una sola adesione per persona, nucleo familiare, email, telefono e indirizzo IP"
+      ],
+      "excludedPaymentMethods": [
+        "Skrill"
+      ],
+      "validFrom": null,
+      "validUntil": null,
+      "verifiedAt": "2026-10-29",
+      "status": "bozza",
+      "issues": [],
+      "id": "admiralbet-sport",
+      "operatorId": "admiralbet",
+      "operatorName": "AdmiralBet",
+      "sections": [
+        "sport"
+      ],
+      "title": "Bonus 1° Ricarica Scommesse",
+      "advertisedTotal": 5000,
+      "minDeposit": 20,
+      "depositWithinDays": 7,
+      "sourceUrl": "https://www.admiralbet.it/promozioni/bonus-scommesse",
+      "termsUrl": "https://www.admiralbet.it/promozioni/bonus-scommesse",
+      "description": "Real bonus scommesse del 50% del primo deposito, fino a 5.000 €, sbloccato dopo aver giocato 6 volte il deposito. Va usato una volta entro 7 giorni.",
+      "components": [
+        {
+          "percent": 50,
+          "maxConvertible": null,
+          "wagering": 1,
+          "wageringDays": null,
+          "validityDays": 7,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [
+            "Massimo 100 € di bonus per biglietto",
+            "Le vincite ottenute con il real bonus sono prelevabili",
+            "Per sbloccarlo servono scommesse pari a 6 volte il deposito con almeno 3 eventi a quota 2,00"
+          ],
+          "id": "real-bonus",
+          "product": "sport",
+          "kind": "bonus-real",
+          "maxAmount": 5000,
+          "usableOn": "Scommesse sportive con quota totale di almeno 2,00 (esclusi i sistemi)"
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Scegliere il Bonus Prima Ricarica Slot al primo deposito",
+        "Primo deposito entro 7 giorni dalla registrazione",
+        "Una sola adesione per persona, codice fiscale, nucleo familiare, email, telefono e indirizzo IP"
+      ],
+      "excludedPaymentMethods": [],
+      "validFrom": "2025-11-17",
+      "validUntil": "2026-12-31",
+      "verifiedAt": "2026-10-29",
+      "status": "bozza",
+      "issues": [
+        "La pagina elenco e il testo informativo parlano di Real Bonus, i termini di Fun Bonus: nei dati è usato il Fun Bonus dei termini",
+        "I termini non indicano il deposito minimo",
+        "\"Cap 0,4\": i termini non chiariscono se è il 40% del bonus o un altro limite di conversione"
+      ],
+      "id": "admiralbet-casino",
+      "operatorId": "admiralbet",
+      "operatorName": "AdmiralBet",
+      "sections": [
+        "casino"
+      ],
+      "title": "Bonus Prima Ricarica Slot",
+      "advertisedTotal": 5000,
+      "minDeposit": null,
+      "depositWithinDays": 7,
+      "sourceUrl": "https://www.admiralbet.it/promozioni/bonus-slot-casino",
+      "termsUrl": "https://www.admiralbet.it/promozioni/bonus-slot-casino",
+      "description": "Fun bonus del 200% del primo deposito, fino a 5.000 €, sulle slot Novomatic (Greentube), accreditato entro 72 ore e valido 3 giorni.",
+      "components": [
+        {
+          "percent": null,
+          "maxConvertible": null,
+          "wagering": 65,
+          "wageringDays": null,
+          "validityDays": 3,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [
+            "Pari al 200% del deposito, fino a 5.000 €",
+            "Limite di conversione (\"cap\") 0,4",
+            "Il saldo convertito diventa Real Bonus Slot entro 72 ore lavorative"
+          ],
+          "id": "fun-bonus-slot",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "maxAmount": 5000,
+          "usableOn": "Slot del produttore Novomatic (Greentube)"
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Conto nuovo, convalidato (con SPID o con documento d'identità)",
+        "Le tranche successive alla prima vanno riscattate ogni giorno dalla sezione \"Le Mie Offerte\" entro 24 ore"
+      ],
+      "excludedPaymentMethods": [],
+      "validFrom": "2025-11-19",
+      "validUntil": "2026-12-31",
+      "verifiedAt": "2026-10-29",
+      "status": "bozza",
+      "issues": [
+        "Il testo informativo della pagina /promozioni indica una tranche ogni 2 giorni, i termini una ogni 24 ore: nei dati sono usati i termini"
+      ],
+      "id": "admiralbet-registrazione",
+      "operatorId": "admiralbet",
+      "operatorName": "AdmiralBet",
+      "sections": [
+        "casino"
+      ],
+      "title": "Offerta di Registrazione",
+      "advertisedTotal": 2000,
+      "minDeposit": null,
+      "depositWithinDays": null,
+      "sourceUrl": "https://www.admiralbet.it/promozioni/offerta-registrazione",
+      "termsUrl": "https://www.admiralbet.it/promozioni/offerta-registrazione",
+      "description": "Fun bonus slot senza deposito in 10 tranche giornaliere: 2.000 € e 1.000 free spin con registrazione SPID, 300 € e 300 free spin con registrazione classica.",
+      "components": [
+        {
+          "percent": null,
+          "maxConvertible": null,
+          "wagering": 100,
+          "wageringDays": null,
+          "validityDays": 1,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [
+            "2.000 € con SPID (10 tranche da 200 €), 300 € con registrazione classica (10 tranche da 30 €)",
+            "Free spin da 0,10 €: 1.000 con SPID, 300 con registrazione classica, in 10 tranche",
+            "Limite di conversione (\"cap\") 0,40; le vincite dei free spin hanno lo stesso requisito 100x"
+          ],
+          "id": "fun-bonus-slot",
+          "product": "casino",
+          "kind": "senza-deposito",
+          "maxAmount": 2000,
+          "usableOn": "Slot Novomatic (Greentube) in modalità \"Bonus\""
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Scegliere l'Offerta di Benvenuto Casinò in registrazione",
+        "Bonus da attivare entro 14 giorni dalla registrazione",
+        "Per ogni deposito, l'importo depositato va giocato 35 volte sui giochi del casinò entro 7 giorni",
+        "Una sola adesione per indirizzo IP, email, telefono e metodo di pagamento"
+      ],
+      "excludedPaymentMethods": [],
+      "validFrom": null,
+      "validUntil": null,
+      "verifiedAt": "2026-10-29",
+      "status": "bozza",
+      "issues": [
+        "Il deposito minimo di 10 € è indicato nella pagina dell'offerta, non nei termini"
+      ],
+      "id": "leovegas-casino",
+      "operatorId": "leovegas",
+      "operatorName": "LeoVegas",
+      "sections": [
+        "casino"
+      ],
+      "title": "Offerta di Benvenuto Casinò",
+      "advertisedTotal": 1500,
+      "minDeposit": 10,
+      "depositWithinDays": 14,
+      "sourceUrl": "https://www.leovegas.it/promozioni/offerta-benvenuto-casino",
+      "termsUrl": "https://www.leovegas.it/promozioni/termini",
+      "description": "Bonus reale del 100% sui primi tre depositi (fino a 350, 500 e 650 €) più 200 free spin, sbloccato giocando 35 volte ogni deposito. Con SPID anche 50 free spin senza deposito.",
+      "components": [
+        {
+          "percent": 100,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": null,
+          "validityDays": null,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [
+            "Più 50 free spin da 0,10 € su Big Bass Bonanza, validi 3 giorni",
+            "Il bonus reale va giocato una volta prima del prelievo"
+          ],
+          "id": "primo-deposito",
+          "product": "casino",
+          "kind": "bonus-real",
+          "maxAmount": 350,
+          "usableOn": "Giochi di casinò (slot al 100%, giochi live allo 0%)"
+        },
+        {
+          "percent": 100,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": null,
+          "validityDays": null,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [
+            "Più 75 free spin da 0,10 €",
+            "Disponibile dopo aver sbloccato il bonus del primo deposito"
+          ],
+          "id": "secondo-deposito",
+          "product": "casino",
+          "kind": "bonus-real",
+          "maxAmount": 500,
+          "usableOn": "Giochi di casinò (slot al 100%, giochi live allo 0%)"
+        },
+        {
+          "percent": 100,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": null,
+          "validityDays": null,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [
+            "Più 75 free spin da 0,10 €",
+            "Disponibile dopo aver sbloccato il bonus del secondo deposito"
+          ],
+          "id": "terzo-deposito",
+          "product": "casino",
+          "kind": "bonus-real",
+          "maxAmount": 650,
+          "usableOn": "Giochi di casinò (slot al 100%, giochi live allo 0%)"
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Scegliere l'Offerta di Benvenuto Casinò Live in registrazione",
+        "Bonus disponibile 14 giorni dalla comparsa nella pagina Promozioni",
+        "Requisito da completare entro 30 giorni dal primo deposito"
+      ],
+      "excludedPaymentMethods": [],
+      "validFrom": null,
+      "validUntil": null,
+      "verifiedAt": "2026-10-29",
+      "status": "bozza",
+      "issues": [
+        "I termini parlano di \"quattro Bonus di Benvenuto\" ma elencano tre depositi",
+        "Il deposito minimo non è indicato nei termini"
+      ],
+      "id": "leovegas-casino-live",
+      "operatorId": "leovegas",
+      "operatorName": "LeoVegas",
+      "sections": [
+        "casino"
+      ],
+      "title": "Offerta di Benvenuto Casinò Live",
+      "advertisedTotal": 2000,
+      "minDeposit": null,
+      "depositWithinDays": 14,
+      "sourceUrl": "https://www.leovegas.it/promozioni/offerta-benvenuto-casino-live",
+      "termsUrl": "https://www.leovegas.it/promozioni/termini",
+      "description": "Bonus reale del 100% sui primi tre depositi (fino a 550, 650 e 800 €) per i giochi del casinò live, sbloccato giocando 75 volte l'importo del bonus.",
+      "components": [
+        {
+          "percent": 100,
+          "maxConvertible": null,
+          "wagering": 75,
+          "wageringDays": 30,
+          "validityDays": null,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [
+            "Il bonus reale sbloccato va giocato una volta sul casinò live prima del prelievo"
+          ],
+          "id": "primo-deposito",
+          "product": "casino",
+          "kind": "bonus-real",
+          "maxAmount": 550,
+          "usableOn": "Giochi del casinò live"
+        },
+        {
+          "percent": 100,
+          "maxConvertible": null,
+          "wagering": 75,
+          "wageringDays": 30,
+          "validityDays": null,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [],
+          "id": "secondo-deposito",
+          "product": "casino",
+          "kind": "bonus-real",
+          "maxAmount": 650,
+          "usableOn": "Giochi del casinò live"
+        },
+        {
+          "percent": 100,
+          "maxConvertible": null,
+          "wagering": 75,
+          "wageringDays": 30,
+          "validityDays": null,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [],
+          "id": "terzo-deposito",
+          "product": "casino",
+          "kind": "bonus-real",
+          "maxAmount": 800,
+          "usableOn": "Giochi del casinò live"
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Scegliere il Bonus Benvenuto Scommesse in registrazione",
+        "Conto convalidato con documento d'identità",
+        "Primo deposito di almeno 20 € entro 7 giorni (esclusi Skrill, Neteller, OnShop e Titolo di Ricarica)",
+        "Solo per chi non ha mai avuto un conto Lottomatica; una adesione per persona, nucleo familiare, indirizzo, IP, dispositivo, email e telefono"
+      ],
+      "excludedPaymentMethods": [
+        "Skrill",
+        "Neteller",
+        "OnShop",
+        "Titolo di Ricarica"
+      ],
+      "validFrom": "2026-09-17",
+      "validUntil": "2026-11-01",
+      "verifiedAt": "2026-10-29",
+      "status": "bozza",
+      "issues": [
+        "La pagina indica sia \"fino a 2.100 €\" sia \"fino a 7.100 €\": il secondo include 5.000 € in PremiumPoints di Invita un Amico, non inseriti nei dati",
+        "Offerta valida fino al 1° novembre 2026"
+      ],
+      "id": "lottomatica-scommesse",
+      "operatorId": "lottomatica",
+      "operatorName": "Lottomatica",
+      "sections": [
+        "sport",
+        "casino"
+      ],
+      "title": "Bonus Benvenuto Scommesse",
+      "advertisedTotal": 2100,
+      "minDeposit": 20,
+      "depositWithinDays": 7,
+      "sourceUrl": "https://www.lottomatica.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse",
+      "termsUrl": "https://www.lottomatica.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse",
+      "description": "5 € di bonus sport alla convalida del conto, bonus sport del 25% del primo deposito fino a 100 € e play bonus slot del 100% fino a 2.000 € divisi tra quattro provider.",
+      "components": [
+        {
+          "percent": null,
+          "maxConvertible": null,
+          "wagering": 5,
+          "wageringDays": 7,
+          "validityDays": null,
+          "minEvents": 5,
+          "minOddsPerEvent": 1.7,
+          "notes": [
+            "Accreditato dopo la convalida del documento"
+          ],
+          "id": "registrazione",
+          "product": "sport",
+          "kind": "senza-deposito",
+          "maxAmount": 5,
+          "usableOn": "Multiple con almeno 5 eventi a quota 1,70"
+        },
+        {
+          "percent": 25,
+          "maxConvertible": null,
+          "wagering": 5,
+          "wageringDays": 7,
+          "validityDays": 7,
+          "minEvents": 5,
+          "minOddsPerEvent": 1.7,
+          "notes": [
+            "Escluse scommesse live, sistemi, cash out, marcatori, antepost e mercati Under/Over e Goal/No Goal",
+            "Massimo 100 € di bonus per biglietto",
+            "Il bonus real convertito vale 7 giorni sulle stesse multiple"
+          ],
+          "id": "rigioco-sport",
+          "product": "sport",
+          "kind": "bonus-deposito",
+          "maxAmount": 100,
+          "usableOn": "Multiple pre-partita con almeno 5 eventi a quota 1,70"
+        },
+        {
+          "percent": 100,
+          "maxConvertible": 1000,
+          "wagering": 30,
+          "wageringDays": null,
+          "validityDays": 3,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [
+            "Ogni euro di play bonus conta al 75% del requisito",
+            "Fino al 50% convertibile, massimo 250 € per provider",
+            "Il real bonus convertito vale 1 giorno e va giocato una volta sullo stesso provider"
+          ],
+          "id": "play-bonus-slot",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "maxAmount": 2000,
+          "usableOn": "Slot di Amusnet, Games Global, Greentube e Inspired (500 € per provider)"
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Scegliere il Bonus Benvenuto Casinò in registrazione",
+        "Conto convalidato con documento d'identità",
+        "Primo deposito di almeno 20 € entro 7 giorni (esclusi Skrill, Neteller, OnShop, Titolo di Ricarica e movimentazione bancaria)"
+      ],
+      "excludedPaymentMethods": [
+        "Skrill",
+        "Neteller",
+        "OnShop",
+        "Titolo di Ricarica",
+        "Movimentazione bancaria"
+      ],
+      "validFrom": "2026-08-17",
+      "validUntil": "2026-12-28",
+      "verifiedAt": "2026-10-29",
+      "status": "bozza",
+      "issues": [
+        "Il totale di 10.030 € indicato dall’operatore include 5.000 € in PremiumPoints di Invita un Amico, non inseriti tra i componenti (somma dei componenti 5.030 €)"
+      ],
+      "id": "lottomatica-casino",
+      "operatorId": "lottomatica",
+      "operatorName": "Lottomatica",
+      "sections": [
+        "casino"
+      ],
+      "title": "Bonus Benvenuto Casinò",
+      "advertisedTotal": 10030,
+      "minDeposit": 20,
+      "depositWithinDays": 7,
+      "sourceUrl": "https://www.lottomatica.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
+      "termsUrl": "https://www.lottomatica.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
+      "description": "Play bonus slot del 100% del primo deposito fino a 5.000 € divisi tra cinque provider, real bonus del 10% fino a 25 € sui giochi IGT e 5 € di bonus sport alla convalida.",
+      "components": [
+        {
+          "percent": null,
+          "maxConvertible": null,
+          "wagering": 5,
+          "wageringDays": 7,
+          "validityDays": null,
+          "minEvents": 5,
+          "minOddsPerEvent": 1.7,
+          "notes": [
+            "Accreditato dopo la convalida del documento"
+          ],
+          "id": "registrazione",
+          "product": "sport",
+          "kind": "senza-deposito",
+          "maxAmount": 5,
+          "usableOn": "Multiple con almeno 5 eventi a quota 1,70"
+        },
+        {
+          "percent": 10,
+          "maxConvertible": null,
+          "wagering": 1,
+          "wageringDays": null,
+          "validityDays": null,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [
+            "Da giocare una volta per intero prima del prelievo"
+          ],
+          "id": "real-bonus-igt",
+          "product": "casino",
+          "kind": "bonus-real",
+          "maxAmount": 25,
+          "usableOn": "Giochi IGT"
+        },
+        {
+          "percent": 100,
+          "maxConvertible": 2000,
+          "wagering": 40,
+          "wageringDays": null,
+          "validityDays": 3,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "notes": [
+            "Ogni euro di play bonus conta al 75% del requisito",
+            "Fino al 40% convertibile, massimo 400 € per provider",
+            "Il real bonus convertito vale 1 giorno e va giocato una volta sullo stesso provider"
+          ],
+          "id": "play-bonus-slot",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "maxAmount": 5000,
+          "usableOn": "Slot di Amusnet, Games Global, Greentube, Elk e Inspired (1.000 € per provider)"
         }
       ]
     }
