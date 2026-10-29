@@ -8,6 +8,8 @@ import { routes as staticRoutes } from "./routes";
 import { footballRoutes, legacyFootballRoutes } from "./lib/footballRoutes";
 import { legacyMatchdayRoutes, matchdayRoutes } from "./lib/matchdays";
 import { NBA_HUB } from "./lib/nbaPaths";
+import { goalStatsMeta, type Competition } from "./lib/footballCore";
+import { leagueGoalStats, type GoalResult } from "./lib/goalStats.mjs";
 import { loadAllCompetitionData } from "./lib/footballData";
 import { dayRoutes } from "./lib/dayPages";
 import { basketRoutes, nbaGames } from "./lib/basket";
@@ -56,7 +58,17 @@ const legacyRoutes = [
   { path: "/basket/nba", redirect: NBA_HUB, title: "Pronostici NBA", description: `Pagina spostata su ${NBA_HUB}.`, index: false },
 ];
 export { legacyTarget, rewriteLegacyLinks } from "./lib/legacyUrls";
-export const routes = [...legacyRoutes, ...staticRoutes, ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes((id) => !!basketPredictionFor(id), (id) => highlightFor("nba", id), (g) => nbaVenues.get(g.home.id) ?? null), ...tennisRoutes(), ...guideRoutes(), ...teamRoutes(), ...resultsRoutes()];
+// Under/Over statistics pages: one per competition with a table and results (description from the season figures)
+const competitionFiles = import.meta.glob<{ default: { competition: Competition; season?: { results: GoalResult[] } } }>(
+  "./data/football/comp-*.json",
+  { eager: true },
+);
+const goalStatsRoutes = () =>
+  Object.values(competitionFiles).flatMap(({ default: f }) => {
+    const league = leagueGoalStats(f.season?.results ?? []);
+    return f.competition.standings.length && league.n ? [goalStatsMeta(f.competition, league)] : [];
+  });
+export const routes = [...legacyRoutes, ...goalStatsRoutes(), ...staticRoutes, ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes((id) => !!basketPredictionFor(id), (id) => highlightFor("nba", id), (g) => nbaVenues.get(g.home.id) ?? null), ...tennisRoutes(), ...guideRoutes(), ...teamRoutes(), ...resultsRoutes()];
 
 /** `archivedHtml`: stored HTML of a finished match no longer in the data (see src/lib/archive.tsx). */
 export function render(url: string, basename: string, archivedHtml: string | null = null) {

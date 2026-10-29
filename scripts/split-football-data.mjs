@@ -10,6 +10,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { BUILD_TIME_FILE } from "../src/lib/eventTiming.mjs";
+import { seasonResults } from "./lib/season-results.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "data", "football");
@@ -23,6 +24,7 @@ const read = (rel, fallback) => {
 const football = read("src/data/football.json", { generatedAt: null, competitions: [], headToHead: {} });
 const predictions = read("src/data/football-predictions.json", { predictions: {} }).predictions ?? {};
 const archived = read("src/data/archived-predictions-calcio.json", {});
+const history = read("data/football-history.json", { results: [] });
 let now;
 try {
   now = Date.parse(fs.readFileSync(path.join(root, BUILD_TIME_FILE), "utf8").trim());
@@ -58,6 +60,10 @@ for (const c of football.competitions) {
       headToHead: pick(football.headToHead ?? {}, ids),
       predictions: pick(predictions, ids),
       archived: pick(archived, ids),
+      // every result of the current season, for the Under/Over and Goal statistics (src/lib/goalStats.mjs)
+      season: (({ results, complete }) => ({ complete, results: results.map(({ id, ...r }) => r) }))(
+        seasonResults(c, history),
+      ),
     }) + "\n",
   );
   written.add(file);

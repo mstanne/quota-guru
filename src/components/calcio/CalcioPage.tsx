@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "../../lib/links";
-import { CalendarDays, ListOrdered, Trophy } from "lucide-react";
+import { BarChart3, CalendarDays, ListOrdered, Trophy } from "lucide-react";
 import {
   competitionPath,
   formatDay,
@@ -29,7 +29,7 @@ import { PageHeader } from "../layout/PageHeader";
 import { ListChecks } from "lucide-react";
 import { hasResults, resultsPath } from "../../lib/results";
 import { featuredMatchday } from "../../lib/matchdaysCore";
-import { matchdayPath, PRONOSTICI } from "../../lib/footballCore";
+import { goalStatsPath, matchdayPath, PRONOSTICI } from "../../lib/footballCore";
 
 const MARKET_IDS = FOOTBALL_MARKETS.map((m) => m.id);
 
@@ -119,6 +119,15 @@ export function CalcioPage() {
           >
             <ListOrdered className="w-4 h-4 text-slate-300" aria-hidden="true" />
             Classifica {competition.name}
+          </Link>
+        )}
+        {competition && competition.standings.length > 0 && (
+          <Link
+            to={goalStatsPath(competition)}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
+          >
+            <BarChart3 className="w-4 h-4 text-slate-300" aria-hidden="true" />
+            Statistiche Under/Over
           </Link>
         )}
         {competition && round && (

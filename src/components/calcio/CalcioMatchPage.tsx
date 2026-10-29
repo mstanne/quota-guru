@@ -1,7 +1,8 @@
 import { Fragment } from "react";
 import { useParams } from "react-router";
 import { Link } from "../../lib/links";
-import { ArrowLeft, CalendarDays, History, Info, ListOrdered, TrendingUp, Users } from "lucide-react";
+import { ArrowLeft, BarChart3, CalendarDays, History, Info, ListOrdered, TrendingUp, Users } from "lucide-react";
+import { GoalStatsNote, MatchGoalComparison } from "../stats/GoalStats";
 import {
   competitionPath,
   formatDay,
@@ -23,7 +24,7 @@ import {
   matchMeta,
 } from "../../lib/footballCore";
 import { useCompetitionData, type CompetitionData } from "../../lib/footballData";
-import { PRONOSTICI, eventPath, matchPath, nextOfPair, pairMatches, pairSlug } from "../../lib/footballCore";
+import { PRONOSTICI, eventPath, goalStatsPath, matchPath, nextOfPair, pairMatches, pairSlug } from "../../lib/footballCore";
 import { highlightFor } from "../../lib/highlights";
 import { footballReasons } from "../../lib/predictionReasons";
 import { matchdaysOf } from "../../lib/matchdaysCore";
@@ -373,6 +374,26 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
             </SectionTitle>
             <StatsComparison home={home} away={away} />
           </section>
+
+          {competition.standings.length > 0 && (home || away) && (
+            <section className={card} aria-labelledby="under-over">
+              <SectionTitle icon={BarChart3}>
+                <span id="under-over">Under/Over e Goal: le squadre a confronto</span>
+              </SectionTitle>
+              <MatchGoalComparison
+                home={data.goalStats(match.homeTeam.id, match.utcDate)}
+                away={data.goalStats(match.awayTeam.id, match.utcDate)}
+                homeName={match.homeTeam.shortName}
+                awayName={match.awayTeam.shortName}
+              />
+              <GoalStatsNote complete={data.season.complete}>
+                Partite di {competition.name} giocate prima di questa.{" "}
+                <Link to={goalStatsPath(competition)} className="text-action-text hover:text-action-text-hover">
+                  Statistiche di tutte le squadre
+                </Link>
+              </GoalStatsNote>
+            </section>
+          )}
 
           <section className={card} aria-labelledby="forma">
             <SectionTitle icon={Users}>

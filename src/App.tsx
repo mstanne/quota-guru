@@ -19,6 +19,7 @@ const PronosticiLeagueChild = lazyPage(() =>
   import("./components/calcio/PronosticiLeaguePage").then((m) => m.PronosticiLeagueChild),
 );
 const BasketEventPage = lazyPage(() => import("./components/basket/BasketEventPage").then((m) => m.BasketEventPage));
+const GoalStatsPage = lazyPage(() => import("./components/stats/GoalStatsPage").then((m) => m.GoalStatsPage));
 const LegacyRedirect = lazyPage(() => import("./components/LegacyRedirect").then((m) => m.LegacyRedirect));
 const DayPredictionsPage = lazyPage(() =>
   import("./components/predictions/DayPredictionsPage").then((m) => m.DayPredictionsPage),
@@ -76,6 +77,7 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/basket/nba/risultati/:mese", [NbaResultsPage, NotFoundPage]],
   ["/calcio/:competizione", [LegacyRedirect, NotFoundPage]],
   ["/calcio/:competizione/classifica", [StandingsPage, NotFoundPage]],
+  ["/calcio/:competizione/statistiche-under-over", [GoalStatsPage, NotFoundPage]],
   ["/calcio/:competizione/giornata/:numero", [LegacyRedirect, NotFoundPage]],
   [paths.pronostici, [PronosticiPage]],
   ["/pronostici/oggi", [DayPredictionsPage]],
@@ -203,6 +205,7 @@ export default function App() {
             <Route path="/calcio/:competizione/giornata/:numero" element={<LegacyRedirect />} />
             <Route path="/basket/nba" element={<LegacyRedirect />} />
             <Route path="/calcio/:competizione/classifica" element={<StandingsPage />} />
+            <Route path="/calcio/:competizione/statistiche-under-over" element={<GoalStatsPage />} />
             <Route path={paths.pronostici} element={<PronosticiPage />} />
             <Route path="/pronostici/oggi" element={<DayPredictionsPage day="oggi" />} />
             <Route path="/pronostici/domani" element={<DayPredictionsPage day="domani" />} />

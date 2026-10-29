@@ -7,6 +7,7 @@ import index from "../data/football/index.json";
 import { settleMatch, matchSlug, type Competition, type HeadToHead, type Match } from "./footballCore";
 import type { Prediction } from "./predictionsCore";
 import type { TrackEntry } from "./trackRecord";
+import { leagueGoalStats, teamGoalStats, type GoalResult } from "./goalStats.mjs";
 
 export interface CompetitionInfo {
   code: string;
@@ -24,6 +25,8 @@ interface CompetitionFile {
   headToHead: Record<string, HeadToHead>;
   predictions: Record<string, Prediction>;
   archived: Record<string, { published: string; prediction: Omit<Prediction, "pre"> }>;
+  /** Every result of the current season (scripts/lib/season-results.mjs); `complete`: none missing. */
+  season?: { complete: boolean; results: Omit<GoalResult, never>[] };
 }
 
 const idx = index as unknown as {
@@ -59,6 +62,18 @@ export class CompetitionData {
   }
   headToHead(m: Match): HeadToHead | undefined {
     return this.file.headToHead[String(m.id)];
+  }
+  /** Results of the current season and whether the list is complete (see scripts/lib/season-results.mjs). */
+  get season(): { complete: boolean; results: GoalResult[] } {
+    return this.file.season ?? { complete: false, results: [] };
+  }
+  /** Under/Over and Goal statistics of a team in this competition's current season. */
+  goalStats(teamId: number, before?: string) {
+    const results = before ? this.season.results.filter((r) => r.date < before) : this.season.results;
+    return teamGoalStats(results, teamId);
+  }
+  leagueGoalStats() {
+    return leagueGoalStats(this.season.results);
   }
 }
 
