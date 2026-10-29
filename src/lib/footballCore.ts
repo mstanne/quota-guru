@@ -3,6 +3,8 @@
 
 import { isOverdue } from "./eventTiming.mjs";
 import { sportsEvent, videoObject, type EventVenue } from "./schema";
+import { pickHit, pickLabel, pickProbability, type Prediction } from "./predictionsCore";
+import type { OgCard } from "../routes";
 
 export interface Team {
   id: number;
@@ -305,6 +307,12 @@ export const formatDay = (iso: string) =>
   new Intl.DateTimeFormat("it-IT", { timeZone: TZ, weekday: "long", day: "numeric", month: "long" }).format(
     new Date(iso),
   );
+/** "17 ottobre" (page titles). */
+export const formatDayMonth = (iso: string) =>
+  new Intl.DateTimeFormat("it-IT", { timeZone: TZ, day: "numeric", month: "long" }).format(new Date(iso));
+/** "17 ottobre 2026" (headings of match pages). */
+export const formatLongDate = (iso: string) =>
+  new Intl.DateTimeFormat("it-IT", { timeZone: TZ, day: "numeric", month: "long", year: "numeric" }).format(new Date(iso));
 export const formatShortDate = (iso: string) =>
   new Intl.DateTimeFormat("it-IT", { timeZone: TZ, day: "2-digit", month: "2-digit", year: "numeric" }).format(
     new Date(iso),
@@ -377,6 +385,39 @@ export function standingsMeta(c: Competition) {
     description: `Classifica aggiornata di ${c.name}: punti, partite giocate, vittorie, pareggi, sconfitte e differenza reti.`,
   };
 }
+/** Social image of a match page (src/routes.ts OgCard); null without a prediction to show. */
+export function footballCard(c: CompetitionRef, m: Match, p: Prediction | undefined): OgCard | null {
+  if (!p) return null;
+  const home = m.homeTeam.shortName;
+  const away = m.awayTeam.shortName;
+  const ft = m.score.fullTime;
+  const done = isFinished(m) && ft.home !== null && ft.away !== null;
+  const round = roundLabel(m);
+  const day = formatDay(m.utcDate);
+  return {
+    competition: round ? `${c.name} · ${round}` : c.name,
+    when: `${day.charAt(0).toUpperCase()}${day.slice(1)} · ${formatTime(m.utcDate)}`,
+    home,
+    away,
+    probs: [
+      { label: `1 · ${home}`, p: p.p[0] },
+      { label: "X · Pareggio", p: p.p[1] },
+      { label: `2 · ${away}`, p: p.p[2] },
+    ],
+    pick: { label: pickLabel(p, home, away), p: pickProbability(p) },
+    result: done ? { home: ft.home!, away: ft.away!, hit: pickHit(p, ft.home!, ft.away!) } : null,
+  };
+}
+
+/** Visible H1 of a match page: "Pronostico Juventus – Inter (22 novembre 2026)" / "Juventus – Inter 2-1: …". */
+export function matchHeadline(m: Match) {
+  const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
+  const date = formatLongDate(m.utcDate);
+  return isFinished(m)
+    ? `${teams} ${m.score.fullTime.home}-${m.score.fullTime.away}: risultato e pronostico (${date})`
+    : `Pronostico ${teams} (${date})`;
+}
+
 /** `predicted`: the model has a prediction for this match (title and description mention it only then). */
 export function matchMeta(
   c: Competition,
@@ -400,9 +441,10 @@ export function matchMeta(
     ...(canonical !== path ? { canonical } : {}),
     title: isFinished(m)
       ? `${teams} ${m.score.fullTime.home}-${m.score.fullTime.away}: risultato ${c.name}`
-      : `${teams}: ${predicted ? "pronostico, orario e precedenti" : "orario, classifica e precedenti"}`,
+      : `${teams} (${formatDayMonth(m.utcDate)}): ${predicted ? "pronostico, orario e precedenti" : "orario, classifica e precedenti"}`,
     description,
     archive: isFinished(m),
+    ...(canonical === path ? { article: { headline: matchHeadline(m), section: c.name } } : {}),
     // the event is described once, on its canonical page
     jsonLd: canonical !== path ? [] : footballEventLd(c, m, path, description, video, venue),
   };
@@ -461,7 +503,8 @@ export function eventMeta(
     return {
       path,
       event: true,
-      title: `Pronostico ${teams}: ${p ? "probabilità, orario e precedenti" : "orario e precedenti"} · ${c.name}`,
+      article: { headline: matchHeadline(next), section: c.name },
+      title: `Pronostico ${teams} (${formatDayMonth(next.utcDate)}): ${p ? "probabilità e statistiche" : "orario e precedenti"} · ${c.name}`,
       description,
       archive: false,
       jsonLd: footballEventLd(c, next, path, description, undefined, venue),

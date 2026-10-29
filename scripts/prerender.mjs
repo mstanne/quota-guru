@@ -20,6 +20,7 @@ import path from "node:path";
 import zlib from "node:zlib";
 import crypto from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { writeCard } from "./lib/og-cards.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dist = path.join(root, "dist");
@@ -31,7 +32,8 @@ const archiveDir = path.join(cacheDir, "archive");
 const base = (process.env.BASE_PATH ?? "/").replace(/\/?$/, "/"); // always ends with "/"
 const basename = base.replace(/\/$/, ""); // "" or "/quota-guru"
 const siteUrl = (process.env.SITE_URL ?? "").replace(/\/$/, "");
-const today = new Date().toISOString().slice(0, 10);
+const buildIso = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
+const today = buildIso.slice(0, 10);
 
 const { render, routes, notFoundMeta, fullTitle, preloadAllPages, site, legacyTarget, rewriteLegacyLinks } = await import(
   pathToFileURL(ssrEntry).href
@@ -188,13 +190,39 @@ function faqPage(meta, appHtml) {
   return items.length ? { "@type": "FAQPage", mainEntity: items } : null;
 }
 
-function jsonLd(meta, appHtml) {
+/**
+ * Article for the match and event pages (meta.article): an analysis with its author and real dates. Published = first
+ * build that produced the page, modified = last build that changed its content (state between builds, see emit).
+ */
+function article(meta, dates) {
+  if (!meta.article || !dates) return null;
+  const img = ogImage(meta);
+  return {
+    "@type": "Article",
+    "@id": `${meta.path}#articolo`,
+    mainEntityOfPage: meta.path,
+    headline: meta.article.headline,
+    description: meta.description,
+    inLanguage: "it-IT",
+    articleSection: meta.article.section,
+    image: { "@type": "ImageObject", url: img.path, width: img.width, height: img.height },
+    datePublished: dates.published,
+    dateModified: dates.modified,
+    author: { "@type": "Person", name: site.company, url: "/chi-siamo" },
+    publisher: { "@id": "/#organizzazione" },
+    ...((meta.jsonLd ?? []).some((n) => n["@type"] === "SportsEvent") ? { about: { "@id": `${meta.path}#evento` } } : {}),
+  };
+}
+
+function jsonLd(meta, appHtml, dates) {
   if (meta.index === false) return "";
   const graph = [organization()];
   if (meta.path === "/") graph.push(website());
   const crumbs = breadcrumb(appHtml, meta.path);
   if (crumbs) graph.push(crumbs);
   graph.push(...(meta.jsonLd ?? []));
+  const art = article(meta, dates);
+  if (art) graph.push(art);
   const faq = faqPage(meta, appHtml);
   if (faq) graph.push(faq);
   const json = JSON.stringify(absolutize({ "@context": "https://schema.org", "@graph": graph }));
@@ -208,7 +236,7 @@ function ogImage(meta) {
   return { path: "/og-image.png", width: 1200, height: 630 };
 }
 
-function page(meta, appHtml, { prerendered }) {
+function page(meta, appHtml, { prerendered, dates = null }) {
   const title = esc(fullTitle(meta));
   const desc = esc(meta.description);
   // a dated match page whose evergreen page shows the same match points its canonical there
@@ -218,7 +246,10 @@ function page(meta, appHtml, { prerendered }) {
   const head = [
     `<title>${title}</title>`,
     `<meta name="description" content="${desc}" />`,
-    meta.index === false ? `<meta name="robots" content="noindex" />` : "",
+    // large previews in Google Search and Discover
+    meta.index === false
+      ? `<meta name="robots" content="noindex" />`
+      : `<meta name="robots" content="max-image-preview:large" />`,
     canonical && meta.index !== false ? `<link rel="canonical" href="${canonical}" />` : "",
     `<meta property="og:type" content="${isArticle ? "article" : "website"}" />`,
     `<meta property="og:site_name" content="QuotaGuru" />`,
@@ -230,7 +261,7 @@ function page(meta, appHtml, { prerendered }) {
     siteUrl ? `<meta property="og:image:width" content="${img.width}" />` : "",
     siteUrl ? `<meta property="og:image:height" content="${img.height}" />` : "",
     `<meta name="twitter:card" content="summary_large_image" />`,
-    jsonLd(meta, appHtml),
+    jsonLd(meta, appHtml, dates),
   ]
     .filter(Boolean)
     .join("\n    ");
@@ -282,14 +313,38 @@ function emitBridge(from, to, title) {
   bridges.push(from);
 }
 
+// 16:9 social images of the match pages (scripts/lib/og-cards.mjs), cached between builds next to the SEO state
+const ogCacheDir = path.join(cacheDir, "..", "og");
+let cards = 0;
+const usedCards = new Set();
+/** Draws the page's card (if any) and makes it the page image, also in its SportsEvent. */
+function withCard(meta) {
+  if (!meta.card) return meta;
+  const image = { path: writeCard(meta.card, dist, ogCacheDir), width: 1200, height: 675 };
+  cards++;
+  usedCards.add(path.basename(image.path));
+  const jsonLd = (meta.jsonLd ?? []).map((n) => (n["@type"] === "SportsEvent" ? { ...n, image: image.path } : n));
+  return { ...meta, image, jsonLd };
+}
+
 /** Writes one page and records when its content last changed (`main`: the page content, see mainContent). */
-function emit(meta, appHtml, main = mainContent(appHtml)) {
+function emit(meta0, appHtml, main = mainContent(appHtml)) {
+  const meta = withCard(meta0);
   const out = outFile(meta.path);
   fs.mkdirSync(path.dirname(out), { recursive: true });
-  fs.writeFileSync(out, page(meta, appHtml, { prerendered: true }));
   const hash = contentHash(main);
   const prev = prevState.pages[meta.path];
-  nextState.pages[meta.path] = { hash, lastmod: prev?.hash === hash ? prev.lastmod : today };
+  const same = prev?.hash === hash;
+  // full timestamps for the Article dates; pages known only from older states get the day of their last change
+  const prevModified = prev ? (prev.modified ?? `${prev.lastmod}T00:00:00Z`) : null;
+  const entry = {
+    hash,
+    lastmod: same ? prev.lastmod : today,
+    published: prev?.published ?? prevModified ?? buildIso,
+    modified: same ? prevModified : buildIso,
+  };
+  nextState.pages[meta.path] = entry;
+  fs.writeFileSync(out, page(meta, appHtml, { prerendered: true, dates: entry }));
   // only canonical pages go to the sitemap and to IndexNow
   const indexable = meta.index !== false && (!meta.canonical || meta.canonical === meta.path);
   if (prev?.hash !== hash && indexable) changedNow.push(meta.path);
@@ -300,8 +355,10 @@ function emit(meta, appHtml, main = mainContent(appHtml)) {
 }
 
 // ---------- live pages (from the current data) ----------
-const metaOnly = ({ path: p, title, description, index, jsonLd: ld, image, event }) => ({
+const metaOnly = ({ path: p, title, description, index, jsonLd: ld, image, event, article: art, card }) => ({
   ...(event ? { event } : {}),
+  ...(art ? { article: art } : {}),
+  ...(card ? { card } : {}),
   path: p,
   title,
   description,
@@ -434,13 +491,17 @@ fs.mkdirSync(cacheDir, { recursive: true });
 // URLs for IndexNow (scripts/indexnow.mjs runs after the deploy): only what is new or changed in this build.
 if (siteUrl) fs.writeFileSync(path.join(cacheDir, "indexnow-urls.txt"), changedNow.map(publicUrl).join("\n") + "\n");
 
+// drop cached images no page uses any more (old matches whose card changed), so the cache does not grow forever
+if (fs.existsSync(ogCacheDir))
+  for (const f of fs.readdirSync(ogCacheDir)) if (!usedCards.has(f)) fs.rmSync(path.join(ogCacheDir, f));
+
 fs.mkdirSync(cacheDir, { recursive: true });
 fs.writeFileSync(stateFile, JSON.stringify(nextState) + "\n");
 fs.rmSync(path.join(root, "dist-ssr"), { recursive: true, force: true });
 
 const changed = Object.values(nextState.pages).filter((p) => p.lastmod === today).length;
 console.log(
-  `prerender: ${routes.filter((r) => !r.redirect).length} pagine dai dati + ${restored} partite archiviate + ${bridges.length} URL spostati (reindirizzati) + 404.html` +
+  `prerender: ${routes.filter((r) => !r.redirect).length} pagine dai dati + ${restored} partite archiviate + ${bridges.length} URL spostati (reindirizzati) + 404.html, ${cards} immagini partita` +
     `${siteUrl ? ` + sitemap (${sitemapPages.length} pagine, ${sitemapMatches.length} partite)` : ""} (base "${base}")\n` +
     `  archivio: ${archivedNow} partite finite salvate/aggiornate${unreadable ? `, ${unreadable} voci ignorate` : ""}; ` +
     `pagine con data di modifica di oggi: ${changed}; nuove o cambiate in questa build: ${changedNow.length}`,

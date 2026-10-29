@@ -3,9 +3,9 @@
 // so that the football data is not part of the initial JavaScript bundle.
 import { allMatches, competitionMeta, competitions, matchMeta, standingsMeta } from "./football";
 import type { RouteMeta } from "../routes";
-import { predictionFor } from "./predictions";
+import { archivedPredictionFor, predictionFor } from "./predictions";
 import { highlightFor } from "./highlights";
-import { eventMeta, pairMatches, pairSlug, nextOfPair, competitionPath, type Competition, type Match } from "./footballCore";
+import { eventMeta, footballCard, isUpcoming, pairMatches, pairSlug, nextOfPair, competitionPath, type Competition, type Match } from "./footballCore";
 import type { EventVenue } from "./schema";
 
 /** Official highlights from YouTube, for the competitions covered by scripts/fetch-highlights.mjs. */
@@ -16,9 +16,22 @@ export function footballRoutes(venueOf: (teamId: number) => EventVenue | null = 
   return [
     ...competitions.map(competitionMeta),
     ...competitions.filter((c) => c.standings.length > 0).map(standingsMeta),
-    ...allMatches.map(({ competition, match }) => matchMeta(competition, match, !!predictionFor(match.id), highlightOf(competition, match), venueOf(match.homeTeam.id))),
+    ...allMatches.map(({ competition, match }) => {
+      const meta: RouteMeta = matchMeta(competition, match, !!predictionFor(match.id), highlightOf(competition, match), venueOf(match.homeTeam.id));
+      const card = meta.article ? footballCard(competition, match, shownPrediction(match)) : null;
+      return card ? { ...meta, card } : meta;
+    }),
     ...competitions.flatMap((c) => eventRoutes(c, venueOf)),
   ];
+}
+
+/** The prediction a match page shows: as published before kick-off once the match has started. */
+function shownPrediction(m: Match) {
+  if (isUpcoming(m)) return predictionFor(m.id);
+  const archived = archivedPredictionFor(m.id);
+  if (archived) return { ...archived.prediction, pre: true };
+  const p = predictionFor(m.id);
+  return p?.pre ? p : undefined;
 }
 
 /** One evergreen page per fixture (home team, away team) with a meeting in the data. */
@@ -27,8 +40,10 @@ function eventRoutes(c: Competition, venueOf: (teamId: number) => EventVenue | n
   return slugs.flatMap((slug) => {
     const list = pairMatches(c, slug);
     const shown = nextOfPair(list) ?? list[list.length - 1];
-    const meta = shown && eventMeta(c, slug, (id) => !!predictionFor(id), venueOf(shown.homeTeam.id));
-    return meta ? [meta] : [];
+    const meta: RouteMeta | null = shown && eventMeta(c, slug, (id) => !!predictionFor(id), venueOf(shown.homeTeam.id));
+    if (!meta) return [];
+    const card = nextOfPair(list) ? footballCard(c, shown, shownPrediction(shown)) : null;
+    return [card ? { ...meta, card } : meta];
   });
 }
 

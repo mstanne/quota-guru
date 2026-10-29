@@ -252,6 +252,24 @@ saranno disponibili si potranno collegare le schede partita e i testi editoriali
 
 Le pagine dei pronostici seguono lo schema descritto sotto.
 
+## Pagine partita: struttura e dati per i motori di ricerca
+
+- **H1 visibile** con squadre e data: "Pronostico Juventus – Inter (22 novembre 2026)"; a partita finita
+  "Juventus – Inter 2-1: risultato e pronostico (…)". Anche il `<title>` contiene la data.
+- **Il pronostico in breve** (`src/components/predictions/QuickSummary.tsx`), subito sotto le squadre: esito più
+  probabile con la probabilità, Under/Over 2,5, Goal/No goal e combinazione 1X2 + Under/Over più probabile (NBA:
+  favorita, punti attesi, scarto, totale punti). A partita finita mostra il pronostico pubblicato prima e se era
+  corretto. Sono probabilità del modello, mai presentate come consigli di gioco.
+- **Dati strutturati**: `SportsEvent` (squadre, orario, stadio) più `Article` con titolo uguale all'H1, autore,
+  data di prima pubblicazione e di ultima modifica reale (stato tra una build e l'altra in `.cache/seo/state.json`).
+  `FAQPage` resta generato dalle domande visibili.
+- **Immagini 16:9** (1200×675) per ogni pagina partita o evento con un pronostico, disegnate in build da
+  `scripts/lib/og-cards.mjs` con font Sora (`scripts/assets/fonts`, licenza OFL): squadre, data, probabilità e,
+  a partita finita, risultato ed esito del pronostico. Niente stemmi dei club. Usate come `og:image`, nell'`Article` e
+  nel `SportsEvent`; conservate in `.cache/og` tra le esecuzioni, quindi vengono ridisegnate solo quando cambiano.
+- `max-image-preview:large` su tutte le pagine indicizzabili (anteprime grandi in Google e Discover).
+- Nessun invito a giocare con bonus nelle pagine pronostico: da valutare con il legale prima delle affiliazioni.
+
 ## Statistiche Under/Over e Goal
 
 Percentuali Over 1,5 / 2,5 / 3,5, Goal, porta inviolata e partite a secco, calcolate solo dai risultati finali
