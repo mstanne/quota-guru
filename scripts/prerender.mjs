@@ -141,9 +141,10 @@ const website = () => ({
 const URL_KEYS = new Set(["@id", "url", "item", "image", "logo", "mainEntityOfPage"]);
 function absolute(value) {
   if (!siteUrl || typeof value !== "string" || !value.startsWith("/")) return value;
-  const [p, hash] = value.split("#");
+  const [p0, hash] = value.split("#");
+  const [p, query] = p0.split("?");
   const isFile = /\.[a-z0-9]{2,5}$/i.test(p);
-  return (isFile ? `${siteUrl}${p}` : publicUrl(p.replace(/\/+$/, "") || "/")) + (hash ? `#${hash}` : "");
+  return (isFile ? `${siteUrl}${p}${query ? `?${query}` : ""}` : publicUrl(p.replace(/\/+$/, "") || "/")) + (hash ? `#${hash}` : "");
 }
 function absolutize(node) {
   if (Array.isArray(node)) return node.map(absolutize);
@@ -232,7 +233,7 @@ function jsonLd(meta, appHtml, dates) {
 
 function ogImage(meta) {
   const img = meta.image;
-  if (img && fs.existsSync(path.join(dist, img.path.slice(1)))) return img;
+  if (img && fs.existsSync(path.join(dist, img.path.slice(1).split("?")[0]))) return img;
   return { path: "/og-image.png", width: 1200, height: 630 };
 }
 
@@ -320,9 +321,11 @@ const usedCards = new Set();
 /** Draws the page's card (if any) and makes it the page image, also in its SportsEvent. */
 function withCard(meta) {
   if (!meta.card) return meta;
-  const image = { path: writeCard(meta.card, dist, ogCacheDir), width: 1200, height: 675 };
+  const { path: imgPath, version } = writeCard(meta.card, meta.path, dist, ogCacheDir);
+  // ?v= changes with the content, so social networks fetch the new image when the card changes
+  const image = { path: `${imgPath}?v=${version}`, width: 1200, height: 675 };
   cards++;
-  usedCards.add(path.basename(image.path));
+  usedCards.add(`${version}.png`);
   const jsonLd = (meta.jsonLd ?? []).map((n) => (n["@type"] === "SportsEvent" ? { ...n, image: image.path } : n));
   return { ...meta, image, jsonLd };
 }

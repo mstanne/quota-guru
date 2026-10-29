@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { Link } from "../../lib/links";
 import { ArrowLeft, BarChart3, CalendarDays, History, Info, ListOrdered, TrendingUp, Users } from "lucide-react";
 import { GoalStatsNote, MatchGoalComparison } from "../stats/GoalStats";
-import { FootballQuickSummary } from "../predictions/QuickSummary";
+import { FootballQuickSummary, SummaryWithImage } from "../predictions/QuickSummary";
 import {
   competitionPath,
   formatDay,
@@ -25,7 +25,7 @@ import {
   matchMeta,
 } from "../../lib/footballCore";
 import { useCompetitionData, type CompetitionData } from "../../lib/footballData";
-import { PRONOSTICI, eventPath, goalStatsPath, matchHeadline, matchPath, nextOfPair, pairMatches, pairSlug } from "../../lib/footballCore";
+import { PRONOSTICI, eventPath, goalStatsPath, matchCanonical, matchHeadline, matchPath, nextOfPair, pairMatches, pairSlug } from "../../lib/footballCore";
 import { highlightFor } from "../../lib/highlights";
 import { footballReasons } from "../../lib/predictionReasons";
 import { matchdaysOf } from "../../lib/matchdaysCore";
@@ -329,12 +329,17 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
             </div>
           </div>
           {prediction && (!finished || prediction.pre) && !live && (
-            <FootballQuickSummary
-              prediction={prediction}
-              home={match.homeTeam.shortName}
-              away={match.awayTeam.shortName}
-              result={finished && ft.home !== null && ft.away !== null ? { home: ft.home, away: ft.away } : null}
-            />
+            <SummaryWithImage
+              imagePage={event ? eventPath(competition, match) : matchCanonical(competition, match)}
+              alt={`${teams}: ${finished ? "risultato e " : ""}probabilità del modello statistico`}
+            >
+              <FootballQuickSummary
+                prediction={prediction}
+                home={match.homeTeam.shortName}
+                away={match.awayTeam.shortName}
+                result={finished && ft.home !== null && ft.away !== null ? { home: ft.home, away: ft.away } : null}
+              />
+            </SummaryWithImage>
           )}
           <MatchSummary text={footballSummary(match, competition.name, prediction, { finished, live })} />
           <DataUpdatedNote generatedAt={generatedAt} className="justify-center mt-6" />

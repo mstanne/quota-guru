@@ -5,7 +5,7 @@ import { allMatches, competitionMeta, competitions, matchMeta, standingsMeta } f
 import type { RouteMeta } from "../routes";
 import { archivedPredictionFor, predictionFor } from "./predictions";
 import { highlightFor } from "./highlights";
-import { eventMeta, footballCard, isUpcoming, pairMatches, pairSlug, nextOfPair, competitionPath, type Competition, type Match } from "./footballCore";
+import { eventMeta, footballCard, isFinished, isUpcoming, pairMatches, pairSlug, nextOfPair, competitionPath, type Competition, type Match } from "./footballCore";
 import type { EventVenue } from "./schema";
 
 /** Official highlights from YouTube, for the competitions covered by scripts/fetch-highlights.mjs. */
@@ -26,12 +26,13 @@ export function footballRoutes(venueOf: (teamId: number) => EventVenue | null = 
 }
 
 /** The prediction a match page shows: as published before kick-off once the match has started. */
+/** Same rule as the match page (CalcioMatchPage): the archived copy once the match has started, else the current one;
+ *  a finished match shows a prediction only if it was made before kick-off. */
 function shownPrediction(m: Match) {
-  if (isUpcoming(m)) return predictionFor(m.id);
-  const archived = archivedPredictionFor(m.id);
+  const archived = isUpcoming(m) ? undefined : archivedPredictionFor(m.id);
   if (archived) return { ...archived.prediction, pre: true };
   const p = predictionFor(m.id);
-  return p?.pre ? p : undefined;
+  return isFinished(m) && !p?.pre ? undefined : p;
 }
 
 /** One evergreen page per fixture (home team, away team) with a meeting in the data. */

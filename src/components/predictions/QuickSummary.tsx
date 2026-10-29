@@ -1,6 +1,8 @@
 // "In breve": the model's numbers at the top of a match page, readable in a few seconds on a phone without scrolling.
 // Same figures as the full panel further down (#pronostico); statistical estimates, never presented as betting tips.
+import { useState } from "react";
 import { Check, X as XIcon } from "lucide-react";
+import { cardImagePath } from "../../lib/footballCore";
 import { pct, pickHit, pickLabel, pickProbability, topCombo, type Prediction } from "../../lib/predictionsCore";
 import { fmtPts, type BasketPrediction } from "../../lib/basketPredict";
 import { ConfidenceBadge } from "./PredictionUi";
@@ -33,7 +35,7 @@ function Box({
   return (
     <section
       aria-labelledby="in-breve"
-      className="max-w-3xl mx-auto mt-6 rounded-xl border border-slate-700 bg-slate-950/60 p-4 sm:p-5 text-left"
+      className="w-full rounded-xl border border-slate-700 bg-slate-950/60 p-4 sm:p-5 text-left"
     >
       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
         <h2 id="in-breve" className="text-white text-base font-medium">
@@ -142,5 +144,31 @@ export function BasketQuickSummary({
         />
       )}
     </Box>
+  );
+}
+
+/**
+ * The quick summary and, on wide screens only, the match's 16:9 image (drawn at build time by scripts/lib/og-cards.mjs
+ * for the canonical page of the match, `imagePage`). On phones the image is not shown, so the numbers stay above
+ * the fold. If the image is missing (e.g. `npm run dev`) the summary simply takes the whole width.
+ */
+export function SummaryWithImage({ children, imagePage, alt }: { children: React.ReactNode; imagePage: string; alt: string }) {
+  const [missing, setMissing] = useState(false);
+  return (
+    <div className={`mt-6 mx-auto grid gap-6 items-center ${missing ? "max-w-3xl" : "max-w-3xl lg:max-w-6xl lg:grid-cols-[minmax(0,1fr)_minmax(0,480px)]"}`}>
+      {children}
+      {!missing && (
+        <img
+          src={cardImagePath(imagePage)}
+          alt={alt}
+          width={1200}
+          height={675}
+          loading="lazy"
+          decoding="async"
+          onError={() => setMissing(true)}
+          className="hidden lg:block w-full h-auto rounded-xl border border-slate-700"
+        />
+      )}
+    </div>
   );
 }

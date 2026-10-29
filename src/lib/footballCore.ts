@@ -385,6 +385,9 @@ export function standingsMeta(c: Competition) {
     description: `Classifica aggiornata di ${c.name}: punti, partite giocate, vittorie, pareggi, sconfitte e differenza reti.`,
   };
 }
+/** Site path of the 16:9 image of a page (same rule as cardPath in scripts/lib/og-cards.mjs). */
+export const cardImagePath = (pagePath: string) => `/og${pagePath}.png`;
+
 /** Social image of a match page (src/routes.ts OgCard); null without a prediction to show. */
 export function footballCard(c: CompetitionRef, m: Match, p: Prediction | undefined): OgCard | null {
   if (!p) return null;

@@ -111,16 +111,19 @@ export function cardSvg(card) {
 </svg>`;
 }
 
+/** Site path of the image of a page: "/pronostici/serie-a/juventus-inter" → "/og/pronostici/serie-a/juventus-inter.png".
+ *  Same rule as cardImagePath in src/lib/footballCore.ts (the page shows the image on wide screens). */
+export const cardPath = (pagePath) => `/og${pagePath}.png`;
+
 /**
- * Writes the PNG of `card` into `distDir/og/partite/<hash>.png` (from the cache when it was already drawn) and
- * returns its site path, e.g. "/og/partite/3f2a….png".
+ * Writes the PNG of `card` for the page at `pagePath` (drawn once per distinct content: PNGs are cached by hash in
+ * `cacheDir`) and returns { path, version }: the stable site path and a content hash for cache busting (?v=).
  */
-export function writeCard(card, distDir, cacheDir) {
+export function writeCard(card, pagePath, distDir, cacheDir) {
   const svg = cardSvg(card);
   const hash = crypto.createHash("sha1").update(svg).digest("hex").slice(0, 16);
-  const rel = `og/partite/${hash}.png`;
+  const rel = cardPath(pagePath).slice(1);
   const out = path.join(distDir, rel);
-  if (fs.existsSync(out)) return `/${rel}`;
   const cached = path.join(cacheDir, `${hash}.png`);
   let png;
   if (fs.existsSync(cached)) png = fs.readFileSync(cached);
@@ -136,5 +139,5 @@ export function writeCard(card, distDir, cacheDir) {
   }
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, png);
-  return `/${rel}`;
+  return { path: `/${rel}`, version: hash };
 }

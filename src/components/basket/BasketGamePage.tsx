@@ -17,7 +17,7 @@ import { HighlightVideo } from "../media/HighlightVideo";
 import { MatchOddsSlot } from "../odds/MatchOddsSlot";
 import { highlightFor } from "../../lib/highlights";
 import { formatDay, formatShortDate, formatTime, PRONOSTICI, romeDay } from "../../lib/footballCore";
-import { BasketQuickSummary } from "../predictions/QuickSummary";
+import { BasketQuickSummary, SummaryWithImage } from "../predictions/QuickSummary";
 import {
   basketPaths,
   basketUpdatedAt,
@@ -36,6 +36,7 @@ import {
   nbaPairGames,
   nextOfNbaPair,
   gameHeadline,
+  gameHref,
   type BasketGame,
 } from "../../lib/basket";
 import { usePageMeta } from "../../lib/pageMeta";
@@ -139,12 +140,17 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
             )}
           </div>
           {prediction && (!finished || prediction.pre) && !live && (
-            <BasketQuickSummary
-              prediction={prediction}
-              home={game.home.shortName ?? game.home.name}
-              away={game.away.shortName ?? game.away.name}
-              result={finished && game.score.home != null && game.score.away != null ? { home: game.score.home, away: game.score.away } : null}
-            />
+            <SummaryWithImage
+              imagePage={event ? nbaEventPath(game) : gameHref(game)}
+              alt={`${teams}: ${finished ? "risultato e " : ""}probabilità del modello statistico`}
+            >
+              <BasketQuickSummary
+                prediction={prediction}
+                home={game.home.shortName ?? game.home.name}
+                away={game.away.shortName ?? game.away.name}
+                result={finished && game.score.home != null && game.score.away != null ? { home: game.score.home, away: game.score.away } : null}
+              />
+            </SummaryWithImage>
           )}
           <MatchSummary text={basketSummary(game, prediction, { finished, live })} />
           <DataUpdatedNote generatedAt={basketUpdatedAt} className="justify-center mt-6" />
