@@ -151,6 +151,124 @@
         }
       ],
       "notes": "Usare innerText dopo il caricamento (textContent contiene i template non compilati). Esistono anche le varianti casino-real-funbonus, tutti-giochi, poker, giochi-di-carte, bingo e lotterie: non seguite."
+    },
+    {
+      "operatorId": "codere",
+      "operatorName": "Codere",
+      "listing": "https://www.codere.it/promozioni",
+      "pages": [
+        {
+          "offerId": "codere-sport",
+          "sections": [
+            "sport"
+          ],
+          "url": "https://www.codere.it/promo/sport/WelcomeSportOnline"
+        },
+        {
+          "offerId": "codere-casino",
+          "sections": [
+            "casino"
+          ],
+          "url": "https://www.codere.it/promo/casino/WelcomeCasinoPrimaRicarica"
+        }
+      ],
+      "notes": "Termini nella pagina stessa. Il banner cookie non ha un pulsante di rifiuto: non cliccare OK. Metodi di pagamento: funzioni cg_openSupportPage(\"modalita-versamento\") e (\"modalita-prelievo\") del footer."
+    },
+    {
+      "operatorId": "888",
+      "operatorName": "888",
+      "listing": "https://www.888casino.it/promozioni/",
+      "pages": [
+        {
+          "offerId": "888-casino",
+          "sections": [
+            "casino"
+          ],
+          "url": "https://www.888casino.it/promozioni/bonus-benvenuto/"
+        },
+        {
+          "offerId": "888-casino",
+          "sections": [
+            "casino"
+          ],
+          "url": "https://www.888casino.it/promozioni/bonus-senza-deposito/"
+        }
+      ],
+      "notes": "Il sito sport è sport.888casino.it (promozioni in /promozioni/promozioni-attive/): al 29/10/2026 nessuna offerta di benvenuto sport; segnalare se compare. Banner cookie: \"Accetta solo i cookie essenziali\"."
+    },
+    {
+      "operatorId": "admiralbet",
+      "operatorName": "AdmiralBet",
+      "listing": "https://www.admiralbet.it/promozioni",
+      "pages": [
+        {
+          "offerId": "admiralbet-sport",
+          "sections": [
+            "sport"
+          ],
+          "url": "https://www.admiralbet.it/promozioni/bonus-scommesse"
+        },
+        {
+          "offerId": "admiralbet-casino",
+          "sections": [
+            "casino"
+          ],
+          "url": "https://www.admiralbet.it/promozioni/bonus-slot-casino"
+        },
+        {
+          "offerId": "admiralbet-registrazione",
+          "sections": [
+            "casino"
+          ],
+          "url": "https://www.admiralbet.it/promozioni/offerta-registrazione"
+        }
+      ],
+      "notes": "Pagine caricate via JavaScript: se compare \"Pagina non raggiungibile\" ricaricare. Le pagine di dettaglio si aprono dal pulsante DETTAGLI dell’elenco. Banner cookie: \"No, grazie solo i cookie tecnici\"."
+    },
+    {
+      "operatorId": "leovegas",
+      "operatorName": "LeoVegas",
+      "listing": "https://www.leovegas.it/promozioni",
+      "pages": [
+        {
+          "offerId": "leovegas-casino",
+          "sections": [
+            "casino"
+          ],
+          "url": "https://www.leovegas.it/promozioni/offerta-benvenuto-casino"
+        },
+        {
+          "offerId": "leovegas-casino-live",
+          "sections": [
+            "casino"
+          ],
+          "url": "https://www.leovegas.it/promozioni/offerta-benvenuto-casino-live"
+        }
+      ],
+      "notes": "I termini completi di tutte le offerte sono in https://www.leovegas.it/promozioni/termini. Al 29/10/2026 nessuna offerta di benvenuto sport. Banner cookie: \"Accetta solo i necessari\"."
+    },
+    {
+      "operatorId": "lottomatica",
+      "operatorName": "Lottomatica",
+      "listing": "https://www.lottomatica.it/bonus/bonus-benvenuto",
+      "pages": [
+        {
+          "offerId": "lottomatica-scommesse",
+          "sections": [
+            "sport",
+            "casino"
+          ],
+          "url": "https://www.lottomatica.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse"
+        },
+        {
+          "offerId": "lottomatica-casino",
+          "sections": [
+            "casino"
+          ],
+          "url": "https://www.lottomatica.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino"
+        }
+      ],
+      "notes": "Stessa società di Goldbet (GBO Italy S.p.A.). Termini in sezioni a scomparsa: leggere il textContent di <main>. L’offerta scommesse scade il 1/11/2026: controllare la nuova versione."
     }
   ]
 }
