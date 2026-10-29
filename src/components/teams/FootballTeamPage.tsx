@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { Building2, CalendarDays, ListChecks, ListOrdered, Shield, Users } from "lucide-react";
 import { hasResults, resultsPath } from "../../lib/results";
 import { Link } from "../../lib/links";
+import { competitionPath } from "../../lib/footballCore";
 import { PageHeader } from "../layout/PageHeader";
 import { TeamBadge } from "../calcio/MatchRow";
 import { NotFoundPage } from "../NotFoundPage";
@@ -238,7 +239,7 @@ export function FootballTeamPage() {
             <ListOrdered className="w-4 h-4" aria-hidden="true" />
             Classifica {t.competition.name}
           </Link>
-          <Link to={`/calcio/${t.competition.slug}`} className="inline-flex items-center gap-2 text-action-text hover:text-action-text-hover">
+          <Link to={competitionPath(t.competition)} className="inline-flex items-center gap-2 text-action-text hover:text-action-text-hover">
             <Shield className="w-4 h-4" aria-hidden="true" />
             Partite di {t.competition.name}
           </Link>

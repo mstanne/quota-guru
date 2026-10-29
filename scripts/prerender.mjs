@@ -33,7 +33,9 @@ const basename = base.replace(/\/$/, ""); // "" or "/quota-guru"
 const siteUrl = (process.env.SITE_URL ?? "").replace(/\/$/, "");
 const today = new Date().toISOString().slice(0, 10);
 
-const { render, routes, notFoundMeta, fullTitle, preloadAllPages, site } = await import(pathToFileURL(ssrEntry).href);
+const { render, routes, notFoundMeta, fullTitle, preloadAllPages, site, legacyTarget, rewriteLegacyLinks } = await import(
+  pathToFileURL(ssrEntry).href
+);
 // lazy page chunks must be loaded before rendering synchronously with renderToString
 await preloadAllPages();
 const template = fs.readFileSync(path.join(dist, "index.html"), "utf8");
@@ -209,7 +211,8 @@ function ogImage(meta) {
 function page(meta, appHtml, { prerendered }) {
   const title = esc(fullTitle(meta));
   const desc = esc(meta.description);
-  const canonical = publicUrl(meta.path);
+  // a dated match page whose evergreen page shows the same match points its canonical there
+  const canonical = publicUrl(meta.canonical ?? meta.path);
   const img = ogImage(meta);
   const isArticle = (meta.jsonLd ?? []).some((n) => n["@type"] === "Article");
   const head = [
@@ -248,23 +251,57 @@ const sitemapMatches = [];
 /** Indexable pages that are new or whose content changed in this build (sent to IndexNow after the deploy). */
 const changedNow = [];
 
+const outFile = (p) => (p === "/" ? path.join(dist, "index.html") : path.join(dist, p.slice(1), "index.html"));
+
+/**
+ * Moved URL (src/lib/legacyUrls.ts). GitHub Pages cannot send a 301, so the old URL gets a small page with the
+ * canonical of the new one and an immediate redirect (meta refresh 0 + location.replace), which search engines
+ * treat as a permanent move. Not in the sitemap.
+ */
+const bridges = [];
+function emitBridge(from, to, title) {
+  const target = pageUrl(to);
+  const abs = publicUrl(to) || target;
+  const html = `<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>${esc(title)} | QuotaGuru</title>
+    <link rel="canonical" href="${abs}" />
+    <meta http-equiv="refresh" content="0; url=${abs}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <p>Questa pagina si è spostata: <a href="${target}">${esc(title)}</a>.</p>
+    <script>location.replace(${JSON.stringify(target)} + location.search + location.hash);</script>
+  </body>
+</html>
+`;
+  fs.mkdirSync(path.dirname(outFile(from)), { recursive: true });
+  fs.writeFileSync(outFile(from), html);
+  bridges.push(from);
+}
+
 /** Writes one page and records when its content last changed (`main`: the page content, see mainContent). */
 function emit(meta, appHtml, main = mainContent(appHtml)) {
-  const out = meta.path === "/" ? path.join(dist, "index.html") : path.join(dist, meta.path.slice(1), "index.html");
+  const out = outFile(meta.path);
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, page(meta, appHtml, { prerendered: true }));
   const hash = contentHash(main);
   const prev = prevState.pages[meta.path];
   nextState.pages[meta.path] = { hash, lastmod: prev?.hash === hash ? prev.lastmod : today };
-  if (prev?.hash !== hash && meta.index !== false) changedNow.push(meta.path);
-  if (meta.index !== false) {
-    const isMatch = (meta.jsonLd ?? []).some((n) => n["@type"] === "SportsEvent");
+  // only canonical pages go to the sitemap and to IndexNow
+  const indexable = meta.index !== false && (!meta.canonical || meta.canonical === meta.path);
+  if (prev?.hash !== hash && indexable) changedNow.push(meta.path);
+  if (indexable) {
+    const isMatch = meta.event || (meta.jsonLd ?? []).some((n) => n["@type"] === "SportsEvent");
     (isMatch ? sitemapMatches : sitemapPages).push(meta.path);
   }
 }
 
 // ---------- live pages (from the current data) ----------
-const metaOnly = ({ path: p, title, description, index, jsonLd: ld, image }) => ({
+const metaOnly = ({ path: p, title, description, index, jsonLd: ld, image, event }) => ({
+  ...(event ? { event } : {}),
   path: p,
   title,
   description,
@@ -272,13 +309,22 @@ const metaOnly = ({ path: p, title, description, index, jsonLd: ld, image }) => 
   jsonLd: ld,
   image,
 });
+// (an archived page is final: it has no `canonical` to another URL)
 const live = new Set();
 let archivedNow = 0;
 for (const meta of routes) {
+  if (meta.redirect) {
+    emitBridge(meta.path, meta.redirect, meta.title);
+    live.add(meta.path);
+    continue;
+  }
   const appHtml = render(pageUrl(meta.path), basename);
   emit(meta, appHtml);
   live.add(meta.path);
-  if (meta.archive) {
+  if (meta.archive && appHtml.includes("data-not-found")) {
+    // the route list and the page data disagree: never store a "page not found" over a good archived copy
+    console.warn(`prerender: ${meta.path} non trovata nei dati della pagina, archivio non aggiornato`);
+  } else if (meta.archive) {
     // finished match: keep its final page (refreshed while the match is still in the data)
     const html = mainContent(appHtml);
     const prev = readArchive(archiveFile(meta.path));
@@ -300,14 +346,24 @@ if (fs.existsSync(archiveDir)) {
       continue;
     }
     if (live.has(entry.meta.path)) continue;
-    const appHtml = render(pageUrl(entry.meta.path), basename, slashLinks(entry.html));
+    // archived under a URL that has moved since (old round pages): publish a bridge to the new URL
+    const moved = legacyTarget(entry.meta.path);
+    if (moved) {
+      emitBridge(entry.meta.path, moved, entry.meta.title);
+      live.add(entry.meta.path);
+      restored++;
+      continue;
+    }
+    // links saved by older builds point at moved URLs: rewrite them to the new ones
+    const stored = slashLinks(rewriteLegacyLinks(entry.html));
+    const appHtml = render(pageUrl(entry.meta.path), basename, stored);
     if (!appHtml.includes("data-archived-page")) {
       // the URL no longer leads to a match page (route renamed or removed): do not publish it
       unreadable++;
       continue;
     }
     // same hash as when the page was live: archiving alone does not change its lastmod
-    emit(entry.meta, appHtml, entry.html);
+    emit(entry.meta, appHtml, stored === slashLinks(entry.html) ? entry.html : stored);
     live.add(entry.meta.path);
     restored++;
   }
@@ -384,7 +440,7 @@ fs.rmSync(path.join(root, "dist-ssr"), { recursive: true, force: true });
 
 const changed = Object.values(nextState.pages).filter((p) => p.lastmod === today).length;
 console.log(
-  `prerender: ${routes.length} pagine dai dati + ${restored} partite archiviate + 404.html` +
+  `prerender: ${routes.filter((r) => !r.redirect).length} pagine dai dati + ${restored} partite archiviate + ${bridges.length} URL spostati (reindirizzati) + 404.html` +
     `${siteUrl ? ` + sitemap (${sitemapPages.length} pagine, ${sitemapMatches.length} partite)` : ""} (base "${base}")\n` +
     `  archivio: ${archivedNow} partite finite salvate/aggiornate${unreadable ? `, ${unreadable} voci ignorate` : ""}; ` +
     `pagine con data di modifica di oggi: ${changed}; nuove o cambiate in questa build: ${changedNow.length}`,

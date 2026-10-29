@@ -22,7 +22,8 @@ import {
   type StandingRow,
   matchMeta,
 } from "../../lib/footballCore";
-import { useCompetitionData } from "../../lib/footballData";
+import { useCompetitionData, type CompetitionData } from "../../lib/footballData";
+import { PRONOSTICI, eventPath, matchPath, nextOfPair, pairMatches, pairSlug } from "../../lib/footballCore";
 import { highlightFor } from "../../lib/highlights";
 import { footballReasons } from "../../lib/predictionReasons";
 import { matchdaysOf } from "../../lib/matchdaysCore";
@@ -204,7 +205,7 @@ function MiniStandings({ competition, match }: { competition: Competition; match
   );
 }
 
-/** /calcio/:competizione/:partita */
+/** /calcio/:competizione/:partita – one match, kept forever as the archive of its prediction. */
 export function CalcioMatchPage() {
   const { competizione, partita } = useParams();
   const data = useCompetitionData(competizione);
@@ -212,7 +213,19 @@ export function CalcioMatchPage() {
   const match = data?.findMatch(partita);
   usePageMeta(competition && match ? matchMeta(competition, match, !!data.prediction(match.id)) : null);
   if (!data || !competition || !match) return <ArchivedOrNotFound />;
+  return <MatchView data={data} match={match} />;
+}
+
+/**
+ * Body of a match page. `event`: rendered by the evergreen page /pronostici/<lega>/<casa>-<trasferta>
+ * (CalcioEventPage), which shows the next meeting and lists the earlier ones.
+ */
+export function MatchView({ data, match, event }: { data: CompetitionData; match: Match; event?: { previous: Match[] } }) {
+  const competition = data.competition;
   const generatedAt = data.generatedAt;
+  const teams = `${match.homeTeam.shortName} – ${match.awayTeam.shortName}`;
+  const pairPrevious = event ? event.previous : pairMatches(competition, pairSlug(match)).filter((m) => m.id !== match.id);
+  const nextMeeting = !event && isFinished(match) ? nextOfPair(pairMatches(competition, pairSlug(match))) : undefined;
 
   const finished = isFinished(match);
   const live = isLive(match);
@@ -242,17 +255,25 @@ export function CalcioMatchPage() {
               Home
             </Link>
             <span aria-hidden="true">›</span>
-            <Link to="/calcio" className="hover:text-white">
-              Calcio
+            <Link to={PRONOSTICI} className="hover:text-white">
+              Pronostici
             </Link>
             <span aria-hidden="true">›</span>
             <Link to={competitionPath(competition)} className="hover:text-white">
               {competition.name}
             </Link>
             <span aria-hidden="true">›</span>
-            <span className="text-slate-300">
-              {match.homeTeam.shortName} – {match.awayTeam.shortName}
-            </span>
+            {event ? (
+              <span className="text-slate-300">{teams}</span>
+            ) : (
+              <>
+                <Link to={eventPath(competition, match)} className="hover:text-white">
+                  {teams}
+                </Link>
+                <span aria-hidden="true">›</span>
+                <span className="text-slate-300">{formatShortDate(match.utcDate)}</span>
+              </>
+            )}
           </nav>
 
           <div className="flex flex-wrap items-center justify-center gap-2 mb-6 text-sm">
@@ -260,7 +281,7 @@ export function CalcioMatchPage() {
             {roundLabel(match) &&
               (roundPage ? (
                 <Link
-                  to={matchdayPath(competition, roundPage.n)}
+                  to={matchdayPath(competition, roundPage)}
                   className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 hover:text-white underline-offset-2 hover:underline"
                 >
                   {roundLabel(match)} · tutti i pronostici
@@ -276,7 +297,7 @@ export function CalcioMatchPage() {
           </div>
 
           <h1 className="sr-only">
-            {match.homeTeam.shortName} – {match.awayTeam.shortName}, {competition.name}
+            {event ? `Pronostico ${teams}, ${competition.name}` : `${teams}, ${competition.name}, ${formatShortDate(match.utcDate)}`}
           </h1>
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 max-w-3xl mx-auto">
             <div className="flex flex-col items-center text-center gap-3">
@@ -443,6 +464,14 @@ export function CalcioMatchPage() {
           </section>
         )}
 
+        <PairHistory
+          competition={competition}
+          match={match}
+          previous={pairPrevious.filter((m) => isFinished(m) && m.utcDate < match.utcDate)}
+          next={nextMeeting}
+          event={!!event}
+        />
+
         <div className="lg:col-span-3">
           <Link
             to={competitionPath(competition)}
@@ -459,5 +488,65 @@ export function CalcioMatchPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+/**
+ * Links between the evergreen page of a fixture and its dated pages: earlier meetings (archive of their
+ * predictions), the next meeting, the reverse fixture.
+ */
+function PairHistory({
+  competition,
+  match,
+  previous,
+  next,
+  event,
+}: {
+  competition: Competition;
+  match: Match;
+  previous: Match[];
+  next?: Match;
+  event: boolean;
+}) {
+  const reverse = pairMatches(competition, pairSlug({ homeTeam: match.awayTeam, awayTeam: match.homeTeam }));
+  const teams = `${match.homeTeam.shortName} – ${match.awayTeam.shortName}`;
+  if (!previous.length && !next && !reverse.length && event) return null;
+  return (
+    <section className={`${card} lg:col-span-3`} aria-labelledby="sfida">
+      <SectionTitle icon={History}>
+        <span id="sfida">
+          {teams} in {competition.name}
+        </span>
+      </SectionTitle>
+      <ul className="space-y-2 text-sm">
+        {!event && (
+          <li>
+            <Link to={eventPath(competition, match)} className="text-action-text hover:text-action-text-hover">
+              {next ? `Pronostico della prossima ${teams} (${formatShortDate(next.utcDate)})` : `Pagina della sfida ${teams}`}
+            </Link>
+          </li>
+        )}
+        {previous
+          .slice()
+          .reverse()
+          .map((m) => (
+            <li key={m.id}>
+              <Link to={matchPath(competition, m)} className="text-action-text hover:text-action-text-hover">
+                {formatShortDate(m.utcDate)}: {m.homeTeam.shortName} {m.score.fullTime.home}-{m.score.fullTime.away}{" "}
+                {m.awayTeam.shortName}
+              </Link>{" "}
+              <span className="text-slate-400">· risultato e pronostico pubblicato</span>
+            </li>
+          ))}
+        {reverse.length > 0 && (
+          <li>
+            <Link to={eventPath(competition, reverse[0])} className="text-action-text hover:text-action-text-hover">
+              Pronostico {reverse[0].homeTeam.shortName} – {reverse[0].awayTeam.shortName}
+            </Link>{" "}
+            <span className="text-slate-400">· la sfida a campi invertiti</span>
+          </li>
+        )}
+      </ul>
+    </section>
   );
 }

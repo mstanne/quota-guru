@@ -34,7 +34,7 @@ export function TeamsIndexPage({ sport }: { sport: "football" | "nba" }) {
           title="Squadre NBA"
           icon={Shield}
           subtitle="Roster, record e statistiche dei giocatori stagione per stagione."
-          breadcrumb={[{ label: "Basket", to: "/basket" }, { label: "NBA", to: "/basket/nba" }, { label: "Squadre" }]}
+          breadcrumb={[{ label: "Basket", to: "/basket" }, { label: "NBA", to: "/pronostici/nba" }, { label: "Squadre" }]}
         />
         <div className="container mx-auto px-4 py-8">
           <Grid teams={nbaTeamRefs} base={teamPaths.nba} />

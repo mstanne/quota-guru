@@ -1,4 +1,4 @@
-// /calcio/:competizione/giornata/:numero – every match of one round with the model's probabilities,
+// /pronostici/:competizione/giornata-<n> (fase-campionato-giornata-<n> for the cups) – every match of one round with the model's probabilities,
 // the data points behind them and, for played matches, how the prediction went.
 import { useParams } from "react-router";
 import { ChevronLeft, ChevronRight, ListChecks, Check, X as XIcon, CalendarDays } from "lucide-react";
@@ -18,7 +18,9 @@ import {
   isResultPending,
   isUpcoming,
   matchdayPath,
-  matchPath,
+  matchdaySlug,
+  matchHref,
+  PRONOSTICI,
   statusLabel,
   type Competition,
   type Match,
@@ -144,7 +146,7 @@ function MatchCard({ c, m, data }: { c: Competition; m: Match; data: Competition
       {!showPred && open && <p className="text-slate-400 text-sm">Dati insufficienti per un pronostico affidabile.</p>}
 
       <Link
-        to={matchPath(c, m)}
+        to={matchHref(c, m)}
         className="inline-flex items-center gap-1 mt-4 text-sm text-action-text hover:text-action-text-hover"
       >
         {open ? "Analisi completa" : "Scheda della partita"}
@@ -158,11 +160,12 @@ function MatchCard({ c, m, data }: { c: Competition; m: Match; data: Competition
   );
 }
 
-export function MatchdayPage() {
-  const { competizione, numero } = useParams();
+/** `slug`: the round segment of the URL ("giornata-12"); a slug of the wrong form for the competition is a 404. */
+export function MatchdayPage({ slug }: { slug: string }) {
+  const { competizione } = useParams();
   const data = useCompetitionData(competizione);
   const c = data?.competition;
-  const d = c && /^\d+$/.test(numero ?? "") ? matchdaysOf(c).find((x) => x.n === Number(numero)) : undefined;
+  const d = c ? matchdaysOf(c).find((x) => matchdaySlug(x) === slug) : undefined;
   usePageMeta(c && d ? matchdayMeta(c, d, (id) => !!data.prediction(id)) : null);
   if (!data || !c || !d) return <ArchivedOrNotFound />;
 
@@ -184,7 +187,7 @@ export function MatchdayPage() {
         title={`Pronostici ${c.name}: ${label}`}
         subtitle={`${cap(matchdayDates(d))}. ${done ? "Tutte le partite sono state giocate: ecco come sono andati i pronostici." : "Le probabilità del modello statistico per ogni partita, con i dati che le spiegano."}`}
         breadcrumb={[
-          { label: "Calcio", to: "/calcio" },
+          { label: "Pronostici", to: PRONOSTICI },
           { label: c.name, to: competitionPath(c) },
           { label: cap(label) },
         ]}
@@ -195,7 +198,7 @@ export function MatchdayPage() {
         <nav aria-label="Altre giornate" className="flex flex-wrap items-center gap-2 mb-6">
           {prev && (
             <Link
-              to={matchdayPath(c, prev.n)}
+              to={matchdayPath(c, prev)}
               className={navBtn}
               data-track="matchday_nav"
               data-track-competition={c.slug}
@@ -207,7 +210,7 @@ export function MatchdayPage() {
           )}
           {next && (
             <Link
-              to={matchdayPath(c, next.n)}
+              to={matchdayPath(c, next)}
               className={navBtn}
               data-track="matchday_nav"
               data-track-competition={c.slug}

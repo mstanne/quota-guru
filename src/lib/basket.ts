@@ -2,7 +2,8 @@
 // NBA calendar/results and Lega Basket Serie A standings.
 import raw from "../data/basket.json";
 import { sportsEvent, videoObject, type EventVenue } from "./schema";
-import { formatDay, formatTime, referenceTime, romeDay, slugify } from "./footballCore";
+import { formatDay, formatTime, referenceTime } from "./footballCore";
+import { gamePairSlug, gamePath, gameSlug, NBA_HUB, nbaEventPath } from "./nbaPaths";
 import { isOverdue } from "./eventTiming.mjs";
 
 export interface BasketTeam {
@@ -63,12 +64,29 @@ export const lbaSeason = seasonLabel(data.lba.season);
 
 // ---------- URLs ----------
 export const basketPaths = {
-  nba: "/basket/nba",
+  nba: NBA_HUB,
   lbaStandings: "/basket/serie-a/classifica",
 };
-const teamSlug = (t: BasketTeam) => slugify(t.shortName || t.name);
-export const gameSlug = (g: BasketGame) => `${teamSlug(g.home)}-${teamSlug(g.away)}-${romeDay(g.utcDate)}`;
-export const gamePath = (g: BasketGame) => `${basketPaths.nba}/${gameSlug(g)}`;
+export { gamePath, gameSlug, gamePairSlug, nbaEventPath };
+
+// ---------- evergreen event pages (same rules as football, src/lib/footballCore.ts) ----------
+const isGameClosed = (g: BasketGame) => g.status === "final";
+const pairs = new Map<string, BasketGame[]>();
+for (const g of [...nbaGames].sort((a, b) => a.utcDate.localeCompare(b.utcDate))) {
+  const k = gamePairSlug(g);
+  pairs.set(k, [...(pairs.get(k) ?? []), g]);
+}
+/** Meetings of one fixture (home team, away team), oldest first. */
+export const nbaPairGames = (slug?: string) => (slug ? (pairs.get(slug) ?? []) : []);
+/** All fixtures with at least one game in the data. */
+export const nbaPairSlugs = () => [...pairs.keys()];
+/** The game the evergreen page shows: the first one not final, undefined when the page is resting. */
+export const nextOfNbaPair = (list: BasketGame[]) => list.find((g) => !isGameClosed(g));
+/** True when `g` is the game shown by its evergreen page (its canonical URL is then the evergreen one). */
+export const isOnNbaEventPage = (g: BasketGame) =>
+  !isGameClosed(g) && nextOfNbaPair(nbaPairGames(gamePairSlug(g)))?.id === g.id;
+/** Where a link to a game points: the evergreen page while it shows the game, else the dated archive page. */
+export const gameHref = (g: BasketGame) => (isOnNbaEventPage(g) ? nbaEventPath(g) : gamePath(g));
 /** Wins in the last `n` finished games of a team before `beforeIso` (null with fewer than 5 games). */
 export function nbaRecentRecord(teamId: number, beforeIso: string, n = 10) {
   const games = nbaGames
@@ -101,6 +119,31 @@ export const gameRoundLabel = (g: BasketGame) => (g.postseason ? "Playoff" : "St
 
 // ---------- SEO metadata ----------
 const teams = (g: BasketGame) => `${g.home.name} – ${g.away.name}`;
+function nbaEventLd(
+  g: BasketGame,
+  path: string,
+  description: string,
+  video?: { video: string; title: string; published: string },
+  venue?: EventVenue | null,
+) {
+  return [
+    sportsEvent({
+      path,
+      name: `${teams(g)} (NBA)`,
+      description,
+      startDate: g.utcDate,
+      durationMinutes: 150,
+      sport: "Pallacanestro",
+      venue,
+      league: "NBA",
+      home: { name: g.home.name },
+      away: { name: g.away.name },
+      status: g.status === "postponed" ? "postponed" : "scheduled",
+    }),
+    ...(video ? [videoObject(video, `Gli highlights ufficiali di ${teams(g)} (NBA).`)] : []),
+  ];
+}
+
 /** `predicted`: the model has a prediction for this game (title and description mention it only then). */
 export function gameMeta(
   g: BasketGame,
@@ -110,6 +153,8 @@ export function gameMeta(
 ) {
   const when = `${formatDay(g.utcDate)} ore ${formatTime(g.utcDate)}`;
   const path = gamePath(g);
+  // while the evergreen page shows this game, it is the canonical URL (the dated page is its future archive)
+  const canonical = gameHref(g);
   const description = isGameFinished(g)
     ? `Risultato finale e parziali di ${teams(g)} (NBA), giocata ${when}.`
     : isGamePending(g)
@@ -117,27 +162,43 @@ export function gameMeta(
       : `${teams(g)}, NBA: si gioca ${when} (ora italiana).${predicted ? " Orario e pronostico con le probabilità di vittoria." : ""}`;
   return {
     path,
+    ...(canonical !== path ? { canonical } : {}),
     title: isGameFinished(g)
       ? `${teams(g)} ${g.score.home}-${g.score.away}: risultato NBA`
       : `${teams(g)}: ${predicted ? "pronostico e orario NBA" : "orario NBA"}`,
     description,
     archive: isGameFinished(g),
-    jsonLd: [
-      sportsEvent({
-        path,
-        name: `${teams(g)} (NBA)`,
-        description,
-        startDate: g.utcDate,
-        durationMinutes: 150,
-        sport: "Pallacanestro",
-        venue,
-        league: "NBA",
-        home: { name: g.home.name },
-        away: { name: g.away.name },
-        status: g.status === "postponed" ? "postponed" : "scheduled",
-      }),
-      ...(video ? [videoObject(video, `Gli highlights ufficiali di ${teams(g)} (NBA).`)] : []),
-    ],
+    jsonLd: canonical !== path ? [] : nbaEventLd(g, path, description, video, venue),
+  };
+}
+
+/** Evergreen NBA event page /pronostici/nba/<casa>-<trasferta> (same rules as eventMeta for football). */
+export function nbaEventMeta(slug: string, predicted = false, venue?: EventVenue | null) {
+  const list = nbaPairGames(slug);
+  const last = list[list.length - 1];
+  if (!last) return null;
+  const next = nextOfNbaPair(list);
+  const path = nbaEventPath(last);
+  if (next) {
+    const when = `${formatDay(next.utcDate)} ore ${formatTime(next.utcDate)}`;
+    const description = isGamePending(next)
+      ? `${teams(next)} (NBA), giocata ${when} (ora italiana): risultato in arrivo. Il pronostico pubblicato prima della partita.`
+      : `Pronostico ${teams(next)} (NBA), ${when} ora italiana: ${predicted ? "probabilità di vittoria e punti attesi calcolati dal modello statistico" : "orario"}, forma recente e precedenti.`;
+    return {
+      path,
+      event: true,
+      title: `Pronostico ${teams(next)}: ${predicted ? "probabilità e orario" : "orario"} NBA`,
+      description,
+      archive: false,
+      jsonLd: nbaEventLd(next, path, description, undefined, venue),
+    };
+  }
+  return {
+    path,
+    event: true,
+    title: `${teams(last)} (NBA): ultimo risultato e precedenti`,
+    description: `${teams(last)}: l'ultima sfida NBA è finita ${last.score.home}-${last.score.away}. Il risultato, i precedenti della stagione e la prossima partita appena sarà in calendario.`,
+    archive: true,
   };
 }
 export const nbaMeta = {
@@ -163,5 +224,10 @@ export function basketRoutes(
     nbaMeta,
     ...(lbaStandings.length ? [lbaMeta] : []),
     ...nbaGames.map((g) => gameMeta(g, predicted(g.id), video(g.id), venue(g))),
+    ...nbaPairSlugs().map((slug) => {
+      const next = nextOfNbaPair(nbaPairGames(slug));
+      const g = next ?? nbaPairGames(slug).at(-1)!;
+      return nbaEventMeta(slug, !!next && predicted(next.id), venue(g))!;
+    }),
   ];
 }

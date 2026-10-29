@@ -49,7 +49,7 @@ function matches(g: BasketGame, f: Filter) {
   return d >= day(0) && d <= day(6);
 }
 
-/** /basket and /basket/nba – NBA calendar and results (real data, BALLDONTLIE). */
+/** /basket and /pronostici/nba – NBA calendar and results (real data, BALLDONTLIE). */
 export function BasketPage({ league }: { league?: "nba" }) {
   const [filter, setFilter] = useState<Filter>("upcoming");
   const [market, setMarket] = useQueryChoice<BasketMarket>("mercato", MARKET_IDS, "win");
@@ -78,8 +78,8 @@ export function BasketPage({ league }: { league?: "nba" }) {
     <div className="min-h-screen bg-slate-950">
       <PageHeader
         icon={Trophy}
-        title={league ? `NBA ${nbaSeason}: calendario e risultati` : "Basket: calendario e risultati"}
-        breadcrumb={league ? [{ label: "Basket", to: "/basket" }, { label: "NBA" }] : [{ label: "Basket" }]}
+        title={league ? `Pronostici NBA ${nbaSeason}: calendario e risultati` : "Basket: calendario e risultati"}
+        breadcrumb={league ? [{ label: "Pronostici", to: "/pronostici" }, { label: "NBA" }] : [{ label: "Basket" }]}
         meta={<DataUpdatedNote generatedAt={basketUpdatedAt} />}
       >
         {lbaStandings.length > 0 && (

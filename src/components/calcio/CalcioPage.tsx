@@ -29,7 +29,7 @@ import { PageHeader } from "../layout/PageHeader";
 import { ListChecks } from "lucide-react";
 import { hasResults, resultsPath } from "../../lib/results";
 import { featuredMatchday } from "../../lib/matchdaysCore";
-import { matchdayPath } from "../../lib/footballCore";
+import { matchdayPath, PRONOSTICI } from "../../lib/footballCore";
 
 const MARKET_IDS = FOOTBALL_MARKETS.map((m) => m.id);
 
@@ -105,9 +105,9 @@ export function CalcioPage() {
     <div className="min-h-screen bg-slate-950">
       <PageHeader
         icon={Trophy}
-        title={competition ? `${competition.name}: calendario e risultati` : "Calcio: calendario e risultati"}
+        title={competition ? `Pronostici ${competition.name}: calendario e risultati` : "Calcio: calendario e risultati"}
         breadcrumb={
-          competition ? [{ label: "Calcio", to: "/calcio" }, { label: competition.name }] : [{ label: "Calcio" }]
+          competition ? [{ label: "Pronostici", to: PRONOSTICI }, { label: competition.name }] : [{ label: "Calcio" }]
         }
         meta={<DataUpdatedNote generatedAt={generatedAt} />}
       >
@@ -123,7 +123,7 @@ export function CalcioPage() {
         )}
         {competition && round && (
           <Link
-            to={matchdayPath(competition, round.n)}
+            to={matchdayPath(competition, round)}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
           >
             <CalendarDays className="w-4 h-4 text-slate-300" aria-hidden="true" />

@@ -1,7 +1,7 @@
 import { Link } from "../../lib/links";
 import { ChevronRight } from "lucide-react";
 import { formatTime } from "../../lib/footballCore";
-import { gamePath, gameRoundLabel, isGameFinished, isGameLive, isGamePending, type BasketGame } from "../../lib/basket";
+import { gameHref, gameRoundLabel, isGameFinished, isGameLive, isGamePending, type BasketGame } from "../../lib/basket";
 import { TeamBadge } from "../calcio/MatchRow";
 import { basketPredictionFor } from "../../lib/basketPredict";
 import { BasketMarketMini, type BasketMarket } from "./BasketPrediction";
@@ -17,7 +17,7 @@ export function BasketGameRow({ game, market = "win" }: { game: BasketGame; mark
   const prediction = !finished && !live && !pending ? basketPredictionFor(game.id) : undefined;
   return (
     <Link
-      to={gamePath(game)}
+      to={gameHref(game)}
       aria-label={label}
       className="group flex items-center gap-3 sm:gap-4 px-4 py-3 border-b border-slate-800 last:border-b-0 hover:bg-slate-800/40 transition-colors focus-visible:outline-2 focus-visible:outline-action"
     >

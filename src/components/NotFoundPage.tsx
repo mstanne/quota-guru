@@ -6,7 +6,7 @@ import { notFoundMeta } from "../routes";
 export function NotFoundPage() {
   usePageMeta(notFoundMeta);
   return (
-    <div className="container mx-auto px-4 py-24 text-center">
+    <div className="container mx-auto px-4 py-24 text-center" data-not-found="">
       <p className="text-slate-400 text-6xl mb-4">404</p>
       <h1 className="text-white text-3xl mb-3">Pagina non trovata</h1>
       <p className="text-slate-400 mb-8">La pagina che cerchi non esiste o è stata spostata.</p>

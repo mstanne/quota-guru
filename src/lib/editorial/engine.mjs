@@ -511,7 +511,7 @@ export function nbaRecap({ game: g, generatedAt }) {
     sections: [section("resoconto", "La partita", [lead, ...story]), section("numeri", "I numeri", [], bullets)],
     faq: [
       { q: `Com'è finita ${g.home.name} – ${g.away.name}?`, a: `${hs}-${as} per ${nThe(win)}.` },
-      { q: "Dove trovo le altre partite NBA?", a: "Nella pagina [Basket](/basket/nba)." },
+      { q: "Dove trovo le altre partite NBA?", a: "Nella pagina dei [pronostici NBA](/pronostici/nba)." },
     ],
     note: recapNote(generatedAt),
   });

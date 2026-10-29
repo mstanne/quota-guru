@@ -6,7 +6,7 @@ import {
   isFinished,
   isLive,
   isResultPending,
-  matchPath,
+  matchHref,
   roundLabel,
   statusLabel,
   type CompetitionRef,
@@ -83,7 +83,7 @@ export function MatchRow({
 
   return (
     <Link
-      to={matchPath(competition, match)}
+      to={matchHref(competition, match)}
       aria-label={label}
       className="group flex items-center gap-3 sm:gap-4 px-4 py-3 border-b border-slate-800 last:border-b-0 hover:bg-slate-800/40 transition-colors focus-visible:outline-2 focus-visible:outline-action"
     >

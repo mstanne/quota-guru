@@ -5,8 +5,9 @@ import { StaticRouter } from "react-router";
 import App from "./App";
 
 import { routes as staticRoutes } from "./routes";
-import { footballRoutes } from "./lib/footballRoutes";
-import { matchdayRoutes } from "./lib/matchdays";
+import { footballRoutes, legacyFootballRoutes } from "./lib/footballRoutes";
+import { legacyMatchdayRoutes, matchdayRoutes } from "./lib/matchdays";
+import { NBA_HUB } from "./lib/nbaPaths";
 import { loadAllCompetitionData } from "./lib/footballData";
 import { dayRoutes } from "./lib/dayPages";
 import { basketRoutes, nbaGames } from "./lib/basket";
@@ -48,7 +49,14 @@ for (const g of nbaGames) {
   const d = nbaDetailsFor(g.id);
   if (d?.arena) nbaVenues.set(g.home.id, { name: d.arena, city: d.city, country: g.home.abbr === "TOR" ? "CA" : "US" });
 }
-export const routes = [...staticRoutes, ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes((id) => !!basketPredictionFor(id), (id) => highlightFor("nba", id), (g) => nbaVenues.get(g.home.id) ?? null), ...tennisRoutes(), ...guideRoutes(), ...teamRoutes(), ...resultsRoutes()];
+/** Moved URLs (bridge pages, see src/lib/legacyUrls.ts). */
+const legacyRoutes = [
+  ...legacyFootballRoutes(),
+  ...legacyMatchdayRoutes(),
+  { path: "/basket/nba", redirect: NBA_HUB, title: "Pronostici NBA", description: `Pagina spostata su ${NBA_HUB}.`, index: false },
+];
+export { legacyTarget, rewriteLegacyLinks } from "./lib/legacyUrls";
+export const routes = [...legacyRoutes, ...staticRoutes, ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes((id) => !!basketPredictionFor(id), (id) => highlightFor("nba", id), (g) => nbaVenues.get(g.home.id) ?? null), ...tennisRoutes(), ...guideRoutes(), ...teamRoutes(), ...resultsRoutes()];
 
 /** `archivedHtml`: stored HTML of a finished match no longer in the data (see src/lib/archive.tsx). */
 export function render(url: string, basename: string, archivedHtml: string | null = null) {

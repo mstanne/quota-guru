@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { Link } from "../../lib/links";
-import { ArrowLeft, CalendarDays, Info } from "lucide-react";
+import { ArrowLeft, CalendarDays, History, Info } from "lucide-react";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";
 import { MatchSummary, basketSummary } from "../editorial/MatchSummary";
 import { TeamBadge } from "../calcio/MatchRow";
@@ -16,7 +16,7 @@ import { nbaDetailsFor } from "../../lib/basketDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
 import { MatchOddsSlot } from "../odds/MatchOddsSlot";
 import { highlightFor } from "../../lib/highlights";
-import { formatDay, formatTime, romeDay } from "../../lib/footballCore";
+import { formatDay, formatShortDate, formatTime, PRONOSTICI, romeDay } from "../../lib/footballCore";
 import {
   basketPaths,
   basketUpdatedAt,
@@ -29,6 +29,12 @@ import {
   isGamePending,
   nbaGames,
   nbaSeasonYear,
+  gamePairSlug,
+  gamePath,
+  nbaEventPath,
+  nbaPairGames,
+  nextOfNbaPair,
+  type BasketGame,
 } from "../../lib/basket";
 import { usePageMeta } from "../../lib/pageMeta";
 import { nbaReasonsFor } from "../../lib/basketReasons";
@@ -37,12 +43,22 @@ import { MatchEditorial } from "../editorial/MatchEditorial";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 
-/** /basket/nba/:partita */
+/** /basket/nba/:partita – one game, kept forever as the archive of its prediction. */
 export function BasketGamePage() {
   const { partita } = useParams();
   const game = findGame(partita);
   usePageMeta(game ? gameMeta(game, !!basketPredictionFor(game.id)) : null);
   if (!game) return <ArchivedOrNotFound />;
+  return <GameView game={game} />;
+}
+
+/** Body of an NBA game page. `event`: rendered by the evergreen page /pronostici/nba/<casa>-<trasferta>. */
+export function GameView({ game, event = false }: { game: BasketGame; event?: boolean }) {
+  const teams = `${game.home.shortName ?? game.home.name} – ${game.away.shortName ?? game.away.name}`;
+  const meetings = nbaPairGames(gamePairSlug(game));
+  const previous = meetings.filter((g) => isGameFinished(g) && g.utcDate < game.utcDate);
+  const nextMeeting = !event && isGameFinished(game) ? nextOfNbaPair(meetings) : undefined;
+  const reverse = nbaPairGames(gamePairSlug({ home: game.away, away: game.home }));
 
   const finished = isGameFinished(game);
   const live = isGameLive(game);
@@ -62,17 +78,25 @@ export function BasketGamePage() {
               Home
             </Link>
             <span aria-hidden="true">›</span>
-            <Link to="/basket" className="hover:text-white">
-              Basket
+            <Link to={PRONOSTICI} className="hover:text-white">
+              Pronostici
             </Link>
             <span aria-hidden="true">›</span>
             <Link to={basketPaths.nba} className="hover:text-white">
               NBA
             </Link>
             <span aria-hidden="true">›</span>
-            <span className="text-slate-300">
-              {game.home.shortName ?? game.home.name} – {game.away.shortName ?? game.away.name}
-            </span>
+            {event ? (
+              <span className="text-slate-300">{teams}</span>
+            ) : (
+              <>
+                <Link to={nbaEventPath(game)} className="hover:text-white">
+                  {teams}
+                </Link>
+                <span aria-hidden="true">›</span>
+                <span className="text-slate-300">{formatShortDate(game.utcDate)}</span>
+              </>
+            )}
           </nav>
           <div className="flex flex-wrap items-center justify-center gap-2 mb-6 text-sm">
             <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300">NBA</span>
@@ -84,7 +108,7 @@ export function BasketGamePage() {
             </span>
           </div>
           <h1 className="sr-only">
-            {game.home.name} – {game.away.name}, NBA
+            {event ? `Pronostico ${game.home.name} – ${game.away.name}, NBA` : `${game.home.name} – ${game.away.name}, NBA, ${formatShortDate(game.utcDate)}`}
           </h1>
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 max-w-3xl mx-auto">
             {[game.home, null, game.away].map((t, i) =>
@@ -194,6 +218,43 @@ export function BasketGamePage() {
                 <BasketGameRow key={g.id} game={g} />
               ))}
             </div>
+          </section>
+        )}
+
+        {(!event || previous.length > 0 || reverse.length > 0) && (
+          <section className={card} aria-labelledby="sfida">
+            <h2 id="sfida" className="flex items-center gap-2 text-white text-xl mb-4">
+              <History className="w-5 h-5 text-slate-300" aria-hidden="true" />
+              {teams} in stagione
+            </h2>
+            <ul className="space-y-2 text-sm">
+              {!event && (
+                <li>
+                  <Link to={nbaEventPath(game)} className="text-action-text hover:text-action-text-hover">
+                    {nextMeeting
+                      ? `Pronostico della prossima ${teams} (${formatShortDate(nextMeeting.utcDate)})`
+                      : `Pagina della sfida ${teams}`}
+                  </Link>
+                </li>
+              )}
+              {[...previous].reverse().map((g) => (
+                <li key={g.id}>
+                  <Link to={gamePath(g)} className="text-action-text hover:text-action-text-hover">
+                    {formatShortDate(g.utcDate)}: {g.score.home}-{g.score.away}
+                  </Link>{" "}
+                  <span className="text-slate-400">· risultato e pronostico pubblicato</span>
+                </li>
+              ))}
+              {reverse.length > 0 && (
+                <li>
+                  <Link to={nbaEventPath(reverse[0])} className="text-action-text hover:text-action-text-hover">
+                    Pronostico {reverse[0].home.shortName ?? reverse[0].home.name} –{" "}
+                    {reverse[0].away.shortName ?? reverse[0].away.name}
+                  </Link>{" "}
+                  <span className="text-slate-400">· la sfida a campi invertiti</span>
+                </li>
+              )}
+            </ul>
           </section>
         )}
 

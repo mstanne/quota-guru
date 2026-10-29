@@ -144,7 +144,7 @@ export function NbaTeamPage() {
         subtitle="Roster e statistiche stagione per stagione."
         breadcrumb={[
           { label: "Basket", to: "/basket" },
-          { label: "NBA", to: "/basket/nba" },
+          { label: "NBA", to: "/pronostici/nba" },
           { label: "Squadre", to: "/basket/nba/squadre" },
           { label: t.shortName },
         ]}
@@ -173,7 +173,7 @@ export function NbaTeamPage() {
             <Season key={s.season} s={s} open={i === 0} />
           ))}
         </Card>
-        <Link to="/basket/nba" className="text-sm text-action-text hover:text-action-text-hover">
+        <Link to="/pronostici/nba" className="text-sm text-action-text hover:text-action-text-hover">
           Calendario e risultati NBA
         </Link>
       </div>

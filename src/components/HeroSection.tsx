@@ -3,7 +3,7 @@ import { ArrowRight, TrendingUp } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Card } from "./ui/card";
 import home from "../data/football-home.json";
-import { formatDay, formatTime, matchPath, type CompetitionRef, type Match } from "../lib/footballCore";
+import { formatDay, formatTime, matchHref, type CompetitionRef, type Match } from "../lib/footballCore";
 import { pickLabel, type Prediction } from "../lib/predictionsCore";
 import { TeamBadge } from "./calcio/MatchRow";
 import { ConfidenceBadge, ProbabilityBar } from "./predictions/PredictionUi";
@@ -67,7 +67,7 @@ export function HeroSection({ matches = data.featured ?? [] }: { matches?: Featu
                       <ConfidenceBadge confidence={prediction.confidence} />
                     </div>
                     <Link
-                      to={matchPath(competition, match)}
+                      to={matchHref(competition, match)}
                       className="mt-auto inline-flex items-center justify-center gap-2 rounded-md bg-action hover:bg-action-hover text-action-foreground px-4 py-2 text-sm font-medium"
                       aria-label={`Pronostico completo ${home} – ${away}`}
                     >

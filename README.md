@@ -237,18 +237,58 @@ saranno disponibili si potranno collegare le schede partita e i testi editoriali
 | URL | Pagina |
 | --- | --- |
 | `/` | Home |
+| `/pronostici` | Hub dei pronostici (calcio, NBA, tennis) |
+| `/pronostici/oggi`, `/pronostici/domani` | Pronostici del giorno |
 | `/calcio` | Calendario e risultati di tutte le competizioni |
-| `/calcio/serie-a` (e `champions-league`, `premier-league`, `liga`, …) | Calendario di una competizione |
-| `/calcio/serie-a/classifica` | Classifica |
-| `/calcio/serie-a/inter-juventus-2026-10-18` | Scheda partita (generata per ogni partita) |
-| `/basket`, `/basket/nba` | Calendario e risultati NBA |
-| `/basket/nba/pistons-celtics-2026-10-20` | Scheda partita NBA (generata per ogni partita, con quote a confronto) |
-| `/basket/serie-a/classifica` | Classifica Serie A basket |
-| `/tennis`, `/tennis/djokovic-alcaraz` | Quote tennis e scheda partita (dati di esempio) |
-| `/siti-scommesse` | Bookmaker a confronto |
-| `/bonus` | Bonus |
+| `/calcio/squadre`, `/calcio/squadre/<squadra>` | Squadre di calcio |
+| `/calcio/serie-a/classifica`, `/calcio/serie-a/risultati` | Classifica e risultati di una competizione |
+| `/basket`, `/basket/serie-a/classifica` | Basket e classifica Serie A basket |
+| `/basket/nba/risultati`, `/basket/nba/squadre` | Risultati e squadre NBA |
+| `/tennis`, `/tennis/classifica-atp`, `/tennis/calendario-wta`, … | Tennis |
+| `/siti-scommesse`, `/bonus` | Bookmaker e bonus |
 | `/guide`, `/guide/<slug>`, `/guide/categoria/<slug>` | Guide (indice, singola guida, categoria) |
 | `/accedi`, `/registrati`, `/password-dimenticata` | Account (nascoste dal menu, `noindex`) |
+
+Le pagine dei pronostici seguono lo schema descritto sotto.
+
+## Schema degli URL dei pronostici
+
+Gerarchia fissa, prevedibile e riutilizzabile negli anni: lega → giornata → evento.
+
+| Livello | URL | Esempio |
+| --- | --- | --- |
+| Hub di lega | `/pronostici/<lega>` | `/pronostici/serie-a`, `/pronostici/champions-league`, `/pronostici/nba` |
+| Giornata | `/pronostici/<lega>/giornata-<n>` | `/pronostici/serie-a/giornata-12` |
+| Giornata della fase campionato (coppe) | `/pronostici/<lega>/fase-campionato-giornata-<n>` | `/pronostici/champions-league/fase-campionato-giornata-3` |
+| Evento (evergreen) | `/pronostici/<lega>/<casa>-<trasferta>` | `/pronostici/serie-a/juventus-inter`, `/pronostici/nba/lakers-celtics` |
+| Archivio della singola partita | `/calcio/<lega>/<casa>-<trasferta>-<data>`, `/basket/nba/<casa>-<trasferta>-<data>` | `/calcio/serie-a/juventus-inter-2026-11-22` |
+
+Regole:
+
+- **Pagina evento evergreen.** Un URL per ogni abbinamento (competizione + squadra di casa + squadra in trasferta,
+  sempre in quest'ordine): `juventus-inter` e `inter-juventus` sono due pagine, perché sono due partite diverse.
+  La pagina mostra sempre il **prossimo incrocio non ancora concluso** (pronostico, orario, dati). Quando tutti gli
+  incroci presenti nei dati sono conclusi la pagina **resta online "a riposo"**: ultimo risultato con il link al suo
+  archivio, incroci precedenti, sfida a campi invertiti. Appena esce la prossima partita torna a mostrarla, sullo
+  stesso URL: l'autorità della pagina si accumula stagione dopo stagione.
+- **Archivio datato.** Ogni partita ha anche la sua pagina con la data, che resta per sempre come archivio del
+  pronostico pubblicato (track record verificabile). Finché la partita non è conclusa la pagina datata ha il
+  **canonical verso la pagina evento** e non è nella sitemap; a partita finita diventa canonica di se stessa.
+  I link interni puntano alla pagina evento finché mostra quella partita, poi alla pagina datata
+  (`matchHref` / `gameHref`).
+- **Slug delle squadre.** Nelle pagine evento i club usano il dizionario `TEAM_SLUGS` in `src/lib/footballCore.ts`
+  (nomi come li cerca un utente italiano: `barcellona`, `bayern-monaco`, `psg`); i club non elencati usano il nome
+  breve della fonte. Si possono aggiungere righe; **una riga già pubblicata non va cambiata**, perché
+  cambierebbe URL già indicizzati. Gli URL datati usano il nome breve originale e non cambiano mai.
+- **Pagine che escono dai dati.** Le pagine evento a riposo vengono archiviate dal pre-render come le partite
+  finite (`.cache/seo/archive`), quindi l'URL resta pubblicato anche quando l'abbinamento non è più nello snapshot
+  (squadra retrocessa, cambio di stagione).
+- **Classifiche, risultati e squadre** restano sotto `/calcio` e `/basket`.
+- **URL spostati.** GitHub Pages non permette redirect 301: ogni vecchio URL (`/calcio/<lega>`,
+  `/calcio/<lega>/giornata/<n>`, `/basket/nba`) è pubblicato come pagina-ponte con canonical verso il nuovo URL e
+  reindirizzamento immediato (`meta refresh` 0 e `location.replace`), che i motori di ricerca trattano come
+  spostamento permanente. Elenco e regole in `src/lib/legacyUrls.ts`; nel browser le stesse rotte reindirizzano con
+  `<Navigate replace>`. I link salvati nelle pagine archiviate vengono riscritti verso i nuovi URL.
 
 Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e description) e la `<Route>` in
 `src/App.tsx`; il pre-rendering e la sitemap la includono automaticamente.
