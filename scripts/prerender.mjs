@@ -435,7 +435,10 @@ fs.writeFileSync(
 // ---------- sitemap and robots ----------
 const XML = '<?xml version="1.0" encoding="UTF-8"?>';
 const NS = 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"';
-const lastmodOf = (p) => nextState.pages[p]?.lastmod ?? today;
+// Full W3C timestamp of the last real change (the site is rebuilt every 3 hours: a match page that gets its
+// prediction or line-ups in the afternoon must look newer than the version crawled in the morning). Pages known
+// only from older states, without the time, keep their day at midnight UTC.
+const lastmodOf = (p) => nextState.pages[p]?.modified ?? buildIso;
 if (siteUrl) {
   const files = [
     ["sitemap-pagine.xml", sitemapPages],

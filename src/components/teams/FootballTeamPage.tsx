@@ -3,7 +3,9 @@ import { useParams } from "react-router";
 import { BarChart3, Building2, CalendarDays, ListChecks, ListOrdered, Shield, Users } from "lucide-react";
 import { hasResults, resultsPath } from "../../lib/results";
 import { Link } from "../../lib/links";
-import { competitionPath, goalStatsPath } from "../../lib/footballCore";
+import { competitionPath, goalStatsPath, isLive, isUpcoming, matchHref } from "../../lib/footballCore";
+import { useCompetitionData } from "../../lib/footballData";
+import { NextMatches } from "./NextMatches";
 import { GOAL_COLUMNS, GoalStatsNote, PctCell, TeamGoalTable } from "../stats/GoalStats";
 import { PageHeader } from "../layout/PageHeader";
 import { TeamBadge } from "../calcio/MatchRow";
@@ -172,8 +174,24 @@ export function FootballTeamPage() {
   const t = footballTeam(squadra);
   if (t instanceof Promise) throw t; // league data still loading (Suspense)
   usePageMeta(t ? footballTeamMeta(t) : null);
+  // league data (Suspense: preloaded with the team data, see preloadTeamData) for the club's next matches
+  const league = useCompetitionData(t?.competition.slug);
   if (!t) return <NotFoundPage />;
   const cur = t.seasons.find((s) => s.current);
+  const next = league
+    ? league.competition.matches
+        .filter((m) => (isUpcoming(m) || isLive(m)) && (m.homeTeam.id === t.id || m.awayTeam.id === t.id))
+        .sort((a, b) => a.utcDate.localeCompare(b.utcDate))
+        .slice(0, 3)
+        .map((m) => ({
+          id: m.id,
+          href: matchHref(league.competition, m),
+          home: m.homeTeam.shortName,
+          away: m.awayTeam.shortName,
+          utcDate: m.utcDate,
+          live: isLive(m),
+        }))
+    : [];
   const facts: [string, string | number | JSX.Element][] = [
     ["Nome", t.name],
     ...(t.founded ? ([["Fondazione", t.founded]] as [string, number][]) : []),
@@ -224,6 +242,11 @@ export function FootballTeamPage() {
           </SectionTitle>
           <Facts rows={facts} />
         </Card>
+        <NextMatches
+          team={t.shortName}
+          matches={next}
+          label={`${t.competition.name}: probabilità 1X2, Under/Over e Goal calcolate dal modello statistico.`}
+        />
         <Squad team={t} />
         <TeamGoals team={t} />
         <Card id="stagioni">

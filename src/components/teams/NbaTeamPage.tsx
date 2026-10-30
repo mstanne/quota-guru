@@ -8,6 +8,8 @@ import { usePageMeta } from "../../lib/pageMeta";
 import { nbaTeam, type NbaTeam } from "../../lib/teams";
 import { nbaTeamMeta } from "../../lib/teamMeta";
 import { Card, Facts, SectionTitle, age, num } from "./TeamUi";
+import { gameHref, isGameLive, isGameUpcoming, nbaGames } from "../../lib/basket";
+import { NextMatches } from "./NextMatches";
 
 const pct = (m: number, a: number) => (a ? `${num((m / a) * 100)}%` : "–");
 
@@ -137,6 +139,18 @@ export function NbaTeamPage() {
   usePageMeta(t ? nbaTeamMeta(t) : null);
   if (!t) return <NotFoundPage />;
   const cur = t.seasons.find((s) => s.current);
+  const next = nbaGames
+    .filter((g) => (isGameUpcoming(g) || isGameLive(g)) && (g.home.id === t.id || g.away.id === t.id))
+    .sort((a, b) => a.utcDate.localeCompare(b.utcDate))
+    .slice(0, 3)
+    .map((g) => ({
+      id: g.id,
+      href: gameHref(g),
+      home: g.home.shortName || g.home.name,
+      away: g.away.shortName || g.away.name,
+      utcDate: g.utcDate,
+      live: isGameLive(g),
+    }));
   return (
     <div className="min-h-screen bg-slate-950">
       <PageHeader
@@ -164,6 +178,7 @@ export function NbaTeamPage() {
             ]}
           />
         </Card>
+        <NextMatches team={t.name} matches={next} label="NBA: probabilità di vittoria calcolate dal modello statistico." />
         <Roster team={t} />
         <Card id="stagioni">
           <SectionTitle id="stagioni-titolo" icon={CalendarDays}>
