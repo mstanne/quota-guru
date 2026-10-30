@@ -12,6 +12,9 @@ const data = home as unknown as {
   matches: { competition: CompetitionRef; match: Match; prediction?: Prediction }[];
 };
 
+const button =
+  "px-4 py-2 rounded-md border border-slate-700 text-slate-200 hover:border-slate-500 hover:text-white text-sm";
+
 /** Home page block: next real fixtures from football-data.org, with the model's 1X2 probabilities. */
 export function UpcomingMatches({ limit = 8 }: { limit?: number }) {
   const next = data.matches.slice(0, limit);
@@ -28,12 +31,19 @@ export function UpcomingMatches({ limit = 8 }: { limit?: number }) {
             </h2>
             <DataUpdatedNote generatedAt={data.generatedAt} />
           </div>
-          <Link
-            to="/calcio"
-            className="px-4 py-2 rounded-md border border-slate-700 text-slate-200 hover:border-slate-500 hover:text-white text-sm"
-          >
-            Tutto il calendario
-          </Link>
+          <div className="flex flex-wrap gap-2">
+            {/* same URLs as dayPath in src/lib/dayPages.ts (not imported: it would pull every match into the home
+                page bundle). They list every match of the day, so each imminent match page is two clicks from home. */}
+            <Link to="/pronostici/oggi" className={button}>
+              Pronostici di oggi
+            </Link>
+            <Link to="/pronostici/domani" className={button}>
+              Pronostici di domani
+            </Link>
+            <Link to="/calcio" className={button}>
+              Tutto il calendario
+            </Link>
+          </div>
         </div>
         <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
           {next.map(({ competition, match, prediction }) => (

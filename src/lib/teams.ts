@@ -172,7 +172,13 @@ export function preloadTeamData(pathname: string): Promise<unknown> {
   const f = pathname.match(/^\/calcio\/squadre\/([^/]+)/);
   if (f) {
     const ref = findFootballRef(f[1]);
-    return ref?.competition ? loadFootballLeague(ref.competition) : Promise.resolve();
+    if (!ref?.competition) return Promise.resolve();
+    // the page also lists the club's next league matches (FootballTeamPage → NextMatches)
+    const comp = ref.competition;
+    return Promise.all([
+      loadFootballLeague(comp),
+      import("./footballData").then((m) => m.loadCompetitionData(comp)),
+    ]);
   }
   if (/^\/basket\/nba\/squadre\/[^/]+/.test(pathname)) return loadNbaTeams();
   return Promise.resolve();
