@@ -1119,7 +1119,7 @@
       ],
       "validFrom": null,
       "validUntil": null,
-      "verifiedAt": "2026-10-29",
+      "verifiedAt": "2026-10-31",
       "status": "bozza",
       "issues": [],
       "id": "admiralbet-sport",
@@ -1134,20 +1134,21 @@
       "depositWithinDays": 7,
       "sourceUrl": "https://www.admiralbet.it/promozioni/bonus-scommesse",
       "termsUrl": "https://www.admiralbet.it/promozioni/bonus-scommesse",
-      "description": "Real bonus scommesse del 50% del primo deposito, fino a 5.000 €, sbloccato dopo aver giocato 6 volte il deposito. Va usato una volta entro 7 giorni.",
+      "description": "Real bonus scommesse del 50% del primo deposito, fino a 5.000 €. Si sblocca solo dopo aver giocato 6 volte il deposito su multiple da almeno 3 eventi a quota 2,00, e va poi usato una volta entro 7 giorni.",
       "components": [
         {
           "percent": 50,
           "maxConvertible": null,
-          "wagering": 1,
-          "wageringDays": null,
+          "wagering": 12,
+          "wageringDays": 15,
           "validityDays": 7,
-          "minEvents": null,
-          "minOddsPerEvent": null,
+          "minEvents": 3,
+          "minOddsPerEvent": 2.0,
           "notes": [
+            "Il bonus si sblocca giocando con saldo reale 6 volte il primo deposito (pari a 12 volte il bonus) entro 15 giorni, su biglietti con almeno 3 eventi a quota 2,00 ciascuno; esclusi sistemi, scommesse rimborsate e cash out",
+            "Una volta sbloccato va giocato una volta entro 7 giorni, su scommesse con quota totale di almeno 2,00 (esclusi i sistemi)",
             "Massimo 100 € di bonus per biglietto",
-            "Le vincite ottenute con il real bonus sono prelevabili",
-            "Per sbloccarlo servono scommesse pari a 6 volte il deposito con almeno 3 eventi a quota 2,00"
+            "Le vincite ottenute con il real bonus sono prelevabili"
           ],
           "id": "real-bonus",
           "product": "sport",
@@ -1166,12 +1167,11 @@
       "excludedPaymentMethods": [],
       "validFrom": "2025-11-17",
       "validUntil": "2026-12-31",
-      "verifiedAt": "2026-10-29",
+      "verifiedAt": "2026-10-31",
       "status": "bozza",
       "issues": [
-        "La pagina elenco e il testo informativo parlano di Real Bonus, i termini di Fun Bonus: nei dati è usato il Fun Bonus dei termini",
-        "I termini non indicano il deposito minimo",
-        "\"Cap 0,4\": i termini non chiariscono se è il 40% del bonus o un altro limite di conversione"
+        "La pagina /promozioni parla di Real Bonus, i termini di Fun Bonus: nei dati è usato il Fun Bonus dei termini",
+        "I termini non indicano il deposito minimo"
       ],
       "id": "admiralbet-casino",
       "operatorId": "admiralbet",
@@ -1189,7 +1189,7 @@
       "components": [
         {
           "percent": null,
-          "maxConvertible": null,
+          "maxConvertible": 2000,
           "wagering": 65,
           "wageringDays": null,
           "validityDays": 3,
@@ -1197,7 +1197,7 @@
           "minOddsPerEvent": null,
           "notes": [
             "Pari al 200% del deposito, fino a 5.000 €",
-            "Limite di conversione (\"cap\") 0,4",
+            "Convertibile al massimo il 40% del bonus (\"cap 0,4\" secondo le Regole generali dei bonus)",
             "Il saldo convertito diventa Real Bonus Slot entro 72 ore lavorative"
           ],
           "id": "fun-bonus-slot",
@@ -1216,11 +1216,9 @@
       "excludedPaymentMethods": [],
       "validFrom": "2025-11-19",
       "validUntil": "2026-12-31",
-      "verifiedAt": "2026-10-29",
+      "verifiedAt": "2026-10-31",
       "status": "bozza",
-      "issues": [
-        "Il testo informativo della pagina /promozioni indica una tranche ogni 2 giorni, i termini una ogni 24 ore: nei dati sono usati i termini"
-      ],
+      "issues": [],
       "id": "admiralbet-registrazione",
       "operatorId": "admiralbet",
       "operatorName": "AdmiralBet",
@@ -1237,16 +1235,16 @@
       "components": [
         {
           "percent": null,
-          "maxConvertible": null,
+          "maxConvertible": 800,
           "wagering": 100,
           "wageringDays": null,
           "validityDays": 1,
           "minEvents": null,
           "minOddsPerEvent": null,
           "notes": [
-            "2.000 € con SPID (10 tranche da 200 €), 300 € con registrazione classica (10 tranche da 30 €)",
-            "Free spin da 0,10 €: 1.000 con SPID, 300 con registrazione classica, in 10 tranche",
-            "Limite di conversione (\"cap\") 0,40; le vincite dei free spin hanno lo stesso requisito 100x"
+            "2.000 € con SPID (10 tranche da 200 €, una ogni 24 ore da riscattare in \"Le Mie Offerte\"), 300 € con registrazione classica",
+            "Free spin da 0,10 €: 1.000 con SPID, 300 con registrazione classica; le vincite hanno lo stesso requisito 100 volte",
+            "Convertibile al massimo il 40% di ogni tranche (\"cap 0,40\"): fino a 800 € sui 2.000 €"
           ],
           "id": "fun-bonus-slot",
           "product": "casino",
