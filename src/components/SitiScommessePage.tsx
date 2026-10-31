@@ -14,6 +14,7 @@ import {
 } from "../data/operators";
 import { amountFor, formatEuro, visibleOffers, type WelcomeOffer } from "../data/offers";
 import { paths } from "../routes";
+import { operatorPath } from "../lib/operatorPages";
 import { OperatorCta, OperatorLogo } from "./operator/OperatorUi";
 import { OffersSidebar } from "./operator/OffersSidebar";
 import { PageHeader, MetaItems } from "./layout/PageHeader";
@@ -128,7 +129,19 @@ export function SitiScommessePage({
                   <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
                     <div className="flex items-center gap-4">
                       <OperatorLogo operator={bookmaker} width={48} height={48} />
-                      <h3 className="text-white text-2xl">{bookmaker.name}</h3>
+                      <div>
+                        <h3 className="text-white text-2xl">
+                          <Link to={operatorPath(bookmaker)} className="hover:underline underline-offset-4">
+                            {bookmaker.name}
+                          </Link>
+                        </h3>
+                        <Link
+                          to={operatorPath(bookmaker)}
+                          className="text-sm text-action-text hover:text-action-text-hover"
+                        >
+                          Scheda completa →
+                        </Link>
+                      </div>
                     </div>
                     <OfferSummary offer={offerOf(bookmaker)} />
                   </div>

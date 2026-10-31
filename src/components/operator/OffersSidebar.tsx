@@ -18,11 +18,14 @@ const TABS: { id: Product; label: string }[] = [
 
 export function OffersSidebar({
   currentOfferId,
+  currentOperatorId,
   initial = "sport",
   offers = visibleOffers({ includeDrafts: import.meta.env.DEV }),
 }: {
   /** Offer of the page being viewed: highlighted in the list. */
   currentOfferId?: string;
+  /** Operator of the page being viewed (operator page): its rows are highlighted but stay links. */
+  currentOperatorId?: string;
   initial?: Product;
   offers?: WelcomeOffer[];
 }) {
@@ -97,8 +100,9 @@ export function OffersSidebar({
                 )}
               </>
             );
+            const mine = current || o.operatorId === currentOperatorId;
             const cls = `flex items-center gap-3 px-4 py-2.5 border-b border-slate-800 ${
-              current ? "bg-predict/10" : "hover:bg-slate-800/40"
+              mine ? "bg-predict/10" : "hover:bg-slate-800/40"
             }`;
             return (
               <li key={o.id}>

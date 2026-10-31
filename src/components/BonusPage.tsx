@@ -367,7 +367,7 @@ export function Fact({ label, value }: { label: string; value: string }) {
   );
 }
 
-const times = (n: number | null) => (n === null ? "—" : `${n} volte`);
+const times = (n: number | null) => (n === null ? "—" : n === 1 ? "1 volta" : `${n} volte`);
 
 function volumeText(c: OfferComponent) {
   const v = componentMath(c).volume;

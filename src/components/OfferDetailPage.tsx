@@ -15,6 +15,7 @@ import { formatDate, formatEuro, productLabels, type OfferProduct, type WelcomeO
 import { BONUS_COST_GUIDE, CASINO_RTP, SPORT_MARGIN_PER_EVENT, componentMath } from "../lib/bonusCost";
 import { findOffer, offerMeta, offerVolume, operatorNameFor } from "../lib/offerPages";
 import { paths } from "../routes";
+import { findOperator, operatorPath } from "../lib/operatorPages";
 
 const SHOW_DRAFTS = import.meta.env.DEV;
 
@@ -186,6 +187,14 @@ function OfferDetail({ offer }: { offer: WelcomeOffer }) {
             </section>
 
             <nav aria-label="Approfondimenti" className="flex flex-wrap gap-3 text-sm">
+              {findOperator(offer.operatorId) && (
+                <Link
+                  to={operatorPath({ id: offer.operatorId })}
+                  className="px-4 py-2 rounded-md border border-slate-700 bg-slate-900 text-slate-300 hover:text-white"
+                >
+                  Scheda di {name}
+                </Link>
+              )}
               <Link
                 to={paths.bonus}
                 className="px-4 py-2 rounded-md border border-slate-700 bg-slate-900 text-slate-300 hover:text-white"
