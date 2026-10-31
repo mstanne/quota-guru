@@ -9,6 +9,7 @@ import { paths } from "../../routes";
 import {
   CONFIDENCE_LABEL,
   FOOTBALL_MARKETS,
+  fairOdds,
   marketCells,
   pct,
   pickHit,
@@ -186,11 +187,49 @@ export function ConfidenceBadge({ confidence }: { confidence: Prediction["confid
   );
 }
 
-function Stat({ label, value, strong = false }: { label: string; value: string; strong?: boolean }) {
+function Stat({ label, p, strong = false }: { label: string; p: number; strong?: boolean }) {
   return (
     <div className="flex items-baseline justify-between gap-3 py-1.5 border-b border-slate-800 last:border-0">
       <dt className="text-slate-400 text-sm">{label}</dt>
-      <dd className={`tabular-nums ${strong ? "text-predict font-semibold" : "text-white"}`}>{value}</dd>
+      <dd className="tabular-nums text-right whitespace-nowrap">
+        <span className={strong ? "text-predict font-semibold" : "text-white"}>{pct(p)}</span>
+        <span className="ml-2 inline-block w-10 text-slate-500 text-xs" title="Quota equa: 1 ÷ probabilità">
+          {fairOdds(p)}
+        </span>
+      </dd>
+    </div>
+  );
+}
+
+export const FAIR_ODDS_GUIDE = "/guide/quota-equa-e-valore-atteso";
+
+/**
+ * "Quota equa" strip under the main probabilities: 1 ÷ probability for each outcome, i.e. the price with no
+ * bookmaker margin. Informational: no operator odds, no "value" verdict, no link to any operator.
+ */
+export function FairOddsStrip({ items }: { items: { label: string; p: number }[] }) {
+  return (
+    <div className="mt-4 rounded-lg border border-slate-800 bg-slate-950/40 px-4 py-3">
+      <dl className={`grid gap-3 text-sm ${items.length === 3 ? "grid-cols-3" : "grid-cols-2"}`}>
+        {items.map((it, i) => (
+          <div
+            key={it.label}
+            className={items.length === 3 ? (i === 0 ? "text-left" : i === 1 ? "text-center" : "text-right") : i === 0 ? "text-left" : "text-right"}
+          >
+            <dt className="text-slate-400 text-xs truncate">Quota equa {it.label}</dt>
+            <dd className="text-white tabular-nums text-base">{fairOdds(it.p)}</dd>
+          </div>
+        ))}
+      </dl>
+      <p className="mt-2 text-slate-400 text-xs leading-relaxed">
+        La quota equa è 1 ÷ la probabilità stimata: il prezzo dell'esito senza il margine dell'operatore. Non è una quota
+        offerta da un bookmaker. Una quota di mercato più alta della quota equa indica solo che il mercato stima
+        quell'esito meno probabile del modello, non che la giocata sia conveniente: il modello può sbagliare.{" "}
+        <Link to={FAIR_ODDS_GUIDE} className="text-action-text hover:text-action-text-hover">
+          Come si legge
+        </Link>
+        .
+      </p>
     </div>
   );
 }
@@ -234,11 +273,18 @@ export function PredictionPanel({
       </div>
       <p className="text-slate-400 text-sm mb-5">
         {publishedAt ? <PublishedNote iso={publishedAt} /> : null}
-        Probabilità stimate da un modello statistico sui risultati delle ultime stagioni. Non sono quote né consigli di
-        gioco.
+        Probabilità stimate da un modello statistico sui risultati delle ultime stagioni, con la quota equa
+        corrispondente. Non sono quote di un operatore né consigli di gioco.
       </p>
 
       <ProbabilityBar prediction={p} home={home} away={away} />
+      <FairOddsStrip
+        items={[
+          { label: "1", p: p.p[0] },
+          { label: "X", p: p.p[1] },
+          { label: "2", p: p.p[2] },
+        ]}
+      />
 
       <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 rounded-lg bg-slate-950/50 border border-slate-800 px-4 py-3">
         <p className="text-white">
@@ -263,31 +309,32 @@ export function PredictionPanel({
 
       {!finished && <ReasonList reasons={reasons} />}
 
-      <div className="mt-5 grid gap-6 sm:grid-cols-3">
+      <p className="mt-5 text-slate-500 text-xs">Per ogni esito: probabilità stimata e, in grigio, quota equa.</p>
+      <div className="mt-2 grid gap-6 sm:grid-cols-3">
         <div>
           <h3 className="text-white text-base mb-1">Doppia chance</h3>
           <dl>
             {p.dc.map((v, i) => (
-              <Stat key={i} label={dcLabels[i]} value={pct(v)} strong={i === dcTop} />
+              <Stat key={i} label={dcLabels[i]} p={v} strong={i === dcTop} />
             ))}
           </dl>
         </div>
         <div>
           <h3 className="text-white text-base mb-1">Gol</h3>
           <dl>
-            <Stat label="Over 1,5" value={pct(p.over["1.5"])} />
-            <Stat label="Over 2,5" value={pct(p.over["2.5"])} strong={p.over["2.5"] >= 0.5} />
-            <Stat label="Under 2,5" value={pct(1 - p.over["2.5"])} strong={p.over["2.5"] < 0.5} />
-            <Stat label="Over 3,5" value={pct(p.over["3.5"])} />
-            <Stat label="Goal (entrambe segnano)" value={pct(p.btts)} strong={p.btts >= 0.5} />
-            <Stat label="No goal" value={pct(1 - p.btts)} strong={p.btts < 0.5} />
+            <Stat label="Over 1,5" p={p.over["1.5"]} />
+            <Stat label="Over 2,5" p={p.over["2.5"]} strong={p.over["2.5"] >= 0.5} />
+            <Stat label="Under 2,5" p={1 - p.over["2.5"]} strong={p.over["2.5"] < 0.5} />
+            <Stat label="Over 3,5" p={p.over["3.5"]} />
+            <Stat label="Goal (entrambe segnano)" p={p.btts} strong={p.btts >= 0.5} />
+            <Stat label="No goal" p={1 - p.btts} strong={p.btts < 0.5} />
           </dl>
         </div>
         <div>
           <h3 className="text-white text-base mb-1">Risultati più probabili</h3>
           <dl>
             {p.scores.map(([h, a, v], i) => (
-              <Stat key={`${h}-${a}`} label={`${h} – ${a}`} value={pct(v)} strong={i === 0} />
+              <Stat key={`${h}-${a}`} label={`${h} – ${a}`} p={v} strong={i === 0} />
             ))}
           </dl>
         </div>

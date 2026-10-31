@@ -41,6 +41,7 @@ const TennisCalendarPage = lazyPage(() =>
 );
 const SitiScommessePage = lazyPage(() => import("./components/SitiScommessePage").then((m) => m.SitiScommessePage));
 const BonusPage = lazyPage(() => import("./components/BonusPage").then((m) => m.BonusPage));
+const OfferDetailPage = lazyPage(() => import("./components/OfferDetailPage").then((m) => m.OfferDetailPage));
 const GuidesPage = lazyPage(() => import("./components/GuidesPage").then((m) => m.GuidesPage));
 const GuideArticlePage = lazyPage(() =>
   import("./components/guides/GuideArticlePage").then((m) => m.GuideArticlePage),
@@ -98,6 +99,7 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/basket/nba/:partita", [BasketGamePage, NotFoundPage]],
   [paths.sitiScommesse, [SitiScommessePage]],
   [paths.bonus, [BonusPage]],
+  ["/bonus/:offerta", [OfferDetailPage, NotFoundPage]],
   [paths.guide, [GuidesPage]],
   ["/guide/categoria/:categoria", [GuideCategoryPage, NotFoundPage]],
   ["/guide/:slug", [GuideArticlePage, NotFoundPage]],
@@ -224,6 +226,7 @@ export default function App() {
             <Route path="/tennis/calendario-wta" element={<TennisCalendarPage tour="wta" />} />
             <Route path={paths.sitiScommesse} element={<SitiScommessePage />} />
             <Route path={paths.bonus} element={<BonusPage />} />
+            <Route path="/bonus/:offerta" element={<OfferDetailPage />} />
             <Route path={paths.guide} element={<GuidesPage />} />
             <Route path="/guide/categoria/:categoria" element={<GuideCategoryPage />} />
             <Route path="/guide/:slug" element={<GuideArticlePage />} />

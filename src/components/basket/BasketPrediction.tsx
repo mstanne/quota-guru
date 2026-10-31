@@ -6,7 +6,7 @@ import { ChartColumn, Check, Info, X as XIcon } from "lucide-react";
 import { paths } from "../../routes";
 import { pct } from "../../lib/predictionsCore";
 import { fmtPts, type BasketPrediction } from "../../lib/basketPredict";
-import { ConfidenceBadge, PublishedNote, ReasonList } from "../predictions/PredictionUi";
+import { ConfidenceBadge, FairOddsStrip, PublishedNote, ReasonList } from "../predictions/PredictionUi";
 
 const label = (p: BasketPrediction, home: string, away: string) =>
   `Probabilità di vittoria stimate dal modello: ${home} ${pct(p.p[0])}, ${away} ${pct(p.p[1])}`;
@@ -133,8 +133,8 @@ export function BasketPredictionPanel({
       </div>
       <p className="text-slate-400 text-sm mb-5">
         {publishedAt ? <PublishedNote iso={publishedAt} /> : null}
-        Probabilità stimate da un modello statistico sui punteggi delle ultime due stagioni. Non sono quote né consigli
-        di gioco.
+        Probabilità stimate da un modello statistico sui punteggi delle ultime due stagioni, con la quota equa
+        corrispondente. Non sono quote di un operatore né consigli di gioco.
       </p>
 
       <div role="img" aria-label={label(p, home, away)}>
@@ -156,6 +156,12 @@ export function BasketPredictionPanel({
           ))}
         </div>
       </div>
+      <FairOddsStrip
+        items={[
+          { label: `1 · ${home}`, p: p.p[0] },
+          { label: `2 · ${away}`, p: p.p[1] },
+        ]}
+      />
 
       <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 rounded-lg bg-slate-950/50 border border-slate-800 px-4 py-3">
         <p className="text-white tabular-nums">

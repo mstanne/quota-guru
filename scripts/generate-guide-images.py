@@ -696,6 +696,117 @@ def cash_out():
     return frame("".join(b), "Giocata in corso con grafico del valore e pulsante di cash out totale, parziale e automatico")
 
 
+# ------------------------------------------------------------------------------------------- academy
+
+def quota_equa():
+    b = [panel(150, 190, 600, 520)]
+    b.append(text(200, 270, "Probabilità stimata", 32, GREY, weight=600))
+    b.append(text(200, 380, "40%", 110, GREEN))
+    b.append(f'<line x1="200" y1="430" x2="700" y2="430" stroke="{LINE}" stroke-width="3"/>')
+    b.append(text(200, 500, "Quota equa", 32, GREY, weight=600))
+    b.append(text(200, 610, "2,50", 110, LIGHT))
+    b.append(text(700, 610, "= 1 ÷ 0,40", 34, MUTED, "end", 600))
+    # scale: fair vs market
+    x0, x1, y = 880, 1460, 450
+    b.append(f'<line x1="{x0}" y1="{y}" x2="{x1}" y2="{y}" stroke="{LINE}" stroke-width="10" stroke-linecap="round"/>')
+    for v, lab, col in [(2.30, "2,30", MUTED), (2.50, "2,50", GREEN), (2.70, "2,70", AMBER)]:
+        px = x0 + (v - 2.1) / 0.8 * (x1 - x0)
+        b.append(f'<circle cx="{px:.0f}" cy="{y}" r="22" fill="{col}"/>')
+        b.append(text(px, y - 50, lab, 40, LIGHT, "middle"))
+    b.append(text(x0, y + 90, "quota di mercato", 28, MUTED, weight=600))
+    b.append(text(x1, y + 90, "il modello può sbagliare", 28, MUTED, "end", 600))
+    b.append(chip(1010, 230, 330, 60, "stessa informazione", PANEL, GREY, 28))
+    return frame("".join(b), "Una probabilità del 40% convertita in quota equa 2,50 e confrontata con quote di mercato")
+
+
+def kelly():
+    b = []
+    # growth curve: g(f) ~ f*mu - f^2/2, zero at 2f*
+    x0, y0, w, h = 180, 640, 760, 380
+    b.append(f'<line x1="{x0}" y1="{y0}" x2="{x0+w}" y2="{y0}" stroke="{LINE}" stroke-width="4"/>')
+    b.append(f'<line x1="{x0}" y1="{y0+60}" x2="{x0}" y2="{y0-h}" stroke="{LINE}" stroke-width="4"/>')
+    pts = []
+    for i in range(0, 101):
+        f = i / 100 * 2.12
+        g = f * 2 - f * f
+        pts.append(f"{x0 + f / 2.6 * w:.1f},{y0 - g * 300:.1f}")
+    b.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{GREEN}" stroke-width="10" stroke-linejoin="round"/>')
+    kx = x0 + 1 / 2.6 * w
+    b.append(f'<line x1="{kx:.0f}" y1="{y0}" x2="{kx:.0f}" y2="{y0-300}" stroke="{AMBER}" stroke-width="4" stroke-dasharray="12 10"/>')
+    b.append(text(kx, y0 - 320, "Kelly", 34, AMBER, "middle"))
+    zx = x0 + 2 / 2.6 * w
+    b.append(f'<circle cx="{zx:.0f}" cy="{y0}" r="14" fill="{RED}"/>')
+    b.append(text(zx, y0 + 110, "2× Kelly: crescita zero", 28, GREY, "middle", 600))
+    b.append(text(x0, y0 - h - 20, "crescita attesa del budget", 28, MUTED, weight=600))
+    b.append(panel(1040, 220, 420, 460))
+    b.append(text(1250, 300, "f = (b·p − q) ÷ b", 36, LIGHT, "middle"))
+    for i, (k, v) in enumerate([("p stimata 45%", "8,3%"), ("p reale 40%", "0%"), ("p reale 38%", "&lt; 0")]):
+        y = 400 + i * 90
+        b.append(text(1080, y, k, 30, GREY, weight=600))
+        b.append(text(1420, y, v, 34, [GREEN, AMBER, RED][i], "end"))
+    return frame("".join(b), "Curva di crescita del criterio di Kelly e formula con la sensibilità all'errore di stima")
+
+
+def varianza():
+    b = []
+    import random
+    rnd = random.Random(7)
+    x0, y0, w = 160, 470, 1280
+    b.append(f'<line x1="{x0}" y1="{y0}" x2="{x0+w}" y2="{y0}" stroke="{LINE}" stroke-width="3" stroke-dasharray="10 10"/>')
+    cols = [GREEN, AMBER, ORANGE, GREY, MUTED]
+    for k in range(5):
+        v, pts = 0.0, []
+        for i in range(121):
+            pts.append(f"{x0 + i / 120 * w:.1f},{y0 - v * 9:.1f}")
+            v += 1.0 if rnd.random() < 0.475 else -1.0
+        b.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{cols[k]}" stroke-width="6" stroke-opacity=".9" stroke-linejoin="round"/>')
+    b.append(f'<line x1="{x0}" y1="{y0}" x2="{x0+w}" y2="{y0 + 0.05*120*9:.0f}" stroke="{LIGHT}" stroke-width="6" stroke-dasharray="4 14" stroke-linecap="round"/>')
+    b.append(text(x0, 210, "Stesse probabilità, percorsi diversi", 40, LIGHT))
+    b.append(text(x0 + w, 780, "media attesa: −5% delle puntate", 30, MUTED, "end", 600))
+    return frame("".join(b), "Cinque andamenti simulati di un budget con le stesse probabilità e la linea della media attesa")
+
+
+def emozioni():
+    b = [panel(160, 200, 560, 500)]
+    b.append(text(210, 280, "Prima di giocare", 38, LIGHT))
+    for i, lab in enumerate(["Budget del mese", "Limite di tempo", "Niente rincorse", "Pausa dopo 3 perdite"]):
+        y = 360 + i * 82
+        b.append(check(232, y - 12, 1.2))
+        b.append(text(280, y, lab, 32, GREY, weight=600))
+    # gauge calm / tilt
+    cx, cy, r = 1120, 560, 260
+    b.append(arc(cx, cy, r, 180, 260, GREEN, 48))
+    b.append(arc(cx, cy, r, 262, 300, AMBER, 48))
+    b.append(arc(cx, cy, r, 302, 360, RED, 48))
+    ang = 180 + 0.25 * 180
+    nx, ny = cx + (r - 70) * cos(ang * pi / 180), cy + (r - 70) * sin(ang * pi / 180)
+    b.append(f'<line x1="{cx}" y1="{cy}" x2="{nx:.1f}" y2="{ny:.1f}" stroke="{LIGHT}" stroke-width="14" stroke-linecap="round"/>')
+    b.append(f'<circle cx="{cx}" cy="{cy}" r="24" fill="{LIGHT}"/>')
+    b.append(text(cx - r, cy + 70, "calma", 30, GREEN, "middle", 600))
+    b.append(text(cx + r, cy + 70, "tilt", 30, RED, "middle", 600))
+    return frame("".join(b), "Lista di regole personali e indicatore dello stato emotivo da calma a tilt")
+
+
+def bonus_costo():
+    b = [panel(160, 190, 640, 520)]
+    b.append(text(210, 270, "Bonus casinò 100 €", 38, LIGHT))
+    rows = [("Requisito", "35 volte"), ("Giocate richieste", "3.500 €"), ("Ritorno medio slot", "96%"), ("Costo medio", "140 €")]
+    for i, (k, v) in enumerate(rows):
+        y = 360 + i * 84
+        b.append(f'<line x1="210" y1="{y-40}" x2="750" y2="{y-40}" stroke="{LINE}" stroke-width="2"/>')
+        b.append(text(210, y + 10, k, 30, GREY, weight=600))
+        b.append(text(750, y + 10, v, 34, RED if i == 3 else LIGHT, "end"))
+    # bars: bonus vs expected cost
+    base = 720
+    b.append(f'<rect x="980" y="{base-250}" width="160" height="250" rx="14" fill="{GREEN}"/>')
+    b.append(f'<rect x="1220" y="{base-350}" width="160" height="350" rx="14" fill="{RED}"/>')
+    b.append(text(1060, base - 270, "100 €", 36, LIGHT, "middle"))
+    b.append(text(1300, base - 370, "140 €", 36, LIGHT, "middle"))
+    b.append(text(1060, base + 50, "bonus", 28, MUTED, "middle", 600))
+    b.append(text(1300, base + 50, "costo medio", 28, MUTED, "middle", 600))
+    return frame("".join(b), "Calcolo del costo medio di un bonus casinò confrontato con l'importo del bonus")
+
+
 SCENES2 = {
     "siti-scommesse-legali": siti_legali,
     "aprire-un-conto-di-gioco": aprire_conto,
@@ -714,6 +825,11 @@ SCENES2 = {
     "tornei-di-tennis": tornei_tennis,
     "nba-stagione-play-in-playoff": nba_playoff,
     "cash-out": cash_out,
+    "quota-equa-e-valore-atteso": quota_equa,
+    "criterio-di-kelly": kelly,
+    "varianza-e-serie-negative": varianza,
+    "emozioni-e-disciplina": emozioni,
+    "quanto-costa-un-bonus": bonus_costo,
 }
 
 SCENES = {

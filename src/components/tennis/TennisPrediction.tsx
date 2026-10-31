@@ -7,6 +7,7 @@ import { paths } from "../../routes";
 import { tourData, tourLabel, tours, type Tour } from "../../lib/tennis";
 import { hasSurfaceRatings, ratingSource, tennisPrediction, type MatchPrediction, type Surface } from "../../lib/tennisPredict";
 import { pct } from "../../lib/predictionsCore";
+import { FairOddsStrip } from "../predictions/PredictionUi";
 
 const SURFACE_LABEL: Record<Surface, string> = { Hard: "Cemento", Clay: "Terra battuta", Grass: "Erba" };
 
@@ -54,6 +55,12 @@ export function TennisPredictionResult({
           ))}
         </div>
       </div>
+      <FairOddsStrip
+        items={[
+          { label: a, p: p.p[0] },
+          { label: b, p: p.p[1] },
+        ]}
+      />
 
       <div className="mt-6 grid gap-6 sm:grid-cols-2">
         <div>

@@ -23,7 +23,7 @@ export function GuidesPage() {
           <h2 id="cats" className="text-white text-xl mb-6">
             Esplora per categoria
           </h2>
-          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <ul className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-7 gap-4">
             {categories.map((c) => {
               const Icon = categoryIcons[c.icon];
               const n = guidesIn(c.slug).length;

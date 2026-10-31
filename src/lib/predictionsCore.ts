@@ -39,6 +39,16 @@ export function pct(x: number) {
   return `${Math.min(99, Math.max(1, v))}%`;
 }
 
+/**
+ * Fair odds ("quota equa"): 1 ÷ probability, the price of an outcome with no bookmaker margin.
+ * Informational only: it is not an odd offered by any operator. "—" below 2% (odds above 50 say nothing useful).
+ */
+export function fairOdds(x: number) {
+  if (!(x >= 0.02)) return "—";
+  const o = 1 / Math.min(x, 0.99);
+  return o.toFixed(2).replace(".", ",");
+}
+
 /** Index (0/1/2) of the most likely 1X2 outcome. */
 export const topOutcome = (p: Prediction) => p.p.indexOf(Math.max(...p.p)) as 0 | 1 | 2;
 
