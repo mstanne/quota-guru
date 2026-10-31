@@ -225,7 +225,8 @@ const planetwin365: OperatorData = {
     "Deposito minimo di 30 € con Skrill, Neteller, Rapid Transfer e Paysafecard",
     "Le vincite da bonus e promozioni possono essere pagate solo con bonifico bancario",
   ],
-  liveStreaming: false,
+  // "le emozioni della diretta streaming" on planetwin365.it/app/sport, 31/10/2026
+  liveStreaming: true,
   cashOut: true,
 };
 

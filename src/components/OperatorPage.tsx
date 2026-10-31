@@ -14,6 +14,8 @@ import {
   ThumbsDown,
   ThumbsUp,
   Trophy,
+  Scale,
+  Smartphone,
 } from "lucide-react";
 import { Link } from "../lib/links";
 import { usePageMeta } from "../lib/pageMeta";
@@ -34,6 +36,7 @@ import {
   publishedOperators,
 } from "../lib/operatorPages";
 import { paths } from "../routes";
+import { profileOf, type OperatorProfile } from "../data/operatorProfiles";
 
 const SHOW_DRAFTS = import.meta.env.DEV;
 const real = (v: string) => !isPlaceholder(v);
@@ -52,6 +55,8 @@ const SECTIONS = [
   { id: "prodotti", title: "Scommesse e prodotti" },
   { id: "offerta", title: "Offerta di benvenuto" },
   { id: "pagamenti", title: "Depositi e prelievi" },
+  { id: "app-assistenza", title: "App e assistenza" },
+  { id: "limiti", title: "Limiti di puntata e vincita" },
   { id: "carta-identita", title: "Carta d'identità" },
   { id: "pro-contro", title: "Punti di forza e limiti" },
   { id: "domande", title: "Domande frequenti" },
@@ -67,7 +72,8 @@ function OperatorProfile({ op }: { op: OperatorData }) {
   const others = publishedOperators()
     .filter((o) => o.id !== op.id)
     .sort((a, b) => a.name.localeCompare(b.name, "it"));
-  const faqs = buildFaq(op, sport);
+  const profile = profileOf(op.id);
+  const faqs = buildFaq(op, sport, profile);
 
   const summary: [string, string][] = [
     ["Concessione ADM", real(op.admLicense) ? op.admLicense : "Non ancora indicata"],
@@ -77,6 +83,14 @@ function OperatorProfile({ op }: { op: OperatorData }) {
     ["Streaming", op.liveStreaming ? "Disponibile" : "Non rilevato"],
     ["Deposito minimo", orNot(op.minDeposit)],
     ["Tempi di prelievo", orNot(op.withdrawalTime)],
+    ["App", appsText(profile)],
+    [
+      "Assistenza",
+      profile?.support
+        ? [profile.support.channels.join(", "), profile.support.hours].filter(Boolean).join(" · ")
+        : "Non ancora indicata",
+    ],
+    ["Vincita massima", profile?.limits?.maxWin ?? "Non ancora indicata"],
     ["Offerta sport", sport ? `Fino a ${formatEuro(amountFor(sport, "sport"))}` : "Nessuna offerta verificata"],
   ];
 
@@ -234,6 +248,96 @@ function OperatorProfile({ op }: { op: OperatorData }) {
             </p>
           </Section>
 
+          {/* App e assistenza */}
+          <Section id="app-assistenza" icon={Smartphone} title={`App e servizio clienti di ${op.name}`}>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-lg border border-slate-800 bg-slate-900 p-5">
+                <h3 className="text-white text-lg mb-3">App</h3>
+                {profile?.apps && (profile.apps.ios || profile.apps.android) ? (
+                  <ul className="space-y-2 text-slate-300 text-sm">
+                    <li>
+                      <span className="text-slate-400">iPhone e iPad: </span>
+                      {profile.apps.ios ? (
+                        <a
+                          href={profile.apps.ios}
+                          target="_blank"
+                          rel="nofollow noopener noreferrer"
+                          className="text-white underline underline-offset-2"
+                        >
+                          disponibile
+                        </a>
+                      ) : (
+                        "non verificata"
+                      )}
+                    </li>
+                    <li>
+                      <span className="text-slate-400">Android: </span>
+                      {profile.apps.android === "apk"
+                        ? "disponibile, si scarica dal sito dell'operatore (file APK)"
+                        : profile.apps.android
+                          ? "disponibile"
+                          : "non verificata"}
+                    </li>
+                  </ul>
+                ) : (
+                  <p className="text-slate-400 text-sm">Non ancora verificata.</p>
+                )}
+                <p className="text-slate-500 text-xs mt-3">
+                  Scarica le app solo dallo store ufficiale o dal sito dell'operatore.
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-800 bg-slate-900 p-5">
+                <h3 className="text-white text-lg mb-3">Servizio clienti</h3>
+                {profile?.support ? (
+                  <dl className="space-y-2 text-sm">
+                    <div>
+                      <dt className="text-slate-400">Canali</dt>
+                      <dd className="text-white">{profile.support.channels.join(", ")}</dd>
+                    </div>
+                    {profile.support.hours && (
+                      <div>
+                        <dt className="text-slate-400">Orari</dt>
+                        <dd className="text-white">{profile.support.hours}</dd>
+                      </div>
+                    )}
+                    {profile.support.phone && (
+                      <div>
+                        <dt className="text-slate-400">Telefono</dt>
+                        <dd className="text-white">{profile.support.phone}</dd>
+                      </div>
+                    )}
+                    {profile.support.email && (
+                      <div>
+                        <dt className="text-slate-400">Email</dt>
+                        <dd className="text-white break-all">{profile.support.email}</dd>
+                      </div>
+                    )}
+                    {profile.support.note && <p className="text-slate-400 text-xs pt-1">{profile.support.note}</p>}
+                  </dl>
+                ) : (
+                  <p className="text-slate-400 text-sm">Non ancora verificato.</p>
+                )}
+              </div>
+            </div>
+          </Section>
+
+          {/* Limiti */}
+          <Section id="limiti" icon={Scale} title="Limiti di puntata e vincita">
+            <dl className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-lg bg-slate-900 border border-slate-800 p-4">
+                <dt className="text-slate-400 text-sm mb-1">Puntata minima</dt>
+                <dd className="text-white">{profile?.limits?.minStake ?? "Non ancora indicata"}</dd>
+              </div>
+              <div className="rounded-lg bg-slate-900 border border-slate-800 p-4">
+                <dt className="text-slate-400 text-sm mb-1">Vincita massima</dt>
+                <dd className="text-white">{profile?.limits?.maxWin ?? "Non ancora indicata"}</dd>
+              </div>
+            </dl>
+            <p className="text-slate-400 text-sm mt-3">
+              Valori dai regolamenti dell'operatore: alcuni mercati o eventi possono avere limiti diversi.
+            </p>
+          </Section>
+
           {/* Carta d'identità */}
           <Section id="carta-identita" icon={IdCard} title={`La carta d'identità di ${op.name}`}>
             <div className="overflow-x-auto rounded-lg border border-slate-800">
@@ -245,6 +349,10 @@ function OperatorProfile({ op }: { op: OperatorData }) {
                       ["Concessione", real(op.admLicense) ? `ADM ${op.admLicense}` : "Non ancora indicata"],
                       ["Sito", site?.host ?? "Non ancora indicato"],
                       ["Prodotti", realList(op.features).join(", ") || "Non ancora indicati"],
+                      [
+                        "Assistenza",
+                        profile?.support?.phone ?? profile?.support?.email ?? "Vedi sezione App e assistenza",
+                      ],
                     ] as [string, string][]
                   ).map(([k, v]) => (
                     <tr key={k} className="border-b border-slate-800 last:border-0">
@@ -333,6 +441,32 @@ function OperatorProfile({ op }: { op: OperatorData }) {
               ))}
             </div>
           </Section>
+
+          {profile && (
+            <section aria-labelledby="fonti" className="text-sm">
+              <h2 id="fonti" className="text-white text-lg mb-2">
+                Fonti
+              </h2>
+              <p className="text-slate-400 mb-2">
+                Dati letti sul sito di {op.name} il {formatDate(profile.checkedAt)}. In caso di differenze valgono le
+                pagine dell'operatore.
+              </p>
+              <ul className="flex flex-wrap gap-x-4 gap-y-1">
+                {profile.sources.map((src) => (
+                  <li key={src.url}>
+                    <a
+                      href={src.url}
+                      target="_blank"
+                      rel="nofollow noopener noreferrer"
+                      className="text-slate-300 underline underline-offset-2 hover:text-white"
+                    >
+                      {src.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           {/* Altri operatori */}
           <section aria-labelledby="altri-operatori">
@@ -430,7 +564,13 @@ function OfferBlock({ offer }: { offer: WelcomeOffer }) {
   );
 }
 
-function buildFaq(op: OperatorData, sport?: WelcomeOffer) {
+function appsText(p?: OperatorProfile) {
+  if (!p?.apps) return "Non ancora indicata";
+  const list = [p.apps.ios && "iOS", p.apps.android && "Android"].filter(Boolean);
+  return list.length ? list.join(" e ") : "Non ancora indicata";
+}
+
+function buildFaq(op: OperatorData, sport?: WelcomeOffer, profile?: OperatorProfile) {
   const out: { q: string; a: string }[] = [];
   out.push({
     q: `${op.name} è legale in Italia?`,
@@ -447,6 +587,22 @@ function buildFaq(op: OperatorData, sport?: WelcomeOffer) {
     out.push({
       q: `Quanto tempo serve per prelevare da ${op.name}?`,
       a: `${op.withdrawalTime}. I tempi dipendono dal metodo scelto e dalla verifica del conto.`,
+    });
+  if (profile?.support)
+    out.push({
+      q: `Come si contatta l'assistenza di ${op.name}?`,
+      a:
+        `Canali: ${profile.support.channels.join(", ").toLowerCase()}` +
+        (profile.support.phone ? `; telefono ${profile.support.phone}` : "") +
+        (profile.support.email ? `; email ${profile.support.email}` : "") +
+        (profile.support.hours ? ` (${profile.support.hours})` : "") +
+        "." +
+        (profile.support.note ? ` ${profile.support.note}` : ""),
+    });
+  if (profile?.limits?.maxWin)
+    out.push({
+      q: `Qual è la vincita massima su ${op.name}?`,
+      a: `${profile.limits.maxWin}, secondo il regolamento dell'operatore.`,
     });
   out.push({
     q: `${op.name} ha il cash out?`,
