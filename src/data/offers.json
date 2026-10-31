@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29",
+  "updatedAt": "2026-10-31",
   "offers": [
     {
       "id": "eurobet-welcombonus",
@@ -29,7 +29,7 @@
       "validUntil": null,
       "sourceUrl": "https://www.eurobet.it/it/promo/nuovi-iscritti",
       "termsUrl": "https://www.eurobet.it/it/promo/nuovi-iscritti",
-      "verifiedAt": "2026-10-25",
+      "verifiedAt": "2026-10-31",
       "status": "approvata",
       "description": "Offerta unica con tre bonus separati sul primo deposito: uno per le scommesse sportive, uno per le slot e uno per il casinò, ciascuno con requisiti propri.",
       "issues": [],
@@ -115,7 +115,7 @@
       "validUntil": "2026-11-01",
       "sourceUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-sport",
       "termsUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-sport",
-      "verifiedAt": "2026-10-25",
+      "verifiedAt": "2026-10-31",
       "status": "approvata",
       "description": "Il totale indicato dall'operatore comprende un bonus sport fino a 100 €, un bonus per le slot fino a 2.150 € e un rimborso settimanale sulle scommesse fino a 10 € per 10 settimane.",
       "issues": [],
@@ -202,7 +202,7 @@
       "validUntil": "2026-11-01",
       "sourceUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse",
       "termsUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse",
-      "verifiedAt": "2026-10-25",
+      "verifiedAt": "2026-10-31",
       "status": "approvata",
       "description": "Il totale indicato dall'operatore comprende un bonus sport fino a 100 € e un bonus per le slot fino a 2.000 €.",
       "issues": [],
@@ -365,10 +365,10 @@
         "Movimentazione bancaria"
       ],
       "validFrom": "2026-07-20",
-      "validUntil": "2026-11-01",
+      "validUntil": "2026-12-28",
       "sourceUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
       "termsUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
-      "verifiedAt": "2026-10-25",
+      "verifiedAt": "2026-10-31",
       "status": "approvata",
       "description": "Un bonus real del 10% del primo deposito fino a 50 € sui giochi IGT e un bonus slot del 100% fino a 5.000 €, diviso in quattro parti da usare entro 3 giorni ciascuna.",
       "issues": [],
@@ -434,11 +434,11 @@
         "Movimentazione bancaria"
       ],
       "validFrom": "2026-07-20",
-      "validUntil": "2026-11-01",
+      "validUntil": "2026-12-28",
       "sourceUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
       "termsUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
-      "verifiedAt": "2026-10-25",
-      "status": "bozza",
+      "verifiedAt": "2026-10-31",
+      "status": "approvata",
       "description": "Un bonus real del 10% del primo deposito fino a 50 € sui giochi IGT e un bonus slot del 100% fino a 5.000 € sulle slot Inspired, da usare entro 3 giorni.",
       "issues": [],
       "components": [
@@ -567,7 +567,7 @@
       "validUntil": null,
       "sourceUrl": "https://offerte.betsson.it/welcome-offer-sport-100-2000e-26-27",
       "termsUrl": "https://offerte.betsson.it/welcome-offer-sport-100-2000e-26-27",
-      "verifiedAt": "2026-10-25",
+      "verifiedAt": "2026-10-31",
       "status": "approvata",
       "description": "Real bonus pari al 100% del primo deposito, fino a 2.000 €, accreditato dopo aver puntato 7 volte l'importo depositato su scommesse con almeno 3 selezioni.",
       "issues": [],
@@ -685,7 +685,7 @@
       "validUntil": null,
       "sourceUrl": "https://offerte.betsson.it/offerta-di-benvenuto-casino",
       "termsUrl": "https://offerte.betsson.it/offerta-di-benvenuto-casino",
-      "verifiedAt": "2026-10-25",
+      "verifiedAt": "2026-10-31",
       "status": "approvata",
       "description": "Quattro rimborsi settimanali pari al 50% delle perdite nette sulle slot in promozione, fino a 250 € a settimana e 1.000 € in totale, erogati come fun bonus.",
       "issues": [],
@@ -736,7 +736,7 @@
       "validUntil": null,
       "sourceUrl": "https://www.bwin.it/it/p/promozioni/sports/bonus-benvenuto",
       "termsUrl": "https://www.bwin.it/it/p/promozioni/sports/bonus-benvenuto",
-      "verifiedAt": "2026-10-25",
+      "verifiedAt": "2026-10-31",
       "status": "approvata",
       "description": "Bonus scommesse pari al 100% del primo deposito fino a 3.000 € e 10 € dopo la prima scommessa (totale sport indicato: 3.010 €), più 30 free spin su Pirots 4 e 5 € su Aviator.",
       "issues": [],
@@ -839,7 +839,7 @@
       "validUntil": null,
       "sourceUrl": "https://www.sisal.it/bonus/bonus-benvenuto/scommesse",
       "termsUrl": "https://www.sisal.it/bonus/bonus-benvenuto/scommesse",
-      "verifiedAt": "2026-10-25",
+      "verifiedAt": "2026-10-31",
       "status": "approvata",
       "description": "Real bonus del 30% del primo deposito fino a 100 €, 50 € in freebet e fun bonus slot del 50% fino a 2.000 €. Il totale di 7.150 € indicato dall'operatore include 5.000 € virtuali del gioco Salva il Bottino.",
       "issues": [],
@@ -914,7 +914,8 @@
         "Selezionare il bonus \"Casinò\" durante la registrazione online",
         "Validazione del documento d'identità e dell'indirizzo email",
         "Primo deposito con carta, Postepay, BancoPosta, PayPal, Skrill, Neteller, Paysafecard o in ricevitoria (escluso bonifico)",
-        "Una sola adesione per persona, nucleo familiare, email, telefono e indirizzo IP"
+        "Una sola adesione per persona, nucleo familiare, email, telefono e indirizzo IP",
+        "Il testo introduttivo della pagina indica un totale fino a 7.030 € e una validità fino al 2 novembre 2026; i termini non riportano né il totale né una data di fine"
       ],
       "excludedPaymentMethods": [
         "Bonifico bancario"
@@ -923,9 +924,9 @@
       "validUntil": null,
       "sourceUrl": "https://www.sisal.it/bonus/bonus-benvenuto/casino",
       "termsUrl": "https://www.sisal.it/bonus/bonus-benvenuto/casino",
-      "verifiedAt": "2026-10-25",
+      "verifiedAt": "2026-10-31",
       "status": "approvata",
-      "description": "Fun bonus pari al 50% del primo deposito, fino a 7.000 €, da usare entro 2 giorni su 15 slot con requisito di puntata di 45 volte.",
+      "description": "Fun bonus pari al 50% del primo deposito, fino a 7.000 €, da usare entro 2 giorni su 15 slot con requisito di puntata di 45 volte, più un real bonus di 30 € valido 7 giorni sulle slot indicate nei termini.",
       "issues": [],
       "components": [
         {
@@ -943,6 +944,23 @@
           "usableOn": "15 slot indicate nei termini",
           "notes": [
             "Il real bonus convertito vale 7 giorni su 15 slot indicate nei termini"
+          ]
+        },
+        {
+          "id": "real-extra",
+          "product": "casino",
+          "kind": "bonus-real",
+          "percent": null,
+          "maxAmount": 30,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": null,
+          "validityDays": 7,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "15 slot indicate nei termini",
+          "notes": [
+            "Importo fisso di 30 € in aggiunta al fun bonus sul primo deposito"
           ]
         }
       ]
