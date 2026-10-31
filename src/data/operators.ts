@@ -107,7 +107,8 @@ const eurobet: OperatorData = {
   description:
     "Concessionario ADM gestito da Eurobet Italia S.r.l., con scommesse sportive pre-partita e live, casinò, slot, poker e bingo online.",
   minDeposit: "10 €",
-  withdrawalTime: "24 ore",
+  // eurobet.it/it/guide/conto-di-gioco/prelievo, 31/10/2026
+  withdrawalTime: "Entro 1 giorno lavorativo con PayPal, Skrill e Neteller; carte 2-10 giorni; bonifico istantaneo in pochi minuti",
   paymentMethods: [
     "Carte di credito/debito",
     "Postepay",
@@ -128,7 +129,7 @@ const eurobet: OperatorData = {
   ],
   pros: [
     "Deposito minimo di 10 €",
-    "Tempo di prelievo indicato in 24 ore",
+    "Prelievi con PayPal, Skrill e Neteller entro 1 giorno lavorativo, senza commissioni",
     "Dieci metodi di pagamento, tra cui PayPal, Postepay e Apple Pay",
   ],
   cons: [
@@ -270,7 +271,7 @@ const bet365: OperatorData = {
 };
 
 // Betsson, bwin and Sisal: data from the footers, promotions and help pages of the official sites, 25/10/2026.
-// Betsson's payment pages need a login: deposit, withdrawal and payment fields stay to be filled in.
+// Betsson: payment methods, minimum deposit and withdrawal times from support.betsson.it (31/10/2026).
 const betsson: OperatorData = {
   id: "betsson",
   name: "Betsson",
@@ -284,9 +285,24 @@ const betsson: OperatorData = {
   company: "Azzurri Ltd",
   description:
     "Concessionario ADM gestito da Azzurri Ltd (Malta), con scommesse sportive pre-partita e live, virtuali, casinò, casinò live, giochi di carte, bingo e ippica.",
-  minDeposit: "[DEPOSITO_MINIMO]",
-  withdrawalTime: "[TEMPI_PRELIEVO]",
-  paymentMethods: ["[METODO_PAGAMENTO_1]", "[METODO_PAGAMENTO_2]", "[METODO_PAGAMENTO_3]", "[METODO_PAGAMENTO_4]"],
+  // support.betsson.it (Depositi, Prelievi), 31/10/2026
+  minDeposit: "5 € con tutti i metodi",
+  withdrawalTime:
+    "Approvazione entro 24-48 ore lavorative, poi: portafogli elettronici e bonifico istantaneo fino a 24 ore lavorative, carta 3-4 giorni lavorativi, bonifico 6-9 giorni lavorativi",
+  paymentMethods: [
+    "Visa",
+    "Mastercard",
+    "Apple Pay / Google Pay",
+    "PayPal",
+    "Skrill",
+    "Neteller",
+    "Paysafecard",
+    "MyBank (solo depositi)",
+    "MuchBetter (solo depositi)",
+    "Neosurf (solo depositi)",
+    "Postepay (solo prelievi)",
+    "Bonifico bancario (solo prelievi)",
+  ],
   features: ["Scommesse sportive pre-partita e live", "Cash out", "Virtuali e ippica", "Casinò, casinò live, carte e bingo"],
   pros: [
     "Offerta di benvenuto sport attivabile con un primo deposito da 5 €",
@@ -295,6 +311,7 @@ const betsson: OperatorData = {
   cons: [
     "Skrill e Neteller sono esclusi dalle offerte di benvenuto",
     "Il real bonus sport non vale su scommesse live, sistemi e bet builder",
+    "Ogni prelievo viene prima approvato, entro 24-48 ore lavorative, e solo dopo accreditato",
   ],
   liveStreaming: false,
   cashOut: true,
@@ -467,11 +484,16 @@ const leovegas: OperatorData = {
   company: "LeoVegas Gaming Plc",
   description:
     "Concessionario ADM gestito da LeoVegas Gaming Plc (Malta), con casinò, casinò live e scommesse sportive.",
-  minDeposit: "[DEPOSITO_MINIMO]",
-  withdrawalTime: "[TEMPI_PRELIEVO]",
-  paymentMethods: ["Visa", "Mastercard", "Postepay", "PayPal", "Apple Pay", "Google Pay"],
+  // leovegas.it/metodi-di-pagamento, 31/10/2026
+  minDeposit: "10 €",
+  withdrawalTime: "Immediato con Skrill e PayPal; 2-5 giorni lavorativi con carte e Apple Pay; bonifico entro 5 giorni lavorativi",
+  paymentMethods: ["Visa", "Mastercard", "Postepay", "PayPal", "Skrill", "Apple Pay", "Paysafecard", "Bonifico bancario (solo prelievi)"],
   features: ["Scommesse sportive e live", "Casinò e slot", "Casinò live", "App"],
-  pros: ["Offerte di benvenuto distinte per casinò e casinò live", "Assistenza in italiano via chat ed email"],
+  pros: [
+    "Offerte di benvenuto distinte per casinò e casinò live",
+    "Prelievi immediati e gratuiti con Skrill e PayPal",
+    "Assistenza in italiano via chat ed email",
+  ],
   cons: ["Nessuna offerta di benvenuto per le scommesse sportive al 29/10/2026"],
   liveStreaming: false,
   cashOut: false,
@@ -517,6 +539,58 @@ const lottomatica: OperatorData = {
   cashOut: true,
 };
 
+// Snai: footer, contacts, app and bonus pages of snai.it, 31/10/2026.
+const snai: OperatorData = {
+  id: "snai",
+  name: "Snai",
+  shortName: "SN",
+  logoUrl: "operators/logo_snai.png",
+  logoAlt: "Logo Snai",
+  affiliateUrl: "https://www.snai.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "Snaitech S.p.a. - Socio Unico ... CONCESSIONE N°16032" (footer of snai.it): verify on the ADM list.
+  admLicense: "16032",
+  company: "Snaitech S.p.A.",
+  description:
+    "Concessionario ADM gestito da Snaitech S.p.A., con scommesse sportive pre-partita e live, ippica, virtuali, slot, casinò, casinò live, poker, giochi di carte, lotterie e bingo, e una rete di punti vendita.",
+  // snai.it/faq/ricariche and snai.it/faq/prelievi, 31/10/2026
+  minDeposit: "10 € online (1 € nei punti vendita)",
+  withdrawalTime:
+    "Generalmente immediato con carta, Apple Pay, PayPal, Skrill, Neteller e bonifico istantaneo; bonifico 1-2 giorni lavorativi",
+  paymentMethods: [
+    "Visa",
+    "Mastercard",
+    "Postepay",
+    "Apple Pay",
+    "PayPal",
+    "Skrill",
+    "Neteller",
+    "Paysafecard (solo depositi)",
+    "MyBank (solo depositi)",
+    "Bonifico bancario e istantaneo",
+    "Punti vendita Snai",
+    "Istituti di pagamento",
+  ],
+  features: [
+    "Scommesse sportive pre-partita e live",
+    "Cash out",
+    "Ippica e virtuali",
+    "Casinò, casinò live e slot",
+    "Poker, carte, lotterie e bingo",
+  ],
+  pros: [
+    "Prelievi senza commissioni con tutti i metodi",
+    "Prelievi generalmente immediati con carta, PayPal, Skrill, Neteller e bonifico istantaneo",
+    "Live chat con un operatore tutti i giorni dalle 9 alle 24, assistente automatico 24 ore su 24",
+  ],
+  cons: [
+    "Il bonus sport di benvenuto vale solo su multiple con almeno 3 eventi a quota 1,50 ed è erogato in 5 tranche settimanali",
+    "Paysafecard e MyBank non sono disponibili per i prelievi",
+  ],
+  liveStreaming: false,
+  cashOut: true,
+};
+
 /** Operators shown across the site (comparison tables, offers, bet slip). Order = display order. */
 export const operators: OperatorData[] = [
   eurobet,
@@ -526,6 +600,7 @@ export const operators: OperatorData[] = [
   betsson,
   bwin,
   sisal,
+  snai,
   lottomatica,
   admiralbet,
   codere,

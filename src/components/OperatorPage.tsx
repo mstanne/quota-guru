@@ -239,6 +239,42 @@ function OperatorProfile({ op }: { op: OperatorData }) {
                 I metodi di pagamento non sono ancora stati verificati sul sito dell'operatore.
               </p>
             )}
+            {profile?.payments?.length ? (
+              <>
+                <h3 className="text-white text-lg mt-6 mb-2">Limiti e tempi per metodo</h3>
+                <div className="overflow-x-auto rounded-lg border border-slate-800">
+                  <table className="w-full text-sm">
+                    <thead className="bg-slate-800/60 text-slate-400 text-xs text-left">
+                      <tr>
+                        <th className="p-2 font-normal">Metodo</th>
+                        <th className="p-2 font-normal">Deposito</th>
+                        <th className="p-2 font-normal">Prelievo</th>
+                        <th className="p-2 font-normal">Tempi di prelievo</th>
+                        <th className="p-2 font-normal">Costo prelievo</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-slate-200">
+                      {profile.payments.map((r) => (
+                        <tr key={r.method} className="border-t border-slate-800 align-top">
+                          <td className="p-2 text-white">{r.method}</td>
+                          <td className="p-2 whitespace-nowrap">{r.deposit}</td>
+                          <td className="p-2 whitespace-nowrap">{r.withdrawal}</td>
+                          <td className="p-2">{r.withdrawalTime}</td>
+                          <td className="p-2">{r.fee ?? "—"}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {profile.paymentNotes?.length ? (
+                  <ul className="mt-2 space-y-1 text-slate-400 text-xs">
+                    {profile.paymentNotes.map((n) => (
+                      <li key={n}>{n}</li>
+                    ))}
+                  </ul>
+                ) : null}
+              </>
+            ) : null}
             <p className="text-slate-400 text-sm mt-4">
               Limiti, commissioni e tempi possono cambiare: fanno fede le pagine di aiuto dell'operatore. Guida:{" "}
               <Link to="/guide/depositi-e-prelievi" className="text-action-text hover:text-action-text-hover">

@@ -252,29 +252,25 @@
       "sections": [
         "sport"
       ],
-      "title": "Bonus Benvenuto Sport",
-      "advertisedTotal": 2000,
+      "title": "Bonus Benvenuto Scommesse Gold",
+      "advertisedTotal": 2003,
       "minDeposit": 10,
       "depositWithinDays": 7,
       "requirements": [
-        "Selezione del Bonus Benvenuto Sport in fase di registrazione",
-        "Validazione del documento d'identità",
-        "Solo per chi non ha mai avuto un conto gioco Snai; una adesione per persona e nucleo familiare"
+        "Selezione del Bonus Benvenuto Gold in fase di registrazione",
+        "Validazione del documento d'identità prima dell'accredito",
+        "Primo deposito di almeno 10 € entro 7 giorni dalla registrazione",
+        "Solo per chi non ha mai avuto un conto gioco Snai; una adesione per persona, nucleo familiare, indirizzo, IP, dispositivo, email e telefono"
       ],
       "excludedPaymentMethods": [],
       "validFrom": null,
       "validUntil": null,
       "sourceUrl": "https://www.snai.it/bonus/bonus-benvenuto/sport",
       "termsUrl": "https://www.snai.it/bonus/bonus-benvenuto/sport",
-      "verifiedAt": "2026-10-25",
-      "status": "bozza",
-      "description": "Il totale indicato dall'operatore comprende un bonus sport fino a 500 € erogato in cinque tranche settimanali, un rimborso del 20% delle perdite nelle prime quattro settimane fino a 1.000 € e un bonus per le slot fino a 500 €.",
-      "issues": [
-        "Il titolo della pagina indica 2.000 €, il titolo dei termini e condizioni indica 1.500 €.",
-        "Le FAQ dicono che il bonus sport va usato entro 3 giorni, i termini entro 7 giorni.",
-        "I termini dicono che il bonus complessivo non può superare l'importo del primo deposito.",
-        "Date di inizio e fine dell'offerta non indicate."
-      ],
+      "verifiedAt": "2026-10-31",
+      "status": "approvata",
+      "description": "Il totale indicato dall'operatore comprende un bonus sport fino a 500 € in cinque tranche settimanali, un rimborso del 20% delle perdite nelle prime 10 settimane fino a 1.000 €, un bonus per le slot fino a 500 € e 3 € dopo la prima My Combo.",
+      "issues": [],
       "components": [
         {
           "id": "sport",
@@ -290,7 +286,7 @@
           "minOddsPerEvent": 1.5,
           "usableOn": "Scommesse multiple con almeno 3 eventi",
           "notes": [
-            "Erogato in 5 tranche settimanali del 20% ciascuna",
+            "Erogato in 5 tranche settimanali da 100 €, ognuna da giocare 9 volte (900 €) entro 7 giorni",
             "Esclusi cash out, sistemi e My Combo"
           ]
         },
@@ -301,16 +297,31 @@
           "percent": 20,
           "maxAmount": 1000,
           "maxConvertible": null,
-          "wagering": null,
+          "wagering": 6,
           "wageringDays": null,
           "validityDays": 7,
           "minEvents": 3,
           "minOddsPerEvent": 1.5,
-          "usableOn": "Calcolato sulle perdite nette delle prime 4 settimane",
+          "usableOn": "20% delle perdite nette delle prime 10 settimane, fino a 100 € a settimana",
           "notes": [
-            "Valgono solo multiple giocate con saldo reale, almeno 3 eventi a quota 1,50 e quota totale almeno 4,50",
-            "Esclusi cash out, sistemi e My Combo"
+            "Valgono solo multiple pre-partita con saldo reale, almeno 3 eventi a quota 1,50; esclusi singole, live, Goal/No Goal e Over/Under",
+            "Il rimborso è in Bonus Gold da giocare 6 volte entro 7 giorni su multiple da almeno 3 eventi a quota 1,50"
           ]
+        },
+        {
+          "id": "my-combo",
+          "product": "sport",
+          "kind": "bonus-real",
+          "percent": null,
+          "maxAmount": 3,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": null,
+          "validityDays": 7,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Scommesse sportive, dopo la prima My Combo di almeno 1 €",
+          "notes": []
         },
         {
           "id": "slot",
@@ -318,15 +329,15 @@
           "kind": "bonus-deposito",
           "percent": 50,
           "maxAmount": 500,
-          "maxConvertible": 500,
+          "maxConvertible": null,
           "wagering": 45,
           "wageringDays": 5,
           "validityDays": 5,
           "minEvents": null,
           "minOddsPerEvent": null,
-          "usableOn": "Sette slot indicate nel regolamento",
+          "usableOn": "Sette slot: Pirots 2, 3 e 4, Golden Winner, Gladiatoro, Tomb of Gold, Book of Toro",
           "notes": [
-            "Il bonus convertito va usato entro 5 giorni"
+            "Fun bonus da giocare 45 volte entro 5 giorni; il bonus convertito va usato entro 5 giorni"
           ]
         }
       ]
@@ -479,22 +490,22 @@
       "title": "Bonus Benvenuto Casinò",
       "advertisedTotal": 5000,
       "minDeposit": null,
-      "depositWithinDays": null,
+      "depositWithinDays": 7,
       "requirements": [
-        "Solo per chi non ha mai avuto un conto gioco Snai; una adesione per persona e nucleo familiare"
+        "Selezione del Bonus Benvenuto Casinò in fase di registrazione (non modificabile)",
+        "Validazione del documento d'identità prima dell'accredito",
+        "Primo deposito entro 7 giorni dalla registrazione",
+        "Solo per chi non ha mai avuto un conto gioco Snai; una adesione per persona, nucleo familiare, indirizzo, IP, dispositivo, email e telefono"
       ],
       "excludedPaymentMethods": [],
       "validFrom": null,
       "validUntil": null,
       "sourceUrl": "https://www.snai.it/bonus/bonus-benvenuto/casino",
       "termsUrl": "https://www.snai.it/bonus/bonus-benvenuto/casino",
-      "verifiedAt": "2026-10-25",
-      "status": "bozza",
+      "verifiedAt": "2026-10-31",
+      "status": "approvata",
       "description": "Un bonus slot di 500 € alla registrazione, senza deposito, e un bonus slot del 100% del primo deposito fino a 4.500 €.",
-      "issues": [
-        "I termini del casinò non indicano il deposito minimo.",
-        "Date di inizio e fine dell'offerta non indicate."
-      ],
+      "issues": [],
       "components": [
         {
           "id": "senza-deposito",
@@ -508,7 +519,7 @@
           "validityDays": 2,
           "minEvents": null,
           "minOddsPerEvent": null,
-          "usableOn": "Slot indicate nel regolamento",
+          "usableOn": "Sette slot: Pirots 2, 3 e 4, Golden Winner, Gladiatoro, Tomb of Gold, Book of Toro",
           "notes": [
             "Il bonus convertito va usato entro 7 giorni"
           ]
@@ -525,8 +536,10 @@
           "validityDays": 5,
           "minEvents": null,
           "minOddsPerEvent": null,
-          "usableOn": "Sette slot indicate nel regolamento",
-          "notes": []
+          "usableOn": "Sette slot: Pirots 2, 3 e 4, Golden Winner, Gladiatoro, Tomb of Gold, Book of Toro",
+          "notes": [
+            "Erogato in 10 tranche"
+          ]
         }
       ]
     },
@@ -603,12 +616,10 @@
       "validUntil": null,
       "sourceUrl": "https://offerte.betsson.it/kyc-spid-e-cie-2000e-26-27",
       "termsUrl": "https://offerte.betsson.it/kyc-spid-e-cie-2000e-26-27",
-      "verifiedAt": "2026-10-25",
-      "status": "bozza",
+      "verifiedAt": "2026-10-31",
+      "status": "approvata",
       "description": "Fun bonus sport e casinò senza deposito, distribuiti in cinque settimane; l'importo dipende dal metodo di registrazione (CIE, SPID o documento).",
-      "issues": [
-        "Per il fun bonus casinò i termini indicano un importo extra da 80 € sia per SPID sia per CIE, mentre la tranche CIE è descritta come 180 €: da chiarire prima di pubblicare"
-      ],
+      "issues": [],
       "components": [
         {
           "id": "sport",
@@ -616,7 +627,7 @@
           "kind": "senza-deposito",
           "percent": null,
           "maxAmount": 1000,
-          "maxConvertible": null,
+          "maxConvertible": 500,
           "wagering": null,
           "wageringDays": null,
           "validityDays": 5,
@@ -624,9 +635,9 @@
           "minOddsPerEvent": 1.5,
           "usableOn": "Multiple pre-partita da almeno 20 € con almeno 8 selezioni",
           "notes": [
-            "Importo massimo con CIE (5 tranche da 200 €); 500 € con SPID, 100 € con documento",
-            "Conversione in real bonus: massimo 20 € per la tranche da 20 € e 80 € per quella da 80 € o 180 €",
-            "Il real bonus convertito vale 5 giorni su scommesse con almeno 3 selezioni a quota 1,50"
+            "Importo massimo con CIE: 5 tranche settimanali da 200 € (20 € + 180 €); 500 € con SPID (20 € + 80 € a settimana), 100 € con documento",
+            "Convertibili in real bonus al massimo 20 € per la parte da 20 € e 80 € per quella da 80 € o 180 €: con CIE fino a 100 € a settimana, 500 € in tutto",
+            "Il real bonus convertito vale 5 giorni su scommesse pre-partita con almeno 3 selezioni a quota 1,50"
           ]
         },
         {
@@ -635,7 +646,7 @@
           "kind": "senza-deposito",
           "percent": null,
           "maxAmount": 1000,
-          "maxConvertible": null,
+          "maxConvertible": 500,
           "wagering": 50,
           "wageringDays": null,
           "validityDays": 1,
@@ -643,9 +654,9 @@
           "minOddsPerEvent": null,
           "usableOn": "25 slot indicate nei termini",
           "notes": [
-            "Importo massimo con CIE (5 tranche da 200 €); 500 € con SPID, 100 € con documento",
-            "Ogni fun bonus casinò vale 24 ore",
-            "Il real bonus convertito è utilizzabile su tutti i giochi del casinò"
+            "Importo massimo con CIE: 5 tranche settimanali da 200 € (20 € + 180 €); 500 € con SPID, 100 € con documento",
+            "Convertibili al massimo 20 € per la parte da 20 € e 80 € per la parte extra: con CIE fino a 100 € a settimana. Per la parte CIE da 180 € i termini del casinò citano solo il limite di 80 € della parte SPID; applichiamo lo stesso limite",
+            "Ogni fun bonus casinò va giocato 50 volte entro 24 ore; il real bonus convertito vale su tutti i giochi del casinò"
           ]
         }
       ]
@@ -947,7 +958,7 @@
       "validFrom": null,
       "validUntil": null,
       "verifiedAt": "2026-10-29",
-      "status": "bozza",
+      "status": "approvata",
       "issues": [],
       "id": "codere-sport",
       "operatorId": "codere",
@@ -997,7 +1008,7 @@
       "validFrom": null,
       "validUntil": null,
       "verifiedAt": "2026-10-29",
-      "status": "bozza",
+      "status": "approvata",
       "issues": [],
       "id": "codere-casino",
       "operatorId": "codere",
@@ -1049,11 +1060,8 @@
       "validFrom": null,
       "validUntil": null,
       "verifiedAt": "2026-10-29",
-      "status": "bozza",
-      "issues": [
-        "L'operatore non dichiara un totale unico: advertisedTotal lasciato vuoto",
-        "Nessuna offerta di benvenuto per le scommesse sportive nella pagina promozioni di 888sport (29/10/2026)"
-      ],
+      "status": "approvata",
+      "issues": [],
       "id": "888-casino",
       "operatorId": "888",
       "operatorName": "888",
@@ -1119,8 +1127,8 @@
       ],
       "validFrom": null,
       "validUntil": null,
-      "verifiedAt": "2026-10-29",
-      "status": "bozza",
+      "verifiedAt": "2026-10-31",
+      "status": "approvata",
       "issues": [],
       "id": "admiralbet-sport",
       "operatorId": "admiralbet",
@@ -1134,20 +1142,21 @@
       "depositWithinDays": 7,
       "sourceUrl": "https://www.admiralbet.it/promozioni/bonus-scommesse",
       "termsUrl": "https://www.admiralbet.it/promozioni/bonus-scommesse",
-      "description": "Real bonus scommesse del 50% del primo deposito, fino a 5.000 €, sbloccato dopo aver giocato 6 volte il deposito. Va usato una volta entro 7 giorni.",
+      "description": "Real bonus scommesse del 50% del primo deposito, fino a 5.000 €. Si sblocca solo dopo aver giocato 6 volte il deposito su multiple da almeno 3 eventi a quota 2,00, e va poi usato una volta entro 7 giorni.",
       "components": [
         {
           "percent": 50,
           "maxConvertible": null,
-          "wagering": 1,
-          "wageringDays": null,
+          "wagering": 12,
+          "wageringDays": 15,
           "validityDays": 7,
-          "minEvents": null,
-          "minOddsPerEvent": null,
+          "minEvents": 3,
+          "minOddsPerEvent": 2.0,
           "notes": [
+            "Il bonus si sblocca giocando con saldo reale 6 volte il primo deposito (pari a 12 volte il bonus) entro 15 giorni, su biglietti con almeno 3 eventi a quota 2,00 ciascuno; esclusi sistemi, scommesse rimborsate e cash out",
+            "Una volta sbloccato va giocato una volta entro 7 giorni, su scommesse con quota totale di almeno 2,00 (esclusi i sistemi)",
             "Massimo 100 € di bonus per biglietto",
-            "Le vincite ottenute con il real bonus sono prelevabili",
-            "Per sbloccarlo servono scommesse pari a 6 volte il deposito con almeno 3 eventi a quota 2,00"
+            "Le vincite ottenute con il real bonus sono prelevabili"
           ],
           "id": "real-bonus",
           "product": "sport",
@@ -1166,13 +1175,9 @@
       "excludedPaymentMethods": [],
       "validFrom": "2025-11-17",
       "validUntil": "2026-12-31",
-      "verifiedAt": "2026-10-29",
-      "status": "bozza",
-      "issues": [
-        "La pagina elenco e il testo informativo parlano di Real Bonus, i termini di Fun Bonus: nei dati è usato il Fun Bonus dei termini",
-        "I termini non indicano il deposito minimo",
-        "\"Cap 0,4\": i termini non chiariscono se è il 40% del bonus o un altro limite di conversione"
-      ],
+      "verifiedAt": "2026-10-31",
+      "status": "approvata",
+      "issues": [],
       "id": "admiralbet-casino",
       "operatorId": "admiralbet",
       "operatorName": "AdmiralBet",
@@ -1189,7 +1194,7 @@
       "components": [
         {
           "percent": null,
-          "maxConvertible": null,
+          "maxConvertible": 2000,
           "wagering": 65,
           "wageringDays": null,
           "validityDays": 3,
@@ -1197,8 +1202,9 @@
           "minOddsPerEvent": null,
           "notes": [
             "Pari al 200% del deposito, fino a 5.000 €",
-            "Limite di conversione (\"cap\") 0,4",
-            "Il saldo convertito diventa Real Bonus Slot entro 72 ore lavorative"
+            "Convertibile al massimo il 40% del bonus (\"cap 0,4\" secondo le Regole generali dei bonus)",
+            "Il saldo convertito diventa Real Bonus Slot entro 72 ore lavorative",
+            "La pagina elenco delle promozioni lo chiama Real Bonus; i termini parlano di Fun Bonus da giocare 65 volte: valgono i termini"
           ],
           "id": "fun-bonus-slot",
           "product": "casino",
@@ -1216,11 +1222,9 @@
       "excludedPaymentMethods": [],
       "validFrom": "2025-11-19",
       "validUntil": "2026-12-31",
-      "verifiedAt": "2026-10-29",
-      "status": "bozza",
-      "issues": [
-        "Il testo informativo della pagina /promozioni indica una tranche ogni 2 giorni, i termini una ogni 24 ore: nei dati sono usati i termini"
-      ],
+      "verifiedAt": "2026-10-31",
+      "status": "approvata",
+      "issues": [],
       "id": "admiralbet-registrazione",
       "operatorId": "admiralbet",
       "operatorName": "AdmiralBet",
@@ -1237,16 +1241,16 @@
       "components": [
         {
           "percent": null,
-          "maxConvertible": null,
+          "maxConvertible": 800,
           "wagering": 100,
           "wageringDays": null,
           "validityDays": 1,
           "minEvents": null,
           "minOddsPerEvent": null,
           "notes": [
-            "2.000 € con SPID (10 tranche da 200 €), 300 € con registrazione classica (10 tranche da 30 €)",
-            "Free spin da 0,10 €: 1.000 con SPID, 300 con registrazione classica, in 10 tranche",
-            "Limite di conversione (\"cap\") 0,40; le vincite dei free spin hanno lo stesso requisito 100x"
+            "2.000 € con SPID (10 tranche da 200 €, una ogni 24 ore da riscattare in \"Le Mie Offerte\"), 300 € con registrazione classica",
+            "Free spin da 0,10 €: 1.000 con SPID, 300 con registrazione classica; le vincite hanno lo stesso requisito 100 volte",
+            "Convertibile al massimo il 40% di ogni tranche (\"cap 0,40\"): fino a 800 € sui 2.000 €"
           ],
           "id": "fun-bonus-slot",
           "product": "casino",
@@ -1266,11 +1270,9 @@
       "excludedPaymentMethods": [],
       "validFrom": null,
       "validUntil": null,
-      "verifiedAt": "2026-10-29",
-      "status": "bozza",
-      "issues": [
-        "Il deposito minimo di 10 € è indicato nella pagina dell'offerta, non nei termini"
-      ],
+      "verifiedAt": "2026-10-31",
+      "status": "approvata",
+      "issues": [],
       "id": "leovegas-casino",
       "operatorId": "leovegas",
       "operatorName": "LeoVegas",
@@ -1288,14 +1290,15 @@
         {
           "percent": 100,
           "maxConvertible": null,
-          "wagering": null,
-          "wageringDays": null,
+          "wagering": 35,
+          "wageringDays": 7,
           "validityDays": null,
           "minEvents": null,
           "minOddsPerEvent": null,
           "notes": [
             "Più 50 free spin da 0,10 € su Big Bass Bonanza, validi 3 giorni",
-            "Il bonus reale va giocato una volta prima del prelievo"
+            "Il bonus reale va giocato una volta prima del prelievo",
+            "Si sblocca giocando con il proprio saldo 35 volte il deposito (pari al bonus, essendo del 100%)"
           ],
           "id": "primo-deposito",
           "product": "casino",
@@ -1306,14 +1309,15 @@
         {
           "percent": 100,
           "maxConvertible": null,
-          "wagering": null,
-          "wageringDays": null,
+          "wagering": 35,
+          "wageringDays": 7,
           "validityDays": null,
           "minEvents": null,
           "minOddsPerEvent": null,
           "notes": [
             "Più 75 free spin da 0,10 €",
-            "Disponibile dopo aver sbloccato il bonus del primo deposito"
+            "Disponibile dopo aver sbloccato il bonus del primo deposito",
+            "Si sblocca giocando con il proprio saldo 35 volte il deposito (pari al bonus, essendo del 100%)"
           ],
           "id": "secondo-deposito",
           "product": "casino",
@@ -1324,14 +1328,15 @@
         {
           "percent": 100,
           "maxConvertible": null,
-          "wagering": null,
-          "wageringDays": null,
+          "wagering": 35,
+          "wageringDays": 7,
           "validityDays": null,
           "minEvents": null,
           "minOddsPerEvent": null,
           "notes": [
             "Più 75 free spin da 0,10 €",
-            "Disponibile dopo aver sbloccato il bonus del secondo deposito"
+            "Disponibile dopo aver sbloccato il bonus del secondo deposito",
+            "Si sblocca giocando con il proprio saldo 35 volte il deposito (pari al bonus, essendo del 100%)"
           ],
           "id": "terzo-deposito",
           "product": "casino",
@@ -1350,12 +1355,9 @@
       "excludedPaymentMethods": [],
       "validFrom": null,
       "validUntil": null,
-      "verifiedAt": "2026-10-29",
-      "status": "bozza",
-      "issues": [
-        "I termini parlano di \"quattro Bonus di Benvenuto\" ma elencano tre depositi",
-        "Il deposito minimo non è indicato nei termini"
-      ],
+      "verifiedAt": "2026-10-31",
+      "status": "approvata",
+      "issues": [],
       "id": "leovegas-casino-live",
       "operatorId": "leovegas",
       "operatorName": "LeoVegas",
@@ -1379,7 +1381,8 @@
           "minEvents": null,
           "minOddsPerEvent": null,
           "notes": [
-            "Il bonus reale sbloccato va giocato una volta sul casinò live prima del prelievo"
+            "Il bonus reale sbloccato va giocato una volta sul casinò live prima del prelievo",
+            "Contributo al requisito: giochi live 100% salvo eccezioni (blackjack 20%, baccarat 30%, roulette francese 40%), giochi da tavolo 10%, slot 0%"
           ],
           "id": "primo-deposito",
           "product": "casino",
@@ -1437,7 +1440,6 @@
       "verifiedAt": "2026-10-29",
       "status": "bozza",
       "issues": [
-        "La pagina indica sia \"fino a 2.100 €\" sia \"fino a 7.100 €\": il secondo include 5.000 € in PremiumPoints di Invita un Amico, non inseriti nei dati",
         "Offerta valida fino al 1° novembre 2026"
       ],
       "id": "lottomatica-scommesse",
@@ -1453,7 +1455,7 @@
       "depositWithinDays": 7,
       "sourceUrl": "https://www.lottomatica.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse",
       "termsUrl": "https://www.lottomatica.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse",
-      "description": "5 € di bonus sport alla convalida del conto, bonus sport del 25% del primo deposito fino a 100 € e play bonus slot del 100% fino a 2.000 € divisi tra quattro provider.",
+      "description": "5 € di bonus sport alla convalida, bonus sport del 25% del primo deposito fino a 100 € e play bonus slot del 100% fino a 2.000 € su quattro provider. Il totale di 7.100 € di alcune pagine include 5.000 € in PremiumPoints, esclusi qui.",
       "components": [
         {
           "percent": null,
@@ -1528,10 +1530,8 @@
       "validFrom": "2026-08-17",
       "validUntil": "2026-12-28",
       "verifiedAt": "2026-10-29",
-      "status": "bozza",
-      "issues": [
-        "Il totale di 10.030 € indicato dall’operatore include 5.000 € in PremiumPoints di Invita un Amico, non inseriti tra i componenti (somma dei componenti 5.030 €)"
-      ],
+      "status": "approvata",
+      "issues": [],
       "id": "lottomatica-casino",
       "operatorId": "lottomatica",
       "operatorName": "Lottomatica",
@@ -1544,7 +1544,7 @@
       "depositWithinDays": 7,
       "sourceUrl": "https://www.lottomatica.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
       "termsUrl": "https://www.lottomatica.it/bonus/bonus-di-benvenuto/bonus-benvenuto-casino",
-      "description": "Play bonus slot del 100% del primo deposito fino a 5.000 € divisi tra cinque provider, real bonus del 10% fino a 25 € sui giochi IGT e 5 € di bonus sport alla convalida.",
+      "description": "Play bonus slot del 100% del primo deposito fino a 5.000 € su cinque provider, real bonus del 10% fino a 25 € sui giochi IGT e 5 € di bonus sport. Il totale di 10.030 € dell'operatore include 5.000 € in PremiumPoints di Invita un amico, esclusi qui.",
       "components": [
         {
           "percent": null,

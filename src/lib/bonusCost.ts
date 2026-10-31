@@ -76,8 +76,9 @@ export function componentMath(c: OfferComponent): ComponentMath {
   const lines: string[] = [];
   const amount = formatEuro(c.maxAmount);
   if (c.kind === "rimborso") {
+    const losses = c.percent ? (c.maxAmount * 100) / c.percent : c.maxAmount;
     lines.push(
-      `Il rimborso restituisce una parte di quanto si perde: per ottenerlo bisogna prima perdere, e l'importo massimo di ${amount} si raggiunge solo con perdite almeno pari.`,
+      `Il rimborso restituisce una parte di quanto si perde${c.percent ? ` (il ${c.percent}%)` : ""}: per ottenerlo bisogna prima perdere, e l'importo massimo di ${amount} si raggiunge solo con perdite di almeno ${formatEuro(Math.round(losses))}.`,
     );
   } else if (volume !== null && c.wagering! > 1) {
     const dayWord = (d: number) => `${d} ${d === 1 ? "giorno" : "giorni"}`;
