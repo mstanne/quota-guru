@@ -1,8 +1,10 @@
 # Agente offerte di benvenuto – istruzioni
 
 Queste istruzioni descrivono il controllo giornaliero delle offerte di benvenuto degli operatori.
-L'agente **prepara e segnala**: non pubblica nulla. Ogni modifica entra in `src/data/offers.json` come
-`"status": "bozza"` e diventa visibile sul sito solo quando la redazione la imposta su `"approvata"`.
+L'agente **prepara e segnala**: non pubblica nulla. Lavora sul repository GitHub (ramo `main`), non sulla
+cartella locale, e consegna ogni controllo come **pull request** sul ramo `offerte/<AAAA-MM-GG>` che modifica
+solo `src/data/offers.json`. Ogni offerta cambiata entra come `"status": "bozza"` e diventa visibile sul sito
+solo quando la redazione la imposta su `"approvata"`; nulla arriva su `main` senza il merge della redazione.
 
 ## Ingressi
 
@@ -73,11 +75,22 @@ Esito validazione: <n> errori, <n> avvisi
 
 Se non ci sono novità il rapporto è una riga: `Controllo offerte – <data>: nessuna modifica.`
 
+## Pull request
+
+- Una pull request al giorno, anche se cambiano solo le date di verifica (senza merge, le offerte approvate
+  spariscono dal sito dopo 14 giorni dall'ultima verifica).
+- Titolo `Controllo offerte <gg/mm/aaaa>` se c'è qualcosa da guardare, altrimenti
+  `Controllo offerte <gg/mm/aaaa>: solo date di verifica`. Il corpo è il rapporto qui sotto.
+- Le pull request `offerte/…` dei giorni precedenti ancora aperte vengono chiuse come sostituite dalla nuova,
+  che parte da `main` aggiornato.
+- L'agente non fa merge e non tocca altri file o rami.
+
 ## Approvazione (redazione)
 
-Per pubblicare un'offerta: rileggi i dati confrontandoli con la pagina indicata in `sourceUrl`,
-risolvi o elimina le voci di `issues`, imposta `"status": "approvata"` e lancia il build
-(`npm run build` esegue `check-offers.mjs` e si ferma in caso di errori sulle offerte approvate).
+Rivedi la pull request del giorno e falla confluire in `main`. Per pubblicare un'offerta in bozza: rileggi i dati confrontandoli con la pagina indicata in `sourceUrl`,
+risolvi o elimina le voci di `issues` e imposta `"status": "approvata"`, direttamente nel ramo della pull
+request o in una successiva. Il build (`npm run build`) esegue `check-offers.mjs` e si ferma in caso di errori
+sulle offerte approvate.
 Per togliere un'offerta senza cancellarla: `"status": "ritirata"`.
 
 Un'offerta approvata sparisce automaticamente dal sito quando supera `validUntil` o quando
