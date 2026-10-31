@@ -107,7 +107,8 @@ const eurobet: OperatorData = {
   description:
     "Concessionario ADM gestito da Eurobet Italia S.r.l., con scommesse sportive pre-partita e live, casinò, slot, poker e bingo online.",
   minDeposit: "10 €",
-  withdrawalTime: "24 ore",
+  // eurobet.it/it/guide/conto-di-gioco/prelievo, 31/10/2026
+  withdrawalTime: "Entro 1 giorno lavorativo con PayPal, Skrill e Neteller; carte 2-10 giorni; bonifico istantaneo in pochi minuti",
   paymentMethods: [
     "Carte di credito/debito",
     "Postepay",
@@ -128,7 +129,7 @@ const eurobet: OperatorData = {
   ],
   pros: [
     "Deposito minimo di 10 €",
-    "Tempo di prelievo indicato in 24 ore",
+    "Prelievi con PayPal, Skrill e Neteller entro 1 giorno lavorativo, senza commissioni",
     "Dieci metodi di pagamento, tra cui PayPal, Postepay e Apple Pay",
   ],
   cons: [
@@ -270,7 +271,7 @@ const bet365: OperatorData = {
 };
 
 // Betsson, bwin and Sisal: data from the footers, promotions and help pages of the official sites, 25/10/2026.
-// Betsson's payment pages need a login: deposit, withdrawal and payment fields stay to be filled in.
+// Betsson: payment methods from support.betsson.it (31/10/2026); minimum deposit and withdrawal times need a login.
 const betsson: OperatorData = {
   id: "betsson",
   name: "Betsson",
@@ -286,7 +287,20 @@ const betsson: OperatorData = {
     "Concessionario ADM gestito da Azzurri Ltd (Malta), con scommesse sportive pre-partita e live, virtuali, casinò, casinò live, giochi di carte, bingo e ippica.",
   minDeposit: "[DEPOSITO_MINIMO]",
   withdrawalTime: "[TEMPI_PRELIEVO]",
-  paymentMethods: ["[METODO_PAGAMENTO_1]", "[METODO_PAGAMENTO_2]", "[METODO_PAGAMENTO_3]", "[METODO_PAGAMENTO_4]"],
+  paymentMethods: [
+    "Visa",
+    "Mastercard",
+    "Apple Pay / Google Pay",
+    "PayPal",
+    "Skrill",
+    "Neteller",
+    "Paysafecard",
+    "MyBank (solo depositi)",
+    "MuchBetter (solo depositi)",
+    "Neosurf (solo depositi)",
+    "Postepay (solo prelievi)",
+    "Bonifico bancario (solo prelievi)",
+  ],
   features: ["Scommesse sportive pre-partita e live", "Cash out", "Virtuali e ippica", "Casinò, casinò live, carte e bingo"],
   pros: [
     "Offerta di benvenuto sport attivabile con un primo deposito da 5 €",
