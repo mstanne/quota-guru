@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+<title>Una probabilità del 40% convertita in quota equa 2,50 e confrontata con quote di mercato</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0F1A2C"/><stop offset="1" stop-color="#0A1220"/>
+  </linearGradient>
+  <radialGradient id="glowO"><stop offset="0" stop-color="#FB6801" stop-opacity=".22"/><stop offset="1" stop-color="#FB6801" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowG"><stop offset="0" stop-color="#06BA55" stop-opacity=".18"/><stop offset="1" stop-color="#06BA55" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#EEF0F3" fill-opacity=".07"/></pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="url(#dots)"/>
+<circle cx="1330" cy="170" r="520" fill="url(#glowO)"/>
+<circle cx="260" cy="780" r="520" fill="url(#glowG)"/>
+<g font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="700">
+<rect x="150" y="190" width="600" height="520" rx="28" fill="#16243B" stroke="#2A3D59" stroke-width="2"/><text x="200" y="270" font-size="32" fill="#BECED8" text-anchor="start" font-weight="600" fill-opacity="1">Probabilità stimata</text><text x="200" y="380" font-size="110" fill="#06BA55" text-anchor="start" font-weight="700" fill-opacity="1">40%</text><line x1="200" y1="430" x2="700" y2="430" stroke="#2A3D59" stroke-width="3"/><text x="200" y="500" font-size="32" fill="#BECED8" text-anchor="start" font-weight="600" fill-opacity="1">Quota equa</text><text x="200" y="610" font-size="110" fill="#EEF0F3" text-anchor="start" font-weight="700" fill-opacity="1">2,50</text><text x="700" y="610" font-size="34" fill="#7F93AE" text-anchor="end" font-weight="600" fill-opacity="1">= 1 ÷ 0,40</text><line x1="880" y1="450" x2="1460" y2="450" stroke="#2A3D59" stroke-width="10" stroke-linecap="round"/><circle cx="1025" cy="450" r="22" fill="#7F93AE"/><text x="1024.9999999999998" y="400" font-size="40" fill="#EEF0F3" text-anchor="middle" font-weight="700" fill-opacity="1">2,30</text><circle cx="1170" cy="450" r="22" fill="#06BA55"/><text x="1170.0" y="400" font-size="40" fill="#EEF0F3" text-anchor="middle" font-weight="700" fill-opacity="1">2,50</text><circle cx="1315" cy="450" r="22" fill="#FBBF24"/><text x="1315.0" y="400" font-size="40" fill="#EEF0F3" text-anchor="middle" font-weight="700" fill-opacity="1">2,70</text><text x="880" y="540" font-size="28" fill="#7F93AE" text-anchor="start" font-weight="600" fill-opacity="1">quota di mercato</text><text x="1460" y="540" font-size="28" fill="#7F93AE" text-anchor="end" font-weight="600" fill-opacity="1">il modello può sbagliare</text><rect x="1010" y="230" width="330" height="60" rx="30.0" fill="#16243B"/><text x="1175.0" y="270.08" font-size="28" fill="#BECED8" text-anchor="middle" font-weight="700" fill-opacity="1">stessa informazione</text>
+</g>
+</svg>

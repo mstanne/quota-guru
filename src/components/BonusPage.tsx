@@ -1,4 +1,7 @@
-import { CircleAlert, FileText, Gift, Info, Phone } from "lucide-react";
+import { Calculator, CircleAlert, FileText, Gift, Info, Phone } from "lucide-react";
+import { Link } from "../lib/links";
+import { BONUS_COST_GUIDE, CASINO_RTP, SPORT_MARGIN_PER_EVENT, componentMath } from "../lib/bonusCost";
+import { offerPath } from "../lib/offerPages";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./ui/accordion";
 import { Badge } from "./ui/badge";
 import { Card } from "./ui/card";
@@ -60,6 +63,16 @@ export function BonusPage({
                   Il totale che un operatore indica per un'offerta è spesso la somma di più bonus su prodotti diversi.
                   Per ogni offerta mostriamo quanto vale ciascuna parte, dove si può usare, quante volte va giocata
                   prima di poter prelevare e entro quanti giorni.
+                </p>
+                <p className="text-slate-300 text-sm mb-3">
+                  Per ogni parte calcoliamo anche quanto bisogna giocare in totale e quanto costano in media quelle
+                  giocate, con due ipotesi dichiarate: un margine del {Math.round(SPORT_MARGIN_PER_EVENT * 100)}% per
+                  evento sulle scommesse sportive e un ritorno teorico del {Math.round(CASINO_RTP * 100)}% per le slot.
+                  Il calcolo è spiegato in{" "}
+                  <Link to={BONUS_COST_GUIDE} className="text-white underline underline-offset-2">
+                    quanto costa davvero un bonus
+                  </Link>
+                  .
                 </p>
                 <p className="text-slate-400 text-sm">
                   I dati sono ricavati dai termini pubblicati dagli operatori e riportano la data dell'ultima verifica.
@@ -243,6 +256,8 @@ function OfferCard({ offer, section, operator }: { offer: WelcomeOffer; section:
               </div>
             )}
 
+            <OfferPractice components={own} />
+
             <dl className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5 text-sm">
               <Fact label="Deposito minimo" value={offer.minDeposit !== null ? formatEuro(offer.minDeposit) : "Non indicato"} />
               <Fact
@@ -282,6 +297,14 @@ function OfferCard({ offer, section, operator }: { offer: WelcomeOffer; section:
                 label="Vai al sito"
                 className="bg-action hover:bg-action-hover text-action-foreground"
               />
+              {!isDraft && (
+                <Link
+                  to={offerPath(offer)}
+                  className="text-sm text-action-text hover:text-action-text-hover underline underline-offset-2"
+                >
+                  Condizioni spiegate
+                </Link>
+              )}
               <OfferDisclaimer
                 termsUrl={offer.termsUrl}
                 operator={offer.operatorId}
@@ -296,7 +319,7 @@ function OfferCard({ offer, section, operator }: { offer: WelcomeOffer; section:
   );
 }
 
-function Fact({ label, value }: { label: string; value: string }) {
+export function Fact({ label, value }: { label: string; value: string }) {
   return (
     <div className="bg-slate-800/60 rounded p-2">
       <dt className="text-slate-400 text-xs mb-1">{label}</dt>
@@ -306,6 +329,39 @@ function Fact({ label, value }: { label: string; value: string }) {
 }
 
 const times = (n: number | null) => (n === null ? "—" : `${n} volte`);
+
+function volumeText(c: OfferComponent) {
+  const v = componentMath(c).volume;
+  return v === null ? "—" : formatEuro(v);
+}
+
+/** "In pratica": what the conditions mean in euro, from src/lib/bonusCost.ts. Exported for the offer page. */
+export function OfferPractice({ components, className = "mt-4" }: { components: OfferComponent[]; className?: string }) {
+  const lines = components.flatMap((c) => componentMath(c).lines);
+  if (!lines.length) return null;
+  return (
+    <div className={`${className} rounded-lg border border-slate-800 bg-slate-950/40 p-4`}>
+      <h4 className="flex items-center gap-2 text-white text-sm mb-2">
+        <Calculator className="w-4 h-4 text-slate-300" aria-hidden="true" />
+        In pratica
+      </h4>
+      <ul className="space-y-1.5 text-sm text-slate-300">
+        {lines.map((l, i) => (
+          <li key={i} className="flex gap-2">
+            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" aria-hidden="true" />
+            <span>{l}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-2 text-slate-500 text-xs">
+        Medie calcolate su molte giocate: il risultato del singolo può essere migliore o peggiore.{" "}
+        <Link to={BONUS_COST_GUIDE} className="underline underline-offset-2 hover:text-slate-300">
+          Come calcoliamo
+        </Link>
+      </p>
+    </div>
+  );
+}
 
 function conditions(c: OfferComponent) {
   const parts = [c.usableOn];
@@ -318,7 +374,7 @@ function deadline(c: OfferComponent) {
   return d === null ? "—" : `${d} giorni`;
 }
 
-function ComponentTable({ components, showProduct = false }: { components: OfferComponent[]; showProduct?: boolean }) {
+export function ComponentTable({ components, showProduct = false }: { components: OfferComponent[]; showProduct?: boolean }) {
   return (
     <div className="overflow-x-auto rounded-lg border border-slate-800">
       <table className="w-full text-sm">
@@ -327,7 +383,8 @@ function ComponentTable({ components, showProduct = false }: { components: Offer
             {showProduct && <th className="p-2 font-normal">Prodotto</th>}
             <th className="p-2 font-normal">Tipo</th>
             <th className="p-2 font-normal">Importo massimo</th>
-            <th className="p-2 font-normal">Da giocare</th>
+            <th className="p-2 font-normal">Requisito</th>
+            <th className="p-2 font-normal">Giocate richieste</th>
             <th className="p-2 font-normal">Entro</th>
             <th className="p-2 font-normal">Dove si usa</th>
           </tr>
@@ -347,6 +404,7 @@ function ComponentTable({ components, showProduct = false }: { components: Offer
                 )}
               </td>
               <td className="p-2 whitespace-nowrap">{times(c.wagering)}</td>
+              <td className="p-2 whitespace-nowrap">{volumeText(c)}</td>
               <td className="p-2 whitespace-nowrap">{deadline(c)}</td>
               <td className="p-2">
                 {conditions(c)}

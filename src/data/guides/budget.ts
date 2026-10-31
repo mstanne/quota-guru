@@ -338,7 +338,7 @@ export const budgetGuides: Guide[] = [
           },
           {
             type: "p",
-            text: "Nella pagina [Bonus](/bonus) le condizioni principali di ogni offerta sono riportate in campi separati, così da confrontarle in modo oggettivo.",
+            text: "Nella pagina [Bonus](/bonus) le condizioni principali di ogni offerta sono riportate in campi separati, così da confrontarle in modo oggettivo. Quanto costa in media completare un requisito è spiegato in [quanto costa davvero un bonus](/guide/quanto-costa-un-bonus).",
           },
         ],
       },
@@ -367,6 +367,6 @@ export const budgetGuides: Guide[] = [
         a: "Perché un bonus ha sempre condizioni da rispettare, e la normativa italiana limita fortemente la comunicazione promozionale sul gioco.",
       },
     ],
-    related: ["depositi-e-prelievi", "gestione-del-budget", "calcolare-vincita-multipla-sistema"],
+    related: ["quanto-costa-un-bonus", "depositi-e-prelievi", "gestione-del-budget"],
   },
 ];

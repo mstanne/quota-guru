@@ -361,6 +361,20 @@ export function MetodologiaPage() {
           superficie.
         </li>
       </ul>
+      <h2 id="quota-equa">Quota equa</h2>
+      <p>
+        Accanto a ogni probabilità mostriamo la <strong>quota equa</strong>, cioè 1 ÷ la probabilità stimata dal
+        modello: il prezzo che avrebbe quell'esito senza il margine dell'operatore (una probabilità del 40% corrisponde
+        a una quota equa di 2,50). È un modo diverso di leggere lo stesso numero, non una quota offerta da un operatore.
+        Non indichiamo giocate "di valore": il confronto con le quote di mercato richiede che il modello sia più preciso
+        del mercato, cosa che va verificata sul{" "}
+        <a href="#calibrazione">bilancio dei pronostici passati</a>. Approfondimento:{" "}
+        <Link to="/guide/quota-equa-e-valore-atteso">quota equa e valore atteso</Link>.
+      </p>
+      <p>
+        Le offerte, i requisiti di giocata e il loro costo medio sono spiegati nella pagina{" "}
+        <Link to={paths.bonus}>offerte di benvenuto</Link>, con le ipotesi usate per i calcoli.
+      </p>
       <p>
         I pronostici non sono consigli di gioco e non garantiscono alcuna vincita. Il gioco è vietato ai minori e può
         causare dipendenza.

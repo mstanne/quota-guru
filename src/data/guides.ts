@@ -19,6 +19,7 @@ import { analisiGuides } from "./guides/analisi";
 import { budgetGuides } from "./guides/budget";
 import { sportGuides } from "./guides/sport";
 import { direttaGuides } from "./guides/diretta";
+import { academyGuides } from "./guides/academy";
 import { site } from "./site";
 import type { RouteMeta } from "../routes";
 import { isoFromItalianDate, plainText } from "../lib/schema";
@@ -48,7 +49,7 @@ export interface GuideCategory {
   slug: string;
   name: string;
   description: string;
-  icon: "book" | "calculator" | "target" | "shield" | "award" | "clock";
+  icon: "book" | "calculator" | "target" | "shield" | "award" | "clock" | "academy";
 }
 
 export interface Guide {
@@ -75,6 +76,7 @@ export const guideCategories: GuideCategory[] = [
   { slug: "gestione-del-budget", name: "Gestione del budget", icon: "shield", description: "Budget, limiti, autoesclusione, pagamenti e bonus: gli strumenti per mantenere il controllo." },
   { slug: "sport", name: "Sport specifici", icon: "award", description: "Mercati, regole e formati di calcio, tennis e basket." },
   { slug: "in-diretta", name: "Scommesse in diretta", icon: "clock", description: "Quote live, sospensioni e cash out: come funzionano e quali rischi comportano." },
+  { slug: "academy", name: "Academy", icon: "academy", description: "Quota equa e valore atteso, criterio di Kelly e i suoi limiti, varianza ed emozioni: le basi per ragionare sui numeri senza illusioni." },
 ];
 
 const coreGuides: Guide[] = [
@@ -608,6 +610,7 @@ export const guides: Guide[] = [
   ...budgetGuides,
   ...sportGuides,
   ...direttaGuides,
+  ...academyGuides,
 ].sort((a, b) => categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category));
 
 /** Related guides: the explicit list, completed with same-category guides, max 3. */
@@ -663,7 +666,7 @@ export const guideMeta = (g: Guide): RouteMeta => {
 };
 export const categoryMeta = (c: GuideCategory) => ({
   path: categoryPath(c),
-  title: `Guide: ${c.name.toLowerCase()}`,
+  title: c.slug === "academy" ? "Academy: metodo, probabilità e disciplina nelle scommesse" : `Guide: ${c.name.toLowerCase()}`,
   description: c.description,
 });
 export const guideRoutes = () => [...guides.map(guideMeta), ...guideCategories.filter((c) => guidesIn(c.slug).length).map(categoryMeta)];
