@@ -271,7 +271,7 @@ const bet365: OperatorData = {
 };
 
 // Betsson, bwin and Sisal: data from the footers, promotions and help pages of the official sites, 25/10/2026.
-// Betsson: payment methods from support.betsson.it (31/10/2026); minimum deposit and withdrawal times need a login.
+// Betsson: payment methods, minimum deposit and withdrawal times from support.betsson.it (31/10/2026).
 const betsson: OperatorData = {
   id: "betsson",
   name: "Betsson",
@@ -285,8 +285,10 @@ const betsson: OperatorData = {
   company: "Azzurri Ltd",
   description:
     "Concessionario ADM gestito da Azzurri Ltd (Malta), con scommesse sportive pre-partita e live, virtuali, casinò, casinò live, giochi di carte, bingo e ippica.",
-  minDeposit: "[DEPOSITO_MINIMO]",
-  withdrawalTime: "[TEMPI_PRELIEVO]",
+  // support.betsson.it (Depositi, Prelievi), 31/10/2026
+  minDeposit: "5 € con tutti i metodi",
+  withdrawalTime:
+    "Approvazione entro 24-48 ore lavorative, poi: portafogli elettronici e bonifico istantaneo fino a 24 ore lavorative, carta 3-4 giorni lavorativi, bonifico 6-9 giorni lavorativi",
   paymentMethods: [
     "Visa",
     "Mastercard",
@@ -309,6 +311,7 @@ const betsson: OperatorData = {
   cons: [
     "Skrill e Neteller sono esclusi dalle offerte di benvenuto",
     "Il real bonus sport non vale su scommesse live, sistemi e bet builder",
+    "Ogni prelievo viene prima approvato, entro 24-48 ore lavorative, e solo dopo accreditato",
   ],
   liveStreaming: false,
   cashOut: true,
