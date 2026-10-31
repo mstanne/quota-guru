@@ -703,7 +703,62 @@ export const operatorProfiles: Record<string, OperatorProfile> = {
   leovegas: {
     support: { channels: ["Live chat", "Email"], email: "support-it@leovegas.com" },
     apps: { ios: "https://apps.apple.com/it/app/leovegas-casino-con-soldi-veri/id1499499692" },
+    payments: [
+      {
+        method: "Skrill",
+        deposit: "10 – 10.000 €",
+        withdrawal: "20 – 10.000 €",
+        withdrawalTime: "Immediato",
+        fee: "Gratis",
+      },
+      {
+        method: "PayPal",
+        deposit: "10 – 4.000 €",
+        withdrawal: "20 – 10.000 €",
+        withdrawalTime: "Immediato",
+        fee: "Gratis",
+      },
+      {
+        method: "Visa / Mastercard",
+        deposit: "10 – 2.000 €",
+        withdrawal: "20 – 10.000 €",
+        withdrawalTime: "2-5 giorni lavorativi",
+        fee: "Gratis",
+      },
+      {
+        method: "Postepay",
+        deposit: "10 – 2.000 €",
+        withdrawal: "20 – 10.000 €",
+        withdrawalTime: "2-5 giorni lavorativi",
+        fee: "Gratis",
+      },
+      {
+        method: "Apple Pay",
+        deposit: "10 – 3.000 €",
+        withdrawal: "20 – 5.000 €",
+        withdrawalTime: "2-5 giorni lavorativi",
+        fee: "Gratis",
+      },
+      {
+        method: "Paysafecard",
+        deposit: "10 – 2.000 €",
+        withdrawal: "20 – 1.000 € (tramite bonifico)",
+        withdrawalTime: "2-5 giorni lavorativi",
+        fee: "Gratis",
+      },
+      {
+        method: "Bonifico bancario (Trustly)",
+        deposit: "—",
+        withdrawal: "20 – 50.000 €",
+        withdrawalTime: "Entro 5 giorni lavorativi",
+        fee: "Gratis",
+      },
+    ],
+    paymentNotes: [
+      "Depositi immediati e gratuiti. Si preleva con lo stesso metodo usato per depositare; chi ha depositato con carte prepagate o Paysafecard preleva solo con bonifico, dopo aver convalidato il conto.",
+    ],
     sources: [
+      { label: "Metodi di pagamento", url: "https://www.leovegas.it/metodi-di-pagamento" },
       { label: "Assistenza", url: "https://www.leovegas.it/assistenza" },
       { label: "App Store", url: "https://apps.apple.com/it/app/leovegas-casino-con-soldi-veri/id1499499692" },
     ],

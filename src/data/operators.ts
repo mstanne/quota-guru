@@ -481,11 +481,16 @@ const leovegas: OperatorData = {
   company: "LeoVegas Gaming Plc",
   description:
     "Concessionario ADM gestito da LeoVegas Gaming Plc (Malta), con casinò, casinò live e scommesse sportive.",
-  minDeposit: "[DEPOSITO_MINIMO]",
-  withdrawalTime: "[TEMPI_PRELIEVO]",
-  paymentMethods: ["Visa", "Mastercard", "Postepay", "PayPal", "Apple Pay", "Google Pay"],
+  // leovegas.it/metodi-di-pagamento, 31/10/2026
+  minDeposit: "10 €",
+  withdrawalTime: "Immediato con Skrill e PayPal; 2-5 giorni lavorativi con carte e Apple Pay; bonifico entro 5 giorni lavorativi",
+  paymentMethods: ["Visa", "Mastercard", "Postepay", "PayPal", "Skrill", "Apple Pay", "Paysafecard", "Bonifico bancario (solo prelievi)"],
   features: ["Scommesse sportive e live", "Casinò e slot", "Casinò live", "App"],
-  pros: ["Offerte di benvenuto distinte per casinò e casinò live", "Assistenza in italiano via chat ed email"],
+  pros: [
+    "Offerte di benvenuto distinte per casinò e casinò live",
+    "Prelievi immediati e gratuiti con Skrill e PayPal",
+    "Assistenza in italiano via chat ed email",
+  ],
   cons: ["Nessuna offerta di benvenuto per le scommesse sportive al 29/10/2026"],
   liveStreaming: false,
   cashOut: false,
