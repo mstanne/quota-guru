@@ -52,7 +52,9 @@ export function componentMath(c: OfferComponent): ComponentMath {
   // bonus credited in tranches (or one per provider), each with its own deadline: no single "per day" figure
   const tranches = /tranche|erogato come \d+ bonus|per provider/i.test(text);
   const volume =
-    c.wagering !== null && c.wagering > 0 && c.kind !== "rimborso" ? (c.wagering * c.maxAmount) / (share || 1) : null;
+    c.wagering !== null && c.wagering > 0 && c.kind !== "rimborso"
+      ? Math.round((c.wagering * c.maxAmount) / (share || 1))
+      : null;
   const perDay = volume !== null && days && !tranches ? volume / days : null;
   const legs = Math.max(1, c.minEvents ?? 1);
   // live casino games only ("esclusi Live Roulette" is not a live-only bonus)

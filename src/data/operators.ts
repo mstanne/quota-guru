@@ -34,6 +34,8 @@ export interface OperatorData {
   reviewUrl: string;
   /** ADM concession number, shown next to the operator (check it on the official ADM list). */
   admLicense: string;
+  /** Company holding the concession (from the operator's site footer), shown on the operator page. */
+  company?: string;
   /** Short neutral description (no promotional claims). */
   description: string;
   minDeposit: string;
@@ -101,6 +103,7 @@ const eurobet: OperatorData = {
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
   // From the footer of eurobet.it ("Eurobet Italia S.r.l. Unipersonale"), 24/10/2026: verify on the ADM list.
   admLicense: "GAD 16012",
+  company: "Eurobet Italia S.r.l. Unipersonale",
   description:
     "Concessionario ADM gestito da Eurobet Italia S.r.l., con scommesse sportive pre-partita e live, casinò, slot, poker e bingo online.",
   minDeposit: "10 €",
@@ -150,6 +153,7 @@ const goldbet: OperatorData = {
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
   // From the footer of goldbet.it ("GBO Italy S.p.A."), 24/10/2026: verify on the ADM list.
   admLicense: "GAD 16009",
+  company: "GBO Italy S.p.A.",
   description:
     "Concessionario ADM gestito da GBO Italy S.p.A., con scommesse sportive, casinò, casinò live, slot, poker, bingo, giochi di carte e lotterie online.",
   minDeposit: "10 € (carte, Postepay e PayPal)",
@@ -192,6 +196,7 @@ const planetwin365: OperatorData = {
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
   // From the footer of planetwin365.it ("PWO S.p.A."), 24/10/2026: verify on the ADM list.
   admLicense: "GAD 16007",
+  company: "PWO S.p.A.",
   description:
     "Concessionario ADM gestito da PWO S.p.A., con scommesse sportive, casinò, casinò live, slot, poker, bingo, giochi di carte e lotterie online, e una rete di punti vendita.",
   minDeposit: "10 € (carte, Postepay e PayPal)",
@@ -220,7 +225,8 @@ const planetwin365: OperatorData = {
     "Deposito minimo di 30 € con Skrill, Neteller, Rapid Transfer e Paysafecard",
     "Le vincite da bonus e promozioni possono essere pagate solo con bonifico bancario",
   ],
-  liveStreaming: false,
+  // "le emozioni della diretta streaming" on planetwin365.it/app/sport, 31/10/2026
+  liveStreaming: true,
   cashOut: true,
 };
 
@@ -236,6 +242,7 @@ const bet365: OperatorData = {
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
   // "Hillside (New Media Malta) Plc ... Concessione n° 16030": verify on the ADM list.
   admLicense: "16030",
+  company: "Hillside (New Media Malta) Plc",
   description:
     "Concessionario ADM gestito da Hillside (New Media Malta) Plc, con scommesse sportive pre-partita e live e casinò online.",
   minDeposit: "5 €",
@@ -274,6 +281,7 @@ const betsson: OperatorData = {
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
   // "Azzurri Ltd ... Titolare della concessione GAD 16027" (footer of betsson.it): verify on the ADM list.
   admLicense: "GAD 16027",
+  company: "Azzurri Ltd",
   description:
     "Concessionario ADM gestito da Azzurri Ltd (Malta), con scommesse sportive pre-partita e live, virtuali, casinò, casinò live, giochi di carte, bingo e ippica.",
   minDeposit: "[DEPOSITO_MINIMO]",
@@ -302,6 +310,7 @@ const bwin: OperatorData = {
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
   // "bwin è una piattaforma di gaming online di Eurobet Italia srl unipersonale concessione GAD 16013 (ex 15026)".
   admLicense: "GAD 16013",
+  company: "Eurobet Italia S.r.l. Unipersonale",
   description:
     "Piattaforma di gioco online di Eurobet Italia S.r.l. (concessione distinta da quella di Eurobet), con scommesse sportive, casinò, poker, bingo e giochi di carte.",
   minDeposit: "10 € (Postepay)",
@@ -343,6 +352,7 @@ const sisal: OperatorData = {
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
   // "Sisal Italia S.p.A. - Via Ugo Bassi 6, 20159 Milano - Conc. GAD: 16020" (footer of sisal.it).
   admLicense: "GAD 16020",
+  company: "Sisal Italia S.p.A.",
   description:
     "Concessionario ADM gestito da Sisal Italia S.p.A., con scommesse sportive, lotterie, casinò, casinò live, poker, giochi di carte, bingo e una rete di punti vendita.",
   minDeposit: "10 € (1 € nei punti vendita)",
@@ -379,12 +389,13 @@ const codere: OperatorData = {
   id: "codere",
   name: "Codere",
   shortName: "CO",
-  logoUrl: null,
+  logoUrl: "operators/codere.png",
   logoAlt: "Logo Codere",
   affiliateUrl: "https://www.codere.it",
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
   // "Codere.it s.r.l. - C.F. 14678721003 - P. IVA 16338101005 Conc. GAD 16018" (footer of codere.it)
   admLicense: "GAD 16018",
+  company: "Codere.it S.r.l.",
   description:
     "Concessionario ADM gestito da Codere.it S.r.l., con scommesse sportive pre-partita e live, virtuali, ippica, slot, casinò live, poker, bingo, giochi di carte e lotterie.",
   minDeposit: "[DEPOSITO_MINIMO]",
@@ -401,12 +412,13 @@ const eight88: OperatorData = {
   id: "888",
   name: "888",
   shortName: "888",
-  logoUrl: null,
+  logoUrl: "operators/888_logo.svg",
   logoAlt: "Logo 888",
   affiliateUrl: "https://sport.888casino.it",
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
   // "888 Italia Limited, società titolare della concessione ... n. 16045" (footer of sport.888casino.it)
   admLicense: "16045",
+  company: "888 Italia Limited",
   description:
     "Concessionario ADM gestito da 888 Italia Limited (Malta, gruppo Evoke), con scommesse sportive (888sport), casinò, casinò live e poker.",
   minDeposit: "[DEPOSITO_MINIMO]",
@@ -423,12 +435,13 @@ const admiralbet: OperatorData = {
   id: "admiralbet",
   name: "AdmiralBet",
   shortName: "AB",
-  logoUrl: null,
+  logoUrl: "operators/admiralbet_logo-white.svg",
   logoAlt: "Logo AdmiralBet",
   affiliateUrl: "https://www.admiralbet.it",
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
   // "Admiral Bet S.r.l., titolare della concessione GAD n. 16048" (footer of admiralbet.it)
   admLicense: "GAD 16048",
+  company: "Admiral Bet S.r.l.",
   description:
     "Concessionario ADM gestito da Admiral Bet S.r.l. (gruppo Novomatic), con scommesse sportive, virtuali, ippica, slot, casinò, casinò live, poker, bingo e lotterie, e una rete di punti vendita.",
   minDeposit: "5 € con la maggior parte dei metodi",
@@ -445,12 +458,13 @@ const leovegas: OperatorData = {
   id: "leovegas",
   name: "LeoVegas",
   shortName: "LV",
-  logoUrl: null,
+  logoUrl: "operators/leovegas_logo.svg",
   logoAlt: "Logo LeoVegas",
   affiliateUrl: "https://www.leovegas.it",
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
   // "LeoVegas Gaming Plc (P.IVA MT28686627) ... concessione numero 16019" (footer of leovegas.it)
   admLicense: "16019",
+  company: "LeoVegas Gaming Plc",
   description:
     "Concessionario ADM gestito da LeoVegas Gaming Plc (Malta), con casinò, casinò live e scommesse sportive.",
   minDeposit: "[DEPOSITO_MINIMO]",
@@ -467,12 +481,14 @@ const lottomatica: OperatorData = {
   id: "lottomatica",
   name: "Lottomatica",
   shortName: "LO",
-  logoUrl: null,
+  // Official wordmark turned white for the dark background (original colour: operators/lottomatica-logo.webp).
+  logoUrl: "operators/lottomatica-logo-white.png",
   logoAlt: "Logo Lottomatica",
   affiliateUrl: "https://www.lottomatica.it",
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
   // "Concessione GAD n° 16010. GBO Italy S.p.A." (footer of lottomatica.it); same company as Goldbet, separate concession.
   admLicense: "GAD 16010",
+  company: "GBO Italy S.p.A.",
   description:
     "Concessionario ADM gestito da GBO Italy S.p.A. (concessione distinta da quella di Goldbet), con scommesse sportive, lotterie, casinò, casinò live, poker, bingo, giochi di carte e una rete di punti vendita.",
   minDeposit: "10 € (carte, Apple Pay, Google Pay, Postepay e PayPal)",

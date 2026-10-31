@@ -20,6 +20,7 @@ import {
   type WelcomeOffer,
 } from "../data/offers";
 import { OfferDisclaimer, OperatorCta, OperatorLogo } from "./operator/OperatorUi";
+import { OffersSidebar } from "./operator/OffersSidebar";
 import { PageHeader, MetaItems } from "./layout/PageHeader";
 
 interface BonusPageProps {
@@ -50,152 +51,180 @@ export function BonusPage({
         title="Offerte di benvenuto a confronto"
         subtitle="Le condizioni delle offerte per i nuovi iscritti degli operatori autorizzati, divise per prodotto: importi reali di ogni componente, requisiti di giocata, scadenze e termini."
         breadcrumb={[{ label: "Offerte" }]}
-        meta={<MetaItems items={[`${offers.length} offerte`, `${operatorCount} operatori`, "Solo concessionari ADM"]} />}
+        meta={
+          <MetaItems items={[`${offers.length} offerte`, `${operatorCount} operatori`, "Solo concessionari ADM"]} />
+        }
       />
-      <div className="container mx-auto px-4 py-12">
-        <Card className="bg-blue-500/10 border-blue-500/20 mb-8">
-          <div className="p-6">
-            <div className="flex items-start gap-3">
-              <Info className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" aria-hidden="true" />
-              <div>
-                <h2 className="text-blue-400 text-lg mb-2">Come leggere le condizioni</h2>
-                <p className="text-slate-300 text-sm mb-3">
-                  Il totale che un operatore indica per un'offerta è spesso la somma di più bonus su prodotti diversi.
-                  Per ogni offerta mostriamo quanto vale ciascuna parte, dove si può usare, quante volte va giocata
-                  prima di poter prelevare e entro quanti giorni.
-                </p>
-                <p className="text-slate-300 text-sm mb-3">
-                  Per ogni parte calcoliamo anche quanto bisogna giocare in totale e quanto costano in media quelle
-                  giocate, con due ipotesi dichiarate: un margine del {Math.round(SPORT_MARGIN_PER_EVENT * 100)}% per
-                  evento sulle scommesse sportive e un ritorno teorico del {Math.round(CASINO_RTP * 100)}% per le slot.
-                  Il calcolo è spiegato in{" "}
-                  <Link to={BONUS_COST_GUIDE} className="text-white underline underline-offset-2">
-                    quanto costa davvero un bonus
-                  </Link>
-                  .
-                </p>
-                <p className="text-slate-400 text-sm">
-                  I dati sono ricavati dai termini pubblicati dagli operatori e riportano la data dell'ultima verifica.
-                  In caso di differenze valgono i termini sul sito dell'operatore. Un'offerta non è un motivo per
-                  giocare: gioca solo somme che puoi permetterti di perdere.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Card>
-
-        {sections.length > 1 && (
-          <nav aria-label="Sezioni" className="flex flex-wrap gap-3 mb-10">
-            {sections.map((s) => (
-              <a
-                key={s.id}
-                href={`#${s.id}`}
-                data-track="filter_use"
-                data-track-filter="bonus-section"
-                data-track-value={s.id}
-                className="px-4 py-2 rounded-md border border-slate-700 bg-slate-900 text-slate-300 hover:text-white hover:border-slate-500 text-sm"
-              >
-                {s.label}
-                <span className="ml-2 text-slate-500">{offersInSection(offers, s.id).length}</span>
-              </a>
-            ))}
-          </nav>
-        )}
-
-        {sections.map((section) => {
-          const list = offersInSection(offers, section.id);
-          return (
-            <section key={section.id} id={section.id} className="mb-14 scroll-mt-24" aria-labelledby={`h-${section.id}`}>
-              <h2 id={`h-${section.id}`} className="text-white text-2xl mb-2">
-                {section.label}
-              </h2>
-              <p className="text-slate-400 text-sm mb-6">{section.intro}</p>
-              {list.length === 0 ? (
-                <p className="text-slate-400 text-sm border border-dashed border-slate-700 rounded-lg p-6">
-                  Nessuna offerta verificata da mostrare in questo momento.
-                </p>
-              ) : (
-                <div className="grid grid-cols-1 gap-6">
-                  {list.map((offer) => (
-                    <OfferCard
-                      key={offer.id}
-                      offer={offer}
-                      section={section.id}
-                      operator={resolveOperator(offer.operatorId)}
-                    />
-                  ))}
+      <div className="container mx-auto px-4 py-12 lg:grid lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8 lg:items-start">
+        <div className="min-w-0">
+          <Card className="bg-blue-500/10 border-blue-500/20 mb-8">
+            <div className="p-6">
+              <div className="flex items-start gap-3">
+                <Info className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" aria-hidden="true" />
+                <div>
+                  <h2 className="text-blue-400 text-lg mb-2">Come leggere le condizioni</h2>
+                  <p className="text-slate-300 text-sm mb-3">
+                    Il totale che un operatore indica per un'offerta è spesso la somma di più bonus su prodotti diversi.
+                    Per ogni offerta mostriamo quanto vale ciascuna parte, dove si può usare, quante volte va giocata
+                    prima di poter prelevare e entro quanti giorni.
+                  </p>
+                  <p className="text-slate-300 text-sm mb-3">
+                    Per ogni parte calcoliamo anche quanto bisogna giocare in totale e quanto costano in media quelle
+                    giocate, con due ipotesi dichiarate: un margine del {Math.round(SPORT_MARGIN_PER_EVENT * 100)}% per
+                    evento sulle scommesse sportive e un ritorno teorico del {Math.round(CASINO_RTP * 100)}% per le
+                    slot. Il calcolo è spiegato in{" "}
+                    <Link to={BONUS_COST_GUIDE} className="text-white underline underline-offset-2">
+                      quanto costa davvero un bonus
+                    </Link>
+                    .
+                  </p>
+                  <p className="text-slate-400 text-sm">
+                    I dati sono ricavati dai termini pubblicati dagli operatori e riportano la data dell'ultima
+                    verifica. In caso di differenze valgono i termini sul sito dell'operatore. Un'offerta non è un
+                    motivo per giocare: gioca solo somme che puoi permetterti di perdere.
+                  </p>
                 </div>
-              )}
-            </section>
-          );
-        })}
-
-        <Card className="bg-slate-900 border-slate-800">
-          <div className="p-8">
-            <h2 className="text-white text-2xl mb-6">Domande frequenti</h2>
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="faq-1" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-white"><span data-faq="q">Cosa sono i requisiti di giocata?</span></AccordionTrigger>
-                <AccordionContent data-faq="a" className="text-slate-400">
-                  Indicano quante volte va giocato l'importo del bonus prima che diventi prelevabile. Un requisito di
-                  5 volte su un bonus di 100 € significa giocate per 500 €; un requisito di 40 volte su 1.000 € significa
-                  giocate per 40.000 €, spesso da completare in pochi giorni.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="faq-2" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-white"><span data-faq="q">Perché un'offerta sport contiene un bonus slot?</span></AccordionTrigger>
-                <AccordionContent data-faq="a" className="text-slate-400">
-                  Molti operatori uniscono nella stessa offerta di benvenuto bonus per prodotti diversi e ne indicano
-                  la somma. Per questo mostriamo separatamente la parte utilizzabile sulle scommesse sportive e le
-                  parti che valgono solo su altri giochi.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="faq-3" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-white"><span data-faq="q">Cosa sono le quote minime?</span></AccordionTrigger>
-                <AccordionContent data-faq="a" className="text-slate-400">
-                  Molti bonus sport valgono solo su scommesse multiple con un numero minimo di eventi, ciascuno con una
-                  quota pari o superiore a un valore minimo (ad esempio 5 eventi a quota 1,70).
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="faq-4" className="border-slate-800">
-                <AccordionTrigger className="text-white hover:text-white"><span data-faq="q">Posso usare più offerte insieme?</span></AccordionTrigger>
-                <AccordionContent data-faq="a" className="text-slate-400">
-                  In genere no: l'offerta di benvenuto si sceglie una sola volta in fase di registrazione e vale una
-                  sola volta per persona e nucleo familiare.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </Card>
-        <Card className="mt-8 bg-warn/10 border-warn/30">
-          <div className="p-6">
-            <div className="flex items-start gap-3">
-              <CircleAlert className="w-6 h-6 text-slate-300 flex-shrink-0 mt-1" aria-hidden="true" />
-              <div>
-                <h3 className="text-warn mb-2">Gioco responsabile</h3>
-                <p className="text-slate-300 text-sm mb-3">
-                  Il gioco con vincita in denaro è vietato ai minori di {rg.minAge} anni e può causare dipendenza
-                  patologica. Stabilisci un limite, non giocare mai più di quanto puoi permetterti di perdere e non
-                  inseguire le perdite.
-                </p>
-                <p className="text-slate-400 text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
-                  <Phone className="w-4 h-4 text-warn" aria-hidden="true" />
-                  {rg.helplineName} ({rg.helplineOrg}):
-                  <a href={rg.helplineHref} className="text-white underline underline-offset-2">
-                    {rg.helplineNumber}
-                  </a>
-                  · gratuito e anonimo
-                </p>
               </div>
             </div>
-          </div>
-        </Card>
+          </Card>
+
+          {sections.length > 1 && (
+            <nav aria-label="Sezioni" className="flex flex-wrap gap-3 mb-10">
+              {sections.map((s) => (
+                <a
+                  key={s.id}
+                  href={`#${s.id}`}
+                  data-track="filter_use"
+                  data-track-filter="bonus-section"
+                  data-track-value={s.id}
+                  className="px-4 py-2 rounded-md border border-slate-700 bg-slate-900 text-slate-300 hover:text-white hover:border-slate-500 text-sm"
+                >
+                  {s.label}
+                  <span className="ml-2 text-slate-500">{offersInSection(offers, s.id).length}</span>
+                </a>
+              ))}
+            </nav>
+          )}
+
+          {sections.map((section) => {
+            const list = offersInSection(offers, section.id);
+            return (
+              <section
+                key={section.id}
+                id={section.id}
+                className="mb-14 scroll-mt-24"
+                aria-labelledby={`h-${section.id}`}
+              >
+                <h2 id={`h-${section.id}`} className="text-white text-2xl mb-2">
+                  {section.label}
+                </h2>
+                <p className="text-slate-400 text-sm mb-6">{section.intro}</p>
+                {list.length === 0 ? (
+                  <p className="text-slate-400 text-sm border border-dashed border-slate-700 rounded-lg p-6">
+                    Nessuna offerta verificata da mostrare in questo momento.
+                  </p>
+                ) : (
+                  <div className="grid grid-cols-1 gap-6">
+                    {list.map((offer) => (
+                      <OfferCard
+                        key={offer.id}
+                        offer={offer}
+                        section={section.id}
+                        operator={resolveOperator(offer.operatorId)}
+                      />
+                    ))}
+                  </div>
+                )}
+              </section>
+            );
+          })}
+
+          <Card className="bg-slate-900 border-slate-800">
+            <div className="p-8">
+              <h2 className="text-white text-2xl mb-6">Domande frequenti</h2>
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem value="faq-1" className="border-slate-800">
+                  <AccordionTrigger className="text-white hover:text-white">
+                    <span data-faq="q">Cosa sono i requisiti di giocata?</span>
+                  </AccordionTrigger>
+                  <AccordionContent data-faq="a" className="text-slate-400">
+                    Indicano quante volte va giocato l'importo del bonus prima che diventi prelevabile. Un requisito di
+                    5 volte su un bonus di 100 € significa giocate per 500 €; un requisito di 40 volte su 1.000 €
+                    significa giocate per 40.000 €, spesso da completare in pochi giorni.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="faq-2" className="border-slate-800">
+                  <AccordionTrigger className="text-white hover:text-white">
+                    <span data-faq="q">Perché un'offerta sport contiene un bonus slot?</span>
+                  </AccordionTrigger>
+                  <AccordionContent data-faq="a" className="text-slate-400">
+                    Molti operatori uniscono nella stessa offerta di benvenuto bonus per prodotti diversi e ne indicano
+                    la somma. Per questo mostriamo separatamente la parte utilizzabile sulle scommesse sportive e le
+                    parti che valgono solo su altri giochi.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="faq-3" className="border-slate-800">
+                  <AccordionTrigger className="text-white hover:text-white">
+                    <span data-faq="q">Cosa sono le quote minime?</span>
+                  </AccordionTrigger>
+                  <AccordionContent data-faq="a" className="text-slate-400">
+                    Molti bonus sport valgono solo su scommesse multiple con un numero minimo di eventi, ciascuno con
+                    una quota pari o superiore a un valore minimo (ad esempio 5 eventi a quota 1,70).
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="faq-4" className="border-slate-800">
+                  <AccordionTrigger className="text-white hover:text-white">
+                    <span data-faq="q">Posso usare più offerte insieme?</span>
+                  </AccordionTrigger>
+                  <AccordionContent data-faq="a" className="text-slate-400">
+                    In genere no: l'offerta di benvenuto si sceglie una sola volta in fase di registrazione e vale una
+                    sola volta per persona e nucleo familiare.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </Card>
+          <Card className="mt-8 bg-warn/10 border-warn/30">
+            <div className="p-6">
+              <div className="flex items-start gap-3">
+                <CircleAlert className="w-6 h-6 text-slate-300 flex-shrink-0 mt-1" aria-hidden="true" />
+                <div>
+                  <h3 className="text-warn mb-2">Gioco responsabile</h3>
+                  <p className="text-slate-300 text-sm mb-3">
+                    Il gioco con vincita in denaro è vietato ai minori di {rg.minAge} anni e può causare dipendenza
+                    patologica. Stabilisci un limite, non giocare mai più di quanto puoi permetterti di perdere e non
+                    inseguire le perdite.
+                  </p>
+                  <p className="text-slate-400 text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <Phone className="w-4 h-4 text-warn" aria-hidden="true" />
+                    {rg.helplineName} ({rg.helplineOrg}):
+                    <a href={rg.helplineHref} className="text-white underline underline-offset-2">
+                      {rg.helplineNumber}
+                    </a>
+                    · gratuito e anonimo
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+        <div className="mt-10 lg:mt-0 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto rounded-xl">
+          <OffersSidebar />
+        </div>
       </div>
     </div>
   );
 }
 
-function OfferCard({ offer, section, operator }: { offer: WelcomeOffer; section: OfferProduct; operator: OperatorData }) {
+function OfferCard({
+  offer,
+  section,
+  operator,
+}: {
+  offer: WelcomeOffer;
+  section: OfferProduct;
+  operator: OperatorData;
+}) {
   const name = isPlaceholder(operator.name) ? offer.operatorName : operator.name;
   const op = { ...operator, name, logoAlt: `Logo ${name}` };
   const own = offer.components.filter((c) => c.product === section);
@@ -203,7 +232,9 @@ function OfferCard({ offer, section, operator }: { offer: WelcomeOffer; section:
   const isDraft = offer.status !== "approvata";
 
   return (
-    <Card className={`bg-slate-900 overflow-hidden ${isDraft ? "border-amber-500/60 border-dashed" : "border-slate-700"}`}>
+    <Card
+      className={`bg-slate-900 overflow-hidden ${isDraft ? "border-amber-500/60 border-dashed" : "border-slate-700"}`}
+    >
       <div className="p-6">
         {isDraft && (
           <div className="mb-4 rounded-md bg-amber-500/10 border border-amber-500/30 p-3 text-sm text-amber-200">
@@ -229,9 +260,7 @@ function OfferCard({ offer, section, operator }: { offer: WelcomeOffer; section:
               </div>
             </div>
             <div className="mt-4 bg-slate-800 border border-slate-700 rounded-lg p-4">
-              <div className="text-slate-400 text-xs mb-1">
-                Utilizzabile su {productLabels[section].toLowerCase()}
-              </div>
+              <div className="text-slate-400 text-xs mb-1">Utilizzabile su {productLabels[section].toLowerCase()}</div>
               <div className="text-white text-2xl leading-tight">fino a {formatEuro(amountFor(offer, section))}</div>
               {offer.advertisedTotal !== null && offer.advertisedTotal !== amountFor(offer, section) && (
                 <div className="text-slate-400 text-xs mt-2">
@@ -259,12 +288,22 @@ function OfferCard({ offer, section, operator }: { offer: WelcomeOffer; section:
             <OfferPractice components={own} />
 
             <dl className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5 text-sm">
-              <Fact label="Deposito minimo" value={offer.minDeposit !== null ? formatEuro(offer.minDeposit) : "Non indicato"} />
+              <Fact
+                label="Deposito minimo"
+                value={offer.minDeposit !== null ? formatEuro(offer.minDeposit) : "Non indicato"}
+              />
               <Fact
                 label="Deposito entro"
-                value={offer.depositWithinDays !== null ? `${offer.depositWithinDays} giorni dalla registrazione` : "Non indicato"}
+                value={
+                  offer.depositWithinDays !== null
+                    ? `${offer.depositWithinDays} giorni dalla registrazione`
+                    : "Non indicato"
+                }
               />
-              <Fact label="Offerta valida fino al" value={offer.validUntil ? formatDate(offer.validUntil) : "Non indicato"} />
+              <Fact
+                label="Offerta valida fino al"
+                value={offer.validUntil ? formatDate(offer.validUntil) : "Non indicato"}
+              />
               <Fact label="Condizioni verificate il" value={formatDate(offer.verifiedAt)} />
             </dl>
 
@@ -328,7 +367,7 @@ export function Fact({ label, value }: { label: string; value: string }) {
   );
 }
 
-const times = (n: number | null) => (n === null ? "—" : `${n} volte`);
+const times = (n: number | null) => (n === null ? "—" : n === 1 ? "1 volta" : `${n} volte`);
 
 function volumeText(c: OfferComponent) {
   const v = componentMath(c).volume;
@@ -336,7 +375,13 @@ function volumeText(c: OfferComponent) {
 }
 
 /** "In pratica": what the conditions mean in euro, from src/lib/bonusCost.ts. Exported for the offer page. */
-export function OfferPractice({ components, className = "mt-4" }: { components: OfferComponent[]; className?: string }) {
+export function OfferPractice({
+  components,
+  className = "mt-4",
+}: {
+  components: OfferComponent[];
+  className?: string;
+}) {
   const lines = components.flatMap((c) => componentMath(c).lines);
   if (!lines.length) return null;
   return (
@@ -365,7 +410,8 @@ export function OfferPractice({ components, className = "mt-4" }: { components: 
 
 function conditions(c: OfferComponent) {
   const parts = [c.usableOn];
-  if (c.minOddsPerEvent !== null) parts.push(`quota minima ${c.minOddsPerEvent.toFixed(2).replace(".", ",")} per evento`);
+  if (c.minOddsPerEvent !== null)
+    parts.push(`quota minima ${c.minOddsPerEvent.toFixed(2).replace(".", ",")} per evento`);
   return parts.join(" · ");
 }
 
@@ -374,7 +420,13 @@ function deadline(c: OfferComponent) {
   return d === null ? "—" : `${d} giorni`;
 }
 
-export function ComponentTable({ components, showProduct = false }: { components: OfferComponent[]; showProduct?: boolean }) {
+export function ComponentTable({
+  components,
+  showProduct = false,
+}: {
+  components: OfferComponent[];
+  showProduct?: boolean;
+}) {
   return (
     <div className="overflow-x-auto rounded-lg border border-slate-800">
       <table className="w-full text-sm">
