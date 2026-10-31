@@ -26,6 +26,10 @@ export interface OperatorProfile {
     minStake?: string;
     maxWin?: string;
   };
+  /** Per-method table, as published in the operator's payment pages. "—" = not available for that operation. */
+  payments?: { method: string; deposit: string; withdrawal: string; withdrawalTime: string; fee?: string }[];
+  /** One-line notes shown under the payments table (weekly caps, conditions). */
+  paymentNotes?: string[];
   /** Pages the data was read from. */
   sources: { label: string; url: string }[];
   /** ISO date of the check. */
@@ -208,8 +212,93 @@ export const operatorProfiles: Record<string, OperatorProfile> = {
       hours: "Live chat con operatore 9:00–24:00 tutti i giorni; assistente automatico 24 ore su 24",
       email: "info@snai.it",
     },
-    apps: { ios: "https://apps.apple.com/it/app/snai-sport-scommesse-sportive/id518361690", android: "https://www.snai.it/app/sport" },
+    apps: {
+      ios: "https://apps.apple.com/it/app/snai-sport-scommesse-sportive/id518361690",
+      android: "https://www.snai.it/app/sport",
+    },
+    payments: [
+      {
+        method: "Visa / Mastercard",
+        deposit: "10 – 10.000 €",
+        withdrawal: "10 – 5.000 €",
+        withdrawalTime: "Generalmente immediato*",
+        fee: "Gratis",
+      },
+      {
+        method: "Postepay",
+        deposit: "10 – 10.000 €",
+        withdrawal: "10 – 5.000 €",
+        withdrawalTime: "Generalmente immediato",
+        fee: "Gratis",
+      },
+      {
+        method: "Apple Pay",
+        deposit: "10 – 10.000 €",
+        withdrawal: "10 – 5.000 €",
+        withdrawalTime: "Generalmente immediato",
+        fee: "Gratis",
+      },
+      {
+        method: "PayPal",
+        deposit: "10 – 10.000 €",
+        withdrawal: "10 – 5.000 €",
+        withdrawalTime: "Generalmente immediato",
+        fee: "Gratis",
+      },
+      {
+        method: "Skrill",
+        deposit: "10 – 10.000 €",
+        withdrawal: "10 – 5.000 €",
+        withdrawalTime: "Generalmente immediato",
+        fee: "Gratis",
+      },
+      {
+        method: "Neteller",
+        deposit: "10 – 10.000 €",
+        withdrawal: "10 – 5.000 €",
+        withdrawalTime: "Generalmente immediato",
+        fee: "Gratis",
+      },
+      { method: "Paysafecard", deposit: "10 – 1.000 €", withdrawal: "—", withdrawalTime: "—" },
+      { method: "MyBank", deposit: "10 – 10.000 €", withdrawal: "—", withdrawalTime: "—" },
+      {
+        method: "Bonifico istantaneo",
+        deposit: "—",
+        withdrawal: "10 – 5.000 €",
+        withdrawalTime: "Generalmente immediato",
+        fee: "Gratis",
+      },
+      {
+        method: "Bonifico bancario",
+        deposit: "fino a 50.000 €",
+        withdrawal: "10 – 30.000 €",
+        withdrawalTime: "1-2 giorni lavorativi",
+        fee: "Gratis",
+      },
+      { method: "Punti vendita Snai", deposit: "1 – 4.999 € al giorno", withdrawal: "—", withdrawalTime: "—" },
+      {
+        method: "Istituti di pagamento",
+        deposit: "10 – 999 €",
+        withdrawal: "10 – 4.999 €",
+        withdrawalTime: "Autorizzazione generalmente immediata",
+        fee: "Gratis",
+      },
+      {
+        method: "Domiciliazione postale",
+        deposit: "—",
+        withdrawal: "10 – 6.000 €",
+        withdrawalTime: "4-5 giorni lavorativi",
+        fee: "Gratis",
+      },
+    ],
+    paymentNotes: [
+      "Ricariche: massimo 50.000 € ogni 7 giorni; nei punti vendita 999 € al giorno se il documento non è stato inviato o è scaduto.",
+      "Istituti di pagamento: massimo 999 € al giorno, 4.999 € in 7 giorni e 9.999 € in 30 giorni.",
+      "* Carte: accredito immediato se la banca aderisce ai pagamenti in tempo reale di Visa e Mastercard, altrimenti 2-3 giorni; con controlli a campione fino a 12 ore o 3-5 giorni.",
+    ],
     sources: [
+      { label: "FAQ ricariche", url: "https://www.snai.it/faq/ricariche" },
+      { label: "FAQ prelievi", url: "https://www.snai.it/faq/prelievi" },
       { label: "Contatti", url: "https://www.snai.it/contatti" },
       { label: "App sport", url: "https://www.snai.it/app/sport" },
       { label: "App Store", url: "https://apps.apple.com/it/app/snai-sport-scommesse-sportive/id518361690" },

@@ -518,12 +518,11 @@ const lottomatica: OperatorData = {
 };
 
 // Snai: footer, contacts, app and bonus pages of snai.it, 31/10/2026.
-// Payments and withdrawal times still to be read from the help pages. Logo still to be added.
 const snai: OperatorData = {
   id: "snai",
   name: "Snai",
   shortName: "SN",
-  logoUrl: null,
+  logoUrl: "operators/logo_snai.png",
   logoAlt: "Logo Snai",
   affiliateUrl: "https://www.snai.it",
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
@@ -532,12 +531,40 @@ const snai: OperatorData = {
   company: "Snaitech S.p.A.",
   description:
     "Concessionario ADM gestito da Snaitech S.p.A., con scommesse sportive pre-partita e live, ippica, virtuali, slot, casinò, casinò live, poker, giochi di carte, lotterie e bingo, e una rete di punti vendita.",
-  minDeposit: "[DEPOSITO_MINIMO]",
-  withdrawalTime: "[TEMPI_PRELIEVO]",
-  paymentMethods: ["[METODO_PAGAMENTO_1]", "[METODO_PAGAMENTO_2]", "[METODO_PAGAMENTO_3]", "[METODO_PAGAMENTO_4]"],
-  features: ["Scommesse sportive pre-partita e live", "Cash out", "Ippica e virtuali", "Casinò, casinò live e slot", "Poker, carte, lotterie e bingo"],
-  pros: ["Live chat con un operatore tutti i giorni dalle 9 alle 24, assistente automatico 24 ore su 24"],
-  cons: ["Il bonus sport di benvenuto vale solo su multiple con almeno 3 eventi a quota 1,50 ed è erogato in 5 tranche settimanali"],
+  // snai.it/faq/ricariche and snai.it/faq/prelievi, 31/10/2026
+  minDeposit: "10 € online (1 € nei punti vendita)",
+  withdrawalTime:
+    "Generalmente immediato con carta, Apple Pay, PayPal, Skrill, Neteller e bonifico istantaneo; bonifico 1-2 giorni lavorativi",
+  paymentMethods: [
+    "Visa",
+    "Mastercard",
+    "Postepay",
+    "Apple Pay",
+    "PayPal",
+    "Skrill",
+    "Neteller",
+    "Paysafecard (solo depositi)",
+    "MyBank (solo depositi)",
+    "Bonifico bancario e istantaneo",
+    "Punti vendita Snai",
+    "Istituti di pagamento",
+  ],
+  features: [
+    "Scommesse sportive pre-partita e live",
+    "Cash out",
+    "Ippica e virtuali",
+    "Casinò, casinò live e slot",
+    "Poker, carte, lotterie e bingo",
+  ],
+  pros: [
+    "Prelievi senza commissioni con tutti i metodi",
+    "Prelievi generalmente immediati con carta, PayPal, Skrill, Neteller e bonifico istantaneo",
+    "Live chat con un operatore tutti i giorni dalle 9 alle 24, assistente automatico 24 ore su 24",
+  ],
+  cons: [
+    "Il bonus sport di benvenuto vale solo su multiple con almeno 3 eventi a quota 1,50 ed è erogato in 5 tranche settimanali",
+    "Paysafecard e MyBank non sono disponibili per i prelievi",
+  ],
   liveStreaming: false,
   cashOut: true,
 };
