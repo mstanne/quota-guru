@@ -481,7 +481,8 @@ const lottomatica: OperatorData = {
   id: "lottomatica",
   name: "Lottomatica",
   shortName: "LO",
-  logoUrl: null,
+  // Official wordmark turned white for the dark background (original colour: operators/lottomatica-logo.webp).
+  logoUrl: "operators/lottomatica-logo-white.png",
   logoAlt: "Logo Lottomatica",
   affiliateUrl: "https://www.lottomatica.it",
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
