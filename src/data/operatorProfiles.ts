@@ -202,6 +202,20 @@ export const operatorProfiles: Record<string, OperatorProfile> = {
     ],
     checkedAt: CHECKED,
   },
+  snai: {
+    support: {
+      channels: ["Live chat", "Assistente automatico", "Email"],
+      hours: "Live chat con operatore 9:00–24:00 tutti i giorni; assistente automatico 24 ore su 24",
+      email: "info@snai.it",
+    },
+    apps: { ios: "https://apps.apple.com/it/app/snai-sport-scommesse-sportive/id518361690", android: "https://www.snai.it/app/sport" },
+    sources: [
+      { label: "Contatti", url: "https://www.snai.it/contatti" },
+      { label: "App sport", url: "https://www.snai.it/app/sport" },
+      { label: "App Store", url: "https://apps.apple.com/it/app/snai-sport-scommesse-sportive/id518361690" },
+    ],
+    checkedAt: CHECKED,
+  },
   codere: {
     apps: { ios: "https://apps.apple.com/it/app/360bet/id6473166933", android: "apk" },
     sources: [{ label: "Link alle app nel sito", url: "https://www.codere.it/" }],

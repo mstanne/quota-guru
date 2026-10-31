@@ -517,6 +517,31 @@ const lottomatica: OperatorData = {
   cashOut: true,
 };
 
+// Snai: footer, contacts, app and bonus pages of snai.it, 31/10/2026.
+// Payments and withdrawal times still to be read from the help pages. Logo still to be added.
+const snai: OperatorData = {
+  id: "snai",
+  name: "Snai",
+  shortName: "SN",
+  logoUrl: null,
+  logoAlt: "Logo Snai",
+  affiliateUrl: "https://www.snai.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "Snaitech S.p.a. - Socio Unico ... CONCESSIONE N°16032" (footer of snai.it): verify on the ADM list.
+  admLicense: "16032",
+  company: "Snaitech S.p.A.",
+  description:
+    "Concessionario ADM gestito da Snaitech S.p.A., con scommesse sportive pre-partita e live, ippica, virtuali, slot, casinò, casinò live, poker, giochi di carte, lotterie e bingo, e una rete di punti vendita.",
+  minDeposit: "[DEPOSITO_MINIMO]",
+  withdrawalTime: "[TEMPI_PRELIEVO]",
+  paymentMethods: ["[METODO_PAGAMENTO_1]", "[METODO_PAGAMENTO_2]", "[METODO_PAGAMENTO_3]", "[METODO_PAGAMENTO_4]"],
+  features: ["Scommesse sportive pre-partita e live", "Cash out", "Ippica e virtuali", "Casinò, casinò live e slot", "Poker, carte, lotterie e bingo"],
+  pros: ["Live chat con un operatore tutti i giorni dalle 9 alle 24, assistente automatico 24 ore su 24"],
+  cons: ["Il bonus sport di benvenuto vale solo su multiple con almeno 3 eventi a quota 1,50 ed è erogato in 5 tranche settimanali"],
+  liveStreaming: false,
+  cashOut: true,
+};
+
 /** Operators shown across the site (comparison tables, offers, bet slip). Order = display order. */
 export const operators: OperatorData[] = [
   eurobet,
@@ -526,6 +551,7 @@ export const operators: OperatorData[] = [
   betsson,
   bwin,
   sisal,
+  snai,
   lottomatica,
   admiralbet,
   codere,
