@@ -4023,58 +4023,6 @@
   "model": "claude-haiku-5-5",
   "at": "2026-10-30T22:45:18.072Z"
  },
- "fb:567339": {
-  "fingerprint": "13wlww",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Domenica 1 novembre alle 21:30 il Braga ospita il Famalicão per la 10ª giornata di Primeira Liga. In classifica il Braga è al 10° posto con 11 punti, mentre il Famalicão è all'11° con 10."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 4 partite di Primeira Liga il Braga ha ottenuto 1 pareggio e 3 sconfitte (sequenza N-P-P-P), segnando 2 gol e subendone 6. Ha perso le ultime 3 gare. In casa ha perso tutte le 2 partite disputate.",
-     "Nelle ultime 3 partite di Primeira Liga il Famalicão ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), segnando 9 gol e subendone 4. In trasferta ha vinto tutte le 2 partite disputate."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati a partita: Braga 1,0, Famalicão 1,6.",
-     "Gol subiti finora: Braga 11, Famalicão 11.",
-     "In tutte le ultime 3 partite del Famalicão sono stati segnati almeno tre gol."
-    ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Braga, nessuna per il Famalicão e 4 pareggi, con 19 gol complessivi (media di 3,8 a partita). L'ultimo incrocio, a ottobre 2026 in Taça da Liga, è terminato Braga 2-2 Famalicão."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Braga – Famalicão?",
-    "a": "Domenica 1 novembre alle 21:30, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-01T19:11:30.516Z"
- },
  "fb:567342": {
   "fingerprint": "1p3y4rk",
   "sections": [
@@ -6632,93 +6580,38 @@
   "at": "2026-11-01T20:28:12.149Z"
  },
  "nba:21718007": {
-  "fingerprint": "17sdlei",
+  "fingerprint": "1soigg",
   "sections": [
    {
-    "id": "presentazione",
+    "id": "resoconto",
     "paragraphs": [
-     "I Thunder fanno visita ai Rockets domenica 1 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
+     "I Rockets hanno battuto i Thunder 119-98. La partita si è giocata domenica 1 novembre.",
+     "All'intervallo i Rockets conducevano 62-51.",
+     "Il parziale più netto è arrivato nel 1º quarto, vinto dai Rockets 35-26."
     ],
     "bullets": []
    },
    {
-    "id": "momento",
-    "paragraphs": [
-     "I Rockets hanno un record di 5-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 121,0 punti segnati e 110,0 subiti. In casa il bilancio è 2-0.",
-     "I Thunder hanno un record di 4-1 in stagione, con una media di 108,2 punti segnati e 104,6 subiti. In trasferta il bilancio è 1-1."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
+    "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "I Rockets giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 4 gare."
+     "Punti totali: 217.",
+     "Parziali (Rockets–Thunder): 35-26, 27-25, 30-24, 27-23."
     ]
    }
   ],
   "faq": [
    {
-    "q": "A che ora si gioca Houston Rockets – Oklahoma City Thunder in Italia?",
-    "a": "Domenica 1 novembre alle 01:30."
+    "q": "Com'è finita Houston Rockets – Oklahoma City Thunder?",
+    "a": "119-98 per i Rockets."
    },
    {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T06:09:06.203Z"
- },
- "nba:21718008": {
-  "fingerprint": "tef9lw",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Domenica 1 novembre alle 21:30, ora italiana, i Magic ospitano i Celtics in una partita della regular season NBA 2026-27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "I Magic hanno un record di 2-3 in stagione, con una media di 109,8 punti segnati e 118,4 subiti. In casa il bilancio è 0-2.",
-     "I Celtics hanno un record di 4-1 in stagione, con una media di 120,8 punti segnati e 111,6 subiti."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
-    "paragraphs": [],
-    "bullets": [
-     "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 4 gare.",
-     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 4 gare."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "A che ora si gioca Orlando Magic – Boston Celtics in Italia?",
-    "a": "Domenica 1 novembre alle 21:30."
-   },
-   {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-10-31T06:09:08.050Z"
+  "at": "2026-11-01T20:50:18.364Z"
  },
  "nba:21718009": {
   "fingerprint": "1yn1p6h",
@@ -13247,20 +13140,20 @@
   "at": "2026-11-01T17:26:40.418Z"
  },
  "fb:1001601593": {
-  "fingerprint": "zm12pq",
+  "fingerprint": "1ncwbu8",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Venerdì 6 novembre alle 20:30 l'Ascoli ospita il Palermo per la 11ª giornata di Serie B. Si tratta di un incontro tra due squadre di alta classifica: l'Ascoli è terzo con 19 punti, mentre il Palermo è primo con 23."
+     "Venerdì 6 novembre alle 20:30 l'Ascoli ospita il Palermo nella 11ª giornata di Serie B. È una sfida tra squadre di alta classifica: l'Ascoli è terzo con 19 punti, il Palermo primo con 23."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie B l'Ascoli ha ottenuto 2 vittorie e 3 pareggi (sequenza N-N-V-V-N), segnando 9 gol e subendone 2. La squadra non perde da 6 partite. In casa, nella stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Serie B il Palermo ha ottenuto 4 vittorie e 1 pareggio (sequenza V-V-V-V-N), segnando 13 gol e subendone 7. La squadra non perde da 5 partite. In trasferta, nella stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte."
+     "Nelle ultime 5 partite di Serie B l'Ascoli ha ottenuto 2 vittorie e 3 pareggi (sequenza N-N-V-V-N), segnando 9 gol e subendone 2. Non perde da 6 partite. In casa, nel bilancio stagionale, conta 2 vittorie e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie B il Palermo ha ottenuto 4 vittorie e 1 pareggio (sequenza V-V-V-N-V), segnando 14 gol e subendone 7. Non perde da 6 partite. In trasferta, nel bilancio stagionale, conta 2 vittorie e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -13268,7 +13161,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Ascoli 1,6, Palermo 2,3.",
+     "Media gol segnati: Ascoli 1,6, Palermo 2,3 a partita.",
      "Gol subiti finora: Ascoli 6, Palermo 11.",
      "L'Ascoli ha la miglior difesa del torneo.",
      "Il Palermo ha il miglior attacco del torneo.",
@@ -13292,7 +13185,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:38:25.865Z"
+  "at": "2026-11-01T20:49:58.103Z"
  },
  "fb:1001601596": {
   "fingerprint": "hmsqpp",
@@ -13654,20 +13547,20 @@
   "at": "2026-11-01T19:46:38.972Z"
  },
  "fb:1001601599": {
-  "fingerprint": "fe4k68",
+  "fingerprint": "196sr47",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento domenica 8 novembre alle 19:30: il Vicenza Virtus ospita la Cremonese per la 11ª giornata di Serie B. In classifica il Vicenza Virtus è al 17° posto con 9 punti, mentre la Cremonese è all'11° posto con 12 punti."
+     "Domenica 8 novembre alle 19:30 il Vicenza Virtus ospita la Cremonese nell'11ª giornata di Serie B. In classifica il Vicenza Virtus occupa il 17° posto con 9 punti, mentre la Cremonese è all'11° posto con 12 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie B il Vicenza Virtus ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-V-P), con 6 gol fatti e 9 subiti. In casa ha perso tutte le 2 partite disputate.",
-     "Nelle ultime 5 partite di Serie B la Cremonese ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-P-V-V), con 5 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
+     "Nelle ultime 5 partite di Serie B il Vicenza Virtus ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-N-V-P-P), segnando 6 gol e subendone 10. Ha perso le ultime 2 gare. In casa ha perso tutte le 2 partite disputate.",
+     "Nelle ultime 5 partite di Serie B la Cremonese ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-P-V-V), con 5 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -13677,7 +13570,7 @@
     "bullets": [
      "Media gol segnati: Vicenza Virtus 1,3, Cremonese 1,0 a partita.",
      "Gol subiti finora: Vicenza Virtus 17, Cremonese 11.",
-     "In 4 delle ultime 5 partite del Vicenza Virtus sono stati segnati almeno tre gol.",
+     "Nelle ultime 5 partite del Vicenza Virtus, in 4 si sono segnati almeno tre gol.",
      "La Cremonese non ha subito gol in 3 delle ultime 5 partite."
     ]
    }
@@ -13688,16 +13581,16 @@
     "a": "Domenica 8 novembre alle 19:30, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
+    "q": "Dove vedo classifica e risultati?",
     "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:38:55.800Z"
+  "at": "2026-11-01T20:50:04.753Z"
  },
  "fb:1001635640": {
   "fingerprint": "17ubd19",
@@ -17566,5 +17459,145 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-01T20:28:22.844Z"
+ },
+ "fb:1001601589": {
+  "fingerprint": "pbqpzl",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il Palermo ha battuto in casa il Vicenza Virtus per 3-1. La partita, valida per la 10ª giornata di Serie B, si è giocata domenica 1 novembre; il primo tempo si era chiuso 1-1."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora il Palermo è al 1° posto con 23 punti, mentre il Vicenza Virtus è al 17° con 9. Puoi consultare la [classifica completa](/calcio/serie-b/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Palermo tornerà in campo venerdì 6 novembre alle 20:30 in trasferta contro l'Ascoli. Il Vicenza Virtus tornerà in campo domenica 8 novembre alle 19:30 in casa contro la Cremonese."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Palermo – Vicenza Virtus?",
+    "a": "3-1 (1-1 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T20:50:06.305Z"
+ },
+ "nba:21718004": {
+  "fingerprint": "1sz99nl",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Grizzlies hanno battuto i Kings 136-105. La partita si è giocata domenica 1 novembre.",
+     "All'intervallo i Grizzlies conducevano 66-55.",
+     "Il parziale più netto è arrivato nel 3º quarto, vinto dai Grizzlies 42-25."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 241.",
+     "Parziali (Grizzlies–Kings): 27-21, 39-34, 42-25, 28-25."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Memphis Grizzlies – Sacramento Kings?",
+    "a": "136-105 per i Grizzlies."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T20:50:07.625Z"
+ },
+ "nba:21718005": {
+  "fingerprint": "761glj",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Cavaliers si sono imposti sui Bucks per 136-111. La partita si è giocata domenica 1 novembre.",
+     "All'intervallo i Cavaliers guidavano 72-46.",
+     "Il parziale più netto è arrivato nel 2º quarto, vinto dai Cavaliers per 48-21."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti complessivi: 247.",
+     "Parziali (Bucks–Cavaliers): 25-24, 21-48, 30-37, 35-27."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Milwaukee Bucks – Cleveland Cavaliers?",
+    "a": "Il risultato finale è stato Bucks 111, Cavaliers 136: vittoria dei Cavaliers."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T20:50:12.341Z"
+ },
+ "nba:21718006": {
+  "fingerprint": "1rluyic",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Gli Spurs si sono imposti sui Timberwolves per 121-111. La partita si è giocata domenica 1 novembre.",
+     "All'intervallo i Timberwolves conducevano 61-60: nella ripresa gli Spurs hanno rimontato 1 punto di svantaggio.",
+     "Il parziale più netto è arrivato nel 2º quarto, vinto dai Timberwolves 33-26."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 232.",
+     "Parziali (Spurs–Timberwolves): 34-28, 26-33, 33-27, 28-23."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita San Antonio Spurs – Minnesota Timberwolves?",
+    "a": "121-111 per gli Spurs."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Le altre partite NBA sono nella pagina dei [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T20:50:17.099Z"
  }
 }
