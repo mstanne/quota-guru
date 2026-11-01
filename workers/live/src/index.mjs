@@ -28,6 +28,11 @@ const CHUNK = 10;
 const FINAL = new Set(["FT", "AET", "PEN", "AWD", "WO", "CANC", "ABD", "PST"]);
 const PLAYING = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
 
+const SCHEDULE_STEP = 3; // calendar requests per minute (the calendar is rebuilt over a few minutes)
+const PAUSE_MS = 5 * 60e3; // pause after the API's per-minute limit
+
+class RateLimit extends Error {}
+
 const day = (ms) => new Date(ms).toISOString().slice(0, 10);
 
 /** One fixture of /fixtures?ids= in the form served to the site. */
@@ -71,10 +76,26 @@ export class LiveHub {
     if (used === null) throw new Error("tetto giornaliero di richieste raggiunto");
     const base = this.env.API_BASE || "https://v3.football.api-sports.io";
     const res = await fetch(base + path, { headers: { "x-apisports-key": this.env.API_FOOTBALL_KEY } });
+    // limits reported by API-Football, shown in /stato (per minute and per day)
+    const h = (k) => res.headers.get(k);
+    await this.storage.put("apiInfo", {
+      at: new Date().toISOString(),
+      path: path.split("?")[0],
+      status: res.status,
+      minuteLimit: h("x-ratelimit-limit"),
+      minuteRemaining: h("x-ratelimit-remaining"),
+      dayLimit: h("x-ratelimit-requests-limit"),
+      dayRemaining: h("x-ratelimit-requests-remaining"),
+    });
+    if (res.status === 429) throw new RateLimit(`HTTP 429 su ${path}`);
     if (!res.ok) throw new Error(`HTTP ${res.status} su ${path}`);
     const json = await res.json();
-    const errors = json.errors && !Array.isArray(json.errors) ? Object.values(json.errors).join(" ") : "";
-    if (errors) throw new Error(errors);
+    const errors = json.errors && !Array.isArray(json.errors) ? json.errors : null;
+    if (errors && Object.keys(errors).length) {
+      const msg = Object.values(errors).join(" ");
+      if (errors.rateLimit || errors.requests) throw new RateLimit(msg);
+      throw new Error(msg);
+    }
     return json.response ?? [];
   }
 
@@ -95,24 +116,37 @@ export class LiveHub {
    */
   async schedule(now) {
     let s = await this.storage.get("schedule");
-    if (!s || now - s.at > SCHEDULE_EVERY_MS) {
-      const byId = new Map((s?.list ?? []).filter((m) => now <= m.kickoff + AFTER_MS).map((m) => [m.id, m]));
-      const add = (f) =>
-        LEAGUES.has(f.league?.id) && byId.set(f.fixture.id, { id: f.fixture.id, kickoff: Date.parse(f.fixture.date), status: f.fixture.status?.short });
-      for (const id of LEAGUES) for (const f of await this.api(`/fixtures?league=${id}&next=20`)) add(f);
-      for (const f of await this.api(`/fixtures?live=${[...LEAGUES].join("-")}`)) add(f);
-      // only what can enter the window in the next 2 days
-      const list = [...byId.values()].filter((m) => m.kickoff <= now + 2 * 86400e3);
-      s = { at: now, list };
-      await this.storage.put("schedule", s);
+    let b = await this.storage.get("build"); // calendar being rebuilt, SCHEDULE_STEP requests per minute
+    if (!b && (!s || now - s.at > SCHEDULE_EVERY_MS)) {
+      b = { todo: [...[...LEAGUES].map(String), "live"], found: [] };
     }
-    return s.list;
+    if (b) {
+      const step = b.todo.slice(0, SCHEDULE_STEP);
+      for (const item of step) {
+        const path = item === "live" ? `/fixtures?live=${[...LEAGUES].join("-")}` : `/fixtures?league=${item}&next=20`;
+        for (const f of await this.api(path))
+          if (LEAGUES.has(f.league?.id)) b.found.push({ id: f.fixture.id, kickoff: Date.parse(f.fixture.date), status: f.fixture.status?.short });
+        b.todo.shift(); // progress is kept even if a later request of this step fails
+        await this.storage.put("build", b);
+      }
+      if (!b.todo.length) {
+        const byId = new Map((s?.list ?? []).filter((m) => now <= m.kickoff + AFTER_MS).map((m) => [m.id, m]));
+        for (const m of b.found) byId.set(m.id, m);
+        // only what can enter the window in the next 2 days
+        s = { at: now, list: [...byId.values()].filter((m) => m.kickoff <= now + 2 * 86400e3) };
+        await this.storage.put("schedule", s);
+        await this.storage.delete("build");
+      }
+    }
+    return s?.list ?? [];
   }
 
   /** Every minute: the matches in the window go in a queue, processed CHUNK at a time (see alarm). */
   async refresh() {
     const now = Date.now();
     if (!this.env.API_FOOTBALL_KEY) return { ok: false, message: "API_FOOTBALL_KEY mancante" };
+    const pause = await this.storage.get("pauseUntil");
+    if (pause && now < pause) return { ok: false, at: new Date(now).toISOString(), message: `in pausa fino alle ${new Date(pause).toISOString()} (limite al minuto)` };
     const list = await this.schedule(now);
     const done = (await this.storage.get("done")) ?? {}; // fixture id → time it was seen finished
     const window = list.filter(
@@ -154,11 +188,19 @@ export class LiveHub {
     if (queue.length > CHUNK) await this.storage.setAlarm(Date.now() + 500);
   }
 
+  /** Records an error; on the API's per-minute limit, stops asking for PAUSE_MS. */
+  async failed(err) {
+    const result = { ok: false, at: new Date().toISOString(), message: String(err.message).slice(0, 200) };
+    if (err instanceof RateLimit) await this.storage.put("pauseUntil", Date.now() + PAUSE_MS);
+    await this.storage.put("last", result);
+    return result;
+  }
+
   async alarm() {
     try {
       await this.processChunk();
     } catch (err) {
-      await this.storage.put("last", { ok: false, at: new Date().toISOString(), message: String(err.message).slice(0, 200) });
+      await this.failed(err);
     }
   }
 
@@ -168,9 +210,7 @@ export class LiveHub {
       try {
         return Response.json(await this.refresh());
       } catch (err) {
-        const result = { ok: false, at: new Date().toISOString(), message: String(err.message).slice(0, 200) };
-        await this.storage.put("last", result);
-        return Response.json(result, { status: 500 });
+        return Response.json(await this.failed(err), { status: 500 });
       }
     }
     const m = url.pathname.match(/^\/match\/(\d+)$/);
@@ -183,10 +223,16 @@ export class LiveHub {
     }
     if (url.pathname === "/stato") {
       const schedule = (await this.storage.get("schedule")) ?? { list: [] };
+      const build = await this.storage.get("build");
+      const pause = await this.storage.get("pauseUntil");
       return Response.json({
         last: (await this.storage.get("last")) ?? null,
         requests: (await this.storage.get("requests")) ?? null,
         todayMatches: schedule.list.length,
+        scheduleAt: schedule.at ? new Date(schedule.at).toISOString() : null,
+        scheduleBuilding: build ? `${build.todo.length} richieste mancanti` : null,
+        pausedUntil: pause && Date.now() < pause ? new Date(pause).toISOString() : null,
+        api: (await this.storage.get("apiInfo")) ?? null,
       });
     }
     return new Response("not found", { status: 404 });
