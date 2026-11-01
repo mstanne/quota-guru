@@ -1,7 +1,7 @@
 // Fills the permanent archive (data/archivio/, see scripts/archive-data.mjs) with past seasons, a small block at a
 // time, from API-Sports (Pro plan).
 //
-// Football: for every competition on the site, the current season (matches played before the archive existed) and
+// Football: for every competition on the site, the current season (matches older than 3 days) and
 // the ARCHIVE_SEASONS before it (default 3): first the list of finished matches (1 request per season), then the
 // matches with all their details, 20 per request (/fixtures?ids=…: result, scorers, cards, substitutions, line-ups,
 // statistics, ratings). Most recent seasons first, Serie A first.
@@ -62,8 +62,8 @@ async function football(api, progress, budget) {
     if (!p.ids) {
       budget.left--;
       const list = await api.get(`/fixtures?league=${c.api}&season=${y}`);
-      // the current season: only matches played before the site's own archive covers them (older than 45 days)
-      const limit = current ? Date.now() - 45 * 86400e3 : Infinity;
+      // the current season: matches older than 3 days (the recent ones get their details from fetch-match-details.mjs)
+      const limit = current ? Date.now() - 3 * 86400e3 : Infinity;
       p.ids = list.filter((f) => FINAL.has(f.fixture?.status?.short) && Date.parse(f.fixture.date) < limit).map((f) => f.fixture.id);
       if (!p.ids.length) {
         p.complete = true;

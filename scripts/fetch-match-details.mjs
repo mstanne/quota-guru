@@ -415,6 +415,12 @@ store.football ??= {};
 store.nba ??= {};
 store.blocked ??= {};
 store.allowed ??= {}; // seasons the plan covers, learnt from its error messages
+// Pro plan from November 2026: forget the pauses and season limits learnt on the free plan (once)
+if (store.plan !== "pro") {
+  store.blocked = {};
+  store.allowed = {};
+  store.plan = "pro";
+}
 // pauses saved by the previous version of this script (one per sport) are dropped: steps now pause on their own
 for (const k of Object.keys(store.blocked)) if (!k.includes(":")) delete store.blocked[k];
 const seasons = readJson(SEASONS_STORE, {});

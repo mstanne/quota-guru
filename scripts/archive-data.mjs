@@ -259,6 +259,23 @@ async function main() {
     }
   }
 
+  // the archive feeds the site: matches still on the site without details get them from the archive
+  // (e.g. matches played before the Pro plan, filled in by scripts/backfill-archive.mjs)
+  const detFile = path.join(root, "src", "data", "football-details.json");
+  let filled = 0;
+  for (const c of football?.competitions ?? [])
+    for (const m of c.matches ?? []) {
+      if (!FINAL.has(m.status) || fDetails[m.id]) continue;
+      const a = readJson(monthFile(path.join(ARCHIVE, "calcio", c.slug), seasonOf(m.utcDate, c.code), m.utcDate), null)?.matches?.[m.id];
+      if (!a?.timeline) continue;
+      fDetails[m.id] = { fixture: a.apiId, venue: a.venue ?? null, city: null, referee: a.referee ?? null, timeline: a.timeline, lineups: a.lineups, stats: a.stats, top: a.top ?? null };
+      filled++;
+    }
+  if (filled) {
+    writeJson(detFile, fDetails);
+    console.log(`Dettagli dall'archivio per ${filled} partite ancora sul sito.`);
+  }
+
   // logos: the site's own copy
   const stats = { failed: 0 };
   if (football) writeJson(path.join(root, "src", "data", "football.json"), await localLogos(football, stats));
