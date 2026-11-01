@@ -1,19 +1,17 @@
 {
-  "updatedAt": "2026-11-01T18:38:02.048Z",
+  "updatedAt": "2026-11-01T18:51:28.314Z",
   "football": {
     "details": {
-      "ok": false,
-      "message": "piano: Free plans do not have access to this season, try from 2022 to 2024."
+      "ok": true
     },
     "seasons": {
-      "ok": false,
-      "message": "piano: Free plans are limited to a maximum value of 3 for the Page parameter"
+      "ok": true
     },
-    "ok": false,
-    "requests": 0,
-    "remainingToday": null,
-    "matches": 0,
-    "teamSeasons": 0
+    "ok": true,
+    "requests": 1922,
+    "remainingToday": 5508,
+    "matches": 78,
+    "teamSeasons": 588
   },
   "nba": {
     "details": {
@@ -23,13 +21,13 @@
       "ok": true
     },
     "ok": true,
-    "requests": 17,
-    "remainingToday": 7419,
+    "requests": 107,
+    "remainingToday": 7411,
     "games": 12,
-    "teamSeasons": 0
+    "teamSeasons": 60
   },
   "calendarioCalcio": {
-    "updatedAt": "2026-11-01T18:35:53.844Z",
+    "updatedAt": "2026-11-01T18:49:35.000Z",
     "source": "API-Football",
     "ok": true,
     "competitions": {
@@ -86,15 +84,15 @@
         "matches": 73
       }
     },
-    "requests": 188,
-    "remainingToday": 7333
+    "requests": 119,
+    "remainingToday": 7288
   },
   "calendarioNba": {
-    "updatedAt": "2026-11-01T18:36:42.378Z",
+    "updatedAt": "2026-11-01T18:50:07.801Z",
     "source": "API-NBA",
     "ok": true,
     "games": 189,
-    "requests": 2,
-    "remainingToday": 7434
+    "requests": 1,
+    "remainingToday": 7416
   }
 }

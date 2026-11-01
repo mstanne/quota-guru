@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-01T18:40:09.488Z",
+ "generatedAt": "2026-11-01T19:04:01.461Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558547": {
@@ -2678,6 +2678,565 @@
     }
    ]
   },
+  "fb:1001636399": {
+   "fingerprint": "1s27vrc",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 5 novembre alle 18:45 il Bodø/Glimt ospita l'Inter Club d'Escaldes per la 3ª giornata della fase a campionato di Conference League. In classifica il Bodø/Glimt è al 22° posto con 1 punto, mentre l'Inter Club d'Escaldes è al 35° con 0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League il Bodø/Glimt ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 4 gol e subendone 5.",
+      "Nelle ultime 2 partite di Conference League l'Inter Club d'Escaldes ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 5. Ha perso entrambe le ultime partite."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Bodø/Glimt – Inter Club d'Escaldes?",
+     "a": "Giovedì 5 novembre alle 18:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636444": {
+   "fingerprint": "1yakzyp",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Lincoln Red Imps FC e HNK Hajduk Split si affrontano giovedì 5 novembre alle 18:45 per la 3ª giornata della fase a campionato di Conference League. In classifica il Lincoln Red Imps FC è al 33° posto con 0 punti, mentre l'HNK Hajduk Split è all'8° con 6."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League il Lincoln Red Imps FC ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 6 subiti. Ha perso le ultime 2.",
+      "Nelle ultime 2 partite di Conference League l'HNK Hajduk Split ha raccolto 2 vittorie (sequenza V-V), con 3 gol fatti e 1 subito."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Lincoln Red Imps FC – HNK Hajduk Split?",
+     "a": "Giovedì 5 novembre alle 18:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636476": {
+   "fingerprint": "1p4fmh0",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 5 novembre alle 18:45 il Trabzonspor ospita il Freiburg per la 3ª giornata della fase a campionato di Conference League. In classifica il Trabzonspor è al 4° posto con 6 punti, il Freiburg al 18° con 3."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League il Trabzonspor ha raccolto 2 vittorie (sequenza V-V), con 6 gol fatti e 2 subiti.",
+      "Nelle ultime 2 partite di Conference League il Freiburg ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 3 gol fatti e 5 subiti."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Trabzonspor – Freiburg?",
+     "a": "Giovedì 5 novembre alle 18:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Conference League](/calcio/conference-league) e la [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636473": {
+   "fingerprint": "1m4ojr2",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Il FC Thun e l'Heart Of Midlothian si affrontano giovedì 5 novembre alle 18:45 per la 3ª giornata della fase a campionato di Conference League. In classifica il FC Thun è al 32° posto con 0 punti, mentre l'Heart Of Midlothian è al 28° con 1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League il FC Thun ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 2 subiti. Ha perso entrambe le ultime partite.",
+      "Nelle ultime 2 partite di Conference League l'Heart Of Midlothian ha raccolto 1 pareggio e 1 sconfitta (sequenza N-P), con 1 gol fatto e 3 subiti."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca FC Thun – Heart Of Midlothian?",
+     "a": "Giovedì 5 novembre alle 18:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636439": {
+   "fingerprint": "nw0qs4",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "KuPS e Gent si affrontano giovedì 5 novembre alle 18:45 per la 3ª giornata della fase a campionato di Conference League. In classifica il KuPS è al 34° posto con 0 punti, il Gent al 17° con 3."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League il KuPS ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 6 subiti. Ha perso le ultime 2.",
+      "Nelle ultime 2 partite di Conference League il Gent ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 1 gol fatto e 2 subiti."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca KuPS – Gent?",
+     "a": "Giovedì 5 novembre alle 18:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636452": {
+   "fingerprint": "148udh1",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Mjallby AIF e Borac Banja Luka si affrontano giovedì 5 novembre alle 18:45 per la 3ª giornata della fase a campionato di Conference League. In classifica il Mjallby AIF è al 12° posto con 4 punti, mentre il Borac Banja Luka è al 14° con 3."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League il Mjallby AIF ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 3 gol e subendone 1.",
+      "Nelle ultime 2 partite di Conference League il Borac Banja Luka ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 3 gol e subendone 2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Mjallby AIF – Borac Banja Luka?",
+     "a": "Giovedì 5 novembre alle 18:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636456": {
+   "fingerprint": "vbc9ba",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento giovedì 5 novembre alle 21:00: il Monaco ospita il FC Nordsjaelland per la 3ª giornata della fase a campionato di Conference League. In classifica il Monaco è 6° con 6 punti, mentre il FC Nordsjaelland è 19° con 2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League il Monaco ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 1.",
+      "Nelle ultime 2 partite di Conference League il FC Nordsjaelland ha ottenuto 2 pareggi (sequenza N-N), segnando 3 gol e subendone 3."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Monaco – FC Nordsjaelland?",
+     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636408": {
+   "fingerprint": "fwane6",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 5 novembre alle 21:00 il FC Copenhagen ospita il FC Iberia 1999 per la 3ª giornata della fase a campionato di Conference League. In classifica il FC Copenhagen è al 10° posto con 4 punti, mentre il FC Iberia 1999 è al 29° con 1 punto."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League, il FC Copenhagen ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 5 gol e subendone 2.",
+      "Nelle ultime 2 partite di Conference League, il FC Iberia 1999 ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 1 gol e subendone 3."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca FC Copenhagen – FC Iberia 1999?",
+     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636478": {
+   "fingerprint": "1sx5zx1",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 5 novembre alle 21:00 il Twente ospita il Pafos per la 3ª giornata della fase a campionato di Conference League. In classifica il Twente è al 5° posto con 6 punti, il Pafos al 27° con 1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League il Twente ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 1.",
+      "Nelle ultime 2 partite di Conference League il Pafos ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 2 gol e subendone 4."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Twente – Pafos?",
+     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636416": {
+   "fingerprint": "7kkmz6",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento giovedì 5 novembre alle 21:00: il Getafe riceve il Brighton per la 3ª giornata della fase a campionato di Conference League. In classifica il Getafe è al 30° posto con 1 punto, il Brighton al 9° con 4."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League il Getafe ha raccolto 1 pareggio e 1 sconfitta (sequenza N-P), con 3 gol fatti e 6 subiti.",
+      "Nelle ultime 2 partite di Conference League il Brighton ha raccolto 1 vittoria e 1 pareggio (sequenza V-N), con 4 gol fatti e 0 subiti."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Getafe – Brighton?",
+     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636447": {
+   "fingerprint": "ot6u4f",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 5 novembre alle 21:00 il FC Lugano ospita il Kauno Žalgiris per la 3ª giornata della fase a campionato di Conference League. In classifica il FC Lugano è al 2° posto con 6 punti, il Kauno Žalgiris al 36° con 0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League il FC Lugano ha raccolto 2 vittorie (sequenza V-V), con 8 gol fatti e 4 subiti.",
+      "Nelle ultime 2 partite di Conference League il Kauno Žalgiris ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 8 subiti. Ha perso le ultime 2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca FC Lugano – Kauno Žalgiris?",
+     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636465": {
+   "fingerprint": "17t0ggp",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Il Panathinaikos ospita il CSKA Sofia giovedì 5 novembre alle 21:00, nell'ambito della 3ª giornata della fase a campionato di Conference League. In classifica il Panathinaikos è al 1° posto con 6 punti, mentre il CSKA Sofia è al 23° con 1 punto."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League il Panathinaikos ha ottenuto 2 vittorie (sequenza V-V), segnando 7 gol e subendone 2.",
+      "Nelle ultime 2 partite di Conference League il CSKA Sofia ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 3 gol e subendone 4."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Panathinaikos – CSKA Sofia?",
+     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636483": {
+   "fingerprint": "mswawr",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "L'Universitatea Craiova e l'Egnatia Rrogozhinë si affrontano giovedì 5 novembre alle 21:00 per la 3ª giornata della fase a campionato di Conference League. In classifica l'Universitatea Craiova è all'11° posto con 4 punti, mentre l'Egnatia Rrogozhinë è al 20° con 2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League l'Universitatea Craiova ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 4 gol fatti e 2 subiti.",
+      "Nelle ultime 2 partite di Conference League l'Egnatia Rrogozhinë ha raccolto 2 pareggi (sequenza N-N), con 2 gol fatti e 2 subiti."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Universitatea Craiova – Egnatia Rrogozhinë?",
+     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636469": {
+   "fingerprint": "1dll536",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 5 novembre alle 21:00 lo St. Truiden ospita il Brann per la 3ª giornata della fase a campionato di Conference League. Le due squadre sono a pari punti, con 6 punti ciascuna."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League lo St. Truiden ha ottenuto 2 vittorie (sequenza V-V), segnando 3 gol e non subendone nessuno.",
+      "Nelle ultime 2 partite di Conference League il Brann ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca St. Truiden – Brann?",
+     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001636466": {
+   "fingerprint": "7109dd",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 5 novembre alle 21:00 il Riga ospita il FK Jablonec per la 3ª giornata della fase a campionato di Conference League. In classifica il Riga è al 21° posto con 2 punti, il FK Jablonec al 24° con 1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Conference League il Riga ha raccolto 2 pareggi (sequenza N-N), con 2 gol fatti e 2 subiti.",
+      "Nelle ultime 2 partite di Conference League il FK Jablonec ha raccolto 1 pareggio e 1 sconfitta (sequenza P-N), con 2 gol fatti e 3 subiti."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Riga – FK Jablonec?",
+     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001557455": {
+   "fingerprint": "migv11",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Lunedì 2 novembre alle 21:00 il Newcastle ospita l'Everton per la 9ª giornata di Premier League. In classifica il Newcastle occupa il 12° posto con 11 punti, mentre l'Everton è al 14° con 10."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di Premier League il Newcastle ha ottenuto 2 vittorie e 2 sconfitte, con sequenza V-P-P-V, segnando 5 gol e subendone 6. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 4 partite di Premier League l'Everton ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con sequenza V-N-P-P, segnando 3 gol e subendone 6. Ha perso le ultime 2 gare. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Newcastle 1,5, Everton 1,0.",
+      "Gol subiti finora: Newcastle 14, Everton 9."
+     ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il Newcastle ha vinto 1 volta, l'Everton 4 volte e non ci sono stati pareggi. In totale sono stati segnati 19 gol, con una media di 3,8 a partita. L'ultimo incrocio, disputato a ottobre 2026 in League Cup, è terminato Everton 3-1 Newcastle."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Newcastle – Everton?",
+     "a": "Lunedì 2 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:560634": {
    "fingerprint": "18u561k",
    "sections": [
@@ -2763,6 +3322,136 @@
     }
    ]
   },
+  "fb:1001557461": {
+   "fingerprint": "1jgiv4e",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Fulham e Newcastle si affrontano sabato 7 novembre alle 16:00 per la 10ª giornata di Premier League. In classifica il Fulham è al 15° posto con 9 punti, il Newcastle al 12° con 11."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Premier League il Fulham ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-P-V-V-N), con 5 gol fatti e 4 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 4 partite di Premier League il Newcastle ha raccolto 2 vittorie e 2 sconfitte (sequenza V-P-P-V), con 5 gol fatti e 6 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Fulham 1,0, Newcastle 1,5 a partita.",
+      "Gol subiti finora: Fulham 11, Newcastle 14."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Fulham – Newcastle?",
+     "a": "Sabato 7 novembre alle 16:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:560640": {
+   "fingerprint": "3qkf8i",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 7 novembre alle 16:00 l'Arsenal ospita l'Hull City nella 10ª giornata di Premier League. In classifica l'Arsenal occupa il 2° posto con 21 punti, mentre l'Hull City è al 10° con 11."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Premier League l'Arsenal ha ottenuto 4 vittorie e 1 sconfitta, con sequenza P-V-V-V-V, segnando 6 gol e subendone 4. Arriva da 4 vittorie consecutive. In casa ha vinto entrambe le partite disputate.",
+      "Nelle ultime 5 partite di Premier League l'Hull City ha raccolto 3 pareggi e 2 sconfitte, con sequenza P-N-P-N-N, segnando 6 gol e subendone 8. In trasferta ha perso entrambe le partite disputate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Arsenal 1,6, Hull City 1,2 a partita.",
+      "Gol subiti finora: Arsenal 5, Hull City 10.",
+      "L'Arsenal ha la miglior difesa del torneo.",
+      "L'Arsenal non ha subito gol in 3 delle ultime 5 partite.",
+      "In 3 delle ultime 5 partite dell'Hull City sono stati segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Arsenal – Hull City?",
+     "a": "Sabato 7 novembre alle 16:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Le spiegazioni si trovano nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:560641": {
+   "fingerprint": "10mja5m",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Nottingham Forest e Manchester City si affrontano sabato 7 novembre alle 18:30 per la 10ª giornata di Premier League. In classifica il Nottingham Forest è al 19° posto con 6 punti, mentre il Manchester City è al 1° con 21."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Premier League il Nottingham Forest ha ottenuto 1 pareggio e 4 sconfitte (sequenza P-P-P-N-P), con 2 gol fatti e 8 subiti. In casa ha perso tutte le 2 partite disputate.",
+      "Nelle ultime 5 partite di Premier League il Manchester City ha ottenuto 3 vittorie e 2 sconfitte (sequenza V-V-V-P-P), con 12 gol fatti e 8 subiti. Ha perso le ultime 2. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Nottingham Forest 0,7, Manchester City 2,2.",
+      "Gol subiti finora: Nottingham Forest 12, Manchester City 10.",
+      "In 4 delle ultime 5 partite del Manchester City si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Nottingham Forest – Manchester City?",
+     "a": "Sabato 7 novembre alle 18:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:560638": {
    "fingerprint": "17cbju0",
    "sections": [
@@ -2800,6 +3489,48 @@
     },
     {
      "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:560635": {
+   "fingerprint": "frfsql",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 8 novembre alle 15:00 il Crystal Palace ospita il Liverpool, per la 10ª giornata di Premier League. In classifica il Crystal Palace occupa il 18° posto con 7 punti, mentre il Liverpool è al 5° con 15."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Premier League il Crystal Palace ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza N-V-P-P-P), segnando 3 gol e subendone 10. Ha perso le ultime 3. In casa, in stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 5 partite di Premier League il Liverpool ha raccolto 3 vittorie e 2 sconfitte (sequenza V-P-V-V-P), con 5 gol fatti e 5 subiti. In trasferta ha vinto tutte le 2 partite giocate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Crystal Palace 1,0, Liverpool 1,4.",
+      "Gol subiti finora: Crystal Palace 21, Liverpool 8."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Crystal Palace – Liverpool?",
+     "a": "Domenica 8 novembre alle 15:00, ora italiana."
+    },
+    {
+     "q": "Dove si possono consultare classifica e risultati?",
      "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
@@ -2937,6 +3668,106 @@
     }
    ]
   },
+  "fb:564729": {
+   "fingerprint": "g130xt",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 1 novembre alle 21:00 l'Athletic ospita il Real Sociedad per la 11ª giornata di LaLiga. In classifica l'Athletic occupa il 7° posto con 12 punti, il Real Sociedad il 5° con 19."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di LaLiga l'Athletic ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza N-N-P-V), segnando 5 gol e subendone 3. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 4 partite di LaLiga il Real Sociedad ha conquistato 4 vittorie (sequenza V-V-V-V), con 13 gol fatti e 7 subiti. Arriva da 4 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Athletic 1,3, Real Sociedad 1,9.",
+      "Gol subiti finora: Athletic 9, Real Sociedad 18.",
+      "L'Athletic non ha subito gol in 3 delle ultime 4 partite.",
+      "In tutte le ultime 4 partite del Real Sociedad si sono segnati almeno tre gol."
+     ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per l'Athletic, 3 per il Real Sociedad e 1 pareggio, con 10 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, disputato a ottobre 2026 in Friendlies Clubs, si è concluso Real Sociedad 0-1 Athletic."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Athletic – Real Sociedad?",
+     "a": "Domenica 1 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove trovo classifica e risultati?",
+     "a": "Puoi consultare la pagina [LaLiga](/calcio/liga) e la [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:564731": {
+   "fingerprint": "zbz3ir",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Lunedì 2 novembre alle 21:00 il Deportivo riceve l'Osasuna per la 11ª giornata di LaLiga. Le due squadre sono appaiate a 11 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di LaLiga il Deportivo ha raccolto 2 pareggi e 2 sconfitte (sequenza N-P-N-P), con 4 gol fatti e 6 subiti. In casa il bilancio stagionale è di 2 pareggi, ancora senza vittorie.",
+      "Nelle ultime 4 partite di LaLiga l'Osasuna ha raccolto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-V-P), con 5 gol fatti e 8 subiti. In trasferta ha perso tutte le 2 partite giocate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Deportivo 1,3, Osasuna 1,0 a partita.",
+      "Gol subiti finora: Deportivo 13, Osasuna 20."
+     ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Deportivo, 2 vittorie per l'Osasuna e 1 pareggio, con 14 gol complessivi (media di 2,8 a partita). L'ultimo incrocio, a dicembre 2021 in Copa del Rey, è finito Deportivo 1-2 Osasuna."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Deportivo – Osasuna?",
+     "a": "Lunedì 2 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:564740": {
    "fingerprint": "dolktr",
    "sections": [
@@ -2974,6 +3805,49 @@
     {
      "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:564744": {
+   "fingerprint": "1x3qlrv",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Málaga e Santander si affrontano sabato 7 novembre alle 14:00, per la 12ª giornata di LaLiga. In classifica il Málaga occupa il 20° posto con 5 punti, mentre il Santander è al 16° posto con 11 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di LaLiga il Málaga ha ottenuto 2 pareggi e 3 sconfitte, con la sequenza P-N-P-N-P. Ha segnato 5 gol e ne ha subiti 10. In casa, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza vittorie.",
+      "Nelle ultime 5 partite di LaLiga il Santander ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza P-N-P-V-P. Ha segnato 4 gol e ne ha subiti 13. In trasferta ha perso tutte le 2 partite giocate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Málaga 0,7, Santander 1,4.",
+      "Gol subiti finora: Málaga 21, Santander 29.",
+      "In 4 delle ultime 5 partite del Santander sono stati segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Málaga – Santander?",
+     "a": "Sabato 7 novembre alle 14:00, ora italiana."
+    },
+    {
+     "q": "Dove posso vedere classifica e risultati?",
+     "a": "Nella pagina di [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -3059,6 +3933,50 @@
     {
      "q": "Dove vedo classifica e risultati?",
      "a": "Puoi consultarli nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:564741": {
+   "fingerprint": "esmdsy",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Valencia e Real Madrid si affrontano sabato 7 novembre alle 21:00 per la 12ª giornata di LaLiga. In classifica il Valencia occupa il 19° posto con 6 punti, mentre il Real Madrid è al 3° con 27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di LaLiga il Valencia ha ottenuto 2 pareggi e 2 sconfitte (sequenza P-N-N-P), con 5 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie.",
+      "Nelle ultime 5 partite di LaLiga il Real Madrid ha ottenuto 4 vittorie e 1 sconfitta (sequenza P-V-V-V-V), con 11 gol fatti e 4 subiti. Arriva da 4 vittorie consecutive. In trasferta il bilancio stagionale è di 2 vittorie e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Valencia 0,7, Real Madrid 2,5 a partita.",
+      "Gol subiti finora: Valencia 17, Real Madrid 10.",
+      "Nelle 4 ultime partite del Valencia si sono segnati almeno tre gol in 3 occasioni.",
+      "Nelle 5 ultime partite del Real Madrid si sono segnati almeno tre gol in 4 occasioni."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Valencia – Real Madrid?",
+     "a": "Sabato 7 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -3241,6 +4159,96 @@
     }
    ]
   },
+  "fb:1001570443": {
+   "fingerprint": "xqbvs3",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Atlético Madrid e Barcelona si affrontano domenica 8 novembre alle 21:00, nella 12ª giornata di LaLiga. Il match mette di fronte due squadre ai vertici della classifica: l'Atlético Madrid è al 2° posto con 28 punti, mentre il Barcelona guida la graduatoria con 30 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di LaLiga, l'Atlético Madrid ha ottenuto 5 vittorie (sequenza V-V-V-V-V), segnando 8 gol e subendone 2. La squadra arriva da 5 vittorie consecutive. Giocando in casa, ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 5 partite di LaLiga, il Barcelona ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-V-V-P-V), segnando 18 gol e subendone 6. In trasferta ha vinto tutte le 2 partite disputate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Atlético Madrid 2,0, Barcelona 4,2 a partita.",
+      "Gol subiti finora: Atlético Madrid 8, Barcelona 12.",
+      "L'Atlético Madrid ha la miglior difesa del torneo.",
+      "Il Barcelona ha il miglior attacco del torneo.",
+      "L'Atlético Madrid non ha subito gol in 3 delle ultime 5 partite.",
+      "Nelle ultime 5 partite del Barcelona si sono segnati almeno tre gol in ciascuna gara."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Atlético Madrid – Barcelona?",
+     "a": "Domenica 8 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina di [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:565852": {
+   "fingerprint": "qcyfjj",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Venerdì 6 novembre alle 20:30 l'HSV ospita il M'gladbach nella 9ª giornata di Bundesliga. In classifica l'HSV occupa il 14° posto con 9 punti, il M'gladbach il 18° con 4."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Bundesliga l'HSV ha ottenuto 3 vittorie e 2 sconfitte (sequenza V-V-V-P-P), segnando 7 gol e subendone 7. Ha perso le ultime 2. In casa ha vinto entrambe le partite giocate.",
+      "Nelle ultime 5 partite di Bundesliga il M'gladbach ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-P-V-N), con 8 gol fatti e 10 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: HSV 0,9, M'gladbach 1,4 a partita.",
+      "Gol subiti finora: HSV 16, M'gladbach 22.",
+      "In 3 delle ultime 5 partite dell'HSV si sono segnati almeno tre gol.",
+      "In 4 delle ultime 5 partite del M'gladbach si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca HSV – M'gladbach?",
+     "a": "Venerdì 6 novembre alle 20:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:565851": {
    "fingerprint": "1276e60",
    "sections": [
@@ -3331,6 +4339,180 @@
     }
    ]
   },
+  "fb:565848": {
+   "fingerprint": "tewyow",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 7 novembre alle 15:30 il RB Leipzig ospita l'Augsburg per la 9ª giornata di Bundesliga. In classifica il RB Leipzig è al 4° posto con 15 punti, mentre l'Augsburg è al 9° con 9 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Bundesliga il RB Leipzig ha ottenuto 3 vittorie e 2 sconfitte (sequenza P-V-P-V-V), segnando 13 gol e subendone 8. In casa ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 5 partite di Bundesliga l'Augsburg ha ottenuto 2 pareggi e 3 sconfitte (sequenza P-N-P-N-P), segnando 9 gol e subendone 12. In trasferta ha perso tutte le 2 partite disputate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: RB Leipzig 2,8, Augsburg 2,3 a partita.",
+      "Gol subiti finora: RB Leipzig 11, Augsburg 15.",
+      "In 3 delle ultime 5 partite del RB Leipzig si sono segnati almeno tre gol.",
+      "Il RB Leipzig non ha subito gol in 3 delle ultime 5.",
+      "In 4 delle ultime 5 partite dell'Augsburg si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca RB Leipzig – Augsburg?",
+     "a": "Sabato 7 novembre alle 15:30, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:565853": {
+   "fingerprint": "x63xae",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 7 novembre alle 15:30 SC Paderborn e Frankfurt si sfidano nella 9ª giornata di Bundesliga. In classifica lo SC Paderborn occupa il 13° posto con 9 punti, il Frankfurt il 15° con 8."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Bundesliga lo SC Paderborn ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta, con la sequenza V-P-N-V-N. Ha segnato 6 gol e ne ha subiti 5. In casa, nella stagione, il bilancio è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Bundesliga il Frankfurt ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza N-P-V-P-V. Ha segnato 6 gol e ne ha subiti 10. In trasferta ha perso tutte le 2 partite giocate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: SC Paderborn 0,8, Frankfurt 1,4 a partita.",
+      "Gol subiti finora: SC Paderborn 9, Frankfurt 17.",
+      "Nelle ultime 5 partite del Frankfurt, in 3 occasioni si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca SC Paderborn – Frankfurt?",
+     "a": "Sabato 7 novembre alle 15:30, ora italiana."
+    },
+    {
+     "q": "Dove trovo classifica e risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:565849": {
+   "fingerprint": "chby6c",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento sabato 7 novembre alle 18:30: lo Stuttgart riceve il Bremen per la 9ª giornata di Bundesliga. In classifica lo Stuttgart è al 10° posto con 9 punti, il Bremen al 5° con 15."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Bundesliga lo Stuttgart ha raccolto 2 vittorie e 3 sconfitte (sequenza P-V-P-P-V), con 8 gol fatti e 7 subiti. In casa ha perso tutte le 2 partite giocate.",
+      "Nelle ultime 5 partite di Bundesliga il Bremen ha raccolto 3 vittorie e 2 pareggi (sequenza V-N-N-V-V), con 12 gol fatti e 8 subiti. Non perde da 5 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Stuttgart 1,8, Bremen 2,1 a partita.",
+      "Gol subiti finora: Stuttgart 15, Bremen 14.",
+      "In 4 delle ultime 5 partite del Bremen si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Stuttgart – Bremen?",
+     "a": "Sabato 7 novembre alle 18:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:565855": {
+   "fingerprint": "1ai037i",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Il 1. FC Köln e il Leverkusen si affrontano domenica 8 novembre alle 15:30, nella 9ª giornata di Bundesliga. In classifica il 1. FC Köln è al 12° posto con 9 punti, mentre il Leverkusen è al 6° con 13."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Bundesliga il 1. FC Köln ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza P-V-P-N-N. Ha segnato 4 gol e ne ha subiti 5. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Bundesliga il Leverkusen ha ottenuto 3 vittorie e 2 sconfitte, con la sequenza V-V-V-P-P. Ha segnato 10 gol e ne ha subiti 11. Ha perso le ultime 2 partite. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: 1. FC Köln 1,1, Leverkusen 2,3.",
+      "Gol subiti finora: 1. FC Köln 12, Leverkusen 16.",
+      "In 4 delle ultime 5 partite del Leverkusen sono stati segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca 1. FC Köln – Leverkusen?",
+     "a": "Domenica 8 novembre alle 15:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:565854": {
    "fingerprint": "o5i6jc",
    "sections": [
@@ -3371,6 +4553,151 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:565856": {
+   "fingerprint": "1jh2hsz",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Hoffenheim e Schalke si affrontano domenica 8 novembre alle 19:30 per la 9ª giornata di Bundesliga. In classifica l'Hoffenheim è all'11° posto con 9 punti, lo Schalke al 17° con 6."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Bundesliga l'Hoffenheim ha raccolto 2 vittorie e 3 sconfitte (sequenza P-P-V-V-P), con 8 gol fatti e 9 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 5 partite di Bundesliga lo Schalke ha raccolto 2 pareggi e 3 sconfitte (sequenza N-P-P-N-P), con 1 gol fatto e 5 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Hoffenheim 1,8, Schalke 0,5 a partita.",
+      "Gol subiti finora: Hoffenheim 16, Schalke 9.",
+      "In 4 delle ultime 5 partite dell'Hoffenheim si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Hoffenheim – Schalke?",
+     "a": "Domenica 8 novembre alle 19:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:559645": {
+   "fingerprint": "gmfoxs",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Marseille e Toulouse scendono in campo domenica 1 novembre alle 20:45, in occasione della 9ª giornata di Ligue 1. In classifica il Marseille occupa il 9° posto con 12 punti, mentre il Toulouse è all'11° con 10."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di Ligue 1 il Marseille ha ottenuto 3 vittorie e 1 sconfitta, con la sequenza P-V-V-V, segnando 12 gol e subendone 7. La squadra arriva da 3 vittorie consecutive. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 4 partite di Ligue 1 il Toulouse ha ottenuto 2 vittorie e 2 pareggi, con la sequenza V-N-V-N, segnando 8 gol e subendone 4. La squadra non perde da 4 partite. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Marseille 2,3, Toulouse 1,5 a partita.",
+      "Gol subiti finora: Marseille 13, Toulouse 11.",
+      "In 3 delle ultime 4 partite del Marseille si sono segnati almeno tre gol.",
+      "In 3 delle ultime 4 partite del Toulouse si sono segnati almeno tre gol."
+     ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per il Marseille, nessuna per il Toulouse e 2 pareggi, con 18 gol complessivi, pari a una media di 3,6 a partita. L'ultimo incrocio, disputato a marzo 2026 in Ligue 1, si è concluso Toulouse 0-1 Marseille."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Marseille – Toulouse?",
+     "a": "Domenica 1 novembre alle 20:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001552803": {
+   "fingerprint": "19umv11",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Lunedì 2 novembre alle 20:45 il Lorient ospita lo Stade Brestois 29 nella 9ª giornata di Ligue 1. In classifica il Lorient occupa il 10° posto con 12 punti, mentre lo Stade Brestois 29 è al 14° con 9 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di Ligue 1 il Lorient ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta, con la sequenza P-V-V-N. Ha segnato 3 gol e ne ha subiti 2. In casa ha vinto tutte le 2 partite giocate.",
+      "Nelle ultime 4 partite di Ligue 1 lo Stade Brestois 29 ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con la sequenza P-V-N-P. Ha segnato 8 gol e ne ha subiti 6. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Lorient 0,9, Stade Brestois 29 1,8 a partita.",
+      "Gol subiti finora: Lorient 6, Stade Brestois 29 12.",
+      "Il Lorient non ha subito gol in 3 delle ultime 4 partite.",
+      "In 3 delle ultime 4 partite dello Stade Brestois 29 si sono segnati almeno tre gol."
+     ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per il Lorient, 3 vittorie per lo Stade Brestois 29 e 2 pareggi, con 15 gol complessivi, pari a una media di 3,0 a partita. L'ultimo incrocio, disputato a febbraio 2026 in Ligue 1, è terminato con il successo dello Stade Brestois 29 per 2-0 sul Lorient."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Lorient – Stade Brestois 29?",
+     "a": "Lunedì 2 novembre alle 20:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -3418,6 +4745,50 @@
     }
    ]
   },
+  "fb:559637": {
+   "fingerprint": "mx9ido",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento sabato 7 novembre alle 17:15: l'Auxerre ospita il Paris FC nella 10ª giornata di Ligue 1. In classifica l'Auxerre occupa il 13° posto con 10 punti, mentre il Paris FC è 6° con 14."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Ligue 1 l'Auxerre ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza V-P-V-N-P. Ha segnato 8 gol e ne ha subiti 12. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Ligue 1 il Paris FC ha ottenuto 3 vittorie e 2 sconfitte, con la sequenza V-P-V-P-V. Ha segnato 10 gol e ne ha subiti 8. In trasferta ha perso tutte le 2 partite giocate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Auxerre 1,4, Paris FC 1,6.",
+      "Gol subiti finora: Auxerre 23, Paris FC 9.",
+      "In 4 delle ultime 5 partite dell'Auxerre si sono segnati almeno tre gol.",
+      "In 4 delle ultime 5 partite del Paris FC si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Auxerre – Paris FC?",
+     "a": "Sabato 7 novembre alle 17:15, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:559635": {
    "fingerprint": "14ebw0l",
    "sections": [
@@ -3451,6 +4822,136 @@
     {
      "q": "Quando si gioca Paris Saint-Germain – Troyes?",
      "a": "Sabato 7 novembre alle 20:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001552816": {
+   "fingerprint": "rzf39u",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 8 novembre alle 15:00 il Rennes ospita il Lille nella 10ª giornata di Ligue 1. Si tratta di una sfida tra squadre della parte alta della classifica: il Rennes è al 3° posto con 16 punti, il Lille al 2° con 18."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Ligue 1 il Rennes ha raccolto 2 vittorie e 3 sconfitte, con sequenza P-V-P-V-P, segnando 12 gol e subendone 14. In casa ha vinto tutte le 2 partite giocate.",
+      "Nelle ultime 5 partite di Ligue 1 il Lille ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta, con sequenza P-V-N-N-V, segnando 5 gol e subendone 4. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Rennes 2,2, Lille 1,3 a partita.",
+      "Gol subiti finora: Rennes 19, Lille 6.",
+      "In tutte le ultime 5 partite del Rennes si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Rennes – Lille?",
+     "a": "Domenica 8 novembre alle 15:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:559634": {
+   "fingerprint": "1qz3j5k",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "L'Angers SCO e il Nice si affrontano domenica 8 novembre alle 17:15 per la 10ª giornata di Ligue 1. In classifica l'Angers SCO è al 15° posto con 8 punti, mentre il Nice è al 7° con 14."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Ligue 1 l'Angers SCO ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-P-N-P), con 5 gol fatti e 12 subiti. In casa il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+      "Nelle ultime 5 partite di Ligue 1 il Nice ha raccolto 4 vittorie e 1 sconfitta (sequenza V-V-P-V-V), con 12 gol fatti e 7 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Angers SCO 1,1, Nice 1,4 a partita.",
+      "Gol subiti finora: Angers SCO 15, Nice 12.",
+      "In tutte le ultime 5 partite del Nice si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Angers SCO – Nice?",
+     "a": "Domenica 8 novembre alle 17:15, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001552812": {
+   "fingerprint": "y693cs",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 8 novembre alle 17:15 lo Stade Brestois 29 ospita l'Olympique Lyon nella 10ª giornata di Ligue 1. In classifica lo Stade Brestois 29 occupa il 14° posto con 9 punti, mentre l'Olympique Lyon è 5° con 14."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di Ligue 1 lo Stade Brestois 29 ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza P-V-N-P), segnando 8 gol e subendone 6. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 5 partite di Ligue 1 l'Olympique Lyon ha collezionato 3 vittorie e 2 sconfitte (sequenza V-P-V-P-V), con 9 gol fatti e 5 subiti. In trasferta ha perso tutte le 2 partite disputate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: 1,8 per lo Stade Brestois 29 e 1,6 per l'Olympique Lyon a partita.",
+      "Gol subiti finora: 12 per lo Stade Brestois 29 e 7 per l'Olympique Lyon.",
+      "In 3 delle ultime 4 partite dello Stade Brestois 29 sono stati segnati almeno tre gol.",
+      "In 3 delle ultime 5 partite dell'Olympique Lyon sono stati segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Stade Brestois 29 – Olympique Lyon?",
+     "a": "Domenica 8 novembre alle 17:15, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -3506,6 +5007,50 @@
     }
    ]
   },
+  "fb:559631": {
+   "fingerprint": "1134a1d",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 8 novembre alle 17:15 il Le Mans ospita il Monaco nella 10ª giornata di Ligue 1. In classifica il Le Mans occupa il 17° posto con 7 punti, mentre il Monaco è al 4° con 15."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Ligue 1 il Le Mans ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-P-N-P), segnando 4 gol e subendone 10. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 5 partite di Ligue 1 il Monaco ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza V-N-P-N-P), con 6 gol fatti e 8 subiti. In trasferta ha perso tutte le 2 partite giocate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Le Mans 1,2, Monaco 1,4 a partita.",
+      "Gol subiti finora: Le Mans 18, Monaco 7.",
+      "In 3 delle ultime 5 partite del Le Mans si sono segnati almeno tre gol.",
+      "In 3 delle ultime 5 partite del Monaco si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Le Mans – Monaco?",
+     "a": "Domenica 8 novembre alle 17:15, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:559630": {
    "fingerprint": "1w91ie5",
    "sections": [
@@ -3543,6 +5088,92 @@
     {
      "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:558845": {
+   "fingerprint": "a7o7a4",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Venerdì 6 novembre alle 20:00 il Willem II ospita lo Zwolle nella 12ª giornata di Eredivisie. In classifica il Willem II occupa il 18° posto con 2 punti, mentre lo Zwolle è al 14° con 11."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Eredivisie il Willem II ha collezionato 5 sconfitte (sequenza P-P-P-P-P), segnando 4 gol e subendone 20. Ha perso tutte le ultime 5 gare. In casa ha perso entrambe le partite giocate finora.",
+      "Nelle ultime 5 partite di Eredivisie lo Zwolle ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-P-V-N-V), con 6 gol fatti e 6 subiti. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Willem II 0,9, Zwolle 1,1 a partita.",
+      "Gol subiti finora: Willem II 39, Zwolle 23.",
+      "In 4 delle ultime 5 partite del Willem II si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Willem II – Zwolle?",
+     "a": "Venerdì 6 novembre alle 20:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Eredivisie](/calcio/eredivisie) e la [classifica aggiornata](/calcio/eredivisie/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001552217": {
+   "fingerprint": "1hmzmjw",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 7 novembre alle 16:30 il Sittard ospita il Telstar per la 12ª giornata di Eredivisie. In classifica il Sittard occupa il 6° posto con 19 punti, mentre il Telstar è al 16° con 9."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Eredivisie il Sittard ha ottenuto 2 vittorie e 3 pareggi (sequenza V-N-N-V-N), con 6 gol fatti e 4 subiti. Non perde da 5 partite. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Eredivisie il Telstar ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-N-P-P-V), con 11 gol fatti e 12 subiti. In trasferta ha perso tutte le 2 partite disputate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Sittard 1,6, Telstar 1,5 a partita.",
+      "Gol subiti finora: Sittard 18, Telstar 23.",
+      "In 4 delle ultime 5 partite del Telstar si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Sittard – Telstar?",
+     "a": "Sabato 7 novembre alle 16:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -3816,6 +5447,48 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:567351": {
+   "fingerprint": "lt6m3a",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 8 novembre alle 16:30 il Santa Clara ospita il Gil Vicente nella 11ª giornata di Primeira Liga. In classifica il Santa Clara è al 5° posto con 18 punti, mentre il Gil Vicente è al 7° con 14."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Primeira Liga il Santa Clara ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-V-P), con 2 gol segnati e 2 subiti. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie.",
+      "Nelle ultime 4 partite di Primeira Liga il Gil Vicente ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza N-V-V-P), con 4 gol segnati e 3 subiti. In trasferta ha vinto tutte le 2 partite disputate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Santa Clara 1,4, Gil Vicente 0,9 a partita.",
+      "Gol subiti finora: Santa Clara 6, Gil Vicente 7."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Santa Clara – Gil Vicente?",
+     "a": "Domenica 8 novembre alle 16:30, ora italiana."
+    },
+    {
+     "q": "Dove si trovano classifica e risultati?",
+     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },

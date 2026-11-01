@@ -8,6 +8,10 @@ Copia permanente dei dati del sito, salvata a ogni aggiornamento completo da `.g
 - `stato/seo/`: date di modifica delle pagine, archivio HTML delle partite finite, registro dei dati.
 - `stato/match-details/`: dettagli e highlights già scaricati.
 - `stato/editorial-*.json`: riscritture dei testi con Claude già pagate.
+- `archivio/`: archivio permanente (non si cancella mai): partite finite con tutti i dettagli per competizione,
+  stagione e mese, risultati usati dai modelli, squadre e rose per stagione, statistiche dei giocatori, loghi dei club.
+  Le stagioni passate si aggiungono a piccoli blocchi (`scripts/backfill-archive.mjs`, avanzamento in
+  `archivio/recupero.json`).
 
 La cronologia dei commit è lo storico datato di ogni modifica. Se la cache dei workflow va persa,
 il giro successivo riparte da qui.
