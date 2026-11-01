@@ -72,7 +72,7 @@ export const isGoal = (e: TimelineEvent) => e.type === "goal" && e.detail !== "M
  * Goals with the running score. Sources differ on which team an own goal is filed under: the reading that
  * reproduces the final score (90' + extra time) is used.
  */
-export function goalsWithScore(d: FootballDetails, final: { home: number | null; away: number | null }) {
+export function goalsWithScore(d: Pick<FootballDetails, "timeline">, final: { home: number | null; away: number | null }) {
   const goals = d.timeline.filter(isGoal);
   const run = (ownToOpponent: boolean) => {
     let h = 0;

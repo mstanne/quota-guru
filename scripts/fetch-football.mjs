@@ -158,6 +158,29 @@ export function compactStandings(groups, teamOf) {
     }));
 }
 
+/** Why a player is missing, in Italian (API-Football gives an English reason). */
+const BODY = {
+  knee: "al ginocchio", ankle: "alla caviglia", hamstring: "al bicipite femorale", thigh: "alla coscia", calf: "al polpaccio",
+  groin: "all'inguine", back: "alla schiena", shoulder: "alla spalla", foot: "al piede", hip: "all'anca", achilles: "al tendine d'Achille",
+  head: "alla testa", muscle: "muscolare", hand: "alla mano", wrist: "al polso", arm: "al braccio", leg: "alla gamba", toe: "al piede",
+  rib: "alle costole", chest: "al torace", neck: "al collo", face: "al volto", adductor: "agli adduttori", quadriceps: "al quadricipite",
+};
+export function reasonIt(reason = "") {
+  const r = reason.toLowerCase();
+  if (/suspend|red card|yellow card|card/.test(r)) return "squalifica";
+  if (/illness|sick|virus|flu/.test(r)) return "malattia";
+  if (/knock/.test(r)) return "botta";
+  if (/international|national team/.test(r)) return "impegni con la nazionale";
+  if (/personal|family/.test(r)) return "motivi personali";
+  if (/lack of fitness|fitness/.test(r)) return "condizione fisica";
+  if (/coach|decision/.test(r)) return "scelta tecnica";
+  if (/injur|strain|sprain|fracture|broken|ligament|tear|surgery|problem|pain/.test(r) || Object.keys(BODY).some((k) => r.includes(k))) {
+    const part = Object.keys(BODY).find((k) => r.includes(k));
+    return part ? (BODY[part] === "muscolare" ? "problema muscolare" : `infortunio ${BODY[part]}`) : "infortunio";
+  }
+  return "non specificato";
+}
+
 const POSITION = { Goalkeeper: "Goalkeeper", Defender: "Defence", Midfielder: "Midfield", Attacker: "Offence" };
 
 // ------------------------------------------------------------------------------------------- main
@@ -326,6 +349,49 @@ async function main() {
   }
   for (const [pair, v] of Object.entries(store.h2h)) if (!fresh(v.at, 3)) delete store.h2h[pair];
   console.log(`Precedenti: ${Object.keys(headToHead).length} partite`);
+
+  // live data gathered by the quick runs (line-ups, events, statistics: scripts/fetch-live-scores.mjs) stay with
+  // their matches until the full details arrive
+  const prevById = new Map((previous.competitions ?? []).flatMap((c) => (c.matches ?? []).map((m) => [m.id, m])));
+  for (const c of competitions)
+    for (const m of c.matches) {
+      const old = prevById.get(m.id);
+      if (old?.live && !m.live) m.live = old.live;
+    }
+
+  // injured and suspended players of the matches of the next 3 days (20 matches per request)
+  if (!stopped) {
+    const soonest = competitions
+      .flatMap((c) => c.matches)
+      .filter((m) => {
+        const t = Date.parse(m.utcDate);
+        return m.apiId && ["SCHEDULED", "TIMED", "IN_PLAY", "PAUSED"].includes(m.status) && t >= now - 4 * 3600e3 && t <= now + 3 * DAY;
+      });
+    const sideOf = (m, apiTeamId) => {
+      const site = map.footballTeams[String(apiTeamId)]?.id;
+      return site === m.homeTeam.id ? "home" : site === m.awayTeam.id ? "away" : null;
+    };
+    try {
+      for (let i = 0; i < soonest.length; i += 20) {
+        const chunk = soonest.slice(i, i + 20);
+        const list = await api.get(`/injuries?ids=${chunk.map((m) => m.apiId).join("-")}`);
+        for (const m of chunk) {
+          const rows = list.filter((r) => r.fixture?.id === m.apiId);
+          const out = { home: [], away: [] };
+          for (const r of rows) {
+            const side = sideOf(m, r.team?.id);
+            if (!side || !r.player?.name) continue;
+            out[side].push({ name: r.player.name, doubtful: r.player.type === "Questionable", reason: reasonIt(r.player.reason) });
+          }
+          if (out.home.length || out.away.length) m.injuries = out;
+        }
+      }
+      console.log(`Indisponibili: ${soonest.filter((m) => m.injuries).length} partite su ${soonest.length} dei prossimi 3 giorni`);
+    } catch (err) {
+      if (err instanceof BudgetError || err instanceof PlanError) stopped = err.message;
+      console.warn(`Indisponibili non aggiornati: ${err.message}`);
+    }
+  }
 
   // clubs, coaches and squads of the domestic leagues (team pages), a few clubs per run
   if (!stopped) {

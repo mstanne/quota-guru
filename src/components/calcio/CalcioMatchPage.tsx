@@ -40,6 +40,7 @@ import { FootballBoxScore } from "./FootballBoxScore";
 import { TeamName } from "../teams/TeamLink";
 import { hasResults, resultsPath } from "../../lib/results";
 import { FootballMatchDetails } from "./FootballMatchDetails";
+import { MatchUnavailable } from "./MatchUnavailable";
 import { footballDetailsFor } from "../../lib/footballDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
 import { SofascoreLive } from "../media/SofascoreLive";
@@ -253,7 +254,9 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
   const archived = !isUpcoming(match) ? data.archived(match.id) : undefined;
   const prediction = archived ? { ...archived.prediction, pre: true } : data.prediction(match.id);
   const highlight = finished ? highlightFor(competition.slug, match.id) : undefined;
-  const details = finished ? footballDetailsFor(match.id) : undefined;
+  // full details once downloaded; until then (and while the match is played) the live data of the quick updates
+  const details = finished ? (footballDetailsFor(match.id) ?? match.live) : undefined;
+  const liveData = !finished ? match.live : undefined;
   const sofascoreId = sofascoreEventFor(match.id);
   const roundPage = isMatchdayStage(match)
     ? matchdaysOf(competition).find((d) => d.n === match.matchday)
@@ -357,6 +360,16 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
 
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
         {sofascoreId && <SofascoreLive eventId={sofascoreId} utcDate={match.utcDate} teams={teams} />}
+        {liveData && (
+          <div className="lg:col-span-3 min-w-0 space-y-6">
+            <FootballMatchDetails match={match} details={liveData} lineupTitle={isUpcoming(match) ? "Formazioni ufficiali" : "Formazioni"} />
+          </div>
+        )}
+        {!finished && match.injuries && (
+          <div className="lg:col-span-3 min-w-0">
+            <MatchUnavailable match={match} />
+          </div>
+        )}
         {finished && (
           <div className="lg:col-span-3 min-w-0 space-y-6">
             {/* box score and highlights side by side on wide screens, stacked otherwise */}

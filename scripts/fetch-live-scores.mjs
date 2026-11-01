@@ -1,6 +1,7 @@
 // Quick update of scores and standings between the full data refreshes (workflow .github/workflows/live-scores.yml,
 // every 15 minutes). Starts from the src/data/football.json of the last full run and, only if a match is under way or
-// just finished, asks API-Football for those matches by id (1 request per 20 matches) and for the standings of the
+// just finished, asks API-Football for those matches by id (1 request per 20 matches: score, official line-ups,
+// events and statistics, kept in the match as `live`) and for the standings of the
 // competitions where a match has just ended (1 request each). Everything else (calendar, head-to-head, teams,
 // details, highlights, texts) stays as the last full run left it.
 //
@@ -11,12 +12,13 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { apiSports, loadDotEnv } from "./lib/api-sports.mjs";
 import { COMPETITIONS, compactFixture, compactStandings } from "./fetch-football.mjs";
+import { footballDetails } from "./lib/match-details.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "data", "football.json");
 const STORE = path.join(root, ".cache", "match-details", "football-store.json");
 
-const BEFORE_MS = 10 * 60e3; // from 10 minutes before kick-off...
+const BEFORE_MS = 75 * 60e3; // from 75 minutes before kick-off (official line-ups come about an hour before)...
 const AFTER_MS = 4 * 3600e3; // ...to 4 hours after it, while the match is not final
 const FINAL = new Set(["FINISHED", "AWARDED", "CANCELLED", "POSTPONED"]);
 const PLAYING = new Set(["IN_PLAY", "PAUSED", "SUSPENDED"]);
@@ -81,12 +83,21 @@ async function main() {
       (t) => (t.id === f.teams.home.id ? old.homeTeam : old.awayTeam),
       () => old.id,
     );
-    if (sameResult(old, fresh)) continue;
+    // official line-ups, events (goals, cards, substitutions) and statistics, same format as the full details
+    const sideOf = (id) => (id === f.teams.home.id ? "home" : id === f.teams.away.id ? "away" : null);
+    const { fixture, savedAt, ...d } = footballDetails(f, f.events ?? [], f.lineups ?? [], f.statistics ?? [], f.players ?? [], sideOf);
+    const hasLive = d.timeline.length || d.lineups.home || d.lineups.away || Object.keys(d.stats).length;
+    const live = hasLive ? d : old.live;
+    const liveChanged = JSON.stringify(live ?? null) !== JSON.stringify(old.live ?? null);
+    if (sameResult(old, fresh) && !liveChanged) continue;
     Object.assign(old, { status: fresh.status, score: fresh.score, utcDate: fresh.utcDate });
+    if (live) old.live = live;
     changed++;
     console.log(
       `  ${old.homeTeam.shortName} – ${old.awayTeam.shortName}: ${fresh.status} ` +
-        `${fresh.score.fullTime.home ?? "-"}-${fresh.score.fullTime.away ?? "-"}`,
+        `${fresh.score.fullTime.home ?? "-"}-${fresh.score.fullTime.away ?? "-"}` +
+        (live?.lineups?.home ? " · formazioni" : "") +
+        (live?.timeline?.length ? ` · ${live.timeline.length} eventi` : ""),
     );
     if (fresh.status === "FINISHED") ended.add(hit.c);
   }
