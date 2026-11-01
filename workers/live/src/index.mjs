@@ -14,7 +14,9 @@
 //   - At most MAX_DAILY_REQUESTS requests a day (default 3000 of the 7500 of the Pro plan); GET /stato shows how many.
 //
 // Configuration: wrangler.toml; secret API_FOOTBALL_KEY (set by .github/workflows/live-worker.yml).
-// API_BASE: test server standing in for API-Football (local tests only).
+// API_BASE: address API-Football is reached through instead of v3.football.api-sports.io: our relay server with a
+// dedicated IP (workers/live/server; API-Football limits the shared outbound IPs of Cloudflare Workers), or a test
+// server in local tests. PROXY_SECRET: password the relay server expects.
 import { footballDetails } from "../../../scripts/lib/match-details.mjs";
 import { COMPETITIONS } from "../../../scripts/lib/leagues.mjs";
 
@@ -75,13 +77,20 @@ export class LiveHub {
     this.storage = ctx.storage;
   }
 
+  /** API key, plus the password of our relay server when API_BASE points to it (workers/live/server). */
+  apiHeaders() {
+    const h = { "x-apisports-key": this.env.API_FOOTBALL_KEY ?? "" };
+    if (this.env.PROXY_SECRET) h["x-proxy-secret"] = this.env.PROXY_SECRET;
+    return h;
+  }
+
   async api(path) {
     const used = await this.countRequest();
     if (used === null) throw new Error("tetto giornaliero di richieste raggiunto");
     const base = this.env.API_BASE || "https://v3.football.api-sports.io";
     // API-Football sits behind Cloudflare too: without no-store, an error answer (e.g. a per-minute limit hit while
     // the site's jobs were running) can stay in Cloudflare's cache and come back for every later identical request.
-    const res = await fetch(base + path, { headers: { "x-apisports-key": this.env.API_FOOTBALL_KEY }, cache: "no-store" });
+    const res = await fetch(base + path, { headers: this.apiHeaders(), cache: "no-store" });
     // limits reported by API-Football, shown in /stato (per minute and per day)
     const h = (k) => res.headers.get(k);
     await this.storage.put("apiInfo", {
@@ -233,7 +242,7 @@ export class LiveHub {
     if (url.pathname === "/prova") {
       // check from Cloudflare: /status of API-Football (account, plan, requests of the day; not counted in the quota)
       const base = this.env.API_BASE || "https://v3.football.api-sports.io";
-      const res = await fetch(`${base}/status`, { headers: { "x-apisports-key": this.env.API_FOOTBALL_KEY ?? "" } });
+      const res = await fetch(`${base}/status`, { headers: this.apiHeaders(), cache: "no-store" });
       const headers = Object.fromEntries([...res.headers].filter(([k]) => /ratelimit|cf-ray|server/i.test(k)));
       const body = await res.json().catch(() => null);
       return Response.json({ status: res.status, headers, errors: body?.errors ?? null, subscription: body?.response?.subscription ?? null, requests: body?.response?.requests ?? null });
