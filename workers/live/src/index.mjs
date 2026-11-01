@@ -28,8 +28,12 @@ const CHUNK = 10;
 const FINAL = new Set(["FT", "AET", "PEN", "AWD", "WO", "CANC", "ABD", "PST"]);
 const PLAYING = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
 
-const SCHEDULE_STEP = 3; // calendar requests per minute (the calendar is rebuilt over a few minutes)
-const PAUSE_MS = 5 * 60e3; // pause after the API's per-minute limit
+// API-Football's front door rejects requests that come in quick succession from Cloudflare (answer "Too many
+// requests" without the usual limit headers, even far below the 300 a minute of the plan): the worker sends one
+// request at a time, GAP_MS apart, and after a refusal waits PAUSE_MS.
+const SCHEDULE_STEP = 1; // calendar requests per minute (the calendar is rebuilt over about 15 minutes)
+const GAP_MS = 4000; // pause between two requests
+const PAUSE_MS = 3 * 60e3; // pause after a refusal
 
 class RateLimit extends Error {}
 
@@ -118,6 +122,7 @@ export class LiveHub {
    */
   async schedule(now) {
     let s = await this.storage.get("schedule");
+    this.scheduleUsed = false;
     let b = await this.storage.get("build"); // calendar being rebuilt, SCHEDULE_STEP requests per minute
     if (!b && (!s || now - s.at > SCHEDULE_EVERY_MS)) {
       b = { todo: [...[...LEAGUES].map(String), "live"], found: [] };
@@ -128,6 +133,7 @@ export class LiveHub {
         const path = item === "live" ? `/fixtures?live=${[...LEAGUES].join("-")}` : `/fixtures?next=20&league=${item}`;
         for (const f of await this.api(path))
           if (LEAGUES.has(f.league?.id)) b.found.push({ id: f.fixture.id, kickoff: Date.parse(f.fixture.date), status: f.fixture.status?.short });
+        this.scheduleUsed = true;
         b.todo.shift(); // progress is kept even if a later request of this step fails
         await this.storage.put("build", b);
       }
@@ -165,7 +171,8 @@ export class LiveHub {
     await this.storage.put("queue", window.map((m) => m.id));
     const result = { ok: true, at: new Date(now).toISOString(), matches: window.length };
     await this.storage.put("last", result);
-    if (window.length) await this.processChunk();
+    // the match data in its own invocation, GAP_MS after a calendar request of this minute
+    if (window.length) await this.storage.setAlarm(Date.now() + (this.scheduleUsed ? GAP_MS : 0));
     return result;
   }
 
@@ -187,7 +194,7 @@ export class LiveHub {
     }
     await this.storage.put("done", done);
     if (s) await this.storage.put("schedule", s);
-    if (queue.length > CHUNK) await this.storage.setAlarm(Date.now() + 500);
+    if (queue.length > CHUNK) await this.storage.setAlarm(Date.now() + GAP_MS);
   }
 
   /** Records an error; on the API's per-minute limit, stops asking for PAUSE_MS. */
