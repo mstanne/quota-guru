@@ -141,6 +141,57 @@ async function localLogos(value, stats) {
   return rewrite(value);
 }
 
+// ------------------------------------------------------------------------------------------- match statistics
+const CORNER_LINES = [7.5, 8.5, 9.5, 10.5, 11.5];
+const CARD_LINES = [2.5, 3.5, 4.5, 5.5];
+const val = (o, k) => (Number.isFinite(o?.[k]) ? o[k] : null);
+
+/** Corners, cards (yellow + red) and expected goals of a season, for the league and every team. */
+export function seasonMatchStats(matches) {
+  const blank = () => ({ n: 0, cf: 0, ca: 0, yf: 0, ya: 0, rf: 0, ra: 0, xn: 0, xf: 0, xa: 0, cOver: CORNER_LINES.map(() => 0), kOver: CARD_LINES.map(() => 0) });
+  const league = blank();
+  const teams = {};
+  for (const m of matches) {
+    const H = m.stats.home;
+    const A = m.stats.away;
+    const ch = val(H, "Corner Kicks");
+    const ca = val(A, "Corner Kicks");
+    if (ch == null || ca == null) continue;
+    const yh = val(H, "Yellow Cards") ?? 0;
+    const ya = val(A, "Yellow Cards") ?? 0;
+    const rh = val(H, "Red Cards") ?? 0;
+    const ra = val(A, "Red Cards") ?? 0;
+    const xh = val(H, "expected_goals");
+    const xa = val(A, "expected_goals");
+    const corners = ch + ca;
+    const cards = yh + ya + rh + ra;
+    for (const [id, cf, cag, yf, yag, rf, rag, xf, xag] of [
+      [m.home.id, ch, ca, yh, ya, rh, ra, xh, xa],
+      [m.away.id, ca, ch, ya, yh, ra, rh, xa, xh],
+      [null, ch, ca, yh, ya, rh, ra, xh, xa],
+    ]) {
+      const t = id == null ? league : (teams[id] ??= blank());
+      t.n++;
+      t.cf += cf;
+      t.ca += cag;
+      t.yf += yf;
+      t.ya += yag;
+      t.rf += rf;
+      t.ra += rag;
+      if (xf != null && xag != null) (t.xn++, (t.xf += xf), (t.xa += xag));
+      CORNER_LINES.forEach((l, i) => corners > l && t.cOver[i]++);
+      CARD_LINES.forEach((l, i) => cards > l && t.kOver[i]++);
+    }
+  }
+  const round = (o) => ({ ...o, xf: Math.round(o.xf * 100) / 100, xa: Math.round(o.xa * 100) / 100 });
+  return {
+    n: league.n,
+    lines: { corners: CORNER_LINES, cards: CARD_LINES },
+    league: round(league),
+    teams: Object.fromEntries(Object.entries(teams).map(([id, t]) => [id, round(t)])),
+  };
+}
+
 // ------------------------------------------------------------------------------------------- main
 async function main() {
   const football = readJson(path.join(root, "src", "data", "football.json"), null);
@@ -274,6 +325,41 @@ async function main() {
   if (filled) {
     writeJson(detFile, fDetails);
     console.log(`Dettagli dall'archivio per ${filled} partite ancora sul sito.`);
+  }
+
+  // corners, cards and expected goals of the current season, by competition and team, from the archive
+  // (data/statistiche-partite.json: corner and card pages, team pages; kept in the data snapshot so the quick
+  // runs, which do not have the archive, publish the same figures) and xG in the model history
+  const matchStats = {};
+  const xg = new Map();
+  for (const c of football?.competitions ?? []) {
+    const y = Number(c.season?.startDate?.slice(0, 4));
+    const dir = path.join(ARCHIVE, "calcio", c.slug, String(y));
+    if (!y || !fs.existsSync(dir)) continue;
+    const ms = [];
+    for (const f of fs.readdirSync(dir).filter((f) => f.endsWith(".json")))
+      for (const m of Object.values(readJson(path.join(dir, f), { matches: {} }).matches)) if (m.stats?.home && m.stats?.away) ms.push(m);
+    const s = seasonMatchStats(ms);
+    if (s.n) matchStats[c.slug] = { season: y, ...s };
+    for (const m of ms) {
+      const h = m.stats.home.expected_goals;
+      const a = m.stats.away.expected_goals;
+      if (Number.isFinite(h) && Number.isFinite(a)) xg.set(String(m.id), [h, a]);
+    }
+  }
+  writeJson(path.join(root, "data", "statistiche-partite.json"), { updatedAt: new Date().toISOString(), competitions: matchStats });
+  if (xg.size) {
+    const hf = path.join(root, "data", "football-history.json");
+    const h = readJson(hf, null);
+    if (h?.results) {
+      let n = 0;
+      for (const r of h.results) {
+        const v = xg.get(String(r.id));
+        if (v) (r.hxg = v[0]), (r.axg = v[1]), n++;
+      }
+      writeJson(hf, h);
+      console.log(`Expected goals nello storico del modello: ${n} partite.`);
+    }
   }
 
   // logos: the site's own copy

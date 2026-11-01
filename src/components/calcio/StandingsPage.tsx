@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import { Link } from "../../lib/links";
 import { ListOrdered } from "lucide-react";
-import { competitionPath, goalStatsPath, leadersPath, standingsMeta } from "../../lib/footballCore";
+import { competitionPath, cornersCardsPath, goalStatsPath, leadersPath, standingsMeta } from "../../lib/footballCore";
 import { useCompetitionData } from "../../lib/footballData";
 import { usePageMeta } from "../../lib/pageMeta";
 import { DataUpdatedNote } from "./DataUpdatedNote";
@@ -109,6 +109,11 @@ export function StandingsPage() {
           {competition.leaders?.scorers?.length ? (
             <Link to={leadersPath(competition)} className="text-action-text hover:text-action-text-hover">
               Classifica marcatori {competition.name} →
+            </Link>
+          ) : null}
+          {data.matchStats ? (
+            <Link to={cornersCardsPath(competition)} className="text-action-text hover:text-action-text-hover">
+              Statistiche corner e cartellini {competition.name} →
             </Link>
           ) : null}
         </div>

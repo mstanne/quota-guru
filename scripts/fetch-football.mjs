@@ -50,6 +50,7 @@ const H2H_DAYS = 7;
 const H2H_MAX = 40;
 const SQUAD_DAYS = 3; // squads refreshed every N days...
 const COACH_DAYS = 7;
+const TEAM_STATS_DAYS = 3; // season statistics of a club (/teams/statistics)
 const CLUBS_PER_RUN = 80; // ...a few clubs per run
 const DAY = 86400e3;
 
@@ -406,6 +407,26 @@ function apiTeamId(map, siteId) {
   return null;
 }
 
+/** /teams/statistics in compact form (the answer is an object, not a list). */
+function compactTeamStats(st, slug, season) {
+  const minutes = (o) =>
+    Object.fromEntries(Object.entries(o ?? {}).map(([k, v]) => [k, v?.total ?? 0]).filter(([k]) => /^\d+-\d+$/.test(k)));
+  const hat = (o) => ({ home: o?.home ?? 0, away: o?.away ?? 0, total: o?.total ?? 0 });
+  return {
+    competition: slug,
+    season,
+    form: typeof st.form === "string" ? st.form.slice(-10) : null,
+    played: hat(st.fixtures?.played),
+    goalsByMinute: { for: minutes(st.goals?.for?.minute), against: minutes(st.goals?.against?.minute) },
+    cleanSheets: hat(st.clean_sheet),
+    failedToScore: hat(st.failed_to_score),
+    penalty: { scored: st.penalty?.scored?.total ?? 0, missed: st.penalty?.missed?.total ?? 0 },
+    formations: (st.lineups ?? []).slice(0, 4).map((l) => ({ formation: l.formation, played: l.played })),
+    streak: { wins: st.biggest?.streak?.wins ?? 0, draws: st.biggest?.streak?.draws ?? 0, loses: st.biggest?.streak?.loses ?? 0 },
+    biggestWin: { home: st.biggest?.wins?.home ?? null, away: st.biggest?.wins?.away ?? null },
+  };
+}
+
 async function updateClubs(api, competitions, teamsFile, store, map, now) {
   teamsFile.teams ??= {};
   teamsFile.competitions ??= {};
@@ -473,6 +494,16 @@ async function updateClubs(api, competitions, teamsFile, store, map, now) {
           out.coach = { name: current.name, nationality: current.nationality ?? null, since: current.career[0].start ?? null };
         store.coaches[t.id] = new Date(now).toISOString();
       }
+      // season statistics in the league: goals by minute, clean sheets, penalties, formations, streaks
+      store.teamStats ??= {};
+      if (budget > 0 && !fresh(store.teamStats[`${t.id}-${def.code}`], TEAM_STATS_DAYS)) {
+        budget--;
+        const ts = await api.get(`/teams/statistics?league=${def.api}&season=${season}&team=${t.id}`);
+        const st = Array.isArray(ts) ? ts[0] : ts;
+        if (st?.fixtures) out.stats = compactTeamStats(st, comp.slug, season);
+        store.teamStats[`${t.id}-${def.code}`] = new Date(now).toISOString();
+      }
+      if (!out.stats && old.stats) out.stats = old.stats;
       teamsFile.teams[known.id] = out;
     }
     if (ids.length) teamsFile.competitions[comp.slug] = ids;

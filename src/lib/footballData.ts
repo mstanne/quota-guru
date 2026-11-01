@@ -27,6 +27,31 @@ interface CompetitionFile {
   archived: Record<string, { published: string; prediction: Omit<Prediction, "pre"> }>;
   /** Every result of the current season (scripts/lib/season-results.mjs); `complete`: none missing. */
   season?: { complete: boolean; results: Omit<GoalResult, never>[] };
+  /** Corners, cards and expected goals of the current season (scripts/archive-data.mjs). */
+  matchStats?: SeasonMatchStats | null;
+}
+/** Totals over `n` matches; `cOver`/`kOver`: matches with more total corners / cards than each line. */
+export interface MatchStatsCounts {
+  n: number;
+  cf: number;
+  ca: number;
+  yf: number;
+  ya: number;
+  rf: number;
+  ra: number;
+  /** expected goals for and against, over `xn` matches that have them */
+  xn: number;
+  xf: number;
+  xa: number;
+  cOver: number[];
+  kOver: number[];
+}
+export interface SeasonMatchStats {
+  season: number;
+  n: number;
+  lines: { corners: number[]; cards: number[] };
+  league: MatchStatsCounts;
+  teams: Record<string, MatchStatsCounts>;
 }
 
 const idx = index as unknown as {
@@ -74,6 +99,10 @@ export class CompetitionData {
   }
   leagueGoalStats() {
     return leagueGoalStats(this.season.results);
+  }
+  /** Corners, cards and expected goals of the current season, or null without the archive. */
+  get matchStats(): SeasonMatchStats | null {
+    return this.file.matchStats?.n ? this.file.matchStats : null;
   }
 }
 

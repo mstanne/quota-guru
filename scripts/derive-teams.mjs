@@ -25,6 +25,8 @@ const football = read("src/data/football.json", { competitions: [] });
 const fHistory = read("data/football-history.json", { results: [] });
 const fTeams = read("data/football-teams.json", { teams: {}, competitions: {} });
 const api = read("data/team-seasons-api.json", { footballInfo: {}, football: {}, nba: {} });
+// corners, cards and expected goals of the current season by team (scripts/archive-data.mjs)
+const matchStats = read("data/statistiche-partite.json", { competitions: {} }).competitions ?? {};
 const basket = read("src/data/basket.json", { nba: { season: 0, games: [] } });
 const bHistory = read("data/basket-history.json", { games: [] });
 
@@ -209,6 +211,9 @@ for (const comp of football.competitions) {
       venue: afInfo.venue ?? (info?.venue ? { name: info.venue, city: null, capacity: null, surface: null } : null),
       coach: info?.coach ? { ...info.coach, nationality: country(info.coach.nationality) } : null,
       squad: (info?.squad ?? []).map((p) => ({ ...p, nationality: country(p.nationality) })),
+      // season statistics in the league (API-Football /teams/statistics) and corners, cards, xG from the archive
+      stats: info?.stats?.competition === comp.slug ? info.stats : null,
+      matchStats: matchStats[comp.slug]?.teams?.[id] ? { ...matchStats[comp.slug].teams[id], lines: matchStats[comp.slug].lines } : null,
       seasons,
     };
     index.football.push({ id, slug, name: base.name, shortName: base.shortName || base.name, crest: base.crest ?? null, competition: comp.slug });

@@ -1,4 +1,5 @@
 import type { TeamGoalStats } from "./goalStats.mjs";
+import type { MatchStatsCounts } from "./footballData";
 // Team pages: index of every team (small, bundled where team names are linked) and on-demand loading of the
 // per-league data (src/data/teams/*.json, built by scripts/derive-teams.mjs).
 import index from "../data/teams/index.json";
@@ -76,7 +77,25 @@ export interface FootballTeam {
   venue: { name: string; city: string | null; capacity: number | null; surface: string | null } | null;
   coach: { name: string; nationality: string | null; since: string | null } | null;
   squad: { name: string; position: string | null; born: string | null; nationality: string | null; number: number | null }[];
+  /** Season statistics in the league (API-Football /teams/statistics). */
+  stats?: TeamApiStats | null;
+  /** Corners, cards and expected goals of the current season (from the archive, scripts/archive-data.mjs). */
+  matchStats?: (MatchStatsCounts & { lines: { corners: number[]; cards: number[] } }) | null;
   seasons: FootballSeason[];
+}
+export interface TeamApiStats {
+  competition: string;
+  season: number;
+  /** W/D/L of the last league matches, oldest first */
+  form: string | null;
+  played: { home: number; away: number; total: number };
+  goalsByMinute: { for: Record<string, number>; against: Record<string, number> };
+  cleanSheets: { home: number; away: number; total: number };
+  failedToScore: { home: number; away: number; total: number };
+  penalty: { scored: number; missed: number };
+  formations: { formation: string; played: number }[];
+  streak: { wins: number; draws: number; loses: number };
+  biggestWin: { home: string | null; away: string | null };
 }
 export interface NbaPlayerAverages {
   name: string;

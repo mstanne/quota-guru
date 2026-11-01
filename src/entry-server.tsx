@@ -8,7 +8,8 @@ import { routes as staticRoutes } from "./routes";
 import { footballRoutes, legacyFootballRoutes } from "./lib/footballRoutes";
 import { legacyMatchdayRoutes, matchdayRoutes } from "./lib/matchdays";
 import { NBA_HUB } from "./lib/nbaPaths";
-import { goalStatsMeta, leadersMeta, type Competition } from "./lib/footballCore";
+import { cornersCardsMeta, goalStatsMeta, leadersMeta, type Competition } from "./lib/footballCore";
+import type { SeasonMatchStats } from "./lib/footballData";
 import { loadAllPlayerData, type FootballPlayer } from "./lib/players";
 import { playerMeta } from "./lib/playerMeta";
 import { leagueGoalStats, type GoalResult } from "./lib/goalStats.mjs";
@@ -63,7 +64,9 @@ const legacyRoutes = [
 ];
 export { legacyTarget, rewriteLegacyLinks } from "./lib/legacyUrls";
 // Under/Over statistics pages: one per competition with a table and results (description from the season figures)
-const competitionFiles = import.meta.glob<{ default: { competition: Competition; season?: { results: GoalResult[] } } }>(
+const competitionFiles = import.meta.glob<{
+  default: { competition: Competition; season?: { results: GoalResult[] }; matchStats?: SeasonMatchStats | null };
+}>(
   "./data/football/comp-*.json",
   { eager: true },
 );
@@ -78,7 +81,12 @@ const leadersRoutes = () =>
 // player pages (server only: every part is bundled here)
 const playerFiles = import.meta.glob<{ default: Record<string, FootballPlayer> }>("./data/players/part-*.json", { eager: true });
 const playerRoutes = () => Object.values(playerFiles).flatMap((f) => Object.values(f.default).map(playerMeta));
-export const routes = [...legacyRoutes, ...goalStatsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...staticRoutes, ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes(
+// corner and card statistics pages: competitions whose archive has match statistics
+const cornersCardsRoutes = () =>
+  Object.values(competitionFiles).flatMap(({ default: f }) =>
+    f.matchStats?.n && f.competition.standings.length ? [cornersCardsMeta(f.competition, f.matchStats.league)] : [],
+  );
+export const routes = [...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...staticRoutes, ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes(
   (id) => !!basketPredictionFor(id),
   (id) => highlightFor("nba", id),
   (g) => nbaVenues.get(g.home.id) ?? null,

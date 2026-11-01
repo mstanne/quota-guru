@@ -230,6 +230,8 @@ export const competitionPath = (c: Pick<CompetitionRef, "slug">) => `${PRONOSTIC
 export const standingsPath = (c: CompetitionRef) => `/calcio/${c.slug}/classifica`;
 /** Top scorers, assists and cards of a competition (src/components/stats/LeadersPage.tsx). */
 export const leadersPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slug}/marcatori`;
+/** Corners and cards of every team of a competition (src/components/stats/CornersCardsPage.tsx). */
+export const cornersCardsPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slug}/statistiche-corner-cartellini`;
 /** Under/Over and Goal statistics of every team of a competition (src/components/stats/GoalStatsPage.tsx). */
 export const goalStatsPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slug}/statistiche-under-over`;
 /** "2026/27", or "2026" for calendar-year seasons (Brasileirão). */
@@ -417,6 +419,18 @@ export function leadersMeta(c: Competition) {
       `Classifica marcatori di ${c.name}${season ? ` ${season}` : ""} aggiornata ogni giorno` +
       (top && topName ? `: in testa ${topName} (${top.team?.shortName ?? ""}) con ${top.goals} gol.` : ".") +
       " Classifiche assist, ammonizioni ed espulsioni, con presenze e minuti giocati.",
+  };
+}
+/** `league`: totals of the season (corners, cards over `n` matches), for the description. */
+export function cornersCardsMeta(c: Competition, league?: { n: number; cf: number; ca: number; yf: number; ya: number; rf: number; ra: number }) {
+  const season = seasonName(c);
+  const d = (v: number) => v.toFixed(1).replace(".", ",");
+  return {
+    path: cornersCardsPath(c),
+    title: `Statistiche corner e cartellini ${c.name}${season ? ` ${season}` : ""}: medie squadra per squadra`,
+    description: league?.n
+      ? `Calci d'angolo e cartellini di ogni squadra di ${c.name}: medie a partita, fatti e subiti, e quante partite superano le soglie più comuni. In media ${d((league.cf + league.ca) / league.n)} corner e ${d((league.yf + league.ya + league.rf + league.ra) / league.n)} cartellini a partita (${league.n} partite).`
+      : `Calci d'angolo e cartellini di ogni squadra di ${c.name}: medie a partita, fatti e subiti, e quante partite superano le soglie più comuni.`,
   };
 }
 export function standingsMeta(c: Competition) {
