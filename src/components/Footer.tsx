@@ -136,19 +136,7 @@ export function Footer() {
               <p className="text-slate-400 text-sm">
                 © {new Date().getFullYear()} QuotaGuru. Tutti i diritti riservati.
               </p>
-              {/* Required by the football-data.org terms of use (section 7, Attribution) – do not remove. */}
-              <p className="text-slate-400 text-sm">
-                Football data provided by the{" "}
-                <a
-                  href="https://www.football-data.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-2 hover:text-white transition-colors"
-                >
-                  Football-Data.org
-                </a>{" "}
-                API
-              </p>
+              <p className="text-slate-400 text-sm">Dati sportivi: API-Sports (API-Football, API-NBA)</p>
             </div>
             {socialLinks.length > 0 && (
               <ul className="flex items-center gap-2" aria-label="Profili social e contatti">

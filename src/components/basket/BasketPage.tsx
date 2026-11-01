@@ -49,7 +49,7 @@ function matches(g: BasketGame, f: Filter) {
   return d >= day(0) && d <= day(6);
 }
 
-/** /basket and /pronostici/nba – NBA calendar and results (real data, BALLDONTLIE). */
+/** /basket and /pronostici/nba – NBA calendar and results (real data, API-NBA). */
 export function BasketPage({ league }: { league?: "nba" }) {
   const [filter, setFilter] = useState<Filter>("upcoming");
   const [market, setMarket] = useQueryChoice<BasketMarket>("mercato", MARKET_IDS, "win");
@@ -160,7 +160,7 @@ export function BasketPage({ league }: { league?: "nba" }) {
             ))}
           </div>
         )}
-        <p className="text-slate-400 text-xs mt-8">Orari in ora italiana. Dati NBA e Serie A: balldontlie.io.</p>
+        <p className="text-slate-400 text-xs mt-8">Orari in ora italiana. Dati NBA: API-NBA (API-Sports). Classifica Serie A: balldontlie.io.</p>
       </div>
     </div>
   );

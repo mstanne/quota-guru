@@ -1,6 +1,6 @@
 // Every result of the current season of a competition, for the Under/Over and Goal statistics.
 // The snapshot (src/data/football.json) holds only the last 45 days; the full current season is downloaded at every
-// data update into data/football-history.json (scripts/fetch-football-data.mjs, updateHistory). Both are merged
+// data update into data/football-history.json (scripts/fetch-football.mjs). Both are merged
 // by match id, the snapshot winning (it is the fresher of the two).
 // Without the history (local build without token) only the snapshot is available: `complete` is then false and the
 // pages say how many matches the numbers are based on.

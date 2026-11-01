@@ -22,7 +22,7 @@ const choices = [TIMELINE, ...competitions.map((c) => c.slug)] as const;
 const button =
   "px-4 py-2 rounded-md border border-slate-700 text-slate-200 hover:border-slate-500 hover:text-white text-sm";
 
-/** Home page block: next real fixtures from football-data.org, with the model's 1X2 probabilities. */
+/** Home page block: next real fixtures from API-Football, with the model's 1X2 probabilities. */
 export function UpcomingMatches({ limit = 8 }: { limit?: number }) {
   // default: every main competition in time order; otherwise the next matches of one competition (?campionato=…)
   const [choice, choose] = useQueryChoice<string>("campionato", choices, TIMELINE);

@@ -1,22 +1,20 @@
 // Quick update of scores and standings between the full data refreshes (workflow .github/workflows/live-scores.yml,
 // every 15 minutes). Starts from the src/data/football.json of the last full run and, only if a match is under way or
-// just finished, asks football-data.org for the matches of those days (1 request) and for the standings of the
+// just finished, asks API-Football for those matches by id (1 request per 20 matches) and for the standings of the
 // competitions where a match has just ended (1 request each). Everything else (calendar, head-to-head, teams,
-// API-Sports details, highlights, texts) stays as the last full run left it.
+// details, highlights, texts) stays as the last full run left it.
 //
-// Usage:  FOOTBALL_DATA_TOKEN=<token> node scripts/fetch-live-scores.mjs
+// Usage:  API_FOOTBALL_KEY=<key> node scripts/fetch-live-scores.mjs
 // Writes "active" and "changed" (true/false) to $GITHUB_OUTPUT: the workflow rebuilds the site only when changed.
-// Note: the football-data.org free plan has no real-time scores (they come with some delay).
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-
-// API responses must not be served from the short disk cache of the full download
-process.env.FOOTBALL_DATA_CACHE_MINUTES ??= "0";
-const { COMPETITIONS, api, compactMatch, compactStanding, loadDotEnv } = await import("./fetch-football-data.mjs");
+import { apiSports, loadDotEnv } from "./lib/api-sports.mjs";
+import { COMPETITIONS, compactFixture, compactStandings } from "./fetch-football.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "data", "football.json");
+const STORE = path.join(root, ".cache", "match-details", "football-store.json");
 
 const BEFORE_MS = 10 * 60e3; // from 10 minutes before kick-off...
 const AFTER_MS = 4 * 3600e3; // ...to 4 hours after it, while the match is not final
@@ -36,6 +34,7 @@ export function liveMatches(competitions, now = Date.now()) {
   return competitions.flatMap((c) =>
     c.matches
       .filter((m) => {
+        if (!m.apiId) return false;
         if (PLAYING.has(m.status)) return true;
         if (FINAL.has(m.status)) return false;
         const t = Date.parse(m.utcDate);
@@ -46,16 +45,13 @@ export function liveMatches(competitions, now = Date.now()) {
 }
 
 const sameResult = (a, b) =>
-  a.status === b.status &&
-  JSON.stringify(a.score) === JSON.stringify(b.score) &&
-  (a.goals?.length ?? 0) === (b.goals?.length ?? 0) &&
-  a.utcDate === b.utcDate;
+  a.status === b.status && JSON.stringify(a.score) === JSON.stringify(b.score) && a.utcDate === b.utcDate;
 
 async function main() {
-  loadDotEnv();
-  const token = process.env.FOOTBALL_DATA_TOKEN;
-  if (!token || !fs.existsSync(OUT)) {
-    console.warn("Token o dati di partenza mancanti: nessun aggiornamento.");
+  loadDotEnv(root);
+  const key = process.env.API_FOOTBALL_KEY;
+  if (!key || !fs.existsSync(OUT)) {
+    console.warn("Chiave o dati di partenza mancanti: nessun aggiornamento.");
     return output({ active: false, changed: false });
   }
   const snap = JSON.parse(fs.readFileSync(OUT, "utf8"));
@@ -66,58 +62,67 @@ async function main() {
     return output({ active: false, changed: false });
   }
   console.log(`Partite da controllare: ${live.length}`);
+  const api = apiSports("football", key);
 
-  const days = live.map(({ m }) => m.utcDate.slice(0, 10)).sort();
-  const today = new Date(now).toISOString().slice(0, 10);
-  const from = days[0];
-  const to = days.at(-1) > today ? days.at(-1) : today;
-  const codes = [...new Set(live.map(({ c }) => c.code))].join(",");
-  const res = await api(`/matches?competitions=${codes}&dateFrom=${from}&dateTo=${to}`, token);
+  const byApiId = new Map(live.map(({ c, m }) => [m.apiId, { c, m }]));
+  const fixtures = [];
+  const ids = [...byApiId.keys()];
+  for (let i = 0; i < ids.length; i += 20) fixtures.push(...(await api.get(`/fixtures?ids=${ids.slice(i, i + 20).join("-")}`)));
 
-  const byId = new Map((snap.competitions ?? []).flatMap((c) => c.matches.map((m, i) => [m.id, { c, i }])));
   const ended = new Set();
   let changed = 0;
-  for (const raw of res.matches ?? []) {
-    const hit = byId.get(raw.id);
+  for (const f of fixtures) {
+    const hit = byApiId.get(f.fixture?.id);
     if (!hit) continue;
-    const old = hit.c.matches[hit.i];
-    const fresh = compactMatch(raw);
-    // scorers and cards added by the full run (separate requests) are kept
-    if (!fresh.goals && old.goals) fresh.goals = old.goals;
-    if (!fresh.cards && old.cards) fresh.cards = old.cards;
+    const old = hit.m;
+    // same teams and same id as before: only status and score change
+    const fresh = compactFixture(
+      f,
+      (t) => (t.id === f.teams.home.id ? old.homeTeam : old.awayTeam),
+      () => old.id,
+    );
     if (sameResult(old, fresh)) continue;
-    hit.c.matches[hit.i] = fresh;
+    Object.assign(old, { status: fresh.status, score: fresh.score, utcDate: fresh.utcDate });
     changed++;
     console.log(
-      `  ${fresh.homeTeam.shortName} – ${fresh.awayTeam.shortName}: ${old.status} → ${fresh.status} ` +
+      `  ${old.homeTeam.shortName} – ${old.awayTeam.shortName}: ${fresh.status} ` +
         `${fresh.score.fullTime.home ?? "-"}-${fresh.score.fullTime.away ?? "-"}`,
     );
-    if (fresh.status === "FINISHED" && old.status !== "FINISHED") ended.add(hit.c.code);
+    if (fresh.status === "FINISHED") ended.add(hit.c);
   }
 
-  for (const code of ended) {
-    const c = snap.competitions.find((x) => x.code === code);
+  const seasons = (() => {
     try {
-      const s = await api(`/competitions/${code}/standings`, token);
-      const standings = (s.standings || [])
-        .filter((g) => g.type === "TOTAL")
-        .map((g) => ({ stage: g.stage, group: g.group, table: g.table.map(compactStanding) }));
-      if (standings.length) {
-        c.standings = standings;
-        console.log(`  classifica aggiornata: ${COMPETITIONS.find((x) => x.code === code)?.name ?? code}`);
+      return JSON.parse(fs.readFileSync(STORE, "utf8")).seasons ?? {};
+    } catch {
+      return {};
+    }
+  })();
+  for (const c of ended) {
+    const def = COMPETITIONS.find((x) => x.code === c.code);
+    const year = seasons[c.code]?.year ?? Number(c.season?.startDate?.slice(0, 4));
+    if (!def || !year) continue;
+    try {
+      const teams = new Map(c.matches.flatMap((m) => [m.homeTeam, m.awayTeam]).map((t) => [t.name, t]));
+      const s = await api.get(`/standings?league=${def.api}&season=${year}`);
+      // the clubs are already in the standings of the full run: keep their site ids
+      const prevTeams = new Map((c.standings ?? []).flatMap((g) => g.table).map((r) => [r.team.crest, r.team]));
+      const st = compactStandings(s[0]?.league?.standings ?? [], (t) => prevTeams.get(t.logo) ?? teams.get(t.name) ?? null);
+      if (st.length && st.every((g) => g.table.every((r) => r.team))) {
+        c.standings = st;
+        console.log(`  classifica aggiornata: ${c.name}`);
       }
     } catch (err) {
-      console.warn(`  classifica ${code} non aggiornata: ${err.message.slice(0, 80)}`);
+      console.warn(`  classifica ${c.name} non aggiornata: ${err.message.slice(0, 80)}`);
     }
   }
 
   if (changed) {
     snap.generatedAt = new Date(now).toISOString();
-    const tmp = OUT + ".tmp";
-    fs.writeFileSync(tmp, JSON.stringify(snap) + "\n");
-    fs.renameSync(tmp, OUT);
+    fs.writeFileSync(OUT + ".tmp", JSON.stringify(snap) + "\n");
+    fs.renameSync(OUT + ".tmp", OUT);
   }
-  console.log(`Partite cambiate: ${changed}`);
+  console.log(`Partite cambiate: ${changed} (${api.stats().requests} richieste)`);
   output({ active: true, changed: changed > 0 });
 }
 

@@ -1,9 +1,8 @@
 # Quick update of football scores and standings between the full refreshes of deploy.yml (every 3 hours).
 # Every 15 minutes: if a match is under way or has just ended, it starts from the data of the last full run
-# (kept in the workflow cache), asks football-data.org only for those matches and the standings that changed
+# (kept in the workflow cache), asks API-Football only for those matches and the standings that changed
 # (scripts/fetch-live-scores.mjs, 1-3 requests), rebuilds the site and publishes it. Otherwise it stops in seconds.
-# The free football-data.org plan has no real-time scores: results arrive with some delay, and GitHub may run
-# scheduled workflows late when it is busy. Nothing here calls API-Sports, YouTube or Claude.
+# GitHub may run scheduled workflows late when it is busy. Nothing here calls YouTube or Claude.
 name: Live scores
 
 on:
@@ -84,8 +83,7 @@ jobs:
         if: steps.snap.outputs.ok == 'true'
         run: node scripts/fetch-live-scores.mjs
         env:
-          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
-          FOOTBALL_DATA_CACHE_MINUTES: "0"
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
 
       - run: npm ci
         if: steps.live.outputs.changed == 'true'

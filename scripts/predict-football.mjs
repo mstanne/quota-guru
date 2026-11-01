@@ -2,7 +2,7 @@
 //
 // Reads  src/data/football.json            (current snapshot: fixtures, recent results)
 //        data/football-history.json         (optional: all results of the current and previous season,
-//                                            written by scripts/fetch-football-data.mjs)
+//                                            written by scripts/fetch-football.mjs)
 // Writes src/data/football-predictions.json  { generatedAt, model, track, predictions: { [matchId]: Prediction } }
 //
 // Predictions are made for every upcoming match AND, "before kick-off", for the finished matches in the

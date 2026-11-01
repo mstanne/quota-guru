@@ -84,7 +84,7 @@ personalizzato o un repo `<utente>.github.io`, imposta nel workflow `BASE_PATH: 
   `scripts/derive-football-home.mjs` a ogni build).
 - **Accessibilità:** quote e card cliccabili sono veri pulsanti/link con etichetta descrittiva; la quota migliore ha
   anche un'icona ✓ (non solo il colore); focus da tastiera sempre visibile. Verificato con axe-core: 0 violazioni.
-- **Stemmi** delle squadre: arrivano da football-data.org (`crest`); se mancano o non si caricano viene mostrata la sigla.
+- **Stemmi** delle squadre: arrivano da API-Football (`crest`); se mancano o non si caricano viene mostrata la sigla.
 
 ## Pagine istituzionali
 
@@ -135,18 +135,24 @@ un CMS o un'API senza toccare il layout.
   della schedina; con i segnaposto mostra `[QUOTA_TOTALE]` e `[VINCITA_POTENZIALE]`.
 - **Immagini editoriali** (guide): `ImageSlot` mostra `[PLACEHOLDER_IMMAGINE_GUIDA_800x450]` finché non imposti l'URL.
 
-## Dati calcio (football-data.org)
+## Dati calcio e NBA (API-Sports)
 
-Calendario, risultati, classifiche e precedenti del calcio arrivano dall'API gratuita di
-[football-data.org](https://www.football-data.org) (10 competizioni del piano gratuito, risultati non in diretta).
+Calendario, risultati, classifiche, precedenti, rose, formazioni e statistiche arrivano da
+[API-Sports](https://api-sports.io) con piano **Pro** (uso commerciale): API-Football per il calcio (13 competizioni,
+comprese Serie B, Europa League e Conference League) e API-NBA per il basket. Una sola chiave per entrambi.
 
-- `scripts/fetch-football-data.mjs` scarica i dati inviando il token nell'header HTTP `X-Auth-Token` e scrive
-  `src/data/football.json` (≈50 richieste, rispettando il limite di 10 al minuto: circa 5–6 minuti).
-- Il token **non va mai scritto nel codice**: su GitHub sta nel secret `FOOTBALL_DATA_TOKEN`
+- `scripts/fetch-football.mjs` → `src/data/football.json`, `data/football-history.json`, `data/football-teams.json`;
+  `scripts/fetch-basket-data.mjs` → `src/data/basket.json`, `data/basket-history.json`. Richieste ben sotto i limiti
+  del piano (300 al minuto, 7.500 al giorno per sport); `scripts/lib/api-sports.mjs` è il client comune.
+- **Id stabili** (`data/id-map.json`, `scripts/lib/id-map.mjs`): fino a novembre 2026 i dati venivano da
+  football-data.org e BALLDONTLIE. La prima volta che una squadra o una partita API-Sports compare viene abbinata a
+  quella dei dati precedenti e ne conserva id e nomi, quindi URL, archivio dei pronostici, storico e pagine squadra non
+  cambiano. Le novità prendono l'id API-Sports più un offset. La mappa si salva con i dati nel branch `dati`.
+- La chiave **non va mai scritta nel codice**: su GitHub sta nel secret `API_FOOTBALL_KEY`
   (Settings → Secrets and variables → Actions); in locale in un file `.env` (già escluso da git):
 
   ```
-  FOOTBALL_DATA_TOKEN=il-tuo-token
+  API_FOOTBALL_KEY=la-tua-chiave
   ```
 
   poi `npm run data` scarica i dati aggiornati.
@@ -156,9 +162,8 @@ Calendario, risultati, classifiche e precedenti del calcio arrivano dall'API gra
   finisce in "Risultati" e mostra "Risultato in arrivo" finché la fonte non pubblica il finale. Il riferimento è
   l'ora della build (`scripts/stamp-build-time.mjs`), uguale per le pagine pre-renderizzate e il browser; per i tornei
   di tennis vale la data di fine del torneo.
-- Il workflow aggiorna i dati e ripubblica il sito ogni 3 ore. Senza token usa lo snapshot già presente nel repo.
-- I termini d'uso richiedono l'attribuzione "Football data provided by the Football-Data.org API", presente nel footer:
-  non rimuoverla.
+- Il workflow aggiorna i dati e ripubblica il sito ogni 3 ore e, durante le partite, aggiorna punteggi e classifiche
+  ogni 15 minuti (`live-scores.yml`). Senza chiave usa gli ultimi dati salvati.
 
 ## Pronostici calcio (modello Poisson)
 
@@ -170,10 +175,9 @@ Al posto delle quote (che arriveranno con i feed degli operatori) home, liste pa
   del campionato di appartenenza. Stima a massima verosimiglianza penalizzata, partite pesate per recenza (il peso si
   dimezza in un anno). Parametri tarati con un backtest su 2022-2026 (5 campionati maggiori, ~3.400 partite):
   log-loss 1X2 ≈ 0,978, esito più probabile corretto ≈ 54%.
-- **Storico** (`data/football-history.json`, non incluso nel sito): stagione in corso da football-data.org a ogni
-  aggiornamento; le due stagioni precedenti si scaricano una sola volta, da football-data.org se il piano lo consente,
-  altrimenti da [openfootball](https://github.com/openfootball/football.json) (stessi nomi squadra). `npm run history`
-  aggiorna solo lo storico (anche senza token). Per riscaricare tutto da zero, cancella il file.
+- **Storico** (`data/football-history.json`, non incluso nel sito): stagione in corso da API-Football a ogni
+  aggiornamento; le due stagioni precedenti si scaricano una sola volta. Alcune stagioni passate raccolte prima di
+  novembre 2026 vengono da [openfootball](https://github.com/openfootball/football.json) (pubblico dominio) e restano.
 - **Previsioni** (`npm run predict` → `src/data/football-predictions.json`): per le partite in programma e, per quelle
   già giocate, il pronostico calcolato prima del calcio d'inizio (serve per il "Pronostico corretto/sbagliato" e per
   il dato di affidabilità in `/metodologia#pronostici`). Se una squadra ha meno di 3 partite pesate il pronostico non
@@ -205,22 +209,15 @@ Al posto delle quote (che arriveranno con i feed degli operatori) home, liste pa
   seguono una normale con deviazione stimata sui residui → probabilità di vittoria, scarto, punti totali.
 - **Backtest** (stagioni 2018-19 → 2023-24, previsione di ogni partita con i soli dati precedenti): esito corretto
   65%, log-loss 0,628, errore medio sullo scarto 10,6 punti.
-- **Storico** (`data/basket-history.json`): stagione in corso + precedente, da BALLDONTLIE (endpoint `games`, gratuito).
-  La stagione precedente si scarica una volta sola (~15 richieste, ~4 minuti col piano gratuito), poi solo
-  aggiornamenti incrementali. **Prima volta:** `npm run history:basket` in locale e committa il file, così
-  GitHub Actions non lo riscarica a ogni build.
+- **Storico** (`data/basket-history.json`): stagione in corso + precedente, da API-NBA (1 richiesta per stagione).
 - **Previsioni** (`scripts/predict-basket.mjs` → `src/data/basket-predictions.json`) girano dentro `npm run build`.
   Senza storico il file resta vuoto e il sito non mostra pronostici NBA.
 
-## Dati basket (BALLDONTLIE)
+## Classifica Serie A di basket (BALLDONTLIE, facoltativa)
 
-Calendario e risultati **NBA** e classifica della **Serie A di basket** arrivano dal piano gratuito di
-[balldontlie.io](https://www.balldontlie.io) (5 richieste al minuto: il download richiede circa un minuto).
-Calendario e risultati della Serie A e dell'EuroLeague richiedono il piano a pagamento della stessa fonte.
-
-- Script: `scripts/fetch-basket-data.mjs` → `src/data/basket.json` (chiave nell'header `Authorization`).
-- Chiave: secret **`BALLDONTLIE_API_KEY`** su GitHub; in locale nel file `.env` (escluso da git).
-- Le condizioni d'uso della fonte non richiedono attribuzione e ammettono l'uso commerciale.
+La classifica della **Serie A di basket** arriva da [balldontlie.io](https://www.balldontlie.io) solo se il secret
+**`BALLDONTLIE_API_KEY`** è impostato; altrimenti resta l'ultima scaricata. Prima di usarla verifica che i termini
+della fonte consentano l'uso commerciale (vale anche per i dati tennis qui sotto).
 
 ## Dati tennis (BALLDONTLIE)
 
@@ -367,9 +364,7 @@ In cima alla pagina di ogni partita finita compare il **tabellino**, calcolato d
 e "entrambe a segno" sui 90', arbitro (calcio); risultato, intervallo, secondo tempo, supplementari, parziale più
 largo, punti totali e tabella dei quarti (NBA). Componenti: `FootballBoxScore.tsx`, `BasketBoxScore.tsx`.
 
-- **Marcatori e cartellini (calcio)**: `scripts/fetch-football-data.mjs` li chiede a football-data.org per le partite
-  finite negli ultimi giorni (una richiesta per partita, salvata in `.cache/match-details`). Se il piano non li
-  fornisce lo registra e riprova dopo 7 giorni; quando arrivano compaiono nel tabellino senza altre modifiche.
+- **Marcatori e cartellini (calcio)**: dalla cronologia degli eventi di API-Football (`scripts/fetch-match-details.mjs`).
 - **Highlights ufficiali** (Serie A, LaLiga, Bundesliga, Primeira Liga, Championship, Eredivisie e NBA;
   non Champions League, Premier League e Ligue 1, che su YouTube non pubblicano le sintesi delle partite, né il
   Brasileirão, le cui sintesi su YouTube sono bloccate in Italia):
@@ -411,9 +406,9 @@ Link dalle pagine dei campionati, dalle schede partita, dalla pagina Basket e da
 `/calcio/squadre/<squadra>` (club dei campionati nazionali) e `/basket/nba/squadre/<squadra>`, con le pagine indice
 `/calcio/squadre` e `/basket/nba/squadre`. I nomi delle squadre in classifiche e schede partita portano alla pagina.
 
-- **Società e rosa (calcio)**: `scripts/fetch-football-data.mjs` scarica `/competitions/{code}/teams` (1 richiesta per
-  campionato) in `data/football-teams.json`: indirizzo, sito, fondazione, colori, stadio, allenatore e rosa. Stadio con
-  capienza e anno di fondazione arrivano anche da API-Football.
+- **Società e rosa (calcio)**: `scripts/fetch-football.mjs` scarica da API-Football club, stadio e fondazione
+  (`/teams`, 1 richiesta per campionato a settimana), rosa (`/players/squads`) e allenatore (`/coachs`), pochi club a
+  ogni giro, in `data/football-teams.json`. Colori sociali e sito web non sono in API-Football: restano quelli già noti.
 - **Stagione per stagione**: classifica, punti, vittorie/pareggi/sconfitte, gol e rendimento in casa e in trasferta,
   calcolati da `data/football-history.json` e `data/basket-history.json` (stagione in corso: classifica ufficiale).
   Se lo storico di una stagione è incompleto la pagina lo segnala.
