@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T16:57:01.066Z",
+  "updatedAt": "2026-11-01T17:23:21.514Z",
   "football": {
     "details": {
       "ok": false,
@@ -24,12 +24,12 @@
     },
     "ok": true,
     "requests": 12,
-    "remainingToday": 54,
+    "remainingToday": 40,
     "games": 12,
     "teamSeasons": 0
   },
   "extraLeagues": {
-    "updatedAt": "2026-11-01T16:57:01.008Z",
+    "updatedAt": "2026-11-01T17:23:21.474Z",
     "ok": false,
     "competitions": {},
     "message": "piano: Free plans do not have access to this season, try from 2022 to 2024. (nuovo controllo dopo il 2026-11-02T09:52:47.456Z)"
