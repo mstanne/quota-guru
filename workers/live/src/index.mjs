@@ -221,6 +221,14 @@ export class LiveHub {
         headers: { "content-type": "application/json" },
       });
     }
+    if (url.pathname === "/prova") {
+      // check from Cloudflare: /status of API-Football (account, plan, requests of the day; not counted in the quota)
+      const base = this.env.API_BASE || "https://v3.football.api-sports.io";
+      const res = await fetch(`${base}/status`, { headers: { "x-apisports-key": this.env.API_FOOTBALL_KEY ?? "" } });
+      const headers = Object.fromEntries([...res.headers].filter(([k]) => /ratelimit|cf-ray|server/i.test(k)));
+      const body = await res.json().catch(() => null);
+      return Response.json({ status: res.status, headers, errors: body?.errors ?? null, subscription: body?.response?.subscription ?? null, requests: body?.response?.requests ?? null });
+    }
     if (url.pathname === "/stato") {
       const schedule = (await this.storage.get("schedule")) ?? { list: [] };
       const build = await this.storage.get("build");
@@ -275,6 +283,7 @@ export default {
       return cors(request, env, res);
     }
     if (url.pathname === "/stato") return cors(request, env, await hub(env).fetch("https://hub/stato"));
+    if (url.pathname === "/prova") return hub(env).fetch("https://hub/prova");
     return new Response("QuotaGuru live", { status: 404 });
   },
 
