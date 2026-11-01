@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-01T20:15:32.966Z",
+ "generatedAt": "2026-11-01T20:28:22.849Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558541": {
@@ -13619,6 +13619,258 @@
     }
    ]
   },
+  "fb:558852": {
+   "fingerprint": "kowesv",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "L'Heerenveen si impone di misura in casa sul NEC per 1-0. La partita, valida per l'11ª giornata di Eredivisie, si è giocata sabato 31 ottobre e il primo tempo si era chiuso sullo 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora, l'Heerenveen è al 7° posto con 18 punti, mentre il NEC è al 13° con 11. [Classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Heerenveen tornerà in campo domenica 8 novembre alle 12:15 in casa contro il Feyenoord. Il NEC tornerà in campo domenica 8 novembre alle 20:00 in trasferta contro l'Utrecht."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Heerenveen – NEC?",
+     "a": "1-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
+  "fb:558851": {
+   "fingerprint": "1l8rh58",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Successo di misura dell'Ajax in casa contro l'AZ, finita 1-0. La partita, valida per la 11ª giornata di Eredivisie, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora l'Ajax è al 2° posto con 24 punti, mentre l'AZ è al 5° con 20. Per tutti i dettagli si può consultare la [classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Ajax tornerà in campo domenica 8 novembre alle 14:30 in trasferta contro il Twente. L'AZ tornerà in campo domenica 8 novembre alle 16:45 in casa contro il Groningen."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Ajax – AZ?",
+     "a": "1-0 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
+  "fb:558850": {
+   "fingerprint": "naxoxp",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Cambuur ha superato il Go Ahead in casa con un netto 4-0. La partita, valida per l'11ª giornata di Eredivisie, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 3-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Cambuur occupa il 9° posto con 15 punti, mentre il Go Ahead è al 10° con 14. [Classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Cambuur tornerà in campo domenica 8 novembre alle 16:45 in casa contro lo PSV. Il Go Ahead giocherà sabato 7 novembre alle 21:00 in trasferta contro l'Excelsior."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Cambuur – Go Ahead?",
+     "a": "4-0 (3-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
+  "fb:558849": {
+   "fingerprint": "1snighv",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Lo Zwolle ha vinto di misura in casa contro il Den Haag, con il punteggio di 1-0. La partita, valida per l'11ª giornata di Eredivisie, si è giocata domenica 1 novembre e il primo tempo si era chiuso sul punteggio di 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora, lo Zwolle è al 14° posto con 11 punti, mentre il Den Haag è al 17° con 6 punti. [Consulta la classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Lo Zwolle tornerà in campo venerdì 6 novembre alle 20:00, in trasferta contro il Willem II. Il Den Haag giocherà sabato 7 novembre alle 18:45, in casa contro lo Sparta Rotterdam."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Zwolle – Den Haag?",
+     "a": "1-0, con lo stesso risultato già al termine del primo tempo (1-0)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
+  "fb:558847": {
+   "fingerprint": "4tbaev",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Twente ha vinto in trasferta contro l'Excelsior con il punteggio di 0-9. La partita, valida per la 11ª giornata di Eredivisie, si è giocata domenica 1 novembre; il primo tempo si era chiuso 0-5."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora l'Excelsior è al 15° posto con 11 punti, mentre il Twente è al 4° con 23. [Vai alla classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Excelsior tornerà in campo sabato 7 novembre alle 21:00 in casa contro il Go Ahead. Il Twente tornerà in campo domenica 8 novembre alle 14:30 in casa contro l'Ajax."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Excelsior – Twente?",
+     "a": "0-9 (0-5 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
+  "fb:1001552214": {
+   "fingerprint": "4ax5h4",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Telstar ha battuto l'Utrecht in casa per 4-2. La partita, valida per l'11ª giornata di Eredivisie, si è giocata domenica 1 novembre; il primo tempo si era chiuso 3-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Considerando le partite giocate finora, il Telstar è al 16° posto con 9 punti, mentre l'Utrecht è al 12° con 12. [Consulta la classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Telstar tornerà in campo sabato 7 novembre alle 16:30, in trasferta contro il Sittard. L'Utrecht giocherà domenica 8 novembre alle 20:00, in casa contro il NEC."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Telstar – Utrecht?",
+     "a": "4-2 (3-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
+  "fb:1001552215": {
+   "fingerprint": "18kywyz",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Successo di misura dello Sparta Rotterdam in trasferta: 2-3 contro il Groningen. La partita, valida per la 11ª giornata di Eredivisie, si è giocata domenica 1 novembre; il primo tempo si era chiuso 2-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Groningen è all'8° posto con 15 punti e lo Sparta Rotterdam all'11° con 12. [Classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Groningen tornerà in campo domenica 8 novembre alle 16:45 in trasferta contro l'AZ. Lo Sparta Rotterdam tornerà in campo sabato 7 novembre alle 18:45 in trasferta contro il Den Haag."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Groningen – Sparta Rotterdam?",
+     "a": "2-3 (2-2 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
   "fb:567344": {
    "fingerprint": "kmzywv",
    "sections": [
@@ -13652,6 +13904,654 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
+    }
+   ]
+  },
+  "fb:567343": {
+   "fingerprint": "ejyjjf",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Moreirense ha ottenuto una vittoria di misura in casa, imponendosi 2-1 sull'Amadora. La partita, valida per la 10ª giornata di Primeira Liga, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Moreirense è all'8° posto con 14 punti, mentre l'Amadora è al 12° con 10. [Consulta la classifica completa](/calcio/primeira-liga/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Moreirense tornerà in campo sabato 7 novembre alle 21:30 in trasferta contro lo Sporting CP. L'Amadora giocherà domenica 8 novembre alle 21:30 in casa contro lo SL Benfica."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Moreirense – Amadora?",
+     "a": "2-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
+    }
+   ]
+  },
+  "fb:567338": {
+   "fingerprint": "11r7la1",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Porto ha vinto nettamente in casa contro l'Estoril Praia, con il punteggio di 4-0. La partita, valida per la 10ª giornata di Primeira Liga, si è disputata sabato 31 ottobre; al termine del primo tempo il risultato era di 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, il Porto occupa il 1° posto con 30 punti, mentre l'Estoril Praia è al 18° posto con 2 punti. [Vedi la classifica completa](/calcio/primeira-liga/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Porto tornerà in campo domenica 8 novembre alle 19:00, in trasferta contro il Vitória SC. L'Estoril Praia giocherà domenica 8 novembre alle 16:30, in casa contro il Marítimo."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Porto – Estoril Praia?",
+     "a": "Il risultato finale è stato 4-0, con 1-0 all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina [Primeira Liga](/calcio/primeira-liga)."
+    }
+   ]
+  },
+  "fb:567341": {
+   "fingerprint": "t8qjwi",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Successo di misura dell'Arouca in casa, che ha battuto il CD Nacional 1-0. La partita, valida per la 10ª giornata di Primeira Liga, si è giocata domenica 1 novembre; il primo tempo si era chiuso 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora l'Arouca è al 4° posto con 20 punti, mentre il CD Nacional è al 15° con 7. [Consulta la classifica completa](/calcio/primeira-liga/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Arouca tornerà in campo venerdì 6 novembre alle 21:45 in trasferta contro il Famalicão. Il CD Nacional giocherà sabato 7 novembre alle 16:30 in casa contro l'Acad. Viseu."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Arouca – CD Nacional?",
+     "a": "1-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina dedicata alla [Primeira Liga](/calcio/primeira-liga)."
+    }
+   ]
+  },
+  "fb:567340": {
+   "fingerprint": "rlyvdr",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Santa Clara ha battuto il Marítimo per 0-2 in trasferta. La partita, valida per la 10ª giornata di Primeira Liga, si è giocata domenica 1 novembre; il primo tempo era terminato 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite giocate finora, il Marítimo occupa il 14° posto con 8 punti, mentre il Santa Clara è al 5° posto con 18 punti. [Consulta la classifica completa](/calcio/primeira-liga/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Marítimo tornerà in campo domenica 8 novembre alle 16:30, in trasferta contro l'Estoril Praia. Anche il Santa Clara giocherà domenica 8 novembre alle 16:30, ma in casa contro il Gil Vicente."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Marítimo – Santa Clara?",
+     "a": "Il match è terminato 0-2, con il punteggio di 0-1 all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina [Primeira Liga](/calcio/primeira-liga)."
+    }
+   ]
+  },
+  "fb:567345": {
+   "fingerprint": "a0ehgm",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Rimonta dell'Acad. Viseu, che dopo essere andato sotto all'intervallo vince in casa per 2-1 contro il Rio Ave. La partita, valida per la 10ª giornata di Primeira Liga, si è giocata domenica 1 novembre; il primo tempo si era chiuso 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora, l'Acad. Viseu è al 6° posto con 17 punti, mentre il Rio Ave è al 16° con 7. [Classifica completa](/calcio/primeira-liga/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Acad. Viseu tornerà in campo sabato 7 novembre alle 16:30 in trasferta contro il CD Nacional. Il Rio Ave tornerà in campo domenica 8 novembre alle 21:30 in casa contro il Braga."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Acad. Viseu – Rio Ave?",
+     "a": "2-1 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
+    }
+   ]
+  },
+  "fb:561916": {
+   "fingerprint": "krgcmj",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Lo Sheffield Utd ha superato di misura il Wrexham in casa, imponendosi 1-0. La partita, valida per la 13ª giornata di Championship, si è giocata venerdì 30 ottobre e il primo tempo si era già chiuso sul punteggio di 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora lo Sheffield Utd occupa il 10° posto con 19 punti, mentre il Wrexham è al 18° con 14. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Lo Sheffield Utd tornerà in campo martedì 3 novembre alle 20:45 in trasferta contro il Preston NE. Il Wrexham scenderà in campo mercoledì 4 novembre alle 20:45 in casa contro il Middlesbrough."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Sheffield Utd – Wrexham?",
+     "a": "Il risultato finale è 1-0, con lo stesso punteggio già registrato all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561910": {
+   "fingerprint": "1dnq8lz",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Rimonta del Norwich, che dopo essere stato sotto all'intervallo vince in casa 3-2 contro il Watford. La partita, valida per la 13ª giornata di Championship, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 0-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Norwich è al 15° posto con 15 punti, mentre il Watford è al 21° con 11. Per visualizzare l'intera graduatoria, consulta la [classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Norwich tornerà in campo martedì 3 novembre alle 20:45 in trasferta contro il Derby County. Anche il Watford tornerà in campo martedì 3 novembre alle 20:45, in casa contro il Lincoln City."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Norwich – Watford?",
+     "a": "Il Norwich ha vinto 3-2 (0-2 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561908": {
+   "fingerprint": "bs9g2g",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Lo Stoke si impone in casa sul Preston NE per 2-0. La partita, valida per la 13ª giornata di Championship, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora, lo Stoke occupa il 7° posto con 23 punti, mentre il Preston NE è al 24° con 5. [Classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Lo Stoke tornerà in campo martedì 3 novembre alle 20:45 in trasferta contro il Blackburn. Anche il Preston NE tornerà in campo martedì 3 novembre alle 20:45, in casa contro lo Sheffield Utd."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Stoke – Preston NE?",
+     "a": "2-0 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561915": {
+   "fingerprint": "tlgdyr",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Birmingham ha vinto in trasferta contro il Lincoln City per 1-3. La partita, valida per la 13ª giornata di Championship, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Lincoln City occupa il 16° posto con 15 punti, mentre il Birmingham è al 6° posto con 23. [Classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Lincoln City tornerà in campo martedì 3 novembre alle 20:45 in trasferta contro il Watford. Il Birmingham tornerà in campo martedì 3 novembre alle 21:00 in casa contro il Millwall."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Lincoln City – Birmingham?",
+     "a": "1-3 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:1001563238": {
+   "fingerprint": "r71zua",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Wolves ha vinto in casa per 3-0 contro il Cardiff. La partita, valida per la 13ª giornata di Championship, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 2-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Wolves è al 3° posto con 24 punti, mentre il Cardiff è al 17° con 14. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Wolves tornerà in campo mercoledì 4 novembre alle 21:00 in trasferta contro il Bristol City. Il Cardiff giocherà mercoledì 4 novembre alle 20:45 in casa contro il West Ham."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Wolves – Cardiff?",
+     "a": "Il risultato finale è stato 3-0, con il primo tempo chiuso 2-0."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:1001563234": {
+   "fingerprint": "wjsmio",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Vittoria netta del Southampton, che in casa supera il QPR per 4-1. La partita, valida per la 13ª giornata di Championship, si è giocata sabato 31 ottobre; al termine del primo tempo il punteggio era di 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite disputate finora il Southampton occupa il 5° posto con 23 punti, mentre il QPR è al 9° con 20. Puoi consultare la [classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Southampton tornerà in campo martedì 3 novembre alle 21:00, in trasferta contro il West Brom. Il QPR giocherà martedì 3 novembre alle 20:45, in casa contro il Burnley."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Southampton – QPR?",
+     "a": "4-1 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561912": {
+   "fingerprint": "ljj7mi",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Burnley e il Portsmouth hanno chiuso a reti inviolate: 0-0. La partita, valida per la 13ª giornata di Championship, si è disputata sabato 31 ottobre; anche il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, il Burnley occupa il 22° posto con 9 punti, mentre il Portsmouth è all'11° con 19. [Classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Burnley tornerà in campo martedì 3 novembre alle 20:45, in trasferta contro il QPR. Il Portsmouth scenderà in campo nello stesso giorno e alla stessa ora, giocando in casa contro lo Swansea."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Burnley – Portsmouth?",
+     "a": "Il risultato finale è 0-0, con lo stesso punteggio anche all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561906": {
+   "fingerprint": "5pabdn",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il West Brom ha battuto in trasferta il West Ham per 1-3. La partita, valida per la 13ª giornata di Championship, si è giocata sabato 31 ottobre; al termine del primo tempo il punteggio era di 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il West Ham occupa l'8° posto con 22 punti, mentre il West Brom è al 4° con 24. Puoi consultare la [classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il West Ham tornerà in campo mercoledì 4 novembre alle 20:45, in trasferta contro il Cardiff. Il West Brom giocherà martedì 3 novembre alle 21:00, in casa contro il Southampton."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita West Ham – West Brom?",
+     "a": "1-3 (1-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina di [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561913": {
+   "fingerprint": "17l7zf2",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Millwall ha battuto il Derby County per 4-1 in casa. La partita, valida per la 13ª giornata di Championship, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 3-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora, il Millwall è al 12° posto con 18 punti, mentre il Derby County è al 23° con 7. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Millwall tornerà in campo martedì 3 novembre alle 21:00 in trasferta contro il Birmingham. Il Derby County giocherà martedì 3 novembre alle 20:45 in casa contro il Norwich."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Millwall – Derby County?",
+     "a": "4-1 (3-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561909": {
+   "fingerprint": "1ep7iou",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Bristol City ha vinto di misura in trasferta contro il Bolton, con il risultato finale di 2-3. La partita, valida per la 13ª giornata di Championship, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Bolton è al 19° posto con 14 punti, mentre il Bristol City è al 14° con 18. [Vai alla classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Bolton tornerà in campo martedì 3 novembre alle 20:45 in trasferta contro il Charlton. Il Bristol City tornerà in campo mercoledì 4 novembre alle 21:00 in casa contro il Wolves."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Bolton – Bristol City?",
+     "a": "2-3 (1-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561911": {
+   "fingerprint": "fiky7z",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Vittoria netta del Middlesbrough, che in casa batte il Charlton 3-0. La partita, valida per la 13ª giornata di Championship, si è giocata sabato 31 ottobre; al termine del primo tempo il punteggio era di 2-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Middlesbrough è al 1° posto con 28 punti, mentre il Charlton è al 20° con 14. Puoi consultare la [classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Middlesbrough tornerà in campo mercoledì 4 novembre alle 20:45, in trasferta contro il Wrexham. Il Charlton tornerà in campo martedì 3 novembre alle 20:45, in casa contro il Bolton."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Middlesbrough – Charlton?",
+     "a": "3-0 (2-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561907": {
+   "fingerprint": "bkaerr",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Lo Swansea ha vinto largamente in casa contro il Blackburn, imponendosi 4-0. La partita, valida per la 13ª giornata di Championship, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 3-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora lo Swansea è al 2° posto con 26 punti, mentre il Blackburn è al 13° con 18. [Vedi la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Lo Swansea tornerà in campo martedì 3 novembre alle 20:45 in trasferta contro il Portsmouth. Il Blackburn giocherà anch'esso martedì 3 novembre alle 20:45, in casa contro lo Stoke."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Swansea – Blackburn?",
+     "a": "Il risultato finale è 4-0, con 3-0 all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina dedicata alla [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:1001492430": {
+   "fingerprint": "45tgad",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Vittoria di misura del Cruzeiro in trasferta: 0-1 contro l'Atletico-MG. La gara, valida per la 33ª giornata di Brasileirão, si è disputata giovedì 29 ottobre; il primo tempo si era concluso 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le gare disputate finora, l'Atletico-MG occupa il 7° posto con 50 punti, mentre il Cruzeiro è al 3° con 57. [Classifica completa](/calcio/brasileirao/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Atletico-MG tornerà in campo giovedì 5 novembre alle 01:30, in trasferta contro il Botafogo. Il Cruzeiro scenderà in campo venerdì 6 novembre alle 01:30, in casa contro il Bahia."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Qual è stato il risultato di Atletico-MG – Cruzeiro?",
+     "a": "La partita è terminata 0-1 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove si trovano gli altri risultati?",
+     "a": "Nella pagina [Brasileirão](/calcio/brasileirao)."
     }
    ]
   },
@@ -13720,6 +14620,78 @@
     {
      "q": "Com'è finita Grêmio – Paranaense?",
      "a": "2-0 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Brasileirão](/calcio/brasileirao)."
+    }
+   ]
+  },
+  "fb:555063": {
+   "fingerprint": "12ipydg",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Corinthians ha battuto il Mirassol in casa per 2-0. La partita, valida per la 33ª giornata del Brasileirão, si è giocata sabato 31 ottobre; il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, il Corinthians occupa il 17° posto con 36 punti, mentre il Mirassol è al 16° con 37. [Classifica completa](/calcio/brasileirao/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Corinthians tornerà in campo giovedì 5 novembre alle 01:30, in trasferta contro lo São Paulo. Il Mirassol giocherà martedì 3 novembre alle 23:30, in trasferta contro il Chapecoense."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Qual è stato il risultato di Corinthians – Mirassol?",
+     "a": "2-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove si trovano gli altri risultati?",
+     "a": "Nella pagina [Brasileirão](/calcio/brasileirao)."
+    }
+   ]
+  },
+  "fb:555064": {
+   "fingerprint": "1fa6adh",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Coritiba ha battuto il Vitória in casa per 2-0. La partita, valida per la 33ª giornata di Brasileirão, si è giocata sabato 31 ottobre; il primo tempo si era chiuso sullo 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora, il Coritiba è all'11° posto con 42 punti, mentre il Vitória è al 14° con 38. Puoi consultare la [classifica completa](/calcio/brasileirao/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Coritiba tornerà in campo mercoledì 4 novembre alle 01:30, in trasferta contro l'Internacional. Il Vitória tornerà in campo sabato 7 novembre alle 00:00, in casa contro il Fluminense."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Coritiba – Vitória?",
+     "a": "2-0 (0-0 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
@@ -13820,6 +14792,422 @@
     {
      "q": "Dove trovo le altre partite NBA?",
      "a": "Puoi consultarle nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21717990": {
+   "fingerprint": "rrcwln",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Wizards hanno battuto gli Hornets 95-79. La sfida si è disputata sabato 31 ottobre.",
+      "All'intervallo i Wizards erano avanti 51-46.",
+      "Il parziale più netto è arrivato nel 3º quarto, vinto dai Wizards per 28-13."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "I punti complessivi sono stati 174.",
+      "Parziali (Wizards–Hornets): 22-26, 29-20, 28-13, 16-20."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Washington Wizards – Charlotte Hornets?",
+     "a": "95-79 per i Wizards."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21717992": {
+   "fingerprint": "1d16mvc",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Celtics hanno battuto i Bulls 125-111. La partita si è giocata sabato 31 ottobre.",
+      "All'intervallo i Celtics conducevano 78-49.",
+      "Il parziale più netto è arrivato nel 1º quarto, vinto dai Celtics 44-25."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti complessivi: 236.",
+      "Parziali (Celtics–Bulls): 44-25, 34-24, 21-25, 26-37."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Boston Celtics – Chicago Bulls?",
+     "a": "I Celtics hanno vinto 125-111."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Sono disponibili nella pagina dei [pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21717993": {
+   "fingerprint": "14xmtu1",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Pistons hanno battuto i Nets per 110-94. La partita si è disputata sabato 31 ottobre.",
+      "All'intervallo i Pistons conducevano 56-49.",
+      "Il parziale più netto è arrivato nel 3º quarto, vinto dai Pistons per 36-17."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 204.",
+      "Parziali (Nets–Pistons): 28-21, 21-35, 17-36, 28-18."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Brooklyn Nets – Detroit Pistons?",
+     "a": "La partita è terminata 94-110 in favore dei Pistons."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Le altre partite NBA sono nella [pagina dedicata alla NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21717994": {
+   "fingerprint": "gwbc6u",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I 76ers hanno battuto i Knicks 98-93. La partita si è giocata sabato 31 ottobre.",
+      "All'intervallo i 76ers conducevano 53-44.",
+      "Il parziale più netto è arrivato nel 1º quarto, vinto dai 76ers 29-21."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 191.",
+      "Parziali (76ers–Knicks): 29-21, 24-23, 24-24, 21-25."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Philadelphia 76ers – New York Knicks?",
+     "a": "98-93 per i 76ers."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Nella [pagina dedicata alle partite NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21717995": {
+   "fingerprint": "ssst8m",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Magic si impongono sui Raptors per 121-114. La sfida si è giocata sabato 31 ottobre.",
+      "All'intervallo i Magic erano avanti 64-55.",
+      "Il parziale più netto è arrivato nel 2º quarto, vinto dai Magic per 33-28."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 235.",
+      "Parziali (Raptors–Magic): 27-31, 28-33, 33-31, 26-26."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Toronto Raptors – Orlando Magic?",
+     "a": "Il risultato finale è 114-121 per i Magic."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21717996": {
+   "fingerprint": "4f6t2j",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Gli Heat hanno battuto i Pacers 145-125. La partita si è giocata sabato 31 ottobre.",
+      "All'intervallo gli Heat conducevano 68-61.",
+      "Il parziale più netto è arrivato nel 2º quarto, vinto dagli Heat 32-19."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 270.",
+      "Parziali (Heat–Pacers): 36-42, 32-19, 35-27, 42-37."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Miami Heat – Indiana Pacers?",
+     "a": "145-125 per gli Heat."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21717997": {
+   "fingerprint": "3s4sfg",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Mavericks hanno superato i Rockets 116-111 nella partita giocata sabato 31 ottobre.",
+      "All'intervallo i Rockets conducevano 51-44. Nella ripresa i Mavericks hanno recuperato 7 punti di svantaggio.",
+      "Il parziale più netto è arrivato nel 2º quarto, vinto dai Rockets 31-17."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 227.",
+      "Parziali (Mavericks–Rockets): 27-20, 17-31, 32-33, 40-27."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Dallas Mavericks – Houston Rockets?",
+     "a": "116-111 per i Mavericks."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Nella [sezione dedicata alla NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21717998": {
+   "fingerprint": "1ash0sp",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Timberwolves hanno superato i Clippers per 127-101. La partita si è giocata sabato 31 ottobre.",
+      "All'intervallo i Timberwolves conducevano 69-56.",
+      "Il parziale più netto è arrivato nel 1º quarto, vinto dai Timberwolves per 34-24."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 228.",
+      "Parziali (Timberwolves–Clippers): 34-24, 35-32, 29-25, 29-20."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Minnesota Timberwolves – LA Clippers?",
+     "a": "127-101 per i Timberwolves."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21717999": {
+   "fingerprint": "1ot08st",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Golden State Warriors hanno battuto i Los Angeles Lakers 112-95. La partita si è giocata sabato 31 ottobre.",
+      "All'intervallo il punteggio era in parità, 53-53.",
+      "Il parziale più netto è arrivato nel 1º quarto, vinto dai Lakers 38-15."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 207.",
+      "Parziali (Warriors–Lakers): 15-38, 38-15, 32-27, 27-15."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Golden State Warriors – Los Angeles Lakers?",
+     "a": "I Warriors hanno vinto 112-95."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Sono disponibili nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21718000": {
+   "fingerprint": "1vd010b",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Nuggets hanno superato i Suns per 127-120. La sfida si è disputata sabato 31 ottobre.",
+      "All'intervallo i Nuggets erano in vantaggio per 71-67.",
+      "Il parziale più netto è arrivato nel 2º quarto, vinto dai Nuggets per 39-30."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti complessivi: 247.",
+      "Parziali (Suns–Nuggets): 37-32, 30-39, 26-32, 27-24."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Qual è stato il risultato di Phoenix Suns – Denver Nuggets?",
+     "a": "Il risultato finale è stato 120-127 in favore dei Nuggets."
+    },
+    {
+     "q": "Dove posso consultare le altre partite NBA?",
+     "a": "Sono disponibili nella pagina dedicata alle [previsioni NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21718001": {
+   "fingerprint": "1vyxyew",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Trail Blazers battono i Jazz 112-90. La partita si è giocata sabato 31 ottobre.",
+      "All'intervallo conducevano i Trail Blazers 59-42.",
+      "Il parziale più netto è arrivato nel 1º quarto, vinto dai Trail Blazers 27-18."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 202.",
+      "Parziali (Jazz–Trail Blazers): 18-27, 24-32, 22-29, 26-24."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Utah Jazz – Portland Trail Blazers?",
+     "a": "90-112 per i Trail Blazers."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Nella [pagina dedicata alla NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21718002": {
+   "fingerprint": "1dc5l5y",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I 76ers hanno superato gli Hornets per 109-104. La sfida si è disputata sabato 31 ottobre.",
+      "All'intervallo i 76ers erano in vantaggio 57-54.",
+      "Lo scarto più ampio si è registrato nel 2º quarto, vinto dai 76ers per 30-17."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 213.",
+      "Parziali per quarto (Hornets–76ers): 37-27, 17-30, 29-20, 21-32."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Charlotte Hornets – Philadelphia 76ers?",
+     "a": "Il risultato è stato 104-109 a favore dei 76ers."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21718003": {
+   "fingerprint": "kwfwph",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Pelicans hanno battuto gli Hawks 121-99. La partita si è giocata domenica 1 novembre.",
+      "All'intervallo i Pelicans conducevano 63-48.",
+      "Il parziale più netto è arrivato nel 1º quarto, vinto dai Pelicans 35-18."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 220.",
+      "Parziali per quarto (Pelicans–Hawks): 35-18, 28-30, 29-26 e 29-25."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita New Orleans Pelicans – Atlanta Hawks?",
+     "a": "121-99 per i Pelicans."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Nella sezione dedicata ai [pronostici sulla NBA](/pronostici/nba)."
     }
    ]
   }
