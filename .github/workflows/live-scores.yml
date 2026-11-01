@@ -1,0 +1,216 @@
+# Quick update of football scores and standings between the full refreshes of deploy.yml (every 3 hours).
+# Every 15 minutes: if a match is under way or has just ended, it starts from the data of the last full run
+# (kept in the workflow cache), asks football-data.org only for those matches and the standings that changed
+# (scripts/fetch-live-scores.mjs, 1-3 requests), rebuilds the site and publishes it. Otherwise it stops in seconds.
+# The free football-data.org plan has no real-time scores: results arrive with some delay, and GitHub may run
+# scheduled workflows late when it is busy. Nothing here calls API-Sports, YouTube or Claude.
+name: Live scores
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read # to see whether a full refresh (deploy.yml) is running
+
+concurrency:
+  # own queue, so a quick run never cancels a full refresh waiting in the "pages" queue of deploy.yml;
+  # while a full refresh is running the quick run skips its turn (see the first step)
+  group: live-scores
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-26.04
+    outputs:
+      changed: ${{ steps.live.outputs.changed }}
+    steps:
+      - name: Skip while a full refresh is running
+        id: busy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          n=$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/deploy.yml/runs?per_page=5" \
+            --jq '[.workflow_runs[] | select(.status != "completed")] | length')
+          if [ "$n" != "0" ]; then
+            echo "::notice::Aggiornamento completo in corso: questo giro rapido salta il turno"
+            echo "busy=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "busy=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v7
+        if: steps.busy.outputs.busy == 'false'
+
+      - uses: actions/setup-node@v7
+        if: steps.busy.outputs.busy == 'false'
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Restore state between runs
+        if: steps.busy.outputs.busy == 'false'
+        # Same paths as deploy.yml (they must match to share the cache). Saved again only if the site changes.
+        id: state
+        uses: actions/cache/restore@v6
+        with:
+          path: |
+            .cache/seo
+            .cache/og
+            .cache/match-details
+          key: state-${{ github.run_id }}
+          restore-keys: |
+            state-
+            seo-
+
+      - name: Restore the data of the last full run
+        id: snap
+        if: steps.busy.outputs.busy == 'false'
+        run: |
+          if [ -f .cache/match-details/snapshot.tgz ]; then
+            tar xzf .cache/match-details/snapshot.tgz
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::Nessun dato salvato da un aggiornamento completo: attendo il prossimo giro di deploy.yml"
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update live scores
+        id: live
+        if: steps.snap.outputs.ok == 'true'
+        run: node scripts/fetch-live-scores.mjs
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+          FOOTBALL_DATA_CACHE_MINUTES: "0"
+
+      - run: npm ci
+        if: steps.live.outputs.changed == 'true'
+
+      - name: Log of the data added by the APIs
+        if: steps.live.outputs.changed == 'true'
+        run: node scripts/log-data-changes.mjs
+        continue-on-error: true
+
+      - name: Keep the updated data for the next quick run
+        if: steps.live.outputs.changed == 'true'
+        run: |
+          mkdir -p .cache/match-details
+          tar czf .cache/match-details/snapshot.tgz --ignore-failed-read \
+            src/data/football.json src/data/basket.json src/data/tennis.json \
+            src/data/football-details.json src/data/basket-details.json src/data/highlights.json \
+            src/data/editorial-ai.json data public/stato-dati.json
+        continue-on-error: true
+
+      - name: Restore the predictions archive
+        if: steps.live.outputs.changed == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          dir=.cache/predictions-archive
+          set +e
+          git ls-remote --exit-code --heads "$url" archivio-pronostici >/dev/null
+          found=$?
+          set -e
+          if [ "$found" -eq 0 ]; then
+            git clone --quiet --depth 1 --branch archivio-pronostici "$url" "$dir"
+          else
+            echo "::warning::Archivio pronostici non raggiungibile: questo giro non pubblica"
+            exit 1
+          fi
+
+      - name: Check the predictions archive
+        # Without the archive the pages of started matches would lose the published prediction: do not publish.
+        id: archive
+        if: steps.live.outputs.changed == 'true'
+        run: test -d .cache/predictions-archive/.git
+
+      - name: Build
+        if: steps.live.outputs.changed == 'true'
+        run: npm run build
+        env:
+          BASE_PATH: /
+          SITE_URL: https://www.quotaguru.it
+          VITE_ANALYTICS_PROVIDER: ${{ vars.ANALYTICS_PROVIDER }}
+          VITE_ANALYTICS_ID: ${{ vars.ANALYTICS_ID }}
+          VITE_COOKIE_POLICY_URL: ${{ vars.COOKIE_POLICY_URL }}
+
+      - name: Save the predictions archive
+        if: steps.live.outputs.changed == 'true'
+        continue-on-error: true
+        working-directory: .cache/predictions-archive
+        run: |
+          git add -A
+          if git diff --cached --quiet; then echo "Archivio pronostici invariato"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit --quiet -m "Archivio pronostici $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --quiet origin HEAD:archivio-pronostici
+
+      - name: Save state between runs
+        if: steps.live.outputs.changed == 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: |
+            .cache/seo
+            .cache/og
+            .cache/match-details
+          key: state-${{ github.run_id }}
+
+      - uses: actions/upload-pages-artifact@v5
+        if: steps.live.outputs.changed == 'true'
+        with:
+          path: dist
+
+      - name: Keep the list of new or changed pages for IndexNow
+        if: steps.live.outputs.changed == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: indexnow-urls
+          path: .cache/seo/indexnow-urls.txt
+          if-no-files-found: ignore
+          retention-days: 1
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.changed == 'true'
+    runs-on: ubuntu-26.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
+
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            scripts/indexnow.mjs
+            .nvmrc
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: indexnow-urls
+          path: .cache/seo
+        continue-on-error: true
+
+      - name: Send changed pages to IndexNow
+        run: node scripts/indexnow.mjs
+        continue-on-error: true
+        env:
+          SITE_URL: https://www.quotaguru.it

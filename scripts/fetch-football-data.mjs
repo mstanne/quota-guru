@@ -47,7 +47,7 @@ const MIN_GAP_MS = 6500; // ~9 requests/minute, under the free limit of 10
 const CACHE_DIR = path.join(root, ".cache", "football-data");
 const CACHE_TTL_MS = Number(process.env.FOOTBALL_DATA_CACHE_MINUTES ?? 30) * 60000;
 
-function loadDotEnv() {
+export function loadDotEnv() {
   // Minimal .env support for local runs (KEY=value lines). .env is git-ignored.
   const file = path.join(root, ".env");
   if (!fs.existsSync(file)) return;
@@ -62,7 +62,7 @@ let lastRequest = 0;
 
 const cacheFile = (p) => path.join(CACHE_DIR, p.replace(/[^a-zA-Z0-9]+/g, "_") + ".json");
 
-async function api(pathAndQuery, token, attempt = 1) {
+export async function api(pathAndQuery, token, attempt = 1) {
   const cached = cacheFile(pathAndQuery);
   if (CACHE_TTL_MS > 0 && fs.existsSync(cached) && Date.now() - fs.statSync(cached).mtimeMs < CACHE_TTL_MS) {
     return JSON.parse(fs.readFileSync(cached, "utf8"));
@@ -129,7 +129,7 @@ const events = (m) => {
   return { goals, cards };
 };
 
-function compactMatch(m) {
+export function compactMatch(m) {
   const duration = m.score?.duration ?? "REGULAR";
   const { goals, cards } = events(m);
   return {
@@ -246,7 +246,7 @@ function compactTeam(t, now) {
   };
 }
 
-function compactStanding(row) {
+export function compactStanding(row) {
   return {
     position: row.position,
     team: team(row.team),
@@ -472,7 +472,11 @@ function seasonOf(r, code) {
 
 // `node scripts/fetch-football-data.mjs --history` updates only the history (token optional: without it
 // past seasons come from openfootball), using the competitions of the current snapshot.
-if (process.argv.includes("--history")) {
+// Run only when called directly (scripts/fetch-live-scores.mjs imports the helpers above).
+const direct = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (!direct) {
+  // imported: nothing to run
+} else if (process.argv.includes("--history")) {
   loadDotEnv();
   const snap = JSON.parse(fs.readFileSync(OUT, "utf8"));
   updateHistory(process.env.FOOTBALL_DATA_TOKEN, snap.competitions).catch((err) => {

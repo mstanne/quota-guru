@@ -1,5 +1,6 @@
 # Builds the site and publishes it to GitHub Pages on every push to main and every 3 hours
 # (to refresh fixtures, results and standings from football-data.org).
+# In between, live-scores.yml updates scores and standings every 15 minutes while matches are on.
 # One-time setup:
 #   - repo Settings -> Pages -> Source: "GitHub Actions"
 #   - repo Settings -> Secrets and variables -> Actions -> New repository secret:
@@ -127,6 +128,17 @@ jobs:
         # Compares the fresh data with the previous run (state in .cache/seo) and publishes /registro-dati.json,
         # read by the daily e-mail report. Never blocks the deploy.
         run: node scripts/log-data-changes.mjs
+        continue-on-error: true
+
+      - name: Keep the downloaded data for the quick live-score runs
+        # live-scores.yml starts from these files and only updates scores and standings in between the full runs.
+        # Stored inside .cache/match-details so the cache paths (and the existing cache) stay the same.
+        run: |
+          mkdir -p .cache/match-details
+          tar czf .cache/match-details/snapshot.tgz --ignore-failed-read \
+            src/data/football.json src/data/basket.json src/data/tennis.json \
+            src/data/football-details.json src/data/basket-details.json src/data/highlights.json \
+            src/data/editorial-ai.json data public/stato-dati.json
         continue-on-error: true
 
       - name: Restore the predictions archive
