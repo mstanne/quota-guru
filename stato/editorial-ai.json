@@ -1736,20 +1736,20 @@
   "at": "2026-11-01T00:26:56.135Z"
  },
  "fb:560640": {
-  "fingerprint": "3qkf8i",
+  "fingerprint": "ma0f10",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 7 novembre alle 16:00 l'Arsenal ospita l'Hull City nella 10ª giornata di Premier League. In classifica l'Arsenal occupa il 2° posto con 21 punti, mentre l'Hull City è al 10° con 11."
+     "Sabato 7 novembre alle 16:00 l'Arsenal ospita l'Hull City nella 10ª giornata di Premier League. In classifica l'Arsenal occupa il 1° posto con 24 punti, mentre l'Hull City è al 10° posto con 11 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Premier League l'Arsenal ha ottenuto 4 vittorie e 1 sconfitta, con sequenza P-V-V-V-V, segnando 6 gol e subendone 4. Arriva da 4 vittorie consecutive. In casa ha vinto entrambe le partite disputate.",
-     "Nelle ultime 5 partite di Premier League l'Hull City ha raccolto 3 pareggi e 2 sconfitte, con sequenza P-N-P-N-N, segnando 6 gol e subendone 8. In trasferta ha perso entrambe le partite disputate."
+     "Nelle ultime 5 partite di Premier League l'Arsenal ha ottenuto 4 vittorie e 1 sconfitta (sequenza P-V-V-V-V), segnando 6 gol e subendone 4. Arriva da 4 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
+     "Nelle ultime 5 partite di Premier League l'Hull City ha ottenuto 3 pareggi e 2 sconfitte (sequenza P-N-P-N-N), segnando 6 gol e subendone 8. In trasferta ha perso tutte le 2 partite disputate."
     ],
     "bullets": []
    },
@@ -1761,7 +1761,7 @@
      "Gol subiti finora: Arsenal 5, Hull City 10.",
      "L'Arsenal ha la miglior difesa del torneo.",
      "L'Arsenal non ha subito gol in 3 delle ultime 5 partite.",
-     "In 3 delle ultime 5 partite dell'Hull City sono stati segnati almeno tre gol."
+     "Nelle ultime 5 partite dell'Hull City si sono segnati almeno tre gol in 3 occasioni."
     ]
    }
   ],
@@ -1776,27 +1776,27 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Le spiegazioni si trovano nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T19:02:25.710Z"
+  "at": "2026-11-01T19:46:42.880Z"
  },
  "fb:560641": {
-  "fingerprint": "10mja5m",
+  "fingerprint": "1exal3x",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Nottingham Forest e Manchester City si affrontano sabato 7 novembre alle 18:30 per la 10ª giornata di Premier League. In classifica il Nottingham Forest è al 19° posto con 6 punti, mentre il Manchester City è al 1° con 21."
+     "Il Nottingham Forest e il Manchester City si affrontano sabato 7 novembre alle 18:30, per la 10ª giornata di Premier League. In classifica il Nottingham Forest è al 19° posto con 6 punti, mentre il Manchester City è al 2° con 21."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Premier League il Nottingham Forest ha ottenuto 1 pareggio e 4 sconfitte (sequenza P-P-P-N-P), con 2 gol fatti e 8 subiti. In casa ha perso tutte le 2 partite disputate.",
-     "Nelle ultime 5 partite di Premier League il Manchester City ha ottenuto 3 vittorie e 2 sconfitte (sequenza V-V-V-P-P), con 12 gol fatti e 8 subiti. Ha perso le ultime 2. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     "Nelle ultime 5 partite di Premier League il Nottingham Forest ha raccolto 1 pareggio e 4 sconfitte (sequenza P-P-P-N-P), segnando 2 gol e subendone 8. In casa ha perso tutte le 2 partite giocate.",
+     "Nelle ultime 5 partite di Premier League il Manchester City ha raccolto 3 vittorie e 2 sconfitte (sequenza V-V-V-P-P), segnando 12 gol e subendone 8. Ha perso le ultime 2. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -1804,7 +1804,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Nottingham Forest 0,7, Manchester City 2,2.",
+     "Media gol segnati: Nottingham Forest 0,7, Manchester City 2,2 a partita.",
      "Gol subiti finora: Nottingham Forest 12, Manchester City 10.",
      "In 4 delle ultime 5 partite del Manchester City si sono segnati almeno tre gol."
     ]
@@ -1821,27 +1821,27 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T19:02:29.241Z"
+  "at": "2026-11-01T19:46:46.144Z"
  },
  "fb:560635": {
-  "fingerprint": "frfsql",
+  "fingerprint": "k00s7c",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 15:00 il Crystal Palace ospita il Liverpool, per la 10ª giornata di Premier League. In classifica il Crystal Palace occupa il 18° posto con 7 punti, mentre il Liverpool è al 5° con 15."
+     "Domenica 8 novembre alle 15:00 il Crystal Palace ospiterà il Liverpool per la 10ª giornata di Premier League. In classifica il Crystal Palace occupa il 18° posto con 7 punti, mentre il Liverpool è al 5° posto con 15."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Premier League il Crystal Palace ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza N-V-P-P-P), segnando 3 gol e subendone 10. Ha perso le ultime 3. In casa, in stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 5 partite di Premier League il Liverpool ha raccolto 3 vittorie e 2 sconfitte (sequenza V-P-V-V-P), con 5 gol fatti e 5 subiti. In trasferta ha vinto tutte le 2 partite giocate."
+     "Nelle ultime 5 partite di Premier League il Crystal Palace ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con sequenza N-V-P-P-P. Ha segnato 3 gol e ne ha subiti 10. Le ultime 3 partite sono state tutte perse. In casa, nel bilancio stagionale, il Crystal Palace ha 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Premier League il Liverpool ha ottenuto 3 vittorie e 2 sconfitte, con sequenza V-P-V-V-P. Ha segnato 5 gol e ne ha subiti 5. In trasferta ha vinto tutte le 2 partite giocate."
     ],
     "bullets": []
    },
@@ -1849,8 +1849,8 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Crystal Palace 1,0, Liverpool 1,4.",
-     "Gol subiti finora: Crystal Palace 21, Liverpool 8."
+     "Media gol segnati a partita: Crystal Palace 1,0, Liverpool 1,2.",
+     "Gol subiti finora: Crystal Palace 21, Liverpool 9."
     ]
    }
   ],
@@ -1860,8 +1860,8 @@
     "a": "Domenica 8 novembre alle 15:00, ora italiana."
    },
    {
-    "q": "Dove si possono consultare classifica e risultati?",
-    "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Premier League](/calcio/premier-league) e la [classifica aggiornata](/calcio/premier-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -1869,7 +1869,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T19:02:32.393Z"
+  "at": "2026-11-01T19:46:49.659Z"
  },
  "fb:560636": {
   "fingerprint": "59gffk",
@@ -2414,20 +2414,20 @@
   "at": "2026-11-01T16:10:19.936Z"
  },
  "fb:564741": {
-  "fingerprint": "esmdsy",
+  "fingerprint": "2hn6yl",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Valencia e Real Madrid si affrontano sabato 7 novembre alle 21:00 per la 12ª giornata di LaLiga. In classifica il Valencia occupa il 19° posto con 6 punti, mentre il Real Madrid è al 3° con 27."
+     "Valencia e Real Madrid si affrontano sabato 7 novembre alle 21:00 per la 12ª giornata di LaLiga. In classifica il Valencia è al 19° posto con 6 punti, il Real Madrid al 3° con 27."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di LaLiga il Valencia ha ottenuto 2 pareggi e 2 sconfitte (sequenza P-N-N-P), con 5 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie.",
-     "Nelle ultime 5 partite di LaLiga il Real Madrid ha ottenuto 4 vittorie e 1 sconfitta (sequenza P-V-V-V-V), con 11 gol fatti e 4 subiti. Arriva da 4 vittorie consecutive. In trasferta il bilancio stagionale è di 2 vittorie e 1 sconfitta."
+     "Nelle ultime 5 partite di LaLiga il Valencia ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-N-N-P-V), con 6 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 pareggio e 2 sconfitte, ancora senza vittorie.",
+     "Nelle ultime 5 partite di LaLiga il Real Madrid ha raccolto 4 vittorie e 1 sconfitta (sequenza P-V-V-V-V), con 11 gol fatti e 4 subiti. È reduce da 4 vittorie consecutive. In trasferta il bilancio stagionale è di 2 vittorie e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -2437,8 +2437,8 @@
     "bullets": [
      "Media gol segnati: Valencia 0,7, Real Madrid 2,5 a partita.",
      "Gol subiti finora: Valencia 17, Real Madrid 10.",
-     "Nelle 4 ultime partite del Valencia si sono segnati almeno tre gol in 3 occasioni.",
-     "Nelle 5 ultime partite del Real Madrid si sono segnati almeno tre gol in 4 occasioni."
+     "In 3 delle ultime 5 partite del Valencia si sono segnati almeno tre gol.",
+     "In 4 delle ultime 5 partite del Real Madrid si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -2453,27 +2453,27 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T19:02:50.765Z"
+  "at": "2026-11-01T19:46:52.083Z"
  },
  "fb:564738": {
-  "fingerprint": "1ymvba0",
+  "fingerprint": "2j3v8n",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 14:00 l'Elche ospita il Real Betis per la 12ª giornata di LaLiga. In classifica l'Elche occupa il 17° posto con 10 punti, mentre il Real Betis è 4° con 23."
+     "Domenica 8 novembre alle 14:00 l'Elche ospita il Real Betis nella 12ª giornata di LaLiga. In classifica l'Elche occupa il 17° posto con 10 punti, mentre il Real Betis è 4° con 23 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di LaLiga l'Elche ha ottenuto 2 vittorie e 2 pareggi (sequenza V-N-N-V), segnando 6 gol e subendone 1. Non perde da 4 partite.",
-     "Nelle ultime 5 partite di LaLiga il Real Betis ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-V-P-N-V), con 10 gol fatti e 9 subiti. In trasferta, il bilancio stagionale comprende 2 pareggi e nessuna vittoria."
+     "Nelle ultime 5 partite di LaLiga l'Elche ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-N-N-V-P), segnando 6 gol e subendone 2. In casa, il bilancio stagionale comprende 1 pareggio e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 5 partite di LaLiga il Real Betis ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-V-P-N-V), segnando 10 gol e subendone 9. In trasferta, il bilancio stagionale comprende 2 pareggi e nessuna vittoria."
     ],
     "bullets": []
    },
@@ -2481,10 +2481,10 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Elche 1,4, Real Betis 1,6.",
+     "Media gol segnati: Elche 1,4, Real Betis 1,6 a partita.",
      "Gol subiti finora: Elche 17, Real Betis 15.",
-     "L'Elche non ha subito gol in 3 delle ultime 4 partite.",
-     "In 3 delle ultime 5 partite del Real Betis sono stati segnati almeno tre gol."
+     "L'Elche non ha subito gol in 3 delle ultime 5 partite.",
+     "Nel 3 delle ultime 5 partite del Real Betis si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -2494,8 +2494,8 @@
     "a": "Domenica 8 novembre alle 14:00, ora italiana."
    },
    {
-    "q": "Dove posso vedere classifica e risultati?",
-    "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -2503,7 +2503,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:10:27.880Z"
+  "at": "2026-11-01T19:46:56.291Z"
  },
  "fb:564743": {
   "fingerprint": "1vmyh8v",
@@ -10049,7 +10049,7 @@
   "at": "2026-11-01T19:13:19.672Z"
  },
  "nba:21718078": {
-  "fingerprint": "12wdx4e",
+  "fingerprint": "e2af89",
   "sections": [
    {
     "id": "presentazione",
@@ -10070,7 +10070,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 4 gare.",
+     "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 3 gare.",
      "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 3 gare."
     ]
    }
@@ -10090,10 +10090,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:54.656Z"
+  "at": "2026-11-01T19:46:58.344Z"
  },
  "nba:21718079": {
-  "fingerprint": "qxklpo",
+  "fingerprint": "eqhcif",
   "sections": [
    {
     "id": "presentazione",
@@ -10114,7 +10114,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 2 gare.",
      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 3 gare."
     ]
    }
@@ -10126,18 +10126,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Trovi tutto su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:36:09.299Z"
+  "at": "2026-11-01T19:47:00.281Z"
  },
  "nba:21718080": {
-  "fingerprint": "vmcwto",
+  "fingerprint": "1lg68db",
   "sections": [
    {
     "id": "presentazione",
@@ -10159,7 +10159,7 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 4 gare."
+     "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 3 gare."
     ]
    }
   ],
@@ -10170,23 +10170,23 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:36:11.388Z"
+  "at": "2026-11-01T19:47:02.118Z"
  },
  "nba:21718081": {
-  "fingerprint": "130tqqn",
+  "fingerprint": "1exlpl8",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "I Wizards fanno visita ai Pacers giovedì 12 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
+     "I Washington Wizards fanno visita agli Indiana Pacers giovedì 12 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
     ],
     "bullets": []
    },
@@ -10203,7 +10203,7 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 3 gare."
+     "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 2 gare."
     ]
    }
   ],
@@ -10214,18 +10214,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Una panoramica è disponibile in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:36:13.420Z"
+  "at": "2026-11-01T19:47:04.121Z"
  },
  "nba:21718082": {
-  "fingerprint": "1ckkyl8",
+  "fingerprint": "dwr48h",
   "sections": [
    {
     "id": "presentazione",
@@ -10247,7 +10247,7 @@
     "paragraphs": [],
     "bullets": [
      "I Knicks giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 2 gare.",
      "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 3 gare."
     ]
    }
@@ -10259,18 +10259,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Puoi consultare la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:36:15.495Z"
+  "at": "2026-11-01T19:47:06.155Z"
  },
  "nba:21718083": {
-  "fingerprint": "1plz71s",
+  "fingerprint": "k93ktq",
   "sections": [
    {
     "id": "presentazione",
@@ -10291,9 +10291,9 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 2 gare.",
      "I Celtics giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 2 gare."
+     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 1 gara."
     ]
    }
   ],
@@ -10304,18 +10304,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Maggiori dettagli nella guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:36:17.373Z"
+  "at": "2026-11-01T19:47:08.092Z"
  },
  "nba:21718084": {
-  "fingerprint": "1xhmhw8",
+  "fingerprint": "v5tt7j",
   "sections": [
    {
     "id": "presentazione",
@@ -10337,7 +10337,7 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 3 gare."
+     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 2 gare."
     ]
    }
   ],
@@ -10356,7 +10356,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:36:19.316Z"
+  "at": "2026-11-01T19:47:09.956Z"
  },
  "nba:21718085": {
   "fingerprint": "1w0xtif",
@@ -10403,7 +10403,7 @@
   "at": "2026-11-01T16:36:21.339Z"
  },
  "nba:21718086": {
-  "fingerprint": "6rffga",
+  "fingerprint": "9a17ss",
   "sections": [
    {
     "id": "presentazione",
@@ -10425,8 +10425,8 @@
     "paragraphs": [],
     "bullets": [
      "I Bucks giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 2 gare."
+     "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 2 gare.",
+     "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 1 gara."
     ]
    }
   ],
@@ -10437,15 +10437,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:36:23.440Z"
+  "at": "2026-11-01T19:47:11.893Z"
  },
  "nba:21718087": {
   "fingerprint": "mcrbkj",
@@ -10492,7 +10492,7 @@
   "at": "2026-11-01T16:36:25.450Z"
  },
  "nba:21718088": {
-  "fingerprint": "8jj8e1",
+  "fingerprint": "hftune",
   "sections": [
    {
     "id": "presentazione",
@@ -10514,7 +10514,7 @@
     "paragraphs": [],
     "bullets": [
      "I Jazz giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 2 gare.",
      "I Magic giocano la seconda partita in due giorni (back-to-back).",
      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 2 gare."
     ]
@@ -10527,18 +10527,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:36:27.429Z"
+  "at": "2026-11-01T19:47:13.889Z"
  },
  "nba:21718089": {
-  "fingerprint": "eieuao",
+  "fingerprint": "1neohxf",
   "sections": [
    {
     "id": "presentazione",
@@ -10559,7 +10559,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 2 gare.",
      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 2 gare."
     ]
    }
@@ -10575,14 +10575,14 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:36:29.391Z"
+  "at": "2026-11-01T19:47:15.831Z"
  },
  "nba:21718090": {
-  "fingerprint": "6t413i",
+  "fingerprint": "xecspf",
   "sections": [
    {
     "id": "presentazione",
@@ -10606,7 +10606,7 @@
      "I Trail Blazers giocano la seconda partita in due giorni (back-to-back).",
      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 2 gare.",
      "I Thunder giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 3 gare."
+     "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 2 gare."
     ]
    }
   ],
@@ -10625,7 +10625,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:36:31.505Z"
+  "at": "2026-11-01T19:47:17.816Z"
  },
  "fb:558552": {
   "fingerprint": "7eagyt",
@@ -11748,7 +11748,7 @@
   "at": "2026-10-29T18:49:45.694Z"
  },
  "nba:21718091": {
-  "fingerprint": "1wq4t8d",
+  "fingerprint": "66hite",
   "sections": [
    {
     "id": "presentazione",
@@ -11771,7 +11771,7 @@
     "bullets": [
      "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 2 gare.",
      "I Raptors giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 2 gare."
+     "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 1 gara."
     ]
    }
   ],
@@ -11790,10 +11790,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:36:33.489Z"
+  "at": "2026-11-01T19:47:19.618Z"
  },
  "nba:21718092": {
-  "fingerprint": "m1w7dp",
+  "fingerprint": "1hdp2sk",
   "sections": [
    {
     "id": "presentazione",
@@ -11815,7 +11815,7 @@
     "paragraphs": [],
     "bullets": [
      "I Wizards giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 2 gare.",
+     "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 1 gara.",
      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 2 gare."
     ]
    }
@@ -11827,18 +11827,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [Basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Scopri di più nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [Regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Puoi consultare la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:58:46.966Z"
+  "at": "2026-11-01T19:47:21.880Z"
  },
  "nba:21718093": {
-  "fingerprint": "1elar5v",
+  "fingerprint": "1wq6fx4",
   "sections": [
    {
     "id": "presentazione",
@@ -11860,7 +11860,7 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 2 gare.",
-     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 3 gare."
+     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 2 gare."
     ]
    }
   ],
@@ -11879,10 +11879,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:58:48.922Z"
+  "at": "2026-11-01T19:47:23.799Z"
  },
  "nba:21718094": {
-  "fingerprint": "29v8l1",
+  "fingerprint": "tp6u1j",
   "sections": [
    {
     "id": "presentazione",
@@ -11903,8 +11903,8 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 2 gare.",
-     "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 2 gare."
+     "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 1 gara."
     ]
    }
   ],
@@ -11915,15 +11915,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Trovi tutto nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:58:50.812Z"
+  "at": "2026-11-01T19:47:25.754Z"
  },
  "fb:558558": {
   "fingerprint": "1yzzcgk",
@@ -12460,7 +12460,7 @@
   "at": "2026-11-01T17:26:18.191Z"
  },
  "nba:21718095": {
-  "fingerprint": "12z6dq0",
+  "fingerprint": "psnu09",
   "sections": [
    {
     "id": "presentazione",
@@ -12482,7 +12482,7 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 2 gare.",
-     "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 2 gare."
+     "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 1 gara."
     ]
    }
   ],
@@ -12493,18 +12493,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
+    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:58:52.711Z"
+  "at": "2026-11-01T19:47:27.611Z"
  },
  "nba:21718096": {
-  "fingerprint": "1s9hku5",
+  "fingerprint": "15idhgy",
   "sections": [
    {
     "id": "presentazione",
@@ -12526,7 +12526,7 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 1 gara.",
-     "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 2 gare."
+     "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 1 gara."
     ]
    }
   ],
@@ -12537,15 +12537,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:58:54.560Z"
+  "at": "2026-11-01T19:47:29.562Z"
  },
  "nba:21718097": {
   "fingerprint": "1beq3ze",
@@ -12592,20 +12592,20 @@
   "at": "2026-11-01T16:58:56.586Z"
  },
  "nba:21718098": {
-  "fingerprint": "1zca1y",
+  "fingerprint": "n8c0op",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Gli Hawks fanno visita ai Bulls sabato 14 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
+     "Gli Hawks fanno visita ai Bulls sabato 14 novembre alle 02:00, ora italiana, in una partita di regular season NBA 2026-27."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "I Bulls hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 113,5 punti segnati e 129,3 subiti. In casa il bilancio è 0-2.",
-     "Gli Hawks hanno un record di 3-4 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,3 punti segnati e 115,4 subiti. In trasferta il bilancio è 2-2."
+     "I Bulls hanno un record di 1-5 in stagione e nelle ultime 5 partite hanno vinto 1 volta, con una media di 113,5 punti segnati e 129,3 subiti. In casa il bilancio è 0-2.",
+     "Gli Hawks hanno un record di 3-4 in stagione e nelle ultime 5 partite hanno vinto 1 volta, con una media di 116,3 punti segnati e 115,4 subiti. In trasferta il bilancio è 2-2."
     ],
     "bullets": []
    },
@@ -12613,8 +12613,8 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 2 gare.",
-     "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 2 gare."
+     "Nei 7 giorni a partire da questa partita i Bulls hanno in programma 2 gare.",
+     "Nei 7 giorni a partire da questa partita gli Hawks hanno in programma 1 gara."
     ]
    }
   ],
@@ -12625,15 +12625,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:58:58.719Z"
+  "at": "2026-11-01T19:47:32.604Z"
  },
  "nba:21718099": {
   "fingerprint": "un0k51",
@@ -12680,7 +12680,7 @@
   "at": "2026-11-01T16:59:01.787Z"
  },
  "nba:21718100": {
-  "fingerprint": "jsahrw",
+  "fingerprint": "1nwzed0",
   "sections": [
    {
     "id": "presentazione",
@@ -12701,8 +12701,8 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 2 gare.",
-     "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 2 gare."
+     "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 1 gara."
     ]
    }
   ],
@@ -12713,18 +12713,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:59:03.568Z"
+  "at": "2026-11-01T19:47:34.423Z"
  },
  "nba:21718101": {
-  "fingerprint": "hxpbn0",
+  "fingerprint": "9mzjbz",
   "sections": [
    {
     "id": "presentazione",
@@ -12745,7 +12745,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 2 gare.",
+     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 1 gara.",
      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 1 gara."
     ]
    }
@@ -12757,18 +12757,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:59:06.700Z"
+  "at": "2026-11-01T19:47:36.331Z"
  },
  "nba:21718102": {
-  "fingerprint": "2ppul7",
+  "fingerprint": "2mhlp6",
   "sections": [
    {
     "id": "presentazione",
@@ -12789,7 +12789,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 2 gare.",
+     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 1 gara.",
      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 1 gara."
     ]
    }
@@ -12805,14 +12805,14 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:59:09.835Z"
+  "at": "2026-11-01T19:47:38.185Z"
  },
  "nba:21718103": {
-  "fingerprint": "d5fsfm",
+  "fingerprint": "9rfdbw",
   "sections": [
    {
     "id": "presentazione",
@@ -12833,8 +12833,8 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 2 gare.",
-     "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 2 gare."
+     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 1 gara."
     ]
    }
   ],
@@ -12845,15 +12845,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:59:11.592Z"
+  "at": "2026-11-01T19:47:40.043Z"
  },
  "nba:21718104": {
   "fingerprint": "nc0gzl",
@@ -12901,7 +12901,7 @@
   "at": "2026-11-01T16:59:13.766Z"
  },
  "nba:21718105": {
-  "fingerprint": "1m09s05",
+  "fingerprint": "5lqetk",
   "sections": [
    {
     "id": "presentazione",
@@ -12924,7 +12924,7 @@
     "bullets": [
      "I Cavaliers giocano la seconda partita in due giorni (back-to-back).",
      "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 1 gara.",
-     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 2 gare."
+     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 1 gara."
     ]
    }
   ],
@@ -12943,7 +12943,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:59:15.673Z"
+  "at": "2026-11-01T19:47:41.976Z"
  },
  "nba:21718106": {
   "fingerprint": "1op5dmk",
@@ -13668,20 +13668,20 @@
   "at": "2026-11-01T18:38:28.298Z"
  },
  "fb:1001601602": {
-  "fingerprint": "1yo21jv",
+  "fingerprint": "19ypz53",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 7 novembre alle 15:00 il Pisa ospita il Sudtirol nell'11ª giornata di Serie B. In classifica il Pisa occupa il 7° posto con 15 punti, mentre il Sudtirol è 9° con 14."
+     "Sabato 7 novembre alle 15:00 il Pisa ospita il Sudtirol nell'11ª giornata di Serie B. In classifica il Pisa occupa l'8° posto con 15 punti, mentre il Sudtirol è al 10° con 14."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie B il Pisa ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta, con sequenza V-V-N-N-P. Ha segnato 10 gol e ne ha subiti 7. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Serie B il Sudtirol ha ottenuto 3 pareggi e 2 sconfitte, con sequenza N-P-N-P-N. Ha segnato 2 gol e ne ha subiti 7. In trasferta, nella stagione, il bilancio è di 1 vittoria e 2 sconfitte."
+     "Nelle ultime 5 partite di Serie B il Pisa ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta, con la sequenza V-V-N-N-P. Ha segnato 10 gol e ne ha subiti 7. Quest'anno, giocando in casa, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie B il Sudtirol ha totalizzato 3 pareggi e 2 sconfitte, con la sequenza N-P-N-P-N. Ha segnato 2 gol e ne ha subiti 7. In trasferta il bilancio stagionale è di 1 vittoria e 2 sconfitte."
     ],
     "bullets": []
    },
@@ -13701,16 +13701,16 @@
     "a": "Sabato 7 novembre alle 15:00, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Puoi trovare spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:38:32.357Z"
+  "at": "2026-11-01T19:46:28.545Z"
  },
  "fb:1001601598": {
   "fingerprint": "isw839",
@@ -13758,20 +13758,20 @@
   "at": "2026-11-01T18:38:34.774Z"
  },
  "fb:1001601601": {
-  "fingerprint": "bqtrlb",
+  "fingerprint": "1xon1tr",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 7 novembre alle 15:00 il Padova ospita l'Empoli nella 11ª giornata di Serie B. In classifica il Padova occupa l'8° posto con 14 punti, mentre l'Empoli è al 18° con 8."
+     "Sabato 7 novembre alle 15:00 il Padova ospita l'Empoli nell'11ª giornata di Serie B. In classifica il Padova occupa il 9° posto con 14 punti, mentre l'Empoli è al 18° con 8."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie B il Padova ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza P-P-V-V-N. Ha segnato 5 gol e ne ha subiti 5. In casa, nella stagione, il bilancio è di 1 vittoria e 2 sconfitte.",
-     "Nelle ultime 5 partite di Serie B l'Empoli ha ottenuto 2 pareggi e 3 sconfitte, con la sequenza P-N-P-P-N. Ha segnato 6 gol e ne ha subiti 11. In trasferta, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza vittorie."
+     "Nelle ultime 5 partite di Serie B il Padova ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-P-V-V-N), segnando 5 gol e subendone 5. In casa, il bilancio stagionale è di 1 vittoria e 2 sconfitte.",
+     "Nelle ultime 5 partite di Serie B l'Empoli ha ottenuto 2 pareggi e 3 sconfitte (sequenza P-N-P-P-N), segnando 6 gol e subendone 11. In trasferta, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza ancora alcuna vittoria."
     ],
     "bullets": []
    },
@@ -13779,9 +13779,9 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Padova 1,0, Empoli 1,0 a partita.",
+     "Media gol segnati a partita: Padova 1,0, Empoli 1,0.",
      "Gol subiti finora: Padova 11, Empoli 17.",
-     "Nelle ultime 5 partite dell'Empoli, in 3 casi si sono segnati almeno tre gol."
+     "In 3 delle ultime 5 partite dell'Empoli sono stati segnati almeno tre gol."
     ]
    }
   ],
@@ -13800,23 +13800,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:38:38.195Z"
+  "at": "2026-11-01T19:46:33.026Z"
  },
  "fb:1001601600": {
-  "fingerprint": "1ml13ys",
+  "fingerprint": "hq3jvq",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Il Mantova ospita l'Hellas Verona sabato 7 novembre alle 17:15, in occasione dell'11ª giornata di Serie B. In classifica il Mantova occupa il 4° posto con 18 punti, mentre l'Hellas Verona è al 10° posto con 12 punti."
+     "Sabato 7 novembre alle 17:15 il Mantova ospita l'Hellas Verona nell'11ª giornata di Serie B. In classifica il Mantova è al 4° posto con 18 punti, mentre l'Hellas Verona è al 7° con 15."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie B il Mantova ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza V-P-V-P-N. Ha segnato 5 gol e ne ha subiti 6. In casa, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie.",
-     "Nelle ultime 5 partite di Serie B l'Hellas Verona ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta, con la sequenza P-N-N-V-V. Ha segnato 9 gol e ne ha subiti 6. La squadra non perde da 4 partite. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     "Nelle ultime 5 partite di Serie B il Mantova ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con sequenza V-P-V-P-N. Ha segnato 5 gol e ne ha subiti 6. In casa, nel bilancio stagionale, ha totalizzato 1 pareggio e 2 sconfitte, senza ancora vincere.",
+     "Nelle ultime 5 partite di Serie B l'Hellas Verona ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta, con sequenza P-N-N-V-V. Ha segnato 9 gol e ne ha subiti 6. Non perde da 4 partite. In trasferta, nel bilancio stagionale, ha ottenuto 1 vittoria e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -13824,28 +13824,28 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Mantova 1,5, Hellas Verona 1,8.",
+     "Media gol segnati a partita: Mantova 1,5, Hellas Verona 1,9.",
      "Gol subiti finora: Mantova 11, Hellas Verona 13.",
-     "Nelle ultime 5 partite dell'Hellas Verona, in 3 occasioni si sono segnati almeno tre gol."
+     "Nelle ultime 5 partite dell'Hellas Verona, in 3 casi si sono segnati almeno tre gol."
     ]
    }
   ],
   "faq": [
    {
     "q": "Quando si gioca Mantova – Hellas Verona?",
-    "a": "La partita si disputa sabato 7 novembre alle 17:15, ora italiana."
+    "a": "Sabato 7 novembre alle 17:15, ora italiana."
    },
    {
     "q": "Dove posso consultare classifica e risultati?",
-    "a": "Puoi consultare la pagina dedicata alla [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Puoi trovare le spiegazioni nelle guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:38:42.522Z"
+  "at": "2026-11-01T19:46:36.608Z"
  },
  "fb:1001601594": {
   "fingerprint": "v3k1m",
@@ -13937,7 +13937,7 @@
   "at": "2026-11-01T18:38:48.976Z"
  },
  "fb:1001601595": {
-  "fingerprint": "c6d0op",
+  "fingerprint": "d80g0",
   "sections": [
    {
     "id": "presentazione",
@@ -13958,8 +13958,8 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Carrarese 1,0, Sampdoria 1,0 a partita.",
-     "Gol subiti finora: Carrarese 10, Sampdoria 18.",
+     "Media gol segnati: Carrarese 0,9, Sampdoria 1,0 a partita.",
+     "Gol subiti finora: Carrarese 13, Sampdoria 18.",
      "In 4 delle ultime 5 partite del Carrarese si sono segnati almeno tre gol."
     ]
    }
@@ -13979,7 +13979,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:38:51.374Z"
+  "at": "2026-11-01T19:46:38.972Z"
  },
  "fb:1001601599": {
   "fingerprint": "fe4k68",
@@ -16266,5 +16266,315 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-01T19:12:47.674Z"
+ },
+ "nba:21718109": {
+  "fingerprint": "19pnw57",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Domenica 15 novembre alle 19:00, ora italiana, i 76ers ospitano i Pacers in una partita della regular season NBA 2026-27."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "I 76ers hanno un record di 6-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 108,7 punti segnati e 104,9 subiti. In casa il bilancio è 3-1.",
+     "I Pacers hanno un record di 2-4 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,7 punti segnati e 119,8 subiti. In trasferta il bilancio è 2-2."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "calendario",
+    "paragraphs": [],
+    "bullets": [
+     "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 1 gara."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "A che ora si gioca Philadelphia 76ers – Indiana Pacers in Italia?",
+    "a": "Domenica 15 novembre alle 19:00."
+   },
+   {
+    "q": "Come funzionano totali e handicap nel basket?",
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+   },
+   {
+    "q": "Come è organizzata la stagione NBA?",
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:47:43.770Z"
+ },
+ "fb:558540": {
+  "fingerprint": "1bf6biq",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il Genoa ha battuto in trasferta il Lecce per 1-2, di misura. La partita, valida per la 10ª giornata di Serie A, si è giocata domenica 1 novembre. Il primo tempo si era chiuso 1-2."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Dopo le partite giocate finora, il Lecce occupa il 14° posto con 9 punti, mentre il Genoa è al 13° con 10 punti. [Consulta la classifica completa](/calcio/serie-a/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Lecce tornerà in campo sabato 7 novembre alle 15:00, in trasferta contro il Torino. Il Genoa giocherà domenica 8 novembre alle 15:00, in casa contro il Milan."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Lecce – Genoa?",
+    "a": "1-2 (1-2 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Serie A](/calcio/serie-a)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:47:46.994Z"
+ },
+ "fb:1001601586": {
+  "fingerprint": "10sgbad",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "La Cremonese ha battuto il Benevento per 2-0 sul proprio campo. La partita, valida per la 10ª giornata di Serie B, si è disputata sabato 31 ottobre; al termine del primo tempo il risultato era 1-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite disputate finora, la Cremonese occupa l'11° posto con 12 punti, mentre il Benevento è al 6° con 15. [Classifica completa](/calcio/serie-b/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "La Cremonese tornerà in campo domenica 8 novembre alle 19:30, in trasferta contro il Vicenza Virtus. Il Benevento giocherà sabato 7 novembre alle 19:30, in casa contro l'Avellino."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Cremonese – Benevento?",
+    "a": "2-0 (1-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:47:48.732Z"
+ },
+ "fb:1001601588": {
+  "fingerprint": "30thix",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il Modena e il Mantova si dividono la posta con un 1-1. La partita, valida per la 10ª giornata di Serie B, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora il Modena è al 2° posto con 20 punti e il Mantova al 4° con 18. [Classifica completa](/calcio/serie-b/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Modena tornerà in campo domenica 8 novembre alle 15:00 in trasferta contro il Virtus Entella. Il Mantova tornerà in campo sabato 7 novembre alle 17:15 in casa contro l'Hellas Verona."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Modena – Mantova?",
+    "a": "1-1 (0-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:47:50.196Z"
+ },
+ "fb:1001601591": {
+  "fingerprint": "3rrcdq",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il match si chiude 1-1: il Sudtirol, in vantaggio 1-0 all'intervallo, viene raggiunto nella ripresa dal Cesena. La sfida, valida per la 10ª giornata di Serie B, si è disputata sabato 31 ottobre."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Dopo le partite disputate finora, il Sudtirol occupa il 10° posto con 14 punti, mentre il Cesena è al 12° con 12. Per l'intera graduatoria consulta la [classifica completa](/calcio/serie-b/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Sudtirol tornerà in campo sabato 7 novembre alle 15:00 in trasferta contro il Pisa. Anche il Cesena scenderà in campo sabato 7 novembre alle 15:00, ma in casa contro il Catanzaro."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Sudtirol – Cesena?",
+    "a": "1-1 (1-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:47:52.090Z"
+ },
+ "fb:1001601585": {
+  "fingerprint": "palfo1",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il match si chiude 1-1: il Catanzaro, in vantaggio 1-0 all'intervallo, viene raggiunto nella ripresa dal Padova. La partita, valida per la 10ª giornata di Serie B, si è disputata sabato 31 ottobre."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Dopo le partite giocate finora, il Catanzaro occupa il 20° posto con 6 punti, mentre il Padova è al 9° con 14. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/serie-b/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Catanzaro tornerà in campo sabato 7 novembre alle 15:00 in trasferta contro il Cesena. Anche il Padova scenderà in campo sabato 7 novembre alle 15:00, giocando in casa contro l'Empoli."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Catanzaro – Padova?",
+    "a": "1-1 (1-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:47:54.059Z"
+ },
+ "fb:1001601590": {
+  "fingerprint": "f26s5h",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "La Sampdoria ha battuto in casa il Virtus Entella per 2-0. La partita, valida per la 10ª giornata di Serie B, si è giocata sabato 31 ottobre. Il primo tempo era già terminato 2-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora, la Sampdoria occupa il 19° posto con 8 punti, mentre il Virtus Entella è al 14° con 10 punti. Puoi consultare la [classifica completa](/calcio/serie-b/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "La Sampdoria tornerà in campo domenica 8 novembre alle 17:15, in trasferta contro il Carrarese. Il Virtus Entella giocherà domenica 8 novembre alle 15:00, in casa contro il Modena."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Sampdoria – Virtus Entella?",
+    "a": "Il risultato finale è stato 2-0, con lo stesso punteggio già all'intervallo."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Puoi consultarli nella pagina [Serie B](/calcio/serie-b)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:47:58.160Z"
+ },
+ "fb:1001601587": {
+  "fingerprint": "17noord",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il match si conclude 2-2: l'Empoli, in vantaggio 2-1 all'intervallo, viene raggiunto nella ripresa dal Juve Stabia. La partita, valida per la 10ª giornata di Serie B, si è disputata domenica 1 novembre."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora l'Empoli occupa il 18° posto con 8 punti, mentre il Juve Stabia è al 16° con 9. [Consulta la classifica completa](/calcio/serie-b/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "L'Empoli tornerà in campo sabato 7 novembre alle 15:00 in trasferta contro il Padova. Il Juve Stabia scenderà di nuovo in campo sabato 7 novembre alle 15:00 in casa contro l'Arezzo."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Empoli – Juve Stabia?",
+    "a": "2-2 (2-1 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:48:00.495Z"
  }
 }
