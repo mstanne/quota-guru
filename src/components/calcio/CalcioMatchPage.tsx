@@ -215,7 +215,18 @@ export function CalcioMatchPage() {
   const data = useCompetitionData(competizione);
   const competition = data?.competition;
   const match = data?.findMatch(partita);
-  usePageMeta(competition && match ? matchMeta(competition, match, !!data.prediction(match.id)) : null);
+  usePageMeta(
+    competition && match
+      ? matchMeta(
+          competition,
+          match,
+          !!data.prediction(match.id),
+          isFinished(match) ? highlightFor(competition.slug, match.id) : undefined,
+          undefined,
+          isFinished(match) ? footballDetailsFor(match.id) : undefined,
+        )
+      : null,
+  );
   if (!data || !competition || !match) return <ArchivedOrNotFound />;
   return <MatchView data={data} match={match} />;
 }

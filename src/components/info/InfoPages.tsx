@@ -195,7 +195,7 @@ const FAQ: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Da dove arrivano calendario, risultati e classifiche del calcio?",
-    a: "Dall'API di football-data.org, aggiornata più volte al giorno. I risultati non sono in diretta.",
+    a: "Dall'API di football-data.org. Calendario e classifiche si aggiornano più volte al giorno; mentre si gioca punteggi e classifiche vengono aggiornati ogni 15 minuti circa. I risultati non sono in tempo reale: per seguire una partita minuto per minuto, nella sua pagina puoi aprire i dati live di SofaScore.",
   },
   {
     q: "Ho bisogno di aiuto con il gioco: a chi posso rivolgermi?",
@@ -301,7 +301,7 @@ export function MetodologiaPage() {
           )}
         </li>
         <li>
-          <strong>Archivio dei pronostici pubblicati:</strong> a ogni aggiornamento del sito (ogni 3 ore) il pronostico
+          <strong>Archivio dei pronostici pubblicati:</strong> a ogni aggiornamento del sito (ogni 3 ore e, durante le partite, ogni 15 minuti circa) il pronostico
           di ogni partita ancora da giocare viene salvato in un archivio. Fino al calcio d'inizio può essere sostituito
           da una versione più recente; dal calcio d'inizio in poi resta bloccato e gli si aggiunge solo il risultato.
           Le pagine delle partite giocate mostrano il pronostico archiviato con la data di pubblicazione, e il bilancio

@@ -5,6 +5,7 @@ import { allMatches, competitionMeta, competitions, matchMeta, standingsMeta } f
 import type { RouteMeta } from "../routes";
 import { archivedPredictionFor, predictionFor } from "./predictions";
 import { highlightFor } from "./highlights";
+import { footballDetailsFor } from "./footballDetails";
 import { eventMeta, footballCard, isFinished, isUpcoming, pairMatches, pairSlug, nextOfPair, competitionPath, type Competition, type Match } from "./footballCore";
 import type { EventVenue } from "./schema";
 
@@ -17,7 +18,14 @@ export function footballRoutes(venueOf: (teamId: number) => EventVenue | null = 
     ...competitions.map(competitionMeta),
     ...competitions.filter((c) => c.standings.length > 0).map(standingsMeta),
     ...allMatches.map(({ competition, match }) => {
-      const meta: RouteMeta = matchMeta(competition, match, !!predictionFor(match.id), highlightOf(competition, match), venueOf(match.homeTeam.id));
+      const meta: RouteMeta = matchMeta(
+        competition,
+        match,
+        !!predictionFor(match.id),
+        highlightOf(competition, match),
+        venueOf(match.homeTeam.id),
+        isFinished(match) ? footballDetailsFor(match.id) : undefined,
+      );
       const card = meta.article ? footballCard(competition, match, shownPrediction(match)) : null;
       return card ? { ...meta, card } : meta;
     }),

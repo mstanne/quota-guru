@@ -6,7 +6,7 @@ export function DataUpdatedNote({ generatedAt, className = "" }: { generatedAt: 
     // data-volatile: changes at every data refresh, ignored when the pre-render decides if a page changed (lastmod)
     <p data-volatile="" className={`flex items-center gap-1.5 text-slate-400 text-sm ${className}`}>
       <Clock className="w-4 h-4" aria-hidden="true" />
-      Dati aggiornati al {formatUpdated(generatedAt)} · risultati non in diretta
+      Dati aggiornati al {formatUpdated(generatedAt)} · durante le partite ogni 15 minuti circa, non in tempo reale
     </p>
   );
 }
