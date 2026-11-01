@@ -5,6 +5,7 @@ import { isOverdue } from "./eventTiming.mjs";
 import { sportsEvent, videoObject, type EventVenue } from "./schema";
 import { pickHit, pickLabel, pickProbability, type Prediction } from "./predictionsCore";
 import type { OgCard } from "../routes";
+import type { FootballDetails } from "./matchDetails";
 
 export interface Team {
   id: number;
@@ -363,7 +364,7 @@ export function competitionMeta(c: Competition) {
   return {
     path: competitionPath(c),
     title: `Pronostici ${c.name}: calendario e risultati`,
-    description: `Pronostici con le probabilità 1X2, calendario, orari e risultati delle partite di ${c.name}${c.area ? ` (${c.area})` : ""}, con classifica aggiornata.`,
+    description: `Pronostici con le probabilità 1X2, calendario, orari e risultati delle partite di ${c.name}${c.area ? ` (${c.area})` : ""}, con risultati e classifica aggiornati durante le partite.`,
   };
 }
 /** `league`: Under/Over counts of the whole season (src/lib/goalStats.mjs), for the description. */
@@ -381,8 +382,8 @@ export function goalStatsMeta(c: Competition, league?: { n: number; gf: number; 
 export function standingsMeta(c: Competition) {
   return {
     path: standingsPath(c),
-    title: `Classifica ${c.name}`,
-    description: `Classifica aggiornata di ${c.name}: punti, partite giocate, vittorie, pareggi, sconfitte e differenza reti.`,
+    title: `Classifica ${c.name}${seasonName(c) ? ` ${seasonName(c)}` : ""} aggiornata`,
+    description: `Classifica aggiornata di ${c.name}, rivista dopo ogni partita mentre si gioca: punti, partite giocate, vittorie, pareggi, sconfitte e differenza reti.`,
   };
 }
 /** Social image of a match page (src/routes.ts OgCard); null without a prediction to show. */
@@ -419,29 +420,49 @@ export function matchHeadline(m: Match) {
 }
 
 /** `predicted`: the model has a prediction for this match (title and description mention it only then). */
+/** What a finished match page shows besides the score, in the order used by titles and descriptions. */
+function finishedContents(m: Match, details?: FootballDetails | null, video?: unknown) {
+  const out: string[] = [];
+  if (video) out.push("highlights");
+  if (details?.lineups?.home && details?.lineups?.away) out.push("formazioni");
+  if (m.goals?.length || details?.timeline?.some((e) => e.type === "goal")) out.push("marcatori");
+  if (details && Object.keys(details.stats?.home ?? {}).length) out.push("statistiche");
+  return out;
+}
+const listIt = (items: string[]) =>
+  items.length <= 1 ? (items[0] ?? "") : `${items.slice(0, -1).join(", ")} e ${items[items.length - 1]}`;
+
 export function matchMeta(
   c: Competition,
   m: Match,
   predicted = false,
   video?: { video: string; title: string; published: string },
   venue?: EventVenue | null,
+  details?: FootballDetails | null,
 ) {
   const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
   const when = `${formatDay(m.utcDate)} ore ${formatTime(m.utcDate)}`;
   const path = matchPath(c, m);
   // while the evergreen page shows this match, it is the canonical URL (the dated page is its future archive)
   const canonical = matchCanonical(c, m);
+  const ft = m.score.fullTime;
+  const contents = isFinished(m) ? finishedContents(m, details, video) : [];
   const description = isFinished(m)
-    ? `Risultato finale di ${teams} (${c.name}), giocata ${when}.`
-    : isResultPending(m)
+    ? `Risultato finale di ${teams} (${c.name}), giocata ${when}${contents.length ? `: ${listIt(contents)}` : ""}.`
+    : isLive(m)
+      ? `${teams} (${c.name}) è in corso: punteggio aggiornato durante la partita ogni 15 minuti circa (non in tempo reale), classifica, forma recente e precedenti.`
+      : isResultPending(m)
       ? `${teams} (${c.name}), giocata ${when}: risultato in arrivo. Classifica, forma recente e precedenti delle due squadre.`
       : `${teams}, ${c.name}: si gioca ${when}. ${predicted ? "Pronostico con le probabilità 1X2, classifica" : "Classifica"}, forma recente e precedenti delle due squadre.`;
   return {
     path,
     ...(canonical !== path ? { canonical } : {}),
     title: isFinished(m)
-      ? `${teams} ${m.score.fullTime.home}-${m.score.fullTime.away}: risultato ${c.name}`
-      : `${teams} (${formatDayMonth(m.utcDate)}): ${predicted ? "pronostico, orario e precedenti" : "orario, classifica e precedenti"}`,
+      ? // one extra at most (highlights first), so the title stays near the ~60 characters Google shows
+        `${teams} ${ft.home}-${ft.away}: ${listIt(["risultato", ...contents.slice(0, 1)])} · ${c.name}`
+      : isLive(m)
+        ? `${teams} ${ft.home ?? 0}-${ft.away ?? 0} in corso: risultato ${c.name}`
+        : `${teams} (${formatDayMonth(m.utcDate)}): ${predicted ? "pronostico, orario e precedenti" : "orario, classifica e precedenti"}`,
     description,
     archive: isFinished(m),
     ...(canonical === path ? { article: { headline: matchHeadline(m), section: c.name } } : {}),
@@ -497,14 +518,20 @@ export function eventMeta(
   if (next) {
     const when = `${formatDay(next.utcDate)} ore ${formatTime(next.utcDate)}`;
     const p = predicted(next.id);
-    const description = isResultPending(next)
-      ? `${teams} (${c.name}), giocata ${when}: risultato in arrivo. Il pronostico pubblicato prima della partita, classifica e precedenti.`
-      : `Pronostico ${teams} (${c.name}), ${when}: ${p ? "probabilità 1X2, Under/Over e Goal calcolate dal modello statistico" : "orario"}, classifica, forma recente e precedenti.`;
+    const live = isLive(next);
+    const nft = next.score.fullTime;
+    const description = live
+      ? `${teams} (${c.name}) è in corso: punteggio aggiornato durante la partita ogni 15 minuti circa (non in tempo reale)${p ? ", il pronostico pubblicato prima del calcio d'inizio" : ""}, classifica e precedenti.`
+      : isResultPending(next)
+        ? `${teams} (${c.name}), giocata ${when}: risultato in arrivo. Il pronostico pubblicato prima della partita, classifica e precedenti.`
+        : `Pronostico ${teams} (${c.name}), ${when}: ${p ? "probabilità 1X2, Under/Over e Goal calcolate dal modello statistico" : "orario"}, classifica, forma recente e precedenti.`;
     return {
       path,
       event: true,
       article: { headline: matchHeadline(next), section: c.name },
-      title: `Pronostico ${teams} (${formatDayMonth(next.utcDate)}): ${p ? "probabilità e statistiche" : "orario e precedenti"} · ${c.name}`,
+      title: live
+        ? `${teams} ${nft.home ?? 0}-${nft.away ?? 0} in corso: risultato e pronostico · ${c.name}`
+        : `Pronostico ${teams} (${formatDayMonth(next.utcDate)}): ${p ? "probabilità e statistiche" : "orario e precedenti"} · ${c.name}`,
       description,
       archive: false,
       jsonLd: footballEventLd(c, next, path, description, undefined, venue),

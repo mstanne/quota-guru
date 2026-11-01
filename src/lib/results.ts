@@ -66,7 +66,7 @@ export function resultsRoutes() {
     ...idx.football.map((c) => ({
       path: resultsPath(c.slug),
       title: `Risultati ${c.name}: tutte le partite giocate`,
-      description: `I risultati di tutte le partite di ${c.name} giocate, giornata per giornata, con il link alla scheda di ogni partita.`,
+      description: `I risultati di tutte le partite di ${c.name} giocate, giornata per giornata e aggiornati durante le partite, con il link alla scheda di ogni partita (marcatori, formazioni e statistiche quando disponibili).`,
     })),
     ...(idx.nba.length
       ? [
