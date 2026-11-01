@@ -12,6 +12,7 @@ import { TeamBadge } from "../calcio/MatchRow";
 import { NotFoundPage } from "../NotFoundPage";
 import { usePageMeta } from "../../lib/pageMeta";
 import { footballTeam, type FootballSeason, type FootballTeam } from "../../lib/teams";
+import { playerPath } from "../../lib/players";
 import { footballTeamMeta } from "../../lib/teamMeta";
 import { Card, Facts, SectionTitle, age, formatDate, num } from "./TeamUi";
 
@@ -97,7 +98,13 @@ function Players({ s }: { s: FootballSeason }) {
           {s.players.map((p) => (
             <tr key={p.name} className="border-b border-slate-800 last:border-0">
               <th scope="row" className="text-left font-normal py-2 pr-2 text-white whitespace-nowrap">
-                {p.name}
+                {playerPath(p) ? (
+                  <Link to={playerPath(p)!} className="hover:text-action-text-hover underline-offset-2 hover:underline">
+                    {p.name}
+                  </Link>
+                ) : (
+                  p.name
+                )}
                 {p.pos && <span className="text-slate-400 text-xs ml-1.5">{p.pos}</span>}
               </th>
               <td className={`${td} text-slate-300`}>{p.apps}</td>

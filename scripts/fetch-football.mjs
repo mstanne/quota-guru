@@ -274,6 +274,42 @@ async function main() {
         matches,
         standings,
       };
+      // top scorers, assists and cards (4 requests, refreshed daily): /calcio/<competition>/marcatori
+      store.leaders ??= {};
+      if (!fresh(store.leaders[c.code]?.at, 1) || store.leaders[c.code]?.season !== season.year) {
+        const row = (r) => {
+          const st = r.statistics?.find((x) => x.league?.id === c.api) ?? r.statistics?.[0] ?? {};
+          const t = st.team ? teamOf(st.team) : null;
+          return {
+            id: r.player?.id ?? null,
+            name: r.player?.name ?? "",
+            first: r.player?.firstname ?? null,
+            last: r.player?.lastname ?? null,
+            nationality: r.player?.nationality ?? null,
+            team: t ? { id: t.id, shortName: t.shortName, crest: t.crest } : null,
+            apps: st.games?.appearences ?? 0,
+            min: st.games?.minutes ?? 0,
+            goals: st.goals?.total ?? 0,
+            assists: st.goals?.assists ?? 0,
+            pen: st.penalty?.scored ?? 0,
+            yellow: st.cards?.yellow ?? 0,
+            red: (st.cards?.red ?? 0) + (st.cards?.yellowred ?? 0),
+          };
+        };
+        const get = async (what) => (await api.get(`/players/${what}?league=${c.api}&season=${season.year}`)).slice(0, 20).map(row);
+        store.leaders[c.code] = {
+          at: new Date(now).toISOString(),
+          season: season.year,
+          scorers: await get("topscorers"),
+          assists: await get("topassists"),
+          yellow: await get("topyellowcards"),
+          red: await get("topredcards"),
+        };
+      }
+      {
+        const { at, season: _s, ...lists } = store.leaders[c.code];
+        if (lists.scorers?.length) comp.leaders = { updatedAt: at, ...lists };
+      }
       // a competition with nothing to show (e.g. a cup between seasons) stays off the site
       if (matches.length || standings.length) competitions.push(comp);
       status.competitions[c.code] = { ok: true, matches: matches.length };
