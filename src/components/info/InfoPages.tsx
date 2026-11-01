@@ -642,6 +642,15 @@ export function CookiePage() {
         trattare dati di navigazione secondo la propria informativa (policies.google.com/privacy). Avviare il video
         equivale a richiederlo: se preferisci, usa il link "Apri su YouTube".
       </p>
+      <h2>Dati live di SofaScore (solo se li richiedi)</h2>
+      <p>
+        Nelle pagine delle partite di calcio, da poco prima del calcio d'inizio a qualche ora dopo, puoi visualizzare
+        formazioni e andamento live forniti da SofaScore (Sofascore Ltd). Finché non premi "Mostra i dati live" non
+        viene caricato nulla da SofaScore. Quando li richiedi, i contenuti vengono caricati da widgets.sofascore.com,
+        che usa strumenti di statistica (Google Analytics, Firebase) e può impostare cookie secondo la propria
+        informativa. Se scegli "Mostra sempre senza chiedere", la preferenza viene salvata solo nel tuo browser: puoi
+        annullarla con il link "Non caricare più in automatico" o cancellando i dati del sito.
+      </p>
       <h2>Come cambiare le preferenze</h2>
       <p>
         {analyticsConfigured ? (

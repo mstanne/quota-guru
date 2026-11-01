@@ -42,6 +42,8 @@ import { hasResults, resultsPath } from "../../lib/results";
 import { FootballMatchDetails } from "./FootballMatchDetails";
 import { footballDetailsFor } from "../../lib/footballDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
+import { SofascoreLive } from "../media/SofascoreLive";
+import { sofascoreEventFor } from "../../lib/sofascore";
 import { MatchOddsSlot } from "../odds/MatchOddsSlot";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 import { ArchivedOrNotFound } from "../../lib/archive";
@@ -241,6 +243,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
   const prediction = archived ? { ...archived.prediction, pre: true } : data.prediction(match.id);
   const highlight = finished ? highlightFor(competition.slug, match.id) : undefined;
   const details = finished ? footballDetailsFor(match.id) : undefined;
+  const sofascoreId = sofascoreEventFor(match.id);
   const roundPage = isMatchdayStage(match)
     ? matchdaysOf(competition).find((d) => d.n === match.matchday)
     : undefined;
@@ -342,6 +345,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
       </div>
 
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        {sofascoreId && <SofascoreLive eventId={sofascoreId} utcDate={match.utcDate} teams={teams} />}
         {finished && (
           <div className="lg:col-span-3 min-w-0 space-y-6">
             {/* box score and highlights side by side on wide screens, stacked otherwise */}
