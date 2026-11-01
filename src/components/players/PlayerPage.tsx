@@ -62,7 +62,7 @@ export function PlayerPage() {
       />
       <div className="container mx-auto px-4 py-8 space-y-6">
         <Card id="profilo">
-          <SectionTitle id="profilo" icon={User}>
+          <SectionTitle id="profilo-titolo" icon={User}>
             Profilo
           </SectionTitle>
           <Facts rows={facts} />
@@ -75,7 +75,7 @@ export function PlayerPage() {
         </Card>
 
         <Card id="stagioni">
-          <SectionTitle id="stagioni" icon={User}>
+          <SectionTitle id="stagioni-titolo" icon={User}>
             Statistiche stagione per stagione
           </SectionTitle>
           <div className="overflow-x-auto">
