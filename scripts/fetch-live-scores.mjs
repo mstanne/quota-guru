@@ -105,9 +105,11 @@ async function main() {
     try {
       const teams = new Map(c.matches.flatMap((m) => [m.homeTeam, m.awayTeam]).map((t) => [t.name, t]));
       const s = await api.get(`/standings?league=${def.api}&season=${year}`);
-      // the clubs are already in the standings of the full run: keep their site ids
-      const prevTeams = new Map((c.standings ?? []).flatMap((g) => g.table).map((r) => [r.team.crest, r.team]));
-      const st = compactStandings(s[0]?.league?.standings ?? [], (t) => prevTeams.get(t.logo) ?? teams.get(t.name) ?? null);
+      // the clubs are already in the standings of the full run: keep their site ids. The logo file name is the
+      // API-Football team id, both in the provider's URL and in the site's copy (/loghi/calcio/<id>.png).
+      const logoId = (u) => String(u ?? "").match(/\/(\d+)\.png$/)?.[1];
+      const prevTeams = new Map((c.standings ?? []).flatMap((g) => g.table).map((r) => [logoId(r.team.crest), r.team]));
+      const st = compactStandings(s[0]?.league?.standings ?? [], (t) => prevTeams.get(String(t.id)) ?? prevTeams.get(logoId(t.logo)) ?? teams.get(t.name) ?? null);
       if (st.length && st.every((g) => g.table.every((r) => r.team))) {
         c.standings = st;
         console.log(`  classifica aggiornata: ${c.name}`);

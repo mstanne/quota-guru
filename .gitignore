@@ -34,3 +34,6 @@ scripts/offers-agent/rapporti/
 /public/stato-dati.json
 /public/registro-dati.json
 /public/dati/
+# permanent archive and club logos: kept in the `dati` branch (scripts/data-branch.sh)
+/data/archivio/
+/public/loghi/
