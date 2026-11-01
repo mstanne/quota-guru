@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-01T20:50:18.369Z",
+ "generatedAt": "2026-11-01T21:32:00.793Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558541": {
@@ -3854,20 +3854,20 @@
    ]
   },
   "fb:564741": {
-   "fingerprint": "2hn6yl",
+   "fingerprint": "v0rvg4",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Valencia e Real Madrid si affrontano sabato 7 novembre alle 21:00 per la 12ª giornata di LaLiga. In classifica il Valencia è al 19° posto con 6 punti, il Real Madrid al 3° con 27."
+      "Valencia e Real Madrid si affrontano sabato 7 novembre alle 21:00 per la 12ª giornata di LaLiga. In classifica il Valencia occupa il 19° posto con 9 punti, mentre il Real Madrid è al 3° con 27."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di LaLiga il Valencia ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-N-N-P-V), con 6 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 pareggio e 2 sconfitte, ancora senza vittorie.",
-      "Nelle ultime 5 partite di LaLiga il Real Madrid ha raccolto 4 vittorie e 1 sconfitta (sequenza P-V-V-V-V), con 11 gol fatti e 4 subiti. È reduce da 4 vittorie consecutive. In trasferta il bilancio stagionale è di 2 vittorie e 1 sconfitta."
+      "Nelle ultime 5 partite di LaLiga il Valencia ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza P-N-N-P-V. Ha segnato 6 gol e ne ha subiti 7. In casa, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza vittorie.",
+      "Nelle ultime 5 partite di LaLiga il Real Madrid ha ottenuto 4 vittorie e 1 sconfitta, con la sequenza P-V-V-V-V. Ha segnato 11 gol e ne ha subiti 4. La squadra arriva da 4 vittorie consecutive. In trasferta, nella stagione, il bilancio è di 2 vittorie e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -3877,8 +3877,8 @@
      "bullets": [
       "Media gol segnati: Valencia 0,7, Real Madrid 2,5 a partita.",
       "Gol subiti finora: Valencia 17, Real Madrid 10.",
-      "In 3 delle ultime 5 partite del Valencia si sono segnati almeno tre gol.",
-      "In 4 delle ultime 5 partite del Real Madrid si sono segnati almeno tre gol."
+      "In 3 delle ultime 5 partite del Valencia sono stati segnati almeno tre gol.",
+      "In 4 delle ultime 5 partite del Real Madrid sono stati segnati almeno tre gol."
      ]
     }
    ],
@@ -3893,25 +3893,25 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:564738": {
-   "fingerprint": "2j3v8n",
+   "fingerprint": "vwnq8t",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 14:00 l'Elche ospita il Real Betis nella 12ª giornata di LaLiga. In classifica l'Elche occupa il 17° posto con 10 punti, mentre il Real Betis è 4° con 23 punti."
+      "Domenica 8 novembre alle 14:00 l'Elche ospita il Real Betis nella 12ª giornata di LaLiga. In classifica l'Elche occupa il 17° posto con 10 punti, mentre il Real Betis è al 4° posto con 23."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di LaLiga l'Elche ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-N-N-V-P), segnando 6 gol e subendone 2. In casa, il bilancio stagionale comprende 1 pareggio e 1 sconfitta, senza vittorie.",
-      "Nelle ultime 5 partite di LaLiga il Real Betis ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-V-P-N-V), segnando 10 gol e subendone 9. In trasferta, il bilancio stagionale comprende 2 pareggi e nessuna vittoria."
+      "Nelle ultime 5 partite di LaLiga l'Elche ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-N-N-V-P), segnando 6 gol e subendone 2. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
+      "Nelle ultime 5 partite di LaLiga il Real Betis ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-V-P-N-V), con 10 gol fatti e 9 subiti. In trasferta, nella stagione, il bilancio è di 2 pareggi, senza vittorie."
      ],
      "bullets": []
     },
@@ -3919,10 +3919,10 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Elche 1,4, Real Betis 1,6 a partita.",
-      "Gol subiti finora: Elche 17, Real Betis 15.",
+      "Media gol segnati: Elche 1,3, Real Betis 1,6 a partita.",
+      "Gol subiti finora: Elche 18, Real Betis 15.",
       "L'Elche non ha subito gol in 3 delle ultime 5 partite.",
-      "Nel 3 delle ultime 5 partite del Real Betis si sono segnati almeno tre gol."
+      "In 3 delle ultime 5 partite del Real Betis si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -3933,11 +3933,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+     "a": "Puoi consultare la pagina [LaLiga](/calcio/liga) e la [classifica aggiornata](/calcio/liga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio) spiegano come interpretare le quote di questa partita."
     }
    ]
   },
@@ -9614,7 +9614,7 @@
    ]
   },
   "nba:21718060": {
-   "fingerprint": "us6chc",
+   "fingerprint": "8eidln",
    "sections": [
     {
      "id": "presentazione",
@@ -9636,7 +9636,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 3 gare."
+      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 4 gare."
      ]
     }
    ],
@@ -9647,11 +9647,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -9867,7 +9867,7 @@
    ]
   },
   "nba:21718066": {
-   "fingerprint": "15hjkwi",
+   "fingerprint": "n1p8bv",
    "sections": [
     {
      "id": "presentazione",
@@ -9890,7 +9890,7 @@
      "bullets": [
       "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 2 gare.",
       "I Lakers giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 2 gare."
+      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 3 gare."
      ]
     }
    ],
@@ -9901,11 +9901,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -10122,7 +10122,7 @@
    ]
   },
   "nba:21718072": {
-   "fingerprint": "1a9miok",
+   "fingerprint": "4nc8p9",
    "sections": [
     {
      "id": "presentazione",
@@ -10143,7 +10143,7 @@
      "id": "calendario",
      "paragraphs": [],
      "bullets": [
-      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 4 gare.",
       "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 3 gare."
      ]
     }
@@ -10291,7 +10291,7 @@
    ]
   },
   "nba:21718076": {
-   "fingerprint": "1xyscr7",
+   "fingerprint": "d3m4d6",
    "sections": [
     {
      "id": "presentazione",
@@ -10313,7 +10313,7 @@
      "paragraphs": [],
      "bullets": [
       "I Suns giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 2 gare.",
+      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 3 gare.",
       "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 2 gare."
      ]
     }
@@ -10325,11 +10325,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -10672,7 +10672,7 @@
    ]
   },
   "nba:21718086": {
-   "fingerprint": "9a17ss",
+   "fingerprint": "1bd342n",
    "sections": [
     {
      "id": "presentazione",
@@ -10695,7 +10695,7 @@
      "bullets": [
       "I Bucks giocano la seconda partita in due giorni (back-to-back).",
       "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 1 gara."
+      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 2 gare."
      ]
     }
    ],
@@ -10706,11 +10706,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -11015,7 +11015,7 @@
    ]
   },
   "nba:21718094": {
-   "fingerprint": "tp6u1j",
+   "fingerprint": "om3oaq",
    "sections": [
     {
      "id": "presentazione",
@@ -11036,7 +11036,7 @@
      "id": "calendario",
      "paragraphs": [],
      "bullets": [
-      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 1 gara.",
+      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 2 gare.",
       "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 1 gara."
      ]
     }
@@ -11048,11 +11048,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Trovi tutto nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Trovi tutto su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -11688,6 +11688,48 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:1000017130": {
+   "fingerprint": "1muco2c",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 15 novembre alle 22:00, ora italiana, i Suns ospitano i Lakers in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Suns hanno un record di 1-3 in stagione, con una media di 112,0 punti segnati e 124,5 subiti. In casa il bilancio è 1-1.",
+      "I Lakers hanno un record di 4-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 118,5 punti segnati e 113,3 subiti. In trasferta il bilancio è 2-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 1 gara.",
+      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 1 gara."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Phoenix Suns – Los Angeles Lakers in Italia?",
+     "a": "Domenica 15 novembre alle 22:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -12880,26 +12922,26 @@
    ]
   },
   "fb:564728": {
-   "fingerprint": "7eotdn",
+   "fingerprint": "1eemcvs",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Valencia ha conquistato una vittoria di misura in trasferta, imponendosi 0-1 sull'Elche. La partita, valida per la 11ª giornata di LaLiga, si è giocata domenica 1 novembre; il primo tempo si era chiuso 0-0."
+      "Il Valencia ha vinto in trasferta per 1-0 sul campo dell'Elche, con il risultato di 0-1. La partita, valida per la 11ª giornata di LaLiga, si è giocata domenica 1 novembre; il primo tempo si era chiuso 0-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora l'Elche occupa il 17° posto con 10 punti, mentre il Valencia è al 19° con 6. [Consulta la classifica completa](/calcio/liga/classifica)."
+      "Con le partite giocate finora l'Elche è al 17° posto con 10 punti e il Valencia al 19° con 9. [Consulta la classifica completa](/calcio/liga/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "L'Elche tornerà in campo domenica 8 novembre alle 14:00 in casa contro il Real Betis. Il Valencia giocherà sabato 7 novembre alle 21:00 in casa contro il Real Madrid."
+      "L'Elche tornerà in campo domenica 8 novembre alle 14:00 in casa contro il Real Betis. Il Valencia tornerà in campo sabato 7 novembre alle 21:00 in casa contro il Real Madrid."
      ],
      "bullets": []
     }
