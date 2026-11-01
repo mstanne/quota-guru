@@ -27,6 +27,12 @@ export interface SeasonRecord {
   away?: { played?: number; won: number; draw?: number; lost: number; gf?: number; ga?: number };
 }
 export interface FootballPlayerSeason {
+  /** API-Football player id (player page), with full name, birth date and height when downloaded. */
+  id?: number | null;
+  first?: string | null;
+  last?: string | null;
+  birth?: string | null;
+  height?: number | null;
   name: string;
   age: number | null;
   nationality: string | null;

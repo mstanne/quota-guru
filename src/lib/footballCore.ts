@@ -6,6 +6,7 @@ import { sportsEvent, videoObject, type EventVenue } from "./schema";
 import { pickHit, pickLabel, pickProbability, type Prediction } from "./predictionsCore";
 import type { OgCard } from "../routes";
 import type { FootballDetails } from "./matchDetails";
+import { playerName } from "./playerNames.mjs";
 
 export interface Team {
   id: number;
@@ -90,6 +91,30 @@ export interface Competition {
   season: { startDate: string; endDate: string; currentMatchday: number | null } | null;
   matches: Match[];
   standings: { stage: string; group: string | null; table: StandingRow[] }[];
+  /** Top scorers, assists and cards of the season (API-Football, refreshed daily). */
+  leaders?: Leaders;
+}
+export interface LeaderRow {
+  id: number | null;
+  name: string;
+  first: string | null;
+  last: string | null;
+  nationality: string | null;
+  team: { id: number; shortName: string; crest: string | null } | null;
+  apps: number;
+  min: number;
+  goals: number;
+  assists: number;
+  pen: number;
+  yellow: number;
+  red: number;
+}
+export interface Leaders {
+  updatedAt: string;
+  scorers: LeaderRow[];
+  assists: LeaderRow[];
+  yellow: LeaderRow[];
+  red: LeaderRow[];
 }
 export interface HeadToHead {
   numberOfMatches: number;
@@ -203,6 +228,8 @@ export type CompetitionRef = Pick<Competition, "code" | "slug" | "name">;
 export const PRONOSTICI = "/pronostici";
 export const competitionPath = (c: Pick<CompetitionRef, "slug">) => `${PRONOSTICI}/${c.slug}`;
 export const standingsPath = (c: CompetitionRef) => `/calcio/${c.slug}/classifica`;
+/** Top scorers, assists and cards of a competition (src/components/stats/LeadersPage.tsx). */
+export const leadersPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slug}/marcatori`;
 /** Under/Over and Goal statistics of every team of a competition (src/components/stats/GoalStatsPage.tsx). */
 export const goalStatsPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slug}/statistiche-under-over`;
 /** "2026/27", or "2026" for calendar-year seasons (Brasileirão). */
@@ -377,6 +404,19 @@ export function goalStatsMeta(c: Competition, league?: { n: number; gf: number; 
     description: league?.n
       ? `Percentuali Over 1,5, Over 2,5, Over 3,5 e Goal/No Goal di ogni squadra di ${c.name}, in casa e in trasferta. Finora il ${pc(league.over[1])}% delle partite è finito Over 2,5 e nel ${pc(league.btts)}% hanno segnato entrambe le squadre (${league.n} partite).`
       : `Percentuali Over 1,5, Over 2,5, Over 3,5 e Goal/No Goal di ogni squadra di ${c.name}, in casa e in trasferta.`,
+  };
+}
+export function leadersMeta(c: Competition) {
+  const season = seasonName(c);
+  const top = c.leaders?.scorers?.[0];
+  const topName = top ? playerName(top) : null;
+  return {
+    path: leadersPath(c),
+    title: `Classifica marcatori ${c.name}${season ? ` ${season}` : ""}: gol, assist e cartellini`,
+    description:
+      `Classifica marcatori di ${c.name}${season ? ` ${season}` : ""} aggiornata ogni giorno` +
+      (top && topName ? `: in testa ${topName} (${top.team?.shortName ?? ""}) con ${top.goals} gol.` : ".") +
+      " Classifiche assist, ammonizioni ed espulsioni, con presenze e minuti giocati.",
   };
 }
 export function standingsMeta(c: Competition) {

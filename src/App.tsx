@@ -20,6 +20,8 @@ const PronosticiLeagueChild = lazyPage(() =>
 );
 const BasketEventPage = lazyPage(() => import("./components/basket/BasketEventPage").then((m) => m.BasketEventPage));
 const GoalStatsPage = lazyPage(() => import("./components/stats/GoalStatsPage").then((m) => m.GoalStatsPage));
+const LeadersPage = lazyPage(() => import("./components/stats/LeadersPage").then((m) => m.LeadersPage));
+const PlayerPage = lazyPage(() => import("./components/players/PlayerPage").then((m) => m.PlayerPage));
 const LegacyRedirect = lazyPage(() => import("./components/LegacyRedirect").then((m) => m.LegacyRedirect));
 const DayPredictionsPage = lazyPage(() =>
   import("./components/predictions/DayPredictionsPage").then((m) => m.DayPredictionsPage),
@@ -72,6 +74,7 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   [paths.calcio, [CalcioPage]],
   ["/calcio/squadre", [TeamsIndexPage]],
   ["/calcio/squadre/:squadra", [FootballTeamPage, NotFoundPage]],
+  ["/calcio/giocatori/:giocatore", [PlayerPage, NotFoundPage]],
   ["/basket/nba/squadre", [TeamsIndexPage]],
   ["/basket/nba/squadre/:squadra", [NbaTeamPage, NotFoundPage]],
   ["/calcio/:competizione/risultati", [FootballResultsPage, NotFoundPage]],
@@ -80,6 +83,7 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/calcio/:competizione", [LegacyRedirect, NotFoundPage]],
   ["/calcio/:competizione/classifica", [StandingsPage, NotFoundPage]],
   ["/calcio/:competizione/statistiche-under-over", [GoalStatsPage, NotFoundPage]],
+  ["/calcio/:competizione/marcatori", [LeadersPage, NotFoundPage]],
   ["/calcio/:competizione/giornata/:numero", [LegacyRedirect, NotFoundPage]],
   [paths.pronostici, [PronosticiPage]],
   ["/pronostici/oggi", [DayPredictionsPage]],
@@ -126,11 +130,12 @@ export function preloadForPath(pathname: string) {
     : null;
   // football pages: the data of their competition (all of them for /calcio)
   const football =
-    (/^\/calcio(\/|$)/.test(clean) && !/^\/calcio\/squadre/.test(clean)) ||
+    (/^\/calcio(\/|$)/.test(clean) && !/^\/calcio\/(squadre|giocatori)/.test(clean)) ||
     /^\/pronostici\/(?!nba(\/|$)|oggi$|domani$)[^/]+/.test(clean)
     ? import("./lib/footballData").then((m) => m.preloadFootballData(clean))
     : null;
-  return Promise.all([...(hit ? hit[1] : [NotFoundPage]).map((p) => p.preload()), team, results, football]);
+  const player = /^\/calcio\/giocatori\/[^/]+$/.test(clean) ? import("./lib/players").then((m) => m.preloadPlayerData(clean)) : null;
+  return Promise.all([...(hit ? hit[1] : [NotFoundPage]).map((p) => p.preload()), team, results, football, player]);
 }
 
 function PageLoading() {
@@ -199,6 +204,7 @@ export default function App() {
             <Route path={paths.calcio} element={<CalcioPage />} />
             <Route path="/calcio/squadre" element={<TeamsIndexPage sport="football" />} />
             <Route path="/calcio/squadre/:squadra" element={<FootballTeamPage />} />
+            <Route path="/calcio/giocatori/:giocatore" element={<PlayerPage />} />
             <Route path="/basket/nba/squadre" element={<TeamsIndexPage sport="nba" />} />
             <Route path="/basket/nba/squadre/:squadra" element={<NbaTeamPage />} />
             <Route path="/calcio/:competizione/risultati" element={<FootballResultsPage />} />
@@ -210,6 +216,7 @@ export default function App() {
             <Route path="/basket/nba" element={<LegacyRedirect />} />
             <Route path="/calcio/:competizione/classifica" element={<StandingsPage />} />
             <Route path="/calcio/:competizione/statistiche-under-over" element={<GoalStatsPage />} />
+            <Route path="/calcio/:competizione/marcatori" element={<LeadersPage />} />
             <Route path={paths.pronostici} element={<PronosticiPage />} />
             <Route path="/pronostici/oggi" element={<DayPredictionsPage day="oggi" />} />
             <Route path="/pronostici/domani" element={<DayPredictionsPage day="domani" />} />

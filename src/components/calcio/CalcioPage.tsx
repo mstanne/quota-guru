@@ -29,7 +29,7 @@ import { PageHeader } from "../layout/PageHeader";
 import { ListChecks } from "lucide-react";
 import { hasResults, resultsPath } from "../../lib/results";
 import { featuredMatchday } from "../../lib/matchdaysCore";
-import { goalStatsPath, matchdayPath, PRONOSTICI } from "../../lib/footballCore";
+import { goalStatsPath, leadersPath, matchdayPath, PRONOSTICI } from "../../lib/footballCore";
 
 const MARKET_IDS = FOOTBALL_MARKETS.map((m) => m.id);
 
@@ -130,6 +130,15 @@ export function CalcioPage() {
             Statistiche Under/Over
           </Link>
         )}
+        {competition?.leaders?.scorers?.length ? (
+          <Link
+            to={leadersPath(competition)}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
+          >
+            <Trophy className="w-4 h-4 text-slate-300" aria-hidden="true" />
+            Marcatori
+          </Link>
+        ) : null}
         {competition && round && (
           <Link
             to={matchdayPath(competition, round)}

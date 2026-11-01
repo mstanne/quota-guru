@@ -261,7 +261,12 @@ function compactPlayers(rows) {
           rated.reduce((t, x) => t + num(x.games.appearences), 0)
         : null;
       return {
+        id: r.player?.id ?? null,
         name: r.player?.name ?? "",
+        first: r.player?.firstname ?? null,
+        last: r.player?.lastname ?? null,
+        birth: r.player?.birth?.date ?? null,
+        height: num(String(r.player?.height ?? "").replace(/\s*cm$/, "")),
         age: r.player?.age ?? null,
         nationality: r.player?.nationality ?? null,
         pos: st.find((x) => x.games?.position)?.games?.position ?? null,
@@ -279,6 +284,10 @@ function compactPlayers(rows) {
     .filter(Boolean)
     .sort((a, b) => b.min - a.min);
 }
+
+// Pro plan: the season statistics would otherwise take a large share of the day's requests in one run
+const SEASON_REQUESTS_PER_RUN = 300;
+let seasonRequests = 0;
 
 async function footballSeasonsRun(api, seasons, data, now, allowed) {
   const teamsFile = readJson(TEAMS, { teams: {}, competitions: {} });
@@ -322,9 +331,13 @@ async function footballSeasonsRun(api, seasons, data, now, allowed) {
       seasons.footballInfo[id] = { founded: af.founded, venue: af.venue };
       for (const y of wanted) {
         const k = `${id}-${y}`;
-        if (fresh(seasons.football[k], 4)) continue;
+        // v2: players with their API-Football id, full name, birth date and height (player pages); older entries,
+        // including past seasons, are downloaded again once, a few teams per run
+        if (seasons.football[k]?.v === 2 && fresh(seasons.football[k], 4)) continue;
+        if (seasonRequests >= SEASON_REQUESTS_PER_RUN) return;
         const players = [];
         for (let page = 1, total = 1; page <= total && page <= 6; page++) {
+          seasonRequests++;
           const res = await api.raw(`/players?team=${af.id}&season=${y}&page=${page}`);
           players.push(...(res.response ?? []));
           total = res.paging?.total ?? 1;
@@ -333,6 +346,7 @@ async function footballSeasonsRun(api, seasons, data, now, allowed) {
           fetchedAt: new Date(now).toISOString(),
           final: y < season, // past seasons: never downloaded again
           afTeam: af.id,
+          v: 2,
           players: compactPlayers(players),
         };
         console.log(`  rosa ${fd.shortName ?? fd.name} ${y}/${String(y + 1).slice(2)}: ${seasons.football[k].players.length} giocatori`);
