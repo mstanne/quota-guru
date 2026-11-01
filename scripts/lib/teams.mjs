@@ -13,6 +13,7 @@ const ALIASES = {
   BMG: ["Borussia Monchengladbach"],
   ATL: ["Atletico Madrid"],
   INT: ["Inter"],
+  CAP: ["Athletico Paranaense", "Athletico"],
 };
 
 export const norm = (s) =>
