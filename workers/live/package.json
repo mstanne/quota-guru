@@ -1,0 +1,13 @@
+{
+  "name": "quotaguru-live",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare Worker for the live match data of quotaguru.it (see src/index.mjs)",
+  "scripts": {
+    "dev": "wrangler dev --test-scheduled",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.156.0"
+  }
+}

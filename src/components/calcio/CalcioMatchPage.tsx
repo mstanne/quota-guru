@@ -41,6 +41,7 @@ import { TeamName } from "../teams/TeamLink";
 import { hasResults, resultsPath } from "../../lib/results";
 import { FootballMatchDetails } from "./FootballMatchDetails";
 import { MatchUnavailable } from "./MatchUnavailable";
+import { LiveMatch } from "./LiveMatch";
 import { footballDetailsFor } from "../../lib/footballDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
 import { SofascoreLive } from "../media/SofascoreLive";
@@ -359,12 +360,9 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
       </div>
 
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {sofascoreId && <SofascoreLive eventId={sofascoreId} utcDate={match.utcDate} teams={teams} />}
-        {liveData && (
-          <div className="lg:col-span-3 min-w-0 space-y-6">
-            <FootballMatchDetails match={match} details={liveData} lineupTitle={isUpcoming(match) ? "Formazioni ufficiali" : "Formazioni"} />
-          </div>
-        )}
+        {/* SofaScore widgets only until the site's own live service is configured (VITE_LIVE_URL) */}
+        {sofascoreId && !import.meta.env.VITE_LIVE_URL && <SofascoreLive eventId={sofascoreId} utcDate={match.utcDate} teams={teams} />}
+        {!finished && <LiveMatch match={match} initial={liveData} />}
         {!finished && match.injuries && (
           <div className="lg:col-span-3 min-w-0">
             <MatchUnavailable match={match} />

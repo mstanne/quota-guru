@@ -34,6 +34,8 @@ export type MatchStatus =
   | "RESULT_PENDING";
 export interface Match {
   id: number;
+  /** API-Football fixture id (live data service, scripts/fetch-football.mjs). */
+  apiId?: number;
   utcDate: string;
   status: MatchStatus;
   matchday: number | null;
