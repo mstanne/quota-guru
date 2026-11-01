@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T17:23:21.514Z",
+  "updatedAt": "2026-11-01T18:38:02.048Z",
   "football": {
     "details": {
       "ok": false,
@@ -23,15 +23,78 @@
       "ok": true
     },
     "ok": true,
-    "requests": 12,
-    "remainingToday": 40,
+    "requests": 17,
+    "remainingToday": 7419,
     "games": 12,
     "teamSeasons": 0
   },
-  "extraLeagues": {
-    "updatedAt": "2026-11-01T17:23:21.474Z",
-    "ok": false,
-    "competitions": {},
-    "message": "piano: Free plans do not have access to this season, try from 2022 to 2024. (nuovo controllo dopo il 2026-11-02T09:52:47.456Z)"
+  "calendarioCalcio": {
+    "updatedAt": "2026-11-01T18:35:53.844Z",
+    "source": "API-Football",
+    "ok": true,
+    "competitions": {
+      "SA": {
+        "ok": true,
+        "matches": 70
+      },
+      "SB": {
+        "ok": true,
+        "matches": 70
+      },
+      "CL": {
+        "ok": true,
+        "matches": 54
+      },
+      "EL": {
+        "ok": true,
+        "matches": 63
+      },
+      "ECL": {
+        "ok": true,
+        "matches": 54
+      },
+      "PL": {
+        "ok": true,
+        "matches": 60
+      },
+      "PD": {
+        "ok": true,
+        "matches": 63
+      },
+      "BL1": {
+        "ok": true,
+        "matches": 54
+      },
+      "FL1": {
+        "ok": true,
+        "matches": 54
+      },
+      "DED": {
+        "ok": true,
+        "matches": 54
+      },
+      "PPL": {
+        "ok": true,
+        "matches": 46
+      },
+      "ELC": {
+        "ok": true,
+        "matches": 97
+      },
+      "BSA": {
+        "ok": true,
+        "matches": 73
+      }
+    },
+    "requests": 188,
+    "remainingToday": 7333
+  },
+  "calendarioNba": {
+    "updatedAt": "2026-11-01T18:36:42.378Z",
+    "source": "API-NBA",
+    "ok": true,
+    "games": 189,
+    "requests": 2,
+    "remainingToday": 7434
   }
 }
