@@ -27,6 +27,9 @@ contenuto nel tema del sito.
    `LIVE_URL` = l'indirizzo del punto 5. Dal prossimo aggiornamento del sito le pagine partita usano il servizio e
    SofaScore non compare più. Per tornare a SofaScore basta cancellare la variabile.
 
+**Server ponte (necessario)**: API-Football limita gli indirizzi condivisi dei Cloudflare Workers, quindi le
+richieste passano da un piccolo server con IP dedicato: vedi `server/README.md`.
+
 Facoltativo: indirizzo `live.quotaguru.it` invece di `workers.dev` (richiede di gestire il DNS del dominio su
 Cloudflare, oggi è su OVH): non serve per funzionare.
 

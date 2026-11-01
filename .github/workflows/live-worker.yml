@@ -56,6 +56,21 @@ jobs:
         working-directory: workers/live
         run: npm ci
 
+      # relay server with a dedicated IP (workers/live/server/README.md): used when both are set
+      - name: Relay server
+        id: relay
+        if: steps.check.outputs.ready == 'true'
+        env:
+          API_BASE: ${{ vars.LIVE_API_BASE }}
+          PROXY_SECRET: ${{ secrets.LIVE_PROXY_SECRET }}
+        run: |
+          if [ -n "$API_BASE" ] && [ -n "$PROXY_SECRET" ]; then
+            printf 'list<<EOF\nAPI_FOOTBALL_KEY\nAPI_BASE\nPROXY_SECRET\nEOF\n' >> "$GITHUB_OUTPUT"
+            echo "Richieste ad API-Football tramite $API_BASE"
+          else
+            printf 'list<<EOF\nAPI_FOOTBALL_KEY\nEOF\n' >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Publish the worker
         id: deploy
         if: steps.check.outputs.ready == 'true'
@@ -65,10 +80,11 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: workers/live
           command: deploy
-          secrets: |
-            API_FOOTBALL_KEY
+          secrets: ${{ steps.relay.outputs.list }}
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_BASE: ${{ vars.LIVE_API_BASE }}
+          PROXY_SECRET: ${{ secrets.LIVE_PROXY_SECRET }}
 
       - name: Address of the worker
         if: steps.check.outputs.ready == 'true'

@@ -1,0 +1,28 @@
+#cloud-config
+# Relay server for the live service: a small Linux server with a dedicated IP that forwards the Worker's requests to
+# API-Football (API-Football limits the shared outbound IPs of Cloudflare Workers). Paste it, with the two values
+# below replaced, in the "Cloud config" box when creating the server (Ubuntu 24.04). Guide: README.md (same folder).
+#   api.quotaguru.it  -> the sub-domain pointing to the server (DNS record A at OVH)
+#   SEGRETO           -> the password, the same as the GitHub secret LIVE_PROXY_SECRET
+package_update: true
+package_upgrade: true
+packages:
+  - caddy
+  - unattended-upgrades
+write_files:
+  - path: /etc/caddy/Caddyfile
+    content: |
+      # forwards to API-Football only the requests carrying our password; everything else gets 403
+      api.quotaguru.it {
+        @worker header X-Proxy-Secret "SEGRETO"
+        handle @worker {
+          request_header -X-Proxy-Secret
+          reverse_proxy https://v3.football.api-sports.io {
+            header_up Host {upstream_hostport}
+          }
+        }
+        respond 403
+      }
+runcmd:
+  - systemctl enable caddy
+  - systemctl restart caddy
