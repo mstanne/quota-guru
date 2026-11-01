@@ -107,6 +107,18 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
+      - name: Past seasons for the archive, a small block per run
+        # scripts/backfill-archive.mjs: at most 150 API-Sports requests per run, progress kept in the archive.
+        run: node scripts/backfill-archive.mjs
+        continue-on-error: true
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+
+      - name: Update the permanent archive and the site's copy of the club logos
+        # scripts/archive-data.mjs: data/archivio only grows; it is saved in the `dati` branch.
+        run: node scripts/archive-data.mjs
+        continue-on-error: true
+
       - name: Restore editorial cache
         # Claude rewrites already accepted: unchanged texts are not rewritten (or paid for) again
         uses: actions/cache@v6
@@ -145,10 +157,10 @@ jobs:
         # Stored inside .cache/match-details so the cache paths (and the existing cache) stay the same.
         run: |
           mkdir -p .cache/match-details
-          tar czf .cache/match-details/snapshot.tgz --ignore-failed-read \
+          tar czf .cache/match-details/snapshot.tgz --ignore-failed-read --exclude=data/archivio \
             src/data/football.json src/data/basket.json src/data/tennis.json \
             src/data/football-details.json src/data/basket-details.json src/data/highlights.json \
-            src/data/editorial-ai.json data public/stato-dati.json
+            src/data/editorial-ai.json data public/stato-dati.json public/loghi
         continue-on-error: true
 
       - name: Restore the predictions archive

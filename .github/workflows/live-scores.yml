@@ -97,10 +97,10 @@ jobs:
         if: steps.live.outputs.changed == 'true'
         run: |
           mkdir -p .cache/match-details
-          tar czf .cache/match-details/snapshot.tgz --ignore-failed-read \
+          tar czf .cache/match-details/snapshot.tgz --ignore-failed-read --exclude=data/archivio \
             src/data/football.json src/data/basket.json src/data/tennis.json \
             src/data/football-details.json src/data/basket-details.json src/data/highlights.json \
-            src/data/editorial-ai.json data public/stato-dati.json
+            src/data/editorial-ai.json data public/stato-dati.json public/loghi
         continue-on-error: true
 
       - name: Restore the predictions archive

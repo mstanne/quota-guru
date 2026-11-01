@@ -56,7 +56,9 @@ case "${1:-}" in
     for f in "${DATA_FILES[@]}"; do
       if [ -f "$DIR/$f" ]; then mkdir -p "$(dirname "$f")"; cp "$DIR/$f" "$f"; n=$((n + 1)); fi
     done
-    echo "Dati ripristinati dal branch $BRANCH: $n file"
+    # permanent archive (scripts/archive-data.mjs) and the club logos it holds
+    if [ -d "$DIR/archivio" ]; then rm -rf data/archivio; cp -r "$DIR/archivio" data/archivio; fi
+    echo "Dati ripristinati dal branch $BRANCH: $n file$( [ -d data/archivio ] && echo ' e archivio')"
     ;;
   restore-state)
     if [ -f .cache/seo/state.json ]; then echo "Cache presente: niente da ripristinare"; exit 0; fi
@@ -84,6 +86,7 @@ case "${1:-}" in
     for f in "${DATA_FILES[@]}"; do
       if [ -f "$f" ]; then mkdir -p "$DIR/$(dirname "$f")"; cp "$f" "$DIR/$f"; fi
     done
+    if [ -d data/archivio ]; then rm -rf "$DIR/archivio"; cp -r data/archivio "$DIR/archivio"; fi
     mkdir -p "$DIR/stato"
     for d in seo match-details; do
       if [ -d ".cache/$d" ]; then rm -rf "$DIR/stato/$d"; cp -r ".cache/$d" "$DIR/stato/$d"; fi
@@ -104,6 +107,10 @@ Copia permanente dei dati del sito, salvata a ogni aggiornamento completo da `.g
 - `stato/seo/`: date di modifica delle pagine, archivio HTML delle partite finite, registro dei dati.
 - `stato/match-details/`: dettagli e highlights già scaricati.
 - `stato/editorial-*.json`: riscritture dei testi con Claude già pagate.
+- `archivio/`: archivio permanente (non si cancella mai): partite finite con tutti i dettagli per competizione,
+  stagione e mese, risultati usati dai modelli, squadre e rose per stagione, statistiche dei giocatori, loghi dei club.
+  Le stagioni passate si aggiungono a piccoli blocchi (`scripts/backfill-archive.mjs`, avanzamento in
+  `archivio/recupero.json`).
 
 La cronologia dei commit è lo storico datato di ogni modifica. Se la cache dei workflow va persa,
 il giro successivo riparte da qui.
