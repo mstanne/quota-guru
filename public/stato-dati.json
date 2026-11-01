@@ -1,0 +1,37 @@
+{
+  "updatedAt": "2026-11-01T16:57:01.066Z",
+  "football": {
+    "details": {
+      "ok": false,
+      "message": "piano: Free plans do not have access to this season, try from 2022 to 2024."
+    },
+    "seasons": {
+      "ok": false,
+      "message": "piano: Free plans are limited to a maximum value of 3 for the Page parameter"
+    },
+    "ok": false,
+    "requests": 0,
+    "remainingToday": null,
+    "matches": 0,
+    "teamSeasons": 0
+  },
+  "nba": {
+    "details": {
+      "ok": true
+    },
+    "seasons": {
+      "ok": true
+    },
+    "ok": true,
+    "requests": 12,
+    "remainingToday": 54,
+    "games": 12,
+    "teamSeasons": 0
+  },
+  "extraLeagues": {
+    "updatedAt": "2026-11-01T16:57:01.008Z",
+    "ok": false,
+    "competitions": {},
+    "message": "piano: Free plans do not have access to this season, try from 2022 to 2024. (nuovo controllo dopo il 2026-11-02T09:52:47.456Z)"
+  }
+}
