@@ -75,7 +75,9 @@ export class LiveHub {
     const used = await this.countRequest();
     if (used === null) throw new Error("tetto giornaliero di richieste raggiunto");
     const base = this.env.API_BASE || "https://v3.football.api-sports.io";
-    const res = await fetch(base + path, { headers: { "x-apisports-key": this.env.API_FOOTBALL_KEY } });
+    // API-Football sits behind Cloudflare too: without no-store, an error answer (e.g. a per-minute limit hit while
+    // the site's jobs were running) can stay in Cloudflare's cache and come back for every later identical request.
+    const res = await fetch(base + path, { headers: { "x-apisports-key": this.env.API_FOOTBALL_KEY }, cache: "no-store" });
     // limits reported by API-Football, shown in /stato (per minute and per day)
     const h = (k) => res.headers.get(k);
     await this.storage.put("apiInfo", {
@@ -123,7 +125,7 @@ export class LiveHub {
     if (b) {
       const step = b.todo.slice(0, SCHEDULE_STEP);
       for (const item of step) {
-        const path = item === "live" ? `/fixtures?live=${[...LEAGUES].join("-")}` : `/fixtures?league=${item}&next=20`;
+        const path = item === "live" ? `/fixtures?live=${[...LEAGUES].join("-")}` : `/fixtures?next=20&league=${item}`;
         for (const f of await this.api(path))
           if (LEAGUES.has(f.league?.id)) b.found.push({ id: f.fixture.id, kickoff: Date.parse(f.fixture.date), status: f.fixture.status?.short });
         b.todo.shift(); // progress is kept even if a later request of this step fails
