@@ -58,6 +58,17 @@ jobs:
             state-
             seo-
 
+      - name: Restore from the data branch
+        # The site has no database: the `dati` branch keeps a permanent copy of the data and of the state in the
+        # cache (scripts/data-branch.sh). The last saved data replace the old snapshot committed in main; the state
+        # comes back only if GitHub deleted the cache.
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          scripts/data-branch.sh restore-data
+          scripts/data-branch.sh restore-state
+
       - name: Download football data
         # Uses the secret only here; without it the committed snapshot in src/data is used.
         run: node scripts/fetch-football-data.mjs
@@ -110,6 +121,12 @@ jobs:
           path: .cache/editorial-ai.json
           key: editorial-${{ github.run_id }}
           restore-keys: editorial-
+
+      - name: Restore the Claude rewrites from the data branch if the cache was lost
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: scripts/data-branch.sh restore-editorial
 
       - name: Editorial texts for match pages
         # Template texts always; Claude rewrite only if the ANTHROPIC_API_KEY secret is set.
@@ -189,6 +206,13 @@ jobs:
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
             commit --quiet -m "Archivio pronostici $(date -u +%Y-%m-%dT%H:%MZ)"
           git push --quiet origin HEAD:archivio-pronostici
+
+      - name: Save to the data branch
+        if: github.ref == 'refs/heads/main'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: scripts/data-branch.sh save
 
       - uses: actions/upload-pages-artifact@v5
         with:
