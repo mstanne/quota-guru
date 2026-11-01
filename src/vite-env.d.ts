@@ -7,6 +7,8 @@ interface ImportMetaEnv {
   readonly VITE_ANALYTICS_ID?: string;
   /** Cookie policy URL shown in the consent banner. */
   readonly VITE_COOKIE_POLICY_URL?: string;
+  /** Address of the live data service (workers/live), e.g. https://quotaguru-live.<account>.workers.dev. */
+  readonly VITE_LIVE_URL?: string;
 }
 
 /** ISO time of the build (vite.config.ts): reference for "upcoming / live / result pending". */

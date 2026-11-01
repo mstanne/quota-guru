@@ -1,0 +1,85 @@
+# Publishes the live data service (workers/live, a Cloudflare Worker) when its code changes, or by hand
+# (Actions → "Live worker" → Run workflow).
+# One-time setup (see workers/live/README.md):
+#   - repo Settings → Secrets and variables → Actions → New repository secret:
+#       CLOUDFLARE_API_TOKEN  = Cloudflare API token, template "Edit Cloudflare Workers"
+#       CLOUDFLARE_ACCOUNT_ID = Cloudflare account id (dashboard → Workers & Pages, right column)
+#   - after the first run, the address printed in the run summary goes in the repository variable LIVE_URL
+#     (Variables tab): from the next site update, match pages use it and SofaScore is no longer shown.
+# The API-Football key (secret API_FOOTBALL_KEY, already used by the site) is copied to the worker as a secret.
+name: Live worker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "workers/live/**"
+      - "scripts/lib/match-details.mjs"
+      - "scripts/lib/leagues.mjs"
+      - ".github/workflows/live-worker.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: live-worker
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-26.04
+    steps:
+      - name: Check the Cloudflare secrets
+        id: check
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$TOKEN" ] || [ -z "$ACCOUNT" ]; then
+            echo "::notice::Secret CLOUDFLARE_API_TOKEN o CLOUDFLARE_ACCOUNT_ID mancante: il worker non viene pubblicato (vedi workers/live/README.md)"
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v7
+        if: steps.check.outputs.ready == 'true'
+
+      - uses: actions/setup-node@v7
+        if: steps.check.outputs.ready == 'true'
+        with:
+          node-version-file: .nvmrc
+
+      - name: Install wrangler
+        if: steps.check.outputs.ready == 'true'
+        working-directory: workers/live
+        run: npm ci
+
+      - name: Publish the worker
+        id: deploy
+        if: steps.check.outputs.ready == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: workers/live
+          command: deploy
+          secrets: |
+            API_FOOTBALL_KEY
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+
+      - name: Address of the worker
+        if: steps.check.outputs.ready == 'true'
+        env:
+          URL: ${{ steps.deploy.outputs.deployment-url }}
+        run: |
+          {
+            echo "### Servizio dati live pubblicato"
+            echo
+            echo "Indirizzo: \`${URL:-vedi il log del passo precedente}\`"
+            echo
+            echo "Mettilo nella variabile del repository **LIVE_URL** (Settings → Secrets and variables → Actions → Variables)."
+            echo "Stato: \`${URL}/stato\`"
+          } >> "$GITHUB_STEP_SUMMARY"
