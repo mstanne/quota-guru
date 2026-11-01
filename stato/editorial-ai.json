@@ -545,20 +545,20 @@
   "at": "2026-11-01T13:54:44.410Z"
  },
  "fb:558532": {
-  "fingerprint": "g7b798",
+  "fingerprint": "yv87lh",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 7 novembre alle 15:00 il Torino riceve il Lecce per la 11ª giornata di Serie A. In classifica il Torino è al 10° posto con 13 punti, mentre il Lecce è al 14° con 9."
+     "Sabato 7 novembre alle 15:00 il Torino riceve il Lecce nella 11ª giornata di Serie A. In classifica il Torino è al 10° posto con 13 punti, il Lecce al 14° con 9."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A il Torino ha raccolto 3 vittorie e 2 sconfitte, con sequenza V-V-V-P-P, segnando 9 gol e subendone 8. Ha perso le ultime 2. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
-     "Nelle ultime 5 partite di Serie A il Lecce ha raccolto 1 vittoria e 4 sconfitte, con sequenza P-P-V-P-P, segnando 5 gol e subendone 12. Ha perso le ultime 2. In trasferta, il bilancio stagionale è di 1 vittoria e 2 sconfitte."
+     "Nelle ultime 5 partite di Serie A il Torino ha raccolto 3 vittorie e 2 sconfitte (sequenza V-V-V-P-P), con 9 gol fatti e 8 subiti. Ha perso le ultime 2. In casa il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+     "Nelle ultime 5 partite di Serie A il Lecce ha raccolto 1 vittoria e 4 sconfitte (sequenza P-V-P-P-P), con 6 gol fatti e 11 subiti. Ha perso le ultime 3. In trasferta il bilancio stagionale è di 1 vittoria e 2 sconfitte."
     ],
     "bullets": []
    },
@@ -588,7 +588,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:38:16.923Z"
+  "at": "2026-11-01T19:11:01.612Z"
  },
  "fb:558534": {
   "fingerprint": "azzkrf",
@@ -776,20 +776,20 @@
   "at": "2026-11-01T16:34:21.460Z"
  },
  "fb:558536": {
-  "fingerprint": "lib15b",
+  "fingerprint": "1m58hkd",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Genoa e Milan si affrontano domenica 8 novembre alle 15:00, nell'ambito dell'11ª giornata di Serie A. In classifica il Genoa occupa il 13° posto con 10 punti, il Milan il 5° con 21."
+     "Genoa e Milan si sfidano domenica 8 novembre alle 15:00, nella 11ª giornata di Serie A. In classifica il Genoa occupa il 13° posto con 10 punti, il Milan il 5° con 21."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A il Genoa ha ottenuto 3 vittorie e 2 sconfitte, con la sequenza P-V-P-V-V, segnando 6 gol e subendone 5. In casa ha vinto tutte le 3 partite disputate.",
-     "Nelle ultime 5 partite di Serie A il Milan ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza N-V-V-P-V, segnando 11 gol e subendone 8. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 5 partite di Serie A il Genoa ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-P-V-V-V), segnando 7 gol e subendone 4. Arriva da 3 vittorie consecutive. In casa ha vinto tutte le 3 gare disputate.",
+     "Nelle ultime 5 partite di Serie A il Milan ha collezionato 3 vittorie, 1 pareggio e 1 sconfitta (sequenza N-V-V-P-V), con 11 gol fatti e 8 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -797,9 +797,9 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Il Genoa segna in media 0,9 gol a partita, il Milan 2,1.",
-     "Finora il Genoa ha subito 13 gol, il Milan 12.",
-     "Nelle ultime 5 partite del Milan, in 3 casi sono stati segnati almeno tre gol."
+     "Media gol segnati: Genoa 0,9, Milan 2,1 a partita.",
+     "Gol subiti finora: Genoa 13, Milan 12.",
+     "In 3 delle ultime 5 partite del Milan sono stati segnati almeno tre gol."
     ]
    }
   ],
@@ -810,15 +810,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:38:21.852Z"
+  "at": "2026-11-01T19:11:06.476Z"
  },
  "fb:558538": {
   "fingerprint": "286map",
@@ -3883,19 +3883,19 @@
   "at": "2026-11-01T19:03:58.104Z"
  },
  "fb:558843": {
-  "fingerprint": "19d589f",
+  "fingerprint": "3bxxfk",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 7 novembre alle 21:00 l'Excelsior ospita il Go Ahead nella 12ª giornata di Eredivisie. In classifica l'Excelsior occupa il 14° posto con 11 punti, mentre il Go Ahead è al 10° con 14."
+     "Sabato 7 novembre alle 21:00 l'Excelsior ospita il Go Ahead per la 12ª giornata di Eredivisie. In classifica l'Excelsior occupa il 15° posto con 11 punti, mentre il Go Ahead è al 10° con 14."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Eredivisie l'Excelsior ha raccolto 1 pareggio e 4 sconfitte (sequenza N-P-P-P-P), con 3 gol fatti e 21 subiti. Ha perso le ultime 4. In casa ha perso tutte le 2 partite giocate.",
+     "Nelle ultime 5 partite di Eredivisie l'Excelsior ha raccolto 1 pareggio e 4 sconfitte (sequenza N-P-P-P-P), con 3 gol fatti e 21 subiti. Ha perso le ultime 4 gare. In casa ha perso tutte le 2 partite disputate.",
      "Nelle ultime 5 partite di Eredivisie il Go Ahead ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-N-P-V-P), con 8 gol fatti e 14 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
     ],
     "bullets": []
@@ -3918,15 +3918,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Eredivisie](/calcio/eredivisie) e la [classifica aggiornata](/calcio/eredivisie/classifica)."
+    "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:11:49.849Z"
+  "at": "2026-11-01T19:11:15.126Z"
  },
  "fb:558840": {
   "fingerprint": "geghvc",
@@ -4022,20 +4022,20 @@
   "at": "2026-11-01T16:11:55.501Z"
  },
  "fb:558837": {
-  "fingerprint": "2jo0qo",
+  "fingerprint": "13f7ry4",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 16:45 l'AZ ospita il Groningen nella 12ª giornata di Eredivisie. In classifica l'AZ occupa il 5° posto con 20 punti, mentre il Groningen è all'8° posto con 16."
+     "Domenica 8 novembre alle 16:45 l'AZ ospita il Groningen per la 12ª giornata di Eredivisie. In classifica l'AZ è al 5° posto con 20 punti, mentre il Groningen è all'8° con 15."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Eredivisie l'AZ ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-N-P-P), segnando 3 gol e subendone 7. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 4 partite di Eredivisie il Groningen ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-P-N), segnando 12 gol e subendone 8. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 5 partite di Eredivisie l'AZ ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con sequenza V-P-N-P-P. Ha segnato 3 gol e ne ha subiti 7. Le ultime 2 partite sono state perse. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Eredivisie il Groningen ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con sequenza V-V-P-N-P. Ha segnato 14 gol e ne ha subiti 11. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -4043,9 +4043,9 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: AZ 1,8, Groningen 2,4 a partita.",
-     "Gol subiti finora: AZ 13, Groningen 23.",
-     "In tutte le ultime 4 partite del Groningen si sono segnati almeno tre gol."
+     "Le medie gol a partita sono 1,8 per l'AZ e 2,4 per il Groningen.",
+     "I gol subiti finora sono 13 per l'AZ e 24 per il Groningen.",
+     "In ciascuna delle ultime 5 partite del Groningen si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -4064,7 +4064,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:35:42.803Z"
+  "at": "2026-11-01T19:11:20.784Z"
  },
  "fb:558842": {
   "fingerprint": "qo3tqq",
@@ -4114,20 +4114,20 @@
   "at": "2026-11-01T00:28:04.516Z"
  },
  "fb:558838": {
-  "fingerprint": "1ozbbca",
+  "fingerprint": "sn8d31",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 20:00 l'Utrecht ospita il NEC nella 12ª giornata di Eredivisie. In classifica l'Utrecht occupa l'11° posto con 12 punti, mentre il NEC è al 12° con 11."
+     "Domenica 8 novembre alle 20:00 l'Utrecht ospita il NEC nella 12ª giornata di Eredivisie. In classifica l'Utrecht occupa il 12° posto con 12 punti, il NEC il 13° con 11."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Eredivisie l'Utrecht ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-V-N-P), segnando 8 gol e subendone 12. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Eredivisie il NEC ha collezionato 4 pareggi e 1 sconfitta (sequenza N-N-N-N-P), con 6 gol fatti e 7 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie finora."
+     "Nelle ultime 5 partite di Eredivisie l'Utrecht ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-V-N-P), con 8 gol fatti e 12 subiti. In casa, nel bilancio stagionale, conta 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Eredivisie il NEC ha collezionato 4 pareggi e 1 sconfitta (sequenza N-N-N-N-P), con 6 gol fatti e 7 subiti. In trasferta, nel bilancio stagionale, registra 1 pareggio e 1 sconfitta, ancora senza vittorie."
     ],
     "bullets": []
    },
@@ -4144,19 +4144,19 @@
   "faq": [
    {
     "q": "Quando si gioca Utrecht – NEC?",
-    "a": "La partita si disputa domenica 8 novembre alle 20:00, ora italiana."
+    "a": "Domenica 8 novembre alle 20:00, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Puoi consultare la pagina [Eredivisie](/calcio/eredivisie) e la [classifica aggiornata](/calcio/eredivisie/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Il tema è spiegato nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:12:05.400Z"
+  "at": "2026-11-01T19:11:26.030Z"
  },
  "fb:567344": {
   "fingerprint": "kmzywv",
@@ -4197,12 +4197,12 @@
   "at": "2026-10-30T22:45:18.072Z"
  },
  "fb:567339": {
-  "fingerprint": "1f5dd3a",
+  "fingerprint": "13wlww",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 1 novembre alle 21:30 il Braga ospita il Famalicão per la 10ª giornata di Primeira Liga. In classifica il Braga è al 10° posto con 11 punti, il Famalicão all'11° con 10."
+     "Domenica 1 novembre alle 21:30 il Braga ospita il Famalicão per la 10ª giornata di Primeira Liga. In classifica il Braga è al 10° posto con 11 punti, mentre il Famalicão è all'11° con 10."
     ],
     "bullets": []
    },
@@ -4210,7 +4210,7 @@
     "id": "momento",
     "paragraphs": [
      "Nelle ultime 4 partite di Primeira Liga il Braga ha ottenuto 1 pareggio e 3 sconfitte (sequenza N-P-P-P), segnando 2 gol e subendone 6. Ha perso le ultime 3 gare. In casa ha perso tutte le 2 partite disputate.",
-     "Nelle ultime 3 partite di Primeira Liga il Famalicão ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), con 9 gol segnati e 4 subiti. In trasferta ha vinto tutte le 2 partite disputate."
+     "Nelle ultime 3 partite di Primeira Liga il Famalicão ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), segnando 9 gol e subendone 4. In trasferta ha vinto tutte le 2 partite disputate."
     ],
     "bullets": []
    },
@@ -4218,15 +4218,15 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Braga 1,0, Famalicão 1,6 a partita.",
+     "Media gol segnati a partita: Braga 1,0, Famalicão 1,6.",
      "Gol subiti finora: Braga 11, Famalicão 11.",
-     "In tutte le ultime 3 partite del Famalicão si sono segnati almeno tre gol."
+     "In tutte le ultime 3 partite del Famalicão sono stati segnati almeno tre gol."
     ]
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Braga, 0 per il Famalicão e 3 pareggi, con 18 gol complessivi (media di 3,6 a partita). L'ultimo incontro, ad aprile 2026 in Primeira Liga, è terminato Braga 2-2 Famalicão."
+     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Braga, nessuna per il Famalicão e 4 pareggi, con 19 gol complessivi (media di 3,8 a partita). L'ultimo incrocio, a ottobre 2026 in Taça da Liga, è terminato Braga 2-2 Famalicão."
     ],
     "bullets": []
    }
@@ -4246,7 +4246,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T21:00:08.377Z"
+  "at": "2026-11-01T19:11:30.516Z"
  },
  "fb:567342": {
   "fingerprint": "1p3y4rk",
@@ -4301,20 +4301,20 @@
   "at": "2026-11-01T06:31:03.470Z"
  },
  "fb:567346": {
-  "fingerprint": "1y5du3l",
+  "fingerprint": "ni4oki",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Lunedì 2 novembre alle 21:15 il Gil Vicente ospiterà il Vitória SC nella 10ª giornata di Primeira Liga. In classifica il Gil Vicente occupa il 7° posto con 14 punti, mentre il Vitória SC è 13° con 8 punti."
+     "Lunedì 2 novembre alle 21:15 il Gil Vicente ospita il Vitória SC nella 10ª giornata di Primeira Liga. In classifica il Gil Vicente occupa il 7° posto con 14 punti, mentre il Vitória SC è 13° con 8 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Primeira Liga il Gil Vicente ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza N-V-V-P), segnando 4 gol e subendone 3. Nel bilancio stagionale casalingo registra 1 pareggio e 1 sconfitta, senza vittorie.",
-     "Nelle ultime 3 partite di Primeira Liga il Vitória SC ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-P-V), con 6 gol fatti e 3 subiti."
+     "Nelle ultime 4 gare di Primeira Liga il Gil Vicente ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza N-V-V-P), segnando 4 gol e subendone 3. Nelle gare casalinghe della stagione il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 3 gare di Primeira Liga il Vitória SC ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-P-V), segnando 6 gol e subendone 3."
     ],
     "bullets": []
    },
@@ -4322,14 +4322,14 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Gil Vicente 0,9, Vitória SC 1,1.",
+     "Media gol segnati: Gil Vicente 0,9, Vitória SC 1,1 a partita.",
      "Gol subiti finora: Gil Vicente 7, Vitória SC 10."
     ]
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 4 confronti diretti il bilancio è di 0 vittorie per il Gil Vicente, 3 per il Vitória SC e 1 pareggio, con 6 gol complessivi (media di 1,5 a partita). L'ultimo incrocio, ad aprile 2026 in Primeira Liga, è terminato con il punteggio Gil Vicente 0-1 Vitória SC."
+     "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per il Gil Vicente, 4 vittorie per il Vitória SC e 1 pareggio, con 10 gol complessivi (media di 2,0 a partita). L'ultimo incontro, ad aprile 2026 in Primeira Liga, è terminato Gil Vicente 0-1 Vitória SC."
     ],
     "bullets": []
    }
@@ -4341,31 +4341,31 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Primeira Liga](/calcio/primeira-liga) e la [classifica aggiornata](/calcio/primeira-liga/classifica)."
+    "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:03.638Z"
+  "at": "2026-11-01T19:11:36.324Z"
  },
  "fb:567353": {
-  "fingerprint": "dy4bhe",
+  "fingerprint": "1jixega",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Venerdì 6 novembre alle 21:45 il Famalicão ospita l'Arouca per la 11ª giornata di Primeira Liga. In classifica il Famalicão occupa l'11° posto con 10 punti, mentre l'Arouca è al 4° con 20."
+     "Venerdì 6 novembre alle 21:45 il Famalicão ospita l'Arouca nell'11ª giornata di Primeira Liga. In classifica il Famalicão occupa l'11° posto con 10 punti, mentre l'Arouca è al 4° con 20."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Primeira Liga il Famalicão ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), segnando 9 gol e subendone 4.",
-     "Nelle ultime 3 partite di Primeira Liga l'Arouca ha ottenuto 2 vittorie e 1 pareggio (sequenza N-V-V), segnando 4 gol e subendone 2. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 3 partite di Primeira Liga il Famalicão ha ottenuto 2 vittorie e 1 sconfitta, con la sequenza V-P-V, segnando 9 gol e subendone 4.",
+     "Nelle ultime 4 partite di Primeira Liga l'Arouca ha ottenuto 3 vittorie e 1 pareggio, con la sequenza N-V-V-V, segnando 5 gol e subendone 2. Arriva da 3 vittorie consecutive. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -4375,7 +4375,8 @@
     "bullets": [
      "Media gol segnati a partita: Famalicão 1,6, Arouca 1,3.",
      "Gol subiti finora: Famalicão 11, Arouca 7.",
-     "In tutte le ultime 3 partite del Famalicão sono stati segnati almeno tre gol."
+     "In tutte le ultime 3 partite del Famalicão sono stati segnati almeno tre gol.",
+     "L'Arouca non ha subito gol in 3 delle ultime 4 partite."
     ]
    }
   ],
@@ -4385,7 +4386,7 @@
     "a": "Venerdì 6 novembre alle 21:45, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
+    "q": "Dove posso consultare classifica e risultati?",
     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
    },
    {
@@ -4394,23 +4395,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T17:25:41.721Z"
+  "at": "2026-11-01T19:11:40.493Z"
  },
  "fb:567352": {
-  "fingerprint": "4ghjcg",
+  "fingerprint": "1a6exx0",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "CD Nacional e Acad. Viseu si affrontano sabato 7 novembre alle 16:30 nella 11ª giornata di Primeira Liga. In classifica il CD Nacional occupa il 15° posto con 7 punti, mentre l'Acad. Viseu è 6° con 17."
+     "Il CD Nacional e l'Acad. Viseu si affrontano sabato 7 novembre alle 16:30 nell'11ª giornata di Primeira Liga. In classifica il CD Nacional occupa il 15° posto con 7 punti, mentre l'Acad. Viseu è 6° con 17."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Primeira Liga il CD Nacional ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-P-V), segnando 3 gol e subendone 7. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 3 partite di Primeira Liga l'Acad. Viseu ha ottenuto 3 vittorie (sequenza V-V-V), con 6 gol fatti e 2 subiti. La squadra arriva da 3 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
+     "Nelle ultime 4 partite di Primeira Liga il CD Nacional ha ottenuto 1 vittoria e 3 sconfitte (sequenza P-P-V-P), segnando 3 gol e subendone 8. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 3 partite di Primeira Liga l'Acad. Viseu ha ottenuto 3 vittorie (sequenza V-V-V), con 6 gol fatti e 2 subiti. La squadra arriva da 3 vittorie consecutive. In trasferta ha vinto tutte e 2 le partite disputate."
     ],
     "bullets": []
    },
@@ -4430,15 +4431,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
+    "a": "Nella [pagina della Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano la [guida su come leggere le quote](/guide/come-leggere-le-quote) e la [guida sui mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T17:25:47.495Z"
+  "at": "2026-11-01T19:11:45.714Z"
  },
  "fb:567347": {
   "fingerprint": "7k3j2q",
@@ -5011,20 +5012,20 @@
   "at": "2026-10-31T18:16:34.075Z"
  },
  "fb:561928": {
-  "fingerprint": "1s9vdth",
+  "fingerprint": "l4s4t8",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Charlton e Bolton si sfidano martedì 3 novembre alle 20:45 nella 14ª giornata di Championship. Le due squadre sono a pari punteggio, con 14 punti ciascuna."
+     "Charlton e Bolton si affrontano martedì 3 novembre alle 20:45, nell'ambito della 14ª giornata di Championship. Le due squadre sono appaiate a 14 punti in classifica."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Championship il Charlton ha ottenuto 2 pareggi e 3 sconfitte (sequenza N-N-P-P-P), segnando 4 gol e subendone 11. Ha perso le ultime 3 gare. In casa, la stagione del Charlton registra 1 pareggio e 1 sconfitta, senza vittorie.",
-     "Nelle ultime 5 partite di Championship il Bolton ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-V-N-P-P), segnando 7 gol e subendone 11. Ha perso le ultime 2 gare. In trasferta, la stagione del Bolton registra 2 vittorie e 1 pareggio, senza sconfitte."
+     "Nelle ultime 5 partite di Championship il Charlton ha collezionato 2 pareggi e 3 sconfitte, con la sequenza N-N-P-P-P, segnando 4 gol e subendone 11. Le ultime 3 gare sono state tutte perse. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 5 partite di Championship il Bolton ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza P-V-N-P-P, segnando 7 gol e subendone 11. Le ultime 2 gare sono state perse. In trasferta, nella stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -5032,11 +5033,18 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Charlton 0,8, Bolton 1,4.",
+     "Media gol segnati: Charlton 0,8, Bolton 1,4 a partita.",
      "Gol subiti finora: Charlton 21, Bolton 26.",
      "In 3 delle ultime 5 partite del Charlton sono stati segnati almeno tre gol.",
      "In 4 delle ultime 5 partite del Bolton sono stati segnati almeno tre gol."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Charlton, 2 vittorie per il Bolton e 1 pareggio, con 16 gol complessivi (media di 3,2 a partita). L'ultimo incrocio, disputato a gennaio 2025 in League One, si è concluso Bolton 1-2 Charlton."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -5050,11 +5058,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T18:16:38.172Z"
+  "at": "2026-11-01T19:11:55.354Z"
  },
  "fb:561918": {
   "fingerprint": "1wvkboy",
@@ -5161,20 +5169,20 @@
   "at": "2026-11-01T16:36:03.843Z"
  },
  "fb:561923": {
-  "fingerprint": "18h1izw",
+  "fingerprint": "j492by",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Martedì 3 novembre alle 21:00 il West Brom ospita il Southampton per la 14ª giornata di Championship. Le due squadre si trovano nelle parti alte della classifica: il West Brom è al 4° posto con 24 punti, il Southampton al 5° con 23."
+     "La partita si gioca martedì 3 novembre alle 21:00, quando il West Brom ospita il Southampton per la 14ª giornata di Championship. Il match mette di fronte due squadre della parte alta della classifica: il West Brom è 4° con 24 punti, il Southampton 5° con 23."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Championship il West Brom ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-V-N-V), segnando 9 gol e subendone 6. Non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 5 partite di Championship il Southampton ha ottenuto 4 vittorie e 1 pareggio (sequenza V-V-N-V-V), segnando 9 gol e subendone 3. Non perde da 5 partite. In trasferta il bilancio stagionale è di 2 vittorie e 1 sconfitta."
+     "Nelle ultime 5 partite di Championship il West Brom ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-V-N-V), segnando 9 gol e subendone 6. La squadra non perde da 4 partite. Il rendimento interno della stagione registra 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Championship il Southampton ha ottenuto 4 vittorie e 1 pareggio (sequenza V-V-N-V-V), segnando 9 gol e subendone 3. La squadra non perde da 5 partite. Il rendimento in trasferta della stagione registra 2 vittorie e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -5182,11 +5190,18 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: West Brom 1,5, Southampton 2,2.",
+     "Media gol segnati: West Brom 1,5, Southampton 2,2 a partita.",
      "Gol subiti finora: West Brom 14, Southampton 13.",
-     "Nelle ultime 5 partite del West Brom in 3 casi si sono segnati almeno tre gol.",
-     "Nelle ultime 5 partite il Southampton non ha subito gol in 3 casi."
+     "In 3 delle ultime 5 partite del West Brom si sono segnati almeno tre gol.",
+     "Il Southampton non ha subito gol in 3 delle ultime 5."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per il West Brom, 3 vittorie per il Southampton e 2 pareggi, con 13 gol complessivi (media di 2,6 a partita). L'ultimo incontro, disputato a marzo 2026 in Championship, è terminato West Brom 1-1 Southampton."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -5204,10 +5219,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T18:16:50.500Z"
+  "at": "2026-11-01T19:12:03.065Z"
  },
  "fb:561917": {
-  "fingerprint": "1ex6bf7",
+  "fingerprint": "1gyzbec",
   "sections": [
    {
     "id": "presentazione",
@@ -5234,6 +5249,13 @@
      "Il Birmingham non ha subito gol in 3 delle ultime 5.",
      "In 3 delle ultime 5 partite del Millwall si sono segnati almeno tre gol."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Birmingham, 2 vittorie per il Millwall e 1 pareggio, con 11 gol complessivi (media di 2,2 a partita). L'ultimo incrocio, a febbraio 2026 in Championship, è finito Millwall 3-0 Birmingham."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -5251,23 +5273,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T18:16:52.905Z"
+  "at": "2026-11-01T19:11:58.193Z"
  },
  "fb:561925": {
-  "fingerprint": "1rcqlg9",
+  "fingerprint": "135w1ih",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Mercoledì 4 novembre alle 20:45 il Cardiff ospita il West Ham nella 14ª giornata di Championship. In classifica il Cardiff occupa il 17° posto con 14 punti, mentre il West Ham è all'8° posto con 22."
+     "Appuntamento mercoledì 4 novembre alle 20:45: il Cardiff ospita il West Ham nella 14ª giornata di Championship. In classifica il Cardiff occupa il 17° posto con 14 punti, mentre il West Ham è all'8° posto con 22."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Championship il Cardiff ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con sequenza P-V-N-V-P. Ha segnato 9 gol e ne ha subiti 8. In casa ha vinto tutte le 3 partite disputate.",
-     "Nelle ultime 5 partite di Championship il West Ham ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con sequenza N-V-V-P-P. Ha segnato 11 gol e ne ha subiti 7. Ha perso le ultime 2 partite. In trasferta il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
+     "Nelle ultime 5 partite di Championship il Cardiff ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-N-V-P), segnando 9 gol e subendone 8. In casa ha vinto tutte le 3 partite giocate.",
+     "Nelle ultime 5 partite di Championship il West Ham ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-V-V-P-P), segnando 11 gol e subendone 7. Ha perso le ultime 2 partite. In trasferta il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -5277,10 +5299,17 @@
     "bullets": [
      "Media gol segnati: Cardiff 1,5, West Ham 2,5 a partita.",
      "Gol subiti finora: Cardiff 20, West Ham 18.",
-     "Il West Ham ha il miglior attacco del torneo.",
+     "Il West Ham ha l'attacco più prolifico del torneo.",
      "In 4 delle ultime 5 partite del Cardiff sono stati segnati almeno tre gol.",
      "In 3 delle ultime 5 partite del West Ham sono stati segnati almeno tre gol."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Cardiff, 4 vittorie per il West Ham e nessun pareggio, con 15 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, a marzo 2019 in Premier League, si è concluso con il Cardiff vincente per 2-0 sul West Ham."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -5298,15 +5327,15 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T18:16:56.950Z"
+  "at": "2026-11-01T19:12:07.673Z"
  },
  "fb:561927": {
-  "fingerprint": "zh97zm",
+  "fingerprint": "c364rv",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Mercoledì 4 novembre alle 20:45 il Wrexham ospita il Middlesbrough nella 14ª giornata di Championship. In classifica il Wrexham occupa il 18° posto con 14 punti, mentre il Middlesbrough è al 1° posto con 28 punti."
+     "Mercoledì 4 novembre alle 20:45 il Wrexham ospita il Middlesbrough nella 14ª giornata di Championship. In classifica il Wrexham occupa il 18° posto con 14 punti, mentre il Middlesbrough è al 1° posto con 28."
     ],
     "bullets": []
    },
@@ -5322,10 +5351,17 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Wrexham 1,2, Middlesbrough 2,3.",
+     "Media gol segnati: Wrexham 1,2, Middlesbrough 2,3 a partita.",
      "Gol subiti finora: Wrexham 19, Middlesbrough 17.",
-     "Nelle ultime 5 partite del Middlesbrough, in 4 si sono segnati almeno tre gol."
+     "In 4 delle ultime 5 partite del Middlesbrough si sono segnati almeno tre gol."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 3 confronti diretti il bilancio è di 0 vittorie per il Wrexham, 1 vittoria per il Middlesbrough e 2 pareggi, con 7 gol complessivi (media di 2,3 a partita). L'ultimo incrocio, ad agosto 2026 in League Cup, è terminato Middlesbrough 1-0 Wrexham."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -5335,7 +5371,7 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Championship](/calcio/championship) e la [classifica aggiornata](/calcio/championship/classifica)."
+    "a": "Puoi consultarli nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -5343,7 +5379,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T06:31:10.982Z"
+  "at": "2026-11-01T19:12:12.968Z"
  },
  "fb:561932": {
   "fingerprint": "r1gv7u",
@@ -6008,20 +6044,20 @@
   "at": "2026-10-30T10:23:44.429Z"
  },
  "fb:555072": {
-  "fingerprint": "15qjih5",
+  "fingerprint": "vt64ms",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Bragantino e Santos si sfidano martedì 3 novembre alle 00:00 nella 34ª giornata di Brasileirão. In classifica il Bragantino è al 9° posto con 44 punti, mentre il Santos è all'8° con 47."
+     "Bragantino e Santos si affrontano martedì 3 novembre alle 00:00 per la 34ª giornata di Brasileirão. In classifica il Bragantino occupa il 9° posto con 44 punti, mentre il Santos è all'8° con 47."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Brasileirão il Bragantino ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-V-N-P-V), segnando 9 gol e subendone 6. In casa, nella stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Brasileirão il Santos ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta (sequenza N-P-V-N-N), segnando 6 gol e subendone 6. In trasferta, nella stagione, il bilancio è di 3 vittorie e 1 sconfitta."
+     "Nelle ultime 5 partite di Brasileirão il Bragantino ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-V-N-P-V), segnando 9 gol e subendone 6. In casa, nel bilancio stagionale, il Bragantino conta 2 vittorie e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Brasileirão il Santos ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta (sequenza N-P-V-N-N), segnando 6 gol e subendone 6. In trasferta, nel bilancio stagionale, il Santos conta 3 vittorie e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -6031,13 +6067,13 @@
     "bullets": [
      "Media gol segnati a partita: Bragantino 1,3, Santos 1,5.",
      "Gol subiti finora: Bragantino 38, Santos 47.",
-     "Nelle ultime 5 partite del Santos, in 3 occasioni sono stati segnati almeno tre gol."
+     "Nelle ultime 5 partite del Santos, in 3 occasioni si sono segnati almeno tre gol."
     ]
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per il Bragantino, 1 vittoria per il Santos e 1 pareggio, con 15 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, disputato a maggio 2026 nel Campeonato Brasileiro Série A, è terminato Santos 2-0 Bragantino."
+     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Bragantino, 2 vittorie per il Santos e 2 pareggi, con 11 gol complessivi (media di 2,2 a partita). L'ultimo incrocio, disputato a maggio 2026 in Serie A, è terminato Santos 2-0 Bragantino."
     ],
     "bullets": []
    }
@@ -6057,23 +6093,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:07.638Z"
+  "at": "2026-11-01T19:12:27.360Z"
  },
  "fb:555073": {
-  "fingerprint": "d34y34",
+  "fingerprint": "1dvjg23",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Martedì 3 novembre alle 23:30 il Chapecoense ospita il Mirassol nella 34ª giornata di Brasileirão. In classifica il Chapecoense occupa il 20° posto con 21 punti, mentre il Mirassol è al 16° con 37."
+     "Martedì 3 novembre alle 23:30 il Chapecoense ospita il Mirassol nella 34ª giornata di Brasileirão. In classifica il Chapecoense occupa il 20° posto con 21 punti, il Mirassol il 16° con 37."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Brasileirão il Chapecoense ha ottenuto 1 vittoria e 4 sconfitte (sequenza P-P-P-V-P), segnando 3 gol e subendone 13. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 5 partite di Brasileirão il Mirassol ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-P-V-N-P), segnando 4 gol e subendone 5. In trasferta, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
+     "Nelle ultime 5 partite di Brasileirão il Chapecoense ha ottenuto 1 vittoria e 4 sconfitte (sequenza P-P-P-V-P), segnando 3 gol e subendone 13. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Brasileirão il Mirassol ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-P-V-N-P), segnando 4 gol e subendone 5. In trasferta, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza ancora vittorie."
     ],
     "bullets": []
    },
@@ -6081,10 +6117,17 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Chapecoense 1,0, Mirassol 1,1 a partita.",
+     "Media gol segnati a partita: Chapecoense 1,0, Mirassol 1,1.",
      "Gol subiti finora: Chapecoense 66, Mirassol 47.",
      "In 4 delle ultime 5 partite del Chapecoense si sono segnati almeno tre gol."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per il Chapecoense, 4 per il Mirassol e 1 pareggio, con 6 gol complessivi (media di 1,2 a partita). L'ultimo incrocio, disputato a maggio 2026 in Serie A, è terminato Mirassol 1-1 Chapecoense."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -6093,32 +6136,32 @@
     "a": "Martedì 3 novembre alle 23:30, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
+    "q": "Dove si possono consultare classifica e risultati?",
     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T06:08:52.938Z"
+  "at": "2026-11-01T19:12:34.237Z"
  },
  "fb:555076": {
-  "fingerprint": "1kr88vy",
+  "fingerprint": "1x1tgkk",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Mercoledì 4 novembre alle 01:30 l'Internacional ospita il Coritiba nella 34ª giornata di Brasileirão. In classifica l'Internacional occupa il 18° posto con 35 punti, mentre il Coritiba è all'11° posto con 42."
+     "L'appuntamento è per mercoledì 4 novembre alle 01:30: l'Internacional ospita il Coritiba nella 34ª giornata di Brasileirão. In classifica l'Internacional occupa il 18° posto con 35 punti, mentre il Coritiba è all'11° con 42."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Brasileirão l'Internacional ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con sequenza V-N-P-V-P. Ha segnato 7 gol e ne ha subiti 6. In casa ha vinto tutte le 2 partite giocate.",
-     "Nelle ultime 5 partite di Brasileirão il Coritiba ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con sequenza P-N-P-P-V. Ha segnato 3 gol e ne ha subiti 7. In trasferta ha perso tutte le 3 partite giocate."
+     "Nelle ultime 5 partite di Brasileirão l'Internacional ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-N-P-V-P), segnando 7 gol e subendone 6. In casa ha vinto tutte le 2 partite giocate.",
+     "Nelle ultime 5 partite di Brasileirão il Coritiba ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-N-P-P-V), segnando 3 gol e subendone 7. In trasferta ha perso tutte le 3 partite giocate."
     ],
     "bullets": []
    },
@@ -6130,6 +6173,13 @@
      "Gol subiti finora: Internacional 42, Coritiba 50.",
      "In 3 delle ultime 5 partite dell'Internacional sono stati segnati almeno tre gol."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per l'Internacional, 1 vittoria per il Coritiba e 2 pareggi, con 17 gol complessivi (media di 3,4 a partita). L'ultimo incontro, disputato a maggio 2026 in Serie A, è terminato Coritiba 2-2 Internacional."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -6138,8 +6188,8 @@
     "a": "Mercoledì 4 novembre alle 01:30, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Brasileirão](/calcio/brasileirao) e la [classifica aggiornata](/calcio/brasileirao/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -6147,7 +6197,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T21:22:11.748Z"
+  "at": "2026-11-01T19:12:38.943Z"
  },
  "fb:555070": {
   "fingerprint": "1f87wpy",
@@ -9245,7 +9295,7 @@
   "at": "2026-11-01T13:56:18.421Z"
  },
  "nba:21718060": {
-  "fingerprint": "8eidln",
+  "fingerprint": "us6chc",
   "sections": [
    {
     "id": "presentazione",
@@ -9267,7 +9317,7 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 4 gare.",
-     "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 4 gare."
+     "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 3 gare."
     ]
    }
   ],
@@ -9286,10 +9336,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T00:28:47.975Z"
+  "at": "2026-11-01T19:12:49.647Z"
  },
  "nba:21718061": {
-  "fingerprint": "m425wj",
+  "fingerprint": "17kf58m",
   "sections": [
    {
     "id": "presentazione",
@@ -9311,7 +9361,7 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 5 gare."
+     "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 4 gare."
     ]
    }
   ],
@@ -9322,18 +9372,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:20.280Z"
+  "at": "2026-11-01T19:12:51.569Z"
  },
  "nba:21718062": {
-  "fingerprint": "fyn98e",
+  "fingerprint": "1osbbxj",
   "sections": [
    {
     "id": "presentazione",
@@ -9354,7 +9404,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 5 gare.",
+     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 4 gare.",
      "I Nets giocano la seconda partita in due giorni (back-to-back).",
      "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 3 gare."
     ]
@@ -9371,14 +9421,14 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi tutto su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T00:28:52.998Z"
+  "at": "2026-11-01T19:12:53.709Z"
  },
  "nba:21718063": {
-  "fingerprint": "xpr6al",
+  "fingerprint": "16udvcp",
   "sections": [
    {
     "id": "presentazione",
@@ -9399,8 +9449,8 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 5 gare.",
-     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 4 gare."
+     "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 4 gare.",
+     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 3 gare."
     ]
    }
   ],
@@ -9411,18 +9461,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per i dettagli, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:22.107Z"
+  "at": "2026-11-01T19:12:55.704Z"
  },
  "nba:21718064": {
-  "fingerprint": "1566kbl",
+  "fingerprint": "k06xsi",
   "sections": [
    {
     "id": "presentazione",
@@ -9443,7 +9493,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 4 gare.",
+     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 3 gare.",
      "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 5 gare."
     ]
    }
@@ -9455,18 +9505,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:29.077Z"
+  "at": "2026-11-01T19:12:57.647Z"
  },
  "nba:21718065": {
-  "fingerprint": "15ydx2p",
+  "fingerprint": "1tdlmrk",
   "sections": [
    {
     "id": "presentazione",
@@ -9487,7 +9537,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 4 gare.",
+     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 3 gare.",
      "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 4 gare."
     ]
    }
@@ -9507,10 +9557,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:30.891Z"
+  "at": "2026-11-01T19:12:59.699Z"
  },
  "nba:21718066": {
-  "fingerprint": "nciku",
+  "fingerprint": "15hjkwi",
   "sections": [
    {
     "id": "presentazione",
@@ -9531,9 +9581,9 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 2 gare.",
      "I Lakers giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 3 gare."
+     "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 2 gare."
     ]
    }
   ],
@@ -9544,18 +9594,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:32.921Z"
+  "at": "2026-11-01T19:13:01.780Z"
  },
  "nba:21718067": {
-  "fingerprint": "n1dhgn",
+  "fingerprint": "lyisga",
   "sections": [
    {
     "id": "presentazione",
@@ -9576,7 +9626,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 2 gare.",
      "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 4 gare."
     ]
    }
@@ -9588,18 +9638,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Qui trovi una spiegazione in [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:34.896Z"
+  "at": "2026-11-01T19:13:03.760Z"
  },
  "nba:21718068": {
-  "fingerprint": "q9l9p",
+  "fingerprint": "z4y64y",
   "sections": [
    {
     "id": "presentazione",
@@ -9622,7 +9672,7 @@
     "bullets": [
      "I Pistons giocano la seconda partita in due giorni (back-to-back).",
      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 4 gare."
+     "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 3 gare."
     ]
    }
   ],
@@ -9633,18 +9683,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi tutto nella guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:36.882Z"
+  "at": "2026-11-01T19:13:05.721Z"
  },
  "nba:21718069": {
-  "fingerprint": "jy73zs",
+  "fingerprint": "1weli8b",
   "sections": [
    {
     "id": "presentazione",
@@ -9665,7 +9715,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 4 gare.",
+     "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 3 gare.",
      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 4 gare."
     ]
    }
@@ -9681,14 +9731,14 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Il formato della stagione è spiegato in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:38.796Z"
+  "at": "2026-11-01T19:13:07.665Z"
  },
  "nba:21718070": {
-  "fingerprint": "18xac2o",
+  "fingerprint": "1t1oa21",
   "sections": [
    {
     "id": "presentazione",
@@ -9710,7 +9760,7 @@
     "paragraphs": [],
     "bullets": [
      "I Mavericks giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 4 gare.",
+     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 3 gare.",
      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 4 gare."
     ]
    }
@@ -9722,7 +9772,7 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
@@ -9730,10 +9780,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:40.871Z"
+  "at": "2026-11-01T19:13:09.758Z"
  },
  "nba:21718071": {
-  "fingerprint": "tvwfpq",
+  "fingerprint": "1o2aduv",
   "sections": [
    {
     "id": "presentazione",
@@ -9754,7 +9804,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 4 gare.",
+     "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 3 gare.",
      "Nei 7 giorni a partire da questa partita i Nuggets hanno in calendario 3 gare."
     ]
    }
@@ -9766,18 +9816,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:42.752Z"
+  "at": "2026-11-01T19:13:11.585Z"
  },
  "nba:21718072": {
-  "fingerprint": "b8l14y",
+  "fingerprint": "1a9miok",
   "sections": [
    {
     "id": "presentazione",
@@ -9798,8 +9848,8 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 4 gare.",
-     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 4 gare."
+     "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 3 gare."
     ]
    }
   ],
@@ -9818,7 +9868,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:44.644Z"
+  "at": "2026-11-01T19:13:13.533Z"
  },
  "nba:21718073": {
   "fingerprint": "19z72qg",
@@ -9866,7 +9916,7 @@
   "at": "2026-11-01T13:56:46.674Z"
  },
  "nba:21718074": {
-  "fingerprint": "1cu0gef",
+  "fingerprint": "16l36f1",
   "sections": [
    {
     "id": "presentazione",
@@ -9887,8 +9937,8 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 4 gare.",
-     "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 4 gare."
+     "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 3 gare."
     ]
    }
   ],
@@ -9899,7 +9949,7 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondimento nella guida [Basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
@@ -9907,10 +9957,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:49.068Z"
+  "at": "2026-11-01T19:13:15.816Z"
  },
  "nba:21718075": {
-  "fingerprint": "5m8svs",
+  "fingerprint": "h4y1sb",
   "sections": [
    {
     "id": "presentazione",
@@ -9932,7 +9982,7 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 3 gare."
+     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 2 gare."
     ]
    }
   ],
@@ -9943,18 +9993,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:50.837Z"
+  "at": "2026-11-01T19:13:17.585Z"
  },
  "nba:21718076": {
-  "fingerprint": "1j0pizn",
+  "fingerprint": "1xyscr7",
   "sections": [
    {
     "id": "presentazione",
@@ -9976,8 +10026,8 @@
     "paragraphs": [],
     "bullets": [
      "I Suns giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 3 gare."
+     "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 2 gare.",
+     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 2 gare."
     ]
    }
   ],
@@ -9988,15 +10038,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Dettagli nella pagina [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T13:56:52.701Z"
+  "at": "2026-11-01T19:13:19.672Z"
  },
  "nba:21718078": {
   "fingerprint": "12wdx4e",
@@ -15890,5 +15940,331 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-01T19:04:01.456Z"
+ },
+ "fb:1001552220": {
+  "fingerprint": "cdmh9h",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Den Haag e Sparta Rotterdam si sfidano sabato 7 novembre alle 18:45, nell'ambito della 12ª giornata di Eredivisie. In classifica il Den Haag occupa il 17° posto con 6 punti, mentre lo Sparta Rotterdam è all'11° con 12."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Eredivisie il Den Haag ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-N-V-P-P), segnando 7 gol e subendone 8. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+     "Nelle ultime 5 partite di Eredivisie lo Sparta Rotterdam ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-N-V-P-V), segnando 10 gol e subendone 13. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Den Haag 1,2, Sparta Rotterdam 1,8 a partita.",
+     "Gol subiti finora: Den Haag 24, Sparta Rotterdam 26.",
+     "In 3 delle ultime 5 partite del Den Haag si sono segnati almeno tre gol.",
+     "In tutte le ultime 5 partite dello Sparta Rotterdam si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Den Haag – Sparta Rotterdam?",
+    "a": "La partita si disputa sabato 7 novembre alle 18:45, ora italiana."
+   },
+   {
+    "q": "Dove si possono consultare classifica e risultati?",
+    "a": "Nella pagina dedicata all'[Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:11:11.064Z"
+ },
+ "fb:1001563244": {
+  "fingerprint": "1ipw072",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 3 novembre alle 20:45 il QPR ospita il Burnley nella 14ª giornata di Championship. In classifica il QPR occupa il 9° posto con 20 punti, mentre il Burnley è al 22° con 9."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Championship il QPR ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-V-P-V-P), segnando 11 gol e subendone 9. In casa, nella stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Championship il Burnley ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza V-N-P-P-N), segnando 8 gol e subendone 8. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: QPR 1,6, Burnley 1,3 a partita.",
+     "Gol subiti finora: QPR 16, Burnley 25.",
+     "In 4 delle ultime 5 partite del QPR sono stati segnati almeno tre gol.",
+     "In 4 delle ultime 5 partite del Burnley sono stati segnati almeno tre gol."
+    ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il QPR, 3 vittorie per il Burnley e 1 pareggio, con 12 gol complessivi (media di 2,4 a partita). L'ultimo incrocio, ad aprile 2025 in Championship, è terminato QPR 0-5 Burnley."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca QPR – Burnley?",
+    "a": "Martedì 3 novembre alle 20:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:11:50.572Z"
+ },
+ "fb:1001563247": {
+  "fingerprint": "kdg10t",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Mercoledì 4 novembre alle 21:00 il Bristol City ospita il Wolves per la 14ª giornata di Championship. In classifica il Bristol City è al 14° posto con 18 punti, il Wolves al 3° con 24."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Championship il Bristol City ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-P-P-N-V), con 4 gol fatti e 5 subiti. In casa il bilancio stagionale è di 1 vittoria e 2 sconfitte.",
+     "Nelle ultime 5 partite di Championship il Wolves ha raccolto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-N-V-V), con 8 gol fatti e 5 subiti. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Bristol City 1,2, Wolves 1,8 a partita.",
+     "Gol subiti finora: Bristol City 17, Wolves 16.",
+     "In 3 delle ultime 5 partite del Wolves si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Bristol City – Wolves?",
+    "a": "Mercoledì 4 novembre alle 21:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:12:15.232Z"
+ },
+ "fb:1001563262": {
+  "fingerprint": "1rdgsyf",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 7 novembre alle 13:30 il Wrexham ospita il Wolves per la 15ª giornata di Championship. In classifica il Wrexham occupa il 18° posto con 14 punti, mentre il Wolves è al 3° con 24."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Championship il Wrexham ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza N-P-V-P-P), segnando 6 gol e subendone 7. Ha perso le ultime 2. In casa, nella stagione, il bilancio è di 2 vittorie e 1 sconfitta.",
+     "Nelle ultime 5 partite di Championship il Wolves ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-N-V-V), segnando 8 gol e subendone 5. Non perde da 4 partite. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Wrexham 1,2, Wolves 1,8.",
+     "Gol subiti finora: Wrexham 19, Wolves 16.",
+     "In 3 delle ultime 5 partite del Wolves sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Wrexham – Wolves?",
+    "a": "Sabato 7 novembre alle 13:30, ora italiana."
+   },
+   {
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:12:18.706Z"
+ },
+ "fb:1001563259": {
+  "fingerprint": "541o9h",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Il QPR riceve il Lincoln City sabato 7 novembre alle 16:00, per la 15ª giornata di Championship. In classifica il QPR è al 9° posto con 20 punti, mentre il Lincoln City è al 16° con 15."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Championship il QPR ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-V-P-V-P), con 11 gol fatti e 9 subiti. In casa il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Championship il Lincoln City ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-V-P), con 7 gol fatti e 15 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: QPR 1,6, Lincoln City 1,1 a partita.",
+     "Gol subiti finora: QPR 16, Lincoln City 23.",
+     "In 4 delle ultime 5 partite del QPR si sono segnati almeno tre gol.",
+     "In tutte le ultime 5 partite del Lincoln City si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca QPR – Lincoln City?",
+    "a": "Sabato 7 novembre alle 16:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:12:22.267Z"
+ },
+ "fb:1001492441": {
+  "fingerprint": "1i6va1l",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "La partita è in programma giovedì 5 novembre alle 01:30, quando il Botafogo ospita l'Atletico-MG nella 34ª giornata di Brasileirão. In classifica il Botafogo occupa il 12° posto con 39 punti, mentre l'Atletico-MG è al 7° con 50."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Brasileirão il Botafogo ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-N-V-P-P), segnando 4 gol e subendone 8. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Brasileirão l'Atletico-MG ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-V-V-P-P), segnando 7 gol e subendone 7. Ha perso le ultime 2 gare. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Botafogo 1,4, Atletico-MG 1,3 a partita.",
+     "Gol subiti finora: Botafogo 53, Atletico-MG 39.",
+     "In 3 delle ultime 5 partite del Botafogo sono stati segnati almeno tre gol.",
+     "In 3 delle ultime 5 partite dell'Atletico-MG sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Botafogo – Atletico-MG?",
+    "a": "Giovedì 5 novembre alle 01:30, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:12:43.443Z"
+ },
+ "fb:1001492455": {
+  "fingerprint": "9lko1u",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 14 novembre alle 22:30 il Mirassol ospita l'Atletico-MG per la 35ª giornata di Brasileirão. In classifica il Mirassol occupa il 16° posto con 37 punti, mentre l'Atletico-MG è al 7° posto con 50."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Brasileirão il Mirassol ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-P-V-N-P), con 4 gol fatti e 5 subiti. In casa, nella stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Brasileirão l'Atletico-MG ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-V-V-P-P), con 7 gol fatti e 7 subiti. Le ultime 2 partite sono state sconfitte. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Mirassol 1,1, Atletico-MG 1,3 a partita.",
+     "Gol subiti finora: Mirassol 47, Atletico-MG 39.",
+     "In 3 delle ultime 5 partite dell'Atletico-MG si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Mirassol – Atletico-MG?",
+    "a": "Sabato 14 novembre alle 22:30, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Brasileirão](/calcio/brasileirao) e la [classifica aggiornata](/calcio/brasileirao/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-01T19:12:47.674Z"
  }
 }
