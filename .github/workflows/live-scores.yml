@@ -137,6 +137,8 @@ jobs:
           VITE_ANALYTICS_PROVIDER: ${{ vars.ANALYTICS_PROVIDER }}
           VITE_ANALYTICS_ID: ${{ vars.ANALYTICS_ID }}
           VITE_COOKIE_POLICY_URL: ${{ vars.COOKIE_POLICY_URL }}
+          # share of expected goals in the prediction model (0 = off); turn on only after a backtest
+          MODEL_XG_WEIGHT: ${{ vars.MODEL_XG_WEIGHT }}
 
       - name: Save the predictions archive
         if: steps.live.outputs.changed == 'true'

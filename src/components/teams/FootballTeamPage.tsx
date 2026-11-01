@@ -14,6 +14,7 @@ import { usePageMeta } from "../../lib/pageMeta";
 import { footballTeam, type FootballSeason, type FootballTeam } from "../../lib/teams";
 import { playerPath } from "../../lib/players";
 import { footballTeamMeta } from "../../lib/teamMeta";
+import { TeamSeasonStats } from "./TeamSeasonStats";
 import { Card, Facts, SectionTitle, age, formatDate, num } from "./TeamUi";
 
 const GROUPS: [string, RegExp][] = [
@@ -254,6 +255,7 @@ export function FootballTeamPage() {
           matches={next}
           label={`${t.competition.name}: probabilità 1X2, Under/Over e Goal calcolate dal modello statistico.`}
         />
+        <TeamSeasonStats team={t} />
         <Squad team={t} />
         <TeamGoals team={t} />
         <Card id="stagioni">

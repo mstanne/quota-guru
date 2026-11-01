@@ -22,6 +22,7 @@ const BasketEventPage = lazyPage(() => import("./components/basket/BasketEventPa
 const GoalStatsPage = lazyPage(() => import("./components/stats/GoalStatsPage").then((m) => m.GoalStatsPage));
 const LeadersPage = lazyPage(() => import("./components/stats/LeadersPage").then((m) => m.LeadersPage));
 const PlayerPage = lazyPage(() => import("./components/players/PlayerPage").then((m) => m.PlayerPage));
+const CornersCardsPage = lazyPage(() => import("./components/stats/CornersCardsPage").then((m) => m.CornersCardsPage));
 const LegacyRedirect = lazyPage(() => import("./components/LegacyRedirect").then((m) => m.LegacyRedirect));
 const DayPredictionsPage = lazyPage(() =>
   import("./components/predictions/DayPredictionsPage").then((m) => m.DayPredictionsPage),
@@ -84,6 +85,7 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/calcio/:competizione/classifica", [StandingsPage, NotFoundPage]],
   ["/calcio/:competizione/statistiche-under-over", [GoalStatsPage, NotFoundPage]],
   ["/calcio/:competizione/marcatori", [LeadersPage, NotFoundPage]],
+  ["/calcio/:competizione/statistiche-corner-cartellini", [CornersCardsPage, NotFoundPage]],
   ["/calcio/:competizione/giornata/:numero", [LegacyRedirect, NotFoundPage]],
   [paths.pronostici, [PronosticiPage]],
   ["/pronostici/oggi", [DayPredictionsPage]],
@@ -217,6 +219,7 @@ export default function App() {
             <Route path="/calcio/:competizione/classifica" element={<StandingsPage />} />
             <Route path="/calcio/:competizione/statistiche-under-over" element={<GoalStatsPage />} />
             <Route path="/calcio/:competizione/marcatori" element={<LeadersPage />} />
+            <Route path="/calcio/:competizione/statistiche-corner-cartellini" element={<CornersCardsPage />} />
             <Route path={paths.pronostici} element={<PronosticiPage />} />
             <Route path="/pronostici/oggi" element={<DayPredictionsPage day="oggi" />} />
             <Route path="/pronostici/domani" element={<DayPredictionsPage day="domani" />} />

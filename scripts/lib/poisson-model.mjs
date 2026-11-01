@@ -26,6 +26,10 @@ export const DEFAULTS = {
   otherLeague: -0.05, // prior strength of teams whose domestic league is not in the data (e.g. Club Brugge in CL):
   // their league is weaker, but they are its best teams, so the two effects nearly cancel
   cupSigma: 0.05, // cups have few games: their scoring rate stays close to the overall average
+  // Share of expected goals (xG) in the target of the fit, where the result has them (hxg/axg, from the archive:
+  // scripts/archive-data.mjs): 0 = goals only (default). xG are a steadier measure of how well a team plays; the
+  // Dixon-Coles correction still uses the real scores. Turn it on only if `--backtest` shows an improvement.
+  xgWeight: 0,
   iterations: 80,
   maxGoals: 10,
 };
@@ -103,8 +107,11 @@ export function fitModel(results, cfg = {}) {
     // league strength is learnt only from cup games between leagues: in domestic games a promoted or
     // relegated side would otherwise link two leagues with a team that changed level
     const cross = cups.has(g.comp) && lh && la && lh !== la;
-    obs.push({ y: g.hg, w, comp: g.comp, att: g.home, def: g.away, home: !g.neutral, lA: cross ? lh : undefined, lD: cross ? la : undefined });
-    obs.push({ y: g.ag, w, comp: g.comp, att: g.away, def: g.home, home: false, lA: cross ? la : undefined, lD: cross ? lh : undefined });
+    const withXg = o.xgWeight > 0 && Number.isFinite(g.hxg) && Number.isFinite(g.axg);
+    const yh = withXg ? (1 - o.xgWeight) * g.hg + o.xgWeight * g.hxg : g.hg;
+    const ya = withXg ? (1 - o.xgWeight) * g.ag + o.xgWeight * g.axg : g.ag;
+    obs.push({ y: yh, w, comp: g.comp, att: g.home, def: g.away, home: !g.neutral, lA: cross ? lh : undefined, lD: cross ? la : undefined });
+    obs.push({ y: ya, w, comp: g.comp, att: g.away, def: g.home, home: false, lA: cross ? la : undefined, lD: cross ? lh : undefined });
   }
 
   const teams = new Set();
