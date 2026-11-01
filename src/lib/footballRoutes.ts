@@ -1,4 +1,4 @@
-// Metadata of the football pages generated from the football-data.org snapshot
+// Metadata of the football pages generated from the API-Football snapshot
 // (one per competition, one per standings table, one per match). Kept out of src/routes.ts
 // so that the football data is not part of the initial JavaScript bundle.
 import { allMatches, competitionMeta, competitions, matchMeta, standingsMeta } from "./football";

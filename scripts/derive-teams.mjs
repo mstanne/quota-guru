@@ -3,7 +3,7 @@
 //   src/data/teams/football-<comp>.json   clubs of one domestic league: details, squad, season by season
 //   src/data/teams/nba.json               NBA teams: roster, season by season
 // Sources: src/data/football.json and basket.json (current season), data/football-history.json and
-// basket-history.json (past results), data/football-teams.json (club details and squads, football-data.org),
+// basket-history.json (past results), data/football-teams.json (club details and squads, API-Football),
 // data/team-seasons-api.json (players' season statistics, API-Sports; filled in over time).
 import fs from "node:fs";
 import path from "node:path";

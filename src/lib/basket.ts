@@ -1,4 +1,4 @@
-// Basketball data from the BALLDONTLIE snapshot (src/data/basket.json, refreshed by scripts/fetch-basket-data.mjs):
+// Basketball data from the API-NBA snapshot (src/data/basket.json, refreshed by scripts/fetch-basket-data.mjs):
 // NBA calendar/results and Lega Basket Serie A standings.
 import raw from "../data/basket.json";
 import { sportsEvent, videoObject, type EventVenue } from "./schema";

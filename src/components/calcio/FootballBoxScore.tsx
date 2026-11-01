@@ -118,7 +118,7 @@ function TeamEvents({ team, goals, cards }: { team: Team; goals: MatchGoal[]; ca
   );
 }
 
-/** Goals and cards from the API-Sports timeline, in the same shape as football-data.org's. */
+/** Goals and cards from the API-Sports timeline, in the same shape as the match data. */
 function eventsFromDetails(match: Match, d: FootballDetails): { goals: MatchGoal[]; cards: MatchCard[] } {
   const id = (side: "home" | "away") => (side === "home" ? match.homeTeam.id : match.awayTeam.id);
   const final = playedScore(match);

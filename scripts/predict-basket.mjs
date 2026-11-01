@@ -2,7 +2,7 @@
 //
 // Reads  src/data/basket.json                calendar/results shown on the site (BALLDONTLIE)
 //        data/basket-history.json            results of the current and previous season
-//                                            (scripts/fetch-basket-data.mjs; `npm run history:basket`)
+//                                            (scripts/fetch-basket-data.mjs)
 // Writes src/data/basket-predictions.json    { generatedAt, model, track, predictions: { [gameId]: Prediction } }
 //
 // Upcoming games get a prediction from a fit on everything played so far; games already finished in the

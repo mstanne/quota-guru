@@ -2,7 +2,7 @@
 //
 // At every workflow run (after the fetch-* scripts, before the build) it compares the fresh snapshots with the
 // ones of the previous run and records:
-//   nuova      – a match/game that appeared in the calendar (football-data.org, BALLDONTLIE)
+//   nuova      – a match/game that appeared in the calendar (API-Football, API-NBA)
 //   risultato  – a match that became final, with its score
 //   stato      – a match postponed, suspended or cancelled
 //   dettagli   – line-ups/stats (football) or box score (NBA) downloaded from API-Sports

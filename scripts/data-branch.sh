@@ -29,6 +29,7 @@ DATA_FILES=(
   src/data/football-details.json src/data/basket-details.json src/data/highlights.json
   src/data/editorial-ai.json
   data/football-history.json data/football-teams.json data/basket-history.json data/team-seasons-api.json
+  data/id-map.json
   public/stato-dati.json
 )
 

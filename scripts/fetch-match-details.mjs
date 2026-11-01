@@ -33,7 +33,7 @@ const DAY = 86400000;
 
 const DAYS_BACK = 3; // finished matches of the last N days are looked up
 const RESERVE = 4; // requests left unused each day (manual checks)
-const MIN_GAP_MS = 6500; // ~9 requests/minute, under the free limit of 10
+const MIN_GAP_MS = Number(process.env.API_SPORTS_GAP_MS ?? 250); // Pro plan: 300 requests/minute
 const RETRY_HOURS = 20; // after a "plan does not cover this season" answer
 
 // football-data.org competition slug → API-Football league id; order = priority when the daily budget is short
@@ -48,7 +48,6 @@ const LEAGUES = [
   ["primeira-liga", 94],
   ["championship", 40],
   ["brasileirao", 71],
-  // from API-Football itself (scripts/fetch-extra-leagues.mjs)
   ["serie-b", 136],
   ["europa-league", 3],
   ["conference-league", 848],
@@ -593,8 +592,8 @@ if (!key) {
   status.football.teamSeasons = Object.keys(seasons.football ?? {}).length;
   status.nba.teamSeasons = Object.keys(seasons.nba ?? {}).filter((k) => !k.endsWith("-roster")).length;
 }
-// keep what scripts/fetch-extra-leagues.mjs wrote earlier in this run
+// keep what scripts/fetch-football.mjs and fetch-basket-data.mjs wrote earlier in this run
 const previous = readJson(STATUS, {});
-if (previous.extraLeagues) status.extraLeagues = previous.extraLeagues;
+for (const k of ["calendarioCalcio", "calendarioNba"]) if (previous[k]) status[k] = previous[k];
 fs.mkdirSync(path.dirname(STATUS), { recursive: true });
 fs.writeFileSync(STATUS, JSON.stringify(status, null, 2) + "\n");

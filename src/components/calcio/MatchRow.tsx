@@ -17,7 +17,7 @@ import type { FootballMarket, Prediction } from "../../lib/predictionsCore";
 import { MarketMini } from "../predictions/PredictionUi";
 
 /**
- * Team crest (football-data.org CDN). Falls back to the three-letter code if the crest is missing
+ * Team crest (API-Football CDN). Falls back to the three-letter code if the crest is missing
  * or fails to load. The box size is fixed so the layout does not move while the image loads.
  */
 export function TeamBadge({

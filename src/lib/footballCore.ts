@@ -12,7 +12,7 @@ export interface Team {
   name: string;
   shortName: string;
   tla: string;
-  /** Club crest from the football-data.org CDN (null if not available). */
+  /** Club logo from the API-Football CDN (null if not available). */
   crest?: string | null;
 }
 export interface Score {
@@ -51,7 +51,7 @@ export interface Match {
     penalties?: Score | null;
   };
   referee: string | null;
-  /** Goals and cards: only when the data plan provides them (scripts/fetch-football-data.mjs). */
+  /** Goals and cards: from the match details (scripts/fetch-match-details.mjs). */
   goals?: MatchGoal[];
   cards?: MatchCard[];
 }

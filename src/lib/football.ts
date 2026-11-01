@@ -1,5 +1,5 @@
 // Typed access to the football-data.org snapshot (src/data/football.json).
-// The snapshot is refreshed by scripts/fetch-football-data.mjs (scheduled GitHub Action).
+// The snapshot is refreshed by scripts/fetch-football.mjs (scheduled GitHub Action).
 // Importing this module includes the whole snapshot in the JS chunk: use ./footballCore for pure helpers.
 import raw from "../data/football.json";
 import { matchSlug, settleMatch, type Competition, type HeadToHead, type Match } from "./footballCore";

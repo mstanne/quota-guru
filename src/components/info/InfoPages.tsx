@@ -195,7 +195,7 @@ const FAQ: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Da dove arrivano calendario, risultati e classifiche del calcio?",
-    a: "Dall'API di football-data.org. Calendario e classifiche si aggiornano più volte al giorno; mentre si gioca punteggi e classifiche vengono aggiornati ogni 15 minuti circa. I risultati non sono in tempo reale: per seguire una partita minuto per minuto, nella sua pagina puoi aprire i dati live di SofaScore.",
+    a: "Da API-Football (API-Sports). Calendario e classifiche si aggiornano più volte al giorno; mentre si gioca punteggi e classifiche vengono aggiornati ogni 15 minuti circa. I risultati non sono in tempo reale: per seguire una partita minuto per minuto, nella sua pagina puoi aprire i dati live di SofaScore.",
   },
   {
     q: "Ho bisogno di aiuto con il gioco: a chi posso rivolgermi?",
@@ -258,9 +258,9 @@ export function MetodologiaPage() {
           ricontrollate periodicamente; ogni offerta riporta la data dell'ultima verifica.
         </li>
         <li>
-          <strong>Calendario, risultati e classifiche del calcio:</strong> API di football-data.org; i risultati delle
-          stagioni passate usati dal modello dei pronostici arrivano da football-data.org o, se non disponibili, da
-          openfootball.
+          <strong>Calendario, risultati, classifiche e rose:</strong> calcio da API-Football e NBA da API-NBA, entrambe
+          di API-Sports. I risultati delle stagioni passate usati dai modelli dei pronostici arrivano dalle stesse API
+          o, per alcune stagioni passate del calcio, da openfootball (dati di pubblico dominio).
         </li>
       </ul>
       <h2 id="pronostici">Pronostici del calcio</h2>
@@ -464,7 +464,7 @@ export function TerminiPage() {
       <p>
         Testi, grafica e codice del sito appartengono al Gestore o ai rispettivi titolari. Marchi e loghi degli
         operatori e delle squadre appartengono ai legittimi proprietari e sono usati a fini identificativi. Dati
-        calcistici forniti da football-data.org.
+        di calcio e NBA forniti da API-Sports.
       </p>
       <h2>7. Limitazione di responsabilità</h2>
       <p>
