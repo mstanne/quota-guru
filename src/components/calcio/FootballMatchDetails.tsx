@@ -52,7 +52,7 @@ function fmtStat(v: number | null | undefined, kind: "pct" | "dec" | "int") {
   return String(v);
 }
 
-function Stats({ match, d }: { match: Match; d: FootballDetails }) {
+function Stats({ match, d }: { match: Match; d: Pick<FootballDetails, "stats"> }) {
   const h = d.stats.home ?? {};
   const a = d.stats.away ?? {};
   const rows = FOOTBALL_STATS.filter(([k]) => h[k] != null || a[k] != null);
@@ -138,7 +138,7 @@ function describe(e: TimelineEvent, team: string, score: string | undefined) {
   return `${e.detail} (${team}).`;
 }
 
-function Timeline({ match, d }: { match: Match; d: FootballDetails }) {
+function Timeline({ match, d }: { match: Match; d: Pick<FootballDetails, "timeline"> }) {
   if (!d.timeline.length) return null;
   const scores = new Map(goalsWithScore(d, playedScore(match)).map((g) => [g.event, g]));
   const name = (side: "home" | "away") => (side === "home" ? match.homeTeam.shortName : match.awayTeam.shortName);
@@ -164,14 +164,22 @@ function Timeline({ match, d }: { match: Match; d: FootballDetails }) {
   );
 }
 
-export function FootballMatchDetails({ match, details: d }: { match: Match; details: FootballDetails }) {
+export function FootballMatchDetails({
+  match,
+  details: d,
+  lineupTitle = "Formazioni",
+}: {
+  match: Match;
+  details: Pick<FootballDetails, "lineups" | "stats" | "timeline">;
+  lineupTitle?: string;
+}) {
   const { home, away } = d.lineups;
   return (
     <>
       {(home || away) && (
         <section className={card} aria-labelledby="formazioni">
           <Title id="formazioni" icon={Users}>
-            Formazioni
+            {lineupTitle}
           </Title>
           <div className="grid sm:grid-cols-2 gap-6">
             {home && <TeamLineup name={match.homeTeam.shortName} lineup={home} />}

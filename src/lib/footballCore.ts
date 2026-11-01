@@ -54,6 +54,18 @@ export interface Match {
   /** Goals and cards: from the match details (scripts/fetch-match-details.mjs). */
   goals?: MatchGoal[];
   cards?: MatchCard[];
+  /** Official line-ups (about an hour before kick-off), then events and statistics while the match is played
+   *  (scripts/fetch-live-scores.mjs, every 15 minutes). Same format as the full details. */
+  live?: Omit<FootballDetails, "fixture">;
+  /** Injured and suspended players of the matches of the next days (scripts/fetch-football.mjs). */
+  injuries?: { home: Unavailable[]; away: Unavailable[] };
+}
+export interface Unavailable {
+  name: string;
+  /** true = in doubt, false = out */
+  doubtful: boolean;
+  /** In Italian: "squalifica", "infortunio al ginocchio", … */
+  reason: string;
 }
 export interface MatchGoal {
   minute: number;
@@ -429,6 +441,10 @@ function finishedContents(m: Match, details?: FootballDetails | null, video?: un
   if (details && Object.keys(details.stats?.home ?? {}).length) out.push("statistiche");
   return out;
 }
+/** Official line-ups published (quick updates) / injured or suspended players known, for titles and descriptions. */
+const hasLineups = (m: Match) => !!(m.live?.lineups?.home && m.live?.lineups?.away);
+const hasInjuries = (m: Match) => (m.injuries?.home.length ?? 0) + (m.injuries?.away.length ?? 0) > 0;
+
 const listIt = (items: string[]) =>
   items.length <= 1 ? (items[0] ?? "") : `${items.slice(0, -1).join(", ")} e ${items[items.length - 1]}`;
 
@@ -453,7 +469,9 @@ export function matchMeta(
       ? `${teams} (${c.name}) è in corso: punteggio aggiornato durante la partita ogni 15 minuti circa (non in tempo reale), classifica, forma recente e precedenti.`
       : isResultPending(m)
       ? `${teams} (${c.name}), giocata ${when}: risultato in arrivo. Classifica, forma recente e precedenti delle due squadre.`
-      : `${teams}, ${c.name}: si gioca ${when}. ${predicted ? "Pronostico con le probabilità 1X2, classifica" : "Classifica"}, forma recente e precedenti delle due squadre.`;
+      : `${teams}, ${c.name}: si gioca ${when}. ${hasLineups(m) ? "Formazioni ufficiali, " : ""}${
+          hasLineups(m) ? (predicted ? "pronostico con le probabilità 1X2, classifica" : "classifica") : predicted ? "Pronostico con le probabilità 1X2, classifica" : "Classifica"
+        }${hasInjuries(m) ? ", indisponibili" : ""}, forma recente e precedenti delle due squadre.`;
   return {
     path,
     ...(canonical !== path ? { canonical } : {}),
@@ -462,7 +480,9 @@ export function matchMeta(
         `${teams} ${ft.home}-${ft.away}: ${listIt(["risultato", ...contents.slice(0, 1)])} · ${c.name}`
       : isLive(m)
         ? `${teams} ${ft.home ?? 0}-${ft.away ?? 0} in corso: risultato ${c.name}`
-        : `${teams} (${formatDayMonth(m.utcDate)}): ${predicted ? "pronostico, orario e precedenti" : "orario, classifica e precedenti"}`,
+        : hasLineups(m)
+          ? `${teams} (${formatDayMonth(m.utcDate)}): formazioni ufficiali e ${predicted ? "pronostico" : "precedenti"}`
+          : `${teams} (${formatDayMonth(m.utcDate)}): ${predicted ? "pronostico, orario e precedenti" : "orario, classifica e precedenti"}`,
     description,
     archive: isFinished(m),
     ...(canonical === path ? { article: { headline: matchHeadline(m), section: c.name } } : {}),
@@ -524,14 +544,18 @@ export function eventMeta(
       ? `${teams} (${c.name}) è in corso: punteggio aggiornato durante la partita ogni 15 minuti circa (non in tempo reale)${p ? ", il pronostico pubblicato prima del calcio d'inizio" : ""}, classifica e precedenti.`
       : isResultPending(next)
         ? `${teams} (${c.name}), giocata ${when}: risultato in arrivo. Il pronostico pubblicato prima della partita, classifica e precedenti.`
-        : `Pronostico ${teams} (${c.name}), ${when}: ${p ? "probabilità 1X2, Under/Over e Goal calcolate dal modello statistico" : "orario"}, classifica, forma recente e precedenti.`;
+        : `Pronostico ${teams} (${c.name}), ${when}: ${hasLineups(next) ? "formazioni ufficiali, " : ""}${p ? "probabilità 1X2, Under/Over e Goal calcolate dal modello statistico" : "orario"}${
+            hasInjuries(next) ? ", indisponibili (infortunati e squalificati)" : ""
+          }, classifica, forma recente e precedenti.`;
     return {
       path,
       event: true,
       article: { headline: matchHeadline(next), section: c.name },
       title: live
         ? `${teams} ${nft.home ?? 0}-${nft.away ?? 0} in corso: risultato e pronostico · ${c.name}`
-        : `Pronostico ${teams} (${formatDayMonth(next.utcDate)}): ${p ? "probabilità e statistiche" : "orario e precedenti"} · ${c.name}`,
+        : hasLineups(next)
+          ? `Pronostico ${teams}: formazioni ufficiali e probabilità · ${c.name}`
+          : `Pronostico ${teams} (${formatDayMonth(next.utcDate)}): ${p ? "probabilità e statistiche" : "orario e precedenti"} · ${c.name}`,
       description,
       archive: false,
       jsonLd: footballEventLd(c, next, path, description, undefined, venue),

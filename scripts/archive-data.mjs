@@ -159,7 +159,8 @@ async function main() {
       if (!FINAL.has(m.status)) continue;
       const y = seasonOf(m.utcDate, c.code);
       const list = bySeason.get(y) ?? [];
-      list.push(archivedMatch(m, fDetails[m.id], highlights[c.slug]?.[m.id]));
+      // full details, or the live data of the quick updates until they arrive
+      list.push(archivedMatch(m, fDetails[m.id] ?? (m.live?.timeline?.length ? m.live : undefined), highlights[c.slug]?.[m.id]));
       bySeason.set(y, list);
     }
     for (const [y, list] of bySeason)
