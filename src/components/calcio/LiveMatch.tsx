@@ -5,7 +5,7 @@
 // contacted and no cookie is set. Without VITE_LIVE_URL, or outside the match window, it shows the static data only.
 import { useEffect, useState } from "react";
 import { Radio } from "lucide-react";
-import { isUpcoming, type Match } from "../../lib/footballCore";
+import { isLive, isUpcoming, type Match } from "../../lib/footballCore";
 import type { FootballDetails } from "../../lib/matchDetails";
 import { inLiveWindow } from "../../lib/sofascore";
 import { FootballMatchDetails } from "./FootballMatchDetails";
@@ -104,7 +104,22 @@ export function LiveMatch({ match, initial }: { match: Match; initial?: Match["l
         </section>
       )}
       {hasContent ? (
-        <FootballMatchDetails match={match} details={details} lineupTitle={(data ? !started : isUpcoming(match)) ? "Formazioni ufficiali" : "Formazioni"} />
+        <FootballMatchDetails
+          match={match}
+          details={details}
+          lineupTitle={(data ? !started : isUpcoming(match)) ? "Formazioni ufficiali" : "Formazioni"}
+          phase={
+            data
+              ? !started
+                ? "upcoming"
+                : FINAL.has(st.short)
+                  ? "finished"
+                  : "live"
+              : isLive(match)
+                ? "live"
+                : "upcoming"
+          }
+        />
       ) : null}
     </div>
   );

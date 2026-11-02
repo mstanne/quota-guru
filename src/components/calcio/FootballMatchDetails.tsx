@@ -1,5 +1,6 @@
 // Line-ups, team statistics and timeline of a finished match (API-Football data, see src/lib/matchDetails.ts).
 // The timeline text is built from the events only: nothing is added that the data does not say.
+import { Fragment, type ReactNode } from "react";
 import { BarChart3, ListOrdered, Users } from "lucide-react";
 import type { Match } from "../../lib/footballCore";
 import { FOOTBALL_STATS, goalsWithScore, isGoal, type FootballDetails, type Lineup, type TimelineEvent } from "../../lib/matchDetails";
@@ -168,27 +169,42 @@ export function FootballMatchDetails({
   match,
   details: d,
   lineupTitle = "Formazioni",
+  phase = "upcoming",
 }: {
   match: Match;
   details: Pick<FootballDetails, "lineups" | "stats" | "timeline">;
   lineupTitle?: string;
+  /** Order of the boxes: line-ups first before kick-off, timeline first while the match is on,
+   * statistics first once it is over. */
+  phase?: "upcoming" | "live" | "finished";
 }) {
   const { home, away } = d.lineups;
+  const box: Record<"lineups" | "stats" | "timeline", ReactNode> = {
+    lineups: (home || away) && (
+      <section className={card} aria-labelledby="formazioni">
+        <Title id="formazioni" icon={Users}>
+          {lineupTitle}
+        </Title>
+        <div className="grid sm:grid-cols-2 gap-6">
+          {home && <TeamLineup name={match.homeTeam.shortName} lineup={home} />}
+          {away && <TeamLineup name={match.awayTeam.shortName} lineup={away} />}
+        </div>
+      </section>
+    ),
+    stats: <Stats match={match} d={d} />,
+    timeline: <Timeline match={match} d={d} />,
+  };
+  const order =
+    phase === "live"
+      ? (["timeline", "lineups", "stats"] as const)
+      : phase === "finished"
+        ? (["stats", "lineups", "timeline"] as const)
+        : (["lineups", "stats", "timeline"] as const);
   return (
     <>
-      {(home || away) && (
-        <section className={card} aria-labelledby="formazioni">
-          <Title id="formazioni" icon={Users}>
-            {lineupTitle}
-          </Title>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {home && <TeamLineup name={match.homeTeam.shortName} lineup={home} />}
-            {away && <TeamLineup name={match.awayTeam.shortName} lineup={away} />}
-          </div>
-        </section>
-      )}
-      <Stats match={match} d={d} />
-      <Timeline match={match} d={d} />
+      {order.map((k) => (
+        <Fragment key={k}>{box[k]}</Fragment>
+      ))}
       <p className="text-slate-400 text-xs">Formazioni, statistiche, voti e cronaca: dati API-Football.</p>
     </>
   );

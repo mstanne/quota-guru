@@ -375,7 +375,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               <FootballBoxScore match={match} details={details} />
               {highlight && <HighlightVideo highlight={highlight} channel={highlight.channel ?? competition.name} />}
             </div>
-            {details && <FootballMatchDetails match={match} details={details} />}
+            {details && <FootballMatchDetails match={match} details={details} phase="finished" />}
           </div>
         )}
         <div className="lg:col-span-2 space-y-6 min-w-0">
