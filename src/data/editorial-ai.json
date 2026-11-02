@@ -1,58 +1,7 @@
 {
- "generatedAt": "2026-11-02T11:20:24.315Z",
+ "generatedAt": "2026-11-02T19:10:08.413Z",
  "model": "claude-haiku-5-5",
  "items": {
-  "fb:558541": {
-   "fingerprint": "usxxw6",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Lunedì 2 novembre alle 18:30 il Sassuolo ospita la Fiorentina per la 10ª giornata di Serie A. In classifica il Sassuolo è al 15° posto con 8 punti, la Fiorentina al 17° con 5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Serie A il Sassuolo ha raccolto 1 pareggio e 4 sconfitte (sequenza P-N-P-P-P), con 6 gol fatti e 15 subiti. Ha perso le ultime 3. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie.",
-      "Nelle ultime 5 partite di Serie A la Fiorentina ha raccolto 2 pareggi e 3 sconfitte (sequenza N-P-P-P-N), con 6 gol fatti e 10 subiti. In trasferta ha perso tutte le 2 partite giocate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Sassuolo 1,6, Fiorentina 1,2 a partita.",
-      "Gol subiti finora: Sassuolo 22, Fiorentina 21.",
-      "In 3 delle ultime 5 partite del Sassuolo si sono segnati almeno tre gol.",
-      "In 4 delle ultime 5 partite della Fiorentina si sono segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Sassuolo, 2 vittorie per la Fiorentina e 1 pareggio, con 15 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, ad aprile 2026 in Serie A, è finito Fiorentina 0-0 Sassuolo."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Sassuolo – Fiorentina?",
-     "a": "Lunedì 2 novembre alle 18:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:558545": {
    "fingerprint": "og8ica",
    "sections": [
@@ -6385,20 +6334,20 @@
    ]
   },
   "fb:1001563247": {
-   "fingerprint": "kdg10t",
+   "fingerprint": "tfitv3",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Mercoledì 4 novembre alle 21:00 il Bristol City ospita il Wolves per la 14ª giornata di Championship. In classifica il Bristol City è al 14° posto con 18 punti, il Wolves al 3° con 24."
+      "Mercoledì 4 novembre alle 21:00 il Bristol City ospita il Wolves nella 14ª giornata di Championship. In classifica il Bristol City occupa il 14° posto con 18 punti, mentre il Wolves è al 3° posto con 24."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Bristol City ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-P-P-N-V), con 4 gol fatti e 5 subiti. In casa il bilancio stagionale è di 1 vittoria e 2 sconfitte.",
-      "Nelle ultime 5 partite di Championship il Wolves ha raccolto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-N-V-V), con 8 gol fatti e 5 subiti. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 5 partite di Championship il Bristol City ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza N-P-P-N-V. Ha segnato 4 gol e ne ha subiti 5. In casa, la stagione del Bristol City registra 1 vittoria e 2 sconfitte.",
+      "Nelle ultime 5 partite di Championship il Wolves ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza P-V-N-V-V. Ha segnato 8 gol e ne ha subiti 5. Non perde da 4 partite. In trasferta, la stagione del Wolves registra 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -6406,10 +6355,17 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Bristol City 1,2, Wolves 1,8 a partita.",
+      "Media gol segnati a partita: Bristol City 1,2, Wolves 1,8.",
       "Gol subiti finora: Bristol City 17, Wolves 16.",
-      "In 3 delle ultime 5 partite del Wolves si sono segnati almeno tre gol."
+      "Nelle ultime 5 partite del Wolves, in 3 gare sono stati segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti, il bilancio è di 1 vittoria per il Bristol City, 3 vittorie per il Wolves e 1 pareggio, con 17 gol complessivi (media di 3,4 a partita). L'ultimo incrocio, disputato a gennaio 2025 in FA Cup, è terminato Bristol City 1-2 Wolves."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -6419,11 +6375,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+     "a": "Nella pagina dedicata al [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -13513,78 +13469,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
-    }
-   ]
-  },
-  "fb:1001552806": {
-   "fingerprint": "n3hyws",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Nice si impone con un largo 5-2 sul Rennes, davanti al proprio pubblico. La gara, valida per la 9ª giornata di Ligue 1, si è disputata venerdì 30 ottobre; il primo tempo si era concluso sul 3-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite disputate finora il Nice occupa l'8° posto con 14 punti, mentre il Rennes è al 5° con 16. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Nice tornerà in campo domenica 8 novembre alle 17:15 in trasferta contro l'Angers SCO. Il Rennes giocherà domenica 8 novembre alle 15:00 in casa contro il Lille."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Nice – Rennes?",
-     "a": "5-2 (3-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
-    }
-   ]
-  },
-  "fb:559644": {
-   "fingerprint": "1c2ifsb",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Paris Saint-Germain ha vinto in trasferta contro il Le Havre con un netto 1-5. La partita, valida per la 9ª giornata di Ligue 1, si è giocata venerdì 30 ottobre; al primo tempo il punteggio era 1-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Le Havre è al 18° posto con 2 punti, mentre il Paris Saint-Germain è al 1° con 20. [Vai alla classifica completa](/calcio/ligue-1/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Le Havre tornerà in campo domenica 8 novembre alle 17:15 in casa contro il Lorient. Il Paris Saint-Germain tornerà in campo sabato 7 novembre alle 20:45 in casa contro il Troyes."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Le Havre – Paris Saint-Germain?",
-     "a": "Il risultato finale è 1-5, con 1-2 all'intervallo."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
     }
    ]
   },
