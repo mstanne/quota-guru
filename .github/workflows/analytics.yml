@@ -1,0 +1,70 @@
+# Weekly export of the site's statistics: visitors (Google Analytics 4) and Google searches (Search Console).
+# scripts/fetch-site-analytics.mjs downloads the last 28 days and the files are committed to the `statistiche-sito`
+# branch: `ultimo/` always holds the latest export, `storico/<data>/` keeps every week. Claude reads them from there.
+# Started every Monday by the live worker (workers/live, reliable timer) and, as a fallback, by the schedule below;
+# also by hand: Actions → "Statistiche sito" → Run workflow.
+# One-time setup: docs/statistiche-sito.md (secret GOOGLE_SERVICE_ACCOUNT_JSON, variable GA4_PROPERTY_ID).
+name: Statistiche sito
+
+on:
+  schedule:
+    - cron: "37 5 * * 1" # Monday 05:37 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: statistiche-sito
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            scripts/fetch-site-analytics.mjs
+            .nvmrc
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+
+      - name: Download GA4 and Search Console data
+        id: fetch
+        run: node scripts/fetch-site-analytics.mjs
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID }}
+          GSC_SITE: ${{ vars.GSC_SITE }}
+          OUT_DIR: .cache/statistiche
+
+      - name: Save to the statistiche-sito branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -f .cache/statistiche/riepilogo.md ] || { echo "Niente da salvare"; exit 0; }
+          url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          dir=.cache/statistiche-branch
+          if git ls-remote --exit-code --heads "$url" statistiche-sito >/dev/null; then
+            git clone --quiet --depth 1 --branch statistiche-sito "$url" "$dir"
+          else
+            mkdir -p "$dir"
+            git -C "$dir" init --quiet -b statistiche-sito
+            git -C "$dir" remote add origin "$url"
+          fi
+          today=$(date -u +%Y-%m-%d)
+          rm -rf "$dir/ultimo" "$dir/storico/$today"
+          mkdir -p "$dir/ultimo" "$dir/storico/$today"
+          cp .cache/statistiche/* "$dir/ultimo/"
+          cp .cache/statistiche/* "$dir/storico/$today/"
+          printf '# Statistiche di Quota Guru\n\nEsportate ogni lunedì da `.github/workflows/analytics.yml` (ramo main).\n`ultimo/`: ultima esportazione · `storico/<data>/`: una cartella per settimana. Non modificare a mano.\n' > "$dir/README.md"
+          cd "$dir"
+          git add -A
+          if git diff --cached --quiet; then echo "Statistiche invariate"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit --quiet -m "Statistiche $today"
+          git push --quiet origin HEAD:statistiche-sito

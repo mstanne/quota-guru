@@ -323,6 +323,7 @@ export default {
 export function githubJob(d) {
   const m = d.getUTCMinutes();
   const h = d.getUTCHours();
+  if (m === 37 && h === 5 && d.getUTCDay() === 1) return "analytics.yml"; // weekly statistics, Monday
   if (m === 17 && h % 3 === 0) return "deploy.yml"; // full refresh every 3 hours (it also updates the scores)
   if (m % 15 === 0) return "live-scores.yml"; // quick scores and standings
   return null;
