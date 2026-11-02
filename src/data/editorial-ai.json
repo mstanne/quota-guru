@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-02T20:47:15.210Z",
+ "generatedAt": "2026-11-02T21:11:12.432Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558537": {
@@ -178,20 +178,20 @@
    ]
   },
   "fb:558531": {
-   "fingerprint": "16akn3r",
+   "fingerprint": "y1xz8u",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 20:45 la Roma ospita il Sassuolo nell'11ª giornata di Serie A. In classifica la Roma occupa il 3° posto con 24 punti, mentre il Sassuolo è al 15° con 8."
+      "Sabato 7 novembre alle 20:45 la Roma ospita il Sassuolo nell'11ª giornata di Serie A. In classifica la Roma occupa il 3° posto con 24 punti, mentre il Sassuolo è al 16° con 8 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie A la Roma ha ottenuto 3 vittorie e 2 pareggi (sequenza N-V-N-V-V), segnando 14 gol e subendone 7. Non perde da 6 partite. In casa, nel bilancio stagionale, conta 2 vittorie e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 5 partite di Serie A il Sassuolo ha raccolto 1 pareggio e 4 sconfitte (sequenza N-P-P-P-P), con 7 gol segnati e 17 subiti. Ha perso le ultime 4 partite. In trasferta ha perso tutte le 3 gare disputate."
+      "Nelle ultime 5 partite di Serie A la Roma ha ottenuto 3 vittorie e 2 pareggi (sequenza N-V-N-V-V), segnando 14 gol e subendone 7. Non perde da 6 partite. In casa il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Serie A il Sassuolo ha ottenuto 1 pareggio e 4 sconfitte (sequenza N-P-P-P-P), segnando 7 gol e subendone 17. Ha perso le ultime 4 partite. In trasferta ha perso tutte le 3 partite giocate."
      ],
      "bullets": []
     },
@@ -200,10 +200,10 @@
      "paragraphs": [],
      "bullets": [
       "Media gol segnati a partita: Roma 2,8, Sassuolo 1,6.",
-      "Gol subiti finora: Roma 10, Sassuolo 22.",
+      "Gol subiti finora: Roma 10, Sassuolo 26.",
       "La Roma ha il miglior attacco del torneo.",
-      "In 3 delle ultime 5 partite della Roma si sono segnati almeno tre gol.",
-      "In 3 delle ultime 5 partite del Sassuolo si sono segnati almeno tre gol."
+      "Nelle 3 delle ultime 5 partite della Roma si sono segnati almeno tre gol.",
+      "Nelle 3 delle ultime 5 partite del Sassuolo si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -214,11 +214,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina dedicata alla [Serie A](/calcio/serie-a) e la [classifica aggiornata](/calcio/serie-a/classifica)."
+     "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -310,20 +310,20 @@
    ]
   },
   "fb:558538": {
-   "fingerprint": "1265k3o",
+   "fingerprint": "5frt5r",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 15:00 il Monza ospita l'Atalanta per l'11ª giornata di Serie A. In classifica il Monza è al 16° posto con 7 punti, mentre l'Atalanta è al 13° con 11."
+      "Domenica 8 novembre alle 15:00 il Monza ospita l'Atalanta, valida per la 11ª giornata di Serie A. In classifica il Monza occupa il 17° posto con 7 punti, mentre l'Atalanta è al 13° con 11."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie A il Monza ha ottenuto 1 vittoria e 4 sconfitte (sequenza P-V-P-P-P), segnando 9 gol e subendone 12. Ha perso le ultime 3. In casa, in questa stagione, il bilancio è di 2 vittorie e 1 sconfitta.",
-      "Nelle ultime 5 partite di Serie A l'Atalanta ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-V-P-N-N), segnando 11 gol e subendone 12. In trasferta, in questa stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza vittorie."
+      "Nelle ultime 5 partite di Serie A il Monza ha ottenuto 1 vittoria e 4 sconfitte (sequenza P-V-P-P-P), segnando 9 gol e subendone 12. Le ultime 3 gare sono tutte perse. In casa il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Serie A l'Atalanta ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-V-P-N-N), con 11 gol fatti e 12 subiti. In trasferta il bilancio stagionale comprende 1 pareggio e 2 sconfitte, senza vittorie."
      ],
      "bullets": []
     },
@@ -345,11 +345,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+     "a": "Trovi classifica e risultati nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Le spiegazioni si trovano nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -398,12 +398,12 @@
    ]
   },
   "fb:558529": {
-   "fingerprint": "el1r10",
+   "fingerprint": "16iziti",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 20:45 la Fiorentina ospita la Juventus per l'11ª giornata di Serie A. In classifica la Fiorentina occupa il 17° posto con 5 punti, mentre la Juventus è al 7° posto con 17."
+      "La partita si giocherà domenica 8 novembre alle 20:45, quando la Fiorentina ospiterà la Juventus nell'11ª giornata di Serie A. In classifica la Fiorentina occupa il 15° posto con 8 punti, mentre la Juventus è 7ª con 17."
      ],
      "bullets": []
     },
@@ -419,8 +419,8 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Fiorentina 1,2, Juventus 1,3.",
-      "Gol subiti finora: Fiorentina 21, Juventus 10.",
+      "Media gol segnati a partita: Fiorentina 1,5, Juventus 1,3.",
+      "Gol subiti finora: Fiorentina 23, Juventus 10.",
       "In tutte le ultime 5 partite della Fiorentina sono stati segnati almeno tre gol."
      ]
     }
@@ -431,8 +431,8 @@
      "a": "Domenica 8 novembre alle 20:45, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Serie A](/calcio/serie-a) e la [classifica aggiornata](/calcio/serie-a/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -11582,19 +11582,19 @@
    ]
   },
   "fb:558539": {
-   "fingerprint": "aiydey",
+   "fingerprint": "6i91qt",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Bologna ha battuto di misura il Monza in casa, con il punteggio di 2-1. La partita, valida per la 10ª giornata di Serie A, si è giocata sabato 31 ottobre; al termine del primo tempo il punteggio era di 1-1."
+      "Il Bologna ha battuto il Monza di misura in casa: 2-1. La partita, valida per la 10ª giornata di Serie A, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 1-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Bologna occupa il 9° posto con 14 punti, mentre il Monza è al 16° con 7. [Consulta la classifica completa](/calcio/serie-a/classifica)."
+      "Con le partite giocate finora il Bologna è al 9° posto con 14 punti, mentre il Monza è al 17° con 7. [Consulta la classifica completa](/calcio/serie-a/classifica)."
      ],
      "bullets": []
     },
@@ -11870,19 +11870,19 @@
    ]
   },
   "fb:558541": {
-   "fingerprint": "19fxsps",
+   "fingerprint": "17vxvhw",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "La Fiorentina ha vinto in trasferta contro il Sassuolo per 2-4. La partita, valida per la 10ª giornata di Serie A, si è giocata lunedì 2 novembre; il primo tempo si era chiuso sull'1-1."
+      "La Fiorentina si impone in trasferta sul Sassuolo per 2-4. La partita, valida per la 10ª giornata di Serie A, si è giocata lunedì 2 novembre; il primo tempo si era chiuso sull'1-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Sassuolo occupa il 15° posto con 8 punti, mentre la Fiorentina è al 17° con 5. [Vai alla classifica completa](/calcio/serie-a/classifica)."
+      "Con le partite giocate finora il Sassuolo è al 16° posto con 8 punti, mentre la Fiorentina è al 15° con 8. [Consulta la classifica completa](/calcio/serie-a/classifica)."
      ],
      "bullets": []
     },
@@ -11897,7 +11897,7 @@
    "faq": [
     {
      "q": "Com'è finita Sassuolo – Fiorentina?",
-     "a": "2-4 (1-1 all'intervallo)."
+     "a": "Il risultato finale è 2-4, con l'1-1 registrato all'intervallo."
     },
     {
      "q": "Dove trovo gli altri risultati?",
