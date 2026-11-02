@@ -1,7 +1,12 @@
 // Validates src/data/offers.json before every build (and after every run of the offers agent).
 //
 //   node scripts/check-offers.mjs            -> errors only on approved offers block the build
-//   node scripts/check-offers.mjs --strict   -> drafts are checked as if they were approved
+//   node scripts/check-offers.mjs --strict   -> drafts are checked as if they were approved, and an expired or
+//                                               not recently verified offer is an error (used by the offers agent)
+//
+// In the build an approved offer that has expired, or was not verified in the last MAX_VERIFICATION_AGE_DAYS days,
+// does not stop the build: the site already hides it (visibleOffers in src/data/offers.ts), so results, standings
+// and live data keep updating; the build log gets a warning for the offers agent to act on.
 //   node scripts/check-offers.mjs --json     -> machine-readable report (used by the offers agent)
 //
 // Exit code 1 when an approved offer (or any offer with --strict) has errors.
@@ -95,14 +100,14 @@ for (const o of data.offers ?? []) {
       errors.push(`${key} non è sul dominio ufficiale dell'operatore (${allowed.join(", ")})`);
   }
 
+  // time limits: errors for the offers agent (--strict), warnings in the build (the site hides the offer)
+  const timeLimit = strict && o.status === "approvata" ? errors : warnings;
   if (o.validUntil && ISO_DATE.test(o.validUntil) && daysSince(o.validUntil) > 1)
-    (o.status === "approvata" ? errors : warnings).push(`offerta scaduta il ${o.validUntil}: va ritirata o aggiornata`);
+    timeLimit.push(`offerta scaduta il ${o.validUntil}: non viene mostrata, va ritirata o aggiornata`);
   else if (o.validUntil && ISO_DATE.test(o.validUntil) && daysSince(o.validUntil) > -3)
     warnings.push(`l'offerta scade il ${o.validUntil}`);
   if (ISO_DATE.test(o.verifiedAt ?? "") && daysSince(o.verifiedAt) > MAX_VERIFICATION_AGE_DAYS)
-    (o.status === "approvata" ? errors : warnings).push(
-      `ultima verifica il ${o.verifiedAt}: più di ${MAX_VERIFICATION_AGE_DAYS} giorni, l'offerta non viene mostrata`,
-    );
+    timeLimit.push(`ultima verifica il ${o.verifiedAt}: più di ${MAX_VERIFICATION_AGE_DAYS} giorni, l'offerta non viene mostrata`);
   if (o.status === "approvata" && o.issues?.length)
     errors.push(`offerta approvata con ${o.issues.length} incoerenze aperte in "issues": risolvile o svuota la lista`);
 
@@ -162,6 +167,9 @@ if (asJson) {
     console.log(`${r.errors.length && r.blocking ? "✗" : "•"} ${head}`);
     for (const e of r.errors) console.log(`    errore: ${e}`);
     for (const w of r.warnings) console.log(`    avviso: ${w}`);
+    // annotation in the GitHub Actions run summary for offers hidden because expired or not verified
+    if (process.env.GITHUB_ACTIONS && r.status === "approvata")
+      for (const w of r.warnings.filter((w) => w.includes("non viene mostrata"))) console.log(`::warning title=Offerta nascosta (${r.id})::${w}`);
     for (const i of r.openIssues) console.log(`    da verificare: ${i}`);
   }
   const counts = STATUSES.map((s) => `${report.filter((r) => r.status === s).length} ${s}`).join(", ");
