@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-02T04:50:17.528Z",
+ "generatedAt": "2026-11-02T06:38:25.634Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558541": {
@@ -8171,6 +8171,90 @@
     }
    ]
   },
+  "nba:21718029": {
+   "fingerprint": "1cyi5ta",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Bucks fanno visita ai Celtics giovedì 5 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Celtics hanno un record di 5-1 in stagione e hanno vinto 5 delle ultime 5, con una media di 118,7 punti segnati e 109,2 subiti. In casa il bilancio è 4-0.",
+      "I Bucks hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 113,0 punti segnati e 126,2 subiti. In trasferta il bilancio è 0-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 5 gare.",
+      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Boston Celtics – Milwaukee Bucks in Italia?",
+     "a": "Giovedì 5 novembre alle 01:30."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Trovi tutti i dettagli su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718030": {
+   "fingerprint": "1ui9p3x",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Gli Hornets fanno visita ai Nets giovedì 5 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Nets hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,2 punti segnati e 116,0 subiti. In casa il bilancio è 0-3.",
+      "Gli Hornets hanno un record di 3-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 98,3 punti segnati e 106,4 subiti. In trasferta il bilancio è 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Brooklyn Nets – Charlotte Hornets in Italia?",
+     "a": "Giovedì 5 novembre alle 01:30."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Qui trovi la guida su [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Qui trovi la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
   "nba:21718031": {
    "fingerprint": "pqliiv",
    "sections": [
@@ -8210,6 +8294,48 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718032": {
+   "fingerprint": "165lot0",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Pacers fanno visita ai Grizzlies giovedì 5 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Grizzlies hanno un record di 6-0 in stagione e hanno vinto 5 delle ultime 5, con una media di 121,2 punti segnati e 106,0 subiti. In casa il bilancio è 2-0.",
+      "I Pacers hanno un record di 2-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 112,9 punti segnati e 116,7 subiti. In trasferta il bilancio è 2-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Memphis Grizzlies – Indiana Pacers in Italia?",
+     "a": "Giovedì 5 novembre alle 02:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Puoi approfondire nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8339,6 +8465,48 @@
     }
    ]
   },
+  "nba:21718036": {
+   "fingerprint": "6bv8pp",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Raptors fanno visita ai Nuggets giovedì 5 novembre alle 03:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Nuggets hanno un record di 3-2 in stagione, con una media di 114,0 punti segnati e 115,2 subiti. In casa il bilancio è 1-1.",
+      "I Raptors hanno un record di 3-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 118,2 punti segnati e 110,3 subiti. In trasferta il bilancio è 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Nuggets hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Denver Nuggets – Toronto Raptors in Italia?",
+     "a": "Giovedì 5 novembre alle 03:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
   "nba:21718037": {
    "fingerprint": "1clum14",
    "sections": [
@@ -8423,6 +8591,176 @@
     }
    ]
   },
+  "nba:21718039": {
+   "fingerprint": "j2k6fe",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 5 novembre alle 04:00, ora italiana, i Kings ospitano i Lakers in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Kings hanno un record di 0-6 in stagione e hanno vinto 0 delle ultime 5, con una media di 109,3 punti segnati e 128,3 subiti. In casa il bilancio è 0-2.",
+      "I Lakers hanno un record di 5-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 120,3 punti segnati e 115,0 subiti. In trasferta il bilancio è 2-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 5 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Sacramento Kings – Los Angeles Lakers in Italia?",
+     "a": "Giovedì 5 novembre alle 04:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Trovi tutti i dettagli nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718040": {
+   "fingerprint": "zfrwpb",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 5 novembre alle 04:30, ora italiana, i Clippers ospitano gli Heat in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Clippers hanno un record di 1-5 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 113,8 subiti. In casa il bilancio è 1-1.",
+      "Gli Heat hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 118,3 punti segnati e 121,5 subiti. In trasferta il bilancio è 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca LA Clippers – Miami Heat in Italia?",
+     "a": "Giovedì 5 novembre alle 04:30."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718041": {
+   "fingerprint": "t97tt3",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Magic fanno visita ai Suns venerdì 6 novembre alle 03:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Suns hanno un record di 1-3 in stagione, con una media di 112,0 punti segnati e 124,5 subiti. In casa il bilancio è 1-1.",
+      "I Magic hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 107,7 punti segnati e 116,7 subiti. In trasferta il bilancio è 2-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "I Suns giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 5 gare.",
+      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Phoenix Suns – Orlando Magic in Italia?",
+     "a": "Venerdì 6 novembre alle 03:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Consulta la guida [Basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718042": {
+   "fingerprint": "10j316o",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Venerdì 6 novembre alle 04:00, ora italiana, i Warriors ospitano gli Heat in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Warriors hanno un record di 4-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 117,7 punti segnati e 114,9 subiti. In casa il bilancio è 2-1.",
+      "Gli Heat hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 118,3 punti segnati e 121,5 subiti. In trasferta il bilancio è 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 4 gare.",
+      "Gli Heat giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Golden State Warriors – Miami Heat in Italia?",
+     "a": "Venerdì 6 novembre alle 04:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
   "nba:21718043": {
    "fingerprint": "1bdxqj0",
    "sections": [
@@ -8462,6 +8800,48 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Per i dettagli si veda [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718044": {
+   "fingerprint": "f0ts78",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 7 novembre alle 01:00, ora italiana, gli Hornets ospitano i Celtics in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Gli Hornets hanno un record di 3-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 98,3 punti segnati e 106,4 subiti. In casa il bilancio è 2-2.",
+      "I Celtics hanno un record di 5-1 in stagione e hanno vinto 5 delle ultime 5, con una media di 118,7 punti segnati e 109,2 subiti. In trasferta il bilancio è 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Charlotte Hornets – Boston Celtics in Italia?",
+     "a": "Sabato 7 novembre alle 01:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8591,6 +8971,48 @@
     }
    ]
   },
+  "nba:21718048": {
+   "fingerprint": "177ptqh",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 7 novembre alle 02:00, ora italiana, i Bucks ospitano i Raptors in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Bucks hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 113,0 punti segnati e 126,2 subiti. In casa il bilancio è 1-3.",
+      "I Raptors hanno un record di 3-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 118,2 punti segnati e 110,3 subiti. In trasferta il bilancio è 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 5 gare.",
+      "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Milwaukee Bucks – Toronto Raptors in Italia?",
+     "a": "Sabato 7 novembre alle 02:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
   "nba:21718049": {
    "fingerprint": "4ogpkw",
    "sections": [
@@ -8633,6 +9055,48 @@
     }
    ]
   },
+  "nba:21718050": {
+   "fingerprint": "483h8h",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Trail Blazers fanno visita ai Lakers sabato 7 novembre alle 04:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Lakers hanno un record di 5-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 120,3 punti segnati e 115,0 subiti. In casa il bilancio è 3-1.",
+      "I Trail Blazers hanno un record di 4-1 in stagione, con una media di 120,6 punti segnati e 109,2 subiti. In trasferta il bilancio è 3-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 5 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Los Angeles Lakers – Portland Trail Blazers in Italia?",
+     "a": "Sabato 7 novembre alle 04:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
   "nba:21718051": {
    "fingerprint": "uznr2u",
    "sections": [
@@ -8672,6 +9136,91 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Per maggiori dettagli, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718052": {
+   "fingerprint": "8zwr6n",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Nuggets fanno visita ai Pacers sabato 7 novembre alle 23:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Pacers hanno un record di 2-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 112,9 punti segnati e 116,7 subiti. In casa il bilancio è 0-3.",
+      "I Nuggets hanno un record di 3-2 in stagione, con una media di 114,0 punti segnati e 115,2 subiti. In trasferta il bilancio è 2-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Nuggets hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Indiana Pacers – Denver Nuggets in Italia?",
+     "a": "Sabato 7 novembre alle 23:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718053": {
+   "fingerprint": "1nj34ev",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 8 novembre alle 01:30, ora italiana, gli Hawks ospitano i Nets in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Gli Hawks hanno un record di 3-4 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,3 punti segnati e 115,4 subiti. In casa il bilancio è 1-2.",
+      "I Nets hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,2 punti segnati e 116,0 subiti. In trasferta il bilancio è 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Gli Hawks giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Atlanta Hawks – Brooklyn Nets in Italia?",
+     "a": "Domenica 8 novembre alle 01:30."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8759,6 +9308,48 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Trovi i dettagli su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718056": {
+   "fingerprint": "15fb1fn",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Magic fanno visita ai Warriors domenica 8 novembre alle 02:30, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Warriors hanno un record di 4-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 117,7 punti segnati e 114,9 subiti. In casa il bilancio è 2-1.",
+      "I Magic hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 107,7 punti segnati e 116,7 subiti. In trasferta il bilancio è 2-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Golden State Warriors – Orlando Magic in Italia?",
+     "a": "Domenica 8 novembre alle 02:30."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8890,6 +9481,302 @@
     }
    ]
   },
+  "nba:21718060": {
+   "fingerprint": "1jy86ga",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Lunedì 9 novembre alle 00:00, ora italiana, i Pistons ospitano i Lakers in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Pistons hanno un record di 5-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 109,8 punti segnati e 101,8 subiti. In casa il bilancio è 2-0.",
+      "I Lakers hanno un record di 5-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 120,3 punti segnati e 115,0 subiti. In trasferta il bilancio è 2-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Detroit Pistons – Los Angeles Lakers in Italia?",
+     "a": "Lunedì 9 novembre alle 00:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Puoi consultare la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718061": {
+   "fingerprint": "m425wj",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Jazz fanno visita ai Timberwolves lunedì 9 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Timberwolves hanno un record di 4-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 120,0 punti segnati e 108,7 subiti. In casa il bilancio è 2-1.",
+      "I Jazz hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,7 punti segnati e 118,8 subiti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 5 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Minnesota Timberwolves – Utah Jazz in Italia?",
+     "a": "Lunedì 9 novembre alle 01:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718062": {
+   "fingerprint": "q47i3a",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Lunedì 9 novembre alle 01:30, ora italiana, i Mavericks ospitano i Nets in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Mavericks hanno un record di 4-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 114,3 punti segnati e 111,8 subiti. In casa il bilancio è 2-1.",
+      "I Nets hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,2 punti segnati e 116,0 subiti. In trasferta il bilancio è 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 5 gare.",
+      "I Nets giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Dallas Mavericks – Brooklyn Nets in Italia?",
+     "a": "Lunedì 9 novembre alle 01:30."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Trovi i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718063": {
+   "fingerprint": "4dzvue",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Celtics fanno visita ai Bucks lunedì 9 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Bucks hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 113,0 punti segnati e 126,2 subiti. In casa il bilancio è 1-3.",
+      "I Celtics hanno un record di 5-1 in stagione e hanno vinto 5 delle ultime 5, con una media di 118,7 punti segnati e 109,2 subiti. In trasferta il bilancio è 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 5 gare.",
+      "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Milwaukee Bucks – Boston Celtics in Italia?",
+     "a": "Lunedì 9 novembre alle 02:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Per approfondire, consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Per capirne la struttura, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718064": {
+   "fingerprint": "1x09nkw",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Lunedì 9 novembre alle 03:00, ora italiana, i Clippers ospitano i Pelicans in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Clippers hanno un record di 1-5 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 113,8 subiti. In casa il bilancio è 1-1.",
+      "I Pelicans hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 119,7 punti segnati e 117,8 subiti. In trasferta il bilancio è 0-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 5 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca LA Clippers – New Orleans Pelicans in Italia?",
+     "a": "Lunedì 9 novembre alle 03:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Trovi i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718065": {
+   "fingerprint": "15ydx2p",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Gli Heat fanno visita ai Kings lunedì 9 novembre alle 03:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Kings hanno un record di 0-6 in stagione e hanno vinto 0 delle ultime 5, con una media di 109,3 punti segnati e 128,3 subiti. In casa il bilancio è 0-2.",
+      "Gli Heat hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 118,3 punti segnati e 121,5 subiti. In trasferta il bilancio è 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Sacramento Kings – Miami Heat in Italia?",
+     "a": "Lunedì 9 novembre alle 03:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718066": {
+   "fingerprint": "98rda3",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 10 novembre alle 01:00, ora italiana, gli Hawks ospitano i Lakers in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Gli Hawks hanno un record di 3-4 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,3 punti segnati e 115,4 subiti. In casa il bilancio è 1-2.",
+      "I Lakers hanno un record di 5-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 120,3 punti segnati e 115,0 subiti. In trasferta il bilancio è 2-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 3 gare.",
+      "I Lakers giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Atlanta Hawks – Los Angeles Lakers in Italia?",
+     "a": "Martedì 10 novembre alle 01:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
   "nba:21718067": {
    "fingerprint": "n1dhgn",
    "sections": [
@@ -8932,6 +9819,684 @@
     }
    ]
   },
+  "nba:21718068": {
+   "fingerprint": "q9l9p",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 10 novembre alle 01:00, ora italiana, i Pistons ospitano i Wizards in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Pistons hanno un record di 5-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 109,8 punti segnati e 101,8 subiti. In casa il bilancio è 2-0.",
+      "I Wizards hanno un record di 3-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 110,5 punti segnati e 109,7 subiti. In trasferta il bilancio è 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "I Pistons giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Detroit Pistons – Washington Wizards in Italia?",
+     "a": "Martedì 10 novembre alle 01:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718069": {
+   "fingerprint": "1re6ajp",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Grizzlies fanno visita ai Raptors martedì 10 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Raptors hanno un record di 3-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 118,2 punti segnati e 110,3 subiti. In casa il bilancio è 2-1.",
+      "I Grizzlies hanno un record di 6-0 in stagione e hanno vinto 5 delle ultime 5, con una media di 121,2 punti segnati e 106,0 subiti. In trasferta il bilancio è 4-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Toronto Raptors – Memphis Grizzlies in Italia?",
+     "a": "Martedì 10 novembre alle 01:30."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718070": {
+   "fingerprint": "1n8jan5",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Pacers fanno visita ai Mavericks martedì 10 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Mavericks hanno un record di 4-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 114,3 punti segnati e 111,8 subiti. In casa il bilancio è 2-1.",
+      "I Pacers hanno un record di 2-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 112,9 punti segnati e 116,7 subiti. In trasferta il bilancio è 2-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "I Mavericks giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Dallas Mavericks – Indiana Pacers in Italia?",
+     "a": "Martedì 10 novembre alle 02:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718071": {
+   "fingerprint": "tvwfpq",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 10 novembre alle 02:30, ora italiana, i Rockets ospitano i Nuggets in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Rockets hanno un record di 6-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 120,7 punti segnati e 108,3 subiti. In casa il bilancio è 3-0.",
+      "I Nuggets hanno un record di 3-2 in stagione, con una media di 114,0 punti segnati e 115,2 subiti. In trasferta il bilancio è 2-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Nuggets hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Houston Rockets – Denver Nuggets in Italia?",
+     "a": "Martedì 10 novembre alle 02:30."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718072": {
+   "fingerprint": "b8l14y",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Gli Spurs fanno visita ai Suns martedì 10 novembre alle 03:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Suns hanno un record di 1-3 in stagione, con una media di 112,0 punti segnati e 124,5 subiti. In casa il bilancio è 1-1.",
+      "Gli Spurs hanno un record di 4-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 117,3 punti segnati e 110,2 subiti. In trasferta il bilancio è 2-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Phoenix Suns – San Antonio Spurs in Italia?",
+     "a": "Martedì 10 novembre alle 03:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718073": {
+   "fingerprint": "bdatub",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 10 novembre alle 04:00, ora italiana, i Warriors ospitano i Pelicans in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Warriors hanno un record di 4-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 117,7 punti segnati e 114,9 subiti. In casa il bilancio è 2-1.",
+      "I Pelicans hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 119,7 punti segnati e 117,8 subiti. In trasferta il bilancio è 0-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 3 gare.",
+      "I Pelicans giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Golden State Warriors – New Orleans Pelicans in Italia?",
+     "a": "Martedì 10 novembre alle 04:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718074": {
+   "fingerprint": "1cu0gef",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Bucks fanno visita ai Knicks mercoledì 11 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Knicks hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 107,0 punti segnati e 107,7 subiti. In casa il bilancio è 1-2.",
+      "I Bucks hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 113,0 punti segnati e 126,2 subiti. In trasferta il bilancio è 0-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca New York Knicks – Milwaukee Bucks in Italia?",
+     "a": "Mercoledì 11 novembre alle 01:30."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718075": {
+   "fingerprint": "1bqf6lr",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Mercoledì 11 novembre alle 02:00, ora italiana, i 76ers ospitano i Celtics in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I 76ers hanno un record di 6-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 108,7 punti segnati e 104,9 subiti. In casa il bilancio è 3-1.",
+      "I Celtics hanno un record di 5-1 in stagione e hanno vinto 5 delle ultime 5, con una media di 118,7 punti segnati e 109,2 subiti. In trasferta il bilancio è 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Philadelphia 76ers – Boston Celtics in Italia?",
+     "a": "Mercoledì 11 novembre alle 02:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718076": {
+   "fingerprint": "l4w0ep",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Clippers fanno visita ai Suns mercoledì 11 novembre alle 03:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Suns hanno un record di 1-3 in stagione, con una media di 112,0 punti segnati e 124,5 subiti. In casa il bilancio è 1-1.",
+      "I Clippers hanno un record di 1-5 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 113,8 subiti. In trasferta il bilancio è 0-4."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "I Suns giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Phoenix Suns – LA Clippers in Italia?",
+     "a": "Mercoledì 11 novembre alle 03:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Il formato è spiegato in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718078": {
+   "fingerprint": "12wdx4e",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Gli Heat fanno visita ai Jazz mercoledì 11 novembre alle 03:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Jazz hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,7 punti segnati e 118,8 subiti. In casa il bilancio è 1-4.",
+      "Gli Heat hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 118,3 punti segnati e 121,5 subiti. In trasferta il bilancio è 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Utah Jazz – Miami Heat in Italia?",
+     "a": "Mercoledì 11 novembre alle 03:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Puoi consultare la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718079": {
+   "fingerprint": "7b87vz",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Mercoledì 11 novembre alle 04:00, ora italiana, i Kings ospitano i Magic in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Kings hanno un record di 0-6 in stagione e hanno vinto 0 delle ultime 5, con una media di 109,3 punti segnati e 128,3 subiti. In casa il bilancio è 0-2.",
+      "I Magic hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 107,7 punti segnati e 116,7 subiti. In trasferta il bilancio è 2-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Sacramento Kings – Orlando Magic in Italia?",
+     "a": "La partita si disputa mercoledì 11 novembre alle 04:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Per capirlo meglio puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Per i dettagli sul formato del campionato consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718080": {
+   "fingerprint": "vmcwto",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Mercoledì 11 novembre alle 05:00, ora italiana, i Trail Blazers ospitano i Thunder in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Trail Blazers hanno un record di 4-1 in stagione, con una media di 120,6 punti segnati e 109,2 subiti. In casa il bilancio è 1-1.",
+      "I Thunder hanno un record di 4-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 106,5 punti segnati e 107,0 subiti. In trasferta il bilancio è 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 4 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Portland Trail Blazers – Oklahoma City Thunder in Italia?",
+     "a": "Mercoledì 11 novembre alle 05:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718081": {
+   "fingerprint": "gb4fnn",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Washington Wizards fanno visita agli Indiana Pacers giovedì 12 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Pacers hanno un record di 2-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 112,9 punti segnati e 116,7 subiti. In casa il bilancio è 0-3.",
+      "I Wizards hanno un record di 3-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 110,5 punti segnati e 109,7 subiti. In trasferta il bilancio è 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Indiana Pacers – Washington Wizards in Italia?",
+     "a": "Giovedì 12 novembre alle 01:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718082": {
+   "fingerprint": "1ckkyl8",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 12 novembre alle 01:00, ora italiana, i Knicks ospitano i Cavaliers in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Knicks hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 107,0 punti segnati e 107,7 subiti. In casa il bilancio è 1-2.",
+      "I Cavaliers hanno un record di 4-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 121,0 punti segnati e 116,0 subiti. In trasferta il bilancio è 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "I Knicks giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca New York Knicks – Cleveland Cavaliers in Italia?",
+     "a": "Giovedì 12 novembre alle 01:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718083": {
+   "fingerprint": "p55gny",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Celtics fanno visita ai Raptors giovedì 12 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Raptors hanno un record di 3-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 118,2 punti segnati e 110,3 subiti. In casa il bilancio è 2-1.",
+      "I Celtics hanno un record di 5-1 in stagione e hanno vinto 5 delle ultime 5, con una media di 118,7 punti segnati e 109,2 subiti. In trasferta il bilancio è 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 3 gare.",
+      "I Celtics giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 2 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Toronto Raptors – Boston Celtics in Italia?",
+     "a": "Giovedì 12 novembre alle 01:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718084": {
+   "fingerprint": "1xhmhw8",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 12 novembre alle 02:00, ora italiana, i Bulls ospitano gli Spurs in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Bulls hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 113,5 punti segnati e 129,3 subiti. In casa il bilancio è 0-2.",
+      "Gli Spurs hanno un record di 4-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 117,3 punti segnati e 110,2 subiti. In trasferta il bilancio è 2-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 3 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Chicago Bulls – San Antonio Spurs in Italia?",
+     "a": "Giovedì 12 novembre alle 02:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
   "nba:21718085": {
    "fingerprint": "1w0xtif",
    "sections": [
@@ -8971,6 +10536,135 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718086": {
+   "fingerprint": "xhh185",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 12 novembre alle 02:00, ora italiana, i Milwaukee Bucks ospitano i Los Angeles Lakers in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Bucks hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 113,0 punti segnati e 126,2 subiti. In casa il bilancio è 1-3.",
+      "I Lakers hanno un record di 5-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 120,3 punti segnati e 115,0 subiti. In trasferta il bilancio è 2-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "I Bucks giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 2 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Milwaukee Bucks – Los Angeles Lakers in Italia?",
+     "a": "Giovedì 12 novembre alle 02:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718087": {
+   "fingerprint": "1n3btwz",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Brooklyn Nets fanno visita ai New Orleans Pelicans giovedì 12 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Pelicans hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 119,7 punti segnati e 117,8 subiti. In casa il bilancio è 2-2.",
+      "I Nets hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,2 punti segnati e 116,0 subiti. In trasferta il bilancio è 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 2 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca New Orleans Pelicans – Brooklyn Nets in Italia?",
+     "a": "Giovedì 12 novembre alle 02:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:21718088": {
+   "fingerprint": "9egzcc",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 12 novembre alle 03:00, ora italiana, i Jazz ospitano i Magic in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Jazz hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,7 punti segnati e 118,8 subiti. In casa il bilancio è 1-4.",
+      "I Magic hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 107,7 punti segnati e 116,7 subiti. In trasferta il bilancio è 2-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "I Jazz giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 3 gare.",
+      "I Magic giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 2 gare."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Utah Jazz – Orlando Magic in Italia?",
+     "a": "Giovedì 12 novembre alle 03:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
