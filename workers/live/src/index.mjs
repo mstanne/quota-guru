@@ -307,5 +307,39 @@ export default {
 
   async scheduled(event, env, ctx) {
     ctx.waitUntil(hub(env).fetch("https://hub/refresh"));
+    const job = githubJob(new Date(event.scheduledTime));
+    if (job) ctx.waitUntil(dispatchWorkflow(env, job));
   },
 };
+
+// ---------- reliable timer for the GitHub workflows ----------
+// GitHub runs scheduled workflows "best effort": under load it delays or skips them (on 2 Nov 2026 the
+// 15-minute live-scores.yml started twice in a whole day). This worker's per-minute cron is reliable, so it
+// starts the workflows itself through workflow_dispatch. Their own `schedule:` stays as a fallback.
+// Needs the GH_DISPATCH_TOKEN secret (fine-grained token, this repository only, "Actions: Read and write");
+// without it nothing happens.
+
+/** Which workflow to start at this minute (UTC), or null. Same times as the crons in the workflow files. */
+export function githubJob(d) {
+  const m = d.getUTCMinutes();
+  const h = d.getUTCHours();
+  if (m === 17 && h % 3 === 0) return "deploy.yml"; // full refresh every 3 hours (it also updates the scores)
+  if (m % 15 === 0) return "live-scores.yml"; // quick scores and standings
+  return null;
+}
+
+async function dispatchWorkflow(env, workflow) {
+  if (!env.GH_DISPATCH_TOKEN || !env.GH_REPO) return;
+  const res = await fetch(`https://api.github.com/repos/${env.GH_REPO}/actions/workflows/${workflow}/dispatches`, {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${env.GH_DISPATCH_TOKEN}`,
+      accept: "application/vnd.github+json",
+      "content-type": "application/json",
+      "user-agent": "quotaguru-live",
+      "x-github-api-version": "2022-11-28",
+    },
+    body: JSON.stringify({ ref: "main" }),
+  });
+  if (!res.ok) console.log(`workflow_dispatch ${workflow}: HTTP ${res.status} ${await res.text()}`);
+}
