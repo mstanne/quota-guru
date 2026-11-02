@@ -1,0 +1,507 @@
+{
+ "periodo": {
+  "da": "2026-10-05",
+  "a": "2026-11-01"
+ },
+ "totali": {
+  "activeUsers": 10,
+  "sessions": 35,
+  "screenPageViews": 94,
+  "engagementRate": 0.7142857142857143,
+  "averageSessionDuration": 313.97189717142857,
+  "newUsers": 10,
+  "bounceRate": 0.2857142857142857
+ },
+ "perGiorno": [
+  {
+   "date": "20261025",
+   "activeUsers": 4,
+   "sessions": 7,
+   "screenPageViews": 13
+  },
+  {
+   "date": "20261026",
+   "activeUsers": 2,
+   "sessions": 4,
+   "screenPageViews": 14
+  },
+  {
+   "date": "20261027",
+   "activeUsers": 2,
+   "sessions": 7,
+   "screenPageViews": 9
+  },
+  {
+   "date": "20261028",
+   "activeUsers": 1,
+   "sessions": 1,
+   "screenPageViews": 1
+  },
+  {
+   "date": "20261029",
+   "activeUsers": 1,
+   "sessions": 4,
+   "screenPageViews": 8
+  },
+  {
+   "date": "20261030",
+   "activeUsers": 1,
+   "sessions": 1,
+   "screenPageViews": 8
+  },
+  {
+   "date": "20261031",
+   "activeUsers": 2,
+   "sessions": 4,
+   "screenPageViews": 14
+  },
+  {
+   "date": "20261101",
+   "activeUsers": 4,
+   "sessions": 7,
+   "screenPageViews": 27
+  }
+ ],
+ "pagine": [
+  {
+   "pagePath": "/",
+   "screenPageViews": 23,
+   "activeUsers": 7,
+   "userEngagementDuration": 124
+  },
+  {
+   "pagePath": "/pronostici/serie-a/juventus-napoli/",
+   "screenPageViews": 8,
+   "activeUsers": 2,
+   "userEngagementDuration": 81
+  },
+  {
+   "pagePath": "/calcio/",
+   "screenPageViews": 7,
+   "activeUsers": 2,
+   "userEngagementDuration": 114
+  },
+  {
+   "pagePath": "/siti-scommesse/",
+   "screenPageViews": 7,
+   "activeUsers": 1,
+   "userEngagementDuration": 100
+  },
+  {
+   "pagePath": "/bonus/",
+   "screenPageViews": 3,
+   "activeUsers": 1,
+   "userEngagementDuration": 72
+  },
+  {
+   "pagePath": "/calcio/serie-a/roma-cagliari-2026-10-27/",
+   "screenPageViews": 3,
+   "activeUsers": 1,
+   "userEngagementDuration": 10
+  },
+  {
+   "pagePath": "/calcio/serie-a/udinese-milan-2026-10-25/",
+   "screenPageViews": 3,
+   "activeUsers": 1,
+   "userEngagementDuration": 18
+  },
+  {
+   "pagePath": "/calcio/squadre/lazio/",
+   "screenPageViews": 3,
+   "activeUsers": 1,
+   "userEngagementDuration": 18
+  },
+  {
+   "pagePath": "/pronostici/serie-a/",
+   "screenPageViews": 3,
+   "activeUsers": 1,
+   "userEngagementDuration": 13
+  },
+  {
+   "pagePath": "/calcio/serie-a/",
+   "screenPageViews": 2,
+   "activeUsers": 2,
+   "userEngagementDuration": 42
+  },
+  {
+   "pagePath": "/calcio/serie-a/risultati/",
+   "screenPageViews": 2,
+   "activeUsers": 1,
+   "userEngagementDuration": 16
+  },
+  {
+   "pagePath": "/pronostici/domani/",
+   "screenPageViews": 2,
+   "activeUsers": 1,
+   "userEngagementDuration": 32
+  },
+  {
+   "pagePath": "/pronostici/oggi/",
+   "screenPageViews": 2,
+   "activeUsers": 2,
+   "userEngagementDuration": 36
+  },
+  {
+   "pagePath": "/pronostici/premier-league/chelsea-manchester-united/",
+   "screenPageViews": 2,
+   "activeUsers": 1,
+   "userEngagementDuration": 5
+  },
+  {
+   "pagePath": "/pronostici/serie-a/lecce-genoa/",
+   "screenPageViews": 2,
+   "activeUsers": 2,
+   "userEngagementDuration": 10
+  },
+  {
+   "pagePath": "/bonus",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 49
+  },
+  {
+   "pagePath": "/bonus/eurobet-welcombonus/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 7
+  },
+  {
+   "pagePath": "/calcio",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 0
+  },
+  {
+   "pagePath": "/calcio/brasileirao/clube-do-remo-botafogo-2026-10-29/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 5
+  },
+  {
+   "pagePath": "/calcio/champions-league/feyenoord-inter-2026-11-03/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 0
+  },
+  {
+   "pagePath": "/calcio/premier-league/aston-villa-man-city-2026-10-24/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 18
+  },
+  {
+   "pagePath": "/calcio/serie-a/classifica/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 4
+  },
+  {
+   "pagePath": "/calcio/serie-a/lazio-parma-2026-10-24/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 52
+  },
+  {
+   "pagePath": "/calcio/serie-a/lecce-juventus-2026-10-25",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 3
+  },
+  {
+   "pagePath": "/calcio/serie-a/torino-monza-2026-10-23/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 2
+  },
+  {
+   "pagePath": "/calcio/squadre/juventus/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 1
+  },
+  {
+   "pagePath": "/calcio/squadre/roma/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 4
+  },
+  {
+   "pagePath": "/calcio/squadre/santander/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 2
+  },
+  {
+   "pagePath": "/calcio/squadre/torino/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 15
+  },
+  {
+   "pagePath": "/guide/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 1
+  },
+  {
+   "pagePath": "/pronostici/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 2
+  },
+  {
+   "pagePath": "/pronostici/liga/racing-santander-real-madrid/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 5
+  },
+  {
+   "pagePath": "/pronostici/nba/hornets-76ers/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 28
+  },
+  {
+   "pagePath": "/pronostici/nba/pacers-nets/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 9
+  },
+  {
+   "pagePath": "/pronostici/premier-league/liverpool-arsenal/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 29
+  },
+  {
+   "pagePath": "/pronostici/serie-a/frosinone-lecce/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 4
+  },
+  {
+   "pagePath": "/siti-scommesse",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 30
+  }
+ ],
+ "pagineDiIngresso": [
+  {
+   "landingPage": "/",
+   "sessions": 15,
+   "engagementRate": 0.8,
+   "bounceRate": 0.2,
+   "averageSessionDuration": 298.1567299999999
+  },
+  {
+   "landingPage": "(not set)",
+   "sessions": 5,
+   "engagementRate": 0,
+   "bounceRate": 1,
+   "averageSessionDuration": 0
+  },
+  {
+   "landingPage": "/calcio",
+   "sessions": 2,
+   "engagementRate": 1,
+   "bounceRate": 0,
+   "averageSessionDuration": 648.9532415
+  },
+  {
+   "landingPage": "/calcio/serie-a/udinese-milan-2026-10-25",
+   "sessions": 2,
+   "engagementRate": 0.5,
+   "bounceRate": 0.5,
+   "averageSessionDuration": 13.581674
+  },
+  {
+   "landingPage": "/siti-scommesse",
+   "sessions": 2,
+   "engagementRate": 1,
+   "bounceRate": 0,
+   "averageSessionDuration": 451.0053165
+  },
+  {
+   "landingPage": "/calcio/champions-league/feyenoord-inter-2026-11-03",
+   "sessions": 1,
+   "engagementRate": 0,
+   "bounceRate": 1,
+   "averageSessionDuration": 0
+  },
+  {
+   "landingPage": "/calcio/premier-league/aston-villa-man-city-2026-10-24",
+   "sessions": 1,
+   "engagementRate": 1,
+   "bounceRate": 0,
+   "averageSessionDuration": 1631.377885
+  },
+  {
+   "landingPage": "/calcio/serie-a/roma-cagliari-2026-10-27",
+   "sessions": 1,
+   "engagementRate": 1,
+   "bounceRate": 0,
+   "averageSessionDuration": 53.817442
+  },
+  {
+   "landingPage": "/calcio/squadre/lazio",
+   "sessions": 1,
+   "engagementRate": 1,
+   "bounceRate": 0,
+   "averageSessionDuration": 111.335998
+  },
+  {
+   "landingPage": "/pronostici/nba/hornets-76ers",
+   "sessions": 1,
+   "engagementRate": 1,
+   "bounceRate": 0,
+   "averageSessionDuration": 28.411343
+  },
+  {
+   "landingPage": "/pronostici/nba/pacers-nets",
+   "sessions": 1,
+   "engagementRate": 1,
+   "bounceRate": 0,
+   "averageSessionDuration": 14.74766
+  },
+  {
+   "landingPage": "/pronostici/premier-league/chelsea-manchester-united",
+   "sessions": 1,
+   "engagementRate": 1,
+   "bounceRate": 0,
+   "averageSessionDuration": 15.900497
+  },
+  {
+   "landingPage": "/pronostici/serie-a/juventus-napoli",
+   "sessions": 1,
+   "engagementRate": 1,
+   "bounceRate": 0,
+   "averageSessionDuration": 2378.92224
+  },
+  {
+   "landingPage": "/pronostici/serie-a/lecce-genoa",
+   "sessions": 1,
+   "engagementRate": 1,
+   "bounceRate": 0,
+   "averageSessionDuration": 55.071922
+  }
+ ],
+ "canali": [
+  {
+   "sessionDefaultChannelGroup": "Direct",
+   "sessions": 28,
+   "activeUsers": 4,
+   "engagementRate": 0.75
+  },
+  {
+   "sessionDefaultChannelGroup": "Organic Search",
+   "sessions": 6,
+   "activeUsers": 5,
+   "engagementRate": 0.5
+  },
+  {
+   "sessionDefaultChannelGroup": "AI Assistant",
+   "sessions": 1,
+   "activeUsers": 1,
+   "engagementRate": 1
+  }
+ ],
+ "sorgenti": [
+  {
+   "sessionSourceMedium": "(direct) / (none)",
+   "sessions": 28,
+   "activeUsers": 4,
+   "engagementRate": 0.75
+  },
+  {
+   "sessionSourceMedium": "google / organic",
+   "sessions": 6,
+   "activeUsers": 5,
+   "engagementRate": 0.5
+  },
+  {
+   "sessionSourceMedium": "chatgpt.com / ai-assistant",
+   "sessions": 1,
+   "activeUsers": 1,
+   "engagementRate": 1
+  }
+ ],
+ "dispositivi": [
+  {
+   "deviceCategory": "desktop",
+   "sessions": 21,
+   "activeUsers": 2,
+   "engagementRate": 0.7619047619047619
+  },
+  {
+   "deviceCategory": "mobile",
+   "sessions": 14,
+   "activeUsers": 8,
+   "engagementRate": 0.6428571428571429
+  }
+ ],
+ "paesi": [
+  {
+   "country": "Italy",
+   "sessions": 33,
+   "activeUsers": 8
+  },
+  {
+   "country": "(not set)",
+   "sessions": 2,
+   "activeUsers": 2
+  }
+ ],
+ "eventi": [
+  {
+   "eventName": "page_view",
+   "eventCount": 94,
+   "totalUsers": 10
+  },
+  {
+   "eventName": "session_start",
+   "eventCount": 35,
+   "totalUsers": 10
+  },
+  {
+   "eventName": "user_engagement",
+   "eventCount": 26,
+   "totalUsers": 5
+  },
+  {
+   "eventName": "first_visit",
+   "eventCount": 10,
+   "totalUsers": 10
+  },
+  {
+   "eventName": "scroll",
+   "eventCount": 9,
+   "totalUsers": 3
+  },
+  {
+   "eventName": "prediction_view",
+   "eventCount": 8,
+   "totalUsers": 4
+  },
+  {
+   "eventName": "day_switch",
+   "eventCount": 4,
+   "totalUsers": 1
+  },
+  {
+   "eventName": "filter_use",
+   "eventCount": 3,
+   "totalUsers": 1
+  },
+  {
+   "eventName": "click",
+   "eventCount": 1,
+   "totalUsers": 1
+  },
+  {
+   "eventName": "outbound_click",
+   "eventCount": 1,
+   "totalUsers": 1
+  }
+ ]
+}
