@@ -479,20 +479,20 @@
   "at": "2026-11-01T20:13:43.334Z"
  },
  "fb:558535": {
-  "fingerprint": "1vb6575",
+  "fingerprint": "14doyw3",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Parma e Bologna si affrontano sabato 7 novembre alle 18:00 per la 11ª giornata di Serie A. In classifica il Parma occupa il 18° posto con 5 punti, mentre il Bologna è al 9° con 14."
+     "Parma e Bologna si sfidano sabato 7 novembre alle 18:00, nell'11ª giornata di Serie A. In classifica il Parma occupa il 18° posto con 5 punti, mentre il Bologna è 9° con 14."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A il Parma ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-P-P-N), segnando 3 gol e subendone 9. In casa, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
-     "Nelle ultime 5 partite di Serie A il Bologna ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-P-V-V-V), segnando 11 gol e subendone 7. Arriva da 3 vittorie consecutive. In trasferta ha vinto tutte le 3 partite giocate."
+     "Nelle ultime 5 partite di Serie A il Parma ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con sequenza P-P-P-N-V, segnando 4 gol e subendone 8. In casa, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+     "Nelle ultime 5 partite di Serie A il Bologna ha raccolto 4 vittorie e 1 sconfitta, con sequenza V-P-V-V-V, realizzando 11 gol e subendone 7. Arriva da 3 vittorie consecutive e in trasferta ha vinto tutte le 3 partite giocate."
     ],
     "bullets": []
    },
@@ -500,10 +500,10 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Parma 0,6, Bologna 1,4 a partita.",
-     "Gol subiti finora: Parma 15, Bologna 13.",
-     "In 4 delle ultime 5 partite del Parma si sono segnati almeno tre gol.",
-     "In 4 delle ultime 5 partite del Bologna si sono segnati almeno tre gol."
+     "La media gol segnati è di 0,6 per il Parma e 1,4 per il Bologna a partita.",
+     "I gol subiti finora sono 15 per il Parma e 13 per il Bologna.",
+     "In 4 delle ultime 5 partite del Parma sono stati segnati almeno tre gol.",
+     "In 4 delle ultime 5 partite del Bologna sono stati segnati almeno tre gol."
     ]
    }
   ],
@@ -514,15 +514,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Serie A](/calcio/serie-a) e la [classifica aggiornata](/calcio/serie-a/classifica)."
+    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ti aiutano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-02T04:47:47.578Z"
+  "at": "2026-11-02T21:46:07.223Z"
  },
  "fb:558531": {
   "fingerprint": "y1xz8u",
@@ -663,20 +663,20 @@
   "at": "2026-11-01T20:13:47.986Z"
  },
  "fb:558538": {
-  "fingerprint": "5frt5r",
+  "fingerprint": "lrhwr9",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 15:00 il Monza ospita l'Atalanta, valida per la 11ª giornata di Serie A. In classifica il Monza occupa il 17° posto con 7 punti, mentre l'Atalanta è al 13° con 11."
+     "Appuntamento domenica 8 novembre alle 15:00: il Monza ospita l'Atalanta nell'11ª giornata di Serie A. In classifica il Monza è al 17° posto con 7 punti, mentre l'Atalanta è al 13° con 11."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A il Monza ha ottenuto 1 vittoria e 4 sconfitte (sequenza P-V-P-P-P), segnando 9 gol e subendone 12. Le ultime 3 gare sono tutte perse. In casa il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
-     "Nelle ultime 5 partite di Serie A l'Atalanta ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-V-P-N-N), con 11 gol fatti e 12 subiti. In trasferta il bilancio stagionale comprende 1 pareggio e 2 sconfitte, senza vittorie."
+     "Nelle ultime 5 partite di Serie A il Monza ha raccolto 1 vittoria e 4 sconfitte (sequenza P-V-P-P-P), con 9 gol fatti e 12 subiti. Ha perso le ultime 3. In casa il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+     "Nelle ultime 5 partite di Serie A l'Atalanta ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza V-P-N-N-P), con 11 gol fatti e 13 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie finora."
     ],
     "bullets": []
    },
@@ -687,7 +687,7 @@
      "Media gol segnati: Monza 1,7, Atalanta 1,8 a partita.",
      "Gol subiti finora: Monza 24, Atalanta 17.",
      "In tutte le ultime 5 partite del Monza si sono segnati almeno tre gol.",
-     "In 4 delle ultime 5 partite dell'Atalanta si sono segnati almeno tre gol."
+     "In tutte le ultime 5 partite dell'Atalanta si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -698,15 +698,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Trovi classifica e risultati nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+    "a": "Puoi consultarli nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Le spiegazioni si trovano nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-02T21:11:04.297Z"
+  "at": "2026-11-02T21:46:10.492Z"
  },
  "fb:558530": {
   "fingerprint": "cyized",
@@ -3296,20 +3296,20 @@
   "at": "2026-11-02T04:49:33.914Z"
  },
  "fb:559633": {
-  "fingerprint": "12uwq54",
+  "fingerprint": "1ff0n2w",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Le Havre e Lorient si affrontano domenica 8 novembre alle 17:15 per la 10ª giornata di Ligue 1. In classifica il Le Havre è al 18° posto con 2 punti, mentre il Lorient è al 10° con 12."
+     "Domenica 8 novembre alle 17:15 Le Havre e Lorient si sfidano nella 10ª giornata di Ligue 1. In classifica il Le Havre occupa il 18° posto con 2 punti, mentre il Lorient è al 10° con 12."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Ligue 1 il Le Havre ha collezionato 5 sconfitte (sequenza P-P-P-P-P), segnando 7 gol e subendone 16. Ha perso tutte le ultime 5 gare. In casa, le 2 partite giocate si sono chiuse tutte con una sconfitta.",
-     "Nelle ultime 4 partite di Ligue 1 il Lorient ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-V-N), con 3 gol fatti e 2 subiti. In trasferta, il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza ancora vittorie."
+     "Nelle ultime 5 partite di Ligue 1 il Le Havre ha subito 5 sconfitte (sequenza P-P-P-P-P), segnando 7 gol e subendone 16. Ha perso le ultime 5 gare. In casa ha perso tutte le 2 partite disputate.",
+     "Nelle ultime 5 partite di Ligue 1 il Lorient ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-V-N-P), con 3 gol segnati e 4 subiti. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
     ],
     "bullets": []
    },
@@ -3320,7 +3320,7 @@
      "Media gol segnati: Le Havre 1,0, Lorient 0,9 a partita.",
      "Gol subiti finora: Le Havre 20, Lorient 6.",
      "In 4 delle ultime 5 partite del Le Havre si sono segnati almeno tre gol.",
-     "Il Lorient non ha subito gol in 3 delle ultime 4."
+     "Il Lorient non ha subito gol in 3 delle ultime 5."
     ]
    }
   ],
@@ -3330,16 +3330,16 @@
     "a": "Domenica 8 novembre alle 17:15, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina dedicata alla [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-30T22:44:16.770Z"
+  "at": "2026-11-02T21:46:19.854Z"
  },
  "fb:559634": {
   "fingerprint": "18ud6wd",
@@ -15037,20 +15037,20 @@
   "at": "2026-11-01T20:14:29.527Z"
  },
  "fb:1001552812": {
-  "fingerprint": "18zpf2u",
+  "fingerprint": "1tc8qz5",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 17:15 lo Stade Brestois 29 ospita l'Olympique Lyon per la 10ª giornata di Ligue 1. In classifica lo Stade Brestois 29 è al 14° posto con 9 punti, mentre l'Olympique Lyon è al 3° con 17."
+     "Domenica 8 novembre alle 17:15 lo Stade Brestois 29 ospita l'Olympique Lyon per la 10ª giornata di Ligue 1. In classifica lo Stade Brestois 29 occupa il 14° posto con 9 punti, mentre l'Olympique Lyon è al 3° posto con 17."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Ligue 1 lo Stade Brestois 29 ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con la sequenza P-V-N-P. Ha segnato 8 gol e ne ha subiti 6. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 5 partite di Ligue 1 l'Olympique Lyon ha ottenuto 3 vittorie e 2 sconfitte, con la sequenza V-P-V-P-V. Ha segnato 9 gol e ne ha subiti 5. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 5 partite di Ligue 1 lo Stade Brestois 29 ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza P-V-N-P-V. Ha segnato 10 gol e ne ha subiti 6. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Ligue 1 l'Olympique Lyon ha ottenuto 3 vittorie e 2 sconfitte, con la sequenza V-P-V-P-V. Ha segnato 9 gol e ne ha subiti 5. In trasferta ha perso tutte e 2 le partite giocate."
     ],
     "bullets": []
    },
@@ -15060,8 +15060,8 @@
     "bullets": [
      "Media gol segnati: Stade Brestois 29 1,8, Olympique Lyon 1,7 a partita.",
      "Gol subiti finora: Stade Brestois 29 12, Olympique Lyon 7.",
-     "Nelle ultime 4 partite dello Stade Brestois 29 si sono segnati almeno tre gol in 3 occasioni.",
-     "Nelle ultime 5 partite dell'Olympique Lyon si sono segnati almeno tre gol in 3 occasioni."
+     "In 3 delle ultime 5 partite dello Stade Brestois 29 sono stati segnati almeno tre gol.",
+     "In 3 delle ultime 5 partite dell'Olympique Lyon sono stati segnati almeno tre gol."
     ]
    }
   ],
@@ -15071,8 +15071,8 @@
     "a": "Domenica 8 novembre alle 17:15, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -15080,7 +15080,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T20:14:36.119Z"
+  "at": "2026-11-02T21:46:14.894Z"
  },
  "fb:1001552217": {
   "fingerprint": "1hmzmjw",
@@ -17811,5 +17811,81 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-02T21:11:12.428Z"
+ },
+ "fb:558545": {
+  "fingerprint": "14dprqh",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il Parma si impone con un ampio 0-3 in trasferta sull'Atalanta. La gara, valida per la 10ª giornata di Serie A, si è disputata lunedì 2 novembre; al termine del primo tempo il punteggio era 0-1."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora l'Atalanta occupa il 13° posto con 11 punti, mentre il Parma è al 18° con 5. Per consultare la graduatoria aggiornata: [Classifica completa](/calcio/serie-a/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "L'Atalanta tornerà in campo domenica 8 novembre alle 15:00, in trasferta contro il Monza. Il Parma giocherà sabato 7 novembre alle 18:00, in casa contro il Bologna."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Atalanta – Parma?",
+    "a": "0-3 (0-1 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Serie A](/calcio/serie-a)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-02T21:46:21.652Z"
+ },
+ "fb:1001552803": {
+  "fingerprint": "139644q",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Lo Stade Brestois 29 ha vinto in trasferta contro il Lorient per 0-2. La partita, valida per la 9ª giornata di Ligue 1, si è giocata lunedì 2 novembre; il primo tempo si era chiuso 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora il Lorient è al 10° posto con 12 punti, mentre lo Stade Brestois 29 è al 14° con 9. [Classifica completa](/calcio/ligue-1/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Lorient tornerà in campo domenica 8 novembre alle 17:15 in trasferta contro il Le Havre. Lo Stade Brestois 29 tornerà in campo domenica 8 novembre alle 17:15 in casa contro l'Olympique Lyon."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Lorient – Stade Brestois 29?",
+    "a": "0-2 (0-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-02T21:46:23.357Z"
  }
 }
