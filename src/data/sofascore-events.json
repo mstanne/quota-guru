@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-01T15:47:09.388Z",
+ "updatedAt": "2026-11-02T06:25:17.643Z",
  "events": [
   {
    "id": 16310993,
@@ -398,7 +398,7 @@
    "league": "ligue-1",
    "start": "2026-11-01T14:00:00Z",
    "home": "RC Strasbourg",
-   "away": "Auxerre"
+   "away": "AJ Auxerre"
   },
   {
    "id": 16434084,
@@ -678,7 +678,7 @@
    "league": "champions-league",
    "start": "2026-11-03T20:00:00Z",
    "home": "Bodø/Glimt",
-   "away": "Lille"
+   "away": "LOSC Lille"
   },
   {
    "id": 16938971,
@@ -819,6 +819,20 @@
    "start": "2026-11-05T00:30:00Z",
    "home": "Botafogo",
    "away": "Atlético Mineiro"
+  },
+  {
+   "id": 15238233,
+   "league": "brasileirao",
+   "start": "2026-11-05T22:30:00Z",
+   "home": "Palmeiras",
+   "away": "Remo"
+  },
+  {
+   "id": 15238235,
+   "league": "brasileirao",
+   "start": "2026-11-06T00:30:00Z",
+   "home": "Cruzeiro",
+   "away": "Bahia"
   }
  ]
 }
