@@ -585,20 +585,20 @@
   "at": "2026-11-01T20:13:43.334Z"
  },
  "fb:558535": {
-  "fingerprint": "ppkigf",
+  "fingerprint": "1vb6575",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Parma e Bologna si affronteranno sabato 7 novembre alle 18:00, nell'11ª giornata di Serie A. In classifica il Parma occupa il 18° posto con 5 punti, mentre il Bologna è all'8° posto con 14."
+     "Parma e Bologna si affrontano sabato 7 novembre alle 18:00 per la 11ª giornata di Serie A. In classifica il Parma occupa il 18° posto con 5 punti, mentre il Bologna è al 9° con 14."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A il Parma ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-P-P-N), segnando 3 gol e subendone 9. In casa, nel bilancio stagionale, il Parma registra 1 vittoria, 1 pareggio e 1 sconfitta.",
-     "Nelle ultime 5 partite di Serie A il Bologna ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-P-V-V-V), segnando 11 gol e subendone 7. La squadra arriva da 3 vittorie consecutive. In trasferta il Bologna ha vinto tutte le 3 partite disputate."
+     "Nelle ultime 5 partite di Serie A il Parma ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-P-P-N), segnando 3 gol e subendone 9. In casa, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+     "Nelle ultime 5 partite di Serie A il Bologna ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-P-V-V-V), segnando 11 gol e subendone 7. Arriva da 3 vittorie consecutive. In trasferta ha vinto tutte le 3 partite giocate."
     ],
     "bullets": []
    },
@@ -606,10 +606,10 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Parma 0,6, Bologna 1,4.",
+     "Media gol segnati: Parma 0,6, Bologna 1,4 a partita.",
      "Gol subiti finora: Parma 15, Bologna 13.",
-     "In 4 delle ultime 5 partite del Parma sono stati segnati almeno tre gol.",
-     "In 4 delle ultime 5 partite del Bologna sono stati segnati almeno tre gol."
+     "In 4 delle ultime 5 partite del Parma si sono segnati almeno tre gol.",
+     "In 4 delle ultime 5 partite del Bologna si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -619,16 +619,16 @@
     "a": "Sabato 7 novembre alle 18:00, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Serie A](/calcio/serie-a) e la [classifica aggiornata](/calcio/serie-a/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Possono essere utili le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ti aiutano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T06:30:32.000Z"
+  "at": "2026-11-02T04:47:47.578Z"
  },
  "fb:558531": {
   "fingerprint": "6nid6j",
@@ -678,20 +678,20 @@
   "at": "2026-11-01T06:30:35.673Z"
  },
  "fb:558533": {
-  "fingerprint": "ygai6",
+  "fingerprint": "1wnm8a4",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Napoli e Lazio si affrontano domenica 8 novembre alle 12:30 per la 11ª giornata di Serie A. In classifica il Napoli è al 7° posto con 14 punti, la Lazio al 1° con 28."
+     "Napoli e Lazio si affrontano domenica 8 novembre alle 12:30, nell'11ª giornata di Serie A. In classifica il Napoli è all'8° posto con 14 punti, mentre la Lazio è al 1° posto con 28 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A il Napoli ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-N-V-P), con 10 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Serie A la Lazio ha raccolto 5 vittorie (sequenza V-V-V-V-V), con 16 gol fatti e 5 subiti. È reduce da 6 vittorie consecutive. In trasferta ha vinto tutte le 3 partite giocate."
+     "Nelle ultime 5 partite di Serie A il Napoli ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-N-V-P), segnando 10 gol e subendone 7. Nel bilancio casalingo della stagione figurano 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie A la Lazio ha raccolto 5 vittorie (sequenza V-V-V-V-V), con 16 gol fatti e 5 subiti. La squadra arriva da 6 vittorie consecutive. In trasferta ha vinto tutte le 3 partite disputate."
     ],
     "bullets": []
    },
@@ -699,10 +699,10 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Napoli 1,9, Lazio 2,4 a partita.",
-     "Gol subiti finora: Napoli 11, Lazio 8.",
-     "In 3 delle ultime 5 partite del Napoli si sono segnati almeno tre gol.",
-     "In tutte le ultime 5 partite della Lazio si sono segnati almeno tre gol."
+     "Media gol segnati: Napoli 1,7, Lazio 2,4 a partita.",
+     "Gol subiti finora: Napoli 13, Lazio 8.",
+     "Nelle ultime 5 partite del Napoli, in 3 si sono segnati almeno tre gol.",
+     "Nelle ultime 5 partite della Lazio, in tutte si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -712,16 +712,16 @@
     "a": "Domenica 8 novembre alle 12:30, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
+    "q": "Dove si trovano classifica e risultati?",
     "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T21:48:03.389Z"
+  "at": "2026-11-02T04:47:54.442Z"
  },
  "fb:558536": {
   "fingerprint": "1253t4m",
@@ -861,20 +861,20 @@
   "at": "2026-11-01T13:54:54.375Z"
  },
  "fb:558529": {
-  "fingerprint": "wrplzw",
+  "fingerprint": "708i0u",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "La Fiorentina ospita la Juventus domenica 8 novembre alle 20:45, in occasione dell'11ª giornata di Serie A. In classifica la Fiorentina occupa il 17° posto con 5 punti, mentre la Juventus è al 9° posto con 14 punti."
+     "La partita si giocherà domenica 8 novembre alle 20:45, quando la Fiorentina ospiterà la Juventus per l'11ª giornata di Serie A. In classifica la Fiorentina occupa il 17° posto con 5 punti, mentre la Juventus è al 7° posto con 17."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A la Fiorentina ha ottenuto 2 pareggi e 3 sconfitte (sequenza N-P-P-P-N), segnando 6 gol e subendone 10. In casa, il bilancio stagionale è di 2 pareggi e 1 sconfitta, senza vittorie.",
-     "Nelle ultime 5 partite di Serie A la Juventus ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-V-P-V), segnando 5 gol e subendone 6. In trasferta, il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
+     "Nelle ultime 5 partite di Serie A la Fiorentina ha ottenuto 2 pareggi e 3 sconfitte, con sequenza N-P-P-P-N, segnando 6 gol e subendone 10. In casa, il bilancio stagionale è di 2 pareggi e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 5 partite di Serie A la Juventus ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con sequenza N-P-V-P-V, segnando 5 gol e subendone 6. In trasferta, il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -882,9 +882,9 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Fiorentina 1,2, Juventus 1,2.",
-     "Gol subiti finora: Fiorentina 21, Juventus 10.",
-     "In 4 delle ultime 5 partite della Fiorentina sono stati segnati almeno tre gol."
+     "La media dei gol segnati a partita è di 1,2 per la Fiorentina e di 1,3 per la Juventus.",
+     "Finora la Fiorentina ha subito 21 gol, la Juventus 10.",
+     "In 4 delle ultime 5 partite della Fiorentina si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -895,15 +895,15 @@
    },
    {
     "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+    "a": "Nella pagina dedicata alla [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T21:48:07.467Z"
+  "at": "2026-11-02T04:47:58.949Z"
  },
  "fb:575377": {
   "fingerprint": "1enp1t",
@@ -2189,20 +2189,20 @@
   "at": "2026-11-01T16:34:31.007Z"
  },
  "fb:564744": {
-  "fingerprint": "1x3qlrv",
+  "fingerprint": "1suaafu",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Málaga e Santander si affrontano sabato 7 novembre alle 14:00, per la 12ª giornata di LaLiga. In classifica il Málaga occupa il 20° posto con 5 punti, mentre il Santander è al 16° posto con 11 punti."
+     "Málaga e Santander si sfidano sabato 7 novembre alle 14:00, nell'ambito della 12ª giornata di LaLiga. In classifica il Málaga occupa il 20° posto con 5 punti, mentre il Santander è al 16° con 11."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di LaLiga il Málaga ha ottenuto 2 pareggi e 3 sconfitte, con la sequenza P-N-P-N-P. Ha segnato 5 gol e ne ha subiti 10. In casa, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza vittorie.",
-     "Nelle ultime 5 partite di LaLiga il Santander ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza P-N-P-V-P. Ha segnato 4 gol e ne ha subiti 13. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 5 partite di LaLiga il Málaga ha ottenuto 2 pareggi e 3 sconfitte, con la sequenza P-N-P-N-P. Ha segnato 5 gol e ne ha subiti 10. In casa, in stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 5 partite di LaLiga il Santander ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza P-N-P-V-P. Ha segnato 4 gol e ne ha subiti 13. In trasferta ha perso tutte le 2 partite disputate."
     ],
     "bullets": []
    },
@@ -2212,7 +2212,7 @@
     "bullets": [
      "Media gol segnati a partita: Málaga 0,7, Santander 1,4.",
      "Gol subiti finora: Málaga 21, Santander 29.",
-     "In 4 delle ultime 5 partite del Santander sono stati segnati almeno tre gol."
+     "Nelle ultime 5 partite del Santander, in 4 casi si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -2222,16 +2222,16 @@
     "a": "Sabato 7 novembre alle 14:00, ora italiana."
    },
    {
-    "q": "Dove posso vedere classifica e risultati?",
-    "a": "Nella pagina di [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T19:02:47.204Z"
+  "at": "2026-11-02T04:49:05.561Z"
  },
  "fb:564745": {
   "fingerprint": "1w2drc2",
@@ -2278,20 +2278,20 @@
   "at": "2026-11-01T00:27:32.894Z"
  },
  "fb:564739": {
-  "fingerprint": "39aclw",
+  "fingerprint": "24zytg",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 7 novembre alle 18:30 l'Osasuna ospita l'Athletic nella 12ª giornata di LaLiga. In classifica l'Osasuna occupa il 15° posto con 11 punti, mentre l'Athletic è al 7° posto con 12 punti."
+     "Sabato 7 novembre alle 18:30 l'Osasuna ospita l'Athletic nella 12ª giornata di LaLiga. In classifica l'Osasuna occupa il 15° posto con 11 punti, mentre l'Athletic è 7° con 15."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di LaLiga l'Osasuna ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-V-P), segnando 5 gol e subendone 8. In casa, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 4 partite di LaLiga l'Athletic ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza N-N-P-V), segnando 5 gol e subendone 3. In trasferta, il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie."
+     "Nelle ultime 4 partite di LaLiga l'Osasuna ha raccolto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-V-P), con 5 gol fatti e 8 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di LaLiga l'Athletic ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-N-P-V-V), con 7 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza ancora vittorie."
     ],
     "bullets": []
    },
@@ -2299,9 +2299,10 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Osasuna 1,0, Athletic 1,3 a partita.",
-     "Gol subiti finora: Osasuna 20, Athletic 9.",
-     "L'Athletic non ha subito gol in 3 delle ultime 4 partite."
+     "Media gol segnati: Osasuna 1,0, Athletic 1,4 a partita.",
+     "Gol subiti finora: Osasuna 20, Athletic 10.",
+     "In 3 delle ultime 5 partite dell'Athletic si sono segnati almeno tre gol.",
+     "L'Athletic non ha subito gol in 3 delle ultime 5."
     ]
    }
   ],
@@ -2316,11 +2317,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne spiegano la lettura le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:10:19.936Z"
+  "at": "2026-11-02T04:49:10.835Z"
  },
  "fb:564741": {
   "fingerprint": "v0rvg4",
@@ -2415,20 +2416,20 @@
   "at": "2026-11-01T21:31:45.639Z"
  },
  "fb:564743": {
-  "fingerprint": "1vmyh8v",
+  "fingerprint": "19bxbvl",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 16:15 il Real Sociedad ospita il Rayo Vallecano nella 12ª giornata di LaLiga. In classifica il Real Sociedad occupa il 5° posto con 19 punti, mentre il Rayo Vallecano è all'11° con 12."
+     "Domenica 8 novembre alle 16:15 il Real Sociedad ospita il Rayo Vallecano per la 12ª giornata di LaLiga. In classifica il Real Sociedad è al 5° posto con 19 punti, il Rayo Vallecano all'11° con 12."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di LaLiga il Real Sociedad ha ottenuto 4 vittorie (sequenza V-V-V-V), segnando 13 gol e subendone 7. La squadra arriva da 4 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
-     "Nelle ultime 4 partite di LaLiga il Rayo Vallecano ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza N-N-P-V), con 5 gol fatti e 5 subiti. In trasferta il bilancio stagionale comprende 2 pareggi e nessuna vittoria."
+     "Nelle ultime 5 partite di LaLiga il Real Sociedad ha raccolto 4 vittorie e 1 sconfitta (sequenza V-V-V-V-P), con 14 gol fatti e 9 subiti. In casa ha vinto tutte le 2 partite giocate.",
+     "Nelle ultime 4 partite di LaLiga il Rayo Vallecano ha raccolto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza N-N-P-V), con 5 gol fatti e 5 subiti. In trasferta il bilancio stagionale è di 2 pareggi, ancora senza vittorie."
     ],
     "bullets": []
    },
@@ -2436,9 +2437,9 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Real Sociedad 1,9, Rayo Vallecano 1,5.",
-     "Gol subiti finora: Real Sociedad 18, Rayo Vallecano 20.",
-     "In tutte le ultime 4 partite del Real Sociedad sono stati segnati almeno tre gol."
+     "Media gol segnati: Real Sociedad 1,8, Rayo Vallecano 1,5 a partita.",
+     "Gol subiti finora: Real Sociedad 20, Rayo Vallecano 20.",
+     "In tutte le ultime 5 partite del Real Sociedad si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -2448,16 +2449,16 @@
     "a": "Domenica 8 novembre alle 16:15, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina dedicata a [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:10:31.703Z"
+  "at": "2026-11-02T04:49:14.614Z"
  },
  "fb:564742": {
   "fingerprint": "8orqad",
@@ -2507,20 +2508,20 @@
   "at": "2026-11-01T16:10:36.003Z"
  },
  "fb:564747": {
-  "fingerprint": "10wxdpc",
+  "fingerprint": "r22i19",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "La partita si disputa domenica 8 novembre alle 18:30: il Villarreal ospita il Getafe nella 12ª giornata di LaLiga. Le due squadre sono appaiate a 12 punti."
+     "Domenica 8 novembre alle 18:30 il Villarreal riceve il Getafe per la 12ª giornata di LaLiga. Le due squadre sono appaiate a 12 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di LaLiga il Villarreal ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-N-V-P), segnando 5 gol e subendone 4. In casa, nel corso della stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
-     "Nelle ultime 5 partite di LaLiga il Getafe ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-N-P-V), segnando 5 gol e subendone 9. In trasferta ha perso tutte le 3 partite disputate."
+     "Nelle ultime 5 partite di LaLiga il Villarreal ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-N-V-P), segnando 5 gol e subendone 4. In casa, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+     "Nelle ultime 5 partite di LaLiga il Getafe ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-N-P-V), segnando 5 gol e subendone 9. In trasferta ha perso tutte le 2 partite giocate."
     ],
     "bullets": []
    },
@@ -2536,12 +2537,12 @@
   ],
   "faq": [
    {
-    "q": "Quando si disputa Villarreal – Getafe?",
+    "q": "Quando si gioca Villarreal – Getafe?",
     "a": "Domenica 8 novembre alle 18:30, ora italiana."
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    "a": "Risultati e classifica si trovano nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -2549,7 +2550,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:34:38.704Z"
+  "at": "2026-11-02T04:49:20.635Z"
  },
  "fb:565846": {
   "fingerprint": "616ljj",
@@ -3268,20 +3269,20 @@
   "at": "2026-11-01T20:15:27.779Z"
  },
  "fb:559638": {
-  "fingerprint": "1o9judy",
+  "fingerprint": "3c53vi",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Toulouse e Strasbourg si sfidano venerdì 6 novembre alle 20:45, nell'ambito della 10ª giornata di Ligue 1. Le due squadre sono appaiate a 10 punti in classifica."
+     "Toulouse e Strasbourg si affrontano venerdì 6 novembre alle 20:45 per la 10ª giornata di Ligue 1. Le due squadre sono appaiate a 10 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Ligue 1 il Toulouse ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta, con la sequenza V-N-V-N-P. Ha segnato 8 gol e ne ha subiti 6. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Ligue 1 lo Strasbourg ha ottenuto 1 vittoria e 4 sconfitte, con la sequenza P-P-P-P-V. Ha segnato 8 gol e ne ha subiti 11. In trasferta ha perso tutte le 3 partite disputate."
+     "Nelle ultime 5 partite di Ligue 1 il Toulouse ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-N-V-N-P), con 8 gol fatti e 6 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Ligue 1 lo Strasbourg ha raccolto 1 vittoria e 4 sconfitte (sequenza P-P-P-P-V), con 8 gol fatti e 11 subiti. In trasferta ha perso tutte le 3 partite giocate."
     ],
     "bullets": []
    },
@@ -3289,8 +3290,8 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Toulouse 1,5, Strasbourg 1,9 a partita.",
-     "Gol subiti finora: Toulouse 11, Strasbourg 19.",
+     "Media gol segnati: Toulouse 1,3, Strasbourg 1,9 a partita.",
+     "Gol subiti finora: Toulouse 13, Strasbourg 19.",
      "In 3 delle ultime 5 partite del Toulouse si sono segnati almeno tre gol.",
      "In tutte le ultime 5 partite dello Strasbourg si sono segnati almeno tre gol."
     ]
@@ -3303,15 +3304,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
+    "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T21:48:12.965Z"
+  "at": "2026-11-02T04:49:23.341Z"
  },
  "fb:559637": {
   "fingerprint": "1aola5p",
@@ -3406,20 +3407,20 @@
   "at": "2026-11-01T16:11:24.612Z"
  },
  "fb:559631": {
-  "fingerprint": "xpt7xu",
+  "fingerprint": "onxmzd",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 17:15 il Le Mans ospita il Monaco per la 10ª giornata di Ligue 1. In classifica il Le Mans è al 17° posto con 7 punti, mentre il Monaco è al 6° posto con 15 punti."
+     "Domenica 8 novembre alle 17:15 il Le Mans ospita il Monaco per la 10ª giornata di Ligue 1. In classifica il Le Mans occupa il 17° posto con 7 punti, mentre il Monaco è al 7° con 15."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Ligue 1 il Le Mans ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-P-N-P), segnando 4 gol e subendone 10. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 5 partite di Ligue 1 il Monaco ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza V-N-P-N-P), segnando 6 gol e subendone 8. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 5 partite di Ligue 1 il Le Mans ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con sequenza V-P-P-N-P. Ha segnato 4 gol e ne ha subiti 10. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Ligue 1 il Monaco ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con sequenza V-N-P-N-P. Ha segnato 6 gol e ne ha subiti 8. Lontano da casa ha perso tutte le 2 partite giocate."
     ],
     "bullets": []
    },
@@ -3445,11 +3446,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ti spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T20:14:40.022Z"
+  "at": "2026-11-02T04:49:33.914Z"
  },
  "fb:559633": {
   "fingerprint": "12uwq54",
@@ -3498,20 +3499,20 @@
   "at": "2026-10-30T22:44:16.770Z"
  },
  "fb:559634": {
-  "fingerprint": "1tdiykr",
+  "fingerprint": "18ud6wd",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Angers SCO e Nice si sfidano domenica 8 novembre alle 17:15 nella 10ª giornata di Ligue 1. In classifica l'Angers SCO occupa il 15° posto con 8 punti, mentre il Nice è al 7° con 14."
+     "Domenica 8 novembre alle 17:15 l'Angers SCO affronta il Nice nella 10ª giornata di Ligue 1. In classifica l'Angers SCO occupa il 15° posto con 8 punti, mentre il Nice è all'8° posto con 14 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Ligue 1 l'Angers SCO ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-P-N-P), con 5 gol fatti e 12 subiti. In casa il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta.",
-     "Nelle ultime 5 partite di Ligue 1 il Nice ha raccolto 4 vittorie e 1 sconfitta (sequenza V-V-P-V-V), con 12 gol fatti e 7 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     "Nelle ultime 5 partite di Ligue 1 l'Angers SCO ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-P-N-P), segnando 5 gol e subendone 12. In casa, la stagione dell'Angers SCO registra 1 vittoria, 1 pareggio e 1 sconfitta.",
+     "Nelle ultime 5 partite di Ligue 1 il Nice ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-V-P-V-V), segnando 12 gol e subendone 7. In trasferta, la stagione del Nice registra 1 vittoria e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -3532,31 +3533,31 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+    "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T20:14:32.165Z"
+  "at": "2026-11-02T04:49:27.772Z"
  },
  "fb:559630": {
-  "fingerprint": "2yt30c",
+  "fingerprint": "179teb5",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 20:45 il RC Lens ospita il Marseille nella 10ª giornata di Ligue 1. In classifica il RC Lens occupa l'8° posto con 13 punti, mentre il Marseille è al 9° con 12."
+     "Domenica 8 novembre alle 20:45 il RC Lens ospita il Marseille per la 10ª giornata di Ligue 1. In classifica il RC Lens occupa il 9° posto con 13 punti, mentre il Marseille è al 6° con 15."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Ligue 1 il RC Lens ha ottenuto 3 vittorie e 2 sconfitte (sequenza P-V-V-V-P), segnando 8 gol e subendone 6. In casa ha vinto tutte le 2 partite disputate.",
-     "Nelle ultime 5 partite di Ligue 1 il Marseille ha ottenuto 4 vittorie e 1 sconfitta (sequenza P-V-V-V-V), segnando 14 gol e subendone 7. Arriva da 4 vittorie consecutive. In trasferta ha vinto tutte le 2 partite disputate."
+     "Nelle ultime 5 partite di Ligue 1 il RC Lens ha ottenuto 3 vittorie e 2 sconfitte, con sequenza P-V-V-V-P. Ha segnato 8 gol e ne ha subiti 6. In casa ha vinto tutte le 2 partite giocate.",
+     "Nelle ultime 5 partite di Ligue 1 il Marseille ha ottenuto 4 vittorie e 1 sconfitta, con sequenza P-V-V-V-V. Ha segnato 14 gol e ne ha subiti 7. La squadra arriva da 4 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
     ],
     "bullets": []
    },
@@ -3564,10 +3565,10 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: RC Lens 1,8, Marseille 2,3.",
+     "Media gol segnati a partita: RC Lens 1,8, Marseille 2,2.",
      "Gol subiti finora: RC Lens 13, Marseille 13.",
-     "In 4 delle ultime 5 partite del RC Lens sono stati segnati almeno tre gol.",
-     "In 3 delle ultime 5 partite del Marseille sono stati segnati almeno tre gol."
+     "In 4 delle ultime 5 partite del RC Lens si sono segnati almeno tre gol.",
+     "In 3 delle ultime 5 partite del Marseille si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -3577,16 +3578,16 @@
     "a": "Domenica 8 novembre alle 20:45, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
+    "q": "Dove vedo classifica e risultati?",
     "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T21:48:16.588Z"
+  "at": "2026-11-02T04:49:37.318Z"
  },
  "fb:558849": {
   "fingerprint": "1snighv",
@@ -4024,20 +4025,20 @@
   "at": "2026-10-30T22:45:18.072Z"
  },
  "fb:567342": {
-  "fingerprint": "1p3y4rk",
+  "fingerprint": "yxexc6",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Lo SL Benfica e l'Alverca si affronteranno lunedì 2 novembre alle 21:15 nella 10ª giornata di Primeira Liga. In classifica lo SL Benfica occupa il 2° posto con 22 punti, mentre l'Alverca è al 9° con 11."
+     "Lo SL Benfica e l'Alverca giocheranno lunedì 2 novembre alle 21:15, in occasione della 10ª giornata di Primeira Liga. In classifica lo SL Benfica occupa il 2° posto con 22 punti, mentre l'Alverca è al 10° posto con 11 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Primeira Liga lo SL Benfica ha raccolto 2 vittorie e 1 sconfitta (sequenza P-V-V), con 5 gol fatti e 4 subiti.",
-     "Nelle ultime 3 partite di Primeira Liga l'Alverca ha raccolto 2 vittorie e 1 sconfitta (sequenza V-V-P), con 5 gol fatti e 2 subiti."
+     "Nelle ultime 3 partite di Primeira Liga lo SL Benfica ha ottenuto 2 vittorie e 1 sconfitta (sequenza P-V-V), segnando 5 gol e subendone 4.",
+     "Nelle ultime 3 partite di Primeira Liga l'Alverca ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-V-P), segnando 5 gol e subendone 2."
     ],
     "bullets": []
    },
@@ -4045,15 +4046,15 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: SL Benfica 2,9, Alverca 1,4 a partita.",
+     "Media gol segnati a partita: SL Benfica 2,9, Alverca 1,4.",
      "Gol subiti finora: SL Benfica 8, Alverca 13.",
-     "Lo SL Benfica ha il miglior attacco del torneo."
+     "Lo SL Benfica ha l'attacco migliore del torneo."
     ]
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per lo SL Benfica, 0 per l'Alverca e nessun pareggio, con 6 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, a febbraio 2026 in Primeira Liga, si è concluso SL Benfica 2-1 Alverca."
+     "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per lo SL Benfica, nessuna per l'Alverca e nessun pareggio, con 6 gol complessivi (media di 3,0 a partita). L'ultimo incontro, disputato a febbraio 2026 in Primeira Liga, è terminato SL Benfica 2-1 Alverca."
     ],
     "bullets": []
    }
@@ -4073,7 +4074,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T06:31:03.470Z"
+  "at": "2026-11-02T04:49:41.136Z"
  },
  "fb:567346": {
   "fingerprint": "ni4oki",
@@ -4127,20 +4128,20 @@
   "at": "2026-11-01T19:11:36.324Z"
  },
  "fb:567353": {
-  "fingerprint": "evfzzf",
+  "fingerprint": "1enc7u1",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Venerdì 6 novembre alle 21:45 il Famalicão ospita l'Arouca nella 11ª giornata di Primeira Liga. In classifica il Famalicão occupa l'11° posto con 10 punti, mentre l'Arouca è 5° con 20."
+     "Venerdì 6 novembre alle 21:45 il Famalicão ospita l'Arouca nell'11ª giornata di Primeira Liga. In classifica il Famalicão occupa l'11° posto con 10 punti, mentre l'Arouca è al 5° con 20."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Primeira Liga il Famalicão ha ottenuto 2 vittorie e 1 sconfitta, con sequenza V-P-V. Ha segnato 9 gol e ne ha subiti 4.",
-     "Nelle ultime 4 partite di Primeira Liga l'Arouca ha ottenuto 3 vittorie e 1 pareggio, con sequenza N-V-V-V. Ha segnato 5 gol e ne ha subiti 2. Arriva da 3 vittorie consecutive. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 4 partite di Primeira Liga il Famalicão ha ottenuto 2 vittorie e 2 sconfitte, con sequenza V-P-V-P, segnando 9 gol e subendone 7.",
+     "Nelle ultime 4 partite di Primeira Liga l'Arouca ha ottenuto 3 vittorie e 1 pareggio, con sequenza N-V-V-V, segnando 5 gol e subendone 2. Arriva da 3 vittorie consecutive. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -4148,9 +4149,9 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Famalicão 1,6, Arouca 1,3.",
-     "Gol subiti finora: Famalicão 11, Arouca 7.",
-     "In tutte le ultime 3 partite del Famalicão sono stati segnati almeno tre gol.",
+     "Media gol segnati a partita: Famalicão 1,4, Arouca 1,3.",
+     "Gol subiti finora: Famalicão 14, Arouca 7.",
+     "Nelle ultime 4 partite del Famalicão si sono segnati almeno tre gol in ciascuna gara.",
      "L'Arouca non ha subito gol in 3 delle ultime 4 partite."
     ]
    }
@@ -4162,7 +4163,7 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina dedicata alla [Primeira Liga](/calcio/primeira-liga) e la [classifica aggiornata](/calcio/primeira-liga/classifica)."
+    "a": "Puoi consultare la pagina [Primeira Liga](/calcio/primeira-liga) e la [classifica aggiornata](/calcio/primeira-liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -4170,7 +4171,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T21:48:20.413Z"
+  "at": "2026-11-02T04:49:46.874Z"
  },
  "fb:567352": {
   "fingerprint": "4anuuw",
@@ -4218,20 +4219,20 @@
   "at": "2026-11-01T21:48:24.148Z"
  },
  "fb:567347": {
-  "fingerprint": "7k3j2q",
+  "fingerprint": "1068k9g",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Alverca e Casa Pia si sfidano sabato 7 novembre alle 19:00, in occasione dell'11ª giornata di Primeira Liga. In classifica l'Alverca occupa il 9° posto con 11 punti, mentre il Casa Pia è al 17° con 7."
+     "Sabato 7 novembre alle 19:00 Alverca e Casa Pia si sfidano nella 11ª giornata di Primeira Liga. In classifica l'Alverca occupa il 10° posto con 11 punti, mentre il Casa Pia è al 17° con 7."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Primeira Liga l'Alverca ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-V-P), segnando 5 gol e subendone 2. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 4 partite di Primeira Liga il Casa Pia ha ottenuto 2 vittorie e 2 sconfitte (sequenza V-P-V-P), con 4 gol fatti e 4 subiti. In trasferta ha vinto tutte le 2 partite disputate."
+     "Nelle ultime 3 partite di Primeira Liga l'Alverca ha ottenuto 2 vittorie e 1 sconfitta, con sequenza V-V-P, segnando 5 gol e subendone 2. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 4 partite di Primeira Liga il Casa Pia ha ottenuto 2 vittorie e 2 sconfitte, con sequenza V-P-V-P, segnando 4 gol e subendone 4. In trasferta ha vinto tutte le 2 partite disputate."
     ],
     "bullets": []
    },
@@ -4250,8 +4251,8 @@
     "a": "Sabato 7 novembre alle 19:00, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina dedicata alla [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -4259,23 +4260,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T18:16:01.647Z"
+  "at": "2026-11-02T04:49:51.413Z"
  },
  "fb:567350": {
-  "fingerprint": "199hetx",
+  "fingerprint": "1ips65",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 7 novembre alle 21:30 lo Sporting CP ospita il Moreirense nella 11ª giornata di Primeira Liga. In classifica lo Sporting CP occupa il 3° posto con 21 punti, mentre il Moreirense è all'8° con 14."
+     "Sabato 7 novembre alle 21:30 lo Sporting CP ospita il Moreirense nella 11ª giornata di Primeira Liga. In classifica lo Sporting CP occupa il 3° posto con 21 punti, mentre il Moreirense è al 9° con 14."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Primeira Liga lo Sporting CP ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza N-V-P-V), segnando 8 gol e subendone 5. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
-     "Nelle ultime 4 partite di Primeira Liga il Moreirense ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza N-P-V-V), segnando 6 gol e subendone 4. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 4 partite di Primeira Liga lo Sporting CP ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza N-V-P-V), segnando 8 gol e subendone 5. In casa il bilancio stagionale comprende 1 pareggio e 1 sconfitta, senza ancora alcuna vittoria.",
+     "Nelle ultime 4 partite di Primeira Liga il Moreirense ha raccolto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza N-P-V-V), con 6 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -4283,9 +4284,9 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Sporting CP 2,3, Moreirense 1,3.",
-     "Gol subiti finora: Sporting CP 11, Moreirense 17.",
-     "Nelle ultime 4 partite dello Sporting CP, in 3 si sono segnati almeno tre gol."
+     "La media gol segnati è di 2,3 a partita per lo Sporting CP e di 1,3 per il Moreirense.",
+     "Gol subiti finora: 11 per lo Sporting CP e 17 per il Moreirense.",
+     "In 3 delle ultime 4 partite dello Sporting CP si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -4304,7 +4305,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T18:16:05.306Z"
+  "at": "2026-11-02T04:49:57.371Z"
  },
  "fb:567348": {
   "fingerprint": "kojnzy",
@@ -4443,20 +4444,20 @@
   "at": "2026-11-01T00:28:16.021Z"
  },
  "fb:567354": {
-  "fingerprint": "13bqbvr",
+  "fingerprint": "8apwjn",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 21:30 il Rio Ave ospita il Braga, per la 11ª giornata di Primeira Liga. In classifica il Rio Ave occupa il 16° posto con 7 punti, mentre il Braga è al 10° con 11."
+     "La partita si giocherà domenica 8 novembre alle 21:30, quando il Rio Ave ospiterà il Braga nella 11ª giornata di Primeira Liga. In classifica il Rio Ave occupa il 16° posto con 7 punti, mentre il Braga è all'8° con 14."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Primeira Liga il Rio Ave ha ottenuto 1 vittoria e 3 sconfitte (sequenza P-V-P-P), segnando 4 gol e subendone 9. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 4 partite di Primeira Liga il Braga ha ottenuto 1 pareggio e 3 sconfitte (sequenza N-P-P-P), con 2 gol fatti e 6 subiti. Ha perso le ultime 3 gare. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie finora."
+     "Nelle ultime 4 partite di Primeira Liga il Rio Ave ha ottenuto 1 vittoria e 3 sconfitte (sequenza P-V-P-P), segnando 4 gol e subendone 9. Le ultime 2 gare sono state perse. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Primeira Liga il Braga ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza N-P-P-P-V), con 5 gol fatti e 6 subiti. In trasferta, il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie."
     ],
     "bullets": []
    },
@@ -4464,9 +4465,10 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Rio Ave 0,9, Braga 1,0 a partita.",
+     "Media gol segnati: Rio Ave 0,9, Braga 1,2 a partita.",
      "Gol subiti finora: Rio Ave 23, Braga 11.",
-     "In 3 delle ultime 4 partite del Rio Ave si sono segnati almeno tre gol."
+     "In 3 delle ultime 4 partite del Rio Ave si sono segnati almeno tre gol.",
+     "In 3 delle ultime 5 partite del Braga si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -4477,15 +4479,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
+    "a": "Puoi consultare la pagina [Primeira Liga](/calcio/primeira-liga) e la [classifica aggiornata](/calcio/primeira-liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T21:48:39.773Z"
+  "at": "2026-11-02T04:50:01.496Z"
  },
  "fb:567355": {
   "fingerprint": "1xmepw9",
@@ -6834,7 +6836,7 @@
   "at": "2026-11-01T06:31:21.446Z"
  },
  "nba:21718014": {
-  "fingerprint": "mrrye",
+  "fingerprint": "13dbzyi",
   "sections": [
    {
     "id": "presentazione",
@@ -6846,7 +6848,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Pacers hanno un record di 2-4 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,7 punti segnati e 119,8 subiti. In casa il bilancio è 0-2.",
+     "I Pacers hanno un record di 2-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 112,9 punti segnati e 116,7 subiti. In casa il bilancio è 0-3.",
      "Gli Hawks hanno un record di 3-4 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,3 punti segnati e 115,4 subiti. In trasferta il bilancio è 2-2."
     ],
     "bullets": []
@@ -6868,18 +6870,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Maggiori dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T06:31:23.417Z"
+  "at": "2026-11-02T04:50:03.752Z"
  },
  "nba:21718015": {
-  "fingerprint": "1duspeq",
+  "fingerprint": "1qa9w5e",
   "sections": [
    {
     "id": "presentazione",
@@ -6892,7 +6894,7 @@
     "id": "momento",
     "paragraphs": [
      "I Knicks hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 107,0 punti segnati e 107,7 subiti. In casa il bilancio è 1-2.",
-     "I Nets hanno un record di 0-5 in stagione, con una media di 110,2 punti segnati e 121,2 subiti. In trasferta il bilancio è 0-2."
+     "I Nets hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,2 punti segnati e 116,0 subiti. In trasferta il bilancio è 1-2."
     ],
     "bullets": []
    },
@@ -6913,18 +6915,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T06:09:19.868Z"
+  "at": "2026-11-02T04:50:05.665Z"
  },
  "nba:21718016": {
-  "fingerprint": "u2ixcm",
+  "fingerprint": "1hy332c",
   "sections": [
    {
     "id": "presentazione",
@@ -6936,7 +6938,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Magic hanno un record di 2-3 in stagione, con una media di 109,8 punti segnati e 118,4 subiti. In casa il bilancio è 0-2.",
+     "I Magic hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 107,7 punti segnati e 116,7 subiti. In casa il bilancio è 0-3.",
      "I Wizards hanno un record di 3-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 110,5 punti segnati e 109,7 subiti. In trasferta il bilancio è 1-2."
     ],
     "bullets": []
@@ -6958,7 +6960,7 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
@@ -6966,7 +6968,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T06:09:21.812Z"
+  "at": "2026-11-02T04:50:08.260Z"
  },
  "nba:21718017": {
   "fingerprint": "6txn1h",
@@ -7145,7 +7147,7 @@
   "at": "2026-11-01T06:31:31.151Z"
  },
  "nba:21718021": {
-  "fingerprint": "xgbyfo",
+  "fingerprint": "1knn2jv",
   "sections": [
    {
     "id": "presentazione",
@@ -7158,7 +7160,7 @@
     "id": "momento",
     "paragraphs": [
      "I Rockets hanno un record di 6-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 120,7 punti segnati e 108,3 subiti. In casa il bilancio è 3-0.",
-     "I Celtics hanno un record di 4-1 in stagione, con una media di 120,8 punti segnati e 111,6 subiti."
+     "I Celtics hanno un record di 5-1 in stagione e hanno vinto 5 delle ultime 5, con una media di 118,7 punti segnati e 109,2 subiti. In trasferta il bilancio è 1-1."
     ],
     "bullets": []
    },
@@ -7179,15 +7181,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T06:31:32.887Z"
+  "at": "2026-11-02T04:50:10.226Z"
  },
  "nba:21718022": {
   "fingerprint": "7z8m86",
@@ -7278,7 +7280,7 @@
   "at": "2026-11-01T00:28:32.247Z"
  },
  "nba:21718024": {
-  "fingerprint": "1juz3oj",
+  "fingerprint": "14re8s",
   "sections": [
    {
     "id": "presentazione",
@@ -7290,7 +7292,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Warriors hanno un record di 3-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 116,7 punti segnati e 115,3 subiti. In casa il bilancio è 1-1.",
+     "I Warriors hanno un record di 4-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 117,7 punti segnati e 114,9 subiti. In casa il bilancio è 2-1.",
      "I Suns hanno un record di 1-3 in stagione, con una media di 112,0 punti segnati e 124,5 subiti. In trasferta il bilancio è 0-2."
     ],
     "bullets": []
@@ -7316,14 +7318,14 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per i dettagli si veda [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T12:58:48.386Z"
+  "at": "2026-11-02T04:50:12.412Z"
  },
  "nba:21718025": {
-  "fingerprint": "luh01a",
+  "fingerprint": "1nbpqup",
   "sections": [
    {
     "id": "presentazione",
@@ -7335,8 +7337,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Clippers hanno un record di 1-4 in stagione, con una media di 105,4 punti segnati e 111,8 subiti. In casa il bilancio è 1-1.",
-     "I Raptors hanno un record di 3-2 in stagione, con una media di 116,8 punti segnati e 106,2 subiti. In trasferta il bilancio è 1-1."
+     "I Clippers hanno un record di 1-5 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 113,8 subiti. In casa il bilancio è 1-1.",
+     "I Raptors hanno un record di 3-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 118,2 punti segnati e 110,3 subiti. In trasferta il bilancio è 1-2."
     ],
     "bullets": []
    },
@@ -7366,23 +7368,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T12:58:50.293Z"
+  "at": "2026-11-02T04:50:15.304Z"
  },
  "nba:21718026": {
-  "fingerprint": "5sp6qa",
+  "fingerprint": "3az942",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Martedì 3 novembre alle 04:00, ora italiana, i Lakers ospitano gli Heat nel quadro della regular season NBA 2026-27."
+     "Martedì 3 novembre alle 04:00, ora italiana, i Lakers ospitano gli Heat in una partita della regular season NBA 2026-27."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "I Lakers hanno un record di 4-2 in stagione e nelle ultime 5 partite hanno ottenuto 3 vittorie. La media è di 118,5 punti segnati e 113,3 subiti. Quando giocano in casa, il bilancio è di 2-1.",
-     "Gli Heat hanno un record di 2-4 in stagione e nelle ultime 5 partite hanno ottenuto 2 vittorie. La media è di 118,3 punti segnati e 121,5 subiti. In trasferta, il bilancio è di 1-1."
+     "I Lakers hanno un record di 5-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 120,3 punti segnati e 115,0 subiti. In casa il bilancio è 3-1.",
+     "Gli Heat hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 118,3 punti segnati e 121,5 subiti. In trasferta il bilancio è 1-1."
     ],
     "bullets": []
    },
@@ -7391,8 +7393,8 @@
     "paragraphs": [],
     "bullets": [
      "I Lakers giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita, i Lakers hanno in calendario 5 gare.",
-     "Nei 7 giorni a partire da questa partita, gli Heat hanno in calendario 4 gare."
+     "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 5 gare.",
+     "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 4 gare."
     ]
    }
   ],
@@ -7403,15 +7405,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Per maggiori dettagli, consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per le informazioni sul formato, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-10-31T12:58:53.479Z"
+  "at": "2026-11-02T04:50:17.525Z"
  },
  "nba:21718027": {
   "fingerprint": "155kmgb",
@@ -13140,20 +13142,20 @@
   "at": "2026-11-01T17:26:40.418Z"
  },
  "fb:1001601593": {
-  "fingerprint": "1ncwbu8",
+  "fingerprint": "g7vw8t",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Venerdì 6 novembre alle 20:30 l'Ascoli ospita il Palermo nella 11ª giornata di Serie B. È una sfida tra squadre di alta classifica: l'Ascoli è terzo con 19 punti, il Palermo primo con 23."
+     "Venerdì 6 novembre alle 20:30 l'Ascoli ospita il Palermo nell'11ª giornata di Serie B. Il match mette di fronte due squadre ai vertici della classifica: l'Ascoli è terzo con 19 punti, il Palermo primo con 26."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie B l'Ascoli ha ottenuto 2 vittorie e 3 pareggi (sequenza N-N-V-V-N), segnando 9 gol e subendone 2. Non perde da 6 partite. In casa, nel bilancio stagionale, conta 2 vittorie e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Serie B il Palermo ha ottenuto 4 vittorie e 1 pareggio (sequenza V-V-V-N-V), segnando 14 gol e subendone 7. Non perde da 6 partite. In trasferta, nel bilancio stagionale, conta 2 vittorie e 1 pareggio, senza sconfitte."
+     "Nelle ultime 5 partite di Serie B l'Ascoli ha ottenuto 2 vittorie e 3 pareggi (sequenza N-N-V-V-N), segnando 9 gol e subendone 2. La squadra non perde da 6 partite. Tra le mura di casa, il bilancio stagionale registra 2 vittorie e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie B il Palermo ha ottenuto 4 vittorie e 1 pareggio (sequenza V-V-V-N-V), con 14 gol fatti e 7 subiti. Anche il Palermo non perde da 6 partite. In trasferta il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -13161,8 +13163,8 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Ascoli 1,6, Palermo 2,3 a partita.",
-     "Gol subiti finora: Ascoli 6, Palermo 11.",
+     "Media gol segnati: Ascoli 1,6, Palermo 2,4 a partita.",
+     "Gol subiti finora: Ascoli 6, Palermo 12.",
      "L'Ascoli ha la miglior difesa del torneo.",
      "Il Palermo ha il miglior attacco del torneo.",
      "L'Ascoli non ha subito gol in 3 delle ultime 5 partite.",
@@ -13176,7 +13178,7 @@
     "a": "Venerdì 6 novembre alle 20:30, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
+    "q": "Dove si trovano classifica e risultati?",
     "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
    },
    {
@@ -13185,7 +13187,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T20:49:58.103Z"
+  "at": "2026-11-02T04:48:05.103Z"
  },
  "fb:1001601596": {
   "fingerprint": "hmsqpp",
@@ -13547,20 +13549,20 @@
   "at": "2026-11-01T19:46:38.972Z"
  },
  "fb:1001601599": {
-  "fingerprint": "196sr47",
+  "fingerprint": "1svaeq1",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 19:30 il Vicenza Virtus ospita la Cremonese nell'11ª giornata di Serie B. In classifica il Vicenza Virtus occupa il 17° posto con 9 punti, mentre la Cremonese è all'11° posto con 12 punti."
+     "Domenica 8 novembre alle 19:30 il Vicenza Virtus ospita la Cremonese nell'11ª giornata di Serie B. In classifica il Vicenza Virtus occupa il 17° posto con 9 punti, mentre la Cremonese è all'11° posto con 12."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie B il Vicenza Virtus ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-N-V-P-P), segnando 6 gol e subendone 10. Ha perso le ultime 2 gare. In casa ha perso tutte le 2 partite disputate.",
-     "Nelle ultime 5 partite di Serie B la Cremonese ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-P-V-V), con 5 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
+     "Nelle ultime 5 partite di Serie B il Vicenza Virtus ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza P-N-V-P-P. Ha segnato 6 gol e ne ha subiti 10. Le ultime 2 partite sono state perse. In casa ha perso tutte le 2 gare disputate.",
+     "Nelle ultime 5 partite di Serie B la Cremonese ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza N-P-P-V-V. Ha segnato 5 gol e ne ha subiti 4. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -13568,9 +13570,9 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Vicenza Virtus 1,3, Cremonese 1,0 a partita.",
-     "Gol subiti finora: Vicenza Virtus 17, Cremonese 11.",
-     "Nelle ultime 5 partite del Vicenza Virtus, in 4 si sono segnati almeno tre gol.",
+     "Media gol segnati a partita: Vicenza Virtus 1,3, Cremonese 1,0.",
+     "Gol subiti finora: Vicenza Virtus 20, Cremonese 11.",
+     "Nelle ultime 5 partite del Vicenza Virtus si sono segnati almeno tre gol in 4 occasioni.",
      "La Cremonese non ha subito gol in 3 delle ultime 5 partite."
     ]
    }
@@ -13590,7 +13592,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T20:50:04.753Z"
+  "at": "2026-11-02T04:48:09.001Z"
  },
  "fb:1001635640": {
   "fingerprint": "17ubd19",
@@ -13769,20 +13771,20 @@
   "at": "2026-11-01T18:39:17.088Z"
  },
  "fb:1001636254": {
-  "fingerprint": "117yzx5",
+  "fingerprint": "ne4vxn",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Crystal Palace e Hoffenheim si affrontano giovedì 5 novembre alle 18:45 per la 4ª giornata della fase a campionato di Europa League. In classifica il Crystal Palace è al 15° posto con 4 punti, mentre l'Hoffenheim è al 23° con 3."
+     "Crystal Palace e Hoffenheim si sfideranno giovedì 5 novembre alle 18:45, nella 4ª giornata della fase a campionato di Europa League. In classifica il Crystal Palace è 15° con 4 punti, mentre l'Hoffenheim è 23° con 3."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Europa League il Crystal Palace ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza V-P-N), segnando 8 gol e subendone 5.",
-     "Nelle ultime 3 partite di Europa League l'Hoffenheim ha raccolto 1 vittoria e 2 sconfitte (sequenza P-P-V), segnando 5 gol e subendone 5."
+     "Nelle ultime 2 partite di Europa League il Crystal Palace ha ottenuto un pareggio e una sconfitta (sequenza P-N), segnando 4 gol e subendone 5.",
+     "Nelle ultime 2 partite di Europa League l'Hoffenheim ha ottenuto una vittoria e una sconfitta (sequenza P-V), segnando 5 gol e subendone 3."
     ],
     "bullets": []
    },
@@ -13791,8 +13793,7 @@
     "paragraphs": [],
     "bullets": [
      "Media gol segnati a partita: Crystal Palace 2,7, Hoffenheim 1,7.",
-     "Gol subiti finora: Crystal Palace 5, Hoffenheim 5.",
-     "In tutte le ultime 3 partite del Crystal Palace si sono segnati almeno tre gol."
+     "Gol subiti finora: Crystal Palace 5, Hoffenheim 5."
     ]
    }
   ],
@@ -13802,8 +13803,8 @@
     "a": "Giovedì 5 novembre alle 18:45, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Europa League](/calcio/europa-league) e la [classifica aggiornata](/calcio/europa-league/classifica)."
+    "q": "Dove si possono consultare classifica e risultati?",
+    "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -13811,23 +13812,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:20.519Z"
+  "at": "2026-11-02T04:48:13.280Z"
  },
  "fb:1001636289": {
-  "fingerprint": "c2jr49",
+  "fingerprint": "xc59ae",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Giovedì 5 novembre alle 18:45 il Lillestrom affronta il Plzen nella 4ª giornata della fase a campionato di Europa League. In classifica il Lillestrom occupa il 31° posto con 1 punto, mentre il Plzen è al 33° con 0 punti."
+     "Giovedì 5 novembre alle 18:45 il Lillestrom ospita il Plzen nella 4ª giornata della fase a campionato di Europa League. In classifica il Lillestrom occupa il 31° posto con 1 punto, mentre il Plzen è al 33° con 0 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Europa League il Lillestrom ha ottenuto 1 pareggio e 2 sconfitte (sequenza P-N-P), segnando 2 gol e subendone 9. In casa ha perso tutte le 2 partite disputate.",
-     "Nelle ultime 3 partite di Europa League il Plzen ha subito 3 sconfitte (sequenza P-P-P), segnando 2 gol e subendone 7. Ha perso tutte le ultime 3 gare."
+     "Nelle ultime 2 partite di Europa League il Lillestrom ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 1 gol e subendone 7.",
+     "Nelle ultime 2 partite di Europa League il Plzen ha ottenuto 2 sconfitte (sequenza P-P), segnando 2 gol e subendone 4. Nelle ultime due gare non ha mai vinto."
     ],
     "bullets": []
    },
@@ -13836,8 +13837,7 @@
     "paragraphs": [],
     "bullets": [
      "Media gol segnati a partita: Lillestrom 0,7, Plzen 0,7.",
-     "Gol subiti finora: Lillestrom 9, Plzen 7.",
-     "In tutte le ultime 3 partite del Plzen si sono segnati almeno tre gol."
+     "Gol subiti finora: Lillestrom 9, Plzen 7."
     ]
    }
   ],
@@ -13848,18 +13848,18 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Europa League](/calcio/europa-league) e la [classifica aggiornata](/calcio/europa-league/classifica)."
+    "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:24.261Z"
+  "at": "2026-11-02T04:48:17.336Z"
  },
  "fb:1001636302": {
-  "fingerprint": "ndwcoe",
+  "fingerprint": "t6zkdd",
   "sections": [
    {
     "id": "presentazione",
@@ -13871,7 +13871,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Europa League il NEC ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza P-N-V), con 5 gol fatti e 8 subiti.",
+     "Nelle ultime 2 partite di Europa League il NEC ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 5 gol fatti e 3 subiti.",
      "Nelle ultime 2 partite di Europa League l'Omonia Nicosia ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 4 gol fatti e 4 subiti."
     ],
     "bullets": []
@@ -13892,31 +13892,31 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Europa League](/calcio/europa-league) e la [classifica aggiornata](/calcio/europa-league/classifica)."
+    "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:26.350Z"
+  "at": "2026-11-02T04:48:19.364Z"
  },
  "fb:1001636208": {
-  "fingerprint": "3hzbts",
+  "fingerprint": "kp6km5",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Giovedì 5 novembre alle 18:45 il Milan ospita il Ferencvarosi TC per la 4ª giornata della fase a campionato di Europa League. In classifica il Milan è al 24° posto con 3 punti, mentre il Ferencvarosi TC è al 4° con 9."
+     "Giovedì 5 novembre alle 18:45 il Milan ospita il Ferencvarosi TC per la 4ª giornata della fase a campionato di Europa League. In classifica il Milan è al 24° posto con 3 punti, il Ferencvarosi TC al 4° con 9."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Europa League il Milan ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), con 4 gol fatti e 3 subiti.",
-     "Nelle ultime 3 partite di Europa League il Ferencvarosi TC ha ottenuto 3 vittorie (sequenza V-V-V), con 9 gol fatti e 3 subiti. Arriva da 3 vittorie consecutive."
+     "Nelle ultime 2 partite di Europa League il Milan ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 4 gol fatti e 3 subiti.",
+     "Nelle ultime 2 partite di Europa League il Ferencvarosi TC ha raccolto 2 vittorie (sequenza V-V), con 6 gol fatti e 2 subiti."
     ],
     "bullets": []
    },
@@ -13925,8 +13925,7 @@
     "paragraphs": [],
     "bullets": [
      "Media gol segnati: Milan 1,3, Ferencvarosi TC 3,0 a partita.",
-     "Gol subiti finora: Milan 5, Ferencvarosi TC 3.",
-     "In tutte le ultime 3 partite del Ferencvarosi TC si sono segnati almeno tre gol."
+     "Gol subiti finora: Milan 5, Ferencvarosi TC 3."
     ]
    }
   ],
@@ -13937,18 +13936,18 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Europa League](/calcio/europa-league) e la [classifica aggiornata](/calcio/europa-league/classifica)."
+    "a": "Puoi consultarli nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:28.646Z"
+  "at": "2026-11-02T04:48:21.613Z"
  },
  "fb:1001636319": {
-  "fingerprint": "ixzq0m",
+  "fingerprint": "erom69",
   "sections": [
    {
     "id": "presentazione",
@@ -13960,7 +13959,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Europa League il Real Sociedad ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza P-N-V), con 8 gol fatti e 3 subiti.",
+     "Nelle ultime 2 partite di Europa League il Real Sociedad ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), con 7 gol fatti e 1 subito.",
      "Nelle ultime 2 partite di Europa League l'Olympique Lyon ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), con 3 gol fatti e 5 subiti."
     ],
     "bullets": []
@@ -13981,31 +13980,31 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
+    "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:30.810Z"
+  "at": "2026-11-02T04:48:23.703Z"
  },
  "fb:1001636211": {
-  "fingerprint": "17v1chj",
+  "fingerprint": "4fa53",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Anderlecht e Red Bull Salzburg si affrontano giovedì 5 novembre alle 18:45 per la 4ª giornata della fase a campionato di Europa League. In classifica l'Anderlecht è al 22° posto con 3 punti, il Red Bull Salzburg al 21° con 4."
+     "Anderlecht e Red Bull Salzburg si sfidano giovedì 5 novembre alle 18:45, nell'ambito della 4ª giornata della fase a campionato di Europa League. In classifica l'Anderlecht occupa il 22° posto con 3 punti, mentre il Red Bull Salzburg è al 21° posto con 4 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Europa League l'Anderlecht ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 3 gol fatti e 1 subito.",
-     "Nelle ultime 3 partite di Europa League il Red Bull Salzburg ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza V-P-N), con 3 gol fatti e 6 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 2 partite di Europa League l'Anderlecht ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 3 gol e subendone 1.",
+     "Nelle ultime 2 partite di Europa League il Red Bull Salzburg ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 2 gol e subendone 6."
     ],
     "bullets": []
    },
@@ -14013,7 +14012,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Anderlecht 1,3, Red Bull Salzburg 1,0 a partita.",
+     "Media gol segnati a partita: Anderlecht 1,3, Red Bull Salzburg 1,0.",
      "Gol subiti finora: Anderlecht 3, Red Bull Salzburg 6."
     ]
    }
@@ -14025,31 +14024,31 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
+    "a": "Puoi consultare la pagina [Europa League](/calcio/europa-league) e la [classifica aggiornata](/calcio/europa-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:33.225Z"
+  "at": "2026-11-02T04:48:27.696Z"
  },
  "fb:1001636337": {
-  "fingerprint": "e30sc7",
+  "fingerprint": "4pb9m5",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Giovedì 5 novembre alle 18:45 lo Sparta ospita il Bournemouth nella 4ª giornata della fase a campionato di Europa League. In classifica lo Sparta è al 16° posto con 4 punti, mentre il Bournemouth è al 3° con 9."
+     "Appuntamento giovedì 5 novembre alle 18:45: lo Sparta riceve il Bournemouth per la 4ª giornata della fase a campionato di Europa League. In classifica lo Sparta è al 16° posto con 4 punti, il Bournemouth al 3° con 9."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Europa League lo Sparta ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 1 gol e subendone 2.",
-     "Nelle ultime 3 partite di Europa League il Bournemouth ha ottenuto 3 vittorie (sequenza V-V-V), segnando 8 gol e subendone 1. Arriva da 3 vittorie consecutive."
+     "Nelle ultime 2 partite di Europa League lo Sparta ha raccolto 1 pareggio e 1 sconfitta (sequenza N-P), con 1 gol fatto e 2 subiti.",
+     "Nelle ultime 2 partite di Europa League il Bournemouth ha raccolto 2 vittorie (sequenza V-V), con 6 gol fatti e 0 subiti."
     ],
     "bullets": []
    },
@@ -14057,9 +14056,8 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Sparta 1,7, Bournemouth 2,7.",
-     "Gol subiti finora: Sparta 3, Bournemouth 1.",
-     "In ciascuna delle ultime 3 partite del Bournemouth sono stati segnati almeno tre gol."
+     "Media gol segnati: Sparta 1,7, Bournemouth 2,7 a partita.",
+     "Gol subiti finora: Sparta 3, Bournemouth 1."
     ]
    }
   ],
@@ -14078,23 +14076,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:36.965Z"
+  "at": "2026-11-02T04:48:29.808Z"
  },
  "fb:1001636286": {
-  "fingerprint": "1ic62xd",
+  "fingerprint": "1l65kdg",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Giovedì 5 novembre alle 18:45 il Levski Sofia ospita il Jagiellonia per la 4ª giornata della fase a campionato di Europa League. In classifica il Levski Sofia è al 17° posto con 4 punti, mentre il Jagiellonia è al 27° con 3."
+     "Giovedì 5 novembre alle 18:45 il Levski Sofia ospita il Jagiellonia per la 4ª giornata della fase a campionato di Europa League. In classifica il Levski Sofia occupa il 17° posto con 4 punti, mentre il Jagiellonia è al 27° con 3."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Europa League il Levski Sofia ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza P-N-V), segnando 3 gol e subendone 3.",
-     "Nelle ultime 2 partite di Europa League il Jagiellonia ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 3 gol e subendone 4."
+     "Nelle ultime 2 partite di Europa League, il Levski Sofia ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 3 gol e subendone 2.",
+     "Nelle ultime 2 partite di Europa League, il Jagiellonia ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 3 gol e subendone 4."
     ],
     "bullets": []
    },
@@ -14114,31 +14112,31 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
+    "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:40.252Z"
+  "at": "2026-11-02T04:48:35.096Z"
  },
  "fb:1001636223": {
-  "fingerprint": "dvkahx",
+  "fingerprint": "1sltjr3",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento giovedì 5 novembre alle 21:00: il Leverkusen ospita il Marseille per la 4ª giornata della fase a campionato di Europa League. In classifica il Leverkusen è al 2° posto con 9 punti, mentre il Marseille è al 34° con 0."
+     "Giovedì 5 novembre alle 21:00 il Leverkusen ospita il Marseille per la 4ª giornata della fase a campionato di Europa League. In classifica il Leverkusen è al 2° posto con 9 punti, mentre il Marseille è al 34° con 0."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Europa League il Leverkusen ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 0.",
-     "Nelle ultime 3 partite di Europa League il Marseille ha collezionato 3 sconfitte (sequenza P-P-P), segnando 1 gol e subendone 6. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 2 partite di Europa League il Leverkusen ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e non subendone nessuno.",
+     "Nelle ultime 2 partite di Europa League il Marseille ha collezionato 2 sconfitte (sequenza P-P), senza segnare e subendo 2 gol. Ha perso le ultime 2."
     ],
     "bullets": []
    },
@@ -14158,7 +14156,7 @@
     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
+    "q": "Dove si possono consultare classifica e risultati?",
     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
    },
    {
@@ -14167,23 +14165,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:42.414Z"
+  "at": "2026-11-02T04:48:39.917Z"
  },
  "fb:1001636219": {
-  "fingerprint": "k07nem",
+  "fingerprint": "167ef51",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Giovedì 5 novembre alle 21:00 l'AZ ospita la Juventus per la 4ª giornata della fase a campionato di Europa League. In classifica l'AZ è al 10° posto con 6 punti, la Juventus al 7° con 7."
+     "Giovedì 5 novembre alle 21:00 l'AZ ospita la Juventus nella 4ª giornata della fase a campionato di Europa League. In classifica l'AZ occupa il 10° posto con 6 punti, mentre la Juventus è al 7° con 7."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Europa League l'AZ ha raccolto 2 vittorie (sequenza V-V), con 6 gol fatti e 1 subito.",
-     "Nelle ultime 3 partite di Europa League la Juventus ha raccolto 2 vittorie e 1 pareggio (sequenza V-V-N), con 9 gol fatti e 3 subiti."
+     "Nelle ultime 2 partite di Europa League l'AZ ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 1.",
+     "Nelle ultime 2 partite di Europa League la Juventus ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 4 gol e subendone 3."
     ],
     "bullets": []
    },
@@ -14192,8 +14190,7 @@
     "paragraphs": [],
     "bullets": [
      "Media gol segnati: AZ 2,0, Juventus 3,0 a partita.",
-     "Gol subiti finora: AZ 2, Juventus 3.",
-     "In tutte le ultime 3 partite della Juventus si sono segnati almeno tre gol."
+     "Gol subiti finora: AZ 2, Juventus 3."
     ]
    }
   ],
@@ -14203,24 +14200,24 @@
     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina dedicata all'[Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:44.506Z"
+  "at": "2026-11-02T04:48:43.901Z"
  },
  "fb:1001636229": {
-  "fingerprint": "3ge2a9",
+  "fingerprint": "xanz2w",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Giovedì 5 novembre alle 21:00 lo SL Benfica ospita il Lech Poznan nella 4ª giornata della fase a campionato di Europa League. In classifica lo SL Benfica occupa il 1° posto con 9 punti, mentre il Lech Poznan è al 32° con 1 punto."
+     "Appuntamento giovedì 5 novembre alle 21:00: lo SL Benfica ospita il Lech Poznan nella 4ª giornata della fase a campionato di Europa League. In classifica lo SL Benfica occupa il 1° posto con 9 punti, mentre il Lech Poznan si trova al 32° posto con 1 punto."
     ],
     "bullets": []
    },
@@ -14228,7 +14225,7 @@
     "id": "momento",
     "paragraphs": [
      "Nelle ultime 2 partite di Europa League lo SL Benfica ha ottenuto 2 vittorie (sequenza V-V), segnando 8 gol e subendone 2.",
-     "Nelle ultime 3 partite di Europa League il Lech Poznan ha ottenuto 1 pareggio e 2 sconfitte (sequenza P-P-N), segnando 1 gol e subendone 9."
+     "Nelle ultime 2 partite di Europa League il Lech Poznan ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 1 gol e subendone 5."
     ],
     "bullets": []
    },
@@ -14248,7 +14245,7 @@
     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
+    "q": "Dove vedo classifica e risultati?",
     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
    },
    {
@@ -14257,23 +14254,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:49.482Z"
+  "at": "2026-11-02T04:48:48.978Z"
  },
  "fb:1001636250": {
-  "fingerprint": "3velue",
+  "fingerprint": "93r5rh",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Giovedì 5 novembre alle 21:00 il Celtic ospita il Beşiktaş per la 4ª giornata della fase a campionato di Europa League. In classifica il Celtic occupa il 35° posto con 0 punti, mentre il Beşiktaş è all'8° con 7."
+     "Giovedì 5 novembre alle 21:00 il Celtic ospita il Beşiktaş per la 4ª giornata della fase a campionato di Europa League. In classifica il Celtic è al 35° posto con 0 punti, il Beşiktaş all'8° con 7."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Europa League il Celtic ha collezionato 3 sconfitte (sequenza P-P-P), segnando 3 gol e subendone 9. Ha perso tutte le ultime 3 gare. In casa ha perso entrambe le partite disputate.",
-     "Nelle ultime 3 partite di Europa League il Beşiktaş ha ottenuto 2 vittorie e 1 pareggio (sequenza V-V-N), con 9 gol fatti e 5 subiti."
+     "Nelle ultime 2 partite di Europa League il Celtic ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 6 subiti. Ha perso le ultime 2.",
+     "Nelle ultime 2 partite di Europa League il Beşiktaş ha raccolto 1 vittoria e 1 pareggio (sequenza V-N), con 5 gol fatti e 4 subiti."
     ],
     "bullets": []
    },
@@ -14282,9 +14279,7 @@
     "paragraphs": [],
     "bullets": [
      "Media gol segnati: Celtic 1,0, Beşiktaş 3,0 a partita.",
-     "Gol subiti finora: Celtic 9, Beşiktaş 5.",
-     "In tutte le ultime 3 partite del Celtic si sono segnati almeno tre gol.",
-     "In tutte le ultime 3 partite del Beşiktaş si sono segnati almeno tre gol."
+     "Gol subiti finora: Celtic 9, Beşiktaş 5."
     ]
    }
   ],
@@ -14294,19 +14289,19 @@
     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
+    "q": "Dove vedo classifica e risultati?",
     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:53.163Z"
+  "at": "2026-11-02T04:48:52.382Z"
  },
  "fb:1001636245": {
-  "fingerprint": "1m01nd8",
+  "fingerprint": "1rlnnca",
   "sections": [
    {
     "id": "presentazione",
@@ -14319,7 +14314,7 @@
     "id": "momento",
     "paragraphs": [
      "Nelle ultime 2 partite di Europa League il Celta ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 3 gol fatti e 3 subiti.",
-     "Nelle ultime 3 partite di Europa League l'Union St. Gilloise ha raccolto 2 vittorie e 1 pareggio (sequenza V-N-V), con 8 gol fatti e 1 subito."
+     "Nelle ultime 2 partite di Europa League l'Union St. Gilloise ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 5 gol fatti e 1 subito."
     ],
     "bullets": []
    },
@@ -14347,23 +14342,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:55.310Z"
+  "at": "2026-11-02T04:48:54.428Z"
  },
  "fb:1001636264": {
-  "fingerprint": "l38jx5",
+  "fingerprint": "1vr5hx5",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Giovedì 5 novembre alle 21:00 l'Hapoel Beer Sheva ospita l'OFI per la 4ª giornata della fase a campionato di Europa League. In classifica l'Hapoel Beer Sheva è al 30° posto con 1 punto, mentre l'OFI è al 26° con 3."
+     "Giovedì 5 novembre alle 21:00 l'Hapoel Beer Sheva ospita l'OFI nella 4ª giornata della fase a campionato di Europa League. In classifica l'Hapoel Beer Sheva occupa il 30° posto con 1 punto, mentre l'OFI è al 26° con 3."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Europa League l'Hapoel Beer Sheva ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 6 subiti. Ha perso le ultime 2.",
-     "Nelle ultime 3 partite di Europa League l'OFI ha raccolto 1 vittoria e 2 sconfitte (sequenza V-P-P), con 3 gol fatti e 4 subiti. Ha perso le ultime 2."
+     "Nelle ultime 2 partite di Europa League l'Hapoel Beer Sheva ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 6. Ha perso entrambe le gare.",
+     "Nelle ultime 2 partite di Europa League l'OFI ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le gare."
     ],
     "bullets": []
    },
@@ -14371,7 +14366,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Hapoel Beer Sheva 0,3, OFI 1,0 a partita.",
+     "Media gol segnati a partita: Hapoel Beer Sheva 0,3, OFI 1,0.",
      "Gol subiti finora: Hapoel Beer Sheva 6, OFI 4."
     ]
    }
@@ -14382,16 +14377,16 @@
     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
+    "q": "Dove posso consultare classifica e risultati?",
     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:39:57.517Z"
+  "at": "2026-11-02T04:48:58.565Z"
  },
  "fb:1001636339": {
   "fingerprint": "158lyqs",
@@ -14482,20 +14477,20 @@
   "at": "2026-11-01T18:40:01.837Z"
  },
  "fb:1001636347": {
-  "fingerprint": "1a0x2b9",
+  "fingerprint": "dcr1br",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Torreense e Ararat-Armenia si sfidano giovedì 5 novembre alle 21:00 nella 4ª giornata della fase a campionato di Europa League. In classifica il Torreense occupa il 28° posto con 3 punti, mentre l'Ararat-Armenia è al 36° con 0."
+     "Torreense e Ararat-Armenia si affrontano giovedì 5 novembre alle 21:00 per la 4ª giornata della fase a campionato di Europa League. In classifica il Torreense occupa il 28° posto con 3 punti, mentre l'Ararat-Armenia è al 36° con 0."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Europa League il Torreense ha ottenuto 1 vittoria e 2 sconfitte (sequenza V-P-P), segnando 4 gol e subendone 7. Ha perso le ultime 2.",
-     "Nelle ultime 2 partite di Europa League l'Ararat-Armenia ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 7. Ha perso le ultime 2."
+     "Nelle ultime 2 partite di Europa League il Torreense ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 6 subiti. Ha perso le ultime 2.",
+     "Nelle ultime 2 partite di Europa League l'Ararat-Armenia ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 7 subiti. Ha perso le ultime 2."
     ],
     "bullets": []
    },
@@ -14504,8 +14499,7 @@
     "paragraphs": [],
     "bullets": [
      "Media gol segnati: Torreense 1,3, Ararat-Armenia 0,7 a partita.",
-     "Gol subiti finora: Torreense 7, Ararat-Armenia 11.",
-     "In tutte le ultime 3 partite del Torreense si sono segnati almeno tre gol."
+     "Gol subiti finora: Torreense 7, Ararat-Armenia 11."
     ]
    }
   ],
@@ -14524,7 +14518,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T18:40:04.090Z"
+  "at": "2026-11-02T04:49:01.003Z"
  },
  "fb:1001636448": {
   "fingerprint": "bk4iia",
