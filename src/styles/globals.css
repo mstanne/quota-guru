@@ -215,3 +215,24 @@
 html {
   font-size: var(--font-size);
 }
+
+/* Scrollbar of the match timeline box (Cronaca): always visible, in the dark palette of the cards. */
+.timeline-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #475569 #0f172a;
+  scrollbar-gutter: stable;
+}
+.timeline-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.timeline-scroll::-webkit-scrollbar-track {
+  background: #0f172a;
+  border-radius: 9999px;
+}
+.timeline-scroll::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 9999px;
+}
+.timeline-scroll::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
