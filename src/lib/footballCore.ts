@@ -447,11 +447,31 @@ export function cornersCardsMeta(c: Competition, league?: { n: number; cf: numbe
       : `Calci d'angolo e cartellini di ogni squadra di ${c.name}: medie a partita, fatti e subiti, e quante partite superano le soglie più comuni.`,
   };
 }
+/** One-sentence state of a league table ("Dopo 9 giornate guida l'Inter con 22 punti, 2 in più della Lazio"),
+ * used in the description and at the top of the standings page. Null for multi-group tables or before kick-off. */
+export function standingsSummary(c: Competition) {
+  if (c.standings.length !== 1) return null;
+  const t = mainTable(c);
+  const [a, b] = t;
+  const played = Math.max(0, ...t.map((r) => r.playedGames));
+  if (!a || !b || played === 0) return null;
+  const gap = a.points - b.points;
+  const lead =
+    gap === 0
+      ? `${a.team.shortName} e ${b.team.shortName} sono in testa a pari punti (${a.points})`
+      : `${a.team.shortName} è prima con ${a.points} punti, ${gap} in più di ${b.team.shortName}`;
+  return { played, leader: a, second: b, text: `Dopo ${played} ${played === 1 ? "giornata" : "giornate"}, ${lead}` };
+}
+
 export function standingsMeta(c: Competition) {
+  const season = seasonName(c);
+  const sum = standingsSummary(c);
   return {
     path: standingsPath(c),
-    title: `Classifica ${c.name}${seasonName(c) ? ` ${seasonName(c)}` : ""} aggiornata`,
-    description: `Classifica aggiornata di ${c.name}, rivista dopo ogni partita mentre si gioca: punti, partite giocate, vittorie, pareggi, sconfitte e differenza reti.`,
+    title: `Classifica ${c.name}${season ? ` ${season}` : ""} aggiornata oggi: punti e forma`,
+    description: sum
+      ? `Classifica ${c.name} aggiornata dopo ogni partita. ${sum.text}. Forma delle ultime 5, gol fatti e subiti, risultati dell'ultima giornata e partite della prossima.`
+      : `Classifica aggiornata di ${c.name}, rivista dopo ogni partita mentre si gioca: punti, forma delle ultime 5, vittorie, pareggi, sconfitte e differenza reti.`,
   };
 }
 /** Social image of a match page (src/routes.ts OgCard); null without a prediction to show. */
