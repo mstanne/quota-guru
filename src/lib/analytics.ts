@@ -19,6 +19,10 @@
 //   matchday_nav       { competition, to, page }       – move to another round from a matchday page
 //   day_switch         { to, page }                    – switch between "pronostici di oggi" and "di domani"
 //
+// Own visits: opening any page with ?interno=1 marks this browser as internal (saved in localStorage, ?interno=0
+// undoes it). GA4 then receives traffic_type=internal, excluded by the "Internal Traffic" data filter of the
+// property; Plausible ignores the browser (its own plausible_ignore flag).
+//
 // offer_terms_click and filter_use are declarative: put data-track="<event>" and data-track-<prop>="…"
 // on any clickable element and the click listener installed by initAnalytics() sends it.
 
@@ -75,6 +79,50 @@ declare global {
   }
 }
 
+const INTERNAL_KEY = "qg-interno";
+
+/** True when this browser was marked as the site owner's (see ?interno=1 above). */
+export function isInternal() {
+  try {
+    return localStorage.getItem(INTERNAL_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+/** Reads ?interno=1 / ?interno=0, saves the choice, removes the parameter from the address and confirms it. */
+function readInternalFlag() {
+  if (typeof window === "undefined") return;
+  const url = new URL(window.location.href);
+  const v = url.searchParams.get("interno");
+  if (v !== "1" && v !== "0") return;
+  try {
+    if (v === "1") {
+      localStorage.setItem(INTERNAL_KEY, "1");
+      localStorage.setItem("plausible_ignore", "true");
+    } else {
+      localStorage.removeItem(INTERNAL_KEY);
+      localStorage.removeItem("plausible_ignore");
+    }
+  } catch {
+    return; // storage unavailable: nothing can be remembered
+  }
+  url.searchParams.delete("interno");
+  window.history.replaceState(window.history.state, "", url.pathname + url.search + url.hash);
+  const note = document.createElement("div");
+  note.setAttribute("role", "status");
+  note.textContent =
+    v === "1"
+      ? "Questo browser è segnato come interno: le tue visite non contano nelle statistiche."
+      : "Questo browser non è più segnato come interno.";
+  note.style.cssText =
+    "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;max-width:calc(100% - 32px);" +
+    "background:#0f172a;color:#fff;border:1px solid #334155;border-radius:10px;padding:12px 16px;font:14px/1.4 sans-serif;" +
+    "box-shadow:0 8px 24px rgba(0,0,0,.4)";
+  document.body.appendChild(note);
+  window.setTimeout(() => note.remove(), 5000);
+}
+
 let loaded = false;
 function loadProvider() {
   if (loaded || !analyticsConfigured || typeof document === "undefined") return;
@@ -96,7 +144,8 @@ function loadProvider() {
       window.dataLayer!.push(arguments);
     };
     window.gtag("js", new Date());
-    window.gtag("config", ID, { anonymize_ip: true });
+    // own visits (?interno=1) are tagged and dropped by the GA4 "Internal Traffic" data filter
+    window.gtag("config", ID, { anonymize_ip: true, ...(isInternal() ? { traffic_type: "internal" } : {}) });
     script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ID)}`;
   }
   document.head.appendChild(script);
@@ -130,6 +179,7 @@ function listenForClicks() {
 
 /** Call once at start-up: loads the provider if consent was already given and starts listening for clicks. */
 export function initAnalytics() {
+  readInternalFlag();
   listenForClicks();
   if (getConsent() === "granted") loadProvider();
 }
