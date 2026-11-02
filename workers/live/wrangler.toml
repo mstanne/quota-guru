@@ -3,7 +3,8 @@ name = "quotaguru-live"
 main = "src/index.mjs"
 compatibility_date = "2025-09-01"
 
-# every minute; the worker downloads data only while matches are around kick-off or under way
+# every minute; the worker downloads data only while matches are around kick-off or under way,
+# and starts the GitHub workflows of the site at their times (GitHub's own schedule is unreliable)
 [triggers]
 crons = ["* * * * *"]
 
@@ -20,3 +21,5 @@ new_sqlite_classes = ["LiveHub"]
 ALLOWED_ORIGINS = "https://www.quotaguru.it,https://quotaguru.it,http://localhost:5173,http://localhost:4173"
 # share of the API-Football daily quota (Pro: 7500) the worker may use
 MAX_DAILY_REQUESTS = "3000"
+# repository whose workflows the worker starts every 15 minutes (secret GH_DISPATCH_TOKEN, see README.md)
+GH_REPO = "mstanne/quota-guru"

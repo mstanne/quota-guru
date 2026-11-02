@@ -27,6 +27,20 @@ contenuto nel tema del sito.
    `LIVE_URL` = l'indirizzo del punto 5. Dal prossimo aggiornamento del sito le pagine partita usano il servizio e
    SofaScore non compare più. Per tornare a SofaScore basta cancellare la variabile.
 
+7. **Avvio puntuale degli aggiornamenti del sito (consigliato).** GitHub avvia i workflow programmati "quando può":
+   nei momenti di carico li ritarda o li salta (il 2 novembre 2026 *Live scores*, previsto ogni 15 minuti, è partito
+   due volte in tutto il giorno). Il worker, che gira ogni minuto, li avvia lui: *Live scores* ai minuti 00/15/30/45 e
+   l'aggiornamento completo (*Deploy to GitHub Pages*) alle xx:17 ogni 3 ore (UTC). I `schedule:` di GitHub restano
+   come riserva.
+   - GitHub → avatar → *Settings* → *Developer settings* → *Personal access tokens* → **Fine-grained tokens** →
+     *Generate new token*: *Repository access* → *Only select repositories* → `quota-guru`; *Permissions* →
+     *Repository permissions* → **Actions: Read and write** (nient'altro). Scadenza: la più lunga che ti va bene
+     (ricordati di rinnovarlo).
+   - Nel repository: *Settings* → *Secrets and variables* → *Actions* → *New repository secret*
+     `GH_DISPATCH_TOKEN` = il token.
+   - *Actions* → **Live worker** → *Run workflow*. Da quel momento nella pagina Actions vedrai i run con evento
+     `workflow_dispatch` ogni 15 minuti.
+
 **Server ponte (necessario)**: API-Football limita gli indirizzi condivisi dei Cloudflare Workers, quindi le
 richieste passano da un piccolo server con IP dedicato: vedi `server/README.md`.
 

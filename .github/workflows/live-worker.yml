@@ -7,6 +7,7 @@
 #   - after the first run, the address printed in the run summary goes in the repository variable LIVE_URL
 #     (Variables tab): from the next site update, match pages use it and SofaScore is no longer shown.
 # The API-Football key (secret API_FOOTBALL_KEY, already used by the site) is copied to the worker as a secret.
+#   - GH_DISPATCH_TOKEN (recommended): lets the worker start deploy.yml and live-scores.yml on time, see workers/live/README.md
 name: Live worker
 
 on:
@@ -63,13 +64,20 @@ jobs:
         env:
           API_BASE: ${{ vars.LIVE_API_BASE }}
           PROXY_SECRET: ${{ secrets.LIVE_PROXY_SECRET }}
+          GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
         run: |
+          list="API_FOOTBALL_KEY"
           if [ -n "$API_BASE" ] && [ -n "$PROXY_SECRET" ]; then
-            printf 'list<<EOF\nAPI_FOOTBALL_KEY\nAPI_BASE\nPROXY_SECRET\nEOF\n' >> "$GITHUB_OUTPUT"
+            list="$list API_BASE PROXY_SECRET"
             echo "Richieste ad API-Football tramite $API_BASE"
-          else
-            printf 'list<<EOF\nAPI_FOOTBALL_KEY\nEOF\n' >> "$GITHUB_OUTPUT"
           fi
+          # the worker starts deploy.yml and live-scores.yml on time (GitHub's own schedule is unreliable)
+          if [ -n "$GH_DISPATCH_TOKEN" ]; then
+            list="$list GH_DISPATCH_TOKEN"
+          else
+            echo "::warning::Secret GH_DISPATCH_TOKEN mancante: gli aggiornamenti restano affidati al cron di GitHub, che spesso salta"
+          fi
+          { echo 'list<<EOF'; printf '%s\n' $list; echo 'EOF'; } >> "$GITHUB_OUTPUT"
 
       - name: Publish the worker
         id: deploy
@@ -85,6 +93,7 @@ jobs:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
           API_BASE: ${{ vars.LIVE_API_BASE }}
           PROXY_SECRET: ${{ secrets.LIVE_PROXY_SECRET }}
+          GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
 
       - name: Address of the worker
         if: steps.check.outputs.ready == 'true'
