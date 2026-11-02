@@ -1,6 +1,6 @@
 // Line-ups, team statistics and timeline of a finished match (API-Football data, see src/lib/matchDetails.ts).
 // The timeline text is built from the events only: nothing is added that the data does not say.
-import { Fragment, type ReactNode } from "react";
+import { Fragment, useEffect, useRef, type ReactNode } from "react";
 import { BarChart3, ListOrdered, Users } from "lucide-react";
 import type { Match } from "../../lib/footballCore";
 import { FOOTBALL_STATS, goalsWithScore, isGoal, type FootballDetails, type Lineup, type TimelineEvent } from "../../lib/matchDetails";
@@ -139,8 +139,16 @@ function describe(e: TimelineEvent, team: string, score: string | undefined) {
   return `${e.detail} (${team}).`;
 }
 
-function Timeline({ match, d }: { match: Match; d: Pick<FootballDetails, "timeline"> }) {
-  if (!d.timeline.length) return null;
+function Timeline({ match, d, follow }: { match: Match; d: Pick<FootballDetails, "timeline">; follow: boolean }) {
+  const box = useRef<HTMLOListElement>(null);
+  const count = d.timeline.length;
+  // While the match is on, keep the newest events in view, unless the reader has scrolled up to read older ones.
+  const atBottom = useRef(true);
+  useEffect(() => {
+    const el = box.current;
+    if (follow && el && atBottom.current) el.scrollTop = el.scrollHeight;
+  }, [count, follow]);
+  if (!count) return null;
   const scores = new Map(goalsWithScore(d, playedScore(match)).map((g) => [g.event, g]));
   const name = (side: "home" | "away") => (side === "home" ? match.homeTeam.shortName : match.awayTeam.shortName);
   return (
@@ -148,7 +156,17 @@ function Timeline({ match, d }: { match: Match; d: Pick<FootballDetails, "timeli
       <Title id="cronaca" icon={ListOrdered}>
         Cronaca
       </Title>
-      <ol className="divide-y divide-slate-800">
+      {/* Fixed height with its own scrollbar: the whole timeline stays reachable without stretching the page. */}
+      <ol
+        ref={box}
+        tabIndex={0}
+        aria-label={`Cronaca, ${count} eventi`}
+        onScroll={(ev) => {
+          const el = ev.currentTarget;
+          atBottom.current = el.scrollHeight - el.scrollTop - el.clientHeight < 24;
+        }}
+        className="timeline-scroll divide-y divide-slate-800 max-h-[26rem] overflow-y-auto overscroll-contain pr-2 -mr-2 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-slate-500"
+      >
         {d.timeline.map((e, i) => {
           const g = scores.get(e);
           return (
@@ -192,7 +210,7 @@ export function FootballMatchDetails({
       </section>
     ),
     stats: <Stats match={match} d={d} />,
-    timeline: <Timeline match={match} d={d} />,
+    timeline: <Timeline match={match} d={d} follow={phase === "live"} />,
   };
   const order =
     phase === "live"
