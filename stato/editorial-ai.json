@@ -578,20 +578,20 @@
   "at": "2026-11-02T04:47:47.578Z"
  },
  "fb:558531": {
-  "fingerprint": "6nid6j",
+  "fingerprint": "16akn3r",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 7 novembre alle 20:45 la Roma riceve il Sassuolo nella 11ª giornata di Serie A. In classifica la Roma è al 3° posto con 24 punti, mentre il Sassuolo è al 15° con 8."
+     "Sabato 7 novembre alle 20:45 la Roma ospita il Sassuolo nell'11ª giornata di Serie A. In classifica la Roma occupa il 3° posto con 24 punti, mentre il Sassuolo è al 15° con 8."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A la Roma ha ottenuto 3 vittorie e 2 pareggi, con la sequenza N-V-N-V-V, segnando 14 gol e subendone 7. Non perde da 6 partite. In casa, in questa stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Serie A il Sassuolo ha raccolto 1 pareggio e 4 sconfitte, con la sequenza P-N-P-P-P, segnando 6 gol e subendone 15. Ha perso le ultime 3 partite. In trasferta ha perso tutte le 3 gare disputate."
+     "Nelle ultime 5 partite di Serie A la Roma ha ottenuto 3 vittorie e 2 pareggi (sequenza N-V-N-V-V), segnando 14 gol e subendone 7. Non perde da 6 partite. In casa, nel bilancio stagionale, conta 2 vittorie e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie A il Sassuolo ha raccolto 1 pareggio e 4 sconfitte (sequenza N-P-P-P-P), con 7 gol segnati e 17 subiti. Ha perso le ultime 4 partite. In trasferta ha perso tutte le 3 gare disputate."
     ],
     "bullets": []
    },
@@ -602,8 +602,8 @@
      "Media gol segnati a partita: Roma 2,8, Sassuolo 1,6.",
      "Gol subiti finora: Roma 10, Sassuolo 22.",
      "La Roma ha il miglior attacco del torneo.",
-     "In 3 delle ultime 5 partite della Roma sono stati segnati almeno tre gol.",
-     "In 3 delle ultime 5 partite del Sassuolo sono stati segnati almeno tre gol."
+     "In 3 delle ultime 5 partite della Roma si sono segnati almeno tre gol.",
+     "In 3 delle ultime 5 partite del Sassuolo si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -614,15 +614,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+    "a": "Puoi consultare la pagina dedicata alla [Serie A](/calcio/serie-a) e la [classifica aggiornata](/calcio/serie-a/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T06:30:35.673Z"
+  "at": "2026-11-02T19:27:50.251Z"
  },
  "fb:558533": {
   "fingerprint": "1wnm8a4",
@@ -808,20 +808,20 @@
   "at": "2026-11-01T13:54:54.375Z"
  },
  "fb:558529": {
-  "fingerprint": "708i0u",
+  "fingerprint": "el1r10",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "La partita si giocherà domenica 8 novembre alle 20:45, quando la Fiorentina ospiterà la Juventus per l'11ª giornata di Serie A. In classifica la Fiorentina occupa il 17° posto con 5 punti, mentre la Juventus è al 7° posto con 17."
+     "Domenica 8 novembre alle 20:45 la Fiorentina ospita la Juventus per l'11ª giornata di Serie A. In classifica la Fiorentina occupa il 17° posto con 5 punti, mentre la Juventus è al 7° posto con 17."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A la Fiorentina ha ottenuto 2 pareggi e 3 sconfitte, con sequenza N-P-P-P-N, segnando 6 gol e subendone 10. In casa, il bilancio stagionale è di 2 pareggi e 1 sconfitta, senza vittorie.",
-     "Nelle ultime 5 partite di Serie A la Juventus ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con sequenza N-P-V-P-V, segnando 5 gol e subendone 6. In trasferta, il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
+     "Nelle ultime 5 partite di Serie A la Fiorentina ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-P-N-V), segnando 9 gol e subendone 11. In casa, nella stagione, il bilancio è di 2 pareggi e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 5 partite di Serie A la Juventus ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-V-P-V), segnando 5 gol e subendone 6. In trasferta, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -829,9 +829,9 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "La media dei gol segnati a partita è di 1,2 per la Fiorentina e di 1,3 per la Juventus.",
-     "Finora la Fiorentina ha subito 21 gol, la Juventus 10.",
-     "In 4 delle ultime 5 partite della Fiorentina si sono segnati almeno tre gol."
+     "Media gol segnati a partita: Fiorentina 1,2, Juventus 1,3.",
+     "Gol subiti finora: Fiorentina 21, Juventus 10.",
+     "In tutte le ultime 5 partite della Fiorentina sono stati segnati almeno tre gol."
     ]
    }
   ],
@@ -842,15 +842,15 @@
    },
    {
     "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina dedicata alla [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-02T04:47:58.949Z"
+  "at": "2026-11-02T19:27:54.128Z"
  },
  "fb:575377": {
   "fingerprint": "1enp1t",
@@ -18056,5 +18056,43 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-02T11:20:16.595Z"
+ },
+ "fb:558541": {
+  "fingerprint": "19fxsps",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "La Fiorentina ha vinto in trasferta contro il Sassuolo per 2-4. La partita, valida per la 10ª giornata di Serie A, si è giocata lunedì 2 novembre; il primo tempo si era chiuso sull'1-1."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora il Sassuolo occupa il 15° posto con 8 punti, mentre la Fiorentina è al 17° con 5. [Vai alla classifica completa](/calcio/serie-a/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Sassuolo tornerà in campo sabato 7 novembre alle 20:45 in trasferta contro la Roma. La Fiorentina tornerà in campo domenica 8 novembre alle 20:45 in casa contro la Juventus."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Sassuolo – Fiorentina?",
+    "a": "2-4 (1-1 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Serie A](/calcio/serie-a)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-02T19:27:55.734Z"
  }
 }
