@@ -8,7 +8,8 @@ solo quando la redazione la imposta su `"approvata"`; nulla arriva su `main` sen
 
 ## Ingressi
 
-- `scripts/offers-agent/sources.json`: pagine da controllare per ogni operatore.
+- `scripts/offers-agent/sources.json`: pagine da controllare per ogni operatore e, nella voce `tvRights`,
+  le fonti e lo stato attuale dei diritti TV (controllo del lunedì, vedi sotto).
 - `src/data/offers.json`: stato attuale delle offerte (schema descritto in `src/data/offers.ts`).
 
 ## Procedura
@@ -30,6 +31,23 @@ solo quando la redazione la imposta su `"approvata"`; nulla arriva su `main` sen
    e avvisi nel rapporto.
 6. **Rapporto.** Prepara un rapporto breve (vedi sotto) e avvisa la redazione **solo se** c'è almeno
    una modifica, un'offerta nuova o sparita, una scadenza entro 3 giorni, un'incoerenza o un errore.
+
+## Controllo dei diritti TV (solo il lunedì)
+
+Le pagine partita mostrano una riga "In TV" calcolata da `src/lib/broadcast.ts` in base agli accordi sui diritti
+TV della stagione. Il lunedì, dopo le offerte, l'agente verifica che quegli accordi non siano cambiati:
+
+1. Leggi la voce `tvRights.current` di `sources.json`: è ciò che il sito mostra oggi, competizione per competizione.
+2. Cerca notizie recenti sui diritti TV in Italia di quelle competizioni, partendo da `tvRights.sources` e da una
+   ricerca web (per esempio "diritti tv <competizione> <stagione> Italia"). Preferisci comunicati ufficiali di leghe
+   ed emittenti e testate specializzate; ignora forum e siti di streaming non autorizzati.
+3. Confronta: emittente diversa, numero di partite diverso, slot di Sky in Serie A cambiati, nuova stagione
+   iniziata (da luglio controlla che `tvRights.season` sia ancora quella in corso), accordo trovato per una
+   competizione oggi "non indicata".
+4. **Non modificare `src/lib/broadcast.ts` né `tvRights`**: riporta le differenze nel rapporto, ognuna con la
+   fonte. La redazione decide e fa aggiornare il codice.
+
+Gli altri giorni questa parte si salta.
 
 ## Regole di estrazione
 
@@ -71,9 +89,14 @@ Incoerenze nelle pagine degli operatori:
 - ...
 
 Esito validazione: <n> errori, <n> avvisi
+
+Diritti TV (solo il lunedì):
+- <competizione>: sul sito "<testo attuale>" → secondo la fonte "<novità>" (fonte: <url>, data dell'articolo)
+  oppure: nessuna differenza
 ```
 
-Se non ci sono novità il rapporto è una riga: `Controllo offerte – <data>: nessuna modifica.`
+Se non ci sono novità il rapporto è una riga: `Controllo offerte – <data>: nessuna modifica.` (il lunedì:
+`…: nessuna modifica; diritti TV invariati.`). Una differenza sui diritti TV conta come novità da segnalare.
 
 ## Pull request
 
