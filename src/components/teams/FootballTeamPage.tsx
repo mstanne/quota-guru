@@ -48,7 +48,7 @@ function Squad({ team }: { team: FootballTeam }) {
                   <span className="flex-1 text-white">
                     <FootballPlayerLink id={p.id} name={p.name} />
                   </span>
-                  <span className="text-slate-400">{[p.nationality, p.born ? `${age(p.born)} anni` : null].filter(Boolean).join(" · ")}</span>
+                  <span className="text-slate-400">{[p.nationality, p.born ? `${age(p.born)} anni` : p.age ? `${p.age} anni` : null].filter(Boolean).join(" · ")}</span>
                 </li>
               ))}
             </ul>
