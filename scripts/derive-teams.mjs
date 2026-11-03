@@ -212,11 +212,14 @@ for (const comp of football.competitions) {
       venue: afInfo.venue ?? (info?.venue ? { name: info.venue, city: null, capacity: null, surface: null } : null),
       coach: info?.coach ? { ...info.coach, nationality: country(info.coach.nationality) } : null,
       // squads saved before the ids were kept: the id from the club's season statistics, when the name fits one player
-      squad: (info?.squad ?? []).map((p) => ({
-        ...p,
-        id: p.id ?? matchPlayer(p.name, api.football?.[`${id}-${current}`] ?? []),
-        nationality: country(p.nationality),
-      })),
+      // birth date and nationality are not in the squad download (/players/squads): taken from the club's season
+      // statistics, which have them for every player who has played
+      squad: (info?.squad ?? []).map((p) => {
+        const stats = api.football?.[`${id}-${current}`] ?? [];
+        const pid = p.id ?? matchPlayer(p.name, stats);
+        const s = pid != null ? stats.find((x) => x.id === pid) : null;
+        return { ...p, id: pid, born: p.born ?? s?.birth ?? null, nationality: country(p.nationality ?? s?.nationality ?? null) };
+      }),
       // season statistics in the league (API-Football /teams/statistics) and corners, cards, xG from the archive
       stats: info?.stats?.competition === comp.slug ? info.stats : null,
       matchStats: matchStats[comp.slug]?.teams?.[id] ? { ...matchStats[comp.slug].teams[id], lines: matchStats[comp.slug].lines } : null,
