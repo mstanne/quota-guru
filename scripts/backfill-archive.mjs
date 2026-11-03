@@ -4,7 +4,7 @@
 // Football: for every competition on the site, the current season (matches older than 3 days) and
 // the ARCHIVE_SEASONS before it (default 3): first the list of finished matches (1 request per season), then the
 // matches with all their details, 20 per request (/fixtures?ids=…: result, scorers, cards, substitutions, line-ups,
-// statistics, ratings). Most recent seasons first, Serie A first.
+// statistics, ratings, every player's row). Most recent seasons first, Serie A first.
 // NBA: results and quarter scores of the past seasons (1 request per season; box scores are not backfilled).
 //
 // Each run spends at most ARCHIVE_BACKFILL_MAX requests (default 150, ~2% of the daily Pro quota) and stops; the
@@ -57,7 +57,10 @@ async function football(api, progress, budget) {
   for (const { c, y, current } of jobs) {
     if (budget.left <= 0) break;
     const key = `${c.code}-${y}`;
-    const p = (progress.football[key] ??= { ids: null, done: [], complete: false });
+    const p = (progress.football[key] ??= { ids: null, done: [], complete: false, lines: true });
+    // the current season is downloaded again once to add every player's row (player pages: last matches, home/away);
+    // ~1 request per 20 matches, so a few runs. Past seasons keep what they have.
+    if (current && !p.lines) Object.assign(p, { ids: null, done: [], complete: false, lines: true });
     if (p.complete) continue;
     if (!p.ids) {
       budget.left--;

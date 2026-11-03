@@ -9,6 +9,7 @@ import { playerMeta } from "../../lib/playerMeta";
 import { leadersPath } from "../../lib/footballCore";
 import { teamPaths } from "../../lib/teams";
 import { NotFoundPage } from "../NotFoundPage";
+import { PlayerSeasonDetail } from "./PlayerSeasonDetail";
 import { PageHeader } from "../layout/PageHeader";
 import { TeamBadge } from "../calcio/MatchRow";
 import { Card, Facts, SectionTitle, age, formatDate, num } from "../teams/TeamUi";
@@ -29,7 +30,9 @@ export function PlayerPage() {
     ...(p.birth ? ([["Data di nascita", `${formatDate(p.birth)} (${age(p.birth)} anni)`]] as [string, string][]) : []),
     ...(p.nationality ? ([["Nazionalità", p.nationality]] as [string, string][]) : []),
     ...(p.position ? ([["Ruolo", p.position]] as [string, string][]) : []),
+    ...(p.number != null ? ([["Numero di maglia", String(p.number)]] as [string, string][]) : []),
     ...(p.height ? ([["Altezza", `${p.height} cm`]] as [string, string][]) : []),
+    ...(p.weight ? ([["Peso", `${p.weight} kg`]] as [string, string][]) : []),
     [
       "Squadra",
       <Link key="t" to={teamHref} className="text-action-text hover:text-action-text-hover">
@@ -74,9 +77,11 @@ export function PlayerPage() {
           )}
         </Card>
 
+        <PlayerSeasonDetail player={p} />
+
         <Card id="stagioni">
           <SectionTitle id="stagioni-titolo" icon={User}>
-            Statistiche stagione per stagione
+            Carriera: statistiche stagione per stagione
           </SectionTitle>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">

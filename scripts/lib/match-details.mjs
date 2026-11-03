@@ -43,11 +43,14 @@ export function footballDetails(fx, events, lineups, statistics, players, sideOf
     stats[s] = Object.fromEntries((t.statistics ?? []).map((x) => [x.type, num(x.value)]));
   }
   let top = null;
+  const lines = {};
   for (const t of players) {
     const s = side(t.team?.id);
     if (!s) continue;
     for (const p of t.players ?? []) {
       const st = p.statistics?.[0] ?? {};
+      const line = playerLine(p, st);
+      if (line) (lines[s] ??= []).push(line);
       const rating = num(st.games?.rating);
       if (rating == null) continue;
       const goals = st.goals?.total ?? 0;
@@ -66,7 +69,39 @@ export function footballDetails(fx, events, lineups, statistics, players, sideOf
     lineups: lineup,
     stats,
     top,
+    ...(Object.keys(lines).length ? { players: lines } : {}),
     savedAt: new Date().toISOString(),
   };
 }
+
+/**
+ * Every player who took part in a match, one compact row each (arrays keep the archive small: ~30 rows per match).
+ * Order of the values: PLAYER_LINE. Used by the player pages (last matches, home/away), never by the match pages.
+ */
+export const PLAYER_LINE = [
+  "id", "min", "rating", "goals", "assists", "shots", "shotsOn", "keyPasses", "yellow", "red", "starter", "saves", "conceded",
+];
+function playerLine(p, st) {
+  const id = p.player?.id;
+  const min = num(st.games?.minutes);
+  if (id == null || !min) return null;
+  const n = (v) => num(v) ?? 0;
+  return [
+    id,
+    min,
+    num(st.games?.rating),
+    n(st.goals?.total),
+    n(st.goals?.assists),
+    n(st.shots?.total),
+    n(st.shots?.on),
+    n(st.passes?.key),
+    n(st.cards?.yellow),
+    n(st.cards?.red),
+    st.games?.substitute ? 0 : 1,
+    n(st.goals?.saves),
+    n(st.goals?.conceded),
+  ];
+}
+/** A row of PLAYER_LINE as an object. */
+export const lineObject = (row) => Object.fromEntries(PLAYER_LINE.map((k, i) => [k, row[i] ?? null]));
 

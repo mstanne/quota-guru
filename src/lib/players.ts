@@ -24,6 +24,81 @@ export interface PlayerRank {
   slug: string;
   value: number;
 }
+export interface PlayerTotals {
+  apps: number;
+  starts: number;
+  min: number;
+  goals: number;
+  assists: number;
+  yellow: number;
+  red: number;
+  rating: number | null;
+}
+/** Detailed season statistics (API-Football /players), all competitions together. */
+export interface PlayerDetail {
+  subIn: number;
+  subOut: number;
+  bench: number;
+  shots: number;
+  shotsOn: number;
+  passes: number;
+  keyPasses: number;
+  tackles: number;
+  blocks: number;
+  interceptions: number;
+  duels: number;
+  duelsWon: number;
+  dribbles: number;
+  dribblesOk: number;
+  foulsDrawn: number;
+  fouls: number;
+  penWon: number;
+  penCommitted: number;
+  penScored: number;
+  penMissed: number;
+  penSaved: number;
+  saves: number;
+  conceded: number;
+}
+/** One match of the player (current season). */
+export interface PlayerMatch {
+  id: number;
+  date: string;
+  competition: string | null;
+  home: boolean;
+  opponent: { id: number; name: string; slug: string | null };
+  /** [goals for, goals against] */
+  score: [number | null, number | null];
+  path: string | null;
+  min: number;
+  rating: number | null;
+  goals: number;
+  assists: number;
+  shots: number;
+  shotsOn: number;
+  keyPasses: number;
+  yellow: number;
+  red: number;
+  starter: boolean;
+  saves: number;
+  conceded: number;
+}
+export interface PlayerSide {
+  apps: number;
+  min: number;
+  goals: number;
+  assists: number;
+  rating: number | null;
+}
+export interface PlayerCurrent {
+  label: string;
+  team: { id: number; slug: string; shortName: string };
+  totals: PlayerTotals;
+  detail: PlayerDetail | null;
+  byComp: (PlayerTotals & { league: string; leagueId: number | null })[] | null;
+  homeAway: { home?: PlayerSide | null; away?: PlayerSide | null } | null;
+  last: PlayerMatch[];
+}
 export interface FootballPlayer {
   id: number;
   url: string;
@@ -33,10 +108,13 @@ export interface FootballPlayer {
   age: number | null;
   nationality: string | null;
   height: number | null;
+  weight?: number | null;
+  number?: number | null;
   position: string | null;
   team: { id: number; slug: string; name: string; shortName: string; crest: string | null };
   competition: { slug: string; name: string; season: string } | null;
   ranks: { scorers?: PlayerRank; assists?: PlayerRank } | null;
+  current?: PlayerCurrent;
   seasons: PlayerSeason[];
 }
 
