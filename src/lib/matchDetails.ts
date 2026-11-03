@@ -39,6 +39,7 @@ export interface FootballDetails {
 }
 
 export interface NbaPlayerLine {
+  id?: number | null;
   name: string;
   pos: string | null;
   min: string | null;

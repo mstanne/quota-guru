@@ -98,6 +98,7 @@ export interface TeamApiStats {
   biggestWin: { home: string | null; away: string | null };
 }
 export interface NbaPlayerAverages {
+  id?: number | null;
   name: string;
   g: number;
   min: number;
@@ -122,6 +123,7 @@ export interface NbaTeam {
   city: string | null;
   abbr: string;
   roster: {
+    id?: number | null;
     name: string;
     number: string | null;
     pos: string | null;
