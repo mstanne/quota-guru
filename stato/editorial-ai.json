@@ -799,94 +799,6 @@
   "model": "claude-haiku-5-5",
   "at": "2026-11-03T00:19:51.635Z"
  },
- "fb:575377": {
-  "fingerprint": "1enp1t",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Martedì 3 novembre alle 18:45 lo Shakhtar ospita lo Sporting CP per la 4ª giornata della fase a campionato di Champions League. In classifica lo Shakhtar è al 17° posto con 4 punti, lo Sporting CP al 12° con 6."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 2 partite di Champions League lo Shakhtar ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 3 gol fatti e 2 subiti.",
-     "Nelle ultime 2 partite di Champions League lo Sporting CP ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 4 gol fatti e 3 subiti."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati: Shakhtar 1,3, Sporting CP 2,3 a partita.",
-     "Gol subiti finora: Shakhtar 3, Sporting CP 4."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Shakhtar – Sporting CP?",
-    "a": "Martedì 3 novembre alle 18:45, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-10-27T12:19:32.751Z"
- },
- "fb:575378": {
-  "fingerprint": "14xzhhc",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Martedì 3 novembre alle 18:45 il Galatasaray ospita lo Stuttgart per la 4ª giornata della fase a campionato di Champions League. In classifica il Galatasaray è al 23° posto con 3 punti, lo Stuttgart al 6° con 7."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 2 partite di Champions League il Galatasaray ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 5 gol fatti e 6 subiti.",
-     "Nelle ultime 2 partite di Champions League lo Stuttgart ha raccolto 1 vittoria e 1 pareggio (sequenza V-N), con 4 gol fatti e 1 subito."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati: Galatasaray 2,0, Stuttgart 2,3 a partita.",
-     "Gol subiti finora: Galatasaray 9, Stuttgart 2."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Galatasaray – Stuttgart?",
-    "a": "Martedì 3 novembre alle 18:45, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-10-27T12:19:34.852Z"
- },
  "fb:575379": {
   "fingerprint": "143e16a",
   "sections": [
@@ -13126,20 +13038,20 @@
   "at": "2026-11-02T04:48:21.613Z"
  },
  "fb:1001636319": {
-  "fingerprint": "erom69",
+  "fingerprint": "cga06x",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Giovedì 5 novembre alle 18:45 il Real Sociedad ospita l'Olympique Lyon per la 4ª giornata della fase a campionato di Europa League. In classifica il Real Sociedad è al 14° posto con 4 punti, mentre l'Olympique Lyon è al 12° con 6."
+     "Giovedì 5 novembre alle 18:45 il Real Sociedad ospita l'Olympique Lyon nella 4ª giornata della fase a campionato di Europa League. In classifica il Real Sociedad occupa il 14° posto con 4 punti, mentre l'Olympique Lyon è al 12° posto con 6 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Europa League il Real Sociedad ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), con 7 gol fatti e 1 subito.",
-     "Nelle ultime 2 partite di Europa League l'Olympique Lyon ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), con 3 gol fatti e 5 subiti."
+     "Nelle ultime 2 partite di Europa League il Real Sociedad ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), con 7 gol segnati e 1 subito.",
+     "Nelle ultime 2 partite di Europa League l'Olympique Lyon ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), con 3 gol segnati e 5 subiti."
     ],
     "bullets": []
    },
@@ -13147,9 +13059,16 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Real Sociedad 2,7, Olympique Lyon 1,7 a partita.",
+     "Media gol segnati a partita: Real Sociedad 2,7, Olympique Lyon 1,7.",
      "Gol subiti finora: Real Sociedad 3, Olympique Lyon 6."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per il Real Sociedad, nessuna per l'Olympique Lyon e nessun pareggio, con 4 gol complessivi (media di 2,0 a partita). L'ultimo incontro, nell'agosto 2013 in UEFA Champions League, è terminato Real Sociedad 2-0 Olympique Lyon."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -13158,7 +13077,7 @@
     "a": "Giovedì 5 novembre alle 18:45, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
+    "q": "Dove posso consultare classifica e risultati?",
     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
    },
    {
@@ -13167,7 +13086,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-02T04:48:23.703Z"
+  "at": "2026-11-03T18:21:54.557Z"
  },
  "fb:1001636211": {
   "fingerprint": "4fa53",

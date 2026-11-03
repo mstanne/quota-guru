@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-03T17:10:42.666Z",
+ "generatedAt": "2026-11-03T18:21:54.561Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558537": {
@@ -866,90 +866,6 @@
     {
      "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:575377": {
-   "fingerprint": "1enp1t",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 3 novembre alle 18:45 lo Shakhtar ospita lo Sporting CP per la 4ª giornata della fase a campionato di Champions League. In classifica lo Shakhtar è al 17° posto con 4 punti, lo Sporting CP al 12° con 6."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Champions League lo Shakhtar ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 3 gol fatti e 2 subiti.",
-      "Nelle ultime 2 partite di Champions League lo Sporting CP ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 4 gol fatti e 3 subiti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Shakhtar 1,3, Sporting CP 2,3 a partita.",
-      "Gol subiti finora: Shakhtar 3, Sporting CP 4."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Shakhtar – Sporting CP?",
-     "a": "Martedì 3 novembre alle 18:45, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:575378": {
-   "fingerprint": "14xzhhc",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 3 novembre alle 18:45 il Galatasaray ospita lo Stuttgart per la 4ª giornata della fase a campionato di Champions League. In classifica il Galatasaray è al 23° posto con 3 punti, lo Stuttgart al 6° con 7."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Champions League il Galatasaray ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 5 gol fatti e 6 subiti.",
-      "Nelle ultime 2 partite di Champions League lo Stuttgart ha raccolto 1 vittoria e 1 pareggio (sequenza V-N), con 4 gol fatti e 1 subito."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Galatasaray 2,0, Stuttgart 2,3 a partita.",
-      "Gol subiti finora: Galatasaray 9, Stuttgart 2."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Galatasaray – Stuttgart?",
-     "a": "Martedì 3 novembre alle 18:45, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -1883,20 +1799,20 @@
    ]
   },
   "fb:1001636319": {
-   "fingerprint": "erom69",
+   "fingerprint": "cga06x",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Giovedì 5 novembre alle 18:45 il Real Sociedad ospita l'Olympique Lyon per la 4ª giornata della fase a campionato di Europa League. In classifica il Real Sociedad è al 14° posto con 4 punti, mentre l'Olympique Lyon è al 12° con 6."
+      "Giovedì 5 novembre alle 18:45 il Real Sociedad ospita l'Olympique Lyon nella 4ª giornata della fase a campionato di Europa League. In classifica il Real Sociedad occupa il 14° posto con 4 punti, mentre l'Olympique Lyon è al 12° posto con 6 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Europa League il Real Sociedad ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), con 7 gol fatti e 1 subito.",
-      "Nelle ultime 2 partite di Europa League l'Olympique Lyon ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), con 3 gol fatti e 5 subiti."
+      "Nelle ultime 2 partite di Europa League il Real Sociedad ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), con 7 gol segnati e 1 subito.",
+      "Nelle ultime 2 partite di Europa League l'Olympique Lyon ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), con 3 gol segnati e 5 subiti."
      ],
      "bullets": []
     },
@@ -1904,9 +1820,16 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Real Sociedad 2,7, Olympique Lyon 1,7 a partita.",
+      "Media gol segnati a partita: Real Sociedad 2,7, Olympique Lyon 1,7.",
       "Gol subiti finora: Real Sociedad 3, Olympique Lyon 6."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per il Real Sociedad, nessuna per l'Olympique Lyon e nessun pareggio, con 4 gol complessivi (media di 2,0 a partita). L'ultimo incontro, nell'agosto 2013 in UEFA Champions League, è terminato Real Sociedad 2-0 Olympique Lyon."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -1915,7 +1838,7 @@
      "a": "Giovedì 5 novembre alle 18:45, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
+     "q": "Dove posso consultare classifica e risultati?",
      "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
     },
     {
@@ -11736,42 +11659,6 @@
     }
    ]
   },
-  "fb:560627": {
-   "fingerprint": "olun4a",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Tottenham ha battuto il Crystal Palace per 2-0 davanti al proprio pubblico. La gara, valida per la 9ª giornata di Premier League, si è disputata sabato 31 ottobre; il primo tempo si era concluso 1-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite disputate finora il Tottenham occupa il 9° posto con 12 punti, mentre il Crystal Palace è al 18° con 7. [Consulta la classifica completa](/calcio/premier-league/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Tottenham tornerà in campo sabato 7 novembre alle 13:30 in trasferta contro il Leeds United. Il Crystal Palace giocherà domenica 8 novembre alle 15:00 in casa contro il Liverpool."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Tottenham – Crystal Palace?",
-     "a": "2-0 (1-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Premier League](/calcio/premier-league)."
-    }
-   ]
-  },
   "fb:560628": {
    "fingerprint": "17y4l2h",
    "sections": [
@@ -11877,42 +11764,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Premier League](/calcio/premier-league)."
-    }
-   ]
-  },
-  "fb:564736": {
-   "fingerprint": "1tiala3",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Real Betis batte di misura il Málaga tra le mura amiche: 2-1. La partita, valida per la 11ª giornata di LaLiga, si è giocata sabato 31 ottobre, e il primo tempo era terminato 2-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Dopo le partite disputate finora, il Real Betis occupa il 4° posto con 23 punti, mentre il Málaga è al 20° con 5. Trovi la situazione aggiornata nella [classifica di LaLiga](/calcio/liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Real Betis tornerà in campo domenica 8 novembre alle 14:00, in trasferta contro l'Elche. Il Málaga giocherà sabato 7 novembre alle 14:00, in casa contro il Santander."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Real Betis – Málaga?",
-     "a": "2-1 (2-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina dedicata a [LaLiga](/calcio/liga)."
     }
    ]
   },
@@ -12129,42 +11980,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [LaLiga](/calcio/liga)."
-    }
-   ]
-  },
-  "fb:565845": {
-   "fingerprint": "flrzlp",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il match finisce 2-2: il Bayern Monaco, in vantaggio 1-0 all'intervallo, viene raggiunto nella ripresa dal Dortmund. La partita, valida per l'8ª giornata di Bundesliga, si è giocata sabato 31 ottobre."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Bayern Monaco occupa il 1° posto con 18 punti, mentre il Dortmund è al 2° con 18. [Vai alla classifica completa](/calcio/bundesliga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Bayern Monaco tornerà in campo sabato 7 novembre alle 15:30 in trasferta contro il Mainz. Il Dortmund giocherà sabato 7 novembre alle 15:30 in casa contro l'Elversberg."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Bayern Monaco – Dortmund?",
-     "a": "2-2 (1-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
     }
    ]
   },
@@ -12453,78 +12268,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Puoi consultarli nella pagina [Ligue 1](/calcio/ligue-1)."
-    }
-   ]
-  },
-  "fb:558853": {
-   "fingerprint": "ynn8b0",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Vittoria larga dello PSV, che supera il Willem II in casa per 7-0. La partita, valida per la 11ª giornata di Eredivisie, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 2-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora lo PSV è al 3° posto con 23 punti, mentre il Willem II è al 18° con 2 punti. [Consulta la classifica completa](/calcio/eredivisie/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Lo PSV tornerà in campo domenica 8 novembre alle 16:45 in trasferta contro il Cambuur. Il Willem II tornerà in campo venerdì 6 novembre alle 20:00 in casa contro lo Zwolle."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita PSV – Willem II?",
-     "a": "7-0 (2-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Puoi consultarli nella pagina [Eredivisie](/calcio/eredivisie)."
-    }
-   ]
-  },
-  "fb:558852": {
-   "fingerprint": "kowesv",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "L'Heerenveen si impone di misura in casa sul NEC per 1-0. La partita, valida per l'11ª giornata di Eredivisie, si è giocata sabato 31 ottobre e il primo tempo si era chiuso sullo 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora, l'Heerenveen è al 7° posto con 18 punti, mentre il NEC è al 13° con 11. [Classifica completa](/calcio/eredivisie/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Heerenveen tornerà in campo domenica 8 novembre alle 12:15 in casa contro il Feyenoord. Il NEC tornerà in campo domenica 8 novembre alle 20:00 in trasferta contro l'Utrecht."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Heerenveen – NEC?",
-     "a": "1-0 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
     }
    ]
   },
