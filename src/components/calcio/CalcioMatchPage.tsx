@@ -49,6 +49,8 @@ import { SofascoreLive } from "../media/SofascoreLive";
 import { sofascoreEventFor } from "../../lib/sofascore";
 import { MatchOddsSlot } from "../odds/MatchOddsSlot";
 import { DataUpdatedNote } from "./DataUpdatedNote";
+import { footballBroadcast } from "../../lib/broadcast";
+import { BroadcastRow } from "../media/BroadcastInfo";
 import { ArchivedOrNotFound } from "../../lib/archive";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
@@ -462,6 +464,15 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
                 <dt className="text-slate-400">Orario</dt>
                 <dd className="text-white tabular-nums">{formatTime(match.utcDate)}</dd>
               </div>
+              {!finished && (
+                <BroadcastRow
+                  broadcast={footballBroadcast(
+                    competition.slug,
+                    match.utcDate,
+                    competition.matches.filter((m) => m.matchday != null && m.matchday === match.matchday && m.stage === match.stage).map((m) => m.utcDate),
+                  )}
+                />
+              )}
               <div className="flex justify-between gap-4">
                 <dt className="text-slate-400">Competizione</dt>
                 <dd className="text-white text-right">{competition.name}</dd>
