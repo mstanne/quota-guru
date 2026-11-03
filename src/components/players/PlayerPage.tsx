@@ -10,6 +10,7 @@ import { leadersPath } from "../../lib/footballCore";
 import { teamPaths } from "../../lib/teams";
 import { NotFoundPage } from "../NotFoundPage";
 import { PlayerSeasonDetail } from "./PlayerSeasonDetail";
+import { PlayerHistory } from "./PlayerHistory";
 import { PageHeader } from "../layout/PageHeader";
 import { TeamBadge } from "../calcio/MatchRow";
 import { Card, Facts, SectionTitle, age, formatDate, num } from "../teams/TeamUi";
@@ -33,6 +34,17 @@ export function PlayerPage() {
     ...(p.number != null ? ([["Numero di maglia", String(p.number)]] as [string, string][]) : []),
     ...(p.height ? ([["Altezza", `${p.height} cm`]] as [string, string][]) : []),
     ...(p.weight ? ([["Peso", `${p.weight} kg`]] as [string, string][]) : []),
+    ...(p.availability
+      ? ([
+          [
+            "Prossima partita",
+            <span key="a" className={p.availability.doubtful ? "text-amber-300" : "text-red-300"}>
+              {p.availability.doubtful ? "In dubbio" : "Indisponibile"}
+              {p.availability.reason ? ` (${p.availability.reason.toLowerCase()})` : ""}
+            </span>,
+          ],
+        ] as [string, React.ReactNode][])
+      : []),
     [
       "Squadra",
       <Link key="t" to={teamHref} className="text-action-text hover:text-action-text-hover">
@@ -129,6 +141,8 @@ export function PlayerPage() {
           </div>
           <p className="text-slate-400 text-xs mt-3">Statistiche e voti: dati API-Football.</p>
         </Card>
+
+        <PlayerHistory history={p.history} />
       </div>
     </div>
   );

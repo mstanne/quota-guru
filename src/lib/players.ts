@@ -99,6 +99,18 @@ export interface PlayerCurrent {
   homeAway: { home?: PlayerSide | null; away?: PlayerSide | null } | null;
   last: PlayerMatch[];
 }
+export interface PlayerClub {
+  name: string;
+  /** team page slug, when the site has the club */
+  slug: string | null;
+}
+export interface PlayerHistory {
+  transfers: { date: string; type: string | null; from: PlayerClub | null; to: PlayerClub | null }[];
+  trophies: { competition: string; country: string | null; won: string[]; other: { season: string; place: string | null }[] }[];
+  sidelined: { type: string; start: string; end: string | null; days: number | null; ongoing: boolean }[];
+  /** which kinds have been downloaded at least once (an empty list then means "none") */
+  complete: { transfers: boolean; trophies: boolean; sidelined: boolean };
+}
 export interface FootballPlayer {
   id: number;
   url: string;
@@ -114,6 +126,9 @@ export interface FootballPlayer {
   team: { id: number; slug: string; name: string; shortName: string; crest: string | null };
   competition: { slug: string; name: string; season: string } | null;
   ranks: { scorers?: PlayerRank; assists?: PlayerRank } | null;
+  /** out or doubtful for the next match */
+  availability?: { doubtful: boolean; reason: string | null; date: string } | null;
+  history?: PlayerHistory | null;
   current?: PlayerCurrent;
   seasons: PlayerSeason[];
 }
