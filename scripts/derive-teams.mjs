@@ -269,7 +269,8 @@ for (const t of [...nbaTeams.values()].sort((a, b) => a.name.localeCompare(b.nam
       label: `${y}-${String(y + 1).slice(2)}`,
       current: y === nbaSeason,
       record: r ? { position: r.position, size: tb.size, played: r.played, won: r.won, lost: r.lost, pf: r.pf, pa: r.pa, home: r.home, away: r.away } : null,
-      players: api.nba?.[`${t.id}-${y}`] ?? null,
+      // averages only: the per-game rows are for the player pages (scripts/derive-players.mjs)
+      players: api.nba?.[`${t.id}-${y}`]?.map(({ games, first, last, oreb, dreb, pf, ...p }) => p) ?? null,
     };
   }).filter((s) => s.record || s.players);
   nbaOut[t.id] = {
@@ -279,7 +280,7 @@ for (const t of [...nbaTeams.values()].sort((a, b) => a.name.localeCompare(b.nam
     shortName: t.shortName || t.name,
     city: t.city ?? null,
     abbr: t.abbr ?? "",
-    roster: (api.nba?.[`${t.id}-roster`] ?? []).map((p) => ({ ...p, country: country(p.country) })),
+    roster: (api.nba?.[`${t.id}-roster`] ?? []).map(({ first, last, nbaStart, pro, ...p }) => ({ ...p, country: country(p.country) })),
     seasons,
   };
   index.nba.push({ id: t.id, slug, name: t.name, shortName: t.shortName || t.name });

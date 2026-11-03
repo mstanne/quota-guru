@@ -173,6 +173,7 @@ function nbaDetails(g, rows, sideOf) {
     if (!s) continue;
     const n = (k) => num(r[k]) ?? 0;
     players[s].push({
+      id: r.player?.id ?? null,
       name: [r.player?.firstname, r.player?.lastname].filter(Boolean).join(" "),
       pos: r.pos || null,
       min: r.min ? String(r.min) : null,
@@ -410,7 +411,11 @@ async function footballSeasonsRun(api, seasons, data, now, allowed) {
   }
 }
 
-/** Per-game box scores of a team-season (API-NBA /players/statistics) → each player's averages. */
+/**
+ * Per-game box scores of a team-season (API-NBA /players/statistics) → each player's totals and, for the player
+ * pages, one row per game played (order of the values: NBA_LINE).
+ */
+const NBA_LINE = ["game", "min", "pts", "reb", "ast", "stl", "blk", "tov", "fgm", "fga", "tpm", "tpa", "ftm", "fta", "pm", "oreb", "dreb", "pf"];
 function nbaAverages(rows) {
   const by = new Map();
   for (const r of rows) {
@@ -418,14 +423,20 @@ function nbaAverages(rows) {
     const min = parseFloat(String(r.min ?? "0").split(":")[0]) || 0;
     if (id == null || !min) continue;
     const p = by.get(id) ?? {
+      id,
       name: [r.player?.firstname, r.player?.lastname].filter(Boolean).join(" "),
+      first: r.player?.firstname ?? null,
+      last: r.player?.lastname ?? null,
       g: 0, min: 0, pts: 0, reb: 0, ast: 0, stl: 0, blk: 0, tov: 0, fgm: 0, fga: 0, tpm: 0, tpa: 0, ftm: 0, fta: 0,
+      oreb: 0, dreb: 0, pf: 0, games: [],
     };
     p.g++;
     p.min += min;
-    for (const [k, src] of [["pts", "points"], ["reb", "totReb"], ["ast", "assists"], ["stl", "steals"], ["blk", "blocks"], ["tov", "turnovers"], ["fgm", "fgm"], ["fga", "fga"], ["tpm", "tpm"], ["tpa", "tpa"], ["ftm", "ftm"], ["fta", "fta"]]) {
+    for (const [k, src] of [["pts", "points"], ["reb", "totReb"], ["ast", "assists"], ["stl", "steals"], ["blk", "blocks"], ["tov", "turnovers"], ["fgm", "fgm"], ["fga", "fga"], ["tpm", "tpm"], ["tpa", "tpa"], ["ftm", "ftm"], ["fta", "fta"], ["oreb", "offReb"], ["dreb", "defReb"], ["pf", "pFouls"]]) {
       p[k] += num(r[src]) ?? 0;
     }
+    const v = (k) => num(r[k]) ?? 0;
+    p.games.push([r.game?.id ?? null, min, v("points"), v("totReb"), v("assists"), v("steals"), v("blocks"), v("turnovers"), v("fgm"), v("fga"), v("tpm"), v("tpa"), v("ftm"), v("fta"), num(r.plusMinus), v("offReb"), v("defReb"), v("pFouls")]);
     by.set(id, p);
   }
   return [...by.values()].sort((a, b) => b.pts - a.pts);
@@ -448,12 +459,19 @@ async function nbaSeasonsRun(api, seasons, data, now, allowed) {
     if (!af) continue;
     const rk = `${t.id}-roster`;
     const rosterInPlan = !allowed || (season >= allowed[0] && season <= allowed[1]);
-    if (rosterInPlan && !fresh(seasons.nba[rk], 7)) {
+    // v2: with the player ids (links to the player pages)
+    if (rosterInPlan && (seasons.nba[rk]?.v !== 2 || !fresh(seasons.nba[rk], 7))) {
       const list = await api.get(`/players?team=${af.id}&season=${season}`);
       seasons.nba[rk] = {
         fetchedAt: new Date(now).toISOString(),
+        v: 2,
         players: list.map((p) => ({
+          id: p.id ?? null,
           name: [p.firstname, p.lastname].filter(Boolean).join(" "),
+          first: p.firstname ?? null,
+          last: p.lastname ?? null,
+          nbaStart: num(p.nba?.start),
+          pro: num(p.nba?.pro),
           number: p.leagues?.standard?.jersey ?? null,
           pos: p.leagues?.standard?.pos ?? null,
           born: p.birth?.date ?? null,
@@ -467,9 +485,10 @@ async function nbaSeasonsRun(api, seasons, data, now, allowed) {
     for (let y = season; y >= season - 1; y--) {
       if (allowed && (y < allowed[0] || y > allowed[1])) continue;
       const k = `${t.id}-${y}`;
-      if (fresh(seasons.nba[k], 3)) continue;
+      // v2: player ids and one row per game (player pages); older entries, including the past season, once again
+      if (seasons.nba[k]?.v === 2 && fresh(seasons.nba[k], 3)) continue;
       const rows = await api.get(`/players/statistics?team=${af.id}&season=${y}`);
-      seasons.nba[k] = { fetchedAt: new Date(now).toISOString(), final: y < season, players: nbaAverages(rows) };
+      seasons.nba[k] = { fetchedAt: new Date(now).toISOString(), final: y < season, v: 2, players: nbaAverages(rows) };
       console.log(`  NBA ${t.shortName} ${y}-${String(y + 1).slice(2)}: ${seasons.nba[k].players.length} giocatori`);
     }
   }

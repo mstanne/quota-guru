@@ -25,3 +25,9 @@ export const playerUrl = (p) => `${PLAYER_BASE}/${slugify(playerName(p)) || "gio
 
 /** Data file of a player (the data is split in 32 parts, so a page loads only its own part). */
 export const playerPart = (id) => Number(id) % 32;
+
+// NBA players: /basket/nba/giocatori/<name>-<API-NBA id> (API-NBA ids, a different numbering from API-Football)
+export const NBA_PLAYER_BASE = "/basket/nba/giocatori";
+export const nbaPlayerUrl = (p) => `${NBA_PLAYER_BASE}/${slugify(p.name) || "giocatore"}-${p.id}`;
+/** Data file of an NBA player (8 parts: a page loads only its own). */
+export const nbaPlayerPart = (id) => Number(id) % 8;
