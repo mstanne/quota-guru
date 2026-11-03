@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-03T16:18:55.585Z",
+ "generatedAt": "2026-11-03T17:10:42.666Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558537": {
@@ -11232,42 +11232,6 @@
     }
    ]
   },
-  "fb:558542": {
-   "fingerprint": "1ctpf56",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "La Roma ha vinto in trasferta contro l'Udinese con il punteggio di 2-5. La partita, valida per la 10ª giornata di Serie A, si è giocata sabato 31 ottobre; al termine del primo tempo il risultato era 0-4."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Dopo le partite giocate finora, l'Udinese è al 19° posto con 5 punti, mentre la Roma è al 3° con 24. [Classifica completa](/calcio/serie-a/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Udinese tornerà in campo venerdì 6 novembre alle 20:45, in trasferta contro il Venezia. La Roma giocherà sabato 7 novembre alle 20:45, in casa contro il Sassuolo."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Udinese – Roma?",
-     "a": "2-5 (0-4 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Serie A](/calcio/serie-a)."
-    }
-   ]
-  },
   "fb:558548": {
    "fingerprint": "1fvd5zq",
    "sections": [
@@ -11553,42 +11517,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina di [Serie A](/calcio/serie-a)."
-    }
-   ]
-  },
-  "fb:1001601585": {
-   "fingerprint": "palfo1",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il match si chiude 1-1: il Catanzaro, in vantaggio 1-0 all'intervallo, viene raggiunto nella ripresa dal Padova. La partita, valida per la 10ª giornata di Serie B, si è disputata sabato 31 ottobre."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Dopo le partite giocate finora, il Catanzaro occupa il 20° posto con 6 punti, mentre il Padova è al 9° con 14. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/serie-b/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Catanzaro tornerà in campo sabato 7 novembre alle 15:00 in trasferta contro il Cesena. Anche il Padova scenderà in campo sabato 7 novembre alle 15:00, giocando in casa contro l'Empoli."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Catanzaro – Padova?",
-     "a": "1-1 (1-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Serie B](/calcio/serie-b)."
     }
    ]
   },
