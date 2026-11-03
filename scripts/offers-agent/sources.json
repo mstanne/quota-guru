@@ -270,5 +270,31 @@
       ],
       "notes": "Stessa società di Goldbet (GBO Italy S.p.A.). Termini in sezioni a scomparsa: leggere il textContent di <main>. L’offerta scommesse scade il 1/11/2026: controllare la nuova versione."
     }
-  ]
+  ],
+  "tvRights": {
+    "note": "Controllo settimanale (il lunedì) dei diritti TV in Italia usati da src/lib/broadcast.ts per la riga \"In TV\" delle pagine partita. L'agente confronta le fonti con 'current' e segnala le differenze nel rapporto: non modifica broadcast.ts.",
+    "season": "2026/27",
+    "current": {
+      "serie-a": "DAZN tutte le partite; Sky 3 partite per giornata in co-esclusiva negli slot sabato 20:45, domenica 18:00, lunedì 20:45 (accordo fino al 2028/29)",
+      "serie-b": "DAZN e Prime Video (LaB Channel)",
+      "champions-league": "Sky e NOW 185 partite su 203, finale compresa; Prime Video la miglior partita del mercoledì",
+      "europa-league": "Sky e NOW, tutte le partite",
+      "conference-league": "Sky e NOW, tutte le partite",
+      "premier-league": "Sky e NOW (accordo fino al 2027/28)",
+      "bundesliga": "Sky e NOW (accordo fino al 2028/29)",
+      "liga": "DAZN (accordo fino al 2029)",
+      "nba": "Sky Sport Basket e NOW una selezione di partite; tutte su NBA League Pass",
+      "ligue-1": "non indicato sul sito (accordo 2026/27 non verificato)",
+      "eredivisie": "non indicato sul sito (accordo 2026/27 non verificato)",
+      "primeira-liga": "non indicato sul sito (accordo 2026/27 non verificato)",
+      "championship": "non indicato sul sito (accordo 2026/27 non verificato)",
+      "brasileirao": "non indicato sul sito (accordo 2026/27 non verificato)"
+    },
+    "sources": [
+      "https://www.calcioefinanza.it/?p=228327",
+      "https://www.calcioefinanza.it/?p=229499",
+      "https://www.calcioefinanza.it/?p=234827",
+      "https://www.sportface.it/basket/nba/sky-acquisisce-nuovi-diritti-nba-in-italia-accordo-pluriennale/2800175"
+    ]
+  }
 }
