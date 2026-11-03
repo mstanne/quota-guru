@@ -64,6 +64,8 @@ export interface Match {
   injuries?: { home: Unavailable[]; away: Unavailable[] };
 }
 export interface Unavailable {
+  /** API-Football id (player page); missing in data saved before it was kept */
+  id?: number | null;
   name: string;
   /** true = in doubt, false = out */
   doubtful: boolean;

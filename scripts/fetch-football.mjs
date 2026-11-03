@@ -401,10 +401,20 @@ async function main() {
         for (const m of chunk) {
           const rows = list.filter((r) => r.fixture?.id === m.apiId);
           const out = { home: [], away: [] };
+          const seen = new Set();
           for (const r of rows) {
             const side = sideOf(m, r.team?.id);
             if (!side || !r.player?.name) continue;
-            out[side].push({ name: r.player.name, doubtful: r.player.type === "Questionable", reason: reasonIt(r.player.reason) });
+            // the API can list the same player more than once for a match: one row per player
+            const key = r.player.id ?? `${side}|${r.player.name}`;
+            if (seen.has(key)) continue;
+            seen.add(key);
+            out[side].push({
+              id: r.player.id ?? null, // API-Football id: link to the player page
+              name: r.player.name,
+              doubtful: r.player.type === "Questionable",
+              reason: reasonIt(r.player.reason),
+            });
           }
           if (out.home.length || out.away.length) m.injuries = out;
         }
@@ -526,6 +536,7 @@ async function updateClubs(api, competitions, teamsFile, store, map, now) {
         if (players.length) {
           const before = new Map((old.squad ?? []).map((p) => [p.name, p]));
           out.squad = players.map((p) => ({
+            id: p.id ?? null, // API-Football id: link to the player page
             name: p.name ?? "",
             position: POSITION[p.position] ?? p.position ?? null,
             // birth date and nationality are not in this answer: kept when the player was already known

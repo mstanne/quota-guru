@@ -10,6 +10,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { teamGoalStats } from "../src/lib/goalStats.mjs";
 import { seasonResults } from "./lib/season-results.mjs";
+import { matchPlayer } from "./derive-player-links.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (rel, fallback) => {
@@ -210,7 +211,12 @@ for (const comp of football.competitions) {
       website: info?.website ?? null,
       venue: afInfo.venue ?? (info?.venue ? { name: info.venue, city: null, capacity: null, surface: null } : null),
       coach: info?.coach ? { ...info.coach, nationality: country(info.coach.nationality) } : null,
-      squad: (info?.squad ?? []).map((p) => ({ ...p, nationality: country(p.nationality) })),
+      // squads saved before the ids were kept: the id from the club's season statistics, when the name fits one player
+      squad: (info?.squad ?? []).map((p) => ({
+        ...p,
+        id: p.id ?? matchPlayer(p.name, api.football?.[`${id}-${current}`] ?? []),
+        nationality: country(p.nationality),
+      })),
       // season statistics in the league (API-Football /teams/statistics) and corners, cards, xG from the archive
       stats: info?.stats?.competition === comp.slug ? info.stats : null,
       matchStats: matchStats[comp.slug]?.teams?.[id] ? { ...matchStats[comp.slug].teams[id], lines: matchStats[comp.slug].lines } : null,
