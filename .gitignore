@@ -40,3 +40,4 @@ scripts/offers-agent/rapporti/
 
 # player pages data, rebuilt at every build (scripts/derive-players.mjs)
 /src/data/players/part-*.json
+/src/data/players-nba/part-*.json

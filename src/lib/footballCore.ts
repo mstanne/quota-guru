@@ -64,6 +64,8 @@ export interface Match {
   injuries?: { home: Unavailable[]; away: Unavailable[] };
 }
 export interface Unavailable {
+  /** API-Football id (player page); missing in data saved before it was kept */
+  id?: number | null;
   name: string;
   /** true = in doubt, false = out */
   doubtful: boolean;
@@ -78,11 +80,15 @@ export interface MatchGoal {
   team: number;
   scorer: string | null;
   assist: string | null;
+  /** API-Football ids (player pages), when the data has them */
+  scorerId?: number | null;
+  assistId?: number | null;
 }
 export interface MatchCard {
   minute: number;
   team: number;
   player: string | null;
+  playerId?: number | null;
   card: "YELLOW" | "YELLOW_RED" | "RED";
 }
 export interface StandingRow {

@@ -1,17 +1,21 @@
 // Builds the data of the player pages (runs at every build, no network):
 //   src/data/players/ids.json          ids of the players with a page (links from team pages and leaderboards)
 //   src/data/players/part-<n>.json     the players, split in 32 parts by id (a page loads only its part)
+//   src/data/players/slugs.json        id → URL name of every page, for links where only the id is known (match
+//                                      line-ups, events, best player: src/lib/playerLinks.ts)
 // Source: data/team-seasons-api.json (season statistics of every club of the domestic leagues, API-Football, with the
 // player's id, full name, birth date and height), src/data/teams/index.json (club pages), src/data/football.json
 // (current seasons and leaderboards), data/giocatori-partite.json (last matches and home/away figures of the current
 // season, from the archive: scripts/archive-data.mjs) and the results ledger (.cache/seo/results.json, written just
-// before by scripts/derive-results.mjs: links to the match pages). A page exists for every player with an id who
+// before by scripts/derive-results.mjs: links to the match pages), data/giocatori-extra.json (transfers, trophies,
+// injury history and who is out for the next match: scripts/fetch-player-extras.mjs) and data/id-map.json
+// (API-Football club ids → the site's clubs, for links to the team pages). A page exists for every player with an id who
 // plays this season for a club that has a page; the career table lists every season of the player found in the data,
 // for any of those clubs.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { country, positionIt } from "./lib/italian.mjs";
+import { absenceIt, country, placeIt, positionIt, transferTypeIt } from "./lib/italian.mjs";
 import { playerName, playerPart, playerUrl } from "../src/lib/playerNames.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -27,6 +31,9 @@ const api = read("data/team-seasons-api.json", { football: {} });
 const teams = read("src/data/teams/index.json", { football: [] }).football;
 const football = read("src/data/football.json", { competitions: [] });
 const playerMatches = read("data/giocatori-partite.json", { fields: [], players: {} });
+const extra = read("data/giocatori-extra.json", { players: {}, unavailable: {} });
+const idMap = read("data/id-map.json", { footballTeams: {} });
+const buildTime = Date.now();
 const ledger = read(path.join(process.env.SEO_CACHE_DIR ?? path.join(".cache", "seo"), "results.json"), { football: {} });
 
 const teamById = new Map(teams.map((t) => [t.id, t]));
@@ -53,6 +60,51 @@ function lastMatches(entry) {
       starter: line.starter === 1,
     };
   });
+}
+
+/** A club of the API-Football numbering, linked to its team page when the site has one. */
+function club(t) {
+  if (!t) return null;
+  const site = teamById.get(idMap.footballTeams?.[t.id]?.id);
+  return { name: site?.shortName ?? t.name, slug: site?.slug ?? null };
+}
+const DAY = 86400e3;
+/** Out or doubtful for the next match (only if that match is still to come, within two weeks). */
+function availability(id) {
+  const a = extra.unavailable?.[id];
+  if (!a?.date) return null;
+  const t = Date.parse(a.date);
+  if (t < buildTime - 3 * 3600e3 || t > buildTime + 14 * DAY) return null;
+  return { doubtful: /questionable|doubt/i.test(a.type ?? ""), reason: absenceIt(a.reason) ?? null, date: a.date };
+}
+/** Transfers (newest first), trophies by competition, injury and suspension history (newest first). */
+function history(id) {
+  const x = extra.players?.[id];
+  if (!x) return null;
+  const transfers = (x.transfers ?? []).slice(0, 15).map((t) => ({ date: t.date, type: transferTypeIt(t.type), from: club(t.from), to: club(t.to) }));
+  const byLeague = new Map();
+  for (const t of x.trophies ?? []) {
+    const k = `${t.league}|${t.country ?? ""}`;
+    const e = byLeague.get(k) ?? { competition: t.league, country: country(t.country) ?? null, won: [], other: [] };
+    if (/^winner$/i.test(t.place ?? "")) e.won.push(t.season);
+    else e.other.push({ season: t.season, place: placeIt(t.place) });
+    byLeague.set(k, e);
+  }
+  const trophies = [...byLeague.values()]
+    .map((e) => ({ ...e, won: [...new Set(e.won)].sort().reverse() }))
+    .sort((a, b) => b.won.length - a.won.length || b.other.length - a.other.length);
+  const sidelined = (x.sidelined ?? []).slice(0, 12).map((s) => {
+    const days = s.end ? Math.round((Date.parse(s.end) - Date.parse(s.start)) / DAY) + 1 : null;
+    // no end date: still out only if it started recently (old entries without an end are just incomplete)
+    const ongoing = !s.end && buildTime - Date.parse(s.start) < 120 * DAY;
+    return { type: absenceIt(s.type), start: s.start, end: s.end ?? null, days: days != null && days > 0 ? days : null, ongoing };
+  });
+  return {
+    transfers,
+    trophies,
+    sidelined,
+    complete: { transfers: !!x.fetched?.transfers, trophies: !!x.fetched?.trophies, sidelined: !!x.fetched?.sidelined },
+  };
 }
 
 /** Home and away figures of the current season (matches with a player row). */
@@ -129,6 +181,8 @@ for (const [id, list] of rows) {
     team: { id: now.team.id, slug: now.team.slug, name: now.team.name, shortName: now.team.shortName, crest: now.team.crest ?? null },
     competition: comp ? { slug: comp.slug, name: comp.name, season: label(now.y, comp.code) } : null,
     ranks: ranks.get(id) ?? null,
+    availability: availability(id),
+    history: history(id),
     // the current season in detail (v3 season data: detailed statistics and split by competition)
     current: {
       label: label(now.y, comp?.code),
@@ -152,4 +206,7 @@ fs.mkdirSync(OUT, { recursive: true });
 for (const f of fs.readdirSync(OUT)) if (/^part-\d+\.json$/.test(f)) fs.rmSync(path.join(OUT, f));
 parts.forEach((part, i) => fs.writeFileSync(path.join(OUT, `part-${i}.json`), JSON.stringify(part) + "\n"));
 fs.writeFileSync(path.join(OUT, "ids.json"), JSON.stringify(ids.sort((a, b) => a - b)) + "\n");
+const slugs = {};
+for (const part of parts) for (const [id, p] of Object.entries(part)) slugs[id] = p.url.slice(p.url.lastIndexOf("/") + 1, -(`-${id}`.length));
+fs.writeFileSync(path.join(OUT, "slugs.json"), JSON.stringify(slugs) + "\n");
 console.log(`Pagine giocatore: ${ids.length}`);

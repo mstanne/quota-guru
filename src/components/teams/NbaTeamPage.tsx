@@ -10,6 +10,7 @@ import { nbaTeamMeta } from "../../lib/teamMeta";
 import { Card, Facts, SectionTitle, age, num } from "./TeamUi";
 import { gameHref, isGameLive, isGameUpcoming, nbaGames } from "../../lib/basket";
 import { NextMatches } from "./NextMatches";
+import { NbaPlayerLink } from "../players/NbaPlayerLink";
 
 const pct = (m: number, a: number) => (a ? `${num((m / a) * 100)}%` : "–");
 
@@ -38,7 +39,7 @@ function Roster({ team }: { team: NbaTeam }) {
             {team.roster.map((p) => (
               <tr key={p.name} className="border-b border-slate-800 last:border-0">
                 <td className="text-right pr-3 py-2 tabular-nums text-slate-400">{p.number ?? ""}</td>
-                <th scope="row" className="text-left font-normal py-2 text-white whitespace-nowrap">{p.name}</th>
+                <th scope="row" className="text-left font-normal py-2 text-white whitespace-nowrap"><NbaPlayerLink player={p} /></th>
                 <td className="px-2 text-slate-300">{p.pos ?? ""}</td>
                 <td className="text-right px-2 tabular-nums text-slate-300">{p.born ? age(p.born) : ""}</td>
                 <td className="text-right px-2 tabular-nums text-slate-300">{p.height ? `${num(p.height, 2)} m` : ""}</td>
@@ -109,7 +110,7 @@ function Season({ s, open }: { s: NbaTeam["seasons"][number]; open: boolean }) {
               <tbody>
                 {s.players.map((p) => (
                   <tr key={p.name} className="border-b border-slate-800 last:border-0">
-                    <th scope="row" className="text-left font-normal py-2 pr-2 text-white whitespace-nowrap">{p.name}</th>
+                    <th scope="row" className="text-left font-normal py-2 pr-2 text-white whitespace-nowrap"><NbaPlayerLink player={p} /></th>
                     <td className={`${td} text-slate-300`}>{p.g}</td>
                     <td className={`${td} text-slate-300`}>{num(p.min / p.g)}</td>
                     <td className={`${td} text-white font-semibold`}>{num(p.pts / p.g)}</td>

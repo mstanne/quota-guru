@@ -21,6 +21,9 @@ export function footballDetails(fx, events, lineups, statistics, players, sideOf
       player: e.player?.name ?? null,
       // for substitutions API-Football puts the player coming in under "assist"
       other: e.assist?.name ?? null,
+      // API-Football ids: links to the player pages
+      playerId: e.player?.id ?? null,
+      otherId: e.assist?.id ?? null,
       comment: e.comments ?? null,
     }))
     .filter((e) => Number.isFinite(e.minute));
@@ -28,7 +31,7 @@ export function footballDetails(fx, events, lineups, statistics, players, sideOf
   for (const l of lineups) {
     const s = side(l.team?.id);
     if (!s) continue;
-    const p = (x) => ({ name: x.player?.name ?? "", number: x.player?.number ?? null, pos: x.player?.pos ?? null });
+    const p = (x) => ({ id: x.player?.id ?? null, name: x.player?.name ?? "", number: x.player?.number ?? null, pos: x.player?.pos ?? null });
     lineup[s] = {
       formation: l.formation ?? null,
       coach: l.coach?.name ?? null,
@@ -56,7 +59,7 @@ export function footballDetails(fx, events, lineups, statistics, players, sideOf
       const goals = st.goals?.total ?? 0;
       const assists = st.goals?.assists ?? 0;
       if (!top || rating > top.rating || (rating === top.rating && goals > top.goals)) {
-        top = { name: p.player?.name ?? "", side: s, rating, goals, assists, minutes: st.games?.minutes ?? null };
+        top = { id: p.player?.id ?? null, name: p.player?.name ?? "", side: s, rating, goals, assists, minutes: st.games?.minutes ?? null };
       }
     }
   }

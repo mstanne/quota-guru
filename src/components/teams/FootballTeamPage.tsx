@@ -13,6 +13,7 @@ import { NotFoundPage } from "../NotFoundPage";
 import { usePageMeta } from "../../lib/pageMeta";
 import { footballTeam, type FootballSeason, type FootballTeam } from "../../lib/teams";
 import { playerPath } from "../../lib/players";
+import { FootballPlayerLink } from "../players/FootballPlayerLink";
 import { footballTeamMeta } from "../../lib/teamMeta";
 import { TeamSeasonStats } from "./TeamSeasonStats";
 import { Card, Facts, SectionTitle, age, formatDate, num } from "./TeamUi";
@@ -44,7 +45,9 @@ function Squad({ team }: { team: FootballTeam }) {
               {list.map((p) => (
                 <li key={p.name} className="flex items-center gap-3 py-2">
                   <span className="w-6 text-right tabular-nums text-slate-400">{p.number ?? ""}</span>
-                  <span className="flex-1 text-white">{p.name}</span>
+                  <span className="flex-1 text-white">
+                    <FootballPlayerLink id={p.id} name={p.name} />
+                  </span>
                   <span className="text-slate-400">{[p.nationality, p.born ? `${age(p.born)} anni` : null].filter(Boolean).join(" · ")}</span>
                 </li>
               ))}

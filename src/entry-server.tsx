@@ -12,6 +12,7 @@ import { cornersCardsMeta, goalStatsMeta, leadersMeta, type Competition } from "
 import type { SeasonMatchStats } from "./lib/footballData";
 import { loadAllPlayerData, type FootballPlayer } from "./lib/players";
 import { playerMeta } from "./lib/playerMeta";
+import { loadAllNbaPlayerData, nbaPlayerMeta, type NbaPlayer } from "./lib/nbaPlayers";
 import { leagueGoalStats, type GoalResult } from "./lib/goalStats.mjs";
 import { loadAllCompetitionData } from "./lib/footballData";
 import { dayRoutes } from "./lib/dayPages";
@@ -43,7 +44,7 @@ import { setArchivedHtml } from "./lib/archive";
 export { notFoundMeta, fullTitle } from "./routes";
 export { site } from "./data/site";
 /** Page chunks and the data loaded on demand (team pages) must all be ready before rendering synchronously. */
-const preloadAll = () => Promise.all([preloadAllPages(), loadAllTeamData(), loadAllResults(), loadAllCompetitionData(), loadAllPlayerData()]);
+const preloadAll = () => Promise.all([preloadAllPages(), loadAllTeamData(), loadAllResults(), loadAllCompetitionData(), loadAllPlayerData(), loadAllNbaPlayerData()]);
 export { preloadAll as preloadAllPages };
 /** Every URL to pre-render: static pages + one page per competition, standings table and match. */
 // venues for the events' structured data: football from the team pages' data, NBA arenas from the box scores
@@ -81,12 +82,14 @@ const leadersRoutes = () =>
 // player pages (server only: every part is bundled here)
 const playerFiles = import.meta.glob<{ default: Record<string, FootballPlayer> }>("./data/players/part-*.json", { eager: true });
 const playerRoutes = () => Object.values(playerFiles).flatMap((f) => Object.values(f.default).map(playerMeta));
+const nbaPlayerFiles = import.meta.glob<{ default: Record<string, NbaPlayer> }>("./data/players-nba/part-*.json", { eager: true });
+const nbaPlayerRoutes = () => Object.values(nbaPlayerFiles).flatMap((f) => Object.values(f.default).map(nbaPlayerMeta));
 // corner and card statistics pages: competitions whose archive has match statistics
 const cornersCardsRoutes = () =>
   Object.values(competitionFiles).flatMap(({ default: f }) =>
     f.matchStats?.n && f.competition.standings.length ? [cornersCardsMeta(f.competition, f.matchStats.league)] : [],
   );
-export const routes = [...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...staticRoutes, ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes(
+export const routes = [...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...nbaPlayerRoutes(), ...staticRoutes, ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes(
   (id) => !!basketPredictionFor(id),
   (id) => highlightFor("nba", id),
   (g) => nbaVenues.get(g.home.id) ?? null,

@@ -10,6 +10,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { teamGoalStats } from "../src/lib/goalStats.mjs";
 import { seasonResults } from "./lib/season-results.mjs";
+import { matchPlayer } from "./derive-player-links.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (rel, fallback) => {
@@ -210,7 +211,12 @@ for (const comp of football.competitions) {
       website: info?.website ?? null,
       venue: afInfo.venue ?? (info?.venue ? { name: info.venue, city: null, capacity: null, surface: null } : null),
       coach: info?.coach ? { ...info.coach, nationality: country(info.coach.nationality) } : null,
-      squad: (info?.squad ?? []).map((p) => ({ ...p, nationality: country(p.nationality) })),
+      // squads saved before the ids were kept: the id from the club's season statistics, when the name fits one player
+      squad: (info?.squad ?? []).map((p) => ({
+        ...p,
+        id: p.id ?? matchPlayer(p.name, api.football?.[`${id}-${current}`] ?? []),
+        nationality: country(p.nationality),
+      })),
       // season statistics in the league (API-Football /teams/statistics) and corners, cards, xG from the archive
       stats: info?.stats?.competition === comp.slug ? info.stats : null,
       matchStats: matchStats[comp.slug]?.teams?.[id] ? { ...matchStats[comp.slug].teams[id], lines: matchStats[comp.slug].lines } : null,
@@ -269,7 +275,8 @@ for (const t of [...nbaTeams.values()].sort((a, b) => a.name.localeCompare(b.nam
       label: `${y}-${String(y + 1).slice(2)}`,
       current: y === nbaSeason,
       record: r ? { position: r.position, size: tb.size, played: r.played, won: r.won, lost: r.lost, pf: r.pf, pa: r.pa, home: r.home, away: r.away } : null,
-      players: api.nba?.[`${t.id}-${y}`] ?? null,
+      // averages only: the per-game rows are for the player pages (scripts/derive-players.mjs)
+      players: api.nba?.[`${t.id}-${y}`]?.map(({ games, first, last, oreb, dreb, pf, ...p }) => p) ?? null,
     };
   }).filter((s) => s.record || s.players);
   nbaOut[t.id] = {
@@ -279,7 +286,7 @@ for (const t of [...nbaTeams.values()].sort((a, b) => a.name.localeCompare(b.nam
     shortName: t.shortName || t.name,
     city: t.city ?? null,
     abbr: t.abbr ?? "",
-    roster: (api.nba?.[`${t.id}-roster`] ?? []).map((p) => ({ ...p, country: country(p.country) })),
+    roster: (api.nba?.[`${t.id}-roster`] ?? []).map(({ first, last, nbaStart, pro, ...p }) => ({ ...p, country: country(p.country) })),
     seasons,
   };
   index.nba.push({ id: t.id, slug, name: t.name, shortName: t.shortName || t.name });

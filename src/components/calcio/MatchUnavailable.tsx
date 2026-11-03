@@ -1,10 +1,23 @@
 // Injured and suspended players of a match still to be played (API-Football, scripts/fetch-football.mjs).
 import { UserX } from "lucide-react";
 import type { Match, Unavailable } from "../../lib/footballCore";
+import { FootballPlayerLink } from "../players/FootballPlayerLink";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 
-function TeamList({ name, list }: { name: string; list: Unavailable[] }) {
+/** One row per player: data saved before the fix may list the same player twice. */
+const unique = (list: Unavailable[]) => {
+  const seen = new Set<string>();
+  return list.filter((p) => {
+    const k = `${p.name}|${p.reason}`;
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+};
+
+function TeamList({ name, list: all }: { name: string; list: Unavailable[] }) {
+  const list = unique(all);
   return (
     <div>
       <p className="text-white mb-2">{name}</p>
@@ -12,7 +25,9 @@ function TeamList({ name, list }: { name: string; list: Unavailable[] }) {
         <ul className="space-y-1.5 text-sm">
           {list.map((p, i) => (
             <li key={i} className="flex flex-wrap items-baseline gap-x-2 text-slate-200">
-              <span>{p.name}</span>
+              <span>
+                <FootballPlayerLink id={p.id} name={p.name} />
+              </span>
               <span className="text-slate-400">{p.reason}</span>
               {p.doubtful && <span className="px-1.5 py-0.5 rounded bg-slate-800 text-warn text-xs">in dubbio</span>}
             </li>

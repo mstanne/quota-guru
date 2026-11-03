@@ -2,6 +2,7 @@
 // and team totals compared.
 import { BarChart3, Users } from "lucide-react";
 import type { BasketGame } from "../../lib/basket";
+import { NbaPlayerLink } from "../players/NbaPlayerLink";
 import { nbaTotals, type NbaDetails, type NbaPlayerLine, type Side } from "../../lib/matchDetails";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
@@ -50,7 +51,7 @@ function TeamTable({ name, lines }: { name: string; lines: NbaPlayerLine[] }) {
           {rows.map((p, i) => (
             <tr key={i} className="border-b border-slate-800">
               <th scope="row" className="text-left font-normal py-2 pr-2 text-white whitespace-nowrap">
-                {p.name}
+                <NbaPlayerLink player={p} />
                 {isStarter(p) && <span className="text-slate-400 text-xs ml-1.5">{p.pos}</span>}
               </th>
               <td className={`${td} text-slate-400`}>{p.min}</td>
@@ -153,7 +154,7 @@ export function BasketPlayerStats({ game, details }: { game: BasketGame; details
                   {starters(s).map((p, i) => (
                     <li key={i}>
                       <span className="inline-block w-8 text-slate-400">{p.pos}</span>
-                      {p.name}
+                      <NbaPlayerLink player={p} />
                     </li>
                   ))}
                 </ul>

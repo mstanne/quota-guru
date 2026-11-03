@@ -1,8 +1,10 @@
 // Match report shown at the top of a finished match page: final and partial scores, how the match was decided
 // and, when the data plan provides them, scorers and cards. Everything is computed from the downloaded data.
+import type { ReactNode } from "react";
 import { ClipboardList } from "lucide-react";
 import type { Match, MatchCard, MatchGoal, Score, Team } from "../../lib/footballCore";
 import { goalsWithScore, type FootballDetails } from "../../lib/matchDetails";
+import { FootballPlayerLink } from "../players/FootballPlayerLink";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 
@@ -23,7 +25,7 @@ export function playedScore(m: Match): Score {
 
 interface Row {
   label: string;
-  value: string;
+  value: ReactNode;
 }
 
 export function footballReportRows(m: Match): Row[] {
@@ -90,9 +92,14 @@ function TeamEvents({ team, goals, cards }: { team: Team; goals: MatchGoal[]; ca
           {goals.map((g, i) => (
             <li key={i} className="text-white">
               <span className="tabular-nums text-slate-400 mr-2">{minute(g.minute, g.injuryTime)}</span>
-              {g.scorer ?? "Gol"}
+              {g.scorer ? <FootballPlayerLink id={g.scorerId} name={g.scorer} /> : "Gol"}
               {GOAL_NOTE[g.type]}
-              {g.assist && <span className="text-slate-400"> (assist {g.assist})</span>}
+              {g.assist && (
+                <span className="text-slate-400">
+                  {" "}
+                  (assist <FootballPlayerLink id={g.assistId} name={g.assist} />)
+                </span>
+              )}
             </li>
           ))}
         </ul>
@@ -109,7 +116,11 @@ function TeamEvents({ team, goals, cards }: { team: Team; goals: MatchGoal[]; ca
                 className={`inline-block w-2.5 h-3.5 rounded-sm mr-2 align-[-2px] ${c.card === "YELLOW" ? "bg-yellow-400" : "bg-red-600"}`}
               />
               {CARD_LABEL[c.card]}
-              {c.player ? `: ${c.player}` : ""}
+              {c.player && (
+                <>
+                  : <FootballPlayerLink id={c.playerId} name={c.player} />
+                </>
+              )}
             </li>
           ))}
         </ul>
@@ -128,7 +139,9 @@ function eventsFromDetails(match: Match, d: FootballDetails): { goals: MatchGoal
     type: e.detail === "Own Goal" ? ("OWN" as const) : e.detail === "Penalty" ? ("PENALTY" as const) : ("REGULAR" as const),
     team: id(side),
     scorer: e.player,
+    scorerId: e.playerId ?? null,
     assist: e.detail === "Own Goal" ? null : e.other,
+    assistId: e.detail === "Own Goal" ? null : (e.otherId ?? null),
   }));
   const cards = d.timeline
     .filter((e) => e.type === "card")
@@ -136,6 +149,7 @@ function eventsFromDetails(match: Match, d: FootballDetails): { goals: MatchGoal
       minute: e.minute,
       team: id(e.side),
       player: e.player,
+      playerId: e.playerId ?? null,
       card: /second yellow/i.test(e.detail) ? ("YELLOW_RED" as const) : /red/i.test(e.detail) ? ("RED" as const) : ("YELLOW" as const),
     }));
   return { goals, cards };
@@ -155,7 +169,12 @@ export function FootballBoxScore({ match, details }: { match: Match; details?: F
       .join(", ");
     rows.push({
       label: "Migliore in campo",
-      value: `${t.name} (${who}) · voto ${t.rating.toFixed(1).replace(".", ",")}${extra ? ` · ${extra}` : ""}`,
+      value: (
+        <>
+          <FootballPlayerLink id={t.id} name={t.name} /> ({who}) · voto {t.rating.toFixed(1).replace(".", ",")}
+          {extra ? ` · ${extra}` : ""}
+        </>
+      ),
     });
   }
   if (details?.venue) rows.push({ label: "Stadio", value: details.city ? `${details.venue}, ${details.city}` : details.venue });

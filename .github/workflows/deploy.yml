@@ -114,6 +114,14 @@ jobs:
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
 
+      - name: Transfers, trophies and injuries of the players, a block per run
+        # scripts/fetch-player-extras.mjs: at most 250 API-Sports requests per run (players who played most first),
+        # plus who is out or doubtful for the next match. Writes data/giocatori-extra.json (player pages).
+        run: node scripts/fetch-player-extras.mjs
+        continue-on-error: true
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+
       - name: Update the permanent archive and the site's copy of the club logos
         # scripts/archive-data.mjs: data/archivio only grows; it is saved in the `dati` branch.
         run: node scripts/archive-data.mjs
