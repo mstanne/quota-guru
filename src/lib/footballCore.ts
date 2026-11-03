@@ -78,11 +78,15 @@ export interface MatchGoal {
   team: number;
   scorer: string | null;
   assist: string | null;
+  /** API-Football ids (player pages), when the data has them */
+  scorerId?: number | null;
+  assistId?: number | null;
 }
 export interface MatchCard {
   minute: number;
   team: number;
   player: string | null;
+  playerId?: number | null;
   card: "YELLOW" | "YELLOW_RED" | "RED";
 }
 export interface StandingRow {

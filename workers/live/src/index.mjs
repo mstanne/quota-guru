@@ -44,7 +44,8 @@ const day = (ms) => new Date(ms).toISOString().slice(0, 10);
 /** One fixture of /fixtures?ids= in the form served to the site. */
 export function liveEntry(f, now) {
   const sideOf = (id) => (id === f.teams?.home?.id ? "home" : id === f.teams?.away?.id ? "away" : null);
-  const { fixture, savedAt, venue, city, referee, ...details } = footballDetails(
+  // `players`: every player's row, only for the archive and the player pages (not served live)
+  const { fixture, savedAt, venue, city, referee, players, ...details } = footballDetails(
     f,
     f.events ?? [],
     f.lineups ?? [],

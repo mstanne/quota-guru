@@ -1,8 +1,10 @@
 // Match report shown at the top of a finished NBA game page: final score, halves, overtime, how the game was
 // decided and the points per quarter. Everything is computed from the downloaded data.
+import type { ReactNode } from "react";
 import { ClipboardList } from "lucide-react";
 import type { BasketGame } from "../../lib/basket";
 import { nbaTopPlayer, type NbaDetails } from "../../lib/matchDetails";
+import { NbaPlayerLink } from "../players/NbaPlayerLink";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 const periodLabel = (i: number) => (i < 4 ? `${i + 1}º quarto` : `${i - 3}º supplementare`);
@@ -12,7 +14,7 @@ const signed = (n: number) => (n > 0 ? `+${n}` : `${n}`);
 
 interface Row {
   label: string;
-  value: string;
+  value: ReactNode;
 }
 
 export function basketReportRows(g: BasketGame): Row[] {
@@ -70,7 +72,14 @@ export function BasketBoxScore({ game, details }: { game: BasketGame; details?: 
   if (top) {
     const p = top.line;
     const team = top.side === "home" ? (game.home.shortName ?? game.home.name) : (game.away.shortName ?? game.away.name);
-    rows.push({ label: "Migliore in campo", value: `${p.name} (${team}) · ${p.pts} punti, ${p.reb} rimbalzi, ${p.ast} assist` });
+    rows.push({
+      label: "Migliore in campo",
+      value: (
+        <>
+          <NbaPlayerLink player={p} /> ({team}) · {p.pts} punti, {p.reb} rimbalzi, {p.ast} assist
+        </>
+      ),
+    });
   }
   if (details?.arena) rows.push({ label: "Arena", value: details.city ? `${details.arena}, ${details.city}` : details.arena });
   const p = game.periods;
