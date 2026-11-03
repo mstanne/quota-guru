@@ -116,7 +116,7 @@
       "sourceUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-sport",
       "termsUrl": "https://www.planetwin365.it/bonus/bonus-di-benvenuto/bonus-benvenuto-sport",
       "verifiedAt": "2026-11-03",
-      "status": "bozza",
+      "status": "approvata",
       "description": "Il totale indicato dall'operatore comprende un bonus sport fino a 100 €, un bonus per le slot fino a 2.150 € e un rimborso settimanale sulle scommesse fino a 10 € per 10 settimane.",
       "issues": [],
       "components": [
@@ -203,7 +203,7 @@
       "sourceUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse",
       "termsUrl": "https://www.goldbet.it/bonus/bonus-di-benvenuto/bonus-benvenuto-scommesse",
       "verifiedAt": "2026-11-03",
-      "status": "bozza",
+      "status": "approvata",
       "description": "Il totale indicato dall'operatore comprende un bonus sport fino a 100 € e un bonus per le slot fino a 2.000 €.",
       "issues": [],
       "components": [
@@ -840,7 +840,7 @@
       "sourceUrl": "https://www.sisal.it/bonus/bonus-benvenuto/scommesse",
       "termsUrl": "https://www.sisal.it/bonus/bonus-benvenuto/scommesse",
       "verifiedAt": "2026-11-03",
-      "status": "bozza",
+      "status": "approvata",
       "description": "Real bonus del 30% del primo deposito fino a 100 €, fun bonus slot del 50% fino a 2.000 € e 5 € in freebet collegando un account Fantacalcio. Il totale di 7.100 € indicato dall'operatore include 5.000 € virtuali del gioco Salva il Bottino.",
       "issues": [],
       "components": [
@@ -924,7 +924,7 @@
       "sourceUrl": "https://www.sisal.it/bonus/bonus-benvenuto/casino",
       "termsUrl": "https://www.sisal.it/bonus/bonus-benvenuto/casino",
       "verifiedAt": "2026-11-03",
-      "status": "bozza",
+      "status": "approvata",
       "description": "Fun bonus pari al 50% del primo deposito, fino a 7.000 €, da usare entro 2 giorni su 15 slot con requisito di puntata di 45 volte.",
       "issues": [],
       "components": [
@@ -1151,7 +1151,7 @@
           "wageringDays": 15,
           "validityDays": 7,
           "minEvents": 3,
-          "minOddsPerEvent": 2.0,
+          "minOddsPerEvent": 2,
           "notes": [
             "Il bonus si sblocca giocando con saldo reale 6 volte il primo deposito (pari a 12 volte il bonus) entro 15 giorni, su biglietti con almeno 3 eventi a quota 2,00 ciascuno; esclusi sistemi, scommesse rimborsate e cash out",
             "Una volta sbloccato va giocato una volta entro 7 giorni, su scommesse con quota totale di almeno 2,00 (esclusi i sistemi)",
@@ -1223,10 +1223,8 @@
       "validFrom": "2025-11-19",
       "validUntil": "2026-12-31",
       "verifiedAt": "2026-11-03",
-      "status": "bozza",
-      "issues": [
-        "Tranche successive alla prima: i termini indicano una tranche ogni 24 ore da riscattare manualmente in \"Le Mie Offerte\" entro 24 ore; il testo descrittivo della stessa pagina (e di /promozioni) dice che arrivano automaticamente ogni 2 giorni dalla registrazione"
-      ],
+      "status": "approvata",
+      "issues": [],
       "id": "admiralbet-registrazione",
       "operatorId": "admiralbet",
       "operatorName": "AdmiralBet",
@@ -1440,11 +1438,8 @@
       "validFrom": "2026-09-17",
       "validUntil": "2026-11-30",
       "verifiedAt": "2026-11-03",
-      "status": "bozza",
-      "issues": [
-        "Data di inizio: l'elenco /bonus indica validità dalle 10:00 del 2 novembre 2026, la pagina dell'offerta dalle 10:00 del 17 settembre 2026 (usata la pagina dell'offerta)",
-        "Play bonus slot: i termini indicano che ogni play bonus va rigiocato 20 volte, ma anche un turnover di 15.000 € per ogni play bonus da 500 € (pari a 30 volte)"
-      ],
+      "status": "approvata",
+      "issues": [],
       "id": "lottomatica-scommesse",
       "operatorId": "lottomatica",
       "operatorName": "Lottomatica",
