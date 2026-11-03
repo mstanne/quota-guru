@@ -1,5 +1,6 @@
 // Match details of finished games from API-Sports (one key for API-Football and API-NBA):
-//   football: events (goals, cards, substitutions → timeline), line-ups, team statistics, player ratings (top rated);
+//   football: events (goals, cards, substitutions → timeline), line-ups, team statistics, player ratings (top rated)
+//             and every player's row (data/football-player-lines.json, for the player pages);
 //   NBA:      player box scores (team totals and top performer are computed from them).
 // Writes src/data/football-details.json and src/data/basket-details.json (read only by the match pages) and
 // public/stato-dati.json (what the last run could get, e.g. if the plan does not cover the current season).
@@ -28,6 +29,9 @@ const STORE = path.join(root, ".cache", "match-details", "api-sports.json");
 // Season statistics for the team pages (players, venue): built up over days, see seasonRun functions below.
 const SEASONS_STORE = path.join(root, ".cache", "match-details", "api-sports-seasons.json");
 const OUT_SEASONS = path.join(root, "data", "team-seasons-api.json");
+// Every player's row of the football matches still in the data (match id → home/away rows, see PLAYER_LINE in
+// scripts/lib/match-details.mjs): kept out of football-details.json, which the match pages load whole.
+const OUT_LINES = path.join(root, "data", "football-player-lines.json");
 const TEAMS = path.join(root, "data", "football-teams.json");
 const SEASONS_BACK = 2; // current season + the 2 before it (football); NBA: current + 1
 const DAY = 86400000;
@@ -247,19 +251,45 @@ async function nbaRun(api, store, data, now) {
 // Past seasons never change: downloaded once. The current season is refreshed every few days.
 const fresh = (entry, days) => entry && (entry.final || Date.now() - Date.parse(entry.fetchedAt) < days * DAY);
 
-/** Players' season totals over all competitions (API-Football /players). */
+/** Average rating weighted by appearances, 2 decimals (null without ratings). */
+function avgRating(st) {
+  const rated = st.filter((x) => num(x.games?.rating) != null && num(x.games?.appearences));
+  if (!rated.length) return null;
+  const r =
+    rated.reduce((t, x) => t + num(x.games.rating) * num(x.games.appearences), 0) /
+    rated.reduce((t, x) => t + num(x.games.appearences), 0);
+  return Math.round(r * 100) / 100;
+}
+
+/** Basic totals of a set of API-Football statistics entries (one per competition). */
+function basicTotals(st) {
+  const sum = (f) => st.reduce((t, x) => t + (num(f(x)) ?? 0), 0);
+  return {
+    apps: sum((x) => x.games?.appearences),
+    starts: sum((x) => x.games?.lineups),
+    min: sum((x) => x.games?.minutes),
+    goals: sum((x) => x.goals?.total),
+    assists: sum((x) => x.goals?.assists),
+    yellow: sum((x) => x.cards?.yellow),
+    red: sum((x) => x.cards?.red) + sum((x) => x.cards?.yellowred),
+    rating: avgRating(st),
+  };
+}
+
+/**
+ * Players' season totals over all competitions (API-Football /players).
+ * v3: also the detailed statistics (shots, passes, defending, duels, dribbles, fouls, penalties, goalkeeping) and the
+ * split by competition, used by the player pages. Pass accuracy is left out: its meaning in this endpoint is unclear.
+ */
 function compactPlayers(rows) {
   return rows
     .map((r) => {
-      const st = r.statistics ?? [];
+      const all = r.statistics ?? [];
+      const st = all.filter((x) => num(x.games?.appearences));
       const sum = (f) => st.reduce((t, x) => t + (num(f(x)) ?? 0), 0);
-      const apps = sum((x) => x.games?.appearences);
-      if (!apps) return null;
-      const rated = st.filter((x) => num(x.games?.rating) != null && num(x.games?.appearences));
-      const rating = rated.length
-        ? rated.reduce((t, x) => t + num(x.games.rating) * num(x.games.appearences), 0) /
-          rated.reduce((t, x) => t + num(x.games.appearences), 0)
-        : null;
+      const base = basicTotals(st);
+      if (!base.apps) return null;
+      const number = st.map((x) => num(x.games?.number)).find((n) => n != null) ?? null;
       return {
         id: r.player?.id ?? null,
         name: r.player?.name ?? "",
@@ -267,18 +297,43 @@ function compactPlayers(rows) {
         last: r.player?.lastname ?? null,
         birth: r.player?.birth?.date ?? null,
         height: num(String(r.player?.height ?? "").replace(/\s*cm$/, "")),
+        weight: num(String(r.player?.weight ?? "").replace(/\s*kg$/, "")),
         age: r.player?.age ?? null,
         nationality: r.player?.nationality ?? null,
-        pos: st.find((x) => x.games?.position)?.games?.position ?? null,
-        apps,
-        starts: sum((x) => x.games?.lineups),
-        min: sum((x) => x.games?.minutes),
-        goals: sum((x) => x.goals?.total),
-        assists: sum((x) => x.goals?.assists),
-        yellow: sum((x) => x.cards?.yellow),
-        red: sum((x) => x.cards?.red) + sum((x) => x.cards?.yellowred),
-        rating: rating == null ? null : Math.round(rating * 100) / 100,
-        comps: [...new Set(st.filter((x) => num(x.games?.appearences)).map((x) => x.league?.name).filter(Boolean))],
+        pos: all.find((x) => x.games?.position)?.games?.position ?? null,
+        number,
+        ...base,
+        comps: [...new Set(st.map((x) => x.league?.name).filter(Boolean))],
+        detail: {
+          subIn: sum((x) => x.substitutes?.in),
+          subOut: sum((x) => x.substitutes?.out),
+          bench: sum((x) => x.substitutes?.bench),
+          shots: sum((x) => x.shots?.total),
+          shotsOn: sum((x) => x.shots?.on),
+          passes: sum((x) => x.passes?.total),
+          keyPasses: sum((x) => x.passes?.key),
+          tackles: sum((x) => x.tackles?.total),
+          blocks: sum((x) => x.tackles?.blocks),
+          interceptions: sum((x) => x.tackles?.interceptions),
+          duels: sum((x) => x.duels?.total),
+          duelsWon: sum((x) => x.duels?.won),
+          dribbles: sum((x) => x.dribbles?.attempts),
+          dribblesOk: sum((x) => x.dribbles?.success),
+          foulsDrawn: sum((x) => x.fouls?.drawn),
+          fouls: sum((x) => x.fouls?.committed),
+          penWon: sum((x) => x.penalty?.won),
+          penCommitted: sum((x) => x.penalty?.commited),
+          penScored: sum((x) => x.penalty?.scored),
+          penMissed: sum((x) => x.penalty?.missed),
+          penSaved: sum((x) => x.penalty?.saved),
+          saves: sum((x) => x.goals?.saves),
+          conceded: sum((x) => x.goals?.conceded),
+        },
+        // by competition, only when the player played in more than one
+        byComp:
+          st.length > 1
+            ? st.map((x) => ({ league: x.league?.name ?? "", leagueId: x.league?.id ?? null, ...basicTotals([x]) }))
+            : undefined,
       };
     })
     .filter(Boolean)
@@ -331,9 +386,9 @@ async function footballSeasonsRun(api, seasons, data, now, allowed) {
       seasons.footballInfo[id] = { founded: af.founded, venue: af.venue };
       for (const y of wanted) {
         const k = `${id}-${y}`;
-        // v2: players with their API-Football id, full name, birth date and height (player pages); older entries,
-        // including past seasons, are downloaded again once, a few teams per run
-        if (seasons.football[k]?.v === 2 && fresh(seasons.football[k], 4)) continue;
+        // v3: players with their API-Football id, personal data, detailed statistics and split by competition
+        // (player pages); older entries, including past seasons, are downloaded again once, a few teams per run
+        if (seasons.football[k]?.v === 3 && fresh(seasons.football[k], 4)) continue;
         if (seasonRequests >= SEASON_REQUESTS_PER_RUN) return;
         const players = [];
         for (let page = 1, total = 1; page <= total && page <= 6; page++) {
@@ -346,7 +401,7 @@ async function footballSeasonsRun(api, seasons, data, now, allowed) {
           fetchedAt: new Date(now).toISOString(),
           final: y < season, // past seasons: never downloaded again
           afTeam: af.id,
-          v: 2,
+          v: 3,
           players: compactPlayers(players),
         };
         console.log(`  rosa ${fd.shortName ?? fd.name} ${y}/${String(y + 1).slice(2)}: ${seasons.football[k].players.length} giocatori`);
@@ -525,7 +580,12 @@ if (!key) {
   fs.mkdirSync(path.dirname(STORE), { recursive: true });
   fs.writeFileSync(STORE, JSON.stringify(store));
   const strip = (o) => Object.fromEntries(Object.entries(o).map(([id, { savedAt, ...d }]) => [id, d]));
-  fs.writeFileSync(OUT_FOOTBALL, JSON.stringify(strip(store.football)) + "\n");
+  // football: the player rows go to their own file (NBA box scores stay: the NBA match pages show them)
+  const noLines = (o) => Object.fromEntries(Object.entries(o).map(([id, { players, ...d }]) => [id, d]));
+  fs.writeFileSync(OUT_FOOTBALL, JSON.stringify(noLines(strip(store.football))) + "\n");
+  const lines = Object.fromEntries(Object.entries(store.football).filter(([, d]) => d.players).map(([id, d]) => [id, d.players]));
+  fs.mkdirSync(path.dirname(OUT_LINES), { recursive: true });
+  fs.writeFileSync(OUT_LINES, JSON.stringify(lines) + "\n");
   fs.writeFileSync(OUT_BASKET, JSON.stringify(strip(store.nba)) + "\n");
   status.football.matches = Object.keys(store.football).length;
   status.nba.games = Object.keys(store.nba).length;

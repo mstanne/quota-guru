@@ -11,7 +11,9 @@ export function playerMeta(p: FootballPlayer) {
   return {
     path: p.url,
     title: `${p.name}: statistiche ${cur?.label ?? ""} e carriera`.replace(/\s+/g, " "),
-    description: `${p.name}, ${role}del ${p.team.shortName}${p.nationality ? ` (${p.nationality})` : ""}: ${stats}, minuti, cartellini, voto medio e statistiche stagione per stagione.`,
+    description: `${p.name}, ${role}del ${p.team.shortName}${p.nationality ? ` (${p.nationality})` : ""}: ${stats}, ${
+      p.current?.detail ? "tiri, passaggi chiave, duelli, " : ""
+    }voto medio, ${p.current?.last.length ? "ultime partite " : ""}e statistiche stagione per stagione.`,
     jsonLd: [
       {
         "@type": "Person",

@@ -10,6 +10,9 @@
 //   data/archivio/squadre/anagrafica.json            clubs: identity, logo, venue
 //   data/archivio/squadre/<sport>-<season>.json      squad and coach of every club, season by season
 //   data/archivio/giocatori/<sport>-<season>.json    players' season statistics by team
+// Matches keep every player's row (minutes, rating, goals…; see PLAYER_LINE in scripts/lib/match-details.mjs), from
+// which data/giocatori-partite.json is built: last matches and home/away figures of the current season, by player
+// (player pages; kept in the data snapshot so the quick runs, which do not have the archive, publish the same).
 // Files are split by month (matches) or season, so a refresh rewrites only the few files that changed and the
 // history of the `dati` branch stays small.
 //   data/archivio/loghi/calcio/<id>.png                club logos, served by the site from /loghi/calcio/
@@ -23,6 +26,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { PLAYER_LINE } from "./lib/match-details.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const ARCHIVE = path.join(root, "data", "archivio");
@@ -67,6 +71,7 @@ export function archivedMatch(m, details, highlight) {
     ...(details
       ? { venue: details.venue ?? null, timeline: details.timeline, lineups: details.lineups, stats: details.stats, top: details.top }
       : {}),
+    ...(details?.players ? { players: details.players } : {}),
     ...(highlight ? { highlight: { video: highlight.video, title: highlight.title, channel: highlight.channel ?? null } } : {}),
   };
 }
@@ -92,7 +97,9 @@ export function upsertFile(file, meta, matches) {
   let n = 0;
   for (const m of matches) {
     const old = cur.matches[m.id];
-    const merged = old ? { ...old, ...m, ...(m.timeline ? {} : pick(old, ["venue", "timeline", "lineups", "stats", "top"])) } : m;
+    const merged = old
+      ? { ...old, ...m, ...(m.timeline ? {} : pick(old, ["venue", "timeline", "lineups", "stats", "top"])), ...(m.players ? {} : pick(old, ["players"])) }
+      : m;
     if (!old || JSON.stringify(old) !== JSON.stringify(merged)) n++;
     cur.matches[m.id] = merged;
   }
@@ -192,11 +199,59 @@ export function seasonMatchStats(matches) {
   };
 }
 
+// ------------------------------------------------------------------------------------------- player matches
+const LAST_MATCHES = 8;
+
+/**
+ * Current season, by player id: the last matches (newest first, all competitions) and the home/away totals.
+ * last[i] = { m: match id, d: kick-off, c: competition slug, h: played at home, o: opponent {id, name},
+ *             s: [goals for, goals against], l: row in PLAYER_LINE order }
+ * split.home / split.away = { n: matches, min, goals, assists, rs: rating sum, rn: rated matches }
+ */
+export function playerSeasonMatches(list) {
+  const out = {};
+  const sorted = [...list].sort((a, b) => Date.parse(b.m.utcDate) - Date.parse(a.m.utcDate));
+  const iMin = PLAYER_LINE.indexOf("min");
+  const iRating = PLAYER_LINE.indexOf("rating");
+  const iGoals = PLAYER_LINE.indexOf("goals");
+  const iAssists = PLAYER_LINE.indexOf("assists");
+  for (const { m, comp } of sorted) {
+    const ft = m.score?.fullTime ?? {};
+    for (const side of ["home", "away"]) {
+      const home = side === "home";
+      const opp = home ? m.away : m.home;
+      for (const row of m.players?.[side] ?? []) {
+        const id = row[0];
+        const p = (out[id] ??= { last: [], split: {} });
+        if (p.last.length < LAST_MATCHES)
+          p.last.push({
+            m: m.id,
+            d: m.utcDate,
+            c: comp,
+            h: home,
+            o: { id: opp.id, name: opp.shortName ?? opp.name },
+            s: home ? [ft.home ?? null, ft.away ?? null] : [ft.away ?? null, ft.home ?? null],
+            l: row,
+          });
+        const t = (p.split[side] ??= { n: 0, min: 0, goals: 0, assists: 0, rs: 0, rn: 0 });
+        t.n++;
+        t.min += row[iMin] ?? 0;
+        t.goals += row[iGoals] ?? 0;
+        t.assists += row[iAssists] ?? 0;
+        if (row[iRating] != null) (t.rs += row[iRating]), t.rn++;
+      }
+    }
+  }
+  for (const p of Object.values(out)) for (const t of Object.values(p.split)) t.rs = Math.round(t.rs * 100) / 100;
+  return out;
+}
+
 // ------------------------------------------------------------------------------------------- main
 async function main() {
   const football = readJson(path.join(root, "src", "data", "football.json"), null);
   const basket = readJson(path.join(root, "src", "data", "basket.json"), null);
   const fDetails = readJson(path.join(root, "src", "data", "football-details.json"), {});
+  const fLines = readJson(path.join(root, "data", "football-player-lines.json"), {});
   const bDetails = readJson(path.join(root, "src", "data", "basket-details.json"), {});
   const highlights = readJson(path.join(root, "src", "data", "highlights.json"), {});
   const fTeams = readJson(path.join(root, "data", "football-teams.json"), { teams: {}, competitions: {} });
@@ -211,7 +266,8 @@ async function main() {
       const y = seasonOf(m.utcDate, c.code);
       const list = bySeason.get(y) ?? [];
       // full details, or the live data of the quick updates until they arrive
-      list.push(archivedMatch(m, fDetails[m.id] ?? (m.live?.timeline?.length ? m.live : undefined), highlights[c.slug]?.[m.id]));
+      const details = fDetails[m.id] ? { ...fDetails[m.id], players: fLines[m.id] } : m.live?.timeline?.length ? m.live : undefined;
+      list.push(archivedMatch(m, details, highlights[c.slug]?.[m.id]));
       bySeason.set(y, list);
     }
     for (const [y, list] of bySeason)
@@ -333,13 +389,17 @@ async function main() {
   // runs, which do not have the archive, publish the same figures) and xG in the model history
   const matchStats = {};
   const xg = new Map();
+  const playerMatches = [];
   for (const c of football?.competitions ?? []) {
     const y = Number(c.season?.startDate?.slice(0, 4));
     const dir = path.join(ARCHIVE, "calcio", c.slug, String(y));
     if (!y || !fs.existsSync(dir)) continue;
     const ms = [];
     for (const f of fs.readdirSync(dir).filter((f) => f.endsWith(".json")))
-      for (const m of Object.values(readJson(path.join(dir, f), { matches: {} }).matches)) if (m.stats?.home && m.stats?.away) ms.push(m);
+      for (const m of Object.values(readJson(path.join(dir, f), { matches: {} }).matches)) {
+        if (m.stats?.home && m.stats?.away) ms.push(m);
+        if (m.players) playerMatches.push({ m, comp: c.slug });
+      }
     const s = seasonMatchStats(ms);
     if (s.n) matchStats[c.slug] = { season: y, ...s };
     for (const m of ms) {
@@ -349,6 +409,9 @@ async function main() {
     }
   }
   writeJson(path.join(root, "data", "statistiche-partite.json"), { updatedAt: new Date().toISOString(), competitions: matchStats });
+  const pm = playerSeasonMatches(playerMatches);
+  writeJson(path.join(root, "data", "giocatori-partite.json"), { updatedAt: new Date().toISOString(), fields: PLAYER_LINE, players: pm });
+  console.log(`Partite dei giocatori (stagione in corso): ${Object.keys(pm).length} giocatori da ${playerMatches.length} partite.`);
   if (xg.size) {
     const hf = path.join(root, "data", "football-history.json");
     const h = readJson(hf, null);
