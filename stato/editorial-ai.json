@@ -266,19 +266,19 @@
   "at": "2026-11-01T16:59:25.374Z"
  },
  "fb:558539": {
-  "fingerprint": "6i91qt",
+  "fingerprint": "1xuth7c",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Bologna ha battuto il Monza di misura in casa: 2-1. La partita, valida per la 10ª giornata di Serie A, si è giocata sabato 31 ottobre; il primo tempo si era chiuso 1-1."
+     "Il Bologna ha superato il Monza per 2-1 tra le mura amiche. La gara, valida per la 10ª giornata di Serie A, si è disputata sabato 31 ottobre; al termine del primo tempo il punteggio era di 1-1."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Bologna è al 9° posto con 14 punti, mentre il Monza è al 17° con 7. [Consulta la classifica completa](/calcio/serie-a/classifica)."
+     "Con le partite disputate finora il Bologna occupa il 9° posto con 14 punti, mentre il Monza è al 18° con 7. Per consultare la graduatoria aggiornata, vai alla [classifica completa](/calcio/serie-a/classifica)."
     ],
     "bullets": []
    },
@@ -301,7 +301,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-02T21:11:10.642Z"
+  "at": "2026-11-03T09:19:45.646Z"
  },
  "fb:558543": {
   "fingerprint": "btnf5b",
@@ -6425,227 +6425,174 @@
   "at": "2026-11-02T11:20:24.310Z"
  },
  "nba:21718013": {
-  "fingerprint": "5x00zo",
+  "fingerprint": "zgk2ma",
   "sections": [
    {
-    "id": "presentazione",
+    "id": "resoconto",
     "paragraphs": [
-     "Martedì 3 novembre alle 01:30, ora italiana, gli Hornets ospitano i Pistons in una partita della regular season NBA 2026-27."
+     "I Pistons hanno battuto gli Hornets 124-91. La partita si è giocata martedì 3 novembre.",
+     "All'intervallo i Pistons conducevano 65-54.",
+     "Il parziale più netto è arrivato nel 3º quarto, vinto dai Pistons 33-21."
     ],
     "bullets": []
    },
    {
-    "id": "momento",
-    "paragraphs": [
-     "Gli Hornets hanno un record di 3-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 98,3 punti segnati e 106,4 subiti. In casa il bilancio è 2-2.",
-     "I Pistons hanno un record di 5-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 109,8 punti segnati e 101,8 subiti. In trasferta il bilancio è 3-1."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
+    "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 4 gare.",
-     "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 4 gare."
+     "Punti totali: 215.",
+     "Parziali (Hornets–Pistons): 24-27, 30-38, 21-33, 16-26."
     ]
    }
   ],
   "faq": [
    {
-    "q": "A che ora si gioca Charlotte Hornets – Detroit Pistons in Italia?",
-    "a": "Martedì 3 novembre alle 01:30."
+    "q": "Com'è finita Charlotte Hornets – Detroit Pistons?",
+    "a": "91-124 per i Pistons."
    },
    {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi tutto su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T06:31:21.446Z"
+  "at": "2026-11-03T09:20:35.257Z"
  },
  "nba:21718014": {
-  "fingerprint": "13dbzyi",
+  "fingerprint": "150hiif",
   "sections": [
    {
-    "id": "presentazione",
+    "id": "resoconto",
     "paragraphs": [
-     "Gli Hawks fanno visita ai Pacers martedì 3 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
+     "Gli Hawks si sono imposti sui Pacers per 108-104. Il match si è disputato martedì 3 novembre.",
+     "All'intervallo gli Hawks conducevano 68-56.",
+     "Il parziale più netto è arrivato nel 1º quarto, chiuso dagli Hawks 37-29."
     ],
     "bullets": []
    },
    {
-    "id": "momento",
-    "paragraphs": [
-     "I Pacers hanno un record di 2-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 112,9 punti segnati e 116,7 subiti. In casa il bilancio è 0-3.",
-     "Gli Hawks hanno un record di 3-4 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,3 punti segnati e 115,4 subiti. In trasferta il bilancio è 2-2."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
+    "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "I Pacers giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 5 gare."
+     "Punti totali: 212.",
+     "Parziali (Pacers–Hawks): 29-37, 27-31, 23-19, 25-21."
     ]
    }
   ],
   "faq": [
    {
-    "q": "A che ora si gioca Indiana Pacers – Atlanta Hawks in Italia?",
-    "a": "Martedì 3 novembre alle 01:30."
+    "q": "Com'è finita Indiana Pacers – Atlanta Hawks?",
+    "a": "Il risultato finale è 104-108 in favore degli Hawks."
    },
    {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Maggiori dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-02T04:50:03.752Z"
+  "at": "2026-11-03T09:20:42.717Z"
  },
  "nba:21718015": {
-  "fingerprint": "1qa9w5e",
+  "fingerprint": "1xkq32h",
   "sections": [
    {
-    "id": "presentazione",
+    "id": "resoconto",
     "paragraphs": [
-     "Martedì 3 novembre alle 01:30, ora italiana, i Knicks ospitano i Nets in una partita della regular season NBA 2026-27."
+     "I New York Knicks hanno superato i Brooklyn Nets per 103-90. La partita si è giocata martedì 3 novembre.",
+     "All'intervallo i Knicks conducevano 51-44.",
+     "Il parziale più ampio è arrivato nel 4º quarto, vinto dai Knicks per 28-11."
     ],
     "bullets": []
    },
    {
-    "id": "momento",
-    "paragraphs": [
-     "I Knicks hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 107,0 punti segnati e 107,7 subiti. In casa il bilancio è 1-2.",
-     "I Nets hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,2 punti segnati e 116,0 subiti. In trasferta il bilancio è 1-2."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
+    "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 3 gare.",
-     "I Nets giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 4 gare."
+     "Punti totali: 193.",
+     "Parziali (Knicks–Nets): 27-21, 24-23, 24-35, 28-11."
     ]
    }
   ],
   "faq": [
    {
-    "q": "A che ora si gioca New York Knicks – Brooklyn Nets in Italia?",
-    "a": "Martedì 3 novembre alle 01:30."
+    "q": "Com'è finita New York Knicks – Brooklyn Nets?",
+    "a": "103-90 per i Knicks."
    },
    {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-02T04:50:05.665Z"
+  "at": "2026-11-03T09:20:46.108Z"
  },
  "nba:21718016": {
-  "fingerprint": "1hy332c",
+  "fingerprint": "15a38po",
   "sections": [
    {
-    "id": "presentazione",
+    "id": "resoconto",
     "paragraphs": [
-     "I Wizards fanno visita ai Magic martedì 3 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
+     "I Wizards hanno battuto i Magic 103-94. La partita si è giocata martedì 3 novembre.",
+     "All'intervallo i Wizards conducevano 60-59.",
+     "Il parziale più netto è arrivato nel 3º quarto, vinto dai Wizards 19-9."
     ],
     "bullets": []
    },
    {
-    "id": "momento",
-    "paragraphs": [
-     "I Magic hanno un record di 2-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 107,7 punti segnati e 116,7 subiti. In casa il bilancio è 0-3.",
-     "I Wizards hanno un record di 3-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 110,5 punti segnati e 109,7 subiti. In trasferta il bilancio è 1-2."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
+    "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "I Magic giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 5 gare."
+     "Punti totali: 197.",
+     "Parziali (Magic–Wizards): 33-28, 26-32, 9-19, 26-24."
     ]
    }
   ],
   "faq": [
    {
-    "q": "A che ora si gioca Orlando Magic – Washington Wizards in Italia?",
-    "a": "Martedì 3 novembre alle 01:30."
+    "q": "Com'è finita Orlando Magic – Washington Wizards?",
+    "a": "94-103 per i Wizards."
    },
    {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Puoi consultare la sezione dedicata ai [pronostici NBA](/pronostici/nba)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-02T04:50:08.260Z"
+  "at": "2026-11-03T09:20:47.669Z"
  },
  "nba:21718017": {
-  "fingerprint": "6txn1h",
+  "fingerprint": "qhhm4p",
   "sections": [
    {
-    "id": "presentazione",
+    "id": "resoconto",
     "paragraphs": [
-     "Martedì 3 novembre alle 01:30, ora italiana, i 76ers ospitano i Bulls in una partita della regular season NBA 2026-27."
+     "I 76ers hanno superato i Bulls per 126-107. La partita si è giocata martedì 3 novembre.",
+     "All'intervallo i 76ers erano in vantaggio 64-59.",
+     "Il parziale più netto è arrivato nel 4º quarto, vinto dai 76ers 36-28."
     ],
     "bullets": []
    },
    {
-    "id": "momento",
-    "paragraphs": [
-     "I 76ers hanno un record di 6-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 108,7 punti segnati e 104,9 subiti. In casa il bilancio è 3-1.",
-     "I Bulls hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 113,5 punti segnati e 129,3 subiti. In trasferta il bilancio è 1-3."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
+    "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 4 gare.",
-     "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 3 gare."
+     "Punti totali: 233.",
+     "Parziali (76ers–Bulls): 30-23, 34-36, 26-20, 36-28."
     ]
    }
   ],
   "faq": [
    {
-    "q": "A che ora si gioca Philadelphia 76ers – Chicago Bulls in Italia?",
-    "a": "Martedì 3 novembre alle 01:30."
+    "q": "Com'è finita Philadelphia 76ers – Chicago Bulls?",
+    "a": "126-107 per i 76ers."
    },
    {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T06:31:25.165Z"
+  "at": "2026-11-03T09:20:50.394Z"
  },
  "nba:21718027": {
   "fingerprint": "1x6jvhv",
@@ -11069,26 +11016,26 @@
   "at": "2026-11-01T20:15:32.962Z"
  },
  "fb:564735": {
-  "fingerprint": "1ya2312",
+  "fingerprint": "1l7yuoy",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Rayo Vallecano ha superato il Celta per 3-0 tra le mura di casa. La partita, valida per la 11ª giornata di LaLiga, si è giocata sabato 31 ottobre e il primo tempo si era chiuso sull'1-0."
+     "Il Rayo Vallecano ha vinto in casa contro il Celta con il punteggio di 3-0. La partita, valida per l'11ª giornata di LaLiga, si è disputata sabato 31 ottobre e il primo tempo si era chiuso sul 1-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Rayo Vallecano occupa l'11° posto con 12 punti, mentre il Celta è al 9° con 12. [Vai alla classifica completa](/calcio/liga/classifica)."
+     "Con le partite giocate finora il Rayo Vallecano occupa il 12° posto con 12 punti, mentre il Celta è al 10° con 12. [Consulta la classifica completa](/calcio/liga/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Rayo Vallecano tornerà in campo domenica 8 novembre alle 16:15, in trasferta contro il Real Sociedad. Il Celta giocherà domenica 8 novembre alle 18:30, in casa contro il Levante."
+     "Il Rayo Vallecano tornerà in campo domenica 8 novembre alle 16:15, in trasferta contro il Real Sociedad. Il Celta tornerà in campo domenica 8 novembre alle 18:30, in casa contro il Levante."
     ],
     "bullets": []
    }
@@ -11104,7 +11051,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T17:26:11.971Z"
+  "at": "2026-11-03T09:20:04.747Z"
  },
  "fb:564736": {
   "fingerprint": "1tiala3",
@@ -11221,26 +11168,26 @@
   "at": "2026-11-01T16:59:31.604Z"
  },
  "fb:564733": {
-  "fingerprint": "1w10db8",
+  "fingerprint": "1u897lh",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Rimonta del Getafe: sotto all'intervallo, si impone in casa per 3-1 sul Sevilla FC. La partita, valida per la 11ª giornata di LaLiga, si è giocata domenica 1 novembre; il primo tempo si era chiuso 0-1."
+     "Il Getafe ha ribaltato la partita e ha vinto in casa per 3-1 contro il Sevilla FC. Il primo tempo si era chiuso 0-1. La gara, valida per la 11ª giornata di LaLiga, si è giocata domenica 1 novembre."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Getafe occupa il 12° posto con 12 punti, mentre il Sevilla FC è al 6° con 17. [Consulta la classifica completa](/calcio/liga/classifica)."
+     "Con le partite giocate finora il Getafe è al 13° posto con 12 punti, mentre il Sevilla FC è al 6° con 17. [Consulta la classifica completa](/calcio/liga/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Getafe tornerà in campo domenica 8 novembre alle 18:30 in trasferta contro il Villarreal. Il Sevilla FC scenderà in campo venerdì 6 novembre alle 21:00 in casa contro l'Alavés."
+     "Il Getafe tornerà in campo domenica 8 novembre alle 18:30 in trasferta contro il Villarreal. Il Sevilla FC giocherà venerdì 6 novembre alle 21:00 in casa contro l'Alavés."
     ],
     "bullets": []
    }
@@ -11256,7 +11203,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T17:26:18.191Z"
+  "at": "2026-11-03T09:20:08.427Z"
  },
  "nba:21718095": {
   "fingerprint": "1lkg8uo",
@@ -12032,26 +11979,26 @@
   "at": "2026-11-01T16:59:41.998Z"
  },
  "fb:560624": {
-  "fingerprint": "knje2t",
+  "fingerprint": "i2l9cz",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Bournemouth ha battuto il Leeds United per 2-0 in casa. La partita, valida per la 9ª giornata di Premier League, si è giocata sabato 31 ottobre; al termine del primo tempo il punteggio era 1-0."
+     "Il Bournemouth ha battuto il Leeds United per 2-0 davanti al proprio pubblico. La partita, valida per la 9ª giornata di Premier League, si è giocata sabato 31 ottobre; al termine del primo tempo il punteggio era 1-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Bournemouth è al 7° posto con 12 punti, mentre il Leeds United è all'11° con 11. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/premier-league/classifica)."
+     "Con le partite disputate finora, il Bournemouth occupa l'8° posto con 12 punti, mentre il Leeds United è al 12° con 11. Per consultare la graduatoria aggiornata, vai alla [classifica completa](/calcio/premier-league/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Bournemouth tornerà in campo domenica 8 novembre alle 15:00, in trasferta contro l'Ipswich Town. Il Leeds United tornerà in campo sabato 7 novembre alle 13:30, in casa contro il Tottenham."
+     "Il Bournemouth tornerà in campo domenica 8 novembre alle 15:00, in trasferta contro l'Ipswich Town. Il Leeds United giocherà sabato 7 novembre alle 13:30, in casa contro il Tottenham."
     ],
     "bullets": []
    }
@@ -12059,15 +12006,15 @@
   "faq": [
    {
     "q": "Com'è finita Bournemouth – Leeds United?",
-    "a": "2-0 (1-0 all'intervallo)."
+    "a": "Il risultato finale è 2-0, con 1-0 all'intervallo."
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Puoi consultarli nella pagina [Premier League](/calcio/premier-league)."
+    "a": "Nella pagina [Premier League](/calcio/premier-league)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:59:43.728Z"
+  "at": "2026-11-03T09:19:55.418Z"
  },
  "fb:560625": {
   "fingerprint": "m38ou5",
@@ -12108,7 +12055,7 @@
   "at": "2026-11-01T16:59:45.284Z"
  },
  "fb:560629": {
-  "fingerprint": "mfmpty",
+  "fingerprint": "7kakpz",
   "sections": [
    {
     "id": "resoconto",
@@ -12120,7 +12067,7 @@
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora l'Hull City è al 10° posto con 11 punti, mentre l'Ipswich Town è al 13° con 11. [Consulta la classifica completa](/calcio/premier-league/classifica)."
+     "Con le partite giocate finora l'Hull City è all'11° posto con 11 punti, mentre l'Ipswich Town è al 14° con 11. [Consulta la classifica completa](/calcio/premier-league/classifica)."
     ],
     "bullets": []
    },
@@ -12143,7 +12090,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T16:59:46.877Z"
+  "at": "2026-11-03T09:19:57.244Z"
  },
  "fb:560630": {
   "fingerprint": "15c21gi",
@@ -12184,26 +12131,26 @@
   "at": "2026-11-01T17:26:03.041Z"
  },
  "fb:560627": {
-  "fingerprint": "8zmbu",
+  "fingerprint": "olun4a",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Tottenham ha battuto il Crystal Palace in casa per 2-0. La partita, valida per la 9ª giornata di Premier League, si è giocata sabato 31 ottobre; al termine del primo tempo il punteggio era 1-0."
+     "Il Tottenham ha battuto il Crystal Palace per 2-0 davanti al proprio pubblico. La gara, valida per la 9ª giornata di Premier League, si è disputata sabato 31 ottobre; il primo tempo si era concluso 1-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Tottenham è all'8° posto con 12 punti, mentre il Crystal Palace è al 18° con 7. Puoi consultare la [classifica completa](/calcio/premier-league/classifica)."
+     "Con le partite disputate finora il Tottenham occupa il 9° posto con 12 punti, mentre il Crystal Palace è al 18° con 7. [Consulta la classifica completa](/calcio/premier-league/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Tottenham tornerà in campo sabato 7 novembre alle 13:30, in trasferta contro il Leeds United. Il Crystal Palace tornerà in campo domenica 8 novembre alle 15:00, in casa contro il Liverpool."
+     "Il Tottenham tornerà in campo sabato 7 novembre alle 13:30 in trasferta contro il Leeds United. Il Crystal Palace giocherà domenica 8 novembre alle 15:00 in casa contro il Liverpool."
     ],
     "bullets": []
    }
@@ -12219,29 +12166,29 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T17:26:04.858Z"
+  "at": "2026-11-03T09:19:59.328Z"
  },
  "fb:560628": {
-  "fingerprint": "1u8e64t",
+  "fingerprint": "17y4l2h",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il match si chiude 1-1: l'Aston Villa, in vantaggio all'intervallo 1-0, viene raggiunto nella ripresa dal Fulham. La partita, valida per la 9ª giornata di Premier League, si è giocata sabato 31 ottobre."
+     "Il match si chiude 1-1: l'Aston Villa, in vantaggio 1-0 all'intervallo, viene raggiunto dal Fulham nella ripresa. La gara, valida per la 9ª giornata di Premier League, si è disputata sabato 31 ottobre."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora l'Aston Villa è al 9° posto con 12 punti e il Fulham al 15° con 9. [Consulta la classifica completa](/calcio/premier-league/classifica)."
+     "Considerando le partite disputate finora, l'Aston Villa occupa il 10° posto con 12 punti, mentre il Fulham è al 15° con 9. [Consulta la classifica completa](/calcio/premier-league/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "L'Aston Villa tornerà in campo domenica 8 novembre alle 17:30 in trasferta contro il Manchester United. Il Fulham giocherà sabato 7 novembre alle 16:00 in casa contro il Newcastle."
+     "L'Aston Villa tornerà in campo domenica 8 novembre alle 17:30, in trasferta contro il Manchester United. Il Fulham giocherà sabato 7 novembre alle 16:00, in casa contro il Newcastle."
     ],
     "bullets": []
    }
@@ -12257,7 +12204,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T17:26:06.559Z"
+  "at": "2026-11-03T09:20:01.130Z"
  },
  "fb:565841": {
   "fingerprint": "12p4tke",
@@ -12336,26 +12283,26 @@
   "at": "2026-11-01T17:26:38.623Z"
  },
  "fb:559647": {
-  "fingerprint": "1w5w5jv",
+  "fingerprint": "15gvv8l",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Vittoria larga dello Strasbourg, che supera l'Auxerre in casa per 5-1. La partita, valida per la 9ª giornata di Ligue 1, si è giocata domenica 1 novembre; il primo tempo si era chiuso 1-0."
+     "Lo Strasbourg ha vinto in casa per 5-1 contro l'Auxerre. La partita, valida per la 9ª giornata di Ligue 1, si è giocata domenica 1 novembre; il primo tempo si era chiuso 1-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora lo Strasbourg è al 12° posto con 10 punti e l'Auxerre al 13° con 10. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
+     "Con le partite giocate finora lo Strasbourg è al 13° posto con 10 punti, mentre l'Auxerre è al 14° con 10. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Lo Strasbourg tornerà in campo venerdì 6 novembre alle 20:45 in trasferta contro il Toulouse. L'Auxerre tornerà in campo sabato 7 novembre alle 17:15 in casa contro il Paris FC."
+     "Lo Strasbourg tornerà in campo venerdì 6 novembre alle 20:45 in trasferta contro il Toulouse. L'Auxerre giocherà sabato 7 novembre alle 17:15 in casa contro il Paris FC."
     ],
     "bullets": []
    }
@@ -12371,7 +12318,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T17:26:40.418Z"
+  "at": "2026-11-03T09:20:12.968Z"
  },
  "fb:1001601593": {
   "fingerprint": "g7vw8t",
@@ -15432,26 +15379,26 @@
   "at": "2026-11-01T20:15:10.861Z"
  },
  "fb:1001570434": {
-  "fingerprint": "gythf0",
+  "fingerprint": "ox7m3e",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Barcelona supera l'Alavés in casa con un netto 6-1. La partita, valida per l'11ª giornata di LaLiga, si è giocata sabato 31 ottobre; al termine del primo tempo il punteggio era di 4-0."
+     "Il Barcelona supera in casa l'Alavés con un netto 6-1. La partita, valida per la 11ª giornata di LaLiga, si è giocata sabato 31 ottobre; il primo tempo si era chiuso sul 4-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Barcelona è al 1° posto con 30 punti, mentre l'Alavés è al 10° con 12. [Consulta la classifica completa](/calcio/liga/classifica)."
+     "Con le partite giocate finora il Barcelona occupa il 1° posto con 30 punti, mentre l'Alavés è all'11° con 12. [Consulta la classifica completa](/calcio/liga/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Barcelona tornerà in campo domenica 8 novembre alle 21:00 in trasferta contro l'Atlético Madrid. L'Alavés tornerà in campo venerdì 6 novembre alle 21:00 in trasferta contro il Sevilla FC."
+     "Il Barcelona tornerà in campo domenica 8 novembre alle 21:00 in trasferta contro l'Atlético Madrid. L'Alavés giocherà venerdì 6 novembre alle 21:00 in trasferta contro il Sevilla FC."
     ],
     "bullets": []
    }
@@ -15467,7 +15414,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T20:15:14.305Z"
+  "at": "2026-11-03T09:20:06.496Z"
  },
  "fb:564734": {
   "fingerprint": "1cj7wqg",
@@ -16864,26 +16811,26 @@
   "at": "2026-11-02T11:19:58.272Z"
  },
  "fb:559645": {
-  "fingerprint": "1lin2th",
+  "fingerprint": "1ees0mv",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Marseille ha battuto il Toulouse in casa per 2-0. La partita, valida per la 9ª giornata di Ligue 1, si è giocata domenica 1 novembre; il primo tempo era già terminato 2-0."
+     "Il Marseille ha battuto il Toulouse in casa per 2-0. La partita, valida per la 9ª giornata di Ligue 1, si è giocata domenica 1 novembre; il primo tempo si era chiuso sul 2-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora, il Marseille è al 6° posto con 15 punti, mentre il Toulouse è all'11° con 10. [Classifica completa](/calcio/ligue-1/classifica)."
+     "Con le partite giocate finora il Marseille è al 6° posto con 15 punti, mentre il Toulouse è al 12° con 10. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Marseille tornerà in campo domenica 8 novembre alle 20:45, in trasferta contro il RC Lens. Il Toulouse tornerà in campo venerdì 6 novembre alle 20:45, in casa contro lo Strasbourg."
+     "Il Marseille tornerà in campo domenica 8 novembre alle 20:45 in trasferta contro il RC Lens. Il Toulouse tornerà in campo venerdì 6 novembre alle 20:45 in casa contro lo Strasbourg."
     ],
     "bullets": []
    }
@@ -16891,7 +16838,7 @@
   "faq": [
    {
     "q": "Com'è finita Marseille – Toulouse?",
-    "a": "2-0 (2-0 all'intervallo)."
+    "a": "Il risultato finale è 2-0, con lo stesso punteggio già all'intervallo."
    },
    {
     "q": "Dove trovo gli altri risultati?",
@@ -16899,7 +16846,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-02T11:20:08.591Z"
+  "at": "2026-11-03T09:20:17.651Z"
  },
  "nba:1000017132": {
   "fingerprint": "1pwf6c3",
@@ -17277,19 +17224,19 @@
   "at": "2026-11-02T11:20:16.595Z"
  },
  "fb:558541": {
-  "fingerprint": "17vxvhw",
+  "fingerprint": "1vumr1s",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "La Fiorentina si impone in trasferta sul Sassuolo per 2-4. La partita, valida per la 10ª giornata di Serie A, si è giocata lunedì 2 novembre; il primo tempo si era chiuso sull'1-1."
+     "La Fiorentina ha vinto in trasferta contro il Sassuolo per 2-4. La partita, valida per la 10ª giornata di Serie A, si è giocata lunedì 2 novembre; il primo tempo era terminato 1-1."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Sassuolo è al 16° posto con 8 punti, mentre la Fiorentina è al 15° con 8. [Consulta la classifica completa](/calcio/serie-a/classifica)."
+     "Con le partite giocate finora il Sassuolo è al 17° posto con 8 punti, mentre la Fiorentina è al 16° con 8. [Vai alla classifica completa](/calcio/serie-a/classifica)."
     ],
     "bullets": []
    },
@@ -17304,7 +17251,7 @@
   "faq": [
    {
     "q": "Com'è finita Sassuolo – Fiorentina?",
-    "a": "Il risultato finale è 2-4, con l'1-1 registrato all'intervallo."
+    "a": "2-4 (1-1 all'intervallo)."
    },
    {
     "q": "Dove trovo gli altri risultati?",
@@ -17312,22 +17259,22 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-02T21:11:12.428Z"
+  "at": "2026-11-03T09:19:50.095Z"
  },
  "fb:558545": {
-  "fingerprint": "14dprqh",
+  "fingerprint": "1pv6gun",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Parma si impone con un ampio 0-3 in trasferta sull'Atalanta. La gara, valida per la 10ª giornata di Serie A, si è disputata lunedì 2 novembre; al termine del primo tempo il punteggio era 0-1."
+     "Il Parma ha vinto in trasferta contro l'Atalanta con il punteggio di 0-3. La partita, valida per la 10ª giornata di Serie A, si è giocata lunedì 2 novembre; al termine del primo tempo il punteggio era 0-1."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora l'Atalanta occupa il 13° posto con 11 punti, mentre il Parma è al 18° con 5. Per consultare la graduatoria aggiornata: [Classifica completa](/calcio/serie-a/classifica)."
+     "Con le partite giocate finora l'Atalanta è al 13° posto con 11 punti, mentre il Parma è al 15° con 8. Per tutti i dettagli si può consultare la [classifica completa](/calcio/serie-a/classifica)."
     ],
     "bullets": []
    },
@@ -17346,33 +17293,33 @@
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Nella pagina [Serie A](/calcio/serie-a)."
+    "a": "Nella pagina di [Serie A](/calcio/serie-a)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-02T21:46:21.652Z"
+  "at": "2026-11-03T09:19:51.975Z"
  },
  "fb:1001552803": {
-  "fingerprint": "139644q",
+  "fingerprint": "1ga6hyw",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Lo Stade Brestois 29 ha vinto in trasferta contro il Lorient per 0-2. La partita, valida per la 9ª giornata di Ligue 1, si è giocata lunedì 2 novembre; il primo tempo si era chiuso 0-0."
+     "Lo Stade Brestois 29 ha battuto il Lorient in trasferta per 0-2. La partita, valida per la 9ª giornata di Ligue 1, si è giocata lunedì 2 novembre; il primo tempo si era chiuso 0-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Lorient è al 10° posto con 12 punti, mentre lo Stade Brestois 29 è al 14° con 9. [Classifica completa](/calcio/ligue-1/classifica)."
+     "Con le partite giocate finora il Lorient è all'11° posto con 12 punti, mentre lo Stade Brestois 29 è al 10° con 12. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Lorient tornerà in campo domenica 8 novembre alle 17:15 in trasferta contro il Le Havre. Lo Stade Brestois 29 tornerà in campo domenica 8 novembre alle 17:15 in casa contro l'Olympique Lyon."
+     "Il Lorient tornerà in campo domenica 8 novembre alle 17:15 in trasferta contro il Le Havre. Lo Stade Brestois 29 giocherà anch'esso domenica 8 novembre alle 17:15, ma in casa contro l'Olympique Lyon."
     ],
     "bullets": []
    }
@@ -17380,15 +17327,15 @@
   "faq": [
    {
     "q": "Com'è finita Lorient – Stade Brestois 29?",
-    "a": "0-2 (0-0 all'intervallo)."
+    "a": "Il risultato è stato 0-2, con il punteggio di 0-0 all'intervallo."
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
+    "a": "Puoi consultarli nella pagina [Ligue 1](/calcio/ligue-1)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-02T21:46:23.357Z"
+  "at": "2026-11-03T09:20:22.053Z"
  },
  "nba:1000017138": {
   "fingerprint": "15jl8yf",
@@ -17612,5 +17559,661 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-03T06:56:55.435Z"
+ },
+ "nba:1000017143": {
+  "fingerprint": "gd7iuh",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 17 novembre alle 02:00, ora italiana, i Timberwolves ospitano i Trail Blazers in una partita della regular season NBA 2026-27."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "I Timberwolves hanno un record di 5-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 119,0 punti segnati e 107,6 subiti. In casa il bilancio è 3-1.",
+     "I Trail Blazers hanno un record di 5-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 120,2 punti segnati e 109,3 subiti. In trasferta il bilancio è 4-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "calendario",
+    "paragraphs": [],
+    "bullets": [
+     "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 1 gara."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "A che ora si gioca Minnesota Timberwolves – Portland Trail Blazers in Italia?",
+    "a": "Martedì 17 novembre alle 02:00."
+   },
+   {
+    "q": "Come funzionano totali e handicap nel basket?",
+    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+   },
+   {
+    "q": "Come è organizzata la stagione NBA?",
+    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:19:36.010Z"
+ },
+ "nba:1000017144": {
+  "fingerprint": "19624rv",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "I Warriors fanno visita ai Pelicans martedì 17 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "I Pelicans hanno un record di 3-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 121,9 punti segnati e 120,1 subiti. In casa il bilancio è 2-2.",
+     "I Warriors hanno un record di 5-3 in stagione e hanno vinto 5 delle ultime 5, con una media di 117,5 punti segnati e 114,6 subiti. In trasferta il bilancio è 2-2."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "calendario",
+    "paragraphs": [],
+    "bullets": [
+     "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 1 gara."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "A che ora si gioca New Orleans Pelicans – Golden State Warriors in Italia?",
+    "a": "Martedì 17 novembre alle 02:00."
+   },
+   {
+    "q": "Come funzionano totali e handicap nel basket?",
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+   },
+   {
+    "q": "Come è organizzata la stagione NBA?",
+    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:19:39.350Z"
+ },
+ "nba:1000017145": {
+  "fingerprint": "1vkc6y5",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 17 novembre alle 03:00, ora italiana, i Nuggets ospitano i Suns in una partita della regular season NBA 2026-27."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "I Nuggets hanno un record di 3-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 113,3 punti segnati e 115,7 subiti. In casa il bilancio è 1-2.",
+     "I Suns hanno un record di 1-4 in stagione, con una media di 112,2 punti segnati e 122,8 subiti. In trasferta il bilancio è 0-3."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "calendario",
+    "paragraphs": [],
+    "bullets": [
+     "Nei 7 giorni a partire da questa partita i Nuggets hanno in calendario 1 gara.",
+     "I Suns giocano la seconda partita in due giorni (back-to-back).",
+     "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 1 gara."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "A che ora si gioca Denver Nuggets – Phoenix Suns in Italia?",
+    "a": "Martedì 17 novembre alle 03:00."
+   },
+   {
+    "q": "Come funzionano totali e handicap nel basket?",
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+   },
+   {
+    "q": "Come è organizzata la stagione NBA?",
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:19:43.788Z"
+ },
+ "fb:1001557455": {
+  "fingerprint": "ajresu",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "L'Everton si è imposto in trasferta sul Newcastle per 0-1. La partita, valida per la 9ª giornata di Premier League, si è giocata lunedì 2 novembre; il primo tempo si era chiuso sullo 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora il Newcastle occupa il 13° posto con 11 punti, mentre l'Everton è al 7° con 13. [Consulta la classifica completa](/calcio/premier-league/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Newcastle tornerà in campo sabato 7 novembre alle 16:00 in trasferta contro il Fulham. L'Everton scenderà in campo venerdì 6 novembre alle 21:00 in casa contro il Coventry City."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Newcastle – Everton?",
+    "a": "0-1 (0-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Premier League](/calcio/premier-league)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:20:02.830Z"
+ },
+ "fb:564731": {
+  "fingerprint": "u9pzyu",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Rimonta del Deportivo, che dopo essere stato sotto all'intervallo vince in casa 2-1 contro l'Osasuna. La partita, valida per la 11ª giornata di LaLiga, si è giocata lunedì 2 novembre; il primo tempo si era chiuso 0-1."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora il Deportivo è all'8° posto con 14 punti, mentre l'Osasuna è al 15° con 11. [Consulta la classifica completa](/calcio/liga/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Deportivo tornerà in campo sabato 7 novembre alle 16:15 in trasferta contro l'Espanyol. L'Osasuna tornerà in campo sabato 7 novembre alle 18:30 in casa contro l'Athletic."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Deportivo – Osasuna?",
+    "a": "2-1 (0-1 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [LaLiga](/calcio/liga)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:20:10.280Z"
+ },
+ "fb:567342": {
+  "fingerprint": "lrl5hq",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Lo SL Benfica si impone di misura in casa contro l'Alverca per 1-0. La partita, valida per la 10ª giornata di Primeira Liga, si è giocata lunedì 2 novembre; il primo tempo si era chiuso 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora lo SL Benfica è al 2° posto con 25 punti, mentre l'Alverca è al 10° con 11 punti. Puoi consultare la [classifica completa](/calcio/primeira-liga/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Lo SL Benfica tornerà in campo domenica 8 novembre alle 21:30 in trasferta contro l'Amadora. L'Alverca tornerà in campo sabato 7 novembre alle 19:00 in casa contro il Casa Pia."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita SL Benfica – Alverca?",
+    "a": "1-0 (0-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:20:23.850Z"
+ },
+ "fb:567346": {
+  "fingerprint": "z5ig3a",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il Gil Vicente e il Vitória SC non vanno oltre lo 0-0. La partita, valida per la 10ª giornata di Primeira Liga, si è giocata lunedì 2 novembre; il primo tempo si era chiuso 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora il Gil Vicente occupa il 7° posto con 15 punti, mentre il Vitória SC è al 13° con 9. Per l'intera graduatoria consulta la [classifica completa](/calcio/primeira-liga/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Gil Vicente tornerà in campo domenica 8 novembre alle 16:30 in trasferta contro il Santa Clara. Il Vitória SC giocherà domenica 8 novembre alle 19:00 in casa contro il Porto."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Gil Vicente – Vitória SC?",
+    "a": "Il risultato finale è 0-0, con lo stesso punteggio anche all'intervallo."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Puoi consultarli nella pagina [Primeira Liga](/calcio/primeira-liga)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:20:25.824Z"
+ },
+ "fb:555072": {
+  "fingerprint": "1lb5tyy",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il Bragantino ha vinto in casa per 2-1 contro il Santos, di misura. La partita, valida per la 34ª giornata di Brasileirão, si è giocata martedì 3 novembre; il primo tempo si era chiuso 2-1."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora il Bragantino è all'8° posto con 47 punti, mentre il Santos è al 9° con 47. [Consulta la classifica completa](/calcio/brasileirao/classifica)."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Bragantino – Santos?",
+    "a": "2-1 (2-1 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Brasileirão](/calcio/brasileirao)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:20:27.362Z"
+ },
+ "nba:21718012": {
+  "fingerprint": "dvuwg9",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Thunder si impongono sui Cavaliers per 117-112. La partita si è giocata martedì 3 novembre.",
+     "All'intervallo i Thunder conducevano 59-48.",
+     "Il parziale più netto è arrivato nel 2º quarto, vinto dai Thunder 33-18."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 229.",
+     "Parziali (Cavaliers–Thunder): 30-26, 18-33, 36-31, 28-27."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Cleveland Cavaliers – Oklahoma City Thunder?",
+    "a": "112-117 per i Thunder."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:20:28.809Z"
+ },
+ "nba:21718018": {
+  "fingerprint": "qh4gs8",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Kings hanno superato i Mavericks per 115-100. La partita si è disputata martedì 3 novembre.",
+     "All'intervallo i Kings erano avanti 54-53.",
+     "Il parziale che ha fatto più la differenza è arrivato nel 4º quarto, vinto dai Kings 34-26."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 215.",
+     "Parziali (Mavericks–Kings): 18-19, 35-35, 21-27, 26-34."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Dallas Mavericks – Sacramento Kings?",
+    "a": "100-115 per i Kings."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Le altre partite NBA sono nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:20:54.611Z"
+ },
+ "nba:21718019": {
+  "fingerprint": "161puc1",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Pelicans hanno superato i Grizzlies per 135-134 dopo un tempo supplementare. La sfida si è disputata martedì 3 novembre.",
+     "All'intervallo i Grizzlies erano in vantaggio 62-59; nella ripresa i Pelicans hanno recuperato uno svantaggio di 3 punti.",
+     "Il parziale più netto è arrivato nel 3º quarto, vinto dai Pelicans 41-33."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 269.",
+     "Parziali (Grizzlies–Pelicans): 31-34, 31-25, 33-41, 29-24, 10-11."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Memphis Grizzlies – New Orleans Pelicans?",
+    "a": "134-135 per i Pelicans."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:20:59.060Z"
+ },
+ "nba:21718020": {
+  "fingerprint": "1qb66kq",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Timberwolves hanno battuto i Bucks 112-100. La partita si è giocata martedì 3 novembre.",
+     "All'intervallo i Timberwolves erano in vantaggio 48-47.",
+     "Il parziale più netto è stato quello del 1º quarto, vinto dai Timberwolves 29-18."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti complessivi: 212.",
+     "Parziali (Timberwolves–Bucks): 29-18, 19-29, 32-29, 32-24."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Qual è stato il risultato di Minnesota Timberwolves – Milwaukee Bucks?",
+    "a": "112-100 per i Timberwolves."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:21:04.384Z"
+ },
+ "nba:21718021": {
+  "fingerprint": "slcfth",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Gli Houston Rockets hanno battuto i Boston Celtics per 109-93. La partita si è giocata martedì 3 novembre.",
+     "All'intervallo i Rockets conducevano 57-50.",
+     "Il parziale più netto è arrivato nel 2º quarto, vinto dai Rockets 28-21."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 202.",
+     "Parziali (Rockets–Celtics): 29-29, 28-21, 25-23, 27-20."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Qual è stato il risultato di Houston Rockets – Boston Celtics?",
+    "a": "Il risultato finale è 109-93 per i Rockets."
+   },
+   {
+    "q": "Dove posso consultare le altre partite NBA?",
+    "a": "Sono disponibili nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:21:07.806Z"
+ },
+ "nba:21718022": {
+  "fingerprint": "1ijw2g4",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Gli Spurs si sono imposti sui Jazz per 119-97. La partita si è disputata martedì 3 novembre.",
+     "All'intervallo gli Spurs conducevano 59-49.",
+     "Lo scarto più ampio si è registrato nel 3º quarto, vinto dagli Spurs 35-20."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 216.",
+     "Parziali (Spurs–Jazz): 27-16, 32-33, 35-20, 25-28."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita San Antonio Spurs – Utah Jazz?",
+    "a": "119-97 per gli Spurs."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:21:11.274Z"
+ },
+ "nba:21718023": {
+  "fingerprint": "1jaz40n",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Nel match di martedì 3 novembre i Trail Blazers hanno superato i Nuggets 118-110.",
+     "All'intervallo i Nuggets erano avanti 66-58, ma nella ripresa i Trail Blazers hanno recuperato 8 punti di svantaggio.",
+     "Il parziale più netto è arrivato nel 1º quarto, chiuso dai Nuggets 31-19."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 228.",
+     "Parziali (Nuggets–Trail Blazers): 31-19, 35-39, 21-27, 23-33."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Denver Nuggets – Portland Trail Blazers?",
+    "a": "110-118 per i Trail Blazers."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:21:14.739Z"
+ },
+ "nba:21718024": {
+  "fingerprint": "1jxtqo9",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Warriors battono i Suns 116-113. La partita si è giocata martedì 3 novembre.",
+     "All'intervallo conducevano i Suns 57-51: i Warriors hanno rimontato 6 punti di svantaggio nella ripresa.",
+     "Il parziale più netto è arrivato nel 1º quarto, vinto dai Suns 31-19."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 229.",
+     "Parziali (Warriors–Suns): 19-31, 32-26, 42-36, 23-20."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Golden State Warriors – Phoenix Suns?",
+    "a": "116-113 per i Warriors."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:21:18.691Z"
+ },
+ "nba:21718025": {
+  "fingerprint": "3ehfn0",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Raptors hanno superato i Clippers 125-118. La sfida si è disputata martedì 3 novembre.",
+     "All'intervallo i Clippers erano avanti 63-52, ma nella ripresa i Raptors hanno recuperato 11 punti di svantaggio.",
+     "Il parziale più ampio è arrivato nel 4º quarto, vinto dai Raptors 47-27."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 243.",
+     "Parziali (Clippers–Raptors): 33-22, 30-30, 28-26, 27-47."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita LA Clippers – Toronto Raptors?",
+    "a": "118-125 per i Raptors."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella [pagina dedicata alla NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:21:23.302Z"
+ },
+ "nba:21718026": {
+  "fingerprint": "1griokh",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Lakers hanno battuto gli Heat 138-117. La partita si è giocata martedì 3 novembre.",
+     "All'intervallo i Lakers conducevano 79-72.",
+     "Il parziale più netto è arrivato nel 3º quarto, vinto dai Lakers 32-21."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 255.",
+     "Parziali (Lakers–Heat): 37-30, 42-42, 32-21, 27-24."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Los Angeles Lakers – Miami Heat?",
+    "a": "138-117 per i Lakers."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-03T09:21:28.183Z"
  }
 }
