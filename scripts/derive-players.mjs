@@ -1,6 +1,8 @@
 // Builds the data of the player pages (runs at every build, no network):
 //   src/data/players/ids.json          ids of the players with a page (links from team pages and leaderboards)
 //   src/data/players/part-<n>.json     the players, split in 32 parts by id (a page loads only its part)
+//   src/data/players/slugs.json        id → URL name of every page, for links where only the id is known (match
+//                                      line-ups, events, best player: src/lib/playerLinks.ts)
 // Source: data/team-seasons-api.json (season statistics of every club of the domestic leagues, API-Football, with the
 // player's id, full name, birth date and height), src/data/teams/index.json (club pages), src/data/football.json
 // (current seasons and leaderboards), data/giocatori-partite.json (last matches and home/away figures of the current
@@ -204,4 +206,7 @@ fs.mkdirSync(OUT, { recursive: true });
 for (const f of fs.readdirSync(OUT)) if (/^part-\d+\.json$/.test(f)) fs.rmSync(path.join(OUT, f));
 parts.forEach((part, i) => fs.writeFileSync(path.join(OUT, `part-${i}.json`), JSON.stringify(part) + "\n"));
 fs.writeFileSync(path.join(OUT, "ids.json"), JSON.stringify(ids.sort((a, b) => a - b)) + "\n");
+const slugs = {};
+for (const part of parts) for (const [id, p] of Object.entries(part)) slugs[id] = p.url.slice(p.url.lastIndexOf("/") + 1, -(`-${id}`.length));
+fs.writeFileSync(path.join(OUT, "slugs.json"), JSON.stringify(slugs) + "\n");
 console.log(`Pagine giocatore: ${ids.length}`);

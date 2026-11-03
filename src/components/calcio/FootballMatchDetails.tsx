@@ -5,6 +5,7 @@ import { BarChart3, ListOrdered, Users } from "lucide-react";
 import type { Match } from "../../lib/footballCore";
 import { FOOTBALL_STATS, goalsWithScore, isGoal, type FootballDetails, type Lineup, type TimelineEvent } from "../../lib/matchDetails";
 import { playedScore } from "./FootballBoxScore";
+import { FootballPlayerLink } from "../players/FootballPlayerLink";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 const minute = (e: Pick<TimelineEvent, "minute" | "extra">) => (e.extra ? `${e.minute}+${e.extra}'` : `${e.minute}'`);
@@ -30,7 +31,7 @@ function TeamLineup({ name, lineup }: { name: string; lineup: Lineup }) {
         {lineup.starters.map((p, i) => (
           <li key={i} className="flex gap-3 text-slate-200">
             <span className="w-6 text-right tabular-nums text-slate-400">{p.number ?? ""}</span>
-            {p.name}
+            <FootballPlayerLink id={p.id} name={p.name} />
           </li>
         ))}
       </ol>
@@ -38,7 +39,13 @@ function TeamLineup({ name, lineup }: { name: string; lineup: Lineup }) {
         <>
           <p className="text-slate-400 text-sm mt-4 mb-1">A disposizione</p>
           <p className="text-sm text-slate-300">
-            {lineup.bench.map((p) => (p.number != null ? `${p.number} ${p.name}` : p.name)).join(", ")}
+            {lineup.bench.map((p, i) => (
+              <Fragment key={i}>
+                {i > 0 && ", "}
+                {p.number != null && `${p.number} `}
+                <FootballPlayerLink id={p.id} name={p.name} />
+              </Fragment>
+            ))}
           </p>
         </>
       )}
@@ -114,27 +121,37 @@ const VAR_DETAIL: Record<string, string> = {
   "card reviewed": "cartellino rivisto",
 };
 
-/** One sentence per event, from the data only. */
-function describe(e: TimelineEvent, team: string, score: string | undefined) {
-  const who = e.player ?? "un giocatore";
+/** One sentence per event, from the data only; player names link to their pages. */
+function describe(e: TimelineEvent, team: string, score: string | undefined): ReactNode {
+  const who = e.player ? <FootballPlayerLink id={e.playerId} name={e.player} /> : "un giocatore";
+  const other = e.other ? <FootballPlayerLink id={e.otherId} name={e.other} /> : null;
   if (isGoal(e)) {
-    if (e.detail === "Own Goal") return `Autogol di ${who}: ${score}.`;
+    if (e.detail === "Own Goal") return <>Autogol di {who}: {score}.</>;
     const how = e.detail === "Penalty" ? " su rigore" : "";
-    const assist = e.other ? `, assist di ${e.other}` : "";
-    return `Gol di ${who} (${team})${how}${assist}: ${score}.`;
+    return (
+      <>
+        Gol di {who} ({team}){how}
+        {other && <>, assist di {other}</>}: {score}.
+      </>
+    );
   }
-  if (e.type === "goal") return `${who} (${team}) sbaglia un rigore.`;
+  if (e.type === "goal") return <>{who} ({team}) sbaglia un rigore.</>;
   if (e.type === "card") {
-    if (/second yellow/i.test(e.detail)) return `Seconda ammonizione ed espulsione per ${who} (${team}).`;
-    if (/red/i.test(e.detail)) return `Espulso ${who} (${team}).`;
-    return `Ammonito ${who} (${team}).`;
+    if (/second yellow/i.test(e.detail)) return <>Seconda ammonizione ed espulsione per {who} ({team}).</>;
+    if (/red/i.test(e.detail)) return <>Espulso {who} ({team}).</>;
+    return <>Ammonito {who} ({team}).</>;
   }
   if (e.type === "sub") {
-    return e.other ? `Cambio (${team}): entra ${e.other}, esce ${who}.` : `Cambio (${team}): esce ${who}.`;
+    return other ? <>Cambio ({team}): entra {other}, esce {who}.</> : <>Cambio ({team}): esce {who}.</>;
   }
   if (e.type === "var") {
     const what = VAR_DETAIL[e.detail.toLowerCase()] ?? "decisione rivista";
-    return `VAR (${team}): ${what}${e.player ? `, ${e.player}` : ""}.`;
+    return (
+      <>
+        VAR ({team}): {what}
+        {e.player && <>, {who}</>}.
+      </>
+    );
   }
   return `${e.detail} (${team}).`;
 }

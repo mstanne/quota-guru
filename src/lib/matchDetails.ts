@@ -15,9 +15,13 @@ export interface TimelineEvent {
   player: string | null;
   /** assist for goals, player coming in for substitutions */
   other: string | null;
+  /** API-Football ids of `player` and `other` (missing in data saved before they were kept) */
+  playerId?: number | null;
+  otherId?: number | null;
   comment: string | null;
 }
 export interface LineupPlayer {
+  id?: number | null;
   name: string;
   number: number | null;
   pos: string | null;
@@ -35,7 +39,7 @@ export interface FootballDetails {
   timeline: TimelineEvent[];
   lineups: Partial<Record<Side, Lineup>>;
   stats: Partial<Record<Side, Record<string, number | null>>>;
-  top: { name: string; side: Side; rating: number; goals: number; assists: number; minutes: number | null } | null;
+  top: { id?: number | null; name: string; side: Side; rating: number; goals: number; assists: number; minutes: number | null } | null;
 }
 
 export interface NbaPlayerLine {
