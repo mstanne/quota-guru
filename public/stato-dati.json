@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T21:45:47.805Z",
+  "updatedAt": "2026-11-03T00:19:25.486Z",
   "football": {
     "details": {
       "ok": true
@@ -8,9 +8,9 @@
       "ok": true
     },
     "ok": true,
-    "requests": 10,
-    "remainingToday": 6271,
-    "matches": 90,
+    "requests": 19,
+    "remainingToday": 7441,
+    "matches": 94,
     "teamSeasons": 588
   },
   "nba": {
@@ -21,23 +21,23 @@
       "ok": true
     },
     "ok": true,
-    "requests": 18,
-    "remainingToday": 7272,
+    "requests": 11,
+    "remainingToday": 7489,
     "games": 14,
     "teamSeasons": 60
   },
   "calendarioCalcio": {
-    "updatedAt": "2026-11-02T21:44:17.388Z",
+    "updatedAt": "2026-11-03T00:17:54.674Z",
     "source": "API-Football",
     "ok": true,
     "competitions": {
       "SA": {
         "ok": true,
-        "matches": 70
+        "matches": 69
       },
       "SB": {
         "ok": true,
-        "matches": 70
+        "matches": 69
       },
       "CL": {
         "ok": true,
@@ -53,23 +53,23 @@
       },
       "PL": {
         "ok": true,
-        "matches": 60
+        "matches": 59
       },
       "PD": {
         "ok": true,
-        "matches": 61
+        "matches": 60
       },
       "BL1": {
         "ok": true,
-        "matches": 54
+        "matches": 53
       },
       "FL1": {
         "ok": true,
-        "matches": 54
+        "matches": 53
       },
       "DED": {
         "ok": true,
-        "matches": 54
+        "matches": 53
       },
       "PPL": {
         "ok": true,
@@ -77,22 +77,22 @@
       },
       "ELC": {
         "ok": true,
-        "matches": 97
+        "matches": 96
       },
       "BSA": {
         "ok": true,
         "matches": 73
       }
     },
-    "requests": 43,
-    "remainingToday": 6284
+    "requests": 44,
+    "remainingToday": 7457
   },
   "calendarioNba": {
-    "updatedAt": "2026-11-02T21:44:28.312Z",
+    "updatedAt": "2026-11-03T00:18:06.228Z",
     "source": "API-NBA",
     "ok": true,
-    "games": 197,
+    "games": 200,
     "requests": 1,
-    "remainingToday": 7289
+    "remainingToday": 7499
   }
 }
