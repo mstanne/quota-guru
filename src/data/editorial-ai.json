@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-04T21:21:51.324Z",
+ "generatedAt": "2026-11-04T23:48:50.105Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558537": {
@@ -3882,7 +3882,7 @@
    ]
   },
   "fb:558845": {
-   "fingerprint": "1u2rc0d",
+   "fingerprint": "dl4mco",
    "sections": [
     {
      "id": "presentazione",
@@ -3894,7 +3894,7 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie il Willem II ha collezionato 4 sconfitte (sequenza P-P-P-P), con 4 gol fatti e 19 subiti. Ha perso tutte e quattro le gare.",
+      "Nelle ultime 4 partite di Eredivisie il Willem II ha collezionato 4 sconfitte (sequenza P-P-P-P), con 4 gol fatti e 19 subiti. Ha perso tutte le ultime 4.",
       "Nelle ultime 4 partite di Eredivisie lo Zwolle ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-N-V), con 6 gol fatti e 3 subiti."
      ],
      "bullets": []
@@ -3905,8 +3905,15 @@
      "bullets": [
       "Media gol segnati: Willem II 0,9, Zwolle 1,1 a partita.",
       "Gol subiti finora: Willem II 39, Zwolle 23.",
-      "In tutte le ultime 4 partite del Willem II sono stati segnati almeno tre gol."
+      "In tutte le ultime 4 partite del Willem II si sono segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Willem II, 3 vittorie per lo Zwolle e 1 pareggio, con 15 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, a maggio 2025 in Eredivisie, è terminato Willem II 1-2 Zwolle."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -3920,7 +3927,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -4661,12 +4668,12 @@
    ]
   },
   "fb:561932": {
-   "fingerprint": "ey2y7",
+   "fingerprint": "1cum26s",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Venerdì 6 novembre alle 21:00 il Derby County ospita il Bolton per la 15ª giornata di Championship. In classifica il Derby County è al 23° posto con 7 punti, il Bolton al 16° con 17."
+      "Venerdì 6 novembre alle 21:00 il Derby County ospita il Bolton per la 15ª giornata di Championship. In classifica il Derby County è al 23° posto con 7 punti, il Bolton al 17° con 17."
      ],
      "bullets": []
     },
@@ -4705,20 +4712,20 @@
    ]
   },
   "fb:561939": {
-   "fingerprint": "vhofue",
+   "fingerprint": "9vw5wq",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Bristol City e Norwich si affrontano sabato 7 novembre alle 13:30, nell'ambito della 15ª giornata di Championship. Le due squadre sono a pari punteggio, con 18 punti ciascuna."
+      "Bristol City e Norwich si affrontano sabato 7 novembre alle 13:30, nell'ambito della 15ª giornata di Championship. Le due squadre sono appaiate a 18 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Bristol City ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con sequenza N-P-P-N-V. Ha segnato 4 gol e ne ha subiti 5. In casa ha perso tutte le 2 partite disputate.",
-      "Nelle ultime 5 partite di Championship il Norwich ha ottenuto 3 vittorie e 2 sconfitte, con sequenza P-P-V-V-V. Ha segnato 10 gol e ne ha subiti 5. Arriva da 3 vittorie consecutive. In trasferta il bilancio stagionale è di 2 vittorie e 1 sconfitta."
+      "Nelle ultime 5 partite di Championship il Bristol City ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-V-P), con 4 gol fatti e 6 subiti. In casa ha perso tutte le 3 partite giocate.",
+      "Nelle ultime 5 partite di Championship il Norwich ha raccolto 3 vittorie e 2 sconfitte (sequenza P-P-V-V-V), con 10 gol fatti e 5 subiti. Arriva da 3 vittorie consecutive. In trasferta il bilancio stagionale è di 2 vittorie e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -4726,9 +4733,9 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Bristol City 1,2, Norwich 1,9.",
-      "Gol subiti finora: Bristol City 17, Norwich 24.",
-      "In 3 delle ultime 5 partite del Norwich sono stati segnati almeno tre gol."
+      "Media gol segnati: Bristol City 1,1, Norwich 1,9 a partita.",
+      "Gol subiti finora: Bristol City 19, Norwich 24.",
+      "In 3 delle ultime 5 partite del Norwich si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -4743,25 +4750,25 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:561938": {
-   "fingerprint": "5ujh85",
+   "fingerprint": "m6asb2",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 13:30 il Portsmouth ospita lo Stoke nella 15ª giornata di Championship. In classifica il Portsmouth occupa il 10° posto con 22 punti, mentre lo Stoke è al 3° con 26."
+      "Sabato 7 novembre alle 13:30 il Portsmouth ospita lo Stoke nella 15ª giornata di Championship. In classifica il Portsmouth è al 10° posto con 22 punti, mentre lo Stoke è al 4° con 26."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Portsmouth ha ottenuto 3 vittorie e 2 pareggi (sequenza V-N-V-N-V), segnando 7 gol e subendone 3. Non perde da 6 partite. In casa ha vinto tutte le 3 gare disputate.",
-      "Nelle ultime 5 partite di Championship lo Stoke ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-N-V-V), segnando 7 gol e subendone 4. Non perde da 4 partite. In trasferta ha vinto tutte le 3 gare disputate."
+      "Nelle ultime 5 partite di Championship il Portsmouth ha ottenuto 3 vittorie e 2 pareggi, con la sequenza V-N-V-N-V, segnando 7 gol e subendone 3. Non perde da 6 partite. In casa ha vinto tutte le 3 partite disputate.",
+      "Nelle ultime 5 partite di Championship lo Stoke ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza P-V-N-V-V, segnando 7 gol e subendone 4. Non perde da 4 partite. In trasferta ha vinto tutte le 3 partite disputate."
      ],
      "bullets": []
     },
@@ -4769,7 +4776,7 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Portsmouth 1,4, Stoke 1,6 a partita.",
+      "Media gol segnati a partita: Portsmouth 1,4, Stoke 1,6.",
       "Gol subiti finora: Portsmouth 16, Stoke 17.",
       "Lo Stoke non ha subito gol in 3 delle ultime 5 partite."
      ]
@@ -4791,20 +4798,20 @@
    ]
   },
   "fb:1001563262": {
-   "fingerprint": "7eqowh",
+   "fingerprint": "y725nu",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 13:30 il Wrexham ospita il Wolves per la 15ª giornata di Championship. In classifica il Wrexham occupa il 19° posto con 14 punti, mentre il Wolves è al 7° con 24."
+      "Sabato 7 novembre alle 13:30 il Wrexham ospita il Wolves per la 15ª giornata di Championship. In classifica il Wrexham occupa il 16° posto con 17 punti, mentre il Wolves è 2° con 27 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Wrexham ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza N-P-V-P-P), segnando 6 gol e subendone 7. Ha perso le ultime 2 gare. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 5 partite di Championship il Wolves ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-N-V-V), segnando 8 gol e subendone 5. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 5 partite di Championship il Wrexham ha ottenuto 2 vittorie e 3 sconfitte, con sequenza P-V-P-P-V, segnando 7 gol e subendone 6. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Championship il Wolves ha ottenuto 4 vittorie e 1 pareggio, con sequenza V-N-V-V-V, segnando 9 gol e subendone 3. Arriva da 3 vittorie consecutive. In trasferta, il bilancio stagionale è di 2 vittorie e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -4812,8 +4819,8 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Wrexham 1,2, Wolves 1,8.",
-      "Gol subiti finora: Wrexham 19, Wolves 16.",
+      "Media gol segnati: Wrexham 1,2, Wolves 1,8 a partita.",
+      "Gol subiti finora: Wrexham 19, Wolves 17.",
       "In 3 delle ultime 5 partite del Wolves si sono segnati almeno tre gol."
      ]
     }
@@ -4825,29 +4832,29 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+     "a": "Puoi consultare la pagina [Championship](/calcio/championship) e la [classifica aggiornata](/calcio/championship/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:561934": {
-   "fingerprint": "11a8gzb",
+   "fingerprint": "1vcwegp",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:00 il Watford ospita il Middlesbrough per la 15ª giornata di Championship. In classifica il Watford è al 20° posto con 14 punti, il Middlesbrough al 1° con 28."
+      "Sabato 7 novembre alle 16:00 il Watford ospita il Middlesbrough nella 15ª giornata di Championship. In classifica il Watford occupa il 20° posto con 14 punti, mentre il Middlesbrough è al 1° posto con 28."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Watford ha raccolto 2 vittorie e 3 sconfitte (sequenza P-V-P-P-V), con 6 gol fatti e 9 subiti. In casa il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
-      "Nelle ultime 5 partite di Championship il Middlesbrough ha raccolto 4 vittorie e 1 pareggio (sequenza V-V-N-V-V), con 14 gol fatti e 5 subiti. Non perde da 5 partite. In trasferta ha vinto tutte le 2 partite giocate."
+      "Nelle ultime 5 partite di Championship il Watford ha ottenuto 2 vittorie e 3 sconfitte (sequenza P-V-P-P-V), con 6 gol fatti e 9 subiti. In casa, nella stagione, il bilancio è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Championship il Middlesbrough ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-N-V-V-P), con 13 gol fatti e 7 subiti. In trasferta, nella stagione, il bilancio è di 2 vittorie e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -4855,8 +4862,8 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Watford 0,9, Middlesbrough 2,3 a partita.",
-      "Gol subiti finora: Watford 23, Middlesbrough 17.",
+      "Media gol segnati: Watford 0,9, Middlesbrough 2,1 a partita.",
+      "Gol subiti finora: Watford 23, Middlesbrough 19.",
       "In 4 delle ultime 5 partite del Middlesbrough si sono segnati almeno tre gol."
      ]
     }
@@ -4864,6 +4871,50 @@
    "faq": [
     {
      "q": "Quando si gioca Watford – Middlesbrough?",
+     "a": "Sabato 7 novembre alle 16:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Championship](/calcio/championship) e la [classifica aggiornata](/calcio/championship/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:561930": {
+   "fingerprint": "s1rluo",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Cardiff e Burnley si affrontano sabato 7 novembre alle 16:00 per la 15ª giornata di Championship. In classifica il Cardiff è al 18° posto con 15 punti, il Burnley al 22° con 10."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Championship il Cardiff ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-N-V-P-N), con 11 gol fatti e 9 subiti. In casa il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Championship il Burnley ha raccolto 3 pareggi e 2 sconfitte (sequenza N-P-P-N-N), con 5 gol fatti e 9 subiti. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Cardiff 1,6, Burnley 1,3 a partita.",
+      "Gol subiti finora: Cardiff 23, Burnley 26.",
+      "In 4 delle ultime 5 partite del Cardiff si sono segnati almeno tre gol.",
+      "In 3 delle ultime 5 partite del Burnley si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Cardiff – Burnley?",
      "a": "Sabato 7 novembre alle 16:00, ora italiana."
     },
     {
@@ -4876,65 +4927,21 @@
     }
    ]
   },
-  "fb:561930": {
-   "fingerprint": "urs9yh",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Cardiff e Burnley si sfidano sabato 7 novembre alle 16:00, nella 15ª giornata di Championship. In classifica il Cardiff occupa il 18° posto con 14 punti, il Burnley il 22° con 10."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Cardiff ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-N-V-P), segnando 9 gol e subendone 8. In casa ha vinto tutte e 2 le partite giocate.",
-      "Nelle ultime 5 partite di Championship il Burnley ha ottenuto 3 pareggi e 2 sconfitte (sequenza N-P-P-N-N), segnando 5 gol e subendone 9. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Cardiff 1,5, Burnley 1,3 a partita.",
-      "Gol subiti finora: Cardiff 20, Burnley 26.",
-      "In 4 delle ultime 5 partite del Cardiff sono stati segnati almeno tre gol.",
-      "In 3 delle ultime 5 partite del Burnley sono stati segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Cardiff – Burnley?",
-     "a": "Sabato 7 novembre alle 16:00, ora italiana."
-    },
-    {
-     "q": "Dove trovo classifica e risultati?",
-     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:561940": {
-   "fingerprint": "1cwrkjg",
+   "fingerprint": "14ed9oi",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:00 il Birmingham riceve lo Swansea per la 15ª giornata di Championship. Si tratta di un confronto tra due squadre della parte alta della classifica: il Birmingham è al 2° posto con 26 punti, lo Swansea al 4° con 26."
+      "Sabato 7 novembre alle 16:00 il Birmingham affronta in casa lo Swansea nella 15ª giornata di Championship. Si tratta di un confronto tra squadre che occupano le posizioni alte della classifica: il Birmingham è terzo con 26 punti, lo Swansea quinto con 26."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Birmingham ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-V-P-V-V), segnando 13 gol e subendone 2. In casa ha vinto tutte le 3 gare disputate.",
-      "Nelle ultime 5 partite di Championship lo Swansea ha ottenuto 2 vittorie e 3 sconfitte (sequenza V-P-P-V-P), segnando 6 gol e subendone 9. In trasferta il bilancio stagionale è di 1 vittoria e 2 sconfitte."
+      "Nelle ultime 5 partite di Championship il Birmingham ha ottenuto 4 vittorie e 1 sconfitta, con la sequenza V-V-P-V-V. Ha segnato 13 gol e ne ha subiti 2. In casa ha vinto tutte e 3 le gare disputate.",
+      "Nelle ultime 5 partite di Championship lo Swansea ha ottenuto 2 vittorie e 3 sconfitte, con la sequenza V-P-P-V-P. Ha segnato 6 gol e ne ha subiti 9. In trasferta il bilancio stagionale è di 1 vittoria e 2 sconfitte."
      ],
      "bullets": []
     },
@@ -4942,9 +4949,9 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Birmingham 1,9, Swansea 1,5 a partita.",
-      "Gol subiti finora: Birmingham 13, Swansea 16.",
-      "Il Birmingham ha la difesa migliore del torneo.",
+      "La media gol segnati è di 1,9 a partita per il Birmingham e di 1,5 per lo Swansea.",
+      "Gol subiti finora: 13 per il Birmingham, 16 per lo Swansea.",
+      "Il Birmingham ha la miglior difesa del torneo.",
       "In 4 delle ultime 5 partite del Birmingham sono stati segnati almeno tre gol.",
       "Il Birmingham non ha subito gol in 3 delle ultime 5 partite.",
       "In 3 delle ultime 5 partite dello Swansea sono stati segnati almeno tre gol."
@@ -4967,20 +4974,20 @@
    ]
   },
   "fb:561937": {
-   "fingerprint": "1ltu0lj",
+   "fingerprint": "cf61yg",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Preston NE e Southampton si affrontano sabato 7 novembre alle 16:00 per la 15ª giornata di Championship. In classifica il Preston NE è al 24° posto con 5 punti, il Southampton al 6° con 24."
+      "Preston NE e Southampton si sfidano sabato 7 novembre alle 16:00, nella 15ª giornata di Championship. In classifica il Preston NE occupa il 24° posto con 5 punti, mentre il Southampton è al 7° con 24."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Preston NE ha raccolto 1 pareggio e 4 sconfitte (sequenza P-P-N-P-P), con 4 gol fatti e 14 subiti. Ha perso le ultime 2. In casa il bilancio stagionale è di 1 pareggio e 2 sconfitte, ancora senza vittorie.",
-      "Nelle ultime 5 partite di Championship il Southampton ha raccolto 3 vittorie e 2 pareggi (sequenza V-N-V-V-N), con 9 gol fatti e 4 subiti. Non perde da 6 partite. In trasferta il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
+      "Nelle ultime 5 partite di Championship il Preston NE ha ottenuto 1 pareggio e 4 sconfitte (sequenza P-P-N-P-P), segnando 4 gol e subendone 14. Ha perso le ultime 2 gare. In casa il bilancio stagionale comprende 1 pareggio e 2 sconfitte, senza vittorie.",
+      "Nelle ultime 5 partite di Championship il Southampton ha conquistato 3 vittorie e 2 pareggi (sequenza V-N-V-V-N), con 9 gol fatti e 4 subiti. Non perde da 6 partite. In trasferta il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     },
@@ -4990,7 +4997,7 @@
      "bullets": [
       "Media gol segnati: Preston NE 0,9, Southampton 2,1 a partita.",
       "Gol subiti finora: Preston NE 30, Southampton 14.",
-      "In 3 delle ultime 5 partite del Preston NE si sono segnati almeno tre gol."
+      "In 3 delle ultime 5 partite del Preston NE sono stati segnati almeno tre gol."
      ]
     }
    ],
@@ -5001,29 +5008,29 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+     "a": "Puoi consultare la pagina [Championship](/calcio/championship) e la [classifica aggiornata](/calcio/championship/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Trovi spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:561936": {
-   "fingerprint": "klzmfb",
+   "fingerprint": "1vmj01a",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:00 il West Brom ospita il Millwall nella 15ª giornata di Championship. In classifica il West Brom occupa il 5° posto con 25 punti, il Millwall il 13° con 18."
+      "Sabato 7 novembre alle 16:00 il West Brom ospita il Millwall per la 15ª giornata di Championship. In classifica il West Brom è al 6° posto con 25 punti, il Millwall al 13° con 18."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il West Brom ha ottenuto 3 vittorie e 2 pareggi (sequenza V-V-N-V-N), segnando 10 gol e subendone 6. Non perde da 5 partite. In casa, in questa stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
-      "Nelle ultime 5 partite di Championship il Millwall ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-N-P-V-P), con 7 gol fatti e 9 subiti. In trasferta, in stagione, il bilancio è di 1 vittoria e 2 sconfitte."
+      "Nelle ultime 5 partite di Championship il West Brom ha conquistato 3 vittorie e 2 pareggi (sequenza V-V-N-V-N), segnando 10 gol e subendone 6. Non perde da 5 partite. In casa, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+      "Nelle ultime 5 partite di Championship il Millwall ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-N-P-V-P), segnando 7 gol e subendone 9. In trasferta, nella stagione, il bilancio è di 1 vittoria e 2 sconfitte."
      ],
      "bullets": []
     },
@@ -5031,7 +5038,7 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: West Brom 1,4, Millwall 1,6.",
+      "Media gol segnati: West Brom 1,4, Millwall 1,6 a partita.",
       "Gol subiti finora: West Brom 15, Millwall 24.",
       "In 3 delle ultime 5 partite del West Brom si sono segnati almeno tre gol.",
       "In 4 delle ultime 5 partite del Millwall si sono segnati almeno tre gol."
@@ -5044,30 +5051,30 @@
      "a": "Sabato 7 novembre alle 16:00, ora italiana."
     },
     {
-     "q": "Dove trovo classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:561935": {
-   "fingerprint": "1ac8wbv",
+   "fingerprint": "1ysh5hk",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:00 il Blackburn ospita il West Ham nella 15ª giornata di Championship. In classifica il Blackburn occupa il 14° posto con 18 punti, mentre il West Ham è all'8° con 22."
+      "Il Blackburn riceve il West Ham sabato 7 novembre alle 16:00, per la 15ª giornata di Championship. In classifica il Blackburn è al 14° posto con 18 punti, mentre il West Ham occupa l'8° posto con 23."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Blackburn ha ottenuto 2 vittorie e 3 sconfitte (sequenza V-P-V-P-P), segnando 6 gol e subendone 9. Ha perso le ultime 2 gare. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
-      "Nelle ultime 5 partite di Championship il West Ham ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-V-V-P-P), con 11 gol fatti e 7 subiti. Ha perso le ultime 2 gare. In trasferta ha vinto tutte le 2 partite disputate."
+      "Nelle ultime 5 partite di Championship il Blackburn ha ottenuto 2 vittorie e 3 sconfitte (sequenza V-P-V-P-P), segnando 6 gol e subendone 9. Ha perso le ultime 2 partite. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Championship il West Ham ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-V-P-P-N), segnando 13 gol e subendone 9. In trasferta, il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     },
@@ -5075,11 +5082,11 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Blackburn 1,4, West Ham 2,5 a partita.",
-      "Gol subiti finora: Blackburn 22, West Ham 18.",
-      "Il West Ham ha l'attacco migliore del torneo.",
-      "In 3 delle ultime 5 partite del Blackburn sono stati segnati almeno tre gol.",
-      "In 3 delle ultime 5 partite del West Ham sono stati segnati almeno tre gol."
+      "Media gol segnati: Blackburn 1,4, West Ham 2,6 a partita.",
+      "Gol subiti finora: Blackburn 22, West Ham 21.",
+      "Il West Ham ha il miglior attacco del torneo.",
+      "In 3 delle ultime 5 partite del Blackburn si sono segnati almeno tre gol.",
+      "In 4 delle ultime 5 partite del West Ham si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -5089,30 +5096,30 @@
      "a": "Sabato 7 novembre alle 16:00, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove si possono consultare classifica e risultati?",
      "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
     },
     {
-     "q": "Come si leggono le quote di questa partita?",
+     "q": "Dove trovo spiegazioni sulla lettura delle quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001563259": {
-   "fingerprint": "1clcvb",
+   "fingerprint": "1kgzgjx",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:00 il QPR ospita il Lincoln City, per la 15ª giornata di Championship. In classifica il QPR occupa l'11° posto con 21 punti, mentre il Lincoln City è al 17° con 15."
+      "Sabato 7 novembre alle 16:00 il QPR ospita il Lincoln City per la 15ª giornata di Championship. In classifica il QPR occupa l'11° posto con 21 punti, mentre il Lincoln City è al 19° con 15."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il QPR ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza V-P-V-P-N. Ha segnato 11 gol e ne ha subiti 9. In casa, nella stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 5 partite di Championship il Lincoln City ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza P-N-V-P-P. Ha segnato 7 gol e ne ha subiti 13. Ha perso le ultime 2 gare. In trasferta, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza vittorie."
+      "Nelle ultime 5 partite di Championship il QPR ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-V-P-N), segnando 11 gol e subendone 9. Tra le mura amiche, il bilancio stagionale riporta 2 vittorie e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Championship il Lincoln City ha collezionato 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-N-V-P-P), con 7 gol fatti e 13 subiti. Ha perso le ultime 2 gare. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza ancora una vittoria."
      ],
      "bullets": []
     },
@@ -5120,10 +5127,10 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: QPR 1,6, Lincoln City 1,0.",
+      "Media gol segnati: QPR 1,6, Lincoln City 1,0 a partita.",
       "Gol subiti finora: QPR 17, Lincoln City 24.",
-      "In 4 delle ultime 5 partite del QPR sono stati segnati almeno tre gol.",
-      "In 4 delle ultime 5 partite del Lincoln City sono stati segnati almeno tre gol."
+      "In 4 delle ultime 5 partite del QPR si sono segnati almeno tre gol.",
+      "In 4 delle ultime 5 partite del Lincoln City si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -5133,12 +5140,12 @@
      "a": "Sabato 7 novembre alle 16:00, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Championship](/calcio/championship) e la [classifica aggiornata](/calcio/championship/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -5178,107 +5185,6 @@
     {
      "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:555075": {
-   "fingerprint": "1dwhof2",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 4 novembre alle 23:30 il Flamengo ospita il Grêmio per la 34ª giornata di Brasileirão. In classifica il Flamengo occupa il 1° posto con 73 punti, mentre il Grêmio è al 17° con 37."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Brasileirão il Flamengo ha ottenuto 4 vittorie e 1 pareggio (sequenza N-V-V-V-V), segnando 13 gol e subendone 5. Arriva da 4 vittorie consecutive. In casa ha vinto tutte le 3 partite giocate.",
-      "Nelle ultime 5 partite di Brasileirão il Grêmio ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-N-P-V-V), con 7 gol fatti e 6 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati a partita: Flamengo 2,1, Grêmio 1,1.",
-      "Gol subiti finora: Flamengo 28, Grêmio 44.",
-      "Il Flamengo ha il miglior attacco del torneo.",
-      "In 4 delle ultime 5 partite del Flamengo sono stati segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per il Flamengo, 1 vittoria per il Grêmio e 1 pareggio, con 13 gol complessivi (media di 2,6 a partita). L'ultimo incrocio, disputato a maggio 2026 in Serie A, è terminato Grêmio 0-1 Flamengo."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Flamengo – Grêmio?",
-     "a": "Mercoledì 4 novembre alle 23:30, ora italiana."
-    },
-    {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina dedicata al [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:555070": {
-   "fingerprint": "sktz5e",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 4 novembre alle 23:30 il Paranaense ospita il Vasco da Gama nella 34ª giornata di Brasileirão. In classifica il Paranaense occupa il 5° posto con 54 punti, mentre il Vasco da Gama è al 14° con 38."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Brasileirão il Paranaense ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con sequenza N-V-P-N-P. Ha segnato 7 gol e ne ha subiti 8. In casa, il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta.",
-      "Nelle ultime 5 partite di Brasileirão il Vasco da Gama ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con sequenza V-N-P-V-P. Ha segnato 6 gol e ne ha subiti 8. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Paranaense 1,5, Vasco da Gama 1,3 a partita.",
-      "Gol subiti finora: Paranaense 40, Vasco da Gama 49.",
-      "Nelle ultime 5 partite del Vasco da Gama, in 3 incontri sono stati segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il Paranaense ha vinto 2 volte, il Vasco da Gama 3 volte e non ci sono stati pareggi. Sono stati segnati 11 gol complessivi, con una media di 2,2 a partita. L'ultimo incrocio, disputato a maggio 2026 in Serie A, è terminato Vasco da Gama 1-0 Paranaense."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Paranaense – Vasco da Gama?",
-     "a": "Mercoledì 4 novembre alle 23:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -5439,20 +5345,20 @@
    ]
   },
   "fb:555074": {
-   "fingerprint": "vc6d6l",
+   "fingerprint": "1kktg9e",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Cruzeiro e Bahia si affrontano venerdì 6 novembre alle 01:30, nell'ambito della 34ª giornata di Brasileirão. In classifica il Cruzeiro occupa il 3° posto con 57 punti, mentre il Bahia è 6° con 53."
+      "Cruzeiro e Bahia si sfidano venerdì 6 novembre alle 01:30, nell'ambito della 34ª giornata di Brasileirão. In classifica il Cruzeiro occupa il 3° posto con 57 punti, mentre il Bahia è 6° con 53."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Brasileirão il Cruzeiro ha ottenuto 4 vittorie e 1 sconfitta, con la sequenza V-P-V-V-V, segnando 10 gol e subendone 6. La squadra arriva da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite giocate.",
-      "Nelle ultime 5 partite di Brasileirão il Bahia ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza P-V-P-N-V, segnando 5 gol e subendone 7. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza alcuna vittoria."
+      "Nelle ultime 5 partite di Brasileirão il Cruzeiro ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-P-V-V-V), segnando 10 gol e subendone 6. Arriva da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 5 partite di Brasileirão il Bahia ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-P-N-V), con 5 gol fatti e 7 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
      ],
      "bullets": []
     },
@@ -5460,10 +5366,17 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Cruzeiro 1,6, Bahia 1,5.",
+      "Media gol segnati: Cruzeiro 1,6, Bahia 1,5 a partita.",
       "Gol subiti finora: Cruzeiro 46, Bahia 42.",
       "Il Cruzeiro non ha subito gol in 3 delle ultime 5 partite."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per il Cruzeiro, 1 per il Bahia e 1 pareggio, con 16 gol complessivi (media di 3,2 a partita). L'ultimo incontro, disputato a maggio 2026 in Serie A, è terminato Bahia 1-2 Cruzeiro."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -5473,7 +5386,7 @@
     },
     {
      "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
+     "a": "Nella sezione [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -5608,6 +5521,181 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001492451": {
+   "fingerprint": "ykwptw",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Coritiba e Santos si sfidano mercoledì 18 novembre alle 23:30 per la 35ª giornata di Brasileirão. In classifica il Coritiba occupa l'11° posto con 42 punti, mentre il Santos è al 9° con 47."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Brasileirão il Coritiba ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza N-P-P-V-P), segnando 3 gol e subendone 4. In casa, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+      "Nelle ultime 5 partite di Brasileirão il Santos ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-V-N-N-P), segnando 5 gol e subendone 6. In trasferta, nella stagione, il bilancio è di 2 vittorie e 2 sconfitte."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Coritiba 1,2, Santos 1,5 a partita.",
+      "Gol subiti finora: Coritiba 51, Santos 49.",
+      "In 3 delle ultime 5 partite del Santos si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Coritiba – Santos?",
+     "a": "Mercoledì 18 novembre alle 23:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001492456": {
+   "fingerprint": "30362r",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 19 novembre alle 00:00 il Clube do Remo ospita il Chapecoense per la 35ª giornata di Brasileirão. In classifica il Clube do Remo è al 19° posto con 29 punti, mentre il Chapecoense è al 20° con 21."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Brasileirão il Clube do Remo ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta (sequenza N-N-N-P-V), segnando 4 gol e subendone 4. In casa il bilancio stagionale è di 1 vittoria e 2 pareggi, senza sconfitte.",
+      "Nelle ultime 5 partite di Brasileirão il Chapecoense ha ottenuto 1 vittoria e 4 sconfitte (sequenza P-P-V-P-P), segnando 4 gol e subendone 11. Ha perso le ultime 2 gare. In trasferta ha perso tutte le 3 partite disputate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Clube do Remo 1,1, Chapecoense 1,0.",
+      "Gol subiti finora: Clube do Remo 51, Chapecoense 68.",
+      "In 4 delle ultime 5 partite del Chapecoense si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Clube do Remo – Chapecoense?",
+     "a": "Giovedì 19 novembre alle 00:00, ora italiana."
+    },
+    {
+     "q": "Dove si possono consultare classifica e risultati?",
+     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001492453": {
+   "fingerprint": "4t1lr4",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 19 novembre alle 00:30 il Flamengo affronta in casa il Paranaense, valida per la 35ª giornata di Brasileirão. In classifica il Flamengo occupa il 1° posto con 73 punti, mentre il Paranaense è al 5° posto con 54."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Brasileirão il Flamengo ha ottenuto 4 vittorie e 1 pareggio, con la sequenza N-V-V-V-V, segnando 13 gol e subendone 5. Arriva da 4 vittorie consecutive e, in casa, ha vinto tutte le 3 partite disputate.",
+      "Nelle ultime 5 partite di Brasileirão il Paranaense ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza N-V-P-N-P, segnando 7 gol e subendone 8. In trasferta, nel bilancio stagionale, registra 1 vittoria, 1 pareggio e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Flamengo 2,1, Paranaense 1,5.",
+      "Gol subiti finora: Flamengo 28, Paranaense 40.",
+      "Il Flamengo ha l'attacco migliore del torneo.",
+      "Nelle ultime 5 partite del Flamengo, in 4 gare sono stati segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Flamengo – Paranaense?",
+     "a": "Giovedì 19 novembre alle 00:30, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001492452": {
+   "fingerprint": "1f2prsk",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Cruzeiro e Palmeiras si affrontano giovedì 19 novembre alle 00:30 per la 35ª giornata di Brasileirão. È un confronto tra squadre di alta classifica: il Cruzeiro è terzo con 57 punti, il Palmeiras secondo con 70."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Brasileirão il Cruzeiro ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-P-V-V-V), segnando 10 gol e subendone 6. Arriva da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 5 partite di Brasileirão il Palmeiras ha ottenuto 4 vittorie e 1 pareggio (sequenza V-V-V-V-N), segnando 9 gol e subendone 1. Non perde da 6 partite. In trasferta il bilancio stagionale è di 1 vittoria e 2 pareggi, senza sconfitte."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Cruzeiro 1,6, Palmeiras 1,7.",
+      "Gol subiti finora: Cruzeiro 46, Palmeiras 22.",
+      "Il Palmeiras ha la miglior difesa del torneo.",
+      "Il Cruzeiro non ha subito gol in 3 delle ultime 5 partite.",
+      "Il Palmeiras non ha subito gol in 4 delle ultime 5 partite."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Cruzeiro – Palmeiras?",
+     "a": "Giovedì 19 novembre alle 00:30, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -10045,19 +10133,19 @@
    ]
   },
   "fb:575377": {
-   "fingerprint": "1shki0j",
+   "fingerprint": "1mdzmus",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Lo Sporting CP ha vinto di misura in trasferta contro lo Shakhtar, con il punteggio di 0-1. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; al termine del primo tempo il risultato era di 0-0."
+      "Lo Sporting CP ha ottenuto una vittoria di misura in trasferta contro lo Shakhtar, con il punteggio di 0-1. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; il primo tempo si era chiuso sul 0-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora lo Shakhtar occupa il 21° posto con 4 punti, mentre lo Sporting CP è al 6° posto con 9. [Consulta la classifica completa](/calcio/champions-league/classifica)."
+      "Con le partite giocate finora lo Shakhtar occupa il 21° posto con 4 punti, mentre lo Sporting CP è al 10° posto con 9. [Consulta la classifica completa](/calcio/champions-league/classifica)."
      ],
      "bullets": []
     }
@@ -10074,19 +10162,19 @@
    ]
   },
   "fb:575378": {
-   "fingerprint": "1lxtyee",
+   "fingerprint": "nf1otm",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Galatasaray ha battuto lo Stuttgart in casa per 2-0. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; il primo tempo si era chiuso sul 2-0."
+      "Il Galatasaray ha battuto in casa lo Stuttgart per 2-0. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; il primo tempo era già terminato 2-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite disputate finora il Galatasaray è al 18° posto con 6 punti, mentre lo Stuttgart è al 10° con 7. [Consulta la classifica completa](/calcio/champions-league/classifica)."
+      "Dopo le partite giocate finora, il Galatasaray è al 18° posto con 6 punti, mentre lo Stuttgart è al 14° con 7. [Classifica completa](/calcio/champions-league/classifica)."
      ],
      "bullets": []
     }
@@ -10132,19 +10220,19 @@
    ]
   },
   "fb:575379": {
-   "fingerprint": "pwne19",
+   "fingerprint": "1iky999",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "L'Inter ha vinto con un ampio margine in trasferta contro il Feyenoord, imponendosi 0-3. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; il primo tempo si era chiuso 0-2."
+      "L'Inter vince in trasferta contro il Feyenoord con un netto 0-3. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; al termine del primo tempo il punteggio era di 0-2."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Feyenoord è al 31° posto con 3 punti, mentre l'Inter è al 14° con 6. [Vedi la classifica completa](/calcio/champions-league/classifica)."
+      "Con le partite giocate finora il Feyenoord è al 32° posto con 3 punti, mentre l'Inter è al 15° con 6. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/champions-league/classifica)."
      ],
      "bullets": []
     }
@@ -10161,19 +10249,19 @@
    ]
   },
   "fb:1001635640": {
-   "fingerprint": "1p4xt8c",
+   "fingerprint": "15au0yc",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Bodo/Glimt e il Lille non si sono sbloccati e hanno chiuso il match sullo 0-0. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre, con il primo tempo terminato anch'esso 0-0."
+      "Il Bodo/Glimt e il Lille non sono andati oltre lo 0-0. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre, e il primo tempo era già terminato 0-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Bodo/Glimt è al 24° posto con 4 punti, mentre il Lille è al 34° con 1. [Classifica completa](/calcio/champions-league/classifica)."
+      "Con le partite giocate finora il Bodo/Glimt occupa il 25° posto con 4 punti, mentre il Lille è al 35° con 1. [Consulta la classifica completa](/calcio/champions-league/classifica)."
      ],
      "bullets": []
     }
@@ -10190,19 +10278,19 @@
    ]
   },
   "fb:1001635627": {
-   "fingerprint": "undwlu",
+   "fingerprint": "pgytf6",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Barcelona si impone in casa dell'Aston Villa con un netto 3-0. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; il primo tempo si era chiuso sul punteggio di 1-0."
+      "Il Barcelona ha superato l'Aston Villa in casa con un netto 3-0. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; il primo tempo si era chiuso sull'1-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite disputate finora il Barcelona occupa il 3° posto con 9 punti, mentre l'Aston Villa è al 4° posto con 9. [Consulta la classifica completa](/calcio/champions-league/classifica)."
+      "Con le partite giocate finora il Barcelona è al 5° posto con 9 punti, mentre l'Aston Villa è al 6° con 9. [Consulta la classifica completa](/calcio/champions-league/classifica)."
      ],
      "bullets": []
     }
@@ -10219,19 +10307,19 @@
    ]
   },
   "fb:575381": {
-   "fingerprint": "19i56sf",
+   "fingerprint": "rv9a42",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Bayern Monaco ha battuto in trasferta l'Atlético Madrid per 0-2. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; il primo tempo si era chiuso sullo 0-0."
+      "Il Bayern Monaco ha battuto l'Atlético Madrid in trasferta per 0-2. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; il primo tempo si era chiuso 0-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora l'Atlético Madrid occupa il 23° posto con 4 punti, mentre il Bayern Monaco è all'8° posto con 8 punti. [Consulta la classifica completa](/calcio/champions-league/classifica)."
+      "Con le partite giocate finora, l'Atlético Madrid è al 23° posto con 4 punti, mentre il Bayern Monaco è al 13° con 8. [Vai alla classifica completa](/calcio/champions-league/classifica)."
      ],
      "bullets": []
     }
@@ -10239,7 +10327,7 @@
    "faq": [
     {
      "q": "Com'è finita Atlético Madrid – Bayern Monaco?",
-     "a": "Il risultato finale è 0-2, con 0-0 all'intervallo."
+     "a": "0-2 (0-0 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
@@ -10248,19 +10336,19 @@
    ]
   },
   "fb:575382": {
-   "fingerprint": "gweax",
+   "fingerprint": "ed52cy",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Paris Saint-Germain supera in trasferta il Villarreal con un netto 0-6. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; il primo tempo si era chiuso 0-4."
+      "Il Paris Saint-Germain supera il Villarreal in trasferta con un netto 0-6. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; al termine del primo tempo il punteggio era già 0-4."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Villarreal occupa il 29° posto con 3 punti, mentre il Paris Saint-Germain è al 1° posto con 12. [Consulta la classifica completa](/calcio/champions-league/classifica)."
+      "Con le partite giocate finora il Villarreal è al 28° posto con 3 punti, mentre il Paris Saint-Germain è al 1° posto con 12. Puoi consultare la [classifica completa](/calcio/champions-league/classifica)."
      ],
      "bullets": []
     }
@@ -10272,24 +10360,24 @@
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Champions League](/calcio/champions-league)."
+     "a": "Nella pagina di [Champions League](/calcio/champions-league)."
     }
    ]
   },
   "fb:575385": {
-   "fingerprint": "s9xnab",
+   "fingerprint": "1af42ei",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Vittoria netta del LASK, che in casa supera lo Slovan Bratislava per 4-0. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; il primo tempo si era chiuso 3-0."
+      "Il LASK ha vinto in casa dello Slovan Bratislava con un netto 4-0. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; al termine del primo tempo il punteggio era già di 3-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il LASK è al 15° posto con 6 punti, mentre lo Slovan Bratislava è al 36° con 0. Per consultare la graduatoria aggiornata, vai alla [classifica completa](/calcio/champions-league/classifica)."
+      "Dopo le partite disputate finora, il LASK è al 16° posto con 6 punti, mentre lo Slovan Bratislava è al 36° con 0. Per consultare l'intera graduatoria, [vai alla classifica completa](/calcio/champions-league/classifica)."
      ],
      "bullets": []
     }
@@ -10306,19 +10394,19 @@
    ]
   },
   "fb:575386": {
-   "fingerprint": "1n5cvwu",
+   "fingerprint": "1ucbra0",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Real Madrid ha vinto in trasferta contro l'AEK Atene per 2-3, con un successo di misura. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata mercoledì 4 novembre; al termine del primo tempo il punteggio era 1-1."
+      "Il Real Madrid ha vinto in trasferta contro l'AEK Atene per 2-3, con un successo di misura. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata mercoledì 4 novembre; il primo tempo si era chiuso 1-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora, l'AEK Atene occupa il 30° posto con 3 punti, mentre il Real Madrid è al 2° posto con 12. [Consulta la classifica completa](/calcio/champions-league/classifica)."
+      "Dopo le partite disputate finora, l'AEK Atene occupa il 29° posto con 3 punti, mentre il Real Madrid è al 2° posto con 12. [Consulta la classifica completa](/calcio/champions-league/classifica)."
      ],
      "bullets": []
     }
@@ -10335,19 +10423,19 @@
    ]
   },
   "fb:575387": {
-   "fingerprint": "wdrda",
+   "fingerprint": "1ep4gi2",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Fenerbahçe batte di misura in casa il Liverpool per 3-2. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata mercoledì 4 novembre; il primo tempo si era chiuso 1-1."
+      "Il Fenerbahçe ha vinto di misura in casa contro il Liverpool, con il punteggio di 3-2. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata mercoledì 4 novembre; il primo tempo si era chiuso 1-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Fenerbahçe è al 19° posto con 5 punti, mentre il Liverpool è al 5° con 9. [Consulta la classifica completa](/calcio/champions-league/classifica)."
+      "Dopo le partite giocate finora, il Fenerbahçe è al 19° posto con 5 punti, mentre il Liverpool è all'8° con 9. [Classifica completa](/calcio/champions-league/classifica)."
      ],
      "bullets": []
     }
@@ -10360,6 +10448,209 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Champions League](/calcio/champions-league)."
+    }
+   ]
+  },
+  "fb:575393": {
+   "fingerprint": "1x5pdzm",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Vittoria larga del Como, che supera in trasferta il RC Lens per 1-9. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata mercoledì 4 novembre; il primo tempo si era chiuso 0-3."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il RC Lens è al 33° posto con 3 punti, mentre il Como è al 4° con 9. [Consulta la classifica completa](/calcio/champions-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita RC Lens – Como?",
+     "a": "1-9 (0-3 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league)."
+    }
+   ]
+  },
+  "fb:575391": {
+   "fingerprint": "1tfk6uv",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Vittoria di misura del Dortmund in casa, con il risultato finale di 2-1 contro il Real Betis. L'incontro, valido per la 4ª giornata della fase a campionato di Champions League, si è disputato mercoledì 4 novembre; il primo tempo si era chiuso sullo 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Dortmund è al 12° posto con 9 punti, mentre il Real Betis è all'11° con 9. [Classifica completa](/calcio/champions-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Dortmund – Real Betis?",
+     "a": "2-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league)."
+    }
+   ]
+  },
+  "fb:575388": {
+   "fingerprint": "1laepdn",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Manchester City ha vinto in trasferta per 2-3 contro il RB Leipzig. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata mercoledì 4 novembre; il primo tempo si era concluso 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il RB Leipzig è al 30° posto con 3 punti, mentre il Manchester City è al 7° con 9. Puoi consultare la [classifica completa](/calcio/champions-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita RB Leipzig – Manchester City?",
+     "a": "2-3 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league)."
+    }
+   ]
+  },
+  "fb:575390": {
+   "fingerprint": "1m6djn3",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Club Brugge ha vinto di misura in trasferta contro lo PSV, con il risultato di 1-2. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata mercoledì 4 novembre; il primo tempo si era chiuso 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora, lo PSV è al 24° posto con 4 punti, mentre il Club Brugge è al 9° con 9. [Consulta la classifica completa](/calcio/champions-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita PSV – Club Brugge?",
+     "a": "1-2 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league)."
+    }
+   ]
+  },
+  "fb:575392": {
+   "fingerprint": "1xe72g5",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Porto si impone in casa per 4-1 sul Napoli. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata mercoledì 4 novembre; al termine del primo tempo il punteggio era 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Porto è al 26° posto con 3 punti, mentre il Napoli è al 27° con 3. [Consulta la classifica completa](/calcio/champions-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Porto – Napoli?",
+     "a": "4-1 (1-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league)."
+    }
+   ]
+  },
+  "fb:575389": {
+   "fingerprint": "1wu4rqf",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "L'Arsenal si impone in trasferta sullo Slavia Praha per 1-2. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è disputata mercoledì 4 novembre; al termine del primo tempo il punteggio era di 0-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite giocate finora, lo Slavia Praha occupa il 34° posto con 1 punto, mentre l'Arsenal è al 3° posto con 10. Consulta la [classifica completa](/calcio/champions-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Slavia Praha – Arsenal?",
+     "a": "Il risultato finale è 1-2, con 0-2 all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina [Champions League](/calcio/champions-league)."
+    }
+   ]
+  },
+  "fb:1001635745": {
+   "fingerprint": "gyctau",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Viking ha vinto largamente in casa contro il Sabah FA, con il risultato finale di 4-1. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata mercoledì 4 novembre; al termine del primo tempo il punteggio era di 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, il Viking occupa il 22° posto con 4 punti, mentre il Sabah FA è al 31° con 3. [Consulta la classifica completa](/calcio/champions-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Viking – Sabah FA?",
+     "a": "Il risultato finale è 4-1, con il punteggio di 1-1 all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina dedicata alla [Champions League](/calcio/champions-league)."
     }
    ]
   },
@@ -10573,26 +10864,26 @@
    ]
   },
   "fb:561924": {
-   "fingerprint": "1ybeggx",
+   "fingerprint": "1nkjjvb",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Watford si impone in casa sul Lincoln City per 1-0. La gara, valida per la 14ª giornata di Championship, si è disputata martedì 3 novembre; al primo tempo il punteggio era ancora 0-0."
+      "Il Watford si impone in casa sul Lincoln City per 1-0. La partita, valida per la 14ª giornata di Championship, si è disputata martedì 3 novembre e il primo tempo si era chiuso sullo 0-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Dopo le partite disputate finora, il Watford occupa il 20° posto con 14 punti, mentre il Lincoln City è al 17° con 15. Per la tabella completa consulta la [classifica completa](/calcio/championship/classifica)."
+      "Dopo le partite disputate finora, il Watford occupa il 20° posto con 14 punti, mentre il Lincoln City è al 19° con 15. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/championship/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il Watford tornerà in campo sabato 7 novembre alle 16:00, in casa contro il Middlesbrough. Anche il Lincoln City giocherà sabato 7 novembre alle 16:00, ma in trasferta contro il QPR."
+      "Il Watford tornerà in campo sabato 7 novembre alle 16:00 in casa contro il Middlesbrough. Anche il Lincoln City giocherà sabato 7 novembre alle 16:00, ma in trasferta contro il QPR."
      ],
      "bullets": []
     }
@@ -10645,26 +10936,26 @@
    ]
   },
   "fb:561922": {
-   "fingerprint": "132vdkc",
+   "fingerprint": "1h4ypox",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Lo Stoke si impone in trasferta sul Blackburn con il punteggio di 1-2. La gara, valida per la 14ª giornata di Championship, si è disputata martedì 3 novembre; al termine del primo tempo il punteggio era 0-1."
+      "Lo Stoke si impone in trasferta sul campo del Blackburn con il punteggio di 1-2. La partita, valida per la 14ª giornata di Championship, si è giocata martedì 3 novembre; al termine del primo tempo il risultato era di 0-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite disputate finora, il Blackburn occupa il 14° posto con 18 punti, mentre lo Stoke è al 3° posto con 26. [Consulta la classifica completa](/calcio/championship/classifica)."
+      "Con le partite disputate finora, il Blackburn occupa il 14° posto con 18 punti, mentre lo Stoke è al 4° con 26. [Consulta la classifica completa](/calcio/championship/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il Blackburn tornerà in campo sabato 7 novembre alle 16:00 in casa contro il West Ham. Lo Stoke tornerà in campo sabato 7 novembre alle 13:30 in trasferta contro il Portsmouth."
+      "Il Blackburn tornerà in campo sabato 7 novembre alle 16:00, giocando in casa contro il West Ham. Lo Stoke scenderà in campo sabato 7 novembre alle 13:30, in trasferta contro il Portsmouth."
      ],
      "bullets": []
     }
@@ -10672,7 +10963,7 @@
    "faq": [
     {
      "q": "Com'è finita Blackburn – Stoke?",
-     "a": "Il risultato finale è 1-2, con il punteggio di 0-1 all'intervallo."
+     "a": "Il risultato finale è 1-2, con 0-1 all'intervallo."
     },
     {
      "q": "Dove trovo gli altri risultati?",
@@ -10753,26 +11044,26 @@
    ]
   },
   "fb:561928": {
-   "fingerprint": "9uhokl",
+   "fingerprint": "17tgi4a",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Bolton si impone in trasferta sul campo del Charlton per 0-1. La gara, valida per la 14ª giornata di Championship, si è disputata martedì 3 novembre; il primo tempo era già terminato 0-1."
+      "Il Bolton si impone in trasferta sul Charlton per 0-1. La partita, valida per la 14ª giornata di Championship, si è disputata martedì 3 novembre; il primo tempo si era concluso 0-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite disputate finora il Charlton occupa il 21° posto con 14 punti, mentre il Bolton è al 16° con 17. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/championship/classifica)."
+      "Con le partite disputate finora il Charlton occupa il 21° posto con 14 punti, mentre il Bolton è al 17° con 17. [Consulta la classifica completa](/calcio/championship/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il Charlton tornerà in campo sabato 7 novembre alle 16:00, ospitando lo Sheffield Utd. Il Bolton tornerà in campo venerdì 6 novembre alle 21:00, in trasferta contro il Derby County."
+      "Il Charlton tornerà in campo sabato 7 novembre alle 16:00 in casa contro lo Sheffield Utd. Il Bolton scenderà in campo venerdì 6 novembre alle 21:00 in trasferta contro il Derby County."
      ],
      "bullets": []
     }
@@ -10789,69 +11080,69 @@
    ]
   },
   "fb:561918": {
-   "fingerprint": "1v2w7ab",
+   "fingerprint": "18vg8we",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Portsmouth ha battuto lo Swansea 3-1 in casa. La partita, valida per la 14ª giornata di Championship, si è giocata martedì 3 novembre, e il primo tempo era terminato 1-0."
+      "Il Portsmouth supera in casa lo Swansea per 3-1. La partita, valida per la 14ª giornata di Championship, si è giocata martedì 3 novembre; al termine del primo tempo il punteggio era 1-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Portsmouth è decimo con 22 punti, mentre lo Swansea è quarto con 26. [Consulta la classifica completa](/calcio/championship/classifica)."
+      "Con le partite giocate finora il Portsmouth occupa il 10° posto con 22 punti, mentre lo Swansea è al 5° con 26. Per la graduatoria aggiornata consulta la [classifica completa](/calcio/championship/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il Portsmouth tornerà in campo sabato 7 novembre alle 13:30, in casa contro lo Stoke. Lo Swansea giocherà sabato 7 novembre alle 16:00, in trasferta contro il Birmingham."
+      "Il Portsmouth tornerà in campo sabato 7 novembre alle 13:30 in casa contro lo Stoke. Lo Swansea giocherà sabato 7 novembre alle 16:00 in trasferta contro il Birmingham."
      ],
      "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Com'è finita la partita tra Portsmouth e Swansea?",
-     "a": "Il Portsmouth ha vinto 3-1, dopo un primo tempo chiuso 1-0."
+     "q": "Qual è stato il risultato di Portsmouth – Swansea?",
+     "a": "3-1 (1-0 all'intervallo)."
     },
     {
-     "q": "Dove posso consultare gli altri risultati?",
-     "a": "Nella pagina dedicata al [Championship](/calcio/championship)."
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
     }
    ]
   },
   "fb:561917": {
-   "fingerprint": "89v8fa",
+   "fingerprint": "1sph1p5",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Birmingham ha battuto il Millwall in casa con il punteggio di 3-0. La partita, valida per la 14ª giornata di Championship, si è giocata martedì 3 novembre; anche il primo tempo si era chiuso 3-0."
+      "Il Birmingham ha superato il Millwall per 3-0 in casa. La partita, valida per la 14ª giornata di Championship, si è giocata martedì 3 novembre; al termine del primo tempo il punteggio era già di 3-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Birmingham occupa il 2° posto con 26 punti, mentre il Millwall è al 13° con 18. [Classifica completa](/calcio/championship/classifica)."
+      "Con le partite giocate finora il Birmingham occupa il 3° posto con 26 punti, mentre il Millwall è al 13° con 18. [Classifica completa](/calcio/championship/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il Birmingham tornerà in campo sabato 7 novembre alle 16:00 in casa contro lo Swansea. Il Millwall tornerà in campo sabato 7 novembre alle 16:00 in trasferta contro il West Brom."
+      "Il Birmingham tornerà in campo sabato 7 novembre alle 16:00 in casa contro lo Swansea. Il Millwall sarà impegnato sabato 7 novembre alle 16:00 in trasferta contro il West Brom."
      ],
      "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Qual è il risultato di Birmingham – Millwall?",
+     "q": "Com'è finita Birmingham – Millwall?",
      "a": "3-0 (3-0 all'intervallo)."
     },
     {
@@ -10861,26 +11152,26 @@
    ]
   },
   "fb:561923": {
-   "fingerprint": "37fzkf",
+   "fingerprint": "1m9y561",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il match si chiude 1-1: il West Brom, in vantaggio 1-0 all'intervallo, viene raggiunto dal Southampton nel secondo tempo. La partita, valida per la 14ª giornata di Championship, si è giocata martedì 3 novembre."
+      "Il West Brom ha chiuso la partita sull'1-1. Dopo essere passato in vantaggio e aver chiuso il primo tempo 1-0, la squadra è stata raggiunta dal Southampton nella ripresa. L'incontro, valido per la 14ª giornata di Championship, si è disputato martedì 3 novembre."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il West Brom occupa il 5° posto con 25 punti, mentre il Southampton è al 6° con 24. [Consulta la classifica completa](/calcio/championship/classifica)."
+      "Dopo le partite disputate finora, il West Brom occupa il 6° posto con 25 punti, mentre il Southampton è al 7° con 24. [Consulta la classifica completa](/calcio/championship/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il West Brom tornerà in campo sabato 7 novembre alle 16:00 in casa contro il Millwall. Il Southampton giocherà sabato 7 novembre alle 16:00 in trasferta contro il Preston NE."
+      "Il West Brom tornerà in campo sabato 7 novembre alle 16:00, ospitando il Millwall. Anche il Southampton scenderà in campo sabato 7 novembre alle 16:00, in trasferta contro il Preston NE."
      ],
      "bullets": []
     }
@@ -11001,38 +11292,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Brasileirão](/calcio/brasileirao)."
-    }
-   ]
-  },
-  "nba:21718009": {
-   "fingerprint": "rp6mo5",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Nets battono i Pacers 98-90. La partita si è giocata domenica 1 novembre.",
-      "All'intervallo i Nets conducevano 43-40.",
-      "Il parziale più netto è arrivato nel 3º quarto, vinto dai Nets 28-22."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 188.",
-      "Parziali (Pacers–Nets): 19-20, 21-23, 22-28, 28-27."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Indiana Pacers – Brooklyn Nets?",
-     "a": "Il risultato finale è stato 90-98 per i Nets."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Le altre partite NBA si trovano nella [pagina dedicata ai pronostici NBA](/pronostici/nba)."
     }
    ]
   },
