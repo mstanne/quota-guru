@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-04T12:20:33.992Z",
+ "generatedAt": "2026-11-04T15:20:44.283Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558537": {
@@ -10551,78 +10551,6 @@
     }
    ]
   },
-  "fb:558546": {
-   "fingerprint": "x8dv5q",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "La Lazio ha battuto il Cagliari per 2-1 in casa. La partita, valida per la 10ª giornata di Serie A, si è giocata domenica 1 novembre; il primo tempo si era chiuso 1-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora la Lazio è al 1° posto con 28 punti, mentre il Cagliari è al 12° con 13. [Consulta la classifica completa](/calcio/serie-a/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "La Lazio tornerà in campo domenica 8 novembre alle 12:30 in trasferta contro il Napoli. Il Cagliari giocherà sabato 7 novembre alle 15:00 in casa contro il Frosinone."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Lazio – Cagliari?",
-     "a": "2-1 (1-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Serie A](/calcio/serie-a)."
-    }
-   ]
-  },
-  "fb:558544": {
-   "fingerprint": "1jnj0mw",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Frosinone ha battuto il Torino in casa per 2-0. La partita, valida per la 10ª giornata di Serie A, si è giocata domenica 1 novembre; al termine del primo tempo il punteggio era di 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Frosinone è al 6° posto con 20 punti, mentre il Torino è al 10° con 13. Puoi consultare la [classifica completa](/calcio/serie-a/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Frosinone tornerà in campo sabato 7 novembre alle 15:00, in trasferta contro il Cagliari. Il Torino tornerà in campo sabato 7 novembre alle 15:00, in casa contro il Lecce."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Frosinone – Torino?",
-     "a": "2-0 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Puoi trovarli nella pagina [Serie A](/calcio/serie-a)."
-    }
-   ]
-  },
   "fb:558540": {
    "fingerprint": "voqqgu",
    "sections": [
@@ -10764,114 +10692,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina di [Serie A](/calcio/serie-a)."
-    }
-   ]
-  },
-  "fb:1001601587": {
-   "fingerprint": "17noord",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il match si conclude 2-2: l'Empoli, in vantaggio 2-1 all'intervallo, viene raggiunto nella ripresa dal Juve Stabia. La partita, valida per la 10ª giornata di Serie B, si è disputata domenica 1 novembre."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora l'Empoli occupa il 18° posto con 8 punti, mentre il Juve Stabia è al 16° con 9. [Consulta la classifica completa](/calcio/serie-b/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Empoli tornerà in campo sabato 7 novembre alle 15:00 in trasferta contro il Padova. Il Juve Stabia scenderà di nuovo in campo sabato 7 novembre alle 15:00 in casa contro l'Arezzo."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Empoli – Juve Stabia?",
-     "a": "2-2 (2-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Serie B](/calcio/serie-b)."
-    }
-   ]
-  },
-  "fb:1001601584": {
-   "fingerprint": "1dgl114",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "L'Avellino ha battuto il Pisa in casa per 2-0. La partita, valida per la 10ª giornata di Serie B, si è disputata domenica 1 novembre; al termine del primo tempo il punteggio era di 1-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora l'Avellino è al 5° posto con 15 punti, mentre il Pisa è all'8° con 15. Per l'intera graduatoria consulta la [classifica completa](/calcio/serie-b/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Avellino tornerà in campo sabato 7 novembre alle 19:30, in trasferta contro il Benevento. Il Pisa giocherà sabato 7 novembre alle 15:00, in casa contro il Sudtirol."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Avellino – Pisa?",
-     "a": "2-0 (1-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Serie B](/calcio/serie-b)."
-    }
-   ]
-  },
-  "fb:1001601583": {
-   "fingerprint": "m13cp0",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Arezzo e Ascoli chiudono la partita sullo 0-0. Il match, valido per la 10ª giornata di Serie B, si è disputato domenica 1 novembre e il primo tempo era già terminato 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Considerando le partite disputate finora, l'Arezzo occupa il 13° posto con 11 punti, mentre l'Ascoli è al 3° posto con 19. Per l'intera graduatoria consulta la [classifica completa](/calcio/serie-b/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Arezzo tornerà in campo sabato 7 novembre alle 15:00, in trasferta contro il Juve Stabia. L'Ascoli scenderà in campo venerdì 6 novembre alle 20:30, in casa contro il Palermo."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Arezzo – Ascoli?",
-     "a": "0-0, con lo stesso punteggio anche all'intervallo."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina dedicata alla [Serie B](/calcio/serie-b)."
     }
    ]
   },
@@ -11280,78 +11100,6 @@
     }
    ]
   },
-  "fb:564733": {
-   "fingerprint": "1u897lh",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Getafe ha ribaltato la partita e ha vinto in casa per 3-1 contro il Sevilla FC. Il primo tempo si era chiuso 0-1. La gara, valida per la 11ª giornata di LaLiga, si è giocata domenica 1 novembre."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Getafe è al 13° posto con 12 punti, mentre il Sevilla FC è al 6° con 17. [Consulta la classifica completa](/calcio/liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Getafe tornerà in campo domenica 8 novembre alle 18:30 in trasferta contro il Villarreal. Il Sevilla FC giocherà venerdì 6 novembre alle 21:00 in casa contro l'Alavés."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Getafe – Sevilla FC?",
-     "a": "3-1 (0-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [LaLiga](/calcio/liga)."
-    }
-   ]
-  },
-  "fb:564734": {
-   "fingerprint": "1cj7wqg",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Real Madrid ha superato il Santander in trasferta con un netto 0-3. La partita, valida per la 11ª giornata di LaLiga, si è giocata domenica 1 novembre; il primo tempo si era chiuso 0-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Santander è al 16° posto con 11 punti, mentre il Real Madrid è al 3° con 27. [Consulta la classifica completa](/calcio/liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Santander tornerà in campo sabato 7 novembre alle 14:00 in trasferta contro il Málaga. Il Real Madrid tornerà in campo sabato 7 novembre alle 21:00 in trasferta contro il Valencia."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Santander – Real Madrid?",
-     "a": "0-3 (0-3 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [LaLiga](/calcio/liga)."
-    }
-   ]
-  },
   "fb:564728": {
    "fingerprint": "1eemcvs",
    "sections": [
@@ -11460,42 +11208,6 @@
     }
    ]
   },
-  "fb:565841": {
-   "fingerprint": "12p4tke",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il match si chiude 1-1: l'Union Berlin, in vantaggio all'intervallo 1-0, viene raggiunto nella ripresa dal 1. FC Köln. La partita, valida per la 8ª giornata di Bundesliga, si è giocata domenica 1 novembre."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Alla luce delle partite disputate finora, l'Union Berlin occupa il 16° posto con 7 punti, mentre il 1. FC Köln è al 13° con 9. [Consulta la classifica completa](/calcio/bundesliga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Union Berlin tornerà in campo domenica 8 novembre alle 17:30, in trasferta contro il Freiburg. Il 1. FC Köln giocherà domenica 8 novembre alle 15:30, in casa contro il Leverkusen."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Union Berlin – 1. FC Köln?",
-     "a": "1-1 (1-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
-    }
-   ]
-  },
   "fb:565844": {
    "fingerprint": "1hgrh89",
    "sections": [
@@ -11529,42 +11241,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
-    }
-   ]
-  },
-  "fb:559647": {
-   "fingerprint": "15gvv8l",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Lo Strasbourg ha vinto in casa per 5-1 contro l'Auxerre. La partita, valida per la 9ª giornata di Ligue 1, si è giocata domenica 1 novembre; il primo tempo si era chiuso 1-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora lo Strasbourg è al 13° posto con 10 punti, mentre l'Auxerre è al 14° con 10. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Lo Strasbourg tornerà in campo venerdì 6 novembre alle 20:45 in trasferta contro il Toulouse. L'Auxerre giocherà sabato 7 novembre alle 17:15 in casa contro il Paris FC."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Strasbourg – Auxerre?",
-     "a": "5-1 (1-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
     }
    ]
   },
@@ -11709,78 +11385,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Puoi consultarli nella pagina [Ligue 1](/calcio/ligue-1)."
-    }
-   ]
-  },
-  "fb:558847": {
-   "fingerprint": "4tbaev",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Twente ha vinto in trasferta contro l'Excelsior con il punteggio di 0-9. La partita, valida per la 11ª giornata di Eredivisie, si è giocata domenica 1 novembre; il primo tempo si era chiuso 0-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora l'Excelsior è al 15° posto con 11 punti, mentre il Twente è al 4° con 23. [Vai alla classifica completa](/calcio/eredivisie/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Excelsior tornerà in campo sabato 7 novembre alle 21:00 in casa contro il Go Ahead. Il Twente tornerà in campo domenica 8 novembre alle 14:30 in casa contro l'Ajax."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Excelsior – Twente?",
-     "a": "0-9 (0-5 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
-    }
-   ]
-  },
-  "fb:1001552214": {
-   "fingerprint": "4ax5h4",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Telstar ha battuto l'Utrecht in casa per 4-2. La partita, valida per l'11ª giornata di Eredivisie, si è giocata domenica 1 novembre; il primo tempo si era chiuso 3-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Considerando le partite giocate finora, il Telstar è al 16° posto con 9 punti, mentre l'Utrecht è al 12° con 12. [Consulta la classifica completa](/calcio/eredivisie/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Telstar tornerà in campo sabato 7 novembre alle 16:30, in trasferta contro il Sittard. L'Utrecht giocherà domenica 8 novembre alle 20:00, in casa contro il NEC."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Telstar – Utrecht?",
-     "a": "4-2 (3-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
     }
    ]
   },
