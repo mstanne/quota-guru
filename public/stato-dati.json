@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T23:28:24.036Z",
+  "updatedAt": "2026-11-04T00:19:24.091Z",
   "football": {
     "details": {
       "ok": true
@@ -8,8 +8,8 @@
       "ok": true
     },
     "ok": true,
-    "requests": 66,
-    "remainingToday": 2222,
+    "requests": 0,
+    "remainingToday": null,
     "matches": 113,
     "teamSeasons": 588
   },
@@ -21,23 +21,23 @@
       "ok": true
     },
     "ok": true,
-    "requests": 18,
-    "remainingToday": 7062,
+    "requests": 16,
+    "remainingToday": 7484,
     "games": 19,
     "teamSeasons": 60
   },
   "calendarioCalcio": {
-    "updatedAt": "2026-11-03T23:26:53.976Z",
+    "updatedAt": "2026-11-04T00:17:53.216Z",
     "source": "API-Football",
     "ok": true,
     "competitions": {
       "SA": {
         "ok": true,
-        "matches": 69
+        "matches": 65
       },
       "SB": {
         "ok": true,
-        "matches": 69
+        "matches": 64
       },
       "CL": {
         "ok": true,
@@ -53,31 +53,31 @@
       },
       "PL": {
         "ok": true,
-        "matches": 59
+        "matches": 54
       },
       "PD": {
         "ok": true,
-        "matches": 60
+        "matches": 56
       },
       "BL1": {
         "ok": true,
-        "matches": 53
+        "matches": 48
       },
       "FL1": {
         "ok": true,
-        "matches": 53
+        "matches": 48
       },
       "DED": {
         "ok": true,
-        "matches": 53
+        "matches": 49
       },
       "PPL": {
         "ok": true,
-        "matches": 46
+        "matches": 42
       },
       "ELC": {
         "ok": true,
-        "matches": 96
+        "matches": 87
       },
       "BSA": {
         "ok": true,
@@ -85,14 +85,14 @@
       }
     },
     "requests": 44,
-    "remainingToday": 2315
+    "remainingToday": 7464
   },
   "calendarioNba": {
-    "updatedAt": "2026-11-03T23:27:04.977Z",
+    "updatedAt": "2026-11-04T00:18:04.477Z",
     "source": "API-NBA",
     "ok": true,
     "games": 205,
     "requests": 1,
-    "remainingToday": 7079
+    "remainingToday": 7499
   }
 }
