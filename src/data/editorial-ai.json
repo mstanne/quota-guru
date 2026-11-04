@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-04T09:20:37.468Z",
+ "generatedAt": "2026-11-04T12:20:33.992Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558537": {
@@ -10551,42 +10551,6 @@
     }
    ]
   },
-  "fb:558543": {
-   "fingerprint": "btnf5b",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Como ha vinto in casa per 1-0 contro il Venezia. La partita, valida per la 10ª giornata di Serie A, si è giocata domenica 1 novembre; il primo tempo si era chiuso sul punteggio di 1-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Como è al 4° posto con 23 punti, mentre il Venezia è al 20° con 3. [Consulta la classifica completa](/calcio/serie-a/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Como tornerà in campo domenica 8 novembre alle 18:00 in trasferta contro l'Inter. Il Venezia tornerà in campo venerdì 6 novembre alle 20:45 in casa contro l'Udinese."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Como – Venezia?",
-     "a": "1-0 (1-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Serie A](/calcio/serie-a)."
-    }
-   ]
-  },
   "fb:558546": {
    "fingerprint": "x8dv5q",
    "sections": [
@@ -11745,42 +11709,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Puoi consultarli nella pagina [Ligue 1](/calcio/ligue-1)."
-    }
-   ]
-  },
-  "fb:558849": {
-   "fingerprint": "1snighv",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Lo Zwolle ha vinto di misura in casa contro il Den Haag, con il punteggio di 1-0. La partita, valida per l'11ª giornata di Eredivisie, si è giocata domenica 1 novembre e il primo tempo si era chiuso sul punteggio di 1-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora, lo Zwolle è al 14° posto con 11 punti, mentre il Den Haag è al 17° con 6 punti. [Consulta la classifica completa](/calcio/eredivisie/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Lo Zwolle tornerà in campo venerdì 6 novembre alle 20:00, in trasferta contro il Willem II. Il Den Haag giocherà sabato 7 novembre alle 18:45, in casa contro lo Sparta Rotterdam."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Zwolle – Den Haag?",
-     "a": "1-0, con lo stesso risultato già al termine del primo tempo (1-0)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
     }
    ]
   },
