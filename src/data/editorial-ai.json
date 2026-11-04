@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-04T17:21:24.676Z",
+ "generatedAt": "2026-11-04T18:20:58.455Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558537": {
@@ -873,90 +873,6 @@
     }
    ]
   },
-  "fb:575386": {
-   "fingerprint": "ny7jkk",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 4 novembre alle 18:45 l'AEK Atene ospita il Real Madrid per la 4ª giornata della fase a campionato di Champions League. In classifica l'AEK Atene è al 27° posto con 3 punti, il Real Madrid al 5° con 9."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Champions League l'AEK Atene ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 8 subiti. Ha perso le ultime 2.",
-      "Nelle ultime 2 partite di Champions League il Real Madrid ha raccolto 2 vittorie (sequenza V-V), con 8 gol fatti e 4 subiti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: AEK Atene 1,0, Real Madrid 3,3 a partita.",
-      "Gol subiti finora: AEK Atene 8, Real Madrid 5."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca AEK Atene – Real Madrid?",
-     "a": "Mercoledì 4 novembre alle 18:45, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina dedicata alla [Champions League](/calcio/champions-league) e la [classifica aggiornata](/calcio/champions-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti aiutano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:575387": {
-   "fingerprint": "i9d5r8",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Appuntamento mercoledì 4 novembre alle 18:45: il Fenerbahçe riceve il Liverpool per la 4ª giornata della fase a campionato di Champions League. In classifica il Fenerbahçe è al 31° posto con 2 punti, il Liverpool al 4° con 9."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Champions League il Fenerbahçe ha raccolto 1 pareggio e 1 sconfitta (sequenza P-N), con 2 gol fatti e 8 subiti.",
-      "Nelle ultime 2 partite di Champions League il Liverpool ha raccolto 2 vittorie (sequenza V-V), con 10 gol fatti e 6 subiti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Fenerbahçe 1,0, Liverpool 4,0 a partita.",
-      "Gol subiti finora: Fenerbahçe 9, Liverpool 7."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Fenerbahçe – Liverpool?",
-     "a": "Mercoledì 4 novembre alle 18:45, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:575393": {
    "fingerprint": "ju862g",
    "sections": [
@@ -1399,20 +1315,20 @@
    ]
   },
   "fb:1001636208": {
-   "fingerprint": "kp6km5",
+   "fingerprint": "2leplw",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Giovedì 5 novembre alle 18:45 il Milan ospita il Ferencvarosi TC per la 4ª giornata della fase a campionato di Europa League. In classifica il Milan è al 24° posto con 3 punti, il Ferencvarosi TC al 4° con 9."
+      "Giovedì 5 novembre alle 18:45 il Milan ospita il Ferencvarosi TC per la 4ª giornata della fase a campionato di Europa League. In classifica il Milan occupa il 24° posto con 3 punti, mentre il Ferencvarosi TC è al 5° posto con 9."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Europa League il Milan ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 4 gol fatti e 3 subiti.",
-      "Nelle ultime 2 partite di Europa League il Ferencvarosi TC ha raccolto 2 vittorie (sequenza V-V), con 6 gol fatti e 2 subiti."
+      "Nelle ultime 2 partite di Europa League il Milan ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 4 gol e subendone 3.",
+      "Nelle ultime 2 partite di Europa League il Ferencvarosi TC ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 2."
      ],
      "bullets": []
     },
@@ -1420,7 +1336,7 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Milan 1,3, Ferencvarosi TC 3,0 a partita.",
+      "Media gol segnati a partita: Milan 1,3, Ferencvarosi TC 3,0.",
       "Gol subiti finora: Milan 5, Ferencvarosi TC 3."
      ]
     }
@@ -1431,30 +1347,30 @@
      "a": "Giovedì 5 novembre alle 18:45, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001636319": {
-   "fingerprint": "cga06x",
+   "fingerprint": "1ekee86",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Giovedì 5 novembre alle 18:45 il Real Sociedad ospita l'Olympique Lyon nella 4ª giornata della fase a campionato di Europa League. In classifica il Real Sociedad occupa il 14° posto con 4 punti, mentre l'Olympique Lyon è al 12° posto con 6 punti."
+      "Giovedì 5 novembre alle 18:45 il Real Sociedad ospita l'Olympique Lyon per la 4ª giornata della fase a campionato di Europa League. In classifica il Real Sociedad è al 14° posto con 4 punti, l'Olympique Lyon al 13° con 6."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Europa League il Real Sociedad ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), con 7 gol segnati e 1 subito.",
-      "Nelle ultime 2 partite di Europa League l'Olympique Lyon ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), con 3 gol segnati e 5 subiti."
+      "Nelle ultime 2 partite di Europa League il Real Sociedad ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 7 gol fatti e 1 subito.",
+      "Nelle ultime 2 partite di Europa League l'Olympique Lyon ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 3 gol fatti e 5 subiti."
      ],
      "bullets": []
     },
@@ -1462,14 +1378,14 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Real Sociedad 2,7, Olympique Lyon 1,7.",
+      "Media gol segnati: Real Sociedad 2,7, Olympique Lyon 1,7 a partita.",
       "Gol subiti finora: Real Sociedad 3, Olympique Lyon 6."
      ]
     },
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per il Real Sociedad, nessuna per l'Olympique Lyon e nessun pareggio, con 4 gol complessivi (media di 2,0 a partita). L'ultimo incontro, nell'agosto 2013 in UEFA Champions League, è terminato Real Sociedad 2-0 Olympique Lyon."
+      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per il Real Sociedad, 0 vittorie per l'Olympique Lyon e nessun pareggio, con 4 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, ad agosto 2013 in UEFA Champions League, è finito Real Sociedad 2-0 Olympique Lyon."
      ],
      "bullets": []
     }
@@ -1480,7 +1396,7 @@
      "a": "Giovedì 5 novembre alle 18:45, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
     },
     {
@@ -1532,12 +1448,12 @@
    ]
   },
   "fb:1001636337": {
-   "fingerprint": "4pb9m5",
+   "fingerprint": "t7cfwi",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento giovedì 5 novembre alle 18:45: lo Sparta riceve il Bournemouth per la 4ª giornata della fase a campionato di Europa League. In classifica lo Sparta è al 16° posto con 4 punti, il Bournemouth al 3° con 9."
+      "Appuntamento giovedì 5 novembre alle 18:45: lo Sparta riceve il Bournemouth per la 4ª giornata della fase a campionato di Europa League. In classifica lo Sparta è al 16° posto con 4 punti, il Bournemouth al 4° con 9."
      ],
      "bullets": []
     },
@@ -1616,20 +1532,20 @@
    ]
   },
   "fb:1001636223": {
-   "fingerprint": "1w5vtj",
+   "fingerprint": "1wamkey",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 il Leverkusen ospita il Marseille per la 4ª giornata della fase a campionato di Europa League. In classifica il Leverkusen è al 2° posto con 9 punti, mentre il Marseille è al 34° posto con 0 punti."
+      "Giovedì 5 novembre alle 21:00 il Leverkusen ospita il Marseille per la 4ª giornata della fase a campionato di Europa League. In classifica il Leverkusen è al 3° posto con 9 punti, mentre il Marseille è al 34° posto con 0 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Europa League il Leverkusen ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 0.",
-      "Nelle ultime 2 partite di Europa League il Marseille ha ottenuto 2 sconfitte (sequenza P-P), segnando 0 gol e subendone 2. Ha perso entrambe le ultime 2 gare."
+      "Nelle ultime 2 partite di Europa League il Leverkusen ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e non subendone nessuno.",
+      "Nelle ultime 2 partite di Europa League il Marseille ha subito 2 sconfitte (sequenza P-P), senza segnare e subendo 2 gol. Le ultime 2 gare sono state tutte perse."
      ],
      "bullets": []
     },
@@ -1645,7 +1561,7 @@
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 1 confronti diretti il bilancio è di 1 vittoria per il Leverkusen, 0 vittorie per il Marseille e nessun pareggio, con 3 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, disputato ad agosto 2023 in Friendlies Clubs, è terminato Marseille 1-2 Leverkusen."
+      "Negli ultimi 1 confronti diretti il bilancio è di 1 vittoria per il Leverkusen, 0 vittorie per il Marseille e nessun pareggio, con 3 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, ad agosto 2023 in Friendlies Clubs, è terminato Marseille 1-2 Leverkusen."
      ],
      "bullets": []
     }
@@ -1708,20 +1624,20 @@
    ]
   },
   "fb:1001636229": {
-   "fingerprint": "17r6ml4",
+   "fingerprint": "wrbnt1",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 lo SL Benfica riceve il Lech Poznan per la 4ª giornata della fase a campionato di Europa League. In classifica lo SL Benfica è al 1° posto con 9 punti, mentre il Lech Poznan è al 32° con 1 punto."
+      "Giovedì 5 novembre alle 21:00 lo SL Benfica ospita il Lech Poznan per la 4ª giornata della fase a campionato di Europa League. In classifica lo SL Benfica occupa il 2° posto con 9 punti, mentre il Lech Poznan è al 32° posto con 1 punto."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Europa League lo SL Benfica ha raccolto 2 vittorie (sequenza V-V), con 8 gol fatti e 2 subiti.",
-      "Nelle ultime 2 partite di Europa League il Lech Poznan ha raccolto 1 pareggio e 1 sconfitta (sequenza P-N), con 1 gol fatto e 5 subiti."
+      "Nelle ultime 2 partite di Europa League lo SL Benfica ha ottenuto 2 vittorie (sequenza V-V), segnando 8 gol e subendone 2.",
+      "Nelle ultime 2 partite di Europa League il Lech Poznan ha collezionato 1 pareggio e 1 sconfitta (sequenza P-N), con 1 gol fatto e 5 subiti."
      ],
      "bullets": []
     },
@@ -1737,7 +1653,7 @@
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per lo SL Benfica, 0 vittorie per il Lech Poznan e nessun pareggio, con 10 gol complessivi (media di 5,0 a partita). L'ultimo incrocio, a dicembre 2020 in UEFA Europa League, è finito SL Benfica 4-0 Lech Poznan."
+      "Negli ultimi 2 confronti diretti lo SL Benfica ha vinto 2 volte, il Lech Poznan nessuna, e non ci sono stati pareggi, con 10 gol complessivi (media di 5,0 a partita). L'ultimo incontro, nel dicembre 2020 in UEFA Europa League, si è concluso SL Benfica 4-0 Lech Poznan."
      ],
      "bullets": []
     }
@@ -1749,11 +1665,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
+     "a": "Puoi consultarli nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -10914,6 +10830,35 @@
     }
    ]
   },
+  "fb:1001636324": {
+   "fingerprint": "4n96gs",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Rennes e l'Olympiakos Piraeus non sono riusciti a segnare: la partita è terminata 0-0. L'incontro, valido per la 4ª giornata della fase a campionato di Europa League, si è giocato mercoledì 4 novembre, e anche il primo tempo si era chiuso 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Rennes occupa il 12° posto con 6 punti, mentre l'Olympiakos Piraeus è al 1° posto con 10. Per consultare la [classifica completa](/calcio/europa-league/classifica) è possibile seguire il link indicato."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Rennes – Olympiakos Piraeus?",
+     "a": "È finita 0-0, con lo stesso punteggio anche all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Gli altri risultati sono disponibili nella pagina di [Europa League](/calcio/europa-league)."
+    }
+   ]
+  },
   "fb:1001557455": {
    "fingerprint": "ajresu",
    "sections": [
@@ -10947,42 +10892,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Premier League](/calcio/premier-league)."
-    }
-   ]
-  },
-  "fb:564728": {
-   "fingerprint": "1eemcvs",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Valencia ha vinto in trasferta per 1-0 sul campo dell'Elche, con il risultato di 0-1. La partita, valida per la 11ª giornata di LaLiga, si è giocata domenica 1 novembre; il primo tempo si era chiuso 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora l'Elche è al 17° posto con 10 punti e il Valencia al 19° con 9. [Consulta la classifica completa](/calcio/liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Elche tornerà in campo domenica 8 novembre alle 14:00 in casa contro il Real Betis. Il Valencia tornerà in campo sabato 7 novembre alle 21:00 in casa contro il Real Madrid."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Elche – Valencia?",
-     "a": "0-1 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [LaLiga](/calcio/liga)."
     }
    ]
   },
@@ -11127,78 +11036,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Puoi consultarli nella pagina [Ligue 1](/calcio/ligue-1)."
-    }
-   ]
-  },
-  "fb:567340": {
-   "fingerprint": "xr4m0w",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Santa Clara ha vinto in trasferta contro il Marítimo per 0-2. La partita, valida per la 10ª giornata di Primeira Liga, si è giocata domenica 1 novembre; il primo tempo si era chiuso sul punteggio di 0-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Marítimo occupa il 14° posto con 8 punti, mentre il Santa Clara è al 4° posto con 21. [Consulta la classifica completa](/calcio/primeira-liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Marítimo tornerà in campo domenica 8 novembre alle 16:30 in trasferta contro l'Estoril Praia. Il Santa Clara tornerà in campo domenica 8 novembre alle 16:30 in casa contro il Gil Vicente."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Marítimo – Santa Clara?",
-     "a": "Il risultato finale è 0-2, con 0-1 all'intervallo."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
-    }
-   ]
-  },
-  "fb:567345": {
-   "fingerprint": "bxtesw",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "L'Acad. Viseu ha ribaltato il risultato e ha vinto 2-1 in casa contro il Rio Ave. Il primo tempo si era chiuso 0-1. La partita, valida per la 10ª giornata di Primeira Liga, si è giocata domenica 1 novembre."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Dopo le partite giocate finora, l'Acad. Viseu occupa il 6° posto con 20 punti, mentre il Rio Ave è al 16° con 7. [Vai alla classifica completa](/calcio/primeira-liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Sabato 7 novembre alle 16:30 l'Acad. Viseu giocherà in trasferta contro il CD Nacional. Il Rio Ave tornerà in campo domenica 8 novembre alle 21:30, ospitando il Braga."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Qual è stato il risultato di Acad. Viseu – Rio Ave?",
-     "a": "2-1 (0-1 all'intervallo)."
-    },
-    {
-     "q": "Dove si trovano gli altri risultati?",
-     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
     }
    ]
   },
