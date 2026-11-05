@@ -1,4 +1,4 @@
-// Quick update of scores and standings between the full data refreshes (workflow .github/workflows/live-scores.yml,
+// Quick update of scores and standings between the full data refreshes (football here, NBA in lib/live-nba.mjs) (workflow .github/workflows/live-scores.yml,
 // every 15 minutes). Starts from the src/data/football.json of the last full run and, only if a match is under way or
 // just finished, asks API-Football for those matches by id (1 request per 20 matches: score, official line-ups,
 // events and statistics, kept in the match as `live`) and for the standings of the
@@ -13,6 +13,7 @@ import { fileURLToPath } from "node:url";
 import { apiSports, loadDotEnv } from "./lib/api-sports.mjs";
 import { COMPETITIONS, compactFixture, compactStandings } from "./fetch-football.mjs";
 import { footballDetails } from "./lib/match-details.mjs";
+import { updateLiveNba } from "./lib/live-nba.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "data", "football.json");
@@ -47,21 +48,47 @@ export function liveMatches(competitions, now = Date.now()) {
 }
 
 const sameResult = (a, b) =>
-  a.status === b.status && JSON.stringify(a.score) === JSON.stringify(b.score) && a.utcDate === b.utcDate;
+  a.status === b.status &&
+  JSON.stringify(a.score) === JSON.stringify(b.score) &&
+  a.utcDate === b.utcDate &&
+  a.elapsed === b.elapsed;
 
 async function main() {
   loadDotEnv(root);
   const key = process.env.API_FOOTBALL_KEY;
-  if (!key || !fs.existsSync(OUT)) {
-    console.warn("Chiave o dati di partenza mancanti: nessun aggiornamento.");
+  if (!key) {
+    console.warn("Chiave mancante: nessun aggiornamento.");
     return output({ active: false, changed: false });
+  }
+  // football and NBA independently: a failure of one never stops the other
+  const results = [];
+  for (const [name, run] of [
+    ["calcio", () => updateFootball(key)],
+    ["NBA", () => updateLiveNba(root, key)],
+  ]) {
+    try {
+      results.push(await run());
+    } catch (err) {
+      // never break the site: the next full run fixes everything
+      console.warn(`Aggiornamento rapido ${name} non riuscito:`, err.message);
+      results.push({ active: true, changed: false });
+    }
+  }
+  output({ active: results.some((r) => r.active), changed: results.some((r) => r.changed) });
+}
+
+/** Football: scores, live data and standings of the matches under way. Returns { active, changed }. */
+async function updateFootball(key) {
+  if (!fs.existsSync(OUT)) {
+    console.warn("Dati calcio di partenza mancanti: nessun aggiornamento.");
+    return { active: false, changed: false };
   }
   const snap = JSON.parse(fs.readFileSync(OUT, "utf8"));
   const now = Date.now();
   const live = liveMatches(snap.competitions ?? [], now);
   if (!live.length) {
-    console.log("Nessuna partita in corso o appena finita.");
-    return output({ active: false, changed: false });
+    console.log("Calcio: nessuna partita in corso o appena finita.");
+    return { active: false, changed: false };
   }
   console.log(`Partite da controllare: ${live.length}`);
   const api = apiSports("football", key);
@@ -91,6 +118,9 @@ async function main() {
     const liveChanged = JSON.stringify(live ?? null) !== JSON.stringify(old.live ?? null);
     if (sameResult(old, fresh) && !liveChanged) continue;
     Object.assign(old, { status: fresh.status, score: fresh.score, utcDate: fresh.utcDate });
+    // minute of play: only while the match is under way
+    if (fresh.elapsed != null) Object.assign(old, { elapsed: fresh.elapsed, elapsedExtra: fresh.elapsedExtra });
+    else delete old.elapsed, delete old.elapsedExtra;
     if (live) old.live = live;
     changed++;
     console.log(
@@ -135,13 +165,12 @@ async function main() {
     fs.writeFileSync(OUT + ".tmp", JSON.stringify(snap) + "\n");
     fs.renameSync(OUT + ".tmp", OUT);
   }
-  console.log(`Partite cambiate: ${changed} (${api.stats().requests} richieste)`);
-  output({ active: true, changed: changed > 0 });
+  console.log(`Calcio: partite cambiate: ${changed} (${api.stats().requests} richieste)`);
+  return { active: true, changed: changed > 0 };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   main().catch((err) => {
-    // never break the site: the next full run fixes everything
     console.warn("Aggiornamento rapido non riuscito:", err.message);
     output({ active: true, changed: false });
   });

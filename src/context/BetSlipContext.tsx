@@ -48,6 +48,10 @@ interface BetSlipContextValue {
   lastChange: { message: string; n: number } | null;
 }
 
+/** Width from which the open slip sits beside the page instead of over it (Tailwind `xl`). */
+export const SLIP_DOCK_QUERY = "(min-width: 1280px)";
+export const slipDocked = () => typeof window !== "undefined" && !!window.matchMedia?.(SLIP_DOCK_QUERY).matches;
+
 const BetSlipContext = createContext<BetSlipContextValue | undefined>(undefined);
 
 export function BetSlipProvider({ children }: { children: ReactNode }) {
@@ -61,7 +65,8 @@ export function BetSlipProvider({ children }: { children: ReactNode }) {
   const addSelection = (selection: BetSelection, { open = true }: { open?: boolean } = {}) => {
     const withId = { ...selection, id: selection.id ?? `${selection.matchId}-${selection.betType}` };
     setSelections((prev) => [...prev.filter((s) => s.matchId !== withId.matchId), withId]);
-    if (open) setIsOpen(true);
+    // wide screens: the slip is a column beside the page (see BetSlip), so it opens with the first pick too
+    if (open || slipDocked()) setIsOpen(true);
     announce(`Aggiunto alla schedina: ${withId.homeTeam} – ${withId.awayTeam}, ${withId.betTypeLabel}`);
     track("bet_slip_add", {
       operator: withId.selectedBookmaker ?? "pronostico",

@@ -54,6 +54,9 @@ export interface Match {
     penalties?: Score | null;
   };
   referee: string | null;
+  /** Minute of play at the last update, for matches under way (IN_PLAY): 67, or 45 with `elapsedExtra` 2. */
+  elapsed?: number;
+  elapsedExtra?: number;
   /** Goals and cards: from the match details (scripts/fetch-match-details.mjs). */
   goals?: MatchGoal[];
   cards?: MatchCard[];
@@ -350,6 +353,9 @@ const STATUS_LABEL: Record<MatchStatus, string> = {
   RESULT_PENDING: "Risultato in arrivo",
 };
 export const statusLabel = (m: Match) => STATUS_LABEL[m.status] ?? m.status;
+/** "67'" or "45+2'" for a match under way with a known minute (at the last update), else null. */
+export const liveMinute = (m: Match) =>
+  m.status === "IN_PLAY" && m.elapsed != null ? `${m.elapsed}${m.elapsedExtra ? `+${m.elapsedExtra}` : ""}'` : null;
 
 export const formatTime = (iso: string) =>
   new Intl.DateTimeFormat("it-IT", { timeZone: TZ, hour: "2-digit", minute: "2-digit" }).format(new Date(iso));

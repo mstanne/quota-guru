@@ -25,8 +25,8 @@ export function PageHeader({ title, subtitle, icon: Icon, breadcrumb = [], meta,
   const trail: Crumb[] = [{ label: "Home", to: "/" }, ...breadcrumb];
   return (
     <div className="bg-slate-900 border-b border-slate-800">
-      <div className="container mx-auto px-4 py-8 sm:py-10">
-        <nav aria-label="Percorso" className="text-sm text-slate-400 mb-3">
+      <div className="container mx-auto px-4 py-5 sm:py-10">
+        <nav aria-label="Percorso" className="text-sm text-slate-400 mb-2 sm:mb-3">
           <ol className="flex flex-wrap items-center gap-1.5">
             {trail.map((c, i) => (
               <li key={i} className="flex items-center gap-1.5">
@@ -45,16 +45,32 @@ export function PageHeader({ title, subtitle, icon: Icon, breadcrumb = [], meta,
           </ol>
         </nav>
         <div className="flex items-start gap-3">
-          {Icon && <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-slate-300 shrink-0 mt-1" aria-hidden="true" />}
-          <h1 className="text-white text-3xl sm:text-4xl leading-tight">{title}</h1>
+          {Icon && <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-slate-300 shrink-0 mt-0.5 sm:mt-1" aria-hidden="true" />}
+          <h1 className="text-white text-2xl sm:text-4xl leading-tight">{title}</h1>
         </div>
-        {subtitle && <p className="text-slate-400 text-base sm:text-lg mt-3 max-w-3xl">{subtitle}</p>}
-        {meta && <div className="text-slate-400 text-sm mt-3 flex flex-wrap items-center gap-x-3 gap-y-1">{meta}</div>}
-        {children && <div className="mt-5">{children}</div>}
+        {subtitle && <p className="text-slate-400 text-base sm:text-lg mt-2 sm:mt-3 max-w-3xl">{subtitle}</p>}
+        {meta && (
+          <div className="text-slate-400 text-sm mt-2 sm:mt-3 flex flex-wrap items-center gap-x-3 gap-y-1">{meta}</div>
+        )}
+        {children && <div className="mt-4 sm:mt-5">{children}</div>}
       </div>
     </div>
   );
 }
+
+/**
+ * Links under a page header (classifica, statistiche, stagioni…): one row that scrolls sideways on phones, wrapped
+ * from `sm` up. Use `headerLinkClass` for the links.
+ */
+export function HeaderLinks({ children }: { children: ReactNode }) {
+  return (
+    <div className="-mx-4 px-4 flex gap-2 overflow-x-auto scrollbar-none sm:mx-0 sm:px-0 sm:flex-wrap sm:overflow-visible">
+      {children}
+    </div>
+  );
+}
+export const headerLinkClass =
+  "shrink-0 inline-flex items-center gap-2 whitespace-nowrap px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500";
 
 /** "6 partite · 5 operatori" style meta line. */
 export function MetaItems({ items }: { items: ReactNode[] }) {

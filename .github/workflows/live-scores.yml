@@ -1,7 +1,8 @@
-# Quick update of football scores and standings between the full refreshes of deploy.yml (every 3 hours).
-# Every 15 minutes: if a match is under way or has just ended, it starts from the data of the last full run
-# (kept in the workflow cache), asks API-Football only for those matches and the standings that changed
-# (scripts/fetch-live-scores.mjs, 1-3 requests), rebuilds the site and publishes it. Otherwise it stops in seconds.
+# Quick update of football and NBA scores between the full refreshes of deploy.yml (every 3 hours).
+# Every 15 minutes: if a match or an NBA game is under way or has just ended, it starts from the data of the last full
+# run (kept in the workflow cache), asks API-Football only for those matches and the standings that changed, and
+# API-NBA for the games of those dates (scripts/fetch-live-scores.mjs, usually 1-4 requests), rebuilds the site and
+# publishes it. Otherwise it stops in seconds.
 # GitHub may run scheduled workflows late when it is busy. Nothing here calls YouTube or Claude.
 name: Live scores
 

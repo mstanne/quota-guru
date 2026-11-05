@@ -1,11 +1,13 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "../../lib/links";
-import { ChevronRight } from "lucide-react";
+import { Check, ChevronRight, X } from "lucide-react";
+import { compactTeamName } from "../../lib/teamNames";
 import {
   formatTime,
   isFinished,
   isLive,
   isResultPending,
+  liveMinute,
   matchHref,
   roundLabel,
   statusLabel,
@@ -13,7 +15,7 @@ import {
   type Match,
   type Team,
 } from "../../lib/footballCore";
-import type { FootballMarket, Prediction } from "../../lib/predictionsCore";
+import { pct, type FootballMarket, type Prediction } from "../../lib/predictionsCore";
 import { MarketMini, marketColumns } from "../predictions/PredictionUi";
 import { footballSlip } from "../predictions/SlipPicks";
 
@@ -75,10 +77,16 @@ export function MatchRow({
   prediction,
   market = "1x2",
   columns = false,
+  meta = true,
+  outcome,
 }: {
   competition: CompetitionRef;
   match: Match;
   showCompetition?: boolean;
+  /** Competition and round column on the right (md+). Off in lists grouped by competition and round. */
+  meta?: boolean;
+  /** Finished matches: the model's most likely 1X2 outcome and whether it came true. */
+  outcome?: PickOutcome;
   prediction?: Prediction | null;
   /** Market shown in the prediction cells (quick filter of the calendar page). */
   market?: FootballMarket;
@@ -108,10 +116,7 @@ export function MatchRow({
           {finished ? (
             <span className="text-slate-400 text-xs uppercase tracking-wide">Finale</span>
           ) : live ? (
-            <span className="flex flex-col items-center gap-1 text-red-400 text-[10px] leading-none font-semibold uppercase">
-              <span className="h-1.5 w-1.5 rounded-full bg-red-500 motion-safe:animate-pulse" aria-hidden="true" />
-              {statusLabel(match)}
-            </span>
+            <LiveMark minute={liveMinute(match)} label={statusLabel(match)} />
           ) : pending ? (
             <span className="block text-warn text-[11px] leading-tight">{statusLabel(match)}</span>
           ) : (
@@ -127,7 +132,7 @@ export function MatchRow({
           ].map(({ team, goals, win }) => (
             <div key={team.id} className="flex items-center gap-2">
               <TeamBadge team={team} size="xs" />
-              <span className={`truncate ${finished && !win ? "text-slate-400" : "text-white"}`}>{team.shortName}</span>
+              <TeamName name={team.shortName} className={finished && !win ? "text-slate-400" : "text-white"} />
               {(finished || live) && (
                 <span
                   className={`ml-auto tabular-nums ${live ? "text-white text-lg font-semibold" : `text-lg ${win ? "text-best" : "text-slate-300"}`}`}
@@ -153,16 +158,102 @@ export function MatchRow({
         </div>
       )}
 
-      <div className="hidden md:block w-40 shrink-0 text-right text-xs text-slate-400">
-        {showCompetition && <div className="text-slate-300 text-sm">{competition.name}</div>}
-        <div>{roundLabel(match)}</div>
-      </div>
+      {outcome && finished && <OutcomeBadge outcome={outcome} />}
+
+      {meta && (
+        <div className="hidden md:block w-40 shrink-0 text-right text-xs text-slate-400">
+          {showCompetition && <div className="text-slate-300 text-sm">{competition.name}</div>}
+          <div>{roundLabel(match)}</div>
+        </div>
+      )}
       <ChevronRight
         className="hidden sm:block w-4 h-4 text-slate-400 group-hover:text-white shrink-0"
         aria-hidden="true"
       />
     </div>
   );
+}
+
+/** Team name of a list row: a shorter form on phones ("Salisburgo"), the data's name from `sm` up. */
+export function TeamName({ name, short: given, className = "" }: { name: string; short?: string; className?: string }) {
+  const short = given || compactTeamName(name);
+  if (short === name) return <span className={`truncate ${className}`}>{name}</span>;
+  return (
+    <span className={`truncate ${className}`} title={name}>
+      <span className="sm:hidden">{short}</span>
+      <span className="hidden sm:inline">{name}</span>
+    </span>
+  );
+}
+
+/** "In corso" mark of a live row: pulsing dot and the minute at the last update ("67'"), or the status. */
+export function LiveMark({ minute, label }: { minute: string | null; label: string }) {
+  return (
+    <span
+      className="flex flex-col items-center gap-1 text-red-400 text-[10px] leading-none font-semibold uppercase"
+      title={minute ? "All'ultimo aggiornamento dei dati, non in tempo reale" : undefined}
+    >
+      <span className="h-1.5 w-1.5 rounded-full bg-red-500 motion-safe:animate-pulse" aria-hidden="true" />
+      {minute ? (
+        <span className="text-xs tabular-nums normal-case">
+          <span className="sr-only">In corso, minuto </span>
+          {minute}
+        </span>
+      ) : (
+        label
+      )}
+    </span>
+  );
+}
+
+/** The model's most likely outcome of a finished match and whether it came true. */
+export interface PickOutcome {
+  /** "1", "X", "2" */
+  pick: string;
+  /** What the pick stands for, for screen readers: "vittoria Inter", "pareggio". */
+  spoken: string;
+  prob: number;
+  hit: boolean;
+  /** true: the prediction published before kick-off (archive); false: recalculated by the model afterwards. */
+  published: boolean;
+}
+
+/** ✓ / ✗ next to a result: the most likely outcome the model indicated, with its probability. */
+export function OutcomeBadge({ outcome: o }: { outcome: PickOutcome }) {
+  const Icon = o.hit ? Check : X;
+  const what = `${o.published ? "Pronostico pubblicato" : "Pronostico ricalcolato"}: ${o.spoken} (${pct(o.prob)}), ${
+    o.hit ? "azzeccato" : "non azzeccato"
+  }`;
+  return (
+    <span
+      role="img"
+      aria-label={what}
+      title={what}
+      className={`shrink-0 inline-flex items-center gap-1 rounded-md px-1.5 py-1 text-xs tabular-nums ${
+        o.hit ? "bg-best/15 text-best" : "bg-slate-800 text-slate-400"
+      }`}
+    >
+      <Icon className="w-3.5 h-3.5" aria-hidden="true" />
+      <span className="font-semibold">{o.pick}</span>
+      <span className="hidden sm:inline">{pct(o.prob)}</span>
+    </span>
+  );
+}
+
+/** Most likely 1X2 outcome of a finished football match against the 90-minute result (as the track record counts it). */
+export function footballOutcome(
+  match: Match,
+  prediction: Prediction | undefined,
+  published: boolean,
+): PickOutcome | undefined {
+  const ft = match.score.fullTime;
+  if (!prediction?.p || ft.home == null || ft.away == null || !isFinished(match)) return undefined;
+  const i = [0, 1, 2].reduce((a, b) => (prediction.p[b] > prediction.p[a] ? b : a), 0);
+  // cup ties decided in extra time or on penalties: the 90-minute score, where the source has it
+  const rt = match.score.regularTime ?? ft;
+  const res = (rt.home ?? 0) > (rt.away ?? 0) ? 0 : rt.home === rt.away ? 1 : 2;
+  const names = [`vittoria ${match.homeTeam.shortName}`, "pareggio", `vittoria ${match.awayTeam.shortName}`];
+  return { pick: ["1", "X", "2"][i], spoken: names[i], prob: prediction.p[i], hit: i === res, published };
 }
 
 /**
@@ -213,10 +304,19 @@ export function MatchListHeader({
  * Column headers of the probability cells alone (1 · X · 2…), aligned to the rows of a list card: for the bottom of
  * a sticky filter bar, so they stay visible while the list scrolls. The 1px side borders match the list cards.
  */
-export function MatchListColumns({ market, className = "" }: { market: FootballMarket; className?: string }) {
+export function MatchListColumns({
+  market,
+  className = "",
+  meta = true,
+}: {
+  market: FootballMarket;
+  className?: string;
+  /** false: the rows have no competition column (MatchRow `meta`). */
+  meta?: boolean;
+}) {
   const { labels, width } = marketColumns(market);
   if (!labels) return null;
-  return <ListColumns labels={labels} width={width} className={className} />;
+  return <ListColumns labels={labels} width={width} className={className} meta={meta} />;
 }
 
 /** The same column strip with any labels and cell width (also used by the NBA list). */
@@ -224,10 +324,12 @@ export function ListColumns({
   labels,
   width,
   className = "",
+  meta = true,
 }: {
   labels: string[];
   width: string;
   className?: string;
+  meta?: boolean;
 }) {
   return (
     <div className={`border-x border-transparent ${className}`} aria-hidden="true">
@@ -240,7 +342,7 @@ export function ListColumns({
             </span>
           ))}
         </div>
-        <span className="hidden md:block w-40 shrink-0" />
+        {meta && <span className="hidden md:block w-40 shrink-0" />}
         <span className="hidden sm:block w-4 shrink-0" />
       </div>
     </div>

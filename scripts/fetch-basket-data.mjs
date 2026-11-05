@@ -13,6 +13,7 @@ import { fileURLToPath } from "node:url";
 import { apiSports, loadDotEnv } from "./lib/api-sports.mjs";
 import { loadIdMap, MATCH_OFFSET, saveIdMap, TEAM_OFFSET } from "./lib/id-map.mjs";
 import { sameTeam, team as teamMatcher } from "./lib/teams.mjs";
+import { nbaGameState, nbaStatusOf as statusOf } from "./lib/nba-games.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "data", "basket.json");
@@ -71,13 +72,6 @@ function stagesOf(games) {
   return { pre: (g) => g.stage < regular, post: (g) => g.stage > regular };
 }
 
-function statusOf(g) {
-  const long = String(g.status?.long ?? "").toLowerCase();
-  if (long.includes("postponed") || long.includes("canceled") || long.includes("cancelled")) return "postponed";
-  if (g.status?.short === 3 || long === "finished") return "final";
-  if (g.status?.short === 2 || long.includes("play") || long.includes("half")) return "live";
-  return "scheduled";
-}
 
 async function main() {
   loadDotEnv(root);
@@ -120,18 +114,14 @@ async function main() {
     const home = teamOf(g.teams.home);
     const away = teamOf(g.teams.visitors);
     const utcDate = new Date(g.date?.start).toISOString();
-    const st = statusOf(g);
-    const lines = (side) => (g.scores?.[side]?.linescore ?? []).map(Number).filter((n) => Number.isFinite(n));
     return {
       id: gameId(g.id, home.id, away.id, utcDate),
       apiId: g.id,
       utcDate,
-      status: st,
       postseason: post(g),
       home,
       away,
-      score: st === "scheduled" || st === "postponed" ? { home: null, away: null } : { home: g.scores?.home?.points ?? null, away: g.scores?.visitors?.points ?? null },
-      periods: st === "final" ? { home: lines("home"), away: lines("visitors") } : null,
+      ...nbaGameState(g),
     };
   };
   const regular = all.filter((g) => !pre(g));

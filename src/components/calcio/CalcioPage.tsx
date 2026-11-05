@@ -11,6 +11,7 @@ import {
   isResultPending,
   isUpcoming,
   romeDay,
+  roundLabel,
   standingsPath,
   type Competition,
   type Match,
@@ -23,13 +24,16 @@ import { useQueryChoice } from "../../lib/useQueryChoice";
 import { MarketFilter } from "../predictions/MarketFilter";
 import { TrackRecordBox } from "../predictions/TrackRecordBox";
 import { footballTrackRecord } from "../../lib/trackRecordFootball";
-import { MatchListColumns, MatchListHeader, MatchRow } from "./MatchRow";
+import { footballOutcome, MatchListColumns, MatchListHeader, MatchRow } from "./MatchRow";
+import { DayLabel, useRomeToday } from "../predictions/DayLabel";
+import { emptyActionClass, EmptyList, GroupSubheading, TeamSearch } from "../predictions/ListTools";
+import { searchKey } from "../../lib/teamNames";
 import { marketColumns } from "../predictions/PredictionUi";
 import { ChoiceControl } from "../predictions/ChoiceControl";
 import { SlipHint } from "../predictions/SlipPicks";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 import { NotFoundPage } from "../NotFoundPage";
-import { PageHeader } from "../layout/PageHeader";
+import { HeaderLinks, headerLinkClass, PageHeader } from "../layout/PageHeader";
 import { ListChecks } from "lucide-react";
 import { hasResults, resultsPath } from "../../lib/results";
 import { featuredMatchday } from "../../lib/matchdaysCore";
@@ -38,6 +42,7 @@ import { goalStatsPath, leadersPath, matchdayPath, PRONOSTICI } from "../../lib/
 const MARKET_IDS = FOOTBALL_MARKETS.map((m) => m.id);
 
 type Filter = "upcoming" | "today" | "tomorrow" | "week" | "results";
+const FILTER_IDS: Filter[] = ["upcoming", "today", "tomorrow", "week", "results"];
 const FILTERS: { id: Filter; label: string }[] = [
   { id: "upcoming", label: "Prossime" },
   { id: "today", label: "Oggi" },
@@ -69,11 +74,13 @@ export function CalcioPage() {
   const bySlug = new Map(all.map((d) => [d.competition.slug, d]));
   const predictionOf = (c: Competition, m: Match) => bySlug.get(c.slug)?.prediction(m.id);
   const generatedAt = all[0]?.generatedAt ?? "";
-  const [filter, setFilter] = useState<Filter>("upcoming");
+  const [filter, setFilter] = useQueryChoice<Filter>("periodo", FILTER_IDS, "upcoming");
   const [market, setMarket] = useQueryChoice<FootballMarket>("mercato", MARKET_IDS, "1x2");
+  const [query, setQuery] = useState("");
+  const today = useRomeToday();
   usePageMeta(competition ? competitionMeta(competition) : null);
 
-  const rows = useMemo(() => {
+  const periodRows = useMemo(() => {
     const source = all
       .flatMap((d) => d.competition.matches.map((m) => ({ competition: d.competition, match: m })))
       .sort((a, b) => a.match.utcDate.localeCompare(b.match.utcDate));
@@ -81,6 +88,16 @@ export function CalcioPage() {
     return filter === "results" ? [...list].reverse() : list;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [competizione, all.length, filter]);
+  // team search: every word must be in the home or the away team's names
+  const words = searchKey(query).split(" ").filter(Boolean);
+  const rows = words.length
+    ? periodRows.filter(({ match: m }) => {
+        const names = searchKey(
+          [m.homeTeam.name, m.homeTeam.shortName, m.awayTeam.name, m.awayTeam.shortName].join(" "),
+        );
+        return words.every((w) => names.includes(w));
+      })
+    : periodRows;
 
   // matches per competition in the chosen period, for the chips (only on /calcio, where every competition is loaded)
   const counts = useMemo(() => {
@@ -107,19 +124,46 @@ export function CalcioPage() {
     filter !== "results" && !!marketColumns(market).labels && rows.some((r) => !!predictionOf(r.competition, r.match));
   // matches being played: their own group on top ("Prossime" only)
   const live = filter === "upcoming" ? rows.filter((r) => isLive(r.match)) : [];
-  // Group by Italian calendar day
-  const groups: { day: string; label: string; items: { competition: Competition; match: Match }[] }[] = [];
+  // by Italian calendar day, then by competition (site order) and round inside the day
+  const order = new Map(footballIndex.map((c, i) => [c.slug, i]));
+  type Row = { competition: Competition; match: Match };
+  const groups: { day: string; iso: string; sections: { key: string; competition: Competition; round: string; items: Row[] }[] }[] = [];
   for (const r of rows) {
     if (live.includes(r)) continue;
     const day = romeDay(r.match.utcDate);
     let g = groups.find((x) => x.day === day);
-    if (!g) groups.push((g = { day, label: formatDay(r.match.utcDate), items: [] }));
-    g.items.push(r);
+    if (!g) groups.push((g = { day, iso: r.match.utcDate, sections: [] }));
+    const rl = roundLabel(r.match);
+    const key = `${r.competition.slug}|${rl}`;
+    let sec = g.sections.find((x) => x.key === key);
+    if (!sec) g.sections.push((sec = { key, competition: r.competition, round: rl, items: [] }));
+    sec.items.push(r);
   }
+  for (const g of groups)
+    g.sections.sort((a, b) => (order.get(a.competition.slug) ?? 99) - (order.get(b.competition.slug) ?? 99));
   const limitedGroups = competition ? groups : groups.slice(0, 7);
 
-  // switching competition keeps the chosen market
-  const q = market === "1x2" ? "" : `?mercato=${market}`;
+  // finished matches: the prediction as published (archive), else the model's recalculation
+  const outcomeOf = (c: Competition, m: Match) => {
+    const data = bySlug.get(c.slug);
+    const archived = data?.archived(m.id);
+    return footballOutcome(m, archived ? { ...archived.prediction, pre: true } : data?.prediction(m.id), !!archived);
+  };
+
+  // empty period (today, tomorrow…): the next day with matches, to jump to
+  const next =
+    filter !== "upcoming" && filter !== "results" && !rows.length && !words.length
+      ? all
+          .flatMap((d) => d.competition.matches)
+          .filter((m) => isUpcoming(m))
+          .sort((a, b) => a.utcDate.localeCompare(b.utcDate))[0]
+      : undefined;
+
+  // switching competition keeps the chosen market and period
+  const params = new URLSearchParams();
+  if (market !== "1x2") params.set("mercato", market);
+  if (filter !== "upcoming") params.set("periodo", filter);
+  const q = params.toString() ? `?${params}` : "";
 
   const chip = (active: boolean) =>
     `shrink-0 inline-flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 rounded-md text-sm border transition-colors ${
@@ -136,179 +180,208 @@ export function CalcioPage() {
         breadcrumb={
           competition ? [{ label: "Pronostici", to: PRONOSTICI }, { label: competition.name }] : [{ label: "Calcio" }]
         }
-        meta={<DataUpdatedNote generatedAt={generatedAt} />}
+        meta={<DataUpdatedNote generatedAt={generatedAt} short />}
       >
-        <div className="flex flex-wrap gap-2">
-        {competition && competition.standings.length > 0 && (
-          <Link
-            to={standingsPath(competition)}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
-          >
-            <ListOrdered className="w-4 h-4 text-slate-300" aria-hidden="true" />
-            Classifica {competition.name}
-          </Link>
-        )}
-        {competition && competition.standings.length > 0 && (
-          <Link
-            to={goalStatsPath(competition)}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
-          >
-            <BarChart3 className="w-4 h-4 text-slate-300" aria-hidden="true" />
-            Statistiche Under/Over
-          </Link>
-        )}
-        {competition?.leaders?.scorers?.length ? (
-          <Link
-            to={leadersPath(competition)}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
-          >
-            <Trophy className="w-4 h-4 text-slate-300" aria-hidden="true" />
-            Marcatori
-          </Link>
-        ) : null}
-        {competition && round && (
-          <Link
-            to={matchdayPath(competition, round)}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
-          >
-            <CalendarDays className="w-4 h-4 text-slate-300" aria-hidden="true" />
-            Pronostici {round.n}ª giornata
-          </Link>
-        )}
-        {competition && hasResults(competition.slug) && (
-          <Link
-            to={resultsPath(competition.slug)}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
-          >
-            <ListChecks className="w-4 h-4 text-slate-300" aria-hidden="true" />
-            Tutti i risultati
-          </Link>
-        )}
-        {(competition ? hasSeasons(competition.slug) : seasonsIndex.length > 0) && (
-          <Link
-            to={competition ? seasonsPath(competition.slug) : seasonsHubPath}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
-          >
-            <History className="w-4 h-4 text-slate-300" aria-hidden="true" />
-            {competition ? "Stagioni passate" : "Albo d'oro e stagioni passate"}
-          </Link>
-        )}
-        </div>
+        <HeaderLinks>
+          {competition && competition.standings.length > 0 && (
+            <Link to={standingsPath(competition)} className={headerLinkClass}>
+              <ListOrdered className="w-4 h-4 text-slate-300" aria-hidden="true" />
+              Classifica <span className="hidden sm:inline">{competition.name}</span>
+            </Link>
+          )}
+          {competition && round && (
+            <Link to={matchdayPath(competition, round)} className={headerLinkClass}>
+              <CalendarDays className="w-4 h-4 text-slate-300" aria-hidden="true" />
+              Pronostici {round.n}ª giornata
+            </Link>
+          )}
+          {competition && competition.standings.length > 0 && (
+            <Link to={goalStatsPath(competition)} className={headerLinkClass}>
+              <BarChart3 className="w-4 h-4 text-slate-300" aria-hidden="true" />
+              Statistiche Under/Over
+            </Link>
+          )}
+          {competition?.leaders?.scorers?.length ? (
+            <Link to={leadersPath(competition)} className={headerLinkClass}>
+              <Trophy className="w-4 h-4 text-slate-300" aria-hidden="true" />
+              Marcatori
+            </Link>
+          ) : null}
+          {competition && hasResults(competition.slug) && (
+            <Link to={resultsPath(competition.slug)} className={headerLinkClass}>
+              <ListChecks className="w-4 h-4 text-slate-300" aria-hidden="true" />
+              Tutti i risultati
+            </Link>
+          )}
+          {(competition ? hasSeasons(competition.slug) : seasonsIndex.length > 0) && (
+            <Link to={competition ? seasonsPath(competition.slug) : seasonsHubPath} className={headerLinkClass}>
+              <History className="w-4 h-4 text-slate-300" aria-hidden="true" />
+              {competition ? "Stagioni passate" : "Albo d'oro e stagioni passate"}
+            </Link>
+          )}
+        </HeaderLinks>
       </PageHeader>
 
       <div className="container mx-auto px-4 py-6">
-        <TrackRecordBox record={footballTrackRecord()} sport="calcio" className="mb-4" />
+        {/* the list keeps a readable width on wide screens (and leaves room for the slip beside it) */}
+        <div className="max-w-5xl">
+          <TrackRecordBox record={footballTrackRecord()} sport="calcio" className="mb-4" />
 
-        {/* filters: one sticky bar under the site header (competitions scroll sideways, period and market on one row) */}
-        <div
-          className="sticky z-40 -mx-4 px-4 pt-2.5 pb-3 mb-5 bg-slate-950/95 backdrop-blur border-b border-slate-800"
-          style={{ top: "var(--header-h, 0px)" }}
-        >
-          <nav aria-label="Competizioni" className="relative">
-            <div
-              ref={chipsRef}
-              className="flex gap-2 overflow-x-auto scrollbar-none [mask-image:linear-gradient(to_right,black_calc(100%-2rem),transparent)] pr-8"
-            >
-              <Link
-                to={`/calcio${q}`}
-                className={chip(!competition)}
-                aria-current={!competition ? "page" : undefined}
-                data-active={!competition || undefined}
+          {/* filters: one sticky bar under the site header (competitions scroll sideways, period and market on one row) */}
+          <div
+            className="sticky z-40 -mx-4 px-4 pt-2.5 pb-3 mb-5 bg-slate-950/95 backdrop-blur border-b border-slate-800"
+            style={{ top: "var(--header-h, 0px)" }}
+          >
+            <nav aria-label="Competizioni" className="relative">
+              <div
+                ref={chipsRef}
+                className="flex gap-2 overflow-x-auto scrollbar-none [mask-image:linear-gradient(to_right,black_calc(100%-2rem),transparent)] pr-8"
               >
-                Tutte
-                {counts && <Count n={rows.length} />}
-              </Link>
-              {footballIndex
-                .filter((c) => !counts || counts.get(c.slug) || c.slug === competition?.slug)
-                .map((c) => (
-                  <Link
-                    key={c.code}
-                    to={`${competitionPath(c)}${q}`}
-                    className={chip(c.slug === competition?.slug)}
-                    aria-current={c.slug === competition?.slug ? "page" : undefined}
-                    data-active={c.slug === competition?.slug || undefined}
-                  >
-                    {c.name}
-                    {counts && <Count n={counts.get(c.slug) ?? 0} />}
-                  </Link>
-                ))}
-            </div>
-          </nav>
-          <div className="mt-2.5 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-2">
-            <ChoiceControl<Filter>
-              label="Periodo"
-              icon={CalendarDays}
-              options={FILTERS}
-              value={filter}
-              onChange={setFilter}
-              trackAttrs={(id) => ({
-                "data-track": "filter_use",
-                "data-track-filter": "calcio-data",
-                "data-track-value": id,
-              })}
-            />
-            {filter !== "results" && (
-              <MarketFilter options={FOOTBALL_MARKETS} value={market} onChange={setMarket} className="" />
-            )}
-          </div>
-          {columns && <MatchListColumns market={market} className="mt-2.5 -mb-1" />}
-        </div>
-        <SlipHint />
-
-        {live.length === 0 && limitedGroups.length === 0 ? (
-          <div className="rounded-xl border border-slate-800 bg-slate-900 p-10 text-center">
-            <CalendarDays className="w-8 h-8 text-slate-400 mx-auto mb-3" aria-hidden="true" />
-            <p className="text-white mb-1">Nessuna partita per questo filtro</p>
-            <p className="text-slate-400 text-sm">Prova un altro periodo o un'altra competizione.</p>
-          </div>
-        ) : (
-          <div className="space-y-6">
-            {live.length > 0 && (
-              <section aria-labelledby="in-corso">
-                <MatchListHeader
-                  id="in-corso"
-                  tone="live"
-                  market={market}
-                  columns={false}
-                  title={
-                    <span className="inline-flex items-center gap-2">
-                      <span className="h-2 w-2 rounded-full bg-red-500 motion-safe:animate-pulse" aria-hidden="true" />
-                      In corso
-                      <span className="normal-case tracking-normal text-slate-400 text-xs">
-                        · punteggi aggiornati circa ogni 15 minuti
-                      </span>
-                    </span>
-                  }
-                />
-                <div className="rounded-xl border border-red-500/30 bg-slate-900 overflow-hidden">
-                  {live.map(({ competition: c, match }) => (
-                    <MatchRow key={match.id} competition={c} match={match} showCompetition={!competition} />
+                <Link
+                  to={`/calcio${q}`}
+                  className={chip(!competition)}
+                  aria-current={!competition ? "page" : undefined}
+                  data-active={!competition || undefined}
+                >
+                  Tutte
+                  {counts && <Count n={periodRows.length} />}
+                </Link>
+                {footballIndex
+                  .filter((c) => !counts || counts.get(c.slug) || c.slug === competition?.slug)
+                  .map((c) => (
+                    <Link
+                      key={c.code}
+                      to={`${competitionPath(c)}${q}`}
+                      className={chip(c.slug === competition?.slug)}
+                      aria-current={c.slug === competition?.slug ? "page" : undefined}
+                      data-active={c.slug === competition?.slug || undefined}
+                    >
+                      {c.name}
+                      {counts && <Count n={counts.get(c.slug) ?? 0} />}
+                    </Link>
                   ))}
-                </div>
-              </section>
-            )}
-            {limitedGroups.map((g) => {
-              return (
-                <section key={g.day} aria-labelledby={`day-${g.day}`}>
-                  <MatchListHeader id={`day-${g.day}`} title={g.label} market={market} columns={false} />
-                  <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
-                    {g.items.map(({ competition: c, match }) => (
-                      <MatchRow
-                        key={match.id}
-                        competition={c}
-                        match={match}
-                        showCompetition={!competition}
-                        prediction={predictionOf(c, match)}
-                        market={market}
-                        columns={columns}
-                      />
+              </div>
+            </nav>
+            <div className="mt-2.5 grid grid-cols-[1fr_1fr_auto] gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-2">
+              <ChoiceControl<Filter>
+                label="Periodo"
+                icon={CalendarDays}
+                options={FILTERS}
+                value={filter}
+                onChange={setFilter}
+                trackAttrs={(id) => ({
+                  "data-track": "filter_use",
+                  "data-track-filter": "calcio-data",
+                  "data-track-value": id,
+                })}
+              />
+              {filter !== "results" ? (
+                <MarketFilter options={FOOTBALL_MARKETS} value={market} onChange={setMarket} className="" />
+              ) : (
+                <span className="sm:hidden" />
+              )}
+              <TeamSearch value={query} onChange={setQuery} />
+            </div>
+            {columns && <MatchListColumns market={market} meta={false} className="mt-2.5 -mb-1" />}
+          </div>
+          <SlipHint />
+
+          {live.length === 0 && limitedGroups.length === 0 ? (
+            words.length ? (
+              <EmptyList
+                title={`Nessuna partita trovata per «${query.trim()}»`}
+                text="Controlla il nome o prova un altro periodo o competizione."
+                action={
+                  <button type="button" onClick={() => setQuery("")} className={emptyActionClass}>
+                    Cancella la ricerca
+                  </button>
+                }
+              />
+            ) : (
+              <EmptyList
+                title="Nessuna partita per questo filtro"
+                text={next ? undefined : "Prova un altro periodo o un'altra competizione."}
+                action={
+                  next && (
+                    <button type="button" onClick={() => setFilter("upcoming")} className={emptyActionClass}>
+                      <CalendarDays className="w-4 h-4" aria-hidden="true" />
+                      Vedi le prossime: {formatDay(next.utcDate)}
+                    </button>
+                  )
+                }
+              />
+            )
+          ) : (
+            <div className="space-y-6">
+              {live.length > 0 && (
+                <section aria-labelledby="in-corso">
+                  <MatchListHeader
+                    id="in-corso"
+                    tone="live"
+                    market={market}
+                    columns={false}
+                    title={
+                      <span className="inline-flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-red-500 motion-safe:animate-pulse" aria-hidden="true" />
+                        In corso
+                        <span className="normal-case tracking-normal text-slate-400 text-xs">
+                          · punteggi aggiornati circa ogni 15 minuti
+                        </span>
+                      </span>
+                    }
+                  />
+                  <div className="rounded-xl border border-red-500/30 bg-slate-900 overflow-hidden">
+                    {live.map(({ competition: c, match }) => (
+                      <MatchRow key={match.id} competition={c} match={match} showCompetition={!competition} />
                     ))}
                   </div>
                 </section>
-              );
-            })}
-          </div>
-        )}
+              )}
+              {limitedGroups.map((g) => (
+                <section key={g.day} aria-labelledby={`day-${g.day}`}>
+                  <MatchListHeader
+                    id={`day-${g.day}`}
+                    title={<DayLabel iso={g.iso} today={today} />}
+                    market={market}
+                    columns={false}
+                  />
+                  <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
+                    {g.sections.map((sec) => (
+                      <div key={sec.key} className="border-b border-slate-800 last:border-b-0">
+                        <GroupSubheading>
+                          {!competition && (
+                            <>
+                              <Link
+                                to={`${competitionPath(sec.competition)}${q}`}
+                                className="relative z-10 text-slate-200 hover:text-white hover:underline"
+                              >
+                                {sec.competition.name}
+                              </Link>
+                              <span aria-hidden="true">·</span>
+                            </>
+                          )}
+                          <span>{sec.round}</span>
+                        </GroupSubheading>
+                        {sec.items.map(({ competition: c, match }) => (
+                          <MatchRow
+                            key={match.id}
+                            competition={c}
+                            match={match}
+                            prediction={predictionOf(c, match)}
+                            market={market}
+                            columns={columns}
+                            meta={false}
+                            outcome={filter === "results" ? outcomeOf(c, match) : undefined}
+                          />
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
