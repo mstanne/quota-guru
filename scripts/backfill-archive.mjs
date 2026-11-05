@@ -13,6 +13,7 @@
 // ~20 requests and ~2 MB in the `dati` branch: the 7 seasons added by the default of 10 (14 competitions, ~2,000
 // requests, ~200 MB) are complete after about two days of normal runs (8 runs a day).
 // A past season the plan does not cover (PlanError) is marked as unavailable and skipped, so it never blocks the others.
+// Before the matches, the official final standings of every past league season (1 request each, once; season pages).
 //
 // Usage:  API_FOOTBALL_KEY=<key> node scripts/backfill-archive.mjs     (never fails the build)
 import fs from "node:fs";
@@ -21,7 +22,7 @@ import { fileURLToPath } from "node:url";
 import { apiSports, BudgetError, loadDotEnv, PlanError } from "./lib/api-sports.mjs";
 import { footballTeamResolver, loadIdMap, MATCH_OFFSET, saveIdMap, TEAM_OFFSET } from "./lib/id-map.mjs";
 import { footballDetails } from "./lib/match-details.mjs";
-import { COMPETITIONS, compactFixture } from "./fetch-football.mjs";
+import { COMPETITIONS, compactFixture, compactStandings } from "./fetch-football.mjs";
 import { ARCHIVE, archivedMatch, readJson, upsertMatches, writeJson } from "./archive-data.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -77,6 +78,10 @@ async function football(api, progress, budget) {
     if (progress.leagueCheck[c.code].ok) extra.push(c);
   }
 
+  // official final standings of the past seasons of every league (1 request each, once): they include the point
+  // deductions and the tie-breaks that a table computed from the results would miss (season pages)
+  await standingsJobs(api, progress, budget, { resolve, seasons, year });
+
   // work list: most recent seasons first, competitions in site order (archive-only ones last)
   const jobs = [];
   for (let back = 0; back <= SEASONS_BACK; back++)
@@ -97,6 +102,46 @@ async function football(api, progress, budget) {
     }
   }
   saveIdMap(IDMAP, map);
+}
+
+/** Final standings of the past league seasons: data/archivio/classifiche/calcio/<competition>/<season>.json */
+async function standingsJobs(api, progress, budget, { resolve, seasons, year }) {
+  progress.standings ??= {};
+  for (let back = 1; back <= SEASONS_BACK; back++)
+    for (const c of COMPETITIONS.filter((c) => c.domestic)) {
+      if (budget.left <= 0) return;
+      const current = seasons[c.code]?.year ?? (c.code === "BSA" ? year : new Date().getUTCMonth() >= 6 ? year : year - 1);
+      const y = current - back;
+      const key = `${c.code}-${y}`;
+      const done = progress.standings[key];
+      // an empty answer is asked again after a month; saved or not in the plan: never again
+      if (done && (done.status !== "vuota" || Date.now() - Date.parse(done.at) < 30 * 86400e3)) continue;
+      budget.left--;
+      try {
+        const [s] = await api.get(`/standings?league=${c.api}&season=${y}`);
+        const raw = s?.league?.standings ?? [];
+        const groups = compactStandings(raw, (t) => resolve(t, c.slug)).map((g, i) => ({
+          ...g,
+          // API-Football ids (logos) and the zone of each row ("Promotion - Champions League", "Relegation"…)
+          table: g.table.map((row, j) => ({ ...row, apiId: raw[i]?.[j]?.team?.id ?? null, description: raw[i]?.[j]?.description ?? null })),
+        }));
+        if (groups.length)
+          writeJson(path.join(ARCHIVE, "classifiche", "calcio", c.slug, `${y}.json`), {
+            competition: c.name,
+            code: c.code,
+            slug: c.slug,
+            season: y,
+            fetchedAt: new Date().toISOString(),
+            groups,
+          });
+        progress.standings[key] = { status: groups.length ? "ok" : "vuota", at: new Date().toISOString() };
+        console.log(`  Classifica finale ${c.name} ${y}: ${groups.length ? "salvata" : "non disponibile"}`);
+      } catch (err) {
+        if (!(err instanceof PlanError)) throw err;
+        progress.standings[key] = { status: "non disponibile", at: new Date().toISOString() };
+        console.log(`  Classifica finale ${c.name} ${y}: non disponibile nel piano (${err.message})`);
+      }
+    }
 }
 
 async function footballSeason(api, progress, budget, { c, y, current, resolve, map }) {

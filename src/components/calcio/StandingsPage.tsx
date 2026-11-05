@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import { Link } from "../../lib/links";
 import { ListOrdered } from "lucide-react";
+import { hasSeasons, seasonsPath } from "../../lib/seasons";
 import {
   competitionPath,
   cornersCardsPath,
@@ -129,6 +130,11 @@ export function StandingsPage() {
           <Link to={goalStatsPath(competition)} className="text-action-text hover:text-action-text-hover">
             Statistiche Under/Over e Goal {competition.name} →
           </Link>
+          {hasSeasons(competition.slug) && (
+            <Link to={seasonsPath(competition.slug)} className="text-action-text hover:text-action-text-hover">
+              Albo d'oro e stagioni passate {competition.name} →
+            </Link>
+          )}
           {competition.leaders?.scorers?.length ? (
             <Link to={leadersPath(competition)} className="text-action-text hover:text-action-text-hover">
               Classifica marcatori {competition.name} →
