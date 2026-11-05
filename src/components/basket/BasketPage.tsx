@@ -99,7 +99,7 @@ export function BasketPage({ league }: { league?: "nba" }) {
         icon={Trophy}
         title={league ? `Pronostici NBA ${nbaSeason}: calendario e risultati` : "Basket: calendario e risultati"}
         breadcrumb={league ? [{ label: "Pronostici", to: "/pronostici" }, { label: "NBA" }] : [{ label: "Basket" }]}
-        meta={<DataUpdatedNote generatedAt={basketUpdatedAt} cadence="ogni 3 ore circa" />}
+        meta={<DataUpdatedNote generatedAt={basketUpdatedAt} short />}
       >
         {lbaStandings.length > 0 && (
           <HeaderLinks>
@@ -182,7 +182,7 @@ export function BasketPage({ league }: { league?: "nba" }) {
                     <span className="h-2 w-2 rounded-full bg-red-500 motion-safe:animate-pulse" aria-hidden="true" />
                     In corso
                     <span className="normal-case tracking-normal text-slate-400 text-xs">
-                      · punteggi aggiornati circa ogni 3 ore
+                      · punteggi aggiornati circa ogni 15 minuti
                     </span>
                   </h2>
                   <div className="rounded-xl border border-red-500/30 bg-slate-900 overflow-hidden">

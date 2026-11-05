@@ -50,7 +50,7 @@ function RestingNbaEvent({ list }: { list: BasketGame[] }) {
         subtitle={`NBA. Il pronostico della prossima ${teams} comparirà qui appena la partita sarà in calendario.`}
         icon={Trophy}
         breadcrumb={[{ label: "Pronostici", to: PRONOSTICI }, { label: "NBA", to: basketPaths.nba }, { label: teams }]}
-        meta={<DataUpdatedNote generatedAt={basketUpdatedAt} cadence="ogni 3 ore circa" />}
+        meta={<DataUpdatedNote generatedAt={basketUpdatedAt} />}
       />
       <div className="container mx-auto px-4 py-8 grid gap-6 lg:grid-cols-3">
         <section className={`${card} lg:col-span-2`} aria-labelledby="ultima">

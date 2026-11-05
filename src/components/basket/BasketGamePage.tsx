@@ -149,7 +149,7 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
             />
           )}
           <MatchSummary text={basketSummary(game, prediction, { finished, live })} />
-          <DataUpdatedNote generatedAt={basketUpdatedAt} cadence="ogni 3 ore circa" className="justify-center mt-6" />
+          <DataUpdatedNote generatedAt={basketUpdatedAt} className="justify-center mt-6" />
         </div>
       </div>
 
