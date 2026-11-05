@@ -1,15 +1,18 @@
 // Fills the permanent archive (data/archivio/, see scripts/archive-data.mjs) with past seasons, a small block at a
 // time, from API-Sports (Pro plan).
 //
-// Football: for every competition on the site, the current season (matches older than 3 days) and
-// the ARCHIVE_SEASONS before it (default 3): first the list of finished matches (1 request per season), then the
+// Football: for every competition on the site, plus the archive-only ones in ARCHIVE_ONLY (Coppa Italia), the current
+// season (matches older than 3 days) and the ARCHIVE_SEASONS before it (default 10, i.e. back to 2016/17; set the
+// repository variable ARCHIVE_SEASONS to change it): first the list of finished matches (1 request per season), then the
 // matches with all their details, 20 per request (/fixtures?ids=…: result, scorers, cards, substitutions, line-ups,
 // statistics, ratings, every player's row). Most recent seasons first, Serie A first.
 // NBA: results and quarter scores of the past seasons (1 request per season; box scores are not backfilled).
 //
 // Each run spends at most ARCHIVE_BACKFILL_MAX requests (default 150, ~2% of the daily Pro quota) and stops; the
-// progress is kept in data/archivio/recupero.json, so the next run goes on from there. With 13 competitions and
-// 4 seasons (~20,000 matches, ~1,000 requests) the archive is complete after a few days of normal runs.
+// progress is kept in data/archivio/recupero.json, so the next run goes on from there. Each competition-season costs
+// ~20 requests and ~2 MB in the `dati` branch: the 7 seasons added by the default of 10 (14 competitions, ~2,000
+// requests, ~200 MB) are complete after about two days of normal runs (8 runs a day).
+// A past season the plan does not cover (PlanError) is marked as unavailable and skipped, so it never blocks the others.
 //
 // Usage:  API_FOOTBALL_KEY=<key> node scripts/backfill-archive.mjs     (never fails the build)
 import fs from "node:fs";
@@ -25,9 +28,23 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PROGRESS = path.join(ARCHIVE, "recupero.json");
 const IDMAP = path.join(root, "data", "id-map.json");
 const STORE = path.join(root, ".cache", "match-details", "football-store.json");
-const SEASONS_BACK = Number(process.env.ARCHIVE_SEASONS ?? 3);
+const SEASONS_BACK = Number(process.env.ARCHIVE_SEASONS || 10);
 const MAX = Number(process.env.ARCHIVE_BACKFILL_MAX ?? 150);
 const FINAL = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
+// Competitions kept in the archive only (no pages, no predictions yet). `check`: the league name the API must return
+// for `api` before anything is archived, so a wrong id can never write another competition into the folder.
+const ARCHIVE_ONLY = [
+  {
+    code: "CI",
+    slug: "coppa-italia",
+    name: "Coppa Italia",
+    api: 137,
+    check: /coppa italia/i,
+    country: "Italy",
+    archiveOnly: true,
+  },
+];
+
 const logo = (u) => (typeof u === "string" && /^https:\/\/media\.api-sports\.io\/football\/teams\/\d+\.png$/.test(u) ? u : null);
 
 async function football(api, progress, budget) {
@@ -46,54 +63,79 @@ async function football(api, progress, budget) {
   const seasons = readJson(STORE, {}).seasons ?? {};
   const year = new Date().getUTCFullYear();
 
-  // work list: most recent seasons first, competitions in site order
+  // archive-only competitions: check once that the API id is the expected competition
+  progress.leagueCheck ??= {};
+  const extra = [];
+  for (const c of ARCHIVE_ONLY) {
+    if (progress.leagueCheck[c.code] === undefined) {
+      budget.left--;
+      const [l] = await api.get(`/leagues?id=${c.api}`);
+      const ok = !!l && c.check.test(l.league?.name ?? "") && l.country?.name === c.country;
+      progress.leagueCheck[c.code] = { ok, name: l ? `${l.league?.name} (${l.country?.name})` : null };
+      if (!ok) console.warn(`  ${c.name}: l'id ${c.api} corrisponde a "${progress.leagueCheck[c.code].name}", competizione saltata`);
+    }
+    if (progress.leagueCheck[c.code].ok) extra.push(c);
+  }
+
+  // work list: most recent seasons first, competitions in site order (archive-only ones last)
   const jobs = [];
   for (let back = 0; back <= SEASONS_BACK; back++)
-    for (const c of COMPETITIONS) {
+    for (const c of [...COMPETITIONS, ...extra]) {
       const current = seasons[c.code]?.year ?? (c.code === "BSA" ? year : new Date().getUTCMonth() >= 6 ? year : year - 1);
       jobs.push({ c, y: current - back, current: back === 0 });
     }
 
   for (const { c, y, current } of jobs) {
     if (budget.left <= 0) break;
-    const key = `${c.code}-${y}`;
-    const p = (progress.football[key] ??= { ids: null, done: [], complete: false, lines: true });
-    // the current season is downloaded again once to add every player's row (player pages: last matches, home/away);
-    // ~1 request per 20 matches, so a few runs. Past seasons keep what they have.
-    if (current && !p.lines) Object.assign(p, { ids: null, done: [], complete: false, lines: true });
-    if (p.complete) continue;
-    if (!p.ids) {
-      budget.left--;
-      const list = await api.get(`/fixtures?league=${c.api}&season=${y}`);
-      // the current season: matches older than 3 days (the recent ones get their details from fetch-match-details.mjs)
-      const limit = current ? Date.now() - 3 * 86400e3 : Infinity;
-      p.ids = list.filter((f) => FINAL.has(f.fixture?.status?.short) && Date.parse(f.fixture.date) < limit).map((f) => f.fixture.id);
-      if (!p.ids.length) {
-        p.complete = true;
-        continue;
-      }
+    try {
+      await footballSeason(api, progress, budget, { c, y, current, resolve, map });
+    } catch (err) {
+      // a past season outside the plan: remember it and go on with the others (the current season must work)
+      if (!(err instanceof PlanError) || (current && !c.archiveOnly)) throw err;
+      progress.football[`${c.code}-${y}`] = { ids: [], done: [], complete: true, unavailable: err.message };
+      console.log(`  ${c.name} ${y}: non disponibile nel piano (${err.message})`);
     }
-    const done = new Set(p.done);
-    const todo = p.ids.filter((id) => !done.has(id));
-    let added = 0;
-    for (let i = 0; i < todo.length && budget.left > 0; i += 20) {
-      budget.left--;
-      const chunk = todo.slice(i, i + 20);
-      const fixtures = await api.get(`/fixtures?ids=${chunk.join("-")}`);
-      const matches = fixtures.map((f) => {
-        const teamOf = (t) => resolve(t, c.slug);
-        const m = compactFixture(f, teamOf, (apiId) => map.footballMatches[String(apiId)] ?? MATCH_OFFSET + apiId);
-        const sideOf = (id) => (id === f.teams.home.id ? "home" : id === f.teams.away.id ? "away" : null);
-        const details = footballDetails(f, f.events ?? [], f.lineups ?? [], f.statistics ?? [], f.players ?? [], sideOf);
-        return archivedMatch(m, details, null);
-      });
-      added += upsertMatches(path.join(ARCHIVE, "calcio", c.slug), { competition: c.name, code: c.code, slug: c.slug }, y, matches);
-      p.done.push(...chunk);
-    }
-    if (p.done.length >= p.ids.length) p.complete = true;
-    console.log(`  ${c.name} ${y}: ${p.done.length}/${p.ids.length} partite${p.complete ? " (completa)" : ""}${added ? `, +${added}` : ""}`);
   }
   saveIdMap(IDMAP, map);
+}
+
+async function footballSeason(api, progress, budget, { c, y, current, resolve, map }) {
+  const key = `${c.code}-${y}`;
+  const p = (progress.football[key] ??= { ids: null, done: [], complete: false, lines: true });
+  // the current season is downloaded again once to add every player's row (player pages: last matches, home/away);
+  // ~1 request per 20 matches, so a few runs. Past seasons keep what they have.
+  if (current && !p.lines) Object.assign(p, { ids: null, done: [], complete: false, lines: true });
+  if (p.complete) return;
+  if (!p.ids) {
+    budget.left--;
+    const list = await api.get(`/fixtures?league=${c.api}&season=${y}`);
+    // the current season: matches older than 3 days (the recent ones get their details from fetch-match-details.mjs)
+    const limit = current ? Date.now() - 3 * 86400e3 : Infinity;
+    p.ids = list.filter((f) => FINAL.has(f.fixture?.status?.short) && Date.parse(f.fixture.date) < limit).map((f) => f.fixture.id);
+    if (!p.ids.length) {
+      p.complete = true;
+      return;
+    }
+  }
+  const done = new Set(p.done);
+  const todo = p.ids.filter((id) => !done.has(id));
+  let added = 0;
+  for (let i = 0; i < todo.length && budget.left > 0; i += 20) {
+    budget.left--;
+    const chunk = todo.slice(i, i + 20);
+    const fixtures = await api.get(`/fixtures?ids=${chunk.join("-")}`);
+    const matches = fixtures.map((f) => {
+      const teamOf = (t) => resolve(t, c.slug);
+      const m = compactFixture(f, teamOf, (apiId) => map.footballMatches[String(apiId)] ?? MATCH_OFFSET + apiId);
+      const sideOf = (id) => (id === f.teams.home.id ? "home" : id === f.teams.away.id ? "away" : null);
+      const details = footballDetails(f, f.events ?? [], f.lineups ?? [], f.statistics ?? [], f.players ?? [], sideOf);
+      return archivedMatch(m, details, null);
+    });
+    added += upsertMatches(path.join(ARCHIVE, "calcio", c.slug), { competition: c.name, code: c.code, slug: c.slug }, y, matches);
+    p.done.push(...chunk);
+  }
+  if (p.done.length >= p.ids.length) p.complete = true;
+  console.log(`  ${c.name} ${y}: ${p.done.length}/${p.ids.length} partite${p.complete ? " (completa)" : ""}${added ? `, +${added}` : ""}`);
 }
 
 async function nba(api, progress, budget) {

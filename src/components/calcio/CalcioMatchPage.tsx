@@ -15,6 +15,7 @@ import {
   isResultPending,
   mainTable,
   recentForm,
+  romeDay,
   roundLabel,
   standingOf,
   standingsPath,
@@ -368,6 +369,16 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               result={finished && ft.home !== null && ft.away !== null ? { home: ft.home, away: ft.away } : null}
               reasons={isUpcoming(match) ? footballReasons(prediction, competition, match) : []}
               publishedAt={archived?.published}
+              slip={
+                isUpcoming(match) && !prediction.pre
+                  ? {
+                      matchId: match.id,
+                      competition: competition.name,
+                      date: romeDay(match.utcDate),
+                      time: formatTime(match.utcDate),
+                    }
+                  : undefined
+              }
             />
           )}
           {isUpcoming(match) && (

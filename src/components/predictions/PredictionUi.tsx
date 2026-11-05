@@ -18,6 +18,7 @@ import {
   type FootballMarket,
   type Prediction,
 } from "../../lib/predictionsCore";
+import { PredictionSlipPicks } from "./PredictionSlipPicks";
 
 const OUTCOMES = ["1", "X", "2"] as const;
 
@@ -242,6 +243,7 @@ export function PredictionPanel({
   result,
   reasons = [],
   publishedAt,
+  slip,
 }: {
   prediction: Prediction;
   home: string;
@@ -252,6 +254,8 @@ export function PredictionPanel({
   reasons?: string[];
   /** When the shown prediction was published (archive): the panel then says so. */
   publishedAt?: string;
+  /** Upcoming matches only: lets the reader add an outcome to the bet slip, with its probability. */
+  slip?: { matchId: number; competition: string; date?: string; time: string };
 }) {
   const p = prediction;
   const finished = !!result;
@@ -308,6 +312,8 @@ export function PredictionPanel({
       </div>
 
       {!finished && <ReasonList reasons={reasons} />}
+
+      {!finished && slip && <PredictionSlipPicks prediction={p} home={home} away={away} {...slip} />}
 
       <p className="mt-5 text-slate-500 text-xs">Per ogni esito: probabilità stimata e, in grigio, quota equa.</p>
       <div className="mt-2 grid gap-6 sm:grid-cols-3">
