@@ -10,7 +10,16 @@ import { BasketMarketMini, type BasketMarket } from "./BasketPrediction";
  * One NBA game row (same look as the football rows), linking to the game page; upcoming games show win %, as
  * buttons that add the outcome to the bet slip (stretched link, see MatchRow).
  */
-export function BasketGameRow({ game, market = "win" }: { game: BasketGame; market?: BasketMarket }) {
+export function BasketGameRow({
+  game,
+  market = "win",
+  columns = false,
+}: {
+  game: BasketGame;
+  market?: BasketMarket;
+  /** The list shows column headers (ListColumns): the win cells drop their labels. */
+  columns?: boolean;
+}) {
   const finished = isGameFinished(game);
   const live = isGameLive(game);
   const pending = isGamePending(game);
@@ -29,7 +38,11 @@ export function BasketGameRow({ game, market = "win" }: { game: BasketGame; mark
       }
     : undefined;
   return (
-    <div className="group relative flex items-center gap-2.5 sm:gap-4 px-3 sm:px-4 py-3 border-b border-slate-800 last:border-b-0 hover:bg-slate-800/40 focus-within:bg-slate-800/40 transition-colors">
+    <div
+      className={`group relative flex items-center gap-2.5 sm:gap-4 px-3 sm:px-4 py-2.5 border-b border-slate-800 last:border-b-0 hover:bg-slate-800/40 focus-within:bg-slate-800/40 transition-colors ${
+        live ? "bg-red-500/5" : ""
+      }`}
+    >
       <Link
         to={gameHref(game)}
         aria-label={label}
@@ -39,23 +52,28 @@ export function BasketGameRow({ game, market = "win" }: { game: BasketGame; mark
           {finished ? (
             <span className="text-slate-400 text-xs uppercase tracking-wide">Finale</span>
           ) : live ? (
-            <span className="text-red-400 text-xs font-semibold uppercase">In corso</span>
+            <span className="flex flex-col items-center gap-1 text-red-400 text-[10px] leading-none font-semibold uppercase">
+              <span className="h-1.5 w-1.5 rounded-full bg-red-500 motion-safe:animate-pulse" aria-hidden="true" />
+              In corso
+            </span>
           ) : pending ? (
             <span className="block text-warn text-[11px] leading-tight">Risultato in arrivo</span>
           ) : (
             <span className="text-white tabular-nums">{formatTime(game.utcDate)}</span>
           )}
         </div>
-        <div className="flex-1 min-w-0 space-y-1.5">
+        <div className="flex-1 min-w-0 space-y-1">
           {[
             { team: game.home, pts: game.score.home, win: homeWin },
             { team: game.away, pts: game.score.away, win: awayWin },
           ].map(({ team, pts, win }) => (
-            <div key={team.id} className="flex items-center gap-2.5">
-              <TeamBadge team={{ tla: team.abbr, shortName: team.name, crest: null }} />
+            <div key={team.id} className="flex items-center gap-2">
+              <TeamBadge team={{ tla: team.abbr, shortName: team.name, crest: null }} size="xs" />
               <span className={`truncate ${finished && !win ? "text-slate-400" : "text-white"}`}>{team.name}</span>
               {(finished || live) && (
-                <span className={`ml-auto tabular-nums text-lg ${win ? "text-best" : "text-slate-300"}`}>
+                <span
+                  className={`ml-auto tabular-nums text-lg ${win ? "text-best" : live ? "text-white font-semibold" : "text-slate-300"}`}
+                >
                   {pts ?? "–"}
                 </span>
               )}
@@ -71,6 +89,7 @@ export function BasketGameRow({ game, market = "win" }: { game: BasketGame; mark
             home={game.home.name}
             away={game.away.name}
             slip={slip}
+            columns={columns}
           />
         </div>
       )}

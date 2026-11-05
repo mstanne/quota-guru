@@ -216,6 +216,19 @@ export function MatchListHeader({
 export function MatchListColumns({ market, className = "" }: { market: FootballMarket; className?: string }) {
   const { labels, width } = marketColumns(market);
   if (!labels) return null;
+  return <ListColumns labels={labels} width={width} className={className} />;
+}
+
+/** The same column strip with any labels and cell width (also used by the NBA list). */
+export function ListColumns({
+  labels,
+  width,
+  className = "",
+}: {
+  labels: string[];
+  width: string;
+  className?: string;
+}) {
   return (
     <div className={`border-x border-transparent ${className}`} aria-hidden="true">
       <div className="flex items-center gap-2.5 sm:gap-4 px-3 sm:px-4">

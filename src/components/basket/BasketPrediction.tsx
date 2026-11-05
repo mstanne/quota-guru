@@ -35,6 +35,9 @@ export const BASKET_MARKETS: { id: BasketMarket; label: string }[] = [
   { id: "total", label: "Totale punti" },
 ];
 
+/** Width of the win cells under the "1 · 2" column headers of the NBA list. */
+export const NBA_COLUMN_WIDTH = "w-10 sm:w-11";
+
 /** Row cells for the market chosen in the quick filter. Handicap and total use the model's middle line. */
 export function BasketMarketMini({
   prediction: p,
@@ -42,6 +45,7 @@ export function BasketMarketMini({
   home,
   away,
   slip,
+  columns = false,
 }: {
   prediction: BasketPrediction;
   market: BasketMarket;
@@ -49,6 +53,9 @@ export function BasketMarketMini({
   away: string;
   /** Upcoming games: the cells become buttons that add the outcome to the bet slip. */
   slip?: SlipMatch;
+  /** The list shows the "1 · 2" column headers: win cells drop their labels (handicap/total keep theirs: the line
+   * changes from game to game). */
+  columns?: boolean;
 }) {
   const names = [home, away];
   const useWin = market === "win" || (market === "spread" && !p.spread.length) || (market === "total" && !p.totals.length);
@@ -81,7 +88,17 @@ export function BasketMarketMini({
     cells = cells.map((c, i) => ({ ...c, top: i === top }));
   }
   const name = BASKET_MARKETS.find((m) => m.id === (useWin ? "win" : market))!.label;
-  return <PickCells cells={cells} match={slip} name={name} width={useWin ? "w-11" : "w-16"} />;
+  const plain = columns && useWin;
+  return (
+    <PickCells
+      cells={cells}
+      match={slip}
+      name={name}
+      width={plain ? NBA_COLUMN_WIDTH : useWin ? "w-11" : "w-16"}
+      hideLabels={plain}
+      cellClassName={plain ? "py-1.5" : "py-1"}
+    />
+  );
 }
 
 function Row({ label, value, strong = false }: { label: string; value: string; strong?: boolean }) {
