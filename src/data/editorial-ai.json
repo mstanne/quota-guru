@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-05T18:21:22.786Z",
+ "generatedAt": "2026-11-05T21:22:35.696Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558537": {
@@ -658,20 +658,20 @@
    ]
   },
   "fb:1001601601": {
-   "fingerprint": "vmp9ge",
+   "fingerprint": "emaxut",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 15:00 il Padova riceve l'Empoli nella 11ª giornata di Serie B. In classifica il Padova occupa il 9° posto con 14 punti, mentre l'Empoli è 18° con 8."
+      "Sabato 7 novembre alle 15:00 il Padova ospita l'Empoli per la 11ª giornata di Serie B. In classifica il Padova è al 9° posto con 14 punti, l'Empoli al 18° con 8."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie B il Padova ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-P-V-V-N), segnando 5 gol e subendone 5. In casa, nel bilancio stagionale, il Padova registra 1 vittoria e 2 sconfitte.",
-      "Nelle ultime 5 partite di Serie B l'Empoli ha ottenuto 2 pareggi e 3 sconfitte (sequenza P-N-P-P-N), segnando 6 gol e subendone 11. In trasferta, nel bilancio stagionale, l'Empoli registra 1 pareggio e 1 sconfitta, senza ancora alcuna vittoria."
+      "Nelle ultime 5 partite di Serie B il Padova ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-P-V-V-N), con 5 gol fatti e 5 subiti. In casa il bilancio stagionale è di 1 vittoria e 2 sconfitte.",
+      "Nelle ultime 5 partite di Serie B l'Empoli ha raccolto 2 pareggi e 3 sconfitte (sequenza P-N-P-P-N), con 6 gol fatti e 11 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
      ],
      "bullets": []
     },
@@ -679,10 +679,17 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Padova 1,0, Empoli 1,0.",
+      "Media gol segnati: Padova 1,0, Empoli 1,0 a partita.",
       "Gol subiti finora: Padova 11, Empoli 17.",
-      "Nelle ultime 5 partite dell'Empoli, in 3 casi si sono segnati almeno tre gol."
+      "In 3 delle ultime 5 partite dell'Empoli si sono segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 2 confronti diretti il bilancio è di 1 vittoria per il Padova, 1 vittoria per l'Empoli e nessun pareggio, con 5 gol complessivi (media di 2,5 a partita). L'ultimo incrocio, ad aprile 2026 in Serie B, è finito Padova 1-0 Empoli."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -696,7 +703,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -915,713 +922,6 @@
     }
    ]
   },
-  "fb:1001636223": {
-   "fingerprint": "1wamkey",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 il Leverkusen ospita il Marseille per la 4ª giornata della fase a campionato di Europa League. In classifica il Leverkusen è al 3° posto con 9 punti, mentre il Marseille è al 34° posto con 0 punti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Europa League il Leverkusen ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e non subendone nessuno.",
-      "Nelle ultime 2 partite di Europa League il Marseille ha subito 2 sconfitte (sequenza P-P), senza segnare e subendo 2 gol. Le ultime 2 gare sono state tutte perse."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati a partita: Leverkusen 2,7, Marseille 0,3.",
-      "Gol subiti finora: Leverkusen 0, Marseille 6.",
-      "Il Leverkusen ha la miglior difesa del torneo."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 1 confronti diretti il bilancio è di 1 vittoria per il Leverkusen, 0 vittorie per il Marseille e nessun pareggio, con 3 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, ad agosto 2023 in Friendlies Clubs, è terminato Marseille 1-2 Leverkusen."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Leverkusen – Marseille?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636219": {
-   "fingerprint": "167ef51",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 l'AZ ospita la Juventus nella 4ª giornata della fase a campionato di Europa League. In classifica l'AZ occupa il 10° posto con 6 punti, mentre la Juventus è al 7° con 7."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Europa League l'AZ ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 1.",
-      "Nelle ultime 2 partite di Europa League la Juventus ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 4 gol e subendone 3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: AZ 2,0, Juventus 3,0 a partita.",
-      "Gol subiti finora: AZ 2, Juventus 3."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca AZ – Juventus?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina dedicata all'[Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636229": {
-   "fingerprint": "wrbnt1",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 lo SL Benfica ospita il Lech Poznan per la 4ª giornata della fase a campionato di Europa League. In classifica lo SL Benfica occupa il 2° posto con 9 punti, mentre il Lech Poznan è al 32° posto con 1 punto."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Europa League lo SL Benfica ha ottenuto 2 vittorie (sequenza V-V), segnando 8 gol e subendone 2.",
-      "Nelle ultime 2 partite di Europa League il Lech Poznan ha collezionato 1 pareggio e 1 sconfitta (sequenza P-N), con 1 gol fatto e 5 subiti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: SL Benfica 3,3, Lech Poznan 0,3 a partita.",
-      "Gol subiti finora: SL Benfica 2, Lech Poznan 9.",
-      "Lo SL Benfica ha il miglior attacco del torneo."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 2 confronti diretti lo SL Benfica ha vinto 2 volte, il Lech Poznan nessuna, e non ci sono stati pareggi, con 10 gol complessivi (media di 5,0 a partita). L'ultimo incontro, nel dicembre 2020 in UEFA Europa League, si è concluso SL Benfica 4-0 Lech Poznan."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca SL Benfica – Lech Poznan?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636250": {
-   "fingerprint": "93r5rh",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 il Celtic ospita il Beşiktaş per la 4ª giornata della fase a campionato di Europa League. In classifica il Celtic è al 35° posto con 0 punti, il Beşiktaş all'8° con 7."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Europa League il Celtic ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 6 subiti. Ha perso le ultime 2.",
-      "Nelle ultime 2 partite di Europa League il Beşiktaş ha raccolto 1 vittoria e 1 pareggio (sequenza V-N), con 5 gol fatti e 4 subiti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Celtic 1,0, Beşiktaş 3,0 a partita.",
-      "Gol subiti finora: Celtic 9, Beşiktaş 5."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Celtic – Beşiktaş?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636245": {
-   "fingerprint": "1rlnnca",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Celta e Union St. Gilloise si affrontano giovedì 5 novembre alle 21:00 per la 4ª giornata della fase a campionato di Europa League. In classifica il Celta è al 25° posto con 3 punti, mentre l'Union St. Gilloise è al 6° con 7."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Europa League il Celta ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 3 gol fatti e 3 subiti.",
-      "Nelle ultime 2 partite di Europa League l'Union St. Gilloise ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 5 gol fatti e 1 subito."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Celta 1,0, Union St. Gilloise 2,7 a partita.",
-      "Gol subiti finora: Celta 4, Union St. Gilloise 1."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Celta – Union St. Gilloise?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636264": {
-   "fingerprint": "1vr5hx5",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 l'Hapoel Beer Sheva ospita l'OFI nella 4ª giornata della fase a campionato di Europa League. In classifica l'Hapoel Beer Sheva occupa il 30° posto con 1 punto, mentre l'OFI è al 26° con 3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Europa League l'Hapoel Beer Sheva ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 6. Ha perso entrambe le gare.",
-      "Nelle ultime 2 partite di Europa League l'OFI ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le gare."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati a partita: Hapoel Beer Sheva 0,3, OFI 1,0.",
-      "Gol subiti finora: Hapoel Beer Sheva 6, OFI 4."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Hapoel Beer Sheva – OFI?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636339": {
-   "fingerprint": "158lyqs",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 lo Sturm Graz ospita il Celje per la 4ª giornata della fase a campionato di Europa League. In classifica lo Sturm Graz occupa il 19° posto con 4 punti, il Celje il 29° con 1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Europa League lo Sturm Graz ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 1 gol fatto e 3 subiti.",
-      "Nelle ultime 2 partite di Europa League il Celje ha raccolto 1 pareggio e 1 sconfitta (sequenza P-N), con 2 gol fatti e 5 subiti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Sturm Graz 0,3, Celje 0,7 a partita.",
-      "Gol subiti finora: Sturm Graz 3, Celje 7."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Sturm Graz – Celje?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636345": {
-   "fingerprint": "1gtj0zm",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Appuntamento giovedì 5 novembre alle 21:00: il Sunderland ospita il Dinamo Zagreb per la 4ª giornata della fase a campionato di Europa League. In classifica il Sunderland è al 9° posto con 7 punti, il Dinamo Zagreb al 18° con 4."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Europa League il Sunderland ha raccolto 1 vittoria e 1 pareggio (sequenza V-N), con 3 gol fatti e 2 subiti.",
-      "Nelle ultime 2 partite di Europa League il Dinamo Zagreb ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 3 gol fatti e 4 subiti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Sunderland 1,3, Dinamo Zagreb 1,0 a partita.",
-      "Gol subiti finora: Sunderland 2, Dinamo Zagreb 4."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Sunderland – Dinamo Zagreb?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636347": {
-   "fingerprint": "dcr1br",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Torreense e Ararat-Armenia si affrontano giovedì 5 novembre alle 21:00 per la 4ª giornata della fase a campionato di Europa League. In classifica il Torreense occupa il 28° posto con 3 punti, mentre l'Ararat-Armenia è al 36° con 0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Europa League il Torreense ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 6 subiti. Ha perso le ultime 2.",
-      "Nelle ultime 2 partite di Europa League l'Ararat-Armenia ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 7 subiti. Ha perso le ultime 2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Torreense 1,3, Ararat-Armenia 0,7 a partita.",
-      "Gol subiti finora: Torreense 7, Ararat-Armenia 11."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Torreense – Ararat-Armenia?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Europa League](/calcio/europa-league) e nella [classifica aggiornata](/calcio/europa-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636456": {
-   "fingerprint": "vbc9ba",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Appuntamento giovedì 5 novembre alle 21:00: il Monaco ospita il FC Nordsjaelland per la 3ª giornata della fase a campionato di Conference League. In classifica il Monaco è 6° con 6 punti, mentre il FC Nordsjaelland è 19° con 2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Conference League il Monaco ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 1.",
-      "Nelle ultime 2 partite di Conference League il FC Nordsjaelland ha ottenuto 2 pareggi (sequenza N-N), segnando 3 gol e subendone 3."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Monaco – FC Nordsjaelland?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636408": {
-   "fingerprint": "fwane6",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 il FC Copenhagen ospita il FC Iberia 1999 per la 3ª giornata della fase a campionato di Conference League. In classifica il FC Copenhagen è al 10° posto con 4 punti, mentre il FC Iberia 1999 è al 29° con 1 punto."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Conference League, il FC Copenhagen ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 5 gol e subendone 2.",
-      "Nelle ultime 2 partite di Conference League, il FC Iberia 1999 ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 1 gol e subendone 3."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca FC Copenhagen – FC Iberia 1999?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636478": {
-   "fingerprint": "1sx5zx1",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 il Twente ospita il Pafos per la 3ª giornata della fase a campionato di Conference League. In classifica il Twente è al 5° posto con 6 punti, il Pafos al 27° con 1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Conference League il Twente ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 1.",
-      "Nelle ultime 2 partite di Conference League il Pafos ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 2 gol e subendone 4."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Twente – Pafos?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636416": {
-   "fingerprint": "ob95i9",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 il Getafe ospita il Brighton per la 3ª giornata della fase a campionato di Conference League. In classifica il Getafe occupa il 30° posto con 1 punto, mentre il Brighton è al 9° posto con 4 punti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Conference League il Getafe ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 3 gol e subendone 6.",
-      "Nelle ultime 2 partite di Conference League il Brighton ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 4 gol e non subendone alcuno."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 1 confronti diretti il bilancio è di 1 vittoria per il Getafe, nessuna per il Brighton e nessun pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, ad agosto 2021 in Friendlies Clubs, è terminato Brighton 0-2 Getafe."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Getafe – Brighton?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636447": {
-   "fingerprint": "ot6u4f",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 il FC Lugano ospita il Kauno Žalgiris per la 3ª giornata della fase a campionato di Conference League. In classifica il FC Lugano è al 2° posto con 6 punti, il Kauno Žalgiris al 36° con 0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Conference League il FC Lugano ha raccolto 2 vittorie (sequenza V-V), con 8 gol fatti e 4 subiti.",
-      "Nelle ultime 2 partite di Conference League il Kauno Žalgiris ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 8 subiti. Ha perso le ultime 2."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca FC Lugano – Kauno Žalgiris?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636465": {
-   "fingerprint": "17t0ggp",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Il Panathinaikos ospita il CSKA Sofia giovedì 5 novembre alle 21:00, nell'ambito della 3ª giornata della fase a campionato di Conference League. In classifica il Panathinaikos è al 1° posto con 6 punti, mentre il CSKA Sofia è al 23° con 1 punto."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Conference League il Panathinaikos ha ottenuto 2 vittorie (sequenza V-V), segnando 7 gol e subendone 2.",
-      "Nelle ultime 2 partite di Conference League il CSKA Sofia ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 3 gol e subendone 4."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Panathinaikos – CSKA Sofia?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636483": {
-   "fingerprint": "mswawr",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "L'Universitatea Craiova e l'Egnatia Rrogozhinë si affrontano giovedì 5 novembre alle 21:00 per la 3ª giornata della fase a campionato di Conference League. In classifica l'Universitatea Craiova è all'11° posto con 4 punti, mentre l'Egnatia Rrogozhinë è al 20° con 2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Conference League l'Universitatea Craiova ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 4 gol fatti e 2 subiti.",
-      "Nelle ultime 2 partite di Conference League l'Egnatia Rrogozhinë ha raccolto 2 pareggi (sequenza N-N), con 2 gol fatti e 2 subiti."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Universitatea Craiova – Egnatia Rrogozhinë?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636469": {
-   "fingerprint": "1dll536",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 lo St. Truiden ospita il Brann per la 3ª giornata della fase a campionato di Conference League. Le due squadre sono a pari punti, con 6 punti ciascuna."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Conference League lo St. Truiden ha ottenuto 2 vittorie (sequenza V-V), segnando 3 gol e non subendone nessuno.",
-      "Nelle ultime 2 partite di Conference League il Brann ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 2."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca St. Truiden – Brann?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001636466": {
-   "fingerprint": "7109dd",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 5 novembre alle 21:00 il Riga ospita il FK Jablonec per la 3ª giornata della fase a campionato di Conference League. In classifica il Riga è al 21° posto con 2 punti, il FK Jablonec al 24° con 1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Conference League il Riga ha raccolto 2 pareggi (sequenza N-N), con 2 gol fatti e 2 subiti.",
-      "Nelle ultime 2 partite di Conference League il FK Jablonec ha raccolto 1 pareggio e 1 sconfitta (sequenza P-N), con 2 gol fatti e 3 subiti."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Riga – FK Jablonec?",
-     "a": "Giovedì 5 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Conference League](/calcio/conference-league) e nella [classifica aggiornata](/calcio/conference-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:560634": {
    "fingerprint": "1sv8v25",
    "sections": [
@@ -1722,7 +1022,7 @@
    ]
   },
   "fb:1001557461": {
-   "fingerprint": "wdxxj8",
+   "fingerprint": "m6986r",
    "sections": [
     {
      "id": "presentazione",
@@ -1746,6 +1046,13 @@
       "Media gol segnati: Fulham 1,0, Newcastle 1,3 a partita.",
       "Gol subiti finora: Fulham 11, Newcastle 15."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per il Fulham, 2 vittorie per il Newcastle e nessun pareggio, con 15 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, a maggio 2026 in Premier League, è finito Fulham 2-0 Newcastle."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -1764,20 +1071,20 @@
    ]
   },
   "fb:560640": {
-   "fingerprint": "j4c5j3",
+   "fingerprint": "12awapo",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:00 l'Arsenal affronta in casa l'Hull City, nell'ambito della 10ª giornata di Premier League. In classifica l'Arsenal occupa il 1° posto con 24 punti, mentre l'Hull City è all'11° posto con 11 punti."
+      "Sabato 7 novembre alle 16:00 l'Arsenal ospita l'Hull City per la 10ª giornata di Premier League. In classifica l'Arsenal è al 1° posto con 24 punti, mentre l'Hull City è all'11° con 11."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Premier League l'Arsenal ha ottenuto 4 vittorie (sequenza V-V-V-V), segnando 6 gol e subendone 1. La squadra arriva da 4 successi consecutivi. In casa ha vinto tutte e 2 le partite disputate.",
-      "Nelle ultime 4 partite di Premier League l'Hull City ha ottenuto 3 pareggi e 1 sconfitta (sequenza N-P-N-N), segnando 5 gol e subendone 6."
+      "Nelle ultime 4 partite di Premier League l'Arsenal ha ottenuto 4 vittorie (sequenza V-V-V-V), con 6 gol fatti e 1 subito. La squadra arriva da 4 vittorie consecutive. In casa ha vinto tutte le 2 partite giocate.",
+      "Nelle ultime 4 partite di Premier League l'Hull City ha ottenuto 3 pareggi e 1 sconfitta (sequenza N-P-N-N), con 5 gol fatti e 6 subiti."
      ],
      "bullets": []
     },
@@ -1787,9 +1094,16 @@
      "bullets": [
       "Media gol segnati: Arsenal 1,6, Hull City 1,2 a partita.",
       "Gol subiti finora: Arsenal 5, Hull City 10.",
-      "L'Arsenal ha la difesa meno battuta del torneo.",
-      "L'Arsenal non ha subito gol in 3 delle ultime 4 partite."
+      "L'Arsenal ha la miglior difesa del torneo.",
+      "L'Arsenal non ha subito gol in 3 delle ultime 4."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 4 vittorie per l'Arsenal, nessuna per l'Hull City e 1 pareggio, con 15 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, a febbraio 2017 in Premier League, è terminato Arsenal 2-0 Hull City."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -1798,12 +1112,12 @@
      "a": "Sabato 7 novembre alle 16:00, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2166,20 +1480,20 @@
    ]
   },
   "fb:564745": {
-   "fingerprint": "1spha4r",
+   "fingerprint": "a747pu",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:15 l'Espanyol ospita il Deportivo per la 12ª giornata di LaLiga. In classifica l'Espanyol occupa il 14° posto con 11 punti, mentre il Deportivo è all'8° con 14."
+      "Sabato 7 novembre alle 16:15 l'Espanyol ospita il Deportivo nella 12ª giornata di LaLiga. In classifica l'Espanyol occupa il 14° posto con 11 punti, mentre il Deportivo è all'8° con 14."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di LaLiga l'Espanyol ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-P-V), con 3 gol fatti e 4 subiti.",
-      "Nelle ultime 4 partite di LaLiga il Deportivo ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza P-N-P-V), con 5 gol fatti e 6 subiti. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 4 partite di LaLiga l'Espanyol ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con la sequenza N-P-P-V. Ha segnato 3 gol e ne ha subiti 4.",
+      "Nelle ultime 4 partite di LaLiga il Deportivo ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con la sequenza P-N-P-V. Ha segnato 5 gol e ne ha subiti 6. In trasferta ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     },
@@ -2187,9 +1501,16 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Espanyol 1,2, Deportivo 1,4 a partita.",
+      "Media gol segnati a partita: Espanyol 1,2, Deportivo 1,4.",
       "Gol subiti finora: Espanyol 14, Deportivo 14."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per l'Espanyol, nessuna per il Deportivo e 2 pareggi, con 11 gol complessivi, pari a una media di 2,2 a partita. L'ultimo incrocio, disputato a febbraio 2018 in La Liga, è terminato Deportivo 0-0 Espanyol."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -2199,7 +1520,7 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+     "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -2563,20 +1884,20 @@
    ]
   },
   "fb:565851": {
-   "fingerprint": "cw5mwe",
+   "fingerprint": "1q5mble",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 15:30 il Mainz ospita il Bayern Monaco nella 9ª giornata di Bundesliga. In classifica il Mainz occupa il 9° posto con 10 punti, mentre il Bayern Monaco è al 1° con 18."
+      "Sabato 7 novembre alle 15:30 il Mainz ospita il Bayern Monaco per la 9ª giornata di Bundesliga. In classifica il Mainz occupa il 9° posto con 10 punti, mentre il Bayern Monaco è al 1° con 18."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga il Mainz ha raccolto 1 vittoria e 3 sconfitte, con sequenza P-V-P-P, segnando 7 gol e subendone 11. Ha perso le ultime 2 gare. In casa ha perso tutte le 2 partite disputate.",
-      "Nelle ultime 4 partite di Bundesliga il Bayern Monaco ha raccolto 2 vittorie e 2 pareggi, con sequenza N-V-V-N, segnando 13 gol e subendone 6. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 4 partite di Bundesliga il Mainz ha ottenuto 1 vittoria e 3 sconfitte (sequenza P-V-P-P), segnando 7 gol e subendone 11. Ha perso le ultime 2 gare. In casa ha perso tutte le 2 partite disputate.",
+      "Nelle ultime 4 partite di Bundesliga il Bayern Monaco ha ottenuto 2 vittorie e 2 pareggi (sequenza N-V-V-N), segnando 13 gol e subendone 6. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     },
@@ -2586,10 +1907,17 @@
      "bullets": [
       "Media gol segnati: Mainz 2,1, Bayern Monaco 3,4 a partita.",
       "Gol subiti finora: Mainz 17, Bayern Monaco 8.",
-      "Il Bayern Monaco ha il miglior attacco del torneo.",
-      "In 3 delle ultime 4 partite del Mainz si sono segnati almeno tre gol.",
-      "In tutte le ultime 4 partite del Bayern Monaco si sono segnati almeno tre gol."
+      "Il Bayern Monaco ha l'attacco migliore del torneo.",
+      "In 3 delle ultime 4 partite del Mainz sono stati segnati almeno tre gol.",
+      "In tutte le ultime 4 partite del Bayern Monaco sono stati segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Mainz, 3 vittorie per il Bayern Monaco e 1 pareggio, con 21 gol complessivi (media di 4,2 a partita). L'ultimo incrocio, ad aprile 2026 in Bundesliga, è finito Mainz 3-4 Bayern Monaco."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -2652,20 +1980,20 @@
    ]
   },
   "fb:565848": {
-   "fingerprint": "6lzucp",
+   "fingerprint": "6ai7xe",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 15:30 il RB Leipzig ospiterà l'Augsburg nella 9ª giornata di Bundesliga. In classifica il RB Leipzig occupa il 4° posto con 15 punti, mentre l'Augsburg è al 10° con 9."
+      "Sabato 7 novembre alle 15:30 il RB Leipzig ospita l'Augsburg per la 9ª giornata di Bundesliga. In classifica il RB Leipzig è al 4° posto con 15 punti, mentre l'Augsburg è al 10° con 9."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga il RB Leipzig ha ottenuto 3 vittorie e 1 sconfitta (sequenza V-P-V-V), segnando 13 gol e subendone 6. In casa ha vinto in tutte e 2 le partite disputate.",
-      "Nelle ultime 4 partite di Bundesliga l'Augsburg ha ottenuto 2 pareggi e 2 sconfitte (sequenza N-P-N-P), con 7 gol fatti e 9 subiti."
+      "Nelle ultime 4 partite di Bundesliga il RB Leipzig ha raccolto 3 vittorie e 1 sconfitta (sequenza V-P-V-V), con 13 gol fatti e 6 subiti. In casa ha vinto tutte le 2 partite giocate.",
+      "Nelle ultime 4 partite di Bundesliga l'Augsburg ha raccolto 2 pareggi e 2 sconfitte (sequenza N-P-N-P), con 7 gol fatti e 9 subiti."
      ],
      "bullets": []
     },
@@ -2675,10 +2003,17 @@
      "bullets": [
       "Media gol segnati: RB Leipzig 2,8, Augsburg 2,3 a partita.",
       "Gol subiti finora: RB Leipzig 11, Augsburg 15.",
-      "Nelle ultime 4 partite del RB Leipzig, in 3 si sono segnati almeno tre gol.",
-      "Il RB Leipzig non ha subito gol in 3 delle ultime 4 partite.",
-      "Nelle ultime 4 partite dell'Augsburg, in 3 si sono segnati almeno tre gol."
+      "In 3 delle ultime 4 partite del RB Leipzig si sono segnati almeno tre gol.",
+      "Il RB Leipzig non ha subito gol in 3 delle ultime 4.",
+      "In 3 delle ultime 4 partite dell'Augsburg si sono segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per il RB Leipzig, 0 vittorie per l'Augsburg e 2 pareggi, con 17 gol complessivi (media di 3,4 a partita). L'ultimo incrocio, a marzo 2026 in Bundesliga, è finito RB Leipzig 2-1 Augsburg."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -2687,7 +2022,7 @@
      "a": "Sabato 7 novembre alle 15:30, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
     },
     {
@@ -2697,12 +2032,12 @@
    ]
   },
   "fb:565853": {
-   "fingerprint": "1m9b66w",
+   "fingerprint": "192e3wp",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "SC Paderborn e Frankfurt si affrontano sabato 7 novembre alle 15:30 per la 9ª giornata di Bundesliga. In classifica lo SC Paderborn occupa il 14° posto con 9 punti, mentre il Frankfurt è all'8° posto con 11."
+      "Sabato 7 novembre alle 15:30 si affrontano SC Paderborn e Frankfurt, valide per la 9ª giornata di Bundesliga. In classifica lo SC Paderborn è al 14° posto con 9 punti, mentre il Frankfurt è all'8° posto con 11 punti."
      ],
      "bullets": []
     },
@@ -2721,6 +2056,13 @@
       "Media gol segnati: SC Paderborn 0,8, Frankfurt 1,6 a partita.",
       "Gol subiti finora: SC Paderborn 9, Frankfurt 18."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per lo SC Paderborn, 2 vittorie per il Frankfurt e nessun pareggio, con 22 gol complessivi (media di 4,4 a partita). L'ultimo incontro, disputato a giugno 2020 in Bundesliga, è terminato Frankfurt 3-2 SC Paderborn."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -2729,12 +2071,12 @@
      "a": "Sabato 7 novembre alle 15:30, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -3357,20 +2699,20 @@
    ]
   },
   "fb:1001552217": {
-   "fingerprint": "1qa7vbc",
+   "fingerprint": "gbsrpu",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:30 il Sittard ospita il Telstar per la 12ª giornata di Eredivisie. In classifica il Sittard è al 6° posto con 19 punti, mentre il Telstar è al 16° con 9."
+      "Sabato 7 novembre alle 16:30 il Sittard ospita il Telstar nella 12ª giornata di Eredivisie. In classifica il Sittard è sesto con 19 punti, mentre il Telstar è sedicesimo con 9."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie il Sittard ha ottenuto 1 vittoria e 3 pareggi (sequenza N-N-V-N), segnando 5 gol e subendone 4. Non perde da 4 partite. In casa, nel bilancio stagionale, registra 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Eredivisie il Telstar ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-P-V), con 11 gol segnati e 11 subiti."
+      "Nelle ultime 4 partite di Eredivisie il Sittard ha ottenuto 1 vittoria e 3 pareggi (sequenza N-N-V-N), segnando 5 gol e subendone 4. Non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 4 partite di Eredivisie il Telstar ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-P-V), con 11 gol fatti e 11 subiti."
      ],
      "bullets": []
     },
@@ -3380,8 +2722,15 @@
      "bullets": [
       "Media gol segnati a partita: Sittard 1,6, Telstar 1,5.",
       "Gol subiti finora: Sittard 18, Telstar 23.",
-      "In tutte le ultime 4 partite del Telstar si sono segnati almeno tre gol."
+      "In tutte le ultime 4 partite del Telstar sono stati segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Sittard, 1 vittoria per il Telstar e 2 pareggi, con 19 gol complessivi (media di 3,8 a partita). L'ultimo incrocio, a marzo 2026 in Eredivisie, è terminato Sittard 1-4 Telstar."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -3391,11 +2740,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina dedicata all'[Eredivisie](/calcio/eredivisie) e la [classifica aggiornata](/calcio/eredivisie/classifica)."
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -3754,20 +3103,20 @@
    ]
   },
   "fb:567352": {
-   "fingerprint": "k77zr7",
+   "fingerprint": "1y4u6it",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:30 il CD Nacional affronta l'Acad. Viseu nella 11ª giornata di Primeira Liga. In classifica il CD Nacional è al 15° posto con 7 punti, mentre l'Acad. Viseu è al 6° posto con 20 punti."
+      "CD Nacional e Acad. Viseu si affrontano sabato 7 novembre alle 16:30, nell'11ª giornata di Primeira Liga. In classifica il CD Nacional è al 15° posto con 7 punti, mentre l'Acad. Viseu è al 6° posto con 20 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Primeira Liga il CD Nacional ha ottenuto 1 vittoria e 2 sconfitte, con la sequenza P-V-P. Ha segnato 3 gol e ne ha subiti 4.",
-      "Nelle ultime 3 partite di Primeira Liga l'Acad. Viseu ha ottenuto 3 vittorie, con la sequenza V-V-V. Ha segnato 6 gol e ne ha subiti 3. Arriva da 3 vittorie consecutive."
+      "Nelle ultime 3 partite di Primeira Liga il CD Nacional ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-V-P), con 3 gol fatti e 4 subiti.",
+      "Nelle ultime 3 partite di Primeira Liga l'Acad. Viseu ha ottenuto 3 vittorie (sequenza V-V-V), con 6 gol fatti e 3 subiti. La squadra arriva da 3 vittorie consecutive."
      ],
      "bullets": []
     },
@@ -3775,10 +3124,17 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: 1,0 per il CD Nacional e 1,5 per l'Acad. Viseu.",
-      "Gol subiti finora: 19 per il CD Nacional e 12 per l'Acad. Viseu.",
-      "In tutte le ultime 3 partite dell'Acad. Viseu si sono segnati almeno tre gol."
+      "Media gol segnati: CD Nacional 1,0, Acad. Viseu 1,5 a partita.",
+      "Gol subiti finora: CD Nacional 19, Acad. Viseu 12.",
+      "In tutte le ultime 3 partite dell'Acad. Viseu sono stati segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il CD Nacional, 1 vittoria per l'Acad. Viseu e 3 pareggi, con 14 gol complessivi (media di 2,8 a partita). L'ultimo incrocio, a marzo 2024 in Segunda Liga, è terminato CD Nacional 1-1 Acad. Viseu."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -3787,8 +3143,8 @@
      "a": "Sabato 7 novembre alle 16:30, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Primeira Liga](/calcio/primeira-liga) e la [classifica aggiornata](/calcio/primeira-liga/classifica)."
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -4290,20 +3646,20 @@
    ]
   },
   "fb:561934": {
-   "fingerprint": "1vcwegp",
+   "fingerprint": "1b0j71v",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:00 il Watford ospita il Middlesbrough nella 15ª giornata di Championship. In classifica il Watford occupa il 20° posto con 14 punti, mentre il Middlesbrough è al 1° posto con 28."
+      "Sabato 7 novembre alle 16:00 il Watford ospita il Middlesbrough per la 15ª giornata di Championship. In classifica il Watford è al 20° posto con 14 punti, il Middlesbrough al 1° con 28."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Watford ha ottenuto 2 vittorie e 3 sconfitte (sequenza P-V-P-P-V), con 6 gol fatti e 9 subiti. In casa, nella stagione, il bilancio è di 2 vittorie e 1 sconfitta.",
-      "Nelle ultime 5 partite di Championship il Middlesbrough ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-N-V-V-P), con 13 gol fatti e 7 subiti. In trasferta, nella stagione, il bilancio è di 2 vittorie e 1 sconfitta."
+      "Nelle ultime 5 partite di Championship il Watford ha raccolto 2 vittorie e 3 sconfitte (sequenza P-V-P-P-V), con 6 gol fatti e 9 subiti. In casa il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Championship il Middlesbrough ha raccolto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-N-V-V-P), con 13 gol fatti e 7 subiti. In trasferta il bilancio stagionale è di 2 vittorie e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -4315,6 +3671,13 @@
       "Gol subiti finora: Watford 23, Middlesbrough 19.",
       "In 4 delle ultime 5 partite del Middlesbrough si sono segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per il Watford, 2 vittorie per il Middlesbrough e nessun pareggio, con 17 gol complessivi (media di 3,4 a partita). L'ultimo incrocio, ad aprile 2026 in Championship, è finito Middlesbrough 5-1 Watford."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -4324,29 +3687,29 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Championship](/calcio/championship) e la [classifica aggiornata](/calcio/championship/classifica)."
+     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:561930": {
-   "fingerprint": "s1rluo",
+   "fingerprint": "9egwxh",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Cardiff e Burnley si affrontano sabato 7 novembre alle 16:00 per la 15ª giornata di Championship. In classifica il Cardiff è al 18° posto con 15 punti, il Burnley al 22° con 10."
+      "Cardiff e Burnley si sfidano sabato 7 novembre alle 16:00, in occasione della 15ª giornata di Championship. In classifica il Cardiff occupa il 18° posto con 15 punti, mentre il Burnley è 22° con 10 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Cardiff ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-N-V-P-N), con 11 gol fatti e 9 subiti. In casa il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 5 partite di Championship il Burnley ha raccolto 3 pareggi e 2 sconfitte (sequenza N-P-P-N-N), con 5 gol fatti e 9 subiti. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
+      "Nelle ultime 5 partite di Championship il Cardiff ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta, con la sequenza V-N-V-P-N. Ha segnato 11 gol e ne ha subiti 9. Quest'anno, in casa, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Championship il Burnley ha ottenuto 3 pareggi e 2 sconfitte, con la sequenza N-P-P-N-N. Ha segnato 5 gol e ne ha subiti 9. In trasferta, nella stagione in corso, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -4354,11 +3717,18 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Cardiff 1,6, Burnley 1,3 a partita.",
+      "Media gol segnati a partita: Cardiff 1,6, Burnley 1,3.",
       "Gol subiti finora: Cardiff 23, Burnley 26.",
-      "In 4 delle ultime 5 partite del Cardiff si sono segnati almeno tre gol.",
-      "In 3 delle ultime 5 partite del Burnley si sono segnati almeno tre gol."
+      "Nelle ultime 5 partite del Cardiff si sono segnati almeno tre gol in 4 occasioni.",
+      "Nelle ultime 5 partite del Burnley si sono segnati almeno tre gol in 3 occasioni."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il Cardiff ha vinto 1 volta, il Burnley 3 volte e si è registrato 1 pareggio, per un totale di 16 gol (media di 3,2 a partita). L'ultimo precedente, disputato a settembre 2025 in League Cup, si è chiuso con Burnley 1-2 Cardiff."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -4372,25 +3742,25 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:561940": {
-   "fingerprint": "14ed9oi",
+   "fingerprint": "1wswsxc",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:00 il Birmingham affronta in casa lo Swansea nella 15ª giornata di Championship. Si tratta di un confronto tra squadre che occupano le posizioni alte della classifica: il Birmingham è terzo con 26 punti, lo Swansea quinto con 26."
+      "Sabato 7 novembre alle 16:00 il Birmingham ospita lo Swansea per la 15ª giornata di Championship. Si tratta di un confronto tra due squadre di alta classifica: il Birmingham è al 3° posto con 26 punti, mentre lo Swansea è al 5° con 26."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Birmingham ha ottenuto 4 vittorie e 1 sconfitta, con la sequenza V-V-P-V-V. Ha segnato 13 gol e ne ha subiti 2. In casa ha vinto tutte e 3 le gare disputate.",
-      "Nelle ultime 5 partite di Championship lo Swansea ha ottenuto 2 vittorie e 3 sconfitte, con la sequenza V-P-P-V-P. Ha segnato 6 gol e ne ha subiti 9. In trasferta il bilancio stagionale è di 1 vittoria e 2 sconfitte."
+      "Nelle ultime 5 partite di Championship il Birmingham ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-V-P-V-V), segnando 13 gol e subendone 2. In casa ha vinto tutte le 3 partite giocate.",
+      "Nelle ultime 5 partite di Championship lo Swansea ha ottenuto 2 vittorie e 3 sconfitte (sequenza V-P-P-V-P), segnando 6 gol e subendone 9. In trasferta il bilancio stagionale è di 1 vittoria e 2 sconfitte."
      ],
      "bullets": []
     },
@@ -4398,13 +3768,20 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "La media gol segnati è di 1,9 a partita per il Birmingham e di 1,5 per lo Swansea.",
-      "Gol subiti finora: 13 per il Birmingham, 16 per lo Swansea.",
+      "Media gol segnati: Birmingham 1,9, Swansea 1,5 a partita.",
+      "Gol subiti finora: Birmingham 13, Swansea 16.",
       "Il Birmingham ha la miglior difesa del torneo.",
-      "In 4 delle ultime 5 partite del Birmingham sono stati segnati almeno tre gol.",
-      "Il Birmingham non ha subito gol in 3 delle ultime 5 partite.",
-      "In 3 delle ultime 5 partite dello Swansea sono stati segnati almeno tre gol."
+      "In 4 delle ultime 5 partite del Birmingham si sono segnati almeno tre gol.",
+      "Il Birmingham non ha subito gol in 3 delle ultime 5.",
+      "In 3 delle ultime 5 partite dello Swansea si sono segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Birmingham, nessuna per lo Swansea e 3 pareggi, con 10 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, ad agosto 2026 in League Cup, è finito Swansea 0-1 Birmingham."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -4423,20 +3800,20 @@
    ]
   },
   "fb:561937": {
-   "fingerprint": "cf61yg",
+   "fingerprint": "kw8qqo",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Preston NE e Southampton si sfidano sabato 7 novembre alle 16:00, nella 15ª giornata di Championship. In classifica il Preston NE occupa il 24° posto con 5 punti, mentre il Southampton è al 7° con 24."
+      "Sabato 7 novembre alle 16:00 Preston NE e Southampton si sfidano nella 15ª giornata di Championship. In classifica il Preston NE occupa il 24° posto con 5 punti, mentre il Southampton è 7° con 24 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Preston NE ha ottenuto 1 pareggio e 4 sconfitte (sequenza P-P-N-P-P), segnando 4 gol e subendone 14. Ha perso le ultime 2 gare. In casa il bilancio stagionale comprende 1 pareggio e 2 sconfitte, senza vittorie.",
-      "Nelle ultime 5 partite di Championship il Southampton ha conquistato 3 vittorie e 2 pareggi (sequenza V-N-V-V-N), con 9 gol fatti e 4 subiti. Non perde da 6 partite. In trasferta il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
+      "Nelle ultime 5 partite di Championship il Preston NE ha ottenuto 1 pareggio e 4 sconfitte, con la sequenza P-P-N-P-P, segnando 4 gol e subendone 14. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza vittorie.",
+      "Nelle ultime 5 partite di Championship il Southampton ha ottenuto 3 vittorie e 2 pareggi, con la sequenza V-N-V-V-N, segnando 9 gol e subendone 4. Non perde da 6 partite. In trasferta, nella stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     },
@@ -4444,42 +3821,49 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Preston NE 0,9, Southampton 2,1 a partita.",
+      "Media gol segnati a partita: Preston NE 0,9, Southampton 2,1.",
       "Gol subiti finora: Preston NE 30, Southampton 14.",
       "In 3 delle ultime 5 partite del Preston NE sono stati segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Preston NE, 3 vittorie per il Southampton e 1 pareggio, con 16 gol complessivi, pari a una media di 3,2 a partita. L'ultimo incrocio, disputato a maggio 2026 in Championship, è terminato Preston NE 1-3 Southampton."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
     {
      "q": "Quando si gioca Preston NE – Southampton?",
-     "a": "Sabato 7 novembre alle 16:00, ora italiana."
+     "a": "Sabato 7 novembre alle 16:00."
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Championship](/calcio/championship) e la [classifica aggiornata](/calcio/championship/classifica)."
+     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Trovi spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:561936": {
-   "fingerprint": "1vmj01a",
+   "fingerprint": "1u6aoj8",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:00 il West Brom ospita il Millwall per la 15ª giornata di Championship. In classifica il West Brom è al 6° posto con 25 punti, il Millwall al 13° con 18."
+      "Sabato 7 novembre alle 16:00 il West Brom ospita il Millwall nella 15ª giornata di Championship. In classifica il West Brom occupa il 6° posto con 25 punti, mentre il Millwall è al 13° posto con 18."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il West Brom ha conquistato 3 vittorie e 2 pareggi (sequenza V-V-N-V-N), segnando 10 gol e subendone 6. Non perde da 5 partite. In casa, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
-      "Nelle ultime 5 partite di Championship il Millwall ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-N-P-V-P), segnando 7 gol e subendone 9. In trasferta, nella stagione, il bilancio è di 1 vittoria e 2 sconfitte."
+      "Nelle ultime 5 partite di Championship il West Brom ha conquistato 3 vittorie e 2 pareggi, con la sequenza V-V-N-V-N, segnando 10 gol e subendone 6. La squadra non perde da 5 partite. In casa, il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+      "Nelle ultime 5 partite di Championship il Millwall ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza P-N-P-V-P, segnando 7 gol e subendone 9. In trasferta, il bilancio stagionale è di 1 vittoria e 2 sconfitte."
      ],
      "bullets": []
     },
@@ -4487,11 +3871,18 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: West Brom 1,4, Millwall 1,6 a partita.",
+      "Media gol segnati a partita: West Brom 1,4, Millwall 1,6.",
       "Gol subiti finora: West Brom 15, Millwall 24.",
       "In 3 delle ultime 5 partite del West Brom si sono segnati almeno tre gol.",
       "In 4 delle ultime 5 partite del Millwall si sono segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per il West Brom, 1 vittoria per il Millwall e 4 pareggi, con 7 gol complessivi, pari a una media di 1,4 a partita. L'ultimo incontro, disputato ad aprile 2026 in Championship, è terminato West Brom 0-0 Millwall."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -4510,20 +3901,20 @@
    ]
   },
   "fb:561935": {
-   "fingerprint": "1ysh5hk",
+   "fingerprint": "3vea0o",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Il Blackburn riceve il West Ham sabato 7 novembre alle 16:00, per la 15ª giornata di Championship. In classifica il Blackburn è al 14° posto con 18 punti, mentre il West Ham occupa l'8° posto con 23."
+      "Sabato 7 novembre alle 16:00 il Blackburn ospita il West Ham nella 15ª giornata di Championship. In classifica il Blackburn occupa il 14° posto con 18 punti, mentre il West Ham è all'8° con 23."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Blackburn ha ottenuto 2 vittorie e 3 sconfitte (sequenza V-P-V-P-P), segnando 6 gol e subendone 9. Ha perso le ultime 2 partite. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
-      "Nelle ultime 5 partite di Championship il West Ham ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-V-P-P-N), segnando 13 gol e subendone 9. In trasferta, il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
+      "Nelle ultime 5 partite di Championship il Blackburn ha ottenuto 2 vittorie e 3 sconfitte, con sequenza V-P-V-P-P. Ha segnato 6 gol e ne ha subiti 9. Ha perso le ultime 2 gare. In casa, in questa stagione, il bilancio è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Championship il West Ham ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con sequenza V-V-P-P-N. Ha segnato 13 gol e ne ha subiti 9. In trasferta, in questa stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     },
@@ -4531,12 +3922,19 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Blackburn 1,4, West Ham 2,6 a partita.",
+      "Media gol segnati a partita: Blackburn 1,4, West Ham 2,6.",
       "Gol subiti finora: Blackburn 22, West Ham 21.",
       "Il West Ham ha il miglior attacco del torneo.",
       "In 3 delle ultime 5 partite del Blackburn si sono segnati almeno tre gol.",
       "In 4 delle ultime 5 partite del West Ham si sono segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 4 confronti diretti il bilancio è di 0 vittorie per il Blackburn, 1 vittoria per il West Ham e 3 pareggi, con 14 gol complessivi, pari a una media di 3,5 a partita. L'ultimo incrocio, disputato a novembre 2022 in League Cup, è terminato West Ham 2-2 Blackburn."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -4545,12 +3943,12 @@
      "a": "Sabato 7 novembre alle 16:00, ora italiana."
     },
     {
-     "q": "Dove si possono consultare classifica e risultati?",
-     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
     },
     {
-     "q": "Dove trovo spiegazioni sulla lettura delle quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ti spiegano come funzionano le quote le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -4599,20 +3997,20 @@
    ]
   },
   "fb:561931": {
-   "fingerprint": "81cuno",
+   "fingerprint": "kfuexu",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:00 il Charlton ospita lo Sheffield Utd per la 15ª giornata di Championship. In classifica il Charlton è al 21° posto con 14 punti, lo Sheffield Utd è al 9° con 22."
+      "Sabato 7 novembre alle 16:00 il Charlton ospita lo Sheffield Utd per la 15ª giornata di Championship. In classifica il Charlton occupa il 21° posto con 14 punti, mentre lo Sheffield Utd è al 9° con 22."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Charlton ha raccolto 1 pareggio e 4 sconfitte (sequenza N-P-P-P-P), con 3 gol fatti e 11 subiti. Ha perso le ultime 4. In casa il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie.",
-      "Nelle ultime 5 partite di Championship lo Sheffield Utd ha raccolto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-N-V-V), con 8 gol fatti e 6 subiti. Non perde da 4 partite. In trasferta il bilancio stagionale è di 2 vittorie e 1 sconfitta."
+      "Nelle ultime 5 partite di Championship il Charlton ha ottenuto 1 pareggio e 4 sconfitte (sequenza N-P-P-P-P), segnando 3 gol e subendone 11. Ha perso le ultime 4. In casa, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie.",
+      "Nelle ultime 5 partite di Championship lo Sheffield Utd ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-N-V-V), segnando 8 gol e subendone 6. Non perde da 4 partite. In trasferta, il bilancio stagionale è di 2 vittorie e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -4620,10 +4018,17 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Charlton 0,8, Sheffield Utd 1,4 a partita.",
+      "Media gol segnati a partita: Charlton 0,8, Sheffield Utd 1,4.",
       "Gol subiti finora: Charlton 22, Sheffield Utd 17.",
-      "In 3 delle ultime 5 partite del Charlton si sono segnati almeno tre gol."
+      "In 3 delle ultime 5 partite del Charlton sono stati segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Charlton, 2 vittorie per lo Sheffield Utd e 1 pareggio, con 9 gol complessivi (media di 1,8 a partita). L'ultimo incontro, a gennaio 2026 in Championship, è terminato Charlton 1-0 Sheffield Utd."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -9418,42 +8823,6 @@
     }
    ]
   },
-  "fb:558545": {
-   "fingerprint": "1pv6gun",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Parma ha vinto in trasferta contro l'Atalanta con il punteggio di 0-3. La partita, valida per la 10ª giornata di Serie A, si è giocata lunedì 2 novembre; al termine del primo tempo il punteggio era 0-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora l'Atalanta è al 13° posto con 11 punti, mentre il Parma è al 15° con 8. Per tutti i dettagli si può consultare la [classifica completa](/calcio/serie-a/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Atalanta tornerà in campo domenica 8 novembre alle 15:00, in trasferta contro il Monza. Il Parma giocherà sabato 7 novembre alle 18:00, in casa contro il Bologna."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Atalanta – Parma?",
-     "a": "0-3 (0-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina di [Serie A](/calcio/serie-a)."
-    }
-   ]
-  },
   "fb:575377": {
    "fingerprint": "1mdzmus",
    "sections": [
@@ -9977,19 +9346,19 @@
    ]
   },
   "fb:1001636324": {
-   "fingerprint": "4n96gs",
+   "fingerprint": "yo7hin",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Rennes e l'Olympiakos Piraeus non sono riusciti a segnare: la partita è terminata 0-0. L'incontro, valido per la 4ª giornata della fase a campionato di Europa League, si è giocato mercoledì 4 novembre, e anche il primo tempo si era chiuso 0-0."
+      "Il Rennes e l'Olympiakos Piraeus non si sono sbloccati e la partita è terminata 0-0. Il match, valido per la 4ª giornata della fase a campionato di Europa League, si è giocato mercoledì 4 novembre; anche il primo tempo si era chiuso 0-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Rennes occupa il 12° posto con 6 punti, mentre l'Olympiakos Piraeus è al 1° posto con 10. Per consultare la [classifica completa](/calcio/europa-league/classifica) è possibile seguire il link indicato."
+      "Con le partite giocate finora il Rennes è al 15° posto con 6 punti, mentre l'Olympiakos Piraeus è al 3° con 10. [Consulta la classifica completa](/calcio/europa-league/classifica)."
      ],
      "bullets": []
     }
@@ -10001,187 +9370,500 @@
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Gli altri risultati sono disponibili nella pagina di [Europa League](/calcio/europa-league)."
+     "a": "Nella pagina [Europa League](/calcio/europa-league)."
     }
    ]
   },
-  "fb:1001557455": {
-   "fingerprint": "ajresu",
+  "fb:1001636254": {
+   "fingerprint": "1apoox0",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "L'Everton si è imposto in trasferta sul Newcastle per 0-1. La partita, valida per la 9ª giornata di Premier League, si è giocata lunedì 2 novembre; il primo tempo si era chiuso sullo 0-0."
+      "Il match si chiude 1-1: l'Hoffenheim, in vantaggio 0-1 all'intervallo, viene raggiunto nella ripresa dal Crystal Palace. La partita, valida per la 4ª giornata della fase a campionato di Europa League, si è disputata giovedì 5 novembre."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Newcastle occupa il 13° posto con 11 punti, mentre l'Everton è al 7° con 13. [Consulta la classifica completa](/calcio/premier-league/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Newcastle tornerà in campo sabato 7 novembre alle 16:00 in trasferta contro il Fulham. L'Everton scenderà in campo venerdì 6 novembre alle 21:00 in casa contro il Coventry City."
+      "Dopo le partite disputate finora, il Crystal Palace occupa il 18° posto con 5 punti, mentre l'Hoffenheim è al 20° con 4. [Consulta la classifica completa](/calcio/europa-league/classifica)."
      ],
      "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Com'è finita Newcastle – Everton?",
-     "a": "0-1 (0-0 all'intervallo)."
+     "q": "Com'è finita Crystal Palace – Hoffenheim?",
+     "a": "1-1 (0-1 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Premier League](/calcio/premier-league)."
+     "a": "Nella pagina [Europa League](/calcio/europa-league)."
     }
    ]
   },
-  "fb:564731": {
-   "fingerprint": "u9pzyu",
+  "fb:1001636289": {
+   "fingerprint": "7ecsg7",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Rimonta del Deportivo, che dopo essere stato sotto all'intervallo vince in casa 2-1 contro l'Osasuna. La partita, valida per la 11ª giornata di LaLiga, si è giocata lunedì 2 novembre; il primo tempo si era chiuso 0-1."
+      "Il Plzen ha vinto in trasferta contro il Lillestrom con il punteggio di 0-1. La partita, valida per la 4ª giornata della fase a campionato di Europa League, si è giocata giovedì 5 novembre, e il primo tempo si era chiuso 0-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Deportivo è all'8° posto con 14 punti, mentre l'Osasuna è al 15° con 11. [Consulta la classifica completa](/calcio/liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Deportivo tornerà in campo sabato 7 novembre alle 16:15 in trasferta contro l'Espanyol. L'Osasuna tornerà in campo sabato 7 novembre alle 18:30 in casa contro l'Athletic."
+      "Con le partite giocate finora il Lillestrom è al 32° posto con 1 punto, mentre il Plzen è al 29° con 3 punti. [Consulta la classifica completa](/calcio/europa-league/classifica)."
      ],
      "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Com'è finita Deportivo – Osasuna?",
-     "a": "2-1 (0-1 all'intervallo)."
+     "q": "Com'è finita Lillestrom – Plzen?",
+     "a": "0-1 (0-1 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [LaLiga](/calcio/liga)."
+     "a": "Nella pagina [Europa League](/calcio/europa-league)."
     }
    ]
   },
-  "fb:1001552803": {
-   "fingerprint": "1ga6hyw",
+  "fb:1001636302": {
+   "fingerprint": "1p7hebx",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Lo Stade Brestois 29 ha battuto il Lorient in trasferta per 0-2. La partita, valida per la 9ª giornata di Ligue 1, si è giocata lunedì 2 novembre; il primo tempo si era chiuso 0-0."
+      "Il NEC ribalta la partita e vince in casa per 3-1 contro l'Omonia Nicosia. Dopo il primo tempo, chiuso sullo 0-1, la squadra di casa completa la rimonta. L'incontro, valido per la 4ª giornata della fase a campionato di Europa League, si è disputato giovedì 5 novembre."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Lorient è all'11° posto con 12 punti, mentre lo Stade Brestois 29 è al 10° con 12. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Lorient tornerà in campo domenica 8 novembre alle 17:15 in trasferta contro il Le Havre. Lo Stade Brestois 29 giocherà anch'esso domenica 8 novembre alle 17:15, ma in casa contro l'Olympique Lyon."
+      "Con le partite disputate finora il NEC occupa l'11° posto con 7 punti, mentre l'Omonia Nicosia è al 16° con 6 punti. [Consulta la classifica completa](/calcio/europa-league/classifica)."
      ],
      "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Com'è finita Lorient – Stade Brestois 29?",
-     "a": "Il risultato è stato 0-2, con il punteggio di 0-0 all'intervallo."
+     "q": "Com'è finita NEC – Omonia Nicosia?",
+     "a": "3-1 (0-1 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Puoi consultarli nella pagina [Ligue 1](/calcio/ligue-1)."
+     "a": "Nella pagina [Europa League](/calcio/europa-league)."
     }
    ]
   },
-  "fb:567342": {
-   "fingerprint": "lrl5hq",
+  "fb:1001636208": {
+   "fingerprint": "1mfyv9w",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Lo SL Benfica si impone di misura in casa contro l'Alverca per 1-0. La partita, valida per la 10ª giornata di Primeira Liga, si è giocata lunedì 2 novembre; il primo tempo si era chiuso 0-0."
+      "Il Ferencvarosi TC ha battuto il Milan in trasferta per 0-2. La partita, valida per la 4ª giornata della fase a campionato di Europa League, si è giocata giovedì 5 novembre; al termine del primo tempo il punteggio era 0-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora lo SL Benfica è al 2° posto con 25 punti, mentre l'Alverca è al 10° con 11 punti. Puoi consultare la [classifica completa](/calcio/primeira-liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Lo SL Benfica tornerà in campo domenica 8 novembre alle 21:30 in trasferta contro l'Amadora. L'Alverca tornerà in campo sabato 7 novembre alle 19:00 in casa contro il Casa Pia."
+      "Dopo le partite giocate finora il Milan occupa il 26° posto con 3 punti, mentre il Ferencvarosi TC è al 2° posto con 12. Puoi consultare la [classifica completa](/calcio/europa-league/classifica)."
      ],
      "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Com'è finita SL Benfica – Alverca?",
+     "q": "Com'è finita Milan – Ferencvarosi TC?",
+     "a": "0-2 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Europa League](/calcio/europa-league)."
+    }
+   ]
+  },
+  "fb:1001636319": {
+   "fingerprint": "30g1xu",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il match si chiude 1-1: il Real Sociedad, in vantaggio all'intervallo 1-0, viene raggiunto nella ripresa dall'Olympique Lyon. La partita, valida per la 4ª giornata della fase a campionato di Europa League, si è giocata giovedì 5 novembre."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, il Real Sociedad occupa il 17° posto con 5 punti, mentre l'Olympique Lyon è al 12° con 7. [Consulta la classifica completa](/calcio/europa-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Real Sociedad – Olympique Lyon?",
+     "a": "1-1 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina di [Europa League](/calcio/europa-league)."
+    }
+   ]
+  },
+  "fb:1001636211": {
+   "fingerprint": "nfleb2",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "L'Anderlecht ha battuto il Red Bull Salzburg in casa per 2-0. La partita, valida per la 4ª giornata della fase a campionato di Europa League, si è giocata giovedì 5 novembre; il primo tempo si era chiuso 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora, l'Anderlecht occupa il 14° posto con 6 punti, mentre il Red Bull Salzburg è al 23° con 4. [Consulta la classifica completa](/calcio/europa-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Anderlecht – Red Bull Salzburg?",
+     "a": "2-0 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina [Europa League](/calcio/europa-league)."
+    }
+   ]
+  },
+  "fb:1001636337": {
+   "fingerprint": "ppgzpw",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Rimonta del Bournemouth: sotto all'intervallo, si impone in trasferta per 1-3 contro lo Sparta. La partita, valida per la 4ª giornata della fase a campionato di Europa League, si è giocata giovedì 5 novembre; il primo tempo si era chiuso 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora lo Sparta è al 19° posto con 4 punti, mentre il Bournemouth è al 1° con 12. [Consulta la classifica completa](/calcio/europa-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Sparta – Bournemouth?",
+     "a": "1-3 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Europa League](/calcio/europa-league)."
+    }
+   ]
+  },
+  "fb:1001636286": {
+   "fingerprint": "en36lo",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Levski Sofia si impone di misura in casa sul Jagiellonia con il punteggio di 1-0. La gara, valida per la 4ª giornata della fase a campionato di Europa League, si è disputata giovedì 5 novembre; il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite giocate finora il Levski Sofia occupa il 10° posto con 7 punti, mentre il Jagiellonia è al 28° con 3. Puoi consultare la [classifica completa](/calcio/europa-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Levski Sofia – Jagiellonia?",
      "a": "1-0 (0-0 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
+     "a": "Nella pagina [Europa League](/calcio/europa-league)."
     }
    ]
   },
-  "fb:567346": {
-   "fingerprint": "z5ig3a",
+  "fb:1001636448": {
+   "fingerprint": "13u3ezu",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Gil Vicente e il Vitória SC non vanno oltre lo 0-0. La partita, valida per la 10ª giornata di Primeira Liga, si è giocata lunedì 2 novembre; il primo tempo si era chiuso 0-0."
+      "L'Ajax ha vinto con ampio margine in trasferta contro il FC Midtjylland, imponendosi 1-6. La partita, valida per la 3ª giornata della fase a campionato di Conference League, si è giocata giovedì 5 novembre; al termine del primo tempo il punteggio era 1-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Gil Vicente occupa il 7° posto con 15 punti, mentre il Vitória SC è al 13° con 9. Per l'intera graduatoria consulta la [classifica completa](/calcio/primeira-liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Gil Vicente tornerà in campo domenica 8 novembre alle 16:30 in trasferta contro il Santa Clara. Il Vitória SC giocherà domenica 8 novembre alle 19:00 in casa contro il Porto."
+      "Dopo le partite disputate finora, il FC Midtjylland occupa il 34° posto con 1 punto, mentre l'Ajax è al 2° posto con 6 punti. [Consulta la classifica completa](/calcio/conference-league/classifica)."
      ],
      "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Com'è finita Gil Vicente – Vitória SC?",
-     "a": "Il risultato finale è 0-0, con lo stesso punteggio anche all'intervallo."
+     "q": "Com'è finita FC Midtjylland – Ajax?",
+     "a": "Il risultato finale è 1-6, con il punteggio di 1-1 all'intervallo."
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Puoi consultarli nella pagina [Primeira Liga](/calcio/primeira-liga)."
+     "a": "Puoi consultarli nella pagina [Conference League](/calcio/conference-league)."
+    }
+   ]
+  },
+  "fb:1001636376": {
+   "fingerprint": "cgan5c",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Finisce senza gol la sfida tra Aarhus e Braga. La partita, valida per la 3ª giornata della fase a campionato di Conference League, si è giocata giovedì 5 novembre; il primo tempo si era chiuso 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite giocate finora, l'Aarhus occupa il 25° posto con 2 punti, mentre il Braga è al 17° con 4. [Consulta la classifica completa](/calcio/conference-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Aarhus – Braga?",
+     "a": "0-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league)."
+    }
+   ]
+  },
+  "fb:1001636383": {
+   "fingerprint": "rbbu73",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Atalanta e Kairat Almaty hanno chiuso la sfida con un pareggio per 1-1. La gara, valida per la 3ª giornata della fase a campionato di Conference League, si è giocata giovedì 5 novembre; il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite disputate finora, l'Atalanta occupa il 16° posto con 4 punti, mentre il Kairat Almaty è al 26° con 2. [Consulta la classifica completa](/calcio/conference-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Atalanta – Kairat Almaty?",
+     "a": "1-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league)."
+    }
+   ]
+  },
+  "fb:1001636399": {
+   "fingerprint": "u9g2hm",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Bodø/Glimt ha vinto in casa per 2-1 contro l'Inter Club d'Escaldes. La partita, valida per la 3ª giornata della fase a campionato di Conference League, si è giocata giovedì 5 novembre; il primo tempo si era chiuso 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Bodø/Glimt è al 15° posto con 4 punti, mentre l'Inter Club d'Escaldes è al 35° con 0. [Consulta la classifica completa](/calcio/conference-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Bodø/Glimt – Inter Club d'Escaldes?",
+     "a": "2-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league)."
+    }
+   ]
+  },
+  "fb:1001636444": {
+   "fingerprint": "1l5nxo3",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Lincoln Red Imps FC si impone di misura in casa sull'HNK Hajduk Split, con il punteggio di 1-0. La gara, valida per la 3ª giornata della fase a campionato di Conference League, si è disputata giovedì 5 novembre; il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite disputate finora, il Lincoln Red Imps FC occupa il 21° posto con 3 punti, mentre l'HNK Hajduk Split è al 10° posto con 6. [Consulta la classifica completa](/calcio/conference-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Lincoln Red Imps FC – HNK Hajduk Split?",
+     "a": "1-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league)."
+    }
+   ]
+  },
+  "fb:1001636476": {
+   "fingerprint": "axw6f8",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Freiburg ha vinto di misura in trasferta contro il Trabzonspor, con il risultato di 0-1. La partita, valida per la 3ª giornata della fase a campionato di Conference League, si è giocata giovedì 5 novembre; il primo tempo si era chiuso 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Trabzonspor occupa l'8° posto con 6 punti, mentre il Freiburg è all'11° posto con 6 punti. [Consulta la classifica completa](/calcio/conference-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Trabzonspor – Freiburg?",
+     "a": "Il risultato finale è 0-1, con lo stesso punteggio già registrato all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina [Conference League](/calcio/conference-league)."
+    }
+   ]
+  },
+  "fb:1001636473": {
+   "fingerprint": "r80pte",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il FC Thun ha battuto in casa l'Heart Of Midlothian per 3-1. La partita, valida per la 3ª giornata della fase a campionato di Conference League, si è giocata giovedì 5 novembre; il primo tempo si era chiuso 2-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il FC Thun è al 19° posto con 3 punti, mentre l'Heart Of Midlothian è al 32° con 1. Puoi consultare la [classifica completa](/calcio/conference-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita FC Thun – Heart Of Midlothian?",
+     "a": "3-1 (2-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league)."
+    }
+   ]
+  },
+  "fb:1001636439": {
+   "fingerprint": "m1pq31",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il KuPS e il Gent non vanno oltre lo 0-0. La partita, valida per la 3ª giornata della fase a campionato di Conference League, si è giocata giovedì 5 novembre; il primo tempo si era chiuso sul punteggio di 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il KuPS è al 33° posto con 1 punto, mentre il Gent è al 18° con 4 punti. [Vai alla classifica completa](/calcio/conference-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita KuPS – Gent?",
+     "a": "0-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league)."
+    }
+   ]
+  },
+  "fb:1001636452": {
+   "fingerprint": "ccsn6z",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Mjallby AIF supera il Borac Banja Luka in casa per 2-0. La partita, valida per la 3ª giornata della fase a campionato di Conference League, si è giocata giovedì 5 novembre; il primo tempo si era chiuso sullo 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Mjallby AIF occupa il 1° posto con 7 punti, mentre il Borac Banja Luka è al 20° con 3. [Consulta la classifica completa](/calcio/conference-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Mjallby AIF – Borac Banja Luka?",
+     "a": "2-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Conference League](/calcio/conference-league)."
     }
    ]
   },
