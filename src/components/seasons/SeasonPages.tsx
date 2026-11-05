@@ -1,9 +1,10 @@
 // Past seasons: /calcio/stagioni (every competition), /calcio/:competizione/stagioni (roll of honour) and
 // /calcio/:competizione/stagioni/:stagione (final standings and results round by round).
 // Data: src/lib/seasons.ts (scripts/derive-seasons.mjs, from the permanent archive).
-import { useParams } from "react-router";
-import { History, ListOrdered, Trophy } from "lucide-react";
-import { Link } from "../../lib/links";
+import type { ReactNode } from "react";
+import { useNavigate, useParams } from "react-router";
+import { ChevronDown, ChevronLeft, ChevronRight, ListOrdered, Trophy } from "lucide-react";
+import { Link, withSlash } from "../../lib/links";
 import { PageHeader } from "../layout/PageHeader";
 import { NotFoundPage } from "../NotFoundPage";
 import { TeamName } from "../teams/TeamLink";
@@ -135,6 +136,7 @@ export function SeasonsIndexPage() {
         meta={<span>{c.seasons.length} stagioni nell'archivio</span>}
       />
       <div className="container mx-auto px-4 py-8 space-y-6">
+        <SeasonNav slug={c.slug} />
         <div className={`${card} overflow-x-auto`}>
           <table className="w-full text-sm min-w-[560px]">
             <caption className="sr-only">Albo d'oro {c.name}</caption>
@@ -225,6 +227,116 @@ function OtherCompetitions({ current }: { current: string }) {
   );
 }
 
+// ---------------------------------------------------------------- navigation (both pages)
+
+const selectCls =
+  "w-full h-11 appearance-none rounded-md border border-slate-700 bg-slate-950 pl-3 pr-9 text-white text-sm cursor-pointer hover:border-slate-500";
+
+function Select({
+  label,
+  value,
+  onChange,
+  children,
+  className = "flex-1",
+}: {
+  className?: string;
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  children: ReactNode;
+}) {
+  return (
+    <label className={`block min-w-0 ${className}`}>
+      <span className="block text-slate-400 text-xs mb-1">{label}</span>
+      <span className="relative block">
+        <select value={value} onChange={(e) => onChange(e.target.value)} className={selectCls}>
+          {children}
+        </select>
+        <ChevronDown
+          className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+          aria-hidden="true"
+        />
+      </span>
+    </label>
+  );
+}
+
+/**
+ * Competition and season selectors (plus previous/next season arrows on a season page). Changing competition keeps
+ * the same season when the other competition has it (by starting year), otherwise opens its most recent one; on the
+ * roll-of-honour page it opens the other competition's roll of honour.
+ */
+function SeasonNav({ slug, season }: { slug: string; season?: string }) {
+  const navigate = useNavigate();
+  const go = (path: string) => navigate(withSlash(path));
+  const c = seasonsOf(slug)!;
+  const i = season ? c.seasons.findIndex((s) => s.key === season) : -1;
+  const current = i >= 0 ? c.seasons[i] : null;
+  const older = i >= 0 ? c.seasons[i + 1] : undefined;
+  const newer = i > 0 ? c.seasons[i - 1] : undefined;
+
+  const changeCompetition = (to: string) => {
+    const target = seasonsOf(to);
+    if (!target) return;
+    if (!current) return go(seasonsPath(to));
+    const same = target.seasons.find((s) => s.year === current.year) ?? target.seasons[0];
+    go(seasonPath(to, same.key));
+  };
+  const arrow = (s: typeof older, dir: "prev" | "next") => {
+    const Icon = dir === "prev" ? ChevronLeft : ChevronRight;
+    const cls = "inline-flex items-center justify-center size-11 shrink-0 rounded-md border border-slate-700";
+    return s ? (
+      <Link
+        to={seasonPath(slug, s.key)}
+        aria-label={`${dir === "prev" ? "Stagione precedente" : "Stagione successiva"}: ${c.name} ${s.label}`}
+        className={`${cls} bg-slate-950 text-white hover:border-slate-500`}
+      >
+        <Icon className="w-5 h-5" aria-hidden="true" />
+      </Link>
+    ) : (
+      <span className={`${cls} text-slate-700`} aria-hidden="true">
+        <Icon className="w-5 h-5" />
+      </span>
+    );
+  };
+  const groups = [
+    { label: "Campionati", list: seasonsIndex.filter((x) => x.type === "league") },
+    { label: "Coppe", list: seasonsIndex.filter((x) => x.type === "cup") },
+  ];
+
+  return (
+    <nav aria-label="Scegli competizione e stagione" className={`${card} p-3 sm:p-4 flex flex-col sm:flex-row gap-3`}>
+      <Select label="Competizione" value={slug} onChange={changeCompetition} className="sm:w-72 sm:flex-none">
+        {groups.map(
+          (g) =>
+            g.list.length > 0 && (
+              <optgroup key={g.label} label={g.label}>
+                {g.list.map((x) => (
+                  <option key={x.slug} value={x.slug}>
+                    {x.name}
+                  </option>
+                ))}
+              </optgroup>
+            ),
+        )}
+      </Select>
+      <div className="flex flex-1 items-end gap-2 min-w-0">
+        {season && arrow(older, "prev")}
+        <Select label="Stagione" value={season ?? ""} onChange={(v) => go(v ? seasonPath(slug, v) : seasonsPath(slug))}>
+          <option value="">Albo d'oro (tutte le stagioni)</option>
+          {c.seasons.map((s) => (
+            <option key={s.key} value={s.key}>
+              {c.name} {s.label}
+              {s.champion ? ` · ${s.champion.name}` : ""}
+            </option>
+          ))}
+        </Select>
+        {season && arrow(newer, "next")}
+      </div>
+    </nav>
+  );
+}
+
 // ---------------------------------------------------------------- /calcio/:competizione/stagioni/:stagione
 
 export function SeasonPage() {
@@ -234,9 +346,6 @@ export function SeasonPage() {
   if (data instanceof Promise) throw data; // loading (Suspense)
   if (!data) return <NotFoundPage />;
   const c = seasonsOf(data.slug)!;
-  const i = c.seasons.findIndex((s) => s.key === data.key);
-  const newer = c.seasons[i - 1];
-  const older = c.seasons[i + 1];
   const cup = data.type === "cup";
 
   return (
@@ -265,35 +374,7 @@ export function SeasonPage() {
         }
       />
       <div className="container mx-auto px-4 py-8 space-y-8">
-        <nav aria-label="Altre stagioni" className="grid grid-cols-3 items-center gap-3 text-sm">
-          {older ? (
-            <Link to={seasonPath(c.slug, older.key)} className={linkCls} aria-label={`${c.name} ${older.label}`}>
-              ← <span className="hidden sm:inline">{c.name} </span>
-              {older.label}
-            </Link>
-          ) : (
-            <span />
-          )}
-          <Link
-            to={seasonsPath(c.slug)}
-            className="inline-flex items-center justify-center gap-1.5 text-slate-300 hover:text-white"
-          >
-            <History className="w-4 h-4" aria-hidden="true" />
-            Albo d'oro
-          </Link>
-          {newer ? (
-            <Link
-              to={seasonPath(c.slug, newer.key)}
-              className={`${linkCls} text-right`}
-              aria-label={`${c.name} ${newer.label}`}
-            >
-              <span className="hidden sm:inline">{c.name} </span>
-              {newer.label} →
-            </Link>
-          ) : (
-            <span />
-          )}
-        </nav>
+        <SeasonNav slug={c.slug} season={data.key} />
 
         {cup && data.final && (
           <p className={`${card} px-5 py-4 text-white`}>
