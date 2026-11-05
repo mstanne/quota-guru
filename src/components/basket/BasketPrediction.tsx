@@ -7,28 +7,24 @@ import { paths } from "../../routes";
 import { pct } from "../../lib/predictionsCore";
 import { fmtPts, type BasketPrediction } from "../../lib/basketPredict";
 import { ConfidenceBadge, FairOddsStrip, PublishedNote, ReasonList } from "../predictions/PredictionUi";
+import { PickCells, SlipPicksBox, type PickCell, type SlipMatch } from "../predictions/SlipPicks";
 
 const label = (p: BasketPrediction, home: string, away: string) =>
   `Probabilità di vittoria stimate dal modello: ${home} ${pct(p.p[0])}, ${away} ${pct(p.p[1])}`;
 
-/** Compact "1 / 2" win probabilities for list rows. */
-export function BasketPredictionMini({ prediction, home, away }: { prediction: BasketPrediction; home: string; away: string }) {
-  return (
-    <div className="flex gap-1" role="img" aria-label={label(prediction, home, away)}>
-      {prediction.p.map((v, i) => (
-        <span
-          key={i}
-          aria-hidden="true"
-          className={`w-11 rounded-md px-1 py-1 text-center leading-tight ${
-            i === prediction.fav ? "bg-predict/15 text-predict" : "bg-slate-800 text-slate-300"
-          }`}
-        >
-          <span className="block text-[10px] text-slate-400">{i === 0 ? "1" : "2"}</span>
-          <span className="block text-xs tabular-nums font-medium">{pct(v)}</span>
-        </span>
-      ))}
-    </div>
-  );
+/** Compact "1 / 2" win probabilities for list rows; with `slip` each one adds the outcome to the bet slip. */
+export function BasketPredictionMini({
+  prediction,
+  home,
+  away,
+  slip,
+}: {
+  prediction: BasketPrediction;
+  home: string;
+  away: string;
+  slip?: SlipMatch;
+}) {
+  return <BasketMarketMini prediction={prediction} market="win" home={home} away={away} slip={slip} />;
 }
 
 export type BasketMarket = "win" | "spread" | "total";
@@ -45,47 +41,47 @@ export function BasketMarketMini({
   market,
   home,
   away,
+  slip,
 }: {
   prediction: BasketPrediction;
   market: BasketMarket;
   home: string;
   away: string;
+  /** Upcoming games: the cells become buttons that add the outcome to the bet slip. */
+  slip?: SlipMatch;
 }) {
-  if (market === "win" || (market === "spread" && !p.spread.length) || (market === "total" && !p.totals.length))
-    return <BasketPredictionMini prediction={p} home={home} away={away} />;
-  const favName = [home, away][p.fav];
-  const [line, prob] = market === "spread" ? p.spread[0] : p.totals[Math.floor(p.totals.length / 2)];
-  const cells =
-    market === "spread"
-      ? [
-          { label: `${p.fav === 0 ? "1" : "2"} −${fmtPts(line)}`, value: prob, spoken: `${favName} vince con più di ${fmtPts(line)} punti` },
-          { label: `${p.fav === 0 ? "2" : "1"} +${fmtPts(line)}`, value: 1 - prob, spoken: `${[home, away][1 - p.fav]} perde di meno o vince` },
-        ]
-      : [
-          { label: `U ${fmtPts(line)}`, value: 1 - prob, spoken: `meno di ${fmtPts(line)} punti totali` },
-          { label: `O ${fmtPts(line)}`, value: prob, spoken: `più di ${fmtPts(line)} punti totali` },
-        ];
-  const top = cells[0].value >= cells[1].value ? 0 : 1;
-  return (
-    <div
-      className="flex gap-1"
-      role="img"
-      aria-label={`Probabilità stimate dal modello: ${cells.map((c) => `${c.spoken} ${pct(c.value)}`).join(", ")}`}
-    >
-      {cells.map((c, i) => (
-        <span
-          key={c.label}
-          aria-hidden="true"
-          className={`w-16 rounded-md px-1 py-1 text-center leading-tight ${
-            i === top ? "bg-predict/15 text-predict" : "bg-slate-800 text-slate-300"
-          }`}
-        >
-          <span className="block text-[10px] text-slate-400 whitespace-nowrap tabular-nums">{c.label}</span>
-          <span className="block text-xs tabular-nums font-medium">{pct(c.value)}</span>
-        </span>
-      ))}
-    </div>
-  );
+  const names = [home, away];
+  const useWin = market === "win" || (market === "spread" && !p.spread.length) || (market === "total" && !p.totals.length);
+  let cells: PickCell[];
+  if (useWin) {
+    cells = p.p.map((v, i) => ({
+      key: i === 0 ? "1" : "2",
+      label: i === 0 ? "1" : "2",
+      value: v,
+      top: i === p.fav,
+      spoken: `vittoria ${names[i]}`,
+      slipLabel: `Vincente – ${names[i]}`,
+    }));
+  } else {
+    const fav = names[p.fav];
+    const dog = names[1 - p.fav];
+    const [line, prob] = market === "spread" ? p.spread[0] : p.totals[Math.floor(p.totals.length / 2)];
+    const l = fmtPts(line);
+    cells =
+      market === "spread"
+        ? [
+            { key: `hcp-fav-${line}`, label: `${p.fav === 0 ? "1" : "2"} −${l}`, value: prob, spoken: `${fav} vince con più di ${l} punti`, slipLabel: `Handicap – ${fav} −${l}` },
+            { key: `hcp-dog-${line}`, label: `${p.fav === 0 ? "2" : "1"} +${l}`, value: 1 - prob, spoken: `${dog} perde di meno o vince`, slipLabel: `Handicap – ${dog} +${l}` },
+          ]
+        : [
+            { key: `under-${line}`, label: `U ${l}`, value: 1 - prob, spoken: `meno di ${l} punti totali`, slipLabel: `Totale punti – Under ${l}` },
+            { key: `over-${line}`, label: `O ${l}`, value: prob, spoken: `più di ${l} punti totali`, slipLabel: `Totale punti – Over ${l}` },
+          ];
+    const top = cells[0].value >= cells[1].value ? 0 : 1;
+    cells = cells.map((c, i) => ({ ...c, top: i === top }));
+  }
+  const name = BASKET_MARKETS.find((m) => m.id === (useWin ? "win" : market))!.label;
+  return <PickCells cells={cells} match={slip} name={name} width={useWin ? "w-11" : "w-16"} />;
 }
 
 function Row({ label, value, strong = false }: { label: string; value: string; strong?: boolean }) {
@@ -104,6 +100,7 @@ export function BasketPredictionPanel({
   result,
   reasons = [],
   publishedAt,
+  slip,
 }: {
   prediction: BasketPrediction;
   home: string;
@@ -114,6 +111,8 @@ export function BasketPredictionPanel({
   reasons?: string[];
   /** When the shown prediction was published (archive). */
   publishedAt?: string;
+  /** Upcoming games only: lets the reader add an outcome to the bet slip, with its probability. */
+  slip?: SlipMatch;
 }) {
   const p = prediction;
   const names = [home, away];
@@ -184,6 +183,21 @@ export function BasketPredictionPanel({
           </p>
         )}
       </div>
+
+      {!result && slip && (
+        <SlipPicksBox>
+          <div className="mt-3 grid gap-3 sm:grid-cols-3">
+            {BASKET_MARKETS.filter((m) => m.id === "win" || (m.id === "spread" ? p.spread.length : p.totals.length)).map(
+              (m) => (
+                <div key={m.id}>
+                  <div className="text-slate-400 text-xs mb-1.5">{m.label}</div>
+                  <BasketMarketMini prediction={p} market={m.id} home={home} away={away} slip={slip} />
+                </div>
+              ),
+            )}
+          </div>
+        </SlipPicksBox>
+      )}
 
       {!result && <ReasonList reasons={reasons} />}
 

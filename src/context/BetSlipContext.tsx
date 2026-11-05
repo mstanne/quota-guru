@@ -35,13 +35,17 @@ export interface BetSelection {
 interface BetSlipContextValue {
   selections: BetSelection[];
   isOpen: boolean;
-  addSelection: (selection: BetSelection) => void;
+  /** Adds a pick (replacing the previous pick of the same match). `open: false` keeps the slip closed: used by the
+   *  quick picks in the lists, where opening the panel at every tap would cover the page. */
+  addSelection: (selection: BetSelection, options?: { open?: boolean }) => void;
   removeSelection: (id: string) => void;
   clearAll: () => void;
   openBetSlip: () => void;
   closeBetSlip: () => void;
   stake: number;
   setStake: (stake: number) => void;
+  /** Last change, for the screen-reader announcement and the floating button's highlight (count goes up). */
+  lastChange: { message: string; n: number } | null;
 }
 
 const BetSlipContext = createContext<BetSlipContextValue | undefined>(undefined);
@@ -50,12 +54,15 @@ export function BetSlipProvider({ children }: { children: ReactNode }) {
   const [selections, setSelections] = useState<BetSelection[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [stake, setStake] = useState(50);
+  const [lastChange, setLastChange] = useState<{ message: string; n: number } | null>(null);
+  const announce = (message: string) => setLastChange((prev) => ({ message, n: (prev?.n ?? 0) + 1 }));
 
   // Only one pick per match: a new pick replaces the previous one for the same match.
-  const addSelection = (selection: BetSelection) => {
+  const addSelection = (selection: BetSelection, { open = true }: { open?: boolean } = {}) => {
     const withId = { ...selection, id: selection.id ?? `${selection.matchId}-${selection.betType}` };
     setSelections((prev) => [...prev.filter((s) => s.matchId !== withId.matchId), withId]);
-    setIsOpen(true);
+    if (open) setIsOpen(true);
+    announce(`Aggiunto alla schedina: ${withId.homeTeam} – ${withId.awayTeam}, ${withId.betTypeLabel}`);
     track("bet_slip_add", {
       operator: withId.selectedBookmaker ?? "pronostico",
       market: withId.betType,
@@ -64,10 +71,15 @@ export function BetSlipProvider({ children }: { children: ReactNode }) {
   };
 
   const removeSelection = (id: string) => {
+    const gone = selections.find((s) => s.id === id);
     setSelections((prev) => prev.filter((s) => s.id !== id));
+    if (gone) announce(`Tolto dalla schedina: ${gone.homeTeam} – ${gone.awayTeam}`);
   };
 
-  const clearAll = () => setSelections([]);
+  const clearAll = () => {
+    setSelections([]);
+    announce("Schedina svuotata");
+  };
   const openBetSlip = () => setIsOpen(true);
   const closeBetSlip = () => setIsOpen(false);
 
@@ -83,6 +95,7 @@ export function BetSlipProvider({ children }: { children: ReactNode }) {
         closeBetSlip,
         stake,
         setStake,
+        lastChange,
       }}
     >
       {children}

@@ -19,6 +19,7 @@ import {
   type Prediction,
 } from "../../lib/predictionsCore";
 import { PredictionSlipPicks } from "./PredictionSlipPicks";
+import { PickCells, type SlipMatch } from "./SlipPicks";
 
 const OUTCOMES = ["1", "X", "2"] as const;
 
@@ -68,25 +69,19 @@ export function ProbabilityBar({
   );
 }
 
-/** Compact 1 X 2 percentages for list rows. */
-export function PredictionMini({ prediction, home, away }: { prediction: Prediction; home: string; away: string }) {
-  const top = topOutcome(prediction);
-  return (
-    <div className="flex gap-1" role="img" aria-label={a11yLabel(prediction, home, away)}>
-      {prediction.p.map((v, i) => (
-        <span
-          key={i}
-          aria-hidden="true"
-          className={`w-10 sm:w-11 rounded-md px-0.5 sm:px-1 py-1 text-center leading-tight ${
-            i === top ? "bg-predict/15 text-predict" : "bg-slate-800 text-slate-300"
-          }`}
-        >
-          <span className="block text-[10px] text-slate-400">{OUTCOMES[i]}</span>
-          <span className="block text-xs tabular-nums font-medium">{pct(v)}</span>
-        </span>
-      ))}
-    </div>
-  );
+/** Compact 1 X 2 percentages for list rows; with `slip` each one adds the outcome to the bet slip. */
+export function PredictionMini({
+  prediction,
+  home,
+  away,
+  slip,
+}: {
+  prediction: Prediction;
+  home: string;
+  away: string;
+  slip?: SlipMatch;
+}) {
+  return <MarketMini prediction={prediction} market="1x2" home={home} away={away} slip={slip} />;
 }
 
 /** Compact cells for the market chosen in the quick filter (1X2, doppia chance, U/O, GG/NG, combo). */
@@ -95,37 +90,29 @@ export function MarketMini({
   market,
   home,
   away,
+  slip,
 }: {
   prediction: Prediction;
   market: FootballMarket;
   home: string;
   away: string;
+  /** Upcoming matches: the cells become buttons that add the outcome to the bet slip. */
+  slip?: SlipMatch;
 }) {
-  if (market === "1x2") return <PredictionMini prediction={prediction} home={home} away={away} />;
   const cells = marketCells(prediction, market, home, away);
   const name = FOOTBALL_MARKETS.find((m) => m.id === market)!.label;
   const combo = market === "combo";
-  const wide = combo ? "w-[4.5rem]" : market === "gg" ? "w-14" : "w-12";
+  const width = combo ? "w-[4.5rem]" : market === "gg" ? "w-14" : market === "1x2" ? "w-10 sm:w-11" : "w-12";
   return (
-    <div
+    <PickCells
+      cells={cells}
+      match={slip}
+      name={name}
+      width={width}
       // combos are stacked on phones so the team names keep their room
-      className={`flex gap-1 ${combo ? "flex-col sm:flex-row" : ""}`}
-      role="img"
-      aria-label={`${name}, probabilità stimate dal modello: ${cells.map((c) => `${c.spoken} ${pct(c.value)}`).join(", ")}`}
-    >
-      {cells.map((c) => (
-        <span
-          key={c.label}
-          aria-hidden="true"
-          className={`${wide} rounded-md px-1 ${combo ? "py-0.5 sm:py-1" : "py-1"} text-center leading-tight ${
-            c.top ? "bg-predict/15 text-predict" : "bg-slate-800 text-slate-300"
-          }`}
-        >
-          <span className="block text-[10px] text-slate-400 whitespace-nowrap">{c.label}</span>
-          <span className="block text-xs tabular-nums font-medium">{pct(c.value)}</span>
-        </span>
-      ))}
-    </div>
+      className={combo ? "flex-col sm:flex-row" : ""}
+      cellClassName={combo ? "py-0.5 sm:py-1" : "py-1"}
+    />
   );
 }
 
@@ -255,7 +242,7 @@ export function PredictionPanel({
   /** When the shown prediction was published (archive): the panel then says so. */
   publishedAt?: string;
   /** Upcoming matches only: lets the reader add an outcome to the bet slip, with its probability. */
-  slip?: { matchId: number; competition: string; date?: string; time: string };
+  slip?: SlipMatch;
 }) {
   const p = prediction;
   const finished = !!result;
@@ -311,9 +298,9 @@ export function PredictionPanel({
         )}
       </div>
 
-      {!finished && <ReasonList reasons={reasons} />}
+      {!finished && slip && <PredictionSlipPicks prediction={p} slip={slip} />}
 
-      {!finished && slip && <PredictionSlipPicks prediction={p} home={home} away={away} {...slip} />}
+      {!finished && <ReasonList reasons={reasons} />}
 
       <p className="mt-5 text-slate-500 text-xs">Per ogni esito: probabilità stimata e, in grigio, quota equa.</p>
       <div className="mt-2 grid gap-6 sm:grid-cols-3">

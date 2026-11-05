@@ -176,6 +176,18 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
             result={finished && game.score.home != null && game.score.away != null ? { home: game.score.home, away: game.score.away } : null}
             reasons={game.status === "scheduled" ? nbaReasonsFor(game, prediction) : []}
             publishedAt={archived?.published}
+            slip={
+              game.status === "scheduled" && !prediction.pre
+                ? {
+                    slipId: `nba-${game.id}`,
+                    competition: "NBA",
+                    home: game.home.name,
+                    away: game.away.name,
+                    date: romeDay(game.utcDate),
+                    time: formatTime(game.utcDate),
+                  }
+                : undefined
+            }
           />
         )}
 

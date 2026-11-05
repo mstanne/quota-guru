@@ -15,6 +15,7 @@ import {
 } from "../../lib/footballCore";
 import type { FootballMarket, Prediction } from "../../lib/predictionsCore";
 import { MarketMini } from "../predictions/PredictionUi";
+import { footballSlip } from "../predictions/SlipPicks";
 
 /**
  * Team crest (API-Football CDN). Falls back to the three-letter code if the crest is missing
@@ -60,7 +61,11 @@ export function TeamBadge({
   );
 }
 
-/** One fixture/result row, linking to the match page. Upcoming matches show the model's 1X2 probabilities. */
+/**
+ * One fixture/result row, linking to the match page. Upcoming matches show the model's probabilities, which are
+ * buttons that add the outcome to the bet slip: the row is a "stretched" link (the link covers the whole row,
+ * the probability buttons sit above it), so there are no buttons inside the link.
+ */
 export function MatchRow({
   competition,
   match,
@@ -81,49 +86,54 @@ export function MatchRow({
   const ft = match.score.fullTime;
   const label = `${match.homeTeam.shortName} – ${match.awayTeam.shortName}, ${finished ? `risultato ${ft.home}-${ft.away}` : pending ? "risultato in arrivo" : `ore ${formatTime(match.utcDate)}`}`;
 
-  return (
-    <Link
-      to={matchHref(competition, match)}
-      aria-label={label}
-      className="group flex items-center gap-3 sm:gap-4 px-4 py-3 border-b border-slate-800 last:border-b-0 hover:bg-slate-800/40 transition-colors focus-visible:outline-2 focus-visible:outline-action"
-    >
-      <div className="w-14 shrink-0 text-center">
-        {finished ? (
-          <span className="text-slate-400 text-xs uppercase tracking-wide">Finale</span>
-        ) : live ? (
-          <span className="text-red-400 text-xs font-semibold uppercase">{statusLabel(match)}</span>
-        ) : pending ? (
-          <span className="block text-warn text-[11px] leading-tight">{statusLabel(match)}</span>
-        ) : (
-          <span className="text-white tabular-nums">{formatTime(match.utcDate)}</span>
-        )}
-        {match.status === "POSTPONED" && <span className="block text-amber-400 text-xs">Rinviata</span>}
-      </div>
+  const quickPick = !!prediction && !prediction.pre && !finished && !live && !pending;
 
-      <div className="flex-1 min-w-0 space-y-1.5">
-        {[
-          { team: match.homeTeam, goals: ft.home, win: match.score.winner === "HOME_TEAM" },
-          { team: match.awayTeam, goals: ft.away, win: match.score.winner === "AWAY_TEAM" },
-        ].map(({ team, goals, win }) => (
-          <div key={team.id} className="flex items-center gap-2.5">
-            <TeamBadge team={team} />
-            <span className={`truncate ${finished && !win ? "text-slate-400" : "text-white"}`}>{team.shortName}</span>
-            {(finished || live) && (
-              <span className={`ml-auto tabular-nums text-lg ${win ? "text-best" : "text-slate-300"}`}>
-                {goals ?? "–"}
-              </span>
-            )}
-          </div>
-        ))}
-      </div>
+  return (
+    <div className="group relative flex items-center gap-2.5 sm:gap-4 px-3 sm:px-4 py-3 border-b border-slate-800 last:border-b-0 hover:bg-slate-800/40 focus-within:bg-slate-800/40 transition-colors">
+      <Link
+        to={matchHref(competition, match)}
+        aria-label={label}
+        className="flex flex-1 min-w-0 items-center gap-2.5 sm:gap-4 after:absolute after:inset-0 after:content-[''] focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-action focus-visible:after:-outline-offset-2"
+      >
+        <div className="w-11 sm:w-14 shrink-0 text-center">
+          {finished ? (
+            <span className="text-slate-400 text-xs uppercase tracking-wide">Finale</span>
+          ) : live ? (
+            <span className="text-red-400 text-xs font-semibold uppercase">{statusLabel(match)}</span>
+          ) : pending ? (
+            <span className="block text-warn text-[11px] leading-tight">{statusLabel(match)}</span>
+          ) : (
+            <span className="text-white tabular-nums">{formatTime(match.utcDate)}</span>
+          )}
+          {match.status === "POSTPONED" && <span className="block text-amber-400 text-xs">Rinviata</span>}
+        </div>
+
+        <div className="flex-1 min-w-0 space-y-1.5">
+          {[
+            { team: match.homeTeam, goals: ft.home, win: match.score.winner === "HOME_TEAM" },
+            { team: match.awayTeam, goals: ft.away, win: match.score.winner === "AWAY_TEAM" },
+          ].map(({ team, goals, win }) => (
+            <div key={team.id} className="flex items-center gap-2.5">
+              <TeamBadge team={team} />
+              <span className={`truncate ${finished && !win ? "text-slate-400" : "text-white"}`}>{team.shortName}</span>
+              {(finished || live) && (
+                <span className={`ml-auto tabular-nums text-lg ${win ? "text-best" : "text-slate-300"}`}>
+                  {goals ?? "–"}
+                </span>
+              )}
+            </div>
+          ))}
+        </div>
+      </Link>
 
       {prediction && !finished && !live && !pending && (
-        <div className="shrink-0">
+        <div className="relative z-10 shrink-0">
           <MarketMini
             prediction={prediction}
             market={market}
             home={match.homeTeam.shortName}
             away={match.awayTeam.shortName}
+            slip={quickPick ? footballSlip(competition.name, match) : undefined}
           />
         </div>
       )}
@@ -132,7 +142,10 @@ export function MatchRow({
         {showCompetition && <div className="text-slate-300 text-sm">{competition.name}</div>}
         <div>{roundLabel(match)}</div>
       </div>
-      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-white shrink-0" aria-hidden="true" />
-    </Link>
+      <ChevronRight
+        className="hidden sm:block w-4 h-4 text-slate-400 group-hover:text-white shrink-0"
+        aria-hidden="true"
+      />
+    </div>
   );
 }

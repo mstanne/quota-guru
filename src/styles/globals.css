@@ -236,3 +236,24 @@ html {
 .timeline-scroll::-webkit-scrollbar-thumb:hover {
   background: #64748b;
 }
+
+/* Bet slip button: short "pop" when a pick is added or removed (BetSlip.tsx remounts it on every change) */
+@keyframes slip-pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.slip-fab {
+  animation: slip-pop 0.35s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .slip-fab {
+    animation: none;
+  }
+}

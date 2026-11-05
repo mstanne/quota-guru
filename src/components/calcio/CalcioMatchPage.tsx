@@ -15,7 +15,6 @@ import {
   isResultPending,
   mainTable,
   recentForm,
-  romeDay,
   roundLabel,
   standingOf,
   standingsPath,
@@ -36,6 +35,7 @@ import { footballEditorial } from "../../lib/editorial";
 import { MatchEditorial } from "../editorial/MatchEditorial";
 import { MatchSummary, footballSummary } from "../editorial/MatchSummary";
 import { PredictionPanel } from "../predictions/PredictionUi";
+import { footballSlip } from "../predictions/SlipPicks";
 import { MatchRow, TeamBadge } from "./MatchRow";
 import { FootballBoxScore } from "./FootballBoxScore";
 import { TeamName } from "../teams/TeamLink";
@@ -369,16 +369,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               result={finished && ft.home !== null && ft.away !== null ? { home: ft.home, away: ft.away } : null}
               reasons={isUpcoming(match) ? footballReasons(prediction, competition, match) : []}
               publishedAt={archived?.published}
-              slip={
-                isUpcoming(match) && !prediction.pre
-                  ? {
-                      matchId: match.id,
-                      competition: competition.name,
-                      date: romeDay(match.utcDate),
-                      time: formatTime(match.utcDate),
-                    }
-                  : undefined
-              }
+              slip={isUpcoming(match) && !prediction.pre ? footballSlip(competition.name, match) : undefined}
             />
           )}
           {isUpcoming(match) && (
