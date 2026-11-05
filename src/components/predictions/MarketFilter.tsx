@@ -1,6 +1,7 @@
 // Quick market selector above the match lists: switches the probabilities shown in every row,
 // client-side, without reloading the page.
 import { ChartColumn } from "lucide-react";
+import { SlipHint } from "./SlipPicks";
 import { currentPage, track } from "../../lib/analytics";
 
 export function MarketFilter<T extends string>({
@@ -42,6 +43,7 @@ export function MarketFilter<T extends string>({
           </button>
         ))}
       </div>
+      <SlipHint className="sm:ml-auto" />
     </div>
   );
 }

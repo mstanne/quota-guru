@@ -189,11 +189,14 @@ Al posto delle quote (che arriveranno con i feed degli operatori) home, liste pa
   il dato di affidabilità in `/metodologia#pronostici`). Se una squadra ha meno di 3 partite pesate il pronostico non
   viene pubblicato (succede ai club esteri in Champions League finché non c'è storico europeo).
 - `npm run predict:backtest` stampa anche un backtest walk-forward sullo storico.
-- **Schedina con probabilità**: nella pagina di una partita in programma il riquadro del pronostico ha i pulsanti
-  "Aggiungi un esito alla schedina" (1X2, doppia chance, Under/Over 2,5, Goal/No goal). La schedina mostra la
-  probabilità stimata che si verifichino tutti gli esiti (prodotto delle probabilità, `src/lib/slip.ts`), "circa 1 su
-  N" e la quota equa. Un solo esito per partita, quindi gli esiti combinati sono sempre di partite diverse. Quando
-  arriveranno le quote degli operatori, la schedina mostrerà insieme quote e probabilità.
+- **Schedina con probabilità**: in tutte le liste delle partite (calcio e NBA: calendari, pronostici, pagine del
+  giorno, home) le probabilità delle partite in programma sono pulsanti che aggiungono l'esito alla schedina, con il
+  mercato scelto nel filtro; nella pagina partita c'è il riquadro "Aggiungi un esito alla schedina". Toccare di nuovo
+  un esito lo toglie; un solo esito per partita. La schedina non si apre a ogni tocco: il pulsante "Schedina" mostra
+  numero di esiti e probabilità complessiva. Nella schedina (pannello chiaro, distinto dal sito) la probabilità che si
+  verifichino tutti gli esiti (prodotto delle probabilità, `src/lib/slip.ts`), "circa 1 su N" e quota equa restano
+  sempre visibili in basso. Componenti: `src/components/predictions/SlipPicks.tsx`, `src/components/BetSlip.tsx`.
+  Quando arriveranno le quote degli operatori, la schedina mostrerà insieme quote e probabilità.
 - Le previsioni si ricalcolano dentro `npm run build` (quindi anche in GitHub Actions, dopo il download dei dati).
 
 ## Pronostici tennis

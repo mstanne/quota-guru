@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 import { Link } from "../../lib/links";
 import { PageHeader, MetaItems } from "../layout/PageHeader";
 import { MatchRow } from "../calcio/MatchRow";
+import { SlipHint } from "./SlipPicks";
 import { BasketGameRow } from "../basket/BasketGameRow";
 import { TrackRecordBox } from "./TrackRecordBox";
 import { allMatches, competitions, formatUpdated, generatedAt, isLive, isUpcoming, matchdayPath } from "../../lib/football";
@@ -71,7 +72,7 @@ export function PronosticiPage() {
       />
 
       <div className="container mx-auto px-4 py-8">
-        <nav aria-label="Pronostici per giorno" className="flex flex-wrap gap-2 mb-8">
+        <nav aria-label="Pronostici per giorno" className="flex flex-wrap items-center gap-2 mb-8">
           {(["oggi", "domani"] as const).map((d) => (
             <Link
               key={d}
@@ -82,6 +83,7 @@ export function PronosticiPage() {
               Pronostici di {d}
             </Link>
           ))}
+          <SlipHint className="sm:ml-auto" />
         </nav>
         <Section
           id="calcio"

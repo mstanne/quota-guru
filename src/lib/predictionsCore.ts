@@ -133,6 +133,10 @@ export interface MarketCell {
   top: boolean;
   /** Spoken label for screen readers. */
   spoken: string;
+  /** Pick id in the bet slip (same keys everywhere, so a list row and the match page share the selection). */
+  key: string;
+  /** Text of the pick in the bet slip, e.g. "Esito finale – Inter vincente". */
+  slipLabel: string;
 }
 
 const poisson = (l: number, k: number) => {
@@ -172,42 +176,48 @@ export function marketCells(p: Prediction, market: FootballMarket, home: string,
   switch (market) {
     case "1x2":
       return mark([
-        { label: "1", value: p.p[0], spoken: `vittoria ${home}` },
-        { label: "X", value: p.p[1], spoken: "pareggio" },
-        { label: "2", value: p.p[2], spoken: `vittoria ${away}` },
+        { label: "1", value: p.p[0], spoken: `vittoria ${home}`, key: "1", slipLabel: `Esito finale – ${home} vincente` },
+        { label: "X", value: p.p[1], spoken: "pareggio", key: "X", slipLabel: "Esito finale – Pareggio" },
+        { label: "2", value: p.p[2], spoken: `vittoria ${away}`, key: "2", slipLabel: `Esito finale – ${away} vincente` },
       ]);
     case "dc":
       // "12" is almost always the highest: highlight the best of 1X / X2, as on the match page
       return mark(
         [
-          { label: "1X", value: p.dc[0], spoken: `${home} o pareggio` },
-          { label: "12", value: p.dc[1], spoken: `${home} o ${away}` },
-          { label: "X2", value: p.dc[2], spoken: `${away} o pareggio` },
+          { label: "1X", value: p.dc[0], spoken: `${home} o pareggio`, key: "1X", slipLabel: `Doppia chance – ${home} o pareggio` },
+          { label: "12", value: p.dc[1], spoken: `${home} o ${away}`, key: "12", slipLabel: `Doppia chance – ${home} o ${away}` },
+          { label: "X2", value: p.dc[2], spoken: `${away} o pareggio`, key: "X2", slipLabel: `Doppia chance – ${away} o pareggio` },
         ],
         [1],
       );
     case "uo":
       return mark([
-        { label: "Under", value: 1 - p.over["2.5"], spoken: "under 2,5" },
-        { label: "Over", value: p.over["2.5"], spoken: "over 2,5" },
+        { label: "Under", value: 1 - p.over["2.5"], spoken: "under 2,5", key: "under25", slipLabel: "Under 2,5" },
+        { label: "Over", value: p.over["2.5"], spoken: "over 2,5", key: "over25", slipLabel: "Over 2,5" },
       ]);
     case "gg":
       return mark([
-        { label: "Goal", value: p.btts, spoken: "entrambe segnano" },
-        { label: "NoGoal", value: 1 - p.btts, spoken: "almeno una non segna" },
+        { label: "Goal", value: p.btts, spoken: "entrambe segnano", key: "gg", slipLabel: "Goal (entrambe segnano)" },
+        { label: "NoGoal", value: 1 - p.btts, spoken: "almeno una non segna", key: "ng", slipLabel: "No goal" },
       ]);
     case "combo": {
       const c = p.combo ?? comboFromXg(p.xg);
-      const best = (t: Pair3, names: [string, string], spoken: [string, string]) => {
+      const best = (t: Pair3, names: [string, string], spoken: [string, string], slip: [string, string]) => {
         let o = 0, k = 0;
         t.forEach((r, i) => r.forEach((v, j) => v > t[o][k] && ((o = i), (k = j))));
         const who = o === 0 ? `vittoria ${home}` : o === 1 ? "pareggio" : `vittoria ${away}`;
-        return { label: `${OUT[o]}+${names[k]}`, value: t[o][k], spoken: `${who} e ${spoken[k]}` };
+        return {
+          label: `${OUT[o]}+${names[k]}`,
+          value: t[o][k],
+          spoken: `${who} e ${spoken[k]}`,
+          key: `${OUT[o]}+${names[k]}`,
+          slipLabel: `Combo – ${OUT[o]} + ${slip[k]}`,
+        };
       };
       // two most likely combos, one per family; both highlighted as "best of their family"
       return [
-        { ...best(c.ou, ["Under", "Over"], ["under 2,5", "over 2,5"]), top: true },
-        { ...best(c.gg, ["NoGol", "Goal"], ["almeno una non segna", "entrambe segnano"]), top: true },
+        { ...best(c.ou, ["Under", "Over"], ["under 2,5", "over 2,5"], ["Under 2,5", "Over 2,5"]), top: true },
+        { ...best(c.gg, ["NoGol", "Goal"], ["almeno una non segna", "entrambe segnano"], ["No goal", "Goal"]), top: true },
       ];
     }
   }

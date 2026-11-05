@@ -1,11 +1,9 @@
 import { Link } from "../lib/links";
-import { ChartColumn, CircleCheck, ExternalLink, ShoppingCart, X } from "lucide-react";
-import { Badge } from "./ui/badge";
+import { ExternalLink, ListChecks, Trash2, X } from "lucide-react";
 import { Button } from "./ui/button";
-import { Card } from "./ui/card";
 import { Input } from "./ui/input";
-import { Sheet, SheetHeader, SheetContent, SheetTitle } from "./ui/sheet";
-import { useBetSlip } from "../context/BetSlipContext";
+import { Sheet, SheetContent, SheetTitle } from "./ui/sheet";
+import { useBetSlip, type BetSelection } from "../context/BetSlipContext";
 import { getOperator, oddsOperators } from "../data/operators";
 import { formatOdd, productOfOdds } from "../lib/odds";
 import { OperatorCta, OperatorLogo } from "./operator/OperatorUi";
@@ -13,8 +11,13 @@ import { formatChance, oneIn, slipChance, slipFairOdds } from "../lib/slip";
 import { pct } from "../lib/predictionsCore";
 import { paths } from "../routes";
 
+// The slip is a light "ticket" on the dark site, so it never looks like part of the page: dark header band, light
+// body, picks as compact rows of one list, summary pinned at the bottom. Model probabilities use sky-700 here
+// (the site's `predict` colour, sky-400, is for dark backgrounds and is not readable on white).
+
 export function BetSlip() {
-  const { selections, isOpen, closeBetSlip, openBetSlip, removeSelection, clearAll, stake, setStake } = useBetSlip();
+  const { selections, isOpen, closeBetSlip, openBetSlip, removeSelection, clearAll, stake, setStake, lastChange } =
+    useBetSlip();
   // Picks added from the model's predictions have no odds: the odds parts (total, stake, operators) are shown only
   // when every pick has them, the probability whenever at least one pick has it.
   const withOdds = selections.length > 0 && selections.every((s) => s.selectedOdds !== undefined && s.allBookmakers);
@@ -34,201 +37,121 @@ export function BetSlip() {
     })
     .filter((t) => t.offersAll)
     .sort((a, b) => (b.total ?? 0) - (a.total ?? 0));
-  // badge on the floating buttons: total odds, or the probability for a slip of predictions
+  // value on the floating button: total odds, or the probability for a slip of predictions
   const badge = withOdds ? totalLabel : chanceLabel;
+  const n = selections.length;
+
   return (
     <>
-      {!isOpen && selections.length > 0 && (
-        <div className="fixed bottom-6 right-6 z-50 md:hidden">
-          <Button
-            onClick={openBetSlip}
-            className="bg-action hover:bg-action-hover text-action-foreground shadow-lg h-14 px-6 rounded-full"
-            size="lg"
-          >
-            <ShoppingCart className="w-5 h-5 mr-2" />
-            Schedina ({selections.length}){badge && <Badge className="ml-2 bg-white text-slate-900">{badge}</Badge>}
-          </Button>
-        </div>
+      {/* announces every change, also when the slip stays closed (quick picks in the lists) */}
+      <div className="sr-only" aria-live="polite">
+        {lastChange?.message}
+      </div>
+
+      {!isOpen && n > 0 && (
+        <button
+          type="button"
+          onClick={openBetSlip}
+          // key: replays the short highlight every time a pick is added or removed
+          key={lastChange?.n ?? 0}
+          aria-label={`Apri la schedina: ${n} ${n === 1 ? "esito" : "esiti"}${badge ? `, ${withOdds ? "quota" : "probabilità"} ${badge}` : ""}`}
+          className="slip-fab fixed z-50 bottom-5 right-4 md:bottom-auto md:top-24 md:right-6 flex items-center gap-3 rounded-full bg-action hover:bg-action-hover text-action-foreground shadow-xl shadow-black/40 pl-3 pr-4 h-12 md:h-11"
+        >
+          <span className="inline-flex items-center justify-center min-w-7 h-7 rounded-full bg-slate-950 text-white text-sm font-semibold tabular-nums px-2">
+            {n}
+          </span>
+          <span className="font-medium">Schedina</span>
+          {badge && (
+            <span className="rounded-full bg-white/90 text-slate-900 text-sm tabular-nums px-2 py-0.5">{badge}</span>
+          )}
+        </button>
       )}
-      {selections.length > 0 && (
-        <div className="hidden md:block fixed top-24 right-6 z-40">
-          <Button
-            onClick={isOpen ? closeBetSlip : openBetSlip}
-            className={`shadow-lg transition-all ${isOpen ? "bg-slate-800 hover:bg-slate-700 text-white" : "bg-action hover:bg-action-hover text-action-foreground"}`}
-            size="sm"
-          >
-            <ShoppingCart className="w-4 h-4 mr-2" />
-            {selections.length}
-            {!isOpen && badge && <Badge className="ml-2 bg-white text-slate-900 text-xs">{badge}</Badge>}
-          </Button>
-        </div>
-      )}
+
       <Sheet open={isOpen} onOpenChange={closeBetSlip} modal={false}>
         <SheetContent
-          className="w-full sm:max-w-md bg-slate-900 border-slate-700 overflow-y-auto"
+          className="w-full sm:max-w-sm p-0 gap-0 bg-slate-100 text-slate-900 border-l-0 sm:border-l-4 sm:border-action shadow-2xl"
           onInteractOutside={(e) => {
             e.preventDefault();
           }}
         >
-          <SheetHeader className="border-b border-slate-700 pb-4">
-            <div className="flex items-center justify-between">
-              <SheetTitle className="text-white flex items-center gap-2">
-                <CircleCheck className="w-5 h-5 text-slate-300" />
-                {selections.length > 0 ? "Schedina multipla" : "Schedina"}
-              </SheetTitle>
-              <Button variant="ghost" size="icon" onClick={closeBetSlip} className="text-slate-400 hover:text-white">
-                <X className="w-5 h-5" />
+          {/* header band (the sheet's own close button sits in its top-right corner) */}
+          <div className="shrink-0 bg-slate-950 text-white px-4 pt-4 pb-3 pr-16 border-b-4 border-action sm:border-b-0">
+            <SheetTitle className="flex items-center gap-2 text-white text-lg">
+              <ListChecks className="w-5 h-5 text-action" aria-hidden="true" />
+              Schedina
+              {n > 0 && (
+                <span className="rounded-full bg-white/10 px-2 py-0.5 text-sm font-normal tabular-nums">
+                  {n} {n === 1 ? "esito" : "esiti"}
+                </span>
+              )}
+            </SheetTitle>
+            <p className="mt-1 text-slate-400 text-xs">
+              {withOdds ? "Quote degli operatori a confronto" : "Probabilità stimate dal modello"}
+            </p>
+          </div>
+
+          {n === 0 ? (
+            <div className="flex-1 flex flex-col items-center justify-center px-6 py-12 text-center">
+              <ListChecks className="w-12 h-12 text-slate-400" aria-hidden="true" />
+              <p className="mt-4 text-slate-900 font-medium">La schedina è vuota</p>
+              <p className="mt-1 text-slate-600 text-sm">
+                Tocca una probabilità nelle liste delle partite o nella pagina di una partita per aggiungere l'esito.
+              </p>
+              <Button asChild className="mt-6 w-full bg-action hover:bg-action-hover text-action-foreground">
+                <Link to={paths.pronostici} onClick={closeBetSlip}>
+                  Vai ai pronostici
+                </Link>
               </Button>
             </div>
-            {!withOdds && chance.probability !== null && chanceLabel && (
-              <div className="grid grid-cols-2 gap-3 mt-4 text-center">
-                <div className="bg-slate-800 rounded-lg p-2">
-                  <div className="text-slate-400 text-xs">Probabilità stimata:</div>
-                  <div className="text-predict tabular-nums">{chanceLabel}</div>
-                </div>
-                <div className="bg-slate-800 rounded-lg p-2">
-                  <div className="text-slate-400 text-xs">Quota equa:</div>
-                  <div className="text-white tabular-nums">{slipFairOdds(chance.probability)}</div>
-                </div>
-              </div>
-            )}
-            {withOdds && (
-              <div className="grid grid-cols-3 gap-3 mt-4 text-center">
-                <div className="bg-slate-800 rounded-lg p-2">
-                  <div className="text-slate-400 text-xs">Quota:</div>
-                  <div className="text-best tabular-nums">{totalLabel}</div>
-                </div>
-                <div className="bg-slate-800 rounded-lg p-2">
-                  <div className="text-slate-400 text-xs">Puntata:</div>
-                  <div className="text-white">{stake}€</div>
-                </div>
-                <div className="bg-slate-800 rounded-lg p-2">
-                  <div className="text-slate-400 text-xs">Vincita:</div>
-                  <div className="text-white">{winLabel(totalOdds)}</div>
-                </div>
-              </div>
-            )}
-          </SheetHeader>
-          <div className="mt-6">
-            {selections.length === 0 ? (
-              <div className="flex flex-col items-center justify-center py-12 px-4">
-                <div className="w-48 h-48 mb-6 opacity-50 rounded-full bg-slate-800 flex items-center justify-center">
-                  <ShoppingCart className="w-20 h-20 text-slate-400" aria-hidden="true" />
+          ) : (
+            <>
+              <div className="flex-1 overflow-y-auto">
+                <ul className="divide-y divide-slate-200 bg-white border-b border-slate-200">
+                  {selections.map((s) => (
+                    <SlipRow key={s.id} selection={s} onRemove={() => removeSelection(s.id!)} />
+                  ))}
+                </ul>
+
+                <div className="px-4 py-3 flex items-center justify-between">
+                  <span className="text-slate-500 text-xs">Un esito per partita</span>
+                  <button
+                    type="button"
+                    onClick={clearAll}
+                    className="inline-flex items-center gap-1.5 text-slate-600 hover:text-slate-900 text-sm"
+                  >
+                    <Trash2 className="w-4 h-4" aria-hidden="true" />
+                    Svuota
+                  </button>
                 </div>
 
-                <p className="text-slate-400 text-center mb-6">La tua schedina è vuota</p>
-                <Button asChild className="w-full bg-action hover:bg-action-hover text-action-foreground">
-                  <Link to="/calcio" onClick={closeBetSlip}>
-                    Vai alle partite
-                  </Link>
-                </Button>
-              </div>
-            ) : (
-              <div className="space-y-4">
-                {selections.map((selection) => (
-                  <Card key={selection.id} className="bg-slate-800 border-slate-700 p-4">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex-1">
-                        <div className="text-white mb-1">{selection.homeTeam}</div>
-                        <div className="text-white mb-2">{selection.awayTeam}</div>
-                        <Badge variant="secondary" className="bg-slate-700 text-white text-xs">
-                          {selection.betTypeLabel}
-                        </Badge>
-                      </div>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => removeSelection(selection.id)}
-                        className="text-slate-400 hover:text-white h-8 w-8"
-                      >
-                        <X className="w-4 h-4" />
-                      </Button>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-slate-400 text-xs">
-                        {selection.competition}
-                        {" \u2022 "}
-                        {selection.time}
-                      </div>
-                      {selection.selectedOdds !== undefined ? (
-                        <div className="text-best tabular-nums">{formatOdd(selection.selectedOdds)}</div>
-                      ) : selection.probability !== undefined ? (
-                        <div className="text-predict tabular-nums" title="Probabilità stimata dal modello">
-                          {pct(selection.probability)}
-                        </div>
-                      ) : null}
-                    </div>
-                  </Card>
-                ))}
-                {chance.probability !== null && chanceLabel && (
-                  <Card className="bg-slate-800 border-slate-700 p-4" aria-live="polite">
-                    <div className="flex items-center gap-2 text-slate-300">
-                      <ChartColumn className="w-4 h-4" aria-hidden="true" />
-                      {chance.covered > 1
-                        ? "Probabilità che si verifichino tutti gli esiti"
-                        : "Probabilità stimata dell'esito"}
-                    </div>
-                    <div className="mt-2 flex items-baseline gap-3">
-                      <span className="text-predict text-3xl font-semibold tabular-nums">{chanceLabel}</span>
-                      {chance.probability < 0.5 && (
-                        <span className="text-slate-300 text-sm">{oneIn(chance.probability)}</span>
-                      )}
-                    </div>
-                    <div className="mt-1 text-slate-400 text-sm tabular-nums">
-                      Quota equa: {slipFairOdds(chance.probability)}
-                    </div>
-                    {chance.covered < chance.total && (
-                      <p className="mt-2 text-slate-400 text-xs">
-                        Calcolata su {chance.covered} esiti su {chance.total}: gli altri non hanno un pronostico del
-                        modello.
-                      </p>
-                    )}
-                    <p className="mt-3 text-slate-400 text-xs leading-relaxed">
-                      Prodotto delle probabilità stimate dal modello statistico per ogni esito (un esito per partita). È
-                      una stima, non una previsione certa né un consiglio di gioco: ogni esito in più la riduce.{" "}
-                      <Link
-                        to={`${paths.metodologia}#pronostici`}
-                        onClick={closeBetSlip}
-                        className="text-action-text hover:text-action-text-hover"
-                      >
-                        Come funziona
-                      </Link>
-                      .
-                    </p>
-                  </Card>
-                )}
                 {withOdds && (
-                  <Card className="bg-slate-800 border-slate-700 p-4">
-                    <div className="text-slate-300 mb-3">Quota totale per operatore:</div>
-                    <div className="space-y-2">
+                  <div className="px-4 pb-4 space-y-3">
+                    <label className="block">
+                      <span className="text-slate-700 text-sm">Importo della puntata (€)</span>
+                      <Input
+                        type="number"
+                        value={stake}
+                        onChange={(e) => setStake(Number(e.target.value) || 0)}
+                        className="mt-1 bg-white border-slate-300 text-slate-900"
+                        min="1"
+                        step="5"
+                      />
+                    </label>
+                    <div className="text-slate-700 text-sm">Quota totale per operatore</div>
+                    <ul className="space-y-2">
                       {bookmakerTotals.map(({ operator, total }, index) => {
                         const isBest = index === 0;
                         return (
-                          <div
+                          <li
                             key={operator.id}
-                            className={`flex items-center justify-between p-3 rounded-lg border ${isBest ? "bg-best/10 border-best" : "bg-slate-900 border-slate-700"}`}
+                            className={`flex items-center gap-3 rounded-lg border p-2.5 bg-white ${isBest ? "border-best ring-1 ring-best" : "border-slate-200"}`}
                           >
-                            <div className="flex items-center gap-3 flex-1 min-w-0 [&>div]:min-w-0 [&>div>div]:truncate">
-                              <OperatorLogo
-                                operator={operator}
-                                width={40}
-                                height={40}
-                                className={`rounded ${isBest ? "border-best" : ""}`}
-                              />
-                              <div>
-                                <div className="text-slate-400 text-xs">Quota totale:</div>
-                                <div className={isBest ? "text-best" : "text-white"}>
-                                  {total === null ? "[QUOTA_TOT]" : total.toFixed(2)}
-                                </div>
+                            <OperatorLogo operator={operator} width={32} height={32} className="rounded" />
+                            <div className="flex-1 min-w-0 text-sm">
+                              <div className="font-semibold tabular-nums">
+                                {total === null ? "[QUOTA_TOT]" : total.toFixed(2)}
                               </div>
-                              <div>
-                                <div className="text-slate-400 text-xs">Puntata:</div>
-                                <div className="text-white text-sm">{stake}€</div>
-                              </div>
-                              <div>
-                                <div className="text-slate-400 text-xs">Vincita:</div>
-                                <div className="text-white text-sm">{winLabel(total)}</div>
-                              </div>
+                              <div className="text-slate-500 text-xs">Vincita {winLabel(total)}</div>
                             </div>
                             <OperatorCta
                               placement="bet-slip"
@@ -239,45 +162,106 @@ export function BetSlip() {
                               className={
                                 isBest
                                   ? "bg-action hover:bg-action-hover text-action-foreground"
-                                  : "bg-slate-900 border-slate-600 text-slate-300 hover:bg-action hover:text-action-foreground hover:border-action"
+                                  : "bg-white border-slate-300 text-slate-700 hover:bg-action hover:text-action-foreground hover:border-action"
                               }
                               icon={<ExternalLink className="w-3 h-3 mr-1" />}
                             />
-                          </div>
+                          </li>
                         );
                       })}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              {/* summary, always visible under the list */}
+              <div className="shrink-0 bg-white border-t border-slate-300 px-4 pt-3 pb-4 shadow-[0_-6px_16px_-10px_rgba(0,0,0,0.35)]">
+                {chance.probability !== null && chanceLabel && (
+                  <div className="flex items-end justify-between gap-4">
+                    <div>
+                      <div className="text-slate-600 text-xs">
+                        {chance.covered > 1 ? "Probabilità che si verifichino tutti" : "Probabilità stimata"}
+                      </div>
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-sky-700 text-3xl font-semibold tabular-nums">{chanceLabel}</span>
+                        {chance.probability < 0.5 && (
+                          <span className="text-slate-600 text-sm">{oneIn(chance.probability)}</span>
+                        )}
+                      </div>
                     </div>
-                  </Card>
+                    <div className="text-right">
+                      <div className="text-slate-600 text-xs">Quota equa</div>
+                      <div className="text-slate-900 text-xl font-semibold tabular-nums">
+                        {slipFairOdds(chance.probability)}
+                      </div>
+                    </div>
+                  </div>
                 )}
                 {withOdds && (
-                  <Card className="bg-slate-800 border-slate-700 p-4">
-                    <div className="mb-2">
-                      <label className="text-slate-300 text-sm">Importo della puntata (€)</label>
-                    </div>
-                    <Input
-                      type="number"
-                      value={stake}
-                      onChange={(e) => setStake(Number(e.target.value) || 0)}
-                      className="bg-slate-900 border-slate-700 text-white"
-                      min="1"
-                      step="5"
-                    />
-                  </Card>
+                  <div className={`flex items-center justify-between text-sm ${chanceLabel ? "mt-2" : ""}`}>
+                    <span className="text-slate-600">
+                      Quota <strong className="text-slate-900 tabular-nums">{totalLabel}</strong>
+                    </span>
+                    <span className="text-slate-600">
+                      Vincita <strong className="text-slate-900 tabular-nums">{winLabel(totalOdds)}</strong>
+                    </span>
+                  </div>
                 )}
-                <div className="space-y-2 pt-2">
-                  <Button
-                    variant="outline"
-                    className="w-full bg-slate-900 border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white"
-                    onClick={clearAll}
-                  >
-                    Svuota la schedina
-                  </Button>
-                </div>
+                {chance.covered > 0 && chance.covered < chance.total && (
+                  <p className="mt-1.5 text-slate-500 text-xs">
+                    Su {chance.covered} esiti su {chance.total}: gli altri non hanno un pronostico del modello.
+                  </p>
+                )}
+                {chance.probability !== null && (
+                  <p className="mt-2 text-slate-500 text-[11px] leading-snug">
+                    Prodotto delle probabilità stimate dal modello: una stima, non un consiglio di gioco. Ogni esito in
+                    più la riduce.{" "}
+                    <Link
+                      to={`${paths.metodologia}#pronostici`}
+                      onClick={closeBetSlip}
+                      className="text-orange-700 underline underline-offset-2 hover:text-orange-800"
+                    >
+                      Come funziona
+                    </Link>
+                  </p>
+                )}
               </div>
-            )}
-          </div>
+            </>
+          )}
         </SheetContent>
       </Sheet>
     </>
+  );
+}
+
+/** One pick: teams, outcome and match time on the left, odds or probability on the right. */
+function SlipRow({ selection: s, onRemove }: { selection: BetSelection; onRemove: () => void }) {
+  return (
+    <li className="flex items-center gap-2 pl-4 pr-1.5 py-2">
+      <div className="flex-1 min-w-0">
+        <div className="text-slate-900 text-sm font-medium truncate">
+          {s.homeTeam} – {s.awayTeam}
+        </div>
+        <div className="text-slate-700 text-sm truncate">{s.betTypeLabel}</div>
+        <div className="text-slate-500 text-xs truncate">
+          {s.competition} · {s.time}
+        </div>
+      </div>
+      {s.selectedOdds !== undefined ? (
+        <span className="text-slate-900 font-semibold tabular-nums">{formatOdd(s.selectedOdds)}</span>
+      ) : s.probability !== undefined ? (
+        <span className="text-sky-700 font-semibold tabular-nums" title="Probabilità stimata dal modello">
+          {pct(s.probability)}
+        </span>
+      ) : null}
+      <button
+        type="button"
+        onClick={onRemove}
+        aria-label={`Togli ${s.homeTeam} – ${s.awayTeam} dalla schedina`}
+        className="inline-flex items-center justify-center size-9 shrink-0 rounded-md text-slate-500 hover:text-slate-900 hover:bg-slate-100"
+      >
+        <X className="w-4 h-4" aria-hidden="true" />
+      </button>
+    </li>
   );
 }
