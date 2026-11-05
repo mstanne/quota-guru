@@ -47,7 +47,10 @@ export function liveMatches(competitions, now = Date.now()) {
 }
 
 const sameResult = (a, b) =>
-  a.status === b.status && JSON.stringify(a.score) === JSON.stringify(b.score) && a.utcDate === b.utcDate;
+  a.status === b.status &&
+  JSON.stringify(a.score) === JSON.stringify(b.score) &&
+  a.utcDate === b.utcDate &&
+  a.elapsed === b.elapsed;
 
 async function main() {
   loadDotEnv(root);
@@ -91,6 +94,9 @@ async function main() {
     const liveChanged = JSON.stringify(live ?? null) !== JSON.stringify(old.live ?? null);
     if (sameResult(old, fresh) && !liveChanged) continue;
     Object.assign(old, { status: fresh.status, score: fresh.score, utcDate: fresh.utcDate });
+    // minute of play: only while the match is under way
+    if (fresh.elapsed != null) Object.assign(old, { elapsed: fresh.elapsed, elapsedExtra: fresh.elapsedExtra });
+    else delete old.elapsed, delete old.elapsedExtra;
     if (live) old.live = live;
     changed++;
     console.log(

@@ -1,8 +1,17 @@
 import { Link } from "../../lib/links";
 import { ChevronRight } from "lucide-react";
 import { formatTime, romeDay } from "../../lib/footballCore";
-import { gameHref, gameRoundLabel, isGameFinished, isGameLive, isGamePending, type BasketGame } from "../../lib/basket";
-import { TeamBadge } from "../calcio/MatchRow";
+import {
+  gameHref,
+  gamePeriodLabel,
+  gameRoundLabel,
+  isGameFinished,
+  isGameLive,
+  isGamePending,
+  type BasketGame,
+} from "../../lib/basket";
+import { LiveMark, OutcomeBadge, TeamBadge, TeamName, type PickOutcome } from "../calcio/MatchRow";
+import { archivedBasketPredictionFor } from "../../lib/basketPredict";
 import { basketPredictionFor } from "../../lib/basketPredict";
 import { BasketMarketMini, type BasketMarket } from "./BasketPrediction";
 
@@ -14,9 +23,15 @@ export function BasketGameRow({
   game,
   market = "win",
   columns = false,
+  meta = true,
+  outcome = false,
 }: {
   game: BasketGame;
   market?: BasketMarket;
+  /** "NBA · Stagione regolare" column on the right (md+). */
+  meta?: boolean;
+  /** Finished games: show whether the model's favourite won. */
+  outcome?: boolean;
   /** The list shows column headers (ListColumns): the win cells drop their labels. */
   columns?: boolean;
 }) {
@@ -37,6 +52,7 @@ export function BasketGameRow({
         time: formatTime(game.utcDate),
       }
     : undefined;
+  const pickOutcome = outcome && finished ? nbaOutcome(game) : undefined;
   return (
     <div
       className={`group relative flex items-center gap-2.5 sm:gap-4 px-3 sm:px-4 py-2.5 border-b border-slate-800 last:border-b-0 hover:bg-slate-800/40 focus-within:bg-slate-800/40 transition-colors ${
@@ -52,10 +68,7 @@ export function BasketGameRow({
           {finished ? (
             <span className="text-slate-400 text-xs uppercase tracking-wide">Finale</span>
           ) : live ? (
-            <span className="flex flex-col items-center gap-1 text-red-400 text-[10px] leading-none font-semibold uppercase">
-              <span className="h-1.5 w-1.5 rounded-full bg-red-500 motion-safe:animate-pulse" aria-hidden="true" />
-              In corso
-            </span>
+            <LiveMark minute={gamePeriodLabel(game)} label="In corso" />
           ) : pending ? (
             <span className="block text-warn text-[11px] leading-tight">Risultato in arrivo</span>
           ) : (
@@ -69,7 +82,11 @@ export function BasketGameRow({
           ].map(({ team, pts, win }) => (
             <div key={team.id} className="flex items-center gap-2">
               <TeamBadge team={{ tla: team.abbr, shortName: team.name, crest: null }} size="xs" />
-              <span className={`truncate ${finished && !win ? "text-slate-400" : "text-white"}`}>{team.name}</span>
+              <TeamName
+                name={team.name}
+                short={team.shortName}
+                className={finished && !win ? "text-slate-400" : "text-white"}
+              />
               {(finished || live) && (
                 <span
                   className={`ml-auto tabular-nums text-lg ${win ? "text-best" : live ? "text-white font-semibold" : "text-slate-300"}`}
@@ -93,14 +110,35 @@ export function BasketGameRow({
           />
         </div>
       )}
-      <div className="hidden md:block w-40 shrink-0 text-right text-xs text-slate-400">
-        <div className="text-slate-300 text-sm">NBA</div>
-        <div>{gameRoundLabel(game)}</div>
-      </div>
+      {outcome && finished && pickOutcome && <OutcomeBadge outcome={pickOutcome} />}
+      {meta && (
+        <div className="hidden md:block w-40 shrink-0 text-right text-xs text-slate-400">
+          <div className="text-slate-300 text-sm">NBA</div>
+          <div>{gameRoundLabel(game)}</div>
+        </div>
+      )}
       <ChevronRight
         className="hidden sm:block w-4 h-4 text-slate-400 group-hover:text-white shrink-0"
         aria-hidden="true"
       />
     </div>
   );
+}
+
+/** The model's favourite of a finished NBA game (estimate made before tip-off) and whether it won. */
+function nbaOutcome(g: BasketGame): PickOutcome | undefined {
+  if (g.score.home == null || g.score.away == null) return undefined;
+  const archived = archivedBasketPredictionFor(g.id);
+  const current = basketPredictionFor(g.id);
+  // as the track record: only estimates made before tip-off
+  const p = archived?.prediction ?? (current?.pre ? current : undefined);
+  if (!p) return undefined;
+  const winner = g.score.home > g.score.away ? 0 : 1;
+  return {
+    pick: p.fav === 0 ? "1" : "2",
+    spoken: `vittoria ${(p.fav === 0 ? g.home : g.away).name}`,
+    prob: p.p[p.fav],
+    hit: winner === p.fav,
+    published: true,
+  };
 }

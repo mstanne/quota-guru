@@ -18,7 +18,7 @@ export function BasketStandingsPage() {
         icon={ListOrdered}
         title={`Classifica Serie A basket ${lbaSeason}`}
         breadcrumb={[{ label: "Basket", to: "/basket" }, { label: "Serie A" }, { label: "Classifica" }]}
-        meta={<DataUpdatedNote generatedAt={basketUpdatedAt} />}
+        meta={<DataUpdatedNote generatedAt={basketUpdatedAt} cadence="ogni 3 ore circa" />}
       />
       <div className="container mx-auto px-4 py-8 space-y-6">
         <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-x-auto">

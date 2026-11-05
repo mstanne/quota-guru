@@ -3,7 +3,8 @@ import { ExternalLink, ListChecks, Trash2, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Sheet, SheetContent, SheetTitle } from "./ui/sheet";
-import { useBetSlip, type BetSelection } from "../context/BetSlipContext";
+import { slipDocked, useBetSlip, type BetSelection } from "../context/BetSlipContext";
+import { useEffect } from "react";
 import { getOperator, oddsOperators } from "../data/operators";
 import { formatOdd, productOfOdds } from "../lib/odds";
 import { OperatorCta, OperatorLogo } from "./operator/OperatorUi";
@@ -41,6 +42,12 @@ export function BetSlip() {
   const badge = withOdds ? totalLabel : chanceLabel;
   const n = selections.length;
 
+  // wide screens: the open slip is a column beside the page, which makes room for it (globals.css, .slip-docked)
+  useEffect(() => {
+    document.documentElement.classList.toggle("slip-docked", isOpen);
+    return () => document.documentElement.classList.remove("slip-docked");
+  }, [isOpen]);
+
   return (
     <>
       {/* announces every change, also when the slip stays closed (quick picks in the lists) */}
@@ -55,7 +62,7 @@ export function BetSlip() {
           // key: replays the short highlight every time a pick is added or removed
           key={lastChange?.n ?? 0}
           aria-label={`Apri la schedina: ${n} ${n === 1 ? "esito" : "esiti"}${badge ? `, ${withOdds ? "quota" : "probabilità"} ${badge}` : ""}`}
-          className="slip-fab fixed z-50 bottom-5 right-4 md:bottom-auto md:top-24 md:right-6 flex items-center gap-3 rounded-full bg-action hover:bg-action-hover text-action-foreground shadow-xl shadow-black/40 pl-3 pr-4 h-12 md:h-11"
+          className="slip-fab fixed z-50 bottom-5 right-4 md:right-6 flex items-center gap-3 rounded-full bg-action hover:bg-action-hover text-action-foreground shadow-xl shadow-black/40 pl-3 pr-4 h-12 md:h-11"
         >
           <span className="inline-flex items-center justify-center min-w-7 h-7 rounded-full bg-slate-950 text-white text-sm font-semibold tabular-nums px-2">
             {n}
@@ -72,6 +79,10 @@ export function BetSlip() {
           className="w-full sm:max-w-sm p-0 gap-0 bg-slate-100 text-slate-900 border-l-0 sm:border-l-4 sm:border-action shadow-2xl"
           onInteractOutside={(e) => {
             e.preventDefault();
+          }}
+          // beside the page (wide screens) the slip opens by itself at the first pick: focus stays on the list
+          onOpenAutoFocus={(e) => {
+            if (slipDocked()) e.preventDefault();
           }}
         >
           {/* header band (the sheet's own close button sits in its top-right corner) */}

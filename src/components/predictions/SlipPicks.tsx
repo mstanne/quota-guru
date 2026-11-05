@@ -79,7 +79,10 @@ export function PickCells({
   cellClassName = "py-1",
   raised = false,
   hideLabels = false,
+  inline = false,
 }: {
+  /** Label and percentage side by side on one line (wider cells: combos, "1+Under 41%"). */
+  inline?: boolean;
   /** The list has column headers (1 · X · 2…): cells show only the percentage, a bit larger. */
   hideLabels?: boolean;
   /** Cells on a slate-800 card (instead of the page background): darker neutral cells so they stay visible. */
@@ -105,10 +108,7 @@ export function PickCells({
               c.top ? "bg-predict/15 text-predict" : `${raised ? "bg-slate-900" : "bg-slate-800"} text-slate-300`
             }`}
           >
-            {!hideLabels && <span className="block text-[10px] text-slate-400 whitespace-nowrap">{c.label}</span>}
-            <span className={`block tabular-nums font-medium ${hideLabels ? "text-sm" : "text-xs"}`}>
-              {pct(c.value)}
-            </span>
+            <CellText cell={c} hideLabels={hideLabels} inline={inline} />
           </span>
         ))}
       </div>
@@ -141,14 +141,7 @@ export function PickCells({
                   : `${raised ? "bg-slate-900" : "bg-slate-800"} text-slate-300 border-transparent hover:border-slate-500`
             }`}
           >
-            {!hideLabels && (
-              <span className={`block text-[10px] whitespace-nowrap ${on ? "text-slate-600" : "text-slate-400"}`}>
-                {c.label}
-              </span>
-            )}
-            <span className={`block tabular-nums font-medium ${hideLabels ? "text-sm" : "text-xs"}`}>
-              {pct(c.value)}
-            </span>
+            <CellText cell={c} hideLabels={hideLabels} inline={inline} on={on} />
             {on && (
               <Check
                 className="absolute -top-1.5 -right-1.5 size-4 rounded-full bg-action text-action-foreground p-0.5"
@@ -159,6 +152,34 @@ export function PickCells({
         );
       })}
     </div>
+  );
+}
+
+/** Label and percentage of one cell: stacked (default), percentage only (`hideLabels`) or on one line (`inline`). */
+function CellText({
+  cell,
+  hideLabels,
+  inline,
+  on = false,
+}: {
+  cell: PickCell;
+  hideLabels: boolean;
+  inline: boolean;
+  on?: boolean;
+}) {
+  const label = on ? "text-slate-600" : "text-slate-400";
+  if (inline)
+    return (
+      <span className="flex items-baseline justify-between gap-1.5 px-0.5">
+        <span className={`text-[11px] whitespace-nowrap ${label}`}>{cell.label}</span>
+        <span className="tabular-nums font-medium text-sm">{pct(cell.value)}</span>
+      </span>
+    );
+  return (
+    <>
+      {!hideLabels && <span className={`block text-[10px] whitespace-nowrap ${label}`}>{cell.label}</span>}
+      <span className={`block tabular-nums font-medium ${hideLabels ? "text-sm" : "text-xs"}`}>{pct(cell.value)}</span>
+    </>
   );
 }
 
