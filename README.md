@@ -162,6 +162,12 @@ comprese Serie B, Europa League e Conference League) e API-NBA per il basket. Un
   finisce in "Risultati" e mostra "Risultato in arrivo" finché la fonte non pubblica il finale. Il riferimento è
   l'ora della build (`scripts/stamp-build-time.mjs`), uguale per le pagine pre-renderizzate e il browser; per i tornei
   di tennis vale la data di fine del torneo.
+- **Archivio permanente** (`data/archivio/`, salvato nel branch `dati`): ogni partita finita con tutti i dettagli.
+  Le stagioni passate le recupera `scripts/backfill-archive.mjs`, al massimo 150 richieste per giro: tutte le
+  competizioni del sito più la **Coppa Italia** (per ora solo in archivio, senza pagine), fino a 10 stagioni prima
+  di quella in corso. Per cambiare il numero di stagioni imposta la variabile del repository `ARCHIVE_SEASONS`
+  (Settings → Secrets and variables → Actions → Variables). Ogni stagione di una competizione costa circa 20
+  richieste e 2 MB nel branch `dati`; le stagioni che il piano non copre vengono segnate e saltate.
 - Il workflow aggiorna i dati e ripubblica il sito ogni 3 ore e, durante le partite, aggiorna punteggi e classifiche
   ogni 15 minuti (`live-scores.yml`). Senza chiave usa gli ultimi dati salvati.
 
@@ -183,6 +189,11 @@ Al posto delle quote (che arriveranno con i feed degli operatori) home, liste pa
   il dato di affidabilità in `/metodologia#pronostici`). Se una squadra ha meno di 3 partite pesate il pronostico non
   viene pubblicato (succede ai club esteri in Champions League finché non c'è storico europeo).
 - `npm run predict:backtest` stampa anche un backtest walk-forward sullo storico.
+- **Schedina con probabilità**: nella pagina di una partita in programma il riquadro del pronostico ha i pulsanti
+  "Aggiungi un esito alla schedina" (1X2, doppia chance, Under/Over 2,5, Goal/No goal). La schedina mostra la
+  probabilità stimata che si verifichino tutti gli esiti (prodotto delle probabilità, `src/lib/slip.ts`), "circa 1 su
+  N" e la quota equa. Un solo esito per partita, quindi gli esiti combinati sono sempre di partite diverse. Quando
+  arriveranno le quote degli operatori, la schedina mostrerà insieme quote e probabilità.
 - Le previsioni si ricalcolano dentro `npm run build` (quindi anche in GitHub Actions, dopo il download dei dati).
 
 ## Pronostici tennis

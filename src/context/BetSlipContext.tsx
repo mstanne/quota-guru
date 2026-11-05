@@ -8,7 +8,10 @@ export interface BookmakerOdds {
   odds: OddValue;
 }
 
-/** A single pick added to the bet slip ("schedina"). */
+/**
+ * A single pick added to the bet slip ("schedina"): from an operator's odds (OddsComparison) or from the model's
+ * prediction (PredictionSlipPicks). Odds fields are missing for prediction picks; `probability` for odds picks.
+ */
 export interface BetSelection {
   /** Unique id of the pick. Generated from matchId + betType when not provided. */
   id?: string;
@@ -21,10 +24,12 @@ export interface BetSelection {
   betType: string;
   betTypeLabel: string;
   /** OperatorData.id of the operator chosen for this pick. */
-  selectedBookmaker: string;
-  selectedOdds: OddValue;
+  selectedBookmaker?: string;
+  selectedOdds?: OddValue;
   /** Odds of the same pick on every bookmaker, used for the comparison table. */
-  allBookmakers: BookmakerOdds[];
+  allBookmakers?: BookmakerOdds[];
+  /** Probability of the pick estimated by the model (0–1), when it was added from a prediction. */
+  probability?: number;
 }
 
 interface BetSlipContextValue {
@@ -51,7 +56,11 @@ export function BetSlipProvider({ children }: { children: ReactNode }) {
     const withId = { ...selection, id: selection.id ?? `${selection.matchId}-${selection.betType}` };
     setSelections((prev) => [...prev.filter((s) => s.matchId !== withId.matchId), withId]);
     setIsOpen(true);
-    track("bet_slip_add", { operator: withId.selectedBookmaker, market: withId.betType, page: currentPage() });
+    track("bet_slip_add", {
+      operator: withId.selectedBookmaker ?? "pronostico",
+      market: withId.betType,
+      page: currentPage(),
+    });
   };
 
   const removeSelection = (id: string) => {

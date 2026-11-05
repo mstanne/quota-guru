@@ -1,5 +1,5 @@
 import { Link } from "../lib/links";
-import { CircleCheck, ExternalLink, ShoppingCart, X } from "lucide-react";
+import { ChartColumn, CircleCheck, ExternalLink, ShoppingCart, X } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
@@ -9,23 +9,33 @@ import { useBetSlip } from "../context/BetSlipContext";
 import { getOperator, oddsOperators } from "../data/operators";
 import { formatOdd, productOfOdds } from "../lib/odds";
 import { OperatorCta, OperatorLogo } from "./operator/OperatorUi";
+import { formatChance, oneIn, slipChance, slipFairOdds } from "../lib/slip";
+import { pct } from "../lib/predictionsCore";
+import { paths } from "../routes";
 
 export function BetSlip() {
   const { selections, isOpen, closeBetSlip, openBetSlip, removeSelection, clearAll, stake, setStake } = useBetSlip();
+  // Picks added from the model's predictions have no odds: the odds parts (total, stake, operators) are shown only
+  // when every pick has them, the probability whenever at least one pick has it.
+  const withOdds = selections.length > 0 && selections.every((s) => s.selectedOdds !== undefined && s.allBookmakers);
+  const chance = slipChance(selections);
+  const chanceLabel = chance.probability === null ? null : formatChance(chance.probability);
   // Accumulator odds: null while any odd is still a placeholder (template mode).
-  const totalOdds = productOfOdds(selections.map((s) => s.selectedOdds));
+  const totalOdds = withOdds ? productOfOdds(selections.map((s) => s.selectedOdds!)) : null;
   const totalLabel = totalOdds === null ? "[QUOTA_TOT]" : totalOdds.toFixed(2);
   const winLabel = (total: number | null) => (total === null ? "[VINCITA]" : `${(stake * total).toFixed(0)}€`);
 
   // Accumulator odds for the whole slip on each operator (only operators offering every pick), best first.
-  const bookmakerTotals = oddsOperators
+  const bookmakerTotals = (withOdds ? oddsOperators : [])
     .map((operator) => {
-      const picks = selections.map((s) => s.allBookmakers.find((b) => b.operatorId === operator.id));
+      const picks = selections.map((s) => s.allBookmakers?.find((b) => b.operatorId === operator.id));
       const offersAll = picks.every(Boolean);
       return { operator, offersAll, total: offersAll ? productOfOdds(picks.map((p) => p!.odds)) : null };
     })
     .filter((t) => t.offersAll)
     .sort((a, b) => (b.total ?? 0) - (a.total ?? 0));
+  // badge on the floating buttons: total odds, or the probability for a slip of predictions
+  const badge = withOdds ? totalLabel : chanceLabel;
   return (
     <>
       {!isOpen && selections.length > 0 && (
@@ -36,7 +46,7 @@ export function BetSlip() {
             size="lg"
           >
             <ShoppingCart className="w-5 h-5 mr-2" />
-            Schedina ({selections.length})<Badge className="ml-2 bg-white text-slate-900">{totalLabel}</Badge>
+            Schedina ({selections.length}){badge && <Badge className="ml-2 bg-white text-slate-900">{badge}</Badge>}
           </Button>
         </div>
       )}
@@ -49,7 +59,7 @@ export function BetSlip() {
           >
             <ShoppingCart className="w-4 h-4 mr-2" />
             {selections.length}
-            {!isOpen && <Badge className="ml-2 bg-white text-slate-900 text-xs">{totalLabel}</Badge>}
+            {!isOpen && badge && <Badge className="ml-2 bg-white text-slate-900 text-xs">{badge}</Badge>}
           </Button>
         </div>
       )}
@@ -70,7 +80,19 @@ export function BetSlip() {
                 <X className="w-5 h-5" />
               </Button>
             </div>
-            {selections.length > 0 && (
+            {!withOdds && chance.probability !== null && chanceLabel && (
+              <div className="grid grid-cols-2 gap-3 mt-4 text-center">
+                <div className="bg-slate-800 rounded-lg p-2">
+                  <div className="text-slate-400 text-xs">Probabilità stimata:</div>
+                  <div className="text-predict tabular-nums">{chanceLabel}</div>
+                </div>
+                <div className="bg-slate-800 rounded-lg p-2">
+                  <div className="text-slate-400 text-xs">Quota equa:</div>
+                  <div className="text-white tabular-nums">{slipFairOdds(chance.probability)}</div>
+                </div>
+              </div>
+            )}
+            {withOdds && (
               <div className="grid grid-cols-3 gap-3 mt-4 text-center">
                 <div className="bg-slate-800 rounded-lg p-2">
                   <div className="text-slate-400 text-xs">Quota:</div>
@@ -128,73 +150,120 @@ export function BetSlip() {
                         {" \u2022 "}
                         {selection.time}
                       </div>
-                      <div className="text-best tabular-nums">{formatOdd(selection.selectedOdds)}</div>
+                      {selection.selectedOdds !== undefined ? (
+                        <div className="text-best tabular-nums">{formatOdd(selection.selectedOdds)}</div>
+                      ) : selection.probability !== undefined ? (
+                        <div className="text-predict tabular-nums" title="Probabilità stimata dal modello">
+                          {pct(selection.probability)}
+                        </div>
+                      ) : null}
                     </div>
                   </Card>
                 ))}
-                <Card className="bg-slate-800 border-slate-700 p-4">
-                  <div className="text-slate-300 mb-3">Quota totale per operatore:</div>
-                  <div className="space-y-2">
-                    {bookmakerTotals.map(({ operator, total }, index) => {
-                      const isBest = index === 0;
-                      return (
-                        <div
-                          key={operator.id}
-                          className={`flex items-center justify-between p-3 rounded-lg border ${isBest ? "bg-best/10 border-best" : "bg-slate-900 border-slate-700"}`}
-                        >
-                          <div className="flex items-center gap-3 flex-1 min-w-0 [&>div]:min-w-0 [&>div>div]:truncate">
-                            <OperatorLogo
-                              operator={operator}
-                              width={40}
-                              height={40}
-                              className={`rounded ${isBest ? "border-best" : ""}`}
-                            />
-                            <div>
-                              <div className="text-slate-400 text-xs">Quota totale:</div>
-                              <div className={isBest ? "text-best" : "text-white"}>
-                                {total === null ? "[QUOTA_TOT]" : total.toFixed(2)}
+                {chance.probability !== null && chanceLabel && (
+                  <Card className="bg-slate-800 border-slate-700 p-4" aria-live="polite">
+                    <div className="flex items-center gap-2 text-slate-300">
+                      <ChartColumn className="w-4 h-4" aria-hidden="true" />
+                      {chance.covered > 1
+                        ? "Probabilità che si verifichino tutti gli esiti"
+                        : "Probabilità stimata dell'esito"}
+                    </div>
+                    <div className="mt-2 flex items-baseline gap-3">
+                      <span className="text-predict text-3xl font-semibold tabular-nums">{chanceLabel}</span>
+                      {chance.probability < 0.5 && (
+                        <span className="text-slate-300 text-sm">{oneIn(chance.probability)}</span>
+                      )}
+                    </div>
+                    <div className="mt-1 text-slate-400 text-sm tabular-nums">
+                      Quota equa: {slipFairOdds(chance.probability)}
+                    </div>
+                    {chance.covered < chance.total && (
+                      <p className="mt-2 text-slate-400 text-xs">
+                        Calcolata su {chance.covered} esiti su {chance.total}: gli altri non hanno un pronostico del
+                        modello.
+                      </p>
+                    )}
+                    <p className="mt-3 text-slate-400 text-xs leading-relaxed">
+                      Prodotto delle probabilità stimate dal modello statistico per ogni esito (un esito per partita). È
+                      una stima, non una previsione certa né un consiglio di gioco: ogni esito in più la riduce.{" "}
+                      <Link
+                        to={`${paths.metodologia}#pronostici`}
+                        onClick={closeBetSlip}
+                        className="text-action-text hover:text-action-text-hover"
+                      >
+                        Come funziona
+                      </Link>
+                      .
+                    </p>
+                  </Card>
+                )}
+                {withOdds && (
+                  <Card className="bg-slate-800 border-slate-700 p-4">
+                    <div className="text-slate-300 mb-3">Quota totale per operatore:</div>
+                    <div className="space-y-2">
+                      {bookmakerTotals.map(({ operator, total }, index) => {
+                        const isBest = index === 0;
+                        return (
+                          <div
+                            key={operator.id}
+                            className={`flex items-center justify-between p-3 rounded-lg border ${isBest ? "bg-best/10 border-best" : "bg-slate-900 border-slate-700"}`}
+                          >
+                            <div className="flex items-center gap-3 flex-1 min-w-0 [&>div]:min-w-0 [&>div>div]:truncate">
+                              <OperatorLogo
+                                operator={operator}
+                                width={40}
+                                height={40}
+                                className={`rounded ${isBest ? "border-best" : ""}`}
+                              />
+                              <div>
+                                <div className="text-slate-400 text-xs">Quota totale:</div>
+                                <div className={isBest ? "text-best" : "text-white"}>
+                                  {total === null ? "[QUOTA_TOT]" : total.toFixed(2)}
+                                </div>
+                              </div>
+                              <div>
+                                <div className="text-slate-400 text-xs">Puntata:</div>
+                                <div className="text-white text-sm">{stake}€</div>
+                              </div>
+                              <div>
+                                <div className="text-slate-400 text-xs">Vincita:</div>
+                                <div className="text-white text-sm">{winLabel(total)}</div>
                               </div>
                             </div>
-                            <div>
-                              <div className="text-slate-400 text-xs">Puntata:</div>
-                              <div className="text-white text-sm">{stake}€</div>
-                            </div>
-                            <div>
-                              <div className="text-slate-400 text-xs">Vincita:</div>
-                              <div className="text-white text-sm">{winLabel(total)}</div>
-                            </div>
+                            <OperatorCta
+                              placement="bet-slip"
+                              operator={getOperator(operator.id)}
+                              label="Vai"
+                              size="sm"
+                              variant={isBest ? "default" : "outline"}
+                              className={
+                                isBest
+                                  ? "bg-action hover:bg-action-hover text-action-foreground"
+                                  : "bg-slate-900 border-slate-600 text-slate-300 hover:bg-action hover:text-action-foreground hover:border-action"
+                              }
+                              icon={<ExternalLink className="w-3 h-3 mr-1" />}
+                            />
                           </div>
-                          <OperatorCta
-                            placement="bet-slip"
-                            operator={getOperator(operator.id)}
-                            label="Vai"
-                            size="sm"
-                            variant={isBest ? "default" : "outline"}
-                            className={
-                              isBest
-                                ? "bg-action hover:bg-action-hover text-action-foreground"
-                                : "bg-slate-900 border-slate-600 text-slate-300 hover:bg-action hover:text-action-foreground hover:border-action"
-                            }
-                            icon={<ExternalLink className="w-3 h-3 mr-1" />}
-                          />
-                        </div>
-                      );
-                    })}
-                  </div>
-                </Card>
-                <Card className="bg-slate-800 border-slate-700 p-4">
-                  <div className="mb-2">
-                    <label className="text-slate-300 text-sm">Importo della puntata (€)</label>
-                  </div>
-                  <Input
-                    type="number"
-                    value={stake}
-                    onChange={(e) => setStake(Number(e.target.value) || 0)}
-                    className="bg-slate-900 border-slate-700 text-white"
-                    min="1"
-                    step="5"
-                  />
-                </Card>
+                        );
+                      })}
+                    </div>
+                  </Card>
+                )}
+                {withOdds && (
+                  <Card className="bg-slate-800 border-slate-700 p-4">
+                    <div className="mb-2">
+                      <label className="text-slate-300 text-sm">Importo della puntata (€)</label>
+                    </div>
+                    <Input
+                      type="number"
+                      value={stake}
+                      onChange={(e) => setStake(Number(e.target.value) || 0)}
+                      className="bg-slate-900 border-slate-700 text-white"
+                      min="1"
+                      step="5"
+                    />
+                  </Card>
+                )}
                 <div className="space-y-2 pt-2">
                   <Button
                     variant="outline"

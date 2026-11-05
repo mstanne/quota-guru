@@ -109,10 +109,13 @@ jobs:
 
       - name: Past seasons for the archive, a small block per run
         # scripts/backfill-archive.mjs: at most 150 API-Sports requests per run, progress kept in the archive.
+        # Competitions of the site plus Coppa Italia (archive only), back to ARCHIVE_SEASONS seasons.
         run: node scripts/backfill-archive.mjs
         continue-on-error: true
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          # seasons before the current one to recover (default 10); repository variable, optional
+          ARCHIVE_SEASONS: ${{ vars.ARCHIVE_SEASONS }}
 
       - name: Transfers, trophies and injuries of the players, a block per run
         # scripts/fetch-player-extras.mjs: at most 250 API-Sports requests per run (players who played most first),
