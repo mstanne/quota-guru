@@ -7,7 +7,7 @@ export function DataUpdatedNote({
   short = false,
   cadence = "durante le partite ogni 15 minuti circa",
 }: {
-  /** How often the data are refreshed ("ogni 3 ore circa" for the NBA, not in the quick updates). */
+  /** How often the data are refreshed ("ogni 3 ore circa" for data outside the quick updates, e.g. the Serie A basket standings). */
   cadence?: string;
   generatedAt: string;
   className?: string;
