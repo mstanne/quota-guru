@@ -5,6 +5,7 @@ import { PageHeader, MetaItems } from "../layout/PageHeader";
 import { MatchRow } from "../calcio/MatchRow";
 import { BasketGameRow } from "../basket/BasketGameRow";
 import { MarketFilter } from "./MarketFilter";
+import { SlipHint } from "./SlipPicks";
 import { FOOTBALL_MARKETS, predictionFor, type FootballMarket } from "../../lib/predictions";
 import { useQueryChoice } from "../../lib/useQueryChoice";
 import { usePageMeta } from "../../lib/pageMeta";
@@ -79,6 +80,7 @@ export function DayPredictionsPage({ day }: { day: DayKey }) {
               Calcio
             </h2>
             <MarketFilter options={FOOTBALL_MARKETS} value={market} onChange={setMarket} />
+            <SlipHint />
             <div className="space-y-6">
               {groups.map(({ c, items }) => (
                 <section key={c.slug} aria-labelledby={`c-${c.slug}`}>

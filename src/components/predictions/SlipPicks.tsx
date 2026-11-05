@@ -1,8 +1,8 @@
 // Quick picks: the model's probabilities as buttons that add the outcome to the bet slip ("schedina").
 // Used by the match rows (football and NBA) and the prediction panel of the match page. One pick per match: tapping
 // another outcome of the same match replaces it, tapping the selected one removes it.
-import { Check, ListPlus } from "lucide-react";
-import type { ReactNode } from "react";
+import { Check, ListPlus, X } from "lucide-react";
+import { useEffect, useState, type ReactNode } from "react";
 import { useBetSlip } from "../../context/BetSlipContext";
 import { pct } from "../../lib/predictionsCore";
 import { formatTime, romeDay, type Match } from "../../lib/footballCore";
@@ -78,7 +78,10 @@ export function PickCells({
   className = "",
   cellClassName = "py-1",
   raised = false,
+  hideLabels = false,
 }: {
+  /** The list has column headers (1 · X · 2…): cells show only the percentage, a bit larger. */
+  hideLabels?: boolean;
   /** Cells on a slate-800 card (instead of the page background): darker neutral cells so they stay visible. */
   raised?: boolean;
   cells: PickCell[];
@@ -102,8 +105,10 @@ export function PickCells({
               c.top ? "bg-predict/15 text-predict" : `${raised ? "bg-slate-900" : "bg-slate-800"} text-slate-300`
             }`}
           >
-            <span className="block text-[10px] text-slate-400 whitespace-nowrap">{c.label}</span>
-            <span className="block text-xs tabular-nums font-medium">{pct(c.value)}</span>
+            {!hideLabels && <span className="block text-[10px] text-slate-400 whitespace-nowrap">{c.label}</span>}
+            <span className={`block tabular-nums font-medium ${hideLabels ? "text-sm" : "text-xs"}`}>
+              {pct(c.value)}
+            </span>
           </span>
         ))}
       </div>
@@ -136,10 +141,14 @@ export function PickCells({
                   : `${raised ? "bg-slate-900" : "bg-slate-800"} text-slate-300 border-transparent hover:border-slate-500`
             }`}
           >
-            <span className={`block text-[10px] whitespace-nowrap ${on ? "text-slate-600" : "text-slate-400"}`}>
-              {c.label}
+            {!hideLabels && (
+              <span className={`block text-[10px] whitespace-nowrap ${on ? "text-slate-600" : "text-slate-400"}`}>
+                {c.label}
+              </span>
+            )}
+            <span className={`block tabular-nums font-medium ${hideLabels ? "text-sm" : "text-xs"}`}>
+              {pct(c.value)}
             </span>
-            <span className="block text-xs tabular-nums font-medium">{pct(c.value)}</span>
             {on && (
               <Check
                 className="absolute -top-1.5 -right-1.5 size-4 rounded-full bg-action text-action-foreground p-0.5"
@@ -169,12 +178,54 @@ export function SlipPicksBox({ children }: { children: ReactNode }) {
   );
 }
 
-/** One-line hint above the lists whose probabilities can be added to the slip. */
-export function SlipHint({ className = "" }: { className?: string }) {
+const TIP_KEY = "qg-suggerimento-schedina";
+
+/**
+ * First-use tip of the lists whose probabilities can be added to the slip: a small bar at the bottom of the screen
+ * (fixed, so it never moves the page), shown until the reader adds a first pick or closes it, then never again
+ * (remembered in this browser). Not in the pre-rendered HTML: it appears after loading, if not dismissed yet.
+ */
+export function SlipHint() {
+  const { selections } = useBetSlip();
+  const [show, setShow] = useState(false);
+  const done = () => {
+    setShow(false);
+    try {
+      localStorage.setItem(TIP_KEY, "1");
+    } catch {
+      /* storage unavailable: the tip simply comes back next time */
+    }
+  };
+  useEffect(() => {
+    try {
+      if (!localStorage.getItem(TIP_KEY)) setShow(true);
+    } catch {
+      setShow(true);
+    }
+  }, []);
+  // the first pick is the sign it has been understood
+  useEffect(() => {
+    if (selections.length && show) done();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selections.length]);
+  if (!show || selections.length) return null;
   return (
-    <p className={`inline-flex items-center gap-1.5 text-slate-400 text-xs ${className}`}>
-      <ListPlus className="w-4 h-4 text-action" aria-hidden="true" />
-      Tocca una probabilità per aggiungerla alla schedina
-    </p>
+    <div
+      role="note"
+      className="fixed z-40 bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-md flex items-center gap-3 rounded-xl border border-action/50 bg-slate-900/95 backdrop-blur px-4 py-3 shadow-xl shadow-black/40"
+    >
+      <ListPlus className="w-5 h-5 text-action shrink-0" aria-hidden="true" />
+      <p className="flex-1 text-white text-sm leading-snug">
+        Tocca una percentuale per aggiungere l'esito alla schedina: calcola la probabilità che si verifichino tutti.
+      </p>
+      <button
+        type="button"
+        onClick={done}
+        aria-label="Chiudi il suggerimento"
+        className="inline-flex items-center justify-center size-9 shrink-0 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 cursor-pointer"
+      >
+        <X className="w-4 h-4" aria-hidden="true" />
+      </button>
+    </div>
   );
 }

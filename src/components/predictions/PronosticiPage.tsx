@@ -83,7 +83,7 @@ export function PronosticiPage() {
               Pronostici di {d}
             </Link>
           ))}
-          <SlipHint className="sm:ml-auto" />
+          <SlipHint />
         </nav>
         <Section
           id="calcio"

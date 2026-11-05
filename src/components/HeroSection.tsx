@@ -37,9 +37,7 @@ export function HeroSection({ matches = data.featured ?? [] }: { matches?: Featu
                 <FeaturedCard key={f.match.id} {...f} />
               ))}
             </div>
-            <div className="mt-3 text-center">
-              <SlipHint />
-            </div>
+            <SlipHint />
           </>
         )}
         <p className="mt-3 text-center text-slate-400 text-xs">
