@@ -189,6 +189,11 @@ Al posto delle quote (che arriveranno con i feed degli operatori) home, liste pa
   il dato di affidabilità in `/metodologia#pronostici`). Se una squadra ha meno di 3 partite pesate il pronostico non
   viene pubblicato (succede ai club esteri in Champions League finché non c'è storico europeo).
 - `npm run predict:backtest` stampa anche un backtest walk-forward sullo storico.
+- `node scripts/backtest-slip.mjs` controlla la probabilità della schedina: sullo storico (walk-forward) crea schedine
+  casuali di 1–8 esiti di partite diverse e confronta la probabilità stimata (prodotto delle probabilità) con quante
+  sono uscite davvero, per fasce di probabilità e per numero di esiti. Con `PUBLISHED_DIR=<cartella calcio del branch
+  archivio-pronostici>` aggiunge i pronostici realmente pubblicati. Le impostazioni del modello sono in
+  `scripts/lib/football-fit.mjs`, comuni a `predict-football.mjs`.
 - **Schedina con probabilità**: in tutte le liste delle partite (calcio e NBA: calendari, pronostici, pagine del
   giorno, home) le probabilità delle partite in programma sono pulsanti che aggiungono l'esito alla schedina, con il
   mercato scelto nel filtro; nella pagina partita c'è il riquadro "Aggiungi un esito alla schedina". Toccare di nuovo
