@@ -3,7 +3,8 @@
 // Run automatically by `npm run data` and `npm run build`.
 //   matches  → "Prossime partite" list: the next LIMIT matches of the HOME competitions in time order, plus the
 //              next LIMIT of each of them (the list has a competition filter), merged and sorted by date
-//   competitions → the HOME competitions, in filter order
+//   competitions → the HOME competitions, in filter order (European cups included: on Thursdays the Europa and
+//                  Conference League matches are the next ones)
 //   featured → the hero cards: next FEATURED matches with a prediction, Serie A first
 import fs from "node:fs";
 import path from "node:path";
@@ -17,7 +18,7 @@ const predFile = path.join(root, "src", "data", "football-predictions.json");
 const out = path.join(root, "src", "data", "football-home.json");
 
 const PRIORITY = ["SA", "CL", "PL", "PD"]; // hero cards: one per competition, in this order
-const HOME = ["SA", "CL", "PL", "PD", "BL1", "FL1"]; // "Prossime partite" list and its filter
+const HOME = ["SA", "CL", "EL", "ECL", "PL", "PD", "BL1", "FL1"]; // "Prossime partite" list and its filter
 const LIMIT = 8;
 const FEATURED = 3;
 const FEATURED_DAYS = 7; // hero cards only for matches in the next week
