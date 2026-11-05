@@ -2451,20 +2451,20 @@
   "at": "2026-11-04T00:22:19.222Z"
  },
  "fb:559637": {
-  "fingerprint": "1x1uas3",
+  "fingerprint": "1sdl32n",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 7 novembre alle 17:15 l'Auxerre riceve il Paris FC per la 10ª giornata di Ligue 1. In classifica l'Auxerre è al 14° posto con 10 punti, mentre il Paris FC è al 4° con 17."
+     "Sabato 7 novembre alle 19:00 l'Auxerre riceve il Paris FC nella 10ª giornata di Ligue 1. In classifica l'Auxerre occupa il 14° posto con 10 punti, mentre il Paris FC è al 4° con 17."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Ligue 1 l'Auxerre ha raccolto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza P-V-N-P), con 6 gol fatti e 11 subiti.",
-     "Nelle ultime 4 partite di Ligue 1 il Paris FC ha raccolto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), con 8 gol fatti e 7 subiti. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 4 partite di Ligue 1 l'Auxerre ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza P-V-N-P), segnando 6 gol e subendone 11.",
+     "Nelle ultime 4 partite di Ligue 1 il Paris FC ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), segnando 8 gol e subendone 7. In trasferta ha perso tutte le 2 partite giocate."
     ],
     "bullets": []
    },
@@ -2472,7 +2472,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Auxerre 1,4, Paris FC 1,8 a partita.",
+     "Media gol segnati a partita: Auxerre 1,4, Paris FC 1,8.",
      "Gol subiti finora: Auxerre 23, Paris FC 10.",
      "In 3 delle ultime 4 partite dell'Auxerre si sono segnati almeno tre gol.",
      "In 3 delle ultime 4 partite del Paris FC si sono segnati almeno tre gol."
@@ -2482,57 +2482,11 @@
   "faq": [
    {
     "q": "Quando si gioca Auxerre – Paris FC?",
-    "a": "Sabato 7 novembre alle 17:15, ora italiana."
+    "a": "Sabato 7 novembre alle 19:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-05T00:22:31.589Z"
- },
- "fb:559635": {
-  "fingerprint": "rsfg83",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 7 novembre alle 20:45 il Paris Saint-Germain ospita il Troyes nella 10ª giornata di Ligue 1. In classifica il Paris Saint-Germain occupa il 1° posto con 20 punti, mentre il Troyes è al 16° con 8."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 4 partite di Ligue 1 il Paris Saint-Germain ha raccolto 4 vittorie, con sequenza V-V-V-V, segnando 13 gol e subendone 3. Arriva da 4 vittorie consecutive. In casa ha vinto tutte e 2 le partite disputate.",
-     "Nelle ultime 4 partite di Ligue 1 il Troyes ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con sequenza P-P-N-V. Ha segnato 3 gol e ne ha subiti 5."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati a partita: Paris Saint-Germain 2,3, Troyes 0,8.",
-     "Gol subiti finora: Paris Saint-Germain 10, Troyes 16.",
-     "Il Paris Saint-Germain ha il miglior attacco del torneo.",
-     "Nelle ultime 4 partite del Paris Saint-Germain, in 3 occasioni si sono segnati almeno tre gol."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Paris Saint-Germain – Troyes?",
-    "a": "Sabato 7 novembre alle 20:45, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina dedicata alla [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -2540,7 +2494,53 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T00:22:36.491Z"
+  "at": "2026-11-05T12:20:46.164Z"
+ },
+ "fb:559635": {
+  "fingerprint": "vwq483",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 7 novembre alle 21:05 il Paris Saint-Germain ospita il Troyes nella 10ª giornata di Ligue 1. In classifica il Paris Saint-Germain occupa il 1° posto con 20 punti, mentre il Troyes è al 16° con 8."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di Ligue 1 il Paris Saint-Germain ha ottenuto 4 vittorie (sequenza V-V-V-V), segnando 13 gol e subendone 3. Arriva da 4 vittorie consecutive. In casa ha vinto tutte e 2 le partite disputate.",
+     "Nelle ultime 4 partite di Ligue 1 il Troyes ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza P-P-N-V), con 3 gol fatti e 5 subiti."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Paris Saint-Germain 2,3, Troyes 0,8 a partita.",
+     "Gol subiti finora: Paris Saint-Germain 10, Troyes 16.",
+     "Il Paris Saint-Germain ha il miglior attacco del torneo.",
+     "In 3 delle ultime 4 partite del Paris Saint-Germain sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Paris Saint-Germain – Troyes?",
+    "a": "Sabato 7 novembre alle 21:05, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-05T12:20:49.931Z"
  },
  "fb:559631": {
   "fingerprint": "2xhdlk",
@@ -18416,5 +18416,243 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-05T09:22:16.052Z"
+ },
+ "nba:21718034": {
+  "fingerprint": "1nab5hy",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Thunder hanno superato i Cavaliers per 124-116. La partita si è giocata giovedì 5 novembre.",
+     "All'intervallo i Thunder conducevano 60-44.",
+     "Il parziale più netto è arrivato nel 1º quarto, vinto dai Thunder per 37-20."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 240.",
+     "Parziali (Thunder–Cavaliers): 37-20, 23-24, 28-30, 36-42."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Oklahoma City Thunder – Cleveland Cavaliers?",
+    "a": "124-116 per i Thunder."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-05T12:20:52.637Z"
+ },
+ "nba:21718035": {
+  "fingerprint": "me7lwj",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Timberwolves hanno battuto i Rockets 117-107. La partita si è giocata giovedì 5 novembre.",
+     "All'intervallo il punteggio era in parità sul 57-57.",
+     "Il parziale più netto è arrivato nel 4º quarto, vinto dai Timberwolves per 35-23."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti complessivi: 224.",
+     "Parziali per quarto (Rockets–Timberwolves): 30-33, 27-24, 27-25, 23-35."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita la partita tra Houston Rockets e Minnesota Timberwolves?",
+    "a": "107-117 per i Timberwolves."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Puoi consultare la pagina dei [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-05T12:20:57.008Z"
+ },
+ "nba:21718036": {
+  "fingerprint": "54hfmi",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Nuggets battono i Raptors 128-109. La partita si è giocata giovedì 5 novembre.",
+     "All'intervallo i Raptors conducevano 67-64. Nella ripresa i Nuggets hanno rimontato uno svantaggio di 3 punti.",
+     "Il parziale più netto è arrivato nel 3º quarto, vinto dai Nuggets 41-15."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 237.",
+     "Parziali (Nuggets–Raptors): 33-35, 31-32, 41-15, 23-27."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Denver Nuggets – Toronto Raptors?",
+    "a": "Il risultato finale è 128-109 per i Nuggets."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Le altre partite NBA sono disponibili nella pagina dei [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-05T12:21:00.564Z"
+ },
+ "nba:21718037": {
+  "fingerprint": "1ivfamd",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Trail Blazers hanno superato i Suns per 132-119. L'incontro si è disputato giovedì 5 novembre.",
+     "All'intervallo i Trail Blazers conducevano 72-59.",
+     "Il parziale più netto è arrivato nel 2º quarto, chiuso dai Trail Blazers 43-25."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 251.",
+     "Parziali (Suns–Trail Blazers): 34-29, 25-43, 26-32, 34-28."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Qual è stato il risultato di Phoenix Suns – Portland Trail Blazers?",
+    "a": "Il risultato finale è stato 119-132 per i Trail Blazers."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Le altre partite NBA sono disponibili nella pagina dei [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-05T12:21:04.442Z"
+ },
+ "nba:21718038": {
+  "fingerprint": "1jtpbfc",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Gli Spurs si sono imposti sui Mavericks per 112-111. La partita si è giocata giovedì 5 novembre.",
+     "All'intervallo gli Spurs conducevano 68-51.",
+     "Il parziale più netto è arrivato nel 2º quarto, vinto dagli Spurs 36-25."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 223.",
+     "Parziali (Spurs–Mavericks): 32-26, 36-25, 22-29, 22-31."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita San Antonio Spurs – Dallas Mavericks?",
+    "a": "112-111 per gli Spurs."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-05T12:21:05.761Z"
+ },
+ "nba:21718039": {
+  "fingerprint": "faxvnm",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Lakers superano i Kings 116-103. La partita si è giocata giovedì 5 novembre.",
+     "All'intervallo i Lakers erano in vantaggio 61-54.",
+     "Il parziale più ampio è arrivato nel 2º quarto, vinto dai Lakers 33-26."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 219.",
+     "Parziali (Kings–Lakers): 28-28, 26-33, 20-26, 29-29."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Sacramento Kings – Los Angeles Lakers?",
+    "a": "103-116 per i Lakers."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-05T12:21:08.772Z"
+ },
+ "nba:21718040": {
+  "fingerprint": "qxr2k3",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Gli Heat hanno superato i Clippers per 117-116 al termine di un tempo supplementare. La partita si è disputata giovedì 5 novembre.",
+     "All'intervallo i Clippers conducevano 67-52, ma nella ripresa gli Heat hanno recuperato 15 punti di svantaggio.",
+     "Il parziale più netto è arrivato nel 2º quarto, vinto dai Clippers per 43-19."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 233.",
+     "Parziali (Clippers–Heat): 24-33, 43-19, 20-26, 20-29, 9-10."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Qual è stato il risultato di LA Clippers – Miami Heat?",
+    "a": "116-117 per gli Heat."
+   },
+   {
+    "q": "Dove si trovano le altre partite NBA?",
+    "a": "Nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-05T12:21:13.889Z"
  }
 }
