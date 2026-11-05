@@ -84,6 +84,25 @@ export function PredictionMini({
   return <MarketMini prediction={prediction} market="1x2" home={home} away={away} slip={slip} />;
 }
 
+/**
+ * Column headers and cell width of a market in the match lists. Combos have no common header (each row shows its
+ * two most likely combinations), so their cells keep their own labels.
+ */
+export function marketColumns(market: FootballMarket): { labels: string[] | null; width: string } {
+  switch (market) {
+    case "1x2":
+      return { labels: ["1", "X", "2"], width: "w-10 sm:w-11" };
+    case "dc":
+      return { labels: ["1X", "12", "X2"], width: "w-12" };
+    case "uo":
+      return { labels: ["Under", "Over"], width: "w-12" };
+    case "gg":
+      return { labels: ["Goal", "No goal"], width: "w-14" };
+    default:
+      return { labels: null, width: "w-[4.5rem]" };
+  }
+}
+
 /** Compact cells for the market chosen in the quick filter (1X2, doppia chance, U/O, GG/NG, combo). */
 export function MarketMini({
   prediction,
@@ -91,6 +110,7 @@ export function MarketMini({
   home,
   away,
   slip,
+  columns = false,
 }: {
   prediction: Prediction;
   market: FootballMarket;
@@ -98,20 +118,24 @@ export function MarketMini({
   away: string;
   /** Upcoming matches: the cells become buttons that add the outcome to the bet slip. */
   slip?: SlipMatch;
+  /** The list shows column headers (MarketColumnsHeader): the cells drop their labels. */
+  columns?: boolean;
 }) {
   const cells = marketCells(prediction, market, home, away);
   const name = FOOTBALL_MARKETS.find((m) => m.id === market)!.label;
   const combo = market === "combo";
-  const width = combo ? "w-[4.5rem]" : market === "gg" ? "w-14" : market === "1x2" ? "w-10 sm:w-11" : "w-12";
+  const { labels, width } = marketColumns(market);
+  const plain = columns && !!labels;
   return (
     <PickCells
       cells={cells}
       match={slip}
       name={name}
       width={width}
+      hideLabels={plain}
       // combos are stacked on phones so the team names keep their room
       className={combo ? "flex-col sm:flex-row" : ""}
-      cellClassName={combo ? "py-0.5 sm:py-1" : "py-1"}
+      cellClassName={combo ? "py-0.5 sm:py-1" : plain ? "py-1.5" : "py-1"}
     />
   );
 }

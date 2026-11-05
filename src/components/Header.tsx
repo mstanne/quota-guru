@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BookOpen, ChartColumn, CircleDot, Dribbble, Gift, Goal, Menu, Shield } from "lucide-react";
 import { Link, NavLink } from "../lib/links";
 import { Button } from "./ui/button";
@@ -28,9 +28,20 @@ const mobileLink = ({ isActive }: { isActive: boolean }) =>
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
+  // height of the sticky header as a CSS variable (--header-h): toolbars that stick under it use it as `top`
+  const ref = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof ResizeObserver === "undefined") return;
+    const set = () => document.documentElement.style.setProperty("--header-h", `${el.offsetHeight}px`);
+    set();
+    const ro = new ResizeObserver(set);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   return (
     <>
-      <header className="sticky top-0 z-50 bg-slate-900 border-b border-slate-800">
+      <header ref={ref} className="sticky top-0 z-50 bg-slate-900 border-b border-slate-800">
         <ResponsibleBar />
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">

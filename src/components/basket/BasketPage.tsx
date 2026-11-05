@@ -6,6 +6,7 @@ import { DataUpdatedNote } from "../calcio/DataUpdatedNote";
 import { BasketGameRow } from "./BasketGameRow";
 import { BASKET_MARKETS, type BasketMarket } from "./BasketPrediction";
 import { MarketFilter } from "../predictions/MarketFilter";
+import { SlipHint } from "../predictions/SlipPicks";
 import { useQueryChoice } from "../../lib/useQueryChoice";
 import { TrackRecordBox } from "../predictions/TrackRecordBox";
 import { nbaTrackRecord } from "../../lib/trackRecordNba";
@@ -133,7 +134,10 @@ export function BasketPage({ league }: { league?: "nba" }) {
         </div>
 
         {filter !== "results" ? (
-          <MarketFilter options={BASKET_MARKETS} value={market} onChange={setMarket} sport="nba" />
+          <>
+            <MarketFilter options={BASKET_MARKETS} value={market} onChange={setMarket} sport="nba" />
+            <SlipHint />
+          </>
         ) : (
           <div className="mb-6" />
         )}
