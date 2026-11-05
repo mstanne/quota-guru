@@ -36,6 +36,8 @@ scripts/offers-agent/rapporti/
 /public/dati/
 # permanent archive and club logos: kept in the `dati` branch (scripts/data-branch.sh)
 /data/archivio/
+# season pages data copy (scripts/derive-seasons.mjs), travels with the data snapshot
+/data/stagioni/
 /public/loghi/
 
 # player pages data, rebuilt at every build (scripts/derive-players.mjs)

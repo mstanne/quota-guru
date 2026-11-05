@@ -60,6 +60,10 @@ const TeamsIndexPage = lazyPage(() => import("./components/teams/TeamsIndexPage"
 const results = () => import("./components/results/ResultsPages");
 const FootballResultsPage = lazyPage(() => results().then((m) => m.FootballResultsPage));
 const NbaResultsPage = lazyPage(() => results().then((m) => m.NbaResultsPage));
+const seasons = () => import("./components/seasons/SeasonPages");
+const SeasonsHubPage = lazyPage(() => seasons().then((m) => m.SeasonsHubPage));
+const SeasonsIndexPage = lazyPage(() => seasons().then((m) => m.SeasonsIndexPage));
+const SeasonPage = lazyPage(() => seasons().then((m) => m.SeasonPage));
 const info = () => import("./components/info/InfoPages");
 const ChiSiamoPage = lazyPage(() => info().then((m) => m.ChiSiamoPage));
 const ContattiPage = lazyPage(() => info().then((m) => m.ContattiPage));
@@ -81,6 +85,9 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/basket/nba/squadre", [TeamsIndexPage]],
   ["/basket/nba/squadre/:squadra", [NbaTeamPage, NotFoundPage]],
   ["/calcio/:competizione/risultati", [FootballResultsPage, NotFoundPage]],
+  ["/calcio/stagioni", [SeasonsHubPage, NotFoundPage]],
+  ["/calcio/:competizione/stagioni", [SeasonsIndexPage, NotFoundPage]],
+  ["/calcio/:competizione/stagioni/:stagione", [SeasonPage, NotFoundPage]],
   ["/basket/nba/risultati", [NbaResultsPage]],
   ["/basket/nba/risultati/:mese", [NbaResultsPage, NotFoundPage]],
   ["/calcio/:competizione", [LegacyRedirect, NotFoundPage]],
@@ -134,15 +141,18 @@ export function preloadForPath(pathname: string) {
     : null;
   // football pages: the data of their competition (all of them for /calcio)
   const football =
-    (/^\/calcio(\/|$)/.test(clean) && !/^\/calcio\/(squadre|giocatori)/.test(clean)) ||
+    (/^\/calcio(\/|$)/.test(clean) && !/^\/calcio\/(squadre|giocatori|stagioni)/.test(clean) && !/\/stagioni(\/|$)/.test(clean)) ||
     /^\/pronostici\/(?!nba(\/|$)|oggi$|domani$)[^/]+/.test(clean)
     ? import("./lib/footballData").then((m) => m.preloadFootballData(clean))
+    : null;
+  const season = /^\/calcio\/[^/]+\/stagioni\/[^/]+$/.test(clean)
+    ? import("./lib/seasons").then((m) => m.preloadSeasonData(clean))
     : null;
   const player = /^\/calcio\/giocatori\/[^/]+$/.test(clean) ? import("./lib/players").then((m) => m.preloadPlayerData(clean)) : null;
   const nbaPlayer = /^\/basket\/nba\/giocatori\/[^/]+$/.test(clean)
     ? import("./lib/nbaPlayers").then((m) => m.preloadNbaPlayerData(clean))
     : null;
-  return Promise.all([...(hit ? hit[1] : [NotFoundPage]).map((p) => p.preload()), team, results, football, player, nbaPlayer]);
+  return Promise.all([...(hit ? hit[1] : [NotFoundPage]).map((p) => p.preload()), team, results, season, football, player, nbaPlayer]);
 }
 
 function PageLoading() {
@@ -216,6 +226,9 @@ export default function App() {
             <Route path="/basket/nba/squadre/:squadra" element={<NbaTeamPage />} />
             <Route path="/basket/nba/giocatori/:giocatore" element={<NbaPlayerPage />} />
             <Route path="/calcio/:competizione/risultati" element={<FootballResultsPage />} />
+            <Route path="/calcio/stagioni" element={<SeasonsHubPage />} />
+            <Route path="/calcio/:competizione/stagioni" element={<SeasonsIndexPage />} />
+            <Route path="/calcio/:competizione/stagioni/:stagione" element={<SeasonPage />} />
             <Route path="/basket/nba/risultati" element={<NbaResultsPage />} />
             <Route path="/basket/nba/risultati/:mese" element={<NbaResultsPage />} />
             {/* moved URLs (src/lib/legacyUrls.ts) */}

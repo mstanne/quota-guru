@@ -69,9 +69,16 @@ export function roundOf(round = "") {
   if (m) return { stage: "REGULAR_SEASON", matchday: Number(m[1]) };
   m = round.match(/^League Stage - (\d+)/i);
   if (m) return { stage: "LEAGUE_STAGE", matchday: Number(m[1]) };
+  // European cups until 2023/24 (and the past seasons of the archive)
+  m = round.match(/^Group Stage - (\d+)/i);
+  if (m) return { stage: "GROUP_STAGE", matchday: Number(m[1]) };
+  // national cups (Coppa Italia): "1st Round", "2nd Round"…
+  m = round.match(/^(\d)(?:st|nd|rd|th) Round/i);
+  if (m) return { stage: `ROUND_${m[1]}`, matchday: null };
   const r = round.toLowerCase();
   if (r.includes("qualifying") || r.startsWith("preliminary")) return { stage: "QUALIFICATION", matchday: null };
   if (r.includes("knockout round play-offs") || r === "play-offs" || r.includes("play-off")) return { stage: "PLAYOFFS", matchday: null };
+  if (r.includes("round of 32") || r.includes("16th finals")) return { stage: "LAST_32", matchday: null };
   if (r.includes("round of 16") || r.includes("8th finals")) return { stage: "LAST_16", matchday: null };
   if (r.includes("quarter")) return { stage: "QUARTER_FINALS", matchday: null };
   if (r.includes("semi")) return { stage: "SEMI_FINALS", matchday: null };

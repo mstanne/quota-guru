@@ -23,6 +23,7 @@ import { archivedBasketPredictionFor, basketPredictionFor } from "./lib/basketPr
 import { highlightFor } from "./lib/highlights";
 import { loadAllTeamData, type FootballTeam, type NbaTeam } from "./lib/teams";
 import { loadAllResults, resultsRoutes } from "./lib/results";
+import { loadAllSeasons, seasonsRoutes } from "./lib/seasons";
 import { footballTeamMeta, nbaTeamMeta } from "./lib/teamMeta";
 import nbaTeamsData from "./data/teams/nba.json";
 
@@ -44,7 +45,7 @@ import { setArchivedHtml } from "./lib/archive";
 export { notFoundMeta, fullTitle } from "./routes";
 export { site } from "./data/site";
 /** Page chunks and the data loaded on demand (team pages) must all be ready before rendering synchronously. */
-const preloadAll = () => Promise.all([preloadAllPages(), loadAllTeamData(), loadAllResults(), loadAllCompetitionData(), loadAllPlayerData(), loadAllNbaPlayerData()]);
+const preloadAll = () => Promise.all([preloadAllPages(), loadAllTeamData(), loadAllResults(), loadAllSeasons(), loadAllCompetitionData(), loadAllPlayerData(), loadAllNbaPlayerData()]);
 export { preloadAll as preloadAllPages };
 /** Every URL to pre-render: static pages + one page per competition, standings table and match. */
 // venues for the events' structured data: football from the team pages' data, NBA arenas from the box scores
@@ -100,7 +101,7 @@ export const routes = [...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRou
     const p = archived ?? basketPredictionFor(g.id);
     return g.status === "final" && !archived && !basketPredictionFor(g.id)?.pre ? undefined : p;
   },
-), ...tennisRoutes(), ...guideRoutes(), ...offerRoutes(), ...operatorRoutes(), ...teamRoutes(), ...resultsRoutes()];
+), ...tennisRoutes(), ...guideRoutes(), ...offerRoutes(), ...operatorRoutes(), ...teamRoutes(), ...resultsRoutes(), ...seasonsRoutes()];
 
 /** `archivedHtml`: stored HTML of a finished match no longer in the data (see src/lib/archive.tsx). */
 export function render(url: string, basename: string, archivedHtml: string | null = null) {

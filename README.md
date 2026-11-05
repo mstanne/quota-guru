@@ -415,6 +415,26 @@ per i motori di ricerca. `scripts/derive-results.mjs` (a ogni build) aggiorna un
 `.cache/seo/results.json`, conservato dal workflow insieme all'archivio delle pagine, e scrive `src/data/results/`.
 Link dalle pagine dei campionati, dalle schede partita, dalla pagina Basket e dalle pagine squadra.
 
+## Stagioni passate e albo d'oro
+
+`/calcio/stagioni` (tutte le competizioni), `/calcio/<competizione>/stagioni` (albo d'oro: vincitore e seconda, o la
+finale per le coppe) e `/calcio/<competizione>/stagioni/<stagione>` (es. `/calcio/serie-a/stagioni/2023-24`:
+classifica finale e risultati giornata per giornata; per le coppe tutti i turni fino alla finale). Link da footer,
+pagina Calcio, pagina della competizione, classifica e risultati. Anche la Coppa Italia, che per ora ha solo queste
+pagine.
+
+- `scripts/derive-seasons.mjs` (a ogni build, dopo `derive-results.mjs`) legge l'archivio permanente
+  (`data/archivio/`) e scrive `src/data/seasons/` (un file per stagione, caricato solo dalla sua pagina). Solo le
+  stagioni concluse e già recuperate per intero (`data/archivio/recupero.json`); le altre compaiono da sole quando
+  `scripts/backfill-archive.mjs` le completa.
+- **Classifiche finali ufficiali**: `backfill-archive.mjs` scarica una volta la classifica finale di ogni stagione
+  passata dei campionati (`data/archivio/classifiche/`, 1 richiesta ciascuna), con penalizzazioni, spareggi e zone
+  (Champions League, retrocessione…). Finché manca, la pagina mostra la classifica calcolata dai risultati e lo dice.
+- I giri rapidi (`live-scores.yml`) non hanno l'archivio: usano la copia `data/stagioni/` salvata con i dati
+  dell'ultimo aggiornamento completo.
+- Fase a gironi e turni della Coppa Italia: `roundOf` (`fetch-football.mjs`) ora li riconosce; per le stagioni
+  archiviate prima, `derive-seasons.mjs` li ricava dal mese della partita.
+
 ## Pagine delle squadre
 
 `/calcio/squadre/<squadra>` (club dei campionati nazionali) e `/basket/nba/squadre/<squadra>`, con le pagine indice

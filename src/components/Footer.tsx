@@ -49,6 +49,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/calcio/stagioni" className="text-slate-400 hover:text-white transition-colors">
+                  Albo d'oro e stagioni passate
+                </Link>
+              </li>
+              <li>
                 <Link to={paths.squadreNba} className="text-slate-400 hover:text-white transition-colors">
                   Squadre NBA
                 </Link>

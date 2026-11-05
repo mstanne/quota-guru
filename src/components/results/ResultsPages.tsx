@@ -18,6 +18,7 @@ import {
   type ResultRow,
 } from "../../lib/results";
 import { usePageMeta } from "../../lib/pageMeta";
+import { hasSeasons, seasonsPath } from "../../lib/seasons";
 
 /** Title and description of a results URL (same as in the pre-rendered page). */
 const metaFor = (path: string) => resultsRoutes().find((r) => r.path === path) ?? null;
@@ -78,9 +79,16 @@ export function FootballResultsPage() {
         ]}
         meta={<span>{total} partite</span>}
       >
-        <Link to={standingsPath(competition)} className="text-sm text-action-text hover:text-action-text-hover">
-          Classifica {competition.name}
-        </Link>
+        <div className="flex flex-wrap gap-x-5 gap-y-1">
+          <Link to={standingsPath(competition)} className="text-sm text-action-text hover:text-action-text-hover">
+            Classifica {competition.name}
+          </Link>
+          {hasSeasons(competition.slug) && (
+            <Link to={seasonsPath(competition.slug)} className="text-sm text-action-text hover:text-action-text-hover">
+              Stagioni passate
+            </Link>
+          )}
+        </div>
       </PageHeader>
       <div className="container mx-auto px-4 py-8 space-y-8">
         {data.map((s) => (
