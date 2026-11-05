@@ -5,7 +5,7 @@
 //              next LIMIT of each of them (the list has a competition filter), merged and sorted by date
 //   competitions → the HOME competitions, in filter order (European cups included: on Thursdays the Europa and
 //                  Conference League matches are the next ones)
-//   featured → the hero cards: next FEATURED matches with a prediction, Serie A first
+//   featured → the hero cards: FEATURED matches with a prediction, today's first, Serie A first within a day
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -17,7 +17,7 @@ const src = path.join(root, "src", "data", "football.json");
 const predFile = path.join(root, "src", "data", "football-predictions.json");
 const out = path.join(root, "src", "data", "football-home.json");
 
-const PRIORITY = ["SA", "CL", "PL", "PD"]; // hero cards: one per competition, in this order
+const PRIORITY = ["SA", "CL", "EL", "PL", "PD", "ECL"]; // hero cards: order of the competitions within a day
 const HOME = ["SA", "CL", "EL", "ECL", "PL", "PD", "BL1", "FL1"]; // "Prossime partite" list and its filter
 const LIMIT = 8;
 const FEATURED = 3;
@@ -53,19 +53,44 @@ const competitions = HOME.map((code) => data.competitions.find((c) => c.code ===
   .filter((c) => c && matches.some((x) => x.competition.code === c.code))
   .map((c) => ({ code: c.code, slug: c.slug, name: c.name }));
 
-// Hero: one card per competition in PRIORITY order (Serie A first), the earliest predicted match of each,
-// only scheduled matches (not live) within FEATURED_DAYS of the data snapshot.
+// Hero: FEATURED cards, today's matches first, then the following days in order. Within a day the competitions
+// in PRIORITY order come first (Italian clubs first within a cup), one card per competition before a second one
+// of the same competition. Only matches with a prediction that have not started yet (not live), within
+// FEATURED_DAYS of the data snapshot. Every build re-picks them, so a match drops out as soon as it kicks off.
 const horizon = Date.parse(data.generatedAt) + FEATURED_DAYS * 86400000;
+const romeDay = (ms) => new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Rome" }).format(new Date(ms));
 const candidates = all.filter(
-  (x) => x.prediction && ["SCHEDULED", "TIMED"].includes(x.match.status) && Date.parse(x.match.utcDate) <= horizon,
+  (x) =>
+    x.prediction &&
+    ["SCHEDULED", "TIMED"].includes(x.match.status) &&
+    Date.parse(x.match.utcDate) > buildMs &&
+    Date.parse(x.match.utcDate) <= horizon,
 );
+const rank = (code) => (PRIORITY.includes(code) ? PRIORITY.indexOf(code) : PRIORITY.length + HOME.indexOf(code));
+// in the European cups, matches of Italian clubs (teams of the Serie A / Serie B data) come first
+const italian = new Set(
+  data.competitions
+    .filter((c) => c.code === "SA" || c.code === "SB")
+    .flatMap((c) => c.matches.flatMap((m) => [m.homeTeam.id, m.awayTeam.id])),
+);
+const local = (x) => (italian.has(x.match.homeTeam.id) || italian.has(x.match.awayTeam.id) ? 0 : 1);
+const days = [...new Set(candidates.map((x) => romeDay(Date.parse(x.match.utcDate))))].sort();
 const featured = [];
-for (const code of PRIORITY) {
-  const hit = candidates.find((x) => x.competition.code === code && !featured.includes(x));
-  if (hit) featured.push(hit);
+for (const day of days) {
+  const pool = candidates
+    .filter((x) => romeDay(Date.parse(x.match.utcDate)) === day)
+    .sort(
+      (a, b) =>
+        rank(a.competition.code) - rank(b.competition.code) ||
+        local(a) - local(b) ||
+        a.match.utcDate.localeCompare(b.match.utcDate),
+    );
+  // first pass: one per competition; second pass: the rest of the day
+  for (const x of pool)
+    if (featured.length < FEATURED && !featured.some((f) => f.competition.code === x.competition.code)) featured.push(x);
+  for (const x of pool) if (featured.length < FEATURED && !featured.includes(x)) featured.push(x);
   if (featured.length === FEATURED) break;
 }
-for (const x of candidates) if (featured.length < FEATURED && !featured.includes(x)) featured.push(x);
 featured.sort((a, b) => a.match.utcDate.localeCompare(b.match.utcDate));
 
 const next = JSON.stringify({ generatedAt: data.generatedAt, matches, competitions, featured, model }) + "\n";
