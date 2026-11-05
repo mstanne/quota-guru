@@ -1,12 +1,10 @@
 import { Link } from "../lib/links";
-import { ArrowRight, TrendingUp } from "lucide-react";
-import { Badge } from "./ui/badge";
-import { Card } from "./ui/card";
+import { ChevronRight, TrendingUp } from "lucide-react";
 import home from "../data/football-home.json";
-import { formatDay, formatTime, matchHref, type CompetitionRef, type Match } from "../lib/footballCore";
-import { pickLabel, type Prediction } from "../lib/predictionsCore";
+import { formatTime, isUpcoming, matchHref, type CompetitionRef, type Match } from "../lib/footballCore";
+import { CONFIDENCE_LABEL, marketCells, pickLabel, type Prediction } from "../lib/predictionsCore";
 import { TeamBadge } from "./calcio/MatchRow";
-import { ConfidenceBadge, ProbabilityBar } from "./predictions/PredictionUi";
+import { PickCells, SlipHint, footballSlip } from "./predictions/SlipPicks";
 import { paths } from "../routes";
 
 // Featured matches with the model's prediction, pre-computed by scripts/derive-football-home.mjs
@@ -21,9 +19,9 @@ const data = home as unknown as { featured?: FeaturedMatch[] };
 
 export function HeroSection({ matches = data.featured ?? [] }: { matches?: FeaturedMatch[] }) {
   return (
-    <div className="bg-slate-900 py-12">
+    <div className="bg-slate-900 py-8 sm:py-10">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <h1 className="text-white text-3xl sm:text-4xl mb-3">
             <TrendingUp className="inline-block w-7 h-7 text-slate-300 mr-2 align-[-0.1em]" aria-hidden="true" />
             Pronostici calcio basati sui dati
@@ -33,54 +31,18 @@ export function HeroSection({ matches = data.featured ?? [] }: { matches?: Featu
           </p>
         </div>
         {matches.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {matches.map(({ competition, match, prediction }) => {
-              const home = match.homeTeam.shortName;
-              const away = match.awayTeam.shortName;
-              return (
-                <Card
-                  key={match.id}
-                  className="bg-slate-800 border-slate-700 hover:border-slate-500 transition-colors overflow-hidden"
-                >
-                  <div className="p-5 flex flex-col h-full">
-                    <div className="flex items-center justify-between gap-2 mb-4">
-                      <Badge variant="secondary" className="bg-slate-700 text-slate-300">
-                        {competition.name}
-                      </Badge>
-                      <span className="text-slate-400 text-sm first-letter:uppercase">
-                        {formatDay(match.utcDate)} · {formatTime(match.utcDate)}
-                      </span>
-                    </div>
-                    <div className="space-y-2 mb-5">
-                      {[match.homeTeam, match.awayTeam].map((t) => (
-                        <div key={t.id} className="flex items-center gap-2.5">
-                          <TeamBadge team={t} />
-                          <span className="text-white truncate">{t.shortName}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <ProbabilityBar prediction={prediction} home={home} away={away} showTeams={false} />
-                    <div className="mt-4 mb-5 flex flex-wrap items-center justify-between gap-2">
-                      <p className="text-sm text-slate-400">
-                        Più probabile: <strong className="text-predict">{pickLabel(prediction, home, away)}</strong>
-                      </p>
-                      <ConfidenceBadge confidence={prediction.confidence} />
-                    </div>
-                    <Link
-                      to={matchHref(competition, match)}
-                      className="mt-auto inline-flex items-center justify-center gap-2 rounded-md bg-action hover:bg-action-hover text-action-foreground px-4 py-2 text-sm font-medium"
-                      aria-label={`Pronostico completo ${home} – ${away}`}
-                    >
-                      Pronostico completo
-                      <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                    </Link>
-                  </div>
-                </Card>
-              );
-            })}
-          </div>
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {matches.map((f) => (
+                <FeaturedCard key={f.match.id} {...f} />
+              ))}
+            </div>
+            <div className="mt-3 text-center">
+              <SlipHint />
+            </div>
+          </>
         )}
-        <p className="mt-6 text-center text-slate-400 text-xs">
+        <p className="mt-3 text-center text-slate-400 text-xs">
           Stime statistiche, non consigli di gioco: nessun modello può prevedere con certezza il risultato di una
           partita.{" "}
           <Link to={`${paths.metodologia}#pronostici`} className="text-action-text hover:text-action-text-hover">
@@ -89,5 +51,76 @@ export function HeroSection({ matches = data.featured ?? [] }: { matches?: Featu
         </p>
       </div>
     </div>
+  );
+}
+
+/** "ven 6 nov" in Italian time. */
+const shortDay = (iso: string) =>
+  new Intl.DateTimeFormat("it-IT", {
+    timeZone: "Europe/Rome",
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+  }).format(new Date(iso));
+
+/**
+ * Compact featured match: teams on the left, the model's 1X2 probabilities on the right (buttons that add the outcome
+ * to the bet slip), most likely outcome underneath. The whole card links to the match page ("stretched" link; the
+ * probability buttons sit above it).
+ */
+function FeaturedCard({ competition, match, prediction }: FeaturedMatch) {
+  const home = match.homeTeam.shortName;
+  const away = match.awayTeam.shortName;
+  const dots = prediction.confidence === "alta" ? 3 : prediction.confidence === "media" ? 2 : 1;
+  const slip = isUpcoming(match) && !prediction.pre ? footballSlip(competition.name, match) : undefined;
+  return (
+    <article className="group relative rounded-xl border border-slate-700 bg-slate-800 hover:border-slate-500 transition-colors px-4 py-3">
+      <div className="flex items-center justify-between gap-2 text-xs">
+        <span className="text-slate-300 font-medium truncate">{competition.name}</span>
+        <span className="flex items-center gap-2 shrink-0 text-slate-400">
+          <span className="first-letter:uppercase">
+            {shortDay(match.utcDate)} · {formatTime(match.utcDate)}
+          </span>
+          <span
+            className="flex gap-0.5"
+            title={`${CONFIDENCE_LABEL[prediction.confidence]}: quanti dati recenti ha il modello sulle due squadre`}
+            role="img"
+            aria-label={CONFIDENCE_LABEL[prediction.confidence]}
+          >
+            {[1, 2, 3].map((i) => (
+              <span key={i} className={`h-1.5 w-1.5 rounded-full ${i <= dots ? "bg-predict" : "bg-slate-600"}`} />
+            ))}
+          </span>
+        </span>
+      </div>
+
+      <div className="mt-2 flex items-center gap-3">
+        <Link
+          to={matchHref(competition, match)}
+          aria-label={`Pronostico completo ${home} – ${away}`}
+          className="flex-1 min-w-0 space-y-1.5 after:absolute after:inset-0 after:rounded-xl after:content-[''] focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-action"
+        >
+          {[match.homeTeam, match.awayTeam].map((t) => (
+            <span key={t.id} className="flex items-center gap-2">
+              <TeamBadge team={t} />
+              <span className="text-white truncate">{t.shortName}</span>
+            </span>
+          ))}
+        </Link>
+        <div className="relative z-10 shrink-0">
+          <PickCells cells={marketCells(prediction, "1x2", home, away)} match={slip} name="1X2" width="w-12" raised />
+        </div>
+      </div>
+
+      <div className="mt-2 flex items-center justify-between gap-2 text-xs">
+        <span className="text-slate-400 truncate">
+          Più probabile: <strong className="text-predict font-medium">{pickLabel(prediction, home, away)}</strong>
+        </span>
+        <span className="shrink-0 inline-flex items-center text-action-text group-hover:text-action-text-hover">
+          Pronostico
+          <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
+        </span>
+      </div>
+    </article>
   );
 }
