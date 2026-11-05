@@ -77,7 +77,10 @@ export function PickCells({
   width = "w-11",
   className = "",
   cellClassName = "py-1",
+  raised = false,
 }: {
+  /** Cells on a slate-800 card (instead of the page background): darker neutral cells so they stay visible. */
+  raised?: boolean;
   cells: PickCell[];
   match?: SlipMatch;
   /** Market name for screen readers, e.g. "1X2". */
@@ -96,7 +99,7 @@ export function PickCells({
             key={c.key}
             aria-hidden="true"
             className={`${width} rounded-md px-1 ${cellClassName} text-center leading-tight ${
-              c.top ? "bg-predict/15 text-predict" : "bg-slate-800 text-slate-300"
+              c.top ? "bg-predict/15 text-predict" : `${raised ? "bg-slate-900" : "bg-slate-800"} text-slate-300`
             }`}
           >
             <span className="block text-[10px] text-slate-400 whitespace-nowrap">{c.label}</span>
@@ -130,7 +133,7 @@ export function PickCells({
                 ? "bg-selected text-selected-foreground border-selected"
                 : c.top
                   ? "bg-predict/15 text-predict border-transparent hover:border-predict/60"
-                  : "bg-slate-800 text-slate-300 border-transparent hover:border-slate-500"
+                  : `${raised ? "bg-slate-900" : "bg-slate-800"} text-slate-300 border-transparent hover:border-slate-500`
             }`}
           >
             <span className={`block text-[10px] whitespace-nowrap ${on ? "text-slate-600" : "text-slate-400"}`}>
