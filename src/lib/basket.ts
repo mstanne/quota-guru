@@ -24,9 +24,16 @@ export interface BasketGame {
   home: BasketTeam;
   away: BasketTeam;
   score: { home: number | null; away: number | null };
+  /** Quarter being played (5+ = overtime) and half-time break, for games under way. */
+  period?: number;
+  halftime?: boolean;
   /** Points per quarter (and overtime) – only for finished games. */
   periods: { home: number[]; away: number[] } | null;
 }
+/** "Q3", "Supplementare", "Intervallo" for a game under way, when the data has it. */
+export const gamePeriodLabel = (g: BasketGame) =>
+  g.status !== "live" || !g.period ? null : g.halftime ? "Intervallo" : g.period > 4 ? "Suppl." : `Q${g.period}`;
+
 export interface BasketStanding {
   rank: number;
   team: BasketTeam;

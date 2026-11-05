@@ -99,7 +99,7 @@ export function marketColumns(market: FootballMarket): { labels: string[] | null
     case "gg":
       return { labels: ["Goal", "No goal"], width: "w-14" };
     default:
-      return { labels: null, width: "w-[4.5rem]" };
+      return { labels: null, width: "w-[6.5rem]" };
   }
 }
 
@@ -133,9 +133,10 @@ export function MarketMini({
       name={name}
       width={width}
       hideLabels={plain}
-      // combos are stacked on phones so the team names keep their room
+      // combos: "1+Under 41%" on one line per cell, the two cells stacked on phones
+      inline={combo}
       className={combo ? "flex-col sm:flex-row" : ""}
-      cellClassName={combo ? "py-0.5 sm:py-1" : plain ? "py-1.5" : "py-1"}
+      cellClassName={combo ? "py-1" : plain ? "py-1.5" : "py-1"}
     />
   );
 }

@@ -132,6 +132,8 @@ async function main() {
       away,
       score: st === "scheduled" || st === "postponed" ? { home: null, away: null } : { home: g.scores?.home?.points ?? null, away: g.scores?.visitors?.points ?? null },
       periods: st === "final" ? { home: lines("home"), away: lines("visitors") } : null,
+      // quarter being played (1–4, 5+ = overtime) and half-time break, for games under way
+      ...(st === "live" && g.periods?.current ? { period: g.periods.current, ...(g.status?.halftime ? { halftime: true } : {}) } : {}),
     };
   };
   const regular = all.filter((g) => !pre(g));

@@ -258,6 +258,13 @@ html {
   }
 }
 
+/* wide screens: the open bet slip (24rem, sm:max-w-sm) sits beside the page instead of covering it */
+@media (min-width: 1280px) {
+  html.slip-docked body {
+    padding-right: 24rem;
+  }
+}
+
 /* sideways lists (competition chips): scrollable without a visible scrollbar */
 .scrollbar-none {
   scrollbar-width: none;

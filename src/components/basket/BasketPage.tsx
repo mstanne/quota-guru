@@ -1,7 +1,9 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Link } from "../../lib/links";
 import { CalendarDays, ListOrdered, Trophy } from "lucide-react";
-import { PageHeader } from "../layout/PageHeader";
+import { HeaderLinks, headerLinkClass, PageHeader } from "../layout/PageHeader";
+import { DayLabel, useRomeToday } from "../predictions/DayLabel";
+import { emptyActionClass, EmptyList } from "../predictions/ListTools";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";
 import { BasketGameRow } from "./BasketGameRow";
 import { BASKET_MARKETS, NBA_COLUMN_WIDTH, type BasketMarket } from "./BasketPrediction";
@@ -33,6 +35,7 @@ import { nbaResultsPath } from "../../lib/results";
 const MARKET_IDS = BASKET_MARKETS.map((m) => m.id);
 
 type Filter = "upcoming" | "today" | "tomorrow" | "week" | "results";
+const FILTER_IDS: Filter[] = ["upcoming", "today", "tomorrow", "week", "results"];
 const FILTERS: { id: Filter; label: string }[] = [
   { id: "upcoming", label: "Prossime" },
   { id: "today", label: "Oggi" },
@@ -55,8 +58,9 @@ function matches(g: BasketGame, f: Filter) {
 
 /** /basket and /pronostici/nba – NBA calendar and results (real data, API-NBA). */
 export function BasketPage({ league }: { league?: "nba" }) {
-  const [filter, setFilter] = useState<Filter>("upcoming");
+  const [filter, setFilter] = useQueryChoice<Filter>("periodo", FILTER_IDS, "upcoming");
   const [market, setMarket] = useQueryChoice<BasketMarket>("mercato", MARKET_IDS, "win");
+  const today = useRomeToday();
   usePageMeta(league ? nbaMeta : null);
   const rows = useMemo(() => {
     const list = nbaGames.filter((g) => matches(g, filter));
@@ -70,14 +74,17 @@ export function BasketPage({ league }: { league?: "nba" }) {
     filter !== "results" &&
     market === "win" &&
     rows.some((g) => isGameUpcoming(g) && !isGameLive(g) && !!basketPredictionFor(g.id));
-  const groups: { day: string; label: string; items: BasketGame[] }[] = [];
+  const groups: { day: string; iso: string; items: BasketGame[] }[] = [];
   for (const g of rows) {
     if (live.includes(g)) continue;
     const day = romeDay(g.utcDate);
     let grp = groups.find((x) => x.day === day);
-    if (!grp) groups.push((grp = { day, label: formatDay(g.utcDate), items: [] }));
+    if (!grp) groups.push((grp = { day, iso: g.utcDate, items: [] }));
     grp.items.push(g);
   }
+  // empty period (today, tomorrow…): the next day with games, to jump to
+  const next =
+    filter !== "upcoming" && filter !== "results" && !rows.length ? nbaGames.find(isGameUpcoming) : undefined;
 
   const chip = (active: boolean) =>
     `shrink-0 inline-flex items-center whitespace-nowrap px-3 py-1.5 rounded-md text-sm border transition-colors ${
@@ -92,105 +99,124 @@ export function BasketPage({ league }: { league?: "nba" }) {
         icon={Trophy}
         title={league ? `Pronostici NBA ${nbaSeason}: calendario e risultati` : "Basket: calendario e risultati"}
         breadcrumb={league ? [{ label: "Pronostici", to: "/pronostici" }, { label: "NBA" }] : [{ label: "Basket" }]}
-        meta={<DataUpdatedNote generatedAt={basketUpdatedAt} />}
+        meta={<DataUpdatedNote generatedAt={basketUpdatedAt} cadence="ogni 3 ore circa" />}
       >
         {lbaStandings.length > 0 && (
-          <Link
-            to={basketPaths.lbaStandings}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
-          >
-            <ListOrdered className="w-4 h-4 text-slate-300" aria-hidden="true" />
-            Classifica Serie A basket
-          </Link>
+          <HeaderLinks>
+            <Link to={basketPaths.lbaStandings} className={headerLinkClass}>
+              <ListOrdered className="w-4 h-4 text-slate-300" aria-hidden="true" />
+              Classifica Serie A basket
+            </Link>
+          </HeaderLinks>
         )}
       </PageHeader>
 
       <div className="container mx-auto px-4 py-6">
-        <TrackRecordBox record={nbaTrackRecord()} sport="nba" className="mb-4" />
+        <div className="max-w-5xl">
+          <TrackRecordBox record={nbaTrackRecord()} sport="nba" className="mb-4" />
 
-        {/* filters: one sticky bar under the site header, as on the football page */}
-        <div
-          className="sticky z-40 -mx-4 px-4 pt-2.5 pb-3 mb-5 bg-slate-950/95 backdrop-blur border-b border-slate-800"
-          style={{ top: "var(--header-h, 0px)" }}
-        >
-          <nav aria-label="Campionati">
-            <div className="flex gap-2 overflow-x-auto scrollbar-none">
-              <Link to={basketPaths.nba} className={chip(true)} aria-current={league ? "page" : undefined}>
-                NBA
-              </Link>
-              <Link to={nbaResultsPath()} className={chip(false)}>
-                NBA · risultati
-              </Link>
-              {lbaStandings.length > 0 && (
-                <Link to={basketPaths.lbaStandings} className={chip(false)}>
-                  Serie A · classifica
+          {/* filters: one sticky bar under the site header, as on the football page */}
+          <div
+            className="sticky z-40 -mx-4 px-4 pt-2.5 pb-3 mb-5 bg-slate-950/95 backdrop-blur border-b border-slate-800"
+            style={{ top: "var(--header-h, 0px)" }}
+          >
+            <nav aria-label="Campionati">
+              <div className="flex gap-2 overflow-x-auto scrollbar-none">
+                <Link to={basketPaths.nba} className={chip(true)} aria-current={league ? "page" : undefined}>
+                  NBA
                 </Link>
+                <Link to={nbaResultsPath()} className={chip(false)}>
+                  NBA · risultati
+                </Link>
+                {lbaStandings.length > 0 && (
+                  <Link to={basketPaths.lbaStandings} className={chip(false)}>
+                    Serie A · classifica
+                  </Link>
+                )}
+              </div>
+            </nav>
+            <div className="mt-2.5 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-2">
+              <ChoiceControl<Filter>
+                label="Periodo"
+                icon={CalendarDays}
+                options={FILTERS}
+                value={filter}
+                onChange={setFilter}
+                trackAttrs={(id) => ({
+                  "data-track": "filter_use",
+                  "data-track-filter": "nba-data",
+                  "data-track-value": id,
+                })}
+              />
+              {filter !== "results" && (
+                <MarketFilter options={BASKET_MARKETS} value={market} onChange={setMarket} sport="nba" className="" />
               )}
             </div>
-          </nav>
-          <div className="mt-2.5 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-2">
-            <ChoiceControl<Filter>
-              label="Periodo"
-              icon={CalendarDays}
-              options={FILTERS}
-              value={filter}
-              onChange={setFilter}
-              trackAttrs={(id) => ({
-                "data-track": "filter_use",
-                "data-track-filter": "nba-data",
-                "data-track-value": id,
-              })}
-            />
-            {filter !== "results" && (
-              <MarketFilter options={BASKET_MARKETS} value={market} onChange={setMarket} sport="nba" className="" />
+            {columns && (
+              <ListColumns labels={["1", "2"]} width={NBA_COLUMN_WIDTH} meta={false} className="mt-2.5 -mb-1" />
             )}
           </div>
-          {columns && <ListColumns labels={["1", "2"]} width={NBA_COLUMN_WIDTH} className="mt-2.5 -mb-1" />}
-        </div>
-        <SlipHint />
+          <SlipHint />
 
-        {live.length === 0 && groups.length === 0 ? (
-          <div className="rounded-xl border border-slate-800 bg-slate-900 p-10 text-center">
-            <CalendarDays className="w-8 h-8 text-slate-400 mx-auto mb-3" aria-hidden="true" />
-            <p className="text-white mb-1">Nessuna partita per questo filtro</p>
-            <p className="text-slate-400 text-sm">Prova un altro periodo.</p>
-          </div>
-        ) : (
-          <div className="space-y-6">
-            {live.length > 0 && (
-              <section aria-labelledby="in-corso">
-                <h2 id="in-corso" className="flex items-center gap-2 px-3 sm:px-4 mb-1.5 text-red-300 text-sm uppercase tracking-wide">
-                  <span className="h-2 w-2 rounded-full bg-red-500 motion-safe:animate-pulse" aria-hidden="true" />
-                  In corso
-                  <span className="normal-case tracking-normal text-slate-400 text-xs">
-                    · punteggi aggiornati circa ogni 15 minuti
-                  </span>
-                </h2>
-                <div className="rounded-xl border border-red-500/30 bg-slate-900 overflow-hidden">
-                  {live.map((game) => (
-                    <BasketGameRow key={game.id} game={game} market={market} />
-                  ))}
-                </div>
-              </section>
-            )}
-            {groups.slice(0, 10).map((g) => (
-              <section key={g.day} aria-labelledby={`day-${g.day}`}>
-                <h2
-                  id={`day-${g.day}`}
-                  className="px-3 sm:px-4 mb-1.5 text-slate-300 text-sm uppercase tracking-wide first-letter:uppercase"
-                >
-                  {g.label}
-                </h2>
-                <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
-                  {g.items.map((game) => (
-                    <BasketGameRow key={game.id} game={game} market={market} columns={columns} />
-                  ))}
-                </div>
-              </section>
-            ))}
-          </div>
-        )}
-        <p className="text-slate-400 text-xs mt-8">Orari in ora italiana. Dati NBA: API-NBA (API-Sports). Classifica Serie A: balldontlie.io.</p>
+          {live.length === 0 && groups.length === 0 ? (
+            <EmptyList
+              title="Nessuna partita per questo filtro"
+              text={next ? undefined : "Prova un altro periodo."}
+              action={
+                next && (
+                  <button type="button" onClick={() => setFilter("upcoming")} className={emptyActionClass}>
+                    <CalendarDays className="w-4 h-4" aria-hidden="true" />
+                    Vedi le prossime: {formatDay(next.utcDate)}
+                  </button>
+                )
+              }
+            />
+          ) : (
+            <div className="space-y-6">
+              {live.length > 0 && (
+                <section aria-labelledby="in-corso">
+                  <h2
+                    id="in-corso"
+                    className="flex items-center gap-2 px-3 sm:px-4 mb-1.5 text-red-300 text-sm uppercase tracking-wide"
+                  >
+                    <span className="h-2 w-2 rounded-full bg-red-500 motion-safe:animate-pulse" aria-hidden="true" />
+                    In corso
+                    <span className="normal-case tracking-normal text-slate-400 text-xs">
+                      · punteggi aggiornati circa ogni 3 ore
+                    </span>
+                  </h2>
+                  <div className="rounded-xl border border-red-500/30 bg-slate-900 overflow-hidden">
+                    {live.map((game) => (
+                      <BasketGameRow key={game.id} game={game} market={market} meta={false} />
+                    ))}
+                  </div>
+                </section>
+              )}
+              {groups.slice(0, 10).map((g) => (
+                <section key={g.day} aria-labelledby={`day-${g.day}`}>
+                  <h2 id={`day-${g.day}`} className="px-3 sm:px-4 mb-1.5 text-slate-300 text-sm uppercase tracking-wide">
+                    <DayLabel iso={g.iso} today={today} />
+                  </h2>
+                  <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
+                    {g.items.map((game) => (
+                      <BasketGameRow
+                        key={game.id}
+                        game={game}
+                        market={market}
+                        columns={columns}
+                        meta={false}
+                        outcome={filter === "results"}
+                      />
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          )}
+          <p className="text-slate-400 text-xs mt-8">
+            Orari in ora italiana. Dati NBA: API-NBA (API-Sports). Classifica Serie A: balldontlie.io.
+          </p>
+        </div>
       </div>
     </div>
   );

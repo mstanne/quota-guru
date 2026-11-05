@@ -128,6 +128,10 @@ export function compactFixture(f, teamOf, idOf) {
         : {}),
     },
     referee: f.fixture?.referee ? String(f.fixture.referee).split(",")[0].trim() : null,
+    // minute of play at the time of the update (matches under way only), e.g. 67 or 45 + 2
+    ...(status === "IN_PLAY" && f.fixture?.status?.elapsed != null
+      ? { elapsed: f.fixture.status.elapsed, ...(f.fixture.status.extra ? { elapsedExtra: f.fixture.status.extra } : {}) }
+      : {}),
   };
 }
 
