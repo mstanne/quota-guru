@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-05T22:08:31.799Z",
+ "generatedAt": "2026-11-05T22:58:02.796Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558537": {
@@ -4046,57 +4046,6 @@
     }
    ]
   },
-  "fb:555077": {
-   "fingerprint": "1t3jxci",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Palmeiras e Clube do Remo si affrontano giovedì 5 novembre alle 23:30 nell'ambito della 34ª giornata di Brasileirão. In classifica il Palmeiras è al 2° posto con 70 punti, mentre il Clube do Remo è al 19° con 29."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Brasileirão il Palmeiras ha ottenuto 4 vittorie e 1 pareggio, con sequenza V-V-V-V-N, segnando 9 gol e subendone 1. Non perde da 5 partite. In casa ha vinto tutte le 3 gare disputate.",
-      "Nelle ultime 5 partite di Brasileirão il Clube do Remo ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta, con sequenza N-N-N-P-V, segnando 4 gol e subendone 4. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza ancora vittorie."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Palmeiras 1,7, Clube do Remo 1,1 a partita.",
-      "Gol subiti finora: Palmeiras 22, Clube do Remo 51.",
-      "Il Palmeiras ha la miglior difesa del torneo.",
-      "Il Palmeiras non ha subito gol in 4 delle ultime 5 partite."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 1 confronti diretti il bilancio è di 0 vittorie per il Palmeiras, 0 vittorie per il Clube do Remo e 1 pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, disputato a maggio 2026 in Serie A, è terminato Clube do Remo 1-1 Palmeiras."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Palmeiras – Clube do Remo?",
-     "a": "Giovedì 5 novembre alle 23:30."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Brasileirão](/calcio/brasileirao) e la [classifica aggiornata](/calcio/brasileirao/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:555074": {
    "fingerprint": "28chud",
    "sections": [
@@ -4531,6 +4480,92 @@
     {
      "q": "Quando si gioca Corinthians – Botafogo?",
      "a": "Giovedì 19 novembre alle 01:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001492458": {
+   "fingerprint": "gs3k3b",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Vasco da Gama e Internacional si affrontano giovedì 19 novembre alle 23:30 per la 35ª giornata di Brasileirão. In classifica il Vasco da Gama è al 13° posto con 41 punti, l'Internacional al 16° con 38."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Brasileirão il Vasco da Gama ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-V-P-V), con 7 gol fatti e 8 subiti. In casa il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+      "Nelle ultime 5 partite di Brasileirão l'Internacional ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-V-P-V), con 6 gol fatti e 5 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, ancora senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Vasco da Gama 1,3, Internacional 1,1 a partita.",
+      "Gol subiti finora: Vasco da Gama 50, Internacional 42.",
+      "In 3 delle ultime 5 partite del Vasco da Gama si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Vasco da Gama – Internacional?",
+     "a": "Giovedì 19 novembre alle 23:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Brasileirão](/calcio/brasileirao) e la [classifica aggiornata](/calcio/brasileirao/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001492459": {
+   "fingerprint": "pdspqa",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 19 novembre alle 23:30 il Vitória ospita il Bragantino per la 35ª giornata di Brasileirão. In classifica il Vitória è al 15° posto con 38 punti, il Bragantino all'8° con 47."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Brasileirão il Vitória ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza V-P-N-N-P), con 7 gol fatti e 6 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Brasileirão il Bragantino ha raccolto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-N-P-V-V), con 10 gol fatti e 6 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, ancora senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Vitória 1,1, Bragantino 1,3 a partita.",
+      "Gol subiti finora: Vitória 48, Bragantino 39.",
+      "In 3 delle ultime 5 partite del Bragantino si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Vitória – Bragantino?",
+     "a": "Giovedì 19 novembre alle 23:30, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
