@@ -56,9 +56,10 @@ export function ChoiceControl<T extends string>({
 
       {/* from sm: segmented control */}
       <div className="hidden sm:flex items-center gap-2">
-        <span className="inline-flex items-center gap-1.5 text-slate-400 text-sm">
+        {/* the icon alone (the segments say what they are): the filter bar stays on one row */}
+        <span className="inline-flex items-center text-slate-400 text-sm" title={label}>
           {Icon && <Icon className="w-4 h-4" aria-hidden="true" />}
-          {label}
+          <span className={Icon ? "sr-only" : ""}>{label}</span>
         </span>
         <div role="group" aria-label={label} className="flex gap-1 p-1 rounded-lg bg-slate-900 border border-slate-800">
           {options.map((o) => (

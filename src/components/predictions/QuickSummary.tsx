@@ -1,9 +1,18 @@
 // "In breve": the model's numbers at the top of a match page, readable in a few seconds on a phone without scrolling.
 // Same figures as the full panel further down (#pronostico); statistical estimates, never presented as betting tips.
 import { Check, X as XIcon } from "lucide-react";
-import { pct, pickHit, pickLabel, pickProbability, topCombo, type Prediction } from "../../lib/predictionsCore";
+import {
+  marketCells,
+  pct,
+  pickHit,
+  pickLabel,
+  pickProbability,
+  topCombo,
+  type Prediction,
+} from "../../lib/predictionsCore";
 import { fmtPts, type BasketPrediction } from "../../lib/basketPredict";
 import { ConfidenceBadge } from "./PredictionUi";
+import { PickCells, type SlipMatch } from "./SlipPicks";
 
 function Item({ label, value, sub, strong = false }: { label: string; value: string; sub?: string; strong?: boolean }) {
   return (
@@ -24,11 +33,14 @@ function Box({
   badge,
   children,
   result,
+  picks,
 }: {
   title: string;
   badge: React.ReactNode;
   children: React.ReactNode;
   result?: boolean | null;
+  /** Slip buttons under the figures (upcoming matches). */
+  picks?: React.ReactNode;
 }) {
   return (
     <section
@@ -56,6 +68,7 @@ function Box({
         </div>
       </div>
       <dl className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-3">{children}</dl>
+      {picks}
       <p className="mt-3 text-xs text-slate-400">
         Probabilità di un modello statistico, non quote né consigli di gioco.{" "}
         <a href="#pronostico" className="text-action-text hover:text-action-text-hover">
@@ -72,12 +85,15 @@ export function FootballQuickSummary({
   home,
   away,
   result,
+  slip,
 }: {
   prediction: Prediction;
   home: string;
   away: string;
   /** Final score: the box then shows the estimate published before kick-off and whether it was right. */
   result?: { home: number; away: number } | null;
+  /** Upcoming matches: 1X2 buttons that add the outcome to the slip, right at the top of the page. */
+  slip?: SlipMatch;
 }) {
   const over = p.over["2.5"];
   const combo = topCombo(p);
@@ -86,6 +102,17 @@ export function FootballQuickSummary({
       title={result ? "Il pronostico prima della partita" : "Il pronostico in breve"}
       badge={<ConfidenceBadge confidence={p.confidence} />}
       result={result ? pickHit(p, result.home, result.away) : null}
+      picks={
+        slip && !result ? (
+          <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2">
+            <span className="text-slate-400 text-xs">Metti in schedina</span>
+            <PickCells cells={marketCells(p, "1x2", home, away)} match={slip} name="1X2" width="w-14" />
+            <a href="#schedina" className="text-xs text-action-text hover:text-action-text-hover">
+              Altri esiti
+            </a>
+          </div>
+        ) : undefined
+      }
     >
       <Item label="Esito più probabile" value={pickLabel(p, home, away)} sub={pct(pickProbability(p))} strong />
       <Item
@@ -116,11 +143,14 @@ export function BasketQuickSummary({
   home,
   away,
   result,
+  picks,
 }: {
   prediction: BasketPrediction;
   home: string;
   away: string;
   result?: { home: number; away: number } | null;
+  /** Upcoming games: the winner buttons that add the outcome to the slip (built by the page, BasketMarketMini). */
+  picks?: React.ReactNode;
 }) {
   const fav = p.fav === 0 ? home : away;
   const even = [...p.totals].sort((a, b) => Math.abs(a[1] - 0.5) - Math.abs(b[1] - 0.5))[0];
@@ -130,6 +160,17 @@ export function BasketQuickSummary({
       title={result ? "Il pronostico prima della partita" : "Il pronostico in breve"}
       badge={<ConfidenceBadge confidence={p.confidence} />}
       result={hit}
+      picks={
+        picks && !result ? (
+          <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2">
+            <span className="text-slate-400 text-xs">Metti in schedina</span>
+            {picks}
+            <a href="#schedina" className="text-xs text-action-text hover:text-action-text-hover">
+              Altri esiti
+            </a>
+          </div>
+        ) : undefined
+      }
     >
       <Item label="Favorita" value={fav} sub={pct(p.p[p.fav])} strong />
       <Item label="Punti attesi" value={`${fmtPts(p.pts[0])} – ${fmtPts(p.pts[1])}`} />

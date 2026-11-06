@@ -1,5 +1,18 @@
 import { useEffect, useRef, useState } from "react";
-import { BookOpen, ChartColumn, CircleDot, Dribbble, Gift, Goal, Menu, Shield } from "lucide-react";
+import {
+  BookOpen,
+  CalendarDays,
+  ChartColumn,
+  CircleDot,
+  Dribbble,
+  Gift,
+  Goal,
+  ListPlus,
+  Menu,
+  Phone,
+  Shield,
+} from "lucide-react";
+import { useBetSlip } from "../context/BetSlipContext";
 import { Link, NavLink } from "../lib/links";
 import { Button } from "./ui/button";
 import { Sheet, SheetHeader, SheetContent, SheetTitle } from "./ui/sheet";
@@ -27,6 +40,7 @@ const mobileLink = ({ isActive }: { isActive: boolean }) =>
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { selections, openBetSlip } = useBetSlip();
   const closeMenu = () => setIsMenuOpen(false);
   // height of the sticky header as a CSS variable (--header-h): toolbars that stick under it use it as `top`
   const ref = useRef<HTMLElement>(null);
@@ -90,6 +104,54 @@ export function Header() {
               </NavLink>
             ))}
           </nav>
+
+          {/* shortcuts: today's and tomorrow's predictions, the slip, the helpline */}
+          <div className="mt-6 pt-6 border-t border-slate-800 px-4 space-y-4">
+            <div>
+              <p className="text-slate-400 text-xs uppercase tracking-wide mb-2">Scorciatoie</p>
+              <div className="grid grid-cols-2 gap-2">
+                <Link
+                  to="/pronostici/oggi"
+                  onClick={closeMenu}
+                  className="inline-flex items-center gap-2 px-3 py-2.5 rounded-md bg-slate-800 border border-slate-700 text-white text-sm hover:border-slate-500"
+                >
+                  <CalendarDays className="w-4 h-4 text-slate-300" aria-hidden="true" />
+                  Oggi
+                </Link>
+                <Link
+                  to="/pronostici/domani"
+                  onClick={closeMenu}
+                  className="inline-flex items-center gap-2 px-3 py-2.5 rounded-md bg-slate-800 border border-slate-700 text-white text-sm hover:border-slate-500"
+                >
+                  <CalendarDays className="w-4 h-4 text-slate-300" aria-hidden="true" />
+                  Domani
+                </Link>
+              </div>
+              {selections.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    closeMenu();
+                    openBetSlip();
+                  }}
+                  className="mt-2 w-full inline-flex items-center gap-2 px-3 py-2.5 rounded-md border border-action/50 text-white text-sm hover:border-action cursor-pointer"
+                >
+                  <ListPlus className="w-4 h-4 text-action" aria-hidden="true" />
+                  Apri la schedina ({selections.length} {selections.length === 1 ? "esito" : "esiti"})
+                </button>
+              )}
+            </div>
+            <a
+              href="tel:800558822"
+              className="flex items-start gap-2 text-slate-300 text-sm hover:text-white"
+            >
+              <Phone className="w-4 h-4 mt-0.5 text-slate-400 shrink-0" aria-hidden="true" />
+              <span>
+                Telefono Verde gioco d'azzardo <span className="text-white underline">800 558 822</span>
+                <span className="block text-slate-400 text-xs">Gratuito e anonimo · vietato ai minori di 18 anni</span>
+              </span>
+            </a>
+          </div>
         </SheetContent>
       </Sheet>
     </>

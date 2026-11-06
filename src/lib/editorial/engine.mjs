@@ -45,7 +45,8 @@ const fmtTime = (iso) =>
 const fmtMonthYear = (iso) =>
   new Intl.DateTimeFormat("it-IT", { timeZone: TZ, month: "long", year: "numeric" }).format(new Date(iso));
 
-const previewNote = (generatedAt) => `Testi aggiornati al ${fmtDate(generatedAt)}. Non costituisce un pronostico.`;
+const previewNote = (generatedAt) =>
+  `Testi aggiornati al ${fmtDate(generatedAt)}. Stime statistiche, non consigli di gioco.`;
 const recapNote = (generatedAt) => `Testi aggiornati al ${fmtDate(generatedAt)}.`;
 
 // ------------------------------------------------------------------------------------ Italian articles

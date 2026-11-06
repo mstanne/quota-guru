@@ -1,4 +1,4 @@
-import { Calculator, CircleAlert, FileText, Gift, Info, Phone } from "lucide-react";
+import { Calculator, ChevronDown, CircleAlert, FileText, Gift, Info, Phone } from "lucide-react";
 import { Link } from "../lib/links";
 import { BONUS_COST_GUIDE, CASINO_RTP, SPORT_MARGIN_PER_EVENT, componentMath } from "../lib/bonusCost";
 import { offerPath } from "../lib/offerPages";
@@ -57,35 +57,43 @@ export function BonusPage({
       />
       <div className="container mx-auto px-4 py-12 lg:grid lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8 lg:items-start">
         <div className="min-w-0">
+          {/* the explanation on request, so the offers start on the first screen of a phone; the responsible-gambling
+              line stays always visible */}
           <Card className="bg-blue-500/10 border-blue-500/20 mb-8">
-            <div className="p-6">
-              <div className="flex items-start gap-3">
-                <Info className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" aria-hidden="true" />
-                <div>
-                  <h2 className="text-blue-400 text-lg mb-2">Come leggere le condizioni</h2>
-                  <p className="text-slate-300 text-sm mb-3">
-                    Il totale che un operatore indica per un'offerta è spesso la somma di più bonus su prodotti diversi.
-                    Per ogni offerta mostriamo quanto vale ciascuna parte, dove si può usare, quante volte va giocata
-                    prima di poter prelevare e entro quanti giorni.
-                  </p>
-                  <p className="text-slate-300 text-sm mb-3">
-                    Per ogni parte calcoliamo anche quanto bisogna giocare in totale e quanto costano in media quelle
-                    giocate, con due ipotesi dichiarate: un margine del {Math.round(SPORT_MARGIN_PER_EVENT * 100)}% per
-                    evento sulle scommesse sportive e un ritorno teorico del {Math.round(CASINO_RTP * 100)}% per le
-                    slot. Il calcolo è spiegato in{" "}
-                    <Link to={BONUS_COST_GUIDE} className="text-white underline underline-offset-2">
-                      quanto costa davvero un bonus
-                    </Link>
-                    .
-                  </p>
-                  <p className="text-slate-400 text-sm">
-                    I dati sono ricavati dai termini pubblicati dagli operatori e riportano la data dell'ultima
-                    verifica. In caso di differenze valgono i termini sul sito dell'operatore. Un'offerta non è un
-                    motivo per giocare: gioca solo somme che puoi permetterti di perdere.
-                  </p>
-                </div>
+            <details className="group p-4 sm:p-5">
+              <summary className="flex items-center gap-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <Info className="w-5 h-5 text-blue-500 shrink-0" aria-hidden="true" />
+                <h2 className="flex-1 text-blue-400 text-base sm:text-lg">Come leggere le condizioni</h2>
+                <ChevronDown
+                  className="w-4 h-4 text-blue-400 transition-transform group-open:rotate-180"
+                  aria-hidden="true"
+                />
+              </summary>
+              <div className="mt-3 pl-8">
+                <p className="text-slate-300 text-sm mb-3">
+                  Il totale che un operatore indica per un'offerta è spesso la somma di più bonus su prodotti diversi.
+                  Per ogni offerta mostriamo quanto vale ciascuna parte, dove si può usare, quante volte va giocata
+                  prima di poter prelevare e entro quanti giorni.
+                </p>
+                <p className="text-slate-300 text-sm mb-3">
+                  Per ogni parte calcoliamo anche quanto bisogna giocare in totale e quanto costano in media quelle
+                  giocate, con due ipotesi dichiarate: un margine del {Math.round(SPORT_MARGIN_PER_EVENT * 100)}% per
+                  evento sulle scommesse sportive e un ritorno teorico del {Math.round(CASINO_RTP * 100)}% per le slot.
+                  Il calcolo è spiegato in{" "}
+                  <Link to={BONUS_COST_GUIDE} className="text-white underline underline-offset-2">
+                    quanto costa davvero un bonus
+                  </Link>
+                  .
+                </p>
+                <p className="text-slate-400 text-sm">
+                  I dati sono ricavati dai termini pubblicati dagli operatori e riportano la data dell'ultima verifica.
+                  In caso di differenze valgono i termini sul sito dell'operatore.
+                </p>
               </div>
-            </div>
+            </details>
+            <p className="px-4 sm:px-5 pb-4 -mt-1 pl-12 sm:pl-[3.25rem] text-slate-400 text-sm">
+              Un'offerta non è un motivo per giocare: gioca solo somme che puoi permetterti di perdere.
+            </p>
           </Card>
 
           {sections.length > 1 && (

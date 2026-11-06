@@ -234,15 +234,22 @@ export function FairOddsStrip({ items }: { items: { label: string; p: number }[]
           </div>
         ))}
       </dl>
-      <p className="mt-2 text-slate-400 text-xs leading-relaxed">
-        La quota equa è 1 ÷ la probabilità stimata: il prezzo dell'esito senza il margine dell'operatore. Non è una quota
-        offerta da un bookmaker. Una quota di mercato più alta della quota equa indica solo che il mercato stima
-        quell'esito meno probabile del modello, non che la giocata sia conveniente: il modello può sbagliare.{" "}
-        <Link to={FAIR_ODDS_GUIDE} className="text-action-text hover:text-action-text-hover">
-          Come si legge
-        </Link>
-        .
-      </p>
+      {/* the explanation on request: closed it takes one line instead of five on a phone */}
+      <details className="mt-2 group/qe">
+        <summary className="cursor-pointer list-none inline-flex items-center gap-1 text-slate-400 text-xs hover:text-white [&::-webkit-details-marker]:hidden">
+          <Info className="w-3.5 h-3.5" aria-hidden="true" />
+          Cos'è la quota equa?
+        </summary>
+        <p className="mt-2 text-slate-400 text-xs leading-relaxed">
+          La quota equa è 1 ÷ la probabilità stimata: il prezzo dell'esito senza il margine dell'operatore. Non è una quota
+          offerta da un bookmaker. Una quota di mercato più alta della quota equa indica solo che il mercato stima
+          quell'esito meno probabile del modello, non che la giocata sia conveniente: il modello può sbagliare.{" "}
+          <Link to={FAIR_ODDS_GUIDE} className="text-action-text hover:text-action-text-hover">
+            Come si legge
+          </Link>
+          .
+        </p>
+      </details>
     </div>
   );
 }

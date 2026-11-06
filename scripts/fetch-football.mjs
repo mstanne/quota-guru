@@ -87,6 +87,19 @@ export function roundOf(round = "") {
 }
 
 /** One API-Football fixture in the site's match format. `teamOf(apiTeam)` and `idOf(fixture, home, away)` give site ids. */
+// API-Football names of the competitions the precedents most often come from, as the site writes them
+const H2H_NAMES = {
+  "UEFA Champions League": "Champions League",
+  "UEFA Europa League": "Europa League",
+  "UEFA Europa Conference League": "Conference League",
+  "UEFA Conference League": "Conference League",
+  "UEFA Super Cup": "Supercoppa europea",
+  "Super Cup": "Supercoppa",
+  "Club Friendlies": "Amichevole",
+  "League Cup": "League Cup",
+};
+const h2hCompetition = (name) => H2H_NAMES[name] ?? name;
+
 export function compactFixture(f, teamOf, idOf) {
   const short = f.fixture?.status?.short;
   const status = STATUS_MAP[short] ?? "SCHEDULED";
@@ -357,11 +370,15 @@ async function main() {
         const homeApi = apiTeamId(map, m.homeTeam.id);
         const awayApi = apiTeamId(map, m.awayTeam.id);
         if (homeApi && awayApi) {
-          const list = await api.get(`/fixtures/headtohead?h2h=${homeApi}-${awayApi}&last=6`);
+          // a few more than shown: friendlies are dropped below
+          const list = await api.get(`/fixtures/headtohead?h2h=${homeApi}-${awayApi}&last=10`);
           store.h2h[pair] = { at: new Date(now).toISOString(), list };
         }
       }
-      const list = (store.h2h[pair]?.list ?? []).filter((f) => f.fixture?.id !== m.apiId && f.goals?.home != null);
+      // official matches only: friendlies ("Friendlies Clubs") say little and read oddly as precedents
+      const list = (store.h2h[pair]?.list ?? [])
+        .filter((f) => f.fixture?.id !== m.apiId && f.goals?.home != null && !/friendl/i.test(f.league?.name ?? ""))
+        .slice(0, 6);
       if (!store.h2h[pair]) continue;
       const teamOf = (t) => resolveTeam(t, c.slug);
       headToHead[m.id] = {
@@ -370,7 +387,7 @@ async function main() {
         matches: list.slice(0, 5).map((f) => ({
           id: MATCH_OFFSET + f.fixture.id,
           utcDate: new Date(f.fixture.date).toISOString().replace(".000Z", "Z"),
-          competition: f.league?.name ?? "",
+          competition: h2hCompetition(f.league?.name ?? ""),
           homeTeam: teamOf(f.teams.home),
           awayTeam: teamOf(f.teams.away),
           score: { fullTime: { home: f.goals.home, away: f.goals.away } },

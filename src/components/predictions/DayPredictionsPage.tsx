@@ -2,7 +2,8 @@
 import { CalendarDays, ChevronRight, Dribbble, Goal } from "lucide-react";
 import { Link } from "../../lib/links";
 import { PageHeader, MetaItems } from "../layout/PageHeader";
-import { MatchRow } from "../calcio/MatchRow";
+import { ListColumns, MatchListColumns, MatchRow } from "../calcio/MatchRow";
+import { NBA_COLUMN_WIDTH } from "../basket/BasketPrediction";
 import { BasketGameRow } from "../basket/BasketGameRow";
 import { MarketFilter } from "./MarketFilter";
 import { SlipHint } from "./SlipPicks";
@@ -79,7 +80,8 @@ export function DayPredictionsPage({ day }: { day: DayKey }) {
               <Goal className="w-6 h-6 text-slate-300" aria-hidden="true" />
               Calcio
             </h2>
-            <MarketFilter options={FOOTBALL_MARKETS} value={market} onChange={setMarket} />
+            <MarketFilter options={FOOTBALL_MARKETS} value={market} onChange={setMarket} className="mb-3" />
+            <MatchListColumns market={market} meta={false} className="mb-1" />
             <SlipHint />
             <div className="space-y-6">
               {groups.map(({ c, items }) => (
@@ -94,7 +96,15 @@ export function DayPredictionsPage({ day }: { day: DayKey }) {
                   </div>
                   <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
                     {items.map((m) => (
-                      <MatchRow key={m.id} competition={c} match={m} prediction={predictionFor(m.id)} market={market} />
+                      <MatchRow
+                        key={m.id}
+                        competition={c}
+                        match={m}
+                        prediction={predictionFor(m.id)}
+                        market={market}
+                        columns
+                        meta={false}
+                      />
                     ))}
                   </div>
                 </section>
@@ -114,9 +124,10 @@ export function DayPredictionsPage({ day }: { day: DayKey }) {
                 Calendario NBA
               </Link>
             </div>
+            <ListColumns labels={["1", "2"]} width={NBA_COLUMN_WIDTH} meta={false} className="mb-1" />
             <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
               {nba.map((g) => (
-                <BasketGameRow key={g.id} game={g} />
+                <BasketGameRow key={g.id} game={g} columns meta={false} />
               ))}
             </div>
           </section>
