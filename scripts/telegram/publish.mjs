@@ -1,6 +1,7 @@
 // Publishes the rubrics of the QuotaGuru Telegram channel (plan: scripts/telegram/README.md).
 //
-// Run by .github/workflows/telegram.yml every 20 minutes during the day: each run sends the rubrics whose slot (Rome
+// Run by .github/workflows/telegram.yml every 20 minutes during the day (started on time by the live worker, which also
+// starts it as soon as new official line-ups come out): each run sends the rubrics whose slot (Rome
 // time, scripts/telegram/rubriche.mjs) has come in the last WINDOW minutes and that the register does not list as sent
 // yet, so a late or repeated run never posts twice and summer/winter time needs no change to the schedule.
 //
@@ -17,7 +18,8 @@
 //   TELEGRAM_CHAT_ID         public channel, e.g. @quotaguru
 //   TELEGRAM_TEST_CHAT_ID    private test channel (numeric id, e.g. -1001234567890)
 //   GH_TOKEN, GITHUB_REPOSITORY   read the data branches and write the register (branch telegram-registro)
-//   TG_DATA_DIR, TG_ARCHIVE_DIR, TG_REGISTER_FILE   local copies instead of the branches (tests)
+//   LIVE_URL                 address of the live worker (workers/live): official line-ups, rubric "formazioni"
+//   TG_DATA_DIR, TG_ARCHIVE_DIR, TG_REGISTER_FILE, TG_LIVE_FILE   local copies instead of the branches (tests)
 import { RUBRICHE } from "./rubriche.mjs";
 import { complianceProblems, loadData, loadRegister, rome, romeInstant, sendTelegram } from "./lib.mjs";
 
@@ -45,7 +47,10 @@ if (only && !RUBRICHE.some((r) => r.id === only)) {
 
 const keyOf = (r) => `${mode}:${r.id}:${today}`;
 let register = null;
+// event rubrics (official line-ups) have no slot: every run checks them, when their data source is configured
+const eventReady = () => !!(process.env.LIVE_URL || process.env.TG_LIVE_FILE);
 const isDue = (r) => {
+  if (r.event) return (!only || only === r.id) && eventReady();
   if (only) return r.id === only && (flag("force") || dueByClock(r));
   if (flag("all")) return true;
   return dueByClock(r);
@@ -69,12 +74,15 @@ if (!dryRun && !chatId) {
 
 register = await loadRegister();
 register.data.sent ??= {};
-const data = await loadData(nowMs);
+// the register keeps 60 days: enough to stop any repeat, small enough to stay one short file
+for (const [k, v] of Object.entries(register.data.sent))
+  if (nowMs - Date.parse(v.at) > 60 * 86400000) delete register.data.sent[k];
+const data = await loadData(nowMs, { live: candidates.some((r) => r.event) });
 let failed = 0;
 
 for (const r of candidates) {
-  const key = keyOf(r);
-  if (!dryRun && !flag("force") && register.data.sent[key]) {
+  // a slot rubric goes out once a day (--force sends it again); an event post once ever, whatever the flags
+  if (!r.event && !dryRun && !flag("force") && register.data.sent[keyOf(r)]) {
     console.log(`· ${r.id}: già inviata oggi`);
     continue;
   }
@@ -86,31 +94,36 @@ for (const r of candidates) {
     failed++;
     continue;
   }
-  if (!built) {
-    console.log(`· ${r.id}: niente da pubblicare oggi (nessuna partita o dati non pronti), saltata`);
+  const posts = (Array.isArray(built) ? built : built ? [built] : [])
+    .map((b) => (typeof b === "string" ? { text: b } : b))
+    .map((b) => ({ ...b, key: r.event ? `${mode}:${r.id}:${b.key}` : keyOf(r) }))
+    .filter((b) => dryRun || !r.event || !register.data.sent[b.key]);
+  if (!posts.length) {
+    console.log(`· ${r.id}: niente da pubblicare ora (nessuna partita, dati non pronti o già inviata), saltata`);
     continue;
   }
-  const text = typeof built === "string" ? built : built.text;
-  const problems = complianceProblems(text);
-  if (text.length > 4096) problems.push(`testo troppo lungo (${text.length} caratteri, massimo 4096)`);
-  if (problems.length) {
-    console.error(`✗ ${r.id}: post bloccato dal filtro di conformità:\n  - ${problems.join("\n  - ")}\n${text}`);
-    failed++;
-    continue;
-  }
-  if (dryRun) {
-    console.log(`\n===== ${r.id} (${r.name}) =====\n${text}\n`);
-    continue;
-  }
-  try {
-    const messageId = await sendTelegram(chatId, text);
-    register.data.sent[key] = { at: new Date().toISOString(), messageId };
-    built.after?.();
-    await register.save(`${r.id} ${today} (${mode})`);
-    console.log(`✓ ${r.id}: inviata (messaggio ${messageId})`);
-  } catch (e) {
-    console.error(`✗ ${r.id}: ${e.message ?? e}`);
-    failed++;
+  for (const p of posts) {
+    const problems = complianceProblems(p.text);
+    if (p.text.length > 4096) problems.push(`testo troppo lungo (${p.text.length} caratteri, massimo 4096)`);
+    if (problems.length) {
+      console.error(`✗ ${r.id}: post bloccato dal filtro di conformità:\n  - ${problems.join("\n  - ")}\n${p.text}`);
+      failed++;
+      continue;
+    }
+    if (dryRun) {
+      console.log(`\n===== ${r.id} (${r.name}) =====\n${p.text}\n`);
+      continue;
+    }
+    try {
+      const messageId = await sendTelegram(chatId, p.text);
+      register.data.sent[p.key] = { at: new Date().toISOString(), messageId };
+      p.after?.();
+      await register.save(`${p.key.slice(mode.length + 1)} (${mode})`);
+      console.log(`✓ ${r.id}: inviata (messaggio ${messageId})`);
+    } catch (e) {
+      console.error(`✗ ${r.id}: ${e.message ?? e}`);
+      failed++;
+    }
   }
 }
 

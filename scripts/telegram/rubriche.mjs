@@ -336,6 +336,12 @@ export const RUBRICHE = [
     build: (ctx) => results(ctx, "risultati"),
   },
   {
+    id: "formazioni",
+    name: "Formazioni ufficiali",
+    event: true,
+    build: lineupPosts,
+  },
+  {
     id: "classifica",
     name: "Classifica e marcatori",
     days: [1],
@@ -358,6 +364,51 @@ export const RUBRICHE = [
     },
   },
 ];
+
+/** Competitions whose line-ups are posted: every Serie A match, cup matches only with an Italian club. */
+const LINEUP_LEAGUES = new Set(["serie-a", "champions-league", "europa-league", "conference-league"]);
+
+/** Official line-ups, one post per match, as soon as the live worker has them (event rubric: no time slot). */
+function lineupPosts({ data, nowMs }) {
+  const comps = data.football?.competitions ?? [];
+  const italian = new Set(
+    comps.find((c) => c.code === "SA")?.matches.flatMap((m) => [m.homeTeam.id, m.awayTeam.id]) ?? [],
+  );
+  const byApi = new Map();
+  for (const c of comps) for (const m of c.matches) if (m.apiId) byApi.set(m.apiId, { c, m });
+  const archived = new Map(data.archive.calcio.map((e) => [e.id, e]));
+  const posts = [];
+  for (const x of data.lineups ?? []) {
+    const ko = Date.parse(x.kickoff);
+    if (!LINEUP_LEAGUES.has(x.league) || ko <= nowMs || ko > nowMs + 90 * 60000) continue;
+    const site = byApi.get(x.id);
+    if (!site) continue;
+    if (x.league !== "serie-a" && !italian.has(site.m.homeTeam.id) && !italian.has(site.m.awayTeam.id)) continue;
+    const home = shortName(site.m.homeTeam);
+    const away = shortName(site.m.awayTeam);
+    const e = archived.get(site.m.id);
+    const team = (name, l) =>
+      [
+        `<b>${esc(name)}</b>${l.formation ? ` (${esc(l.formation)})` : ""}`,
+        esc(l.starters.join(", ")),
+        l.coach ? `All. ${esc(l.coach)}` : null,
+      ]
+        .filter(Boolean)
+        .join("\n");
+    posts.push({
+      key: String(x.id),
+      text: post(
+        `📋 <b>Formazioni ufficiali</b> – ${esc(home)} – ${esc(away)}`,
+        `${esc(site.c.name)}, ore ${rome(ko).time}`,
+        team(home, x.lineups.home),
+        team(away, x.lineups.away),
+        e?.prediction?.p ? `Il modello prima delle formazioni: ${p1x2(e.prediction.p)}` : null,
+        `Cronaca e statistiche in diretta: ${anchor(e?.path ?? `/pronostici/${site.c.slug}`, `${home} – ${away}`, "formazioni")}`,
+      ),
+    });
+  }
+  return posts;
+}
 
 /** Today's graded predictions: what the model said and how it went. */
 function results({ data, today }, campaign) {
