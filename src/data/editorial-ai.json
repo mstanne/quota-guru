@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-06T00:21:18.572Z",
+ "generatedAt": "2026-11-06T03:22:34.729Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558537": {
@@ -155,20 +155,20 @@
    ]
   },
   "fb:558535": {
-   "fingerprint": "wxknwj",
+   "fingerprint": "auh7nr",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Parma e Bologna si affrontano sabato 7 novembre alle 18:00 per la 11ª giornata di Serie A. In classifica il Parma occupa il 15° posto con 8 punti, mentre il Bologna è al 9° con 14."
+      "Parma e Bologna si affrontano sabato 7 novembre alle 18:00, nella 11ª giornata di Serie A. In classifica il Parma è al 15° posto con 8 punti, mentre il Bologna è al 9° con 14."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie A il Parma ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con sequenza P-P-P-N-V, segnando 4 gol e subendone 8. In casa, nel bilancio stagionale, il Parma conta 1 pareggio e 1 sconfitta, senza vittorie.",
-      "Nelle ultime 5 partite di Serie A il Bologna ha ottenuto 4 vittorie e 1 sconfitta, con sequenza V-P-V-V-V, segnando 11 gol e subendone 7. Arriva da 3 vittorie consecutive. In trasferta ha vinto tutte le 3 partite disputate."
+      "Nelle ultime 5 partite di Serie A il Parma ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-P-N-V), segnando 4 gol e subendone 8. In casa, il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie.",
+      "Nelle ultime 5 partite di Serie A il Bologna ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-P-V-V-V), segnando 11 gol e subendone 7. Arriva da 3 vittorie consecutive. In trasferta ha vinto tutte le 3 partite disputate."
      ],
      "bullets": []
     },
@@ -176,11 +176,18 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Parma 0,8, Bologna 1,4.",
+      "Media gol segnati: Parma 0,8, Bologna 1,4 a partita.",
       "Gol subiti finora: Parma 15, Bologna 13.",
       "In 4 delle ultime 5 partite del Parma sono stati segnati almeno tre gol.",
       "In 4 delle ultime 5 partite del Bologna sono stati segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Parma, 2 per il Bologna e 1 pareggio, con 10 gol complessivi (media di 2,0 a partita). L'ultimo incontro, a febbraio 2026 in Serie A, è terminato Bologna 0-1 Parma."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -189,12 +196,12 @@
      "a": "Sabato 7 novembre alle 18:00, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -4046,56 +4053,6 @@
     }
    ]
   },
-  "fb:555074": {
-   "fingerprint": "28chud",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Cruzeiro e Bahia si affrontano venerdì 6 novembre alle 01:30 per la 34ª giornata di Brasileirão. In classifica il Cruzeiro è terzo con 57 punti, mentre il Bahia è sesto con 53."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Brasileirão il Cruzeiro ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-P-V-V-V), segnando 10 gol e subendone 6. Arriva da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
-      "Nelle ultime 5 partite di Brasileirão il Bahia ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-P-N-V), segnando 5 gol e subendone 7. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza ancora alcuna vittoria."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Cruzeiro 1,6, Bahia 1,5 a partita.",
-      "Gol subiti finora: Cruzeiro 46, Bahia 42.",
-      "Il Cruzeiro non ha subito gol in 3 delle ultime 5 partite."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per il Cruzeiro, 1 per il Bahia e 1 pareggio, con 16 gol complessivi (media di 3,2 a partita). L'ultimo incrocio, a maggio 2026 in Serie A, è terminato Bahia 1-2 Cruzeiro."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Cruzeiro – Bahia?",
-     "a": "Venerdì 6 novembre alle 01:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:555079": {
    "fingerprint": "19wx872",
    "sections": [
@@ -4276,20 +4233,20 @@
    ]
   },
   "fb:1001492456": {
-   "fingerprint": "30362r",
+   "fingerprint": "pbpyuq",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Giovedì 19 novembre alle 00:00 il Clube do Remo ospita il Chapecoense per la 35ª giornata di Brasileirão. In classifica il Clube do Remo è al 19° posto con 29 punti, mentre il Chapecoense è al 20° con 21."
+      "Giovedì 19 novembre alle 00:00 il Clube do Remo ospita il Chapecoense nella 35ª giornata di Brasileirão. In classifica il Clube do Remo occupa il 19° posto con 29 punti, mentre il Chapecoense è 20° con 21 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Brasileirão il Clube do Remo ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta (sequenza N-N-N-P-V), segnando 4 gol e subendone 4. In casa il bilancio stagionale è di 1 vittoria e 2 pareggi, senza sconfitte.",
-      "Nelle ultime 5 partite di Brasileirão il Chapecoense ha ottenuto 1 vittoria e 4 sconfitte (sequenza P-P-V-P-P), segnando 4 gol e subendone 11. Ha perso le ultime 2 gare. In trasferta ha perso tutte le 3 partite disputate."
+      "Nelle ultime 5 partite di Brasileirão il Clube do Remo ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza N-N-P-V-P. Ha segnato 4 gol e ne ha subiti 9. In casa il bilancio stagionale è di 1 vittoria e 2 pareggi, senza sconfitte.",
+      "Nelle ultime 5 partite di Brasileirão il Chapecoense ha ottenuto 1 vittoria e 4 sconfitte, con la sequenza P-P-V-P-P. Ha segnato 4 gol e ne ha subiti 11. Ha perso le ultime 2 partite. In trasferta ha perso tutte le 3 gare disputate."
      ],
      "bullets": []
     },
@@ -4298,8 +4255,8 @@
      "paragraphs": [],
      "bullets": [
       "Media gol segnati a partita: Clube do Remo 1,1, Chapecoense 1,0.",
-      "Gol subiti finora: Clube do Remo 51, Chapecoense 68.",
-      "In 4 delle ultime 5 partite del Chapecoense si sono segnati almeno tre gol."
+      "Gol subiti finora: Clube do Remo 57, Chapecoense 68.",
+      "Nelle ultime 5 partite del Chapecoense si sono segnati almeno tre gol in 4 occasioni."
      ]
     }
    ],
@@ -4309,12 +4266,12 @@
      "a": "Giovedì 19 novembre alle 00:00, ora italiana."
     },
     {
-     "q": "Dove si possono consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -4363,20 +4320,20 @@
    ]
   },
   "fb:1001492452": {
-   "fingerprint": "1v8mft3",
+   "fingerprint": "1bisq6o",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Cruzeiro e Palmeiras si sfidano giovedì 19 novembre alle 00:30 nell'ambito della 35ª giornata di Brasileirão. Si tratta di una partita tra squadre della parte alta della classifica: il Cruzeiro occupa il 3° posto con 57 punti, mentre il Palmeiras è al 2° con 70."
+      "Cruzeiro e Palmeiras si affrontano giovedì 19 novembre alle 00:30, nell'ambito della 35ª giornata di Brasileirão. Il match mette di fronte due squadre della parte alta della classifica: il Cruzeiro è al 3° posto con 57 punti, mentre il Palmeiras occupa il 2° posto con 73."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Brasileirão il Cruzeiro ha ottenuto 4 vittorie e 1 sconfitta, con sequenza V-P-V-V-V, segnando 10 gol e subendone 6. La squadra arriva da 3 vittorie consecutive. In casa ha vinto tutte le 2 gare disputate.",
-      "Nelle ultime 5 partite di Brasileirão il Palmeiras ha ottenuto 4 vittorie e 1 pareggio, con sequenza V-V-V-V-N, segnando 9 gol e subendone 1. Non perde da 5 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 5 partite di Brasileirão, il Cruzeiro ha ottenuto 4 vittorie e 1 sconfitta, con la sequenza P-V-V-V-V. Il bilancio comprende 11 gol fatti e 8 subiti. La squadra arriva da 4 vittorie consecutive e, in casa, ha vinto tutte le 3 partite disputate.",
+      "Nelle ultime 5 partite di Brasileirão, il Palmeiras ha ottenuto 4 vittorie e 1 pareggio, con la sequenza V-V-V-N-V. Il bilancio comprende 14 gol fatti e 2 subiti. La squadra non perde da 6 partite. In trasferta, nel corso della stagione, ha conquistato 1 vittoria e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     },
@@ -4384,11 +4341,11 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Cruzeiro 1,6, Palmeiras 1,7.",
-      "Gol subiti finora: Cruzeiro 46, Palmeiras 22.",
+      "Media gol segnati: Cruzeiro 1,6, Palmeiras 1,8 a partita.",
+      "Gol subiti finora: Cruzeiro 46, Palmeiras 23.",
       "Il Palmeiras ha la miglior difesa del torneo.",
-      "Il Cruzeiro non ha subito gol in 3 delle ultime 5 partite.",
-      "Il Palmeiras non ha subito gol in 4 delle ultime 5 partite."
+      "In 3 delle ultime 5 partite del Cruzeiro si sono segnati almeno tre gol.",
+      "Il Palmeiras non ha subito gol in 3 delle ultime 5."
      ]
     }
    ],
@@ -4398,17 +4355,17 @@
      "a": "Giovedì 19 novembre alle 00:30, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Puoi consultare la pagina dedicata al [Brasileirão](/calcio/brasileirao) e la [classifica aggiornata](/calcio/brasileirao/classifica)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti spiegano come funzionano le quote le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001492454": {
-   "fingerprint": "1w51n7t",
+   "fingerprint": "r7ibwr",
    "sections": [
     {
      "id": "presentazione",
@@ -4421,7 +4378,7 @@
      "id": "momento",
      "paragraphs": [
       "Nelle ultime 5 partite di Brasileirão il Grêmio ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-V-V-P), con 7 gol fatti e 8 subiti. In casa il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta.",
-      "Nelle ultime 5 partite di Brasileirão il Bahia ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-P-N-V), con 5 gol fatti e 7 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
+      "Nelle ultime 5 partite di Brasileirão il Bahia ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-N-V-P), con 7 gol fatti e 9 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, ancora senza vittorie."
      ],
      "bullets": []
     },
@@ -4430,7 +4387,8 @@
      "paragraphs": [],
      "bullets": [
       "Media gol segnati: Grêmio 1,1, Bahia 1,5 a partita.",
-      "Gol subiti finora: Grêmio 47, Bahia 42."
+      "Gol subiti finora: Grêmio 47, Bahia 42.",
+      "In 3 delle ultime 5 partite del Bahia si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -4577,89 +4535,46 @@
     }
    ]
   },
-  "nba:21718041": {
-   "fingerprint": "1k8xdla",
+  "fb:1001492457": {
+   "fingerprint": "8daf1t",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "I Magic fanno visita ai Suns venerdì 6 novembre alle 03:00, ora italiana, in una partita della regular season NBA 2026-27."
+      "Venerdì 20 novembre alle 01:30 lo São Paulo ospita il Fluminense nella 35ª giornata di Brasileirão. In classifica lo São Paulo occupa il 10° posto con 44 punti, mentre il Fluminense è al 4° con 54."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "I Suns hanno un record di 1-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 113,3 punti segnati e 124,3 subiti. In casa il bilancio è 1-2.",
-      "I Magic hanno un record di 2-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 105,7 punti segnati e 114,7 subiti. In trasferta il bilancio è 2-1."
+      "Nelle ultime 5 partite di Brasileirão lo São Paulo ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-V-N-P-N), segnando 6 gol e subendone 5. Nel bilancio stagionale casalingo le vittorie sono 2, i pareggi 1 e le sconfitte 1.",
+      "Nelle ultime 5 partite di Brasileirão il Fluminense ha raccolto 2 vittorie e 3 sconfitte (sequenza V-P-P-P-V), con 8 gol fatti e 6 subiti. In trasferta ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     },
     {
-     "id": "calendario",
+     "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "I Suns giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 5 gare.",
-      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 4 gare."
+      "Media gol segnati: São Paulo 1,1, Fluminense 1,6 a partita.",
+      "Gol subiti finora: São Paulo 39, Fluminense 42.",
+      "In 4 delle ultime 5 partite del Fluminense si sono segnati almeno tre gol."
      ]
     }
    ],
    "faq": [
     {
-     "q": "A che ora si gioca Phoenix Suns – Orlando Magic in Italia?",
-     "a": "Venerdì 6 novembre alle 03:00."
+     "q": "Quando si gioca São Paulo – Fluminense?",
+     "a": "Venerdì 20 novembre alle 01:30, ora italiana."
     },
     {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
     },
     {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718042": {
-   "fingerprint": "1ykssin",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Venerdì 6 novembre alle 04:00, ora italiana, i Warriors ospitano gli Heat in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Warriors hanno un record di 5-3 in stagione e hanno vinto 5 delle ultime 5, con una media di 117,5 punti segnati e 114,6 subiti. In casa il bilancio è 3-1.",
-      "Gli Heat hanno un record di 3-5 in stagione e hanno vinto 3 delle ultime 5, con una media di 118,0 punti segnati e 122,9 subiti. In trasferta il bilancio è 2-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 4 gare.",
-      "Gli Heat giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Golden State Warriors – Miami Heat in Italia?",
-     "a": "Venerdì 6 novembre alle 04:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -6743,7 +6658,7 @@
    ]
   },
   "nba:21718093": {
-   "fingerprint": "4esizt",
+   "fingerprint": "kvug4k",
    "sections": [
     {
      "id": "presentazione",
@@ -6764,7 +6679,7 @@
      "id": "calendario",
      "paragraphs": [],
      "bullets": [
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 5 gare.",
       "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 4 gare."
      ]
     }
@@ -6776,11 +6691,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Trovi tutte le informazioni in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -6827,7 +6742,7 @@
    ]
   },
   "nba:21718095": {
-   "fingerprint": "19eragi",
+   "fingerprint": "476d9b",
    "sections": [
     {
      "id": "presentazione",
@@ -6849,7 +6764,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 3 gare."
+      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 4 gare."
      ]
     }
    ],
@@ -6860,7 +6775,7 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
@@ -6869,7 +6784,7 @@
    ]
   },
   "nba:21718096": {
-   "fingerprint": "1bvat5a",
+   "fingerprint": "1kzscxd",
    "sections": [
     {
      "id": "presentazione",
@@ -6891,7 +6806,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 3 gare."
+      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 4 gare."
      ]
     }
    ],
@@ -6902,11 +6817,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Per saperne di più, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -6995,7 +6910,7 @@
    ]
   },
   "nba:21718099": {
-   "fingerprint": "1wae0h6",
+   "fingerprint": "1l2juzd",
    "sections": [
     {
      "id": "presentazione",
@@ -7007,8 +6922,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "I Pelicans hanno un record di 4-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 121,6 punti segnati e 119,3 subiti. In casa il bilancio è 3-2.",
-      "I Grizzlies hanno un record di 6-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 120,5 punti segnati e 109,8 subiti. In trasferta il bilancio è 4-0."
+      "I Pelicans sono a quota 4-4 in stagione e nelle ultime 5 gare hanno vinto 4 volte, con una media di 121,6 punti segnati e 119,3 subiti. Il bilancio interno è di 3-2.",
+      "I Grizzlies sono a quota 6-2 in stagione e nelle ultime 5 gare hanno vinto 3 volte, con una media di 120,5 punti segnati e 109,8 subiti. Il bilancio in trasferta è di 4-0."
      ],
      "bullets": []
     },
@@ -7016,8 +6931,8 @@
      "id": "calendario",
      "paragraphs": [],
      "bullets": [
-      "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 4 gare."
+      "Nei 7 giorni a partire da questa partita i Pelicans hanno in programma 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in programma 5 gare."
      ]
     }
    ],
@@ -7028,11 +6943,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Per approfondire, consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Maggiori dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Per i dettagli, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -7079,7 +6994,7 @@
    ]
   },
   "nba:21718101": {
-   "fingerprint": "4o1hzv",
+   "fingerprint": "1n6e4nr",
    "sections": [
     {
      "id": "presentazione",
@@ -7100,8 +7015,8 @@
      "id": "calendario",
      "paragraphs": [],
      "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 3 gare."
+      "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 4 gare.",
+      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 4 gare."
      ]
     }
    ],
@@ -7121,7 +7036,7 @@
    ]
   },
   "nba:21718102": {
-   "fingerprint": "1ugg216",
+   "fingerprint": "1x8zhzd",
    "sections": [
     {
      "id": "presentazione",
@@ -7143,7 +7058,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 3 gare."
+      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 4 gare."
      ]
     }
    ],
@@ -7154,16 +7069,16 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Trovi una spiegazione in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
   "nba:21718103": {
-   "fingerprint": "1fqs31i",
+   "fingerprint": "kyipmr",
    "sections": [
     {
      "id": "presentazione",
@@ -7184,7 +7099,7 @@
      "id": "calendario",
      "paragraphs": [],
      "bullets": [
-      "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 4 gare.",
       "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 3 gare."
      ]
     }
@@ -7200,7 +7115,7 @@
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Trovi i dettagli su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -7334,7 +7249,7 @@
    ]
   },
   "nba:21718107": {
-   "fingerprint": "wp2e3q",
+   "fingerprint": "1a03o09",
    "sections": [
     {
      "id": "presentazione",
@@ -7356,7 +7271,7 @@
      "paragraphs": [],
      "bullets": [
       "I Grizzlies giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 4 gare.",
       "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 3 gare."
      ]
     }
@@ -7368,16 +7283,16 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
   "nba:21718108": {
-   "fingerprint": "1d7mimi",
+   "fingerprint": "g8tziz",
    "sections": [
     {
      "id": "presentazione",
@@ -7398,7 +7313,7 @@
      "id": "calendario",
      "paragraphs": [],
      "bullets": [
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 4 gare.",
       "I Bulls giocano la seconda partita in due giorni (back-to-back).",
       "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 3 gare."
      ]
@@ -7411,11 +7326,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -7504,7 +7419,7 @@
    ]
   },
   "nba:1000017131": {
-   "fingerprint": "18iai8i",
+   "fingerprint": "17qqyfd",
    "sections": [
     {
      "id": "presentazione",
@@ -7525,7 +7440,7 @@
      "id": "calendario",
      "paragraphs": [],
      "bullets": [
-      "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 2 gare.",
+      "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 3 gare.",
       "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 2 gare."
      ]
     }
@@ -7537,16 +7452,16 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Maggiori dettagli nella guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
   "nba:1000017132": {
-   "fingerprint": "os72lh",
+   "fingerprint": "195ayws",
    "sections": [
     {
      "id": "presentazione",
@@ -7568,7 +7483,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 2 gare."
+      "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 3 gare."
      ]
     }
    ],
@@ -7583,7 +7498,7 @@
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Puoi leggere una panoramica su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Per le informazioni sul formato del campionato, leggi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -7631,7 +7546,7 @@
    ]
   },
   "nba:1000017134": {
-   "fingerprint": "pkcw3a",
+   "fingerprint": "136g8wn",
    "sections": [
     {
      "id": "presentazione",
@@ -7653,7 +7568,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 2 gare."
+      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 3 gare."
      ]
     }
    ],
@@ -7664,7 +7579,7 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
@@ -7715,7 +7630,7 @@
    ]
   },
   "nba:1000017136": {
-   "fingerprint": "171jvtc",
+   "fingerprint": "1jlru8z",
    "sections": [
     {
      "id": "presentazione",
@@ -7736,7 +7651,7 @@
      "id": "calendario",
      "paragraphs": [],
      "bullets": [
-      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 2 gare.",
+      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 3 gare.",
       "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 2 gare."
      ]
     }
@@ -7748,11 +7663,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Trovi i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -7884,7 +7799,7 @@
    ]
   },
   "nba:1000017140": {
-   "fingerprint": "1ok4jvg",
+   "fingerprint": "148rcsp",
    "sections": [
     {
      "id": "presentazione",
@@ -7907,7 +7822,7 @@
      "bullets": [
       "I Wizards giocano la seconda partita in due giorni (back-to-back).",
       "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 2 gare."
+      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 3 gare."
      ]
     }
    ],
@@ -8012,7 +7927,7 @@
    ]
   },
   "nba:1000017143": {
-   "fingerprint": "lksv8u",
+   "fingerprint": "12gtux4",
    "sections": [
     {
      "id": "presentazione",
@@ -8033,8 +7948,8 @@
      "id": "calendario",
      "paragraphs": [],
      "bullets": [
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 2 gare."
+      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 3 gare.",
+      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 3 gare."
      ]
     }
    ],
@@ -8045,16 +7960,16 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Trovi tutti i dettagli nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Per approfondire, consulta la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Per capire la struttura del campionato consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Per capirne la struttura, leggi la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
   "nba:1000017144": {
-   "fingerprint": "10i7wgj",
+   "fingerprint": "1tlqmom",
    "sections": [
     {
      "id": "presentazione",
@@ -8076,7 +7991,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 2 gare."
+      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 3 gare."
      ]
     }
    ],
@@ -8139,12 +8054,12 @@
    ]
   },
   "nba:1000017146": {
-   "fingerprint": "p40urj",
+   "fingerprint": "uuu3wa",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "I New York Knicks fanno visita ai Toronto Raptors mercoledì 18 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
+      "I New York Knicks fanno visita ai Toronto Raptors mercoledì 18 novembre alle 01:30, ora italiana, in una partita di regular season NBA 2026-27."
      ],
      "bullets": []
     },
@@ -8161,7 +8076,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 1 gara."
+      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 2 gare."
      ]
     }
    ],
@@ -8181,7 +8096,7 @@
    ]
   },
   "nba:1000017147": {
-   "fingerprint": "1efbx5e",
+   "fingerprint": "h86aya",
    "sections": [
     {
      "id": "presentazione",
@@ -8203,9 +8118,9 @@
      "paragraphs": [],
      "bullets": [
       "I Timberwolves giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 1 gara.",
+      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 2 gare.",
       "I Trail Blazers giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 1 gara."
+      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 2 gare."
      ]
     }
    ],
@@ -8225,7 +8140,7 @@
    ]
   },
   "nba:1000017148": {
-   "fingerprint": "85xg0r",
+   "fingerprint": "1h42jt4",
    "sections": [
     {
      "id": "presentazione",
@@ -8246,7 +8161,7 @@
      "id": "calendario",
      "paragraphs": [],
      "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 1 gara.",
+      "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 2 gare.",
       "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 2 gare."
      ]
     }
@@ -8258,11 +8173,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Puoi trovare tutti i dettagli nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Per il quadro generale, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Per approfondire, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8309,7 +8224,7 @@
    ]
   },
   "nba:1000017150": {
-   "fingerprint": "1yw5am4",
+   "fingerprint": "rtz11",
    "sections": [
     {
      "id": "presentazione",
@@ -8330,7 +8245,7 @@
      "id": "calendario",
      "paragraphs": [],
      "bullets": [
-      "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 1 gara.",
+      "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 2 gare.",
       "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 2 gare."
      ]
     }
@@ -8342,16 +8257,16 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
   "nba:1000017151": {
-   "fingerprint": "1raqcph",
+   "fingerprint": "1gevbkg",
    "sections": [
     {
      "id": "presentazione",
@@ -8373,7 +8288,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 1 gara."
+      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 2 gare."
      ]
     }
    ],
@@ -8384,11 +8299,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8435,7 +8350,7 @@
    ]
   },
   "nba:1000017153": {
-   "fingerprint": "18lrrvk",
+   "fingerprint": "81bcev",
    "sections": [
     {
      "id": "presentazione",
@@ -8457,7 +8372,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 1 gara."
+      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 2 gare."
      ]
     }
    ],
@@ -8468,11 +8383,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi tutto nella guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8731,7 +8646,7 @@
    ]
   },
   "nba:1000017160": {
-   "fingerprint": "1lebsmf",
+   "fingerprint": "b0o850",
    "sections": [
     {
      "id": "presentazione",
@@ -8753,7 +8668,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 1 gara."
+      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 2 gare."
      ]
     }
    ],
@@ -8764,11 +8679,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli si veda [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8855,6 +8770,177 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:1000017163": {
+   "fingerprint": "f66tt6",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Venerdì 20 novembre alle 02:00, ora italiana, i Grizzlies ospitano i Warriors in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Grizzlies hanno un record di 6-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 120,5 punti segnati e 109,8 subiti. In casa il bilancio è 2-2.",
+      "I Warriors hanno un record di 5-3 in stagione e hanno vinto 5 delle ultime 5, con una media di 117,5 punti segnati e 114,6 subiti. In trasferta il bilancio è 2-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "I Grizzlies giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 1 gara.",
+      "I Warriors giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 1 gara."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Memphis Grizzlies – Golden State Warriors in Italia?",
+     "a": "Venerdì 20 novembre alle 02:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:1000017164": {
+   "fingerprint": "13tbxpi",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Trail Blazers fanno visita ai Bucks venerdì 20 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Bucks hanno un record di 1-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 110,0 punti segnati e 122,3 subiti. In casa il bilancio è 1-3.",
+      "I Trail Blazers hanno un record di 6-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 121,9 punti segnati e 110,7 subiti. In trasferta il bilancio è 5-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "I Bucks giocano la seconda partita in due giorni (back-to-back).",
+      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 1 gara.",
+      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 1 gara."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Milwaukee Bucks – Portland Trail Blazers in Italia?",
+     "a": "Venerdì 20 novembre alle 02:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:1000017165": {
+   "fingerprint": "5xo49s",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Venerdì 20 novembre alle 02:00, ora italiana, i Timberwolves ospitano i Knicks in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Timberwolves hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 118,8 punti segnati e 107,6 subiti. In casa il bilancio è 3-1.",
+      "I Knicks hanno un record di 4-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 110,0 punti segnati e 105,1 subiti. In trasferta il bilancio è 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 1 gara.",
+      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 1 gara."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Minnesota Timberwolves – New York Knicks in Italia?",
+     "a": "Venerdì 20 novembre alle 02:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:1000017166": {
+   "fingerprint": "1azzhyu",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Clippers fanno visita agli Spurs venerdì 20 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Gli Spurs hanno un record di 6-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 116,9 punti segnati e 108,6 subiti. In casa il bilancio è 4-2.",
+      "I Clippers hanno un record di 1-7 in stagione e hanno vinto 0 delle ultime 5, con una media di 109,1 punti segnati e 115,6 subiti. In trasferta il bilancio è 0-4."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 1 gara.",
+      "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 1 gara."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca San Antonio Spurs – LA Clippers in Italia?",
+     "a": "Venerdì 20 novembre alle 02:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -11072,451 +11158,75 @@
     }
    ]
   },
-  "nba:21718013": {
-   "fingerprint": "zgk2ma",
+  "fb:555077": {
+   "fingerprint": "1umt4k5",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "I Pistons hanno battuto gli Hornets 124-91. La partita si è giocata martedì 3 novembre.",
-      "All'intervallo i Pistons conducevano 65-54.",
-      "Il parziale più netto è arrivato nel 3º quarto, vinto dai Pistons 33-21."
+      "Il Palmeiras si impone in casa sul Clube do Remo con un netto 6-1. La partita, valida per la 34ª giornata di Brasileirão, si è giocata giovedì 5 novembre; il primo tempo si era chiuso 4-1."
      ],
      "bullets": []
     },
     {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 215.",
-      "Parziali (Hornets–Pistons): 24-27, 30-38, 21-33, 16-26."
-     ]
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Palmeiras è al 2° posto con 73 punti, mentre il Clube do Remo è al 19° con 29. Puoi consultare la [classifica completa](/calcio/brasileirao/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Palmeiras tornerà in campo giovedì 19 novembre alle 00:30 in trasferta contro il Cruzeiro. Il Clube do Remo tornerà in campo giovedì 19 novembre alle 00:00 in casa contro il Chapecoense."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Com'è finita Charlotte Hornets – Detroit Pistons?",
-     "a": "91-124 per i Pistons."
+     "q": "Com'è finita Palmeiras – Clube do Remo?",
+     "a": "6-1 (4-1 all'intervallo)."
     },
     {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi trovarli nella pagina [Brasileirão](/calcio/brasileirao)."
     }
    ]
   },
-  "nba:21718014": {
-   "fingerprint": "150hiif",
+  "fb:555074": {
+   "fingerprint": "b1fu9j",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Gli Hawks si sono imposti sui Pacers per 108-104. Il match si è disputato martedì 3 novembre.",
-      "All'intervallo gli Hawks conducevano 68-56.",
-      "Il parziale più netto è arrivato nel 1º quarto, chiuso dagli Hawks 37-29."
+      "Il Cruzeiro ha vinto in casa contro il Bahia per 3-2, con una vittoria di misura. La partita, valida per la 34ª giornata di Brasileirão, si è giocata venerdì 6 novembre; il primo tempo era terminato 1-1."
      ],
      "bullets": []
     },
     {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 212.",
-      "Parziali (Pacers–Hawks): 29-37, 27-31, 23-19, 25-21."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Indiana Pacers – Atlanta Hawks?",
-     "a": "Il risultato finale è 104-108 in favore degli Hawks."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718015": {
-   "fingerprint": "1xkq32h",
-   "sections": [
-    {
-     "id": "resoconto",
+     "id": "classifica",
      "paragraphs": [
-      "I New York Knicks hanno superato i Brooklyn Nets per 103-90. La partita si è giocata martedì 3 novembre.",
-      "All'intervallo i Knicks conducevano 51-44.",
-      "Il parziale più ampio è arrivato nel 4º quarto, vinto dai Knicks per 28-11."
+      "Con le partite giocate finora il Cruzeiro è al 3° posto con 57 punti, mentre il Bahia è al 6° con 53. Puoi consultare la [classifica completa](/calcio/brasileirao/classifica)."
      ],
      "bullets": []
     },
     {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 193.",
-      "Parziali (Knicks–Nets): 27-21, 24-23, 24-35, 28-11."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita New York Knicks – Brooklyn Nets?",
-     "a": "103-90 per i Knicks."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718016": {
-   "fingerprint": "15a38po",
-   "sections": [
-    {
-     "id": "resoconto",
+     "id": "prossimi",
      "paragraphs": [
-      "I Wizards hanno battuto i Magic 103-94. La partita si è giocata martedì 3 novembre.",
-      "All'intervallo i Wizards conducevano 60-59.",
-      "Il parziale più netto è arrivato nel 3º quarto, vinto dai Wizards 19-9."
+      "Il Cruzeiro tornerà in campo giovedì 19 novembre alle 00:30 in casa contro il Palmeiras. Il Bahia tornerà in campo giovedì 19 novembre alle 01:30 in trasferta contro il Grêmio."
      ],
      "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 197.",
-      "Parziali (Magic–Wizards): 33-28, 26-32, 9-19, 26-24."
-     ]
     }
    ],
    "faq": [
     {
-     "q": "Com'è finita Orlando Magic – Washington Wizards?",
-     "a": "94-103 per i Wizards."
+     "q": "Com'è finita Cruzeiro – Bahia?",
+     "a": "3-2 (1-1 all'intervallo)."
     },
     {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Puoi consultare la sezione dedicata ai [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718017": {
-   "fingerprint": "qhhm4p",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I 76ers hanno superato i Bulls per 126-107. La partita si è giocata martedì 3 novembre.",
-      "All'intervallo i 76ers erano in vantaggio 64-59.",
-      "Il parziale più netto è arrivato nel 4º quarto, vinto dai 76ers 36-28."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 233.",
-      "Parziali (76ers–Bulls): 30-23, 34-36, 26-20, 36-28."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Philadelphia 76ers – Chicago Bulls?",
-     "a": "126-107 per i 76ers."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718018": {
-   "fingerprint": "qh4gs8",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Kings hanno superato i Mavericks per 115-100. La partita si è disputata martedì 3 novembre.",
-      "All'intervallo i Kings erano avanti 54-53.",
-      "Il parziale che ha fatto più la differenza è arrivato nel 4º quarto, vinto dai Kings 34-26."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 215.",
-      "Parziali (Mavericks–Kings): 18-19, 35-35, 21-27, 26-34."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Dallas Mavericks – Sacramento Kings?",
-     "a": "100-115 per i Kings."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Le altre partite NBA sono nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718019": {
-   "fingerprint": "161puc1",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Pelicans hanno superato i Grizzlies per 135-134 dopo un tempo supplementare. La sfida si è disputata martedì 3 novembre.",
-      "All'intervallo i Grizzlies erano in vantaggio 62-59; nella ripresa i Pelicans hanno recuperato uno svantaggio di 3 punti.",
-      "Il parziale più netto è arrivato nel 3º quarto, vinto dai Pelicans 41-33."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 269.",
-      "Parziali (Grizzlies–Pelicans): 31-34, 31-25, 33-41, 29-24, 10-11."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Memphis Grizzlies – New Orleans Pelicans?",
-     "a": "134-135 per i Pelicans."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718020": {
-   "fingerprint": "1qb66kq",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Timberwolves hanno battuto i Bucks 112-100. La partita si è giocata martedì 3 novembre.",
-      "All'intervallo i Timberwolves erano in vantaggio 48-47.",
-      "Il parziale più netto è stato quello del 1º quarto, vinto dai Timberwolves 29-18."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti complessivi: 212.",
-      "Parziali (Timberwolves–Bucks): 29-18, 19-29, 32-29, 32-24."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Qual è stato il risultato di Minnesota Timberwolves – Milwaukee Bucks?",
-     "a": "112-100 per i Timberwolves."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718021": {
-   "fingerprint": "slcfth",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Gli Houston Rockets hanno battuto i Boston Celtics per 109-93. La partita si è giocata martedì 3 novembre.",
-      "All'intervallo i Rockets conducevano 57-50.",
-      "Il parziale più netto è arrivato nel 2º quarto, vinto dai Rockets 28-21."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 202.",
-      "Parziali (Rockets–Celtics): 29-29, 28-21, 25-23, 27-20."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Qual è stato il risultato di Houston Rockets – Boston Celtics?",
-     "a": "Il risultato finale è 109-93 per i Rockets."
-    },
-    {
-     "q": "Dove posso consultare le altre partite NBA?",
-     "a": "Sono disponibili nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718022": {
-   "fingerprint": "1ijw2g4",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Gli Spurs si sono imposti sui Jazz per 119-97. La partita si è disputata martedì 3 novembre.",
-      "All'intervallo gli Spurs conducevano 59-49.",
-      "Lo scarto più ampio si è registrato nel 3º quarto, vinto dagli Spurs 35-20."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 216.",
-      "Parziali (Spurs–Jazz): 27-16, 32-33, 35-20, 25-28."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita San Antonio Spurs – Utah Jazz?",
-     "a": "119-97 per gli Spurs."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718023": {
-   "fingerprint": "1jaz40n",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Nel match di martedì 3 novembre i Trail Blazers hanno superato i Nuggets 118-110.",
-      "All'intervallo i Nuggets erano avanti 66-58, ma nella ripresa i Trail Blazers hanno recuperato 8 punti di svantaggio.",
-      "Il parziale più netto è arrivato nel 1º quarto, chiuso dai Nuggets 31-19."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 228.",
-      "Parziali (Nuggets–Trail Blazers): 31-19, 35-39, 21-27, 23-33."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Denver Nuggets – Portland Trail Blazers?",
-     "a": "110-118 per i Trail Blazers."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718024": {
-   "fingerprint": "1jxtqo9",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Warriors battono i Suns 116-113. La partita si è giocata martedì 3 novembre.",
-      "All'intervallo conducevano i Suns 57-51: i Warriors hanno rimontato 6 punti di svantaggio nella ripresa.",
-      "Il parziale più netto è arrivato nel 1º quarto, vinto dai Suns 31-19."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 229.",
-      "Parziali (Warriors–Suns): 19-31, 32-26, 42-36, 23-20."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Golden State Warriors – Phoenix Suns?",
-     "a": "116-113 per i Warriors."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718025": {
-   "fingerprint": "3ehfn0",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Raptors hanno superato i Clippers 125-118. La sfida si è disputata martedì 3 novembre.",
-      "All'intervallo i Clippers erano avanti 63-52, ma nella ripresa i Raptors hanno recuperato 11 punti di svantaggio.",
-      "Il parziale più ampio è arrivato nel 4º quarto, vinto dai Raptors 47-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 243.",
-      "Parziali (Clippers–Raptors): 33-22, 30-30, 28-26, 27-47."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita LA Clippers – Toronto Raptors?",
-     "a": "118-125 per i Raptors."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella [pagina dedicata alla NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718026": {
-   "fingerprint": "1griokh",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Lakers hanno battuto gli Heat 138-117. La partita si è giocata martedì 3 novembre.",
-      "All'intervallo i Lakers conducevano 79-72.",
-      "Il parziale più netto è arrivato nel 3º quarto, vinto dai Lakers 32-21."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 255.",
-      "Parziali (Lakers–Heat): 37-30, 42-42, 32-21, 27-24."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Los Angeles Lakers – Miami Heat?",
-     "a": "138-117 per i Lakers."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Brasileirão](/calcio/brasileirao)."
     }
    ]
   },
