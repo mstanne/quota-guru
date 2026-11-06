@@ -35,3 +35,15 @@ export const BANNED: RegExp[];
 export function textsOf(art: Article): string[];
 export function checkArticle(art: Article, reference?: Article): string[];
 export function withRewrite(art: Article | null, rewrite?: Rewrite | null): Article | null;
+export function pick<T>(key: string, options: T[]): T;
+export function num(n: number, one: string, many: string): string;
+export function dec(x: number, d?: number): string;
+export function al(n: number): string;
+export function cap(s: string): string;
+export function joinIt(items: string[]): string;
+/** Club name with its article: "la Juventus", "l'Inter"; `upper`: capital first letter. */
+export function the(n: string, upper?: boolean): string;
+/** Club name with an articulated preposition: prep("di", "Inter") = "dell'Inter". */
+export function prep(p: "di" | "a" | "da" | "per", n: string): string;
+export function fmtDay(iso: string): string;
+export function fmtMonthYear(iso: string): string;

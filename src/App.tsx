@@ -3,6 +3,7 @@ import { matchPath, Outlet, Route, Routes, useLocation, useNavigate } from "reac
 import { BetSlipProvider } from "./context/BetSlipContext";
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
+import { HowPredictionsWork } from "./components/HowPredictionsWork";
 import { BonusSection } from "./components/BonusSection";
 import { Footer } from "./components/Footer";
 import { BetSlip } from "./components/BetSlip";
@@ -210,6 +211,7 @@ function HomePage() {
       <HeroSection />
       <BonusSection onViewAllClick={() => navigate(paths.bonus)} />
       <UpcomingMatches />
+      <HowPredictionsWork />
     </>
   );
 }

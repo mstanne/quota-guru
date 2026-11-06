@@ -628,3 +628,6 @@ export function withRewrite(art, rewrite) {
     source: "ai",
   };
 }
+
+// text helpers for the other generated texts of the site (src/lib/editorial/extraTexts.ts)
+export { pick, num, dec, al, cap, joinIt, the, prep, fmtDay, fmtMonthYear };

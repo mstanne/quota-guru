@@ -6,6 +6,7 @@ import { hasSeasons, seasonsHubPath, seasonsIndex, seasonsPath } from "../../lib
 import {
   competitionPath,
   formatDay,
+  formatShortDate,
   isFinished,
   isLive,
   isResultPending,
@@ -36,6 +37,8 @@ import { HeaderLinks, headerLinkClass, PageHeader } from "../layout/PageHeader";
 import { ListChecks } from "lucide-react";
 import { hasResults, resultsPath } from "../../lib/results";
 import { featuredMatchday } from "../../lib/matchdaysCore";
+import { competitionText } from "../../lib/editorial/extraTexts";
+import { TextSections } from "../editorial/TextSections";
 import { goalStatsPath, leadersPath, matchdayPath, PRONOSTICI } from "../../lib/footballCore";
 
 const MARKET_IDS = FOOTBALL_MARKETS.map((m) => m.id);
@@ -333,6 +336,19 @@ export function CalcioPage() {
                 outcome={filter === "results" ? (r) => outcomeOf(r.competition, r.match) : undefined}
               />
             </div>
+          )}
+
+          {single && competition && (
+            <TextSections
+              id="analisi-competizione"
+              className="mt-10"
+              title={`Pronostici ${competition.name}: la giornata e i numeri della stagione`}
+              sections={competitionText(
+                single,
+                footballTrackRecord().byWhere?.find((w) => w.where === competition.name),
+              )}
+              note={`Testi aggiornati al ${formatShortDate(generatedAt)}. Stime statistiche, non consigli di gioco.`}
+            />
           )}
         </div>
       </div>

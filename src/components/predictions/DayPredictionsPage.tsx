@@ -11,7 +11,10 @@ import { FOOTBALL_MARKETS, predictionFor, type FootballMarket } from "../../lib/
 import { useQueryChoice } from "../../lib/useQueryChoice";
 import { usePageMeta } from "../../lib/pageMeta";
 import { competitionPath, formatUpdated, generatedAt, type Competition, type Match } from "../../lib/football";
-import { basketPaths } from "../../lib/basket";
+import { basketPaths, gameHref } from "../../lib/basket";
+import { basketPredictionFor } from "../../lib/basketPredict";
+import { dayIntro } from "../../lib/editorial/extraTexts";
+import { Rich } from "../content/Rich";
 import { dayMatches, dayMeta, dayOf, dayPath, type DayKey } from "../../lib/dayPages";
 import { paths } from "../../routes";
 
@@ -24,6 +27,26 @@ export function DayPredictionsPage({ day }: { day: DayKey }) {
   const { label } = dayOf(day);
   const { football, nba } = dayMatches(day);
   const other: DayKey = day === "oggi" ? "domani" : "oggi";
+
+  // opening text: what is played, the clearest and the most open matches (src/lib/editorial/extraTexts.ts)
+  const intro = dayIntro({
+    label,
+    football: football.map((r) => ({ ...r, prediction: predictionFor(r.match.id) })),
+    nba: nba.flatMap((g) => {
+      const p = basketPredictionFor(g.id);
+      return p
+        ? [
+            {
+              home: g.home.shortName || g.home.name,
+              away: g.away.shortName || g.away.name,
+              path: gameHref(g),
+              p: p.p,
+              total: p.total,
+            },
+          ]
+        : [];
+    }),
+  });
 
   // football grouped by competition, in the site's competition order
   const groups: { c: Competition; items: Match[] }[] = [];
@@ -61,6 +84,11 @@ export function DayPredictionsPage({ day }: { day: DayKey }) {
       </PageHeader>
 
       <div className="container mx-auto px-4 py-8">
+        {intro.length > 0 && (
+          <p className="mb-8 max-w-3xl text-slate-300 text-sm sm:text-base leading-relaxed">
+            <Rich text={intro[0]} />
+          </p>
+        )}
         {football.length + nba.length === 0 && (
           <div className="rounded-xl border border-slate-800 bg-slate-900 p-10 text-center">
             <p className="text-white mb-1">Nessuna partita con un pronostico {day === "oggi" ? "oggi" : "domani"}</p>
@@ -128,6 +156,22 @@ export function DayPredictionsPage({ day }: { day: DayKey }) {
             <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
               {nba.map((g) => (
                 <BasketGameRow key={g.id} game={g} columns meta={false} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* the rest of the opening text after the lists, so the matches stay on the first screen on phones */}
+        {intro.length > 1 && (
+          <section aria-labelledby="in-evidenza" className="mb-8 max-w-3xl">
+            <h2 id="in-evidenza" className="text-white text-xl mb-3">
+              In evidenza {day === "oggi" ? "oggi" : "domani"}
+            </h2>
+            <div className="space-y-3 text-slate-300 leading-relaxed">
+              {intro.slice(1).map((p, i) => (
+                <p key={i}>
+                  <Rich text={p} />
+                </p>
               ))}
             </div>
           </section>
