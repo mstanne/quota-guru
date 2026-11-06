@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-05T23:42:56.561Z",
+ "generatedAt": "2026-11-06T00:21:18.572Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558537": {
@@ -11037,26 +11037,26 @@
    ]
   },
   "fb:555078": {
-   "fingerprint": "1v1n239",
+   "fingerprint": "z0wetg",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Lo São Paulo e il Corinthians non sono riusciti a segnare: la partita è finita 0-0. L'incontro, valido per la 34ª giornata di Brasileirão, si è disputato giovedì 5 novembre, con il primo tempo chiuso anch'esso sullo 0-0."
+      "Lo São Paulo e il Corinthians hanno pareggiato 0-0. La partita, valida per la 34ª giornata di Brasileirão, si è disputata giovedì 5 novembre; il primo tempo si era chiuso anch'esso 0-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Considerando le partite giocate finora, lo São Paulo occupa il 10° posto con 44 punti, mentre il Corinthians è al 17° con 37. [Consulta la classifica completa](/calcio/brasileirao/classifica)."
+      "Con le partite giocate finora lo São Paulo è al 10° posto con 44 punti, mentre il Corinthians è al 17° con 37. [Consulta la classifica completa](/calcio/brasileirao/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il Corinthians tornerà in campo giovedì 19 novembre alle 01:30, giocando in casa contro il Botafogo."
+      "Lo São Paulo tornerà in campo venerdì 20 novembre alle 01:30 in casa contro il Fluminense. Il Corinthians tornerà in campo giovedì 19 novembre alle 01:30 in casa contro il Botafogo."
      ],
      "bullets": []
     }
@@ -11064,43 +11064,11 @@
    "faq": [
     {
      "q": "Com'è finita São Paulo – Corinthians?",
-     "a": "0-0 (0-0 all'intervallo)."
+     "a": "È finita 0-0 (0-0 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Brasileirão](/calcio/brasileirao)."
-    }
-   ]
-  },
-  "nba:21718012": {
-   "fingerprint": "dvuwg9",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Thunder si impongono sui Cavaliers per 117-112. La partita si è giocata martedì 3 novembre.",
-      "All'intervallo i Thunder conducevano 59-48.",
-      "Il parziale più netto è arrivato nel 2º quarto, vinto dai Thunder 33-18."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 229.",
-      "Parziali (Cavaliers–Thunder): 30-26, 18-33, 36-31, 28-27."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Cleveland Cavaliers – Oklahoma City Thunder?",
-     "a": "112-117 per i Thunder."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
     }
    ]
   },
