@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-06T07:16:43.621Z",
+ "generatedAt": "2026-11-06T09:05:13.789Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558537": {
@@ -4047,20 +4047,20 @@
    ]
   },
   "fb:555079": {
-   "fingerprint": "19wx872",
+   "fingerprint": "ek2o6o",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 00:00 il Vitória ospita il Fluminense nella 34ª giornata di Brasileirão. In classifica il Vitória occupa il 15° posto con 38 punti, mentre il Fluminense è al 4° con 54."
+      "Sabato 7 novembre alle 00:00 il Vitória ospita il Fluminense nella 34ª giornata di Brasileirão. In classifica il Vitória occupa il 15° posto con 38 punti, mentre il Fluminense è al 4° posto con 54 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Brasileirão il Vitória ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza V-P-N-N-P. Ha segnato 7 gol e ne ha subiti 6. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 5 partite di Brasileirão il Fluminense ha ottenuto 2 vittorie e 3 sconfitte, con la sequenza V-P-P-P-V. Ha segnato 8 gol e ne ha subiti 6. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 5 partite di Brasileirão il Vitória ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza V-P-N-N-P), segnando 7 gol e subendone 6. In casa, nel bilancio stagionale, ha collezionato 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Brasileirão il Fluminense ha ottenuto 2 vittorie e 3 sconfitte (sequenza V-P-P-P-V), segnando 8 gol e subendone 6. In trasferta ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     },
@@ -4070,13 +4070,13 @@
      "bullets": [
       "Media gol segnati a partita: Vitória 1,1, Fluminense 1,6.",
       "Gol subiti finora: Vitória 48, Fluminense 42.",
-      "Nelle ultime 5 partite del Fluminense, in 4 si sono segnati almeno tre gol."
+      "In 4 delle ultime 5 partite del Fluminense sono stati segnati almeno tre gol."
      ]
     },
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Vitória, 1 vittoria per il Fluminense e 2 pareggi, con 11 gol complessivi, pari a una media di 2,2 a partita. L'ultimo incrocio, disputato a maggio 2026 in Serie A, è terminato Fluminense 2-2 Vitória."
+      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Vitória, 1 vittoria per il Fluminense e 2 pareggi, con 11 gol complessivi (media di 2,2 a partita). L'ultimo incrocio, disputato a maggio 2026 in Brasileirão, è terminato Fluminense 2-2 Vitória."
      ],
      "bullets": []
     }
@@ -4087,12 +4087,12 @@
      "a": "Sabato 7 novembre alle 00:00, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Brasileirão](/calcio/brasileirao) e la [classifica aggiornata](/calcio/brasileirao/classifica)."
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
