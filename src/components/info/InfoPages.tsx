@@ -2,6 +2,7 @@
 // Texts are TEMPLATES: company data come from src/data/site.ts, and the legal pages (terms, privacy, cookies)
 // must be reviewed by a lawyer before publishing.
 import { CalibrationSection } from "../predictions/CalibrationChart";
+import { PREDICTIONS_LICENSE } from "../../lib/archiveLicense.mjs";
 import type { ReactNode } from "react";
 import { Link } from "../../lib/links";
 import { BookOpen, Cookie, FileText, HelpCircle, Info, Mail, Scale, ShieldCheck } from "lucide-react";
@@ -342,6 +343,15 @@ export function MetodologiaPage() {
           .
         </li>
       </ul>
+      <p>
+        I pronostici degli archivi sono rilasciati con licenza{" "}
+        <a href={PREDICTIONS_LICENSE.url} rel="license noopener" target="_blank">
+          {PREDICTIONS_LICENSE.name}
+        </a>{" "}
+        (riuso non commerciale citando QuotaGuru); i dati delle partite contenuti negli stessi file provengono da
+        API-Football e non possono essere riprodotti. Il riepilogo è nel{" "}
+        <Link to="/bilancio-pronostici">bilancio dei pronostici</Link>.
+      </p>
       <CalibrationSection />
       <h2 id="pronostici-tennis">Pronostici del tennis</h2>
       <ul>

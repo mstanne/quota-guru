@@ -13,6 +13,7 @@ import { PageHeader } from "../layout/PageHeader";
 import { CalibrationSection } from "./CalibrationChart";
 import { usePageMeta } from "../../lib/pageMeta";
 import { trackRecordMeta, trackLead, ARCHIVE_FILES } from "../../lib/trackRecordMeta";
+import { ARCHIVE_TERMS, PREDICTIONS_LICENSE } from "../../lib/archiveLicense.mjs";
 
 const rate = (x: { n: number; hits: number }) => (x.n ? Math.round((x.hits / x.n) * 100) : 0);
 const MONTHS = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"];
@@ -191,6 +192,18 @@ export function TrackRecordPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-3 text-slate-300 text-xs leading-relaxed">
+            <strong className="font-medium text-white">Licenza.</strong> {ARCHIVE_TERMS}{" "}
+            <a
+              href={PREDICTIONS_LICENSE.url}
+              rel="license noopener"
+              target="_blank"
+              className="text-action-text hover:text-action-text-hover"
+            >
+              Testo della licenza {PREDICTIONS_LICENSE.name}
+            </a>
+            .
+          </p>
           <p className="mt-3 text-slate-400 text-xs">
             Come vengono calcolati i pronostici:{" "}
             <Link to={paths.metodologia} className="text-action-text hover:text-action-text-hover">

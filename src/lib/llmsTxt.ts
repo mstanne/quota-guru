@@ -7,6 +7,7 @@ import { footballTrackRecord } from "./trackRecordFootball";
 import { nbaTrackRecord } from "./trackRecordNba";
 import { trackLead, ARCHIVE_FILES, TRACK_RECORD_PATH } from "./trackRecordMeta";
 import { guides } from "../data/guides";
+import { ARCHIVE_TERMS } from "./archiveLicense.mjs";
 
 export function llmsTxt(url: (path: string) => string) {
   const link = (title: string, path: string, note = "") => `- [${title}](${url(path)})${note ? `: ${note}` : ""}`;
@@ -31,6 +32,7 @@ export function llmsTxt(url: (path: string) => string) {
     "",
     "## Dati",
     ...ARCHIVE_FILES.map((f) => link(f.name, f.url, "ogni pronostico pubblicato con probabilità, risultato ed esito")),
+    `Licenza dell'archivio: ${ARCHIVE_TERMS}`,
     link("Calendario e risultati calcio", paths.calcio),
     link("Squadre di calcio", paths.squadreCalcio),
     link("Squadre NBA", paths.squadreNba),

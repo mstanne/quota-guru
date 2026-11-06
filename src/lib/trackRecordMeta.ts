@@ -3,6 +3,7 @@ import type { TrackRecord } from "./trackRecord";
 import { footballTrackRecord } from "./trackRecordFootball";
 import { nbaTrackRecord } from "./trackRecordNba";
 import { formatShortDate } from "./footballCore";
+import { PREDICTIONS_LICENSE } from "./archiveLicense.mjs";
 
 export const TRACK_RECORD_PATH = "/bilancio-pronostici";
 export const ARCHIVE_FILES = [
@@ -44,6 +45,9 @@ export function trackRecordMeta() {
         url: TRACK_RECORD_PATH,
         inLanguage: "it-IT",
         isAccessibleForFree: true,
+        // the predictions only: the match data inside come from API-Football and may not be reproduced
+        license: PREDICTIONS_LICENSE.url,
+        creditText: "QuotaGuru (www.quotaguru.it)",
         keywords: ["pronostici calcio", "pronostici NBA", "track record", "probabilità", "modello statistico"],
         creator: { "@id": "/#organizzazione" },
         temporalCoverage: since ? `${since.slice(0, 10)}/..` : undefined,

@@ -16,6 +16,7 @@
 //   src/data/archived-predictions-<sport>.json   archived prediction of the matches in the current data that have
 //                                   started (shown on their match pages instead of a recalculation)
 //   public/dati/archivio-pronostici-<sport>.json   full archive, downloadable from the site
+import { ARCHIVE_TERMS, PREDICTIONS_LICENSE } from "../src/lib/archiveLicense.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -188,8 +189,9 @@ for (const g of basket.nba.games) {
 }
 
 const readme = path.join(archiveDir, "README.md");
-if (!fs.existsSync(readme)) {
+{
   fs.mkdirSync(archiveDir, { recursive: true });
+  // rewritten at every run (only its text changes the file): keeps the terms below up to date
   fs.writeFileSync(
     readme,
     `# Archivio dei pronostici di QuotaGuru
@@ -202,6 +204,12 @@ Ogni pronostico pubblicato su www.quotaguru.it, salvato a ogni aggiornamento del
 - \`pick\`: esito indicato come più probabile; \`result\` e \`hit\`: risultato finale e se il pronostico era giusto.
 
 La cronologia dei commit di questo branch mostra quando ogni pronostico è stato pubblicato.
+
+## Licenza
+
+${ARCHIVE_TERMS}
+
+Testo della licenza: ${PREDICTIONS_LICENSE.url}
 `,
   );
 }
@@ -303,7 +311,11 @@ for (const [sport, log] of [
   ["nba", bLog],
 ]) {
   const list = Object.values(log).sort((a, b) => a.kickoff.localeCompare(b.kickoff));
-  writeJson(path.join(root, "public/dati", `archivio-pronostici-${sport}.json`), { generatedAt: nowIso, entries: list });
+  writeJson(path.join(root, "public/dati", `archivio-pronostici-${sport}.json`), {
+    generatedAt: nowIso,
+    licenza: { pronostici: PREDICTIONS_LICENSE.name, url: PREDICTIONS_LICENSE.url, condizioni: ARCHIVE_TERMS },
+    entries: list,
+  });
 }
 
 const line = (s, st, log) =>
