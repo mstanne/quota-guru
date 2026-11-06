@@ -28,6 +28,7 @@ export function BonusSection({
             <h2 id="offerte-benvenuto" className="text-white text-lg sm:text-xl whitespace-nowrap">
               Offerte di benvenuto
             </h2>
+            <span className="hidden sm:inline text-slate-400 text-sm">· importi per le scommesse sportive</span>
           </div>
           <Button
             variant="outline"
@@ -35,7 +36,8 @@ export function BonusSection({
             className="bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white"
             onClick={onViewAllClick}
           >
-            Tutte<span className="hidden sm:inline">&nbsp;le offerte</span>
+            <span className="sm:hidden">Tutte</span>
+            <span className="hidden sm:inline">Tutte le offerte</span>
           </Button>
         </div>
         {/* one row of compact cards that scrolls sideways (snaps card by card); from lg the four fit side by side */}
@@ -48,42 +50,42 @@ export function BonusSection({
             return (
               <li
                 key={offer.id}
-                className="w-[78%] max-w-[18rem] shrink-0 snap-start lg:w-auto lg:max-w-none flex flex-col rounded-xl border border-slate-700 bg-slate-800 p-4"
+                className="w-[72%] max-w-[17rem] shrink-0 snap-start lg:w-auto lg:max-w-none rounded-xl border border-slate-700 bg-slate-800 p-3"
               >
+                {/* one row: logo, operator and offer name, amount on the right */}
                 <div className="flex items-center gap-2.5">
-                  <OperatorLogo operator={operator} width={40} height={40} className="rounded-md" />
-                  <div className="min-w-0">
-                    <h3 className="text-white text-base leading-tight truncate">{name}</h3>
+                  <OperatorLogo operator={operator} width={36} height={36} className="rounded-md" />
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-white text-sm leading-tight truncate">{name}</h3>
                     <p className="text-slate-400 text-xs truncate" title={offer.title}>
                       {offer.title}
                     </p>
                   </div>
+                  <p className="shrink-0 text-right leading-tight" title="Utilizzabile sulle scommesse sportive">
+                    <span className="block text-slate-400 text-[10px]">fino a</span>
+                    <span className="block text-white text-lg whitespace-nowrap">{formatEuro(sport)}</span>
+                    {offer.advertisedTotal !== null && offer.advertisedTotal !== sport && (
+                      <span className="block text-slate-400 text-[10px] whitespace-nowrap">
+                        su {formatEuro(offer.advertisedTotal)} totali
+                      </span>
+                    )}
+                  </p>
                 </div>
-                <p className="mt-3 text-white text-xl leading-tight">
-                  fino a {formatEuro(sport)}
-                  <span className="block text-slate-400 text-xs mt-0.5">
-                    sulle scommesse sportive
-                    {offer.advertisedTotal !== null && offer.advertisedTotal !== sport
-                      ? ` · totale indicato ${formatEuro(offer.advertisedTotal)}`
-                      : ""}
-                  </span>
-                </p>
-                <div className="mt-auto pt-3">
-                  <OperatorCta
-                    placement="home-offers"
-                    operator={operator}
-                    label="Vai al sito"
-                    size="sm"
-                    className="w-full bg-action hover:bg-action-hover text-action-foreground"
-                  />
-                  <OfferDisclaimer
-                    className="text-center mt-1.5"
-                    termsUrl={offer.termsUrl}
-                    operator={offer.operatorId}
-                    offer={offer.id}
-                    placement="home-offers"
-                  />
-                </div>
+                <OperatorCta
+                  placement="home-offers"
+                  operator={operator}
+                  label="Vai al sito"
+                  size="sm"
+                  className="mt-2.5 w-full h-8 bg-action hover:bg-action-hover text-action-foreground"
+                />
+                <OfferDisclaimer
+                  compact
+                  className="text-center mt-1.5"
+                  termsUrl={offer.termsUrl}
+                  operator={offer.operatorId}
+                  offer={offer.id}
+                  placement="home-offers"
+                />
               </li>
             );
           })}
