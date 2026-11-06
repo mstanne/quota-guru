@@ -208,8 +208,8 @@ function HomePage() {
   return (
     <>
       <HeroSection />
-      <UpcomingMatches />
       <BonusSection onViewAllClick={() => navigate(paths.bonus)} />
+      <UpcomingMatches />
     </>
   );
 }
