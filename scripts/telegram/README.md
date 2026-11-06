@@ -1,0 +1,73 @@
+# Canale Telegram di QuotaGuru
+
+Post automatici sul canale Telegram, generati dai dati che il sito già produce. Nessun testo scritto a mano, tranne la
+coda delle guide Academy (`academy.json`).
+
+## Come funziona
+
+- `.github/workflows/telegram.yml` gira ogni 20 minuti tra le 7 e mezzanotte (ora di Roma).
+- `publish.mjs` invia le rubriche il cui orario è arrivato negli ultimi 100 minuti e che non risultano già inviate.
+  Un ritardo di GitHub o un'esecuzione ripetuta non producono doppioni; il cambio dell'ora legale non richiede modifiche.
+- I dati vengono letti dal branch `dati` (calendario, classifiche, marcatori) e dal branch `archivio-pronostici`
+  (ogni pronostico pubblicato con esito): i numeri sul canale sono gli stessi del sito.
+- Il registro dei post inviati e la posizione nella coda Academy stanno nel branch `telegram-registro`, file `registro.json`.
+- Se una rubrica non ha dati (nessuna partita, giornata non pronta) viene saltata: niente post vuoti.
+
+## Rubriche (ora di Roma)
+
+| Rubrica | Quando | Contenuto |
+| --- | --- | --- |
+| `partite-oggi` | ogni giorno 09:30 | partite del giorno con probabilità 1X2 |
+| `track-record` | lunedì 10:00 | esito dei pronostici da venerdì a domenica e degli ultimi 30 giorni |
+| `classifica` | lunedì 12:30 | classifica di Serie A e top 5 marcatori |
+| `academy` | lunedì e mercoledì 18:00 | una guida dalla coda `academy.json`, a rotazione |
+| `coppe` | martedì, mercoledì, giovedì 12:00 | partite europee della sera (solo se ci sono) |
+| `numeri` | martedì 18:00 | Serie A: più e meno Over 2,5 e Goal nelle ultime 5 |
+| `nba` | giovedì 18:00 | partite NBA della notte con la squadra più probabile |
+| `anteprima-serie-a` | venerdì 12:00 | prossima giornata: più probabile, più incerta, più gol attesi |
+| `dove-vederla` | venerdì 18:00 | canali TV della giornata di Serie A (accordi 2026/27) |
+| `risultati` / `risultati-domenica` | sabato 23:00, domenica 23:30 | risultati del giorno contro il modello |
+
+Orari e testi: `rubriche.mjs`.
+
+## Regole sui contenuti (Decreto Dignità)
+
+Prima dell'invio ogni post passa un filtro (`complianceProblems` in `lib.mjs`): niente nomi di operatori, niente bonus,
+promozioni o inviti a giocare, solo link a www.quotaguru.it, sempre la riga di gioco responsabile. Un post che non
+passa non viene inviato e il workflow risulta fallito, con il motivo nel log.
+
+## Configurazione (una volta)
+
+Repo → Settings → Secrets and variables → Actions:
+
+| Tipo | Nome | Valore |
+| --- | --- | --- |
+| secret | `TELEGRAM_BOT_TOKEN` | token del bot creato con @BotFather |
+| secret | `TELEGRAM_TEST_CHAT_ID` | id numerico del canale privato di prova (es. `-1001234567890`) |
+| secret | `TELEGRAM_CHAT_ID` | `@quotaguru` |
+| variable | `TELEGRAM_MODE` | `live` per pubblicare sul canale pubblico; vuota = canale di prova |
+
+Il bot deve essere amministratore di entrambi i canali con il permesso "Pubblica messaggi".
+Per l'id del canale di prova: pubblica un messaggio nel canale, inoltralo a @userinfobot (o a un bot simile)
+e copia il numero che inizia con `-100`.
+
+## Comandi
+
+```bash
+# stampa i post di tutte le rubriche senza inviarli (dati letti dai branch su GitHub)
+node scripts/telegram/publish.mjs --dry-run --all
+
+# una rubrica subito, a prescindere dall'orario
+node scripts/telegram/publish.mjs --rubrica partite-oggi --force
+
+# simula un'ora precisa
+node scripts/telegram/publish.mjs --dry-run --now 2026-11-09T09:10:00Z
+```
+
+Da GitHub: Actions → "Canale Telegram" → Run workflow, scegliendo la rubrica. "Prova a secco" (attiva di default)
+stampa il post nel log senza inviarlo.
+
+## Aggiungere guide Academy
+
+Aggiungi un elemento in fondo ad `academy.json` (`slug` della guida sul sito, `title`, 2-3 `paragraphs`, `linkText`).
+La coda riparte dall'inizio quando è finita.
