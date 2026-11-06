@@ -10,6 +10,8 @@ interface BonusSectionProps {
   /** Resolves an offer's operator (defaults to the template operator list). */
   resolveOperator?: (id: string) => OperatorData;
   onViewAllClick?: () => void;
+  /** Analytics placement of the buttons and terms links ("home-offers", "site-offers"). */
+  placement?: string;
 }
 
 /** Home page block: sport welcome offers, informational (no ranking, no ratings, no "popular" badges). */
@@ -17,6 +19,7 @@ export function BonusSection({
   offers = offersInSection(visibleOffers({ includeDrafts: import.meta.env.DEV }), "sport").slice(0, 4),
   resolveOperator = getOperator,
   onViewAllClick,
+  placement = "home-offers",
 }: BonusSectionProps) {
   if (offers.length === 0) return null;
   return (
@@ -72,7 +75,7 @@ export function BonusSection({
                   </p>
                 </div>
                 <OperatorCta
-                  placement="home-offers"
+                  placement={placement}
                   operator={operator}
                   label="Vai al sito"
                   size="sm"
@@ -84,7 +87,7 @@ export function BonusSection({
                   termsUrl={offer.termsUrl}
                   operator={offer.operatorId}
                   offer={offer.id}
-                  placement="home-offers"
+                  placement={placement}
                 />
               </li>
             );

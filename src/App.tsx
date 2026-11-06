@@ -194,6 +194,7 @@ function SiteLayout() {
             <Outlet />
           </Suspense>
         </main>
+        <SiteOffers />
         <Footer />
         <BetSlip />
         <AgeGate />
@@ -201,6 +202,23 @@ function SiteLayout() {
       </div>
     </BetSlipProvider>
   );
+}
+
+// Pages without the welcome offers above the footer: the home (it has them near the top), the offers pages themselves
+// and the guides on problem gambling and self-exclusion, where an offer would be out of place.
+const NO_SITE_OFFERS = [
+  paths.bonus,
+  `${paths.guide}/gioco-problematico-dove-chiedere-aiuto`,
+  `${paths.guide}/autoesclusione-e-limiti-di-gioco`,
+];
+
+/** Welcome offers (the compact sliding row of the home) at the end of every page, above the footer. */
+function SiteOffers() {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const path = pathname.replace(/\/+$/, "") || "/";
+  if (path === "/" || NO_SITE_OFFERS.some((p) => path === p || path.startsWith(`${p}/`))) return null;
+  return <BonusSection placement="site-offers" onViewAllClick={() => navigate(paths.bonus)} />;
 }
 
 function HomePage() {
