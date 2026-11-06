@@ -144,7 +144,7 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
                     </div>
                   ) : (
                     <>
-                      <div className="text-white text-3xl sm:text-4xl tabular-nums">{formatTime(game.utcDate)}</div>
+                      <time dateTime={game.utcDate} className="block text-white text-3xl sm:text-4xl tabular-nums">{formatTime(game.utcDate)}</time>
                       <div className="text-slate-400 text-sm mt-1 first-letter:uppercase">
                         {formatDay(game.utcDate)}
                       </div>

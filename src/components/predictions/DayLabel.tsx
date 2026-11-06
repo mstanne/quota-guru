@@ -31,11 +31,17 @@ export function relativeDay(day: string, today: string | null) {
 export function DayLabel({ iso, today }: { iso: string; today: string | null }) {
   const rel = relativeDay(romeDay(iso), today);
   const date = formatDay(iso);
-  if (!rel) return <span className="inline-block first-letter:uppercase">{date}</span>;
+  const day = romeDay(iso);
+  if (!rel)
+    return (
+      <time dateTime={day} className="inline-block first-letter:uppercase">
+        {date}
+      </time>
+    );
   return (
-    <>
+    <time dateTime={day}>
       <span className="text-white">{rel}</span>
       <span className="text-slate-400"> · {date}</span>
-    </>
+    </time>
   );
 }

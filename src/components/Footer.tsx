@@ -66,6 +66,11 @@ export function Footer() {
             <h2 className="text-white text-base mb-4">Risorse</h2>
             <ul className="space-y-2">
               <li>
+                <Link to="/bilancio-pronostici" className="text-slate-400 hover:text-white transition-colors">
+                  Bilancio pronostici
+                </Link>
+              </li>
+              <li>
                 <Link to={paths.sitiScommesse} className="text-slate-400 hover:text-white transition-colors">
                   Siti scommesse
                 </Link>

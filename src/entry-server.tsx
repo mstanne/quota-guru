@@ -12,6 +12,8 @@ import { cornersCardsMeta, goalStatsMeta, leadersMeta, type Competition } from "
 import type { SeasonMatchStats } from "./lib/footballData";
 import { loadAllPlayerData, type FootballPlayer } from "./lib/players";
 import { playerMeta } from "./lib/playerMeta";
+import { trackRecordMeta } from "./lib/trackRecordMeta";
+import { homeItemList } from "./lib/homeMeta";
 import { loadAllNbaPlayerData, nbaPlayerMeta, type NbaPlayer } from "./lib/nbaPlayers";
 import { leagueGoalStats, type GoalResult } from "./lib/goalStats.mjs";
 import { loadAllCompetitionData } from "./lib/footballData";
@@ -42,7 +44,8 @@ import { tennisRoutes } from "./lib/tennis";
 import { preloadAllPages } from "./lib/lazyPage";
 import { setArchivedHtml } from "./lib/archive";
 
-export { notFoundMeta, fullTitle } from "./routes";
+export { notFoundMeta, fullTitle, snippet } from "./routes";
+export { llmsTxt } from "./lib/llmsTxt";
 export { site } from "./data/site";
 /** Page chunks and the data loaded on demand (team pages) must all be ready before rendering synchronously. */
 const preloadAll = () => Promise.all([preloadAllPages(), loadAllTeamData(), loadAllResults(), loadAllSeasons(), loadAllCompetitionData(), loadAllPlayerData(), loadAllNbaPlayerData()]);
@@ -90,7 +93,7 @@ const cornersCardsRoutes = () =>
   Object.values(competitionFiles).flatMap(({ default: f }) =>
     f.matchStats?.n && f.competition.standings.length ? [cornersCardsMeta(f.competition, f.matchStats.league)] : [],
   );
-export const routes = [...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...nbaPlayerRoutes(), ...staticRoutes, ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes(
+export const routes = [trackRecordMeta(), ...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...nbaPlayerRoutes(), ...staticRoutes.map((r) => (r.path === "/" ? { ...r, jsonLd: [...(r.jsonLd ?? []), ...homeItemList()] } : r)), ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes(
   (id) => !!basketPredictionFor(id),
   (id) => highlightFor("nba", id),
   (g) => nbaVenues.get(g.home.id) ?? null,

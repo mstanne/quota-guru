@@ -98,3 +98,30 @@ export function placeIt(s) {
   if (k === "promoted") return "Promozione";
   return s;
 }
+
+// API-Football names of competitions that read ambiguously on an Italian site ("Serie A" of Brazil), by league id
+const LEAGUE_NAMES = {
+  71: "Brasileirão",
+  72: "Série B (Brasile)",
+  73: "Copa do Brasil",
+  13: "Copa Libertadores",
+  11: "Copa Sudamericana",
+  2: "Champions League",
+  3: "Europa League",
+  848: "Conference League",
+  531: "Supercoppa europea",
+  137: "Coppa Italia",
+  547: "Supercoppa italiana",
+  136: "Serie B",
+  135: "Serie A",
+};
+/**
+ * Competition name for the site: by API-Football league id when known; otherwise the API name, with Brazil's "Serie A"
+ * / "Serie B" made explicit when the club plays in Brazil (`brazil`).
+ */
+export function leagueIt(name, id = null, { brazil = false } = {}) {
+  if (id != null && LEAGUE_NAMES[id]) return LEAGUE_NAMES[id];
+  if (brazil && name === "Serie A") return "Brasileirão";
+  if (brazil && name === "Serie B") return "Série B (Brasile)";
+  return name;
+}

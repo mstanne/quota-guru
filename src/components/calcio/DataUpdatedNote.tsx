@@ -19,7 +19,7 @@ export function DataUpdatedNote({
     <p data-volatile="" className={`flex items-center gap-1.5 text-slate-400 text-sm ${className}`}>
       <Clock className="w-4 h-4 shrink-0" aria-hidden="true" />
       <span>
-        Dati aggiornati al {formatUpdated(generatedAt)}
+        Dati aggiornati al <time dateTime={generatedAt}>{formatUpdated(generatedAt)}</time>
         <span className={short ? "hidden sm:inline" : ""}> · {cadence}, non in tempo reale</span>
       </span>
     </p>

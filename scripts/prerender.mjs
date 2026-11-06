@@ -35,7 +35,7 @@ const siteUrl = (process.env.SITE_URL ?? "").replace(/\/$/, "");
 const buildIso = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
 const today = buildIso.slice(0, 10);
 
-const { render, routes, notFoundMeta, fullTitle, preloadAllPages, site, legacyTarget, rewriteLegacyLinks } = await import(
+const { render, routes, notFoundMeta, fullTitle, snippet, llmsTxt, preloadAllPages, site, legacyTarget, rewriteLegacyLinks } = await import(
   pathToFileURL(ssrEntry).href
 );
 // lazy page chunks must be loaded before rendering synchronously with renderToString
@@ -138,7 +138,7 @@ const website = () => ({
 });
 
 /** Site paths in the structured data ("/calcio/...", "/og/x.png", "/#id") become absolute URLs. */
-const URL_KEYS = new Set(["@id", "url", "item", "image", "logo", "mainEntityOfPage"]);
+const URL_KEYS = new Set(["@id", "url", "item", "image", "logo", "mainEntityOfPage", "contentUrl"]);
 function absolute(value) {
   if (!siteUrl || typeof value !== "string" || !value.startsWith("/")) return value;
   const [p, hash] = value.split("#");
@@ -238,7 +238,7 @@ function ogImage(meta) {
 
 function page(meta, appHtml, { prerendered, dates = null }) {
   const title = esc(fullTitle(meta));
-  const desc = esc(meta.description);
+  const desc = esc(snippet(meta.description));
   // a dated match page whose evergreen page shows the same match points its canonical there
   const canonical = publicUrl(meta.canonical ?? meta.path);
   const img = ogImage(meta);
@@ -337,17 +337,19 @@ function emit(meta0, appHtml, main = mainContent(appHtml)) {
   const same = prev?.hash === hash;
   // full timestamps for the Article dates; pages known only from older states get the day of their last change
   const prevModified = prev ? (prev.modified ?? `${prev.lastmod}T00:00:00Z`) : null;
+  // only canonical pages go to the sitemap and to IndexNow
+  const indexable = meta.index !== false && (!meta.canonical || meta.canonical === meta.path);
   const entry = {
     hash,
     lastmod: same ? prev.lastmod : today,
     published: prev?.published ?? prevModified ?? buildIso,
     modified: same ? prevModified : buildIso,
+    // remembered so a page that becomes indexable again (a player past the minutes threshold) is announced at once
+    ...(indexable ? {} : { noindex: true }),
   };
   nextState.pages[meta.path] = entry;
   fs.writeFileSync(out, page(meta, appHtml, { prerendered: true, dates: entry }));
-  // only canonical pages go to the sitemap and to IndexNow
-  const indexable = meta.index !== false && (!meta.canonical || meta.canonical === meta.path);
-  if (prev?.hash !== hash && indexable) changedNow.push(meta.path);
+  if (indexable && (prev?.hash !== hash || prev?.noindex)) changedNow.push(meta.path);
   if (indexable) {
     const isMatch = meta.event || (meta.jsonLd ?? []).some((n) => n["@type"] === "SportsEvent");
     (isMatch ? sitemapMatches : sitemapPages).push(meta.path);
@@ -489,6 +491,9 @@ fs.writeFileSync(
     .filter((l, i, a) => l !== "" || a[i - 1] !== "")
     .join("\n") + "\n",
 );
+
+// llms.txt (llmstxt.org): what the site is, the track record figures and the main pages, for AI assistants
+fs.writeFileSync(path.join(dist, "llms.txt"), llmsTxt((p) => (/\.[a-z]+$/.test(p) ? `${siteUrl}${p}` : publicUrl(p) || p)));
 
 fs.mkdirSync(cacheDir, { recursive: true });
 // URLs for IndexNow (scripts/indexnow.mjs runs after the deploy): only what is new or changed in this build.

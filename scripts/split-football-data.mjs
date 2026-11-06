@@ -101,6 +101,26 @@ for (const c of football.competitions)
 entries.sort((a, b) => b.utcDate.localeCompare(a.utcDate));
 const from = new Date(now - 30 * 86400000).toISOString();
 const count = (list) => ({ n: list.length, hits: list.filter((e) => e.hit).length });
+/** Hits by competition and by month (track record page). */
+function breakdown(list) {
+  const group = (keyOf) => {
+    const m = new Map();
+    for (const e of list) {
+      const k = keyOf(e);
+      const g = m.get(k) ?? { n: 0, hits: 0 };
+      g.n++;
+      if (e.hit) g.hits++;
+      m.set(k, g);
+    }
+    return m;
+  };
+  return {
+    byWhere: [...group((e) => e.where)].map(([where, c]) => ({ where, ...c })).sort((a, b) => b.n - a.n),
+    byMonth: [...group((e) => e.utcDate.slice(0, 7))]
+      .map(([month, c]) => ({ month, ...c }))
+      .sort((a, b) => b.month.localeCompare(a.month)),
+  };
+}
 
 fs.writeFileSync(
   path.join(OUT, "index.json"),
@@ -113,7 +133,12 @@ fs.writeFileSync(
         // rounds of the league phase of the cups are "fase-campionato-giornata-<n>" (src/lib/footballCore.ts)
         leaguePhase: matches.some((m) => m.stage === "LEAGUE_STAGE"),
       })),
-    trackRecord: { all: count(entries), last30: count(entries.filter((e) => e.utcDate >= from)), recent: entries.slice(0, 10) },
+    trackRecord: {
+      all: count(entries),
+      last30: count(entries.filter((e) => e.utcDate >= from)),
+      ...breakdown(entries),
+      recent: entries.slice(0, 10),
+    },
   }) + "\n",
 );
 console.log(`Dati calcio per competizione: ${written.size} file (src/data/football)`);

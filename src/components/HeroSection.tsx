@@ -87,7 +87,9 @@ function FeaturedCard({ competition, match, prediction }: FeaturedMatch) {
         <span className="text-slate-300 font-medium truncate">{competition.name}</span>
         <span className="flex items-center gap-2 shrink-0 text-slate-400">
           <span className="first-letter:uppercase">
-            {shortDay(match.utcDate)} · {formatTime(match.utcDate)}
+            <time dateTime={match.utcDate}>
+              {shortDay(match.utcDate)} · {formatTime(match.utcDate)}
+            </time>
           </span>
           <span
             className="flex gap-0.5"

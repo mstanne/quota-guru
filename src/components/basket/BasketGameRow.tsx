@@ -72,7 +72,9 @@ export function BasketGameRow({
           ) : pending ? (
             <span className="block text-warn text-[11px] leading-tight">Risultato in arrivo</span>
           ) : (
-            <span className="text-white tabular-nums">{formatTime(game.utcDate)}</span>
+            <time dateTime={game.utcDate} className="text-white tabular-nums">
+              {formatTime(game.utcDate)}
+            </time>
           )}
         </div>
         <div className="flex-1 min-w-0 space-y-1">

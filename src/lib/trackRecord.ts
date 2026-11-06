@@ -35,17 +35,36 @@ export interface TrackRecord {
   last30: { n: number; hits: number };
   /** Most recent first. */
   recent: TrackEntry[];
+  /** Hits by competition (most predictions first) and by month (newest first): the track record page. */
+  byWhere?: { where: string; n: number; hits: number }[];
+  byMonth?: { month: string; n: number; hits: number }[];
 }
 
 export function summarize(entries: TrackEntry[]): TrackRecord {
   const sorted = [...entries].sort((a, b) => b.utcDate.localeCompare(a.utcDate));
   const from = new Date(referenceTime - 30 * 86400000).toISOString();
   const count = (list: TrackEntry[]) => ({ n: list.length, hits: list.filter((e) => e.hit).length });
+  const group = (keyOf: (e: TrackEntry) => string) => {
+    const m = new Map<string, { n: number; hits: number }>();
+    for (const e of sorted) {
+      const g = m.get(keyOf(e)) ?? { n: 0, hits: 0 };
+      g.n++;
+      if (e.hit) g.hits++;
+      m.set(keyOf(e), g);
+    }
+    return [...m];
+  };
   return {
     source: "ricalcolo",
     all: count(sorted),
     last30: count(sorted.filter((e) => e.utcDate >= from)),
     recent: sorted.slice(0, 10),
+    byWhere: group((e) => e.where)
+      .map(([where, c]) => ({ where, ...c }))
+      .sort((a, b) => b.n - a.n),
+    byMonth: group((e) => e.utcDate.slice(0, 7))
+      .map(([month, c]) => ({ month, ...c }))
+      .sort((a, b) => b.month.localeCompare(a.month)),
   };
 }
 

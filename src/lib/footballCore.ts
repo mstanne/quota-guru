@@ -632,9 +632,11 @@ export function eventMeta(
       ? `${teams} (${c.name}) è in corso: punteggio aggiornato durante la partita ogni 15 minuti circa (non in tempo reale)${p ? ", il pronostico pubblicato prima del calcio d'inizio" : ""}, classifica e precedenti.`
       : isResultPending(next)
         ? `${teams} (${c.name}), giocata ${when}: risultato in arrivo. Il pronostico pubblicato prima della partita, classifica e precedenti.`
-        : `Pronostico ${teams} (${c.name}), ${when}: ${hasLineups(next) ? "formazioni ufficiali, " : ""}${p ? "probabilità 1X2, Under/Over e Goal calcolate dal modello statistico" : "orario"}${
-            hasInjuries(next) ? ", indisponibili (infortunati e squalificati)" : ""
-          }, classifica, forma recente e precedenti.`;
+        : `Pronostico ${teams} (${c.name}), ${formatDayMonth(next.utcDate)} ore ${formatTime(next.utcDate)}: ${
+            hasLineups(next) ? "formazioni, " : ""
+          }${p ? "probabilità 1X2, Under/Over e Goal" : "orario"}${
+            hasInjuries(next) ? ", indisponibili" : ""
+          }, classifica, forma e precedenti.`;
     return {
       path,
       event: true,
@@ -642,8 +644,9 @@ export function eventMeta(
       title: live
         ? `${teams} ${nft.home ?? 0}-${nft.away ?? 0} in corso: risultato e pronostico · ${c.name}`
         : hasLineups(next)
-          ? `Pronostico ${teams}: formazioni ufficiali e probabilità · ${c.name}`
-          : `Pronostico ${teams} (${formatDayMonth(next.utcDate)}): ${p ? "probabilità e statistiche" : "orario e precedenti"} · ${c.name}`,
+          ? `Pronostico ${teams}: formazioni e probabilità · ${c.name}`
+          : // short (search results cut at ~60 characters): teams, date and competition say it all
+            `Pronostico ${teams} (${formatDayMonth(next.utcDate)}) · ${c.name}`,
       description,
       archive: false,
       jsonLd: footballEventLd(c, next, path, description, undefined, venue),

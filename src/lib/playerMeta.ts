@@ -10,6 +10,8 @@ export function playerMeta(p: FootballPlayer) {
     : "statistiche della stagione";
   return {
     path: p.url,
+    // few minutes this season: the page stays for visitors, out of the index and the sitemap
+    index: p.index !== false,
     title: `${p.name}: statistiche ${cur?.label ?? ""} e carriera`.replace(/\s+/g, " "),
     description: `${p.name}, ${role}del ${p.team.shortName}${p.nationality ? ` (${p.nationality})` : ""}: ${stats}, ${
       p.current?.detail ? "tiri, passaggi chiave, duelli, " : ""
