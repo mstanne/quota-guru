@@ -143,11 +143,14 @@ export function BasketQuickSummary({
   home,
   away,
   result,
+  picks,
 }: {
   prediction: BasketPrediction;
   home: string;
   away: string;
   result?: { home: number; away: number } | null;
+  /** Upcoming games: the winner buttons that add the outcome to the slip (built by the page, BasketMarketMini). */
+  picks?: React.ReactNode;
 }) {
   const fav = p.fav === 0 ? home : away;
   const even = [...p.totals].sort((a, b) => Math.abs(a[1] - 0.5) - Math.abs(b[1] - 0.5))[0];
@@ -157,6 +160,17 @@ export function BasketQuickSummary({
       title={result ? "Il pronostico prima della partita" : "Il pronostico in breve"}
       badge={<ConfidenceBadge confidence={p.confidence} />}
       result={hit}
+      picks={
+        picks && !result ? (
+          <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2">
+            <span className="text-slate-400 text-xs">Metti in schedina</span>
+            {picks}
+            <a href="#schedina" className="text-xs text-action-text hover:text-action-text-hover">
+              Altri esiti
+            </a>
+          </div>
+        ) : undefined
+      }
     >
       <Item label="Favorita" value={fav} sub={pct(p.p[p.fav])} strong />
       <Item label="Punti attesi" value={`${fmtPts(p.pts[0])} – ${fmtPts(p.pts[1])}`} />

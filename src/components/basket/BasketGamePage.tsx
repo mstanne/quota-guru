@@ -3,9 +3,11 @@ import { Link } from "../../lib/links";
 import { ArrowLeft, CalendarDays, History, Info } from "lucide-react";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";
 import { MatchSummary, basketSummary } from "../editorial/MatchSummary";
-import { TeamBadge } from "../calcio/MatchRow";
+import { ListColumns, TeamBadge } from "../calcio/MatchRow";
 import { ArchivedOrNotFound } from "../../lib/archive";
-import { BasketPredictionPanel } from "./BasketPrediction";
+import { BasketMarketMini, BasketPredictionPanel, NBA_COLUMN_WIDTH } from "./BasketPrediction";
+import { SectionNav } from "../layout/SectionNav";
+import type { SlipMatch } from "../predictions/SlipPicks";
 import { archivedBasketPredictionFor, basketPredictionFor } from "../../lib/basketPredict";
 import { BasketGameRow } from "./BasketGameRow";
 import { BasketBoxScore } from "./BasketBoxScore";
@@ -67,6 +69,18 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
   const finished = isGameFinished(game);
   const live = isGameLive(game);
   const sameDay = nbaGames.filter((g) => g.id !== game.id && romeDay(g.utcDate) === romeDay(game.utcDate));
+  // the slip entry of this game (upcoming games only), shared by the summary on top and the full prediction panel
+  const slip: SlipMatch | undefined =
+    game.status === "scheduled"
+      ? {
+          slipId: `nba-${game.id}`,
+          competition: "NBA",
+          home: game.home.name,
+          away: game.away.name,
+          date: romeDay(game.utcDate),
+          time: formatTime(game.utcDate),
+        }
+      : undefined;
   // once the game has started, show the prediction as it was published (archive), else the recalculated one
   const archived = game.status !== "scheduled" ? archivedBasketPredictionFor(game.id) : undefined;
   const prediction = archived ? { ...archived.prediction, pre: true } : basketPredictionFor(game.id);
@@ -146,12 +160,35 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
               home={game.home.shortName ?? game.home.name}
               away={game.away.shortName ?? game.away.name}
               result={finished && game.score.home != null && game.score.away != null ? { home: game.score.home, away: game.score.away } : null}
+              picks={
+                slip && !prediction.pre ? (
+                  <BasketMarketMini
+                    prediction={prediction}
+                    market="win"
+                    home={game.home.shortName ?? game.home.name}
+                    away={game.away.shortName ?? game.away.name}
+                    slip={slip}
+                  />
+                ) : undefined
+              }
             />
           )}
           <MatchSummary text={basketSummary(game, prediction, { finished, live })} />
           <DataUpdatedNote generatedAt={basketUpdatedAt} className="justify-center mt-6" />
         </div>
       </div>
+
+      <SectionNav
+        items={[
+          { id: "tabellino", label: "Tabellino" },
+          { id: "statistiche-giocatori", label: "Giocatori" },
+          { id: "pronostico", label: "Pronostico" },
+          { id: "analisi", label: finished ? "Com'è andata" : "Anteprima" },
+          { id: "info", label: "Informazioni" },
+          { id: "stesso-giorno", label: "Altre partite" },
+          { id: "sfida", label: "In stagione" },
+        ]}
+      />
 
       <div className="container mx-auto px-4 py-8 space-y-6">
         {/* box score and highlights side by side on wide screens, stacked otherwise */}
@@ -176,18 +213,7 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
             result={finished && game.score.home != null && game.score.away != null ? { home: game.score.home, away: game.score.away } : null}
             reasons={game.status === "scheduled" ? nbaReasonsFor(game, prediction) : []}
             publishedAt={archived?.published}
-            slip={
-              game.status === "scheduled" && !prediction.pre
-                ? {
-                    slipId: `nba-${game.id}`,
-                    competition: "NBA",
-                    home: game.home.name,
-                    away: game.away.name,
-                    date: romeDay(game.utcDate),
-                    time: formatTime(game.utcDate),
-                  }
-                : undefined
-            }
+            slip={slip && !prediction.pre ? slip : undefined}
           />
         )}
 
@@ -238,9 +264,10 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
               <CalendarDays className="w-5 h-5 text-slate-300" aria-hidden="true" />
               Altre partite dello stesso giorno
             </h2>
+            <ListColumns labels={["1", "2"]} width={NBA_COLUMN_WIDTH} meta={false} className="mb-1" />
             <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
               {sameDay.map((g) => (
-                <BasketGameRow key={g.id} game={g} />
+                <BasketGameRow key={g.id} game={g} columns meta={false} />
               ))}
             </div>
           </section>
