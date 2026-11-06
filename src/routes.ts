@@ -176,6 +176,15 @@ export function findStaticRoute(pathname: string): RouteMeta | undefined {
   return routes.find((r) => r.path === clean);
 }
 
-export function fullTitle(meta: RouteMeta) {
-  return meta.path === "/" ? meta.title : `${meta.title} | ${SITE_NAME}`;
+/** Titles longer than this are shown without " | QuotaGuru" (search results cut them at about 60 characters). */
+const TITLE_SUFFIX_MAX = 52;
+export function fullTitle(meta: Pick<RouteMeta, "path" | "title">) {
+  return meta.path === "/" || meta.title.length > TITLE_SUFFIX_MAX ? meta.title : `${meta.title} | ${SITE_NAME}`;
+}
+
+/** Meta description of at most ~158 characters (what search results show), cut at a word with "…". */
+export function snippet(text: string, max = 158) {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max - 1);
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[\s,;:·–-]+$/, "")}…`;
 }

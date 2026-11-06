@@ -28,6 +28,9 @@ const LegacyRedirect = lazyPage(() => import("./components/LegacyRedirect").then
 const DayPredictionsPage = lazyPage(() =>
   import("./components/predictions/DayPredictionsPage").then((m) => m.DayPredictionsPage),
 );
+const TrackRecordPage = lazyPage(() =>
+  import("./components/predictions/TrackRecordPage").then((m) => m.TrackRecordPage),
+);
 const PronosticiPage = lazyPage(() => import("./components/predictions/PronosticiPage").then((m) => m.PronosticiPage));
 const StandingsPage = lazyPage(() => import("./components/calcio/StandingsPage").then((m) => m.StandingsPage));
 const NotFoundPage = lazyPage(() => import("./components/NotFoundPage").then((m) => m.NotFoundPage));
@@ -124,6 +127,7 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   [paths.contatti, [ContattiPage]],
   [paths.faq, [FaqPage]],
   [paths.metodologia, [MetodologiaPage]],
+  ["/bilancio-pronostici", [TrackRecordPage]],
   [paths.affiliazione, [AffiliazionePage]],
   [paths.termini, [TerminiPage]],
   [paths.privacy, [PrivacyPage]],
@@ -266,6 +270,7 @@ export default function App() {
             <Route path={paths.contatti} element={<ContattiPage />} />
             <Route path={paths.faq} element={<FaqPage />} />
             <Route path={paths.metodologia} element={<MetodologiaPage />} />
+            <Route path="/bilancio-pronostici" element={<TrackRecordPage />} />
             <Route path={paths.affiliazione} element={<AffiliazionePage />} />
             <Route path={paths.termini} element={<TerminiPage />} />
             <Route path={paths.privacy} element={<PrivacyPage />} />

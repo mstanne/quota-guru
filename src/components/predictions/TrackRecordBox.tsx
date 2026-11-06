@@ -122,6 +122,10 @@ export function TrackRecordBox({
             </>
           )}
           Sono stime statistiche, non consigli di gioco.{" "}
+          <Link to="/bilancio-pronostici" className="text-action-text hover:text-action-text-hover">
+            Bilancio completo
+          </Link>
+          {" · "}
           <Link to={`${paths.metodologia}#${anchor}`} className="text-action-text hover:text-action-text-hover">
             Come lo calcoliamo
           </Link>

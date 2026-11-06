@@ -15,7 +15,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { absenceIt, country, placeIt, positionIt, transferTypeIt } from "./lib/italian.mjs";
+import { absenceIt, country, leagueIt, placeIt, positionIt, transferTypeIt } from "./lib/italian.mjs";
 import { playerName, playerPart, playerUrl } from "../src/lib/playerNames.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -142,6 +142,28 @@ for (const c of football.competitions)
       ranks.set(r.id, e);
     });
 
+// Search engines: pages of players with few minutes are mostly empty tables. They stay on the site (links from teams
+// and matches) but are kept out of the index and the sitemap ("noindex") when the player has fewer than
+// MIN_MINUTES minutes this season, counted only once the league has played ROUNDS_BEFORE_THRESHOLD rounds (before
+// that everybody is below the threshold). Checked again at every build (every few hours, so after every round):
+// a player who passes the threshold is indexed again and announced to IndexNow (scripts/prerender.mjs).
+const MIN_MINUTES = 450;
+const ROUNDS_BEFORE_THRESHOLD = 10;
+/** Rounds played in a league: the highest round with a finished match (postponed matches do not hold it back). */
+const roundsPlayed = new Map(
+  football.competitions.map((c) => [
+    c.slug,
+    Math.max(
+      0,
+      ...c.matches
+        .filter((m) => ["FINISHED", "AWARDED"].includes(m.status) && Number.isFinite(m.matchday))
+        .filter((m) => !m.stage || m.stage === "REGULAR_SEASON")
+        .map((m) => m.matchday),
+    ),
+  ]),
+);
+let belowThreshold = 0;
+
 const parts = Array.from({ length: 32 }, () => ({}));
 const ids = [];
 for (const [id, list] of rows) {
@@ -161,14 +183,21 @@ for (const [id, list] of rows) {
         team: { id: team.id, slug: team.slug, shortName: team.shortName, crest: team.crest ?? null },
         competition: comp?.name ?? null,
         apps: s.apps, starts: s.starts, min: s.min, goals: s.goals, assists: s.assists,
-        yellow: s.yellow, red: s.red, rating: s.rating, comps: s.comps ?? [],
+        yellow: s.yellow, red: s.red, rating: s.rating,
+        comps: (s.comps ?? []).map((n) => leagueIt(n, null, { brazil: team.competition === "brasileirao" })),
       };
     });
   const comp = compBySlug.get(now.team.competition);
   const pm = playerMatches.players?.[id];
+  // minutes of this season, with every club of the season (a player moved in the window counts both)
+  const seasonMin = list.filter(({ team, y }) => y === currentOf(team.competition)).reduce((n, r) => n + (r.p.min ?? 0), 0);
+  const rounds = comp ? (roundsPlayed.get(comp.slug) ?? 0) : 0;
+  const index = !comp || rounds < ROUNDS_BEFORE_THRESHOLD || seasonMin >= MIN_MINUTES;
+  if (!index) belowThreshold++;
   const player = {
     id,
     url: playerUrl({ ...p, id }),
+    ...(index ? {} : { index: false }),
     name: playerName(p),
     fullName: [p.first, p.last].filter(Boolean).join(" ") || p.name,
     birth: p.birth ?? null,
@@ -192,7 +221,11 @@ for (const [id, list] of rows) {
         yellow: p.yellow, red: p.red, rating: p.rating,
       },
       detail: p.detail ?? null,
-      byComp: p.byComp ?? null,
+      byComp:
+        p.byComp?.map((c) => ({
+          ...c,
+          league: leagueIt(c.league, c.leagueId, { brazil: now.team.competition === "brasileirao" }),
+        })) ?? null,
       homeAway: homeAway(pm),
       last: lastMatches(pm),
     },
@@ -209,4 +242,6 @@ fs.writeFileSync(path.join(OUT, "ids.json"), JSON.stringify(ids.sort((a, b) => a
 const slugs = {};
 for (const part of parts) for (const [id, p] of Object.entries(part)) slugs[id] = p.url.slice(p.url.lastIndexOf("/") + 1, -(`-${id}`.length));
 fs.writeFileSync(path.join(OUT, "slugs.json"), JSON.stringify(slugs) + "\n");
-console.log(`Pagine giocatore: ${ids.length}`);
+console.log(
+  `Pagine giocatore: ${ids.length} (fuori dall'indice: ${belowThreshold}, meno di ${MIN_MINUTES} minuti dopo ${ROUNDS_BEFORE_THRESHOLD} giornate)`,
+);

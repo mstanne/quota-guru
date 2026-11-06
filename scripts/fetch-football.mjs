@@ -98,7 +98,8 @@ const H2H_NAMES = {
   "Club Friendlies": "Amichevole",
   "League Cup": "League Cup",
 };
-const h2hCompetition = (name) => H2H_NAMES[name] ?? name;
+const h2hCompetition = (name, country) =>
+  country === "Brazil" && name === "Serie A" ? "Brasileirão" : (H2H_NAMES[name] ?? name);
 
 export function compactFixture(f, teamOf, idOf) {
   const short = f.fixture?.status?.short;
@@ -387,7 +388,7 @@ async function main() {
         matches: list.slice(0, 5).map((f) => ({
           id: MATCH_OFFSET + f.fixture.id,
           utcDate: new Date(f.fixture.date).toISOString().replace(".000Z", "Z"),
-          competition: h2hCompetition(f.league?.name ?? ""),
+          competition: h2hCompetition(f.league?.name ?? "", f.league?.country),
           homeTeam: teamOf(f.teams.home),
           awayTeam: teamOf(f.teams.away),
           score: { fullTime: { home: f.goals.home, away: f.goals.away } },

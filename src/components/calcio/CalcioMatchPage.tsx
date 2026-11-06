@@ -320,7 +320,9 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
                 </>
               ) : (
                 <>
-                  <div className="text-white text-3xl sm:text-4xl tabular-nums">{formatTime(match.utcDate)}</div>
+                  <time dateTime={match.utcDate} className="block text-white text-3xl sm:text-4xl tabular-nums">
+                    {formatTime(match.utcDate)}
+                  </time>
                   <div className="text-slate-400 text-sm mt-1 first-letter:uppercase">{formatDay(match.utcDate)}</div>
                 </>
               )}

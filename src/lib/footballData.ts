@@ -6,7 +6,7 @@
 import index from "../data/football/index.json";
 import { settleMatch, matchSlug, type Competition, type HeadToHead, type Match } from "./footballCore";
 import type { Prediction } from "./predictionsCore";
-import type { TrackEntry } from "./trackRecord";
+import type { TrackRecord } from "./trackRecord";
 import { leagueGoalStats, teamGoalStats, type GoalResult } from "./goalStats.mjs";
 
 export interface CompetitionInfo {
@@ -57,7 +57,7 @@ export interface SeasonMatchStats {
 const idx = index as unknown as {
   generatedAt: string;
   competitions: CompetitionInfo[];
-  trackRecord: { all: { n: number; hits: number }; last30: { n: number; hits: number }; recent: TrackEntry[] };
+  trackRecord: Omit<TrackRecord, "source">;
 };
 export const footballIndex = idx.competitions;
 export const footballGeneratedAt = idx.generatedAt;

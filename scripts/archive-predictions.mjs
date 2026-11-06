@@ -236,6 +236,25 @@ function calibration(sport, graded) {
     .map((b) => ({ lo: b.lo, hi: b.hi, n: b.n, pred: Math.round((b.pred / b.n) * 1000) / 1000, obs: Math.round((b.hit / b.n) * 1000) / 1000 }));
 }
 
+/** Hits by competition (most predictions first) and by month of kick-off (newest first), for the track record page. */
+function breakdown(graded, whereOf, dateOf) {
+  const group = (keyOf) => {
+    const m = new Map();
+    for (const e of graded) {
+      const k = keyOf(e);
+      const g = m.get(k) ?? { n: 0, hits: 0 };
+      g.n++;
+      if (e.hit) g.hits++;
+      m.set(k, g);
+    }
+    return m;
+  };
+  return {
+    byWhere: [...group(whereOf)].map(([where, c]) => ({ where, ...c })).sort((a, b) => b.n - a.n),
+    byMonth: [...group((e) => dateOf(e).slice(0, 7))].map(([month, c]) => ({ month, ...c })).sort((a, b) => b.month.localeCompare(a.month)),
+  };
+}
+
 function summary(sport, log) {
   const graded = Object.values(log)
     .filter((e) => e.result)
@@ -248,6 +267,7 @@ function summary(sport, log) {
     all: count(graded),
     last30: count(graded.filter((e) => e.kickoff >= from)),
     calibration: calibration(sport, graded),
+    ...breakdown(graded, (e) => e.where, (e) => e.kickoff),
     recent: graded.slice(0, 10).map((e) => ({
       key: `${sport}-${e.id}`,
       path: e.path,

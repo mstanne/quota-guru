@@ -114,6 +114,8 @@ export interface PlayerHistory {
 export interface FootballPlayer {
   id: number;
   url: string;
+  /** false: kept out of search engines (few minutes this season, scripts/derive-players.mjs). */
+  index?: false;
   name: string;
   fullName: string;
   birth: string | null;

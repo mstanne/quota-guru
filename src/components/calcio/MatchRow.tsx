@@ -120,7 +120,9 @@ export function MatchRow({
           ) : pending ? (
             <span className="block text-warn text-[11px] leading-tight">{statusLabel(match)}</span>
           ) : (
-            <span className="text-white tabular-nums">{formatTime(match.utcDate)}</span>
+            <time dateTime={match.utcDate} className="text-white tabular-nums">
+              {formatTime(match.utcDate)}
+            </time>
           )}
           {match.status === "POSTPONED" && <span className="block text-amber-400 text-xs">Rinviata</span>}
         </div>
