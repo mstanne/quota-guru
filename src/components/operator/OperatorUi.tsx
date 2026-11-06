@@ -130,13 +130,39 @@ export function OfferDisclaimer({
   operator,
   offer,
   placement,
+  compact = false,
 }: {
   className?: string;
   termsUrl?: string;
   operator?: string;
   offer?: string;
   placement?: string;
+  /** One short line ("18+ · Si applicano i termini dell'operatore", with the link on the last words): small cards. */
+  compact?: boolean;
 }) {
+  if (compact)
+    return (
+      <p className={cn("text-slate-400 text-[11px] leading-tight", className)}>
+        18+ · Si applicano i{" "}
+        {termsUrl ? (
+          <a
+            href={isPlaceholder(termsUrl) ? undefined : termsUrl}
+            title={isPlaceholder(termsUrl) ? termsUrl : undefined}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            className="underline underline-offset-2 hover:text-slate-300"
+            data-track={operator ? "offer_terms_click" : undefined}
+            data-track-operator={operator}
+            data-track-offer={offer}
+            data-track-placement={placement}
+          >
+            termini dell'operatore
+          </a>
+        ) : (
+          "termini dell'operatore"
+        )}
+      </p>
+    );
   return (
     <p className={cn("text-slate-400 text-xs", className)}>
       18+ · Si applicano i termini dell'operatore

@@ -7,6 +7,7 @@ import { ListColumns, TeamBadge } from "../calcio/MatchRow";
 import { ArchivedOrNotFound } from "../../lib/archive";
 import { BasketMarketMini, BasketPredictionPanel, NBA_COLUMN_WIDTH } from "./BasketPrediction";
 import { SectionNav } from "../layout/SectionNav";
+import { SiteOffers } from "../SiteOffers";
 import type { SlipMatch } from "../predictions/SlipPicks";
 import { archivedBasketPredictionFor, basketPredictionFor } from "../../lib/basketPredict";
 import { BasketGameRow } from "./BasketGameRow";
@@ -177,6 +178,8 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
           <DataUpdatedNote generatedAt={basketUpdatedAt} className="justify-center mt-6" />
         </div>
       </div>
+
+      <SiteOffers />
 
       <SectionNav
         items={[
