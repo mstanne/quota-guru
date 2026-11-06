@@ -33,6 +33,7 @@ import { isMatchdayStage, matchdayPath } from "../../lib/footballCore";
 import { usePageMeta } from "../../lib/pageMeta";
 import { footballEditorial } from "../../lib/editorial";
 import { MatchEditorial } from "../editorial/MatchEditorial";
+import { extendPreview } from "../../lib/editorial/extraTexts";
 import { MatchSummary, footballSummary } from "../editorial/MatchSummary";
 import { PredictionPanel } from "../predictions/PredictionUi";
 import { footballSlip } from "../predictions/SlipPicks";
@@ -400,7 +401,14 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               time={formatTime(match.utcDate)}
             />
           )}
-          <MatchEditorial article={footballEditorial({ comp: competition, match, h2h, generatedAt })} />
+          <MatchEditorial
+            article={extendPreview(footballEditorial({ comp: competition, match, h2h, generatedAt }), {
+              data,
+              match,
+              prediction,
+              h2h,
+            })}
+          />
 
           <section className={card} aria-labelledby="confronto">
             <SectionTitle icon={TrendingUp}>
