@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-06T21:19:41.653Z",
+ "generatedAt": "2026-11-06T23:16:34.878Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558534": {
@@ -711,20 +711,20 @@
    ]
   },
   "fb:1001601597": {
-   "fingerprint": "1xczz2u",
+   "fingerprint": "4i2t07",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Virtus Entella e Modena si affrontano domenica 8 novembre alle 15:00, nell'11ª giornata di Serie B. In classifica il Virtus Entella occupa il 14° posto con 10 punti, mentre il Modena è al 2° posto con 20 punti."
+      "Virtus Entella e Modena si sfidano domenica 8 novembre alle 15:00, nella 11ª giornata di Serie B. In classifica il Virtus Entella occupa il 14° posto con 10 punti, mentre il Modena è al 3° con 20."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie B il Virtus Entella ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-V-P-N-P), segnando 4 gol e subendone 6. In casa, il bilancio stagionale è di 2 pareggi e 1 sconfitta, senza vittorie finora.",
-      "Nelle ultime 5 partite di Serie B il Modena ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-V-V-N), segnando 10 gol e subendone 6. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 5 partite di Serie B il Virtus Entella ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza N-V-P-N-P, segnando 4 gol e subendone 6. In casa, nella stagione, il bilancio è di 2 pareggi e 1 sconfitta, senza vittorie.",
+      "Nelle ultime 5 partite di Serie B il Modena ha raccolto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-P-V-V-N, segnando 10 gol e subendone 6. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -732,9 +732,9 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Virtus Entella 1,1, Modena 1,8.",
+      "Media gol segnati: Virtus Entella 1,1, Modena 1,8 a partita.",
       "Gol subiti finora: Virtus Entella 12, Modena 10.",
-      "Nelle ultime 5 partite del Modena, in 4 casi sono stati segnati almeno tre gol."
+      "In 4 delle ultime 5 partite del Modena si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -744,8 +744,8 @@
      "a": "Domenica 8 novembre alle 15:00, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [campionato di Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -1040,20 +1040,20 @@
    ]
   },
   "fb:560638": {
-   "fingerprint": "1dseo2z",
+   "fingerprint": "11d1f6y",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 15:00 il Brighton ospita il Brentford per la 10ª giornata di Premier League. In classifica il Brighton è al 3° posto con 19 punti, il Brentford al 6° con 14."
+      "Domenica 8 novembre alle 15:00 il Brighton ospita il Brentford nella 10ª giornata di Premier League. In classifica il Brighton è al 3° posto con 19 punti, mentre il Brentford è al 7° con 14."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Premier League il Brighton ha raccolto 3 vittorie e 1 sconfitta (sequenza V-V-P-V), con 8 gol fatti e 2 subiti.",
-      "Nelle ultime 4 partite di Premier League il Brentford ha raccolto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza N-P-N-V), con 6 gol fatti e 5 subiti. In trasferta il bilancio stagionale è di 2 pareggi, ancora senza vittorie."
+      "Nelle ultime 4 partite di Premier League il Brighton ha ottenuto 3 vittorie e 1 sconfitta (sequenza V-V-P-V), segnando 8 gol e subendone 2.",
+      "Nelle ultime 4 partite di Premier League il Brentford ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza N-P-N-V), segnando 6 gol e subendone 5. In trasferta il bilancio stagionale è di 2 pareggi, senza vittorie."
      ],
      "bullets": []
     },
@@ -1061,10 +1061,10 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Brighton 2,7, Brentford 1,8 a partita.",
+      "Media gol segnati a partita: Brighton 2,7, Brentford 1,8.",
       "Gol subiti finora: Brighton 7, Brentford 9.",
       "Il Brighton ha il miglior attacco del torneo.",
-      "Il Brighton non ha subito gol in 3 delle ultime 4."
+      "Il Brighton non ha subito gol in 3 delle ultime 4 partite."
      ]
     }
    ],
@@ -1075,7 +1075,7 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+     "a": "Nella pagina dedicata alla [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -1084,20 +1084,20 @@
    ]
   },
   "fb:560635": {
-   "fingerprint": "1euk17h",
+   "fingerprint": "5cwve0",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 15:00 il Crystal Palace ospita il Liverpool, in occasione della 10ª giornata di Premier League. In classifica il Crystal Palace occupa il 18° posto con 7 punti, mentre il Liverpool è al 5° posto con 15."
+      "Domenica 8 novembre alle 15:00 il Crystal Palace ospita il Liverpool, nella 10ª giornata di Premier League. In classifica il Crystal Palace occupa il 18° posto con 7 punti, mentre il Liverpool è 6° con 15."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Premier League il Crystal Palace ha ottenuto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), segnando 3 gol e subendone 10. Ha perso le ultime 3 gare. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Premier League il Liverpool ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-V-P), segnando 4 gol e subendone 5."
+      "Nelle ultime 4 partite di Premier League il Crystal Palace ha ottenuto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), segnando 3 gol e subendone 10. Ha perso le ultime 3. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 4 partite di Premier League il Liverpool ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-V-P), con 4 gol fatti e 5 subiti."
      ],
      "bullets": []
     },
@@ -1105,7 +1105,7 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Crystal Palace 1,0, Liverpool 1,2.",
+      "Media gol segnati: Crystal Palace 1,0, Liverpool 1,2 a partita.",
       "Gol subiti finora: Crystal Palace 21, Liverpool 9."
      ]
     }
@@ -1117,11 +1117,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Premier League](/calcio/premier-league) e la [classifica aggiornata](/calcio/premier-league/classifica)."
+     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -1583,12 +1583,12 @@
    ]
   },
   "fb:564742": {
-   "fingerprint": "1gg3prz",
+   "fingerprint": "buk8hv",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Celta e Levante si sfidano domenica 8 novembre alle 18:30 nella 12ª giornata di LaLiga. In classifica il Celta occupa il 10° posto con 12 punti, mentre il Levante è al 18° con 10."
+      "Celta e Levante si sfidano domenica 8 novembre alle 18:30 nella 12ª giornata di LaLiga. In classifica il Celta occupa l'11° posto con 12 punti, il Levante il 18° con 10."
      ],
      "bullets": []
     },
@@ -1596,7 +1596,7 @@
      "id": "momento",
      "paragraphs": [
       "Nelle ultime 4 partite di LaLiga il Celta ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza N-V-N-P), segnando 2 gol e subendone 4. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 5 partite di LaLiga il Levante ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-N-V-P-P), con 8 gol fatti e 9 subiti. Ha perso le ultime 2 gare. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
+      "Nelle ultime 5 partite di LaLiga il Levante ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-N-V-P-P), con 8 gol fatti e 9 subiti. Ha perso le ultime 2. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
      ],
      "bullets": []
     },
@@ -1672,20 +1672,20 @@
    ]
   },
   "fb:565851": {
-   "fingerprint": "1q5mble",
+   "fingerprint": "zt5ws4",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 15:30 il Mainz ospita il Bayern Monaco per la 9ª giornata di Bundesliga. In classifica il Mainz occupa il 9° posto con 10 punti, mentre il Bayern Monaco è al 1° con 18."
+      "Sabato 7 novembre alle 15:30 il Mainz ospita il Bayern Monaco per la 9ª giornata di Bundesliga. In classifica il Mainz occupa il 10° posto con 10 punti, mentre il Bayern Monaco è al 1° con 18."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga il Mainz ha ottenuto 1 vittoria e 3 sconfitte (sequenza P-V-P-P), segnando 7 gol e subendone 11. Ha perso le ultime 2 gare. In casa ha perso tutte le 2 partite disputate.",
-      "Nelle ultime 4 partite di Bundesliga il Bayern Monaco ha ottenuto 2 vittorie e 2 pareggi (sequenza N-V-V-N), segnando 13 gol e subendone 6. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 4 partite di Bundesliga il Mainz ha raccolto 1 vittoria e 3 sconfitte (sequenza P-V-P-P), segnando 7 gol e subendone 11. Le ultime 2 gare le ha perse. In casa ha perso tutte le 2 partite giocate.",
+      "Nelle ultime 4 partite di Bundesliga il Bayern Monaco ha raccolto 2 vittorie e 2 pareggi (sequenza N-V-V-N), segnando 13 gol e subendone 6. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     },
@@ -1695,9 +1695,9 @@
      "bullets": [
       "Media gol segnati: Mainz 2,1, Bayern Monaco 3,4 a partita.",
       "Gol subiti finora: Mainz 17, Bayern Monaco 8.",
-      "Il Bayern Monaco ha l'attacco migliore del torneo.",
-      "In 3 delle ultime 4 partite del Mainz sono stati segnati almeno tre gol.",
-      "In tutte le ultime 4 partite del Bayern Monaco sono stati segnati almeno tre gol."
+      "Il Bayern Monaco ha il miglior attacco del torneo.",
+      "In 3 delle ultime 4 partite del Mainz si sono segnati almeno tre gol.",
+      "In tutte le ultime 4 partite del Bayern Monaco si sono segnati almeno tre gol."
      ]
     },
     {
@@ -1768,12 +1768,12 @@
    ]
   },
   "fb:565848": {
-   "fingerprint": "6ai7xe",
+   "fingerprint": "gjuxos",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 15:30 il RB Leipzig ospita l'Augsburg per la 9ª giornata di Bundesliga. In classifica il RB Leipzig è al 4° posto con 15 punti, mentre l'Augsburg è al 10° con 9."
+      "Sabato 7 novembre alle 15:30 il RB Leipzig ospita l'Augsburg per la 9ª giornata di Bundesliga. In classifica il RB Leipzig è al 4° posto con 15 punti, mentre l'Augsburg è all'11° con 9."
      ],
      "bullets": []
     },
@@ -1820,20 +1820,20 @@
    ]
   },
   "fb:565853": {
-   "fingerprint": "192e3wp",
+   "fingerprint": "1qo74ko",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 15:30 si affrontano SC Paderborn e Frankfurt, valide per la 9ª giornata di Bundesliga. In classifica lo SC Paderborn è al 14° posto con 9 punti, mentre il Frankfurt è all'8° posto con 11 punti."
+      "SC Paderborn e Frankfurt si sfidano sabato 7 novembre alle 15:30, nell'ambito della 9ª giornata di Bundesliga. In classifica lo SC Paderborn occupa il 15° posto con 9 punti, mentre il Frankfurt è al 9° posto con 11 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga lo SC Paderborn ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza P-N-V-N), segnando 3 gol e subendone 4. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Bundesliga il Frankfurt ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), segnando 4 gol e subendone 8. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 4 partite di Bundesliga lo SC Paderborn ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza P-N-V-N), segnando 3 gol e subendone 4. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 4 partite di Bundesliga il Frankfurt ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), segnando 4 gol e subendone 8. In trasferta ha perso tutte le 2 partite disputate."
      ],
      "bullets": []
     },
@@ -1841,14 +1841,14 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: SC Paderborn 0,8, Frankfurt 1,6 a partita.",
+      "Media gol segnati a partita: SC Paderborn 0,8, Frankfurt 1,6.",
       "Gol subiti finora: SC Paderborn 9, Frankfurt 18."
      ]
     },
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per lo SC Paderborn, 2 vittorie per il Frankfurt e nessun pareggio, con 22 gol complessivi (media di 4,4 a partita). L'ultimo incontro, disputato a giugno 2020 in Bundesliga, è terminato Frankfurt 3-2 SC Paderborn."
+      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per lo SC Paderborn, 2 per il Frankfurt e nessun pareggio, con 22 gol complessivi (media di 4,4 a partita). L'ultimo incontro, disputato a giugno 2020 in Bundesliga, è terminato Frankfurt 3-2 SC Paderborn."
      ],
      "bullets": []
     }
@@ -1860,29 +1860,29 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+     "a": "Puoi consultare la pagina [Bundesliga](/calcio/bundesliga) e la [classifica aggiornata](/calcio/bundesliga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:565849": {
-   "fingerprint": "1hln3c6",
+   "fingerprint": "1q737uw",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 18:30 lo Stuttgart ospita il Bremen per la 9ª giornata di Bundesliga. In classifica lo Stuttgart occupa l'11° posto con 9 punti, mentre il Bremen è 5° con 15."
+      "Sabato 7 novembre alle 18:30 lo Stuttgart ospita il Bremen nella 9ª giornata di Bundesliga. In classifica lo Stuttgart occupa il 12° posto con 9 punti, mentre il Bremen è al 5° con 15."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga lo Stuttgart ha ottenuto 2 vittorie e 2 sconfitte (sequenza V-P-P-V), segnando 8 gol e subendone 6.",
-      "Nelle ultime 4 partite di Bundesliga il Bremen ha ottenuto 2 vittorie e 2 pareggi (sequenza N-N-V-V), segnando 9 gol e subendone 6. La squadra non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 4 partite di Bundesliga lo Stuttgart ha ottenuto 2 vittorie e 2 sconfitte, con sequenza V-P-P-V. Ha segnato 8 gol e ne ha subiti 6.",
+      "Nelle ultime 4 partite di Bundesliga il Bremen ha ottenuto 2 vittorie e 2 pareggi, con sequenza N-N-V-V. Ha segnato 9 gol e ne ha subiti 6. Non perde da 4 partite. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     },
@@ -1892,13 +1892,13 @@
      "bullets": [
       "Media gol segnati a partita: Stuttgart 1,8, Bremen 2,1.",
       "Gol subiti finora: Stuttgart 15, Bremen 14.",
-      "Nelle 4 partite più recenti del Bremen, in 3 si sono segnati almeno tre gol."
+      "Nelle ultime 4 partite del Bremen, in 3 si sono segnati almeno tre gol."
      ]
     },
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per lo Stuttgart, 2 vittorie per il Bremen e 2 pareggi, con 16 gol complessivi (media di 3,2 a partita). L'ultimo incontro, ad aprile 2026 in Bundesliga, è terminato Stuttgart 1-1 Bremen."
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per lo Stuttgart, 2 vittorie per il Bremen e 2 pareggi, con 16 gol complessivi, pari a una media di 3,2 a partita. L'ultimo incrocio, ad aprile 2026 in Bundesliga, è terminato Stuttgart 1-1 Bremen."
      ],
      "bullets": []
     }
@@ -1919,12 +1919,12 @@
    ]
   },
   "fb:565855": {
-   "fingerprint": "1af1d9v",
+   "fingerprint": "1j4obtq",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "1. FC Köln e Leverkusen si sfidano domenica 8 novembre alle 15:30 nella 9ª giornata di Bundesliga. In classifica il 1. FC Köln occupa il 13° posto con 9 punti, mentre il Leverkusen è al 6° posto con 13."
+      "1. FC Köln e Leverkusen si affrontano domenica 8 novembre alle 15:30 per la 9ª giornata di Bundesliga. In classifica il 1. FC Köln occupa il 14° posto con 9 punti, mentre il Leverkusen è al 6° con 13."
      ],
      "bullets": []
     },
@@ -1932,7 +1932,7 @@
      "id": "momento",
      "paragraphs": [
       "Nelle ultime 4 partite di Bundesliga il 1. FC Köln ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta, con la sequenza V-P-N-N. Ha segnato 3 gol e ne ha subiti 3. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Bundesliga il Leverkusen ha ottenuto 2 vittorie e 2 sconfitte, con la sequenza V-V-P-P. Ha segnato 8 gol e ne ha subiti 11. Ha perso le ultime 2 gare. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 4 partite di Bundesliga il Leverkusen ha ottenuto 2 vittorie e 2 sconfitte, con la sequenza V-V-P-P. Ha segnato 8 gol e ne ha subiti 11. Le ultime 2 partite le ha perse. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -2005,20 +2005,20 @@
    ]
   },
   "fb:565856": {
-   "fingerprint": "s7544a",
+   "fingerprint": "pywxj9",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Hoffenheim e Schalke si affrontano domenica 8 novembre alle 19:30 per la 9ª giornata di Bundesliga. In classifica l'Hoffenheim è al 12° posto con 9 punti, lo Schalke al 17° con 6."
+      "Hoffenheim e Schalke si sfidano domenica 8 novembre alle 19:30, nella 9ª giornata di Bundesliga. In classifica l'Hoffenheim occupa il 13° posto con 9 punti, mentre lo Schalke è al 17° con 6."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga l'Hoffenheim ha raccolto 2 vittorie e 2 sconfitte (sequenza P-V-V-P), con 7 gol fatti e 6 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Bundesliga lo Schalke ha raccolto 1 pareggio e 3 sconfitte (sequenza P-P-N-P), con 1 gol fatto e 5 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
+      "Nelle ultime 4 partite di Bundesliga l'Hoffenheim ha ottenuto 2 vittorie e 2 sconfitte, con sequenza P-V-V-P, segnando 7 gol e subendone 6. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 4 partite di Bundesliga lo Schalke ha ottenuto 1 pareggio e 3 sconfitte, con sequenza P-P-N-P, segnando 1 gol e subendone 5. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
      ],
      "bullets": []
     },
@@ -2026,9 +2026,9 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Hoffenheim 1,8, Schalke 0,5 a partita.",
+      "Media gol segnati a partita: Hoffenheim 1,8, Schalke 0,5.",
       "Gol subiti finora: Hoffenheim 16, Schalke 9.",
-      "In 3 delle ultime 4 partite dell'Hoffenheim si sono segnati almeno tre gol."
+      "Nelle ultime 4 partite dell'Hoffenheim, in 3 si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -2039,29 +2039,29 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+     "a": "Puoi consultare la pagina [Bundesliga](/calcio/bundesliga) e la [classifica aggiornata](/calcio/bundesliga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Puoi trovare spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001575221": {
-   "fingerprint": "avtbxi",
+   "fingerprint": "yq0lgj",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Il Bayern Monaco e il 1. FC Köln si sfidano venerdì 20 novembre alle 20:30, nella 10ª giornata di Bundesliga. In classifica il Bayern Monaco occupa il 1° posto con 18 punti, mentre il 1. FC Köln è al 13° posto con 9 punti."
+      "Bayern Monaco e 1. FC Köln si sfidano venerdì 20 novembre alle 20:30, nella 10ª giornata di Bundesliga. In classifica il Bayern Monaco occupa il 1° posto con 18 punti, mentre il 1. FC Köln è al 14° con 9."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga il Bayern Monaco ha ottenuto 2 vittorie e 2 pareggi, con la sequenza N-V-V-N. Ha segnato 13 gol e ne ha subiti 6. Non perde da 4 partite. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Bundesliga il 1. FC Köln ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta, con la sequenza V-P-N-N. Ha segnato 3 gol e ne ha subiti 3. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
+      "Nelle ultime 4 partite di Bundesliga il Bayern Monaco ha ottenuto 2 vittorie e 2 pareggi (sequenza N-V-V-N), segnando 13 gol e subendone 6. Non perde da 4 partite. Tra le mura di casa, il bilancio stagionale registra 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 4 partite di Bundesliga il 1. FC Köln ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza V-P-N-N), con 3 gol fatti e 3 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza ancora alcuna vittoria."
      ],
      "bullets": []
     },
@@ -2069,10 +2069,10 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Bayern Monaco 3,4, 1. FC Köln 1,1.",
+      "Media gol segnati: Bayern Monaco 3,4, 1. FC Köln 1,1 a partita.",
       "Gol subiti finora: Bayern Monaco 8, 1. FC Köln 12.",
       "Il Bayern Monaco ha il miglior attacco del torneo.",
-      "In tutte le ultime 4 partite del Bayern Monaco sono stati segnati almeno tre gol."
+      "In tutte le ultime 4 partite del Bayern Monaco si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -2082,8 +2082,8 @@
      "a": "Venerdì 20 novembre alle 20:30, ora italiana."
     },
     {
-     "q": "Dove si possono consultare classifica e risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Bundesliga](/calcio/bundesliga) e la [classifica aggiornata](/calcio/bundesliga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -2274,20 +2274,20 @@
    ]
   },
   "fb:1001552812": {
-   "fingerprint": "1qpqnp7",
+   "fingerprint": "eofbhd",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "La partita si giocherà domenica 8 novembre alle 17:15: lo Stade Brestois 29 riceve l'Olympique Lyon per la 10ª giornata di Ligue 1. In classifica lo Stade Brestois 29 è al 10° posto con 12 punti, mentre l'Olympique Lyon è al 3° con 17."
+      "Domenica 8 novembre alle 17:15 lo Stade Brestois 29 ospita l'Olympique Lyon nella 10ª giornata di Ligue 1. In classifica lo Stade Brestois 29 occupa l'11° posto con 12 punti, mentre l'Olympique Lyon è al 3° con 17."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 lo Stade Brestois 29 ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-N-P-V), segnando 9 gol e subendone 4. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Ligue 1 l'Olympique Lyon ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), segnando 5 gol e subendone 5. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 4 partite di Ligue 1 lo Stade Brestois 29 ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-N-P-V), segnando 9 gol e subendone 4. In casa, nel bilancio stagionale, il dato è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 4 partite di Ligue 1 l'Olympique Lyon ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), con 5 gol segnati e 5 subiti. In trasferta ha perso tutte le 2 partite disputate."
      ],
      "bullets": []
     },
@@ -2295,7 +2295,7 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Stade Brestois 29 1,8, Olympique Lyon 1,7 a partita.",
+      "Media gol segnati a partita: Stade Brestois 29 1,8, Olympique Lyon 1,7.",
       "Gol subiti finora: Stade Brestois 29 12, Olympique Lyon 7."
      ]
     }
@@ -2306,29 +2306,29 @@
      "a": "Domenica 8 novembre alle 17:15, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina dedicata alla [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Puoi approfondire nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:559633": {
-   "fingerprint": "tepyl5",
+   "fingerprint": "1tzua1x",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Le Havre e Lorient si affrontano domenica 8 novembre alle 17:15 per la 10ª giornata di Ligue 1. In classifica il Le Havre è al 18° posto con 2 punti, il Lorient all'11° con 12."
+      "Le Havre e Lorient si affrontano domenica 8 novembre alle 17:15 per la 10ª giornata di Ligue 1. In classifica il Le Havre occupa il 18° posto con 2 punti, mentre il Lorient è al 12° con 12."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 il Le Havre ha collezionato 4 sconfitte (sequenza P-P-P-P), con 5 gol fatti e 13 subiti. Ha perso anche le ultime 4. In casa ha perso tutte le 2 partite giocate.",
+      "Nelle ultime 4 partite di Ligue 1 il Le Havre ha collezionato 4 sconfitte (sequenza P-P-P-P), con 5 gol fatti e 13 subiti. Ha perso le ultime 4. In casa ha perso tutte le 2 partite giocate.",
       "Nelle ultime 4 partite di Ligue 1 il Lorient ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-N-P), con 2 gol fatti e 2 subiti."
      ],
      "bullets": []
@@ -2589,7 +2589,7 @@
    ]
   },
   "fb:558843": {
-   "fingerprint": "gy6qi3",
+   "fingerprint": "1qnx2cx",
    "sections": [
     {
      "id": "presentazione",
@@ -2601,8 +2601,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie l'Excelsior ha raccolto 4 sconfitte (sequenza P-P-P-P), segnando 1 gol e subendone 19. Ha perso le ultime 4 gare. In casa ha perso tutte le 2 partite disputate.",
-      "Nelle ultime 4 partite di Eredivisie il Go Ahead ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-V-P), con 7 gol fatti e 13 subiti. In trasferta ha perso tutte le 2 partite disputate."
+      "Nelle ultime 4 partite di Eredivisie l'Excelsior ha collezionato 4 sconfitte (sequenza P-P-P-P), segnando 1 gol e subendone 19. Ha perso tutte le ultime 4 gare. In casa ha perso entrambe le partite disputate.",
+      "Nelle ultime 4 partite di Eredivisie il Go Ahead ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-V-P), con 7 gol fatti e 13 subiti. In trasferta ha perso entrambe le partite disputate."
      ],
      "bullets": []
     },
@@ -2612,9 +2612,16 @@
      "bullets": [
       "Media gol segnati: Excelsior 1,5, Go Ahead 2,1 a partita.",
       "Gol subiti finora: Excelsior 28, Go Ahead 27.",
-      "In 3 delle ultime 4 partite dell'Excelsior si sono segnati almeno tre gol.",
-      "In tutte le ultime 4 partite del Go Ahead si sono segnati almeno tre gol."
+      "In 3 delle ultime 4 partite dell'Excelsior sono stati segnati almeno tre gol.",
+      "In tutte le ultime 4 partite del Go Ahead sono stati segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per l'Excelsior, 3 vittorie per il Go Ahead e 1 pareggio, con 11 gol complessivi (media di 2,2 a partita). L'ultimo incrocio, disputato a marzo 2026 in Eredivisie, è terminato Excelsior 0-1 Go Ahead."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -2623,12 +2630,12 @@
      "a": "Sabato 7 novembre alle 21:00, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2805,20 +2812,20 @@
    ]
   },
   "fb:558838": {
-   "fingerprint": "bsvr1t",
+   "fingerprint": "18k7qyy",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 20:00 l'Utrecht affronta il NEC nella 12ª giornata di Eredivisie. In classifica l'Utrecht è al 12° posto con 12 punti, mentre il NEC è al 13° con 11."
+      "Domenica 8 novembre alle 20:00 l'Utrecht ospita il NEC nella 12ª giornata di Eredivisie. In classifica l'Utrecht occupa il 12° posto con 12 punti, mentre il NEC è al 14° con 11."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie l'Utrecht ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-N-P), segnando 8 gol e subendone 7. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Eredivisie il NEC ha ottenuto 3 pareggi e 1 sconfitta (sequenza N-N-N-P), segnando 5 gol e subendone 6. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie."
+      "Nelle ultime 4 partite di Eredivisie l'Utrecht ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-N-P), segnando 8 gol e subendone 7. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 4 partite di Eredivisie il NEC ha ottenuto 3 pareggi e 1 sconfitta (sequenza N-N-N-P), segnando 5 gol e subendone 6. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
      ],
      "bullets": []
     },
@@ -2838,12 +2845,12 @@
      "a": "Domenica 8 novembre alle 20:00, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina dedicata all'[Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -3744,56 +3751,6 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:555079": {
-   "fingerprint": "ek2o6o",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 7 novembre alle 00:00 il Vitória ospita il Fluminense nella 34ª giornata di Brasileirão. In classifica il Vitória occupa il 15° posto con 38 punti, mentre il Fluminense è al 4° posto con 54 punti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Brasileirão il Vitória ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza V-P-N-N-P), segnando 7 gol e subendone 6. In casa, nel bilancio stagionale, ha collezionato 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 5 partite di Brasileirão il Fluminense ha ottenuto 2 vittorie e 3 sconfitte (sequenza V-P-P-P-V), segnando 8 gol e subendone 6. In trasferta ha perso tutte le 2 partite giocate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati a partita: Vitória 1,1, Fluminense 1,6.",
-      "Gol subiti finora: Vitória 48, Fluminense 42.",
-      "In 4 delle ultime 5 partite del Fluminense sono stati segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Vitória, 1 vittoria per il Fluminense e 2 pareggi, con 11 gol complessivi (media di 2,2 a partita). L'ultimo incrocio, disputato a maggio 2026 in Brasileirão, è terminato Fluminense 2-2 Vitória."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Vitória – Fluminense?",
-     "a": "Sabato 7 novembre alle 00:00, ora italiana."
-    },
-    {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -8638,6 +8595,64 @@
     }
    ]
   },
+  "fb:558537": {
+   "fingerprint": "1s68f94",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Venezia si impone in casa sull'Udinese per 2-1. La gara, valida per la 11ª giornata di Serie A, si è disputata venerdì 6 novembre; il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, il Venezia occupa il 19° posto con 6 punti, mentre l'Udinese è al 20° con 5. Consulta la [classifica completa](/calcio/serie-a/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Venezia – Udinese?",
+     "a": "2-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Serie A](/calcio/serie-a)."
+    }
+   ]
+  },
+  "fb:1001601593": {
+   "fingerprint": "zi1uz8",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il match tra Ascoli e Palermo è terminato 1-1: l'Ascoli, in vantaggio all'intervallo per 1-0, è stato raggiunto dal Palermo nella ripresa. La gara, valida per la 11ª giornata di Serie B, si è disputata venerdì 6 novembre."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite giocate finora, l'Ascoli occupa il 2° posto con 20 punti, mentre il Palermo è al 1° con 27. [Classifica completa](/calcio/serie-b/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Ascoli – Palermo?",
+     "a": "1-1 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Serie B](/calcio/serie-b)."
+    }
+   ]
+  },
   "fb:575386": {
    "fingerprint": "1ucbra0",
    "sections": [
@@ -9943,20 +9958,136 @@
     }
    ]
   },
-  "fb:558845": {
-   "fingerprint": "10n0b18",
+  "fb:560634": {
+   "fingerprint": "43drau",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Willem II e lo Zwolle chiudono la partita in parità, con il risultato di 1-1. L'incontro, valido per la 12ª giornata di Eredivisie, si è giocato venerdì 6 novembre; il primo tempo si era concluso anch'esso 1-1."
+      "L'Everton ha battuto il Coventry City in casa per 3-1. La partita, valida per la 10ª giornata di Premier League, si è giocata venerdì 6 novembre; il primo tempo era terminato 0-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Willem II è al 18° posto con 2 punti, mentre lo Zwolle è al 14° con 11. Per l'elenco completo consulta la [classifica completa](/calcio/eredivisie/classifica)."
+      "Con le partite giocate finora, l'Everton è al 5° posto con 16 punti, mentre il Coventry City è al 16° con 9. [Classifica completa](/calcio/premier-league/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Everton – Coventry City?",
+     "a": "3-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Premier League](/calcio/premier-league)."
+    }
+   ]
+  },
+  "fb:564740": {
+   "fingerprint": "e3o1ai",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Sevilla FC e l'Alavés hanno chiuso la sfida a reti inviolate, sul punteggio di 0-0. La partita, valida per la 12ª giornata di LaLiga, si è giocata venerdì 6 novembre e il primo tempo era già terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Sevilla FC è al 6° posto con 18 punti, mentre l'Alavés occupa il 9° posto con 13. [Consulta la classifica completa](/calcio/liga/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Sevilla FC – Alavés?",
+     "a": "0-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [LaLiga](/calcio/liga)."
+    }
+   ]
+  },
+  "fb:565852": {
+   "fingerprint": "ixqjmw",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "L'HSV ha battuto il M'gladbach in casa per 3-1. La partita, valida per la 9ª giornata di Bundesliga, si è giocata venerdì 6 novembre; al termine del primo tempo il punteggio era di 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora l'HSV occupa l'8° posto con 12 punti, mentre il M'gladbach è al 18° con 4 punti. Puoi consultare la [classifica completa](/calcio/bundesliga/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita HSV – M'gladbach?",
+     "a": "3-1 (1-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
+    }
+   ]
+  },
+  "fb:559638": {
+   "fingerprint": "4qe9sy",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Toulouse ha battuto lo Strasbourg in casa per 3-1. La partita, valida per la 10ª giornata di Ligue 1, si è giocata venerdì 6 novembre; il primo tempo si era concluso 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora, il Toulouse occupa il 10° posto con 13 punti, mentre lo Strasbourg è al 13° con 10. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Toulouse – Strasbourg?",
+     "a": "3-1 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina dedicata alla [Ligue 1](/calcio/ligue-1)."
+    }
+   ]
+  },
+  "fb:558845": {
+   "fingerprint": "1pweg45",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Willem II e lo Zwolle chiudono la partita con un pareggio per 1-1. La sfida, valida per la 12ª giornata di Eredivisie, si è giocata venerdì 6 novembre; al termine del primo tempo il punteggio era già di 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Willem II è al 18° posto con 3 punti, mentre lo Zwolle è al 13° con 12. [Consulta la classifica completa](/calcio/eredivisie/classifica)."
      ],
      "bullets": []
     }
@@ -9964,11 +10095,40 @@
    "faq": [
     {
      "q": "Com'è finita Willem II – Zwolle?",
-     "a": "Il risultato finale è 1-1, con lo stesso punteggio anche all'intervallo."
+     "a": "È finita 1-1, con lo stesso risultato già all'intervallo."
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Negli altri risultati puoi consultare la pagina [Eredivisie](/calcio/eredivisie)."
+     "a": "Puoi consultarli nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
+  "fb:567353": {
+   "fingerprint": "6v5r6",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Famalicão ha battuto di misura l'Arouca tra le mura di casa, imponendosi per 1-0. La gara, valida per l'11ª giornata di Primeira Liga, si è disputata venerdì 6 novembre e il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Alla luce dei risultati finora disputati, il Famalicão occupa l'11° posto con 10 punti, mentre l'Arouca è al 5° posto con 20 punti. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/primeira-liga/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Famalicão – Arouca?",
+     "a": "1-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina dedicata alla [Primeira Liga](/calcio/primeira-liga)."
     }
    ]
   },
@@ -10080,39 +10240,32 @@
     }
    ]
   },
-  "fb:555073": {
-   "fingerprint": "x06aj9",
+  "fb:561932": {
+   "fingerprint": "1davfkc",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Mirassol ha vinto di misura in trasferta contro il Chapecoense, con il punteggio di 1-2. La partita, valida per la 34ª giornata di Brasileirão, si è giocata martedì 3 novembre; il primo tempo si era chiuso sul 1-1."
+      "Il Derby County ha ribaltato la partita: dopo essere andato al riposo in svantaggio, ha vinto in casa 3-1 contro il Bolton. La gara, valida per la 15ª giornata di Championship, si è giocata venerdì 6 novembre; il primo tempo si era chiuso 0-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora, il Chapecoense occupa il 20° posto con 21 punti, mentre il Mirassol è al 14° con 40. [Vai alla classifica completa](/calcio/brasileirao/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Chapecoense tornerà in campo domenica 15 novembre alle 00:30, giocando in casa contro il Vasco da Gama. Il Mirassol scenderà in campo sabato 14 novembre alle 22:30, sempre in casa, contro l'Atletico-MG."
+      "Con le partite giocate finora il Derby County è al 23° posto con 10 punti, mentre il Bolton è al 17° con 17. [Consulta la classifica completa](/calcio/championship/classifica)."
      ],
      "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Com'è finita Chapecoense – Mirassol?",
-     "a": "Il risultato finale è 1-2, con il punteggio di 1-1 all'intervallo."
+     "q": "Com'è finita Derby County – Bolton?",
+     "a": "3-1 (0-1 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Puoi consultarli nella pagina [Brasileirão](/calcio/brasileirao)."
+     "a": "Nella pagina [Championship](/calcio/championship)."
     }
    ]
   },
