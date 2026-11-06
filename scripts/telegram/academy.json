@@ -1,0 +1,82 @@
+[
+ {
+  "slug": "quota-equa-e-valore-atteso",
+  "title": "Cos'è la quota equa",
+  "paragraphs": [
+   "La quota equa è il prezzo che avrebbe un esito se nessuno ci guadagnasse sopra: 1 diviso la probabilità. Un esito stimato al 40% ha quota equa 2,50; uno al 25% ha quota equa 4,00.",
+   "Sul sito compare accanto a ogni probabilità del modello. Non è una quota offerta da qualcuno: è la stessa probabilità scritta in un altro modo.",
+   "Una quota di mercato diversa dalla quota equa dice solo che due stime non coincidono, non chi ha ragione. Il modello conosce i gol e il fattore campo, non le formazioni né le assenze dell'ultima ora."
+  ],
+  "linkText": "quota equa e valore atteso"
+ },
+ {
+  "slug": "come-leggere-le-quote",
+  "title": "Il margine nascosto nelle quote",
+  "paragraphs": [
+   "Trasforma in probabilità le tre quote di un 1X2 (1 diviso la quota) e sommale: il totale supera sempre il 100%.",
+   "Esempio: quote 2,10 – 3,40 – 3,60 danno 47,6% + 29,4% + 27,8% = 104,8%. Quel 4,8% in più è il margine dell'operatore.",
+   "Per questo, nel lungo periodo e in media, chi scommette perde una parte di quanto gioca: il margine si applica a ogni giocata."
+  ],
+  "linkText": "come leggere le quote"
+ },
+ {
+  "slug": "varianza-e-serie-negative",
+  "title": "Perché poche settimane non dimostrano nulla",
+  "paragraphs": [
+   "La varianza misura quanto i risultati reali si allontanano da quelli medi. Nelle scommesse è molto alta.",
+   "Con giocate a quota 2,00 e un margine del 5%, dopo cento giocate più di un giocatore svantaggiato su quattro è in attivo per puro caso.",
+   "Una serie di vincite non è la prova di un metodo, una serie di perdite non è sfortuna da recuperare. Vale anche per i pronostici: per questo pubblichiamo il bilancio su centinaia di partite, non su una giornata."
+  ],
+  "linkText": "varianza e serie negative"
+ },
+ {
+  "slug": "caso-e-probabilita",
+  "title": "La fallacia del giocatore",
+  "paragraphs": [
+   "Se una moneta dà croce cinque volte di fila, al sesto lancio la probabilità di testa resta il 50%: la moneta non ha memoria.",
+   "Nel calcio vale lo stesso principio: una squadra che non pareggia da otto partite non ha un pareggio «in arrivo» alla nona.",
+   "Altre trappole comuni: la «mano calda» dopo qualche vincita, l'illusione di controllo dopo aver studiato una partita, la multipla persa «per un solo risultato»."
+  ],
+  "linkText": "caso e probabilità"
+ },
+ {
+  "slug": "expected-goals",
+  "title": "Cosa sono gli expected goals (xG)",
+  "paragraphs": [
+   "Gli xG stimano la probabilità che un tiro diventi gol in base a distanza, angolo, parte del corpo e tipo di azione. Un tiro da 30 metri vale circa 0,03 xG, un rigore circa 0,75–0,8.",
+   "Una squadra con 1,8 xG in una partita ha creato occasioni che, in media, valgono circa due gol.",
+   "Servono a capire quanto una squadra crea e concede, non a predire il risultato. Su poche partite oscillano molto: diventano utili su almeno 8-10 gare."
+  ],
+  "linkText": "expected goals"
+ },
+ {
+  "slug": "criterio-di-kelly",
+  "title": "Il criterio di Kelly e i suoi limiti",
+  "paragraphs": [
+   "Kelly è una formula del 1956 che indica quale frazione del capitale impegnare, a una condizione: conoscere la probabilità vera dell'esito.",
+   "Nello sport la probabilità vera non si conosce, si stima. Con una stima del 45% la formula indica l'8,3% del capitale; se la probabilità vera fosse il 38%, la stessa giocata sarebbe in perdita.",
+   "Nessuna formula trasforma una giocata svantaggiosa in vantaggiosa: cambia solo la velocità con cui si vince o si perde. Per il gioco come intrattenimento resta più sicuro un budget mensile fisso, deciso prima."
+  ],
+  "linkText": "criterio di Kelly"
+ },
+ {
+  "slug": "emozioni-e-disciplina",
+  "title": "Riconoscere il «tilt»",
+  "paragraphs": [
+   "Il tilt è lo stato in cui le emozioni prendono il posto del ragionamento: dopo una perdita o una grande vincita si gioca di più, più in fretta, su eventi che di solito si ignorano.",
+   "Segnali da prendere sul serio: rincorrere le perdite, giocare per noia, alzare le cifre dopo una vincita, giocare di notte o di nascosto.",
+   "Regole personali decise a mente fredda (budget, orari, una pausa dopo una perdita) aiutano a fermarsi prima."
+  ],
+  "linkText": "emozioni e disciplina"
+ },
+ {
+  "slug": "gioco-problematico-dove-chiedere-aiuto",
+  "title": "Dove chiedere aiuto",
+  "paragraphs": [
+   "Pensare spesso a come recuperare, nascondere quanto si gioca, superare i limiti che ci si era dati: sono segnali da non ignorare.",
+   "Il Telefono Verde Nazionale dell'Istituto Superiore di Sanità (800 558 822) offre ascolto gratuito e anonimo, anche ai familiari.",
+   "Sui siti autorizzati puoi impostare limiti di deposito e chiedere l'autoesclusione, da un singolo operatore o da tutto il gioco online legale in Italia."
+  ],
+  "linkText": "segnali di gioco problematico e dove chiedere aiuto"
+ }
+]
