@@ -828,20 +828,20 @@
   "at": "2026-11-05T00:21:09.439Z"
  },
  "fb:560634": {
-  "fingerprint": "1sv8v25",
+  "fingerprint": "1adqo6v",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Venerdì 6 novembre alle 21:00 l'Everton ospita il Coventry City per la 10ª giornata di Premier League. In classifica l'Everton è al 7° posto con 13 punti, il Coventry City al 16° con 9."
+     "Venerdì 6 novembre alle 21:00 l'Everton ospita il Coventry City nella 10ª giornata di Premier League. In classifica l'Everton occupa il 7° posto con 13 punti, mentre il Coventry City è 16° con 9."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Premier League l'Everton ha raccolto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-P-V), con 3 gol fatti e 6 subiti.",
-     "Nelle ultime 4 partite di Premier League il Coventry City ha raccolto 2 vittorie e 2 sconfitte (sequenza V-P-P-V), con 8 gol fatti e 6 subiti."
+     "Nelle ultime 4 partite di Premier League l'Everton ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con la sequenza N-P-P-V. Ha segnato 3 gol e ne ha subiti 6.",
+     "Nelle ultime 4 partite di Premier League il Coventry City ha ottenuto 2 vittorie e 2 sconfitte, con la sequenza V-P-P-V. Ha segnato 8 gol e ne ha subiti 6."
     ],
     "bullets": []
    },
@@ -849,17 +849,10 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Everton 1,0, Coventry City 1,0 a partita.",
+     "Media gol segnati a partita: Everton 1,0, Coventry City 1,0.",
      "Gol subiti finora: Everton 9, Coventry City 16.",
      "In 3 delle ultime 4 partite del Coventry City si sono segnati almeno tre gol."
     ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 1 confronti diretti il bilancio è di 0 vittorie per l'Everton, 1 vittoria per il Coventry City e nessun pareggio, con 3 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, a luglio 2024 in Friendlies Clubs, è finito Coventry City 3-0 Everton."
-    ],
-    "bullets": []
    }
   ],
   "faq": [
@@ -869,15 +862,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+    "a": "Nella pagina dedicata alla [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T17:56:57.675Z"
+  "at": "2026-11-06T06:39:28.762Z"
  },
  "fb:560632": {
   "fingerprint": "jcg0d8",
@@ -3258,20 +3251,20 @@
   "at": "2026-10-30T22:45:18.072Z"
  },
  "fb:567353": {
-  "fingerprint": "1l0af3d",
+  "fingerprint": "rw4p5y",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Venerdì 6 novembre alle 21:45 il Famalicão ospita l'Arouca per la 11ª giornata di Primeira Liga. In classifica il Famalicão occupa l'11° posto con 10 punti, mentre l'Arouca è al 5° con 20."
+     "Venerdì 6 novembre alle 21:45 il Famalicão ospita l'Arouca nella 11ª giornata di Primeira Liga. In classifica il Famalicão occupa l'11° posto con 10 punti, mentre l'Arouca è al 5° con 20."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Primeira Liga il Famalicão ha raccolto 1 vittoria e 2 sconfitte (sequenza P-V-P), con 5 gol fatti e 7 subiti.",
-     "Nelle ultime 3 partite di Primeira Liga l'Arouca ha raccolto 3 vittorie (sequenza V-V-V), con 3 gol fatti e 0 subiti. Arriva da 3 vittorie consecutive."
+     "Nelle ultime 3 partite di Primeira Liga il Famalicão ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-V-P), segnando 5 gol e subendone 7.",
+     "Nelle ultime 3 partite di Primeira Liga l'Arouca ha ottenuto 3 vittorie (sequenza V-V-V), segnando 3 gol e non subendone nessuno. Arriva da 3 vittorie consecutive."
     ],
     "bullets": []
    },
@@ -3279,16 +3272,16 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Famalicão 1,4, Arouca 1,3 a partita.",
+     "Media gol segnati a partita: Famalicão 1,4, Arouca 1,3.",
      "Gol subiti finora: Famalicão 14, Arouca 7.",
-     "In tutte le ultime 3 partite del Famalicão si sono segnati almeno tre gol.",
-     "L'Arouca non ha subito gol in tutte le ultime 3."
+     "In tutte le ultime 3 partite del Famalicão sono stati segnati almeno tre gol.",
+     "L'Arouca non ha subito gol in nessuna delle ultime 3 partite."
     ]
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Famalicão, 0 vittorie per l'Arouca e 3 pareggi, con 6 gol complessivi (media di 1,2 a partita). L'ultimo incrocio, a luglio 2026 in Friendlies Clubs, è terminato Famalicão 0-0 Arouca."
+     "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Famalicão, 1 vittoria per l'Arouca e 2 pareggi, con 11 gol complessivi (media di 2,2 a partita). L'ultimo incrocio, disputato a marzo 2026 in Primeira Liga, è terminato Famalicão 1-0 Arouca."
     ],
     "bullets": []
    }
@@ -3296,7 +3289,7 @@
   "faq": [
    {
     "q": "Quando si gioca Famalicão – Arouca?",
-    "a": "Venerdì 6 novembre alle 21:45."
+    "a": "Venerdì 6 novembre alle 21:45, ora italiana."
    },
    {
     "q": "Dove vedo classifica e risultati?",
@@ -3304,11 +3297,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T17:57:20.163Z"
+  "at": "2026-11-06T06:39:32.705Z"
  },
  "fb:567352": {
   "fingerprint": "1y4u6it",
