@@ -38,6 +38,7 @@ import { PredictionPanel } from "../predictions/PredictionUi";
 import { footballSlip } from "../predictions/SlipPicks";
 import { MatchList } from "./MatchList";
 import { SectionNav } from "../layout/SectionNav";
+import { SiteOffers } from "../SiteOffers";
 import { TeamBadge } from "./MatchRow";
 import { FootballBoxScore } from "./FootballBoxScore";
 import { TeamName } from "../teams/TeamLink";
@@ -345,6 +346,8 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
           <DataUpdatedNote generatedAt={generatedAt} className="justify-center mt-6" />
         </div>
       </div>
+
+      <SiteOffers />
 
       <SectionNav
         items={[
