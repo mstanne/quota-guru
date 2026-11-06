@@ -19,7 +19,7 @@ const TIMELINE = "tutte";
 const choices = [TIMELINE, ...competitions.map((c) => c.slug)] as const;
 
 const button =
-  "px-4 py-2 rounded-md border border-slate-700 text-slate-200 hover:border-slate-500 hover:text-white text-sm";
+  "inline-flex items-center justify-center text-center whitespace-nowrap px-2 sm:px-4 py-2 rounded-md border border-slate-700 text-slate-200 hover:border-slate-500 hover:text-white text-sm";
 
 /** Home page block: next real fixtures from API-Football, with the model's 1X2 probabilities. */
 export function UpcomingMatches({ limit = 8 }: { limit?: number }) {
@@ -40,22 +40,27 @@ export function UpcomingMatches({ limit = 8 }: { limit?: number }) {
             </h2>
             <DataUpdatedNote generatedAt={data.generatedAt} />
           </div>
-          <div className="flex flex-wrap gap-2">
+          {/* phones: three short labels on one row; the full texts from sm up */}
+          <div className="grid grid-cols-[1fr_1fr_auto] gap-2 w-full sm:w-auto sm:flex sm:flex-wrap">
             {/* same URLs as dayPath in src/lib/dayPages.ts (not imported: it would pull every match into the home
                 page bundle). They list every match of the day, so each imminent match page is two clicks from home. */}
             <Link to="/pronostici/oggi" className={button}>
-              Pronostici di oggi
+              <span className="sm:hidden">Oggi</span>
+              <span className="hidden sm:inline">Pronostici di oggi</span>
             </Link>
             <Link to="/pronostici/domani" className={button}>
-              Pronostici di domani
+              <span className="sm:hidden">Domani</span>
+              <span className="hidden sm:inline">Pronostici di domani</span>
             </Link>
             {selected ? (
-              <Link to={`/pronostici/${selected.slug}`} className={button}>
-                Tutte le partite di {selected.name}
+              <Link to={`/pronostici/${selected.slug}`} className={button} aria-label={`Tutte le partite di ${selected.name}`}>
+                <span className="sm:hidden">Calendario completo</span>
+                <span className="hidden sm:inline">Tutte le partite di {selected.name}</span>
               </Link>
             ) : (
               <Link to="/calcio" className={button}>
-                Tutto il calendario
+                <span className="sm:hidden">Calendario completo</span>
+                <span className="hidden sm:inline">Tutto il calendario</span>
               </Link>
             )}
           </div>
