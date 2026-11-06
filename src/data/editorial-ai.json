@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-06T16:51:10.977Z",
+ "generatedAt": "2026-11-06T18:20:40.102Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558537": {
@@ -8934,64 +8934,6 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "fb:575377": {
-   "fingerprint": "1mdzmus",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Lo Sporting CP ha ottenuto una vittoria di misura in trasferta contro lo Shakhtar, con il punteggio di 0-1. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; il primo tempo si era chiuso sul 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora lo Shakhtar occupa il 21° posto con 4 punti, mentre lo Sporting CP è al 10° posto con 9. [Consulta la classifica completa](/calcio/champions-league/classifica)."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Shakhtar – Sporting CP?",
-     "a": "0-1 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Champions League](/calcio/champions-league)."
-    }
-   ]
-  },
-  "fb:575378": {
-   "fingerprint": "nf1otm",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Galatasaray ha battuto in casa lo Stuttgart per 2-0. La partita, valida per la 4ª giornata della fase a campionato di Champions League, si è giocata martedì 3 novembre; il primo tempo era già terminato 2-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Dopo le partite giocate finora, il Galatasaray è al 18° posto con 6 punti, mentre lo Stuttgart è al 14° con 7. [Classifica completa](/calcio/champions-league/classifica)."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Galatasaray – Stuttgart?",
-     "a": "2-0 (2-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Champions League](/calcio/champions-league)."
     }
    ]
   },
