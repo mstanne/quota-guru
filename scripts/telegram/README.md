@@ -11,6 +11,8 @@ coda delle guide Academy (`academy.json`).
 - I dati vengono letti dal branch `dati` (calendario, classifiche, marcatori) e dal branch `archivio-pronostici`
   (ogni pronostico pubblicato con esito): i numeri sul canale sono gli stessi del sito.
 - Il registro dei post inviati e la posizione nella coda Academy stanno nel branch `telegram-registro`, file `registro.json`.
+- Il live worker (`workers/live`) avvia il workflow puntuale ai minuti 07, 27 e 47 e, appena escono formazioni
+  ufficiali nuove, subito con la rubrica `formazioni`. Il cron di GitHub resta come riserva.
 - Se una rubrica non ha dati (nessuna partita, giornata non pronta) viene saltata: niente post vuoti.
 
 ## Rubriche (ora di Roma)
@@ -26,6 +28,7 @@ coda delle guide Academy (`academy.json`).
 | `nba` | giovedì 18:00 | partite NBA della notte con la squadra più probabile |
 | `anteprima-serie-a` | venerdì 12:00 | prossima giornata: più probabile, più incerta, più gol attesi |
 | `dove-vederla` | venerdì 18:00 | canali TV della giornata di Serie A (accordi 2026/27) |
+| `formazioni` | appena escono, circa un'ora prima | formazioni ufficiali: tutte le partite di Serie A, coppe europee solo con squadre italiane |
 | `risultati` / `risultati-domenica` | sabato 23:00, domenica 23:30 | risultati del giorno contro il modello |
 
 Orari e testi: `rubriche.mjs`.
@@ -45,6 +48,7 @@ Repo → Settings → Secrets and variables → Actions:
 | secret | `TELEGRAM_BOT_TOKEN` | token del bot creato con @BotFather |
 | secret | `TELEGRAM_TEST_CHAT_ID` | id numerico del canale privato di prova (es. `-1001234567890`) |
 | secret | `TELEGRAM_CHAT_ID` | `@quotaguru` |
+| variable | `LIVE_URL` | indirizzo del live worker (già usato dal sito): serve alla rubrica `formazioni` |
 | variable | `TELEGRAM_MODE` | `live` per pubblicare sul canale pubblico; vuota = canale di prova |
 
 Il bot deve essere amministratore di entrambi i canali con il permesso "Pubblica messaggi".

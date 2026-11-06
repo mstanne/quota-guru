@@ -2,18 +2,21 @@
 # Every 20 minutes during the day scripts/telegram/publish.mjs sends the rubrics whose slot (Rome time) has come and that
 # were not sent yet: the register in the `telegram-registro` branch stops a rubric going out twice, and the schedule
 # needs no change between summer and winter time.
+# The live worker (workers/live) starts it on time at those minutes and, as soon as new official line-ups come out,
+# with rubrica=formazioni (secret GH_DISPATCH_TOKEN of the worker); GitHub's own schedule stays as a fallback.
 # Also by hand: Actions → "Canale Telegram" → Run workflow (one rubric, now, or a dry run that only prints the posts).
 #
 # One-time setup (repo Settings → Secrets and variables → Actions):
 #   secret   TELEGRAM_BOT_TOKEN      token from @BotFather (the bot is admin of both channels)
 #   secret   TELEGRAM_TEST_CHAT_ID   numeric id of the private test channel (e.g. -1001234567890)
 #   secret   TELEGRAM_CHAT_ID        public channel, e.g. @quotaguru
+#   variable LIVE_URL                address of the live worker (already set for the site): official line-ups
 #   variable TELEGRAM_MODE           "live" to post on the public channel; unset or anything else = test channel
 name: Canale Telegram
 
 on:
   schedule:
-    - cron: "*/20 6-22 * * *" # 07:00–00:00 in Rome (UTC hours 6–22)
+    - cron: "7-59/20 6-22 * * *" # 07:00–00:00 in Rome (UTC hours 6–22); same minutes as the live worker's timer
   workflow_dispatch:
     inputs:
       rubrica:
@@ -34,6 +37,7 @@ on:
           - risultati
           - risultati-domenica
           - classifica
+          - formazioni
       prova:
         description: "Prova a secco: stampa i post nel log senza inviarli"
         required: false
@@ -73,6 +77,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_TEST_CHAT_ID: ${{ secrets.TELEGRAM_TEST_CHAT_ID }}
           TELEGRAM_MODE: ${{ vars.TELEGRAM_MODE }}
+          LIVE_URL: ${{ vars.LIVE_URL }}
           GH_TOKEN: ${{ github.token }}
           RUBRICA: ${{ inputs.rubrica }}
           PROVA: ${{ inputs.prova }}

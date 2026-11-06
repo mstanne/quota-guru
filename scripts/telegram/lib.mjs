@@ -106,11 +106,12 @@ async function branchJson(branch, file) {
 /**
  * Data the rubrics read:
  *   football, basket   last data downloaded by the site (`dati` branch: src/data/football.json, basket.json)
+ *   lineups            official line-ups already out (live worker), only when asked
  *   archive.calcio/nba every prediction the site published, with result and hit once graded
  *                      (`archivio-pronostici` branch, files of the previous, current and next month)
  * Local runs: TG_DATA_DIR (a folder holding src/data/…) and TG_ARCHIVE_DIR (a copy of archivio-pronostici).
  */
-export async function loadData(nowMs) {
+export async function loadData(nowMs, { live = false } = {}) {
   const r = rome(nowMs);
   const months = [-1, 0, 1].map((n) => {
     const d = new Date(Date.UTC(Number(r.day.slice(0, 4)), Number(r.day.slice(5, 7)) - 1 + n, 1));
@@ -131,7 +132,22 @@ export async function loadData(nowMs) {
   ]);
   const archive = { calcio: [], nba: [] };
   files.forEach((f, i) => archive[i % 2 ? "nba" : "calcio"].push(...Object.values(f ?? {})));
-  return { football, basket, archive };
+  return { football, basket, archive, lineups: live ? await loadLineups() : [] };
+}
+
+/** Official line-ups already out (live worker, GET /formazioni); [] when the worker cannot be reached. */
+async function loadLineups() {
+  try {
+    if (process.env.TG_LIVE_FILE) return readJsonFile(process.env.TG_LIVE_FILE).matches ?? [];
+    const res = await fetch(`${process.env.LIVE_URL.replace(/\/$/, "")}/formazioni`, {
+      headers: { "User-Agent": "quotaguru-telegram" },
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return (await res.json()).matches ?? [];
+  } catch (e) {
+    console.log(`Formazioni non disponibili dal live worker: ${e.message}`);
+    return [];
+  }
 }
 
 // ---------------------------------------------------------------------------------------------- compliance
