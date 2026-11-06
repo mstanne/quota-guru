@@ -43,7 +43,7 @@ export function TeamSearch({ value, onChange }: { value: string; onChange: (v: s
           }}
           placeholder="Cerca squadra"
           autoComplete="off"
-          className="w-full sm:w-44 h-10 rounded-md border border-slate-700 bg-slate-900 pl-8 pr-8 text-white text-sm placeholder:text-slate-500 [&::-webkit-search-cancel-button]:hidden"
+          className="w-full sm:w-40 h-10 rounded-md border border-slate-700 bg-slate-900 pl-8 pr-8 text-white text-sm placeholder:text-slate-500 [&::-webkit-search-cancel-button]:hidden"
         />
         {value && (
           <button

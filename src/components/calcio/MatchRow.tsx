@@ -177,9 +177,11 @@ export function MatchRow({
 /** Team name of a list row: a shorter form on phones ("Salisburgo"), the data's name from `sm` up. */
 export function TeamName({ name, short: given, className = "" }: { name: string; short?: string; className?: string }) {
   const short = given || compactTeamName(name);
-  if (short === name) return <span className={`truncate ${className}`}>{name}</span>;
+  // a bit smaller on phones: the short names then fit next to the probability cells
+  const cls = `truncate text-[15px] sm:text-base ${className}`;
+  if (short === name) return <span className={cls}>{name}</span>;
   return (
-    <span className={`truncate ${className}`} title={name}>
+    <span className={cls} title={name}>
       <span className="sm:hidden">{short}</span>
       <span className="hidden sm:inline">{name}</span>
     </span>
@@ -266,25 +268,31 @@ export function MatchListHeader({
   market,
   columns,
   tone = "default",
+  meta = true,
+  as: Heading = "h2",
 }: {
+  /** Heading level of the title (h3 inside a page section that already has an h2). */
+  as?: "h2" | "h3";
   id: string;
   title: ReactNode;
   market: FootballMarket;
   /** Show the column headers (only if the rows show prediction cells). */
   columns: boolean;
   tone?: "default" | "live";
+  /** false: the rows have no competition column (MatchRow `meta`). */
+  meta?: boolean;
 }) {
   const { labels, width } = marketColumns(market);
   return (
     <div className="flex items-end gap-2.5 sm:gap-4 px-3 sm:px-4 mb-1.5">
-      <h2
+      <Heading
         id={id}
         className={`flex-1 min-w-0 text-sm uppercase tracking-wide first-letter:uppercase ${
           tone === "live" ? "text-red-300" : "text-slate-300"
         }`}
       >
         {title}
-      </h2>
+      </Heading>
       {columns && labels && (
         <div className="flex gap-1 shrink-0" aria-hidden="true">
           {labels.map((l) => (
@@ -294,7 +302,7 @@ export function MatchListHeader({
           ))}
         </div>
       )}
-      <span className="hidden md:block w-40 shrink-0" aria-hidden="true" />
+      {meta && <span className="hidden md:block w-40 shrink-0" aria-hidden="true" />}
       <span className="hidden sm:block w-4 shrink-0" aria-hidden="true" />
     </div>
   );

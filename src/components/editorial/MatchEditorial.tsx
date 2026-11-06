@@ -8,6 +8,7 @@ export function MatchEditorial({ article, className = "" }: { article: Article |
   const headingId = `editoriale-${article.key.replace(/[^a-z0-9]+/gi, "-")}`;
   return (
     <section
+      id="analisi"
       className={`rounded-xl border border-slate-800 bg-slate-900 p-5 ${className}`}
       aria-labelledby={headingId}
       data-source={article.source}

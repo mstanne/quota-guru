@@ -31,8 +31,11 @@ export function TennisPredictionResult({
   b: string;
 }) {
   const p = prediction;
-  const top = p.p[0] >= p.p[1] ? 0 : 1;
+  // a tie as shown (same rounded percentage) highlights both sides, or nobody, never just the first one
+  const even = pct(p.p[0]) === pct(p.p[1]);
+  const top = even ? -1 : p.p[0] > p.p[1] ? 0 : 1;
   const bestScore = p.scores.reduce((m, x) => (x.p > m.p ? x : m), p.scores[0]);
+  const isBest = (x: (typeof p.scores)[number]) => pct(x.p) === pct(bestScore.p);
   const setKeys = Object.keys(p.sets).sort();
   const maxSets = setKeys[setKeys.length - 1];
   const longLabel = p.bestOf === 5 ? "5 set" : "3 set";
@@ -41,7 +44,11 @@ export function TennisPredictionResult({
       <div role="img" aria-label={`Probabilità di vittoria stimate: ${a} ${pct(p.p[0])}, ${b} ${pct(p.p[1])}`}>
         <div className="flex h-2.5 w-full overflow-hidden rounded-full bg-slate-800 gap-0.5" aria-hidden="true">
           {p.p.map((v, i) => (
-            <span key={i} className={i === top ? "bg-predict" : "bg-slate-500"} style={{ width: `${v * 100}%` }} />
+            <span
+              key={i}
+              className={i === top || (even && i === 0) ? "bg-predict" : "bg-slate-500"}
+              style={{ width: `${v * 100}%` }}
+            />
           ))}
         </div>
         <div className="mt-2 grid grid-cols-2 gap-3" aria-hidden="true">
@@ -71,7 +78,7 @@ export function TennisPredictionResult({
                 key={`${x.a}-${x.b}`}
                 label={`${x.a > x.b ? a : b} ${Math.max(x.a, x.b)}-${Math.min(x.a, x.b)}`}
                 value={pct(x.p)}
-                strong={x === bestScore}
+                strong={isBest(x)}
               />
             ))}
           </dl>

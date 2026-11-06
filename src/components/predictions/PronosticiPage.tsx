@@ -5,9 +5,9 @@ import { dayPath } from "../../lib/dayPages";
 import type { ReactNode } from "react";
 import { Link } from "../../lib/links";
 import { PageHeader, MetaItems } from "../layout/PageHeader";
-import { MatchRow } from "../calcio/MatchRow";
+import { MatchList } from "../calcio/MatchList";
 import { SlipHint } from "./SlipPicks";
-import { BasketGameRow } from "../basket/BasketGameRow";
+import { NbaDayList } from "../basket/NbaDayList";
 import { TrackRecordBox } from "./TrackRecordBox";
 import { allMatches, competitions, formatUpdated, generatedAt, isLive, isUpcoming, matchdayPath } from "../../lib/football";
 import { predictionFor } from "../../lib/predictions";
@@ -92,12 +92,15 @@ export function PronosticiPage() {
           link={{ to: paths.calcio, label: "Tutto il calendario" }}
         >
           {rounds.length > 0 && (
-            <nav aria-label="Pronostici per giornata" className="flex flex-wrap gap-2 mb-4">
+            <nav
+              aria-label="Pronostici per giornata"
+              className="-mx-4 px-4 mb-5 flex gap-2 overflow-x-auto scrollbar-none sm:mx-0 sm:px-0 sm:flex-wrap"
+            >
               {rounds.map(({ c, d }) => (
                 <Link
                   key={c.slug}
                   to={matchdayPath(c, d)}
-                  className="px-3 py-1.5 rounded-md text-sm border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white"
+                  className="shrink-0 whitespace-nowrap px-3 py-1.5 rounded-md text-sm border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white"
                 >
                   {c.name} · {d.n}ª giornata
                 </Link>
@@ -105,17 +108,11 @@ export function PronosticiPage() {
             </nav>
           )}
           {football.length > 0 ? (
-            <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
-              {football.map(({ competition, match }) => (
-                <MatchRow
-                  key={match.id}
-                  competition={competition}
-                  match={match}
-                  prediction={predictionFor(match.id)}
-                  showCompetition
-                />
-              ))}
-            </div>
+            <MatchList
+              rows={football.map((r) => ({ ...r, prediction: predictionFor(r.match.id) }))}
+              idPrefix="pron-calcio"
+              headingLevel="h3"
+            />
           ) : (
             <p className="text-slate-400">Nessuna partita in programma con un pronostico in questo momento.</p>
           )}
@@ -129,11 +126,7 @@ export function PronosticiPage() {
           link={{ to: basketPaths.nba, label: "Calendario NBA" }}
         >
           {nba.length > 0 ? (
-            <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
-              {nba.map((g) => (
-                <BasketGameRow key={g.id} game={g} />
-              ))}
-            </div>
+            <NbaDayList games={nba} />
           ) : (
             <p className="text-slate-400">Nessuna partita NBA in programma con un pronostico in questo momento.</p>
           )}

@@ -11,7 +11,6 @@ import {
   isResultPending,
   isUpcoming,
   romeDay,
-  roundLabel,
   standingsPath,
   type Competition,
   type Match,
@@ -25,8 +24,8 @@ import { MarketFilter } from "../predictions/MarketFilter";
 import { TrackRecordBox } from "../predictions/TrackRecordBox";
 import { footballTrackRecord } from "../../lib/trackRecordFootball";
 import { footballOutcome, MatchListColumns, MatchListHeader, MatchRow } from "./MatchRow";
-import { DayLabel, useRomeToday } from "../predictions/DayLabel";
-import { emptyActionClass, EmptyList, GroupSubheading, TeamSearch } from "../predictions/ListTools";
+import { MatchList } from "./MatchList";
+import { emptyActionClass, EmptyList, TeamSearch } from "../predictions/ListTools";
 import { searchKey } from "../../lib/teamNames";
 import { marketColumns } from "../predictions/PredictionUi";
 import { ChoiceControl } from "../predictions/ChoiceControl";
@@ -77,7 +76,6 @@ export function CalcioPage() {
   const [filter, setFilter] = useQueryChoice<Filter>("periodo", FILTER_IDS, "upcoming");
   const [market, setMarket] = useQueryChoice<FootballMarket>("mercato", MARKET_IDS, "1x2");
   const [query, setQuery] = useState("");
-  const today = useRomeToday();
   usePageMeta(competition ? competitionMeta(competition) : null);
 
   const periodRows = useMemo(() => {
@@ -124,24 +122,11 @@ export function CalcioPage() {
     filter !== "results" && !!marketColumns(market).labels && rows.some((r) => !!predictionOf(r.competition, r.match));
   // matches being played: their own group on top ("Prossime" only)
   const live = filter === "upcoming" ? rows.filter((r) => isLive(r.match)) : [];
-  // by Italian calendar day, then by competition (site order) and round inside the day
-  const order = new Map(footballIndex.map((c, i) => [c.slug, i]));
-  type Row = { competition: Competition; match: Match };
-  const groups: { day: string; iso: string; sections: { key: string; competition: Competition; round: string; items: Row[] }[] }[] = [];
-  for (const r of rows) {
-    if (live.includes(r)) continue;
-    const day = romeDay(r.match.utcDate);
-    let g = groups.find((x) => x.day === day);
-    if (!g) groups.push((g = { day, iso: r.match.utcDate, sections: [] }));
-    const rl = roundLabel(r.match);
-    const key = `${r.competition.slug}|${rl}`;
-    let sec = g.sections.find((x) => x.key === key);
-    if (!sec) g.sections.push((sec = { key, competition: r.competition, round: rl, items: [] }));
-    sec.items.push(r);
-  }
-  for (const g of groups)
-    g.sections.sort((a, b) => (order.get(a.competition.slug) ?? 99) - (order.get(b.competition.slug) ?? 99));
-  const limitedGroups = competition ? groups : groups.slice(0, 7);
+  // by Italian calendar day; inside a day, in time order with a heading whenever the competition changes
+  const listRows = rows
+    .filter((r) => !live.includes(r))
+    .map((r) => ({ ...r, prediction: predictionOf(r.competition, r.match) }));
+  const dayCount = new Set(listRows.map((r) => romeDay(r.match.utcDate))).size;
 
   // finished matches: the prediction as published (archive), else the model's recalculation
   const outcomeOf = (c: Competition, m: Match) => {
@@ -224,7 +209,7 @@ export function CalcioPage() {
 
       <div className="container mx-auto px-4 py-6">
         {/* the list keeps a readable width on wide screens (and leaves room for the slip beside it) */}
-        <div className="max-w-5xl">
+        <div className="max-w-6xl">
           <TrackRecordBox record={footballTrackRecord()} sport="calcio" className="mb-4" />
 
           {/* filters: one sticky bar under the site header (competitions scroll sideways, period and market on one row) */}
@@ -262,7 +247,7 @@ export function CalcioPage() {
                   ))}
               </div>
             </nav>
-            <div className="mt-2.5 grid grid-cols-[1fr_1fr_auto] gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-2">
+            <div className="mt-2.5 grid grid-cols-[1fr_1fr_auto] gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-x-4 sm:gap-y-2">
               <ChoiceControl<Filter>
                 label="Periodo"
                 icon={CalendarDays}
@@ -286,7 +271,7 @@ export function CalcioPage() {
           </div>
           <SlipHint />
 
-          {live.length === 0 && limitedGroups.length === 0 ? (
+          {live.length === 0 && dayCount === 0 ? (
             words.length ? (
               <EmptyList
                 title={`Nessuna partita trovata per «${query.trim()}»`}
@@ -337,48 +322,16 @@ export function CalcioPage() {
                   </div>
                 </section>
               )}
-              {limitedGroups.map((g) => (
-                <section key={g.day} aria-labelledby={`day-${g.day}`}>
-                  <MatchListHeader
-                    id={`day-${g.day}`}
-                    title={<DayLabel iso={g.iso} today={today} />}
-                    market={market}
-                    columns={false}
-                  />
-                  <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
-                    {g.sections.map((sec) => (
-                      <div key={sec.key} className="border-b border-slate-800 last:border-b-0">
-                        <GroupSubheading>
-                          {!competition && (
-                            <>
-                              <Link
-                                to={`${competitionPath(sec.competition)}${q}`}
-                                className="relative z-10 text-slate-200 hover:text-white hover:underline"
-                              >
-                                {sec.competition.name}
-                              </Link>
-                              <span aria-hidden="true">·</span>
-                            </>
-                          )}
-                          <span>{sec.round}</span>
-                        </GroupSubheading>
-                        {sec.items.map(({ competition: c, match }) => (
-                          <MatchRow
-                            key={match.id}
-                            competition={c}
-                            match={match}
-                            prediction={predictionOf(c, match)}
-                            market={market}
-                            columns={columns}
-                            meta={false}
-                            outcome={filter === "results" ? outcomeOf(c, match) : undefined}
-                          />
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              ))}
+              <MatchList
+                rows={listRows}
+                market={market}
+                columns={columns}
+                columnHeader={false}
+                heads={competition ? "round" : "competition"}
+                linkQuery={q}
+                maxDays={competition ? undefined : 7}
+                outcome={filter === "results" ? (r) => outcomeOf(r.competition, r.match) : undefined}
+              />
             </div>
           )}
         </div>

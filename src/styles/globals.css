@@ -258,6 +258,11 @@ html {
   }
 }
 
+/* in-page links (#pronostico…): the target lands below the sticky header and the section bar */
+:target {
+  scroll-margin-top: calc(var(--header-h, 0px) + 3.75rem);
+}
+
 /* wide screens: the open bet slip (24rem, sm:max-w-sm) sits beside the page instead of covering it */
 @media (min-width: 1280px) {
   html.slip-docked body {

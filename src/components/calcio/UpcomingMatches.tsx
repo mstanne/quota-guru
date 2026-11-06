@@ -2,10 +2,9 @@ import { Link } from "../../lib/links";
 import { CalendarDays, ListFilter } from "lucide-react";
 import { useQueryChoice } from "../../lib/useQueryChoice";
 import home from "../../data/football-home.json";
-import { formatDay, type CompetitionRef, type Match } from "../../lib/footballCore";
-import { Fragment } from "react";
+import type { CompetitionRef, Match } from "../../lib/footballCore";
 import type { Prediction } from "../../lib/predictionsCore";
-import { MatchRow } from "./MatchRow";
+import { MatchList } from "./MatchList";
 import { DataUpdatedNote } from "./DataUpdatedNote";
 
 // Small pre-computed list (scripts/derive-football-home.mjs) so the home page does not load the full snapshot.
@@ -99,32 +98,18 @@ export function UpcomingMatches({ limit = 8 }: { limit?: number }) {
             </div>
           </div>
         )}
-        <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
-          {next.length ? (
-            next.map(({ competition, match, prediction }, i) => {
-              // day heading whenever the date changes, so rows on different days are not read as the same day
-              const day = formatDay(match.utcDate);
-              const newDay = i === 0 || formatDay(next[i - 1].match.utcDate) !== day;
-              return (
-                <Fragment key={match.id}>
-                  {newDay && (
-                    <h3 className="px-4 py-2 bg-slate-950/60 border-b border-slate-800 text-slate-300 text-sm first-letter:uppercase">
-                      {day}
-                    </h3>
-                  )}
-                  <MatchRow
-                    competition={competition}
-                    match={match}
-                    prediction={prediction}
-                    showCompetition={!selected}
-                  />
-                </Fragment>
-              );
-            })
-          ) : (
-            <p className="p-6 text-slate-400 text-sm">Nessuna partita in programma nei prossimi giorni.</p>
-          )}
-        </div>
+        {next.length ? (
+          <MatchList
+            rows={next}
+            heads={selected ? "round" : "competition"}
+            idPrefix="home-giorno"
+            headingLevel="h3"
+          />
+        ) : (
+          <p className="rounded-xl border border-slate-800 bg-slate-900 p-6 text-slate-400 text-sm">
+            Nessuna partita in programma nei prossimi giorni.
+          </p>
+        )}
       </div>
     </section>
   );

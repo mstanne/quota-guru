@@ -19,22 +19,32 @@ const data = home as unknown as { featured?: FeaturedMatch[] };
 
 export function HeroSection({ matches = data.featured ?? [] }: { matches?: FeaturedMatch[] }) {
   return (
-    <div className="bg-slate-900 py-8 sm:py-10">
+    <div className="bg-slate-900 py-6 sm:py-10">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-6">
-          <h1 className="text-white text-3xl sm:text-4xl mb-3">
-            <TrendingUp className="inline-block w-7 h-7 text-slate-300 mr-2 align-[-0.1em]" aria-hidden="true" />
-            Pronostici calcio basati sui dati
+        <div className="text-center mb-5 sm:mb-6">
+          <h1 className="text-white text-2xl sm:text-4xl mb-2 sm:mb-3">
+            <TrendingUp
+              className="inline-block w-6 h-6 sm:w-7 sm:h-7 text-slate-300 mr-2 align-[-0.1em]"
+              aria-hidden="true"
+            />
+            Pronostici di calcio, NBA e tennis basati sui dati
           </h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Le probabilità di ogni esito calcolate dal nostro modello statistico sui risultati delle ultime stagioni
+          <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
+            Le probabilità di ogni esito calcolate da modelli statistici sui risultati delle ultime stagioni
           </p>
         </div>
         {matches.length > 0 && (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {/* phones: one row of cards to swipe (one card high instead of three); from md a grid */}
+            <div
+              className="-mx-4 px-4 flex gap-3 overflow-x-auto scrollbar-none snap-x snap-mandatory md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible"
+              aria-label="Partite in evidenza"
+              role="list"
+            >
               {matches.map((f) => (
-                <FeaturedCard key={f.match.id} {...f} />
+                <div key={f.match.id} role="listitem" className="w-[86%] shrink-0 snap-start md:w-auto">
+                  <FeaturedCard {...f} />
+                </div>
               ))}
             </div>
             <SlipHint />
@@ -72,7 +82,7 @@ function FeaturedCard({ competition, match, prediction }: FeaturedMatch) {
   const dots = prediction.confidence === "alta" ? 3 : prediction.confidence === "media" ? 2 : 1;
   const slip = isUpcoming(match) && !prediction.pre ? footballSlip(competition.name, match) : undefined;
   return (
-    <article className="group relative rounded-xl border border-slate-700 bg-slate-800 hover:border-slate-500 transition-colors px-4 py-3">
+    <article className="group relative h-full rounded-xl border border-slate-700 bg-slate-800 hover:border-slate-500 transition-colors px-4 py-3">
       <div className="flex items-center justify-between gap-2 text-xs">
         <span className="text-slate-300 font-medium truncate">{competition.name}</span>
         <span className="flex items-center gap-2 shrink-0 text-slate-400">
@@ -101,7 +111,7 @@ function FeaturedCard({ competition, match, prediction }: FeaturedMatch) {
           {[match.homeTeam, match.awayTeam].map((t) => (
             <span key={t.id} className="flex items-center gap-2">
               <TeamBadge team={t} />
-              <span className="text-white truncate">{t.shortName}</span>
+              <span className="text-white truncate text-[15px] sm:text-base">{t.shortName}</span>
             </span>
           ))}
         </Link>

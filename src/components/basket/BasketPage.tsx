@@ -112,7 +112,7 @@ export function BasketPage({ league }: { league?: "nba" }) {
       </PageHeader>
 
       <div className="container mx-auto px-4 py-6">
-        <div className="max-w-5xl">
+        <div className="max-w-6xl">
           <TrackRecordBox record={nbaTrackRecord()} sport="nba" className="mb-4" />
 
           {/* filters: one sticky bar under the site header, as on the football page */}
@@ -135,7 +135,7 @@ export function BasketPage({ league }: { league?: "nba" }) {
                 )}
               </div>
             </nav>
-            <div className="mt-2.5 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-2">
+            <div className="mt-2.5 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-x-4 sm:gap-y-2">
               <ChoiceControl<Filter>
                 label="Periodo"
                 icon={CalendarDays}

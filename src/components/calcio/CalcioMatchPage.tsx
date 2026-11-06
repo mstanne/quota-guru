@@ -36,7 +36,9 @@ import { MatchEditorial } from "../editorial/MatchEditorial";
 import { MatchSummary, footballSummary } from "../editorial/MatchSummary";
 import { PredictionPanel } from "../predictions/PredictionUi";
 import { footballSlip } from "../predictions/SlipPicks";
-import { MatchRow, TeamBadge } from "./MatchRow";
+import { MatchList } from "./MatchList";
+import { SectionNav } from "../layout/SectionNav";
+import { TeamBadge } from "./MatchRow";
 import { FootballBoxScore } from "./FootballBoxScore";
 import { TeamName } from "../teams/TeamLink";
 import { hasResults, resultsPath } from "../../lib/results";
@@ -244,9 +246,9 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
   const roundPage = isMatchdayStage(match)
     ? matchdaysOf(competition).find((d) => d.n === match.matchday)
     : undefined;
-  const sameRound = competition.matches.filter(
-    (m) => m.matchday === match.matchday && m.stage === match.stage && m.id !== match.id,
-  );
+  const sameRound = competition.matches
+    .filter((m) => m.matchday === match.matchday && m.stage === match.stage && m.id !== match.id)
+    .sort((a, b) => a.utcDate.localeCompare(b.utcDate));
 
   return (
     <div className="min-h-screen bg-slate-950">
@@ -334,6 +336,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               home={match.homeTeam.shortName}
               away={match.awayTeam.shortName}
               result={finished && ft.home !== null && ft.away !== null ? { home: ft.home, away: ft.away } : null}
+              slip={isUpcoming(match) && !prediction.pre ? footballSlip(competition.name, match) : undefined}
             />
           )}
           <MatchSummary text={footballSummary(match, competition.name, prediction, { finished, live })} />
@@ -341,15 +344,24 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
         </div>
       </div>
 
+      <SectionNav
+        items={[
+          { id: "pronostico", label: "Pronostico" },
+          { id: "indisponibili", label: "Indisponibili" },
+          { id: "analisi", label: finished ? "Com'è andata" : "Anteprima" },
+          { id: "confronto", label: "Confronto" },
+          { id: "under-over", label: "Under/Over" },
+          { id: "forma", label: "Forma" },
+          { id: "precedenti", label: "Precedenti" },
+          { id: "classifica", label: "Classifica" },
+          { id: "stesso-turno", label: "Altre partite" },
+        ]}
+      />
+
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* SofaScore widgets only until the site's own live service is configured (VITE_LIVE_URL) */}
         {sofascoreId && !import.meta.env.VITE_LIVE_URL && <SofascoreLive eventId={sofascoreId} utcDate={match.utcDate} teams={teams} />}
         {!finished && <LiveMatch match={match} initial={liveData} />}
-        {!finished && match.injuries && (
-          <div className="lg:col-span-3 min-w-0">
-            <MatchUnavailable match={match} />
-          </div>
-        )}
         {finished && (
           <div className="lg:col-span-3 min-w-0 space-y-6">
             {/* box score and highlights side by side on wide screens, stacked otherwise */}
@@ -372,6 +384,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               slip={isUpcoming(match) && !prediction.pre ? footballSlip(competition.name, match) : undefined}
             />
           )}
+          {!finished && match.injuries && <MatchUnavailable match={match} />}
           {isUpcoming(match) && (
             <MatchOddsSlot
               sport="football"
@@ -502,11 +515,13 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               <CalendarDays className="w-5 h-5 text-slate-300" aria-hidden="true" />
               Altre partite – {roundLabel(match) || competition.name}
             </h2>
-            <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
-              {sameRound.map((m) => (
-                <MatchRow key={m.id} competition={competition} match={m} prediction={data.prediction(m.id)} />
-              ))}
-            </div>
+            {/* by day, in time order (a round spans several days) */}
+            <MatchList
+              rows={sameRound.map((m) => ({ competition, match: m, prediction: data.prediction(m.id) }))}
+              heads="none"
+              idPrefix="turno"
+              headingLevel="h3"
+            />
           </section>
         )}
 

@@ -23,7 +23,9 @@ export function Footer() {
             <div className="mb-4">
               <BrandLogo height={44} />
             </div>
-            <p className="text-slate-400 text-sm">Confronta le quote sportive degli operatori autorizzati</p>
+            <p className="text-slate-400 text-sm">
+              Pronostici basati sui dati e offerte degli operatori autorizzati ADM
+            </p>
           </div>
           <div>
             <h2 className="text-white text-base mb-4">Sport</h2>

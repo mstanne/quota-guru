@@ -186,7 +186,7 @@ function CellText({
 /** Framed "Aggiungi un esito alla schedina" block for the prediction panels of the match pages. */
 export function SlipPicksBox({ children }: { children: ReactNode }) {
   return (
-    <div className="mt-5 rounded-lg border border-action/40 bg-slate-950/40 px-4 py-3">
+    <div id="schedina" className="mt-5 scroll-mt-28 rounded-lg border border-action/40 bg-slate-950/40 px-4 py-3">
       <h3 className="flex items-center gap-2 text-white text-base">
         <ListPlus className="w-4 h-4 text-action" aria-hidden="true" />
         Aggiungi un esito alla schedina
@@ -200,11 +200,13 @@ export function SlipPicksBox({ children }: { children: ReactNode }) {
 }
 
 const TIP_KEY = "qg-suggerimento-schedina";
+const TIP_MS = 12_000;
 
 /**
  * First-use tip of the lists whose probabilities can be added to the slip: a small bar at the bottom of the screen
  * (fixed, so it never moves the page), shown until the reader adds a first pick or closes it, then never again
- * (remembered in this browser). Not in the pre-rendered HTML: it appears after loading, if not dismissed yet.
+ * (remembered in this browser), or after 12 seconds on screen. Not in the pre-rendered HTML: it appears after
+ * loading, if not dismissed yet.
  */
 export function SlipHint() {
   const { selections } = useBetSlip();
@@ -224,6 +226,13 @@ export function SlipHint() {
       setShow(true);
     }
   }, []);
+  // seen long enough: it goes away by itself (and does not come back)
+  useEffect(() => {
+    if (!show) return;
+    const t = window.setTimeout(done, TIP_MS);
+    return () => window.clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [show]);
   // the first pick is the sign it has been understood
   useEffect(() => {
     if (selections.length && show) done();
@@ -233,11 +242,12 @@ export function SlipHint() {
   return (
     <div
       role="note"
-      className="fixed z-40 bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-md flex items-center gap-3 rounded-xl border border-action/50 bg-slate-900/95 backdrop-blur px-4 py-3 shadow-xl shadow-black/40"
+      className="fixed z-40 bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-sm sm:max-w-xl flex items-center gap-2 rounded-lg border border-action/50 bg-slate-900/95 backdrop-blur pl-3 pr-1 py-1 shadow-xl shadow-black/40"
     >
-      <ListPlus className="w-5 h-5 text-action shrink-0" aria-hidden="true" />
-      <p className="flex-1 text-white text-sm leading-snug">
-        Tocca una percentuale per aggiungere l'esito alla schedina: calcola la probabilità che si verifichino tutti.
+      <ListPlus className="w-4 h-4 text-action shrink-0" aria-hidden="true" />
+      <p className="flex-1 text-white text-xs sm:text-sm leading-snug">
+        Tocca una percentuale per metterla in <strong className="font-medium">schedina</strong>
+        <span className="hidden sm:inline">: calcola la probabilità che si verifichino tutti gli esiti</span>.
       </p>
       <button
         type="button"

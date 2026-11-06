@@ -3,7 +3,6 @@ import { Check, ExternalLink, Funnel, Shield, TrendingUp, X } from "lucide-react
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "./ui/select";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import { Link } from "../lib/links";
 import {
@@ -35,7 +34,6 @@ interface SitiScommessePageProps {
 }
 
 /** Shows a field only once it has been filled in (placeholders such as [DEPOSITO_MINIMO] are hidden). */
-const filled = (v: string) => (isPlaceholder(v) ? "Non ancora indicato" : v);
 const filledList = (list: string[]) => list.filter((v) => !isPlaceholder(v));
 
 /** /siti-scommesse – factual comparison of authorised operators, in alphabetical order. */
@@ -82,46 +80,31 @@ export function SitiScommessePage({
       />
       <div className="container mx-auto px-4 py-8 lg:grid lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8 lg:items-start">
         <div className="min-w-0">
-          <Card className="bg-slate-900 border-slate-800 mb-8">
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Funnel className="w-5 h-5 text-slate-400" />
-                <h2 className="text-white text-xl">Filtra operatori</h2>
-              </div>
-              <div className="max-w-md mb-6">
-                <label className="text-slate-400 text-sm mb-2 block">Categoria</label>
-                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger aria-label="Categoria" className="bg-slate-800 border-slate-500 text-white">
-                    <SelectValue placeholder="Seleziona categoria" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-slate-800 border-slate-700">
-                    {filterCategories.map((category) => (
-                      <SelectItem key={category.id} value={category.id} className="text-white">
-                        {category.icon} {category.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {filterCategories.map((category) => (
-                  <Button
-                    key={category.id}
-                    variant={selectedCategory === category.id ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedCategory(category.id)}
-                    className={
-                      selectedCategory === category.id
-                        ? "bg-selected hover:bg-selected text-selected-foreground cursor-pointer"
-                        : "bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white cursor-pointer"
-                    }
-                  >
-                    {category.icon} {category.name}
-                  </Button>
-                ))}
-              </div>
+          {/* one row of filters (scrolls sideways on phones): the same choices are not repeated in a menu */}
+          <div className="flex items-center gap-2 mb-6">
+            <Funnel className="w-4 h-4 text-slate-400 shrink-0" aria-hidden="true" />
+            <div
+              role="group"
+              aria-label="Filtra operatori"
+              className="-mr-4 pr-4 sm:mr-0 sm:pr-0 flex gap-2 overflow-x-auto scrollbar-none sm:flex-wrap"
+            >
+              {filterCategories.map((category) => (
+                <button
+                  key={category.id}
+                  type="button"
+                  onClick={() => setSelectedCategory(category.id)}
+                  aria-pressed={selectedCategory === category.id}
+                  className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-md text-sm border transition-colors cursor-pointer ${
+                    selectedCategory === category.id
+                      ? "bg-selected border-selected text-selected-foreground"
+                      : "bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white"
+                  }`}
+                >
+                  <span aria-hidden="true">{category.icon}</span> {category.name}
+                </button>
+              ))}
             </div>
-          </Card>
+          </div>
           <div className="space-y-6">
             {filteredBookmakers.map((bookmaker) => (
               <Card key={bookmaker.id} className="bg-slate-900 border-slate-800 transition-all">
@@ -147,10 +130,10 @@ export function SitiScommessePage({
                   </div>
                   <div className="bg-slate-800 rounded-lg p-4 mb-6">
                     <p className="text-white text-center">{bookmaker.description}</p>
-                    <p className="text-slate-400 text-sm text-center mt-2">
-                      {"Deposito minimo: "}
-                      {filled(bookmaker.minDeposit)}
-                    </p>
+                    {/* only when known: "non ancora indicato" in the summary says nothing */}
+                    {!isPlaceholder(bookmaker.minDeposit) && (
+                      <p className="text-slate-400 text-sm text-center mt-2">Deposito minimo: {bookmaker.minDeposit}</p>
+                    )}
                   </div>
                   <Tabs defaultValue="overview" className="w-full">
                     <TabsList className="bg-slate-800 mb-4">
@@ -254,14 +237,18 @@ export function SitiScommessePage({
                           <div className="text-slate-400 text-sm mb-1">Licenza</div>
                           <div className="text-white">ADM - Concessione n. {bookmaker.admLicense}</div>
                         </div>
-                        <div className="bg-slate-800 rounded-lg p-4">
-                          <div className="text-slate-400 text-sm mb-1">Tempo di prelievo</div>
-                          <div className="text-white">{filled(bookmaker.withdrawalTime)}</div>
-                        </div>
-                        <div className="bg-slate-800 rounded-lg p-4">
-                          <div className="text-slate-400 text-sm mb-1">Deposito minimo</div>
-                          <div className="text-white">{filled(bookmaker.minDeposit)}</div>
-                        </div>
+                        {!isPlaceholder(bookmaker.withdrawalTime) && (
+                          <div className="bg-slate-800 rounded-lg p-4">
+                            <div className="text-slate-400 text-sm mb-1">Tempo di prelievo</div>
+                            <div className="text-white">{bookmaker.withdrawalTime}</div>
+                          </div>
+                        )}
+                        {!isPlaceholder(bookmaker.minDeposit) && (
+                          <div className="bg-slate-800 rounded-lg p-4">
+                            <div className="text-slate-400 text-sm mb-1">Deposito minimo</div>
+                            <div className="text-white">{bookmaker.minDeposit}</div>
+                          </div>
+                        )}
                       </div>
                     </TabsContent>
                   </Tabs>
