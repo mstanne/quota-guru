@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { FairOddsLegend } from "../predictions/SlipPicks";
 import { Link } from "../../lib/links";
 import { CalendarDays, ListOrdered, Trophy } from "lucide-react";
 import { HeaderLinks, headerLinkClass, PageHeader } from "../layout/PageHeader";
@@ -211,6 +212,7 @@ export function BasketPage({ league }: { league?: "nba" }) {
                   </div>
                 </section>
               ))}
+              <FairOddsLegend className="px-3 sm:px-4" />
             </div>
           )}
           <p className="text-slate-400 text-xs mt-8">

@@ -4,7 +4,8 @@
 import { Check, ListPlus, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { useBetSlip } from "../../context/BetSlipContext";
-import { pct } from "../../lib/predictionsCore";
+import { Link } from "../../lib/links";
+import { fairOdds, pct } from "../../lib/predictionsCore";
 import { formatTime, romeDay, type Match } from "../../lib/footballCore";
 
 /** The match a pick belongs to. `slipId`: "football-<id>" / "nba-<id>", the same ids as the odds blocks. */
@@ -96,7 +97,7 @@ export function PickCells({
   cellClassName?: string;
 }) {
   const { picked, toggle } = useSlipPicks(match);
-  const summary = `${name}, probabilità stimate dal modello: ${cells.map((c) => `${c.spoken} ${pct(c.value)}`).join(", ")}`;
+  const summary = `${name}, probabilità stimate dal modello e quota equa: ${cells.map((c) => `${c.spoken} ${pct(c.value)}, quota equa ${fairOdds(c.value)}`).join("; ")}`;
   if (!match)
     return (
       <div className={`flex gap-1 ${className}`} role="img" aria-label={summary}>
@@ -131,7 +132,7 @@ export function PickCells({
               toggle(c);
             }}
             aria-pressed={on}
-            aria-label={`${c.spoken}, probabilità ${pct(c.value)}. ${on ? "Togli dalla" : "Aggiungi alla"} schedina`}
+            aria-label={`${c.spoken}, probabilità ${pct(c.value)}, quota equa ${fairOdds(c.value)}. ${on ? "Togli dalla" : "Aggiungi alla"} schedina`}
             title={on ? "Togli dalla schedina" : "Aggiungi alla schedina"}
             className={`relative ${width} rounded-md px-1 ${cellClassName} text-center leading-tight border transition-colors cursor-pointer ${
               on
@@ -155,7 +156,10 @@ export function PickCells({
   );
 }
 
-/** Label and percentage of one cell: stacked (default), percentage only (`hideLabels`) or on one line (`inline`). */
+/**
+ * Label, percentage and fair odds (1 ÷ probability, smaller and fainter) of one cell: stacked (default), without the
+ * label (`hideLabels`) or on one line (`inline`).
+ */
 function CellText({
   cell,
   hideLabels,
@@ -172,13 +176,19 @@ function CellText({
     return (
       <span className="flex items-baseline justify-between gap-1.5 px-0.5">
         <span className={`text-[11px] whitespace-nowrap ${label}`}>{cell.label}</span>
-        <span className="tabular-nums font-medium text-sm">{pct(cell.value)}</span>
+        <span className="tabular-nums font-medium text-sm">
+          {pct(cell.value)}
+          <span className="ml-1 text-[10px] font-normal opacity-70">{fairOdds(cell.value)}</span>
+        </span>
       </span>
     );
   return (
     <>
       {!hideLabels && <span className={`block text-[10px] whitespace-nowrap ${label}`}>{cell.label}</span>}
       <span className={`block tabular-nums font-medium ${hideLabels ? "text-sm" : "text-xs"}`}>{pct(cell.value)}</span>
+      <span className="block tabular-nums text-[10px] opacity-70" title="Quota equa: 1 ÷ probabilità">
+        {fairOdds(cell.value)}
+      </span>
     </>
   );
 }
@@ -258,5 +268,18 @@ export function SlipHint() {
         <X className="w-4 h-4" aria-hidden="true" />
       </button>
     </div>
+  );
+}
+
+/** One line under the lists: what the small number under each percentage is. */
+export function FairOddsLegend({ className = "" }: { className?: string }) {
+  return (
+    <p className={`text-slate-500 text-xs ${className}`}>
+      Sotto ogni percentuale, più piccola, la quota equa: 1 ÷ la probabilità stimata, cioè il prezzo dell'esito senza il
+      margine dell'operatore. Non è una quota offerta da un bookmaker.{" "}
+      <Link to="/guide/quota-equa-e-valore-atteso" className="text-slate-400 underline hover:text-white">
+        Cos'è la quota equa
+      </Link>
+    </p>
   );
 }
