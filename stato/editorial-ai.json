@@ -341,75 +341,21 @@
   "model": "claude-haiku-5-5",
   "at": "2026-11-01T16:59:33.162Z"
  },
- "fb:558531": {
-  "fingerprint": "5hlm2w",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 7 novembre alle 20:45 la Roma ospita il Sassuolo nell'11ª giornata di Serie A. In classifica la Roma è al 3° posto con 24 punti, mentre il Sassuolo è al 17° con 8."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 5 partite di Serie A la Roma ha ottenuto 3 vittorie e 2 pareggi (sequenza N-V-N-V-V), segnando 14 gol e subendone 7. Non perde da 5 partite. In casa ha vinto tutte le 2 partite disputate.",
-     "Nelle ultime 5 partite di Serie A il Sassuolo ha ottenuto 1 pareggio e 4 sconfitte (sequenza N-P-P-P-P), segnando 7 gol e subendone 17. Ha perso le ultime 4 partite. In trasferta ha perso tutte le 2 partite disputate."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati a partita: Roma 2,8, Sassuolo 1,6.",
-     "Gol subiti finora: Roma 10, Sassuolo 26.",
-     "La Roma ha il miglior attacco del torneo.",
-     "In 3 delle ultime 5 partite della Roma sono stati segnati almeno tre gol.",
-     "In 3 delle ultime 5 partite del Sassuolo sono stati segnati almeno tre gol."
-    ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 4 vittorie per la Roma e 1 per il Sassuolo, senza pareggi, con 14 gol complessivi (media di 2,8 a partita). L'ultimo incrocio, disputato a gennaio 2026 in Serie A, è terminato Roma 2-0 Sassuolo."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Roma – Sassuolo?",
-    "a": "Sabato 7 novembre alle 20:45, ora italiana."
-   },
-   {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-06T21:01:02.716Z"
- },
  "fb:558533": {
-  "fingerprint": "1xxpwer",
+  "fingerprint": "1lcl8x1",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Napoli e Lazio si affrontano domenica 8 novembre alle 12:30 per la 11ª giornata di Serie A. In classifica il Napoli è al 9° posto con 14 punti, la Lazio al 1° con 28."
+     "Napoli e Lazio si affrontano domenica 8 novembre alle 12:30, per la 11ª giornata di Serie A. In classifica il Napoli occupa il 10° posto con 14 punti, mentre la Lazio è al 1° posto con 28 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A il Napoli ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-N-V-P), con 10 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Serie A la Lazio ha raccolto 5 vittorie (sequenza V-V-V-V-V), con 16 gol fatti e 5 subiti. È reduce da 5 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
+     "Nelle ultime 5 partite di Serie A il Napoli ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza V-P-N-V-P. Ha segnato 10 gol e ne ha subiti 7. In casa, nel corso della stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie A la Lazio ha ottenuto 5 vittorie, con la sequenza V-V-V-V-V. Ha segnato 16 gol e ne ha subiti 5. Arriva da 5 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
     ],
     "bullets": []
    },
@@ -426,7 +372,7 @@
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Napoli, 3 vittorie per la Lazio e 1 pareggio, con 13 gol complessivi (media di 2,6 a partita). L'ultimo incrocio, ad aprile 2026 in Serie A, è finito Napoli 0-2 Lazio."
+     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Napoli, 3 vittorie per la Lazio e 1 pareggio, con 13 gol complessivi, pari a una media di 2,6 a partita. L'ultimo incrocio, disputato nell'aprile 2026 in Serie A, è terminato Napoli 0-2 Lazio."
     ],
     "bullets": []
    }
@@ -442,11 +388,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T18:21:37.137Z"
+  "at": "2026-11-07T20:43:32.527Z"
  },
  "fb:558536": {
   "fingerprint": "16x1vkl",
@@ -607,20 +553,20 @@
   "at": "2026-11-07T18:21:48.844Z"
  },
  "fb:558529": {
-  "fingerprint": "16koj6r",
+  "fingerprint": "12utfl2",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 20:45 la Fiorentina ospita la Juventus per la 11ª giornata di Serie A. In classifica la Fiorentina occupa il 16° posto con 8 punti, la Juventus il 7° con 17."
+     "Domenica 8 novembre alle 20:45 la Fiorentina ospita la Juventus nell'11ª giornata di Serie A. In classifica la Fiorentina occupa il 15° posto con 8 punti, la Juventus il 7° con 17."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A la Fiorentina ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-P-N-V), segnando 9 gol e subendone 11. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
-     "Nelle ultime 5 partite di Serie A la Juventus ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-V-P-V), segnando 5 gol e subendone 6. In trasferta, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta."
+     "Nelle ultime 5 partite di Serie A la Fiorentina ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-P-N-V), segnando 9 gol e subendone 11. In casa, in questa stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 5 partite di Serie A la Juventus ha collezionato 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-V-P-V), con 5 gol fatti e 6 subiti. In trasferta, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -628,15 +574,15 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Fiorentina 1,5, Juventus 1,3.",
+     "Media gol segnati: Fiorentina 1,5, Juventus 1,3 a partita.",
      "Gol subiti finora: Fiorentina 23, Juventus 10.",
-     "In tutte le ultime 5 partite della Fiorentina sono stati segnati almeno tre gol."
+     "Nelle ultime 5 partite della Fiorentina si sono segnati almeno tre gol in ciascuna."
     ]
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per la Fiorentina, 1 vittoria per la Juventus e 2 pareggi, con 12 gol complessivi (media di 2,4 a partita). L'ultimo incontro, a maggio 2026 in Serie A, è terminato Juventus 0-2 Fiorentina."
+     "Negli ultimi 5 confronti diretti la Fiorentina ha ottenuto 2 vittorie, la Juventus 1 e i pareggi sono 2, con 12 gol complessivi (media di 2,4 a partita). L'ultimo incrocio, a maggio 2026 in Serie A, si è chiuso con Juventus 0-2 Fiorentina."
     ],
     "bullets": []
    }
@@ -648,7 +594,7 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+    "a": "Classifica e risultati si trovano nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -656,7 +602,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T18:21:53.108Z"
+  "at": "2026-11-07T20:43:39.485Z"
  },
  "fb:560635": {
   "fingerprint": "txmzw2",
@@ -992,58 +938,6 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-01T20:15:12.584Z"
- },
- "fb:564741": {
-  "fingerprint": "126098t",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Valencia e Real Madrid si affrontano sabato 7 novembre alle 21:00 per la 12ª giornata di LaLiga. In classifica il Valencia occupa il 19° posto con 9 punti, mentre il Real Madrid è al 3° con 27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 4 partite di LaLiga il Valencia ha raccolto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza N-N-P-V), con 4 gol fatti e 4 subiti. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza alcuna vittoria.",
-     "Nelle ultime 4 partite di LaLiga il Real Madrid ha ottenuto 4 vittorie (sequenza V-V-V-V), con 10 gol fatti e 2 subiti. Arriva da 4 vittorie consecutive e, in trasferta, ha vinto tutte le 2 partite giocate."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati: Valencia 0,7, Real Madrid 2,5 a partita.",
-     "Gol subiti finora: Valencia 17, Real Madrid 10.",
-     "In 3 delle ultime 4 partite del Real Madrid si sono segnati almeno tre gol."
-    ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Valencia, 3 vittorie per il Real Madrid e 1 pareggio, con 16 gol complessivi (media di 3,2 a partita). L'ultimo incrocio, disputato a febbraio 2026 in LaLiga, è terminato Valencia 0-2 Real Madrid."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Valencia – Real Madrid?",
-    "a": "Sabato 7 novembre alle 21:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [LaLiga](/calcio/liga) e la [classifica aggiornata](/calcio/liga/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-06T21:01:07.742Z"
  },
  "fb:564738": {
   "fingerprint": "1x4g75i",
@@ -1714,59 +1608,6 @@
   "model": "claude-haiku-5-5",
   "at": "2026-11-02T11:20:05.080Z"
  },
- "fb:559635": {
-  "fingerprint": "1f4zqsg",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 7 novembre alle 21:05 il Paris Saint-Germain ospita il Troyes nella 10ª giornata di Ligue 1. In classifica il Paris Saint-Germain occupa il 1° posto con 20 punti, mentre il Troyes è al 16° posto con 8."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 4 partite di Ligue 1 il Paris Saint-Germain ha ottenuto 4 vittorie (sequenza V-V-V-V), segnando 13 gol e subendone 3. Arriva da 4 successi consecutivi. In casa ha vinto tutte le 2 gare disputate.",
-     "Nelle ultime 4 partite di Ligue 1 il Troyes ha conquistato 1 vittoria, 1 pareggio e 2 sconfitte (sequenza P-P-N-V), con 3 gol fatti e 5 subiti."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati: Paris Saint-Germain 2,3, Troyes 0,8 a partita.",
-     "Gol subiti finora: Paris Saint-Germain 10, Troyes 16.",
-     "Il Paris Saint-Germain ha il miglior attacco del torneo.",
-     "In 3 delle ultime 4 partite del Paris Saint-Germain si sono segnati almeno tre gol."
-    ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 4 vittorie per il Paris Saint-Germain, nessuna per il Troyes e 1 pareggio, con 20 gol complessivi (media di 4,0 a partita). L'ultimo incontro, a maggio 2023 in Ligue 1, è terminato Troyes 1-3 Paris Saint-Germain."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Paris Saint-Germain – Troyes?",
-    "a": "Sabato 7 novembre alle 21:05, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-07T13:13:11.405Z"
- },
  "fb:559631": {
   "fingerprint": "1l6m9sw",
   "sections": [
@@ -2051,59 +1892,6 @@
   "model": "claude-haiku-5-5",
   "at": "2026-11-01T20:26:49.265Z"
  },
- "fb:558843": {
-  "fingerprint": "1qnx2cx",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 7 novembre alle 21:00 l'Excelsior ospita il Go Ahead nella 12ª giornata di Eredivisie. In classifica l'Excelsior occupa il 15° posto con 11 punti, mentre il Go Ahead è al 10° con 14."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 4 partite di Eredivisie l'Excelsior ha collezionato 4 sconfitte (sequenza P-P-P-P), segnando 1 gol e subendone 19. Ha perso tutte le ultime 4 gare. In casa ha perso entrambe le partite disputate.",
-     "Nelle ultime 4 partite di Eredivisie il Go Ahead ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-V-P), con 7 gol fatti e 13 subiti. In trasferta ha perso entrambe le partite disputate."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati: Excelsior 1,5, Go Ahead 2,1 a partita.",
-     "Gol subiti finora: Excelsior 28, Go Ahead 27.",
-     "In 3 delle ultime 4 partite dell'Excelsior sono stati segnati almeno tre gol.",
-     "In tutte le ultime 4 partite del Go Ahead sono stati segnati almeno tre gol."
-    ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per l'Excelsior, 3 vittorie per il Go Ahead e 1 pareggio, con 11 gol complessivi (media di 2,2 a partita). L'ultimo incrocio, disputato a marzo 2026 in Eredivisie, è terminato Excelsior 0-1 Go Ahead."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Excelsior – Go Ahead?",
-    "a": "Sabato 7 novembre alle 21:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-06T23:16:15.948Z"
- },
  "fb:558840": {
   "fingerprint": "1fcfxeb",
   "sections": [
@@ -2313,20 +2101,20 @@
   "at": "2026-11-07T15:22:42.543Z"
  },
  "fb:558838": {
-  "fingerprint": "n6vltz",
+  "fingerprint": "1kxmv93",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 20:00 l'Utrecht ospita il NEC per la 12ª giornata di Eredivisie. In classifica l'Utrecht è al 12° posto con 12 punti, il NEC al 14° con 11."
+     "Domenica 8 novembre alle 20:00 l'Utrecht ospita il NEC per la 12ª giornata di Eredivisie. In classifica l'Utrecht è all'11° posto con 12 punti, il NEC al 14° con 11."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Eredivisie l'Utrecht ha raccolto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-N-P), con 8 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 4 partite di Eredivisie il NEC ha raccolto 3 pareggi e 1 sconfitta (sequenza N-N-N-P), con 5 gol fatti e 6 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
+     "Nelle ultime 4 partite di Eredivisie l'Utrecht ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-N-P), segnando 8 gol e subendone 7. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 4 partite di Eredivisie il NEC ha ottenuto 3 pareggi e 1 sconfitta (sequenza N-N-N-P), segnando 5 gol e subendone 6. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie."
     ],
     "bullets": []
    },
@@ -2362,7 +2150,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T19:30:04.067Z"
+  "at": "2026-11-07T20:44:32.314Z"
  },
  "fb:567344": {
   "fingerprint": "kmzywv",
@@ -2401,109 +2189,6 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-10-30T22:45:18.072Z"
- },
- "fb:567350": {
-  "fingerprint": "ztcy8z",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 7 novembre alle 21:30 lo Sporting CP ospita il Moreirense nell'11ª giornata di Primeira Liga. In classifica lo Sporting CP occupa il 3° posto con 21 punti, mentre il Moreirense è al 9° con 14."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 3 partite di Primeira Liga lo Sporting CP ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), segnando 6 gol e subendone 3.",
-     "Nelle ultime 3 partite di Primeira Liga il Moreirense ha ottenuto 2 vittorie e 1 sconfitta (sequenza P-V-V), segnando 5 gol e subendone 3."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati a partita: Sporting CP 2,3, Moreirense 1,3.",
-     "Gol subiti finora: Sporting CP 11, Moreirense 17."
-    ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 4 vittorie per lo Sporting CP e 1 per il Moreirense, senza pareggi, con 15 gol complessivi (media di 3,0 a partita). L'ultimo incontro, disputato a febbraio 2026 in Primeira Liga, è terminato Moreirense 0-3 Sporting CP."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Sporting CP – Moreirense?",
-    "a": "Sabato 7 novembre alle 21:30, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-07T13:13:19.422Z"
- },
- "fb:567348": {
-  "fingerprint": "1e4zw94",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Estoril Praia e Marítimo si affrontano domenica 8 novembre alle 16:30 nella 11ª giornata di Primeira Liga. In classifica l'Estoril Praia occupa il 18° posto con 2 punti, mentre il Marítimo è al 14° con 8."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 3 partite di Primeira Liga l'Estoril Praia ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 9 subiti. Ha perso le ultime 3.",
-     "Nelle ultime 3 partite di Primeira Liga il Marítimo ha raccolto 3 sconfitte (sequenza P-P-P), con 1 gol fatto e 9 subiti. Anche il Marítimo ha perso le ultime 3."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati a partita: Estoril Praia 0,5, Marítimo 0,9.",
-     "Gol subiti finora: Estoril Praia 19, Marítimo 21.",
-     "In tutte le ultime 3 partite dell'Estoril Praia si sono segnati almeno tre gol."
-    ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per l'Estoril Praia, 1 per il Marítimo e 1 pareggio, con 12 gol complessivi (media di 2,4 a partita). L'ultimo incontro, a maggio 2023 in Primeira Liga, è terminato Estoril Praia 3-1 Marítimo."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Estoril Praia – Marítimo?",
-    "a": "Domenica 8 novembre alle 16:30, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-07T15:22:52.109Z"
  },
  "fb:567351": {
   "fingerprint": "1klyrbb",
@@ -2609,20 +2294,20 @@
   "at": "2026-11-07T19:30:15.978Z"
  },
  "fb:567354": {
-  "fingerprint": "cb8l1g",
+  "fingerprint": "oz3wz0",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 21:30 il Rio Ave riceve il Braga per la 11ª giornata di Primeira Liga. In classifica il Rio Ave occupa il 16° posto con 7 punti, mentre il Braga è all'8° con 14."
+     "La partita si gioca domenica 8 novembre alle 21:30: il Rio Ave ospita il Braga nella 11ª giornata di Primeira Liga. In classifica il Rio Ave occupa il 16° posto con 7 punti, il Braga l'8° con 14."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Primeira Liga il Rio Ave ha ottenuto 1 vittoria e 2 sconfitte (sequenza V-P-P), segnando 4 gol e subendone 8. Le ultime 2 gare sono state entrambe perse. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 4 partite di Primeira Liga il Braga ha ottenuto 1 vittoria e 3 sconfitte (sequenza P-P-P-V), con 5 gol fatti e 6 subiti."
+     "Nelle ultime 3 partite di Primeira Liga il Rio Ave ha ottenuto 1 vittoria e 2 sconfitte (sequenza V-P-P), segnando 4 gol e subendone 8. Ha perso le ultime 2. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 4 partite di Primeira Liga il Braga ha ottenuto 1 vittoria e 3 sconfitte (sequenza P-P-P-V), segnando 5 gol e subendone 6."
     ],
     "bullets": []
    },
@@ -2630,11 +2315,18 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Rio Ave 0,9, Braga 1,2.",
+     "Media gol segnati: Rio Ave 0,9, Braga 1,2 a partita.",
      "Gol subiti finora: Rio Ave 23, Braga 11.",
-     "In tutte le ultime 3 partite del Rio Ave sono stati segnati almeno tre gol.",
-     "In 3 delle ultime 4 partite del Braga sono stati segnati almeno tre gol."
+     "In tutte le ultime 3 partite del Rio Ave si sono segnati almeno tre gol.",
+     "In 3 delle ultime 4 partite del Braga si sono segnati almeno tre gol."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Rio Ave, 2 vittorie per il Braga e 2 pareggi, con 14 gol complessivi (media di 2,8 a partita). L'ultimo incrocio, a febbraio 2026 in Primeira Liga, è terminato Braga 3-0 Rio Ave."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -2643,32 +2335,32 @@
     "a": "Domenica 8 novembre alle 21:30, ora italiana."
    },
    {
-    "q": "Dove si possono consultare classifica e risultati?",
+    "q": "Dove vedo classifica e risultati?",
     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T03:21:47.548Z"
+  "at": "2026-11-07T20:44:47.047Z"
  },
  "fb:567355": {
-  "fingerprint": "2trbkv",
+  "fingerprint": "1hgytm5",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Amadora e SL Benfica si affrontano domenica 8 novembre alle 21:30 per la 11ª giornata di Primeira Liga. In classifica l'Amadora è al 12° posto con 10 punti, mentre lo SL Benfica è al 2° con 25."
+     "L'Amadora e lo SL Benfica si affrontano domenica 8 novembre alle 21:30, per la 11ª giornata di Primeira Liga. In classifica l'Amadora è al 12° posto con 10 punti, mentre lo SL Benfica è al 2° con 25."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Primeira Liga l'Amadora ha raccolto 3 sconfitte (sequenza P-P-P), con 1 gol fatto e 5 subiti. Ha perso le ultime 3.",
-     "Nelle ultime 3 partite di Primeira Liga lo SL Benfica ha raccolto 3 vittorie (sequenza V-V-V), con 5 gol fatti e 1 subito. È reduce da 3 vittorie consecutive."
+     "Nelle ultime 3 partite di Primeira Liga l'Amadora ha raccolto 3 sconfitte (sequenza P-P-P), con 1 gol fatto e 5 subiti. La squadra ha perso le ultime 3 gare.",
+     "Nelle ultime 3 partite di Primeira Liga lo SL Benfica ha raccolto 3 vittorie (sequenza V-V-V), con 5 gol fatti e 1 subito. Arriva da 3 vittorie consecutive."
     ],
     "bullets": []
    },
@@ -2680,6 +2372,13 @@
      "Gol subiti finora: Amadora 19, SL Benfica 8.",
      "Lo SL Benfica ha il miglior attacco del torneo."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per l'Amadora, 5 vittorie per lo SL Benfica e nessun pareggio, con 18 gol complessivi (media di 3,6 a partita). L'ultimo incontro, disputato a gennaio 2026 in Primeira Liga, è terminato SL Benfica 4-0 Amadora."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -2693,11 +2392,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T03:21:49.691Z"
+  "at": "2026-11-07T20:44:51.214Z"
  },
  "fb:561916": {
   "fingerprint": "krgcmj",
@@ -8520,26 +8219,26 @@
   "at": "2026-11-03T09:20:12.968Z"
  },
  "fb:1001601600": {
-  "fingerprint": "69839j",
+  "fingerprint": "1vqxkfz",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il match tra Mantova e Hellas Verona si chiude senza reti. La partita, valida per l'11ª giornata di Serie B, si è disputata sabato 7 novembre; anche il primo tempo era terminato 0-0."
+     "Si chiude senza reti il match tra Mantova e Hellas Verona. La sfida, valida per l'11ª giornata di Serie B, si è disputata sabato 7 novembre; il primo tempo era terminato 0-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Dopo le gare disputate finora, il Mantova occupa il 4° posto con 18 punti, mentre l'Hellas Verona è all'11° posto con 15. [Consulta la classifica completa](/calcio/serie-b/classifica)."
+     "Considerando le partite disputate finora, il Mantova occupa il 4° posto con 19 punti, mentre l'Hellas Verona è al 5° con 16. Consulta la [classifica completa](/calcio/serie-b/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Mantova tornerà in campo sabato 21 novembre alle 15:00, in trasferta contro l'Avellino. Anche l'Hellas Verona giocherà sabato 21 novembre alle 15:00, ma in casa contro il Cesena."
+     "Il Mantova tornerà in campo sabato 21 novembre alle 15:00, in trasferta contro l'Avellino. L'Hellas Verona giocherà sabato 21 novembre alle 15:00, in casa contro il Cesena."
     ],
     "bullets": []
    }
@@ -8555,7 +8254,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T19:31:27.801Z"
+  "at": "2026-11-07T20:45:06.229Z"
  },
  "fb:1001601597": {
   "fingerprint": "lbrdwf",
@@ -16695,19 +16394,19 @@
   "at": "2026-11-07T00:20:56.955Z"
  },
  "fb:564740": {
-  "fingerprint": "e3o1ai",
+  "fingerprint": "xr7eu6",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Sevilla FC e l'Alavés hanno chiuso la sfida a reti inviolate, sul punteggio di 0-0. La partita, valida per la 12ª giornata di LaLiga, si è giocata venerdì 6 novembre e il primo tempo era già terminato 0-0."
+     "Il Sevilla FC e l'Alavés hanno chiuso la sfida a reti inviolate: 0-0. La partita, valida per la 12ª giornata di LaLiga, si è giocata venerdì 6 novembre; il primo tempo era già terminato 0-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Sevilla FC è al 6° posto con 18 punti, mentre l'Alavés occupa il 9° posto con 13. [Consulta la classifica completa](/calcio/liga/classifica)."
+     "Con le partite giocate finora il Sevilla FC occupa il 6° posto con 18 punti, mentre l'Alavés è al 10° con 13. [Consulta la classifica completa](/calcio/liga/classifica)."
     ],
     "bullets": []
    }
@@ -16715,18 +16414,18 @@
   "faq": [
    {
     "q": "Com'è finita Sevilla FC – Alavés?",
-    "a": "0-0 (0-0 all'intervallo)."
+    "a": "È finita 0-0 (0-0 all'intervallo)."
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Nella pagina [LaLiga](/calcio/liga)."
+    "a": "Nella pagina dedicata a [LaLiga](/calcio/liga)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-06T23:16:26.634Z"
+  "at": "2026-11-07T20:45:14.515Z"
  },
  "fb:565852": {
-  "fingerprint": "1rzw8hl",
+  "fingerprint": "xbi8lj",
   "sections": [
    {
     "id": "resoconto",
@@ -16738,14 +16437,14 @@
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora l'HSV è all'8° posto con 12 punti, mentre il M'gladbach è al 18° con 4. Puoi consultare la [classifica completa](/calcio/bundesliga/classifica)."
+     "Con le partite giocate finora l'HSV è al 9° posto con 12 punti, mentre il M'gladbach è al 18° con 4. Puoi consultare la [classifica completa](/calcio/bundesliga/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il M'gladbach tornerà in campo sabato 21 novembre alle 15:30, in casa contro il Dortmund."
+     "Il M'gladbach tornerà in campo sabato 21 novembre alle 15:30, ospitando il Dortmund."
     ],
     "bullets": []
    }
@@ -16757,11 +16456,11 @@
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Puoi trovarli nella pagina [Bundesliga](/calcio/bundesliga)."
+    "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T00:20:58.543Z"
+  "at": "2026-11-07T20:45:21.927Z"
  },
  "fb:559638": {
   "fingerprint": "nct6hu",
@@ -17771,12 +17470,12 @@
   "at": "2026-11-07T18:21:56.934Z"
  },
  "fb:1001550200": {
-  "fingerprint": "15s5i3f",
+  "fingerprint": "10dbr5",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 21 novembre alle 15:00 il Como ospita il Cagliari per la 12ª giornata di Serie A. In classifica il Como occupa il 4° posto con 23 punti, mentre il Cagliari è all'8° posto con 16."
+     "Sabato 21 novembre alle 15:00 il Como ospita il Cagliari per la 12ª giornata di Serie A. In classifica il Como occupa il 4° posto con 23 punti, mentre il Cagliari è 9° con 16."
     ],
     "bullets": []
    },
@@ -17795,7 +17494,7 @@
      "Media gol segnati a partita: Como 1,8, Cagliari 0,9.",
      "Gol subiti finora: Como 8, Cagliari 15.",
      "Il Como non ha subito gol in 3 delle ultime 5 partite.",
-     "In 3 delle ultime 5 partite del Cagliari sono stati segnati almeno tre gol."
+     "In 3 delle ultime 5 partite del Cagliari si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -17814,23 +17513,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T18:22:02.128Z"
+  "at": "2026-11-07T20:43:44.992Z"
  },
  "fb:1001601610": {
-  "fingerprint": "siyuw1",
+  "fingerprint": "4l40i0",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 21 novembre alle 15:00 la Sampdoria riceve il Benevento per la 12ª giornata di Serie B. In classifica la Sampdoria occupa il 19° posto con 8 punti, mentre il Benevento è al 6° con 15."
+     "Sabato 21 novembre alle 15:00 la Sampdoria ospita il Benevento nella 12ª giornata di Serie B. In classifica la Sampdoria occupa il 19° posto con 8 punti, mentre il Benevento è all'8° posto con 15."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie B la Sampdoria ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-P-V), con 5 gol fatti e 9 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 5 partite di Serie B il Benevento ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-N-V-N-P), con 8 gol fatti e 5 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     "Nelle ultime 5 partite di Serie B la Sampdoria ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-P-V), segnando 5 gol e subendone 9. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Serie B il Benevento ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta (sequenza N-V-N-P-N), segnando 7 gol e subendone 6. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -17838,7 +17537,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Sampdoria 1,0, Benevento 1,4 a partita.",
+     "Media gol segnati a partita: Sampdoria 1,0, Benevento 1,4.",
      "Gol subiti finora: Sampdoria 18, Benevento 10."
     ]
    }
@@ -17850,31 +17549,31 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+    "a": "Puoi consultare la pagina [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T14:16:20.308Z"
+  "at": "2026-11-07T20:43:54.470Z"
  },
  "fb:1001601612": {
-  "fingerprint": "163yuq3",
+  "fingerprint": "1df09h8",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "L'Hellas Verona e il Cesena si affrontano sabato 21 novembre alle 15:00 per la 12ª giornata di Serie B. Le due squadre sono appaiate a 15 punti."
+     "Hellas Verona e Cesena si sfidano sabato 21 novembre alle 15:00, nell'ambito della 12ª giornata di Serie B. In classifica l'Hellas Verona occupa il 5° posto con 16 punti, mentre il Cesena è al 10° con 15."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie B l'Hellas Verona ha raccolto 2 vittorie e 3 pareggi (sequenza N-N-V-V-N), con 7 gol fatti e 3 subiti. Non perde da 5 partite. In casa il bilancio stagionale è di 1 vittoria e 2 pareggi, senza sconfitte.",
-     "Nelle ultime 5 partite di Serie B il Cesena ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-P-V-N-V), con 5 gol fatti e 6 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, ancora senza vittorie."
+     "Nelle ultime 5 partite di Serie B l'Hellas Verona ha ottenuto 2 vittorie e 3 pareggi (sequenza N-N-V-V-N), segnando 7 gol e subendone 3. La squadra non perde da 5 partite. In casa, nel corso della stagione, il bilancio è di 1 vittoria e 2 pareggi, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie B il Cesena ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-P-V-N-V), con 5 gol fatti e 6 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
     ],
     "bullets": []
    },
@@ -17882,9 +17581,9 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Hellas Verona 1,9, Cesena 1,1 a partita.",
+     "Media gol segnati: Hellas Verona 1,7, Cesena 1,1 a partita.",
      "Gol subiti finora: Hellas Verona 13, Cesena 14.",
-     "L'Hellas Verona non ha subito gol in 3 delle ultime 5."
+     "L'Hellas Verona non ha subito gol in 3 delle ultime 5 partite."
     ]
    }
   ],
@@ -17894,16 +17593,16 @@
     "a": "Sabato 21 novembre alle 15:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
+    "q": "Dove si possono consultare classifica e risultati?",
     "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T18:22:18.030Z"
+  "at": "2026-11-07T20:44:01.108Z"
  },
  "fb:1001601604": {
   "fingerprint": "1jbrcus",
@@ -17952,20 +17651,20 @@
   "at": "2026-11-07T14:16:27.044Z"
  },
  "fb:1001601608": {
-  "fingerprint": "bz8e6t",
+  "fingerprint": "k8dhh0",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Empoli e Pisa si affrontano sabato 21 novembre alle 15:00, nell'ambito della 12ª giornata di Serie B. In classifica l'Empoli occupa il 18° posto con 9 punti, mentre il Pisa è al 5° posto con 16 punti."
+     "Empoli e Pisa si sfidano sabato 21 novembre alle 15:00 nella 12ª giornata di Serie B. In classifica l'Empoli occupa il 18° posto con 9 punti, mentre il Pisa è 6° con 16 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie B l'Empoli ha ottenuto 3 pareggi e 2 sconfitte, con sequenza N-P-P-N-N, segnando 6 gol e subendone 9. In casa, il bilancio stagionale riporta 1 pareggio e 2 sconfitte, senza vittorie.",
-     "Nelle ultime 5 partite di Serie B il Pisa ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta, con sequenza V-N-N-P-N, segnando 9 gol e subendone 9. In trasferta, il bilancio stagionale riporta 1 vittoria, 1 pareggio e 1 sconfitta."
+     "Nelle ultime 5 partite di Serie B l'Empoli ha ottenuto 3 pareggi e 2 sconfitte (sequenza N-P-P-N-N), segnando 6 gol e subendone 9. In casa, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza ancora vittorie.",
+     "Nelle ultime 5 partite di Serie B il Pisa ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta (sequenza V-N-N-P-N), con 9 gol fatti e 9 subiti. In trasferta, il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -17973,10 +17672,10 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Empoli 1,1, Pisa 1,8.",
+     "Media gol segnati: Empoli 1,1, Pisa 1,8 a partita.",
      "Gol subiti finora: Empoli 19, Pisa 17.",
-     "Nelle ultime 5 partite dell'Empoli, in 3 casi si sono segnati almeno tre gol.",
-     "Nelle ultime 5 partite del Pisa, in 3 casi si sono segnati almeno tre gol."
+     "Nelle ultime 5 partite dell'Empoli, in 3 si sono segnati almeno tre gol.",
+     "Nelle ultime 5 partite del Pisa, in 3 si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -17987,30 +17686,30 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Puoi trovare le spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T18:22:21.951Z"
+  "at": "2026-11-07T20:44:07.542Z"
  },
  "fb:1001601605": {
-  "fingerprint": "1qd3p5",
+  "fingerprint": "apkiu8",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Avellino e Mantova si affrontano sabato 21 novembre alle 15:00 per la 12ª giornata di Serie B. In classifica l'Avellino è al 10° posto con 15 punti, il Mantova al 4° con 18."
+     "Avellino e Mantova si affrontano sabato 21 novembre alle 15:00 per la 12ª giornata di Serie B. In classifica l'Avellino è all'11° posto con 15 punti, il Mantova al 4° con 19."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie B l'Avellino ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-N-P-N-V), con 8 gol fatti e 4 subiti. In casa il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+     "Nelle ultime 5 partite di Serie B l'Avellino ha raccolto 1 vittoria, 3 pareggi e 1 sconfitta (sequenza N-P-N-V-N), con 5 gol fatti e 4 subiti. In casa il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
      "Nelle ultime 5 partite di Serie B il Mantova ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-V-P-N-N), con 2 gol fatti e 5 subiti. In trasferta il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
@@ -18019,7 +17718,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Avellino 1,5, Mantova 1,5 a partita.",
+     "Media gol segnati: Avellino 1,5, Mantova 1,4 a partita.",
      "Gol subiti finora: Avellino 10, Mantova 11."
     ]
    }
@@ -18039,7 +17738,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T18:22:24.200Z"
+  "at": "2026-11-07T20:44:09.801Z"
  },
  "fb:1001601603": {
   "fingerprint": "76nkk2",
@@ -18133,20 +17832,20 @@
   "at": "2026-11-07T18:22:31.182Z"
  },
  "fb:1001601611": {
-  "fingerprint": "dislqt",
+  "fingerprint": "1qioxql",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sudtirol e Cremonese si affrontano sabato 21 novembre alle 15:00, nell'ambito della 12ª giornata di Serie B. In classifica il Sudtirol occupa l'8° posto con 15 punti, mentre la Cremonese è al 13° con 12."
+     "Sudtirol e Cremonese si affrontano sabato 21 novembre alle 15:00 per la 12ª giornata di Serie B. In classifica il Sudtirol è al 9° posto con 15 punti, mentre la Cremonese è al 13° con 12."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie B il Sudtirol ha ottenuto 3 pareggi e 2 sconfitte (sequenza P-N-P-N-N), segnando 4 gol e subendone 9. In casa, il bilancio stagionale è di 3 pareggi, senza vittorie.",
-     "Nelle ultime 5 partite di Serie B la Cremonese ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-P-V-V), segnando 5 gol e subendone 4. In trasferta, il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
+     "Nelle ultime 5 partite di Serie B il Sudtirol ha ottenuto 3 pareggi e 2 sconfitte (sequenza P-N-P-N-N), con 4 gol fatti e 9 subiti. In casa, nel bilancio stagionale, ci sono 3 pareggi e nessuna vittoria.",
+     "Nelle ultime 5 partite di Serie B la Cremonese ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-P-V-V), con 5 gol fatti e 4 subiti. In trasferta, nel bilancio stagionale, ci sono 1 vittoria, 1 pareggio e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -18154,7 +17853,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Sudtirol 1,2, Cremonese 1,0.",
+     "Media gol segnati: Sudtirol 1,2, Cremonese 1,0 a partita.",
      "Gol subiti finora: Sudtirol 12, Cremonese 11.",
      "La Cremonese non ha subito gol in 3 delle ultime 5 partite."
     ]
@@ -18166,8 +17865,8 @@
     "a": "Sabato 21 novembre alle 15:00, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -18175,7 +17874,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T18:22:34.566Z"
+  "at": "2026-11-07T20:44:13.248Z"
  },
  "fb:1001601606": {
   "fingerprint": "k4ahl6",
@@ -19240,19 +18939,19 @@
   "at": "2026-11-07T19:30:59.835Z"
  },
  "fb:564744": {
-  "fingerprint": "1tawlyj",
+  "fingerprint": "1amwmri",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Santander ha ribaltato il risultato: dopo essere stato sotto all'intervallo, ha vinto in trasferta 1-2 contro il Málaga. La partita, valida per la 12ª giornata di LaLiga, si è giocata sabato 7 novembre; il primo tempo si era chiuso 1-0."
+     "Il Santander ha ribaltato il risultato: dopo essere stato in svantaggio all'intervallo, ha vinto 1-2 in trasferta sul campo del Málaga. La gara, valida per la 12ª giornata di LaLiga, si è disputata sabato 7 novembre, e il primo tempo era terminato 1-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Málaga è al 20° posto con 5 punti, mentre il Santander è al 16° con 11. [Consulta la classifica completa](/calcio/liga/classifica)."
+     "Considerando le partite giocate finora, il Málaga occupa il 20° posto con 5 punti, mentre il Santander è al 9° posto con 14 punti. [Consulta la classifica completa](/calcio/liga/classifica)."
     ],
     "bullets": []
    }
@@ -19264,11 +18963,11 @@
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Nella pagina [LaLiga](/calcio/liga)."
+    "a": "Nella sezione dedicata a [LaLiga](/calcio/liga)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T15:23:27.503Z"
+  "at": "2026-11-07T20:45:17.391Z"
  },
  "fb:1001552229": {
   "fingerprint": "1k4jhkq",
@@ -19316,20 +19015,20 @@
   "at": "2026-11-07T15:33:30.746Z"
  },
  "fb:1001550205": {
-  "fingerprint": "176mm0v",
+  "fingerprint": "1mdqrms",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Il Parma ospita la Roma sabato 21 novembre alle 18:00, in occasione della 12ª giornata di Serie A. In classifica il Parma è al 15° posto con 8 punti, mentre la Roma è al 3° con 24."
+     "Sabato 21 novembre alle 18:00 il Parma ospita la Roma nella 12ª giornata di Serie A. In classifica il Parma occupa il 16° posto con 8 punti, mentre la Roma è al 3° posto con 24."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A il Parma ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza P-P-N-V-P. Ha segnato 5 gol e ne ha subiti 7. In casa, la stagione del Parma registra 1 pareggio e 2 sconfitte, senza vittorie.",
-     "Nelle ultime 5 partite di Serie A la Roma ha ottenuto 3 vittorie e 2 pareggi, con la sequenza N-V-N-V-V. Ha segnato 14 gol e ne ha subiti 7. La Roma non perde da 5 partite. In trasferta, la stagione della Roma registra 1 vittoria e 2 pareggi, senza sconfitte."
+     "Nelle ultime 5 partite di Serie A il Parma ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-V-P), segnando 5 gol e subendone 7. In casa, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza vittorie.",
+     "Nelle ultime 5 partite di Serie A la Roma ha ottenuto 3 vittorie e 2 pareggi (sequenza N-V-N-V-V), segnando 14 gol e subendone 7. Non perde da 5 partite. In trasferta, nella stagione, il bilancio è di 1 vittoria e 2 pareggi, senza sconfitte."
     ],
     "bullets": []
    },
@@ -19338,10 +19037,10 @@
     "paragraphs": [],
     "bullets": [
      "Media gol segnati a partita: Parma 0,8, Roma 2,8.",
-     "Gol subiti finora: Parma 15, Roma 10.",
+     "Gol subiti finora: Parma 17, Roma 10.",
      "La Roma ha il miglior attacco del torneo.",
-     "Nelle ultime 5 partite del Parma, in 4 si sono segnati almeno tre gol.",
-     "Nelle ultime 5 partite della Roma, in 3 si sono segnati almeno tre gol."
+     "In 4 delle ultime 5 partite del Parma sono stati segnati almeno tre gol.",
+     "In 3 delle ultime 5 partite della Roma sono stati segnati almeno tre gol."
     ]
    }
   ],
@@ -19360,7 +19059,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T19:29:33.745Z"
+  "at": "2026-11-07T20:43:48.902Z"
  },
  "fb:1001557475": {
   "fingerprint": "1kszngx",
@@ -19500,20 +19199,20 @@
   "at": "2026-11-07T18:24:17.790Z"
  },
  "fb:1001552233": {
-  "fingerprint": "9k0vjx",
+  "fingerprint": "3pjab",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 21 novembre alle 18:45 l'Utrecht ospita il Cambuur per la 13ª giornata di Eredivisie. In classifica l'Utrecht occupa il 12° posto con 12 punti, mentre il Cambuur è al 9° posto con 15."
+     "Sabato 21 novembre alle 18:45 l'Utrecht ospita il Cambuur per la 13ª giornata di Eredivisie. In classifica l'Utrecht occupa l'11° posto con 12 punti, mentre il Cambuur è al 9° con 15."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Eredivisie l'Utrecht ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-N-P), segnando 8 gol e subendone 7. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 4 partite di Eredivisie il Cambuur ha raccolto 3 vittorie e 1 pareggio (sequenza V-N-V-V), con 13 gol fatti e 3 subiti. Non perde da 4 partite. In trasferta ha vinto tutte le 2 partite disputate."
+     "Nelle ultime 4 partite di Eredivisie l'Utrecht ha raccolto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-N-P), segnando 8 gol e subendone 7. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 4 partite di Eredivisie il Cambuur ha raccolto 3 vittorie e 1 pareggio (sequenza V-N-V-V), segnando 13 gol e subendone 3. Non perde da 4 partite. In trasferta ha vinto tutte le 2 partite giocate."
     ],
     "bullets": []
    },
@@ -19543,7 +19242,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T19:30:09.110Z"
+  "at": "2026-11-07T20:44:34.699Z"
  },
  "fb:1001552226": {
   "fingerprint": "drm0g7",
@@ -19635,26 +19334,26 @@
   "at": "2026-11-07T19:31:13.523Z"
  },
  "fb:558534": {
-  "fingerprint": "a0o1vn",
+  "fingerprint": "4jmi43",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Cagliari ha vinto di misura in casa contro il Frosinone, 1-0. La partita, valida per l'11ª giornata di Serie A, si è giocata sabato 7 novembre; il primo tempo si era chiuso sul punteggio di 1-0."
+     "Il Cagliari ha vinto di misura in casa contro il Frosinone, con il punteggio di 1-0. La partita, valida per la 11ª giornata di Serie A, si è giocata sabato 7 novembre; il primo tempo si era chiuso 1-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Cagliari occupa l'8° posto con 16 punti, mentre il Frosinone è al 6° con 20. Puoi consultare la [classifica completa](/calcio/serie-a/classifica)."
+     "Con le partite giocate finora il Cagliari è al 9° posto con 16 punti e il Frosinone al 6° con 20. Puoi consultare la [classifica completa](/calcio/serie-a/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Cagliari tornerà in campo sabato 21 novembre alle 15:00, in trasferta contro il Como."
+     "Il Cagliari tornerà in campo sabato 21 novembre alle 15:00 in trasferta contro il Como."
     ],
     "bullets": []
    }
@@ -19662,15 +19361,15 @@
   "faq": [
    {
     "q": "Com'è finita Cagliari – Frosinone?",
-    "a": "Il risultato finale è 1-0 (1-0 all'intervallo)."
+    "a": "1-0 (1-0 all'intervallo)."
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Nella pagina di [Serie A](/calcio/serie-a)."
+    "a": "Puoi trovarli nella pagina [Serie A](/calcio/serie-a)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T19:31:15.422Z"
+  "at": "2026-11-07T20:44:59.266Z"
  },
  "fb:558532": {
   "fingerprint": "14jigva",
@@ -19711,19 +19410,19 @@
   "at": "2026-11-07T19:31:17.067Z"
  },
  "fb:558535": {
-  "fingerprint": "1canu80",
+  "fingerprint": "ghz8qy",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Bologna si impone in trasferta sul Parma per 1-2. La partita, valida per l'11ª giornata di Serie A, si è disputata sabato 7 novembre; il primo tempo si era concluso sullo 0-0."
+     "Il Bologna si impone in trasferta sul Parma per 1-2. La partita, valida per l'11ª giornata di Serie A, si è giocata sabato 7 novembre; il primo tempo si era chiuso 0-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Dopo le partite disputate finora, il Parma occupa il 15° posto con 8 punti, mentre il Bologna è al 10° con 14. Consulta la [classifica completa](/calcio/serie-a/classifica)."
+     "Con le partite giocate finora il Parma occupa il 16° posto con 8 punti, mentre il Bologna è all'8° con 17. [Vai alla classifica completa](/calcio/serie-a/classifica)."
     ],
     "bullets": []
    },
@@ -19742,33 +19441,33 @@
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Puoi consultarli nella pagina [Serie A](/calcio/serie-a)."
+    "a": "Nella pagina [Serie A](/calcio/serie-a)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T19:31:18.598Z"
+  "at": "2026-11-07T20:45:00.857Z"
  },
  "fb:1001601596": {
-  "fingerprint": "sv4psa",
+  "fingerprint": "dv4cp2",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Cesena ha battuto di misura il Catanzaro in casa, con il punteggio di 1-0. La partita, valida per la 11ª giornata di Serie B, si è giocata sabato 7 novembre; il primo tempo si era chiuso sullo 0-0."
+     "Il Cesena si impone di misura in casa sul Catanzaro con il risultato di 1-0. La partita, valida per la 11ª giornata di Serie B, si è disputata sabato 7 novembre; il primo tempo era terminato 0-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Cesena è al 9° posto con 15 punti, mentre il Catanzaro è al 20° con 6. Per l'intera graduatoria consulta la [classifica completa](/calcio/serie-b/classifica)."
+     "Con le partite giocate finora il Cesena occupa il 10° posto con 15 punti, mentre il Catanzaro è al 20° con 6. Per consultare la graduatoria aggiornata, vedi [Classifica completa](/calcio/serie-b/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Cesena tornerà in campo sabato 21 novembre alle 15:00 in trasferta contro l'Hellas Verona. Anche il Catanzaro tornerà in campo sabato 21 novembre alle 15:00, ma in casa contro il Palermo."
+     "Il Cesena tornerà in campo sabato 21 novembre alle 15:00 in trasferta contro l'Hellas Verona. Anche il Catanzaro giocherà sabato 21 novembre alle 15:00, ma in casa contro il Palermo."
     ],
     "bullets": []
    }
@@ -19780,33 +19479,33 @@
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Nella pagina di [Serie B](/calcio/serie-b)."
+    "a": "Nella pagina [Serie B](/calcio/serie-b)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T19:31:20.709Z"
+  "at": "2026-11-07T20:45:02.898Z"
  },
  "fb:1001601602": {
-  "fingerprint": "svwans",
+  "fingerprint": "1oujzy5",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Pisa e Sudtirol hanno pareggiato 2-2. La partita, valida per la 11ª giornata di Serie B, si è giocata sabato 7 novembre; il primo tempo si era chiuso 1-1."
+     "Pisa e Sudtirol hanno pareggiato 2-2. La partita, valida per l'11ª giornata di Serie B, si è giocata sabato 7 novembre; il primo tempo si era chiuso 1-1."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Pisa è al 5° posto con 16 punti, mentre il Sudtirol è all'8° con 15. [Vai alla classifica completa](/calcio/serie-b/classifica)."
+     "Con le partite giocate finora il Pisa è al 6° posto con 16 punti, mentre il Sudtirol è al 9° con 15. [Consulta la classifica completa](/calcio/serie-b/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Pisa tornerà in campo sabato 21 novembre alle 15:00 in trasferta contro l'Empoli. Il Sudtirol tornerà in campo sabato 21 novembre alle 15:00 in casa contro la Cremonese."
+     "Il Pisa tornerà in campo sabato 21 novembre alle 15:00 in trasferta contro l'Empoli. Anche il Sudtirol giocherà sabato 21 novembre alle 15:00, in casa contro la Cremonese."
     ],
     "bullets": []
    }
@@ -19818,11 +19517,11 @@
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Nella pagina [Consulta tutti i risultati di Serie B](/calcio/serie-b)."
+    "a": "Nella pagina [Serie B](/calcio/serie-b)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T19:31:22.318Z"
+  "at": "2026-11-07T20:45:04.496Z"
  },
  "fb:1001601598": {
   "fingerprint": "16k1onm",
@@ -19899,5 +19598,781 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-07T19:31:25.917Z"
+ },
+ "fb:1001550204": {
+  "fingerprint": "1haqsnh",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 21 novembre alle 20:45 il Napoli ospita il Torino per la 12ª giornata di Serie A. Le due squadre sono appaiate a 14 punti."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie A il Napoli ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-N-V-P), con 10 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie A il Torino ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-V-P-P-N), con 8 gol fatti e 8 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Napoli 1,7, Torino 1,4 a partita.",
+     "Gol subiti finora: Napoli 13, Torino 17.",
+     "In 3 delle ultime 5 partite del Napoli si sono segnati almeno tre gol.",
+     "In 3 delle ultime 5 partite del Torino si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Napoli – Torino?",
+    "a": "Sabato 21 novembre alle 20:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:43:51.143Z"
+ },
+ "fb:1001552820": {
+  "fingerprint": "1rq51qv",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 21 novembre alle 20:45 il Lille ospita l'Olympique Lyon per l'11ª giornata di Ligue 1. Si tratta di una sfida tra squadre di vertice: il Lille è al 2° posto con 18 punti, mentre l'Olympique Lyon è al 3° con 17."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di Ligue 1 il Lille ha ottenuto 2 vittorie e 2 pareggi (sequenza V-N-N-V), segnando 4 gol e subendone 2. La squadra non perde da 4 partite. In casa, nel bilancio stagionale, conta 2 vittorie e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 4 partite di Ligue 1 l'Olympique Lyon ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), con 5 gol fatti e 5 subiti. In trasferta ha perso tutte le 2 partite giocate."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Lille 1,3, Olympique Lyon 1,7.",
+     "Gol subiti finora: Lille 6, Olympique Lyon 7.",
+     "Il Lille ha la miglior difesa del torneo."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Lille – Olympique Lyon?",
+    "a": "Sabato 21 novembre alle 20:45, ora italiana."
+   },
+   {
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:44:17.169Z"
+ },
+ "fb:1001552823": {
+  "fingerprint": "2hr42d",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 21 novembre alle 20:45 il Monaco ospita l'Auxerre per la 11ª giornata di Ligue 1. In classifica il Monaco occupa il 7° posto con 15 punti, mentre l'Auxerre è al 14° con 10."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di Ligue 1 il Monaco ha ottenuto 2 pareggi e 2 sconfitte, con sequenza N-P-N-P, segnando 4 gol e subendone 7. In casa, nel bilancio stagionale, ha collezionato 2 pareggi e nessuna vittoria.",
+     "Nelle ultime 5 partite di Ligue 1 l'Auxerre ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con sequenza P-V-N-P-P, segnando 6 gol e subendone 12. Ha perso le ultime 2 gare. In trasferta, nel bilancio stagionale, conta 1 vittoria e 2 sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Monaco 1,3, Auxerre 1,4 a partita.",
+     "Gol subiti finora: Monaco 10, Auxerre 23.",
+     "In 3 delle ultime 5 partite dell'Auxerre si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Monaco – Auxerre?",
+    "a": "Sabato 21 novembre alle 20:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:44:21.142Z"
+ },
+ "fb:1001552826": {
+  "fingerprint": "x9wzjp",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 21 novembre alle 20:45 lo Strasbourg ospita il Brest nella 11ª giornata di Ligue 1. In classifica lo Strasbourg occupa il 13° posto con 10 punti, mentre il Brest è all'11° con 12."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Ligue 1 lo Strasbourg ha ottenuto 1 vittoria e 4 sconfitte (sequenza P-P-P-V-P), segnando 8 gol e subendone 12. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 4 partite di Ligue 1 il Brest ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-N-P-V), segnando 9 gol e subendone 4. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Strasbourg 1,8, Brest 1,8.",
+     "Gol subiti finora: Strasbourg 22, Brest 12.",
+     "In tutte le ultime 5 partite dello Strasbourg sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Strasbourg – Brest?",
+    "a": "Sabato 21 novembre alle 20:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:44:24.778Z"
+ },
+ "fb:1001552819": {
+  "fingerprint": "pp2sus",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "RC Lens e Toulouse si affrontano sabato 21 novembre alle 20:45, in occasione della 11ª giornata di Ligue 1. Le due squadre sono appaiate a 13 punti."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di Ligue 1 il RC Lens ha ottenuto 3 vittorie e 1 sconfitta, con sequenza V-V-V-P, segnando 7 gol e subendone 4. In casa ha vinto tutte le 2 partite disputate.",
+     "Nelle ultime 5 partite di Ligue 1 il Toulouse ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta, con sequenza N-V-N-P-V, segnando 8 gol e subendone 5. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: RC Lens 1,8, Toulouse 1,5 a partita.",
+     "Gol subiti finora: RC Lens 13, Toulouse 14.",
+     "In 3 delle ultime 4 partite del RC Lens si sono segnati almeno tre gol.",
+     "In 3 delle ultime 5 partite del Toulouse si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca RC Lens – Toulouse?",
+    "a": "Sabato 21 novembre alle 20:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:44:29.283Z"
+ },
+ "fb:1001552228": {
+  "fingerprint": "7p6chj",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 21 novembre alle 21:00 il Groningen ospita l'Heerenveen nella 13ª giornata di Eredivisie. In classifica il Groningen occupa l'8° posto con 15 punti, mentre l'Heerenveen è al 7° con 18."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di Eredivisie il Groningen ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con la sequenza V-P-N-P. Ha segnato 11 gol e ne ha subiti 11. In casa ha perso tutte le 2 partite disputate.",
+     "Nelle ultime 4 partite di Eredivisie l'Heerenveen ha ottenuto 3 vittorie e 1 sconfitta, con la sequenza P-V-V-V. Ha segnato 8 gol e ne ha subiti 4. Arriva da 3 vittorie consecutive. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Groningen 2,4, Heerenveen 1,7.",
+     "Gol subiti finora: Groningen 24, Heerenveen 13.",
+     "Nelle ultime 4 partite del Groningen si sono segnati almeno tre gol in ciascuna gara."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Groningen – Heerenveen?",
+    "a": "Sabato 21 novembre alle 21:00, ora italiana."
+   },
+   {
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:44:38.943Z"
+ },
+ "fb:1001552231": {
+  "fingerprint": "ob3zo3",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Telstar e Zwolle si affrontano sabato 21 novembre alle 21:00 per la 13ª giornata di Eredivisie. In classifica il Telstar occupa il 16° posto con 10 punti, lo Zwolle il 13° con 12."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Eredivisie il Telstar ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-P-P-V-N), con 13 gol fatti e 13 subiti. In casa, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+     "Nelle ultime 5 partite di Eredivisie lo Zwolle ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza P-V-N-V-N), con 7 gol fatti e 4 subiti. Non perde da 4 partite. In trasferta, nella stagione, il bilancio è di 2 pareggi, senza vittorie."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Telstar 1,5, Zwolle 1,1 a partita.",
+     "Gol subiti finora: Telstar 25, Zwolle 24.",
+     "In tutte le ultime 5 partite del Telstar si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Telstar – Zwolle?",
+    "a": "Sabato 21 novembre alle 21:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:44:42.329Z"
+ },
+ "fb:1001492468": {
+  "fingerprint": "omrcqw",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 21 novembre alle 20:30 il Palmeiras ospita il Flamengo per la 36ª giornata di Brasileirão. Si tratta di un confronto di alta classifica: il Palmeiras è al 2° posto con 73 punti, mentre il Flamengo è al 1° con 76."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Brasileirão il Palmeiras ha ottenuto 4 vittorie e 1 pareggio (sequenza V-V-V-N-V), segnando 14 gol e subendone 2. Non perde da 6 partite e in casa ha vinto tutte le 4 gare disputate.",
+     "Nelle ultime 5 partite di Brasileirão il Flamengo ha ottenuto 5 vittorie (sequenza V-V-V-V-V), segnando 14 gol e subendone 4. Arriva da 5 vittorie consecutive. In trasferta il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Palmeiras 1,8, Flamengo 2,1.",
+     "Gol subiti finora: Palmeiras 23, Flamengo 29.",
+     "Il Palmeiras ha la miglior difesa del torneo.",
+     "Il Flamengo ha il miglior attacco del torneo.",
+     "Il Palmeiras non ha subito gol in 3 delle ultime 5 partite.",
+     "In 4 delle ultime 5 partite del Flamengo si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Palmeiras – Flamengo?",
+    "a": "Sabato 21 novembre alle 20:30, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:44:55.406Z"
+ },
+ "fb:1001492462": {
+  "fingerprint": "4j99x2",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Bahia e Coritiba si affrontano sabato 21 novembre alle 21:30 per la 36ª giornata di Brasileirão. In classifica il Bahia è al 6° posto con 53 punti, il Coritiba al 12° con 42."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Brasileirão il Bahia ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-N-V-P), con 7 gol fatti e 9 subiti. In casa il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+     "Nelle ultime 5 partite di Brasileirão il Coritiba ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza N-P-P-V-P), con 3 gol fatti e 4 subiti. In trasferta ha perso tutte le 3 partite giocate."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Bahia 1,5, Coritiba 1,2 a partita.",
+     "Gol subiti finora: Bahia 45, Coritiba 51.",
+     "In 3 delle ultime 5 partite del Bahia si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Bahia – Coritiba?",
+    "a": "Sabato 21 novembre alle 21:30, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:44:57.767Z"
+ },
+ "fb:1001601594": {
+  "fingerprint": "a9akc1",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Benevento e Avellino pareggiano 1-1. La partita, valida per la 11ª giornata di Serie B, si è giocata sabato 7 novembre; il primo tempo si era chiuso 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora il Benevento è all'8° posto con 15 punti e l'Avellino all'11° con 15. [Classifica completa](/calcio/serie-b/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Benevento tornerà in campo sabato 21 novembre alle 15:00 in trasferta contro la Sampdoria. L'Avellino tornerà in campo sabato 21 novembre alle 15:00 in casa contro il Mantova."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Benevento – Avellino?",
+    "a": "1-1 (0-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:45:07.731Z"
+ },
+ "fb:1001557461": {
+  "fingerprint": "1s1yx2p",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Fulham e Newcastle hanno chiuso in parità, 1-1. La gara, valida per la 10ª giornata di Premier League, si è disputata sabato 7 novembre; il primo tempo era terminato 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite disputate finora, il Fulham occupa il 15° posto con 10 punti, mentre il Newcastle è all'11° con 12. [Classifica completa](/calcio/premier-league/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Fulham tornerà in campo sabato 21 novembre alle 13:30, in trasferta contro il Manchester City. Il Newcastle giocherà sabato 21 novembre alle 18:30, in casa contro l'Arsenal."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Fulham – Newcastle?",
+    "a": "1-1 (0-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Premier League](/calcio/premier-league)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:45:09.590Z"
+ },
+ "fb:560640": {
+  "fingerprint": "13upuge",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "L'Arsenal si impone di misura in casa sull'Hull City con il punteggio di 1-0. La partita, valida per la 10ª giornata di Premier League, si è giocata sabato 7 novembre; il primo tempo si era chiuso 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora l'Arsenal è al 1° posto con 27 punti, mentre l'Hull City è al 13° con 11. Per consultare la [classifica completa](/calcio/premier-league/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "L'Arsenal tornerà in campo sabato 21 novembre alle 18:30, in trasferta contro il Newcastle."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Arsenal – Hull City?",
+    "a": "1-0 (0-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Premier League](/calcio/premier-league)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:45:11.343Z"
+ },
+ "fb:560641": {
+  "fingerprint": "138hx7t",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il Nottingham Forest ha battuto il Manchester City 3-1 in casa. La partita, valida per la 10ª giornata di Premier League, si è giocata sabato 7 novembre; il primo tempo si era chiuso 2-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora il Nottingham Forest è al 19° posto con 6 punti, mentre il Manchester City è al 2° con 21. [Vai alla classifica completa](/calcio/premier-league/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Nottingham Forest tornerà in campo sabato 21 novembre alle 16:00, in trasferta contro il Bournemouth. Il Manchester City tornerà in campo sabato 21 novembre alle 13:30, in casa contro il Fulham."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Nottingham Forest – Manchester City?",
+    "a": "3-1 (2-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Premier League](/calcio/premier-league)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:45:13.169Z"
+ },
+ "fb:564745": {
+  "fingerprint": "17i4zp8",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Si chiude senza reti il match tra Espanyol e Deportivo. La sfida, valida per la 12ª giornata di LaLiga, è stata disputata sabato 7 novembre; il primo tempo era terminato 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Considerando le partite disputate finora, l'Espanyol occupa il 13° posto con 12 punti, mentre il Deportivo è all'8° con 15. [Vai alla classifica completa](/calcio/liga/classifica)."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Espanyol – Deportivo?",
+    "a": "0-0 (0-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [LaLiga](/calcio/liga)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:45:18.800Z"
+ },
+ "fb:564739": {
+  "fingerprint": "1nn3a2s",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Osasuna e Athletic si dividono la posta con un pareggio per 1-1. La partita, valida per la 12ª giornata di LaLiga, si è giocata sabato 7 novembre; il primo tempo si era chiuso sullo 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora l'Osasuna è al 16° posto con 11 punti, mentre l'Athletic è al 7° con 15. [Consulta la classifica completa](/calcio/liga/classifica)."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Osasuna – Athletic?",
+    "a": "1-1 (0-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [LaLiga](/calcio/liga)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:45:20.426Z"
+ },
+ "fb:565851": {
+  "fingerprint": "1xo50t1",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il Bayern Monaco ha vinto in trasferta di misura contro il Mainz, imponendosi 1-2. La partita, valida per la 9ª giornata di Bundesliga, si è giocata sabato 7 novembre; il primo tempo si era chiuso 0-1."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora il Mainz è al 10° posto con 10 punti, mentre il Bayern Monaco è al 1° con 21. [Consulta la classifica completa](/calcio/bundesliga/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Bayern Monaco tornerà in campo venerdì 20 novembre alle 20:30 in casa contro il 1. FC Köln."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Mainz – Bayern Monaco?",
+    "a": "1-2 (0-1 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:45:23.442Z"
+ },
+ "fb:565850": {
+  "fingerprint": "1pswjf2",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il Dortmund ha battuto in casa l'Elversberg per 2-1. La partita, valida per la 9ª giornata di Bundesliga, si è disputata sabato 7 novembre; il primo tempo era terminato 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite disputate finora il Dortmund occupa il 2° posto con 21 punti, mentre l'Elversberg è al 7° con 13. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/bundesliga/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Dortmund tornerà in campo sabato 21 novembre alle 15:30, in trasferta contro il M'gladbach. L'Elversberg giocherà anch'essa sabato 21 novembre alle 15:30, in casa contro il Freiburg."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Dortmund – Elversberg?",
+    "a": "2-1 (0-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:45:25.373Z"
+ },
+ "fb:565848": {
+  "fingerprint": "l1dgxs",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il RB Leipzig supera l'Augsburg in casa con un ampio 5-2. La partita, valida per la 9ª giornata di Bundesliga, si è giocata sabato 7 novembre; il primo tempo si era chiuso 3-1."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora il RB Leipzig è al 3° posto con 18 punti, mentre l'Augsburg è al 12° con 9. La [classifica completa](/calcio/bundesliga/classifica) è disponibile sul sito."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il RB Leipzig tornerà in campo sabato 21 novembre alle 15:30, in trasferta contro l'Union Berlin."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita RB Leipzig – Augsburg?",
+    "a": "Il risultato finale è 5-2, con 3-1 all'intervallo."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Puoi consultarli nella pagina [Bundesliga](/calcio/bundesliga)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:45:27.113Z"
+ },
+ "fb:565853": {
+  "fingerprint": "1pa0pek",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Lo SC Paderborn e il Frankfurt pareggiano 2-2. La gara, valida per la 9ª giornata di Bundesliga, si è disputata sabato 7 novembre; il primo tempo era terminato 1-1."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Dopo le partite disputate finora, lo SC Paderborn occupa l'11° posto con 10 punti, mentre il Frankfurt è all'8° posto con 12. [Vai alla classifica completa](/calcio/bundesliga/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Lo SC Paderborn tornerà in campo sabato 21 novembre alle 15:30, in trasferta contro il Leverkusen. Il Frankfurt giocherà sabato 21 novembre alle 15:30 in casa contro l'Hoffenheim."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Qual è stato il risultato di SC Paderborn – Frankfurt?",
+    "a": "2-2 (1-1 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T20:45:31.771Z"
  }
 }
