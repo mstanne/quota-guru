@@ -92,19 +92,20 @@ const graded = (list, fromMs, toMs) =>
   );
 
 /** Matches of the next Serie A round still to be played (from the downloaded data), with the round number. */
-function nextSerieARound(data, nowMs) {
-  const sa = data.football?.competitions?.find((c) => c.code === "SA");
-  if (!sa) return null;
-  const upcoming = sa.matches.filter(
+function nextRound(data, code, nowMs) {
+  const comp = data.football?.competitions?.find((c) => c.code === code);
+  if (!comp) return null;
+  const upcoming = comp.matches.filter(
     (m) => (m.status === "SCHEDULED" || m.status === "TIMED") && Date.parse(m.utcDate) > nowMs && m.matchday,
   );
   if (!upcoming.length) return null;
   const n = Math.min(...upcoming.map((m) => m.matchday));
-  const matches = sa.matches
+  const matches = comp.matches
     .filter((m) => m.matchday === n && m.stage === "REGULAR_SEASON")
     .sort((a, b) => a.utcDate.localeCompare(b.utcDate));
-  return { sa, n, matches, open: matches.filter((m) => Date.parse(m.utcDate) > nowMs) };
+  return { comp, sa: comp, n, matches, open: matches.filter((m) => Date.parse(m.utcDate) > nowMs) };
 }
+const nextSerieARound = (data, nowMs) => nextRound(data, "SA", nowMs);
 const shortName = (t) => t.shortName.replace(/ FC$/, "");
 const capital = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
@@ -191,7 +192,7 @@ export const RUBRICHE = [
     name: "Track record del weekend",
     days: [1],
     time: "10:00",
-    build({ data, today }) {
+    build({ data, today, register, mode }) {
       const from = romeInstant(addDays(today, -3), "00:00");
       const to = romeInstant(today, "00:00");
       const list = [...graded(data.archive.calcio, from, to), ...graded(data.archive.nba, from, to)];
@@ -213,11 +214,25 @@ export const RUBRICHE = [
         ...graded(data.archive.nba, to - 30 * 86400000, to),
       ];
       const h30 = last30.filter((e) => e.hit).length;
+      // the threes of the last week (register): how they went, once all their matches are graded
+      const trisLine =
+        Object.entries(register?.data.tris?.[mode] ?? {})
+          .filter(([, t]) => t.day >= addDays(today, -7))
+          .map(([k, t]) => {
+            const done = t.ids
+              .map((id) => data.archive.calcio.find((e) => e.id === id))
+              .filter((e) => e && typeof e.hit === "boolean");
+            if (done.length !== 3) return null;
+            return `${TRIS[k]?.title ?? k}: ${done.map((e) => (e.hit ? "✅" : "❌")).join(" ")} (${done.filter((e) => e.hit).length} su 3).`;
+          })
+          .filter(Boolean)
+          .join("\n") || null;
       const caption = post(
         `📊 <b>Track record del weekend</b> (${dayLabel(addDays(today, -3))} – ${dayLabel(addDays(today, -1))})`,
         `L'esito indicato come più probabile dal modello si è verificato in <b>${hits} partite su ${list.length}</b> (${pct(hits / list.length)}).`,
         rows.join("\n"),
         last30.length ? `Ultimi 30 giorni: ${h30} su ${last30.length} (${pct(h30 / last30.length)}).` : null,
+        trisLine,
         "Contano i pronostici così come erano pubblicati prima del calcio d'inizio, anche quando vanno male.",
         `Archivio completo e calibrazione del modello: ${anchor("/metodologia#calibrazione", "metodologia", "track-record")}`,
       );
@@ -428,74 +443,40 @@ export const RUBRICHE = [
       };
     },
   },
+  // round previews: Serie A on Friday; the other leagues the day before their round starts (also midweek rounds)
+  roundPreview({ id: "anteprima-serie-a", code: "SA", flag: "🇮🇹", days: [5], time: "12:00" }),
+  roundPreview({
+    id: "anteprima-premier-league",
+    code: "PL",
+    flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    days: EVERY_DAY,
+    time: "13:00",
+    dayBefore: true,
+  }),
+  roundPreview({ id: "anteprima-liga", code: "PD", flag: "🇪🇸", days: EVERY_DAY, time: "14:00", dayBefore: true }),
+  roundPreview({ id: "anteprima-ligue-1", code: "FL1", flag: "🇫🇷", days: EVERY_DAY, time: "15:00", dayBefore: true }),
+  { id: "tris-weekend", name: "Il tris del weekend", days: [6], time: "10:30", build: makeTris("tris-weekend") },
+  // cups: checked every matchday morning, posted only on the first day of each matchweek
   {
-    id: "anteprima-serie-a",
-    name: "Anteprima Serie A",
-    days: [5],
-    time: "12:00",
-    build({ data, nowMs }) {
-      const round = nextSerieARound(data, nowMs);
-      if (!round) return null;
-      const byId = new Map(data.archive.calcio.filter(open).map((e) => [e.id, e]));
-      const list = round.open.map((m) => ({ m, e: byId.get(m.id) })).filter((x) => x.e);
-      if (list.length < 5) return null;
-      const name = ({ m }) => `${shortName(m.homeTeam)} – ${shortName(m.awayTeam)}`;
-      const maxP = ({ e }) => Math.max(...e.prediction.p);
-      const sign = ({ e }) => ["1", "X", "2"][e.prediction.p.indexOf(Math.max(...e.prediction.p))];
-      const goals = ({ e }) => (e.prediction.xg ? e.prediction.xg[0] + e.prediction.xg[1] : 0);
-      const fav = list.reduce((a, b) => (maxP(b) > maxP(a) ? b : a));
-      const uncertain = list.reduce((a, b) => (maxP(b) < maxP(a) ? b : a));
-      const most = list.reduce((a, b) => (goals(b) > goals(a) ? b : a));
-      const all = list
-        .map((x) => `${esc(shortDayTime(x.m.utcDate))} ${esc(name(x))}\n${p1x2(x.e.prediction.p)}`)
-        .join("\n");
-      const short = (all) => [
-        `🇮🇹 <b>Serie A, ${round.n}ª giornata</b> – cosa dice il modello`,
-        [
-          `Più probabile: <b>${esc(name(fav))}</b>, ${sign(fav)} al ${pct(maxP(fav))}`,
-          `Più incerta: <b>${esc(name(uncertain))}</b>, nessun esito oltre il ${pct(maxP(uncertain))}`,
-          goals(most)
-            ? `Più gol attesi: <b>${esc(name(most))}</b>, ${goals(most).toFixed(1).replace(".", ",")} gol`
-            : null,
-        ]
-          .filter(Boolean)
-          .join("\n"),
-        all,
-        `Probabilità, quota equa e Under/Over di ogni partita: ${anchor(`/pronostici/${round.sa.slug}/giornata-${round.n}`, `${round.n}ª giornata`, "anteprima-serie-a")}`,
-      ];
-      const caption = post(
-        `🇮🇹 <b>Serie A, ${round.n}ª giornata</b> – cosa dice il modello`,
-        [
-          `Più probabile: <b>${esc(name(fav))}</b>, ${sign(fav)} al ${pct(maxP(fav))}`,
-          `Più incerta: <b>${esc(name(uncertain))}</b>, nessun esito oltre il ${pct(maxP(uncertain))}`,
-          goals(most)
-            ? `Più gol attesi: <b>${esc(name(most))}</b>, ${goals(most).toFixed(1).replace(".", ",")} gol`
-            : null,
-        ]
-          .filter(Boolean)
-          .join("\n"),
-        all,
-        `Probabilità, quota equa e Under/Over di ogni partita: ${anchor(`/pronostici/${round.sa.slug}/giornata-${round.n}`, `${round.n}ª giornata`, "anteprima-serie-a")}`,
-      );
-      return {
-        caption: post(...short("Tutte le partite con le probabilità 1X2 nell'immagine.")),
-        text: caption,
-        card: {
-          type: "preview",
-          badge: "Anteprima",
-          title: `Serie A, ${round.n}ª giornata`,
-          subtitle: "Cosa dice il modello, partita per partita",
-          highlights: [
-            { label: "Più probabile", match: name(fav), value: `${sign(fav)} al ${pct(maxP(fav))}` },
-            { label: "Più incerta", match: name(uncertain), value: `max ${pct(maxP(uncertain))}`, color: "#FBBF24" },
-            goals(most)
-              ? { label: "Più gol attesi", match: name(most), value: `${goals(most).toFixed(1).replace(".", ",")} gol` }
-              : null,
-          ].filter(Boolean),
-          matches: list.map((x) => ({ when: shortDayTime(x.m.utcDate), label: name(x), p: x.e.prediction.p })),
-        },
-      };
-    },
+    id: "tris-champions",
+    name: "Il tris di Champions",
+    days: [2, 3],
+    time: "10:30",
+    build: makeTris("tris-champions"),
+  },
+  {
+    id: "tris-europa-league",
+    name: "Il tris di Europa League",
+    days: [3, 4],
+    time: "10:30",
+    build: makeTris("tris-europa-league"),
+  },
+  {
+    id: "tris-conference",
+    name: "Il tris di Conference",
+    days: [3, 4],
+    time: "11:00",
+    build: makeTris("tris-conference"),
   },
   {
     id: "dove-vederla",
@@ -644,6 +625,168 @@ export const RUBRICHE = [
     },
   },
 ];
+
+/**
+ * Preview of the next round of a league: most likely outcome, most open match, most expected goals, every match.
+ * dayBefore: posted only when the round starts 12 to 36 hours later, so once per round whatever the day.
+ */
+function roundPreview({ id, code, flag, days, time, dayBefore = false }) {
+  return {
+    id,
+    name: `Anteprima ${code}`,
+    days,
+    time,
+    build({ data, nowMs }) {
+      const round = nextRound(data, code, nowMs);
+      if (!round) return null;
+      if (dayBefore) {
+        const first = Date.parse(round.matches[0]?.utcDate);
+        if (!(first >= nowMs + 12 * 3600000 && first < nowMs + 36 * 3600000)) return null;
+      }
+      const byId = new Map(data.archive.calcio.filter(open).map((e) => [e.id, e]));
+      const list = round.open.map((m) => ({ m, e: byId.get(m.id) })).filter((x) => x.e);
+      if (list.length < 5) return null;
+      const league = round.comp.name;
+      const name = ({ m }) => `${shortName(m.homeTeam)} – ${shortName(m.awayTeam)}`;
+      const top = ({ e }) => Math.max(...e.prediction.p);
+      const sign = ({ e }) => ["1", "X", "2"][e.prediction.p.indexOf(Math.max(...e.prediction.p))];
+      const goals = ({ e }) => (e.prediction.xg ? e.prediction.xg[0] + e.prediction.xg[1] : 0);
+      const fav = list.reduce((a, b) => (top(b) > top(a) ? b : a));
+      const uncertain = list.reduce((a, b) => (top(b) < top(a) ? b : a));
+      const most = list.reduce((a, b) => (goals(b) > goals(a) ? b : a));
+      const title = `${flag} <b>${esc(league)}, ${round.n}ª giornata</b> – cosa dice il modello`;
+      const lines = [
+        `Più probabile: <b>${esc(name(fav))}</b>, ${sign(fav)} al ${pct(top(fav))}`,
+        `Più incerta: <b>${esc(name(uncertain))}</b>, nessun esito oltre il ${pct(top(uncertain))}`,
+        goals(most) ? `Più gol attesi: <b>${esc(name(most))}</b>, ${dec1(goals(most))} gol` : null,
+      ]
+        .filter(Boolean)
+        .join("\n");
+      const link = `Probabilità, quota equa e Under/Over di ogni partita: ${anchor(`/pronostici/${round.comp.slug}/giornata-${round.n}`, `${round.n}ª giornata`, id)}`;
+      const all = list
+        .map((x) => `${esc(shortDayTime(x.m.utcDate))} ${esc(name(x))}\n${p1x2(x.e.prediction.p)}`)
+        .join("\n");
+      return {
+        caption: post(title, lines, "Tutte le partite con le probabilità 1X2 nell'immagine.", link),
+        text: post(title, lines, all, link),
+        card: {
+          type: "preview",
+          badge: "Anteprima",
+          title: `${league}, ${round.n}ª giornata`,
+          subtitle: "Cosa dice il modello, partita per partita",
+          highlights: [
+            { label: "Più probabile", match: name(fav), value: `${sign(fav)} al ${pct(top(fav))}` },
+            { label: "Più incerta", match: name(uncertain), value: `max ${pct(top(uncertain))}`, color: "#FBBF24" },
+            goals(most) ? { label: "Più gol attesi", match: name(most), value: `${dec1(goals(most))} gol` } : null,
+          ].filter(Boolean),
+          matches: list.map((x) => ({ when: shortDayTime(x.m.utcDate), label: name(x), p: x.e.prediction.p })),
+        },
+      };
+    },
+  };
+}
+
+/**
+ * A three ("tris"): the three matches where the model is most sure of one outcome, and the chance that all three come
+ * in, the product, much lower than each one. Informative: it shows how quickly "sure" outcomes stop being sure when
+ * put together. The three are kept in the register; Monday's track record says how they went.
+ *   weekend: Saturday and Sunday, top five leagues
+ *   cups: one per cup, the morning of the first day of each matchweek (Champions: Tuesday and Wednesday together)
+ */
+const TRIS = {
+  "tris-weekend": {
+    title: "Il tris del weekend",
+    emoji: "🎯",
+    leagues: new Set(["Serie A", "Premier League", "LaLiga", "Bundesliga", "Ligue 1"]),
+    min: 6,
+  },
+  "tris-champions": {
+    title: "Il tris di Champions",
+    emoji: "🏆",
+    leagues: new Set(["Champions League"]),
+    cup: true,
+    min: 4,
+  },
+  "tris-europa-league": {
+    title: "Il tris di Europa League",
+    emoji: "🟠",
+    leagues: new Set(["Europa League"]),
+    cup: true,
+    min: 4,
+  },
+  "tris-conference": {
+    title: "Il tris di Conference",
+    emoji: "🟢",
+    leagues: new Set(["Conference League"]),
+    cup: true,
+    min: 4,
+  },
+};
+
+function makeTris(id) {
+  return ({ data, today, nowMs, register, mode }) => {
+    const t = TRIS[id];
+    const ids = currentIds(data);
+    const of = (e) => open(e) && ids.has(e.id) && t.leagues.has(e.where);
+    if (t.cup) {
+      // first day of the matchweek: matches today, none in the three days before
+      const before = romeInstant(addDays(today, -3), "00:00");
+      const start = romeInstant(today, "00:00");
+      if (!data.archive.calcio.some((e) => of(e) && dayOf(e) === today)) return null;
+      if (
+        data.archive.calcio.some(
+          (e) => t.leagues.has(e.where) && Date.parse(e.kickoff) >= before && Date.parse(e.kickoff) < start,
+        )
+      )
+        return null;
+    }
+    const end = romeInstant(addDays(today, 2), "00:00");
+    const list = data.archive.calcio.filter(
+      (e) => of(e) && Date.parse(e.kickoff) > nowMs && Date.parse(e.kickoff) < end,
+    );
+    if (list.length < t.min) return null;
+    const three = [...list].sort((a, b) => maxP(b) - maxP(a) || a.kickoff.localeCompare(b.kickoff)).slice(0, 3);
+    three.sort((a, b) => a.kickoff.localeCompare(b.kickoff));
+    const all = three.reduce((p, e) => p * maxP(e), 1);
+    const outcome = (e) => {
+      const [home, away] = e.label.split(" – ");
+      const i = topOf(e.prediction.p);
+      return i === 1 ? "pareggio" : `vittoria ${i === 0 ? home : away}`;
+    };
+    const sign = (e) => ["1", "X", "2"][topOf(e.prediction.p)];
+    const rows = three.map(
+      (e) =>
+        `${esc(shortDayTime(e.kickoff))} <b>${esc(e.label)}</b>${t.cup ? "" : ` (${esc(e.where)})`}\n${sign(e)} · ${esc(outcome(e))} al ${pct(maxP(e))}`,
+    );
+    const title = `${t.emoji} <b>${t.title}</b> – le 3 partite più prevedibili secondo il modello`;
+    const miss = Math.round((1 - all) * 10);
+    const lesson = `Prese una per una sembrano quasi sicure. Insieme, la probabilità che si verifichino tutte e tre è del <b>${pct(all)}</b>: ${all < 0.5 ? "è più facile che almeno una vada diversamente" : `in circa ${miss} casi su 10 almeno una va diversamente`}.`;
+    const page = t.cup ? `/pronostici/${compSlug(data, [...t.leagues][0])}` : "/pronostici/oggi";
+    const link = `Le probabilità di ogni partita: ${anchor(page, "pronostici", id)}`;
+    return {
+      caption: post(title, rows.join("\n\n"), lesson, link),
+      card: {
+        type: "tris",
+        badge: t.title.replace(/^Il /, "").replace(/^t/, "T"),
+        title: t.title,
+        subtitle: "Le 3 partite più prevedibili secondo il modello",
+        picks: three.map((e) => ({
+          when: shortDayTime(e.kickoff),
+          where: e.where,
+          label: e.label,
+          sign: sign(e),
+          outcome: outcome(e),
+          p: maxP(e),
+        })),
+        all,
+      },
+      after: () => {
+        register.data.tris ??= {};
+        register.data.tris[mode] = { ...register.data.tris[mode], [id]: { day: today, ids: three.map((e) => e.id) } };
+      },
+    };
+  };
+}
 
 /** Competitions whose line-ups are posted: every Serie A match, cup matches only with an Italian club. */
 const LINEUP_LEAGUES = new Set(["serie-a", "champions-league", "europa-league", "conference-league"]);

@@ -580,7 +580,53 @@ function academy(card) {
   return out;
 }
 
-const LAYOUTS = { matchList, results, trackRecord, standings, numbers, nba, preview, tv, lineups, academy };
+/** Weekend three: card.picks = [{ when, where, label, sign, outcome, p }], card.all (product of the three) */
+function tris(card) {
+  let out = "";
+  const ph = 192;
+  let y = TOP - 6;
+  card.picks.forEach((k) => {
+    out += rect(M, y, W - 2 * M, ph, { r: 26 });
+    out += caps(M + 30, y + 44, `${k.where} · ${k.when}`, { size: 19, max: W - 2 * M - 260 });
+    out += text(M + 30, y + 98, k.label, {
+      size: fitSize(k.label, 36, 700, W - 2 * M - 260, 26),
+      max: W - 2 * M - 260,
+    });
+    out += text(M + 30, y + 146, `${k.sign} · ${k.outcome}`, {
+      size: 26,
+      weight: 400,
+      fill: C.grey,
+      max: W - 2 * M - 260,
+    });
+    const cx = W - M - 110;
+    const cy = y + ph / 2;
+    const r = 62;
+    const len = 2 * Math.PI * r;
+    out += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${C.line}" stroke-width="14"/>`;
+    out += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${C.green}" stroke-width="14" stroke-linecap="round" stroke-dasharray="${(len * k.p).toFixed(1)} ${len.toFixed(1)}" transform="rotate(-90 ${cx} ${cy})"/>`;
+    out += text(cx, cy + 12, pct(k.p), { size: 34, anchor: "middle" });
+    y += ph + 16;
+  });
+  y += 4;
+  const bh = BOTTOM - y;
+  out += rect(M, y, W - 2 * M, bh, { r: 26, fill: C.panel2 });
+  out += caps(M + 30, y + 60, "Tutte e tre insieme", { fill: C.amber });
+  out += text(M + 30, y + 128, card.picks.map((k) => pct(k.p)).join("  ×  "), { size: 32, weight: 400, fill: C.grey });
+  out += text(W - M - 30, y + 140, pct(card.all), { size: 92, fill: C.amber, anchor: "end" });
+  const bx = M + 30;
+  const bw = W - 2 * M - 60;
+  out += rect(bx, y + 180, bw, 26, { r: 13, fill: C.line, stroke: null });
+  out += rect(bx, y + 180, Math.max(26, bw * card.all), 26, { r: 13, fill: C.amber, stroke: null });
+  out += text(M + 30, y + bh - 34, "Esiti probabili, presi insieme, sbagliano spesso.", {
+    size: 24,
+    weight: 400,
+    fill: C.muted,
+    max: bw,
+  });
+  return out;
+}
+
+const LAYOUTS = { tris, matchList, results, trackRecord, standings, numbers, nba, preview, tv, lineups, academy };
 
 /** SVG, PNG and words of a card. */
 export function renderCard(card) {
