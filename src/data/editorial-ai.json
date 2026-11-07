@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-07T20:45:31.776Z",
+ "generatedAt": "2026-11-07T20:59:06.243Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558533": {
@@ -1067,12 +1067,12 @@
    ]
   },
   "fb:560635": {
-   "fingerprint": "txmzw2",
+   "fingerprint": "1na053h",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 15:00 il Crystal Palace ospita il Liverpool per la 10ª giornata di Premier League. In classifica il Crystal Palace occupa il 18° posto con 7 punti, mentre il Liverpool è al 6° con 15."
+      "Domenica 8 novembre alle 15:00 il Crystal Palace ospita il Liverpool nella 10ª giornata di Premier League. In classifica il Crystal Palace occupa il 19° posto con 7 punti, mentre il Liverpool è al 6° posto con 15."
      ],
      "bullets": []
     },
@@ -1095,7 +1095,7 @@
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Crystal Palace, 1 vittoria per il Liverpool e 2 pareggi, con 16 gol complessivi (media di 3,2 a partita). L'ultimo incontro, ad aprile 2026 in Premier League, è terminato Liverpool 3-1 Crystal Palace."
+      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Crystal Palace, 1 vittoria per il Liverpool e 2 pareggi, con 16 gol complessivi (media di 3,2 a partita). L'ultimo incontro, disputato ad aprile 2026 in Premier League, è terminato Liverpool 3-1 Crystal Palace."
      ],
      "bullets": []
     }
@@ -1107,11 +1107,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+     "a": "Puoi consultarli nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -1216,20 +1216,20 @@
    ]
   },
   "fb:560639": {
-   "fingerprint": "1lrjxkj",
+   "fingerprint": "d323c6",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "La partita si giocherà domenica 8 novembre alle 17:30, quando il Manchester United ospiterà l'Aston Villa per la 10ª giornata di Premier League. In classifica il Manchester United occupa il 17° posto con 7 punti, mentre l'Aston Villa è al 12° con 12."
+      "Domenica 8 novembre alle 17:30 il Manchester United ospita l'Aston Villa nella 10ª giornata di Premier League. In classifica il Manchester United occupa il 18° posto con 7 punti, mentre l'Aston Villa è 12° con 12 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Premier League il Manchester United ha ottenuto 2 pareggi e 2 sconfitte, con sequenza N-N-P-P, segnando 2 gol e subendone 7. Ha perso le ultime 2 gare. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie.",
-      "Nelle ultime 4 partite di Premier League l'Aston Villa ha ottenuto 2 vittorie e 2 pareggi, con sequenza N-V-V-N, segnando 6 gol e subendone 4. Non perde da 4 partite."
+      "Nelle ultime 4 partite di Premier League il Manchester United ha ottenuto 2 pareggi e 2 sconfitte (sequenza N-N-P-P), segnando 2 gol e subendone 7. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
+      "Nelle ultime 4 partite di Premier League l'Aston Villa ha ottenuto 2 vittorie e 2 pareggi (sequenza N-V-V-N), con 6 gol fatti e 4 subiti. Non perde da 4 partite."
      ],
      "bullets": []
     },
@@ -1237,14 +1237,14 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Manchester United 1,1, Aston Villa 1,1.",
+      "Media gol segnati: Manchester United 1,1 e Aston Villa 1,1 a partita.",
       "Gol subiti finora: Manchester United 15, Aston Villa 13."
      ]
     },
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per il Manchester United, 1 vittoria per l'Aston Villa e 1 pareggio, con 12 gol complessivi, pari a una media di 2,4 a partita. L'ultimo incontro, disputato a marzo 2026 in Premier League, è terminato Manchester United 3-1 Aston Villa."
+      "Negli ultimi 5 confronti diretti il Manchester United ha vinto 3 volte, l'Aston Villa 1 volta e c'è stato 1 pareggio, con 12 gol complessivi (media di 2,4 a partita). L'ultimo incrocio, disputato a marzo 2026 in Premier League, è terminato Manchester United 3-1 Aston Villa."
      ],
      "bullets": []
     }
@@ -1252,7 +1252,7 @@
    "faq": [
     {
      "q": "Quando si gioca Manchester United – Aston Villa?",
-     "a": "Domenica 8 novembre alle 17:30, ora italiana."
+     "a": "Domenica 8 novembre alle 17:30."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -1265,7 +1265,7 @@
    ]
   },
   "fb:1001557474": {
-   "fingerprint": "1pvu3w1",
+   "fingerprint": "2p69sr",
    "sections": [
     {
      "id": "presentazione",
@@ -1286,8 +1286,8 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Manchester City 2,2, Fulham 1,0 a partita.",
-      "Gol subiti finora: Manchester City 10, Fulham 12.",
+      "Media gol segnati: Manchester City 2,1, Fulham 1,0 a partita.",
+      "Gol subiti finora: Manchester City 13, Fulham 12.",
       "In 4 delle ultime 5 partite del Manchester City si sono segnati almeno tre gol."
      ]
     }
@@ -1299,7 +1299,7 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Premier League](/calcio/premier-league) e la [classifica aggiornata](/calcio/premier-league/classifica)."
+     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -1308,12 +1308,12 @@
    ]
   },
   "fb:1001557468": {
-   "fingerprint": "191u96j",
+   "fingerprint": "1f2tkzg",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 16:00 il Bournemouth ospita il Nottingham Forest per la 11ª giornata di Premier League. In classifica il Bournemouth occupa il 9° posto con 12 punti, mentre il Nottingham Forest è al 19° con 6."
+      "Sabato 21 novembre alle 16:00 il Bournemouth ospita il Nottingham Forest nell'11ª giornata di Premier League. In classifica il Bournemouth è 9° con 12 punti, mentre il Nottingham Forest è 16° con 9."
      ],
      "bullets": []
     },
@@ -1321,7 +1321,7 @@
      "id": "momento",
      "paragraphs": [
       "Nelle ultime 4 partite di Premier League il Bournemouth ha ottenuto 3 vittorie e 1 sconfitta (sequenza P-V-V-V), segnando 8 gol e subendone 5. Arriva da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
-      "Nelle ultime 5 partite di Premier League il Nottingham Forest ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-P-V), con 5 gol fatti e 8 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza ancora una vittoria."
+      "Nelle ultime 5 partite di Premier League il Nottingham Forest ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-P-V), con 5 gol fatti e 8 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
      ],
      "bullets": []
     },
@@ -1329,8 +1329,8 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Bournemouth 1,6, Nottingham Forest 0,7 a partita.",
-      "Gol subiti finora: Bournemouth 13, Nottingham Forest 12.",
+      "Media gol segnati: Bournemouth 1,6, Nottingham Forest 0,9 a partita.",
+      "Gol subiti finora: Bournemouth 13, Nottingham Forest 13.",
       "Il Bournemouth non ha subito gol in 3 delle ultime 4 partite."
      ]
     }
@@ -1342,11 +1342,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+     "a": "Puoi consultare la pagina [Premier League](/calcio/premier-league) e la [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -1478,20 +1478,20 @@
    ]
   },
   "fb:1001557471": {
-   "fingerprint": "150mvuf",
+   "fingerprint": "1lr12pb",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 16:00 il Coventry City ospita il Crystal Palace nell'11ª giornata di Premier League. In classifica il Coventry City occupa il 16° posto con 9 punti, mentre il Crystal Palace è al 18° con 7."
+      "Sabato 21 novembre alle 16:00 il Coventry City ospita il Crystal Palace per la 11ª giornata di Premier League. In classifica il Coventry City è al 17° posto con 9 punti, il Crystal Palace al 19° con 7."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Premier League il Coventry City ha ottenuto 2 vittorie e 3 sconfitte (sequenza V-P-P-V-P), segnando 9 gol e subendone 9. In casa, nella stagione, il bilancio è di 2 vittorie e 1 sconfitta.",
-      "Nelle ultime 4 partite di Premier League il Crystal Palace ha ottenuto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), segnando 3 gol e subendone 10. Ha perso le ultime 3 gare. In trasferta ha perso tutte le 2 partite disputate."
+      "Nelle ultime 5 partite di Premier League il Coventry City ha raccolto 2 vittorie e 3 sconfitte (sequenza V-P-P-V-P), con 9 gol fatti e 9 subiti. In casa il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 4 partite di Premier League il Crystal Palace ha raccolto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), con 3 gol fatti e 10 subiti. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     },
@@ -1499,9 +1499,9 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Coventry City 1,0, Crystal Palace 1,0.",
+      "Media gol segnati: Coventry City 1,0, Crystal Palace 1,0 a partita.",
       "Gol subiti finora: Coventry City 19, Crystal Palace 21.",
-      "In 4 delle ultime 5 partite del Coventry City sono stati segnati almeno tre gol."
+      "In 4 delle ultime 5 partite del Coventry City si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -1516,7 +1516,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2058,20 +2058,20 @@
    ]
   },
   "fb:1001575222": {
-   "fingerprint": "1f2f2gn",
+   "fingerprint": "4w3e4p",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Leverkusen e SC Paderborn si sfidano sabato 21 novembre alle 15:30, nell'ambito della 10ª giornata di Bundesliga. In classifica il Leverkusen occupa il 6° posto con 13 punti, mentre lo SC Paderborn è all'11° con 10."
+      "Leverkusen e SC Paderborn si sfidano sabato 21 novembre alle 15:30, nell'ambito della 10ª giornata di Bundesliga. In classifica il Leverkusen occupa il 6° posto con 13 punti, mentre lo SC Paderborn è al 12° con 10 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga il Leverkusen ha ottenuto 2 vittorie e 2 sconfitte, con la sequenza V-V-P-P. Ha segnato 8 gol e ne ha subiti 11. Ha perso le ultime 2 gare. Tra le mura di casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 5 partite di Bundesliga lo SC Paderborn ha conquistato 1 vittoria, 3 pareggi e 1 sconfitta, con la sequenza P-N-V-N-N. Ha segnato 5 gol e ne ha subiti 6. Non perde da 4 partite. In trasferta, il bilancio stagionale è di 2 pareggi e nessuna vittoria."
+      "Nelle ultime 4 partite di Bundesliga il Leverkusen ha ottenuto 2 vittorie e 2 sconfitte, con la sequenza V-V-P-P, segnando 8 gol e subendone 11. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 5 partite di Bundesliga lo SC Paderborn ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta, con la sequenza P-N-V-N-N, segnando 5 gol e subendone 6. Non perde da 4 partite. In trasferta, nella stagione, il bilancio è di 2 pareggi e nessuna vittoria."
      ],
      "bullets": []
     },
@@ -2081,7 +2081,7 @@
      "bullets": [
       "Media gol segnati a partita: Leverkusen 2,3, SC Paderborn 0,9.",
       "Gol subiti finora: Leverkusen 16, SC Paderborn 11.",
-      "In tutte le ultime 4 partite del Leverkusen sono stati segnati almeno tre gol."
+      "In tutte le ultime 4 partite del Leverkusen si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -2091,8 +2091,8 @@
      "a": "Sabato 21 novembre alle 15:30, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella sezione dedicata alla [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -2101,20 +2101,20 @@
    ]
   },
   "fb:1001575223": {
-   "fingerprint": "1kuxber",
+   "fingerprint": "1dnvubf",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 15:30 il Frankfurt ospita l'Hoffenheim nella 10ª giornata di Bundesliga. In classifica il Frankfurt occupa l'8° posto con 12 punti, mentre l'Hoffenheim è al 14° con 9."
+      "Sabato 21 novembre alle 15:30 il Frankfurt ospita l'Hoffenheim nella 10ª giornata di Bundesliga. In classifica il Frankfurt occupa il 9° posto con 12 punti, mentre l'Hoffenheim è al 14° con 9."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Bundesliga il Frankfurt ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza P-V-P-V-N. Ha segnato 6 gol e ne ha subiti 10. In casa ha vinto tutte le 2 gare disputate.",
-      "Nelle ultime 4 partite di Bundesliga l'Hoffenheim ha ottenuto 2 vittorie e 2 sconfitte, con la sequenza P-V-V-P. Ha segnato 7 gol e ne ha subiti 6. In trasferta, nel bilancio stagionale, registra 1 vittoria e 1 sconfitta."
+      "Nelle ultime 5 partite di Bundesliga il Frankfurt ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-P-V-N), segnando 6 gol e subendone 10. In casa ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 4 partite di Bundesliga l'Hoffenheim ha conquistato 2 vittorie e subito 2 sconfitte (sequenza P-V-V-P), con 7 gol fatti e 6 subiti. In trasferta il bilancio stagionale riporta 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -2122,10 +2122,10 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Gol segnati in media a partita: 1,7 per il Frankfurt e 1,8 per l'Hoffenheim.",
-      "Gol subiti finora: 20 per il Frankfurt e 16 per l'Hoffenheim.",
-      "Nel 3 delle ultime 5 partite del Frankfurt sono stati segnati almeno tre gol.",
-      "Nel 3 delle ultime 4 partite dell'Hoffenheim sono stati segnati almeno tre gol."
+      "Media gol segnati: Frankfurt 1,7, Hoffenheim 1,8 a partita.",
+      "Gol subiti finora: Frankfurt 20, Hoffenheim 16.",
+      "Nelle ultime 5 partite del Frankfurt, in 3 si sono segnati almeno tre gol.",
+      "Nelle ultime 4 partite dell'Hoffenheim, in 3 si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -2135,12 +2135,12 @@
      "a": "Sabato 21 novembre alle 15:30, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
+     "q": "Dove posso consultare classifica e risultati?",
      "a": "Puoi consultare la pagina [Bundesliga](/calcio/bundesliga) e la [classifica aggiornata](/calcio/bundesliga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio) spiegano il tema."
     }
    ]
   },
@@ -2233,12 +2233,12 @@
    ]
   },
   "fb:1001575228": {
-   "fingerprint": "vl261q",
+   "fingerprint": "1sooxwy",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 18:30 lo Schalke ospita lo Stuttgart, per la 10ª giornata di Bundesliga. In classifica lo Schalke occupa il 17° posto con 6 punti, mentre lo Stuttgart è 13° con 9."
+      "Sabato 21 novembre alle 18:30 lo Schalke ospita lo Stuttgart nella 10ª giornata di Bundesliga. In classifica lo Schalke occupa il 17° posto con 6 punti, mentre lo Stuttgart è all'8° posto con 12."
      ],
      "bullets": []
     },
@@ -2246,7 +2246,7 @@
      "id": "momento",
      "paragraphs": [
       "Nelle ultime 4 partite di Bundesliga lo Schalke ha ottenuto 1 pareggio e 3 sconfitte (sequenza P-P-N-P), segnando 1 gol e subendone 5. In casa ha perso tutte le 2 partite disputate.",
-      "Nelle ultime 5 partite di Bundesliga lo Stuttgart ha ottenuto 3 vittorie e 2 sconfitte (sequenza V-P-P-V-V), con 9 gol fatti e 6 subiti. In trasferta, nella stagione, il bilancio è di 2 vittorie e 1 sconfitta."
+      "Nelle ultime 5 partite di Bundesliga lo Stuttgart ha ottenuto 3 vittorie e 2 sconfitte (sequenza V-P-P-V-V), con 9 gol fatti e 6 subiti. In trasferta il bilancio stagionale è di 2 vittorie e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -2254,8 +2254,8 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Schalke 0,5, Stuttgart 1,8.",
-      "Gol subiti finora: Schalke 9, Stuttgart 15."
+      "Media di gol segnati a partita: Schalke 0,5, Stuttgart 1,7.",
+      "Gol subiti fino a ora: Schalke 9, Stuttgart 15."
      ]
     }
    ],
@@ -2265,30 +2265,30 @@
      "a": "Sabato 21 novembre alle 18:30, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Bundesliga](/calcio/bundesliga) e la [classifica aggiornata](/calcio/bundesliga/classifica)."
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001552816": {
-   "fingerprint": "8ryakn",
+   "fingerprint": "10asgls",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 15:00 lo Stade Rennais ospita il Lille nella 10ª giornata di Ligue 1. In classifica lo Stade Rennais occupa il 5° posto con 16 punti, mentre il Lille è 2° con 18."
+      "Domenica 8 novembre alle 15:00 lo Stade Rennais affronta il Lille nella 10ª giornata di Ligue 1. Si tratta di una sfida tra squadre di alta classifica: lo Stade Rennais è al 5° posto con 16 punti, mentre il Lille è al 3° con 18."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 lo Stade Rennais ha ottenuto 2 vittorie e 2 sconfitte (sequenza V-P-V-P), segnando 12 gol e subendone 10. In casa ha vinto tutte le 2 partite disputate.",
-      "Nelle ultime 4 partite di Ligue 1 il Lille ha ottenuto 2 vittorie e 2 pareggi (sequenza V-N-N-V), con 4 gol fatti e 2 subiti. Non perde da 4 partite."
+      "Nelle ultime 4 partite di Ligue 1 lo Stade Rennais ha ottenuto 2 vittorie e 2 sconfitte, con sequenza V-P-V-P. Ha segnato 12 gol e ne ha subiti 10. In casa ha vinto tutte le 2 partite giocate.",
+      "Nelle ultime 4 partite di Ligue 1 il Lille ha ottenuto 2 vittorie e 2 pareggi, con sequenza V-N-N-V. Ha segnato 4 gol e ne ha subiti 2. Non perde da 4 partite."
      ],
      "bullets": []
     },
@@ -2296,8 +2296,8 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: 2,2 per lo Stade Rennais e 1,3 per il Lille a partita.",
-      "Gol subiti finora: 19 per lo Stade Rennais e 6 per il Lille.",
+      "Media gol segnati a partita: Stade Rennais 2,2, Lille 1,3.",
+      "Gol subiti finora: Stade Rennais 19, Lille 6.",
       "Il Lille ha la miglior difesa del torneo.",
       "In tutte le ultime 4 partite dello Stade Rennais si sono segnati almeno tre gol."
      ]
@@ -2305,7 +2305,7 @@
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per lo Stade Rennais, 3 per il Lille e 1 pareggio, con 12 gol complessivi (media di 2,4 a partita). L'ultimo incontro, a marzo 2026 in Ligue 1, è terminato Stade Rennais 1-2 Lille."
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per lo Stade Rennais, 3 vittorie per il Lille e 1 pareggio, con 12 gol complessivi, cioè una media di 2,4 a partita. L'ultimo incrocio, disputato a marzo 2026 in Ligue 1, è terminato Stade Rennais 1-2 Lille."
      ],
      "bullets": []
     }
@@ -2316,7 +2316,7 @@
      "a": "Domenica 8 novembre alle 15:00, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
     },
     {
@@ -2376,20 +2376,20 @@
    ]
   },
   "fb:1001552812": {
-   "fingerprint": "1bu37ko",
+   "fingerprint": "5bwe3r",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 17:15 il Brest ospita l'Olympique Lyon nella 10ª giornata di Ligue 1. In classifica il Brest è all'11° posto con 12 punti, mentre l'Olympique Lyon è al 3° posto con 17."
+      "Domenica 8 novembre alle 17:15 il Brest ospita l'Olympique Lyon nella 10ª giornata di Ligue 1. In classifica il Brest è all'11° posto con 12 punti, mentre l'Olympique Lyon è al 4° con 17."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 il Brest ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-N-P-V, segnando 9 gol e subendone 4. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Ligue 1 l'Olympique Lyon ha ottenuto 2 vittorie e 2 sconfitte, con la sequenza P-V-P-V, segnando 5 gol e subendone 5. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 4 partite di Ligue 1 il Brest ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta, con sequenza V-N-P-V, segnando 9 gol e subendone 4. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 4 partite di Ligue 1 l'Olympique Lyon ha ottenuto 2 vittorie e 2 sconfitte, con sequenza P-V-P-V, segnando 5 gol e subendone 5. In trasferta ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     },
@@ -2404,7 +2404,7 @@
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Brest, 3 vittorie per l'Olympique Lyon e 1 pareggio, con 16 gol complessivi, pari a una media di 3,2 a partita. L'ultimo incontro, a gennaio 2026 in Ligue 1, è terminato Olympique Lyon 2-1 Brest."
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Brest, 3 vittorie per l'Olympique Lyon e 1 pareggio, con 16 gol complessivi, pari a una media di 3,2 a partita. L'ultimo incrocio, disputato a gennaio 2026 in Ligue 1, è terminato Olympique Lyon 2-1 Brest."
      ],
      "bullets": []
     }
@@ -2420,7 +2420,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2663,20 +2663,20 @@
    ]
   },
   "fb:1001552820": {
-   "fingerprint": "1rq51qv",
+   "fingerprint": "r3ljqr",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 20:45 il Lille ospita l'Olympique Lyon per l'11ª giornata di Ligue 1. Si tratta di una sfida tra squadre di vertice: il Lille è al 2° posto con 18 punti, mentre l'Olympique Lyon è al 3° con 17."
+      "Sabato 21 novembre alle 20:45 il Lille ospita l'Olympique Lyon nella 11ª giornata di Ligue 1. Il match mette di fronte due squadre di alta classifica: il Lille è terzo con 18 punti, mentre l'Olympique Lyon è quarto con 17."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 il Lille ha ottenuto 2 vittorie e 2 pareggi (sequenza V-N-N-V), segnando 4 gol e subendone 2. La squadra non perde da 4 partite. In casa, nel bilancio stagionale, conta 2 vittorie e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Ligue 1 l'Olympique Lyon ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), con 5 gol fatti e 5 subiti. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 4 partite di campionato il Lille ha ottenuto 2 vittorie e 2 pareggi, con sequenza V-N-N-V, segnando 4 gol e subendone 2. Non perde da 4 partite. In casa il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 4 partite di Ligue 1 l'Olympique Lyon ha ottenuto 2 vittorie e 2 sconfitte, con sequenza P-V-P-V, segnando 5 gol e subendone 5. In trasferta ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     },
@@ -2684,7 +2684,7 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Lille 1,3, Olympique Lyon 1,7.",
+      "Media gol segnati: Lille 1,3, Olympique Lyon 1,7 a partita.",
       "Gol subiti finora: Lille 6, Olympique Lyon 7.",
       "Il Lille ha la miglior difesa del torneo."
      ]
@@ -2696,30 +2696,30 @@
      "a": "Sabato 21 novembre alle 20:45, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina dedicata alla [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ti spiegano il funzionamento le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001552823": {
-   "fingerprint": "2hr42d",
+   "fingerprint": "1isvw3l",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 20:45 il Monaco ospita l'Auxerre per la 11ª giornata di Ligue 1. In classifica il Monaco occupa il 7° posto con 15 punti, mentre l'Auxerre è al 14° con 10."
+      "Sabato 21 novembre alle 20:45 il Monaco ospita l'Auxerre per la 11ª giornata di Ligue 1. In classifica il Monaco è al 7° posto con 15 punti, mentre l'Auxerre è al 14° con 10."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 il Monaco ha ottenuto 2 pareggi e 2 sconfitte, con sequenza N-P-N-P, segnando 4 gol e subendone 7. In casa, nel bilancio stagionale, ha collezionato 2 pareggi e nessuna vittoria.",
-      "Nelle ultime 5 partite di Ligue 1 l'Auxerre ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con sequenza P-V-N-P-P, segnando 6 gol e subendone 12. Ha perso le ultime 2 gare. In trasferta, nel bilancio stagionale, conta 1 vittoria e 2 sconfitte."
+      "Nelle ultime 4 partite di Ligue 1 il Monaco ha ottenuto 2 pareggi e 2 sconfitte (sequenza N-P-N-P), con 4 gol fatti e 7 subiti. In casa il bilancio stagionale riporta 2 pareggi e nessuna vittoria.",
+      "Nelle ultime 5 partite di Ligue 1 l'Auxerre ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-V-N-P-P), con 6 gol fatti e 12 subiti. Ha perso le ultime 2. In trasferta il bilancio stagionale è di 1 vittoria e 2 sconfitte."
      ],
      "bullets": []
     },
@@ -2727,8 +2727,8 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Monaco 1,3, Auxerre 1,4 a partita.",
-      "Gol subiti finora: Monaco 10, Auxerre 23.",
+      "Media gol segnati: Monaco 1,3, Auxerre 1,3 a partita.",
+      "Gol subiti finora: Monaco 10, Auxerre 24.",
       "In 3 delle ultime 5 partite dell'Auxerre si sono segnati almeno tre gol."
      ]
     }
@@ -2740,11 +2740,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -10359,7 +10359,7 @@
    ]
   },
   "fb:560634": {
-   "fingerprint": "1gnssg7",
+   "fingerprint": "u6w5qs",
    "sections": [
     {
      "id": "resoconto",
@@ -10371,7 +10371,7 @@
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora, l'Everton è al 5° posto con 16 punti, mentre il Coventry City è al 16° con 9. Per l'intera graduatoria consulta la [classifica completa](/calcio/premier-league/classifica)."
+      "Con le partite giocate finora, l'Everton occupa il 5° posto con 16 punti, mentre il Coventry City è al 17° con 9. Puoi consultare la [classifica completa](/calcio/premier-league/classifica)."
      ],
      "bullets": []
     },
@@ -10503,26 +10503,26 @@
    ]
   },
   "fb:560641": {
-   "fingerprint": "138hx7t",
+   "fingerprint": "1tjnnvf",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Nottingham Forest ha battuto il Manchester City 3-1 in casa. La partita, valida per la 10ª giornata di Premier League, si è giocata sabato 7 novembre; il primo tempo si era chiuso 2-0."
+      "Il Nottingham Forest ha battuto in casa il Manchester City per 3-1. La partita, valida per la 10ª giornata di Premier League, si è giocata sabato 7 novembre; il primo tempo si era concluso sul 2-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Nottingham Forest è al 19° posto con 6 punti, mentre il Manchester City è al 2° con 21. [Vai alla classifica completa](/calcio/premier-league/classifica)."
+      "Con le partite giocate finora il Nottingham Forest è al 16° posto con 9 punti, mentre il Manchester City è al 2° con 21. Puoi consultare la [classifica completa](/calcio/premier-league/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il Nottingham Forest tornerà in campo sabato 21 novembre alle 16:00, in trasferta contro il Bournemouth. Il Manchester City tornerà in campo sabato 21 novembre alle 13:30, in casa contro il Fulham."
+      "Il Nottingham Forest tornerà in campo sabato 21 novembre alle 16:00 in trasferta contro il Bournemouth. Il Manchester City giocherà sabato 21 novembre alle 13:30 in casa contro il Fulham."
      ],
      "bullets": []
     }
@@ -10626,19 +10626,19 @@
    ]
   },
   "fb:564739": {
-   "fingerprint": "1nn3a2s",
+   "fingerprint": "fk9n0c",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Osasuna e Athletic si dividono la posta con un pareggio per 1-1. La partita, valida per la 12ª giornata di LaLiga, si è giocata sabato 7 novembre; il primo tempo si era chiuso sullo 0-0."
+      "L'Osasuna e l'Athletic hanno chiuso il match con il punteggio di 1-1. La sfida, valida per la 12ª giornata di LaLiga, si è disputata sabato 7 novembre; al termine del primo tempo il risultato era di 0-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora l'Osasuna è al 16° posto con 11 punti, mentre l'Athletic è al 7° con 15. [Consulta la classifica completa](/calcio/liga/classifica)."
+      "Dopo le partite disputate finora, l'Osasuna occupa il 16° posto con 12 punti, mentre l'Athletic è al 7° posto con 16. [Vai alla classifica completa](/calcio/liga/classifica)."
      ],
      "bullets": []
     }
@@ -10655,7 +10655,7 @@
    ]
   },
   "fb:565852": {
-   "fingerprint": "xbi8lj",
+   "fingerprint": "1iovo7j",
    "sections": [
     {
      "id": "resoconto",
@@ -10667,14 +10667,14 @@
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora l'HSV è al 9° posto con 12 punti, mentre il M'gladbach è al 18° con 4. Puoi consultare la [classifica completa](/calcio/bundesliga/classifica)."
+      "Con le partite giocate finora l'HSV è al 10° posto con 12 punti, mentre il M'gladbach è al 18° con 4. Puoi consultare la [classifica completa](/calcio/bundesliga/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il M'gladbach tornerà in campo sabato 21 novembre alle 15:30, ospitando il Dortmund."
+      "Il M'gladbach tornerà in campo sabato 21 novembre alle 15:30, in casa contro il Dortmund."
      ],
      "bullets": []
     }
@@ -10686,31 +10686,31 @@
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
+     "a": "Puoi consultarli nella pagina [Bundesliga](/calcio/bundesliga)."
     }
    ]
   },
   "fb:565851": {
-   "fingerprint": "1xo50t1",
+   "fingerprint": "1nsu1kp",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Bayern Monaco ha vinto in trasferta di misura contro il Mainz, imponendosi 1-2. La partita, valida per la 9ª giornata di Bundesliga, si è giocata sabato 7 novembre; il primo tempo si era chiuso 0-1."
+      "Il Bayern Monaco ha vinto di misura in trasferta contro il Mainz, con il punteggio di 1-2. La partita, valida per la 9ª giornata di Bundesliga, si è giocata sabato 7 novembre; il primo tempo si era chiuso 0-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Mainz è al 10° posto con 10 punti, mentre il Bayern Monaco è al 1° con 21. [Consulta la classifica completa](/calcio/bundesliga/classifica)."
+      "Con le partite giocate finora il Mainz occupa l'11° posto con 10 punti, mentre il Bayern Monaco è al 1° posto con 21. [Consulta la classifica completa](/calcio/bundesliga/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il Bayern Monaco tornerà in campo venerdì 20 novembre alle 20:30 in casa contro il 1. FC Köln."
+      "Il Bayern Monaco tornerà in campo venerdì 20 novembre alle 20:30, giocando in casa contro il 1. FC Köln."
      ],
      "bullets": []
     }
@@ -10763,7 +10763,7 @@
    ]
   },
   "fb:565848": {
-   "fingerprint": "l1dgxs",
+   "fingerprint": "15tsn41",
    "sections": [
     {
      "id": "resoconto",
@@ -10775,14 +10775,14 @@
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il RB Leipzig è al 3° posto con 18 punti, mentre l'Augsburg è al 12° con 9. La [classifica completa](/calcio/bundesliga/classifica) è disponibile sul sito."
+      "Con le partite giocate finora il RB Leipzig è al 3° posto con 18 punti, mentre l'Augsburg è al 13° con 9. Per consultare la graduatoria aggiornata, vedi la [classifica completa](/calcio/bundesliga/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il RB Leipzig tornerà in campo sabato 21 novembre alle 15:30, in trasferta contro l'Union Berlin."
+      "Il RB Leipzig tornerà in campo sabato 21 novembre alle 15:30 in trasferta contro l'Union Berlin."
      ],
      "bullets": []
     }
@@ -10799,26 +10799,26 @@
    ]
   },
   "fb:565853": {
-   "fingerprint": "1pa0pek",
+   "fingerprint": "1wce13y",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Lo SC Paderborn e il Frankfurt pareggiano 2-2. La gara, valida per la 9ª giornata di Bundesliga, si è disputata sabato 7 novembre; il primo tempo era terminato 1-1."
+      "Lo SC Paderborn e il Frankfurt hanno pareggiato 2-2 in una gara valida per la 9ª giornata di Bundesliga, disputata sabato 7 novembre. Al termine del primo tempo il punteggio era di 1-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Dopo le partite disputate finora, lo SC Paderborn occupa l'11° posto con 10 punti, mentre il Frankfurt è all'8° posto con 12. [Vai alla classifica completa](/calcio/bundesliga/classifica)."
+      "Dopo le partite disputate finora, lo SC Paderborn occupa il 12° posto con 10 punti, mentre il Frankfurt è al 9° posto con 12 punti. [Consulta la classifica completa](/calcio/bundesliga/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Lo SC Paderborn tornerà in campo sabato 21 novembre alle 15:30, in trasferta contro il Leverkusen. Il Frankfurt giocherà sabato 21 novembre alle 15:30 in casa contro l'Hoffenheim."
+      "Lo SC Paderborn tornerà in campo sabato 21 novembre alle 15:30, in trasferta contro il Leverkusen. Anche il Frankfurt giocherà sabato 21 novembre alle 15:30, ma in casa contro l'Hoffenheim."
      ],
      "bullets": []
     }
@@ -10826,7 +10826,43 @@
    "faq": [
     {
      "q": "Qual è stato il risultato di SC Paderborn – Frankfurt?",
-     "a": "2-2 (1-1 all'intervallo)."
+     "a": "Il match è terminato 2-2, con il punteggio di 1-1 all'intervallo."
+    },
+    {
+     "q": "Dove posso consultare gli altri risultati?",
+     "a": "Puoi trovarli nella pagina [Bundesliga](/calcio/bundesliga)."
+    }
+   ]
+  },
+  "fb:565849": {
+   "fingerprint": "oxg3li",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Lo Stuttgart si impone in casa sul Bremen per 1-0. La gara, valida per la 9ª giornata di Bundesliga, si è disputata sabato 7 novembre e il primo tempo si era già chiuso sul punteggio di 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite disputate finora, lo Stuttgart occupa l'8° posto con 12 punti, mentre il Bremen è al 5° con 15. [Consulta la classifica completa](/calcio/bundesliga/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Lo Stuttgart tornerà in campo sabato 21 novembre alle 18:30, in trasferta contro lo Schalke."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Stuttgart – Bremen?",
+     "a": "1-0 (1-0 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
@@ -10870,6 +10906,42 @@
     }
    ]
   },
+  "fb:559637": {
+   "fingerprint": "qkc5kw",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Paris FC si impone di misura in trasferta sull'Auxerre, con il risultato di 0-1. La sfida, valida per la 10ª giornata di Ligue 1, si è disputata sabato 7 novembre; il primo tempo si era chiuso 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite disputate finora, l'Auxerre occupa il 14° posto con 10 punti, mentre il Paris FC è al 2° con 20. [Classifica completa](/calcio/ligue-1/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Auxerre tornerà in campo sabato 21 novembre alle 20:45, in trasferta contro il Monaco."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Auxerre – Paris FC?",
+     "a": "0-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
+    }
+   ]
+  },
   "fb:558845": {
    "fingerprint": "w5hhi5",
    "sections": [
@@ -10906,6 +10978,71 @@
     }
    ]
   },
+  "fb:1001552217": {
+   "fingerprint": "fkgghu",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Sittard e Telstar si dividono la posta con un 2-2. La partita, valida per la 12ª giornata di Eredivisie, si è giocata sabato 7 novembre; il primo tempo si era chiuso 2-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Sittard è al 6° posto con 20 punti, mentre il Telstar è al 16° con 10. Puoi consultare la [classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Telstar tornerà in campo sabato 21 novembre alle 21:00 in casa contro lo Zwolle."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Sittard – Telstar?",
+     "a": "2-2 (2-2 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
+  "fb:1001552220": {
+   "fingerprint": "16efmes",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Den Haag ha battuto in casa lo Sparta per 3-1. Il match, valido per la 12ª giornata di Eredivisie, si è disputato sabato 7 novembre; il primo tempo era terminato 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Den Haag occupa il 17° posto con 9 punti, mentre lo Sparta è al 12° con 12. [Consulta la classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Den Haag – Sparta?",
+     "a": "3-1 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
   "fb:567353": {
    "fingerprint": "zzfj8d",
    "sections": [
@@ -10932,6 +11069,467 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
+    }
+   ]
+  },
+  "fb:567347": {
+   "fingerprint": "eex9aa",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il match si chiude 1-1: il Casa Pia, in vantaggio all'intervallo per 0-1, viene raggiunto nella ripresa dall'Alverca. La sfida, valida per la 11ª giornata di Primeira Liga, si è disputata sabato 7 novembre."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Alla luce delle partite disputate finora, l'Alverca occupa l'11° posto con 11 punti, mentre il Casa Pia è al 17° con 7. [Consulta la classifica completa](/calcio/primeira-liga/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Alverca – Casa Pia?",
+     "a": "1-1 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina di [Primeira Liga](/calcio/primeira-liga)."
+    }
+   ]
+  },
+  "fb:561932": {
+   "fingerprint": "1hw4r89",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Derby County ha ribaltato la partita e ha vinto in casa per 3-1 contro il Bolton. Il match, valido per la 15ª giornata di Championship, si è disputato venerdì 6 novembre; al termine del primo tempo il punteggio era 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, il Derby County occupa il 23° posto con 10 punti, mentre il Bolton è al 18° con 17. Consulta la [classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Derby County tornerà in campo sabato 21 novembre alle 13:30, in trasferta contro il Southampton. Il Bolton giocherà sabato 21 novembre alle 16:00 in casa contro il Portsmouth."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Derby County – Bolton?",
+     "a": "Il risultato finale è 3-1, con 0-1 al termine del primo tempo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561939": {
+   "fingerprint": "ywwqel",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Norwich ha vinto in trasferta contro il Bristol City con il punteggio di 0-5. La partita, valida per la 15ª giornata di Championship, si è giocata sabato 7 novembre; il primo tempo si era chiuso 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Bristol City è al 17° posto con 18 punti, mentre il Norwich è al 12° con 21. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Bristol City tornerà in campo sabato 21 novembre alle 16:00 in trasferta contro il Middlesbrough. Il Norwich tornerà in campo sabato 21 novembre alle 13:30 in casa contro il Cardiff."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Bristol City – Norwich?",
+     "a": "0-5 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina di [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561938": {
+   "fingerprint": "1iapzcc",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Lo Stoke ribalta il risultato e vince 1-2 in trasferta sul campo del Portsmouth, dopo essere stato in svantaggio all'intervallo. La gara, valida per la 15ª giornata di Championship, si è disputata sabato 7 novembre; il primo tempo era terminato 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, il Portsmouth occupa l'11° posto con 22 punti, mentre lo Stoke è al 3° con 29. [Vai alla classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Portsmouth tornerà in campo sabato 21 novembre alle 16:00, in trasferta contro il Bolton. Lo Stoke scenderà in campo sabato 21 novembre alle 16:00, in casa contro il Birmingham."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Portsmouth – Stoke?",
+     "a": "1-2 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:1001563262": {
+   "fingerprint": "1wnfo42",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Wrexham e il Wolverhampton hanno chiuso la sfida con il punteggio di 1-1. La partita, valida per la 15ª giornata di Championship, si è giocata sabato 7 novembre; il primo tempo era già terminato 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Wrexham occupa il 15° posto con 18 punti, mentre il Wolverhampton è al 4° con 28. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Wrexham tornerà in campo sabato 21 novembre alle 16:00 in trasferta contro il Lincoln City. Il Wolverhampton tornerà in campo sabato 21 novembre alle 16:00 in casa contro il Charlton."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Wrexham – Wolverhampton?",
+     "a": "Il risultato finale è 1-1, con lo stesso punteggio già all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561934": {
+   "fingerprint": "q49rs5",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Watford e il Middlesbrough hanno chiuso la sfida a reti inviolate: 0-0. La partita, valida per la 15ª giornata di Championship, si è giocata sabato 7 novembre; anche il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Watford occupa il 20° posto con 15 punti, mentre il Middlesbrough è al 2° con 29. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Watford tornerà in campo sabato 21 novembre alle 16:00 in trasferta contro lo Sheffield Utd. Il Middlesbrough giocherà sabato 21 novembre alle 16:00 in casa contro il Bristol City."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Watford – Middlesbrough?",
+     "a": "È finita 0-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561930": {
+   "fingerprint": "14nyid6",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Cardiff ribalta la partita dopo il primo tempo e si impone in casa per 5-4 sul Burnley. La sfida, valida per la 15ª giornata di Championship, si è disputata sabato 7 novembre; alla fine del primo tempo il punteggio era 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite disputate finora il Cardiff occupa il 14° posto con 18 punti, mentre il Burnley è al 22° con 10. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Cardiff tornerà in campo sabato 21 novembre alle 13:30, in trasferta contro il Norwich."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Cardiff – Burnley?",
+     "a": "5-4 (1-2 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561940": {
+   "fingerprint": "gb8dke",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Birmingham vince di misura in casa contro lo Swansea per 2-1. La partita, valida per la 15ª giornata di Championship, si è giocata sabato 7 novembre; all'intervallo il punteggio era 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Birmingham è al 1° posto con 29 punti, mentre lo Swansea è al 6° con 26. [Vedi la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Birmingham tornerà in campo sabato 21 novembre alle 16:00 in trasferta contro lo Stoke. Lo Swansea tornerà in campo sabato 21 novembre alle 16:00 in casa contro il West Brom."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Birmingham – Swansea?",
+     "a": "2-1 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561937": {
+   "fingerprint": "1a7bkd1",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Preston NE si impone di misura in casa sul Southampton per 1-0. La gara, valida per la 15ª giornata di Championship, si è giocata sabato 7 novembre; al termine del primo tempo il punteggio era già 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Preston NE occupa il 24° posto con 8 punti, mentre il Southampton è al 7° con 24. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Preston NE tornerà in campo sabato 21 novembre alle 16:00 in trasferta contro il West Ham. Il Southampton giocherà sabato 21 novembre alle 13:30 in casa contro il Derby County."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Preston NE – Southampton?",
+     "a": "Il risultato finale è 1-0, con lo stesso punteggio già registrato all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561936": {
+   "fingerprint": "hskdog",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il West Brom ha vinto con ampio margine in casa contro il Millwall, imponendosi 3-0. Il match, valido per la 15ª giornata di Championship, si è disputato sabato 7 novembre; il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, il West Brom occupa il 5° posto con 28 punti, mentre il Millwall è al 16° posto con 18 punti. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il West Brom tornerà in campo sabato 21 novembre alle 16:00, in trasferta contro lo Swansea. Il Millwall giocherà sabato 21 novembre alle 13:30, in casa contro il QPR."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Qual è stato il risultato di West Brom – Millwall?",
+     "a": "Il West Brom ha vinto 3-0; il punteggio era 0-0 all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561935": {
+   "fingerprint": "htl2b2",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Blackburn ha battuto in casa il West Ham per 2-1. La sfida, valida per la 15ª giornata di Championship, si è disputata sabato 7 novembre; il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, il Blackburn occupa il 13° posto con 21 punti, mentre il West Ham è al 9° con 23. [Vai alla classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il West Ham tornerà in campo sabato 21 novembre alle 16:00, ospitando il Preston NE."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Blackburn – West Ham?",
+     "a": "2-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:1001563259": {
+   "fingerprint": "18x0uiq",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Vittoria di misura del QPR tra le mura amiche, con il punteggio di 2-1 sul Lincoln City. La partita, valida per la 15ª giornata di Championship, si è giocata sabato 7 novembre; il primo tempo si era chiuso sull'1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il QPR è all'8° posto con 24 punti, mentre il Lincoln City è al 21° con 15. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il QPR tornerà in campo sabato 21 novembre alle 13:30 in trasferta contro il Millwall. Il Lincoln City tornerà in campo sabato 21 novembre alle 16:00 in casa contro il Wrexham."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita QPR – Lincoln City?",
+     "a": "2-1 (1-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561931": {
+   "fingerprint": "1w03yn1",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Charlton ha battuto lo Sheffield Utd per 2-1 in casa. La partita, valida per la 15ª giornata di Championship, si è giocata sabato 7 novembre; il primo tempo era terminato 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Charlton occupa il 19° posto con 17 punti, mentre lo Sheffield Utd è al 10° con 22. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Charlton tornerà in campo sabato 21 novembre alle 16:00 in trasferta contro il Wolverhampton. Lo Sheffield Utd scenderà in campo sabato 21 novembre alle 16:00 in casa contro il Watford."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Charlton – Sheffield Utd?",
+     "a": "2-1 (1-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
     }
    ]
   },
