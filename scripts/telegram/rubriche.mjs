@@ -1,6 +1,7 @@
 // The rubrics of the Telegram channel: when each one goes out (Rome time) and how its post is built from the site's
-// data. Every builder returns the HTML text of the post, or null when there is nothing to say (no matches, data not
-// ready): the rubric is then skipped, never sent empty. Texts are informative only (see the compliance filter in lib.mjs).
+// data. Every builder returns { text: HTML caption, card: image data (scripts/telegram/cards.mjs) }, a list of them
+// (event rubrics), or null when there is nothing to say (no matches, data not ready): the rubric is then skipped, never
+// sent empty. Texts are informative only (see the compliance filter in lib.mjs).
 import fs from "node:fs";
 import path from "node:path";
 import { teamGoalStats } from "../../src/lib/goalStats.mjs";
@@ -43,10 +44,24 @@ const slugify = (s) =>
 const compSlug = (data, name) => data.football?.competitions?.find((c) => c.name === name)?.slug ?? slugify(name);
 
 const dayOf = (e) => rome(Date.parse(e.kickoff)).day;
+/** Ids of the matches in the current data: the archive can still hold a match under an older id (stale duplicate). */
+const currentIds = (data) => new Set((data.football?.competitions ?? []).flatMap((c) => c.matches.map((m) => m.id)));
 const open = (e) => !e.void && e.prediction?.p;
 const p1x2 = (p) => `1 ${pct(p[0])} · X ${pct(p[1])} · 2 ${pct(p[2])}`;
 const timeOf = (e) => rome(Date.parse(e.kickoff)).time;
 const post = (...parts) => [...parts.filter((x) => x !== null && x !== undefined && x !== ""), FOOTER].join("\n\n");
+
+/** Football entries grouped by competition, in the order of the lists (for the cards). */
+function groups(entries, row) {
+  const out = [];
+  for (const e of [...entries].sort(byCompThenTime)) {
+    const last = out.at(-1);
+    if (last?.name === e.where) last.matches.push(row(e));
+    else out.push({ name: e.where, matches: [row(e)] });
+  }
+  return out;
+}
+const matchRow = (e) => ({ time: timeOf(e), label: e.label, p: e.prediction.p });
 
 /** Groups football entries by competition, max `limit` matches in all; returns the lines and how many were left out. */
 function listByCompetition(entries, line, limit = 14) {
@@ -91,6 +106,7 @@ function nextSerieARound(data, nowMs) {
   return { sa, n, matches, open: matches.filter((m) => Date.parse(m.utcDate) > nowMs) };
 }
 const shortName = (t) => t.shortName.replace(/ FC$/, "");
+const capital = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
 // ---------------------------------------------------------------------------------------------- rubrics
 export const RUBRICHE = [
@@ -100,16 +116,28 @@ export const RUBRICHE = [
     days: EVERY_DAY,
     time: "09:30",
     build({ data, today, nowMs }) {
-      const list = data.archive.calcio.filter((e) => open(e) && dayOf(e) === today && Date.parse(e.kickoff) > nowMs);
+      const ids = currentIds(data);
+      const list = data.archive.calcio.filter(
+        (e) => open(e) && ids.has(e.id) && dayOf(e) === today && Date.parse(e.kickoff) > nowMs,
+      );
       if (!list.length) return null;
       const { text, more } = listByCompetition(list, (e) => `${timeOf(e)} ${esc(e.label)}\n${p1x2(e.prediction.p)}`);
-      return post(
-        `⚽ <b>Le partite di oggi</b> – ${dayLabel(today)}`,
-        "Le probabilità 1X2 del modello statistico per le partite di oggi.",
-        text,
-        more > 0 ? `…e altre ${more} partite sul sito.` : null,
-        `Analisi complete, Under/Over e Goal: ${anchor("/pronostici/oggi", "pronostici di oggi", "partite-oggi")}`,
-      );
+      return {
+        text: post(
+          `⚽ <b>Le partite di oggi</b> – ${dayLabel(today)}`,
+          "Le probabilità 1X2 del modello statistico per le partite di oggi.",
+          text,
+          more > 0 ? `…e altre ${more} partite sul sito.` : null,
+          `Analisi complete, Under/Over e Goal: ${anchor("/pronostici/oggi", "pronostici di oggi", "partite-oggi")}`,
+        ),
+        card: {
+          type: "matchList",
+          badge: "Partite di oggi",
+          title: "Le partite di oggi",
+          subtitle: `${capital(dayLabel(today))} · probabilità 1X2 del modello`,
+          groups: groups(list, matchRow),
+        },
+      };
     },
   },
   {
@@ -139,7 +167,7 @@ export const RUBRICHE = [
         ...graded(data.archive.nba, to - 30 * 86400000, to),
       ];
       const h30 = last30.filter((e) => e.hit).length;
-      return post(
+      const caption = post(
         `📊 <b>Track record del weekend</b> (${dayLabel(addDays(today, -3))} – ${dayLabel(addDays(today, -1))})`,
         `L'esito indicato come più probabile dal modello si è verificato in <b>${hits} partite su ${list.length}</b> (${pct(hits / list.length)}).`,
         rows.join("\n"),
@@ -147,6 +175,21 @@ export const RUBRICHE = [
         "Contano i pronostici così come erano pubblicati prima del calcio d'inizio, anche quando vanno male.",
         `Archivio completo e calibrazione del modello: ${anchor("/metodologia#calibrazione", "metodologia", "track-record")}`,
       );
+      return {
+        text: caption,
+        card: {
+          type: "trackRecord",
+          badge: "Track record",
+          title: "Il weekend del modello",
+          subtitle: `Da ${dayLabel(addDays(today, -3))} a ${dayLabel(addDays(today, -1))}`,
+          hits,
+          n: list.length,
+          rows: [...groups]
+            .sort((a, b) => rank(a[0]) - rank(b[0]) || b[1].n - a[1].n)
+            .map(([name, g]) => ({ name, ...g })),
+          last30: last30.length ? { hits: h30, n: last30.length } : null,
+        },
+      };
     },
   },
   {
@@ -165,6 +208,16 @@ export const RUBRICHE = [
           ...g.paragraphs.map(esc),
           `Approfondisci: ${anchor(`/guide/${g.slug}`, g.linkText, "academy")}`,
         ),
+        card: {
+          type: "academy",
+          badge: "Academy",
+          title: g.title,
+          titleSize: 56,
+          subtitle: "Le guide di QuotaGuru, senza scorciatoie",
+          slug: g.slug,
+          lead: g.paragraphs[0],
+          rest: g.paragraphs.slice(1),
+        },
         after: () => {
           register.data.academy = { ...register.data.academy, [mode]: i + 1 };
         },
@@ -177,8 +230,9 @@ export const RUBRICHE = [
     days: [2, 3, 4],
     time: "12:00",
     build({ data, today, nowMs }) {
+      const ids = currentIds(data);
       const list = data.archive.calcio.filter(
-        (e) => open(e) && CUPS.has(e.where) && dayOf(e) === today && Date.parse(e.kickoff) > nowMs,
+        (e) => open(e) && ids.has(e.id) && CUPS.has(e.where) && dayOf(e) === today && Date.parse(e.kickoff) > nowMs,
       );
       if (!list.length) return null;
       const comps = [...new Set(list.map((e) => e.where))].sort((a, b) => rank(a) - rank(b));
@@ -188,12 +242,26 @@ export const RUBRICHE = [
           `${timeOf(e)} ${esc(e.label)}\n${p1x2(e.prediction.p)}${e.prediction.xg ? ` · gol attesi ${(e.prediction.xg[0] + e.prediction.xg[1]).toFixed(1).replace(".", ",")}` : ""}`,
         18,
       );
-      return post(
-        `🏆 <b>${comps.join(", ")}</b> – le partite di stasera`,
-        text,
-        more > 0 ? `…e altre ${more} partite sul sito.` : null,
-        `Tutte le probabilità: ${anchor(`/pronostici/${compSlug(data, comps[0])}`, `pronostici ${comps[0]}`, "coppe")}`,
-      );
+      return {
+        text: post(
+          `🏆 <b>${comps.join(", ")}</b> – le partite di stasera`,
+          text,
+          more > 0 ? `…e altre ${more} partite sul sito.` : null,
+          `Tutte le probabilità: ${anchor(`/pronostici/${compSlug(data, comps[0])}`, `pronostici ${comps[0]}`, "coppe")}`,
+        ),
+        card: {
+          type: "matchList",
+          badge: "Coppe europee",
+          title: comps.length === 1 ? comps[0] : "Coppe europee, stasera",
+          subtitle: `${capital(dayLabel(today))} · probabilità 1X2 e gol attesi`,
+          groups: groups(list, (e) => ({
+            ...matchRow(e),
+            note: e.prediction.xg
+              ? `gol attesi ${(e.prediction.xg[0] + e.prediction.xg[1]).toFixed(1).replace(".", ",")}`
+              : null,
+          })),
+        },
+      };
     },
   },
   {
@@ -219,15 +287,17 @@ export const RUBRICHE = [
         .map(([id, name]) => ({ name, last: teamGoalStats(results, id, 5).last }))
         .filter((s) => s.last.n >= 5);
       if (stats.length < 10) return null;
+      const best = (key, dir = -1) =>
+        [...stats].sort((a, b) => dir * (key(a) - key(b)) || a.name.localeCompare(b.name)).slice(0, 3);
+      const rowsOf = (key, dir) =>
+        best(key, dir).map((s) => ({ team: s.name, count: Math.round(key(s) * s.last.n), n: s.last.n }));
       const top = (key, dir = -1) =>
-        [...stats]
-          .sort((a, b) => dir * (key(a) - key(b)) || a.name.localeCompare(b.name))
-          .slice(0, 3)
-          .map((s) => `${esc(s.name)} ${Math.round(key(s) * s.last.n)} su ${s.last.n}`)
+        rowsOf(key, dir)
+          .map((r) => `${esc(r.team)} ${r.count} su ${r.n}`)
           .join(" · ");
       const over = (s) => s.last.over[1] / s.last.n;
       const btts = (s) => s.btts / s.n;
-      return post(
+      const caption = post(
         "🔢 <b>Numeri della settimana</b> – Serie A, ultime 5 partite",
         `<b>Più Over 2,5</b>\n${top(over)}`,
         `<b>Più partite con Goal</b> (segnano entrambe)\n${top((s) => btts(s.last))}`,
@@ -235,6 +305,20 @@ export const RUBRICHE = [
         "Statistiche, non previsioni: cinque partite sono poche e i numeri oscillano molto.",
         `Tutte le squadre: ${anchor(`/calcio/${sa.slug}/statistiche-under-over`, "statistiche Under/Over e Goal", "numeri")}`,
       );
+      return {
+        text: caption,
+        card: {
+          type: "numbers",
+          badge: "Numeri",
+          title: "I numeri della settimana",
+          subtitle: "Serie A, le ultime 5 partite di ogni squadra",
+          panels: [
+            { title: "Più Over 2,5", note: "partite con almeno 3 gol", rows: rowsOf(over) },
+            { title: "Più partite con Goal", note: "segnano entrambe le squadre", rows: rowsOf((s) => btts(s.last)) },
+            { title: "Meno Over 2,5", note: "partite con al massimo 2 gol", rows: rowsOf(over, 1), color: "#7F93AE" },
+          ],
+        },
+      };
     },
   },
   {
@@ -252,12 +336,24 @@ export const RUBRICHE = [
         const fav = e.prediction.p[0] >= e.prediction.p[1] ? 0 : 1;
         return `${timeOf(e)} ${esc(e.label)}\nPiù probabile: ${esc(fav === 0 ? home : away)}, ${pct(e.prediction.p[fav])}`;
       });
-      return post(
-        "🏀 <b>NBA, le partite della notte</b>",
-        lines.join("\n\n"),
-        list.length > 12 ? `…e altre ${list.length - 12} partite sul sito.` : null,
-        `Punti attesi e handicap: ${anchor("/pronostici/nba", "pronostici NBA", "nba")}`,
-      );
+      return {
+        text: post(
+          "🏀 <b>NBA, le partite della notte</b>",
+          lines.join("\n\n"),
+          list.length > 12 ? `…e altre ${list.length - 12} partite sul sito.` : null,
+          `Punti attesi e handicap: ${anchor("/pronostici/nba", "pronostici NBA", "nba")}`,
+        ),
+        card: {
+          type: "nba",
+          badge: "NBA",
+          title: "NBA, le partite della notte",
+          subtitle: "Probabilità di vittoria del modello · orari italiani",
+          games: list.map((e) => {
+            const [home, away] = e.label.split(" – ");
+            return { time: timeOf(e), home, away, p: e.prediction.p };
+          }),
+        },
+      };
     },
   },
   {
@@ -281,7 +377,7 @@ export const RUBRICHE = [
       const all = list
         .map((x) => `${esc(shortDayTime(x.m.utcDate))} ${esc(name(x))}\n${p1x2(x.e.prediction.p)}`)
         .join("\n");
-      return post(
+      const caption = post(
         `🇮🇹 <b>Serie A, ${round.n}ª giornata</b> – cosa dice il modello`,
         [
           `Più probabile: <b>${esc(name(fav))}</b>, ${sign(fav)} al ${pct(maxP(fav))}`,
@@ -295,6 +391,23 @@ export const RUBRICHE = [
         all,
         `Probabilità, quota equa e Under/Over di ogni partita: ${anchor(`/pronostici/${round.sa.slug}/giornata-${round.n}`, `${round.n}ª giornata`, "anteprima-serie-a")}`,
       );
+      return {
+        text: caption,
+        card: {
+          type: "preview",
+          badge: "Anteprima",
+          title: `Serie A, ${round.n}ª giornata`,
+          subtitle: "Cosa dice il modello, partita per partita",
+          highlights: [
+            { label: "Più probabile", match: name(fav), value: `${sign(fav)} al ${pct(maxP(fav))}` },
+            { label: "Più incerta", match: name(uncertain), value: `max ${pct(maxP(uncertain))}`, color: "#FBBF24" },
+            goals(most)
+              ? { label: "Più gol attesi", match: name(most), value: `${goals(most).toFixed(1).replace(".", ",")} gol` }
+              : null,
+          ].filter(Boolean),
+          matches: list.map((x) => ({ when: shortDayTime(x.m.utcDate), label: name(x), p: x.e.prediction.p })),
+        },
+      };
     },
   },
   {
@@ -307,18 +420,37 @@ export const RUBRICHE = [
       if (!round || round.open.length < 5) return null;
       const dates = round.matches.map((m) => m.utcDate);
       let note = null;
-      const lines = round.open.map((m) => {
+      const tvRows = round.open.map((m) => {
         const b = footballBroadcast(round.sa.slug, m.utcDate, dates);
         if (b?.note) note = b.note;
-        return `${esc(shortDayTime(m.utcDate))} ${esc(shortName(m.homeTeam))} – ${esc(shortName(m.awayTeam))}: ${esc(b?.channels ?? "da definire")}`;
+        return { m, channels: b?.channels ?? "da definire" };
       });
-      return post(
+      const lines = tvRows.map(
+        ({ m, channels }) =>
+          `${esc(shortDayTime(m.utcDate))} ${esc(shortName(m.homeTeam))} – ${esc(shortName(m.awayTeam))}: ${esc(channels)}`,
+      );
+      const caption = post(
         `📺 <b>Serie A, ${round.n}ª giornata: dove vederla in TV</b>`,
         lines.join("\n"),
         note ? esc(note) : null,
         "Secondo gli accordi sui diritti TV della stagione 2026/27; controlla sempre il palinsesto ufficiale.",
         `Calendario e pronostici: ${anchor(`/pronostici/${round.sa.slug}/giornata-${round.n}`, `${round.n}ª giornata`, "dove-vederla")}`,
       );
+      return {
+        text: caption,
+        card: {
+          type: "tv",
+          badge: "Dove vederla",
+          title: `${round.n}ª giornata in TV`,
+          subtitle: "Serie A · secondo gli accordi sui diritti 2026/27",
+          matches: tvRows.map(({ m, channels }) => ({
+            when: shortDayTime(m.utcDate),
+            label: `${shortName(m.homeTeam)} – ${shortName(m.awayTeam)}`,
+            channels: channels.split(/\s*(?:,|\be\b|\+)\s*/).filter(Boolean),
+          })),
+          note: [note, "Controlla sempre il palinsesto ufficiale."].filter(Boolean).join(" "),
+        },
+      };
     },
   },
   {
@@ -355,12 +487,32 @@ export const RUBRICHE = [
       const scorers = (sa.leaders?.scorers ?? [])
         .slice(0, 5)
         .map((p, i) => `${i + 1}. ${esc(p.name)} (${esc(p.team.shortName)}) ${p.goals}`);
-      return post(
+      const caption = post(
         `📋 <b>Serie A, la classifica</b> dopo ${Math.max(...table.map((r) => r.playedGames))} giornate`,
         rows.join("\n"),
         scorers.length ? `<b>Marcatori</b>\n${scorers.join("\n")}` : null,
         `${anchor(`/calcio/${sa.slug}/classifica`, "Classifica completa", "classifica")} · ${anchor(`/calcio/${sa.slug}/marcatori`, "marcatori e assist", "classifica")}`,
       );
+      return {
+        text: caption,
+        card: {
+          type: "standings",
+          badge: "Classifica",
+          title: "Serie A, la classifica",
+          subtitle: `Dopo ${Math.max(...table.map((r) => r.playedGames))} giornate`,
+          zones: { top: 4, bottom: 3 },
+          rows: table.map((r) => ({
+            pos: r.position,
+            team: shortName(r.team),
+            played: r.playedGames,
+            gd: r.goalDifference,
+            points: r.points,
+          })),
+          scorers: (sa.leaders?.scorers ?? [])
+            .slice(0, 3)
+            .map((p) => ({ name: p.name, team: p.team.shortName, goals: p.goals })),
+        },
+      };
     },
   },
 ];
@@ -397,6 +549,17 @@ function lineupPosts({ data, nowMs }) {
         .join("\n");
     posts.push({
       key: String(x.id),
+      card: {
+        type: "lineups",
+        badge: "Formazioni",
+        title: `${home} – ${away}`,
+        subtitle: `${site.c.name} · ore ${rome(ko).time} · formazioni ufficiali`,
+        teams: [
+          { name: home, ...x.lineups.home },
+          { name: away, ...x.lineups.away },
+        ],
+        p: e?.prediction?.p ?? null,
+      },
       text: post(
         `📋 <b>Formazioni ufficiali</b> – ${esc(home)} – ${esc(away)}`,
         `${esc(site.c.name)}, ore ${rome(ko).time}`,
@@ -421,11 +584,27 @@ function results({ data, today }, campaign) {
       `${e.hit ? "✅" : "❌"} ${esc(e.label)} ${e.result.home}-${e.result.away} (modello: ${esc(e.pick.label.split(" · ")[0])} al ${pct(e.pick.prob)})`,
     16,
   );
-  return post(
-    `📈 <b>Risultati di oggi e modello</b> – ${dayLabel(today)}`,
-    `Esito più probabile verificato in <b>${hits} partite su ${list.length}</b>.`,
-    text,
-    more > 0 ? `…e altre ${more} partite nell'archivio.` : null,
-    `Ogni pronostico resta pubblicato con il suo esito: ${anchor("/metodologia#calibrazione", "archivio e track record", campaign)}`,
-  );
+  return {
+    text: post(
+      `📈 <b>Risultati di oggi e modello</b> – ${dayLabel(today)}`,
+      `Esito più probabile verificato in <b>${hits} partite su ${list.length}</b>.`,
+      text,
+      more > 0 ? `…e altre ${more} partite nell'archivio.` : null,
+      `Ogni pronostico resta pubblicato con il suo esito: ${anchor("/metodologia#calibrazione", "archivio e track record", campaign)}`,
+    ),
+    card: {
+      type: "results",
+      badge: "Risultati",
+      title: "Risultati e modello",
+      subtitle: capital(dayLabel(today)),
+      hits,
+      n: list.length,
+      groups: groups(list, (e) => ({
+        label: e.label,
+        score: `${e.result.home}-${e.result.away}`,
+        hit: e.hit,
+        pick: `${e.pick.label.split(" · ")[0]} al ${pct(e.pick.prob)}`,
+      })),
+    },
+  };
 }
