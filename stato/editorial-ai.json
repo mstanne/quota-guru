@@ -10145,20 +10145,20 @@
   "at": "2026-11-05T21:21:05.186Z"
  },
  "fb:1001570443": {
-  "fingerprint": "puupk3",
+  "fingerprint": "ucnbij",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Atlético Madrid e Barcelona si sfidano domenica 8 novembre alle 21:00 nella 12ª giornata di LaLiga. Il match mette di fronte due squadre della parte alta della classifica: l'Atlético Madrid è al 2° posto con 28 punti, mentre il Barcelona occupa il 1° posto con 30."
+     "Atlético Madrid e Barcellona si affrontano domenica 8 novembre alle 21:00 per la 12ª giornata di LaLiga. Il match mette di fronte due squadre della parte alta della classifica: l'Atlético Madrid è al 2° posto con 28 punti, il Barcellona al 1° con 30."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di LaLiga, l'Atlético Madrid ha ottenuto 4 vittorie (sequenza V-V-V-V), segnando 6 gol e subendone 1. La squadra arriva da 4 successi consecutivi.",
-     "Nelle ultime 4 partite di LaLiga, il Barcelona ha ottenuto 3 vittorie e 1 sconfitta (sequenza V-V-P-V), con 15 gol fatti e 5 subiti."
+     "Nelle ultime 4 partite di LaLiga l'Atlético Madrid ha ottenuto 4 vittorie (sequenza V-V-V-V), segnando 6 gol e subendone 1. La squadra arriva da 4 vittorie consecutive.",
+     "Nelle ultime 4 partite di LaLiga il Barcellona ha ottenuto 3 vittorie e 1 sconfitta (sequenza V-V-P-V), segnando 15 gol e subendone 5."
     ],
     "bullets": []
    },
@@ -10166,18 +10166,18 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Atlético Madrid 2,0, Barcelona 4,2.",
-     "Gol subiti finora: Atlético Madrid 8, Barcelona 12.",
+     "Media gol segnati a partita: Atlético Madrid 2,0, Barcellona 4,2.",
+     "Gol subiti finora: Atlético Madrid 8, Barcellona 12.",
      "L'Atlético Madrid ha la miglior difesa del torneo.",
-     "Il Barcelona ha il miglior attacco del torneo.",
+     "Il Barcellona ha il miglior attacco del torneo.",
      "L'Atlético Madrid non ha subito gol in 3 delle ultime 4 partite.",
-     "In tutte le ultime 4 partite del Barcelona sono stati segnati almeno tre gol."
+     "In tutte le ultime 4 partite del Barcellona sono stati segnati almeno tre gol."
     ]
    }
   ],
   "faq": [
    {
-    "q": "Quando si gioca Atlético Madrid – Barcelona?",
+    "q": "Quando si gioca Atlético Madrid – Barcellona?",
     "a": "Domenica 8 novembre alle 21:00, ora italiana."
    },
    {
@@ -10190,23 +10190,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T00:22:09.435Z"
+  "at": "2026-11-07T10:09:53.948Z"
  },
  "fb:1001552816": {
-  "fingerprint": "1iyr3ar",
+  "fingerprint": "1trb060",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 15:00 il Rennes ospita il Lille nella 10ª giornata di Ligue 1. In classifica il Rennes occupa il 5° posto con 16 punti, mentre il Lille è al 2° con 18."
+     "Domenica 8 novembre alle 15:00 lo Stade Rennais ospita il Lille per la 10ª giornata di Ligue 1. In classifica lo Stade Rennais è al 5° posto con 16 punti, il Lille al 2° con 18."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Ligue 1 il Rennes ha ottenuto 2 vittorie e 2 sconfitte, con sequenza V-P-V-P, segnando 12 gol e subendone 10. In casa ha vinto tutte le 2 partite giocate.",
-     "Nelle ultime 4 partite di Ligue 1 il Lille ha ottenuto 2 vittorie e 2 pareggi, con sequenza V-N-N-V, segnando 4 gol e subendone 2. La squadra non perde da 4 partite."
+     "Nelle ultime 4 partite di Ligue 1 lo Stade Rennais ha raccolto 2 vittorie e 2 sconfitte (sequenza V-P-V-P), con 12 gol fatti e 10 subiti. In casa ha vinto tutte le 2 partite giocate.",
+     "Nelle ultime 4 partite di Ligue 1 il Lille ha raccolto 2 vittorie e 2 pareggi (sequenza V-N-N-V), con 4 gol fatti e 2 subiti. Non perde da 4 partite."
     ],
     "bullets": []
    },
@@ -10214,16 +10214,16 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Rennes 2,2, Lille 1,3.",
-     "Gol subiti finora: Rennes 19, Lille 6.",
+     "Media gol segnati: Stade Rennais 2,2, Lille 1,3 a partita.",
+     "Gol subiti finora: Stade Rennais 19, Lille 6.",
      "Il Lille ha la miglior difesa del torneo.",
-     "In tutte le ultime 4 partite del Rennes sono stati segnati almeno tre gol."
+     "In tutte le ultime 4 partite dello Stade Rennais si sono segnati almeno tre gol."
     ]
    }
   ],
   "faq": [
    {
-    "q": "Quando si gioca Rennes – Lille?",
+    "q": "Quando si gioca Stade Rennais – Lille?",
     "a": "Domenica 8 novembre alle 15:00, ora italiana."
    },
    {
@@ -10236,23 +10236,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T00:22:40.970Z"
+  "at": "2026-11-07T10:09:56.210Z"
  },
  "fb:1001552812": {
-  "fingerprint": "eofbhd",
+  "fingerprint": "19j4182",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 17:15 lo Stade Brestois 29 ospita l'Olympique Lyon nella 10ª giornata di Ligue 1. In classifica lo Stade Brestois 29 occupa l'11° posto con 12 punti, mentre l'Olympique Lyon è al 3° con 17."
+     "Domenica 8 novembre alle 17:15 il Brest ospita l'Olympique Lyon, in programma per la 10ª giornata di Ligue 1. Attualmente il Brest occupa l'11° posto con 12 punti, mentre l'Olympique Lyon è 3° con 17 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Ligue 1 lo Stade Brestois 29 ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-N-P-V), segnando 9 gol e subendone 4. In casa, nel bilancio stagionale, il dato è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 4 partite di Ligue 1 l'Olympique Lyon ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), con 5 gol segnati e 5 subiti. In trasferta ha perso tutte le 2 partite disputate."
+     "Nelle ultime 4 partite di Ligue 1 il Brest ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-N-P-V), segnando 9 gol e subendone 4. In casa, la stagione del Brest registra 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 4 partite di Ligue 1 l'Olympique Lyon ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), segnando 5 gol e subendone 5. In trasferta ha perso tutte le 2 partite giocate."
     ],
     "bullets": []
    },
@@ -10260,14 +10260,14 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Stade Brestois 29 1,8, Olympique Lyon 1,7.",
-     "Gol subiti finora: Stade Brestois 29 12, Olympique Lyon 7."
+     "Media gol segnati a partita: Brest 1,8, Olympique Lyon 1,7.",
+     "Gol subiti finora: Brest 12, Olympique Lyon 7."
     ]
    }
   ],
   "faq": [
    {
-    "q": "Quando si gioca Stade Brestois 29 – Olympique Lyon?",
+    "q": "Quando si gioca Brest – Olympique Lyon?",
     "a": "Domenica 8 novembre alle 17:15, ora italiana."
    },
    {
@@ -10276,11 +10276,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Puoi approfondire nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-06T23:16:09.349Z"
+  "at": "2026-11-07T10:09:59.896Z"
  },
  "fb:1001552217": {
   "fingerprint": "gbsrpu",
@@ -10335,20 +10335,20 @@
   "at": "2026-11-05T21:21:31.963Z"
  },
  "fb:1001552220": {
-  "fingerprint": "19qw9fi",
+  "fingerprint": "11kitvq",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Den Haag e Sparta Rotterdam si sfideranno sabato 7 novembre alle 18:45 nell'ambito della 12ª giornata di Eredivisie. In classifica il Den Haag occupa il 17° posto con 6 punti, mentre lo Sparta Rotterdam è all'11° con 12."
+     "Den Haag e Sparta si affrontano sabato 7 novembre alle 18:45 per la 12ª giornata di Eredivisie. In classifica il Den Haag occupa il 17° posto con 6 punti, mentre lo Sparta è all'11° posto con 12 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Eredivisie il Den Haag ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-V-P-P), segnando 6 gol e subendone 7. Ha perso le ultime 2 gare. In casa, nel corso della stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 4 partite di Eredivisie lo Sparta Rotterdam ha collezionato 2 vittorie, 1 pareggio e 1 sconfitta (sequenza N-V-P-V), con 10 gol fatti e 9 subiti. In trasferta, nel corso della stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 4 partite di Eredivisie il Den Haag ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-V-P-P), segnando 6 gol e subendone 7. Le ultime 2 partite sono state perse. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 4 partite di Eredivisie lo Sparta ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza N-V-P-V), segnando 10 gol e subendone 9. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -10356,52 +10356,52 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Den Haag 1,2, Sparta Rotterdam 1,8.",
-     "Gol subiti finora: Den Haag 24, Sparta Rotterdam 26.",
+     "Media gol segnati: Den Haag 1,2, Sparta 1,8 a partita.",
+     "Gol subiti finora: Den Haag 24, Sparta 26.",
      "In 3 delle ultime 4 partite del Den Haag sono stati segnati almeno tre gol.",
-     "In tutte le ultime 4 partite dello Sparta Rotterdam sono stati segnati almeno tre gol."
+     "In tutte le ultime 4 partite dello Sparta sono stati segnati almeno tre gol."
     ]
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 4 confronti diretti il bilancio è di 1 vittoria per il Den Haag, 1 vittoria per lo Sparta Rotterdam e 2 pareggi, con 12 gol complessivi (media di 3,0 a partita). L'ultimo incontro, a dicembre 2023 in KNVB Beker, si è chiuso con il risultato Den Haag 2-0 Sparta Rotterdam."
+     "Negli ultimi 4 confronti diretti il bilancio è di 1 vittoria per il Den Haag, 1 vittoria per lo Sparta e 2 pareggi, con 12 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, disputato a dicembre 2023 in KNVB Beker, è terminato Den Haag 2-0 Sparta."
     ],
     "bullets": []
    }
   ],
   "faq": [
    {
-    "q": "Quando si gioca Den Haag – Sparta Rotterdam?",
+    "q": "Quando si gioca Den Haag – Sparta?",
     "a": "Sabato 7 novembre alle 18:45, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
+    "q": "Dove vedo classifica e risultati?",
     "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-06T20:05:27.767Z"
+  "at": "2026-11-07T10:10:05.125Z"
  },
  "fb:1001563262": {
-  "fingerprint": "y725nu",
+  "fingerprint": "1vsrdww",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 7 novembre alle 13:30 il Wrexham ospita il Wolves per la 15ª giornata di Championship. In classifica il Wrexham occupa il 16° posto con 17 punti, mentre il Wolves è 2° con 27 punti."
+     "Sabato 7 novembre alle 13:30 il Wrexham ospita il Wolverhampton per la 15ª giornata di Championship. In classifica il Wrexham occupa il 16° posto con 17 punti, mentre il Wolverhampton è al 2° con 27."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Championship il Wrexham ha ottenuto 2 vittorie e 3 sconfitte, con sequenza P-V-P-P-V, segnando 7 gol e subendone 6. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
-     "Nelle ultime 5 partite di Championship il Wolves ha ottenuto 4 vittorie e 1 pareggio, con sequenza V-N-V-V-V, segnando 9 gol e subendone 3. Arriva da 3 vittorie consecutive. In trasferta, il bilancio stagionale è di 2 vittorie e 1 sconfitta."
+     "Nelle ultime 5 partite di Championship il Wrexham ha ottenuto 2 vittorie e 3 sconfitte (sequenza P-V-P-P-V), con 7 gol segnati e 6 subiti. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+     "Nelle ultime 5 partite di Championship il Wolverhampton ha ottenuto 4 vittorie e 1 pareggio (sequenza V-N-V-V-V), con 9 gol segnati e 3 subiti. Arriva da 3 vittorie consecutive. In trasferta, il bilancio stagionale è di 2 vittorie e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -10409,20 +10409,20 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Wrexham 1,2, Wolves 1,8 a partita.",
-     "Gol subiti finora: Wrexham 19, Wolves 17.",
-     "In 3 delle ultime 5 partite del Wolves si sono segnati almeno tre gol."
+     "Media gol segnati a partita: Wrexham 1,2, Wolverhampton 1,8.",
+     "Gol subiti finora: Wrexham 19, Wolverhampton 17.",
+     "In 3 delle ultime 5 partite del Wolverhampton si sono segnati almeno tre gol."
     ]
    }
   ],
   "faq": [
    {
-    "q": "Quando si gioca Wrexham – Wolves?",
+    "q": "Quando si gioca Wrexham – Wolverhampton?",
     "a": "Sabato 7 novembre alle 13:30, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Championship](/calcio/championship) e la [classifica aggiornata](/calcio/championship/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -10430,7 +10430,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-04T23:47:13.039Z"
+  "at": "2026-11-07T10:10:09.063Z"
  },
  "fb:1001563259": {
   "fingerprint": "1kgzgjx",
@@ -10479,34 +10479,34 @@
   "at": "2026-11-04T23:47:47.449Z"
  },
  "fb:1001492441": {
-  "fingerprint": "czorj2",
+  "fingerprint": "1044shl",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Botafogo si è imposto di misura in casa contro l'Atletico-MG, 1-0. La partita, valida per la 34ª giornata di Brasileirão, si è giocata giovedì 5 novembre; il primo tempo si era chiuso sull'1-0."
+     "Il Botafogo si impone in casa di misura, con un 1-0 sul Mineiro. La partita, valida per la 34ª giornata di Brasileirão, si è giocata giovedì 5 novembre; il primo tempo si era chiuso 1-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Botafogo è all'11° posto con 42 punti, mentre l'Atletico-MG è al 7° con 50. [Consulta la classifica completa](/calcio/brasileirao/classifica)."
+     "Con le partite giocate finora il Botafogo è all'11° posto con 42 punti, mentre il Mineiro è al 7° con 50. [Vai alla classifica completa](/calcio/brasileirao/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Botafogo tornerà in campo giovedì 19 novembre alle 01:30 in trasferta contro il Corinthians. L'Atletico-MG tornerà in campo sabato 14 novembre alle 22:30 in trasferta contro il Mirassol."
+     "Il Botafogo tornerà in campo giovedì 19 novembre alle 01:30 in trasferta contro il Corinthians. Il Mineiro giocherà sabato 14 novembre alle 22:30 in trasferta contro il Mirassol."
     ],
     "bullets": []
    }
   ],
   "faq": [
    {
-    "q": "Com'è finita Botafogo – Atletico-MG?",
-    "a": "Il risultato finale è 1-0 (1-0 all'intervallo)."
+    "q": "Com'è finita Botafogo – Mineiro?",
+    "a": "1-0 (1-0 all'intervallo)."
    },
    {
     "q": "Dove trovo gli altri risultati?",
@@ -10514,23 +10514,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T09:21:52.199Z"
+  "at": "2026-11-07T10:10:23.958Z"
  },
  "fb:1001492455": {
-  "fingerprint": "96150k",
+  "fingerprint": "1id4het",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 22:30 il Mirassol ospita l'Atletico-MG per la 35ª giornata di Brasileirão. In classifica il Mirassol è al 14° posto con 40 punti, mentre l'Atletico-MG è al 7° con 50."
+     "Sabato 14 novembre alle 22:30 il Mirassol ospita il Mineiro nella 35ª giornata di Brasileirão. In classifica il Mirassol occupa il 14° posto con 40 punti, il Mineiro il 7° con 50."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Brasileirão il Mirassol ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-N-P-V), con 5 gol fatti e 5 subiti. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Brasileirão l'Atletico-MG ha ottenuto 2 vittorie e 3 sconfitte (sequenza V-V-P-P-P), con 5 gol fatti e 6 subiti. Ha perso le ultime 3. In trasferta, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, ancora senza vittorie."
+     "Nelle ultime 5 partite di Brasileirão il Mirassol ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-N-P-V), con 5 gol fatti e 5 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Brasileirão il Mineiro ha raccolto 2 vittorie e 3 sconfitte (sequenza V-V-P-P-P), con 5 gol fatti e 6 subiti. Ha perso le ultime 3. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, ancora senza vittorie."
     ],
     "bullets": []
    },
@@ -10538,27 +10538,27 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Mirassol 1,1, Atletico-MG 1,3.",
-     "Gol subiti finora: Mirassol 48, Atletico-MG 40."
+     "Media gol segnati: Mirassol 1,1, Mineiro 1,3 a partita.",
+     "Gol subiti finora: Mirassol 48, Mineiro 40."
     ]
    }
   ],
   "faq": [
    {
-    "q": "Quando si gioca Mirassol – Atletico-MG?",
+    "q": "Quando si gioca Mirassol – Mineiro?",
     "a": "Sabato 14 novembre alle 22:30, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
+    "q": "Dove vedo classifica e risultati?",
     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T06:20:58.215Z"
+  "at": "2026-11-07T10:10:12.324Z"
  },
  "nba:21718109": {
   "fingerprint": "8lg9tr",
@@ -14795,35 +14795,35 @@
   "at": "2026-11-05T09:21:42.267Z"
  },
  "fb:1001636324": {
-  "fingerprint": "1dd30wo",
+  "fingerprint": "x8kagw",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Rennes e l'Olympiakos Piraeus non hanno segnato: la partita è finita 0-0. L'incontro, valido per la 4ª giornata della fase a campionato di Europa League, si è giocato mercoledì 4 novembre e il primo tempo si era chiuso anch'esso 0-0."
+     "Lo Stade Rennais e l'Olympiakos Piraeus hanno chiuso la sfida a reti inviolate: 0-0. La partita, valida per la 4ª giornata della fase a campionato di Europa League, si è giocata mercoledì 4 novembre; il primo tempo era terminato 0-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Rennes è al 17° posto con 6 punti, mentre l'Olympiakos Piraeus è al 6° posto con 10. Per consultare tutte le posizioni, vai alla [classifica completa](/calcio/europa-league/classifica)."
+     "Dopo le partite giocate finora lo Stade Rennais occupa il 17° posto con 6 punti, mentre l'Olympiakos Piraeus è al 6° con 10. [Consulta la classifica completa](/calcio/europa-league/classifica)."
     ],
     "bullets": []
    }
   ],
   "faq": [
    {
-    "q": "Com'è finita Rennes – Olympiakos Piraeus?",
-    "a": "Il risultato finale è 0-0, con lo stesso punteggio anche all'intervallo."
+    "q": "Com'è finita Stade Rennais – Olympiakos Piraeus?",
+    "a": "Il risultato finale è 0-0, con lo stesso punteggio all'intervallo."
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Puoi consultarli nella pagina di [Europa League](/calcio/europa-league)."
+    "a": "Nella pagina [Europa League](/calcio/europa-league)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T23:42:06.534Z"
+  "at": "2026-11-07T10:10:13.803Z"
  },
  "fb:575386": {
   "fingerprint": "1ucbra0",
@@ -15947,26 +15947,26 @@
   "at": "2026-11-05T09:21:32.853Z"
  },
  "fb:561927": {
-  "fingerprint": "1jasusg",
+  "fingerprint": "pssy5w",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Wrexham ha battuto il Middlesbrough per 2-0 davanti al proprio pubblico. La partita, valida per la 14ª giornata di Championship, si è giocata mercoledì 4 novembre; il primo tempo si era concluso 0-0."
+     "Il Wrexham supera il Middlesbrough per 2-0 davanti al proprio pubblico. La partita, valida per la 14ª giornata di Championship, si è giocata mercoledì 4 novembre e il primo tempo era terminato 0-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Wrexham occupa il 16° posto con 17 punti, mentre il Middlesbrough è al 1° con 28. [Consulta la classifica completa](/calcio/championship/classifica)."
+     "Dopo le partite disputate finora, il Wrexham occupa il 16° posto con 17 punti, mentre il Middlesbrough è primo con 28. Trovi la [classifica aggiornata](/calcio/championship/classifica) completa."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Wrexham tornerà in campo sabato 7 novembre alle 13:30 in casa contro il Wolves. Il Middlesbrough giocherà sabato 7 novembre alle 16:00 in trasferta contro il Watford."
+     "Il Wrexham tornerà in campo sabato 7 novembre alle 13:30, ospitando il Wolverhampton. Il Middlesbrough giocherà sabato 7 novembre alle 16:00 in trasferta contro il Watford."
     ],
     "bullets": []
    }
@@ -15978,40 +15978,40 @@
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Nella pagina [Championship](/calcio/championship)."
+    "a": "Nella [pagina dedicata al Championship](/calcio/championship)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T09:21:34.712Z"
+  "at": "2026-11-07T10:10:20.567Z"
  },
  "fb:1001563247": {
-  "fingerprint": "16yb5gx",
+  "fingerprint": "4m5x0v",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Wolves ha ribaltato il risultato e ha vinto in trasferta per 1-2 contro il Bristol City. La partita, valida per la 14ª giornata di Championship, si è giocata mercoledì 4 novembre, e il primo tempo si era chiuso 1-0."
+     "Rimonta del Wolverhampton: sotto all'intervallo, vince in trasferta 1-2 contro il Bristol City. La partita, valida per la 14ª giornata di Championship, si è giocata mercoledì 4 novembre; il primo tempo si era chiuso 1-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Dopo le partite giocate finora, il Bristol City è 15° con 18 punti, mentre il Wolves è 2° con 27 punti. Per l'intera graduatoria consulta la [classifica completa](/calcio/championship/classifica)."
+     "Con le partite giocate finora il Bristol City è al 15° posto con 18 punti e il Wolverhampton al 2° con 27. [Classifica completa](/calcio/championship/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Bristol City tornerà in campo sabato 7 novembre alle 13:30, in casa contro il Norwich. Il Wolves giocherà lo stesso giorno, sabato 7 novembre alle 13:30, in trasferta contro il Wrexham."
+     "Il Bristol City tornerà in campo sabato 7 novembre alle 13:30 in casa contro il Norwich. Il Wolverhampton tornerà in campo sabato 7 novembre alle 13:30 in trasferta contro il Wrexham."
     ],
     "bullets": []
    }
   ],
   "faq": [
    {
-    "q": "Com'è finita Bristol City – Wolves?",
+    "q": "Com'è finita Bristol City – Wolverhampton?",
     "a": "1-2 (1-0 all'intervallo)."
    },
    {
@@ -16020,7 +16020,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T09:21:38.458Z"
+  "at": "2026-11-07T10:10:22.068Z"
  },
  "fb:555075": {
   "fingerprint": "1elxts9",
@@ -16693,35 +16693,35 @@
   "at": "2026-11-05T23:42:14.922Z"
  },
  "fb:1001636337": {
-  "fingerprint": "c0z517",
+  "fingerprint": "1a7hy4b",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Rimonta del Bournemouth: sotto all'intervallo, in trasferta vince 1-3 contro lo Sparta. La partita, valida per la 4ª giornata della fase a campionato di Europa League, si è giocata giovedì 5 novembre; il primo tempo si era chiuso 1-0."
+     "Rimonta del Bournemouth, che in trasferta si impone 3-1 sullo Sparta Praha dopo essere andato al riposo in svantaggio. La gara, valida per la 4ª giornata della fase a campionato di Europa League, si è disputata giovedì 5 novembre; il primo tempo si era chiuso 1-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora lo Sparta è al 22° posto con 4 punti e il Bournemouth al 2° con 12. [Classifica completa](/calcio/europa-league/classifica)."
+     "Con le partite giocate finora lo Sparta Praha è al 22° posto con 4 punti, mentre il Bournemouth è al 2° con 12. [Consulta la classifica completa](/calcio/europa-league/classifica)."
     ],
     "bullets": []
    }
   ],
   "faq": [
    {
-    "q": "Com'è finita Sparta – Bournemouth?",
+    "q": "Com'è finita Sparta Praha – Bournemouth?",
     "a": "1-3 (1-0 all'intervallo)."
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Nella pagina [Europa League](/calcio/europa-league)."
+    "a": "Nella pagina dedicata all'[Europa League](/calcio/europa-league)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T23:42:16.255Z"
+  "at": "2026-11-07T10:10:15.301Z"
  },
  "fb:1001636286": {
   "fingerprint": "1qg2imd",
@@ -18317,7 +18317,7 @@
   "at": "2026-11-07T00:20:58.543Z"
  },
  "fb:559638": {
-  "fingerprint": "e8kzd9",
+  "fingerprint": "nct6hu",
   "sections": [
    {
     "id": "resoconto",
@@ -18329,14 +18329,14 @@
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Toulouse è al 10° posto con 13 punti, mentre lo Strasbourg è al 13° con 10. Per consultare la [classifica completa](/calcio/ligue-1/classifica) è possibile visitare la pagina dedicata."
+     "Con le partite giocate finora il Toulouse è al 10° posto con 13 punti, mentre lo Strasbourg è al 13° con 10. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/ligue-1/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Toulouse tornerà in campo sabato 21 novembre alle 20:45 in trasferta contro il RC Lens. Lo Strasbourg tornerà in campo nello stesso giorno e orario, sabato 21 novembre alle 20:45, in casa contro lo Stade Brestois 29."
+     "Il Toulouse tornerà in campo sabato 21 novembre alle 20:45 in trasferta contro il RC Lens. Lo Strasbourg tornerà in campo sabato 21 novembre alle 20:45 in casa contro il Brest."
     ],
     "bullets": []
    }
@@ -18344,15 +18344,15 @@
   "faq": [
    {
     "q": "Com'è finita Toulouse – Strasbourg?",
-    "a": "Il risultato finale è 3-1, con 1-0 all'intervallo."
+    "a": "Il risultato finale è stato 3-1, con 1-0 all'intervallo."
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Nella pagina dedicata alla [Ligue 1](/calcio/ligue-1)."
+    "a": "Puoi consultarli nella pagina [Ligue 1](/calcio/ligue-1)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T00:21:00.553Z"
+  "at": "2026-11-07T10:10:17.192Z"
  },
  "fb:567353": {
   "fingerprint": "zzfj8d",

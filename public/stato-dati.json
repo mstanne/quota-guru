@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T09:34:22.082Z",
+  "updatedAt": "2026-11-07T10:08:39.740Z",
   "football": {
     "details": {
       "ok": true
@@ -22,12 +22,12 @@
     },
     "ok": true,
     "requests": 13,
-    "remainingToday": 7381,
+    "remainingToday": 7367,
     "games": 33,
     "teamSeasons": 60
   },
   "calendarioCalcio": {
-    "updatedAt": "2026-11-07T09:32:51.567Z",
+    "updatedAt": "2026-11-07T10:07:05.293Z",
     "source": "API-Football",
     "ok": true,
     "competitions": {
@@ -85,14 +85,44 @@
       }
     },
     "requests": 43,
-    "remainingToday": 5588
+    "remainingToday": 5214,
+    "squadreNuove": [
+      {
+        "kind": "nome",
+        "apiId": 354,
+        "id": 10000354,
+        "name": "The New Saints",
+        "competition": "champions-league"
+      },
+      {
+        "kind": "nome",
+        "apiId": 628,
+        "id": 10000628,
+        "name": "Sparta Praha",
+        "competition": "champions-league"
+      },
+      {
+        "kind": "nome",
+        "apiId": 604,
+        "id": 10000604,
+        "name": "Maccabi Tel Aviv",
+        "competition": "europa-league"
+      },
+      {
+        "kind": "nome",
+        "apiId": 257,
+        "id": 10000257,
+        "name": "Rangers",
+        "competition": "europa-league"
+      }
+    ]
   },
   "calendarioNba": {
-    "updatedAt": "2026-11-07T09:33:02.578Z",
+    "updatedAt": "2026-11-07T10:07:20.687Z",
     "source": "API-NBA",
     "ok": true,
     "games": 235,
     "requests": 1,
-    "remainingToday": 7393
+    "remainingToday": 7379
   }
 }
