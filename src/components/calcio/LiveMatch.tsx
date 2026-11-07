@@ -1,10 +1,11 @@
 // Live data of a match on its page: score, minute, events, official line-ups and statistics, refreshed every
 // 30 seconds from the site's own live service (Cloudflare Worker, workers/live; address in VITE_LIVE_URL).
+// useLiveData polls once for the whole page: the score and status at the top of the page (CalcioMatchPage) and the
+// details below (LiveMatch) show the same data.
 // The page is pre-rendered with the data of the last site update (match.live, every 15 minutes): that is what
 // search engines and the first paint show; in the browser the widget then keeps it up to date. No third party is
 // contacted and no cookie is set. Without VITE_LIVE_URL, or outside the match window, it shows the static data only.
 import { useEffect, useState } from "react";
-import { Radio } from "lucide-react";
 import { isLive, isUpcoming, type Match } from "../../lib/footballCore";
 import type { FootballDetails } from "../../lib/matchDetails";
 import { inLiveWindow } from "../../lib/sofascore";
@@ -12,9 +13,7 @@ import { FootballMatchDetails } from "./FootballMatchDetails";
 
 const LIVE_URL = (import.meta.env.VITE_LIVE_URL ?? "").replace(/\/+$/, "");
 const POLL_MS = 30_000;
-const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
-
-interface LiveData extends Pick<FootballDetails, "timeline" | "lineups" | "stats" | "top"> {
+export interface LiveData extends Pick<FootballDetails, "timeline" | "lineups" | "stats" | "top"> {
   id: number;
   status: { short: string; long: string; elapsed: number | null; extra: number | null };
   score: { home: number | null; away: number | null; halftime: { home: number | null; away: number | null } | null; penalty: { home: number | null; away: number | null } | null };
@@ -27,25 +26,39 @@ const STATUS: Record<string, string> = {
   LIVE: "In corso", FT: "Finale", AET: "Finale dopo i supplementari", PEN: "Finale dopo i rigori", PST: "Rinviata",
   CANC: "Annullata", ABD: "Sospesa definitivamente", AWD: "Vittoria a tavolino", WO: "Vittoria a tavolino",
 };
-const PLAYING = new Set(["1H", "2H", "ET", "P", "LIVE"]);
-const FINAL = new Set(["FT", "AET", "PEN", "AWD", "WO", "CANC", "ABD", "PST"]);
-const time = (iso: string) =>
+export const PLAYING = new Set(["1H", "2H", "ET", "P", "LIVE"]);
+export const FINAL = new Set(["FT", "AET", "PEN", "AWD", "WO", "CANC", "ABD", "PST"]);
+export const liveTime = (iso: string) =>
   new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", hour: "2-digit", minute: "2-digit", second: "2-digit" }).format(new Date(iso));
 
-export function LiveMatch({ match, initial }: { match: Match; initial?: Match["live"] }) {
+/** Started (or over) according to the live service. */
+export const liveStarted = (d: LiveData | null): d is LiveData => !!d && d.status.short !== "NS" && d.status.short !== "TBD";
+
+/** "Intervallo", "Secondo tempo · 67'", "Finale". */
+export function liveStatusText(d: LiveData) {
+  const st = d.status;
+  const minute = PLAYING.has(st.short) && st.elapsed != null ? ` · ${st.elapsed}${st.extra ? `+${st.extra}` : ""}'` : "";
+  return `${STATUS[st.short] ?? st.long}${minute}`;
+}
+
+/** Live data of the match from the live service, every 30 seconds while the page is visible; null until it answers. */
+export function useLiveData(match: Match, enabled = true) {
   const [data, setData] = useState<LiveData | null>(null);
 
   useEffect(() => {
-    if (!LIVE_URL || !match.apiId || !inLiveWindow(match.utcDate)) return;
+    if (!enabled || !LIVE_URL || !match.apiId || !inLiveWindow(match.utcDate)) return;
     let stop = false;
     let timer: number | undefined;
     let finalSeen = 0;
+    let loaded = false;
     const load = async () => {
+      window.clearTimeout(timer);
       if (document.visibilityState === "visible") {
         try {
           const res = await fetch(`${LIVE_URL}/match/${match.apiId}`);
           if (res.ok) {
             const d = (await res.json()) as LiveData;
+            loaded = true;
             if (!stop) setData(d);
             if (FINAL.has(d.status.short)) finalSeen++;
           }
@@ -57,52 +70,26 @@ export function LiveMatch({ match, initial }: { match: Match; initial?: Match["l
       if (!stop && finalSeen < 3) timer = window.setTimeout(load, POLL_MS);
     };
     load();
-    const onVisible = () => document.visibilityState === "visible" && data === null && load();
+    const onVisible = () => document.visibilityState === "visible" && !loaded && load();
     document.addEventListener("visibilitychange", onVisible);
     return () => {
       stop = true;
       window.clearTimeout(timer);
       document.removeEventListener("visibilitychange", onVisible);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [match.apiId, match.utcDate]);
+  }, [enabled, match.apiId, match.utcDate]);
 
+  return data;
+}
+
+export function LiveMatch({ match, initial, data }: { match: Match; initial?: Match["live"]; data: LiveData | null }) {
   const details = data ?? initial;
   if (!details) return null;
   const hasContent = details.timeline.length || details.lineups.home || details.lineups.away || Object.keys(details.stats).length;
-  const st = data?.status;
-  const started = st && st.short !== "NS" && st.short !== "TBD";
+  const started = liveStarted(data);
 
   return (
     <div className="lg:col-span-3 min-w-0 space-y-6">
-      {data && started && (
-        <section className={card} aria-labelledby="diretta" aria-live="polite">
-          <h2 id="diretta" className="flex items-center gap-2 text-white text-xl mb-4">
-            <Radio className={`w-5 h-5 ${PLAYING.has(st.short) ? "text-red-500 animate-pulse motion-reduce:animate-none" : "text-slate-300"}`} aria-hidden="true" />
-            {FINAL.has(st.short) ? "Risultato" : "In diretta"}
-          </h2>
-          <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 max-w-xl mx-auto text-center">
-            <span className="text-white text-lg">{match.homeTeam.shortName}</span>
-            <span className="text-white text-4xl tabular-nums">
-              {data.score.home ?? 0} <span className="text-slate-400">–</span> {data.score.away ?? 0}
-            </span>
-            <span className="text-white text-lg">{match.awayTeam.shortName}</span>
-          </div>
-          <p className="text-center mt-2 text-sm">
-            <span className={PLAYING.has(st.short) ? "text-red-400" : "text-slate-300"}>
-              {STATUS[st.short] ?? st.long}
-              {PLAYING.has(st.short) && st.elapsed != null && ` · ${st.elapsed}${st.extra ? `+${st.extra}` : ""}'`}
-            </span>
-            {data.score.penalty?.home != null && (
-              <span className="text-slate-300">
-                {" "}
-                · rigori {data.score.penalty.home}–{data.score.penalty.away}
-              </span>
-            )}
-          </p>
-          <p className="text-center text-slate-500 text-xs mt-2">Aggiornato alle {time(data.updatedAt)} · si aggiorna da solo ogni 30 secondi</p>
-        </section>
-      )}
       {hasContent ? (
         <FootballMatchDetails
           match={match}
@@ -112,7 +99,7 @@ export function LiveMatch({ match, initial }: { match: Match; initial?: Match["l
             data
               ? !started
                 ? "upcoming"
-                : FINAL.has(st.short)
+                : FINAL.has(data.status.short)
                   ? "finished"
                   : "live"
               : isLive(match)
