@@ -337,7 +337,8 @@ export default {
   async scheduled(event, env, ctx) {
     ctx.waitUntil(hub(env).fetch("https://hub/refresh"));
     const job = githubJob(new Date(event.scheduledTime));
-    if (job) ctx.waitUntil(dispatchWorkflow(env, job));
+    // the Telegram rubrics are sent for real: a dispatch without inputs would take the manual default (dry run)
+    if (job) ctx.waitUntil(dispatchWorkflow(env, job, job === "telegram.yml" ? { prova: "false" } : undefined));
   },
 };
 
