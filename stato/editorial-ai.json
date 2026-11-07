@@ -394,59 +394,6 @@
   "model": "claude-haiku-5-5",
   "at": "2026-11-05T17:56:46.206Z"
  },
- "fb:558534": {
-  "fingerprint": "1lo8cch",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 7 novembre alle 15:00 il Cagliari ospita il Frosinone nell'11ª giornata di Serie A. In classifica il Cagliari occupa il 12° posto con 13 punti, mentre il Frosinone è al 6° con 20."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 5 partite di Serie A il Cagliari ha ottenuto 1 pareggio e 4 sconfitte (sequenza N-P-P-P-P), segnando 4 gol e subendone 13. Ha perso le ultime 4. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza ancora alcuna vittoria.",
-     "Nelle ultime 5 partite di Serie A il Frosinone ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-N-V-V), segnando 15 gol e subendone 10. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza ancora alcuna vittoria."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati a partita: Cagliari 0,9, Frosinone 2,4.",
-     "Gol subiti finora: Cagliari 15, Frosinone 14.",
-     "In 3 delle ultime 5 partite del Cagliari si sono segnati almeno tre gol.",
-     "In 4 delle ultime 5 partite del Frosinone si sono segnati almeno tre gol."
-    ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Cagliari, 1 vittoria per il Frosinone e 2 pareggi, con 20 gol complessivi (media di 4,0 a partita). L'ultimo incontro, a settembre 2025 in Coppa Italia, è terminato Cagliari 4-1 Frosinone."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Cagliari – Frosinone?",
-    "a": "Sabato 7 novembre alle 15:00, ora italiana."
-   },
-   {
-    "q": "Dove si trovano classifica e risultati?",
-    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-05T17:56:43.485Z"
- },
  "fb:558535": {
   "fingerprint": "auh7nr",
   "sections": [
@@ -608,20 +555,20 @@
   "at": "2026-11-07T13:12:58.545Z"
  },
  "fb:558536": {
-  "fingerprint": "1253t4m",
+  "fingerprint": "13a110l",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Genoa e Milan si affrontano domenica 8 novembre alle 15:00 per la 11ª giornata di Serie A. In classifica il Genoa è all'11° posto con 13 punti, il Milan al 5° con 21."
+     "Genoa e Milan si affrontano domenica 8 novembre alle 15:00, nell'ambito dell'11ª giornata di Serie A. In classifica il Genoa occupa l'11° posto con 13 punti, mentre il Milan è al 5° con 21."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A il Genoa ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-P-V-V-V), con 7 gol fatti e 4 subiti. Arriva da 3 vittorie consecutive. In casa ha vinto tutte le 3 partite giocate.",
-     "Nelle ultime 5 partite di Serie A il Milan ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza N-V-V-P-V), con 11 gol fatti e 8 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 5 partite di Serie A il Genoa ha ottenuto 4 vittorie e 1 sconfitta, con la sequenza V-P-V-V-V, segnando 7 gol e subendone 4. Arriva da 3 vittorie consecutive. In casa ha vinto tutte le 3 partite disputate.",
+     "Nelle ultime 5 partite di Serie A il Milan ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza N-V-V-P-V, segnando 11 gol e subendone 8. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -629,10 +576,17 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Genoa 1,0, Milan 2,1 a partita.",
-     "Gol subiti finora: Genoa 14, Milan 12.",
-     "In 3 delle ultime 5 partite del Milan si sono segnati almeno tre gol."
+     "La media di gol segnati a partita è 1,0 per il Genoa e 2,1 per il Milan.",
+     "Fin qui il Genoa ha subito 14 gol, il Milan 12.",
+     "Nelle ultime 5 partite del Milan, in 3 casi sono stati segnati almeno tre gol."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per il Genoa, 2 per il Milan e 3 pareggi, con 14 gol complessivi (media di 2,8 a partita). L'ultimo incontro, a maggio 2026 in Serie A, è terminato Genoa 1-2 Milan."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -642,31 +596,31 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+    "a": "Trovi i dati nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-01T20:13:47.986Z"
+  "at": "2026-11-07T14:15:59.286Z"
  },
  "fb:558538": {
-  "fingerprint": "1sdk1ts",
+  "fingerprint": "j8ay3i",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 15:00 il Monza ospita l'Atalanta nell'11ª giornata di Serie A. In classifica il Monza occupa il 18° posto con 7 punti, mentre l'Atalanta è al 13° con 11."
+     "Domenica 8 novembre alle 15:00 il Monza ospita l'Atalanta per la 11ª giornata di Serie A. In classifica il Monza occupa il 18° posto con 7 punti, mentre l'Atalanta è al 13° con 11."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A il Monza ha ottenuto 1 vittoria e 4 sconfitte, con la sequenza P-V-P-P-P. Ha segnato 9 gol e ne ha subiti 12. Le ultime 3 partite sono state tutte perse. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 5 partite di Serie A l'Atalanta ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza V-P-N-N-P. Ha segnato 11 gol e ne ha subiti 13. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
+     "Nelle ultime 5 partite di Serie A il Monza ha ottenuto 1 vittoria e 4 sconfitte (sequenza P-V-P-P-P), segnando 9 gol e subendone 12. Ha perso le ultime 3 gare. In casa, nel bilancio stagionale, il Monza ha 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Serie A l'Atalanta ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza V-P-N-N-P), segnando 11 gol e subendone 13. In trasferta, nel bilancio stagionale, l'Atalanta ha 1 pareggio e 1 sconfitta, senza vittorie."
     ],
     "bullets": []
    },
@@ -676,9 +630,16 @@
     "bullets": [
      "Media gol segnati a partita: Monza 1,7, Atalanta 1,6.",
      "Gol subiti finora: Monza 24, Atalanta 20.",
-     "Nelle ultime 5 partite del Monza si sono segnati almeno tre gol in ogni gara.",
-     "Nelle ultime 5 partite dell'Atalanta si sono segnati almeno tre gol in ogni gara."
+     "In tutte le ultime 5 partite del Monza sono stati segnati almeno tre gol.",
+     "In tutte le ultime 5 partite dell'Atalanta sono stati segnati almeno tre gol."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per il Monza, 5 per l'Atalanta e nessun pareggio, con 19 gol complessivi (media di 3,8 a partita). L'ultimo incrocio, disputato a maggio 2025 in Serie A, è terminato Monza 0-4 Atalanta."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -687,7 +648,7 @@
     "a": "Domenica 8 novembre alle 15:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
+    "q": "Dove posso consultare classifica e risultati?",
     "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
    },
    {
@@ -696,7 +657,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T00:21:03.580Z"
+  "at": "2026-11-07T14:16:03.323Z"
  },
  "fb:558530": {
   "fingerprint": "1qkyh5j",
@@ -1029,12 +990,12 @@
   "at": "2026-11-05T00:21:37.543Z"
  },
  "fb:560638": {
-  "fingerprint": "11d1f6y",
+  "fingerprint": "115vy7x",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 8 novembre alle 15:00 il Brighton ospita il Brentford nella 10ª giornata di Premier League. In classifica il Brighton è al 3° posto con 19 punti, mentre il Brentford è al 7° con 14."
+     "Domenica 8 novembre alle 15:00 il Brighton ospita il Brentford nella 10ª giornata di Premier League. In classifica il Brighton occupa il 3° posto con 19 punti, mentre il Brentford è al 7° con 14."
     ],
     "bullets": []
    },
@@ -1055,6 +1016,13 @@
      "Il Brighton ha il miglior attacco del torneo.",
      "Il Brighton non ha subito gol in 3 delle ultime 4 partite."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Brighton, 1 vittoria per il Brentford e 2 pareggi, con 11 gol complessivi (media di 2,2 a partita). L'ultimo incrocio, disputato a febbraio 2026 in Premier League, è terminato Brentford 0-2 Brighton."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -1063,8 +1031,8 @@
     "a": "Domenica 8 novembre alle 15:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina dedicata alla [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -1072,7 +1040,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-06T23:15:28.886Z"
+  "at": "2026-11-07T14:17:01.982Z"
  },
  "fb:560639": {
   "fingerprint": "uley8p",
@@ -2700,12 +2668,12 @@
   "at": "2026-11-07T13:13:15.658Z"
  },
  "fb:558839": {
-  "fingerprint": "b9d313",
+  "fingerprint": "onrkri",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Twente e Ajax si affrontano domenica 8 novembre alle 14:30 per la 12ª giornata di Eredivisie. È un confronto tra squadre di alta classifica: il Twente è al 4° posto con 23 punti, mentre l'Ajax è al 2° con 24."
+     "Twente e Ajax si sfidano domenica 8 novembre alle 14:30 nella 12ª giornata di Eredivisie. Il match mette di fronte due squadre della parte alta della classifica: il Twente è 4° con 23 punti, mentre l'Ajax è 2° con 24."
     ],
     "bullets": []
    },
@@ -2713,7 +2681,7 @@
     "id": "momento",
     "paragraphs": [
      "Nelle ultime 4 partite di Eredivisie il Twente ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza N-P-V-V), segnando 13 gol e subendone 3.",
-     "Nelle ultime 4 partite di Eredivisie l'Ajax ha ottenuto 3 vittorie e 1 pareggio (sequenza N-V-V-V), segnando 9 gol e subendone 4. Arriva da 3 vittorie consecutive. In trasferta ha vinto tutte le 2 partite disputate."
+     "Nelle ultime 4 partite di Eredivisie l'Ajax ha ottenuto 3 vittorie e 1 pareggio (sequenza N-V-V-V), segnando 9 gol e subendone 4. Arriva da 3 vittorie consecutive e, in trasferta, ha vinto tutte le 2 gare disputate."
     ],
     "bullets": []
    },
@@ -2725,6 +2693,13 @@
      "Gol subiti finora: Twente 10, Ajax 13.",
      "Il Twente ha la miglior difesa del torneo."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Twente, 3 vittorie per l'Ajax e 1 pareggio, con 17 gol complessivi (media di 3,4 a partita). L'ultimo incontro, ad aprile 2026 in Eredivisie, è terminato Ajax 1-2 Twente."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -2734,7 +2709,7 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina dedicata all' [Eredivisie](/calcio/eredivisie) e la [classifica aggiornata](/calcio/eredivisie/classifica)."
+    "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -2742,7 +2717,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-05T00:23:04.210Z"
+  "at": "2026-11-07T14:17:06.558Z"
  },
  "fb:558837": {
   "fingerprint": "1augkpu",
@@ -9488,207 +9463,6 @@
   "model": "claude-haiku-5-5",
   "at": "2026-11-03T09:20:12.968Z"
  },
- "fb:1001601596": {
-  "fingerprint": "q44lml",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 7 novembre alle 15:00 il Cesena ospita il Catanzaro per la 11ª giornata di Serie B. In classifica il Cesena occupa il 12° posto con 12 punti, mentre il Catanzaro è al 20° con 6."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 5 partite di Serie B il Cesena ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-N-P-V-N), segnando 4 gol e subendone 8. In casa il bilancio stagionale della squadra è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Serie B il Catanzaro ha ottenuto 3 pareggi e 2 sconfitte (sequenza P-N-P-N-N), segnando 6 gol e subendone 13. In trasferta il bilancio stagionale è di 2 pareggi, senza vittorie."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati a partita: Cesena 1,1, Catanzaro 1,1.",
-     "Gol subiti finora: Cesena 14, Catanzaro 22.",
-     "Nelle ultime 5 partite del Catanzaro, in 3 si sono segnati almeno tre gol."
-    ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Cesena e 3 per il Catanzaro, senza pareggi, con 15 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, disputato a marzo 2026 in Serie B, è terminato Cesena 3-1 Catanzaro."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Cesena – Catanzaro?",
-    "a": "Sabato 7 novembre alle 15:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-05T17:56:50.602Z"
- },
- "fb:1001601602": {
-  "fingerprint": "11bv6qu",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 7 novembre alle 15:00 il Pisa ospita il Sudtirol nell'11ª giornata di Serie B. In classifica il Pisa occupa l'8° posto con 15 punti, mentre il Sudtirol è al 10° con 14."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 5 partite di Serie B il Pisa ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-V-N-N-P), segnando 10 gol e subendone 7. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Serie B il Sudtirol ha totalizzato 3 pareggi e 2 sconfitte (sequenza N-P-N-P-N), con 2 gol fatti e 7 subiti. In trasferta ha perso tutte le 2 partite giocate."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati: Pisa 1,8, Sudtirol 1,1 a partita.",
-     "Gol subiti finora: Pisa 15, Sudtirol 10.",
-     "In 3 delle ultime 5 partite del Pisa sono stati segnati almeno tre gol."
-    ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Pisa, 1 vittoria per il Sudtirol e 2 pareggi, con 17 gol complessivi (media di 3,4 a partita). L'ultimo incrocio, disputato a maggio 2025 in Serie B, è terminato Pisa 3-3 Sudtirol."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Pisa – Sudtirol?",
-    "a": "Sabato 7 novembre alle 15:00, ora italiana."
-   },
-   {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-05T17:56:55.114Z"
- },
- "fb:1001601598": {
-  "fingerprint": "l0bkv8",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 7 novembre alle 15:00 la Juve Stabia affronta l'Arezzo nell'11ª giornata di Serie B. In classifica la Juve Stabia è al 16° posto con 9 punti, mentre l'Arezzo è al 13° con 11 punti."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 5 partite di Serie B la Juve Stabia ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-V-V-P-N), segnando 7 gol e subendone 4. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 5 partite di Serie B l'Arezzo ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-V-P-P-N), segnando 3 gol e subendone 6. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati a partita: Juve Stabia 1,1, Arezzo 0,9.",
-     "Gol subiti finora: Juve Stabia 11, Arezzo 19.",
-     "In 3 delle ultime 5 partite dell'Arezzo si sono segnati almeno tre gol."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Juve Stabia – Arezzo?",
-    "a": "Sabato 7 novembre alle 15:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-03T00:19:55.741Z"
- },
- "fb:1001601601": {
-  "fingerprint": "emaxut",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 7 novembre alle 15:00 il Padova ospita l'Empoli per la 11ª giornata di Serie B. In classifica il Padova è al 9° posto con 14 punti, l'Empoli al 18° con 8."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 5 partite di Serie B il Padova ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-P-V-V-N), con 5 gol fatti e 5 subiti. In casa il bilancio stagionale è di 1 vittoria e 2 sconfitte.",
-     "Nelle ultime 5 partite di Serie B l'Empoli ha raccolto 2 pareggi e 3 sconfitte (sequenza P-N-P-P-N), con 6 gol fatti e 11 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati: Padova 1,0, Empoli 1,0 a partita.",
-     "Gol subiti finora: Padova 11, Empoli 17.",
-     "In 3 delle ultime 5 partite dell'Empoli si sono segnati almeno tre gol."
-    ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 2 confronti diretti il bilancio è di 1 vittoria per il Padova, 1 vittoria per l'Empoli e nessun pareggio, con 5 gol complessivi (media di 2,5 a partita). L'ultimo incrocio, ad aprile 2026 in Serie B, è finito Padova 1-0 Empoli."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Padova – Empoli?",
-    "a": "Sabato 7 novembre alle 15:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-05T21:21:02.585Z"
- },
  "fb:1001601600": {
   "fingerprint": "qealwo",
   "sections": [
@@ -9786,20 +9560,20 @@
   "at": "2026-11-06T20:04:50.158Z"
  },
  "fb:1001601597": {
-  "fingerprint": "4i2t07",
+  "fingerprint": "1by1bvq",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Virtus Entella e Modena si sfidano domenica 8 novembre alle 15:00, nella 11ª giornata di Serie B. In classifica il Virtus Entella occupa il 14° posto con 10 punti, mentre il Modena è al 3° con 20."
+     "Virtus Entella e Modena si sfidano domenica 8 novembre alle 15:00, nella 11ª giornata di Serie B. In classifica il Virtus Entella occupa il 14° posto con 10 punti, mentre il Modena è al 3° posto con 20."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie B il Virtus Entella ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza N-V-P-N-P, segnando 4 gol e subendone 6. In casa, nella stagione, il bilancio è di 2 pareggi e 1 sconfitta, senza vittorie.",
-     "Nelle ultime 5 partite di Serie B il Modena ha raccolto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-P-V-V-N, segnando 10 gol e subendone 6. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+     "Nelle ultime 5 partite di Serie B il Virtus Entella ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-V-P-N-P), con 4 gol fatti e 6 subiti. In casa, nel bilancio stagionale, ha 2 pareggi e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 5 partite di Serie B il Modena ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-V-V-N), con 10 gol fatti e 6 subiti. In trasferta, nel bilancio stagionale, il Modena ha 1 vittoria e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -9811,6 +9585,13 @@
      "Gol subiti finora: Virtus Entella 12, Modena 10.",
      "In 4 delle ultime 5 partite del Modena si sono segnati almeno tre gol."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 4 confronti diretti il bilancio è di 2 vittorie per il Virtus Entella, 2 per il Modena e nessun pareggio, con 10 gol complessivi (media di 2,5 a partita). L'ultimo incontro, a marzo 2026 in Serie B, si è concluso Virtus Entella 2-1 Modena."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -9819,16 +9600,16 @@
     "a": "Domenica 8 novembre alle 15:00, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina [campionato di Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-06T23:15:25.123Z"
+  "at": "2026-11-07T14:16:18.098Z"
  },
  "fb:1001601595": {
   "fingerprint": "z2y32u",
@@ -19059,5 +18840,549 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-07T13:13:32.881Z"
+ },
+ "fb:1001550202": {
+  "fingerprint": "1m54sty",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Lazio e Lecce si affrontano sabato 21 novembre alle 15:00, nella 12ª giornata di Serie A. In classifica la Lazio è al 1° posto con 28 punti, mentre il Lecce è al 14° con 9."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie A la Lazio ha ottenuto 5 vittorie (sequenza V-V-V-V-V), segnando 16 gol e subendone 5. È reduce da 5 vittorie consecutive. In casa ha vinto tutte le 3 partite giocate.",
+     "Nelle ultime 5 partite di Serie A il Lecce ha ottenuto 1 vittoria e 4 sconfitte (sequenza P-V-P-P-P), segnando 6 gol e subendone 11. Ha perso le ultime 3. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Lazio 2,4, Lecce 1,1 a partita.",
+     "Gol subiti finora: Lazio 8, Lecce 21.",
+     "In tutte le ultime 5 partite della Lazio si sono segnati almeno tre gol.",
+     "In 4 delle ultime 5 partite del Lecce si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Lazio – Lecce?",
+    "a": "Sabato 21 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T14:16:07.535Z"
+ },
+ "fb:1001550200": {
+  "fingerprint": "1p951e8",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Il match è in programma sabato 21 novembre alle 15:00: il Como ospita il Cagliari nella 12ª giornata di Serie A. In classifica il Como è 4° con 23 punti, il Cagliari 12° con 13."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie A il Como ha ottenuto 4 vittorie e 1 pareggio (sequenza N-V-V-V-V), segnando 9 gol e subendone 2. Arriva da 4 vittorie consecutive. In casa, nella stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie A il Cagliari ha ottenuto 1 pareggio e 4 sconfitte (sequenza N-P-P-P-P), segnando 4 gol e subendone 13. Ha perso le ultime 4 gare. In trasferta ha perso tutte le 3 partite disputate."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Como 1,8, Cagliari 0,9 a partita.",
+     "Gol subiti finora: Como 8, Cagliari 15.",
+     "Il Como non ha subito gol in 3 delle ultime 5 partite.",
+     "In 3 delle ultime 5 partite del Cagliari sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Como – Cagliari?",
+    "a": "Sabato 21 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove si trovano classifica e risultati?",
+    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T14:16:11.480Z"
+ },
+ "fb:1001601610": {
+  "fingerprint": "siyuw1",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 21 novembre alle 15:00 la Sampdoria riceve il Benevento per la 12ª giornata di Serie B. In classifica la Sampdoria occupa il 19° posto con 8 punti, mentre il Benevento è al 6° con 15."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B la Sampdoria ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-P-V), con 5 gol fatti e 9 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Serie B il Benevento ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-N-V-N-P), con 8 gol fatti e 5 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Sampdoria 1,0, Benevento 1,4 a partita.",
+     "Gol subiti finora: Sampdoria 18, Benevento 10."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Sampdoria – Benevento?",
+    "a": "Sabato 21 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T14:16:20.308Z"
+ },
+ "fb:1001601612": {
+  "fingerprint": "1c193tt",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Hellas Verona e Cesena si affrontano sabato 21 novembre alle 15:00 per la 12ª giornata di Serie B. In classifica l'Hellas Verona è al 7° posto con 15 punti, il Cesena al 12° con 12."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B l'Hellas Verona ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza P-N-N-V-V), con 9 gol fatti e 6 subiti. Non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria e 2 pareggi, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie B il Cesena ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-N-P-V-N), con 4 gol fatti e 8 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, ancora senza vittorie."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Hellas Verona 1,9, Cesena 1,1 a partita.",
+     "Gol subiti finora: Hellas Verona 13, Cesena 14.",
+     "In 3 delle ultime 5 partite dell'Hellas Verona si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Hellas Verona – Cesena?",
+    "a": "Sabato 21 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T14:16:22.719Z"
+ },
+ "fb:1001601604": {
+  "fingerprint": "1jbrcus",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 21 novembre alle 15:00 l'Ascoli ospita il Vicenza Virtus nella 12ª giornata di Serie B. In classifica l'Ascoli occupa il 2° posto con 20 punti, mentre il Vicenza Virtus è al 17° con 9."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B l'Ascoli ha ottenuto 2 vittorie e 3 pareggi (sequenza N-V-V-N-N), segnando 10 gol e subendone 3. Non perde da 6 partite. In casa, nel bilancio stagionale, conta 1 vittoria e 2 pareggi, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie B il Vicenza Virtus ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-N-V-P-P), segnando 6 gol e subendone 10. Ha perso le ultime 2 gare. In trasferta, nel bilancio stagionale, conta 1 vittoria, 1 pareggio e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Ascoli 1,5, Vicenza Virtus 1,3 a partita.",
+     "Gol subiti finora: Ascoli 7, Vicenza Virtus 20.",
+     "L'Ascoli ha la miglior difesa del torneo.",
+     "In 4 delle ultime 5 partite del Vicenza Virtus si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Ascoli – Vicenza Virtus?",
+    "a": "Sabato 21 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T14:16:27.044Z"
+ },
+ "fb:1001601608": {
+  "fingerprint": "1g60qmv",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 21 novembre alle 15:00 Empoli e Pisa si sfidano nella 12ª giornata di Serie B. In classifica l'Empoli occupa il 18° posto con 8 punti, mentre il Pisa è all'8° posto con 15."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B l'Empoli ha ottenuto 2 pareggi e 3 sconfitte, con sequenza P-N-P-P-N, segnando 6 gol e subendone 11. In casa, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza alcuna vittoria.",
+     "Nelle ultime 5 partite di Serie B il Pisa ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta, con sequenza V-V-N-N-P, segnando 10 gol e subendone 7. In trasferta, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Empoli 1,0, Pisa 1,8.",
+     "Gol subiti finora: Empoli 17, Pisa 15.",
+     "In 3 delle ultime 5 partite dell'Empoli sono stati segnati almeno tre gol.",
+     "In 3 delle ultime 5 partite del Pisa sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Empoli – Pisa?",
+    "a": "Sabato 21 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T14:16:30.918Z"
+ },
+ "fb:1001601605": {
+  "fingerprint": "aef9pa",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Avellino e Mantova si sfidano sabato 21 novembre alle 15:00 nella 12ª giornata di Serie B. Il match mette di fronte due squadre della parte alta della classifica: l'Avellino è 5° con 15 punti, il Mantova 4° con 18."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B l'Avellino ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta, con la sequenza V-N-P-N-V. Ha segnato 8 gol e ne ha subiti 4. In casa, nel bilancio stagionale, i risultati sono 2 vittorie e 1 sconfitta.",
+     "Nelle ultime 5 partite di Serie B il Mantova ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza V-P-V-P-N. Ha segnato 5 gol e ne ha subiti 6. In trasferta, nel bilancio stagionale, i risultati sono 2 vittorie e 1 pareggio, senza sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Avellino 1,5, Mantova 1,5 a partita.",
+     "Gol subiti finora: Avellino 10, Mantova 11."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Avellino – Mantova?",
+    "a": "Sabato 21 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Le spiegazioni si trovano nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T14:16:36.687Z"
+ },
+ "fb:1001601603": {
+  "fingerprint": "1lkgid4",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Arezzo e Padova si sfidano sabato 21 novembre alle 15:00 nella 12ª giornata di Serie B. In classifica l'Arezzo occupa il 13° posto con 11 punti, mentre il Padova è 9° con 14."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B l'Arezzo ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-V-P-P-N), segnando 3 gol e subendone 6. In casa, nella stagione, il bilancio è di 2 pareggi e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 5 partite di Serie B il Padova ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-P-V-V-N), segnando 5 gol e subendone 5. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Arezzo 0,9, Padova 1,0 a partita.",
+     "Gol subiti finora: Arezzo 19, Padova 11.",
+     "In 3 delle ultime 5 partite dell'Arezzo si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Arezzo – Padova?",
+    "a": "Sabato 21 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ti spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T14:16:40.557Z"
+ },
+ "fb:1001601609": {
+  "fingerprint": "1s0xm9z",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 21 novembre alle 15:00 il Modena riceve il Juve Stabia per la 12ª giornata di Serie B. In classifica il Modena è al 3° posto con 20 punti, mentre il Juve Stabia è al 16° con 9."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B il Modena ha raccolto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-V-V-N), con 10 gol fatti e 6 subiti. In casa il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie B il Juve Stabia ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-V-V-P-N), con 7 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 2 pareggi, senza sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Modena 1,8, Juve Stabia 1,1 a partita.",
+     "Gol subiti finora: Modena 10, Juve Stabia 11.",
+     "In 4 delle ultime 5 partite del Modena si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Modena – Juve Stabia?",
+    "a": "Sabato 21 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T14:16:42.958Z"
+ },
+ "fb:1001601611": {
+  "fingerprint": "hfza2",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sudtirol e Cremonese si affrontano sabato 21 novembre alle 15:00, nella 12ª giornata di Serie B. In classifica il Sudtirol occupa il 10° posto con 14 punti, mentre la Cremonese è all'11° con 12 punti."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B il Sudtirol ha ottenuto 3 pareggi e 2 sconfitte, con la sequenza N-P-N-P-N. Ha segnato 2 gol e ne ha subiti 7. In casa, nella stagione, il bilancio è di 3 pareggi e nessuna vittoria.",
+     "Nelle ultime 5 partite di Serie B la Cremonese ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza N-P-P-V-V. Ha segnato 5 gol e ne ha subiti 4. In trasferta, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Sudtirol 1,1, Cremonese 1,0.",
+     "Gol subiti finora: Sudtirol 10, Cremonese 11.",
+     "La Cremonese non ha subito gol in 3 delle ultime 5 partite."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Sudtirol – Cremonese?",
+    "a": "Sabato 21 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella [pagina della Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T14:16:47.815Z"
+ },
+ "fb:1001601606": {
+  "fingerprint": "k4ahl6",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 21 novembre alle 15:00 Carrarese e Virtus Entella si affrontano nella 12ª giornata di Serie B. Le due squadre condividono il quinto posto in classifica con 10 punti."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B il Carrarese ha ottenuto 3 vittorie e 2 sconfitte, con sequenza V-V-P-V-P. Ha segnato 7 gol e ne ha subiti 7. In casa ha vinto tutte le 2 partite disputate.",
+     "Nelle ultime 5 partite di Serie B la Virtus Entella ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con sequenza N-V-P-N-P. Ha segnato 4 gol e ne ha subiti 6. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Carrarese 0,9, Virtus Entella 1,1.",
+     "Gol subiti finora: Carrarese 13, Virtus Entella 12.",
+     "Nelle ultime 5 partite del Carrarese, in 4 occasioni sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Carrarese – Virtus Entella?",
+    "a": "Sabato 21 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Puoi trovare spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T14:16:51.601Z"
+ },
+ "fb:1001601607": {
+  "fingerprint": "u8obbv",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Il Catanzaro riceve il Palermo sabato 21 novembre alle 15:00, nell'ambito della 12ª giornata di Serie B. In classifica il Catanzaro è al 20° posto con 6 punti, mentre il Palermo è al 1° posto con 27 punti."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B il Catanzaro ha ottenuto 3 pareggi e 2 sconfitte (sequenza P-N-P-N-N), segnando 6 gol e subendone 13. In casa, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie.",
+     "Nelle ultime 5 partite di Serie B il Palermo ha ottenuto 3 vittorie e 2 pareggi (sequenza V-V-N-V-N), segnando 11 gol e subendone 6. Non perde da 6 partite. In trasferta, il bilancio stagionale è di 2 vittorie e 2 pareggi, senza sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Catanzaro 1,1, Palermo 2,3.",
+     "Gol subiti finora: Catanzaro 22, Palermo 13.",
+     "Il Palermo ha il miglior attacco del torneo.",
+     "Nelle ultime 5 partite del Catanzaro si sono segnati almeno tre gol in 3 occasioni.",
+     "Nelle ultime 5 partite del Palermo si sono segnati almeno tre gol in 3 occasioni."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Catanzaro – Palermo?",
+    "a": "Sabato 21 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina dedicata alla [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Le spiegazioni si trovano nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T14:16:56.703Z"
  }
 }
