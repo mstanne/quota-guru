@@ -69,12 +69,6 @@ jobs:
           scripts/data-branch.sh restore-data
           scripts/data-branch.sh restore-state
 
-      # One-off: club ids paired wrongly on 1 November 2026 (scripts/migrations/correggi-squadre-2026-11.mjs).
-      # Each phase runs once (afterwards it only prints "già applicata"); these three steps can go once applied.
-      - name: Correct the club ids (map)
-        continue-on-error: true
-        run: node scripts/migrations/correggi-squadre-2026-11.mjs prima
-
       - name: Download football data
         # API-Football (API-Sports, Pro plan): every competition on the site, including Serie B and the European cups.
         # If the API is unreachable the last saved data are published (see the data branch step above).
@@ -82,12 +76,6 @@ jobs:
         continue-on-error: true
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-
-      - name: Correct the club ids (data and archive)
-        continue-on-error: true
-        env:
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-        run: node scripts/migrations/correggi-squadre-2026-11.mjs dati
 
       - name: Download basket data
         # NBA from API-NBA (same API-Sports key); Lega Basket Serie A standings from BALLDONTLIE only if its key is set.
@@ -211,10 +199,6 @@ jobs:
             echo "::warning::Archivio pronostici non raggiungibile: questa build non lo aggiorna"
             exit 1
           fi
-
-      - name: Correct the club ids (predictions archive)
-        continue-on-error: true
-        run: node scripts/migrations/correggi-squadre-2026-11.mjs pronostici
 
       - name: Build
         run: npm run build
