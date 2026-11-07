@@ -12,6 +12,8 @@
 //   - The site reads GET /match/<API-Football fixture id> (JSON, CORS for the site only, cached 15 seconds at the
 //     edge). The API key never leaves the worker.
 //   - At most MAX_DAILY_REQUESTS requests a day (default 3000 of the 7500 of the Pro plan); GET /stato shows how many.
+//   - GET /live: score, status and minute of every match under way or just finished, compact (one record), for the
+//     match lists of the site (src/lib/liveScores.ts), cached 15 seconds at the edge like /match.
 //   - GET /formazioni: the official line-ups already out for the matches not started yet, read by the Telegram channel
 //     (scripts/telegram, rubric "formazioni"). When new line-ups come out the worker starts telegram.yml at once.
 //
@@ -46,6 +48,19 @@ const day = (ms) => new Date(ms).toISOString().slice(0, 10);
 const hasLineups = (e) => e.lineups?.home?.starters?.length === 11 && e.lineups?.away?.starters?.length === 11;
 
 /** One fixture of /fixtures?ids= in the form served to the site. */
+/** Compact record of a match for GET /live: fixture id, status, minute, goals, penalties. */
+export const scoreOf = (e) => ({
+  id: e.id,
+  s: e.status.short,
+  min: e.status.elapsed,
+  ext: e.status.extra,
+  h: e.score.home,
+  a: e.score.away,
+  ph: e.score.penalty?.home ?? null,
+  pa: e.score.penalty?.away ?? null,
+  at: e.updatedAt,
+});
+
 export function liveEntry(f, now) {
   const sideOf = (id) => (id === f.teams?.home?.id ? "home" : id === f.teams?.away?.id ? "away" : null);
   // `players`: every player's row, only for the archive and the player pages (not served live)
@@ -182,6 +197,9 @@ export class LiveHub {
     // drop the data of matches no longer in the schedule
     const keep = new Set(list.map((m) => `m:${m.id}`));
     for (const k of (await this.storage.list({ prefix: "m:" })).keys()) if (!keep.has(k)) await this.storage.delete(k);
+    const scores = (await this.storage.get("scores")) ?? {};
+    for (const id of Object.keys(scores)) if (!keep.has(`m:${id}`)) delete scores[id];
+    await this.storage.put("scores", scores);
     await this.storage.put("queue", window.map((m) => m.id));
     const result = { ok: true, at: new Date(now).toISOString(), matches: window.length };
     await this.storage.put("last", result);
@@ -200,10 +218,12 @@ export class LiveHub {
     const done = (await this.storage.get("done")) ?? {};
     const s = await this.storage.get("schedule");
     const seen = (await this.storage.get("lineupsSeen")) ?? {}; // fixture id → time its line-ups were first seen
+    const scores = (await this.storage.get("scores")) ?? {}; // fixture id → compact score (GET /live)
     let newLineups = false;
     for (const f of await this.api(`/fixtures?ids=${chunk.join("-")}`)) {
       const e = liveEntry(f, now);
       await this.storage.put(`m:${e.id}`, JSON.stringify(e));
+      scores[e.id] = scoreOf(e);
       const m = s?.list.find((x) => x.id === e.id);
       if (m) m.status = e.status.short;
       if (FINAL.has(e.status.short)) done[e.id] ??= now;
@@ -214,6 +234,7 @@ export class LiveHub {
     }
     for (const id of Object.keys(seen)) if (now - seen[id] > 12 * 3600e3) delete seen[id];
     await this.storage.put("lineupsSeen", seen);
+    await this.storage.put("scores", scores);
     await this.storage.put("done", done);
     if (s) await this.storage.put("schedule", s);
     if (queue.length > CHUNK) await this.storage.setAlarm(Date.now() + GAP_MS);
@@ -266,6 +287,12 @@ export class LiveHub {
         headers: { "content-type": "application/json" },
       });
     }
+    if (url.pathname === "/live") {
+      // only what the lists show: matches under way or finished (not the ones waiting for kick-off)
+      const scores = (await this.storage.get("scores")) ?? {};
+      const matches = Object.values(scores).filter((x) => x.s !== "NS" && x.s !== "TBD");
+      return Response.json({ at: new Date().toISOString(), matches });
+    }
     if (url.pathname === "/formazioni") return Response.json({ at: new Date().toISOString(), matches: await this.lineups() });
     if (url.pathname === "/prova") {
       // check from Cloudflare: /status of API-Football (account, plan, requests of the day; not counted in the quota)
@@ -313,7 +340,7 @@ export default {
     const url = new URL(request.url);
     if (request.method === "OPTIONS") return cors(request, env, new Response(null, { status: 204 }));
     if (request.method !== "GET") return new Response("method not allowed", { status: 405 });
-    if (/^\/match\/\d+$/.test(url.pathname)) {
+    if (/^\/match\/\d+$/.test(url.pathname) || url.pathname === "/live") {
       // short edge cache: many viewers of the same match cost one read every 15 seconds per data centre
       const cache = caches.default;
       const key = new Request(`${url.origin}${url.pathname}`);

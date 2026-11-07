@@ -18,6 +18,7 @@ import {
 import { pct, type FootballMarket, type Prediction } from "../../lib/predictionsCore";
 import { MarketMini, marketColumns } from "../predictions/PredictionUi";
 import { footballSlip } from "../predictions/SlipPicks";
+import { useLiveMatch } from "../../lib/liveScores";
 
 /**
  * Team crest (API-Football CDN). Falls back to the three-letter code if the crest is missing
@@ -72,7 +73,7 @@ export function TeamBadge({
  */
 export function MatchRow({
   competition,
-  match,
+  match: sourceMatch,
   showCompetition = false,
   prediction,
   market = "1x2",
@@ -93,11 +94,13 @@ export function MatchRow({
   /** The list shows column headers (MatchListHeader): the probability cells drop their labels. */
   columns?: boolean;
 }) {
+  // score, status and minute follow the live service while the match is played (src/lib/liveScores.ts)
+  const match = useLiveMatch(sourceMatch);
   const finished = isFinished(match);
   const live = isLive(match);
   const pending = isResultPending(match);
   const ft = match.score.fullTime;
-  const label = `${match.homeTeam.shortName} – ${match.awayTeam.shortName}, ${finished ? `risultato ${ft.home}-${ft.away}` : pending ? "risultato in arrivo" : `ore ${formatTime(match.utcDate)}`}`;
+  const label = `${match.homeTeam.shortName} – ${match.awayTeam.shortName}, ${finished ? `risultato ${ft.home}-${ft.away}` : live ? `in corso, ${ft.home ?? 0}-${ft.away ?? 0}` : pending ? "risultato in arrivo" : `ore ${formatTime(match.utcDate)}`}`;
 
   const quickPick = !!prediction && !prediction.pre && !finished && !live && !pending;
 
