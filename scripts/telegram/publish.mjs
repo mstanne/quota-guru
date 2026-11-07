@@ -11,6 +11,11 @@
 //   node scripts/telegram/publish.mjs --dry-run [--all]       print the posts instead of sending them
 //                                                             (--all: every rubric, due or not)
 //   --now 2026-11-07T08:40:00Z                                pretend it is that time (tests)
+//   --cards <folder>                                          with --dry-run: also save the images there
+//                                                             (default .cache/telegram-cards)
+//
+// Every post goes out as an image (scripts/telegram/cards.mjs) with the text as caption; if the image cannot be made,
+// the text alone is sent.
 //
 // Environment:
 //   TELEGRAM_BOT_TOKEN       token of the bot (admin of both channels)
@@ -21,7 +26,20 @@
 //   LIVE_URL                 address of the live worker (workers/live): official line-ups, rubric "formazioni"
 //   TG_DATA_DIR, TG_ARCHIVE_DIR, TG_REGISTER_FILE, TG_LIVE_FILE   local copies instead of the branches (tests)
 import { RUBRICHE } from "./rubriche.mjs";
-import { complianceProblems, loadData, loadRegister, rome, romeInstant, sendTelegram } from "./lib.mjs";
+import fs from "node:fs";
+import path from "node:path";
+import { renderCard } from "./cards.mjs";
+import {
+  captionOf,
+  complianceProblems,
+  loadData,
+  loadRegister,
+  rome,
+  romeInstant,
+  root,
+  sendTelegram,
+  sendTelegramPhoto,
+} from "./lib.mjs";
 
 const WINDOW = 100; // minutes after the slot in which a late run still sends the rubric
 
@@ -103,19 +121,41 @@ for (const r of candidates) {
     continue;
   }
   for (const p of posts) {
-    const problems = complianceProblems(p.text);
-    if (p.text.length > 4096) problems.push(`testo troppo lungo (${p.text.length} caratteri, massimo 4096)`);
+    const caption = p.card ? captionOf(p.text) : p.text;
+    let image = null;
+    if (p.card) {
+      try {
+        image = renderCard(p.card);
+      } catch (e) {
+        console.error(`! ${r.id}: immagine non generata, invio solo testo: ${e.message ?? e}`);
+      }
+    }
+    const problems = [
+      ...complianceProblems(caption),
+      ...(image ? complianceProblems(image.text, { footer: false }).map((x) => `immagine: ${x}`) : []),
+    ];
+    if (!image && p.text.length > 4096) problems.push(`testo troppo lungo (${p.text.length} caratteri, massimo 4096)`);
     if (problems.length) {
       console.error(`✗ ${r.id}: post bloccato dal filtro di conformità:\n  - ${problems.join("\n  - ")}\n${p.text}`);
       failed++;
       continue;
     }
     if (dryRun) {
-      console.log(`\n===== ${r.id} (${r.name}) =====\n${p.text}\n`);
+      let saved = "";
+      if (image) {
+        const dir = path.resolve(value("cards") ?? path.join(root, ".cache/telegram-cards"));
+        fs.mkdirSync(dir, { recursive: true });
+        const file = path.join(dir, `${r.id}${r.event ? `-${p.key.split(":").at(-1)}` : ""}.png`);
+        fs.writeFileSync(file, image.png);
+        saved = `\n[immagine: ${file}]`;
+      }
+      console.log(`\n===== ${r.id} (${r.name}) =====${saved}\n${image ? caption : p.text}\n`);
       continue;
     }
     try {
-      const messageId = await sendTelegram(chatId, p.text);
+      const messageId = image
+        ? await sendTelegramPhoto(chatId, image.png, caption)
+        : await sendTelegram(chatId, p.text);
       register.data.sent[p.key] = { at: new Date().toISOString(), messageId };
       p.after?.();
       await register.save(`${p.key.slice(mode.length + 1)} (${mode})`);

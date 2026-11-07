@@ -205,7 +205,7 @@ function operatorNames() {
   return [...names];
 }
 /** Problems of a post (empty = it can be sent). */
-export function complianceProblems(text) {
+export function complianceProblems(text, { footer = true } = {}) {
   const problems = [];
   const plain = text.replace(/<[^>]+>/g, " ");
   for (const n of operatorNames()) {
@@ -219,7 +219,7 @@ export function complianceProblems(text) {
   for (const [url] of plain.matchAll(/https?:\/\/\S+/g)) {
     if (!url.startsWith(SITE)) problems.push(`link fuori dal sito: ${url}`);
   }
-  if (!text.includes(FOOTER)) problems.push("manca la riga di gioco responsabile");
+  if (footer && !text.includes(FOOTER)) problems.push("manca la riga di gioco responsabile");
   return problems;
 }
 
@@ -308,6 +308,35 @@ export async function sendTelegram(chatId, html) {
       link_preview_options: { is_disabled: true },
     }),
   });
+  const j = await res.json().catch(() => ({}));
+  if (!j.ok) throw new Error(`Telegram: ${j.description ?? `HTTP ${res.status}`}`);
+  return j.result.message_id;
+}
+
+/** Telegram's limit for the caption of a photo. */
+export const CAPTION_MAX = 1024;
+
+/**
+ * Caption of a post with image: the whole text when it fits, otherwise the first paragraph (title), the paragraphs
+ * with links and the responsible-gaming line: the full list is on the image.
+ */
+export function captionOf(html) {
+  if (html.length <= CAPTION_MAX) return html;
+  const parts = html.split("\n\n");
+  const short = [parts[0], ...parts.slice(1, -1).filter((p) => p.includes("<a ")), parts.at(-1)].join("\n\n");
+  return short.length <= CAPTION_MAX ? short : [parts[0], parts.at(-1)].join("\n\n");
+}
+
+/** Sends a PNG with an HTML caption; returns the message id. */
+export async function sendTelegramPhoto(chatId, png, caption) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  if (!token) throw new Error("TELEGRAM_BOT_TOKEN mancante");
+  const form = new FormData();
+  form.append("chat_id", String(chatId));
+  form.append("caption", caption);
+  form.append("parse_mode", "HTML");
+  form.append("photo", new Blob([png], { type: "image/png" }), "quotaguru.png");
+  const res = await fetch(`https://api.telegram.org/bot${token}/sendPhoto`, { method: "POST", body: form });
   const j = await res.json().catch(() => ({}));
   if (!j.ok) throw new Error(`Telegram: ${j.description ?? `HTTP ${res.status}`}`);
   return j.result.message_id;
