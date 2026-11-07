@@ -9,6 +9,7 @@ import { marketColumns } from "../predictions/PredictionUi";
 import type { FootballMarket, Prediction } from "../../lib/predictionsCore";
 import { DayLabel, useRomeToday } from "../predictions/DayLabel";
 import { GroupSubheading } from "../predictions/ListTools";
+import { FairOddsLegend } from "../predictions/SlipPicks";
 import { MatchListHeader, MatchRow, type PickOutcome } from "./MatchRow";
 
 export interface MatchListRow {
@@ -117,6 +118,7 @@ export function MatchList<R extends MatchListRow>({
           </div>
         </section>
       ))}
+      {rows.some((r) => !!r.prediction) && <FairOddsLegend className="px-3 sm:px-4" />}
     </div>
   );
 }
