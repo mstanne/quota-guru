@@ -18,6 +18,7 @@ import { loadAllNbaPlayerData, nbaPlayerMeta, type NbaPlayer } from "./lib/nbaPl
 import { leagueGoalStats, type GoalResult } from "./lib/goalStats.mjs";
 import { loadAllCompetitionData } from "./lib/footballData";
 import { dayRoutes } from "./lib/dayPages";
+import { trisMeta } from "./lib/trisPage";
 import { basketRoutes, nbaGames } from "./lib/basket";
 import { nbaDetailsFor } from "./lib/basketDetails";
 import type { EventVenue } from "./lib/schema";
@@ -93,7 +94,7 @@ const cornersCardsRoutes = () =>
   Object.values(competitionFiles).flatMap(({ default: f }) =>
     f.matchStats?.n && f.competition.standings.length ? [cornersCardsMeta(f.competition, f.matchStats.league)] : [],
   );
-export const routes = [trackRecordMeta(), ...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...nbaPlayerRoutes(), ...staticRoutes.map((r) => (r.path === "/" ? { ...r, jsonLd: [...(r.jsonLd ?? []), ...homeItemList()] } : r)), ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...basketRoutes(
+export const routes = [trackRecordMeta(), ...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...nbaPlayerRoutes(), ...staticRoutes.map((r) => (r.path === "/" ? { ...r, jsonLd: [...(r.jsonLd ?? []), ...homeItemList()] } : r)), ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), trisMeta(), ...basketRoutes(
   (id) => !!basketPredictionFor(id),
   (id) => highlightFor("nba", id),
   (g) => nbaVenues.get(g.home.id) ?? null,

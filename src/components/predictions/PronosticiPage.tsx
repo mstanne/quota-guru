@@ -1,7 +1,8 @@
 // /pronostici – hub of the model's predictions: next football and NBA matches, the round pages,
 // the tennis predictor and the verifiable track record of both models.
-import { CalendarDays, ChartColumn, ChevronRight, CircleDot, Goal, Dribbble } from "lucide-react";
+import { CalendarDays, ChartColumn, ChevronRight, CircleDot, Goal, Dribbble, Target } from "lucide-react";
 import { dayPath } from "../../lib/dayPages";
+import { TRIS_PATH } from "../../lib/trisPage";
 import type { ReactNode } from "react";
 import { Link } from "../../lib/links";
 import { PageHeader, MetaItems } from "../layout/PageHeader";
@@ -83,6 +84,13 @@ export function PronosticiPage() {
               Pronostici di {d}
             </Link>
           ))}
+          <Link
+            to={TRIS_PATH}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
+          >
+            <Target className="w-4 h-4 text-slate-300" aria-hidden="true" />
+            Il tris della settimana
+          </Link>
           <SlipHint />
         </nav>
         <Section
