@@ -32,6 +32,7 @@ const DayPredictionsPage = lazyPage(() =>
 const TrackRecordPage = lazyPage(() =>
   import("./components/predictions/TrackRecordPage").then((m) => m.TrackRecordPage),
 );
+const TrisPage = lazyPage(() => import("./components/predictions/TrisPage").then((m) => m.TrisPage));
 const PronosticiPage = lazyPage(() => import("./components/predictions/PronosticiPage").then((m) => m.PronosticiPage));
 const StandingsPage = lazyPage(() => import("./components/calcio/StandingsPage").then((m) => m.StandingsPage));
 const NotFoundPage = lazyPage(() => import("./components/NotFoundPage").then((m) => m.NotFoundPage));
@@ -101,6 +102,7 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/calcio/:competizione/statistiche-corner-cartellini", [CornersCardsPage, NotFoundPage]],
   ["/calcio/:competizione/giornata/:numero", [LegacyRedirect, NotFoundPage]],
   [paths.pronostici, [PronosticiPage]],
+  ["/pronostici/tris", [TrisPage]],
   ["/pronostici/oggi", [DayPredictionsPage]],
   ["/pronostici/domani", [DayPredictionsPage]],
   ["/pronostici/nba", [BasketPage]],
@@ -147,7 +149,7 @@ export function preloadForPath(pathname: string) {
   // football pages: the data of their competition (all of them for /calcio)
   const football =
     (/^\/calcio(\/|$)/.test(clean) && !/^\/calcio\/(squadre|giocatori|stagioni)/.test(clean) && !/\/stagioni(\/|$)/.test(clean)) ||
-    /^\/pronostici\/(?!nba(\/|$)|oggi$|domani$)[^/]+/.test(clean)
+    /^\/pronostici\/(?!nba(\/|$)|oggi$|domani$|tris$)[^/]+/.test(clean)
     ? import("./lib/footballData").then((m) => m.preloadFootballData(clean))
     : null;
   const season = /^\/calcio\/[^/]+\/stagioni\/[^/]+$/.test(clean)
@@ -246,6 +248,7 @@ export default function App() {
             <Route path="/calcio/:competizione/marcatori" element={<LeadersPage />} />
             <Route path="/calcio/:competizione/statistiche-corner-cartellini" element={<CornersCardsPage />} />
             <Route path={paths.pronostici} element={<PronosticiPage />} />
+            <Route path="/pronostici/tris" element={<TrisPage />} />
             <Route path="/pronostici/oggi" element={<DayPredictionsPage day="oggi" />} />
             <Route path="/pronostici/domani" element={<DayPredictionsPage day="domani" />} />
             <Route path="/pronostici/nba" element={<BasketPage league="nba" />} />

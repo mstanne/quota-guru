@@ -68,6 +68,7 @@ jobs:
         with:
           sparse-checkout: |
             scripts/telegram
+            scripts/lib/tris.mjs
             scripts/assets/fonts
             src/assets/brand/quotaguru-logo-dark-bg.svg
             src/assets/guides

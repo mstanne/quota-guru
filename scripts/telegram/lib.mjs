@@ -109,6 +109,7 @@ async function branchJson(branch, file) {
  *   lineups            official line-ups already out (live worker), only when asked
  *   archive.calcio/nba every prediction the site published, with result and hit once graded
  *                      (`archivio-pronostici` branch, files of the previous, current and next month)
+ *   tris               the threes locked by the site build (same branch, tris.json; scripts/lib/tris.mjs)
  * Local runs: TG_DATA_DIR (a folder holding src/data/…) and TG_ARCHIVE_DIR (a copy of archivio-pronostici).
  */
 export async function loadData(nowMs, { live = false } = {}) {
@@ -125,14 +126,15 @@ export async function loadData(nowMs, { live = false } = {}) {
     const p = path.join(archDir, f);
     return fs.existsSync(p) ? readJsonFile(p) : null;
   };
-  const [football, basket, ...files] = await Promise.all([
+  const [football, basket, tris, ...files] = await Promise.all([
     data("src/data/football.json"),
     data("src/data/basket.json"),
+    arch("tris.json"),
     ...months.flatMap((m) => [arch(`calcio/${m}.json`), arch(`nba/${m}.json`)]),
   ]);
   const archive = { calcio: [], nba: [] };
   files.forEach((f, i) => archive[i % 2 ? "nba" : "calcio"].push(...Object.values(f ?? {})));
-  return { football, basket, archive, lineups: live ? await loadLineups() : [] };
+  return { football, basket, archive, tris: tris ?? {}, lineups: live ? await loadLineups() : [] };
 }
 
 /** Official line-ups already out (live worker, GET /formazioni); [] when the worker cannot be reached. */
