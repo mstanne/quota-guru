@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T23:15:01.726Z",
+  "updatedAt": "2026-11-07T00:19:25.383Z",
   "football": {
     "details": {
       "ok": true
@@ -8,8 +8,8 @@
       "ok": true
     },
     "ok": true,
-    "requests": 40,
-    "remainingToday": 1119,
+    "requests": 0,
+    "remainingToday": null,
     "matches": 178,
     "teamSeasons": 588
   },
@@ -22,22 +22,22 @@
     },
     "ok": true,
     "requests": 7,
-    "remainingToday": 7287,
+    "remainingToday": 7491,
     "games": 29,
     "teamSeasons": 60
   },
   "calendarioCalcio": {
-    "updatedAt": "2026-11-06T23:13:20.792Z",
+    "updatedAt": "2026-11-07T00:17:55.324Z",
     "source": "API-Football",
     "ok": true,
     "competitions": {
       "SA": {
         "ok": true,
-        "matches": 60
+        "matches": 64
       },
       "SB": {
         "ok": true,
-        "matches": 60
+        "matches": 70
       },
       "CL": {
         "ok": true,
@@ -53,7 +53,7 @@
       },
       "PL": {
         "ok": true,
-        "matches": 50
+        "matches": 57
       },
       "PD": {
         "ok": true,
@@ -61,15 +61,15 @@
       },
       "BL1": {
         "ok": true,
-        "matches": 46
+        "matches": 52
       },
       "FL1": {
         "ok": true,
-        "matches": 46
+        "matches": 51
       },
       "DED": {
         "ok": true,
-        "matches": 45
+        "matches": 50
       },
       "PPL": {
         "ok": true,
@@ -77,22 +77,22 @@
       },
       "ELC": {
         "ok": true,
-        "matches": 85
+        "matches": 96
       },
       "BSA": {
         "ok": true,
-        "matches": 73
+        "matches": 75
       }
     },
-    "requests": 86,
-    "remainingToday": 1159
+    "requests": 43,
+    "remainingToday": 7456
   },
   "calendarioNba": {
-    "updatedAt": "2026-11-06T23:13:42.336Z",
+    "updatedAt": "2026-11-07T00:18:06.150Z",
     "source": "API-NBA",
     "ok": true,
-    "games": 226,
+    "games": 227,
     "requests": 1,
-    "remainingToday": 7294
+    "remainingToday": 7497
   }
 }

@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-06T23:16:34.878Z",
+ "generatedAt": "2026-11-07T00:21:05.297Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558534": {
@@ -2905,20 +2905,20 @@
    ]
   },
   "fb:567347": {
-   "fingerprint": "m1ifjz",
+   "fingerprint": "1se2ck5",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Alverca e Casa Pia si affrontano sabato 7 novembre alle 19:00 nell'11ª giornata di Primeira Liga. In classifica l'Alverca occupa il 10° posto con 11 punti, il Casa Pia il 17° con 7."
+      "Alverca e Casa Pia si affrontano sabato 7 novembre alle 19:00 per la 11ª giornata di Primeira Liga. In classifica l'Alverca è all'11° posto con 11 punti, mentre il Casa Pia è al 17° con 7."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Primeira Liga l'Alverca ha ottenuto 1 vittoria e 2 sconfitte (sequenza V-P-P), segnando 4 gol e subendone 3. Ha perso le ultime 2 gare.",
-      "Nelle ultime 3 partite di Primeira Liga il Casa Pia ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-V-P), segnando 2 gol e subendone 3."
+      "Nelle ultime 3 partite di Primeira Liga l'Alverca ha raccolto 1 vittoria e 2 sconfitte (sequenza V-P-P), con 4 gol fatti e 3 subiti. Ha perso le ultime 2.",
+      "Nelle ultime 3 partite di Primeira Liga il Casa Pia ha raccolto 1 vittoria e 2 sconfitte (sequenza P-V-P), con 2 gol fatti e 3 subiti."
      ],
      "bullets": []
     },
@@ -2933,7 +2933,7 @@
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per l'Alverca, 0 per il Casa Pia e nessun pareggio, con 6 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, ad aprile 2026 in Primeira Liga, è finito Alverca 3-1 Casa Pia."
+      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per l'Alverca, 0 vittorie per il Casa Pia e nessun pareggio, con 6 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, ad aprile 2026 in Primeira Liga, è finito Alverca 3-1 Casa Pia."
      ],
      "bullets": []
     }
@@ -2944,7 +2944,7 @@
      "a": "Sabato 7 novembre alle 19:00, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
     },
     {
@@ -4226,90 +4226,6 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "nba:21718043": {
-   "fingerprint": "101c615",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Wizards fanno visita agli Hawks sabato 7 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Hawks hanno un record di 5-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,8 punti segnati e 113,0 subiti. In casa il bilancio è 1-2.",
-      "I Wizards hanno un record di 4-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 108,9 punti segnati e 109,0 subiti. In trasferta il bilancio è 2-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 5 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Atlanta Hawks – Washington Wizards in Italia?",
-     "a": "Sabato 7 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718044": {
-   "fingerprint": "1a0mkak",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 7 novembre alle 01:00, ora italiana, gli Hornets ospitano i Celtics in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Hornets hanno un record di 3-6 in stagione e hanno vinto 0 delle ultime 5, con una media di 98,1 punti segnati e 109,2 subiti. In casa il bilancio è 2-3.",
-      "I Celtics hanno un record di 6-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 114,3 punti segnati e 108,3 subiti. In trasferta il bilancio è 1-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Charlotte Hornets – Boston Celtics in Italia?",
-     "a": "Sabato 7 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -6519,7 +6435,7 @@
    ]
   },
   "nba:21718098": {
-   "fingerprint": "ggblfo",
+   "fingerprint": "q0oxdn",
    "sections": [
     {
      "id": "presentazione",
@@ -6541,7 +6457,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 3 gare."
+      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 4 gare."
      ]
     }
    ],
@@ -6556,7 +6472,7 @@
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -7070,7 +6986,7 @@
    ]
   },
   "nba:1000017131": {
-   "fingerprint": "17qqyfd",
+   "fingerprint": "jb7nto",
    "sections": [
     {
      "id": "presentazione",
@@ -7092,7 +7008,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 2 gare."
+      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 3 gare."
      ]
     }
    ],
@@ -7103,11 +7019,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Trovi tutti i dettagli nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Per capirne la struttura, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -7281,7 +7197,7 @@
    ]
   },
   "nba:1000017136": {
-   "fingerprint": "1jlru8z",
+   "fingerprint": "1d4cbwi",
    "sections": [
     {
      "id": "presentazione",
@@ -7303,7 +7219,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 2 gare."
+      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 3 gare."
      ]
     }
    ],
@@ -7318,7 +7234,7 @@
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -7833,7 +7749,7 @@
    ]
   },
   "nba:1000017149": {
-   "fingerprint": "ksqvo4",
+   "fingerprint": "xa6zlf",
    "sections": [
     {
      "id": "presentazione",
@@ -7855,7 +7771,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 1 gara."
+      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 2 gare."
      ]
     }
    ],
@@ -7866,11 +7782,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8213,7 +8129,7 @@
    ]
   },
   "nba:1000017158": {
-   "fingerprint": "1c3kj1t",
+   "fingerprint": "8yvuhs",
    "sections": [
     {
      "id": "presentazione",
@@ -8235,7 +8151,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 1 gara."
+      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 2 gare."
      ]
     }
    ],
@@ -8595,6 +8511,48 @@
     }
    ]
   },
+  "nba:1000017167": {
+   "fingerprint": "1uc75kp",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 21 novembre alle 01:00, ora italiana, gli Hawks ospitano gli Hornets in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Gli Hawks hanno un record di 5-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,8 punti segnati e 113,0 subiti. In casa il bilancio è 1-2.",
+      "Gli Hornets hanno un record di 3-6 in stagione e hanno vinto 0 delle ultime 5, con una media di 98,1 punti segnati e 109,2 subiti. In trasferta il bilancio è 1-3."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 1 gara.",
+      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 1 gara."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca Atlanta Hawks – Charlotte Hornets in Italia?",
+     "a": "Sabato 21 novembre alle 01:00."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
   "fb:558537": {
    "fingerprint": "1s68f94",
    "sections": [
@@ -8625,19 +8583,26 @@
    ]
   },
   "fb:1001601593": {
-   "fingerprint": "zi1uz8",
+   "fingerprint": "cz1aa0",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il match tra Ascoli e Palermo è terminato 1-1: l'Ascoli, in vantaggio all'intervallo per 1-0, è stato raggiunto dal Palermo nella ripresa. La gara, valida per la 11ª giornata di Serie B, si è disputata venerdì 6 novembre."
+      "Il match si chiude 1-1: l'Ascoli, in vantaggio 1-0 all'intervallo, viene raggiunto nella ripresa dal Palermo. La partita, valida per la 11ª giornata di Serie B, si è disputata venerdì 6 novembre."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Dopo le partite giocate finora, l'Ascoli occupa il 2° posto con 20 punti, mentre il Palermo è al 1° con 27. [Classifica completa](/calcio/serie-b/classifica)."
+      "Con le partite disputate finora l'Ascoli occupa il 2° posto con 20 punti, mentre il Palermo è al 1° con 27. [Consulta la classifica completa](/calcio/serie-b/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Ascoli tornerà in campo sabato 21 novembre alle 15:00 in casa contro il Vicenza Virtus. Anche il Palermo sarà impegnato sabato 21 novembre alle 15:00, in trasferta contro il Catanzaro."
      ],
      "bullets": []
     }
@@ -9959,19 +9924,26 @@
    ]
   },
   "fb:560634": {
-   "fingerprint": "43drau",
+   "fingerprint": "1gnssg7",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "L'Everton ha battuto il Coventry City in casa per 3-1. La partita, valida per la 10ª giornata di Premier League, si è giocata venerdì 6 novembre; il primo tempo era terminato 0-0."
+      "L'Everton ha battuto il Coventry City in casa per 3-1. La partita, valida per la 10ª giornata di Premier League, si è giocata venerdì 6 novembre; il primo tempo si era chiuso 0-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora, l'Everton è al 5° posto con 16 punti, mentre il Coventry City è al 16° con 9. [Classifica completa](/calcio/premier-league/classifica)."
+      "Con le partite giocate finora, l'Everton è al 5° posto con 16 punti, mentre il Coventry City è al 16° con 9. Per l'intera graduatoria consulta la [classifica completa](/calcio/premier-league/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Coventry City tornerà in campo sabato 21 novembre alle 16:00, in casa contro il Crystal Palace."
      ],
      "bullets": []
     }
@@ -10017,19 +9989,26 @@
    ]
   },
   "fb:565852": {
-   "fingerprint": "ixqjmw",
+   "fingerprint": "1rzw8hl",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "L'HSV ha battuto il M'gladbach in casa per 3-1. La partita, valida per la 9ª giornata di Bundesliga, si è giocata venerdì 6 novembre; al termine del primo tempo il punteggio era di 1-1."
+      "L'HSV ha battuto il M'gladbach in casa per 3-1. La partita, valida per la 9ª giornata di Bundesliga, si è giocata venerdì 6 novembre; il primo tempo si era chiuso 1-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora l'HSV occupa l'8° posto con 12 punti, mentre il M'gladbach è al 18° con 4 punti. Puoi consultare la [classifica completa](/calcio/bundesliga/classifica)."
+      "Con le partite giocate finora l'HSV è all'8° posto con 12 punti, mentre il M'gladbach è al 18° con 4. Puoi consultare la [classifica completa](/calcio/bundesliga/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il M'gladbach tornerà in campo sabato 21 novembre alle 15:30, in casa contro il Dortmund."
      ],
      "bullets": []
     }
@@ -10041,24 +10020,31 @@
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
+     "a": "Puoi trovarli nella pagina [Bundesliga](/calcio/bundesliga)."
     }
    ]
   },
   "fb:559638": {
-   "fingerprint": "4qe9sy",
+   "fingerprint": "e8kzd9",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Toulouse ha battuto lo Strasbourg in casa per 3-1. La partita, valida per la 10ª giornata di Ligue 1, si è giocata venerdì 6 novembre; il primo tempo si era concluso 1-0."
+      "Il Toulouse ha battuto lo Strasbourg in casa per 3-1. La partita, valida per la 10ª giornata di Ligue 1, si è giocata venerdì 6 novembre; il primo tempo si era chiuso sul punteggio di 1-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora, il Toulouse occupa il 10° posto con 13 punti, mentre lo Strasbourg è al 13° con 10. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
+      "Con le partite giocate finora il Toulouse è al 10° posto con 13 punti, mentre lo Strasbourg è al 13° con 10. Per consultare la [classifica completa](/calcio/ligue-1/classifica) è possibile visitare la pagina dedicata."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Toulouse tornerà in campo sabato 21 novembre alle 20:45 in trasferta contro il RC Lens. Lo Strasbourg tornerà in campo nello stesso giorno e orario, sabato 21 novembre alle 20:45, in casa contro lo Stade Brestois 29."
      ],
      "bullets": []
     }
@@ -10066,7 +10052,7 @@
    "faq": [
     {
      "q": "Com'è finita Toulouse – Strasbourg?",
-     "a": "3-1 (1-0 all'intervallo)."
+     "a": "Il risultato finale è 3-1, con 1-0 all'intervallo."
     },
     {
      "q": "Dove trovo gli altri risultati?",
@@ -10075,19 +10061,26 @@
    ]
   },
   "fb:558845": {
-   "fingerprint": "1pweg45",
+   "fingerprint": "w5hhi5",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Willem II e lo Zwolle chiudono la partita con un pareggio per 1-1. La sfida, valida per la 12ª giornata di Eredivisie, si è giocata venerdì 6 novembre; al termine del primo tempo il punteggio era già di 1-1."
+      "Il Willem II e lo Zwolle hanno chiuso la partita in parità, con un 1-1. La sfida, valida per la 12ª giornata di Eredivisie, si è giocata venerdì 6 novembre; il primo tempo si era concluso anch'esso 1-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Willem II è al 18° posto con 3 punti, mentre lo Zwolle è al 13° con 12. [Consulta la classifica completa](/calcio/eredivisie/classifica)."
+      "Con le partite giocate finora il Willem II è al 18° posto con 3 punti, mentre lo Zwolle è al 13° con 12. [Vai alla classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Lo Zwolle tornerà in campo sabato 21 novembre alle 21:00 in trasferta contro il Telstar."
      ],
      "bullets": []
     }
@@ -10095,28 +10088,28 @@
    "faq": [
     {
      "q": "Com'è finita Willem II – Zwolle?",
-     "a": "È finita 1-1, con lo stesso risultato già all'intervallo."
+     "a": "1-1 (1-1 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Puoi consultarli nella pagina [Eredivisie](/calcio/eredivisie)."
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
     }
    ]
   },
   "fb:567353": {
-   "fingerprint": "6v5r6",
+   "fingerprint": "zzfj8d",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Famalicão ha battuto di misura l'Arouca tra le mura di casa, imponendosi per 1-0. La gara, valida per l'11ª giornata di Primeira Liga, si è disputata venerdì 6 novembre e il primo tempo era terminato 0-0."
+      "Il Famalicão ha battuto l'Arouca per 1-0 in casa. La partita, valida per l'11ª giornata di Primeira Liga, si è giocata venerdì 6 novembre; al termine del primo tempo il punteggio era 0-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Alla luce dei risultati finora disputati, il Famalicão occupa l'11° posto con 10 punti, mentre l'Arouca è al 5° posto con 20 punti. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/primeira-liga/classifica)."
+      "Con le partite disputate finora il Famalicão occupa il 10° posto con 13 punti, mentre l'Arouca è al 5° con 20. Per la tabella completa consulta la [classifica completa](/calcio/primeira-liga/classifica)."
      ],
      "bullets": []
     }
@@ -10128,7 +10121,7 @@
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina dedicata alla [Primeira Liga](/calcio/primeira-liga)."
+     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
     }
    ]
   },
@@ -10241,19 +10234,26 @@
    ]
   },
   "fb:561932": {
-   "fingerprint": "1davfkc",
+   "fingerprint": "13cqnwa",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Derby County ha ribaltato la partita: dopo essere andato al riposo in svantaggio, ha vinto in casa 3-1 contro il Bolton. La gara, valida per la 15ª giornata di Championship, si è giocata venerdì 6 novembre; il primo tempo si era chiuso 0-1."
+      "Il Derby County ha ribaltato la partita: dopo essere andato sotto all'intervallo, ha vinto in casa per 3-1 contro il Bolton. L'incontro, valido per la 15ª giornata di Championship, si è giocato venerdì 6 novembre; il primo tempo si era chiuso 0-1."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Derby County è al 23° posto con 10 punti, mentre il Bolton è al 17° con 17. [Consulta la classifica completa](/calcio/championship/classifica)."
+      "Con le partite giocate finora il Derby County è al 23° posto con 10 punti, mentre il Bolton è al 17° con 17. Consulta la [classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Derby County tornerà in campo sabato 21 novembre alle 13:30 in trasferta contro il Southampton. Il Bolton giocherà sabato 21 novembre alle 16:00 in casa contro il Portsmouth."
      ],
      "bullets": []
     }
