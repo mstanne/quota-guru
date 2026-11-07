@@ -12,6 +12,8 @@
 //   - The site reads GET /match/<API-Football fixture id> (JSON, CORS for the site only, cached 15 seconds at the
 //     edge). The API key never leaves the worker.
 //   - At most MAX_DAILY_REQUESTS requests a day (default 3000 of the 7500 of the Pro plan); GET /stato shows how many.
+//   - GET /formazioni: the official line-ups already out for the matches not started yet, read by the Telegram channel
+//     (scripts/telegram, rubric "formazioni"). When new line-ups come out the worker starts telegram.yml at once.
 //
 // Configuration: wrangler.toml; secret API_FOOTBALL_KEY (set by .github/workflows/live-worker.yml).
 // API_BASE: address API-Football is reached through instead of v3.football.api-sports.io: our relay server with a
@@ -40,6 +42,8 @@ const PAUSE_MS = 3 * 60e3; // pause after a refusal
 class RateLimit extends Error {}
 
 const day = (ms) => new Date(ms).toISOString().slice(0, 10);
+/** Both official line-ups published (eleven starters each). */
+const hasLineups = (e) => e.lineups?.home?.starters?.length === 11 && e.lineups?.away?.starters?.length === 11;
 
 /** One fixture of /fixtures?ids= in the form served to the site. */
 export function liveEntry(f, now) {
@@ -195,16 +199,38 @@ export class LiveHub {
     const now = Date.now();
     const done = (await this.storage.get("done")) ?? {};
     const s = await this.storage.get("schedule");
+    const seen = (await this.storage.get("lineupsSeen")) ?? {}; // fixture id → time its line-ups were first seen
+    let newLineups = false;
     for (const f of await this.api(`/fixtures?ids=${chunk.join("-")}`)) {
       const e = liveEntry(f, now);
       await this.storage.put(`m:${e.id}`, JSON.stringify(e));
       const m = s?.list.find((x) => x.id === e.id);
       if (m) m.status = e.status.short;
       if (FINAL.has(e.status.short)) done[e.id] ??= now;
+      if (hasLineups(e) && e.status.short === "NS" && !seen[e.id]) {
+        seen[e.id] = now;
+        newLineups = true;
+      }
     }
+    for (const id of Object.keys(seen)) if (now - seen[id] > 12 * 3600e3) delete seen[id];
+    await this.storage.put("lineupsSeen", seen);
     await this.storage.put("done", done);
     if (s) await this.storage.put("schedule", s);
     if (queue.length > CHUNK) await this.storage.setAlarm(Date.now() + GAP_MS);
+    // new official line-ups: the Telegram channel posts them now, not at its next 20-minute run
+    if (newLineups) await dispatchWorkflow(this.env, "telegram.yml", { rubrica: "formazioni", prova: "false" });
+  }
+
+  /** Line-ups of the matches not started yet (GET /formazioni), compact: names only. */
+  async lineups() {
+    const out = [];
+    for (const body of (await this.storage.list({ prefix: "m:" })).values()) {
+      const e = JSON.parse(body);
+      if (e.status?.short !== "NS" || !hasLineups(e)) continue;
+      const side = (l) => ({ formation: l.formation, coach: l.coach, starters: l.starters.map((p) => p.name) });
+      out.push({ id: e.id, league: e.league, kickoff: e.kickoff, teams: e.teams, lineups: { home: side(e.lineups.home), away: side(e.lineups.away) } });
+    }
+    return out.sort((a, b) => a.kickoff.localeCompare(b.kickoff));
   }
 
   /** Records an error; on the API's per-minute limit, stops asking for PAUSE_MS. */
@@ -240,6 +266,7 @@ export class LiveHub {
         headers: { "content-type": "application/json" },
       });
     }
+    if (url.pathname === "/formazioni") return Response.json({ at: new Date().toISOString(), matches: await this.lineups() });
     if (url.pathname === "/prova") {
       // check from Cloudflare: /status of API-Football (account, plan, requests of the day; not counted in the quota)
       const base = this.env.API_BASE || "https://v3.football.api-sports.io";
@@ -302,6 +329,7 @@ export default {
       return cors(request, env, res);
     }
     if (url.pathname === "/stato") return cors(request, env, await hub(env).fetch("https://hub/stato"));
+    if (url.pathname === "/formazioni") return hub(env).fetch("https://hub/formazioni");
     if (url.pathname === "/prova") return hub(env).fetch("https://hub/prova");
     return new Response("QuotaGuru live", { status: 404 });
   },
@@ -327,10 +355,11 @@ export function githubJob(d) {
   if (m === 37 && h === 5 && d.getUTCDay() === 1) return "analytics.yml"; // weekly statistics, Monday
   if (m === 17 && h % 3 === 0) return "deploy.yml"; // full refresh every 3 hours (it also updates the scores)
   if (m % 15 === 0) return "live-scores.yml"; // quick scores and standings
+  if (m % 20 === 7 && h >= 6 && h <= 22) return "telegram.yml"; // Telegram channel rubrics (scripts/telegram)
   return null;
 }
 
-async function dispatchWorkflow(env, workflow) {
+async function dispatchWorkflow(env, workflow, inputs) {
   if (!env.GH_DISPATCH_TOKEN || !env.GH_REPO) return;
   const res = await fetch(`https://api.github.com/repos/${env.GH_REPO}/actions/workflows/${workflow}/dispatches`, {
     method: "POST",
@@ -341,7 +370,7 @@ async function dispatchWorkflow(env, workflow) {
       "user-agent": "quotaguru-live",
       "x-github-api-version": "2022-11-28",
     },
-    body: JSON.stringify({ ref: "main" }),
+    body: JSON.stringify({ ref: "main", ...(inputs ? { inputs } : {}) }),
   });
   if (!res.ok) console.log(`workflow_dispatch ${workflow}: HTTP ${res.status} ${await res.text()}`);
 }

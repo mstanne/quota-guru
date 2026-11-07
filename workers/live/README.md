@@ -8,6 +8,9 @@ contenuto nel tema del sito.
   chiede ad API-Football le partite delle competizioni del sito (10 per richiesta) e le espone in
   `GET /match/<id API-Football>`. La chiave API resta nel worker. Tetto: 3.000 richieste al giorno (`wrangler.toml`).
 - `GET /stato`: ultimo aggiornamento, richieste usate oggi, partite in calendario.
+- `GET /formazioni`: formazioni ufficiali già uscite delle partite non ancora iniziate, lette dal canale Telegram
+  (`scripts/telegram`). Appena ne escono di nuove il worker avvia `telegram.yml` con la rubrica `formazioni`; avvia
+  anche le rubriche programmate ai minuti 07, 27 e 47 (dalle 6 alle 22 UTC). Serve `GH_DISPATCH_TOKEN` (punto 7).
 - Pagina partita: `src/components/calcio/LiveMatch.tsx` (si attiva con la variabile `LIVE_URL`).
 
 ## Messa in funzione (una volta)
