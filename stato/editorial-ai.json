@@ -2294,20 +2294,20 @@
   "at": "2026-11-07T19:30:15.978Z"
  },
  "fb:567354": {
-  "fingerprint": "oz3wz0",
+  "fingerprint": "1hz499v",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "La partita si gioca domenica 8 novembre alle 21:30: il Rio Ave ospita il Braga nella 11ª giornata di Primeira Liga. In classifica il Rio Ave occupa il 16° posto con 7 punti, il Braga l'8° con 14."
+     "Il Rio Ave ospita il Braga domenica 8 novembre alle 21:30, nell'ambito dell'11ª giornata di Primeira Liga. In classifica il Rio Ave occupa il 17° posto con 7 punti, mentre il Braga è all'8° con 14."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Primeira Liga il Rio Ave ha ottenuto 1 vittoria e 2 sconfitte (sequenza V-P-P), segnando 4 gol e subendone 8. Ha perso le ultime 2. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 4 partite di Primeira Liga il Braga ha ottenuto 1 vittoria e 3 sconfitte (sequenza P-P-P-V), segnando 5 gol e subendone 6."
+     "Nelle ultime 3 partite di Primeira Liga il Rio Ave ha ottenuto 1 vittoria e 2 sconfitte (sequenza V-P-P), segnando 4 gol e subendone 8. La squadra ha perso le ultime 2 gare. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 4 partite di Primeira Liga il Braga ha ottenuto 1 vittoria e 3 sconfitte (sequenza P-P-P-V), con 5 gol segnati e 6 subiti."
     ],
     "bullets": []
    },
@@ -2315,16 +2315,16 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Rio Ave 0,9, Braga 1,2 a partita.",
+     "Media gol segnati a partita: Rio Ave 0,9, Braga 1,2.",
      "Gol subiti finora: Rio Ave 23, Braga 11.",
-     "In tutte le ultime 3 partite del Rio Ave si sono segnati almeno tre gol.",
-     "In 3 delle ultime 4 partite del Braga si sono segnati almeno tre gol."
+     "In tutte le ultime 3 partite del Rio Ave sono stati segnati almeno tre gol.",
+     "In 3 delle ultime 4 partite del Braga sono stati segnati almeno tre gol."
     ]
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Rio Ave, 2 vittorie per il Braga e 2 pareggi, con 14 gol complessivi (media di 2,8 a partita). L'ultimo incrocio, a febbraio 2026 in Primeira Liga, è terminato Braga 3-0 Rio Ave."
+     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Rio Ave, 2 vittorie per il Braga e 2 pareggi, con 14 gol complessivi (media di 2,8 a partita). L'ultimo incontro, disputato a febbraio 2026 in Primeira Liga, è terminato Braga 3-0 Rio Ave."
     ],
     "bullets": []
    }
@@ -2344,7 +2344,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T20:44:47.047Z"
+  "at": "2026-11-07T21:57:51.626Z"
  },
  "fb:567355": {
   "fingerprint": "1hgytm5",
@@ -8649,20 +8649,20 @@
   "at": "2026-11-07T10:10:23.958Z"
  },
  "fb:1001492455": {
-  "fingerprint": "1id4het",
+  "fingerprint": "18moryd",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 22:30 il Mirassol ospita il Mineiro nella 35ª giornata di Brasileirão. In classifica il Mirassol occupa il 14° posto con 40 punti, il Mineiro il 7° con 50."
+     "Sabato 14 novembre alle 22:30 il Mirassol ospita il Mineiro per la 35ª giornata di Brasileirão. In classifica il Mirassol è al 14° posto con 40 punti, il Mineiro al 7° con 50."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Brasileirão il Mirassol ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-N-P-V), con 5 gol fatti e 5 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Brasileirão il Mineiro ha raccolto 2 vittorie e 3 sconfitte (sequenza V-V-P-P-P), con 5 gol fatti e 6 subiti. Ha perso le ultime 3. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, ancora senza vittorie."
+     "Nelle ultime 5 partite di Brasileirão il Mirassol ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-N-P-V), segnando 5 gol e subendone 5. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Brasileirão il Mineiro ha ottenuto 2 vittorie e 3 sconfitte (sequenza V-V-P-P-P), segnando 5 gol e subendone 6. Ha perso le ultime 3. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, ancora senza vittorie."
     ],
     "bullets": []
    },
@@ -8673,6 +8673,13 @@
      "Media gol segnati: Mirassol 1,1, Mineiro 1,3 a partita.",
      "Gol subiti finora: Mirassol 48, Mineiro 40."
     ]
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 3 confronti diretti il bilancio è di 0 vittorie per il Mirassol, 2 vittorie per il Mineiro e 1 pareggio, con 9 gol complessivi (media di 3,0 a partita). L'ultimo incontro, a maggio 2026 in Brasileirão, è terminato Mineiro 3-1 Mirassol."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -8690,7 +8697,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T10:10:12.324Z"
+  "at": "2026-11-07T21:57:55.717Z"
  },
  "nba:21718109": {
   "fingerprint": "vlcb28",
@@ -19001,20 +19008,20 @@
   "at": "2026-11-07T15:33:30.746Z"
  },
  "fb:1001550205": {
-  "fingerprint": "1mdqrms",
+  "fingerprint": "mk2had",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 21 novembre alle 18:00 il Parma ospita la Roma nella 12ª giornata di Serie A. In classifica il Parma occupa il 16° posto con 8 punti, mentre la Roma è al 3° posto con 24."
+     "Sabato 21 novembre alle 18:00 il Parma ospita la Roma nella 12ª giornata di Serie A. In classifica il Parma è al 16° posto con 8 punti, mentre la Roma è al 3° con 24."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Serie A il Parma ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-V-P), segnando 5 gol e subendone 7. In casa, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza vittorie.",
-     "Nelle ultime 5 partite di Serie A la Roma ha ottenuto 3 vittorie e 2 pareggi (sequenza N-V-N-V-V), segnando 14 gol e subendone 7. Non perde da 5 partite. In trasferta, nella stagione, il bilancio è di 1 vittoria e 2 pareggi, senza sconfitte."
+     "Nelle ultime 5 partite di Serie A il Parma ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-V-P), segnando 5 gol e subendone 7. In casa il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza ancora una vittoria.",
+     "Nelle ultime 5 partite di Serie A la Roma ha ottenuto 4 vittorie e 1 pareggio (sequenza V-N-V-V-V), segnando 17 gol e subendone 7. Arriva da 3 vittorie consecutive. In trasferta il bilancio stagionale è di 1 vittoria e 2 pareggi, senza sconfitte."
     ],
     "bullets": []
    },
@@ -19022,11 +19029,11 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati a partita: Parma 0,8, Roma 2,8.",
+     "Media gol segnati: Parma 0,8, Roma 2,8 a partita.",
      "Gol subiti finora: Parma 17, Roma 10.",
      "La Roma ha il miglior attacco del torneo.",
-     "In 4 delle ultime 5 partite del Parma sono stati segnati almeno tre gol.",
-     "In 3 delle ultime 5 partite della Roma sono stati segnati almeno tre gol."
+     "In 4 delle ultime 5 partite del Parma si sono segnati almeno tre gol.",
+     "In 4 delle ultime 5 partite della Roma si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -19045,7 +19052,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T20:43:48.902Z"
+  "at": "2026-11-07T21:57:43.762Z"
  },
  "fb:1001557475": {
   "fingerprint": "1kszngx",
@@ -19231,20 +19238,20 @@
   "at": "2026-11-07T20:44:34.699Z"
  },
  "fb:1001552226": {
-  "fingerprint": "drm0g7",
+  "fingerprint": "1a8f356",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 21 novembre alle 18:45 il Feyenoord riceve l'Excelsior per la 13ª giornata di Eredivisie. In classifica il Feyenoord è al 1° posto con 25 punti, mentre l'Excelsior è al 15° con 11."
+     "Sabato 21 novembre alle 18:45 il Feyenoord ospita l'Excelsior per la 13ª giornata di Eredivisie. In classifica il Feyenoord è al 1° posto con 25 punti, mentre l'Excelsior è al 15° con 11."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Eredivisie il Feyenoord ha raccolto 2 vittorie e 2 pareggi (sequenza V-V-N-N), con 8 gol fatti e 5 subiti. Non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 4 partite di Eredivisie l'Excelsior ha raccolto 4 sconfitte (sequenza P-P-P-P), con 1 gol fatto e 19 subiti. Ha perso le ultime 4. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 4 partite di Eredivisie il Feyenoord ha ottenuto 2 vittorie e 2 pareggi (sequenza V-V-N-N), segnando 8 gol e subendone 5. Non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Eredivisie l'Excelsior ha collezionato 5 sconfitte (sequenza P-P-P-P-P), con 1 gol segnato e 20 subiti. Ha perso le ultime 5 gare. In trasferta ha perso tutte le 2 partite giocate."
     ],
     "bullets": []
    },
@@ -19252,9 +19259,9 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Feyenoord 3,0, Excelsior 1,5 a partita.",
+     "Media gol segnati a partita: Feyenoord 3,0, Excelsior 1,5.",
      "Gol subiti finora: Feyenoord 12, Excelsior 28.",
-     "In 3 delle ultime 4 partite dell'Excelsior si sono segnati almeno tre gol."
+     "In 3 delle ultime 5 partite dell'Excelsior si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -19269,11 +19276,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T19:30:11.424Z"
+  "at": "2026-11-07T21:57:47.424Z"
  },
  "nba:1000017176": {
   "fingerprint": "1q6q56d",
@@ -20469,19 +20476,19 @@
   "at": "2026-11-07T20:58:31.199Z"
  },
  "fb:567347": {
-  "fingerprint": "eex9aa",
+  "fingerprint": "1xjqj6m",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il match si chiude 1-1: il Casa Pia, in vantaggio all'intervallo per 0-1, viene raggiunto nella ripresa dall'Alverca. La sfida, valida per la 11ª giornata di Primeira Liga, si è disputata sabato 7 novembre."
+     "La partita si chiude 1-1: il Casa Pia, in vantaggio all'intervallo per 0-1, viene raggiunto nella ripresa dall'Alverca. Il match, valido per la 11ª giornata di Primeira Liga, si è giocato sabato 7 novembre."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Alla luce delle partite disputate finora, l'Alverca occupa l'11° posto con 11 punti, mentre il Casa Pia è al 17° con 7. [Consulta la classifica completa](/calcio/primeira-liga/classifica)."
+     "Con le partite disputate finora l'Alverca occupa l'11° posto con 12 punti, mentre il Casa Pia è al 15° con 8. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/primeira-liga/classifica)."
     ],
     "bullets": []
    }
@@ -20493,11 +20500,11 @@
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Nella pagina di [Primeira Liga](/calcio/primeira-liga)."
+    "a": "Nella pagina dedicata alla [Primeira Liga](/calcio/primeira-liga)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T20:58:32.680Z"
+  "at": "2026-11-07T21:58:00.749Z"
  },
  "fb:561934": {
   "fingerprint": "q49rs5",
@@ -20802,5 +20809,81 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-07T20:59:06.237Z"
+ },
+ "fb:558531": {
+  "fingerprint": "195lri9",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "La Roma ha vinto con ampio margine, imponendosi per 3-0 sul Sassuolo allo stadio di casa. La partita, valida per la 11ª giornata di Serie A, si è giocata sabato 7 novembre; il primo tempo si era chiuso sul 2-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora la Roma è al 3° posto con 24 punti, mentre il Sassuolo è al 17° con 8. [Vedi la classifica completa](/calcio/serie-a/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "La Roma tornerà in campo sabato 21 novembre alle 18:00, in trasferta contro il Parma."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Roma – Sassuolo?",
+    "a": "3-0 (2-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Serie A](/calcio/serie-a)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T21:57:57.433Z"
+ },
+ "fb:558843": {
+  "fingerprint": "1hrfn2j",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il Go Ahead si impone in trasferta sull'Excelsior per 0-1. La partita, valida per la 12ª giornata di Eredivisie, si è disputata sabato 7 novembre e il primo tempo era terminato 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Dopo le partite giocate finora, l'Excelsior occupa il 15° posto con 11 punti, mentre il Go Ahead è al 10° con 14. Puoi consultare la [classifica completa](/calcio/eredivisie/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "L'Excelsior tornerà in campo sabato 21 novembre alle 18:45, in trasferta contro il Feyenoord."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Excelsior – Go Ahead?",
+    "a": "0-1 (0-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-07T21:57:59.021Z"
  }
 }
