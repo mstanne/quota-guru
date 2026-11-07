@@ -73,26 +73,31 @@ export function PronosticiPage() {
       />
 
       <div className="container mx-auto px-4 py-8">
-        <nav aria-label="Pronostici per giorno" className="flex flex-wrap items-center gap-2 mb-8">
-          {(["oggi", "domani"] as const).map((d) => (
-            <Link
-              key={d}
-              to={dayPath(d)}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
-            >
-              <CalendarDays className="w-4 h-4 text-slate-300" aria-hidden="true" />
-              Pronostici di {d}
-            </Link>
-          ))}
-          <Link
-            to={TRIS_PATH}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
-          >
-            <Target className="w-4 h-4 text-slate-300" aria-hidden="true" />
-            Il tris della settimana
-          </Link>
+        {/* one row on mobile too: three short, equal buttons */}
+        <div className="mb-8">
+          <nav aria-label="Pronostici per giorno" className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap">
+            {(
+              [
+                { to: dayPath("oggi"), icon: CalendarDays, label: "Oggi", sr: "Pronostici di " },
+                { to: dayPath("domani"), icon: CalendarDays, label: "Domani", sr: "Pronostici di " },
+                { to: TRIS_PATH, icon: Target, label: "Tris", sr: "Il " },
+              ] as const
+            ).map(({ to, icon: Icon, label, sr }) => (
+              <Link
+                key={to}
+                to={to}
+                className="inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-md bg-slate-800 border border-slate-700 text-white hover:border-slate-500"
+              >
+                <Icon className="w-4 h-4 shrink-0 text-slate-300" aria-hidden="true" />
+                <span>
+                  <span className="sr-only">{sr}</span>
+                  {label}
+                </span>
+              </Link>
+            ))}
+          </nav>
           <SlipHint />
-        </nav>
+        </div>
         <Section
           id="calcio"
           icon={Goal}
