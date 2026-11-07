@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-07T12:20:53.951Z",
+ "generatedAt": "2026-11-07T13:13:40.521Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558534": {
@@ -208,20 +208,20 @@
    ]
   },
   "fb:558533": {
-   "fingerprint": "1xa2adk",
+   "fingerprint": "1bthndv",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 12:30 Napoli e Lazio si sfidano nell'11ª giornata di Serie A. In classifica il Napoli occupa l'8° posto con 14 punti, mentre la Lazio è al 1° con 28."
+      "Napoli e Lazio si affrontano domenica 8 novembre alle 12:30 per la 11ª giornata di Serie A. In classifica il Napoli occupa l'8° posto con 14 punti, mentre la Lazio è al 1° posto con 28."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie A il Napoli ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con sequenza V-P-N-V-P, segnando 10 gol e subendone 7. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 5 partite di Serie A la Lazio ha vinto tutte e 5 le gare (sequenza V-V-V-V-V), con 16 gol fatti e 5 subiti. Si tratta di 5 vittorie consecutive. In trasferta ha vinto tutte le 2 partite disputate."
+      "Nelle ultime 5 partite di Serie A il Napoli ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-N-V-P), con 10 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Serie A la Lazio ha ottenuto 5 vittorie (sequenza V-V-V-V-V), con 16 gol fatti e 5 subiti. Arriva da 5 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
      ],
      "bullets": []
     },
@@ -234,6 +234,13 @@
       "In 3 delle ultime 5 partite del Napoli si sono segnati almeno tre gol.",
       "In tutte le ultime 5 partite della Lazio si sono segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Napoli, 3 vittorie per la Lazio e 1 pareggio, con 13 gol complessivi (media di 2,6 a partita). L'ultimo incrocio, disputato ad aprile 2026 in Serie A, si è concluso con Napoli 0-2 Lazio."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -840,55 +847,6 @@
     }
    ]
   },
-  "fb:560632": {
-   "fingerprint": "jcg0d8",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 7 novembre alle 13:30 il Leeds United ospita il Tottenham per la 10ª giornata di Premier League. In classifica il Leeds United è al 12° posto con 11 punti, il Tottenham al 9° con 12."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di Premier League il Leeds United ha raccolto 2 pareggi e 2 sconfitte (sequenza P-N-N-P), con 2 gol fatti e 5 subiti.",
-      "Nelle ultime 4 partite di Premier League il Tottenham ha raccolto 3 vittorie e 1 pareggio (sequenza N-V-V-V), con 8 gol fatti e 2 subiti. Arriva da 3 vittorie consecutive. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Leeds United 1,0, Tottenham 1,1 a partita.",
-      "Gol subiti finora: Leeds United 8, Tottenham 10."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per il Leeds United, 4 vittorie per il Tottenham e 1 pareggio, con 21 gol complessivi (media di 4,2 a partita). L'ultimo incrocio, a maggio 2026 in Premier League, è finito Tottenham 1-1 Leeds United."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Leeds United – Tottenham?",
-     "a": "Sabato 7 novembre alle 13:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001557461": {
    "fingerprint": "m6986r",
    "sections": [
@@ -1253,21 +1211,21 @@
     }
    ]
   },
-  "fb:564744": {
-   "fingerprint": "17maf8v",
+  "fb:1001557474": {
+   "fingerprint": "xuqx07",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Málaga e Santander si affrontano sabato 7 novembre alle 14:00, nella 12ª giornata di LaLiga. In classifica il Málaga occupa il 20° posto con 5 punti, mentre il Santander è al 16° con 11."
+      "Sabato 21 novembre alle 13:30 il Manchester City ospita il Fulham nell'11ª giornata di Premier League. In classifica il Manchester City è al 2° posto con 21 punti, mentre il Fulham è al 15° con 9."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di LaLiga il Málaga ha ottenuto 2 pareggi e 2 sconfitte (sequenza N-P-N-P), segnando 5 gol e subendone 9. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
-      "Nelle ultime 4 partite di LaLiga il Santander ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-V-P), con 4 gol fatti e 8 subiti."
+      "Nelle ultime 4 partite di Premier League il Manchester City ha ottenuto 2 vittorie e 2 sconfitte (sequenza V-V-P-P), segnando 7 gol e subendone 5. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 4 partite di Premier League il Fulham ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-V-N), segnando 4 gol e subendone 3. In trasferta, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -1275,31 +1233,24 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Málaga 0,7, Santander 1,4.",
-      "Gol subiti finora: Málaga 21, Santander 29.",
-      "In 3 delle ultime 4 partite del Santander si sono segnati almeno tre gol."
+      "Media gol segnati a partita: Manchester City 2,2, Fulham 1,0.",
+      "Gol subiti finora: Manchester City 10, Fulham 11.",
+      "In 3 delle ultime 4 partite del Manchester City si sono segnati almeno tre gol."
      ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per il Málaga, 3 vittorie per il Santander e 2 pareggi, con 9 gol complessivi (media di 1,8 a partita). L'ultimo incrocio, a maggio 2026 in Segunda División, è terminato Málaga 1-1 Santander."
-     ],
-     "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Quando si gioca Málaga – Santander?",
-     "a": "Sabato 7 novembre alle 14:00, ora italiana."
+     "q": "Quando si gioca Manchester City – Fulham?",
+     "a": "Sabato 21 novembre alle 13:30, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Premier League](/calcio/premier-league) e la [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Trovi spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -1453,20 +1404,20 @@
    ]
   },
   "fb:564738": {
-   "fingerprint": "1uow9l0",
+   "fingerprint": "1x4g75i",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 14:00 l'Elche ospita il Real Betis nella 12ª giornata di LaLiga. In classifica l'Elche occupa il 17° posto con 10 punti, mentre il Real Betis è al 4° posto con 23."
+      "La partita si giocherà domenica 8 novembre alle 14:00, quando l'Elche ospiterà il Real Betis per la 12ª giornata di LaLiga. In classifica l'Elche occupa il 17° posto con 10 punti, mentre il Real Betis è al 4° con 23."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di LaLiga l'Elche ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza N-N-V-P), segnando 3 gol e subendone 1. In casa, in stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
-      "Nelle ultime 4 partite di LaLiga il Real Betis ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V), con 9 gol fatti e 8 subiti."
+      "Nelle ultime 4 partite di LaLiga l'Elche ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta, con la sequenza N-N-V-P. Ha segnato 3 gol e ne ha subito 1. In casa, la stagione dell'Elche registra 1 pareggio e 1 sconfitta, senza vittorie.",
+      "Nelle ultime 4 partite di LaLiga il Real Betis ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-P-N-V. Ha segnato 9 gol e ne ha subiti 8."
      ],
      "bullets": []
     },
@@ -1477,8 +1428,15 @@
       "Media gol segnati a partita: Elche 1,3, Real Betis 1,6.",
       "Gol subiti finora: Elche 18, Real Betis 15.",
       "L'Elche non ha subito gol in 3 delle ultime 4 partite.",
-      "Nelle ultime 4 partite del Real Betis, in 3 si sono segnati almeno tre gol."
+      "In 3 delle ultime 4 partite del Real Betis sono stati segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per l'Elche, 4 per il Real Betis e 1 pareggio, con 16 gol complessivi (media di 3,2 a partita). L'ultimo incrocio, disputato a maggio 2026 in LaLiga, è terminato Real Betis 2-1 Elche."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -1492,7 +1450,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2143,20 +2101,20 @@
    ]
   },
   "fb:559635": {
-   "fingerprint": "vwq483",
+   "fingerprint": "1f4zqsg",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 21:05 il Paris Saint-Germain ospita il Troyes nella 10ª giornata di Ligue 1. In classifica il Paris Saint-Germain occupa il 1° posto con 20 punti, mentre il Troyes è al 16° con 8."
+      "Sabato 7 novembre alle 21:05 il Paris Saint-Germain ospita il Troyes nella 10ª giornata di Ligue 1. In classifica il Paris Saint-Germain occupa il 1° posto con 20 punti, mentre il Troyes è al 16° posto con 8."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 il Paris Saint-Germain ha ottenuto 4 vittorie (sequenza V-V-V-V), segnando 13 gol e subendone 3. Arriva da 4 vittorie consecutive. In casa ha vinto tutte e 2 le partite disputate.",
-      "Nelle ultime 4 partite di Ligue 1 il Troyes ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza P-P-N-V), con 3 gol fatti e 5 subiti."
+      "Nelle ultime 4 partite di Ligue 1 il Paris Saint-Germain ha ottenuto 4 vittorie (sequenza V-V-V-V), segnando 13 gol e subendone 3. Arriva da 4 successi consecutivi. In casa ha vinto tutte le 2 gare disputate.",
+      "Nelle ultime 4 partite di Ligue 1 il Troyes ha conquistato 1 vittoria, 1 pareggio e 2 sconfitte (sequenza P-P-N-V), con 3 gol fatti e 5 subiti."
      ],
      "bullets": []
     },
@@ -2167,8 +2125,15 @@
       "Media gol segnati: Paris Saint-Germain 2,3, Troyes 0,8 a partita.",
       "Gol subiti finora: Paris Saint-Germain 10, Troyes 16.",
       "Il Paris Saint-Germain ha il miglior attacco del torneo.",
-      "In 3 delle ultime 4 partite del Paris Saint-Germain sono stati segnati almeno tre gol."
+      "In 3 delle ultime 4 partite del Paris Saint-Germain si sono segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 4 vittorie per il Paris Saint-Germain, nessuna per il Troyes e 1 pareggio, con 20 gol complessivi (media di 4,0 a partita). L'ultimo incontro, a maggio 2023 in Ligue 1, è terminato Troyes 1-3 Paris Saint-Germain."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -2182,7 +2147,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2640,20 +2605,20 @@
    ]
   },
   "fb:558840": {
-   "fingerprint": "1hk2ord",
+   "fingerprint": "1fcfxeb",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Il appuntamento è domenica 8 novembre alle 12:15, quando l'Heerenveen ospita il Feyenoord per la 12ª giornata di Eredivisie. In classifica l'Heerenveen è al 7° posto con 18 punti, mentre il Feyenoord è al 1° con 25."
+      "Domenica 8 novembre alle 12:15 l'Heerenveen ospita il Feyenoord nella 12ª giornata di Eredivisie. In classifica l'Heerenveen è al 7° posto con 18 punti, mentre il Feyenoord è al 1° con 25."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie l'Heerenveen ha ottenuto 3 vittorie e 1 sconfitta (sequenza P-V-V-V), segnando 8 gol e subendone 4. Arriva da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
-      "Nelle ultime 4 partite di Eredivisie il Feyenoord ha ottenuto 2 vittorie e 2 pareggi (sequenza V-V-N-N), segnando 8 gol e subendone 5. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 4 partite di Eredivisie l'Heerenveen ha ottenuto 3 vittorie e 1 sconfitta, con sequenza P-V-V-V, segnando 8 gol e subendone 4. Arriva da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 4 partite di Eredivisie il Feyenoord ha ottenuto 2 vittorie e 2 pareggi, con sequenza V-V-N-N, segnando 8 gol e subendone 5. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     },
@@ -2661,9 +2626,16 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Heerenveen 1,7, Feyenoord 3,0.",
+      "Media gol segnati: Heerenveen 1,7, Feyenoord 3,0 a partita.",
       "Gol subiti finora: Heerenveen 13, Feyenoord 12."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per l'Heerenveen, 2 vittorie per il Feyenoord e 1 pareggio, con 15 gol complessivi, pari a una media di 3,0 a partita. L'ultimo incrocio, disputato a gennaio 2026 in Eredivisie, è terminato Heerenveen 2-2 Feyenoord."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -2672,12 +2644,12 @@
      "a": "Domenica 8 novembre alle 12:15, ora italiana."
     },
     {
-     "q": "Dove si possono consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2954,20 +2926,20 @@
    ]
   },
   "fb:567350": {
-   "fingerprint": "3vpol2",
+   "fingerprint": "ztcy8z",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 21:30 lo Sporting CP ospita il Moreirense per la 11ª giornata di Primeira Liga. In classifica lo Sporting CP è al 3° posto con 21 punti, il Moreirense al 9° con 14."
+      "Sabato 7 novembre alle 21:30 lo Sporting CP ospita il Moreirense nell'11ª giornata di Primeira Liga. In classifica lo Sporting CP occupa il 3° posto con 21 punti, mentre il Moreirense è al 9° con 14."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Primeira Liga lo Sporting CP ha raccolto 2 vittorie e 1 sconfitta (sequenza V-P-V), con 6 gol fatti e 3 subiti.",
-      "Nelle ultime 3 partite di Primeira Liga il Moreirense ha raccolto 2 vittorie e 1 sconfitta (sequenza P-V-V), con 5 gol fatti e 3 subiti."
+      "Nelle ultime 3 partite di Primeira Liga lo Sporting CP ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), segnando 6 gol e subendone 3.",
+      "Nelle ultime 3 partite di Primeira Liga il Moreirense ha ottenuto 2 vittorie e 1 sconfitta (sequenza P-V-V), segnando 5 gol e subendone 3."
      ],
      "bullets": []
     },
@@ -2975,9 +2947,16 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Sporting CP 2,3, Moreirense 1,3 a partita.",
+      "Media gol segnati a partita: Sporting CP 2,3, Moreirense 1,3.",
       "Gol subiti finora: Sporting CP 11, Moreirense 17."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 4 vittorie per lo Sporting CP e 1 per il Moreirense, senza pareggi, con 15 gol complessivi (media di 3,0 a partita). L'ultimo incontro, disputato a febbraio 2026 in Primeira Liga, è terminato Moreirense 0-3 Sporting CP."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -2991,7 +2970,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -3207,149 +3186,6 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:561939": {
-   "fingerprint": "11si48a",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Bristol City e Norwich si affrontano sabato 7 novembre alle 13:30 per la 15ª giornata di Championship. Le due squadre sono appaiate a 18 punti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Bristol City ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-V-P), segnando 4 gol e subendone 6. In casa ha perso tutte le 3 partite disputate.",
-      "Nelle ultime 5 partite di Championship il Norwich ha ottenuto 3 vittorie e 2 sconfitte (sequenza P-P-V-V-V), segnando 10 gol e subendone 5. Arriva da 3 vittorie consecutive. In trasferta il bilancio stagionale è di 2 vittorie e 1 sconfitta."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Bristol City 1,1, Norwich 1,9 a partita.",
-      "Gol subiti finora: Bristol City 19, Norwich 24.",
-      "In 3 delle ultime 5 partite del Norwich si sono segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per il Bristol City, 1 vittoria per il Norwich e 1 pareggio, con 14 gol complessivi (media di 2,8 a partita). L'ultimo incrocio, ad aprile 2026 in Championship, è terminato Bristol City 2-4 Norwich."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Bristol City – Norwich?",
-     "a": "Sabato 7 novembre alle 13:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:561938": {
-   "fingerprint": "feuxje",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 7 novembre alle 13:30 il Portsmouth ospita lo Stoke nella 15ª giornata di Championship. In classifica il Portsmouth occupa il 10° posto con 22 punti, mentre lo Stoke è al 4° con 26."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Portsmouth ha ottenuto 3 vittorie e 2 pareggi (sequenza V-N-V-N-V), segnando 7 gol e subendone 3. La squadra non perde da 6 partite e, in casa, ha vinto tutte le 3 gare disputate.",
-      "Nelle ultime 5 partite di Championship lo Stoke ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-N-V-V), segnando 7 gol e subendone 4. La squadra non perde da 4 partite e, in trasferta, ha vinto tutte le 3 gare disputate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Portsmouth 1,4, Stoke 1,6 a partita.",
-      "Gol subiti finora: Portsmouth 16, Stoke 17.",
-      "Lo Stoke non ha subito gol in 3 delle ultime 5 partite."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Portsmouth e 3 per lo Stoke, senza pareggi, con 19 gol complessivi (media di 3,8 a partita). L'ultimo incontro, disputato ad aprile 2026 in Championship, si è concluso con Stoke 1-3 Portsmouth."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Portsmouth – Stoke?",
-     "a": "Sabato 7 novembre alle 13:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001563262": {
-   "fingerprint": "1vsrdww",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 7 novembre alle 13:30 il Wrexham ospita il Wolverhampton per la 15ª giornata di Championship. In classifica il Wrexham occupa il 16° posto con 17 punti, mentre il Wolverhampton è al 2° con 27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Wrexham ha ottenuto 2 vittorie e 3 sconfitte (sequenza P-V-P-P-V), con 7 gol segnati e 6 subiti. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
-      "Nelle ultime 5 partite di Championship il Wolverhampton ha ottenuto 4 vittorie e 1 pareggio (sequenza V-N-V-V-V), con 9 gol segnati e 3 subiti. Arriva da 3 vittorie consecutive. In trasferta, il bilancio stagionale è di 2 vittorie e 1 sconfitta."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati a partita: Wrexham 1,2, Wolverhampton 1,8.",
-      "Gol subiti finora: Wrexham 19, Wolverhampton 17.",
-      "In 3 delle ultime 5 partite del Wolverhampton si sono segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Wrexham – Wolverhampton?",
-     "a": "Sabato 7 novembre alle 13:30, ora italiana."
-    },
-    {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -3743,6 +3579,137 @@
     {
      "q": "Quando si gioca Charlton – Sheffield Utd?",
      "a": "Sabato 7 novembre alle 16:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001563270": {
+   "fingerprint": "1q3luxo",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 21 novembre, alle 13:30, il Southampton ospita il Derby County nella 16ª giornata di Championship. In classifica il Southampton occupa il 7° posto con 24 punti, mentre il Derby County è al 23° con 10 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Championship il Southampton ha ottenuto 3 vittorie e 2 pareggi (sequenza V-N-V-V-N), segnando 9 gol e subendone 4. Non perde da 6 partite. In casa, in questa stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Championship il Derby County ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-N-P-P-V), con 5 gol fatti e 11 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza ancora vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Southampton 2,1, Derby County 0,9 a partita.",
+      "Gol subiti finora: Southampton 14, Derby County 30.",
+      "In 3 delle ultime 5 partite del Derby County si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Southampton – Derby County?",
+     "a": "Sabato 21 novembre alle 13:30, ora italiana."
+    },
+    {
+     "q": "Dove trovo classifica e risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001563267": {
+   "fingerprint": "1eunus9",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 21 novembre alle 13:30 il Millwall ospita il QPR nella 16ª giornata di Championship. In classifica il Millwall occupa il 13° posto con 18 punti, mentre il QPR è all'11° posto con 21."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Championship il Millwall ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-N-P-V-P), segnando 7 gol e subendone 9. In casa, il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+      "Nelle ultime 5 partite di Championship il QPR ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-V-P-N), segnando 11 gol e subendone 9. In trasferta, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Millwall 1,6, QPR 1,6 a partita.",
+      "Gol subiti finora: Millwall 24, QPR 17.",
+      "In 4 delle ultime 5 partite del Millwall si sono segnati almeno tre gol.",
+      "In 4 delle ultime 5 partite del QPR si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Millwall – QPR?",
+     "a": "Sabato 21 novembre alle 13:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001563268": {
+   "fingerprint": "1wabdx8",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 21 novembre alle 13:30 il Norwich ospita il Cardiff nella 16ª giornata di Championship. In classifica il Norwich occupa il 12° posto con 18 punti, mentre il Cardiff è al 18° con 15."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Championship il Norwich ha ottenuto 3 vittorie e 2 sconfitte, con la sequenza P-P-V-V-V, segnando 10 gol e subendone 5. La squadra arriva da 3 vittorie consecutive. In casa, il bilancio stagionale è di 1 vittoria e 2 sconfitte.",
+      "Nelle ultime 5 partite di Championship il Cardiff ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta, con la sequenza V-N-V-P-N, segnando 11 gol e subendone 9. In trasferta, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Norwich 1,9, Cardiff 1,6 a partita.",
+      "Gol subiti finora: Norwich 24, Cardiff 23.",
+      "Nelle ultime 5 partite del Norwich, in 3 si sono segnati almeno tre gol.",
+      "Nelle ultime 5 partite del Cardiff, in 4 si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Norwich – Cardiff?",
+     "a": "Sabato 21 novembre alle 13:30, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -10204,26 +10171,26 @@
    ]
   },
   "fb:561927": {
-   "fingerprint": "pssy5w",
+   "fingerprint": "gvjwdu",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Wrexham supera il Middlesbrough per 2-0 davanti al proprio pubblico. La partita, valida per la 14ª giornata di Championship, si è giocata mercoledì 4 novembre e il primo tempo era terminato 0-0."
+      "Il Wrexham ha vinto in casa contro il Middlesbrough per 2-0. La gara, valida per la 14ª giornata di Championship, si è disputata mercoledì 4 novembre, e il primo tempo era terminato 0-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Dopo le partite disputate finora, il Wrexham occupa il 16° posto con 17 punti, mentre il Middlesbrough è primo con 28. Trovi la [classifica aggiornata](/calcio/championship/classifica) completa."
+      "Con le partite disputate finora, il Wrexham occupa il 16° posto con 17 punti, mentre il Middlesbrough è al 1° posto con 28 punti. Per l'intera graduatoria consulta la [classifica completa](/calcio/championship/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il Wrexham tornerà in campo sabato 7 novembre alle 13:30, ospitando il Wolverhampton. Il Middlesbrough giocherà sabato 7 novembre alle 16:00 in trasferta contro il Watford."
+      "Il Wrexham tornerà in campo sabato 21 novembre alle 16:00, in trasferta contro il Lincoln City. Il Middlesbrough giocherà sabato 7 novembre alle 16:00, in trasferta contro il Watford."
      ],
      "bullets": []
     }
@@ -10235,31 +10202,31 @@
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Nella [pagina dedicata al Championship](/calcio/championship)."
+     "a": "Nella pagina di [Championship](/calcio/championship)."
     }
    ]
   },
   "fb:1001563247": {
-   "fingerprint": "4m5x0v",
+   "fingerprint": "6py9g5",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Rimonta del Wolverhampton: sotto all'intervallo, vince in trasferta 1-2 contro il Bristol City. La partita, valida per la 14ª giornata di Championship, si è giocata mercoledì 4 novembre; il primo tempo si era chiuso 1-0."
+      "Il Wolverhampton ha ribaltato il risultato e ha vinto in trasferta per 1-2 sul campo del Bristol City, dopo essere stato in svantaggio all'intervallo. La gara, valida per la 14ª giornata di Championship, si è disputata mercoledì 4 novembre; il primo tempo si era chiuso 1-0."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Bristol City è al 15° posto con 18 punti e il Wolverhampton al 2° con 27. [Classifica completa](/calcio/championship/classifica)."
+      "Con le partite giocate finora, il Bristol City occupa il 15° posto con 18 punti, mentre il Wolverhampton è 2° con 27. Puoi consultare la [classifica completa](/calcio/championship/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il Bristol City tornerà in campo sabato 7 novembre alle 13:30 in casa contro il Norwich. Il Wolverhampton tornerà in campo sabato 7 novembre alle 13:30 in trasferta contro il Wrexham."
+      "Il Bristol City tornerà in campo sabato 21 novembre alle 16:00 in trasferta contro il Middlesbrough. Anche il Wolverhampton giocherà sabato 21 novembre alle 16:00, ma in casa, contro il Charlton."
      ],
      "bullets": []
     }
@@ -10267,11 +10234,11 @@
    "faq": [
     {
      "q": "Com'è finita Bristol City – Wolverhampton?",
-     "a": "1-2 (1-0 all'intervallo)."
+     "a": "Il risultato finale è stato 1-2, con il punteggio di 1-0 all'intervallo."
     },
     {
      "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Championship](/calcio/championship)."
+     "a": "Sono disponibili nella pagina [Championship](/calcio/championship)."
     }
    ]
   },
