@@ -13,9 +13,17 @@ import { NBA_HUB } from "./nbaPaths";
 
 const clean = (p: string) => (p !== "/" ? p.replace(/\/+$/, "") : p);
 
+// URLs moved by a data correction (data/url-spostati.json, e.g. scripts/migrations/correggi-squadre-2026-11.mjs:
+// club names restored after a wrong pairing). Loaded by scripts/prerender.mjs, which publishes a bridge page for each.
+let moved: Record<string, string> = {};
+export function setMovedUrls(table: Record<string, string>) {
+  moved = table ?? {};
+}
+
 /** New path of a moved URL, null when the URL did not move. */
 export function legacyTarget(pathname: string): string | null {
   const p = clean(pathname);
+  if (moved[p]) return moved[p];
   if (p === "/basket/nba") return NBA_HUB;
   const hub = p.match(/^\/calcio\/([^/]+)$/);
   if (hub) {

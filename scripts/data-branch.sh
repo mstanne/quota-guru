@@ -29,7 +29,7 @@ DATA_FILES=(
   src/data/football-details.json src/data/basket-details.json src/data/highlights.json
   src/data/editorial-ai.json
   data/football-history.json data/football-teams.json data/basket-history.json data/team-seasons-api.json
-  data/id-map.json data/statistiche-partite.json data/football-player-lines.json data/giocatori-partite.json data/giocatori-extra.json
+  data/id-map.json data/url-spostati.json data/statistiche-partite.json data/football-player-lines.json data/giocatori-partite.json data/giocatori-extra.json
   public/stato-dati.json
 )
 

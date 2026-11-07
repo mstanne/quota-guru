@@ -42,6 +42,12 @@ const bDetails = readJson("src/data/basket-details.json", {});
 const highlights = readJson("src/data/highlights.json", {});
 // numbers of the Claude rewrite of this run (scripts/generate-editorial.mjs); stale files from other runs are ignored
 const editorialRaw = readJson(".cache/editorial-stats.json", null);
+// clubs paired or created by the football download of this run (public/stato-dati.json, written moments before)
+const statusNow = readJson("public/stato-dati.json", {});
+const newClubs =
+  statusNow.calendarioCalcio && Math.abs(Date.parse(statusNow.calendarioCalcio.updatedAt) - Date.now()) < 3 * 3600000
+    ? (statusNow.calendarioCalcio.squadreNuove ?? []).filter((r) => r.kind !== "nome")
+    : [];
 const editorial =
   editorialRaw && Math.abs(Date.parse(editorialRaw.at) - Date.now()) < 3 * 3600000 ? editorialRaw : null;
 
@@ -150,6 +156,22 @@ if (state?.matches) {
   for (const key of newHighlights) if (!prevHighlights.has(key)) entry("highlights", key);
 }
 for (const key of newHighlights) highlightIds.add(key);
+// clubs met for the first time in this run (scripts/fetch-football.mjs): "squadra" entries, checked by hand the same
+// day (the daily e-mail lists them): a pairing with a club of the previous data ("abbinata") must be the same club
+for (const r of newClubs) {
+  const e = {
+    at,
+    kind: "squadra",
+    key: `squadra-${r.apiId}`,
+    sport: "calcio",
+    competition: r.competition,
+    match: r.kind === "abbinata" ? `${r.apiName} abbinata a "${r.name}" (id ${r.id}): da verificare` : `${r.apiName}: squadra nuova (id ${r.id})`,
+    day: at.slice(0, 10),
+  };
+  if (seen.has(seenKey(e))) continue;
+  seen.set(seenKey(e), e);
+  added.push(e);
+}
 
 const cutoff = now.getTime() - KEEP_DAYS * 86400000;
 const kept = [...entries, ...added].filter((e) => new Date(e.at).getTime() >= cutoff);

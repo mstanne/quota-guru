@@ -35,9 +35,18 @@ const siteUrl = (process.env.SITE_URL ?? "").replace(/\/$/, "");
 const buildIso = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
 const today = buildIso.slice(0, 10);
 
-const { render, routes, notFoundMeta, fullTitle, snippet, llmsTxt, preloadAllPages, site, legacyTarget, rewriteLegacyLinks } = await import(
-  pathToFileURL(ssrEntry).href
-);
+const { render, routes, notFoundMeta, fullTitle, snippet, llmsTxt, preloadAllPages, site, legacyTarget, rewriteLegacyLinks, setMovedUrls } =
+  await import(pathToFileURL(ssrEntry).href);
+// URLs moved by data corrections (src/lib/legacyUrls.ts): archived copies and stored links follow them, and every
+// one gets a bridge page (below)
+const movedUrls = (() => {
+  try {
+    return JSON.parse(fs.readFileSync(path.join(root, "data", "url-spostati.json"), "utf8"));
+  } catch {
+    return {};
+  }
+})();
+setMovedUrls(movedUrls);
 // lazy page chunks must be loaded before rendering synchronously with renderToString
 await preloadAllPages();
 const template = fs.readFileSync(path.join(dist, "index.html"), "utf8");
@@ -427,6 +436,21 @@ if (fs.existsSync(archiveDir)) {
     restored++;
   }
 }
+
+// moved by a data correction and not met above (pages that were live, never archived): bridge to the new URL
+const titles = new Map(routes.map((r) => [r.path, r.title]));
+let movedBridges = 0;
+for (const [from, to] of Object.entries(movedUrls)) {
+  if (live.has(from)) continue;
+  if (!live.has(to)) {
+    console.warn(`prerender: ${from} spostata a ${to}, che non esiste: niente pagina ponte`);
+    continue;
+  }
+  emitBridge(from, to, titles.get(to) ?? "Pagina spostata");
+  live.add(from);
+  movedBridges++;
+}
+if (movedBridges) console.log(`prerender: ${movedBridges} pagine ponte per indirizzi corretti (data/url-spostati.json)`);
 
 // GitHub Pages serves 404.html for unknown URLs; the client renders it from scratch.
 fs.writeFileSync(

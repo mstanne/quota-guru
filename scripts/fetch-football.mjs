@@ -230,7 +230,8 @@ async function main() {
   }
   for (const [slug, ids] of Object.entries(teamsFile.competitions ?? {}))
     for (const id of ids) if (teamsFile.teams?.[id]) addTeam(teamsFile.teams[id], slug);
-  const resolveTeam = footballTeamResolver(map, [...prevTeams.values()], logo);
+  const teamReport = [];
+  const resolveTeam = footballTeamResolver(map, [...prevTeams.values()], logo, teamReport);
   const prevMatches = (previous.competitions ?? []).flatMap((c) => (c.matches ?? []).map((match) => ({ match, comp: c.slug })));
   const resolveMatch = matchIdResolver(map.footballMatches, prevMatches);
 
@@ -480,6 +481,18 @@ async function main() {
   status.ok = !stopped && Object.values(status.competitions).every((s) => s.ok);
   if (stopped) status.message = stopped;
   Object.assign(status, api.stats());
+  // clubs met for the first time in this run (new id, or paired with a club of the previous data): checked by hand
+  if (teamReport.length) {
+    status.squadreNuove = teamReport;
+    for (const r of teamReport)
+      console.log(
+        r.kind === "abbinata"
+          ? `  ATTENZIONE squadra abbinata: API ${r.apiId} "${r.apiName}" (${r.competition}) → id ${r.id} "${r.name}": controlla che sia lo stesso club`
+          : r.kind === "nuova"
+            ? `  squadra nuova: API ${r.apiId} "${r.apiName}" (${r.competition}) → id ${r.id}`
+            : `  nome da API: ${r.name} (id ${r.id})`,
+      );
+  }
   const st = readJson(STATUS, {});
   st.calendarioCalcio = status;
   writeJson(STATUS, st);
