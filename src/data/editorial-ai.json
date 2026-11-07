@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-07T15:23:33.392Z",
+ "generatedAt": "2026-11-07T15:33:30.752Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558535": {
@@ -1351,19 +1351,19 @@
    ]
   },
   "fb:560639": {
-   "fingerprint": "uley8p",
+   "fingerprint": "qh88ap",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 17:30 il Manchester United ospita l'Aston Villa per la 10ª giornata di Premier League. In classifica il Manchester United occupa il 17° posto con 7 punti, mentre l'Aston Villa è al 10° con 12."
+      "Domenica 8 novembre alle 17:30 il Manchester United ospita l'Aston Villa per la 10ª giornata di Premier League. In classifica il Manchester United occupa il 17° posto con 7 punti, mentre l'Aston Villa è al 10° posto con 12."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Premier League il Manchester United ha ottenuto 2 pareggi e 2 sconfitte (sequenza N-N-P-P), segnando 2 gol e subendone 7. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
+      "Nelle ultime 4 partite di Premier League il Manchester United ha ottenuto 2 pareggi e 2 sconfitte (sequenza N-N-P-P), segnando 2 gol e subendone 7. Le ultime 2 gare sono state perse. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
       "Nelle ultime 4 partite di Premier League l'Aston Villa ha ottenuto 2 vittorie e 2 pareggi (sequenza N-V-V-N), segnando 6 gol e subendone 4. Non perde da 4 partite."
      ],
      "bullets": []
@@ -1375,6 +1375,13 @@
       "Media gol segnati a partita: Manchester United 1,1, Aston Villa 1,1.",
       "Gol subiti finora: Manchester United 15, Aston Villa 13."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per il Manchester United, 1 per l'Aston Villa e 1 pareggio, con 12 gol complessivi (media di 2,4 a partita). L'ultimo incrocio, disputato a marzo 2026 in Premier League, è terminato Manchester United 3-1 Aston Villa."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -1383,7 +1390,7 @@
      "a": "Domenica 8 novembre alle 17:30, ora italiana."
     },
     {
-     "q": "Dove si possono vedere classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
@@ -1645,55 +1652,6 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:564745": {
-   "fingerprint": "a747pu",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 7 novembre alle 16:15 l'Espanyol ospita il Deportivo nella 12ª giornata di LaLiga. In classifica l'Espanyol occupa il 14° posto con 11 punti, mentre il Deportivo è all'8° con 14."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di LaLiga l'Espanyol ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con la sequenza N-P-P-V. Ha segnato 3 gol e ne ha subiti 4.",
-      "Nelle ultime 4 partite di LaLiga il Deportivo ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con la sequenza P-N-P-V. Ha segnato 5 gol e ne ha subiti 6. In trasferta ha perso tutte le 2 partite giocate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati a partita: Espanyol 1,2, Deportivo 1,4.",
-      "Gol subiti finora: Espanyol 14, Deportivo 14."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per l'Espanyol, nessuna per il Deportivo e 2 pareggi, con 11 gol complessivi, pari a una media di 2,2 a partita. L'ultimo incrocio, disputato a febbraio 2018 in La Liga, è terminato Deportivo 0-0 Espanyol."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Espanyol – Deportivo?",
-     "a": "Sabato 7 novembre alle 16:15, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -3308,6 +3266,49 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001552229": {
+   "fingerprint": "1k4jhkq",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 21 novembre alle 16:30 il NEC ospita lo PSV nella 13ª giornata di Eredivisie. In classifica il NEC è al 14° posto con 11 punti, mentre lo PSV è al 3° con 23 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di Eredivisie il NEC ha ottenuto 3 pareggi e 1 sconfitta (sequenza N-N-N-P), segnando 5 gol e subendone 6. In casa il bilancio stagionale è di 2 pareggi, senza vittorie.",
+      "Nelle ultime 4 partite di Eredivisie lo PSV ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V), con 11 gol fatti e 3 subiti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: NEC 1,5, PSV 3,2 a partita.",
+      "Gol subiti finora: NEC 19, PSV 13.",
+      "Lo PSV ha il miglior attacco del torneo."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca NEC – PSV?",
+     "a": "Sabato 21 novembre alle 16:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la [pagina dedicata all'Eredivisie](/calcio/eredivisie) e la [classifica aggiornata](/calcio/eredivisie/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Trovi spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -9334,35 +9335,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina dedicata alla [Champions League](/calcio/champions-league)."
-    }
-   ]
-  },
-  "fb:1001636324": {
-   "fingerprint": "x8kagw",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Lo Stade Rennais e l'Olympiakos Piraeus hanno chiuso la sfida a reti inviolate: 0-0. La partita, valida per la 4ª giornata della fase a campionato di Europa League, si è giocata mercoledì 4 novembre; il primo tempo era terminato 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Dopo le partite giocate finora lo Stade Rennais occupa il 17° posto con 6 punti, mentre l'Olympiakos Piraeus è al 6° con 10. [Consulta la classifica completa](/calcio/europa-league/classifica)."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Stade Rennais – Olympiakos Piraeus?",
-     "a": "Il risultato finale è 0-0, con lo stesso punteggio all'intervallo."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Europa League](/calcio/europa-league)."
     }
    ]
   },
