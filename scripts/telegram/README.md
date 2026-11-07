@@ -40,6 +40,8 @@ node scripts/telegram/publish.mjs --dry-run --all --cards /percorso/cartella
 | `numeri` | martedì 18:00 | Serie A: più e meno Over 2,5 e Goal nelle ultime 5 |
 | `nba` | giovedì 18:00 | partite NBA della notte con la squadra più probabile |
 | `anteprima-serie-a` | venerdì 12:00 | prossima giornata: più probabile, più incerta, più gol attesi |
+| `anteprima-premier-league`, `anteprima-liga`, `anteprima-ligue-1` | il giorno prima dell'inizio di ogni giornata, 13:00 / 14:00 / 15:00 | anteprima della giornata come quella di Serie A (anche turni infrasettimanali) |
+| `tris-weekend` | sabato 10:30 | le 3 partite del weekend (5 grandi campionati) più prevedibili e la probabilità che si verifichino tutte e tre; lunedì il track record dice com'è andata |
 | `dove-vederla` | venerdì 18:00 | canali TV della giornata di Serie A (accordi 2026/27) |
 | `formazioni` | appena escono, circa un'ora prima | formazioni ufficiali: tutte le partite di Serie A, coppe europee solo con squadre italiane |
 | `risultati` / `risultati-domenica` | sabato 23:00, domenica 23:30 | risultati del giorno contro il modello |
