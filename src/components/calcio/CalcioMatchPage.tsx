@@ -46,7 +46,7 @@ import { TeamName } from "../teams/TeamLink";
 import { hasResults, resultsPath } from "../../lib/results";
 import { FootballMatchDetails } from "./FootballMatchDetails";
 import { MatchUnavailable } from "./MatchUnavailable";
-import { LiveMatch } from "./LiveMatch";
+import { LiveMatch, FINAL, PLAYING, liveStarted, liveStatusText, liveTime, useLiveData } from "./LiveMatch";
 import { FormBadges } from "./FormBadges";
 import { footballDetailsFor } from "../../lib/footballDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
@@ -244,6 +244,12 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
   // full details once downloaded; until then (and while the match is played) the live data of the quick updates
   const details = finished ? (footballDetailsFor(match.id) ?? match.live) : undefined;
   const liveData = !finished ? match.live : undefined;
+  // live service (every 30 s): once it answers, the score and status at the top follow it, not the last site update
+  const liveNow = useLiveData(match, !finished);
+  const onAir = liveStarted(liveNow) ? liveNow : null;
+  const playing = onAir ? PLAYING.has(onAir.status.short) || onAir.status.short === "HT" : live;
+  const score = onAir ? { home: onAir.score.home, away: onAir.score.away } : ft;
+  const half = onAir ? (onAir.score.halftime ?? { home: null, away: null }) : ht;
   const sofascoreId = sofascoreEventFor(match.id);
   const roundPage = isMatchdayStage(match)
     ? matchdaysOf(competition).find((d) => d.n === match.matchday)
@@ -297,9 +303,9 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
                 <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300">{roundLabel(match)}</span>
               ))}
             <span
-              className={`px-2 py-0.5 rounded-md ${live ? "bg-red-600 text-white" : isResultPending(match) ? "bg-slate-800 text-warn" : "bg-slate-800 text-slate-300"}`}
+              className={`px-2 py-0.5 rounded-md ${playing ? "bg-red-600 text-white" : !onAir && isResultPending(match) ? "bg-slate-800 text-warn" : "bg-slate-800 text-slate-300"}`}
             >
-              {statusLabel(match)}
+              {onAir ? liveStatusText(onAir) : statusLabel(match)}
             </span>
           </div>
 
@@ -309,17 +315,22 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               <TeamName id={match.homeTeam.id} name={match.homeTeam.shortName} className="text-white text-lg sm:text-2xl" />
             </div>
             <div className="text-center">
-              {finished || live ? (
-                <>
+              {finished || live || onAir ? (
+                <div aria-live={onAir ? "polite" : undefined}>
                   <div className="text-white text-4xl sm:text-5xl tabular-nums">
-                    {ft.home ?? 0} <span className="text-slate-400">–</span> {ft.away ?? 0}
+                    {score.home ?? 0} <span className="text-slate-400">–</span> {score.away ?? 0}
                   </div>
-                  {ht.home !== null && (
-                    <div className="text-slate-400 text-sm mt-1">
-                      1º tempo {ht.home}–{ht.away}
+                  {onAir?.score.penalty?.home != null && (
+                    <div className="text-slate-300 text-sm mt-1">
+                      rigori {onAir.score.penalty.home}–{onAir.score.penalty.away}
                     </div>
                   )}
-                </>
+                  {half.home !== null && (
+                    <div className="text-slate-400 text-sm mt-1">
+                      1º tempo {half.home}–{half.away}
+                    </div>
+                  )}
+                </div>
               ) : (
                 <>
                   <time dateTime={match.utcDate} className="block text-white text-3xl sm:text-4xl tabular-nums">
@@ -334,7 +345,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               <TeamName id={match.awayTeam.id} name={match.awayTeam.shortName} className="text-white text-lg sm:text-2xl" />
             </div>
           </div>
-          {prediction && (!finished || prediction.pre) && !live && (
+          {prediction && (!finished || prediction.pre) && !live && !onAir && (
             <FootballQuickSummary
               prediction={prediction}
               home={match.homeTeam.shortName}
@@ -343,8 +354,20 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               slip={isUpcoming(match) && !prediction.pre ? footballSlip(competition.name, match) : undefined}
             />
           )}
-          <MatchSummary text={footballSummary(match, competition.name, prediction, { finished, live })} />
-          <DataUpdatedNote generatedAt={generatedAt} className="justify-center mt-6" />
+          {/* the summary is written from the last site update: hidden while the live score above is newer */}
+          {!onAir && <MatchSummary text={footballSummary(match, competition.name, prediction, { finished, live })} />}
+          {onAir ? (
+            <p className="mt-6 text-slate-400 text-sm text-center">
+              <span
+                className={`inline-block align-middle mr-2 w-2 h-2 rounded-full ${PLAYING.has(onAir.status.short) ? "bg-red-500 animate-pulse motion-reduce:animate-none" : "bg-slate-500"}`}
+                aria-hidden="true"
+              />
+              {FINAL.has(onAir.status.short) ? "Risultato" : "In diretta"}: aggiornato alle {liveTime(onAir.updatedAt)} · si
+              aggiorna da solo ogni 30 secondi
+            </p>
+          ) : (
+            <DataUpdatedNote generatedAt={generatedAt} className="justify-center mt-6" />
+          )}
         </div>
       </div>
 
@@ -367,7 +390,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* SofaScore widgets only until the site's own live service is configured (VITE_LIVE_URL) */}
         {sofascoreId && !import.meta.env.VITE_LIVE_URL && <SofascoreLive eventId={sofascoreId} utcDate={match.utcDate} teams={teams} />}
-        {!finished && <LiveMatch match={match} initial={liveData} />}
+        {!finished && <LiveMatch match={match} initial={liveData} data={liveNow} />}
         {finished && (
           <div className="lg:col-span-3 min-w-0 space-y-6">
             {/* box score and highlights side by side on wide screens, stacked otherwise */}
