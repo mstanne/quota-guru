@@ -1,58 +1,7 @@
 {
- "generatedAt": "2026-11-07T14:17:06.561Z",
+ "generatedAt": "2026-11-07T14:56:23.993Z",
  "model": "claude-haiku-5-5",
  "items": {
-  "fb:558532": {
-   "fingerprint": "pt07s6",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 7 novembre alle 15:00 il Torino riceve il Lecce per la 11ª giornata di Serie A. In classifica il Torino è al 10° posto con 13 punti, il Lecce al 14° con 9."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Serie A il Torino ha ottenuto 3 vittorie e 2 sconfitte (sequenza V-V-V-P-P), con 9 gol fatti e 8 subiti. Ha perso le ultime 2. In casa il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
-      "Nelle ultime 5 partite di Serie A il Lecce ha ottenuto 1 vittoria e 4 sconfitte (sequenza P-V-P-P-P), con 6 gol fatti e 11 subiti. Ha perso le ultime 3. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Torino 1,4, Lecce 1,1 a partita.",
-      "Gol subiti finora: Torino 16, Lecce 21.",
-      "In 4 delle ultime 5 partite del Torino si sono segnati almeno tre gol.",
-      "In 4 delle ultime 5 partite del Lecce si sono segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Torino, 2 vittorie per il Lecce e 1 pareggio, con 7 gol complessivi (media di 1,4 a partita). L'ultimo incrocio, a febbraio 2026 in Serie A, è finito Torino 1-0 Lecce."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Torino – Lecce?",
-     "a": "Sabato 7 novembre alle 15:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:558535": {
    "fingerprint": "auh7nr",
    "sections": [
@@ -1346,20 +1295,20 @@
    ]
   },
   "fb:560635": {
-   "fingerprint": "5cwve0",
+   "fingerprint": "txmzw2",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 15:00 il Crystal Palace ospita il Liverpool, nella 10ª giornata di Premier League. In classifica il Crystal Palace occupa il 18° posto con 7 punti, mentre il Liverpool è 6° con 15."
+      "Domenica 8 novembre alle 15:00 il Crystal Palace ospita il Liverpool per la 10ª giornata di Premier League. In classifica il Crystal Palace occupa il 18° posto con 7 punti, mentre il Liverpool è al 6° con 15."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Premier League il Crystal Palace ha ottenuto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), segnando 3 gol e subendone 10. Ha perso le ultime 3. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Premier League il Liverpool ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-V-P), con 4 gol fatti e 5 subiti."
+      "Nelle ultime 4 partite di Premier League il Crystal Palace ha ottenuto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), segnando 3 gol e subendone 10. Ha perso le ultime 3 gare. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 4 partite di Premier League il Liverpool ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-V-P), segnando 4 gol e subendone 5."
      ],
      "bullets": []
     },
@@ -1367,9 +1316,16 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Crystal Palace 1,0, Liverpool 1,2 a partita.",
+      "Media gol segnati a partita: Crystal Palace 1,0, Liverpool 1,2.",
       "Gol subiti finora: Crystal Palace 21, Liverpool 9."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Crystal Palace, 1 vittoria per il Liverpool e 2 pareggi, con 16 gol complessivi (media di 3,2 a partita). L'ultimo incontro, ad aprile 2026 in Premier League, è terminato Liverpool 3-1 Crystal Palace."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -1388,20 +1344,20 @@
    ]
   },
   "fb:560637": {
-   "fingerprint": "qxbfv3",
+   "fingerprint": "5mz8rv",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "L'Ipswich Town e il Bournemouth si affrontano domenica 8 novembre alle 15:00 per la 10ª giornata di Premier League. In classifica l'Ipswich Town occupa il 14° posto con 11 punti, mentre il Bournemouth è all'8° con 12."
+      "Ipswich Town e Bournemouth si affrontano domenica 8 novembre alle 15:00 per la 10ª giornata di Premier League. In classifica l'Ipswich Town occupa il 14° posto con 11 punti, mentre il Bournemouth è all'8° posto con 12."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Premier League l'Ipswich Town ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza V-P-N-N), segnando 7 gol e subendone 7. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Premier League il Bournemouth ha ottenuto 3 vittorie e 1 sconfitta (sequenza P-V-V-V), segnando 8 gol e subendone 5. La squadra arriva da 3 vittorie consecutive. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 4 partite di Premier League l'Ipswich Town ha raccolto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza V-P-N-N), segnando 7 gol e subendone 7. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 4 partite di Premier League il Bournemouth ha raccolto 3 vittorie e 1 sconfitta (sequenza P-V-V-V), segnando 8 gol e subendone 5. Arriva da 3 vittorie consecutive. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -1414,6 +1370,13 @@
       "In 3 delle ultime 4 partite dell'Ipswich Town si sono segnati almeno tre gol.",
       "Il Bournemouth non ha subito gol in 3 delle ultime 4."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per l'Ipswich Town, 1 vittoria per il Bournemouth e 3 pareggi, con 16 gol complessivi (media di 3,2 a partita). L'ultimo incrocio, in Premier League nell'aprile 2025, è terminato Bournemouth 1-2 Ipswich Town."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -1432,12 +1395,12 @@
    ]
   },
   "fb:560636": {
-   "fingerprint": "10ayqnl",
+   "fingerprint": "1cloigm",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Il match è in programma domenica 8 novembre alle 15:00, quando il Sunderland ospita il Chelsea per la 10ª giornata di Premier League. In classifica il Sunderland occupa il 20° posto con 5 punti, mentre il Chelsea è al 4° posto con 16 punti."
+      "Domenica 8 novembre alle 15:00 il Sunderland ospita il Chelsea per la 10ª giornata di Premier League. In classifica il Sunderland è 20° con 5 punti, mentre il Chelsea è 4° con 16."
      ],
      "bullets": []
     },
@@ -1445,7 +1408,7 @@
      "id": "momento",
      "paragraphs": [
       "Nelle ultime 4 partite di Premier League il Sunderland ha ottenuto 1 pareggio e 3 sconfitte (sequenza P-P-N-P), segnando 1 gol e subendone 7. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza ancora alcuna vittoria.",
-      "Nelle ultime 4 partite di Premier League il Chelsea ha ottenuto 3 vittorie e 1 sconfitta (sequenza V-V-P-V), con 9 gol fatti e 3 subiti."
+      "Nelle ultime 4 partite di Premier League il Chelsea ha ottenuto 3 vittorie e 1 sconfitta (sequenza V-V-P-V), segnando 9 gol e subendone 3."
      ],
      "bullets": []
     },
@@ -1456,6 +1419,13 @@
       "Media gol segnati a partita: Sunderland 0,8, Chelsea 2,1.",
       "Gol subiti finora: Sunderland 17, Chelsea 15."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per il Sunderland, 2 vittorie per il Chelsea e nessun pareggio, con 18 gol complessivi (media di 3,6 a partita). L'ultimo incrocio, disputato a maggio 2026 in Premier League, è terminato Sunderland 2-1 Chelsea."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -1933,203 +1903,6 @@
     }
    ]
   },
-  "fb:565851": {
-   "fingerprint": "zt5ws4",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 7 novembre alle 15:30 il Mainz ospita il Bayern Monaco per la 9ª giornata di Bundesliga. In classifica il Mainz occupa il 10° posto con 10 punti, mentre il Bayern Monaco è al 1° con 18."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga il Mainz ha raccolto 1 vittoria e 3 sconfitte (sequenza P-V-P-P), segnando 7 gol e subendone 11. Le ultime 2 gare le ha perse. In casa ha perso tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di Bundesliga il Bayern Monaco ha raccolto 2 vittorie e 2 pareggi (sequenza N-V-V-N), segnando 13 gol e subendone 6. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Mainz 2,1, Bayern Monaco 3,4 a partita.",
-      "Gol subiti finora: Mainz 17, Bayern Monaco 8.",
-      "Il Bayern Monaco ha il miglior attacco del torneo.",
-      "In 3 delle ultime 4 partite del Mainz si sono segnati almeno tre gol.",
-      "In tutte le ultime 4 partite del Bayern Monaco si sono segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Mainz, 3 vittorie per il Bayern Monaco e 1 pareggio, con 21 gol complessivi (media di 4,2 a partita). L'ultimo incrocio, ad aprile 2026 in Bundesliga, è finito Mainz 3-4 Bayern Monaco."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Mainz – Bayern Monaco?",
-     "a": "Sabato 7 novembre alle 15:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:565850": {
-   "fingerprint": "qzkqog",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Il appuntamento è sabato 7 novembre alle 15:30: il Dortmund ospita l'Elversberg nella 9ª giornata di Bundesliga. In classifica il Dortmund occupa il 2° posto con 18 punti, mentre l'Elversberg è al 7° con 13."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga il Dortmund ha ottenuto 1 vittoria e 3 pareggi (sequenza N-N-V-N), segnando 5 gol e subendone 4. Non perde da 4 partite. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Bundesliga l'Elversberg ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), con 8 gol fatti e 9 subiti. In trasferta ha perso tutte le 2 partite giocate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati a partita: Dortmund 1,8, Elversberg 2,0.",
-      "Gol subiti finora: Dortmund 6, Elversberg 16.",
-      "Il Dortmund ha la miglior difesa del torneo.",
-      "Nelle ultime 4 partite dell'Elversberg, in 3 si sono segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Dortmund – Elversberg?",
-     "a": "Sabato 7 novembre alle 15:30, ora italiana."
-    },
-    {
-     "q": "Dove si consultano classifica e risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:565848": {
-   "fingerprint": "gjuxos",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 7 novembre alle 15:30 il RB Leipzig ospita l'Augsburg per la 9ª giornata di Bundesliga. In classifica il RB Leipzig è al 4° posto con 15 punti, mentre l'Augsburg è all'11° con 9."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga il RB Leipzig ha raccolto 3 vittorie e 1 sconfitta (sequenza V-P-V-V), con 13 gol fatti e 6 subiti. In casa ha vinto tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di Bundesliga l'Augsburg ha raccolto 2 pareggi e 2 sconfitte (sequenza N-P-N-P), con 7 gol fatti e 9 subiti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: RB Leipzig 2,8, Augsburg 2,3 a partita.",
-      "Gol subiti finora: RB Leipzig 11, Augsburg 15.",
-      "In 3 delle ultime 4 partite del RB Leipzig si sono segnati almeno tre gol.",
-      "Il RB Leipzig non ha subito gol in 3 delle ultime 4.",
-      "In 3 delle ultime 4 partite dell'Augsburg si sono segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per il RB Leipzig, 0 vittorie per l'Augsburg e 2 pareggi, con 17 gol complessivi (media di 3,4 a partita). L'ultimo incrocio, a marzo 2026 in Bundesliga, è finito RB Leipzig 2-1 Augsburg."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca RB Leipzig – Augsburg?",
-     "a": "Sabato 7 novembre alle 15:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:565853": {
-   "fingerprint": "1qo74ko",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "SC Paderborn e Frankfurt si sfidano sabato 7 novembre alle 15:30, nell'ambito della 9ª giornata di Bundesliga. In classifica lo SC Paderborn occupa il 15° posto con 9 punti, mentre il Frankfurt è al 9° posto con 11 punti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga lo SC Paderborn ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza P-N-V-N), segnando 3 gol e subendone 4. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Bundesliga il Frankfurt ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), segnando 4 gol e subendone 8. In trasferta ha perso tutte le 2 partite disputate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati a partita: SC Paderborn 0,8, Frankfurt 1,6.",
-      "Gol subiti finora: SC Paderborn 9, Frankfurt 18."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per lo SC Paderborn, 2 per il Frankfurt e nessun pareggio, con 22 gol complessivi (media di 4,4 a partita). L'ultimo incontro, disputato a giugno 2020 in Bundesliga, è terminato Frankfurt 3-2 SC Paderborn."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca SC Paderborn – Frankfurt?",
-     "a": "Sabato 7 novembre alle 15:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Bundesliga](/calcio/bundesliga) e la [classifica aggiornata](/calcio/bundesliga/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:565849": {
    "fingerprint": "1q737uw",
    "sections": [
@@ -2181,20 +1954,20 @@
    ]
   },
   "fb:565855": {
-   "fingerprint": "1j4obtq",
+   "fingerprint": "1nzhn94",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "1. FC Köln e Leverkusen si affrontano domenica 8 novembre alle 15:30 per la 9ª giornata di Bundesliga. In classifica il 1. FC Köln occupa il 14° posto con 9 punti, mentre il Leverkusen è al 6° con 13."
+      "1. FC Köln e Leverkusen si sfidano domenica 8 novembre alle 15:30 nella 9ª giornata di Bundesliga. In classifica il 1. FC Köln è al 14° posto con 9 punti, mentre il Leverkusen è al 6° con 13."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga il 1. FC Köln ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta, con la sequenza V-P-N-N. Ha segnato 3 gol e ne ha subiti 3. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Bundesliga il Leverkusen ha ottenuto 2 vittorie e 2 sconfitte, con la sequenza V-V-P-P. Ha segnato 8 gol e ne ha subiti 11. Le ultime 2 partite le ha perse. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 4 partite di Bundesliga il 1. FC Köln ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza V-P-N-N), segnando 3 gol e subendone 3. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 4 partite di Bundesliga il Leverkusen ha ottenuto 2 vittorie e 2 sconfitte (sequenza V-V-P-P), segnando 8 gol e subendone 11. Ha perso le ultime 2 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -2206,6 +1979,13 @@
       "Gol subiti finora: 1. FC Köln 12, Leverkusen 16.",
       "In tutte le ultime 4 partite del Leverkusen sono stati segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per il 1. FC Köln, 5 vittorie per il Leverkusen e nessun pareggio, con 15 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, disputato nell'aprile 2026 in Bundesliga, è terminato 1. FC Köln 1-2 Leverkusen."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -2219,7 +1999,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2353,6 +2133,224 @@
     }
    ]
   },
+  "fb:1001575226": {
+   "fingerprint": "1vsg3ri",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 21 novembre alle 15:30 il M'gladbach ospita il Dortmund per la 10ª giornata di Bundesliga. In classifica il M'gladbach occupa il 18° posto con 4 punti, mentre il Dortmund è al 2° posto con 18."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Bundesliga il M'gladbach ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-V-N-P), segnando 6 gol e subendone 9. In casa, nel bilancio stagionale, figurano 1 pareggio e 1 sconfitta, senza vittorie.",
+      "Nelle ultime 4 partite di Bundesliga il Dortmund ha ottenuto 1 vittoria e 3 pareggi (sequenza N-N-V-N), segnando 5 gol e subendone 4. Non perde da 4 partite. In trasferta, nel bilancio stagionale, figurano 2 pareggi e nessuna vittoria."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: M'gladbach 1,3, Dortmund 1,8 a partita.",
+      "Gol subiti finora: M'gladbach 25, Dortmund 6.",
+      "Il Dortmund ha la miglior difesa del torneo.",
+      "In 4 delle ultime 5 partite del M'gladbach si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca M'gladbach – Dortmund?",
+     "a": "Sabato 21 novembre alle 15:30, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001575222": {
+   "fingerprint": "mix2eq",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Leverkusen e SC Paderborn si affrontano sabato 21 novembre alle 15:30 nell'ambito della 10ª giornata di Bundesliga. In classifica il Leverkusen occupa il 6° posto con 13 punti, mentre lo SC Paderborn è al 15° con 9."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di Bundesliga il Leverkusen ha ottenuto 2 vittorie e 2 sconfitte, con la sequenza V-V-P-P, segnando 8 gol e subendone 11. Ha perso le ultime 2 gare. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 4 partite di Bundesliga lo SC Paderborn ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta, con la sequenza P-N-V-N, segnando 3 gol e subendone 4. In trasferta il bilancio stagionale è di 2 pareggi, senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Leverkusen 2,3, SC Paderborn 0,8.",
+      "Gol subiti finora: Leverkusen 16, SC Paderborn 9.",
+      "In tutte le ultime 4 partite del Leverkusen sono stati segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Leverkusen – SC Paderborn?",
+     "a": "Sabato 21 novembre alle 15:30, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001575223": {
+   "fingerprint": "1cergnu",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 21 novembre alle 15:30 il Frankfurt ospita l'Hoffenheim nella 10ª giornata di Bundesliga. In classifica il Frankfurt occupa il 9° posto con 11 punti, mentre l'Hoffenheim è 13° con 9."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di Bundesliga il Frankfurt ha ottenuto 2 vittorie e 2 sconfitte, con sequenza P-V-P-V, segnando 4 gol e subendone 8. In casa ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 4 partite di Bundesliga l'Hoffenheim ha ottenuto 2 vittorie e 2 sconfitte, con sequenza P-V-V-P, segnando 7 gol e subendone 6. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Frankfurt 1,6, Hoffenheim 1,8.",
+      "Gol subiti finora: Frankfurt 18, Hoffenheim 16.",
+      "In 3 delle ultime 4 partite dell'Hoffenheim si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Frankfurt – Hoffenheim?",
+     "a": "Sabato 21 novembre alle 15:30, ora italiana."
+    },
+    {
+     "q": "Dove si trovano classifica e risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001575225": {
+   "fingerprint": "1jl6lk",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 21 novembre alle 15:30 l'Union Berlin ospita il RB Leipzig, per la 10ª giornata di Bundesliga. In classifica l'Union Berlin occupa il 16° posto con 7 punti, mentre il RB Leipzig è al 4° con 15."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di Bundesliga l'Union Berlin ha ottenuto 1 vittoria e 3 pareggi (sequenza V-N-N-N), segnando 3 gol e subendone 2. Non perde da 4 partite. In casa, nella stagione, il bilancio è di 1 vittoria e 2 pareggi, senza sconfitte.",
+      "Nelle ultime 4 partite di Bundesliga il RB Leipzig ha ottenuto 3 vittorie e 1 sconfitta (sequenza V-P-V-V), con 13 gol fatti e 6 subiti. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Union Berlin 0,9, RB Leipzig 2,8.",
+      "Gol subiti finora: Union Berlin 19, RB Leipzig 11.",
+      "In 3 delle ultime 4 partite del RB Leipzig si sono segnati almeno tre gol.",
+      "Il RB Leipzig non ha subito gol in 3 delle ultime 4."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Union Berlin – RB Leipzig?",
+     "a": "Sabato 21 novembre alle 15:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001575229": {
+   "fingerprint": "1v23fsv",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 21 novembre alle 15:30 l'Elversberg ospita il Freiburg per la 10ª giornata di Bundesliga. In classifica l'Elversberg è al 7° posto con 13 punti, il Freiburg al 3° con 16."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di Bundesliga l'Elversberg ha raccolto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), con 8 gol fatti e 9 subiti. In casa ha vinto tutte le 2 partite giocate.",
+      "Nelle ultime 4 partite di Bundesliga il Freiburg ha raccolto 2 vittorie e 2 sconfitte (sequenza V-P-P-V), con 6 gol fatti e 7 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Elversberg 2,0, Freiburg 2,3 a partita.",
+      "Gol subiti finora: Elversberg 16, Freiburg 10.",
+      "In 3 delle ultime 4 partite dell'Elversberg si sono segnati almeno tre gol.",
+      "In tutte le ultime 4 partite del Freiburg si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Elversberg – Freiburg?",
+     "a": "Sabato 21 novembre alle 15:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:559637": {
    "fingerprint": "fz0fd6",
    "sections": [
@@ -2456,20 +2454,20 @@
    ]
   },
   "fb:1001552816": {
-   "fingerprint": "1trb060",
+   "fingerprint": "8ryakn",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 15:00 lo Stade Rennais ospita il Lille per la 10ª giornata di Ligue 1. In classifica lo Stade Rennais è al 5° posto con 16 punti, il Lille al 2° con 18."
+      "Domenica 8 novembre alle 15:00 lo Stade Rennais ospita il Lille nella 10ª giornata di Ligue 1. In classifica lo Stade Rennais occupa il 5° posto con 16 punti, mentre il Lille è 2° con 18."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 lo Stade Rennais ha raccolto 2 vittorie e 2 sconfitte (sequenza V-P-V-P), con 12 gol fatti e 10 subiti. In casa ha vinto tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di Ligue 1 il Lille ha raccolto 2 vittorie e 2 pareggi (sequenza V-N-N-V), con 4 gol fatti e 2 subiti. Non perde da 4 partite."
+      "Nelle ultime 4 partite di Ligue 1 lo Stade Rennais ha ottenuto 2 vittorie e 2 sconfitte (sequenza V-P-V-P), segnando 12 gol e subendone 10. In casa ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 4 partite di Ligue 1 il Lille ha ottenuto 2 vittorie e 2 pareggi (sequenza V-N-N-V), con 4 gol fatti e 2 subiti. Non perde da 4 partite."
      ],
      "bullets": []
     },
@@ -2477,11 +2475,18 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Stade Rennais 2,2, Lille 1,3 a partita.",
-      "Gol subiti finora: Stade Rennais 19, Lille 6.",
+      "Media gol segnati: 2,2 per lo Stade Rennais e 1,3 per il Lille a partita.",
+      "Gol subiti finora: 19 per lo Stade Rennais e 6 per il Lille.",
       "Il Lille ha la miglior difesa del torneo.",
       "In tutte le ultime 4 partite dello Stade Rennais si sono segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per lo Stade Rennais, 3 per il Lille e 1 pareggio, con 12 gol complessivi (media di 2,4 a partita). L'ultimo incontro, a marzo 2026 in Ligue 1, è terminato Stade Rennais 1-2 Lille."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -2490,12 +2495,12 @@
      "a": "Domenica 8 novembre alle 15:00, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
+     "q": "Dove posso consultare classifica e risultati?",
      "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -3989,7 +3994,7 @@
    ]
   },
   "fb:1001563268": {
-   "fingerprint": "1wabdx8",
+   "fingerprint": "1bifd3i",
    "sections": [
     {
      "id": "presentazione",
@@ -4001,8 +4006,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Championship il Norwich ha ottenuto 3 vittorie e 2 sconfitte, con la sequenza P-P-V-V-V, segnando 10 gol e subendone 5. La squadra arriva da 3 vittorie consecutive. In casa, il bilancio stagionale è di 1 vittoria e 2 sconfitte.",
-      "Nelle ultime 5 partite di Championship il Cardiff ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta, con la sequenza V-N-V-P-N, segnando 11 gol e subendone 9. In trasferta, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
+      "Nelle ultime 5 partite di Championship il Norwich ha ottenuto 4 vittorie e 1 sconfitta, con la sequenza P-V-V-V-V, segnando 15 gol e subendone 4. Arriva da 4 vittorie consecutive. In casa, il bilancio stagionale è di 1 vittoria e 2 sconfitte.",
+      "Nelle ultime 5 partite di Championship il Cardiff ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta, con la sequenza V-N-V-P-N, segnando 11 gol e subendone 9. In trasferta, il bilancio stagionale è di 1 pareggio e 2 sconfitte, ancora senza vittorie."
      ],
      "bullets": []
     },
@@ -4012,8 +4017,8 @@
      "bullets": [
       "Media gol segnati: Norwich 1,9, Cardiff 1,6 a partita.",
       "Gol subiti finora: Norwich 24, Cardiff 23.",
-      "Nelle ultime 5 partite del Norwich, in 3 si sono segnati almeno tre gol.",
-      "Nelle ultime 5 partite del Cardiff, in 4 si sono segnati almeno tre gol."
+      "In 4 delle ultime 5 partite del Norwich si sono segnati almeno tre gol.",
+      "In 4 delle ultime 5 partite del Cardiff si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -10279,6 +10284,42 @@
     }
    ]
   },
+  "fb:560632": {
+   "fingerprint": "1rj7s29",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Leeds United ha vinto di misura in casa contro il Tottenham, con il punteggio di 1-0. La partita, valida per la 10ª giornata di Premier League, si è giocata sabato 7 novembre; il primo tempo si era chiuso 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Leeds United è al 12° posto con 11 punti, mentre il Tottenham è al 9° con 12. Per consultare tutti i risultati e le posizioni, vedi la [classifica completa](/calcio/premier-league/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Leeds United tornerà in campo sabato 21 novembre alle 16:00 in trasferta contro il Chelsea. Anche il Tottenham tornerà in campo sabato 21 novembre alle 16:00, in casa contro l'Ipswich Town."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Leeds United – Tottenham?",
+     "a": "1-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Premier League](/calcio/premier-league)."
+    }
+   ]
+  },
   "fb:564740": {
    "fingerprint": "e3o1ai",
    "sections": [
@@ -10586,6 +10627,114 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561939": {
+   "fingerprint": "1lcqnbj",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Norwich ha vinto in trasferta contro il Bristol City con un netto 0-5. La partita, valida per la 15ª giornata di Championship, si è giocata sabato 7 novembre; il primo tempo si era chiuso sull'0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Bristol City occupa il 15° posto con 18 punti, mentre il Norwich è al 12° con 18. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Bristol City tornerà in campo sabato 21 novembre alle 16:00 in trasferta contro il Middlesbrough. Il Norwich giocherà sabato 21 novembre alle 13:30 in casa contro il Cardiff."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Bristol City – Norwich?",
+     "a": "0-5 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:561938": {
+   "fingerprint": "dec4f2",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Rimonta dello Stoke, che dopo il primo tempo in svantaggio vince in trasferta per 1-2 contro il Portsmouth. La partita, valida per la 15ª giornata di Championship, si è giocata sabato 7 novembre; il primo tempo si era chiuso 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Portsmouth è al 10° posto con 22 punti, mentre lo Stoke è al 4° con 26. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Portsmouth tornerà in campo sabato 21 novembre alle 16:00 in trasferta contro il Bolton. Lo Stoke tornerà in campo sabato 21 novembre alle 16:00 in casa contro il Birmingham."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Portsmouth – Stoke?",
+     "a": "1-2 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
+  "fb:1001563262": {
+   "fingerprint": "y00r8t",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Wrexham e il Wolverhampton hanno pareggiato 1-1. La partita, valida per la 15ª giornata di Championship, si è giocata sabato 7 novembre; il primo tempo si era chiuso 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Wrexham è al 16° posto con 17 punti, mentre il Wolverhampton è al 2° con 27. Puoi consultare la [classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Wrexham tornerà in campo sabato 21 novembre alle 16:00 in trasferta contro il Lincoln City. Il Wolverhampton tornerà in campo sabato 21 novembre alle 16:00 in casa contro il Charlton."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Wrexham – Wolverhampton?",
+     "a": "Il risultato finale è 1-1, con lo stesso punteggio anche all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi trovarli nella pagina [Championship](/calcio/championship)."
     }
    ]
   },
