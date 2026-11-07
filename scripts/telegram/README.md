@@ -20,8 +20,9 @@ coda delle guide Academy (`academy.json`).
 Ogni post esce come immagine 1080×1350 con il testo come didascalia (`cards.mjs`, un layout per rubrica). Lo stile è
 quello delle illustrazioni delle guide: sfondo navy, pannelli `#16243B`, arancio `#FB6801` e verde `#06BA55`, font Sora,
 logo in alto. Niente loghi dei club e niente nomi di operatori: il filtro di conformità controlla anche il testo
-dell'immagine. Se la didascalia supera i 1.024 caratteri ammessi da Telegram, resta solo il titolo con i link: l'elenco
-completo è nell'immagine. Per vedere le immagini senza inviarle:
+dell'immagine. Ogni rubrica ha un testo breve di accompagnamento (`caption` in `rubriche.mjs`): i punti salienti in poche
+righe (pronostico più netto, partita più equilibrata, sorpresa del giorno…), il link e la riga 18+, sempre entro i
+1.024 caratteri ammessi da Telegram; l'elenco completo è nell'immagine. Per vedere le immagini senza inviarle:
 
 ```bash
 node scripts/telegram/publish.mjs --dry-run --all --cards /percorso/cartella

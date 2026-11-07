@@ -121,7 +121,8 @@ for (const r of candidates) {
     continue;
   }
   for (const p of posts) {
-    const caption = p.card ? captionOf(p.text) : p.text;
+    // the rubric's own short text when it has one, else the long text cut to the caption limit (lib.mjs)
+    const caption = p.card ? captionOf(p.caption ?? p.text) : p.text;
     let image = null;
     if (p.card) {
       try {
