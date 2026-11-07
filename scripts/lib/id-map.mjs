@@ -33,26 +33,44 @@ export function saveIdMap(file, data) {
  * Football teams. `previous`: teams of the previous data, as [{ team, comps: Set<slug> }].
  * Returns resolve(apiTeam, compSlug) → site team { id, name, shortName, tla, crest }.
  */
-export function footballTeamResolver(map, previous, logo) {
+export function footballTeamResolver(map, previous, logo, report = null) {
   const known = previous.map((p) => ({ ...p, matcher: teamMatcher(p.team) }));
   const taken = new Set(Object.values(map.footballTeams).map((t) => t.id));
+  const sameName = (p, name) => [p.team.name, p.team.shortName].some((n) => n && norm(n) === norm(name));
   return (apiTeam, compSlug) => {
     const key = String(apiTeam.id);
     let t = map.footballTeams[key];
+    if (t && !t.name) {
+      // entry corrected by hand with its name left to the API (scripts/migrations/correggi-squadre-2026-11.mjs)
+      Object.assign(t, { name: apiTeam.name, shortName: apiTeam.name, tla: tlaOf(apiTeam.name) });
+      report?.push({ kind: "nome", apiId: apiTeam.id, id: t.id, name: apiTeam.name, competition: compSlug });
+    }
     if (!t) {
-      // prefer a club of the same competition, then any club; the pairing must be unambiguous
-      // several candidates ("Deportivo": La Coruña or Alavés): keep the one whose name is exactly the same
-      const exact = (list) =>
-        list.length > 1 ? list.filter((p) => [p.team.name, p.team.shortName].some((n) => n && norm(n) === norm(apiTeam.name))) : list;
-      const pick = (list) => exact(list.filter((p) => !taken.has(p.team.id) && sameTeam(apiTeam.name, p.matcher)));
-      let hits = pick(known.filter((p) => p.comps.has(compSlug)));
-      if (hits.length !== 1) hits = pick(known);
+      // A club of the same competition, matched on its names (loose: "QPR" ~ "Queens Park Rangers FC"), else a
+      // club of another competition only with exactly the same name. The pairing must be unambiguous; several
+      // candidates ("Deportivo": La Coruña or Alavés): keep the one whose name is exactly the same.
+      // November 2026: the loose match across competitions gave the ids (and names) of Newcastle, QPR, Brest,
+      // Sparta Rotterdam and Telstar to cup clubs ("Rangers" ~ "Queens Park Rangers FC"), so it is exact now.
+      const exact = (list) => (list.length > 1 ? list.filter((p) => sameName(p, apiTeam.name)) : list);
+      const free = known.filter((p) => !taken.has(p.team.id));
+      let hits = exact(free.filter((p) => p.comps.has(compSlug) && sameTeam(apiTeam.name, p.matcher)));
+      if (hits.length !== 1) hits = free.filter((p) => !p.comps.has(compSlug) && sameName(p, apiTeam.name));
       const old = hits.length === 1 ? hits[0].team : null;
       t = old
         ? { id: old.id, name: old.name, shortName: old.shortName || old.name, tla: old.tla || "" }
         : { id: TEAM_OFFSET + apiTeam.id, name: apiTeam.name, shortName: apiTeam.name, tla: tlaOf(apiTeam.name) };
       map.footballTeams[key] = t;
       taken.add(t.id);
+      // every new pairing or new club is reported (public/stato-dati.json → daily e-mail): a wrong pairing is
+      // easy to fix the day it happens, much harder weeks later
+      report?.push({
+        kind: old ? "abbinata" : "nuova",
+        apiId: apiTeam.id,
+        apiName: apiTeam.name,
+        id: t.id,
+        name: t.name,
+        competition: compSlug,
+      });
     }
     return { ...t, crest: logo(apiTeam.logo) };
   };
@@ -83,7 +101,7 @@ export function matchIdResolver(store, previous) {
   };
 }
 
-function tlaOf(name) {
+export function tlaOf(name) {
   return String(name)
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")

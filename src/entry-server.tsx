@@ -67,7 +67,7 @@ const legacyRoutes = [
   ...legacyMatchdayRoutes(),
   { path: "/basket/nba", redirect: NBA_HUB, title: "Pronostici NBA", description: `Pagina spostata su ${NBA_HUB}.`, index: false },
 ];
-export { legacyTarget, rewriteLegacyLinks } from "./lib/legacyUrls";
+export { legacyTarget, rewriteLegacyLinks, setMovedUrls } from "./lib/legacyUrls";
 // Under/Over statistics pages: one per competition with a table and results (description from the season figures)
 const competitionFiles = import.meta.glob<{
   default: { competition: Competition; season?: { results: GoalResult[] }; matchStats?: SeasonMatchStats | null };
