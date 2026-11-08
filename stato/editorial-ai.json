@@ -3595,274 +3595,38 @@
   "at": "2026-11-07T08:57:04.739Z"
  },
  "nba:21718053": {
-  "fingerprint": "dqzmax",
+  "fingerprint": "vi25bi",
   "sections": [
    {
-    "id": "presentazione",
+    "id": "resoconto",
     "paragraphs": [
-     "Domenica 8 novembre alle 01:30, ora italiana, gli Hawks ospitano i Nets in una partita di regular season NBA 2026-27."
+     "Gli Hawks si sono imposti sui Nets per 124-121. L'incontro si è disputato domenica 8 novembre.",
+     "All'intervallo erano in vantaggio i Nets, 70-66. Nella ripresa gli Hawks hanno recuperato 4 punti di svantaggio.",
+     "Il parziale più netto è arrivato nel 1º quarto, vinto dai Nets 37-27."
     ],
     "bullets": []
    },
    {
-    "id": "momento",
-    "paragraphs": [
-     "Gli Hawks hanno un record di 6-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 114,9 subiti. In casa il bilancio è 2-2.",
-     "I Nets hanno un record di 2-6 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,6 punti segnati e 112,9 subiti. In trasferta il bilancio è 1-3."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
+    "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Gli Hawks giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 3 gare."
+     "Punti totali: 245.",
+     "Parziali (Hawks–Nets): 27-37, 39-33, 22-25, 36-26."
     ]
    }
   ],
   "faq": [
    {
-    "q": "A che ora si gioca Atlanta Hawks – Brooklyn Nets in Italia?",
-    "a": "Domenica 8 novembre alle 01:30."
+    "q": "Com'è finita Atlanta Hawks – Brooklyn Nets?",
+    "a": "Il risultato finale è stato 124-121 per gli Hawks."
    },
    {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Puoi consultare la pagina dei [pronostici NBA](/pronostici/nba)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T03:20:48.938Z"
- },
- "nba:21718054": {
-  "fingerprint": "pywnbq",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "I Knicks fanno visita ai Cavaliers domenica 8 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "I Cavaliers hanno un record di 5-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 119,2 punti segnati e 114,7 subiti. In casa il bilancio è 4-1.",
-     "I Knicks hanno un record di 4-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 110,0 punti segnati e 105,1 subiti. In trasferta il bilancio è 1-2."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
-    "paragraphs": [],
-    "bullets": [
-     "I Cavaliers giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 5 gare.",
-     "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 4 gare."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "A che ora si gioca Cleveland Cavaliers – New York Knicks in Italia?",
-    "a": "Domenica 8 novembre alle 02:00."
-   },
-   {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-07T03:20:50.883Z"
- },
- "nba:21718055": {
-  "fingerprint": "1itmv74",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Domenica 8 novembre alle 02:00, ora italiana, i Thunder ospitano i Wizards in una partita della regular season NBA 2026-27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "I Thunder hanno un record di 7-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 112,0 punti segnati e 107,4 subiti. In casa il bilancio è 4-0.",
-     "I Wizards hanno un record di 4-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 111,4 punti segnati e 112,3 subiti. In trasferta il bilancio è 2-3."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
-    "paragraphs": [],
-    "bullets": [
-     "I Thunder giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 4 gare.",
-     "I Wizards giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 4 gare."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "A che ora si gioca Oklahoma City Thunder – Washington Wizards in Italia?",
-    "a": "Domenica 8 novembre alle 02:00."
-   },
-   {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:07:16.664Z"
- },
- "nba:21718056": {
-  "fingerprint": "1wmwmnj",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "I Magic fanno visita ai Warriors domenica 8 novembre alle 02:30, ora italiana, in una partita della regular season NBA 2026-27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "I Warriors hanno un record di 6-3 in stagione e hanno vinto 5 delle ultime 5, con una media di 117,8 punti segnati e 113,0 subiti. In casa il bilancio è 4-1.",
-     "I Magic hanno un record di 2-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 105,5 punti segnati e 115,0 subiti. In trasferta il bilancio è 2-2."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
-    "paragraphs": [],
-    "bullets": [
-     "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 4 gare.",
-     "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 4 gare."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "A che ora si gioca Golden State Warriors – Orlando Magic in Italia?",
-    "a": "La partita si gioca domenica 8 novembre alle 02:30."
-   },
-   {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Per approfondire leggi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Per capire la struttura del campionato consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-06T06:21:29.181Z"
- },
- "nba:21718057": {
-  "fingerprint": "nc1fb2",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Domenica 8 novembre alle 03:00, ora italiana, i Suns ospitano i Rockets in una partita della regular season NBA 2026-27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "I Suns hanno un record di 2-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 113,9 punti segnati e 121,4 subiti. In casa il bilancio è 2-2.",
-     "I Rockets hanno un record di 7-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 117,9 punti segnati e 107,6 subiti. In trasferta il bilancio è 3-1."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
-    "paragraphs": [],
-    "bullets": [
-     "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 4 gare.",
-     "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 4 gare."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "A che ora si gioca Phoenix Suns – Houston Rockets in Italia?",
-    "a": "Domenica 8 novembre alle 03:00."
-   },
-   {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-06T06:21:31.146Z"
- },
- "nba:21718058": {
-  "fingerprint": "1plqkud",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Gli Spurs fanno visita ai Trail Blazers domenica 8 novembre alle 04:00, ora italiana, in una partita della regular season NBA 2026-27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "I Trail Blazers hanno un record di 6-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 121,4 punti segnati e 112,4 subiti. In casa il bilancio è 1-1.",
-     "Gli Spurs hanno un record di 7-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 117,7 punti segnati e 108,7 subiti. In trasferta il bilancio è 3-0."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
-    "paragraphs": [],
-    "bullets": [
-     "I Trail Blazers giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 4 gare.",
-     "Gli Spurs giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 4 gare."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "A che ora si gioca Portland Trail Blazers – San Antonio Spurs in Italia?",
-    "a": "Domenica 8 novembre alle 04:00."
-   },
-   {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:20:43.505Z"
+  "at": "2026-11-08T03:21:29.858Z"
  },
  "nba:21718059": {
   "fingerprint": "160pmg8",
@@ -3997,7 +3761,7 @@
   "at": "2026-11-07T06:07:20.553Z"
  },
  "nba:21718062": {
-  "fingerprint": "elsrmp",
+  "fingerprint": "10wcnaf",
   "sections": [
    {
     "id": "presentazione",
@@ -4010,7 +3774,7 @@
     "id": "momento",
     "paragraphs": [
      "I Mavericks hanno un record di 5-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 112,1 punti segnati e 110,9 subiti. In casa il bilancio è 3-2.",
-     "I Nets hanno un record di 2-6 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,6 punti segnati e 112,9 subiti. In trasferta il bilancio è 1-3."
+     "I Nets hanno un record di 2-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 108,2 punti segnati e 114,1 subiti. In trasferta il bilancio è 1-4."
     ],
     "bullets": []
    },
@@ -4031,15 +3795,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:07:22.681Z"
+  "at": "2026-11-08T03:20:11.718Z"
  },
  "nba:21718063": {
   "fingerprint": "h6rjpc",
@@ -4174,7 +3938,7 @@
   "at": "2026-11-07T06:07:28.988Z"
  },
  "nba:21718066": {
-  "fingerprint": "1t6m1hi",
+  "fingerprint": "3vptvy",
   "sections": [
    {
     "id": "presentazione",
@@ -4186,7 +3950,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Gli Hawks hanno un record di 6-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 114,9 subiti. In casa il bilancio è 2-2.",
+     "Gli Hawks hanno un record di 7-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,6 punti segnati e 115,5 subiti. In casa il bilancio è 3-2.",
      "I Lakers hanno un record di 8-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 122,0 punti segnati e 114,3 subiti. In trasferta il bilancio è 3-1."
     ],
     "bullets": []
@@ -4216,7 +3980,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:20:47.743Z"
+  "at": "2026-11-08T03:20:13.883Z"
  },
  "nba:21718067": {
   "fingerprint": "1gmorzo",
@@ -5062,7 +4826,7 @@
   "at": "2026-11-07T06:20:51.868Z"
  },
  "nba:21718087": {
-  "fingerprint": "ak173z",
+  "fingerprint": "1vw1p15",
   "sections": [
    {
     "id": "presentazione",
@@ -5075,7 +4839,7 @@
     "id": "momento",
     "paragraphs": [
      "I Pelicans hanno un record di 4-5 in stagione e hanno vinto 4 delle ultime 5, con una media di 120,2 punti segnati e 118,8 subiti. In casa il bilancio è 3-3.",
-     "I Nets hanno un record di 2-6 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,6 punti segnati e 112,9 subiti. In trasferta il bilancio è 1-3."
+     "I Nets hanno un record di 2-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 108,2 punti segnati e 114,1 subiti. In trasferta il bilancio è 1-4."
     ],
     "bullets": []
    },
@@ -5103,7 +4867,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:07:54.314Z"
+  "at": "2026-11-08T03:20:16.378Z"
  },
  "nba:21718088": {
   "fingerprint": "7ya43z",
@@ -7192,7 +6956,7 @@
   "at": "2026-11-07T03:21:19.621Z"
  },
  "nba:21718098": {
-  "fingerprint": "1hclgde",
+  "fingerprint": "2en7gd",
   "sections": [
    {
     "id": "presentazione",
@@ -7205,7 +6969,7 @@
     "id": "momento",
     "paragraphs": [
      "I Bulls hanno un record di 1-7 in stagione e hanno vinto 0 delle ultime 5, con una media di 111,6 punti segnati e 129,6 subiti. In casa il bilancio è 0-2.",
-     "Gli Hawks hanno un record di 6-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 114,9 subiti. In trasferta il bilancio è 4-2."
+     "Gli Hawks hanno un record di 7-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,6 punti segnati e 115,5 subiti. In trasferta il bilancio è 4-2."
     ],
     "bullets": []
    },
@@ -7229,11 +6993,11 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi tutto su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T03:21:21.536Z"
+  "at": "2026-11-08T03:20:18.324Z"
  },
  "nba:21718099": {
   "fingerprint": "cc3k8y",
@@ -7591,7 +7355,7 @@
   "at": "2026-11-07T03:21:33.897Z"
  },
  "nba:21718107": {
-  "fingerprint": "1sgzj72",
+  "fingerprint": "1ocvirt",
   "sections": [
    {
     "id": "presentazione",
@@ -7604,7 +7368,7 @@
     "id": "momento",
     "paragraphs": [
      "I Grizzlies hanno un record di 6-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 111,8 subiti. In casa il bilancio è 2-3.",
-     "I Nets hanno un record di 2-6 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,6 punti segnati e 112,9 subiti. In trasferta il bilancio è 1-3."
+     "I Nets hanno un record di 2-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 108,2 punti segnati e 114,1 subiti. In trasferta il bilancio è 1-4."
     ],
     "bullets": []
    },
@@ -7613,7 +7377,7 @@
     "paragraphs": [],
     "bullets": [
      "I Grizzlies giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 4 gare.",
+     "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 5 gare.",
      "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 4 gare."
     ]
    }
@@ -7629,14 +7393,14 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per il quadro generale consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:08:20.844Z"
+  "at": "2026-11-08T03:20:20.382Z"
  },
  "nba:21718108": {
-  "fingerprint": "1s8bgs3",
+  "fingerprint": "1co811o",
   "sections": [
    {
     "id": "presentazione",
@@ -7657,7 +7421,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 4 gare.",
+     "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 5 gare.",
      "I Bulls giocano la seconda partita in due giorni (back-to-back).",
      "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 4 gare."
     ]
@@ -7670,15 +7434,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:08:22.775Z"
+  "at": "2026-11-08T03:20:22.333Z"
  },
  "fb:558544": {
   "fingerprint": "1jnj0mw",
@@ -10468,7 +10232,7 @@
   "at": "2026-11-07T06:20:57.672Z"
  },
  "nba:1000017131": {
-  "fingerprint": "1tcebvv",
+  "fingerprint": "1wwhjdq",
   "sections": [
    {
     "id": "presentazione",
@@ -10489,7 +10253,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 4 gare.",
      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 3 gare."
     ]
    }
@@ -10501,15 +10265,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T03:21:44.174Z"
+  "at": "2026-11-08T03:20:24.419Z"
  },
  "fb:558547": {
   "fingerprint": "gb10wl",
@@ -10588,7 +10352,7 @@
   "at": "2026-11-03T09:20:17.651Z"
  },
  "nba:1000017132": {
-  "fingerprint": "13hmx81",
+  "fingerprint": "1ml70g2",
   "sections": [
    {
     "id": "presentazione",
@@ -10610,29 +10374,29 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 4 gare.",
-     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 3 gare."
+     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 4 gare."
     ]
    }
   ],
   "faq": [
    {
     "q": "A che ora si gioca Utah Jazz – San Antonio Spurs in Italia?",
-    "a": "La partita si disputa domenica 15 novembre alle 23:00."
+    "a": "Domenica 15 novembre alle 23:00."
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Per capire come funzionano questi mercati, consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Trovi tutti i dettagli nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per la struttura del campionato, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Per approfondire, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:08:24.946Z"
+  "at": "2026-11-08T03:20:26.339Z"
  },
  "nba:1000017133": {
-  "fingerprint": "6c73on",
+  "fingerprint": "1h97ez1",
   "sections": [
    {
     "id": "presentazione",
@@ -10653,9 +10417,9 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 4 gare.",
      "I Mavericks giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 2 gare."
+     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 3 gare."
     ]
    }
   ],
@@ -10666,15 +10430,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:08:27.815Z"
+  "at": "2026-11-08T03:20:28.292Z"
  },
  "nba:1000017134": {
   "fingerprint": "1iwelng",
@@ -10765,7 +10529,7 @@
   "at": "2026-11-07T03:21:52.078Z"
  },
  "nba:1000017136": {
-  "fingerprint": "1p1xjbn",
+  "fingerprint": "y00fho",
   "sections": [
    {
     "id": "presentazione",
@@ -10778,7 +10542,7 @@
     "id": "momento",
     "paragraphs": [
      "I Bucks hanno un record di 1-8 in stagione e hanno vinto 0 delle ultime 5, con una media di 109,7 punti segnati e 122,1 subiti. In casa il bilancio è 1-4.",
-     "Gli Hawks hanno un record di 6-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 114,9 subiti. In trasferta il bilancio è 4-2."
+     "Gli Hawks hanno un record di 7-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,6 punti segnati e 115,5 subiti. In trasferta il bilancio è 4-2."
     ],
     "bullets": []
    },
@@ -10798,18 +10562,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T19:31:03.682Z"
+  "at": "2026-11-08T03:20:30.419Z"
  },
  "nba:1000017137": {
-  "fingerprint": "tw4j03",
+  "fingerprint": "jcarw0",
   "sections": [
    {
     "id": "presentazione",
@@ -10830,7 +10594,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 4 gare.",
      "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 3 gare."
     ]
    }
@@ -10850,7 +10614,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:20:59.592Z"
+  "at": "2026-11-08T03:20:32.315Z"
  },
  "fb:564729": {
   "fingerprint": "n9g3st",
@@ -11077,7 +10841,7 @@
   "at": "2026-11-03T09:20:22.053Z"
  },
  "nba:1000017138": {
-  "fingerprint": "1vx6ixj",
+  "fingerprint": "ghb8x8",
   "sections": [
    {
     "id": "presentazione",
@@ -11099,7 +10863,7 @@
     "paragraphs": [],
     "bullets": [
      "I Celtics giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 2 gare.",
+     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 3 gare.",
      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 3 gare."
     ]
    }
@@ -11115,11 +10879,11 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T03:21:57.611Z"
+  "at": "2026-11-08T03:20:34.266Z"
  },
  "nba:1000017139": {
   "fingerprint": "1gihk6m",
@@ -11166,7 +10930,7 @@
   "at": "2026-11-07T03:21:59.653Z"
  },
  "nba:1000017140": {
-  "fingerprint": "1xa6fx6",
+  "fingerprint": "iur94t",
   "sections": [
    {
     "id": "presentazione",
@@ -11189,7 +10953,7 @@
     "bullets": [
      "I Wizards giocano la seconda partita in due giorni (back-to-back).",
      "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 3 gare."
+     "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 4 gare."
     ]
    }
   ],
@@ -11204,14 +10968,14 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Trovi i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:01.632Z"
+  "at": "2026-11-08T03:20:36.404Z"
  },
  "nba:1000017141": {
-  "fingerprint": "xi6yt3",
+  "fingerprint": "12xidu",
   "sections": [
    {
     "id": "presentazione",
@@ -11223,7 +10987,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Nets hanno un record di 2-6 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,6 punti segnati e 112,9 subiti. In casa il bilancio è 1-3.",
+     "I Nets hanno un record di 2-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 108,2 punti segnati e 114,1 subiti. In casa il bilancio è 1-3.",
      "I 76ers hanno un record di 8-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 109,4 punti segnati e 106,6 subiti. In trasferta il bilancio è 4-1."
     ],
     "bullets": []
@@ -11244,15 +11008,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T19:31:05.512Z"
+  "at": "2026-11-08T03:20:38.296Z"
  },
  "nba:1000017142": {
   "fingerprint": "1ppietj",
@@ -11300,7 +11064,7 @@
   "at": "2026-11-07T06:21:03.720Z"
  },
  "nba:1000017143": {
-  "fingerprint": "19hgx0n",
+  "fingerprint": "mozgs0",
   "sections": [
    {
     "id": "presentazione",
@@ -11321,7 +11085,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 4 gare.",
      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 4 gare."
     ]
    }
@@ -11333,18 +11097,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Trovi tutti i dettagli nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi tutto su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T00:44:09.517Z"
+  "at": "2026-11-08T03:20:40.553Z"
  },
  "nba:1000017144": {
-  "fingerprint": "1lo57pj",
+  "fingerprint": "fn1kug",
   "sections": [
    {
     "id": "presentazione",
@@ -11365,7 +11129,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 4 gare.",
      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 3 gare."
     ]
    }
@@ -11377,15 +11141,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Una panoramica è disponibile in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:07.528Z"
+  "at": "2026-11-08T03:20:42.562Z"
  },
  "nba:1000017145": {
   "fingerprint": "113i65p",
@@ -12643,7 +12407,7 @@
   "at": "2026-11-08T00:44:13.837Z"
  },
  "nba:1000017147": {
-  "fingerprint": "gzrr13",
+  "fingerprint": "zjo42c",
   "sections": [
    {
     "id": "presentazione",
@@ -12665,7 +12429,7 @@
     "paragraphs": [],
     "bullets": [
      "I Timberwolves giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 2 gare.",
+     "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 3 gare.",
      "I Trail Blazers giocano la seconda partita in due giorni (back-to-back).",
      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 3 gare."
     ]
@@ -12686,10 +12450,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T00:44:16.060Z"
+  "at": "2026-11-08T03:20:44.867Z"
  },
  "nba:1000017148": {
-  "fingerprint": "e0lv8w",
+  "fingerprint": "5mxoux",
   "sections": [
    {
     "id": "presentazione",
@@ -12710,7 +12474,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 2 gare.",
+     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 3 gare.",
      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 3 gare."
     ]
    }
@@ -12722,15 +12486,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Maggiori dettagli nella guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:15.254Z"
+  "at": "2026-11-08T03:20:47.195Z"
  },
  "nba:1000017149": {
   "fingerprint": "snrv2p",
@@ -12777,7 +12541,7 @@
   "at": "2026-11-07T06:21:17.124Z"
  },
  "nba:1000017150": {
-  "fingerprint": "r59pml",
+  "fingerprint": "1p0ean2",
   "sections": [
    {
     "id": "presentazione",
@@ -12798,7 +12562,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 2 gare.",
+     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 3 gare.",
      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 3 gare."
     ]
    }
@@ -12810,15 +12574,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:18.987Z"
+  "at": "2026-11-08T03:20:49.253Z"
  },
  "fb:561923": {
   "fingerprint": "1m9y561",
@@ -13479,7 +13243,7 @@
   "at": "2026-11-05T06:21:11.516Z"
  },
  "nba:1000017151": {
-  "fingerprint": "25vhfe",
+  "fingerprint": "1fte0ah",
   "sections": [
    {
     "id": "presentazione",
@@ -13501,7 +13265,7 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 2 gare.",
-     "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 2 gare."
+     "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 3 gare."
     ]
    }
   ],
@@ -13516,11 +13280,11 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:21.196Z"
+  "at": "2026-11-08T03:20:51.287Z"
  },
  "nba:1000017152": {
   "fingerprint": "14bfmzi",
@@ -13655,7 +13419,7 @@
   "at": "2026-11-07T19:31:09.449Z"
  },
  "nba:1000017155": {
-  "fingerprint": "6v1rty",
+  "fingerprint": "pu6tbh",
   "sections": [
    {
     "id": "presentazione",
@@ -13667,7 +13431,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Nets hanno un record di 2-6 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,6 punti segnati e 112,9 subiti. In casa il bilancio è 1-3.",
+     "I Nets hanno un record di 2-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 108,2 punti segnati e 114,1 subiti. In casa il bilancio è 1-3.",
      "I Bulls hanno un record di 1-7 in stagione e hanno vinto 0 delle ultime 5, con una media di 111,6 punti segnati e 129,6 subiti. In trasferta il bilancio è 1-5."
     ],
     "bullets": []
@@ -13688,7 +13452,7 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Puoi approfondire nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
@@ -13696,7 +13460,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:29.928Z"
+  "at": "2026-11-08T03:20:53.195Z"
  },
  "nba:1000017156": {
   "fingerprint": "1ejp1sh",
@@ -13744,7 +13508,7 @@
   "at": "2026-11-07T06:21:31.926Z"
  },
  "nba:1000017157": {
-  "fingerprint": "4mzu8d",
+  "fingerprint": "1q5eyus",
   "sections": [
    {
     "id": "presentazione",
@@ -13765,7 +13529,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 2 gare.",
+     "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 3 gare.",
      "I Pistons giocano la seconda partita in due giorni (back-to-back).",
      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 2 gare."
     ]
@@ -13786,10 +13550,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:33.782Z"
+  "at": "2026-11-08T03:20:55.102Z"
  },
  "nba:1000017158": {
-  "fingerprint": "vnlyjj",
+  "fingerprint": "15c1pk2",
   "sections": [
    {
     "id": "presentazione",
@@ -13801,8 +13565,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Thunder hanno un record di 7-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 112,0 punti segnati e 107,4 subiti. In casa il bilancio è 4-0.",
-     "Gli Hawks hanno un record di 6-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 114,9 subiti. In trasferta il bilancio è 4-2."
+     "I Thunder hanno un record di 7-2 in stagione e hanno vinto 3 delle ultime 5 partite, con una media di 112,0 punti segnati e 107,4 subiti. In casa il bilancio è 4-0.",
+     "Gli Hawks hanno un record di 7-4 in stagione e hanno vinto 4 delle ultime 5 partite, con una media di 118,6 punti segnati e 115,5 subiti. In trasferta il bilancio è 4-2."
     ],
     "bullets": []
    },
@@ -13822,18 +13586,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Per approfondire, consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi tutte le informazioni in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Per maggiori dettagli, consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:36.301Z"
+  "at": "2026-11-08T03:20:57.330Z"
  },
  "nba:1000017159": {
-  "fingerprint": "u04eia",
+  "fingerprint": "d8tpi3",
   "sections": [
    {
     "id": "presentazione",
@@ -13855,7 +13619,7 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Nuggets hanno in calendario 2 gare.",
-     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 1 gara."
+     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 2 gare."
     ]
    }
   ],
@@ -13866,18 +13630,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Trovi tutti i dettagli nella pagina [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T00:44:20.008Z"
+  "at": "2026-11-08T03:20:59.346Z"
  },
  "nba:1000017160": {
-  "fingerprint": "bglazz",
+  "fingerprint": "jx2lc0",
   "sections": [
    {
     "id": "presentazione",
@@ -13898,7 +13662,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 2 gare.",
      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 2 gare."
     ]
    }
@@ -13910,15 +13674,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi una spiegazione in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:40.045Z"
+  "at": "2026-11-08T03:21:01.257Z"
  },
  "nba:1000017161": {
   "fingerprint": "djbr6d",
@@ -13967,7 +13731,7 @@
   "at": "2026-11-07T06:21:41.977Z"
  },
  "nba:1000017162": {
-  "fingerprint": "9c9p8e",
+  "fingerprint": "1qtwidh",
   "sections": [
    {
     "id": "presentazione",
@@ -13988,7 +13752,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 2 gare.",
+     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 3 gare.",
      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 2 gare."
     ]
    }
@@ -14000,15 +13764,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:44.161Z"
+  "at": "2026-11-08T03:21:03.187Z"
  },
  "fb:561925": {
   "fingerprint": "5iqxpa",
@@ -15829,7 +15593,7 @@
   "at": "2026-11-07T06:07:14.260Z"
  },
  "nba:1000017163": {
-  "fingerprint": "1alf3zn",
+  "fingerprint": "12jm70u",
   "sections": [
    {
     "id": "presentazione",
@@ -15851,7 +15615,7 @@
     "paragraphs": [],
     "bullets": [
      "I Grizzlies giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 2 gare.",
      "I Warriors giocano la seconda partita in due giorni (back-to-back).",
      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 1 gara."
     ]
@@ -15864,15 +15628,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:46.252Z"
+  "at": "2026-11-08T03:21:05.307Z"
  },
  "nba:1000017164": {
   "fingerprint": "1wq4b05",
@@ -15920,7 +15684,7 @@
   "at": "2026-11-08T00:44:22.140Z"
  },
  "nba:1000017165": {
-  "fingerprint": "tlkbmi",
+  "fingerprint": "19dn6tp",
   "sections": [
    {
     "id": "presentazione",
@@ -15941,7 +15705,7 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 2 gare.",
      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 2 gare."
     ]
    }
@@ -15953,18 +15717,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T00:44:24.072Z"
+  "at": "2026-11-08T03:21:07.568Z"
  },
  "nba:1000017166": {
-  "fingerprint": "reoydx",
+  "fingerprint": "148cgh1",
   "sections": [
    {
     "id": "presentazione",
@@ -15985,8 +15749,8 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 1 gara.",
-     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 1 gara."
+     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 2 gare.",
+     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 2 gare."
     ]
    }
   ],
@@ -15997,15 +15761,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:52.070Z"
+  "at": "2026-11-08T03:21:09.553Z"
  },
  "fb:555077": {
   "fingerprint": "1umt4k5",
@@ -16540,7 +16304,7 @@
   "at": "2026-11-07T20:58:37.084Z"
  },
  "nba:1000017167": {
-  "fingerprint": "1anzilr",
+  "fingerprint": "192da4n",
   "sections": [
    {
     "id": "presentazione",
@@ -16552,7 +16316,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Gli Hawks hanno un record di 6-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 114,9 subiti. In casa il bilancio è 2-2.",
+     "Gli Hawks hanno un record di 7-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,6 punti segnati e 115,5 subiti. In casa il bilancio è 3-2.",
      "Gli Hornets hanno un record di 3-7 in stagione e hanno vinto 0 delle ultime 5, con una media di 96,3 punti segnati e 110,2 subiti. In trasferta il bilancio è 1-3."
     ],
     "bullets": []
@@ -16573,18 +16337,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:53.907Z"
+  "at": "2026-11-08T03:21:11.471Z"
  },
  "nba:1000017168": {
-  "fingerprint": "egynxx",
+  "fingerprint": "6myqgg",
   "sections": [
    {
     "id": "presentazione",
@@ -16596,7 +16360,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Nets hanno un record di 2-6 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,6 punti segnati e 112,9 subiti. In casa il bilancio è 1-3.",
+     "I Nets hanno un record di 2-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 108,2 punti segnati e 114,1 subiti. In casa il bilancio è 1-3.",
      "I Magic hanno un record di 2-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 105,5 punti segnati e 115,0 subiti. In trasferta il bilancio è 2-2."
     ],
     "bullets": []
@@ -16617,15 +16381,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:21:55.851Z"
+  "at": "2026-11-08T03:21:13.401Z"
  },
  "nba:1000017169": {
   "fingerprint": "1qexzyn",
@@ -16760,7 +16524,7 @@
   "at": "2026-11-07T06:22:02.637Z"
  },
  "nba:1000017172": {
-  "fingerprint": "1e57kru",
+  "fingerprint": "1wcjetn",
   "sections": [
    {
     "id": "presentazione",
@@ -16772,8 +16536,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Thunder hanno un record di 7-2 in stagione e hanno vinto 3 delle ultime 5 gare, con una media di 112,0 punti segnati e 107,4 subiti. In casa il bilancio è 4-0.",
-     "I Pelicans hanno un record di 4-5 in stagione e hanno vinto 4 delle ultime 5 gare, con una media di 120,2 punti segnati e 118,8 subiti. In trasferta il bilancio è 1-2."
+     "I Thunder hanno un record di 7-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 112,0 punti segnati e 107,4 subiti. In casa il bilancio è 4-0.",
+     "I Pelicans hanno un record di 4-5 in stagione e hanno vinto 4 delle ultime 5, con una media di 120,2 punti segnati e 118,8 subiti. In trasferta il bilancio è 1-2."
     ],
     "bullets": []
    },
@@ -16782,26 +16546,26 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 1 gara.",
-     "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 1 gara."
+     "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 2 gare."
     ]
    }
   ],
   "faq": [
    {
     "q": "A che ora si gioca Oklahoma City Thunder – New Orleans Pelicans in Italia?",
-    "a": "La partita si disputa sabato 21 novembre alle 02:00."
+    "a": "Sabato 21 novembre alle 02:00."
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Per approfondire, consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per i dettagli, consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T08:56:24.736Z"
+  "at": "2026-11-08T03:21:15.543Z"
  },
  "nba:1000017173": {
   "fingerprint": "muwwwo",
@@ -16892,7 +16656,7 @@
   "at": "2026-11-08T00:44:29.365Z"
  },
  "nba:1000017175": {
-  "fingerprint": "f39bol",
+  "fingerprint": "18rwhn6",
   "sections": [
    {
     "id": "presentazione",
@@ -16914,7 +16678,7 @@
     "paragraphs": [],
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 1 gara.",
-     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 1 gara."
+     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 2 gare."
     ]
    }
   ],
@@ -16925,15 +16689,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T08:56:30.232Z"
+  "at": "2026-11-08T03:21:17.425Z"
  },
  "fb:555079": {
   "fingerprint": "9hvs0v",
@@ -21173,5 +20937,183 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-08T00:44:48.195Z"
+ },
+ "nba:1000017178": {
+  "fingerprint": "1fwsj7i",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Domenica 22 novembre alle 02:00, ora italiana, i Mavericks ospitano i Clippers in una partita della regular season NBA 2026-27."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "I Mavericks hanno un record di 5-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 112,1 punti segnati e 110,9 subiti. In casa il bilancio è 3-2.",
+     "I Clippers hanno un record di 1-7 in stagione e hanno vinto 0 delle ultime 5, con una media di 109,1 punti segnati e 115,6 subiti. In trasferta il bilancio è 0-4."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "calendario",
+    "paragraphs": [],
+    "bullets": [
+     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 1 gara."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "A che ora si gioca Dallas Mavericks – LA Clippers in Italia?",
+    "a": "Domenica 22 novembre alle 02:00."
+   },
+   {
+    "q": "Come funzionano totali e handicap nel basket?",
+    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+   },
+   {
+    "q": "Come è organizzata la stagione NBA?",
+    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T03:21:19.252Z"
+ },
+ "nba:1000017179": {
+  "fingerprint": "1n064ra",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "I Grizzlies fanno visita ai Timberwolves domenica 22 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "I Timberwolves hanno un record di 7-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,4 punti segnati e 107,7 subiti. In casa il bilancio è 3-1.",
+     "I Grizzlies hanno un record di 6-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 111,8 subiti. In trasferta il bilancio è 4-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "calendario",
+    "paragraphs": [],
+    "bullets": [
+     "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 1 gara."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "A che ora si gioca Minnesota Timberwolves – Memphis Grizzlies in Italia?",
+    "a": "Domenica 22 novembre alle 02:00."
+   },
+   {
+    "q": "Come funzionano totali e handicap nel basket?",
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+   },
+   {
+    "q": "Come è organizzata la stagione NBA?",
+    "a": "Trovi tutto su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T03:21:21.354Z"
+ },
+ "nba:1000017180": {
+  "fingerprint": "1snqoed",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "I Pelicans fanno visita agli Spurs domenica 22 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Gli Spurs hanno un record di 7-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 117,7 punti segnati e 108,7 subiti. In casa il bilancio è 4-2.",
+     "I Pelicans hanno un record di 4-5 in stagione e hanno vinto 4 delle ultime 5, con una media di 120,2 punti segnati e 118,8 subiti. In trasferta il bilancio è 1-2."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "calendario",
+    "paragraphs": [],
+    "bullets": [
+     "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 1 gara.",
+     "I Pelicans giocano la seconda partita in due giorni (back-to-back).",
+     "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 1 gara."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "A che ora si gioca San Antonio Spurs – New Orleans Pelicans in Italia?",
+    "a": "Domenica 22 novembre alle 02:00."
+   },
+   {
+    "q": "Come funzionano totali e handicap nel basket?",
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+   },
+   {
+    "q": "Come è organizzata la stagione NBA?",
+    "a": "Trovi una spiegazione in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T03:21:23.431Z"
+ },
+ "nba:1000017181": {
+  "fingerprint": "1w2cfaj",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Domenica 22 novembre alle 04:00, ora italiana, i Kings ospitano i Celtics in una partita della regular season NBA 2026-27."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "I Kings hanno un record di 1-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 109,2 punti segnati e 123,3 subiti. In casa il bilancio è 0-4.",
+     "I Celtics hanno un record di 7-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 114,8 punti segnati e 105,1 subiti. In trasferta il bilancio è 2-2."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "calendario",
+    "paragraphs": [],
+    "bullets": [
+     "I Kings giocano la seconda partita in due giorni (back-to-back).",
+     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 1 gara."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "A che ora si gioca Sacramento Kings – Boston Celtics in Italia?",
+    "a": "Domenica 22 novembre alle 04:00."
+   },
+   {
+    "q": "Come funzionano totali e handicap nel basket?",
+    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+   },
+   {
+    "q": "Come è organizzata la stagione NBA?",
+    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T03:21:25.328Z"
  }
 }
