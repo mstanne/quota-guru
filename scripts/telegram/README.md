@@ -43,8 +43,10 @@ node scripts/telegram/publish.mjs --dry-run --all --cards /percorso/cartella
 | `anteprima-premier-league`, `anteprima-liga`, `anteprima-ligue-1` | il giorno prima dell'inizio di ogni giornata, 13:00 / 14:00 / 15:00 | anteprima della giornata come quella di Serie A (anche turni infrasettimanali) |
 | `tris-weekend` | sabato 10:30 | le 3 partite del weekend (5 grandi campionati) più prevedibili e la probabilità che si verifichino tutte e tre; lunedì il track record dice com'è andata. Lo stesso tris è sul sito, `/pronostici/tris`: la build del sito lo fissa la mattina (`tris.json` nel branch `archivio-pronostici`, regole in `scripts/lib/tris.mjs`) e il post usa quello |
 | `tris-champions`, `tris-europa-league`, `tris-conference` | 10:30 / 10:30 / 11:00 del primo giorno di ogni giornata di coppa | lo stesso per ogni coppa (Champions: martedì e mercoledì insieme); anche questi nel track record del lunedì |
+| `tris-nazionali` | 10:30 del primo giorno di ogni finestra delle nazionali | le 3 partite ufficiali delle nazionali europee (Nations League, qualificazioni, Mondiali, Europei) più prevedibili di quel giorno e del successivo |
+| `nazionale-italia` | 11:30 il giorno di ogni partita dell'Italia | pronostico del modello delle nazionali e canale TV (Rai) |
 | `dove-vederla` | venerdì 18:00 | canali TV della giornata di Serie A (accordi 2026/27) |
-| `formazioni` | appena escono, circa un'ora prima | formazioni ufficiali: tutte le partite di Serie A, coppe europee solo con squadre italiane |
+| `formazioni` | appena escono, circa un'ora prima | formazioni ufficiali: tutte le partite di Serie A, coppe europee solo con squadre italiane, ogni partita dell'Italia |
 | `risultati` / `risultati-domenica` | sabato 23:00, domenica 23:30 | risultati del giorno contro il modello |
 
 Orari e testi: `rubriche.mjs`.

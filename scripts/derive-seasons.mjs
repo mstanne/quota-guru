@@ -257,7 +257,8 @@ function main() {
   const index = { generatedAt: now.toISOString(), competitions: [] };
   fs.rmSync(OUT, { recursive: true, force: true });
 
-  for (const c of [...COMPETITIONS, ...EXTRA]) {
+  // national teams: archived (scripts/archive-data.mjs) but no past-season pages yet
+  for (const c of [...COMPETITIONS.filter((c) => !c.national), ...EXTRA]) {
     const dir = path.join(calcio, c.slug);
     if (!fs.existsSync(dir)) continue;
     const cup = c.cup ?? !c.domestic;

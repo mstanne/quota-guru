@@ -5,6 +5,9 @@ import { PageHeader } from "../layout/PageHeader";
 import { TeamBadge } from "../calcio/MatchRow";
 import { footballTeamRefs, nbaTeamRefs, teamPaths, type TeamRef } from "../../lib/teams";
 import { competitions } from "../../lib/football";
+import { confedLabel } from "../../lib/teamMeta";
+
+const CONFEDS = ["UEFA", "CONMEBOL", "CONCACAF", "CAF", "AFC", "OFC"];
 
 function Grid({ teams, base }: { teams: TeamRef[]; base: string }) {
   return (
@@ -45,12 +48,13 @@ export function TeamsIndexPage({ sport }: { sport: "football" | "nba" }) {
   const leagues = competitions
     .map((c) => ({ c, teams: footballTeamRefs.filter((t) => t.competition === c.slug) }))
     .filter((x) => x.teams.length);
+  const nationals = footballTeamRefs.filter((t) => t.national);
   return (
     <div className="min-h-screen bg-slate-950">
       <PageHeader
         title="Squadre di calcio"
         icon={Shield}
-        subtitle="Società, rosa e statistiche stagione per stagione dei club dei principali campionati."
+        subtitle="Società, rosa e statistiche stagione per stagione dei club dei principali campionati, e le nazionali."
         breadcrumb={[{ label: "Calcio", to: "/calcio" }, { label: "Squadre" }]}
       />
       <div className="container mx-auto px-4 py-8 space-y-8">
@@ -62,6 +66,23 @@ export function TeamsIndexPage({ sport }: { sport: "football" | "nba" }) {
             <Grid teams={teams} base={teamPaths.football} />
           </section>
         ))}
+        {nationals.length > 0 && (
+          <section aria-labelledby="nazionali" className="space-y-6">
+            <h2 id="nazionali" className="text-white text-2xl">
+              Nazionali
+            </h2>
+            {[...CONFEDS, null].map((cf) => {
+              const list = nationals.filter((t) => (cf ? t.confed === cf : !t.confed || !CONFEDS.includes(t.confed)));
+              if (!list.length) return null;
+              return (
+                <div key={cf ?? "altre"}>
+                  <h3 className="text-slate-300 text-lg mb-3">{cf ? confedLabel(cf) : "Altre nazionali"}</h3>
+                  <Grid teams={list} base={teamPaths.football} />
+                </div>
+              );
+            })}
+          </section>
+        )}
       </div>
     </div>
   );

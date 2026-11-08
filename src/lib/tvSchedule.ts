@@ -12,6 +12,9 @@ const roundDates = (c: Competition, m: Match) =>
   c.matches.filter((x) => x.matchday != null && x.matchday === m.matchday && x.stage === m.stage).map((x) => x.utcDate);
 
 export const matchBroadcast = (c: Competition, m: Match) =>
-  withSchedule(tv.football[matchPath(c, m)], footballBroadcast(c.slug, m.utcDate, roundDates(c, m)));
+  withSchedule(
+    tv.football[matchPath(c, m)],
+    footballBroadcast(c.slug, m.utcDate, roundDates(c, m), [m.homeTeam.name, m.awayTeam.name], !!c.national),
+  );
 
 export const gameBroadcast = (g: Parameters<typeof gamePath>[0]) => withSchedule(tv.nba[gamePath(g)], nbaBroadcast());

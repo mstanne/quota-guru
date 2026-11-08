@@ -32,6 +32,7 @@ const basket = read("src/data/basket.json", { nba: { season: 0, games: [] } });
 const bHistory = read("data/basket-history.json", { games: [] });
 
 import { country, slugify } from "./lib/italian.mjs";
+import { NATIONAL } from "./lib/leagues.mjs";
 
 const COLOURS = {
   red: "rosso", black: "nero", white: "bianco", blue: "blu", "navy blue": "blu scuro", "sky blue": "celeste",
@@ -120,6 +121,7 @@ for (const r of fHistory.results ?? []) {
 fs.mkdirSync(OUT, { recursive: true });
 for (const comp of football.competitions) {
   if (["CL", "EL", "ECL"].includes(comp.code)) continue; // team pages follow the domestic leagues
+  if (comp.national) continue; // national teams: one page each, below
   const current = Number(comp.season?.startDate?.slice(0, 4)) || null;
   const standing = comp.standings?.[0]?.table ?? [];
   const ids = fTeams.competitions?.[comp.slug]?.length ? fTeams.competitions[comp.slug] : standing.map((r) => r.team.id);
@@ -228,6 +230,136 @@ for (const comp of football.competitions) {
     index.football.push({ id, slug, name: base.name, shortName: base.shortName || base.name, crest: base.crest ?? null, competition: comp.slug });
   }
   fs.writeFileSync(path.join(OUT, `football-${comp.slug}.json`), JSON.stringify(out) + "\n");
+}
+
+// ---------- national teams ----------
+// One page per national team that played in the last two years (data/football-history.json): next matches with the
+// model's prediction, last results, record year by year and by competition, call-ups and coach (API-Football,
+// scripts/fetch-football.mjs). Written to football-nazionali.json, listed in the index with competition "nazionali".
+{
+  const NAT = new Map(NATIONAL.map((c) => [c.code, c]));
+  const predictions = read("src/data/football-predictions.json", { predictions: {} }).predictions ?? {};
+  const idMap = read("data/id-map.json", { footballTeams: {} }).footballTeams ?? {};
+  const known = new Map(); // site id → { name, shortName, tla, crest }
+  for (const [apiId, t] of Object.entries(idMap))
+    if (t.national) known.set(t.id, { ...t, crest: `https://media.api-sports.io/football/teams/${apiId}.png` });
+  for (const c of football.competitions.filter((c) => c.national))
+    for (const m of c.matches) for (const t of [m.homeTeam, m.awayTeam]) known.set(t.id, { ...known.get(t.id), ...t });
+  const nameOf = (id) => known.get(id)?.shortName ?? known.get(id)?.name ?? null;
+
+  const since = new Date(Date.now() - 2 * 365 * 86400e3).toISOString();
+  const results = (fHistory.results ?? []).filter((r) => NAT.has(r.comp));
+  // finished matches of the snapshot not yet in the history (the history is written by the full download only)
+  const seen = new Set(results.map((r) => r.id));
+  for (const c of football.competitions.filter((c) => c.national))
+    for (const m of c.matches)
+      if (["FINISHED", "AWARDED"].includes(m.status) && m.score.fullTime.home != null && !seen.has(m.id))
+        results.push({ id: m.id, date: m.utcDate, comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, hg: m.score.fullTime.home, ag: m.score.fullTime.away });
+  results.sort((a, b) => a.date.localeCompare(b.date));
+
+  // confederation: where the team plays its continental games
+  const confCount = new Map();
+  for (const r of results) {
+    const cf = NAT.get(r.comp)?.confed;
+    if (!cf) continue;
+    for (const id of [r.home, r.away]) {
+      const m = confCount.get(id) ?? {};
+      m[cf] = (m[cf] ?? 0) + 1;
+      confCount.set(id, m);
+    }
+  }
+  const confOf = (id) => Object.entries(confCount.get(id) ?? {}).sort((a, b) => b[1] - a[1])[0]?.[0] ?? null;
+  // match pages of the snapshot (dated URL), for links from the results
+  const pathOf = new Map();
+  for (const c of football.competitions.filter((c) => c.national))
+    for (const m of c.matches)
+      pathOf.set(m.id, `/calcio/${c.slug}/${slugify(m.homeTeam.shortName)}-${slugify(m.awayTeam.shortName)}-${romeDay(m.utcDate)}`);
+
+  const teamIds = new Set();
+  for (const r of results) if (r.date >= since) teamIds.add(r.home), teamIds.add(r.away);
+  for (const c of football.competitions.filter((c) => c.national))
+    for (const m of c.matches) teamIds.add(m.homeTeam.id), teamIds.add(m.awayTeam.id);
+
+  const out = {};
+  for (const id of teamIds) {
+    const base = known.get(id);
+    if (!base?.name) continue;
+    const info = fTeams.teams?.[id];
+    const mine = results.filter((r) => r.home === id || r.away === id);
+    const rec = () => ({ played: 0, won: 0, draw: 0, lost: 0, gf: 0, ga: 0 });
+    const add = (t, gf, ga) => {
+      t.played++;
+      t.gf += gf;
+      t.ga += ga;
+      if (gf > ga) t.won++;
+      else if (gf === ga) t.draw++;
+      else t.lost++;
+    };
+    const years = new Map();
+    for (const r of mine) {
+      const y = Number(r.date.slice(0, 4));
+      const home = r.home === id;
+      const [gf, ga] = home ? [r.hg, r.ag] : [r.ag, r.hg];
+      const yr = years.get(y) ?? { year: y, total: rec(), byComp: new Map() };
+      add(yr.total, gf, ga);
+      const comp = NAT.get(r.comp)?.name ?? r.comp;
+      if (!yr.byComp.has(comp)) yr.byComp.set(comp, rec());
+      add(yr.byComp.get(comp), gf, ga);
+      years.set(y, yr);
+    }
+    const upcoming = [];
+    for (const c of football.competitions.filter((c) => c.national))
+      for (const m of c.matches) {
+        if (!["SCHEDULED", "TIMED"].includes(m.status) || (m.homeTeam.id !== id && m.awayTeam.id !== id)) continue;
+        const p = predictions[m.id];
+        upcoming.push({
+          date: m.utcDate,
+          competition: c.name,
+          home: m.homeTeam.id === id,
+          opponent: (m.homeTeam.id === id ? m.awayTeam : m.homeTeam).shortName,
+          opponentId: (m.homeTeam.id === id ? m.awayTeam : m.homeTeam).id,
+          path: `/pronostici/${c.slug}/${slugify(m.homeTeam.shortName)}-${slugify(m.awayTeam.shortName)}`,
+          p: p ? (m.homeTeam.id === id ? p.p : [p.p[2], p.p[1], p.p[0]]) : null,
+        });
+      }
+    upcoming.sort((a, b) => a.date.localeCompare(b.date));
+    const slug = uniqueSlug(slugify(base.shortName || base.name), base.tla || String(id));
+    out[id] = {
+      id,
+      slug,
+      name: base.name,
+      shortName: base.shortName || base.name,
+      tla: base.tla || "",
+      crest: base.crest ?? null,
+      national: true,
+      confed: confOf(id),
+      coach: info?.coach ? { ...info.coach, nationality: country(info.coach.nationality) } : null,
+      squad: (info?.squad ?? []).map((p) => ({ ...p, nationality: country(p.nationality ?? null) })),
+      squadUpdatedAt: info?.updatedAt ?? null,
+      upcoming: upcoming.slice(0, 6),
+      recent: mine
+        .slice(-10)
+        .reverse()
+        .map((r) => ({
+          date: r.date,
+          competition: NAT.get(r.comp)?.name ?? r.comp,
+          home: r.home === id,
+          opponent: nameOf(r.home === id ? r.away : r.home) ?? "",
+          opponentId: r.home === id ? r.away : r.home,
+          gf: r.home === id ? r.hg : r.ag,
+          ga: r.home === id ? r.ag : r.hg,
+          path: pathOf.get(r.id) ?? null,
+        })),
+      years: [...years.values()]
+        .sort((a, b) => b.year - a.year)
+        .map((y) => ({ year: y.year, total: y.total, byComp: [...y.byComp.entries()].map(([competition, r]) => ({ competition, ...r })) })),
+      // Under/Over and Goal over the last two years, every competition
+      goals: goalsOf(mine.filter((r) => r.date >= since), id),
+    };
+    index.football.push({ id, slug, name: base.name, shortName: base.shortName || base.name, crest: base.crest ?? null, competition: "nazionali", national: true, confed: out[id].confed });
+  }
+  fs.writeFileSync(path.join(OUT, "football-nazionali.json"), JSON.stringify(out) + "\n");
+  console.log(`Pagine nazionale: ${Object.keys(out).length}`);
 }
 
 // ---------- NBA ----------

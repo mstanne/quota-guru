@@ -23,7 +23,7 @@ import { FOOTBALL_MARKETS, type FootballMarket } from "../../lib/predictionsCore
 import { useQueryChoice } from "../../lib/useQueryChoice";
 import { MarketFilter } from "../predictions/MarketFilter";
 import { TrackRecordBox } from "../predictions/TrackRecordBox";
-import { footballTrackRecord } from "../../lib/trackRecordFootball";
+import { footballTrackRecord, nationalTrackRecord } from "../../lib/trackRecordFootball";
 import { footballOutcome, MatchListColumns, MatchListHeader, MatchRow } from "./MatchRow";
 import { MatchList } from "./MatchList";
 import { emptyActionClass, EmptyList, TeamSearch } from "../predictions/ListTools";
@@ -213,7 +213,11 @@ export function CalcioPage() {
       <div className="container mx-auto px-4 py-6">
         {/* the list keeps a readable width on wide screens (and leaves room for the slip beside it) */}
         <div className="max-w-6xl">
-          <TrackRecordBox record={footballTrackRecord()} sport="calcio" className="mb-4" />
+          <TrackRecordBox
+            record={competition?.national ? nationalTrackRecord() : footballTrackRecord()}
+            sport="calcio"
+            className="mb-4"
+          />
 
           {/* filters: one sticky bar under the site header (competitions scroll sideways, period and market on one row) */}
           <div
@@ -345,7 +349,9 @@ export function CalcioPage() {
               title={`Pronostici ${competition.name}: la giornata e i numeri della stagione`}
               sections={competitionText(
                 single,
-                footballTrackRecord().byWhere?.find((w) => w.where === competition.name),
+                (competition.national ? nationalTrackRecord() : footballTrackRecord()).byWhere?.find(
+                  (w) => w.where === competition.name,
+                ),
               )}
               note={`Testi aggiornati al ${formatShortDate(generatedAt)}. Stime statistiche, non consigli di gioco.`}
             />

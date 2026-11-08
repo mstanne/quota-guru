@@ -25,18 +25,20 @@ import { nbaDetailsFor } from "./lib/basketDetails";
 import type { EventVenue } from "./lib/schema";
 import { archivedBasketPredictionFor, basketPredictionFor } from "./lib/basketPredict";
 import { highlightFor } from "./lib/highlights";
-import { loadAllTeamData, type FootballTeam, type NbaTeam } from "./lib/teams";
+import { loadAllTeamData, type FootballTeam, type NationalTeam, type NbaTeam } from "./lib/teams";
 import { loadAllResults, resultsRoutes } from "./lib/results";
 import { loadAllSeasons, seasonsRoutes } from "./lib/seasons";
-import { footballTeamMeta, nbaTeamMeta } from "./lib/teamMeta";
+import { footballTeamMeta, nationalTeamMeta, nbaTeamMeta } from "./lib/teamMeta";
 import nbaTeamsData from "./data/teams/nba.json";
 
 // team pages (server only: every league file is bundled here)
-const footballTeamFiles = import.meta.glob<{ default: Record<string, FootballTeam> }>("./data/teams/football-*.json", {
+const footballTeamFiles = import.meta.glob<{ default: Record<string, FootballTeam | NationalTeam> }>("./data/teams/football-*.json", {
   eager: true,
 });
 const teamRoutes = () => [
-  ...Object.values(footballTeamFiles).flatMap((f) => Object.values(f.default).map(footballTeamMeta)),
+  ...Object.values(footballTeamFiles).flatMap((f) =>
+    Object.values(f.default).map((t) => ("national" in t && t.national ? nationalTeamMeta(t) : footballTeamMeta(t as FootballTeam))),
+  ),
   ...Object.values(nbaTeamsData as unknown as Record<string, NbaTeam>).map(nbaTeamMeta),
 ];
 import { guideRoutes } from "./data/guides";
@@ -57,7 +59,7 @@ export { preloadAll as preloadAllPages };
 const footballVenues = new Map<number, EventVenue>();
 for (const f of Object.values(footballTeamFiles))
   for (const t of Object.values(f.default))
-    if (t.venue?.name) footballVenues.set(t.id, { name: t.venue.name, city: t.venue.city, country: t.area });
+    if (!("national" in t) && t.venue?.name) footballVenues.set(t.id, { name: t.venue.name, city: t.venue.city, country: t.area });
 const nbaVenues = new Map<number, EventVenue>();
 for (const g of nbaGames) {
   const d = nbaDetailsFor(g.id);

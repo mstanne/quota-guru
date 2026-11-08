@@ -65,7 +65,7 @@ function list() {
     console.log(`## ${c.name}`);
     for (const m of rows) {
       const round = c.matches.filter((x) => x.matchday != null && x.matchday === m.matchday && x.stage === m.stage).map((x) => x.utcDate);
-      const rule = footballBroadcast(c.slug, m.utcDate, round);
+      const rule = footballBroadcast(c.slug, m.utcDate, round, [m.homeTeam.name, m.awayTeam.name], !!c.national);
       const key = matchKey(c, m);
       const now = tv.football[key];
       console.log(

@@ -10,7 +10,7 @@ import { useQueryChoice } from "../../lib/useQueryChoice";
 import {
   competitionPath,
   goalStatsMeta,
-  mainTable,
+  allTableRows,
   seasonName,
   standingsPath,
   PRONOSTICI,
@@ -46,7 +46,7 @@ export function GoalStatsPage() {
 
   const rows = useMemo(() => {
     if (!data || !c) return [];
-    return mainTable(c).map((r) => ({ team: r.team, stats: data.goalStats(r.team.id) }));
+    return allTableRows(c).map((r) => ({ team: r.team, stats: data.goalStats(r.team.id) }));
   }, [data, c]);
 
   if (!data || !c || !league || rows.length === 0 || league.n === 0) return <NotFoundPage />;

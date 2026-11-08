@@ -14,6 +14,7 @@ import {
   isUpcoming,
   isResultPending,
   mainTable,
+  tableOf,
   recentForm,
   roundLabel,
   standingOf,
@@ -126,8 +127,9 @@ function StatsComparison({ home, away }: { home?: StandingRow; away?: StandingRo
 }
 
 function MiniStandings({ competition, match }: { competition: Competition; match: Match }) {
-  const table = mainTable(competition);
-  if (table.length === 0) return null;
+  // the group of the home team when the competition has groups (the away team is in the same one)
+  const table = competition.standings.length > 1 ? tableOf(competition, match.homeTeam.id) : mainTable(competition);
+  if (table.length === 0 || !table.some((r) => r.team.id === match.awayTeam.id)) return null;
   const ids = [match.homeTeam.id, match.awayTeam.id];
   const positions = table.filter((r) => ids.includes(r.team.id)).map((r) => r.position);
   // Show two positions above and below each team; a gap row marks skipped positions.

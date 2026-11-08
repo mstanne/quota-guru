@@ -3,6 +3,19 @@
 
 /** Common Italian or short names of clubs whose data name is long. Keys are compared case- and accent-free. */
 const KNOWN: Record<string, string> = {
+  // national teams (Italian names, scripts/lib/national-teams.mjs)
+  "bosnia ed erzegovina": "Bosnia",
+  "repubblica ceca": "Rep. Ceca",
+  "macedonia del nord": "Macedonia N.",
+  "stati uniti": "USA",
+  "emirati arabi uniti": "Emirati Arabi",
+  "repubblica centrafricana": "Centrafrica",
+  "repubblica dominicana": "Rep. Dominicana",
+  "saint vincent e grenadine": "Saint Vincent",
+  "saint kitts e nevis": "Saint Kitts",
+  "isole vergini americane": "Isole Vergini USA",
+  "isole vergini britanniche": "Isole Vergini GB",
+  "papua nuova guinea": "Papua N. G.",
   "red bull salzburg": "Salisburgo",
   "rb salzburg": "Salisburgo",
   "olympique lyonnais": "Lione",

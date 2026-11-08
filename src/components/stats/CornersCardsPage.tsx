@@ -7,7 +7,7 @@ import { Flag } from "lucide-react";
 import { Link } from "../../lib/links";
 import { useCompetitionData, type MatchStatsCounts } from "../../lib/footballData";
 import { usePageMeta } from "../../lib/pageMeta";
-import { PRONOSTICI, competitionPath, cornersCardsMeta, goalStatsPath, mainTable, seasonName } from "../../lib/footballCore";
+import { PRONOSTICI, allTableRows, competitionPath, cornersCardsMeta, goalStatsPath, seasonName } from "../../lib/footballCore";
 import { NotFoundPage } from "../NotFoundPage";
 import { PageHeader } from "../layout/PageHeader";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";
@@ -33,7 +33,7 @@ export function CornersCardsPage() {
 
   const season = seasonName(c);
   const lg = ms.league;
-  const rows = mainTable(c)
+  const rows = allTableRows(c)
     .map((r) => ({ team: r.team, s: ms.teams[String(r.team.id)] as MatchStatsCounts | undefined }))
     .filter((r): r is { team: typeof r.team; s: MatchStatsCounts } => !!r.s?.n);
   const total = (s: MatchStatsCounts) => (kind === "corner" ? s.cf + s.ca : s.yf + s.ya + s.rf + s.ra);

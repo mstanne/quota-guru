@@ -11,6 +11,10 @@ export interface TeamRef {
   shortName: string;
   crest?: string | null;
   competition?: string;
+  /** National team (page data in football-nazionali.json, competition "nazionali"). */
+  national?: boolean;
+  /** Confederation of a national team (UEFA, CONMEBOL, …). */
+  confed?: string | null;
 }
 export interface SeasonRecord {
   position: number;
@@ -82,6 +86,33 @@ export interface FootballTeam {
   /** Corners, cards and expected goals of the current season (from the archive, scripts/archive-data.mjs). */
   matchStats?: (MatchStatsCounts & { lines: { corners: number[]; cards: number[] } }) | null;
   seasons: FootballSeason[];
+}
+interface NationalRecord {
+  played: number;
+  won: number;
+  draw: number;
+  lost: number;
+  gf: number;
+  ga: number;
+}
+/** Page of a national team (scripts/derive-teams.mjs). */
+export interface NationalTeam {
+  id: number;
+  slug: string;
+  name: string;
+  shortName: string;
+  tla: string;
+  crest: string | null;
+  national: true;
+  confed: string | null;
+  coach: { name: string; nationality: string | null; since: string | null } | null;
+  squad: FootballTeam["squad"];
+  squadUpdatedAt: string | null;
+  /** Next matches with the model's 1X2 from the team's side: [win, draw, defeat]. */
+  upcoming: { date: string; competition: string; home: boolean; opponent: string; opponentId: number; path: string; p: [number, number, number] | null }[];
+  recent: { date: string; competition: string; home: boolean; opponent: string; opponentId: number; gf: number; ga: number; path: string | null }[];
+  years: { year: number; total: NationalRecord; byComp: (NationalRecord & { competition: string })[] }[];
+  goals: (TeamGoalStats & { complete?: boolean }) | null;
 }
 export interface TeamApiStats {
   competition: string;
@@ -182,10 +213,18 @@ export const loadAllTeamData = () =>
 /** The club's data, or a promise to wait for (Suspense) when its league is not loaded yet. */
 export function footballTeam(slug?: string): FootballTeam | null | Promise<unknown> {
   const ref = findFootballRef(slug);
-  if (!ref?.competition) return null;
+  if (!ref?.competition || ref.national) return null;
   const league = footballCache.get(ref.competition);
   if (!league) return loadFootballLeague(ref.competition);
   return league[String(ref.id)] ?? null;
+}
+/** A national team's data (same Suspense contract as footballTeam). */
+export function nationalTeam(slug?: string): NationalTeam | null | Promise<unknown> {
+  const ref = findFootballRef(slug);
+  if (!ref?.national) return null;
+  const all = footballCache.get("nazionali");
+  if (!all) return loadFootballLeague("nazionali");
+  return (all[String(ref.id)] as unknown as NationalTeam) ?? null;
 }
 export function nbaTeam(slug?: string): NbaTeam | null | Promise<unknown> {
   const ref = findNbaRef(slug);
@@ -200,6 +239,7 @@ export function preloadTeamData(pathname: string): Promise<unknown> {
   if (f) {
     const ref = findFootballRef(f[1]);
     if (!ref?.competition) return Promise.resolve();
+    if (ref.national) return loadFootballLeague("nazionali"); // next matches are in the page's own data
     // the page also lists the club's next league matches (FootballTeamPage → NextMatches)
     const comp = ref.competition;
     return Promise.all([

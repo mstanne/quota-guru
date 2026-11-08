@@ -43,7 +43,7 @@ export interface TrisData {
 }
 export const trisData = raw as unknown as TrisData;
 
-/** The four kinds, in page order (= scripts/lib/tris.mjs). */
+/** The kinds, in page order (= scripts/lib/tris.mjs). */
 export const TRIS_KINDS = [
   {
     id: "tris-weekend",
@@ -72,6 +72,13 @@ export const TRIS_KINDS = [
     name: "Conference League",
     title: "Il tris di Conference",
     when: "Esce la mattina del primo giorno di ogni giornata.",
+  },
+  {
+    id: "tris-nazionali",
+    slug: "nazionali",
+    name: "Nazionali",
+    title: "Il tris delle nazionali",
+    when: "Esce la mattina del primo giorno di ogni finestra delle nazionali, con le partite ufficiali (Nations League, qualificazioni, Mondiali ed Europei) di quel giorno e del successivo.",
   },
 ] as const;
 

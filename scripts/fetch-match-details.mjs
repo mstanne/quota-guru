@@ -163,6 +163,23 @@ async function footballRun(api, store, data, now) {
       console.log(`  ${slug}: ${m.homeTeam.shortName}-${m.awayTeam.shortName} ✓`);
     }
   }
+  // national teams: their matches already carry API-Football's fixture id (scripts/fetch-football.mjs), and one
+  // /fixtures?ids= request returns events, line-ups, statistics and players of 20 matches at once
+  const todo = all
+    .filter((c) => c.national)
+    .flatMap((c) => c.matches.map((m) => ({ c, m })))
+    .filter(({ m }) => m.apiId && finished(m) && !store.football[m.id] && now - Date.parse(m.utcDate) < DAYS_BACK * 86400000);
+  for (let i = 0; i < todo.length; i += 20) {
+    const chunk = todo.slice(i, i + 20);
+    const list = await api.get(`/fixtures?ids=${chunk.map(({ m }) => m.apiId).join("-")}`);
+    for (const { c, m } of chunk) {
+      const fx = list.find((f) => f.fixture?.id === m.apiId);
+      if (!fx || !["FT", "AET", "PEN"].includes(fx.fixture?.status?.short)) continue;
+      const sideOf = (teamId) => (teamId === fx.teams.home.id ? "home" : teamId === fx.teams.away.id ? "away" : null);
+      store.football[m.id] = footballDetails(fx, fx.events ?? [], fx.lineups ?? [], fx.statistics ?? [], fx.players ?? [], sideOf);
+      console.log(`  ${c.slug}: ${m.homeTeam.shortName}-${m.awayTeam.shortName} ✓`);
+    }
+  }
 }
 
 // ---------- NBA ----------

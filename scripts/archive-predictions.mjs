@@ -112,6 +112,7 @@ function update(log, m, stats) {
       path: m.path,
       pick: m.pick,
       prediction: m.prediction,
+      ...(m.national ? { national: true } : {}),
     });
   }
   if (!e) return;
@@ -148,6 +149,8 @@ for (const c of football.competitions) {
         kickoff: m.utcDate,
         label: `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`,
         where: c.name,
+        // national teams: their own track record (summary "nazionali" below), same archive file
+        ...(c.national ? { national: true } : {}),
         path: footballPath(c, m),
         prediction: pred,
         pick: pred ? { index: top, label: `${OUT[top]} · ${names[top]}`, prob: pred.p[top] } : null,
@@ -263,13 +266,15 @@ function breakdown(graded, whereOf, dateOf) {
   };
 }
 
-function summary(sport, log) {
+function summary(sport, log, keep = () => true) {
   const graded = Object.values(log)
-    .filter((e) => e.result)
+    .filter((e) => e.result && keep(e))
     .sort((a, b) => b.kickoff.localeCompare(a.kickoff));
   const from = new Date(now - 30 * 86400000).toISOString();
   const count = (list) => ({ n: list.length, hits: list.filter((e) => e.hit).length });
-  const first = Object.values(log).reduce((min, e) => (!min || e.firstPublished < min ? e.firstPublished : min), null);
+  const first = Object.values(log)
+    .filter(keep)
+    .reduce((min, e) => (!min || e.firstPublished < min ? e.firstPublished : min), null);
   return {
     since: first,
     all: count(graded),
@@ -290,7 +295,13 @@ function summary(sport, log) {
     })),
   };
 }
-const site = { generatedAt: nowIso, calcio: summary("calcio", fLog), nba: summary("nba", bLog) };
+// clubs and national teams apart: two models, two track records
+const site = {
+  generatedAt: nowIso,
+  calcio: summary("calcio", fLog, (e) => !e.national),
+  nazionali: summary("calcio", fLog, (e) => !!e.national),
+  nba: summary("nba", bLog),
+};
 writeJson(path.join(root, "src/data/track-record.json"), site);
 // archived prediction of the matches in the current data that have started, for their match pages
 for (const [sport, log] of [

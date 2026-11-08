@@ -77,6 +77,7 @@ for (const f of fs.readdirSync(OUT)) if (f.startsWith("comp-") && !written.has(f
 // recalculated track record (used by the site until the archive of published predictions is long enough):
 // finished matches re-predicted with the data available before kick-off, low-reliability ones excluded
 const entries = [];
+const nationalEntries = []; // national teams: their own track record
 for (const c of football.competitions)
   for (const m of c.matches) {
     const p = predictions[m.id];
@@ -86,7 +87,7 @@ for (const c of football.competitions)
     const top = p.p.indexOf(Math.max(...p.p));
     const outcome = ft.home > ft.away ? 0 : ft.home === ft.away ? 1 : 2;
     const names = [m.homeTeam.shortName, "pareggio", m.awayTeam.shortName];
-    entries.push({
+    (c.national ? nationalEntries : entries).push({
       key: `f${m.id}`,
       path: matchPath(c, m),
       label: `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`,
@@ -99,6 +100,7 @@ for (const c of football.competitions)
     });
   }
 entries.sort((a, b) => b.utcDate.localeCompare(a.utcDate));
+nationalEntries.sort((a, b) => b.utcDate.localeCompare(a.utcDate));
 const from = new Date(now - 30 * 86400000).toISOString();
 const count = (list) => ({ n: list.length, hits: list.filter((e) => e.hit).length });
 /** Hits by competition and by month (track record page). */
@@ -128,8 +130,8 @@ fs.writeFileSync(
     generatedAt: football.generatedAt,
     competitions: football.competitions
       .filter((c) => c.matches.length || c.standings.length)
-      .map(({ code, slug, name, area, season, standings, matches }) => ({
-        code, slug, name, area, season, hasStandings: standings.length > 0,
+      .map(({ code, slug, name, area, season, standings, matches, national }) => ({
+        code, slug, name, area, season, hasStandings: standings.length > 0, ...(national ? { national: true } : {}),
         // rounds of the league phase of the cups are "fase-campionato-giornata-<n>" (src/lib/footballCore.ts)
         leaguePhase: matches.some((m) => m.stage === "LEAGUE_STAGE"),
       })),
@@ -138,6 +140,12 @@ fs.writeFileSync(
       last30: count(entries.filter((e) => e.utcDate >= from)),
       ...breakdown(entries),
       recent: entries.slice(0, 10),
+    },
+    trackRecordNational: {
+      all: count(nationalEntries),
+      last30: count(nationalEntries.filter((e) => e.utcDate >= from)),
+      ...breakdown(nationalEntries),
+      recent: nationalEntries.slice(0, 10),
     },
   }) + "\n",
 );

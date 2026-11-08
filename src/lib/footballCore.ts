@@ -114,6 +114,8 @@ export interface Competition {
   season: { startDate: string; endDate: string; currentMatchday: number | null } | null;
   matches: Match[];
   standings: { stage: string; group: string | null; table: StandingRow[] }[];
+  /** Competition of national teams (separate prediction model and track record). */
+  national?: boolean;
   /** Top scorers, assists and cards of the season (API-Football, refreshed daily). */
   leaders?: Leaders;
 }
@@ -257,10 +259,14 @@ export const leadersPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slu
 export const cornersCardsPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slug}/statistiche-corner-cartellini`;
 /** Under/Over and Goal statistics of every team of a competition (src/components/stats/GoalStatsPage.tsx). */
 export const goalStatsPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slug}/statistiche-under-over`;
-/** "2026/27", or "2026" for calendar-year seasons (Brasileirão). */
-export function seasonName(c: Pick<Competition, "code" | "season">) {
+/** "2026/27", or "2026" for calendar-year seasons (Brasileirão, and national-team competitions within one year). */
+export function seasonName(c: Pick<Competition, "code" | "season"> & { national?: boolean }) {
   const y = Number(c.season?.startDate?.slice(0, 4));
   if (!y) return "";
+  if (c.national) {
+    const end = Number(c.season?.endDate?.slice(0, 4)) || y;
+    return end === y ? String(y) : `${y}/${String(end).slice(2)}`;
+  }
   return c.code === "BSA" ? String(y) : `${y}/${String(y + 1).slice(2)}`;
 }
 export const matchPath = (c: CompetitionRef, m: Match) => `/calcio/${c.slug}/${matchSlug(m)}`;
@@ -398,7 +404,12 @@ export function roundLabel(m: Match) {
 
 // ---------- standings helpers ----------
 export const mainTable = (c: Competition) => c.standings[0]?.table ?? [];
-export const standingOf = (c: Competition, teamId: number) => mainTable(c).find((r) => r.team.id === teamId);
+/** Every row of every group (competitions in groups: Nations League, qualifiers of the national teams). */
+export const allTableRows = (c: Competition) => c.standings.flatMap((g) => g.table);
+/** The table (the group, when there are groups) a team is in. */
+export const tableOf = (c: Competition, teamId: number) =>
+  c.standings.find((g) => g.table.some((r) => r.team.id === teamId))?.table ?? [];
+export const standingOf = (c: Competition, teamId: number) => allTableRows(c).find((r) => r.team.id === teamId);
 
 /** Last results (most recent first) of a team in the snapshot: "V" | "N" | "P". */
 export function recentForm(c: Competition, teamId: number, limit = 5) {

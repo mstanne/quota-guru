@@ -21,9 +21,13 @@ export const seasonOfDate = (date, code) => {
 export function seasonResults(comp, history) {
   const season = Number(comp.season?.startDate?.slice(0, 4)) || null;
   const byId = new Map();
+  // national teams: seasons follow the competition's own dates (qualifiers last two years)
+  const inSeason = comp.national
+    ? (r) => r.date.slice(0, 10) >= comp.season.startDate && r.date.slice(0, 10) <= comp.season.endDate
+    : (r) => seasonOfDate(r.date, comp.code) === season;
   if (season)
     for (const r of history?.results ?? [])
-      if (r.comp === comp.code && seasonOfDate(r.date, comp.code) === season)
+      if (r.comp === comp.code && inSeason(r))
         byId.set(String(r.id), { id: r.id, date: r.date, home: r.home, away: r.away, hg: r.hg, ag: r.ag });
   for (const m of comp.matches ?? [])
     if (played(m))

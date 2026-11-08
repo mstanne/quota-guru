@@ -10,6 +10,9 @@
 //   Europa League, Conference League   Sky and NOW, every match
 //   Premier League, Bundesliga   Sky and NOW;   LaLiga   DAZN
 //   NBA          Sky Sport Basket and NOW a selection of games; every game on NBA League Pass
+//   National teams  every match of Italy on Rai 1 and RaiPlay; Nations League 2026/27: Sky and NOW hold the rights
+//                and show a selection of the other matches (some free-to-air on TV8 or Mediaset), so the page says to
+//                check the schedule (Calcio e Finanza, 1 October 2026). Other national-team competitions: not shown.
 // Ligue 1, Eredivisie, Primeira Liga, Championship and Brasileirão: no verified 2026/27 deal, so nothing is shown.
 
 export const BROADCAST_SEASON = "2026/27";
@@ -75,6 +78,11 @@ export const COMPETITION_RIGHTS: { slug: string; name: string; text: string }[] 
   { slug: "premier-league", name: "Premier League", text: "Sky e NOW" },
   { slug: "bundesliga", name: "Bundesliga", text: "Sky e NOW" },
   { slug: "liga", name: "LaLiga", text: "DAZN" },
+  {
+    slug: "nations-league",
+    name: "Nations League",
+    text: "le partite dell'Italia su Rai 1 e RaiPlay; le altre su Sky e NOW (una selezione), alcune in chiaro su TV8 o Mediaset",
+  },
 ];
 
 const romeParts = (iso: string) => {
@@ -96,10 +104,24 @@ const SKY_SERIE_A = new Set(["Sat 20:45", "Sun 18:00", "Mon 20:45"]);
  * Channels of a football match in Italy, or null when the 2026/27 deal of its competition is not known.
  * `roundDates`: kick-offs of every match of the same round (Serie A: Sky's three matches are known for sure only when
  * the round fills its three slots; otherwise the other matches say that Sky may show one of them).
+ * `teams`: names of the two teams (national teams: Italy's matches are on Rai whatever the competition).
+ * `national`: the competition is one of national teams.
  */
-export function footballBroadcast(competitionSlug: string, utcDate: string, roundDates: string[] = []): Broadcast | null {
+export function footballBroadcast(
+  competitionSlug: string,
+  utcDate: string,
+  roundDates: string[] = [],
+  teams: string[] = [],
+  national = false,
+): Broadcast | null {
   const { day } = romeParts(utcDate);
+  if (national && teams.includes("Italia")) return { channels: "Rai 1 e RaiPlay" };
   switch (competitionSlug) {
+    case "nations-league":
+      return {
+        channels: "Sky e NOW",
+        note: "Sky trasmette una selezione delle partite tra nazionali straniere, alcune in chiaro su TV8 o Mediaset: controlla il palinsesto.",
+      };
     case "serie-a": {
       const slot = (d: string) => {
         const p = romeParts(d);

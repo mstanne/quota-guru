@@ -79,7 +79,7 @@ export interface CalibrationBin {
   obs: number;
 }
 type ArchiveSummary = Omit<TrackRecord, "source"> & { calibration?: CalibrationBin[] };
-const archived = archive as unknown as Record<"calcio" | "nba", ArchiveSummary>;
+const archived = archive as unknown as Partial<Record<"calcio" | "nba" | "nazionali", ArchiveSummary>>;
 
 /** Graded archived predictions needed before the calibration chart is shown. */
 export const MIN_CALIBRATION = { calcio: 200, nba: 150 } as const;
@@ -92,7 +92,7 @@ export function archivedCalibration(sport: "calcio" | "nba") {
 }
 
 /** The archive of published predictions, or null while it is too short. */
-export function archivedTrackRecord(sport: "calcio" | "nba"): TrackRecord | null {
+export function archivedTrackRecord(sport: "calcio" | "nba" | "nazionali"): TrackRecord | null {
   const a = archived[sport];
   return a && a.all.n >= MIN_ARCHIVED ? { ...a, source: "archivio" } : null;
 }
