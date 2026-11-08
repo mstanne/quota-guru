@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+<title>Documento d'identità e carta di pagamento intestati alla stessa persona</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0F1A2C"/><stop offset="1" stop-color="#0A1220"/>
+  </linearGradient>
+  <radialGradient id="glowO"><stop offset="0" stop-color="#FB6801" stop-opacity=".22"/><stop offset="1" stop-color="#FB6801" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowG"><stop offset="0" stop-color="#06BA55" stop-opacity=".18"/><stop offset="1" stop-color="#06BA55" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#EEF0F3" fill-opacity=".07"/></pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="url(#dots)"/>
+<circle cx="1330" cy="170" r="520" fill="url(#glowO)"/>
+<circle cx="260" cy="780" r="520" fill="url(#glowG)"/>
+<g font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="700">
+<rect x="170" y="230" width="500" height="320" rx="26" fill="#EEF0F3"/><rect x="170" y="230" width="500" height="70" rx="26" fill="#06BA55"/><rect x="170" y="270" width="500" height="30" fill="#06BA55"/><circle cx="280" cy="410" r="58" fill="#BECED8"/><circle cx="280" cy="394" r="24" fill="#EEF0F3"/><path d="M240,450 a40,34 0 0 1 80,0" fill="#EEF0F3"/><text x="370" y="390" font-size="36" fill="#0F1A2C" text-anchor="start" font-weight="700" fill-opacity="1">M. ROSSI</text><rect x="370" y="420" width="220" height="16" rx="8" fill="#7F93AE"/><rect x="370" y="456" width="180" height="16" rx="8" fill="#7F93AE"/><text x="420" y="640" font-size="30" fill="#7F93AE" text-anchor="middle" font-weight="600" fill-opacity="1">documento</text><rect x="730" y="350" width="120" height="120" rx="60.0" fill="#16243B"/><text x="790.0" y="435.92" font-size="72" fill="#EEF0F3" text-anchor="middle" font-weight="700" fill-opacity="1">=</text><rect x="910" y="250" width="500" height="300" rx="26" fill="#16243B" stroke="#2A3D59" stroke-width="3"/><rect x="910" y="320" width="500" height="54" fill="#0A1220"/><rect x="950" y="420" width="70" height="52" rx="8" fill="#FBBF24"/><text x="950" y="520" font-size="36" fill="#EEF0F3" text-anchor="start" font-weight="700" fill-opacity="1">M. ROSSI</text><text x="1160" y="640" font-size="30" fill="#7F93AE" text-anchor="middle" font-weight="600" fill-opacity="1">metodo di pagamento intestato</text><path d="M1321.2,470.0 L1342.0,490.8 L1382.0,447.6" fill="none" stroke="#06BA55" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
