@@ -142,9 +142,18 @@ export function useAllCompetitionData(): CompetitionData[] {
   return idx.competitions.map((c) => cache.get(c.slug)).filter((d): d is CompetitionData => !!d);
 }
 
+/** Competitions of national teams (the /pronostici/nazionali page); Suspense like useAllCompetitionData. */
+export function useNationalCompetitionData(): CompetitionData[] {
+  const list = idx.competitions.filter((c) => c.national && loaders[fileOf(c.slug)]);
+  if (list.some((c) => !cache.has(c.slug))) throw Promise.all(list.map((c) => loadCompetitionData(c.slug)));
+  return list.map((c) => cache.get(c.slug)!);
+}
+
 /** Data a URL needs before hydration (see preloadForPath in App.tsx). */
 export function preloadFootballData(pathname: string): Promise<unknown> {
   if (/^\/calcio\/?$/.test(pathname)) return loadAllCompetitionData();
+  if (/^\/pronostici\/nazionali\/?$/.test(pathname))
+    return Promise.all(idx.competitions.filter((c) => c.national).map((c) => loadCompetitionData(c.slug)));
   const m = pathname.match(/^\/(?:calcio|pronostici)\/([^/]+)/);
   if (m && findCompetitionInfo(m[1])) return loadCompetitionData(m[1]);
   return Promise.resolve();

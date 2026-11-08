@@ -56,18 +56,20 @@ export function SeasonsHubPage() {
   if (!seasonsIndex.length) return <NotFoundPage />;
   const leagues = seasonsIndex.filter((c) => c.type === "league");
   const cups = seasonsIndex.filter((c) => c.type === "cup");
+  const nationals = seasonsIndex.filter((c) => c.type === "national");
   return (
     <div className="min-h-screen bg-slate-950">
       <PageHeader
         title="Albo d'oro e stagioni passate"
         icon={Trophy}
-        subtitle="I vincitori di ogni stagione, con classifiche finali e risultati di campionati e coppe."
+        subtitle="I vincitori di ogni stagione, con classifiche finali e risultati di campionati, coppe e competizioni delle nazionali."
         breadcrumb={[{ label: "Calcio", to: "/calcio" }, { label: "Stagioni passate" }]}
       />
       <div className="container mx-auto px-4 py-8 space-y-10">
         {[
           { title: "Campionati", list: leagues },
           { title: "Coppe", list: cups },
+          { title: "Nazionali", list: nationals },
         ].map(
           (g) =>
             g.list.length > 0 && (
@@ -95,7 +97,8 @@ function HubCard({ c }: { c: SeasonsCompetition }) {
       <div className="flex items-center justify-between gap-3">
         <h3 className="text-white text-lg">{c.name}</h3>
         <span className="text-slate-400 text-xs whitespace-nowrap">
-          {c.seasons.length} {c.seasons.length === 1 ? "stagione" : "stagioni"}
+          {c.seasons.length}{" "}
+          {c.type === "national" ? (c.seasons.length === 1 ? "edizione" : "edizioni") : c.seasons.length === 1 ? "stagione" : "stagioni"}
         </span>
       </div>
       {last?.champion && (
@@ -105,7 +108,7 @@ function HubCard({ c }: { c: SeasonsCompetition }) {
           <span className="text-white truncate">{last.champion.name}</span>
         </p>
       )}
-      <p className="mt-3 text-action-text text-sm">Albo d'oro e stagioni →</p>
+      <p className="mt-3 text-action-text text-sm">Albo d'oro e {c.type === "national" ? "edizioni" : "stagioni"} →</p>
     </Link>
   );
 }
@@ -117,7 +120,7 @@ export function SeasonsIndexPage() {
   const c = seasonsOf(competizione);
   usePageMeta(metaFor(seasonsPath(competizione ?? "")));
   if (!c) return <NotFoundPage />;
-  const cup = c.type === "cup";
+  const cup = c.type !== "league";
   return (
     <div className="min-h-screen bg-slate-950">
       <PageHeader
@@ -125,7 +128,9 @@ export function SeasonsIndexPage() {
         icon={Trophy}
         subtitle={
           cup
-            ? "Le finali e i vincitori delle stagioni passate. Apri una stagione per tutte le partite, turno per turno."
+            ? c.type === "national"
+              ? "Vincitori e finali delle edizioni passate. Apri un'edizione per gironi e tutte le partite."
+              : "Le finali e i vincitori delle stagioni passate. Apri una stagione per tutte le partite, turno per turno."
             : "Le prime due classificate delle stagioni passate. Apri una stagione per classifica finale e risultati."
         }
         breadcrumb={[
@@ -133,7 +138,7 @@ export function SeasonsIndexPage() {
           { label: "Stagioni passate", to: seasonsHubPath },
           { label: c.name },
         ]}
-        meta={<span>{c.seasons.length} stagioni nell'archivio</span>}
+        meta={<span>{c.seasons.length} {c.type === "national" ? "edizioni" : "stagioni"} nell'archivio</span>}
       />
       <div className="container mx-auto px-4 py-8 space-y-6">
         <SeasonNav slug={c.slug} />
@@ -143,7 +148,7 @@ export function SeasonsIndexPage() {
             <thead>
               <tr className="text-slate-400 border-b border-slate-800">
                 <th scope="col" className="text-left font-normal px-4 py-3">
-                  Stagione
+                  {c.type === "national" ? "Edizione" : "Stagione"}
                 </th>
                 <th scope="col" className="text-left font-normal py-3">
                   Vincitore
@@ -302,6 +307,7 @@ function SeasonNav({ slug, season }: { slug: string; season?: string }) {
   const groups = [
     { label: "Campionati", list: seasonsIndex.filter((x) => x.type === "league") },
     { label: "Coppe", list: seasonsIndex.filter((x) => x.type === "cup") },
+    { label: "Nazionali", list: seasonsIndex.filter((x) => x.type === "national") },
   ];
 
   return (
@@ -323,7 +329,7 @@ function SeasonNav({ slug, season }: { slug: string; season?: string }) {
       <div className="flex flex-1 items-end gap-2 min-w-0">
         {season && arrow(older, "prev")}
         <Select label="Stagione" value={season ?? ""} onChange={(v) => go(v ? seasonPath(slug, v) : seasonsPath(slug))}>
-          <option value="">Albo d'oro (tutte le stagioni)</option>
+          <option value="">Albo d'oro (tutte le {c.type === "national" ? "edizioni" : "stagioni"})</option>
           {c.seasons.map((s) => (
             <option key={s.key} value={s.key}>
               {c.name} {s.label}
@@ -346,7 +352,8 @@ export function SeasonPage() {
   if (data instanceof Promise) throw data; // loading (Suspense)
   if (!data) return <NotFoundPage />;
   const c = seasonsOf(data.slug)!;
-  const cup = data.type === "cup";
+  const cup = data.type !== "league";
+  const national = data.type === "national";
 
   return (
     <div className="min-h-screen bg-slate-950">
@@ -354,9 +361,11 @@ export function SeasonPage() {
         title={`${data.name} ${data.label}`}
         icon={cup ? Trophy : ListOrdered}
         subtitle={
-          cup
-            ? "Tutte le partite della stagione, turno per turno, fino alla finale."
-            : "Classifica finale e risultati di tutte le giornate."
+          national
+            ? `Gironi${data.final ? ", fase finale" : ""} e tutte le partite dell'edizione, turno per turno.`
+            : cup
+              ? "Tutte le partite della stagione, turno per turno, fino alla finale."
+              : "Classifica finale e risultati di tutte le giornate."
         }
         breadcrumb={[
           { label: "Calcio", to: "/calcio" },
@@ -383,6 +392,7 @@ export function SeasonPage() {
           </p>
         )}
         {data.standings && <Standings data={data} />}
+        {data.groups && data.groups.length > 0 && <Groups data={data} />}
         {data.notes.length > 0 && (
           <ul className="space-y-1 text-slate-400 text-sm">
             {data.notes.map((n) => (
@@ -505,6 +515,48 @@ function Standings({ data }: { data: SeasonData }) {
           ))}
         </ul>
       )}
+    </section>
+  );
+}
+
+/** Group tables of a national-team edition. */
+function Groups({ data }: { data: SeasonData }) {
+  return (
+    <section aria-labelledby="gironi" className="space-y-3">
+      <h2 id="gironi" className="text-white text-2xl">
+        {data.groups!.length > 1 ? "Gironi" : "Classifica"}
+      </h2>
+      <div className="grid gap-4 lg:grid-cols-2 items-start">
+        {data.groups!.map((g) => (
+          <div key={g.name} className={`${card} overflow-x-auto`}>
+            <table className="w-full text-sm">
+              <caption className="text-left text-white px-4 pt-3 pb-1">{g.name}</caption>
+              <thead>
+                <tr className="text-slate-400 border-b border-slate-800">
+                  <th scope="col" className="text-left font-normal px-4 py-2 w-8">#</th>
+                  <th scope="col" className="text-left font-normal py-2">Squadra</th>
+                  <th scope="col" className="text-right font-normal py-2 px-2">Pt</th>
+                  <th scope="col" className="text-right font-normal py-2 px-2"><abbr title="Partite giocate">G</abbr></th>
+                  <th scope="col" className="text-right font-normal py-2 px-2 pr-4"><abbr title="Differenza reti">DR</abbr></th>
+                </tr>
+              </thead>
+              <tbody>
+                {g.rows.map((r) => (
+                  <tr key={r.team.id} className="border-b border-slate-800 last:border-0">
+                    <td className="px-4 py-2 text-slate-400 tabular-nums">{r.pos}</td>
+                    <th scope="row" className="py-2 text-left font-normal">
+                      <TeamName id={r.team.id} name={r.team.name} />
+                    </th>
+                    <td className="text-right px-2 text-white font-semibold tabular-nums">{r.pts}</td>
+                    <td className="text-right px-2 text-slate-300 tabular-nums">{r.played}</td>
+                    <td className="text-right px-2 pr-4 text-slate-300 tabular-nums">{r.gd > 0 ? `+${r.gd}` : r.gd}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

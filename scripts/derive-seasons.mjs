@@ -68,7 +68,11 @@ const STAGES = {
   LAST_16: ["Ottavi di finale", 50],
   QUARTER_FINALS: ["Quarti di finale", 60],
   SEMI_FINALS: ["Semifinali", 70],
+  THIRD_PLACE: ["Finale per il terzo posto", 75],
   FINAL: ["Finale", 80],
+  // national teams: group rounds (Nations League, qualifiers) and friendlies
+  REGULAR_SEASON: ["Fase a gironi", 30],
+  FRIENDLY: ["Amichevoli", 90],
 };
 
 const EUROPEAN = new Set(["CL", "EL", "ECL"]);
@@ -90,10 +94,17 @@ function stageOf(m, code) {
   return m.stage ?? "REGULAR_SEASON";
 }
 
-function roundsOf(matches, code, cup, linkOf) {
+function roundsOf(matches, code, cup, linkOf, national = false) {
   const groups = new Map();
   for (const m of matches) {
     const stage = stageOf(m, code);
+    // national teams: the group rounds read "Fase a gironi · 3ª giornata", like the cups
+    if (national && stage === "REGULAR_SEASON" && m.matchday) {
+      const key = `GROUP-${m.matchday}`;
+      if (!groups.has(key)) groups.set(key, { round: `Fase a gironi · ${m.matchday}ª giornata`, sort: 3000 + m.matchday, matches: [] });
+      groups.get(key).matches.push(compactMatch(m, linkOf));
+      continue;
+    }
     const isDay = stage === "REGULAR_SEASON" || ((stage === "GROUP_STAGE" || stage === "LEAGUE_STAGE") && m.matchday);
     const key = isDay ? `${stage}-${m.matchday}` : stage;
     // leagues: after the regular season come play-offs, play-outs and tie-breakers
@@ -234,6 +245,95 @@ function winnerOfFinal(m) {
   return null;
 }
 
+/** Every group table of an edition (national teams), from the official standings in the archive; null without. */
+function groupTables(file, crestOf) {
+  const groups = read(file, null)?.groups ?? [];
+  const out = groups
+    .filter((g) => g.table?.length)
+    .map((g, i) => ({
+      name: g.group ?? (groups.length > 1 ? `Girone ${i + 1}` : "Classifica"),
+      rows: g.table.map((r) => {
+        const row = {
+          pos: r.position,
+          team: { id: r.team.id, name: r.team.shortName || r.team.name },
+          played: r.playedGames, won: r.won, draw: r.draw, lost: r.lost,
+          gf: r.goalsFor, ga: r.goalsAgainst, gd: r.goalDifference, pts: r.points,
+        };
+        const crest = crestOf(r.apiId);
+        if (crest) row.crest = crest;
+        return row;
+      }),
+    }));
+  return out.length ? out : null;
+}
+
+/** "2024" or "2024/25" from the dates of an edition (national teams). */
+const spanLabel = (start, end) => {
+  const a = Number(start?.slice(0, 4));
+  const b = Number(end?.slice(0, 4)) || a;
+  return !a || a === b ? String(a || b) : `${a}/${String(b % 100).padStart(2, "0")}`;
+};
+
+/**
+ * Past editions of the national-team competitions (archived by scripts/backfill-archive.mjs, which records the
+ * dates of each edition). A tournament is named by its year ("Europei 2024"), the others by their dates
+ * ("Nations League 2024/25"). Friendlies have no editions.
+ */
+function nationalEditions(c, calcio, progress, linkOf, crestOf) {
+  const dir = path.join(calcio, c.slug);
+  if (c.code === "FRI" || !fs.existsSync(dir)) return [];
+  const today = new Date().toISOString().slice(0, 10);
+  const out = [];
+  const used = new Set();
+  const years = fs.readdirSync(dir).filter((y) => /^\d{4}$/.test(y)).map(Number).sort((a, b) => b - a);
+  for (const y of years) {
+    const p = progress.football?.[`${c.code}-${y}`];
+    // only editions the backfill has completed and that are over
+    if (!p?.complete || !p.end || p.end >= today) continue;
+    const matches = [];
+    for (const f of fs.readdirSync(path.join(dir, String(y))).filter((f) => f.endsWith(".json")))
+      for (const m of Object.values(read(path.join(dir, String(y), f), { matches: {} }).matches))
+        if ((m.status === "FINISHED" || m.status === "AWARDED") && m.score?.fullTime?.home != null) matches.push(m);
+    if (!matches.length) continue;
+    matches.sort((a, b) => a.utcDate.localeCompare(b.utcDate));
+    let label = c.tournament ? String(y) : spanLabel(p.start, p.end);
+    if (used.has(label)) label = `${label} (${y})`;
+    used.add(label);
+    const key = label.replace(/\//g, "-").replace(/[^0-9a-z-]+/gi, "-").replace(/-+$/, "");
+    const fin = matches.find((m) => m.stage === "FINAL");
+    const w = winnerOfFinal(fin);
+    let champion = null,
+      runnerUp = null,
+      final = null;
+    if (w) {
+      champion = { id: w[0].id, name: w[0].shortName || w[0].name };
+      runnerUp = { id: w[1].id, name: w[1].shortName || w[1].name };
+      const s = fin.score;
+      final = `${fin.home.shortName || fin.home.name} – ${fin.away.shortName || fin.away.name} ${s.fullTime.home}-${s.fullTime.away}${s.penalties?.home != null ? ` (${s.penalties.home}-${s.penalties.away} ai rigori)` : s.duration === "EXTRA_TIME" ? " dts" : ""}`;
+    }
+    const groups = groupTables(path.join(ARCHIVE, "classifiche", "calcio", c.slug, `${y}.json`), crestOf);
+    const notes = [];
+    if (!fin && c.tournament) notes.push("La finale non è nell'archivio.");
+    write(path.join(OUT, c.slug, `${key}.json`), {
+      slug: c.slug,
+      name: c.name,
+      type: "national",
+      season: y,
+      key,
+      label,
+      champion,
+      runnerUp,
+      final,
+      notes,
+      standings: null,
+      groups,
+      rounds: roundsOf(matches, c.code, true, linkOf, true),
+    });
+    out.push({ key, label, year: y, matches: matches.length, champion, runnerUp, final });
+  }
+  return out;
+}
+
 // ---------- main ----------
 function main() {
   const calcio = path.join(ARCHIVE, "calcio");
@@ -257,7 +357,7 @@ function main() {
   const index = { generatedAt: now.toISOString(), competitions: [] };
   fs.rmSync(OUT, { recursive: true, force: true });
 
-  // national teams: archived (scripts/archive-data.mjs) but no past-season pages yet
+  // national teams: their editions below (nationalEditions)
   for (const c of [...COMPETITIONS.filter((c) => !c.national), ...EXTRA]) {
     const dir = path.join(calcio, c.slug);
     if (!fs.existsSync(dir)) continue;
@@ -335,6 +435,17 @@ function main() {
     }
     if (seasons.length) index.competitions.push({ slug: c.slug, name: c.name, type: cup ? "cup" : "league", seasons });
     console.log(`Stagioni passate ${c.name}: ${seasons.length}`);
+  }
+  // national teams: past editions, after the clubs
+  for (const c of COMPETITIONS.filter((c) => c.national)) {
+    const pages = read(path.join(root, "src", "data", "results", `football-${c.slug}.json`), []);
+    const links = new Map();
+    for (const s of pages) for (const r of s.rounds ?? []) for (const m of r.matches ?? []) links.set(m.id, m.path);
+    const seasons = nationalEditions(c, calcio, progress, (id) => links.get(id) ?? null, crestOf);
+    if (seasons.length) {
+      index.competitions.push({ slug: c.slug, name: c.name, type: "national", seasons });
+      console.log(`Edizioni passate ${c.name}: ${seasons.length}`);
+    }
   }
   write(path.join(OUT, "index.json"), index);
   copyDir(OUT, KEEP);

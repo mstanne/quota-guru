@@ -16,8 +16,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { apiSports, BudgetError, loadDotEnv, PlanError } from "./lib/api-sports.mjs";
-import { footballTeamResolver, loadIdMap, matchIdResolver, MATCH_OFFSET, saveIdMap, TEAM_OFFSET, tlaOf } from "./lib/id-map.mjs";
-import { nationalTeamName, sameCountry } from "./lib/national-teams.mjs";
+import { footballTeamResolver, loadIdMap, matchIdResolver, MATCH_OFFSET, saveIdMap, TEAM_OFFSET } from "./lib/id-map.mjs";
+import { nationalTeamResolver, sameCountry } from "./lib/national-teams.mjs";
 import { NATIONAL_HISTORY_YEARS } from "./lib/national-fit.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -248,15 +248,9 @@ async function main() {
   // national teams are never paired with clubs of the previous data: their own id, Italian name
   const nationalSlugs = new Set(NATIONAL.map((c) => c.slug));
   let newNationalTeams = 0;
-  const resolveTeam = (t, slug) => {
-    if (!nationalSlugs.has(slug) || map.footballTeams[String(t.id)]) return resolveClub(t, slug);
-    const { name, shortName } = nationalTeamName(t.name);
-    const entry = { id: TEAM_OFFSET + t.id, name, shortName, tla: /^[A-Z]{3}$/.test(t.code ?? "") ? t.code : tlaOf(name), national: true };
-    // not in the daily report (nothing to check: no pairing), only counted
-    map.footballTeams[String(t.id)] = entry;
-    newNationalTeams++;
-    return { ...entry, crest: logo(t.logo) };
-  };
+  // not in the daily report (nothing to check: no pairing), only counted
+  const resolveNational = nationalTeamResolver(map, logo, TEAM_OFFSET, () => newNationalTeams++);
+  const resolveTeam = (t, slug) => (nationalSlugs.has(slug) ? resolveNational(t) : resolveClub(t, slug));
   const prevMatches = (previous.competitions ?? []).flatMap((c) => (c.matches ?? []).map((match) => ({ match, comp: c.slug })));
   const resolveMatch = matchIdResolver(map.footballMatches, prevMatches);
 
@@ -612,7 +606,8 @@ async function nationalCompetition(api, c, ctx) {
     const list = await api.get(`/fixtures?league=${c.api}&season=${x.year}&from=${from}&to=${to}`);
     for (const f of list) {
       if (f.fixture?.venue?.id) venueOf.set(f.fixture.id, f.fixture.venue.id);
-      matches.push(compactFixture(f, teamOf, idOf, true));
+      // API-Football season of the match: the archive folder of its edition (scripts/archive-data.mjs)
+      matches.push({ ...compactFixture(f, teamOf, idOf, true), season: x.year });
     }
   }
   matches.sort((a, b) => a.utcDate.localeCompare(b.utcDate));
@@ -647,6 +642,7 @@ async function nationalCompetition(api, c, ctx) {
     name: c.name,
     area: c.area,
     national: true,
+    apiSeason: main.year,
     season: { startDate: main.start, endDate: main.end, currentMatchday: next?.matchday ?? regular.at(-1)?.matchday ?? null },
     matches,
     standings,

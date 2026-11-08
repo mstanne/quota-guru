@@ -22,7 +22,8 @@ import { fileURLToPath } from "node:url";
 import { apiSports, BudgetError, loadDotEnv, PlanError } from "./lib/api-sports.mjs";
 import { footballTeamResolver, loadIdMap, MATCH_OFFSET, saveIdMap, TEAM_OFFSET } from "./lib/id-map.mjs";
 import { footballDetails } from "./lib/match-details.mjs";
-import { COMPETITIONS, compactFixture, compactStandings } from "./fetch-football.mjs";
+import { COMPETITIONS, compactFixture, compactStandings, groupIt } from "./fetch-football.mjs";
+import { nationalTeamResolver } from "./lib/national-teams.mjs";
 import { ARCHIVE, archivedMatch, readJson, upsertMatches, writeJson } from "./archive-data.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -91,8 +92,45 @@ async function football(api, progress, budget) {
       jobs.push({ c, y: current - back, current: back === 0 });
     }
 
-  for (const { c, y, current } of jobs) {
+  // past editions of the national-team competitions (after the clubs: they matter less to the season pages)
+  for (const c of COMPETITIONS.filter((c) => c.national && c.code !== "FRI")) {
+    progress.nationalSeasons ??= {};
+    const info = progress.nationalSeasons[c.code];
+    if (!info || Date.now() - Date.parse(info.at) > 30 * 86400e3) {
+      if (budget.left <= 0) break;
+      budget.left--;
+      const [l] = await api.get(`/leagues?id=${c.api}`);
+      // a wrong id would archive another competition under this name
+      if ((l?.league?.name ?? "").toLowerCase() !== c.apiName.toLowerCase()) {
+        console.warn(`  ${c.name}: l'id ${c.api} corrisponde a "${l?.league?.name}", edizioni saltate`);
+        continue;
+      }
+      progress.nationalSeasons[c.code] = {
+        at: new Date().toISOString(),
+        seasons: (l.seasons ?? []).map((s) => ({ year: s.year, start: s.start, end: s.end })),
+      };
+    }
+  }
+  const today = new Date().toISOString().slice(0, 10);
+  const since = `${year - SEASONS_BACK}-01-01`;
+  for (const c of COMPETITIONS.filter((c) => c.national && c.code !== "FRI"))
+    for (const s of [...(progress.nationalSeasons?.[c.code]?.seasons ?? [])].sort((a, b) => b.year - a.year))
+      // ended editions only: the one under way is on the competition's own pages
+      if (s.end && s.end < today && s.end >= since) jobs.push({ c, y: s.year, current: false, national: s });
+
+  const resolveNational = nationalTeamResolver(map, logo, TEAM_OFFSET);
+  for (const { c, y, current, national } of jobs) {
     if (budget.left <= 0) break;
+    if (national) {
+      try {
+        await footballSeason(api, progress, budget, { c, y, current, resolve: (t) => resolveNational(t), map, national });
+        await nationalStandings(api, progress, budget, { c, y, resolve: (t) => resolveNational(t) });
+      } catch (err) {
+        if (!(err instanceof PlanError)) throw err;
+        progress.football[`${c.code}-${y}`] = { ids: [], done: [], complete: true, unavailable: err.message };
+      }
+      continue;
+    }
     try {
       await footballSeason(api, progress, budget, { c, y, current, resolve, map });
     } catch (err) {
@@ -145,9 +183,31 @@ async function standingsJobs(api, progress, budget, { resolve, seasons, year }) 
     }
 }
 
-async function footballSeason(api, progress, budget, { c, y, current, resolve, map }) {
+/** Group tables of an ended national-team edition (all groups, 1 request, once): its season page. */
+async function nationalStandings(api, progress, budget, { c, y, resolve }) {
+  progress.standings ??= {};
+  const key = `${c.code}-${y}`;
+  if (c.standings === false || progress.standings[key] || !progress.football[key]?.complete || budget.left <= 0) return;
+  budget.left--;
+  const [s] = await api.get(`/standings?league=${c.api}&season=${y}`);
+  const groups = compactStandings(s?.league?.standings ?? [], resolve).map((g) => ({ ...g, group: groupIt(g.group) }));
+  if (groups.length)
+    writeJson(path.join(ARCHIVE, "classifiche", "calcio", c.slug, `${y}.json`), {
+      competition: c.name,
+      code: c.code,
+      slug: c.slug,
+      season: y,
+      fetchedAt: new Date().toISOString(),
+      groups,
+    });
+  progress.standings[key] = { status: groups.length ? "ok" : "vuota", at: new Date().toISOString() };
+}
+
+async function footballSeason(api, progress, budget, { c, y, current, resolve, map, national = null }) {
   const key = `${c.code}-${y}`;
   const p = (progress.football[key] ??= { ids: null, done: [], complete: false, lines: true });
+  // national editions: dates of the edition (season page label) and the round names of national teams
+  if (national) Object.assign(p, { start: national.start, end: national.end });
   // the current season is downloaded again once to add every player's row (player pages: last matches, home/away);
   // ~1 request per 20 matches, so a few runs. Past seasons keep what they have.
   if (current && !p.lines) Object.assign(p, { ids: null, done: [], complete: false, lines: true });
@@ -172,7 +232,7 @@ async function footballSeason(api, progress, budget, { c, y, current, resolve, m
     const fixtures = await api.get(`/fixtures?ids=${chunk.join("-")}`);
     const matches = fixtures.map((f) => {
       const teamOf = (t) => resolve(t, c.slug);
-      const m = compactFixture(f, teamOf, (apiId) => map.footballMatches[String(apiId)] ?? MATCH_OFFSET + apiId);
+      const m = compactFixture(f, teamOf, (apiId) => map.footballMatches[String(apiId)] ?? MATCH_OFFSET + apiId, !!national);
       const sideOf = (id) => (id === f.teams.home.id ? "home" : id === f.teams.away.id ? "away" : null);
       const details = footballDetails(f, f.events ?? [], f.lineups ?? [], f.statistics ?? [], f.players ?? [], sideOf);
       return archivedMatch(m, details, null);

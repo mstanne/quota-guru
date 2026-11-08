@@ -45,18 +45,22 @@ export interface SeasonSummary {
   /** Cups: "PSG – Inter 5-0". */
   final: string | null;
 }
+/** "league", "cup", or "national" (an edition of a national-team competition: groups, then knock-outs). */
+export type SeasonType = "league" | "cup" | "national";
 export interface SeasonData extends SeasonSummary {
   slug: string;
   name: string;
-  type: "league" | "cup";
+  type: SeasonType;
   notes: string[];
   standings: SeasonRow[] | null;
+  /** Group tables of a national-team edition (Nations League, qualifiers, tournaments). */
+  groups?: { name: string; rows: SeasonRow[] }[] | null;
   rounds: { round: string; matches: SeasonMatch[] }[];
 }
 export interface SeasonsCompetition {
   slug: string;
   name: string;
-  type: "league" | "cup";
+  type: SeasonType;
   seasons: SeasonSummary[];
 }
 
@@ -103,24 +107,31 @@ export function seasonsRoutes() {
       path: seasonsHubPath,
       title: "Albo d'oro e stagioni passate del calcio",
       description:
-        "Vincitori, classifiche finali e risultati delle stagioni passate di Serie A, Serie B, coppe europee, Coppa Italia e principali campionati esteri.",
+        "Vincitori, classifiche finali e risultati delle stagioni passate di Serie A, Serie B, coppe europee, Coppa Italia, principali campionati esteri e competizioni delle nazionali.",
     },
     ...idx.competitions.map((c) => ({
       path: seasonsPath(c.slug),
-      title: `Albo d'oro ${c.name}: tutte le stagioni`,
-      description: `I vincitori di ogni stagione di ${c.name}${c.type === "cup" ? ", con le finali" : " e le prime classificate"}, con classifica finale e risultati di ogni stagione.`,
+      title: c.type === "national" ? `Albo d'oro ${c.name}: tutte le edizioni` : `Albo d'oro ${c.name}: tutte le stagioni`,
+      description:
+        c.type === "national"
+          ? `Vincitori, finali, gironi e risultati delle edizioni passate di ${c.name}.`
+          : `I vincitori di ogni stagione di ${c.name}${c.type === "cup" ? ", con le finali" : " e le prime classificate"}, con classifica finale e risultati di ogni stagione.`,
     })),
     ...idx.competitions.flatMap((c) =>
       c.seasons.map((s) => ({
         path: seasonPath(c.slug, s.key),
         title:
-          c.type === "cup"
-            ? `${c.name} ${s.label}: risultati e finale`
-            : `${c.name} ${s.label}: classifica finale e risultati`,
+          c.type === "national"
+            ? `${c.name} ${s.label}: gironi, risultati${s.final ? " e finale" : ""}`
+            : c.type === "cup"
+              ? `${c.name} ${s.label}: risultati e finale`
+              : `${c.name} ${s.label}: classifica finale e risultati`,
         description:
-          c.type === "cup"
-            ? `Tutte le partite di ${c.name} ${s.label}, turno per turno${s.champion ? `: ha vinto ${s.champion.name}` : ""}.`
-            : `Classifica finale e risultati giornata per giornata di ${c.name} ${s.label}${s.champion ? `, vinta da ${s.champion.name}` : ""}.`,
+          c.type === "national"
+            ? `Gironi e tutte le partite di ${c.name} ${s.label}${s.champion ? `: ha vinto ${s.champion.name}` : ""}${s.final ? ` (finale ${s.final})` : ""}.`
+            : c.type === "cup"
+              ? `Tutte le partite di ${c.name} ${s.label}, turno per turno${s.champion ? `: ha vinto ${s.champion.name}` : ""}.`
+              : `Classifica finale e risultati giornata per giornata di ${c.name} ${s.label}${s.champion ? `, vinta da ${s.champion.name}` : ""}.`,
       })),
     ),
   ];
