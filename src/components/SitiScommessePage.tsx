@@ -24,7 +24,12 @@ const filterCategories = [
   { id: "all", name: "Tutti gli operatori", icon: "\u{1F3AF}" },
   { id: "streaming", name: "Diretta streaming", icon: "\u{1F4FA}" },
   { id: "cashout", name: "Cash out", icon: "\u{1F4B0}" },
+  { id: "spid", name: "Registrazione SPID", icon: "\u{1FAAA}" },
 ];
+
+/** Yes / no / not verified, for the key facts shown on each operator card. */
+const yesNo = (value: boolean | undefined, no = "No") =>
+  value === undefined ? "Non verificato" : value ? "Sì" : no;
 
 interface SitiScommessePageProps {
   /** Operators to compare (defaults to src/data/operators.ts). */
@@ -54,7 +59,13 @@ export function SitiScommessePage({
   const listed = operators.filter((o) => !isPlaceholder(o.name));
   const filteredBookmakers = listed
     .filter((o) =>
-      selectedCategory === "streaming" ? o.liveStreaming : selectedCategory === "cashout" ? o.cashOut : true,
+      selectedCategory === "streaming"
+        ? o.liveStreaming
+        : selectedCategory === "cashout"
+          ? o.cashOut
+          : selectedCategory === "spid"
+            ? o.spidRegistration === true
+            : true,
     )
     // alphabetical; operators still to be filled in ([NOME_OPERATORE_n]) go last
     .sort(
@@ -128,6 +139,22 @@ export function SitiScommessePage({
                     </div>
                     <OfferSummary offer={offerOf(bookmaker)} />
                   </div>
+                  {/* key facts at a glance: the same answers for every operator */}
+                  <dl className="grid grid-cols-3 gap-2 mb-4 text-center">
+                    {(
+                      [
+                        // streaming false means "not found on the site", not a confirmed absence
+                        ["Live streaming", yesNo(bookmaker.liveStreaming, "Non rilevato")],
+                        ["Registrazione SPID", yesNo(bookmaker.spidRegistration)],
+                        ["Cash out", yesNo(bookmaker.cashOut, "Non rilevato")],
+                      ] as const
+                    ).map(([label, value]) => (
+                      <div key={label} className="rounded-lg border border-slate-800 px-2 py-2">
+                        <dt className="text-slate-400 text-xs">{label}</dt>
+                        <dd className={`text-sm ${value === "Sì" ? "text-white" : "text-slate-400"}`}>{value}</dd>
+                      </div>
+                    ))}
+                  </dl>
                   <div className="bg-slate-800 rounded-lg p-4 mb-6">
                     <p className="text-white text-center">{bookmaker.description}</p>
                     {/* only when known: "non ancora indicato" in the summary says nothing */}

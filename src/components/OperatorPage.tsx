@@ -81,6 +81,10 @@ function OperatorProfile({ op }: { op: OperatorData }) {
     ["Prodotti", realList(op.features).join(" · ") || "Non ancora indicati"],
     ["Cash out", op.cashOut ? "Disponibile" : "Non rilevato"],
     ["Streaming", op.liveStreaming ? "Disponibile" : "Non rilevato"],
+    [
+      "Registrazione SPID",
+      op.spidRegistration === undefined ? "Non ancora verificata" : op.spidRegistration ? "Disponibile" : "Non disponibile",
+    ],
     ["Deposito minimo", orNot(op.minDeposit)],
     ["Tempi di prelievo", orNot(op.withdrawalTime)],
     ["App", appsText(profile)],

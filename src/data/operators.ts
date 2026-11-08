@@ -47,6 +47,11 @@ export interface OperatorData {
   /** Capabilities used by the "Siti Scommesse" filters. */
   liveStreaming: boolean;
   cashOut: boolean;
+  /**
+   * Account opening with SPID, checked on the operator's registration page or official promotions.
+   * `undefined` = not verified yet (shown as "Non verificato"; never guessed from third-party sites).
+   */
+  spidRegistration?: boolean;
 }
 
 export interface OfferData {
@@ -138,11 +143,12 @@ const eurobet: OperatorData = {
   ],
   liveStreaming: true,
   cashOut: true,
+  // "Registrazione con SPID" offered at eurobet.it/it/registrazione, 08/11/2026
+  spidRegistration: true,
 };
 
 // Goldbet and Planetwin365 belong to the same group (same platform and offer structure).
 // Payments: goldbet.it and planetwin365.it /guida/depositi and /guida/prelievi, 25/10/2026.
-// liveStreaming is false until verified on the operator's site.
 const goldbet: OperatorData = {
   id: "goldbet",
   name: "Goldbet",
@@ -183,8 +189,11 @@ const goldbet: OperatorData = {
     "Deposito minimo di 30 € con Skrill, Neteller, Rapid Transfer e Paysafecard",
     "Le vincite da bonus e promozioni possono essere pagate solo con bonifico bancario",
   ],
-  liveStreaming: false,
+  // streaming icon on goldbet.it/scommesse/live, 08/11/2026
+  liveStreaming: true,
   cashOut: true,
+  // registration at goldbet.it/area-personale/registrati starts from the tax code only, no SPID option, 08/11/2026
+  spidRegistration: false,
 };
 
 const planetwin365: OperatorData = {
@@ -229,6 +238,8 @@ const planetwin365: OperatorData = {
   // "le emozioni della diretta streaming" on planetwin365.it/app/sport, 31/10/2026
   liveStreaming: true,
   cashOut: true,
+  // planetwin365.it/area-personale/registrati: tax code only, no SPID option, 08/11/2026
+  spidRegistration: false,
 };
 
 // Data from help.bet365.it (deposit and withdrawal methods) and the footer of bet365.it, 24/10/2026.
@@ -315,6 +326,8 @@ const betsson: OperatorData = {
   ],
   liveStreaming: false,
   cashOut: true,
+  // SPID/CIE registration bonus on offerte.betsson.it, 08/11/2026
+  spidRegistration: true,
 };
 
 const bwin: OperatorData = {
@@ -356,6 +369,8 @@ const bwin: OperatorData = {
   ],
   liveStreaming: false,
   cashOut: true,
+  // bwin.it/it/myaccount/register: e-mail form only, no SPID option, 08/11/2026
+  spidRegistration: false,
 };
 
 const sisal: OperatorData = {
@@ -396,8 +411,11 @@ const sisal: OperatorData = {
     "Il bonifico bancario non vale come primo deposito per le offerte di benvenuto",
     "Il bonus di benvenuto scelto alla registrazione non può essere cambiato",
   ],
-  liveStreaming: false,
+  // "Streaming" section at sisal.it/scommesse-matchpoint/streaming, 08/11/2026
+  liveStreaming: true,
   cashOut: false,
+  // areaprivata.sisal.it registration: ID document upload or point of sale only, 08/11/2026
+  spidRegistration: false,
 };
 
 // Codere, 888, AdmiralBet, LeoVegas and Lottomatica: footers, payment and promotion pages of the official sites,
@@ -446,6 +464,8 @@ const eight88: OperatorData = {
   cons: ["Nessuna offerta di benvenuto per le scommesse sportive al 29/10/2026", "Neteller, Skrill e OnShop esclusi dal bonus sulla prima ricarica"],
   liveStreaming: true,
   cashOut: false,
+  // SPID registration bonus on 888casino.it/promozioni, 08/11/2026
+  spidRegistration: true,
 };
 
 const admiralbet: OperatorData = {
@@ -469,6 +489,8 @@ const admiralbet: OperatorData = {
   cons: ["Skrill escluso dall'offerta di benvenuto scommesse", "Prelievo massimo di 1.000 € con carta e Postepay"],
   liveStreaming: false,
   cashOut: true,
+  // SPID registration bonus on admiralbet.it/promozioni/offerta-registrazione, 08/11/2026
+  spidRegistration: true,
 };
 
 const leovegas: OperatorData = {
@@ -497,6 +519,8 @@ const leovegas: OperatorData = {
   cons: ["Nessuna offerta di benvenuto per le scommesse sportive al 29/10/2026"],
   liveStreaming: false,
   cashOut: false,
+  // SPID free spins on leovegas.it/promozioni/offerta-benvenuto-casino, 08/11/2026
+  spidRegistration: true,
 };
 
 const lottomatica: OperatorData = {
@@ -535,8 +559,11 @@ const lottomatica: OperatorData = {
     "Deposito minimo di 30 € con Skrill, Neteller, Rapid Transfer e Paysafecard",
     "Le vincite da bonus e promozioni possono essere pagate solo con bonifico bancario",
   ],
-  liveStreaming: false,
+  // streaming icon on lottomatica.it/scommesse/live, 08/11/2026
+  liveStreaming: true,
   cashOut: true,
+  // lottomatica.it/area-personale/registrati: tax code only, no SPID option, 08/11/2026
+  spidRegistration: false,
 };
 
 // Snai: footer, contacts, app and bonus pages of snai.it, 31/10/2026.
@@ -589,6 +616,8 @@ const snai: OperatorData = {
   ],
   liveStreaming: false,
   cashOut: true,
+  // snai.it/faq/apertura-conto lists online, app and shop registration, no SPID, 08/11/2026
+  spidRegistration: false,
 };
 
 /** Operators shown across the site (comparison tables, offers, bet slip). Order = display order. */
