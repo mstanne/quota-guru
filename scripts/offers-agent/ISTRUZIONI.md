@@ -3,7 +3,7 @@
 Queste istruzioni descrivono il controllo giornaliero delle offerte di benvenuto degli operatori.
 L'agente **prepara e segnala**: non pubblica nulla. Lavora sul repository GitHub (ramo `main`), non sulla
 cartella locale, e consegna ogni controllo come **pull request** sul ramo `offerte/<AAAA-MM-GG>` che modifica
-solo `src/data/offers.json`. Ogni offerta cambiata entra come `"status": "bozza"` e diventa visibile sul sito
+solo `src/data/offers.json` e `src/data/tv-schedule.json` (palinsesto TV, vedi sotto). Ogni offerta cambiata entra come `"status": "bozza"` e diventa visibile sul sito
 solo quando la redazione la imposta su `"approvata"`; nulla arriva su `main` senza il merge della redazione.
 
 ## Ingressi
@@ -31,6 +31,38 @@ solo quando la redazione la imposta su `"approvata"`; nulla arriva su `main` sen
    e avvisi nel rapporto.
 6. **Rapporto.** Prepara un rapporto breve (vedi sotto) e avvisa la redazione **solo se** c'è almeno
    una modifica, un'offerta nuova o sparita, una scadenza entro 3 giorni, un'incoerenza o un errore.
+
+## Palinsesto TV (ogni giorno, dopo le offerte)
+
+La pagina `/calcio-in-tv-oggi` e la riga "In TV" delle pagine partita usano gli accordi sui diritti TV
+(`src/lib/broadcast.ts`). Per alcune partite gli accordi non bastano: quali 3 partite di Serie A per giornata vanno
+anche su Sky, quale partita di Champions del mercoledì è su Prime Video, quali partite NBA sono su Sky. L'agente le
+controlla ogni mattina sui palinsesti ufficiali e le scrive in `src/data/tv-schedule.json`, che ha la precedenza
+sugli accordi.
+
+1. `git fetch origin dati` e poi `node scripts/tv-schedule.mjs list --days 2`: elenca le partite di oggi e domani
+   con la **chiave** di ognuna, ciò che dicono gli accordi e ciò che c'è già nel palinsesto.
+2. Controlla sulle fonti ufficiali almeno le partite segnate `DA VERIFICARE` e quelle di Serie A, Champions League,
+   Europa League e Conference League. Fonti valide, in quest'ordine: pagine palinsesto o guida TV delle emittenti
+   (DAZN, Sky Sport, Prime Video, Rai, Mediaset, TV8), comunicati della Lega Serie A sulla programmazione
+   televisiva, testate sportive nazionali. Ignora siti di streaming, forum e siti che non citano l'emittente.
+   Per le partite NBA basta controllare la guida di Sky Sport (quali partite sono su Sky Sport Basket).
+3. Scrivi una voce per ogni partita controllata, con la chiave esatta dell'elenco:
+   ```json
+   "/calcio/serie-a/inter-como-1907-2026-11-08": {
+     "channels": "DAZN e Sky",
+     "source": "https://…",
+     "verifiedAt": "2026-11-08"
+   }
+   ```
+   Le partite di calcio vanno sotto `football`, quelle NBA sotto `nba`. `channels` elenca i canali separati da
+   " e " o virgole, scritti come nell'elenco `CHANNELS` di `src/lib/broadcast.ts` (per esempio "DAZN e Sky",
+   "Prime Video", "Sky Sport Basket, NOW e NBA League Pass"). Un canale nuovo non in elenco va segnalato nel
+   rapporto, non inventato. Per le partite di Serie A non su Sky scrivi comunque la voce `"DAZN"`: toglie l'avviso
+   "controlla il palinsesto Sky" dalla pagina.
+4. **Se le fonti non sono d'accordo o non trovi la partita, non scrivere la voce**: la pagina continua a mostrare
+   gli accordi con il loro avviso. Riporta il caso nel rapporto.
+5. Togli le voci di partite di più di 3 giorni fa ed esegui `node scripts/tv-schedule.mjs check --strict`.
 
 ## Controllo dei diritti TV (solo il lunedì)
 
@@ -90,6 +122,10 @@ Incoerenze nelle pagine degli operatori:
 
 Esito validazione: <n> errori, <n> avvisi
 
+Palinsesto TV:
+- <n> partite controllate oggi e domani; differenze rispetto agli accordi: <chiave>: <accordi> → <palinsesto> (fonte)
+- partite non verificate (fonti in disaccordo o non trovate): ...
+
 Diritti TV (solo il lunedì):
 - <competizione>: sul sito "<testo attuale>" → secondo la fonte "<novità>" (fonte: <url>, data dell'articolo)
   oppure: nessuna differenza
@@ -102,6 +138,8 @@ Se non ci sono novità il rapporto è una riga: `Controllo offerte – <data>: n
 
 - Una pull request al giorno, anche se cambiano solo le date di verifica (senza merge, le offerte approvate
   spariscono dal sito dopo 14 giorni dall'ultima verifica).
+- Il palinsesto TV viaggia nella stessa pull request e da solo non conta come novità da guardare; arriva sul sito
+  solo dopo il merge, quindi la pull request va unita in mattinata perché la pagina "Calcio in TV oggi" lo mostri.
 - Titolo `Controllo offerte <gg/mm/aaaa>` se c'è qualcosa da guardare, altrimenti
   `Controllo offerte <gg/mm/aaaa>: solo date di verifica`. Il corpo è il rapporto qui sotto.
 - Le pull request `offerte/…` dei giorni precedenti ancora aperte vengono chiuse come sostituite dalla nuova,

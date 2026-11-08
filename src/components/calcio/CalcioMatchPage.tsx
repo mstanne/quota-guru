@@ -54,7 +54,7 @@ import { SofascoreLive } from "../media/SofascoreLive";
 import { sofascoreEventFor } from "../../lib/sofascore";
 import { MatchOddsSlot } from "../odds/MatchOddsSlot";
 import { DataUpdatedNote } from "./DataUpdatedNote";
-import { footballBroadcast } from "../../lib/broadcast";
+import { matchBroadcast } from "../../lib/tvSchedule";
 import { BroadcastRow } from "../media/BroadcastInfo";
 import { ArchivedOrNotFound } from "../../lib/archive";
 
@@ -517,11 +517,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               </div>
               {!finished && (
                 <BroadcastRow
-                  broadcast={footballBroadcast(
-                    competition.slug,
-                    match.utcDate,
-                    competition.matches.filter((m) => m.matchday != null && m.matchday === match.matchday && m.stage === match.stage).map((m) => m.utcDate),
-                  )}
+                  broadcast={matchBroadcast(competition, match)}
                 />
               )}
               <div className="flex justify-between gap-4">

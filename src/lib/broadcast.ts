@@ -19,7 +19,63 @@ export interface Broadcast {
   channels: string;
   /** when the channel of this match is not settled by the deal */
   note?: string;
+  /** set when the channels come from the broadcasters' schedule checked by the daily agent (src/data/tv-schedule.json) */
+  verifiedAt?: string;
 }
+
+/**
+ * One match in the broadcasters' schedule, written by the daily agent (scripts/offers-agent/ISTRUZIONI.md) after
+ * reading the official schedules: it replaces what the rights deals say. Keyed by the dated match path
+ * ("/calcio/serie-a/inter-como-2026-11-08", "/basket/nba/lakers-celtics-2026-11-08").
+ */
+export interface ScheduleEntry {
+  channels: string;
+  /** official page the channels were read from */
+  source: string;
+  /** YYYY-MM-DD */
+  verifiedAt: string;
+}
+export interface TvSchedule {
+  football: Record<string, ScheduleEntry>;
+  nba: Record<string, ScheduleEntry>;
+}
+/** The schedule entry wins over the rights deal. */
+export const withSchedule = (entry: ScheduleEntry | undefined, fallback: Broadcast | null): Broadcast | null =>
+  entry ? { channels: entry.channels, verifiedAt: entry.verifiedAt } : fallback;
+
+/** Channel names allowed in the schedule (scripts/tv-schedule.mjs check): one spelling each. */
+export const CHANNELS = [
+  "DAZN",
+  "Sky",
+  "NOW",
+  "Prime Video",
+  "LaB Channel",
+  "Rai 1",
+  "Rai 2",
+  "Rai Sport",
+  "RaiPlay",
+  "Canale 5",
+  "Italia 1",
+  "Mediaset Infinity",
+  "TV8",
+  "Sportitalia",
+  "Sky Sport Basket",
+  "NBA League Pass",
+  "Ligue 1+",
+  "OneFootball",
+];
+
+/** Who holds the rights of each competition in Italy, in one line (TV guide page). */
+export const COMPETITION_RIGHTS: { slug: string; name: string; text: string }[] = [
+  { slug: "serie-a", name: "Serie A", text: "tutte le 380 partite su DAZN; 3 partite per giornata anche su Sky, in co-esclusiva" },
+  { slug: "serie-b", name: "Serie B", text: "tutte le partite su DAZN e Prime Video (LaB Channel)" },
+  { slug: "champions-league", name: "Champions League", text: "Sky e NOW, finale compresa; la miglior partita del mercoledì in esclusiva su Prime Video" },
+  { slug: "europa-league", name: "Europa League", text: "tutte le partite su Sky e NOW" },
+  { slug: "conference-league", name: "Conference League", text: "tutte le partite su Sky e NOW" },
+  { slug: "premier-league", name: "Premier League", text: "Sky e NOW" },
+  { slug: "bundesliga", name: "Bundesliga", text: "Sky e NOW" },
+  { slug: "liga", name: "LaLiga", text: "DAZN" },
+];
 
 const romeParts = (iso: string) => {
   const parts = new Intl.DateTimeFormat("en-GB", {

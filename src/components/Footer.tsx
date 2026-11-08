@@ -36,6 +36,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/calcio-in-tv-oggi" className="text-slate-400 hover:text-white transition-colors">
+                  Calcio in TV oggi
+                </Link>
+              </li>
+              <li>
                 <Link to={paths.tennis} className="text-slate-400 hover:text-white transition-colors">
                   Tennis
                 </Link>
