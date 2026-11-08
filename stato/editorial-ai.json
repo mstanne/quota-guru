@@ -341,59 +341,6 @@
   "model": "claude-haiku-5-5",
   "at": "2026-11-01T16:59:33.162Z"
  },
- "fb:558533": {
-  "fingerprint": "1lcl8x1",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Napoli e Lazio si affrontano domenica 8 novembre alle 12:30, per la 11ª giornata di Serie A. In classifica il Napoli occupa il 10° posto con 14 punti, mentre la Lazio è al 1° posto con 28 punti."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 5 partite di Serie A il Napoli ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza V-P-N-V-P. Ha segnato 10 gol e ne ha subiti 7. In casa, nel corso della stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di Serie A la Lazio ha ottenuto 5 vittorie, con la sequenza V-V-V-V-V. Ha segnato 16 gol e ne ha subiti 5. Arriva da 5 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati: Napoli 1,7, Lazio 2,4 a partita.",
-     "Gol subiti finora: Napoli 13, Lazio 8.",
-     "In 3 delle ultime 5 partite del Napoli si sono segnati almeno tre gol.",
-     "In tutte le ultime 5 partite della Lazio si sono segnati almeno tre gol."
-    ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Napoli, 3 vittorie per la Lazio e 1 pareggio, con 13 gol complessivi, pari a una media di 2,6 a partita. L'ultimo incrocio, disputato nell'aprile 2026 in Serie A, è terminato Napoli 0-2 Lazio."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Napoli – Lazio?",
-    "a": "Domenica 8 novembre alle 12:30, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-07T20:43:32.527Z"
- },
  "fb:558536": {
   "fingerprint": "16x1vkl",
   "sections": [
@@ -1891,57 +1838,6 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-01T20:26:49.265Z"
- },
- "fb:558840": {
-  "fingerprint": "1fcfxeb",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Domenica 8 novembre alle 12:15 l'Heerenveen ospita il Feyenoord nella 12ª giornata di Eredivisie. In classifica l'Heerenveen è al 7° posto con 18 punti, mentre il Feyenoord è al 1° con 25."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 4 partite di Eredivisie l'Heerenveen ha ottenuto 3 vittorie e 1 sconfitta, con sequenza P-V-V-V, segnando 8 gol e subendone 4. Arriva da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
-     "Nelle ultime 4 partite di Eredivisie il Feyenoord ha ottenuto 2 vittorie e 2 pareggi, con sequenza V-V-N-N, segnando 8 gol e subendone 5. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati: Heerenveen 1,7, Feyenoord 3,0 a partita.",
-     "Gol subiti finora: Heerenveen 13, Feyenoord 12."
-    ]
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per l'Heerenveen, 2 vittorie per il Feyenoord e 1 pareggio, con 15 gol complessivi, pari a una media di 3,0 a partita. L'ultimo incrocio, disputato a gennaio 2026 in Eredivisie, è terminato Heerenveen 2-2 Feyenoord."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Heerenveen – Feyenoord?",
-    "a": "Domenica 8 novembre alle 12:15, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-07T13:13:15.658Z"
  },
  "fb:558839": {
   "fingerprint": "onrkri",
@@ -25773,5 +25669,1490 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-08T10:32:04.758Z"
+ },
+ "fb:1001550206": {
+  "fingerprint": "k4eo14",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "La partita si giocherà domenica 22 novembre alle 12:30: il Sassuolo ospita il Genoa nella 12ª giornata di Serie A. In classifica il Sassuolo occupa il 17° posto con 8 punti, il Genoa il 12° con 13."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie A il Sassuolo ha collezionato 5 sconfitte (sequenza P-P-P-P-P), segnando 6 gol e subendone 19. Ha perso tutte le ultime 5 gare. In casa, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza vittorie.",
+     "Nelle ultime 5 partite di Serie A il Genoa ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-P-V-V-V), con 7 gol fatti e 4 subiti. Arriva da 3 vittorie consecutive. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Sassuolo 1,5, Genoa 1,0 a partita.",
+     "Gol subiti finora: Sassuolo 29, Genoa 14.",
+     "In 4 delle ultime 5 partite del Sassuolo sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Sassuolo – Genoa?",
+    "a": "Domenica 22 novembre alle 12:30, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:22.097Z"
+ },
+ "fb:1001552232": {
+  "fingerprint": "zrqdgq",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Twente e Willem II si sfidano domenica 22 novembre alle 12:15 nella 13ª giornata di Eredivisie. In classifica il Twente occupa il 4° posto con 23 punti, mentre il Willem II è 18° con 3 punti."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di Eredivisie il Twente ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza N-P-V-V), segnando 13 gol e subendone 3.",
+     "Nelle ultime 5 partite di Eredivisie il Willem II ha ottenuto 1 pareggio e 4 sconfitte (sequenza P-P-P-P-N), segnando 5 gol e subendone 20. In trasferta ha perso tutte le 3 partite giocate."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Twente 2,5, Willem II 0,9 a partita.",
+     "Gol subiti finora: Twente 10, Willem II 40.",
+     "Il Twente ha la miglior difesa del torneo.",
+     "In 4 delle ultime 5 partite del Willem II si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Twente – Willem II?",
+    "a": "Domenica 22 novembre alle 12:15, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:25.552Z"
+ },
+ "fb:1001563264": {
+  "fingerprint": "ql92yi",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Domenica 22 novembre alle 13:00 il Burnley ospita il Blackburn per la 16ª giornata di Championship. In classifica il Burnley occupa il 22° posto con 10 punti, mentre il Blackburn è al 13° posto con 21."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Championship il Burnley ha ottenuto 2 pareggi e 3 sconfitte (sequenza P-P-N-N-P), segnando 7 gol e subendone 12. In casa il bilancio stagionale è di 2 pareggi e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 5 partite di Championship il Blackburn ha ottenuto 2 vittorie e 3 sconfitte (sequenza P-V-P-P-V), segnando 7 gol e subendone 10. In trasferta il bilancio stagionale è di 1 vittoria e 2 sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Burnley 1,5, Blackburn 1,5 a partita.",
+     "Gol subiti finora: Burnley 31, Blackburn 23.",
+     "Nelle 5 partite più recenti del Burnley si sono segnati almeno tre gol in 3 occasioni.",
+     "Nelle 5 partite più recenti del Blackburn si sono segnati almeno tre gol in 4 occasioni."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Burnley – Blackburn?",
+    "a": "Domenica 22 novembre alle 13:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:30.273Z"
+ },
+ "fb:1001640013": {
+  "fingerprint": "7c4atm",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Lunedì 16 novembre alle 20:00 il Guadalupa ospita il Bermuda nella 2ª giornata di CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League il Guadalupa ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza V-N-P-P), segnando 4 gol e subendone 7. Ha perso le ultime 2. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 4 partite di CONCACAF Nations League il Bermuda ha collezionato 4 sconfitte (sequenza P-P-P-P), con 5 gol fatti e 13 subiti. Ha perso le ultime 4. In trasferta ha perso tutte le 2 partite giocate."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "In 3 delle ultime 4 partite del Guadalupa si sono segnati almeno tre gol.",
+     "In tutte le ultime 4 partite del Bermuda si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Guadalupa – Bermuda?",
+    "a": "Lunedì 16 novembre alle 20:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:33.715Z"
+ },
+ "fb:1001640009": {
+  "fingerprint": "14gzqlu",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Lunedì 16 novembre alle 21:00 il Cuba ospita il Grenada nella 3ª giornata di CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League il Cuba ha raccolto 2 vittorie e 2 pareggi (sequenza V-V-N-N), con 10 gol fatti e 5 subiti. Non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 4 partite di CONCACAF Nations League il Grenada ha raccolto 1 vittoria e 3 sconfitte (sequenza P-P-V-P), con 4 gol fatti e 12 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "In 3 delle ultime 4 partite del Cuba si sono segnati almeno tre gol.",
+     "In tutte le ultime 4 partite del Grenada si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Cuba – Grenada?",
+    "a": "Lunedì 16 novembre alle 21:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:35.869Z"
+ },
+ "fb:1001649034": {
+  "fingerprint": "6w3qn6",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 17 novembre alle 01:00 il Trinidad e Tobago ospita l'Antigua e Barbuda per i playoff di CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League il Trinidad e Tobago ha raccolto 1 pareggio e 3 sconfitte (sequenza P-P-P-N), con 4 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 3 partite di CONCACAF Nations League l'Antigua e Barbuda ha raccolto 3 vittorie (sequenza V-V-V), con 11 gol fatti e 2 subiti. Arriva da 3 vittorie consecutive."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "In tutte le ultime 3 partite dell'Antigua e Barbuda si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Trinidad e Tobago – Antigua e Barbuda?",
+    "a": "Martedì 17 novembre alle 01:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:38.013Z"
+ },
+ "fb:1001649033": {
+  "fingerprint": "1dgqs50",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "La partita si gioca martedì 17 novembre alle 01:00: il Martinica riceve l'Aruba per i playoff di CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League il Martinica ha raccolto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza P-P-V-N), con 5 gol fatti e 7 subiti. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 3 partite di CONCACAF Nations League l'Aruba ha raccolto 2 vittorie e 1 sconfitta (sequenza V-V-P), con 7 gol fatti e 5 subiti. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "In 3 delle ultime 4 partite del Martinica si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Martinica – Aruba?",
+    "a": "Martedì 17 novembre alle 01:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:40.055Z"
+ },
+ "fb:1001644694": {
+  "fingerprint": "v0jqjy",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Canada e Guatemala si affrontano martedì 17 novembre alle 02:00 per i quarti di finale di CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League il Guatemala ha raccolto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-N-V), con 9 gol fatti e 3 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Il Guatemala non ha subito gol in 3 delle ultime 4."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Canada – Guatemala?",
+    "a": "Martedì 17 novembre alle 02:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:41.858Z"
+ },
+ "fb:1001640005": {
+  "fingerprint": "1vv6e29",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 17 novembre alle 20:00 il Belize ospita il Sint Maarten nella 4ª giornata di CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League il Belize ha ottenuto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), segnando 1 gol e subendone 4. Ha perso le ultime 3. In casa ha perso tutte le 2 partite giocate.",
+     "Nelle ultime 4 partite di CONCACAF Nations League il Sint Maarten ha collezionato 4 sconfitte (sequenza P-P-P-P), segnando 2 gol e subendone 10. Ha perso le ultime 4. In trasferta ha perso tutte le 2 partite giocate."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Belize – Sint Maarten?",
+    "a": "Martedì 17 novembre alle 20:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:43.756Z"
+ },
+ "fb:1001640010": {
+  "fingerprint": "h4czj8",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 17 novembre alle 20:00 il Dominica ospita le Isole Cayman nella 1ª giornata di CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League il Dominica ha raccolto 1 pareggio e 3 sconfitte (sequenza N-P-P-P), con 2 gol fatti e 15 subiti. Ha perso le ultime 3. In casa ha perso tutte le 2 partite giocate.",
+     "Nelle ultime 4 partite di CONCACAF Nations League le Isole Cayman hanno raccolto 1 pareggio e 3 sconfitte (sequenza N-P-P-P), con 0 gol fatti e 6 subiti. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Dominica – Isole Cayman?",
+    "a": "Martedì 17 novembre alle 20:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:45.763Z"
+ },
+ "fb:1001640017": {
+  "fingerprint": "1qbi93t",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 17 novembre alle 20:00 il Santa Lucia affronta il Barbados nella 2ª giornata di CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League il Santa Lucia ha ottenuto 3 vittorie e 1 sconfitta, con la sequenza P-V-V-V, segnando 9 gol e subendone 4. La squadra arriva da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
+     "Nelle ultime 4 partite di CONCACAF Nations League il Barbados ha ottenuto 3 vittorie e 1 pareggio, con la sequenza V-N-V-V, segnando 10 gol e subendone 4. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "In 3 delle ultime 4 partite del Barbados si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Santa Lucia – Barbados?",
+    "a": "Martedì 17 novembre alle 20:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina dedicata alla [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Le spiegazioni si trovano nelle guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:49.334Z"
+ },
+ "fb:1001640016": {
+  "fingerprint": "11kq91g",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 17 novembre alle 21:00 il Saint Kitts e Nevis ospita il Bonaire, in programma per la 3ª giornata di CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League il Saint Kitts e Nevis ha ottenuto 2 vittorie e 2 pareggi (sequenza V-V-N-N), segnando 10 gol e subendone 6. La squadra non perde da 4 partite. Nelle gare disputate in casa, il bilancio stagionale riporta 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 4 partite di CONCACAF Nations League il Bonaire ha raccolto 1 vittoria e 3 sconfitte (sequenza P-P-P-V), con 7 gol fatti e 8 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "In tutte le ultime 4 partite del Saint Kitts e Nevis sono stati segnati almeno tre gol.",
+     "In 3 delle ultime 4 partite del Bonaire sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Saint Kitts e Nevis – Bonaire?",
+    "a": "Martedì 17 novembre alle 21:00, ora italiana."
+   },
+   {
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:55.105Z"
+ },
+ "fb:1001644697": {
+  "fingerprint": "xhtob3",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Mercoledì 18 novembre alle 01:00 gli Stati Uniti ospitano l'Haiti nei quarti di finale della CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League l'Haiti ha ottenuto 3 vittorie e 1 sconfitta (sequenza V-V-V-P), segnando 9 gol e subendone 5. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Stati Uniti – Haiti?",
+    "a": "Mercoledì 18 novembre alle 01:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:56.877Z"
+ },
+ "fb:1001640011": {
+  "fingerprint": "1jkoom6",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Mercoledì 18 novembre alle 01:00 il French Guyana ospita lo St. Vincent / Grenadines per la 4ª giornata di CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League il French Guyana ha raccolto 3 vittorie e 1 sconfitta (sequenza P-V-V-V), con 5 gol fatti e 2 subiti. È reduce da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite giocate.",
+     "Nelle ultime 4 partite di CONCACAF Nations League lo St. Vincent / Grenadines ha raccolto 4 vittorie (sequenza V-V-V-V), con 11 gol fatti e 3 subiti. È reduce da 4 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Il French Guyana non ha subito gol in 3 delle ultime 4.",
+     "In 3 delle ultime 4 partite dello St. Vincent / Grenadines si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca French Guyana – St. Vincent / Grenadines?",
+    "a": "Mercoledì 18 novembre alle 01:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:20:59.079Z"
+ },
+ "fb:1001649035": {
+  "fingerprint": "1hagaeh",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "El Salvador e Saint Martin si affrontano mercoledì 18 novembre alle 02:00 per i playoff di CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League El Salvador ha raccolto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza V-P-P-N), con 4 gol fatti e 10 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 3 partite di CONCACAF Nations League Saint Martin ha raccolto 2 vittorie e 1 sconfitta (sequenza P-V-V), con 11 gol fatti e 2 subiti."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca El Salvador – Saint Martin?",
+    "a": "Mercoledì 18 novembre alle 02:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:00.888Z"
+ },
+ "fb:1001644695": {
+  "fingerprint": "v8pryn",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Il appuntamento è per mercoledì 18 novembre alle 03:30, quando il Messico ospiterà la Giamaica nei quarti di finale della CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League la Giamaica ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-P-V-N. Ha segnato 6 gol e ne ha subiti 4. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Messico – Giamaica?",
+    "a": "Mercoledì 18 novembre alle 03:30, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:03.889Z"
+ },
+ "fb:1001649036": {
+  "fingerprint": "yuedh0",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Nicaragua e Montserrat si affrontano mercoledì 18 novembre alle 04:00 per i playoff di CONCACAF Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di CONCACAF Nations League il Nicaragua ha raccolto 4 sconfitte (sequenza P-P-P-P), con 4 gol fatti e 14 subiti. Ha perso le ultime 4. In casa ha perso tutte le 2 partite giocate.",
+     "Nelle ultime 3 partite di CONCACAF Nations League il Montserrat ha raccolto 3 vittorie (sequenza V-V-V), con 9 gol fatti e 1 subito. È reduce da 3 vittorie consecutive."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "In tutte le ultime 4 partite del Nicaragua si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Nicaragua – Montserrat?",
+    "a": "Mercoledì 18 novembre alle 04:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:05.836Z"
+ },
+ "fb:1001649005": {
+  "fingerprint": "83775l",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 10 novembre alle 09:00 il Qatar U23 ospita il Singapore U23 nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Qatar U23 – Singapore U23?",
+    "a": "Martedì 10 novembre alle 09:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:07.178Z"
+ },
+ "fb:1001649006": {
+  "fingerprint": "1xzjhol",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Vietnam U23 e Thailand U23 si sfidano martedì 10 novembre alle 13:00 nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 5 confronti diretti il bilancio è di 4 vittorie per il Vietnam U23, nessuna per il Thailand U23 e 1 pareggio, con 11 gol complessivi (media di 2,2 a partita). L'ultimo incrocio, disputato a giugno 2022 nell'AFC U23 Asian Cup, è terminato Thailand U23 2-2 Vietnam U23."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Vietnam U23 – Thailand U23?",
+    "a": "Martedì 10 novembre alle 13:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:10.039Z"
+ },
+ "fb:1001649007": {
+  "fingerprint": "15jk173",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Mercoledì 11 novembre alle 11:00 lo Switzerland U18 ospita il Norway U19 nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Amichevoli internazionali il Norway U19 ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-V-P-N), con 10 gol fatti e 7 subiti. In trasferta, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 2 sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Nelle ultime 5 partite del Norway U19, in 3 occasioni sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Switzerland U18 – Norway U19?",
+    "a": "Mercoledì 11 novembre alle 11:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:14.770Z"
+ },
+ "fb:1001647357": {
+  "fingerprint": "1knkwhi",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Mercoledì 11 novembre alle 13:00 il Vietnam ospita il Taipei Cinese nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 2 confronti diretti il Vietnam ha ottenuto 2 vittorie, il Taipei Cinese nessuna e non ci sono stati pareggi. In totale sono stati segnati 8 gol, con una media di 4,0 a partita. L'ultimo incontro, disputato a marzo 2016 nelle Qualificazioni Mondiali Asia, si è concluso con il successo del Vietnam per 4-1 sul Taipei Cinese."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Vietnam – Taipei Cinese?",
+    "a": "Mercoledì 11 novembre alle 13:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:18.625Z"
+ },
+ "fb:1001647634": {
+  "fingerprint": "1342rc3",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Mercoledì 11 novembre alle 13:35 il China U19 ospita il Vietnam U19 in una partita valida per le Amichevoli internazionali."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca China U19 – Vietnam U19?",
+    "a": "Mercoledì 11 novembre alle 13:35, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:20.053Z"
+ },
+ "fb:1001647635": {
+  "fingerprint": "lous1a",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "England U18 e Netherlands U18 si affrontano mercoledì 11 novembre alle 15:00 per Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 2 partite di Amichevoli internazionali l'England U18 ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 3 subiti.",
+     "Nelle ultime 3 partite di Amichevoli internazionali il Netherlands U18 ha raccolto 2 vittorie e 1 pareggio (sequenza V-V-N), con 5 gol fatti e 3 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca England U18 – Netherlands U18?",
+    "a": "Mercoledì 11 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:22.034Z"
+ },
+ "fb:1001586134": {
+  "fingerprint": "t0y764",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Appuntamento giovedì 12 novembre alle 07:00: la Nuova Zelanda riceve l'India per le Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 2 partite di Amichevoli internazionali la Nuova Zelanda ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 5 gol fatti e 2 subiti.",
+     "Nelle ultime 3 partite di Amichevoli internazionali l'India ha raccolto 1 pareggio e 2 sconfitte (sequenza N-P-P), con 2 gol fatti e 11 subiti. Ha perso le ultime 2."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Nuova Zelanda – India?",
+    "a": "Giovedì 12 novembre alle 07:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:23.795Z"
+ },
+ "fb:1001649008": {
+  "fingerprint": "kerpny",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Thailand U23 e Qatar U23 si sfidano giovedì 12 novembre alle 09:00 nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Thailand U23 – Qatar U23?",
+    "a": "Giovedì 12 novembre alle 09:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:25.214Z"
+ },
+ "fb:1001649009": {
+  "fingerprint": "26no9e",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Appuntamento giovedì 12 novembre alle 13:00: il Singapore U23 riceve il Vietnam U23 nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Singapore U23 – Vietnam U23?",
+    "a": "Giovedì 12 novembre alle 13:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:26.491Z"
+ },
+ "fb:1001649010": {
+  "fingerprint": "mj98uw",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Giovedì 12 novembre alle 14:00 Scotland U21 e Ukraine U21 scendono in campo nel quadro delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Finora l'Ukraine U21 ha disputato una sola partita nelle Amichevoli internazionali, terminata 2-2."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "In che giorno e a che ora si gioca Scotland U21 – Ukraine U21?",
+    "a": "Giovedì 12 novembre alle 14:00, ora italiana."
+   },
+   {
+    "q": "Dove si trovano risultati e classifica?",
+    "a": "Risultati e classifica sono disponibili nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Per capire le quote di questa partita puoi consultare le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:30.774Z"
+ },
+ "fb:1001647358": {
+  "fingerprint": "gvbk9t",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Appuntamento giovedì 12 novembre alle 16:00: l'Uzbekistan ospita il Russia nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 3 partite di Amichevoli internazionali, l'Uzbekistan ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-V-P), segnando 7 gol e subendone 4. Nelle partite giocate in casa ha vinto tutte e 2.",
+     "Nelle ultime 3 partite di Amichevoli internazionali, il Russia ha ottenuto 2 vittorie e 1 pareggio (sequenza V-V-N), segnando 11 gol e subendone 3."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Uzbekistan – Russia?",
+    "a": "Giovedì 12 novembre alle 16:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:33.748Z"
+ },
+ "fb:1001649011": {
+  "fingerprint": "1y0n6pg",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Giovedì 12 novembre alle 18:00 la Lituania ospita il Suriname nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "La Lituania ha giocato finora una sola partita di Amichevoli internazionali, vinta 3-0."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Lituania – Suriname?",
+    "a": "Giovedì 12 novembre alle 18:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:35.089Z"
+ },
+ "fb:1001647359": {
+  "fingerprint": "14hyh04",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Giovedì 12 novembre alle 18:30 il Malta ospita l'Eswatini in una partita valida per le Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Finora il Malta ha giocato una sola partita di Amichevoli internazionali, vinta per 2-0."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Malta – Eswatini?",
+    "a": "La partita si disputa giovedì 12 novembre alle 18:30, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:36.723Z"
+ },
+ "fb:1001649012": {
+  "fingerprint": "1dh5x00",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Venerdì 13 novembre alle 12:00 il Czech Republic U18 ospita il Poland U18 nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 2 partite di Amichevoli internazionali il Poland U18 ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 5. Le ultime 2 gare sono state perse."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Czech Republic U18 – Poland U18?",
+    "a": "Venerdì 13 novembre alle 12:00, ora italiana."
+   },
+   {
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:40.373Z"
+ },
+ "fb:1001640083": {
+  "fingerprint": "alomg4",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Singapore e Paraguay si affrontano venerdì 13 novembre alle 13:00 per Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 2 partite di Amichevoli internazionali il Paraguay ha raccolto 2 vittorie (sequenza V-V), con 3 gol fatti e 0 subiti. In trasferta ha vinto tutte le 2 partite giocate."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Singapore – Paraguay?",
+    "a": "Venerdì 13 novembre alle 13:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:41.917Z"
+ },
+ "fb:1001647360": {
+  "fingerprint": "18dbili",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Taipei Cinese e Kirghizistan si affrontano venerdì 13 novembre alle 13:00 per Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 2 partite di Amichevoli internazionali il Kirghizistan ha raccolto 2 vittorie (sequenza V-V), con 8 gol fatti e 1 subito."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Taipei Cinese – Kirghizistan?",
+    "a": "Venerdì 13 novembre alle 13:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:43.375Z"
+ },
+ "fb:1001647636": {
+  "fingerprint": "msnq3w",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Emirati Arabi Uniti e Honduras si affrontano venerdì 13 novembre alle 14:00 per le Amichevoli internazionali."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Emirati Arabi Uniti – Honduras?",
+    "a": "Venerdì 13 novembre alle 14:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:44.679Z"
+ },
+ "fb:1001647361": {
+  "fingerprint": "s4c1sd",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Venerdì 13 novembre alle 15:30 l'Arabia Saudita ospita la Corea del Sud in una partita valida per le Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di Amichevoli internazionali la Corea del Sud ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V), segnando 6 gol e subendone 4."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "La Corea del Sud non ha subito gol in 3 delle ultime 4 partite."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Arabia Saudita – Corea del Sud?",
+    "a": "Venerdì 13 novembre alle 15:30, ora italiana."
+   },
+   {
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:48.835Z"
+ },
+ "fb:1001640084": {
+  "fingerprint": "dq9t2q",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Venerdì 13 novembre alle 15:45 il Qatar ospita l'Australia in una partita valida per le Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 2 partite di Amichevoli internazionali l'Australia ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 3 gol e subendone 5."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Qatar – Australia?",
+    "a": "Venerdì 13 novembre alle 15:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:50.635Z"
+ },
+ "fb:1001649013": {
+  "fingerprint": "1036mxi",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Germany U21 e Belgium U21 si sfidano venerdì 13 novembre alle 18:00, nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Germany U21 – Belgium U21?",
+    "a": "Venerdì 13 novembre alle 18:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:52.029Z"
+ },
+ "fb:1001647637": {
+  "fingerprint": "1rpuxo1",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Venerdì 13 novembre alle 18:30 il France U21 ospita l'Italy U21 nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 2 partite di Amichevoli internazionali il France U21 ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 3. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca France U21 – Italy U21?",
+    "a": "Venerdì 13 novembre alle 18:30, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ti spiegano come funzionano le quote le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:53.754Z"
+ },
+ "fb:1001640085": {
+  "fingerprint": "1nany17",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Giordania e Indonesia si affrontano venerdì 13 novembre alle 19:00 nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 2 partite di Amichevoli internazionali la Giordania ha ottenuto 2 pareggi (sequenza N-N), con 1 gol fatto e 1 subito. In casa, il bilancio stagionale è di 2 pareggi e ancora nessuna vittoria."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Giordania – Indonesia?",
+    "a": "Venerdì 13 novembre alle 19:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio) spiegano il funzionamento."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:57.840Z"
+ },
+ "fb:1001649014": {
+  "fingerprint": "u0bqg7",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "L'appuntamento è venerdì 13 novembre alle 19:00: l'Albania U21 ospita il Luxembourg U21 nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Finora l'Albania U21 ha disputato una sola partita di Amichevoli internazionali, terminata 2-2."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Albania U21 – Luxembourg U21?",
+    "a": "Venerdì 13 novembre alle 19:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ti spiegano come funziona il tutto le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-08T12:21:59.601Z"
  }
 }
