@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-08T15:23:07.831Z",
+ "generatedAt": "2026-11-08T16:43:28.574Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558530": {
@@ -282,20 +282,20 @@
    ]
   },
   "fb:1001550206": {
-   "fingerprint": "k4eo14",
+   "fingerprint": "cdqha6",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "La partita si giocherà domenica 22 novembre alle 12:30: il Sassuolo ospita il Genoa nella 12ª giornata di Serie A. In classifica il Sassuolo occupa il 17° posto con 8 punti, il Genoa il 12° con 13."
+      "Il match si disputa domenica 22 novembre alle 12:30, quando il Sassuolo ospita il Genoa nella 12ª giornata di Serie A. In classifica il Sassuolo occupa il 17° posto con 8 punti, mentre il Genoa è al 12° con 13."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie A il Sassuolo ha collezionato 5 sconfitte (sequenza P-P-P-P-P), segnando 6 gol e subendone 19. Ha perso tutte le ultime 5 gare. In casa, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza vittorie.",
-      "Nelle ultime 5 partite di Serie A il Genoa ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-P-V-V-V), con 7 gol fatti e 4 subiti. Arriva da 3 vittorie consecutive. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 5 partite di Serie A il Sassuolo ha collezionato 5 sconfitte (sequenza P-P-P-P-P), segnando 6 gol e subendone 19. Ha perso le ultime 5 gare. In casa, nel bilancio stagionale, figurano 1 pareggio e 2 sconfitte, senza alcuna vittoria.",
+      "Nelle ultime 5 partite di Serie A il Genoa ha ottenuto 3 vittorie e 2 sconfitte (sequenza P-V-V-V-P), con 6 gol fatti e 5 subiti. In trasferta, nel bilancio stagionale, il Genoa conta 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -303,7 +303,7 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Sassuolo 1,5, Genoa 1,0 a partita.",
+      "Media gol segnati a partita: Sassuolo 1,5, Genoa 1,0.",
       "Gol subiti finora: Sassuolo 29, Genoa 14.",
       "In 4 delle ultime 5 partite del Sassuolo sono stati segnati almeno tre gol."
      ]
@@ -316,29 +316,29 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+     "a": "Puoi consultare la pagina [Serie A](/calcio/serie-a) e la [classifica aggiornata](/calcio/serie-a/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001550197": {
-   "fingerprint": "2kbvzw",
+   "fingerprint": "1y26jv8",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Milan e Frosinone si sfidano domenica 22 novembre alle 15:00, nell'ambito della 12ª giornata di Serie A. In classifica il Milan occupa il 5° posto con 21 punti, mentre il Frosinone è al 6° con 20."
+      "Milan e Frosinone si affrontano domenica 22 novembre alle 15:00, per la 12ª giornata di Serie A. In classifica il Milan è al 5° posto con 21 punti, mentre il Frosinone è al 6° con 20."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di campionato il Milan ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza N-V-V-P-V. Ha segnato 11 gol e ne ha subiti 8. In casa, nella stagione, il bilancio è di 2 vittorie e 1 sconfitta.",
-      "Nelle ultime 5 partite di campionato il Frosinone ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-N-V-V-P. Ha segnato 15 gol e ne ha subiti 8. In trasferta, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza alcuna vittoria."
+      "Nelle ultime 5 partite di Serie A il Milan ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-V-P-V-V), segnando 12 gol e subendone 8. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Serie A il Frosinone ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-N-V-V-P), segnando 15 gol e subendone 8. In trasferta, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza ancora alcuna vittoria."
      ],
      "bullets": []
     },
@@ -346,10 +346,10 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Milan 2,1, Frosinone 2,2.",
+      "Media gol segnati: Milan 2,1, Frosinone 2,2 a partita.",
       "Gol subiti finora: Milan 12, Frosinone 15.",
-      "Nelle ultime 5 partite del Milan, in 3 si sono segnati almeno tre gol.",
-      "Nelle ultime 5 partite del Frosinone, in 3 si sono segnati almeno tre gol."
+      "In 4 delle ultime 5 partite del Milan sono stati segnati almeno tre gol.",
+      "In 3 delle ultime 5 partite del Frosinone sono stati segnati almeno tre gol."
      ]
     }
    ],
@@ -361,56 +361,6 @@
     {
      "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001601595": {
-   "fingerprint": "ka18mv",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 8 novembre alle 17:15 il Carrarese ospita la Sampdoria per la 11ª giornata di Serie B. In classifica il Carrarese è al 16° posto con 10 punti, la Sampdoria al 19° con 8."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Serie B il Carrarese ha raccolto 3 vittorie e 2 sconfitte (sequenza V-V-P-V-P), con 7 gol fatti e 7 subiti. In casa ha vinto tutte le 2 partite giocate.",
-      "Nelle ultime 5 partite di Serie B la Sampdoria ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-P-V), con 5 gol fatti e 9 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, ancora senza vittorie."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Carrarese 0,9, Sampdoria 1,0 a partita.",
-      "Gol subiti finora: Carrarese 13, Sampdoria 18.",
-      "In 4 delle ultime 5 partite del Carrarese si sono segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 4 confronti diretti il bilancio è di 2 vittorie per il Carrarese, 1 vittoria per la Sampdoria e 1 pareggio, con 10 gol complessivi (media di 2,5 a partita). L'ultimo incrocio, a marzo 2026 in Serie B, è finito Carrarese 2-0 Sampdoria."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Carrarese – Sampdoria?",
-     "a": "Domenica 8 novembre alle 17:15, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -728,7 +678,7 @@
    ]
   },
   "fb:1001601609": {
-   "fingerprint": "1q8bsv7",
+   "fingerprint": "1yfchz1",
    "sections": [
     {
      "id": "presentazione",
@@ -740,8 +690,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie B il Modena ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-P-V-V-N. Ha segnato 10 gol e ne ha subiti 6. In casa, nel corso della stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 5 partite di Serie B il Juve Stabia ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-V-P-N-V. Ha segnato 7 gol e ne ha subiti 3. In trasferta, nel corso della stagione, il bilancio è di 1 vittoria e 2 pareggi, senza sconfitte."
+      "Nelle ultime 5 partite di Serie B il Modena ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza P-V-V-N-V. Ha segnato 9 gol e ne ha subiti 4. La squadra non perde da 4 partite. In casa, in questa stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Serie B il Juve Stabia ha raccolto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-V-P-N-V. Ha segnato 7 gol e ne ha subiti 3. In trasferta, in questa stagione, il bilancio è di 1 vittoria e 2 pareggi, senza sconfitte."
      ],
      "bullets": []
     },
@@ -751,7 +701,7 @@
      "bullets": [
       "Media gol segnati a partita: Modena 1,8, Juve Stabia 1,1.",
       "Gol subiti finora: Modena 10, Juve Stabia 11.",
-      "Nelle ultime 5 partite del Modena si sono segnati almeno tre gol in 4 occasioni.",
+      "Nelle ultime 5 partite del Modena, in 3 casi sono stati segnati almeno tre gol.",
       "Il Juve Stabia non ha subito gol in 3 delle ultime 5 partite."
      ]
     }
@@ -762,12 +712,12 @@
      "a": "Sabato 21 novembre alle 15:00, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina dedicata alla [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e su [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -815,20 +765,20 @@
    ]
   },
   "fb:1001601606": {
-   "fingerprint": "k4ahl6",
+   "fingerprint": "xscow4",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 15:00 Carrarese e Virtus Entella si affrontano nella 12ª giornata di Serie B. Le due squadre condividono il quinto posto in classifica con 10 punti."
+      "Carrarese e Virtus Entella si affrontano sabato 21 novembre alle 15:00 per la 12ª giornata di Serie B. Le due squadre sono a pari punti, 10 ciascuna."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie B il Carrarese ha ottenuto 3 vittorie e 2 sconfitte, con sequenza V-V-P-V-P. Ha segnato 7 gol e ne ha subiti 7. In casa ha vinto tutte le 2 partite disputate.",
-      "Nelle ultime 5 partite di Serie B la Virtus Entella ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con sequenza N-V-P-N-P. Ha segnato 4 gol e ne ha subiti 6. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 5 partite di Serie B il Carrarese ha ottenuto 3 vittorie e 2 sconfitte (sequenza V-V-P-V-P), con 7 gol fatti e 7 subiti. In casa ha vinto tutte le 2 partite giocate.",
+      "Nelle ultime 5 partite di Serie B il Virtus Entella ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-N-P-P), con 3 gol fatti e 7 subiti. Ha perso le ultime 2 gare. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -838,7 +788,7 @@
      "bullets": [
       "Media gol segnati a partita: Carrarese 0,9, Virtus Entella 1,1.",
       "Gol subiti finora: Carrarese 13, Virtus Entella 12.",
-      "Nelle ultime 5 partite del Carrarese, in 4 occasioni sono stati segnati almeno tre gol."
+      "In 4 delle ultime 5 partite del Carrarese si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -853,7 +803,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Puoi trovare spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ti spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -894,55 +844,6 @@
     {
      "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:560639": {
-   "fingerprint": "d323c6",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 8 novembre alle 17:30 il Manchester United ospita l'Aston Villa nella 10ª giornata di Premier League. In classifica il Manchester United occupa il 18° posto con 7 punti, mentre l'Aston Villa è 12° con 12 punti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di Premier League il Manchester United ha ottenuto 2 pareggi e 2 sconfitte (sequenza N-N-P-P), segnando 2 gol e subendone 7. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
-      "Nelle ultime 4 partite di Premier League l'Aston Villa ha ottenuto 2 vittorie e 2 pareggi (sequenza N-V-V-N), con 6 gol fatti e 4 subiti. Non perde da 4 partite."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Manchester United 1,1 e Aston Villa 1,1 a partita.",
-      "Gol subiti finora: Manchester United 15, Aston Villa 13."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il Manchester United ha vinto 3 volte, l'Aston Villa 1 volta e c'è stato 1 pareggio, con 12 gol complessivi (media di 2,4 a partita). L'ultimo incrocio, disputato a marzo 2026 in Premier League, è terminato Manchester United 3-1 Aston Villa."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Manchester United – Aston Villa?",
-     "a": "Domenica 8 novembre alle 17:30."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -994,20 +895,20 @@
    ]
   },
   "fb:1001557468": {
-   "fingerprint": "1f2tkzg",
+   "fingerprint": "1vdamwn",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 16:00 il Bournemouth ospita il Nottingham Forest nell'11ª giornata di Premier League. In classifica il Bournemouth è 9° con 12 punti, mentre il Nottingham Forest è 16° con 9."
+      "Sabato 21 novembre alle 16:00 il Bournemouth ospita il Nottingham Forest per la 11ª giornata di Premier League. In classifica il Bournemouth è al 9° posto con 12 punti, mentre il Nottingham Forest è al 16° con 9."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Premier League il Bournemouth ha ottenuto 3 vittorie e 1 sconfitta (sequenza P-V-V-V), segnando 8 gol e subendone 5. Arriva da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
-      "Nelle ultime 5 partite di Premier League il Nottingham Forest ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-P-V), con 5 gol fatti e 8 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
+      "Nelle ultime 5 partite di Premier League il Bournemouth ha ottenuto 4 vittorie e 1 sconfitta (sequenza P-V-V-V-V), segnando 10 gol e subendone 6. Arriva da 4 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 5 partite di Premier League il Nottingham Forest ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-P-V), segnando 5 gol e subendone 8. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
      ],
      "bullets": []
     },
@@ -1017,7 +918,8 @@
      "bullets": [
       "Media gol segnati: Bournemouth 1,6, Nottingham Forest 0,9 a partita.",
       "Gol subiti finora: Bournemouth 13, Nottingham Forest 13.",
-      "Il Bournemouth non ha subito gol in 3 delle ultime 4 partite."
+      "In 3 delle ultime 5 partite del Bournemouth sono stati segnati almeno tre gol.",
+      "Il Bournemouth non ha subito gol in 3 delle ultime 5 partite."
      ]
     }
    ],
@@ -1028,7 +930,7 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Premier League](/calcio/premier-league) e la [classifica aggiornata](/calcio/premier-league/classifica)."
+     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -1037,20 +939,20 @@
    ]
   },
   "fb:1001557476": {
-   "fingerprint": "1fleoh1",
+   "fingerprint": "12vf4kj",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 16:00 il Tottenham ospita l'Ipswich Town per l'11ª giornata di Premier League. In classifica il Tottenham è al 10° posto con 12 punti, mentre l'Ipswich Town è al 14° con 11."
+      "Sabato 21 novembre alle 16:00 il Tottenham ospita l'Ipswich Town nell'11ª giornata di Premier League. In classifica il Tottenham occupa il 10° posto con 12 punti, mentre l'Ipswich Town è al 14° con 11."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Premier League il Tottenham ha raccolto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza N-V-V-V-P), con 8 gol fatti e 3 subiti. In casa ha vinto tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di Premier League l'Ipswich Town ha raccolto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza V-P-N-N), con 7 gol fatti e 7 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie."
+      "Nelle ultime 5 partite di Premier League il Tottenham ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza N-V-V-V-P), segnando 8 gol e subendone 3. In casa ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 5 partite di Premier League l'Ipswich Town ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza V-P-N-N-P), segnando 8 gol e subendone 9. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie."
      ],
      "bullets": []
     },
@@ -1060,7 +962,7 @@
      "bullets": [
       "Media gol segnati: Tottenham 1,0, Ipswich Town 1,6 a partita.",
       "Gol subiti finora: Tottenham 11, Ipswich Town 18.",
-      "In 3 delle ultime 4 partite dell'Ipswich Town si sono segnati almeno tre gol."
+      "Nelle ultime 5 partite dell'Ipswich Town, in 4 si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -1070,30 +972,30 @@
      "a": "Sabato 21 novembre alle 16:00, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Premier League](/calcio/premier-league) e la [classifica aggiornata](/calcio/premier-league/classifica)."
+     "q": "Dove si possono consultare classifica e risultati?",
+     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001557470": {
-   "fingerprint": "kljro8",
+   "fingerprint": "24zlxa",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Chelsea e Leeds United si affrontano sabato 21 novembre alle 16:00, nell'11ª giornata di Premier League. In classifica il Chelsea occupa il 4° posto con 16 punti, mentre il Leeds United è all'8° con 14."
+      "Chelsea e Leeds United si affrontano sabato 21 novembre alle 16:00, nell'11ª giornata di Premier League. In classifica il Chelsea occupa il 4° posto con 16 punti, mentre il Leeds United è all'8° posto con 14."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Premier League il Chelsea ha ottenuto 3 vittorie e 1 sconfitta (sequenza V-V-P-V), segnando 9 gol e subendone 3. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
-      "Nelle ultime 5 partite di Premier League il Leeds United ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-N-N-P-V), segnando 3 gol e subendone 5. In trasferta, il bilancio stagionale comprende 1 pareggio e 2 sconfitte, senza vittorie."
+      "Nelle ultime 5 partite di Premier League il Chelsea ha ottenuto 3 vittorie e 2 sconfitte, con la sequenza V-V-P-V-P. Ha segnato 9 gol e ne ha subiti 4. In casa, la stagione del Chelsea registra 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Premier League il Leeds United ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza P-N-N-P-V. Ha segnato 3 gol e ne ha subiti 5. In trasferta, la stagione del Leeds United registra 1 pareggio e 2 sconfitte, senza ancora alcuna vittoria."
      ],
      "bullets": []
     },
@@ -1101,7 +1003,7 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Chelsea 2,1, Leeds United 1,0 a partita.",
+      "Gol segnati in media a partita: Chelsea 2,1, Leeds United 1,0.",
       "Gol subiti finora: Chelsea 15, Leeds United 8."
      ]
     }
@@ -1117,17 +1019,17 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001557467": {
-   "fingerprint": "1wfkijp",
+   "fingerprint": "1xm354f",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Aston Villa e Sunderland si affrontano sabato 21 novembre alle 16:00, nell'11ª giornata di Premier League. In classifica l'Aston Villa occupa il 12° posto con 12 punti, mentre il Sunderland è 20° con 5 punti."
+      "Aston Villa e Sunderland si affrontano sabato 21 novembre alle 16:00, nella 11ª giornata di Premier League. In classifica l'Aston Villa occupa il 12° posto con 12 punti, mentre il Sunderland è 20° con 5 punti."
      ],
      "bullets": []
     },
@@ -1135,7 +1037,7 @@
      "id": "momento",
      "paragraphs": [
       "Nelle ultime 4 partite di Premier League l'Aston Villa ha ottenuto 2 vittorie e 2 pareggi, con sequenza N-V-V-N, segnando 6 gol e subendone 4. La squadra non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria e 2 pareggi, senza sconfitte.",
-      "Nelle ultime 4 partite di Premier League il Sunderland ha ottenuto 1 pareggio e 3 sconfitte, con sequenza P-P-N-P, segnando 1 gol e subendone 7. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 5 partite di Premier League il Sunderland ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con sequenza P-P-N-P-V, segnando 2 gol e subendone 7. In trasferta ha perso tutte le 2 partite disputate."
      ],
      "bullets": []
     },
@@ -1164,7 +1066,7 @@
    ]
   },
   "fb:1001557471": {
-   "fingerprint": "1lr12pb",
+   "fingerprint": "12jecxd",
    "sections": [
     {
      "id": "presentazione",
@@ -1177,7 +1079,7 @@
      "id": "momento",
      "paragraphs": [
       "Nelle ultime 5 partite di Premier League il Coventry City ha raccolto 2 vittorie e 3 sconfitte (sequenza V-P-P-V-P), con 9 gol fatti e 9 subiti. In casa il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
-      "Nelle ultime 4 partite di Premier League il Crystal Palace ha raccolto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), con 3 gol fatti e 10 subiti. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 5 partite di Premier League il Crystal Palace ha raccolto 1 vittoria e 4 sconfitte (sequenza V-P-P-P-P), con 4 gol fatti e 13 subiti. Ha perso le ultime 4. In trasferta ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     },
@@ -1187,7 +1089,8 @@
      "bullets": [
       "Media gol segnati: Coventry City 1,0, Crystal Palace 1,0 a partita.",
       "Gol subiti finora: Coventry City 19, Crystal Palace 21.",
-      "In 4 delle ultime 5 partite del Coventry City si sono segnati almeno tre gol."
+      "In 4 delle ultime 5 partite del Coventry City si sono segnati almeno tre gol.",
+      "In 3 delle ultime 5 partite del Crystal Palace si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -1251,20 +1154,20 @@
    ]
   },
   "fb:1001557472": {
-   "fingerprint": "bj0wqy",
+   "fingerprint": "3zy6fq",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 22 novembre alle 15:00 l'Hull City ospita il Brighton per l'11ª giornata di Premier League. In classifica l'Hull City occupa il 13° posto con 11 punti, mentre il Brighton è al 3° posto con 19."
+      "La partita si gioca domenica 22 novembre alle 15:00: l'Hull City ospita il Brighton nell'11ª giornata di Premier League. In classifica l'Hull City occupa il 13° posto con 11 punti, mentre il Brighton è al 3° posto con 19."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Premier League l'Hull City ha ottenuto 3 pareggi e 2 sconfitte, con sequenza N-P-N-N-P. Ha segnato 5 gol e ne ha subiti 7. In casa, il bilancio stagionale è di 3 pareggi, senza ancora nessuna vittoria.",
-      "Nelle ultime 4 partite di Premier League il Brighton ha ottenuto 3 vittorie e 1 sconfitta, con sequenza V-V-P-V. Ha segnato 8 gol e ne ha subiti 2. In trasferta, il bilancio stagionale è di 2 vittorie e 1 sconfitta."
+      "Nelle ultime 5 partite di Premier League l'Hull City ha ottenuto 3 pareggi e 2 sconfitte, con la sequenza N-P-N-N-P, segnando 5 gol e subendone 7. In casa, il bilancio stagionale è di 3 pareggi e nessuna vittoria.",
+      "Nelle ultime 5 partite di Premier League il Brighton ha ottenuto 4 vittorie e 1 sconfitta, con la sequenza V-V-P-V-V, segnando 10 gol e subendone 2. In trasferta, il bilancio stagionale è di 2 vittorie e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -1275,7 +1178,7 @@
       "Media gol segnati a partita: Hull City 1,1, Brighton 2,7.",
       "Gol subiti finora: Hull City 11, Brighton 7.",
       "Il Brighton ha il miglior attacco del torneo.",
-      "Nelle ultime 4 partite il Brighton non ha subito gol in 3 occasioni."
+      "Il Brighton non ha subito gol in 4 delle ultime 5 partite."
      ]
     }
    ],
@@ -1285,8 +1188,8 @@
      "a": "Domenica 22 novembre alle 15:00, ora italiana."
     },
     {
-     "q": "Dove si possono vedere classifica e risultati?",
-     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina dedicata alla [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -1294,21 +1197,21 @@
     }
    ]
   },
-  "fb:564743": {
-   "fingerprint": "1a40kuq",
+  "fb:1001557473": {
+   "fingerprint": "57btio",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 16:15 il Real Sociedad ospita il Rayo Vallecano per la 12ª giornata di LaLiga. In classifica il Real Sociedad è al 5° posto con 19 punti, il Rayo Vallecano al 14° con 12."
+      "Liverpool e Manchester United si affrontano domenica 22 novembre alle 17:30 per la 11ª giornata di Premier League. In classifica il Liverpool è al 6° posto con 15 punti, il Manchester United al 18° con 7."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di LaLiga il Real Sociedad ha raccolto 3 vittorie e 1 sconfitta (sequenza V-V-V-P), con 11 gol fatti e 7 subiti. In casa ha vinto tutte le 2 partite giocate.",
-      "Nelle ultime 3 partite di LaLiga il Rayo Vallecano ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-P-V), con 4 gol fatti e 4 subiti."
+      "Nelle ultime 5 partite di Premier League il Liverpool ha raccolto 3 vittorie e 2 sconfitte (sequenza P-V-V-P-V), con 7 gol fatti e 6 subiti. In casa il bilancio stagionale è di 1 vittoria e 2 sconfitte.",
+      "Nelle ultime 4 partite di Premier League il Manchester United ha raccolto 2 pareggi e 2 sconfitte (sequenza N-N-P-P), con 2 gol fatti e 7 subiti. Ha perso le ultime 2. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
      ],
      "bullets": []
     },
@@ -1316,27 +1219,20 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Real Sociedad 1,8, Rayo Vallecano 1,5 a partita.",
-      "Gol subiti finora: Real Sociedad 20, Rayo Vallecano 20.",
-      "In tutte le ultime 4 partite del Real Sociedad si sono segnati almeno tre gol."
+      "Media gol segnati: Liverpool 1,2, Manchester United 1,1 a partita.",
+      "Gol subiti finora: Liverpool 9, Manchester United 15.",
+      "In 3 delle ultime 5 partite del Liverpool si sono segnati almeno tre gol."
      ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Real Sociedad, 2 vittorie per il Rayo Vallecano e 2 pareggi, con 18 gol complessivi (media di 3,6 a partita). L'ultimo incrocio, ad aprile 2026 in LaLiga, è finito Rayo Vallecano 3-3 Real Sociedad."
-     ],
-     "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Quando si gioca Real Sociedad – Rayo Vallecano?",
-     "a": "Domenica 8 novembre alle 16:15, ora italiana."
+     "q": "Quando si gioca Liverpool – Manchester United?",
+     "a": "Domenica 22 novembre alle 17:30, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -1497,21 +1393,21 @@
     }
    ]
   },
-  "fb:565854": {
-   "fingerprint": "1u7nrmk",
+  "fb:1001570455": {
+   "fingerprint": "11baxc1",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 17:30 il Freiburg ospita l'Union Berlin nella 9ª giornata di Bundesliga. In classifica il Freiburg occupa il 4° posto con 16 punti, mentre l'Union Berlin è 16° con 7."
+      "Barcellona e Villarreal si sfidano domenica 22 novembre alle 17:00, nella 13ª giornata di LaLiga. Il Barcellona occupa il 1° posto in classifica con 30 punti, mentre il Villarreal è all'11° posto con 12."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga il Freiburg ha ottenuto 2 vittorie e 2 sconfitte (sequenza V-P-P-V), segnando 6 gol e subendone 7. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Bundesliga l'Union Berlin ha ottenuto 1 vittoria e 3 pareggi (sequenza V-N-N-N), con 3 gol fatti e 2 subiti. Non perde da 4 partite."
+      "Nelle ultime 4 partite di LaLiga, il Barcellona ha ottenuto 3 vittorie e 1 sconfitta, con la sequenza V-V-P-V. Ha segnato 15 gol e ne ha subiti 5. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 4 partite di LaLiga, il Villarreal ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con la sequenza P-N-V-P. Ha segnato 2 gol e ne ha subiti 3. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -1519,27 +1415,414 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Freiburg 2,3, Union Berlin 0,9 a partita.",
-      "Gol subiti finora: Freiburg 10, Union Berlin 19.",
-      "In tutte le ultime 4 partite del Freiburg si sono segnati almeno tre gol."
+      "Media gol segnati a partita: Barcellona 4,2, Villarreal 1,4.",
+      "Gol subiti finora: Barcellona 12, Villarreal 15.",
+      "Il Barcellona ha il miglior attacco del torneo.",
+      "In tutte le ultime 4 partite del Barcellona sono stati segnati almeno tre gol."
      ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per il Freiburg, 3 per l'Union Berlin e 2 pareggi, con 7 gol complessivi (media di 1,4 a partita). L'ultimo incrocio, a marzo 2026 in Bundesliga, è terminato Freiburg 0-1 Union Berlin."
-     ],
-     "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Quando si gioca Freiburg – Union Berlin?",
-     "a": "Domenica 8 novembre alle 17:30, ora italiana."
+     "q": "Quando si gioca Barcellona – Villarreal?",
+     "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001570454": {
+   "fingerprint": "1rdbszg",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 22 novembre alle 17:00 l'Athletic ospita l'Espanyol per la 13ª giornata di LaLiga. In classifica l'Athletic occupa il 7° posto con 16 punti, mentre l'Espanyol è al 13° con 12."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di LaLiga l'Athletic ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-P-V-V-N), segnando 8 gol e subendone 5. In casa ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 5 partite di LaLiga l'Espanyol ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-P-P-V-N), segnando 3 gol e subendone 4. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Athletic 1,4, Espanyol 1,1.",
+      "Gol subiti finora: Athletic 11, Espanyol 14.",
+      "In 3 delle ultime 5 partite dell'Athletic si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Athletic – Espanyol?",
+     "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001570462": {
+   "fingerprint": "m66gat",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 22 novembre alle 17:00 il Sevilla FC riceve il Real Betis per la 13ª giornata di LaLiga. È uno scontro di alta classifica: il Sevilla FC è al 6° posto con 18 punti, il Real Betis al 4° con 23."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di LaLiga il Sevilla FC ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-P-V-P-N), con 7 gol fatti e 10 subiti. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di LaLiga il Real Betis ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V-V), con 11 gol fatti e 8 subiti. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Sevilla FC 1,4, Real Betis 1,6 a partita.",
+      "Gol subiti finora: Sevilla FC 19, Real Betis 15.",
+      "In 3 delle ultime 5 partite del Sevilla FC si sono segnati almeno tre gol.",
+      "In 3 delle ultime 5 partite del Real Betis si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Sevilla FC – Real Betis?",
+     "a": "Domenica 22 novembre alle 17:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Bundesliga](/calcio/bundesliga) e la [classifica aggiornata](/calcio/bundesliga/classifica)."
+     "a": "Puoi consultare la pagina [LaLiga](/calcio/liga) e la [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001570457": {
+   "fingerprint": "fyiyll",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 22 novembre alle 17:00 il Levante ospita l'Elche per la 13ª giornata di LaLiga. Le due squadre sono appaiate a 10 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di LaLiga il Levante ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-N-V-P-P), con 8 gol fatti e 9 subiti. Nelle ultime 2 ha perso. In casa, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+      "Nelle ultime 5 partite di LaLiga l'Elche ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-N-V-P-P), con 3 gol fatti e 3 subiti. Nelle ultime 2 ha perso. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Levante 1,5, Elche 1,3.",
+      "Gol subiti finora: Levante 21, Elche 18.",
+      "In 3 delle ultime 5 partite del Levante si sono segnati almeno tre gol.",
+      "L'Elche non ha subito gol in 3 delle ultime 5 partite."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Levante – Elche?",
+     "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001570461": {
+   "fingerprint": "w5l1ko",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 22 novembre alle 17:00 il Real Madrid ospita il Celta nella 13ª giornata di LaLiga. In classifica il Real Madrid occupa il 2° posto con 30 punti, mentre il Celta è 12° con 12 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di LaLiga il Real Madrid ha ottenuto 5 vittorie (sequenza V-V-V-V-V), segnando 13 gol e subendone 2. Arriva da 5 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 4 partite di LaLiga il Celta ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza N-V-N-P), con 2 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza alcuna vittoria."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Real Madrid 2,6, Celta 0,9.",
+      "Gol subiti finora: Real Madrid 10, Celta 10.",
+      "In 4 delle ultime 5 partite del Real Madrid sono stati segnati almeno tre gol.",
+      "Il Real Madrid non ha subito gol in 3 delle ultime 5 partite."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Real Madrid – Celta?",
+     "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove si possono consultare classifica e risultati?",
+     "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001570453": {
+   "fingerprint": "14rdy8b",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 22 novembre alle 17:00 l'Alavés affronta il Deportivo nella 13ª giornata di LaLiga. In classifica i baschi occupano il 10° posto con 13 punti, mentre il Deportivo è all'8° con 15."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di LaLiga l'Alavés ha ottenuto 2 pareggi e 3 sconfitte, con la sequenza P-P-N-P-N. Ha segnato 4 gol e ne ha subiti 11. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza alcuna vittoria.",
+      "Nelle ultime 5 partite di LaLiga il Deportivo ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza P-N-P-V-N. Ha segnato 5 gol e ne ha subiti 6. In trasferta, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: 1,3 per l'Alavés e 1,3 per il Deportivo a partita.",
+      "Gol subiti finora: 17 per l'Alavés e 14 per il Deportivo.",
+      "In 3 delle ultime 5 partite dell'Alavés si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Alavés – Deportivo?",
+     "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001570456": {
+   "fingerprint": "twjk6w",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Getafe e Atlético Madrid si sfidano domenica 22 novembre alle 17:00, nella 13ª giornata di LaLiga. In classifica il Getafe occupa il 15° posto con 12 punti, mentre l'Atlético Madrid è al 3° posto con 28."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di LaLiga il Getafe ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza P-N-P-V), segnando 4 gol e subendone 9. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 4 partite di LaLiga l'Atlético Madrid ha collezionato 4 vittorie (sequenza V-V-V-V), con 6 gol fatti e 1 subito. Arriva da 4 vittorie consecutive. In trasferta ha vinto tutte le 3 partite disputate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Getafe 0,7, Atlético Madrid 2,0.",
+      "Gol subiti finora: Getafe 16, Atlético Madrid 8.",
+      "L'Atlético Madrid ha la miglior difesa del torneo.",
+      "In 3 delle ultime 4 partite del Getafe sono stati segnati almeno tre gol.",
+      "L'Atlético Madrid non ha subito gol in 3 delle ultime 4 partite."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Getafe – Atlético Madrid?",
+     "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina dedicata a [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001570458": {
+   "fingerprint": "na8lmm",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 22 novembre alle 17:00 l'Osasuna ospita il Málaga per la 13ª giornata di LaLiga. In classifica l'Osasuna è al 16° posto con 12 punti, il Málaga al 20° con 5."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di LaLiga l'Osasuna ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-V-P-P-N), con 6 gol fatti e 10 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di LaLiga il Málaga ha raccolto 2 pareggi e 3 sconfitte (sequenza N-P-N-P-P), con 6 gol fatti e 11 subiti. Ha perso le ultime 2. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Osasuna 1,0, Málaga 0,8 a partita.",
+      "Gol subiti finora: Osasuna 23, Málaga 23.",
+      "In 3 delle ultime 5 partite del Málaga si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Osasuna – Málaga?",
+     "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001570460": {
+   "fingerprint": "npxgzk",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Rayo Vallecano e Valencia si affrontano domenica 22 novembre alle 17:00 per la 13ª giornata di LaLiga. In classifica il Rayo Vallecano occupa il 14° posto con 12 punti, mentre il Valencia è al 19° con 9."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di LaLiga il Rayo Vallecano ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-P-V), segnando 4 gol e subendone 4. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 5 partite di LaLiga il Valencia ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-N-P-V-P), segnando 4 gol e subendone 7. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Rayo Vallecano 1,5, Valencia 0,7 a partita.",
+      "Gol subiti finora: Rayo Vallecano 20, Valencia 20.",
+      "In 3 delle ultime 5 partite del Valencia si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Rayo Vallecano – Valencia?",
+     "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [LaLiga](/calcio/liga) e la [classifica aggiornata](/calcio/liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001570459": {
+   "fingerprint": "tqke3x",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Santander e Real Sociedad si affrontano domenica 22 novembre alle 17:00 per la 13ª giornata di LaLiga. In classifica il Santander occupa il 9° posto con 14 punti, mentre il Real Sociedad è al 5° con 19."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di LaLiga il Santander ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-V-P-V), segnando 6 gol e subendone 9. In casa, nel corso della stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+      "Nelle ultime 4 partite di LaLiga il Real Sociedad ha ottenuto 3 vittorie e 1 sconfitta (sequenza V-V-V-P), segnando 11 gol e subendone 7. In trasferta, nel corso della stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Santander 1,4, Real Sociedad 1,8.",
+      "Gol subiti finora: Santander 30, Real Sociedad 20.",
+      "In 4 delle ultime 5 partite del Santander si sono segnati almeno tre gol.",
+      "In tutte le ultime 4 partite del Real Sociedad si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Santander – Real Sociedad?",
+     "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -1598,20 +1881,20 @@
    ]
   },
   "fb:1001575221": {
-   "fingerprint": "1gigb6x",
+   "fingerprint": "1cppwmd",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Bayern Monaco e 1. FC Köln si affrontano venerdì 20 novembre alle 20:30, nell'ambito della 10ª giornata di Bundesliga. In classifica il Bayern Monaco occupa il 1° posto con 21 punti, mentre il 1. FC Köln è al 15° posto con 9 punti."
+      "Bayern Monaco e 1. FC Köln si sfidano venerdì 20 novembre alle 20:30, nella 10ª giornata di Bundesliga. In classifica il Bayern Monaco occupa il 1° posto con 21 punti, mentre il 1. FC Köln è al 15° posto con 9 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Bundesliga il Bayern Monaco ha ottenuto 3 vittorie e 2 pareggi, con la sequenza N-V-V-N-V, segnando 15 gol e subendone 7. La squadra non perde da 5 partite. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Bundesliga il 1. FC Köln ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta, con la sequenza V-P-N-N, segnando 3 gol e subendone 3. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
+      "Nelle ultime 5 partite di Bundesliga il Bayern Monaco ha ottenuto 3 vittorie e 2 pareggi, con la sequenza N-V-V-N-V. Ha segnato 15 gol e ne ha subiti 7. Non perde da 5 partite. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Bundesliga il 1. FC Köln ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza V-P-N-N-P. Ha segnato 4 gol e ne ha subiti 5. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie."
      ],
      "bullets": []
     },
@@ -1619,10 +1902,10 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Bayern Monaco 3,2, 1. FC Köln 1,1.",
+      "Media gol segnati: Bayern Monaco 3,2, 1. FC Köln 1,1 a partita.",
       "Gol subiti finora: Bayern Monaco 9, 1. FC Köln 12.",
-      "Il Bayern Monaco dispone del miglior attacco del torneo.",
-      "In tutte le ultime 5 partite del Bayern Monaco sono stati segnati almeno tre gol."
+      "Il Bayern Monaco ha il miglior attacco del torneo.",
+      "In tutte le ultime 5 partite del Bayern Monaco si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -1637,7 +1920,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Te lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -1687,20 +1970,20 @@
    ]
   },
   "fb:1001575222": {
-   "fingerprint": "4w3e4p",
+   "fingerprint": "1hyejow",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Leverkusen e SC Paderborn si sfidano sabato 21 novembre alle 15:30, nell'ambito della 10ª giornata di Bundesliga. In classifica il Leverkusen occupa il 6° posto con 13 punti, mentre lo SC Paderborn è al 12° con 10 punti."
+      "Leverkusen e SC Paderborn si affrontano sabato 21 novembre alle 15:30 per la 10ª giornata di Bundesliga. In classifica il Leverkusen è al 6° posto con 13 punti, lo SC Paderborn al 12° con 10."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga il Leverkusen ha ottenuto 2 vittorie e 2 sconfitte, con la sequenza V-V-P-P, segnando 8 gol e subendone 11. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 5 partite di Bundesliga lo SC Paderborn ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta, con la sequenza P-N-V-N-N, segnando 5 gol e subendone 6. Non perde da 4 partite. In trasferta, nella stagione, il bilancio è di 2 pareggi e nessuna vittoria."
+      "Nelle ultime 5 partite di Bundesliga il Leverkusen ha raccolto 3 vittorie e 2 sconfitte (sequenza V-V-P-P-V), con 10 gol fatti e 12 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 5 partite di Bundesliga lo SC Paderborn ha raccolto 1 vittoria, 3 pareggi e 1 sconfitta (sequenza P-N-V-N-N), con 5 gol fatti e 6 subiti. Non perde da 4 partite. In trasferta il bilancio stagionale è di 2 pareggi, ancora senza vittorie."
      ],
      "bullets": []
     },
@@ -1708,9 +1991,9 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Leverkusen 2,3, SC Paderborn 0,9.",
+      "Media gol segnati: Leverkusen 2,3, SC Paderborn 0,9 a partita.",
       "Gol subiti finora: Leverkusen 16, SC Paderborn 11.",
-      "In tutte le ultime 4 partite del Leverkusen si sono segnati almeno tre gol."
+      "In tutte le ultime 5 partite del Leverkusen si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -1721,11 +2004,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -1947,21 +2230,21 @@
     }
    ]
   },
-  "fb:559634": {
-   "fingerprint": "a8yi60",
+  "fb:1001575227": {
+   "fingerprint": "12p8fi9",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Angers SCO e Nice si affrontano domenica 8 novembre alle 17:15 per la 10ª giornata di Ligue 1. In classifica l'Angers SCO occupa il 15° posto con 8 punti, mentre il Nice è all'8° posto con 14 punti."
+      "Domenica 22 novembre alle 17:30 il Bremen ospita l'HSV nella 10ª giornata di Bundesliga. In classifica il Bremen occupa il 5° posto con 15 punti, mentre l'HSV è al 10° con 12."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 l'Angers SCO ha ottenuto 1 pareggio e 3 sconfitte (sequenza P-P-N-P), segnando 3 gol e subendone 12. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza ancora vittorie.",
-      "Nelle ultime 4 partite di Ligue 1 il Nice ha ottenuto 3 vittorie e 1 sconfitta (sequenza V-P-V-V), segnando 10 gol e subendone 6. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 5 partite di Bundesliga il Bremen ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-N-V-V-P), segnando 9 gol e subendone 7. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Bundesliga l'HSV ha conquistato 3 vittorie e subito 2 sconfitte (sequenza V-V-P-P-V), con 8 gol fatti e 7 subiti. In trasferta, nella stagione, il bilancio è di 1 vittoria e 2 sconfitte."
      ],
      "bullets": []
     },
@@ -1969,180 +2252,25 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Angers SCO 1,0, Nice 1,4.",
-      "Gol subiti finora: Angers SCO 17, Nice 12.",
-      "In tutte le ultime 4 partite del Nice sono stati segnati almeno tre gol."
+      "Media gol segnati a partita: Bremen 1,9, HSV 1,1.",
+      "Gol subiti finora: Bremen 15, HSV 20.",
+      "Nelle ultime 5 partite del Bremen, in 3 si sono segnati almeno tre gol.",
+      "Nelle ultime 5 partite dell'HSV, in 3 si sono segnati almeno tre gol."
      ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per l'Angers SCO, 3 vittorie per il Nice e 1 pareggio, con 13 gol complessivi (media di 2,6 a partita). L'ultimo incrocio, a marzo 2026 in Ligue 1, è terminato Angers SCO 0-2 Nice."
-     ],
-     "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Quando si gioca Angers SCO – Nice?",
-     "a": "Domenica 8 novembre alle 17:15, ora italiana."
+     "q": "Quando si gioca Bremen – HSV?",
+     "a": "Domenica 22 novembre alle 17:30, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+     "a": "Puoi consultare la pagina [Bundesliga](/calcio/bundesliga) e la [classifica aggiornata](/calcio/bundesliga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001552812": {
-   "fingerprint": "5bwe3r",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 8 novembre alle 17:15 il Brest ospita l'Olympique Lyon nella 10ª giornata di Ligue 1. In classifica il Brest è all'11° posto con 12 punti, mentre l'Olympique Lyon è al 4° con 17."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 il Brest ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta, con sequenza V-N-P-V, segnando 9 gol e subendone 4. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Ligue 1 l'Olympique Lyon ha ottenuto 2 vittorie e 2 sconfitte, con sequenza P-V-P-V, segnando 5 gol e subendone 5. In trasferta ha perso tutte le 2 partite giocate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati a partita: Brest 1,8, Olympique Lyon 1,7.",
-      "Gol subiti finora: Brest 12, Olympique Lyon 7."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Brest, 3 vittorie per l'Olympique Lyon e 1 pareggio, con 16 gol complessivi, pari a una media di 3,2 a partita. L'ultimo incrocio, disputato a gennaio 2026 in Ligue 1, è terminato Olympique Lyon 2-1 Brest."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Brest – Olympique Lyon?",
-     "a": "Domenica 8 novembre alle 17:15, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:559633": {
-   "fingerprint": "mexyx7",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Le Havre e Lorient si affrontano domenica 8 novembre alle 17:15 per la 10ª giornata di Ligue 1. In classifica il Le Havre è al 18° posto con 2 punti, il Lorient al 12° con 12."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 il Le Havre ha raccolto 4 sconfitte (sequenza P-P-P-P), con 5 gol fatti e 13 subiti. Ha perso le ultime 4. In casa ha perso tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di Ligue 1 il Lorient ha raccolto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-N-P), con 2 gol fatti e 2 subiti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Le Havre 1,0, Lorient 0,8 a partita.",
-      "Gol subiti finora: Le Havre 20, Lorient 8.",
-      "In 3 delle ultime 4 partite del Le Havre si sono segnati almeno tre gol.",
-      "Il Lorient non ha subito gol in 3 delle ultime 4."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Le Havre, 0 vittorie per il Lorient e 3 pareggi, con 17 gol complessivi (media di 3,4 a partita). L'ultimo incrocio, a maggio 2026 in Ligue 1, è finito Lorient 0-2 Le Havre."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Le Havre – Lorient?",
-     "a": "Domenica 8 novembre alle 17:15, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:559631": {
-   "fingerprint": "1l6m9sw",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 8 novembre alle 17:15 il Le Mans ospita il Monaco nella 10ª giornata di Ligue 1. In classifica il Le Mans occupa il 17° posto con 7 punti, mentre il Monaco è al 7° con 15."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 il Le Mans ha ottenuto 1 pareggio e 3 sconfitte (sequenza P-P-N-P), segnando 2 gol e subendone 9.",
-      "Nelle ultime 4 partite di Ligue 1 il Monaco ha ottenuto 2 pareggi e 2 sconfitte (sequenza N-P-N-P), segnando 4 gol e subendone 7. In trasferta ha perso tutte le 2 partite giocate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Le Mans 1,2, Monaco 1,3 a partita.",
-      "Gol subiti finora: Le Mans 18, Monaco 10."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 4 confronti diretti il bilancio è di 0 vittorie per il Le Mans, 3 vittorie per il Monaco e 1 pareggio, con 13 gol complessivi (media di 3,3 a partita). L'ultimo incrocio, a maggio 2013 in Ligue 2, è terminato Monaco 2-1 Le Mans."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Le Mans – Monaco?",
-     "a": "Domenica 8 novembre alle 17:15, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Trovi spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2285,20 +2413,20 @@
    ]
   },
   "fb:1001552820": {
-   "fingerprint": "r3ljqr",
+   "fingerprint": "cjow2s",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 20:45 il Lille ospita l'Olympique Lyon nella 11ª giornata di Ligue 1. Il match mette di fronte due squadre di alta classifica: il Lille è terzo con 18 punti, mentre l'Olympique Lyon è quarto con 17."
+      "Sabato 21 novembre alle 20:45 il Lille ospita l'Olympique Lyon, per l'11ª giornata di Ligue 1. Si tratta di una sfida tra squadre di alta classifica: il Lille è al 3° posto con 18 punti, mentre l'Olympique Lyon è al 4° con 17."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di campionato il Lille ha ottenuto 2 vittorie e 2 pareggi, con sequenza V-N-N-V, segnando 4 gol e subendone 2. Non perde da 4 partite. In casa il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Ligue 1 l'Olympique Lyon ha ottenuto 2 vittorie e 2 sconfitte, con sequenza P-V-P-V, segnando 5 gol e subendone 5. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 5 partite di Ligue 1 il Lille ha ottenuto 3 vittorie e 2 pareggi (sequenza V-N-N-V-V), con 6 gol fatti e 3 subiti. Non perde da 5 partite. In casa la stagione registra 2 vittorie e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 4 partite di Ligue 1 l'Olympique Lyon ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), con 5 gol fatti e 5 subiti. In trasferta ha perso tutte le 2 partite disputate."
      ],
      "bullets": []
     },
@@ -2319,11 +2447,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina dedicata alla [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
+     "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti spiegano il funzionamento le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2500,21 +2628,21 @@
     }
    ]
   },
-  "fb:558837": {
-   "fingerprint": "x323um",
+  "fb:1001552821": {
+   "fingerprint": "1pxg5ek",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 16:45 l'AZ ospita il Groningen per la 12ª giornata di Eredivisie. In classifica l'AZ occupa il 6° posto con 20 punti, mentre il Groningen è al 9° con 15."
+      "Lorient e Stade Rennais si sfidano domenica 22 novembre alle 17:15, in occasione dell'11ª giornata di Ligue 1. In classifica il Lorient occupa il 12° posto con 12 punti, mentre lo Stade Rennais è 5° con 16."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie l'AZ ha ottenuto 1 pareggio e 3 sconfitte (sequenza P-N-P-P), segnando 2 gol e subendone 7. Ha perso le ultime 2.",
-      "Nelle ultime 4 partite di Eredivisie il Groningen ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza V-P-N-P), con 11 gol fatti e 11 subiti. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 4 partite di Ligue 1 il Lorient ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-N-P), segnando 2 gol e subendone 2. Il bilancio stagionale casalingo è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Ligue 1 lo Stade Rennais ha collezionato 2 vittorie e 3 sconfitte (sequenza V-P-V-P-P), con 13 gol fatti e 12 subiti. Le ultime 2 gare sono state perse. In trasferta ha perso tutte le 2 partite disputate."
      ],
      "bullets": []
     },
@@ -2522,81 +2650,25 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: AZ 1,8, Groningen 2,4.",
-      "Gol subiti finora: AZ 13, Groningen 24.",
-      "In tutte le ultime 4 partite del Groningen si sono segnati almeno tre gol."
+      "Media gol segnati: 0,8 per il Lorient e 2,2 per lo Stade Rennais a partita.",
+      "Gol subiti finora: 8 per il Lorient e 19 per lo Stade Rennais.",
+      "Il Lorient non ha subito gol in 3 delle ultime 4 partite.",
+      "In tutte le ultime 5 partite dello Stade Rennais si sono segnati almeno tre gol."
      ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per l'AZ, 1 vittoria per il Groningen e 1 pareggio, con 15 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, a marzo 2026 in Eredivisie, è terminato Groningen 3-0 AZ."
-     ],
-     "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Quando si gioca AZ – Groningen?",
-     "a": "Domenica 8 novembre alle 16:45, ora italiana."
+     "q": "Quando si gioca Lorient – Stade Rennais?",
+     "a": "Domenica 22 novembre alle 17:15, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
+     "a": "Classifica e risultati sono disponibili nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:558842": {
-   "fingerprint": "1fr0rvt",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Cambuur e PSV si affrontano domenica 8 novembre alle 16:45 per la 12ª giornata di Eredivisie. In classifica il Cambuur è al 10° posto con 15 punti, lo PSV al 3° con 23."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie il Cambuur ha raccolto 3 vittorie e 1 pareggio (sequenza V-N-V-V), con 13 gol fatti e 3 subiti. Non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Eredivisie lo PSV ha raccolto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V), con 11 gol fatti e 3 subiti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Cambuur 2,1, PSV 3,2 a partita.",
-      "Gol subiti finora: Cambuur 22, PSV 13.",
-      "In 3 delle ultime 4 partite del Cambuur si sono segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Cambuur, 4 vittorie per lo PSV e nessun pareggio, con 26 gol complessivi (media di 5,2 a partita). L'ultimo incrocio, a marzo 2023 in Eredivisie, è finito PSV 5-2 Cambuur."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Cambuur – PSV?",
-     "a": "Domenica 8 novembre alle 16:45, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2651,19 +2723,19 @@
    ]
   },
   "fb:1001552229": {
-   "fingerprint": "6gseom",
+   "fingerprint": "1oj5w69",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 16:30 il NEC ospita lo PSV nella 13ª giornata di Eredivisie. In classifica il NEC occupa il 14° posto con 11 punti, mentre lo PSV è al 3° posto con 23 punti."
+      "Sabato 21 novembre alle 16:30 il NEC ospita lo PSV per la 13ª giornata di Eredivisie. In classifica il NEC occupa il 14° posto con 11 punti, mentre lo PSV è al 4° con 23."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie il NEC ha ottenuto 3 pareggi e 1 sconfitta (sequenza N-N-N-P), segnando 5 gol e subendone 6. In casa, nella stagione, il bilancio è di 2 pareggi, senza vittorie.",
+      "Nelle ultime 4 partite di Eredivisie il NEC ha ottenuto 3 pareggi e 1 sconfitta (sequenza N-N-N-P), segnando 5 gol e subendone 6. In casa, nel corso della stagione, il bilancio è di 2 pareggi e nessuna vittoria.",
       "Nelle ultime 4 partite di Eredivisie lo PSV ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V), segnando 11 gol e subendone 3."
      ],
      "bullets": []
@@ -2868,20 +2940,20 @@
    ]
   },
   "fb:1001552232": {
-   "fingerprint": "zrqdgq",
+   "fingerprint": "1n18cmn",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Twente e Willem II si sfidano domenica 22 novembre alle 12:15 nella 13ª giornata di Eredivisie. In classifica il Twente occupa il 4° posto con 23 punti, mentre il Willem II è 18° con 3 punti."
+      "Twente e Willem II si affrontano domenica 22 novembre alle 12:15 per la 13ª giornata di Eredivisie. In classifica il Twente è al 3° posto con 24 punti, il Willem II al 18° con 3."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie il Twente ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza N-P-V-V), segnando 13 gol e subendone 3.",
-      "Nelle ultime 5 partite di Eredivisie il Willem II ha ottenuto 1 pareggio e 4 sconfitte (sequenza P-P-P-P-N), segnando 5 gol e subendone 20. In trasferta ha perso tutte le 3 partite giocate."
+      "Nelle ultime 5 partite di Eredivisie il Twente ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-P-V-V-N), con 15 gol fatti e 5 subiti. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie.",
+      "Nelle ultime 5 partite di Eredivisie il Willem II ha raccolto 1 pareggio e 4 sconfitte (sequenza P-P-P-P-N), con 5 gol fatti e 20 subiti. In trasferta ha perso tutte le 3 partite giocate."
      ],
      "bullets": []
     },
@@ -2890,8 +2962,9 @@
      "paragraphs": [],
      "bullets": [
       "Media gol segnati: Twente 2,5, Willem II 0,9 a partita.",
-      "Gol subiti finora: Twente 10, Willem II 40.",
+      "Gol subiti finora: Twente 12, Willem II 40.",
       "Il Twente ha la miglior difesa del torneo.",
+      "In 3 delle ultime 5 partite del Twente si sono segnati almeno tre gol.",
       "In 4 delle ultime 5 partite del Willem II si sono segnati almeno tre gol."
      ]
     }
@@ -2912,20 +2985,20 @@
    ]
   },
   "fb:1001552225": {
-   "fingerprint": "1psutaz",
+   "fingerprint": "1n2mr34",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 22 novembre alle 14:30 l'Ajax ospita il Den Haag per la 13ª giornata di Eredivisie. In classifica l'Ajax è al 2° posto con 24 punti, mentre il Den Haag è al 17° con 9."
+      "Domenica 22 novembre alle 14:30 l'Ajax ospita il Den Haag, per la 13ª giornata di Eredivisie. In classifica l'Ajax occupa il 2° posto con 25 punti, mentre il Den Haag è 17° con 9."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie l'Ajax ha ottenuto 3 vittorie e 1 pareggio (sequenza N-V-V-V), segnando 9 gol e subendone 4. Arriva da 3 vittorie consecutive. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 5 partite di Eredivisie il Den Haag ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-V-P-P-V), segnando 9 gol e subendone 8. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
+      "Nelle ultime 5 partite di Eredivisie l'Ajax ha ottenuto 3 vittorie e 2 pareggi (sequenza N-V-V-V-N), segnando 11 gol e subendone 6. Non perde da 5 partite. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Eredivisie il Den Haag ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-V-P-P-V), con 9 gol fatti e 8 subiti. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza ancora vittorie."
      ],
      "bullets": []
     },
@@ -2933,9 +3006,10 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Ajax 2,7, Den Haag 1,3.",
-      "Gol subiti finora: Ajax 13, Den Haag 25.",
-      "In 4 delle ultime 5 partite del Den Haag sono stati segnati almeno tre gol."
+      "Media gol segnati: Ajax 2,7, Den Haag 1,3 a partita.",
+      "Gol subiti finora: Ajax 15, Den Haag 25.",
+      "In 3 delle ultime 5 partite dell'Ajax si sono segnati almeno tre gol.",
+      "In 4 delle ultime 5 partite del Den Haag si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -2945,12 +3019,12 @@
      "a": "Domenica 22 novembre alle 14:30, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
+     "q": "Dove si trovano classifica e risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2997,21 +3071,21 @@
     }
    ]
   },
-  "fb:567352": {
-   "fingerprint": "i534rm",
+  "fb:1001552227": {
+   "fingerprint": "ixsnsj",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 7 novembre alle 16:30 CD Nacional e Acad. Viseu si affrontano nella 11ª giornata di Primeira Liga. In classifica il CD Nacional è al 16° posto con 7 punti, mentre l'Acad. Viseu è al 6° posto con 20 punti."
+      "Go Ahead e Sittard si affrontano domenica 22 novembre alle 16:45 nella 13ª giornata di Eredivisie. In classifica il Go Ahead occupa l'8° posto con 17 punti, mentre il Sittard è al 7° con 20."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Primeira Liga il CD Nacional ha ottenuto 1 vittoria e 2 sconfitte, con sequenza P-V-P, segnando 3 gol e subendone 4.",
-      "Nelle ultime 3 partite di Primeira Liga l'Acad. Viseu ha ottenuto 3 vittorie, con sequenza V-V-V, segnando 6 gol e subendone 3. La squadra arriva da 3 vittorie consecutive."
+      "Nelle ultime 5 partite di Eredivisie il Go Ahead ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-V-P-V), segnando 8 gol e subendone 13. Tra le mura di casa, il bilancio stagionale riporta 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Eredivisie il Sittard ha raccolto 1 vittoria e 4 pareggi (sequenza N-N-V-N-N), con 7 gol fatti e 6 subiti. Non perde da 5 partite. In trasferta il bilancio stagionale è di 2 pareggi, senza vittorie."
      ],
      "bullets": []
     },
@@ -3019,80 +3093,24 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: CD Nacional 1,0, Acad. Viseu 1,5 a partita.",
-      "Gol subiti finora: CD Nacional 19, Acad. Viseu 12.",
-      "In tutte le ultime 3 partite dell'Acad. Viseu sono stati segnati almeno tre gol."
+      "Media gol segnati: Go Ahead 2,0, Sittard 1,7 a partita.",
+      "Gol subiti finora: Go Ahead 27, Sittard 20.",
+      "Nelle ultime 5 partite del Go Ahead, in 4 si sono segnati almeno tre gol."
      ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il CD Nacional, 1 vittoria per l'Acad. Viseu e 3 pareggi, con 14 gol complessivi, pari a una media di 2,8 a partita. L'ultimo confronto, disputato a marzo 2024 in Segunda Liga, è terminato CD Nacional 1-1 Acad. Viseu."
-     ],
-     "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Quando si gioca CD Nacional – Acad. Viseu?",
-     "a": "Sabato 7 novembre alle 16:30, ora italiana."
+     "q": "Quando si gioca Go Ahead – Sittard?",
+     "a": "Domenica 22 novembre alle 16:45, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
+     "a": "Puoi consultare la pagina [Eredivisie](/calcio/eredivisie) e la [classifica aggiornata](/calcio/eredivisie/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:567351": {
-   "fingerprint": "1klyrbb",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 8 novembre alle 16:30 il Santa Clara riceve il Gil Vicente per la 11ª giornata di Primeira Liga. In classifica il Santa Clara è al 4° posto con 21 punti, il Gil Vicente al 7° con 15."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 3 partite di Primeira Liga il Santa Clara ha raccolto 2 vittorie e 1 sconfitta (sequenza V-P-V), con 4 gol fatti e 2 subiti.",
-      "Nelle ultime 4 partite di Primeira Liga il Gil Vicente ha raccolto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-P-N), con 3 gol fatti e 2 subiti. In trasferta ha vinto tutte le 2 partite giocate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Santa Clara 1,5, Gil Vicente 0,8 a partita.",
-      "Gol subiti finora: Santa Clara 6, Gil Vicente 7."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 4 vittorie per il Santa Clara, 1 vittoria per il Gil Vicente e nessun pareggio, con 11 gol complessivi (media di 2,2 a partita). L'ultimo incrocio, a marzo 2026 in Primeira Liga, è finito Santa Clara 1-0 Gil Vicente."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Santa Clara – Gil Vicente?",
-     "a": "Domenica 8 novembre alle 16:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -6673,12 +6691,12 @@
    ]
   },
   "fb:1001545872": {
-   "fingerprint": "1cquz4g",
+   "fingerprint": "ireb15",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Gabon e Lesotho si affrontano mercoledì 11 novembre alle 18:00 per la 3ª giornata di Qualificazioni Coppa d'Africa. Si tratta di un confronto tra squadre di alta classifica: il Gabon è al 2° posto con 3 punti, il Lesotho al 4° con 0."
+      "Gabon e Lesotho si affrontano mercoledì 11 novembre alle 18:00 per la 3ª giornata di Qualificazioni Coppa d'Africa. Si tratta di un confronto tra squadre posizionate in alto in classifica: il Gabon è al 2° posto con 3 punti, il Lesotho al 4° con 0."
      ],
      "bullets": []
     },
@@ -6687,6 +6705,13 @@
      "paragraphs": [
       "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Gabon ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 2 gol fatti e 2 subiti.",
       "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Lesotho ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 4 subiti. Ha perso entrambe le ultime partite."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 2 confronti diretti il bilancio è di 1 vittoria per il Gabon, 0 vittorie per il Lesotho e 1 pareggio, con 2 gol complessivi (media di 1,0 a partita). L'ultimo incrocio, a ottobre 2024 in Qualificazioni Coppa d'Africa, è finito Lesotho 0-2 Gabon."
      ],
      "bullets": []
     }
@@ -6775,20 +6800,27 @@
    ]
   },
   "fb:1001545875": {
-   "fingerprint": "195x307",
+   "fingerprint": "b47c4z",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Costa d'Avorio e Gambia si sfidano mercoledì 11 novembre alle 18:00 per la 3ª giornata delle Qualificazioni Coppa d'Africa."
+      "Costa d'Avorio e Gambia si affrontano mercoledì 11 novembre alle 18:00 per la 3ª giornata di Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Costa d'Avorio ha ottenuto 2 vittorie (sequenza V-V), segnando 4 gol e non subendone nessuno.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Gambia ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 3."
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Costa d'Avorio ha raccolto 2 vittorie (sequenza V-V), con 4 gol fatti e 0 subiti.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Gambia ha raccolto 2 vittorie (sequenza V-V), con 6 gol fatti e 3 subiti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per il Costa d'Avorio, 0 vittorie per il Gambia e nessun pareggio, con 3 gol complessivi (media di 1,5 a partita). L'ultimo incrocio, a marzo 2025 in Qualificazioni Mondiali Africa, è finito Costa d'Avorio 1-0 Gambia."
      ],
      "bullets": []
     }
@@ -6800,11 +6832,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -6843,20 +6875,27 @@
    ]
   },
   "fb:1001545877": {
-   "fingerprint": "1val4z9",
+   "fingerprint": "uvalyb",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Mercoledì 11 novembre alle 18:00 il Mali ospita il Ruanda per la 3ª giornata di Qualificazioni Coppa d'Africa."
+      "Mercoledì 11 novembre alle 18:00 il Mali ospita il Ruanda nella 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Mali ha raccolto 2 vittorie (sequenza V-V), con 4 gol fatti e 1 subito.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Ruanda ha raccolto 2 vittorie (sequenza V-V), con 5 gol fatti e 2 subiti."
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Mali ha ottenuto 2 vittorie (sequenza V-V), segnando 4 gol e subendone 1.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Ruanda ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per il Mali, 0 vittorie per il Ruanda e nessun pareggio, con 4 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, a novembre 2021 nelle Qualificazioni Mondiali Africa, è terminato Ruanda 0-3 Mali."
      ],
      "bullets": []
     }
@@ -6877,12 +6916,12 @@
    ]
   },
   "fb:1001545878": {
-   "fingerprint": "rtbuwi",
+   "fingerprint": "1iiu1mb",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Marocco e Niger si affrontano mercoledì 11 novembre alle 18:00 per la 3ª giornata delle Qualificazioni Coppa d'Africa. È un confronto di alta classifica: il Marocco è al 1° posto con 6 punti, il Niger al 3° con 3."
+      "Marocco e Niger si affrontano mercoledì 11 novembre alle 18:00 nella 3ª giornata delle Qualificazioni Coppa d'Africa. Si tratta di un match tra due squadre di alta classifica: il Marocco è al 1° posto con 6 punti, mentre il Niger è al 3° con 3 punti."
      ],
      "bullets": []
     },
@@ -6893,6 +6932,13 @@
       "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Niger ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 3."
      ],
      "bullets": []
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per il Marocco, nessuna per il Niger e nessun pareggio, con 8 gol complessivi (media di 4,0 a partita). L'ultimo incontro, disputato a settembre 2025 nelle Qualificazioni Mondiali Africa, è terminato Marocco 5-0 Niger."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -6901,17 +6947,17 @@
      "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina dedicata alle [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001545879": {
-   "fingerprint": "iw7h4p",
+   "fingerprint": "11fn6xf",
    "sections": [
     {
      "id": "presentazione",
@@ -6925,6 +6971,13 @@
      "paragraphs": [
       "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Mozambico ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 5 gol fatti e 2 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
       "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Etiopia ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 2 subiti. Ha perso le ultime 2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 1 confronti diretti il bilancio è di 0 vittorie per il Mozambico, 0 vittorie per l'Etiopia e 1 pareggio, con 0 gol complessivi (media di 0,0 a partita). L'ultimo incrocio, a gennaio 2023 in African Nations Championship, è finito Etiopia 0-0 Mozambico."
      ],
      "bullets": []
     }
@@ -6945,7 +6998,7 @@
    ]
   },
   "fb:1001545880": {
-   "fingerprint": "1nupd4c",
+   "fingerprint": "4wh2i8",
    "sections": [
     {
      "id": "presentazione",
@@ -6957,8 +7010,15 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa la Nigeria ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 4 subiti.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa la Tanzania ha raccolto 1 pareggio e 1 sconfitta (sequenza P-N), con 1 gol fatto e 3 subiti."
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Nigeria ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 4 subiti.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Tanzania ha raccolto 1 pareggio e 1 sconfitta (sequenza P-N), con 1 gol fatto e 3 subiti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 1 confronti diretti il bilancio è di 1 vittoria per il Nigeria, 0 vittorie per il Tanzania e nessun pareggio, con 3 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, a dicembre 2025 in Coppa d'Africa, è finito Nigeria 2-1 Tanzania."
      ],
      "bullets": []
     }
@@ -6979,20 +7039,27 @@
    ]
   },
   "fb:1001545881": {
-   "fingerprint": "xytqy",
+   "fingerprint": "170rl5q",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Mercoledì 11 novembre alle 18:00 il Senegal ospita il Sudan per la 3ª giornata delle Qualificazioni Coppa d'Africa."
+      "Mercoledì 11 novembre alle 18:00 il Senegal affronta in casa il Sudan, nella 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Senegal ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 2 gol fatti e 1 subito.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Sudan ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 4 subiti."
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Senegal ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1.",
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Sudan ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 4."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Senegal, nessuna per il Sudan e 3 pareggi, con 8 gol complessivi (media di 1,6 a partita). L'ultimo incontro, a gennaio 2026 in Coppa d'Africa, si è concluso Senegal 3-1 Sudan."
      ],
      "bullets": []
     }
@@ -7004,7 +7071,7 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "a": "Nella pagina [dedicata alle Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -7047,20 +7114,27 @@
    ]
   },
   "fb:1001545883": {
-   "fingerprint": "1h2pdxt",
+   "fingerprint": "1dkawxe",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Mercoledì 11 novembre alle 18:00 il Tunisia ospita il Libia per la 3ª giornata delle Qualificazioni Coppa d'Africa."
+      "La sfida è in programma mercoledì 11 novembre alle 18:00: la Tunisia ospita la Libia nella 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Tunisia ha ottenuto 2 pareggi (sequenza N-N), segnando 3 gol e subendone 3. In casa il bilancio stagionale è di 2 pareggi, senza vittorie finora.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Libia ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 2 gol e subendone 3."
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa la Tunisia ha ottenuto 2 pareggi (sequenza N-N), segnando 3 gol e subendone 3. In casa il bilancio stagionale è di 2 pareggi, senza vittorie finora.",
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa la Libia ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 2 gol e subendone 3."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 5 vittorie per la Tunisia, 0 per la Libia e nessun pareggio, con 19 gol complessivi (media di 3,8 a partita). L'ultimo incontro, a marzo 2023 nelle Qualificazioni Coppa d'Africa, è terminato Libia 0-1 Tunisia."
      ],
      "bullets": []
     }
@@ -7076,7 +7150,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -16034,6 +16108,78 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina di [Serie A](/calcio/serie-a)."
+    }
+   ]
+  },
+  "fb:558536": {
+   "fingerprint": "1eoo38w",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Milan ha vinto in trasferta per 1-2 contro il Genoa, con un successo di misura. La partita, valida per la 11ª giornata di Serie A, si è giocata domenica 8 novembre; il primo tempo si era chiuso 0-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Genoa è al 12° posto con 13 punti, mentre il Milan è al 5° con 21. [Vai alla classifica completa](/calcio/serie-a/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Genoa tornerà in campo domenica 22 novembre alle 12:30, in trasferta contro il Sassuolo. Il Milan giocherà domenica 22 novembre alle 15:00, in casa contro il Frosinone."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Genoa – Milan?",
+     "a": "1-2 (0-2 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Serie A](/calcio/serie-a)."
+    }
+   ]
+  },
+  "fb:558538": {
+   "fingerprint": "tbuy77",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Trasferta di misura per l'Atalanta, che ha superato il Monza per 0-1. La gara, valida per la 11ª giornata di Serie A, si è disputata domenica 8 novembre; il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite giocate finora, il Monza è al 18° posto con 7 punti, mentre l'Atalanta è al 13° con 11. [Consulta la classifica completa](/calcio/serie-a/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Atalanta tornerà in campo domenica 22 novembre alle 20:45, ospitando l'Inter."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Monza – Atalanta?",
+     "a": "0-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Serie A](/calcio/serie-a)."
     }
    ]
   },
