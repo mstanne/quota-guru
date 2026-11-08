@@ -15,6 +15,9 @@ import img5 from "../assets/guides/basket-over-under-handicap.svg";
 import img6 from "../assets/guides/scommesse-in-diretta.svg";
 import { principiantiGuides } from "./guides/principianti";
 import { agenzieGuides } from "./guides/agenzie";
+import { mercatiGuides } from "./guides/mercati";
+import { regoleGuides } from "./guides/regole";
+import { strumentiGuides } from "./guides/strumenti";
 import { quoteGuides } from "./guides/quote";
 import { analisiGuides } from "./guides/analisi";
 import { budgetGuides } from "./guides/budget";
@@ -613,6 +616,10 @@ export const guides: Guide[] = [
   ...sportGuides,
   ...direttaGuides,
   ...academyGuides,
+  // newer guides: after the existing ones of their category
+  ...regoleGuides,
+  ...mercatiGuides,
+  ...strumentiGuides,
 ].sort((a, b) => categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category));
 
 /** Related guides ("Articoli correlati"): the explicit list, completed with same-category guides, max 4. */

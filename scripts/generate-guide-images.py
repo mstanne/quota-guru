@@ -922,11 +922,308 @@ def controllo_bolletta():
     return frame("".join(b), "Controllo di una bolletta con lente d'ingrandimento: eventi vinti e un evento annullato valutato a quota 1,00")
 
 
+def _tball(bx, by, r):
+    return (f'<circle cx="{bx}" cy="{by}" r="{r}" fill="#D4E34A"/>'
+            f'<path d="M{bx-r*0.92},{by-r*0.38} C{bx-r*0.2},{by-r*0.2} {bx-r*0.2},{by+r*0.2} {bx-r*0.92},{by+r*0.38}" fill="none" stroke="{LIGHT}" stroke-width="{r*0.08:.0f}" stroke-linecap="round"/>'
+            f'<path d="M{bx+r*0.92},{by-r*0.38} C{bx+r*0.2},{by-r*0.2} {bx+r*0.2},{by+r*0.2} {bx+r*0.92},{by+r*0.38}" fill="none" stroke="{LIGHT}" stroke-width="{r*0.08:.0f}" stroke-linecap="round"/>')
+
+
+def _bball(bx, by, r):
+    seam = f'stroke="{DEEP}" stroke-width="{r*0.06:.0f}" fill="none"'
+    return (f'<circle cx="{bx}" cy="{by}" r="{r}" fill="{ORANGE}"/>'
+            f'<line x1="{bx-r}" y1="{by}" x2="{bx+r}" y2="{by}" {seam}/><line x1="{bx}" y1="{by-r}" x2="{bx}" y2="{by+r}" {seam}/>'
+            f'<path d="M{bx-r*0.7},{by-r*0.71} C{bx-r*0.3},{by-r*0.3} {bx-r*0.3},{by+r*0.3} {bx-r*0.7},{by+r*0.71}" {seam}/>'
+            f'<path d="M{bx+r*0.7},{by-r*0.71} C{bx+r*0.3},{by-r*0.3} {bx+r*0.3},{by+r*0.3} {bx+r*0.7},{by+r*0.71}" {seam}/>')
+
+
+def _goal(x, y, w, h):
+    out = [f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{PANEL}" stroke="{LIGHT}" stroke-width="12"/>']
+    for k in range(1, 8):
+        out.append(f'<line x1="{x + k*w/8:.0f}" y1="{y}" x2="{x + k*w/8:.0f}" y2="{y+h}" stroke="{LINE}" stroke-width="3"/>')
+    for k in range(1, 5):
+        out.append(f'<line x1="{x}" y1="{y + k*h/5:.0f}" x2="{x+w}" y2="{y + k*h/5:.0f}" stroke="{LINE}" stroke-width="3"/>')
+    return "".join(out)
+
+
+def sistemi():
+    b = []
+    labels = [("A", "1,80"), ("B", "2,10"), ("C", "1,60"), ("D", "2,00")]
+    for i, (l, q) in enumerate(labels):
+        y = 190 + i * 130
+        b.append(chip(150, y, 90, 90, l, ORANGE if i < 3 else LIGHT, DEEP, 44))
+        b.append(text(270, y + 60, q, 40, GREY, weight=600))
+    b.append(f'<path d="M430,450 L540,450" stroke="{MUTED}" stroke-width="10" stroke-linecap="round"/>')
+    b.append(f'<path d="M520,425 L550,450 L520,475" fill="none" stroke="{MUTED}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>')
+    pairs = ["AB", "AC", "AD", "BC", "BD", "CD"]
+    for i, p in enumerate(pairs):
+        x, y = 620 + (i % 3) * 280, 200 + (i // 3) * 210
+        win = "D" not in p
+        b.append(panel(x, y, 240, 160, 22, PANEL, GREEN if win else LINE))
+        b.append(text(x + 120, y + 92, f"{p[0]} + {p[1]}", 46, LIGHT if win else MUTED, "middle"))
+        if win:
+            b.append(check(x + 205, y + 40, 0.8, GREEN, 7))
+    b.append(chip(620, 650, 800, 70, "Sistema 2 su 4 · 6 doppie × 1 € = 6 €", LINE, LIGHT, 32))
+    return frame("".join(b), "Quattro esiti combinati in un sistema due su quattro con sei doppie")
+
+
+def boost():
+    b = [panel(160, 220, 560, 460)]
+    b.append(text(440, 300, "Quota", 36, MUTED, "middle", 600))
+    b.append(text(440, 430, "1,80", 110, GREY, "middle"))
+    b.append(f'<line x1="300" y1="400" x2="580" y2="400" stroke="{RED}" stroke-width="12" stroke-linecap="round"/>')
+    b.append(chip(260, 520, 360, 80, "2,00", ORANGE, DEEP, 56))
+    b.append(text(440, 650, "maggiorata · max 10 €", 28, MUTED, "middle", 600))
+    # margin bars
+    for i, (lab, v, col) in enumerate([("Somma prob. normali", 105.6, GREY), ("Con la maggiorazione", 100.0, GREEN)]):
+        y = 300 + i * 190
+        b.append(text(830, y - 20, lab, 30, GREY, weight=600))
+        b.append(f'<rect x="830" y="{y}" width="560" height="70" rx="16" fill="{PANEL}"/>')
+        b.append(f'<rect x="830" y="{y}" width="{560*v/110:.0f}" height="70" rx="16" fill="{col}"/>')
+        b.append(text(856, y + 50, f"{str(v).replace('.', ',')}%", 34, DEEP))
+    b.append(f'<line x1="{830+560*100/110:.0f}" y1="270" x2="{830+560*100/110:.0f}" y2="600" stroke="{LIGHT}" stroke-width="4" stroke-dasharray="10 8"/>')
+    return frame("".join(b), "Quota maggiorata da 1,80 a 2,00 e somma delle probabilità implicite che scende al 100%")
+
+
+def limiti():
+    b = []
+    b.append(panel(170, 240, 470, 420))
+    b.append(text(405, 330, "Importo minimo", 34, MUTED, "middle", 600))
+    b.append(text(405, 470, "1 €", 120, LIGHT, "middle"))
+    b.append(chip(275, 540, 260, 64, "unità 0,05 €", LINE, LIGHT, 30))
+    b.append(panel(760, 240, 670, 420))
+    b.append(text(1095, 330, "Vincita massima", 34, MUTED, "middle", 600))
+    b.append(text(1095, 470, "50.000 €", 110, ORANGE, "middle"))
+    b.append(f'<rect x="830" y="540" width="530" height="40" rx="20" fill="{DEEP}"/>')
+    b.append(f'<rect x="830" y="540" width="530" height="40" rx="20" fill="{AMBER}" fill-opacity=".85"/>')
+    b.append(f'<rect x="1340" y="520" width="14" height="80" rx="7" fill="{LIGHT}"/>')
+    b.append(text(1095, 630, "tetto per scommessa", 28, MUTED, "middle", 600))
+    return frame("".join(b), "Importo minimo di una giocata e vincita massima per scommessa")
+
+
+def dignita():
+    b = []
+    # megaphone crossed
+    b.append(f'<path d="M260,400 L520,280 L520,620 L260,500 Z" fill="{PANEL}" stroke="{GREY}" stroke-width="10" stroke-linejoin="round"/>')
+    b.append(f'<rect x="190" y="390" width="80" height="120" rx="14" fill="{GREY}"/>')
+    b.append(f'<path d="M300,505 L330,600 L380,600 L360,520" fill="{GREY}"/>')
+    for k, r in enumerate([70, 120]):
+        b.append(arc(560, 450, r, -40, 40, GREY, 10, "round", 0.6))
+    b.append(f'<circle cx="430" cy="450" r="250" fill="none" stroke="{RED}" stroke-width="24"/>')
+    b.append(f'<line x1="253" y1="273" x2="607" y2="627" stroke="{RED}" stroke-width="24" stroke-linecap="round"/>')
+    # rule card
+    b.append(panel(860, 220, 560, 460))
+    b.append(text(910, 300, "Art. 9", 44, ORANGE))
+    b.append(text(910, 350, "D.L. 87/2018", 30, MUTED, weight=600))
+    for i, (lab, ok) in enumerate([("Pubblicità", False), ("Sponsorizzazioni", False), ("Gioco responsabile", True), ("Informazione", True)]):
+        y = 420 + i * 62
+        b.append(text(960, y + 12, lab, 32, LIGHT, weight=600))
+        if ok:
+            b.append(check(925, y, 0.9, GREEN, 8))
+        else:
+            b.append(f'<line x1="910" y1="{y-14}" x2="938" y2="{y+14}" stroke="{RED}" stroke-width="8" stroke-linecap="round"/><line x1="938" y1="{y-14}" x2="910" y2="{y+14}" stroke="{RED}" stroke-width="8" stroke-linecap="round"/>')
+    return frame("".join(b), "Megafono barrato e articolo 9 del Decreto Dignità: pubblicità vietata, informazione consentita")
+
+
+def tasse():
+    rows = [("1043", "1", "1,85", ORANGE), ("1057", "GG", "1,70", GREEN)]
+    b = [_ticket(200, 160, 440, rows, "BOLLETTA", ("Vincita netta", "31,45 €"))]
+    b.append(shield(860, 230, 240, 290))
+    b.append(text(980, 400, "ADM", 56, LIGHT, "middle"))
+    b.append(text(980, 580, "imposta a carico", 30, MUTED, "middle", 600))
+    b.append(text(980, 620, "del concessionario", 30, MUTED, "middle", 600))
+    b.append(panel(1180, 260, 250, 320, 24))
+    b.append(text(1305, 360, "730", 54, GREY, "middle"))
+    b.append(f'<line x1="1220" y1="300" x2="1390" y2="540" stroke="{GREEN}" stroke-width="0"/>')
+    b.append(chip(1215, 430, 180, 60, "nessuna", GREEN, DEEP, 28))
+    b.append(text(1305, 540, "da dichiarare", 26, MUTED, "middle", 600))
+    return frame("".join(b), "Bolletta con vincita netta, imposta pagata dal concessionario ADM e nessuna vincita da dichiarare")
+
+
+def verifica():
+    b = []
+    b.append(f'<rect x="170" y="230" width="500" height="320" rx="26" fill="{LIGHT}"/>')
+    b.append(f'<rect x="170" y="230" width="500" height="70" rx="26" fill="{GREEN}"/><rect x="170" y="270" width="500" height="30" fill="{GREEN}"/>')
+    b.append(f'<circle cx="280" cy="410" r="58" fill="{GREY}"/><circle cx="280" cy="394" r="24" fill="{LIGHT}"/><path d="M240,450 a40,34 0 0 1 80,0" fill="{LIGHT}"/>')
+    b.append(text(370, 390, "M. ROSSI", 36, NAVY))
+    for i, w in enumerate([220, 180]):
+        b.append(f'<rect x="370" y="{420 + i*36}" width="{w}" height="16" rx="8" fill="{MUTED}"/>')
+    b.append(text(420, 640, "documento", 30, MUTED, "middle", 600))
+    b.append(chip(730, 350, 120, 120, "=", PANEL, LIGHT, 72))
+    b.append(f'<rect x="910" y="250" width="500" height="300" rx="26" fill="{PANEL}" stroke="{LINE}" stroke-width="3"/>')
+    b.append(f'<rect x="910" y="320" width="500" height="54" fill="{DEEP}"/>')
+    b.append(f'<rect x="950" y="420" width="70" height="52" rx="8" fill="{AMBER}"/>')
+    b.append(text(950, 520, "M. ROSSI", 36, LIGHT))
+    b.append(text(1160, 640, "metodo di pagamento intestato", 30, MUTED, "middle", 600))
+    b.append(check(1350, 470, 1.6, GREEN, 14))
+    return frame("".join(b), "Documento d'identità e carta di pagamento intestati alla stessa persona")
+
+
+def under_over():
+    b = []
+    probs = [0.074, 0.193, 0.251, 0.218, 0.141, 0.074]
+    base, x0, bw = 690, 230, 170
+    for k, p in enumerate(probs):
+        x = x0 + k * 190
+        h = p / 0.26 * 400
+        col = GREEN if k <= 2 else ORANGE
+        b.append(f'<rect x="{x}" y="{base-h:.0f}" width="{bw}" height="{h:.0f}" rx="12" fill="{col}" fill-opacity=".9"/>')
+        b.append(text(x + bw / 2, base + 50, str(k) if k < 5 else "5+", 38, GREY, "middle"))
+    xl = x0 + 3 * 190 - 10
+    b.append(f'<line x1="{xl}" y1="200" x2="{xl}" y2="{base+10}" stroke="{LIGHT}" stroke-width="6" stroke-dasharray="14 10"/>')
+    b.append(chip(xl - 70, 150, 140, 56, "2,5", LIGHT, DEEP, 32))
+    b.append(chip(260, 200, 220, 60, "Under", GREEN, DEEP, 32))
+    b.append(chip(1120, 200, 200, 60, "Over", ORANGE, DEEP, 32))
+    b.append(text(800, 800, "gol totali", 30, MUTED, "middle", 600))
+    return frame("".join(b), "Distribuzione del numero di gol con la soglia 2,5 che separa Under e Over")
+
+
+def goal_nogoal():
+    b = [_goal(160, 280, 480, 280), _goal(960, 280, 480, 280)]
+    b.append(football(400, 470, 62))
+    b.append(football(1200, 470, 62))
+    b.append(chip(330, 610, 140, 60, "1+", GREEN, DEEP, 34))
+    b.append(chip(1130, 610, 140, 60, "1+", GREEN, DEEP, 34))
+    b.append(chip(700, 360, 200, 120, "GG", ORANGE, DEEP, 64))
+    b.append(text(800, 230, "entrambe segnano", 34, GREY, "middle", 600))
+    return frame("".join(b), "Due porte con un pallone in rete ciascuna: entrambe le squadre segnano")
+
+
+def corner_cartellini():
+    b = [pitch(140, 200, 760, 500)]
+    b.append(f'<line x1="170" y1="670" x2="170" y2="470" stroke="{LIGHT}" stroke-width="8"/>')
+    b.append(f'<path d="M170,470 L290,500 L170,540 Z" fill="{ORANGE}"/>')
+    b.append(arc(140, 700, 60, -90, 0, LIGHT, 5))
+    b.append(chip(350, 560, 260, 64, "Over 9,5 corner", PANEL, LIGHT, 28))
+    # cards
+    b.append(f'<rect x="1010" y="230" width="190" height="270" rx="16" fill="{AMBER}" transform="rotate(-10 1105 365)"/>')
+    b.append(f'<rect x="1190" y="260" width="190" height="270" rx="16" fill="{RED}" transform="rotate(8 1285 395)"/>')
+    b.append(chip(1010, 600, 160, 60, "giallo 1", PANEL, LIGHT, 28))
+    b.append(chip(1220, 600, 160, 60, "rosso 2", PANEL, LIGHT, 28))
+    return frame("".join(b), "Bandierina del calcio d'angolo e cartellini giallo e rosso con il loro valore")
+
+
+def marcatori():
+    b = [pitch(140, 200, 900, 500)]
+    b.append(f'<path d="M520,560 C700,420 860,380 1000,440" fill="none" stroke="{LIGHT}" stroke-opacity=".4" stroke-width="5" stroke-dasharray="3 16" stroke-linecap="round"/>')
+    b.append(football(1000, 445, 34))
+    # jersey
+    jx, jy = 1130, 230
+    b.append(f'<path d="M{jx+60},{jy} L{jx+120},{jy+30} L{jx+180},{jy} L{jx+260},{jy+50} L{jx+225},{jy+140} L{jx+200},{jy+125} L{jx+200},{jy+380} L{jx+40},{jy+380} L{jx+40},{jy+125} L{jx+15},{jy+140} L{jx-20},{jy+50} Z" fill="{ORANGE}"/>')
+    b.append(text(jx + 120, jy + 280, "9", 150, DEEP, "middle"))
+    b.append(chip(1150, 650, 220, 60, "segna", GREEN, DEEP, 30))
+    return frame("".join(b), "Pallone verso la porta e maglia numero 9 di un attaccante")
+
+
+def esatto():
+    b = []
+    from math import exp, factorial
+    p = lambda l, k: exp(-l) * l ** k / factorial(k)
+    x0, y0, c = 180, 220, 112
+    for i in range(4):
+        b.append(text(x0 - 40, y0 + i * c + 68, str(i), 34, MUTED, "middle"))
+        b.append(text(x0 + i * c + c / 2, y0 - 26, str(i), 34, MUTED, "middle"))
+        for j in range(4):
+            v = p(1.5, i) * p(1.1, j)
+            b.append(f'<rect x="{x0 + j*c}" y="{y0 + i*c}" width="{c-8}" height="{c-8}" rx="12" fill="{ORANGE}" fill-opacity="{0.1 + v/0.123*0.85:.2f}"/>')
+            b.append(text(x0 + j * c + (c - 8) / 2, y0 + i * c + 66, f"{v*100:.0f}%", 26, LIGHT if v > 0.06 else GREY, "middle"))
+    # half-time / full-time board
+    b.append(panel(860, 220, 570, 450))
+    b.append(text(1145, 300, "Parziale / Finale", 36, MUTED, "middle", 600))
+    for i, (ht, ft, lab) in enumerate([("0-0", "1-0", "X/1"), ("1-0", "2-0", "1/1"), ("1-0", "1-2", "1/2")]):
+        y = 350 + i * 100
+        b.append(text(920, y + 50, ht, 40, GREY))
+        b.append(text(1050, y + 50, "→", 40, MUTED))
+        b.append(text(1120, y + 50, ft, 40, LIGHT))
+        b.append(chip(1270, y + 6, 120, 60, lab, ORANGE if i == 2 else LINE, DEEP if i == 2 else LIGHT, 30))
+    return frame("".join(b), "Griglia delle probabilità dei risultati esatti e tabella parziale finale")
+
+
+def tennis_ritiri():
+    b = [panel(170, 230, 820, 440)]
+    for i, (n, s, ret) in enumerate([("Giocatore A", ["6", "3", "2"], False), ("Giocatore B", ["4", "6", "1"], True)]):
+        y = 330 + i * 150
+        b.append(text(220, y + 30, n, 40, MUTED if ret else LIGHT))
+        for k, v in enumerate(s):
+            b.append(f'<rect x="{560 + k*110}" y="{y-30}" width="90" height="90" rx="14" fill="{DEEP}"/>')
+            b.append(text(605 + k * 110, y + 32, v, 44, LIGHT, "middle"))
+        if ret:
+            b.append(chip(220, y + 60, 170, 56, "RIT.", RED, LIGHT, 30))
+    b.append(_tball(1230, 380, 130))
+    b.append(chip(1080, 580, 300, 60, "rimborso?", AMBER, DEEP, 30))
+    return frame("".join(b), "Tabellone di una partita di tennis con ritiro di un giocatore al terzo set")
+
+
+def props():
+    b = [_bball(330, 450, 170)]
+    rows = [("PTS", 27, 24.5, True), ("REB", 6, 8.5, False), ("AST", 9, 7.5, True)]
+    for i, (lab, v, line, over) in enumerate(rows):
+        y = 230 + i * 150
+        b.append(text(640, y + 60, lab, 40, GREY))
+        b.append(f'<rect x="780" y="{y+20}" width="560" height="64" rx="16" fill="{PANEL}"/>')
+        b.append(f'<rect x="780" y="{y+20}" width="{560*v/30:.0f}" height="64" rx="16" fill="{GREEN if over else MUTED}"/>')
+        lx = 780 + 560 * line / 30
+        b.append(f'<line x1="{lx:.0f}" y1="{y+6}" x2="{lx:.0f}" y2="{y+98}" stroke="{LIGHT}" stroke-width="5"/>')
+        b.append(text(1360, y + 64, str(v), 38, LIGHT))
+        b.append(text(lx, y + 4, str(line).replace(".", ","), 24, MUTED, "middle", 600))
+    return frame("".join(b), "Pallone da basket e statistiche di un giocatore rispetto alle soglie di punti, rimbalzi e assist")
+
+
+def modello():
+    b = []
+    from math import exp, factorial
+    p = lambda l, k: exp(-l) * l ** k / factorial(k)
+    base = 650
+    for k in range(6):
+        for s, (lam, col, dx) in enumerate([(1.5, ORANGE, 0), (1.1, GREEN, 80)]):
+            h = p(lam, k) / 0.37 * 380
+            x = 180 + k * 200 + dx
+            b.append(f'<rect x="{x}" y="{base-h:.0f}" width="70" height="{h:.0f}" rx="10" fill="{col}"/>')
+        b.append(text(180 + k * 200 + 75, base + 50, str(k), 36, GREY, "middle"))
+    b.append(chip(180, 170, 300, 60, "Casa · 1,5 gol", ORANGE, DEEP, 28))
+    b.append(chip(510, 170, 300, 60, "Ospite · 1,1 gol", GREEN, DEEP, 28))
+    b.append(panel(1150, 260, 300, 300, 24))
+    for i, (lab, v) in enumerate([("1", "46%"), ("X", "26%"), ("2", "28%")]):
+        y = 330 + i * 80
+        b.append(text(1190, y + 20, lab, 38, MUTED))
+        b.append(text(1410, y + 20, v, 38, LIGHT, "end"))
+    b.append(text(800, 760, "gol segnati", 30, MUTED, "middle", 600))
+    return frame("".join(b), "Distribuzioni di Poisson dei gol delle due squadre e probabilità 1X2 che ne derivano")
+
+
+def tv():
+    b = [f'<rect x="200" y="200" width="760" height="460" rx="30" fill="{DEEP}" stroke="{GREY}" stroke-width="10"/>']
+    b.append(pitch(250, 250, 660, 360, LIGHT, 0.4))
+    b.append(football(580, 430, 34))
+    b.append(f'<rect x="520" y="660" width="120" height="60" fill="{GREY}"/><rect x="440" y="720" width="280" height="20" rx="10" fill="{GREY}"/>')
+    b.append(chip(260, 270, 160, 50, "LIVE", RED, LIGHT, 26))
+    for i, (lab, col) in enumerate([("Serie A", ORANGE), ("Champions", GREEN), ("Premier", AMBER), ("LaLiga", LIGHT)]):
+        y = 220 + i * 120
+        b.append(panel(1060, y, 380, 90, 20))
+        b.append(f'<circle cx="1110" cy="{y+45}" r="16" fill="{col}"/>')
+        b.append(text(1145, y + 57, lab, 34, LIGHT))
+    return frame("".join(b), "Televisore con una partita in diretta e l'elenco delle competizioni")
+
+
 SCENES2 = {
     "agenzie-scommesse-fisiche-o-online": agenzie_fisico_online,
     "prenotatore-scommesse": prenotatore,
     "bolletta-scommesse": bolletta,
     "controllare-una-bolletta": controllo_bolletta,
+    "sistemi-integrali-e-ridotti": sistemi,
+    "quote-maggiorate": boost,
+    "vincita-massima-e-importo-minimo": limiti,
+    "decreto-dignita-scommesse": dignita,
+    "tasse-sulle-vincite": tasse,
+    "verifica-del-conto-di-gioco": verifica,
+    "under-over-2-5": under_over,
+    "goal-no-goal": goal_nogoal,
+    "calci-d-angolo-e-cartellini": corner_cartellini,
+    "scommesse-marcatori": marcatori,
+    "risultato-esatto-parziale-finale": esatto,
+    "tennis-ritiri-e-walkover": tennis_ritiri,
+    "nba-player-props": props,
+    "come-funzionano-le-probabilita-di-quotaguru": modello,
+    "calcio-in-tv-diritti": tv,
     "siti-scommesse-legali": siti_legali,
     "aprire-un-conto-di-gioco": aprire_conto,
     "glossario-scommesse": glossario,

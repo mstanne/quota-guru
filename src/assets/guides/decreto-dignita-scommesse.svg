@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+<title>Megafono barrato e articolo 9 del Decreto Dignità: pubblicità vietata, informazione consentita</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0F1A2C"/><stop offset="1" stop-color="#0A1220"/>
+  </linearGradient>
+  <radialGradient id="glowO"><stop offset="0" stop-color="#FB6801" stop-opacity=".22"/><stop offset="1" stop-color="#FB6801" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowG"><stop offset="0" stop-color="#06BA55" stop-opacity=".18"/><stop offset="1" stop-color="#06BA55" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#EEF0F3" fill-opacity=".07"/></pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="url(#dots)"/>
+<circle cx="1330" cy="170" r="520" fill="url(#glowO)"/>
+<circle cx="260" cy="780" r="520" fill="url(#glowG)"/>
+<g font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="700">
+<path d="M260,400 L520,280 L520,620 L260,500 Z" fill="#16243B" stroke="#BECED8" stroke-width="10" stroke-linejoin="round"/><rect x="190" y="390" width="80" height="120" rx="14" fill="#BECED8"/><path d="M300,505 L330,600 L380,600 L360,520" fill="#BECED8"/><path d="M613.6,405.0 A70,70 0 0 1 613.6,495.0" fill="none" stroke="#BECED8" stroke-width="10" stroke-linecap="round" stroke-opacity="0.6"/><path d="M651.9,372.9 A120,120 0 0 1 651.9,527.1" fill="none" stroke="#BECED8" stroke-width="10" stroke-linecap="round" stroke-opacity="0.6"/><circle cx="430" cy="450" r="250" fill="none" stroke="#E5484D" stroke-width="24"/><line x1="253" y1="273" x2="607" y2="627" stroke="#E5484D" stroke-width="24" stroke-linecap="round"/><rect x="860" y="220" width="560" height="460" rx="28" fill="#16243B" stroke="#2A3D59" stroke-width="2"/><text x="910" y="300" font-size="44" fill="#FB6801" text-anchor="start" font-weight="700" fill-opacity="1">Art. 9</text><text x="910" y="350" font-size="30" fill="#7F93AE" text-anchor="start" font-weight="600" fill-opacity="1">D.L. 87/2018</text><text x="960" y="432" font-size="32" fill="#EEF0F3" text-anchor="start" font-weight="600" fill-opacity="1">Pubblicità</text><line x1="910" y1="406" x2="938" y2="434" stroke="#E5484D" stroke-width="8" stroke-linecap="round"/><line x1="938" y1="406" x2="910" y2="434" stroke="#E5484D" stroke-width="8" stroke-linecap="round"/><text x="960" y="494" font-size="32" fill="#EEF0F3" text-anchor="start" font-weight="600" fill-opacity="1">Sponsorizzazioni</text><line x1="910" y1="468" x2="938" y2="496" stroke="#E5484D" stroke-width="8" stroke-linecap="round"/><line x1="938" y1="468" x2="910" y2="496" stroke="#E5484D" stroke-width="8" stroke-linecap="round"/><text x="960" y="556" font-size="32" fill="#EEF0F3" text-anchor="start" font-weight="600" fill-opacity="1">Gioco responsabile</text><path d="M908.8,544.0 L920.5,555.7 L943.0,531.4" fill="none" stroke="#06BA55" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><text x="960" y="618" font-size="32" fill="#EEF0F3" text-anchor="start" font-weight="600" fill-opacity="1">Informazione</text><path d="M908.8,606.0 L920.5,617.7 L943.0,593.4" fill="none" stroke="#06BA55" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
