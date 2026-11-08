@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T07:04:19.842Z",
+  "updatedAt": "2026-11-08T07:21:32.777Z",
   "football": {
     "details": {
       "ok": true
@@ -9,7 +9,7 @@
     },
     "ok": true,
     "requests": 1,
-    "remainingToday": 6771,
+    "remainingToday": 6504,
     "matches": 219,
     "teamSeasons": 588
   },
@@ -22,12 +22,12 @@
     },
     "ok": true,
     "requests": 9,
-    "remainingToday": 7404,
+    "remainingToday": 7394,
     "games": 38,
     "teamSeasons": 60
   },
   "calendarioCalcio": {
-    "updatedAt": "2026-11-08T07:02:48.247Z",
+    "updatedAt": "2026-11-08T07:19:09.653Z",
     "source": "API-Football",
     "ok": true,
     "competitions": {
@@ -82,17 +82,93 @@
       "BSA": {
         "ok": true,
         "matches": 79
+      },
+      "WC": {
+        "ok": true,
+        "matches": 0
+      },
+      "UNL": {
+        "ok": true,
+        "matches": 156
+      },
+      "EURO": {
+        "ok": true,
+        "matches": 0
+      },
+      "EUROQ": {
+        "ok": true,
+        "matches": 0
+      },
+      "WCQE": {
+        "ok": true,
+        "matches": 0
+      },
+      "WCQSA": {
+        "ok": true,
+        "matches": 0
+      },
+      "COPA": {
+        "ok": true,
+        "matches": 0
+      },
+      "WCQAF": {
+        "ok": true,
+        "matches": 0
+      },
+      "AFCON": {
+        "ok": true,
+        "matches": 0
+      },
+      "AFCONQ": {
+        "ok": true,
+        "matches": 96
+      },
+      "WCQAS": {
+        "ok": true,
+        "matches": 0
+      },
+      "ASIA": {
+        "ok": true,
+        "matches": 0
+      },
+      "ASIAQ": {
+        "ok": true,
+        "matches": 0
+      },
+      "WCQNA": {
+        "ok": true,
+        "matches": 0
+      },
+      "GOLD": {
+        "ok": true,
+        "matches": 0
+      },
+      "CNL": {
+        "ok": true,
+        "matches": 103
+      },
+      "WCQOC": {
+        "ok": true,
+        "matches": 0
+      },
+      "WCQPO": {
+        "ok": true,
+        "matches": 0
+      },
+      "FRI": {
+        "ok": true,
+        "matches": 309
       }
     },
-    "requests": 41,
-    "remainingToday": 6811
+    "requests": 253,
+    "remainingToday": 6705
   },
   "calendarioNba": {
-    "updatedAt": "2026-11-08T07:03:00.573Z",
+    "updatedAt": "2026-11-08T07:20:13.542Z",
     "source": "API-NBA",
     "ok": true,
     "games": 241,
     "requests": 1,
-    "remainingToday": 7412
+    "remainingToday": 7402
   }
 }
