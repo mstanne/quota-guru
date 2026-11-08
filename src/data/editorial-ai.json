@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-08T18:01:52.075Z",
+ "generatedAt": "2026-11-08T18:21:27.867Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558529": {
@@ -412,20 +412,20 @@
    ]
   },
   "fb:1001601610": {
-   "fingerprint": "1k90lsr",
+   "fingerprint": "4so0bl",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 15:00 la Sampdoria ospita il Benevento nella 12ª giornata di Serie B. In classifica la Sampdoria occupa il 19° posto con 8 punti, mentre il Benevento è al 6° posto con 16."
+      "La Sampdoria ospita il Benevento sabato 21 novembre alle 15:00, nell'ambito della 12ª giornata di Serie B. In classifica la Sampdoria occupa il 19° posto con 8 punti, mentre il Benevento è al 6° con 16."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie B la Sampdoria ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza P-P-N-P-V. Ha segnato 5 gol e ne ha subiti 9. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 5 partite di Serie B il Benevento ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta, con la sequenza N-V-N-P-N. Ha segnato 7 gol e ne ha subiti 6. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 5 partite di Serie B la Sampdoria ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-N-P-V-V), segnando 5 gol e subendone 5. Il rendimento casalingo della stagione registra 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 5 partite di Serie B il Benevento ha collezionato 1 vittoria, 3 pareggi e 1 sconfitta (sequenza N-V-N-P-N), con 7 gol fatti e 6 subiti. Il bilancio stagionale in trasferta è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -433,23 +433,23 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Sampdoria 1,0, Benevento 1,4 a partita.",
+      "Media gol segnati a partita: Sampdoria 1,0, Benevento 1,4.",
       "Gol subiti finora: Sampdoria 18, Benevento 11."
      ]
     }
    ],
    "faq": [
     {
-     "q": "Quando si gioca Sampdoria – Benevento?",
+     "q": "Quando si disputa Sampdoria – Benevento?",
      "a": "Sabato 21 novembre alle 15:00, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Puoi consultare la pagina [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Le spiegazioni sono nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -757,20 +757,20 @@
    ]
   },
   "fb:1001601606": {
-   "fingerprint": "1l671th",
+   "fingerprint": "edfzdn",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Carrarese e Virtus Entella si affrontano sabato 21 novembre alle 15:00 nella 12ª giornata di Serie B. Le due squadre sono appaiate a 10 punti."
+      "Carrarese e Virtus Entella si affrontano sabato 21 novembre alle 15:00, nella 12ª giornata di Serie B. Le due squadre sono appaiate a 10 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie B, il Carrarese ha ottenuto 3 vittorie e 2 sconfitte, con la sequenza V-V-P-V-P. Ha segnato 7 gol e ne ha subiti 7. In casa ha vinto tutte le 2 partite disputate.",
-      "Nelle ultime 5 partite di Serie B, il Virtus Entella ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza V-P-N-P-P. Ha segnato 3 gol e ne ha subiti 7. Ha perso le ultime 2 gare. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 5 partite di Serie B la Carrarese ha ottenuto 2 vittorie e 3 sconfitte, con la sequenza V-P-V-P-P, segnando 5 gol e subendone 8. Ha perso le ultime 2 gare. In casa il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Serie B la Virtus Entella ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza V-P-N-P-P, segnando 3 gol e subendone 7. Ha perso le ultime 2 gare. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -780,7 +780,7 @@
      "bullets": [
       "Media gol segnati: Carrarese 0,9, Virtus Entella 1,0 a partita.",
       "Gol subiti finora: Carrarese 13, Virtus Entella 14.",
-      "In 4 delle ultime 5 partite del Carrarese si sono segnati almeno tre gol."
+      "In 4 delle ultime 5 partite della Carrarese si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -790,7 +790,7 @@
      "a": "Sabato 21 novembre alle 15:00, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
+     "q": "Dove si trovano classifica e risultati?",
      "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
     },
     {
@@ -2217,7 +2217,7 @@
    ]
   },
   "fb:1001552827": {
-   "fingerprint": "txhikn",
+   "fingerprint": "1uavu3a",
    "sections": [
     {
      "id": "presentazione",
@@ -2230,7 +2230,7 @@
      "id": "momento",
      "paragraphs": [
       "Nelle ultime 5 partite di Ligue 1 il Troyes ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-V-P), con 3 gol fatti e 6 subiti. In casa il bilancio stagionale è di 1 vittoria e 2 sconfitte.",
-      "Nelle ultime 4 partite di Ligue 1 il Le Havre ha raccolto 4 sconfitte (sequenza P-P-P-P), con 5 gol fatti e 13 subiti. Ha perso le ultime 4. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 5 partite di Ligue 1 il Le Havre ha raccolto 5 sconfitte (sequenza P-P-P-P-P), con 5 gol fatti e 15 subiti. Ha perso le ultime 5. In trasferta ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     },
@@ -2240,7 +2240,7 @@
      "bullets": [
       "Media gol segnati: Troyes 0,7, Le Havre 1,0 a partita.",
       "Gol subiti finora: Troyes 17, Le Havre 20.",
-      "In 3 delle ultime 4 partite del Le Havre si sono segnati almeno tre gol."
+      "In 3 delle ultime 5 partite del Le Havre si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -2260,20 +2260,20 @@
    ]
   },
   "fb:1001552824": {
-   "fingerprint": "1r6unz0",
+   "fingerprint": "14gvotl",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Nice e Paris Saint-Germain si affrontano sabato 21 novembre alle 17:15 per la 11ª giornata di Ligue 1. In classifica il Nice è all'8° posto con 14 punti, il Paris Saint-Germain al 1° con 23."
+      "Nice e Paris Saint-Germain si sfidano sabato 21 novembre alle 17:15, valevole per la 11ª giornata di Ligue 1. In classifica il Nice occupa l'8° posto con 14 punti, mentre il Paris Saint-Germain è al 1° posto con 23 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 il Nice ha raccolto 3 vittorie e 1 sconfitta (sequenza V-P-V-V), con 10 gol fatti e 6 subiti. In casa ha vinto tutte le 2 partite giocate.",
-      "Nelle ultime 5 partite di Ligue 1 il Paris Saint-Germain ha raccolto 5 vittorie (sequenza V-V-V-V-V), con 14 gol fatti e 3 subiti. È reduce da 5 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
+      "Nelle ultime 5 partite di Ligue 1 il Nice ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-P-V-V-V), segnando 12 gol e subendone 6. Arriva da 3 vittorie consecutive. In casa ha vinto tutte e 2 le partite disputate.",
+      "Nelle ultime 5 partite di Ligue 1 il Paris Saint-Germain ha ottenuto 5 vittorie (sequenza V-V-V-V-V), segnando 14 gol e subendone 3. Arriva da 5 vittorie consecutive. In trasferta ha vinto tutte e 2 le partite disputate."
      ],
      "bullets": []
     },
@@ -2284,8 +2284,8 @@
       "Media gol segnati: Nice 1,4, Paris Saint-Germain 2,2 a partita.",
       "Gol subiti finora: Nice 12, Paris Saint-Germain 10.",
       "Il Paris Saint-Germain ha il miglior attacco del torneo.",
-      "In tutte le ultime 4 partite del Nice si sono segnati almeno tre gol.",
-      "In 3 delle ultime 5 partite del Paris Saint-Germain si sono segnati almeno tre gol."
+      "In 4 delle ultime 5 partite del Nice sono stati segnati almeno tre gol.",
+      "In 3 delle ultime 5 partite del Paris Saint-Germain sono stati segnati almeno tre gol."
      ]
     }
    ],
@@ -2295,30 +2295,30 @@
      "a": "Sabato 21 novembre alle 17:15, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina dedicata alla [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001552820": {
-   "fingerprint": "x22gv3",
+   "fingerprint": "1b1x11v",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento sabato 21 novembre alle 20:45: il Lille riceve l'Olympique Lyon per la 11ª giornata di Ligue 1. Si tratta di uno scontro di alta classifica: il Lille è al 2° posto con 21 punti, l'Olympique Lyon al 4° con 17."
+      "La partita si giocherà sabato 21 novembre alle 20:45: il Lille riceve l'Olympique Lyon per la 11ª giornata di Ligue 1. Si tratta di un confronto di alta classifica: il Lille è al 2° posto con 21 punti, mentre l'Olympique Lyon è al 4° con 17."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Ligue 1 il Lille ha raccolto 3 vittorie e 2 pareggi (sequenza V-N-N-V-V), con 6 gol fatti e 3 subiti. Non perde da 5 partite. In casa il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Ligue 1 l'Olympique Lyon ha raccolto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), con 5 gol fatti e 5 subiti. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 5 partite di Ligue 1 il Lille ha ottenuto 3 vittorie e 2 pareggi (sequenza V-N-N-V-V), segnando 6 gol e subendone 3. Non perde da 5 partite. In casa, il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Ligue 1 l'Olympique Lyon ha ottenuto 2 vittorie e 3 sconfitte (sequenza P-V-P-V-P), con 5 gol fatti e 7 subiti. In trasferta ha perso tutte le 3 partite giocate."
      ],
      "bullets": []
     },
@@ -2347,20 +2347,20 @@
    ]
   },
   "fb:1001552823": {
-   "fingerprint": "1isvw3l",
+   "fingerprint": "1a4tve6",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 20:45 il Monaco ospita l'Auxerre per la 11ª giornata di Ligue 1. In classifica il Monaco è al 7° posto con 15 punti, mentre l'Auxerre è al 14° con 10."
+      "Sabato 21 novembre alle 20:45 il Monaco ospita l'Auxerre per la 11ª giornata di Ligue 1. In classifica il Monaco è 7° con 15 punti, l'Auxerre 14° con 10."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 il Monaco ha ottenuto 2 pareggi e 2 sconfitte (sequenza N-P-N-P), con 4 gol fatti e 7 subiti. In casa il bilancio stagionale riporta 2 pareggi e nessuna vittoria.",
-      "Nelle ultime 5 partite di Ligue 1 l'Auxerre ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-V-N-P-P), con 6 gol fatti e 12 subiti. Ha perso le ultime 2. In trasferta il bilancio stagionale è di 1 vittoria e 2 sconfitte."
+      "Nelle ultime 5 partite di Ligue 1 il Monaco ha ottenuto 3 pareggi e 2 sconfitte (sequenza N-P-N-P-N), con 5 gol fatti e 8 subiti. In casa, il bilancio stagionale è di 2 pareggi, senza vittorie finora.",
+      "Nelle ultime 5 partite di Ligue 1 l'Auxerre ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-V-N-P-P), con 6 gol fatti e 12 subiti. Le ultime 2 gare sono state entrambe perse. In trasferta, il bilancio stagionale è di 1 vittoria e 2 sconfitte."
      ],
      "bullets": []
     },
@@ -2370,7 +2370,7 @@
      "bullets": [
       "Media gol segnati: Monaco 1,3, Auxerre 1,3 a partita.",
       "Gol subiti finora: Monaco 10, Auxerre 24.",
-      "In 3 delle ultime 5 partite dell'Auxerre si sono segnati almeno tre gol."
+      "Nelle ultime 5 partite dell'Auxerre, in 3 si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -2381,21 +2381,21 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+     "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001552826": {
-   "fingerprint": "x9wzjp",
+   "fingerprint": "1403201",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 20:45 lo Strasbourg ospita il Brest nella 11ª giornata di Ligue 1. In classifica lo Strasbourg occupa il 13° posto con 10 punti, mentre il Brest è all'11° con 12."
+      "Sabato 21 novembre alle 20:45 lo Strasbourg ospita il Brest, valevole per l'11ª giornata di Ligue 1. In classifica lo Strasbourg occupa il 13° posto con 10 punti, mentre il Brest è all'11° posto con 12."
      ],
      "bullets": []
     },
@@ -2403,7 +2403,7 @@
      "id": "momento",
      "paragraphs": [
       "Nelle ultime 5 partite di Ligue 1 lo Strasbourg ha ottenuto 1 vittoria e 4 sconfitte (sequenza P-P-P-V-P), segnando 8 gol e subendone 12. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Ligue 1 il Brest ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-N-P-V), segnando 9 gol e subendone 4. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 5 partite di Ligue 1 il Brest ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-N-P-V-V), segnando 11 gol e subendone 4. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     },
@@ -2428,7 +2428,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2477,20 +2477,20 @@
    ]
   },
   "fb:1001552825": {
-   "fingerprint": "3w8exx",
+   "fingerprint": "jtcwhh",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 22 novembre alle 15:00 il Paris FC ospita l'Angers SCO nell'11ª giornata di Ligue 1. In classifica il Paris FC occupa il 3° posto con 20 punti, mentre l'Angers SCO è al 15° con 8."
+      "Domenica 22 novembre alle 15:00 il Paris FC ospita l'Angers SCO nell'11ª giornata di Ligue 1. In classifica il Paris FC è al 3° posto con 20 punti, mentre l'Angers SCO è al 15° con 8."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Ligue 1 il Paris FC ha ottenuto 3 vittorie e 2 sconfitte, con la sequenza P-V-P-V-V. Ha segnato 9 gol e ne ha subiti 7. In casa ha vinto tutte e 2 le partite disputate.",
-      "Nelle ultime 4 partite di Ligue 1 l'Angers SCO ha ottenuto 1 pareggio e 3 sconfitte, con la sequenza P-P-N-P. Ha segnato 3 gol e ne ha subiti 12. In trasferta ha perso tutte e 2 le partite disputate."
+      "Nelle ultime 5 partite di Ligue 1 il Paris FC ha ottenuto 3 vittorie e 2 sconfitte, con la sequenza P-V-P-V-V. Ha segnato 9 gol e ne ha subiti 7. In casa ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 5 partite di Ligue 1 l'Angers SCO ha ottenuto 1 pareggio e 4 sconfitte, con la sequenza P-P-N-P-P. Ha segnato 3 gol e ne ha subiti 14. Ha perso le ultime 2 partite. In trasferta ha perso tutte le 2 partite disputate."
      ],
      "bullets": []
     },
@@ -2510,8 +2510,8 @@
      "a": "Domenica 22 novembre alle 15:00, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1) e nella [classifica aggiornata](/calcio/ligue-1/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -2520,19 +2520,19 @@
    ]
   },
   "fb:1001552821": {
-   "fingerprint": "8ih5ge",
+   "fingerprint": "myyiu9",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Lorient e Stade Rennais si sfidano domenica 22 novembre alle 17:15, in occasione dell'11ª giornata di Ligue 1. In classifica il Lorient è 12° con 12 punti, mentre lo Stade Rennais è 5° con 16."
+      "Lorient e Stade Rennais si sfidano domenica 22 novembre alle 17:15, valevole per la 11ª giornata di Ligue 1. In classifica il Lorient occupa il 12° posto con 12 punti, mentre lo Stade Rennais è al 5° posto con 16."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Ligue 1 il Lorient ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-V-N-P. Ha segnato 2 gol e ne ha subiti 2. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Ligue 1 il Lorient ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-V-N-P-V. Ha segnato 4 gol e ne ha subiti 2. In casa, nella stagione, il bilancio è di 2 vittorie e 1 sconfitta.",
       "Nelle ultime 5 partite di Ligue 1 lo Stade Rennais ha ottenuto 2 vittorie e 3 sconfitte, con la sequenza V-P-V-P-P. Ha segnato 13 gol e ne ha subiti 12. Ha perso le ultime 2 gare. In trasferta ha perso tutte le 2 partite disputate."
      ],
      "bullets": []
@@ -2543,7 +2543,7 @@
      "bullets": [
       "Media gol segnati a partita: Lorient 0,8, Stade Rennais 2,1.",
       "Gol subiti finora: Lorient 8, Stade Rennais 21.",
-      "Il Lorient non ha subito gol in 3 delle ultime 4 partite.",
+      "Il Lorient non ha subito gol in 4 delle ultime 5 partite.",
       "In tutte le ultime 5 partite dello Stade Rennais si sono segnati almeno tre gol."
      ]
     }
@@ -2999,56 +2999,6 @@
     {
      "q": "Dove vedo classifica e risultati?",
      "a": "Puoi consultare la pagina [Eredivisie](/calcio/eredivisie) e la [classifica aggiornata](/calcio/eredivisie/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:567349": {
-   "fingerprint": "1ecxnvs",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Il match è in programma domenica 8 novembre alle 19:00, quando il Vitória SC ospita il Porto per la 11ª giornata di Primeira Liga. In classifica il Vitória SC occupa il 13° posto con 9 punti, mentre il Porto è primo con 30."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 3 partite di Primeira Liga il Vitória SC ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza P-V-N), segnando 5 gol e subendone 2.",
-      "Nelle ultime 3 partite di Primeira Liga il Porto ha ottenuto 3 vittorie (sequenza V-V-V), segnando 7 gol e subendone 1. Arriva da 3 vittorie consecutive e, in trasferta, ha vinto tutte le 2 partite disputate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Vitória SC 1,0, Porto 2,5 a partita.",
-      "Gol subiti finora: Vitória SC 10, Porto 4.",
-      "Il Porto ha la miglior difesa del torneo."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Vitória SC, 3 vittorie per il Porto e 1 pareggio, con 13 gol complessivi (media di 2,6 a partita). L'ultimo incrocio, disputato a gennaio 2026 in Primeira Liga, è terminato Vitória SC 0-1 Porto."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Vitória SC – Porto?",
-     "a": "Domenica 8 novembre alle 19:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Primeira Liga](/calcio/primeira-liga) e la [classifica aggiornata](/calcio/primeira-liga/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -9405,12 +9355,19 @@
    ]
   },
   "fb:1001649008": {
-   "fingerprint": "kerpny",
+   "fingerprint": "10t03b2",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Thailand U23 e Qatar U23 si sfidano giovedì 12 novembre alle 09:00 nell'ambito delle Amichevoli internazionali."
+      "Thailand U23 e Qatar U23 si affrontano giovedì 12 novembre alle 09:00 per Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 1 confronti diretti il bilancio è di 0 vittorie per il Thailand U23, 0 vittorie per il Qatar U23 e 1 pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, a agosto 2018 in Asian Games, è finito Thailand U23 1-1 Qatar U23."
      ],
      "bullets": []
     }
@@ -9426,7 +9383,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -16377,6 +16334,42 @@
     }
    ]
   },
+  "fb:1001601595": {
+   "fingerprint": "4m45fl",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Successo di misura della Sampdoria in trasferta, che ha battuto il Carrarese 0-1. La partita, valida per la 11ª giornata di Serie B, si è giocata domenica 8 novembre; il primo tempo si era chiuso 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Carrarese è al 16° posto con 10 punti, mentre la Sampdoria è al 19° con 8. [Vai alla classifica completa](/calcio/serie-b/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Carrarese tornerà in campo sabato 21 novembre alle 15:00 in casa contro il Virtus Entella. La Sampdoria tornerà in campo sabato 21 novembre alle 15:00 in casa contro il Benevento."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Carrarese – Sampdoria?",
+     "a": "0-1 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Serie B](/calcio/serie-b)."
+    }
+   ]
+  },
   "fb:1001636223": {
    "fingerprint": "1m5sik4",
    "sections": [
@@ -17151,6 +17144,78 @@
     }
    ]
   },
+  "fb:560637": {
+   "fingerprint": "1s4jr2s",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Bournemouth si impone in trasferta sull'Ipswich Town per 1-2. La partita, valida per la 10ª giornata di Premier League, si è giocata domenica 8 novembre; al termine del primo tempo il punteggio era 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, l'Ipswich Town occupa il 14° posto con 11 punti, mentre il Bournemouth è al 7° con 15. [Consulta la classifica completa](/calcio/premier-league/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Ipswich Town tornerà in campo sabato 21 novembre alle 16:00, in trasferta contro il Tottenham. Il Bournemouth giocherà sabato 21 novembre alle 16:00, in casa contro il Nottingham Forest."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Ipswich Town – Bournemouth?",
+     "a": "1-2 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Premier League](/calcio/premier-league)."
+    }
+   ]
+  },
+  "fb:560636": {
+   "fingerprint": "3xm8u8",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Sunderland ha vinto di misura in casa contro il Chelsea, 1-0. La partita, valida per la 10ª giornata di Premier League, si è giocata domenica 8 novembre; il primo tempo si era chiuso 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Sunderland è al 18° posto con 8 punti, mentre il Chelsea è al 5° con 16. Per consultare la [classifica completa](/calcio/premier-league/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Sunderland tornerà in campo sabato 21 novembre alle 16:00 in trasferta contro l'Aston Villa. Il Chelsea giocherà sabato 21 novembre alle 16:00 in casa contro il Leeds United."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Sunderland – Chelsea?",
+     "a": "1-0 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Premier League](/calcio/premier-league)."
+    }
+   ]
+  },
   "fb:564740": {
    "fingerprint": "1fiw991",
    "sections": [
@@ -17328,6 +17393,78 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [LaLiga](/calcio/liga)."
+    }
+   ]
+  },
+  "fb:564738": {
+   "fingerprint": "kzvlwe",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Real Betis ha vinto in trasferta contro l'Elche per 0-2. La partita, valida per la 12ª giornata di LaLiga, si è disputata domenica 8 novembre; il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite disputate finora, l'Elche occupa il 18° posto con 10 punti, mentre il Real Betis è al 4° posto con 26. Consulta la [classifica completa](/calcio/liga/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Elche tornerà in campo domenica 22 novembre alle 17:00, in trasferta contro il Levante. Anche il Real Betis giocherà domenica 22 novembre alle 17:00, in trasferta contro il Sevilla FC."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Elche – Real Betis?",
+     "a": "0-2 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Sono disponibili nella pagina [LaLiga](/calcio/liga)."
+    }
+   ]
+  },
+  "fb:564743": {
+   "fingerprint": "ngzwkr",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Real Sociedad vince di misura in casa contro il Rayo Vallecano per 1-0. La partita, valida per la 12ª giornata di LaLiga, si è giocata domenica 8 novembre; il primo tempo si era chiuso sullo 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Real Sociedad è al 5° posto con 19 punti, mentre il Rayo Vallecano è al 14° con 12. Per tutti i dettagli consulta la [classifica completa](/calcio/liga/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Real Sociedad tornerà in campo domenica 22 novembre alle 17:00 in trasferta contro il Santander. Il Rayo Vallecano tornerà in campo domenica 22 novembre alle 17:00 in casa contro il Valencia."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Real Sociedad – Rayo Vallecano?",
+     "a": "1-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina dedicata alla [LaLiga](/calcio/liga)."
     }
    ]
   },
@@ -17511,6 +17648,78 @@
     }
    ]
   },
+  "fb:565849": {
+   "fingerprint": "1kj12nl",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Lo Stuttgart ha vinto di misura in casa contro il Bremen, imponendosi 1-0. La partita, valida per la 9ª giornata di Bundesliga, si è giocata sabato 7 novembre; il primo tempo si era chiuso 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora lo Stuttgart è all'8° posto con 12 punti, mentre il Bremen è al 6° con 15. [Consulta la classifica completa](/calcio/bundesliga/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Lo Stuttgart tornerà in campo sabato 21 novembre alle 18:30, in trasferta contro lo Schalke. Il Bremen giocherà domenica 22 novembre alle 17:30, in casa contro l'HSV."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Stuttgart – Bremen?",
+     "a": "1-0 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
+    }
+   ]
+  },
+  "fb:565855": {
+   "fingerprint": "14ib0n5",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Vittoria di misura per il Leverkusen in trasferta, che ha superato per 1-2 il 1. FC Köln. La gara, valida per la 9ª giornata di Bundesliga, si è disputata domenica 8 novembre; al termine del primo tempo il punteggio era 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, il 1. FC Köln occupa il 15° posto con 9 punti, mentre il Leverkusen è al 5° con 16. [Consulta la classifica completa](/calcio/bundesliga/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il 1. FC Köln scenderà di nuovo in campo venerdì 20 novembre alle 20:30, in trasferta contro il Bayern Monaco. Il Leverkusen giocherà sabato 21 novembre alle 15:30 in casa contro lo SC Paderborn."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita 1. FC Köln – Leverkusen?",
+     "a": "1-2 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina dedicata alla [Bundesliga](/calcio/bundesliga)."
+    }
+   ]
+  },
   "fb:559638": {
    "fingerprint": "nct6hu",
    "sections": [
@@ -17547,6 +17756,42 @@
     }
    ]
   },
+  "fb:559637": {
+   "fingerprint": "tiya4d",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Paris FC ha vinto di misura in trasferta contro l'Auxerre, con il risultato di 0-1. La partita, valida per la 10ª giornata di Ligue 1, si è giocata sabato 7 novembre e il primo tempo si era chiuso 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora, l'Auxerre è al 14° posto con 10 punti, mentre il Paris FC è al 3° con 20. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/ligue-1/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Auxerre tornerà in campo sabato 21 novembre alle 20:45 in trasferta contro il Monaco. Il Paris FC giocherà domenica 22 novembre alle 15:00 in casa contro l'Angers SCO."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Auxerre – Paris FC?",
+     "a": "0-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
+    }
+   ]
+  },
   "fb:559635": {
    "fingerprint": "4k2q2j",
    "sections": [
@@ -17576,6 +17821,186 @@
     {
      "q": "Com'è finita Paris Saint-Germain – Troyes?",
      "a": "1-0 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
+    }
+   ]
+  },
+  "fb:1001552816": {
+   "fingerprint": "h7vl9n",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Lille ha vinto di misura in trasferta contro lo Stade Rennais, con il punteggio di 1-2. La partita, valida per la 10ª giornata di Ligue 1, si è giocata domenica 8 novembre; il primo tempo si era chiuso 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora lo Stade Rennais è al 5° posto con 16 punti, mentre il Lille è al 2° con 21. [Vai alla classifica completa](/calcio/ligue-1/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Lo Stade Rennais tornerà in campo domenica 22 novembre alle 17:15, in trasferta contro il Lorient. Il Lille giocherà sabato 21 novembre alle 20:45, in casa contro l'Olympique Lyon."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Stade Rennais – Lille?",
+     "a": "Il risultato finale è 1-2, con il punteggio di 1-1 all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina [Ligue 1](/calcio/ligue-1)."
+    }
+   ]
+  },
+  "fb:559634": {
+   "fingerprint": "2qzjxe",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Nice ha battuto l'Angers SCO in trasferta per 0-2. La partita, valida per la 10ª giornata di Ligue 1, si è giocata domenica 8 novembre; il primo tempo si era chiuso 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora, l'Angers SCO è al 15° posto con 8 punti, mentre il Nice è all'8° con 14. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Angers SCO tornerà in campo domenica 22 novembre alle 15:00, in trasferta contro il Paris FC. Il Nice tornerà in campo sabato 21 novembre alle 17:15, in casa contro il Paris Saint-Germain."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Angers SCO – Nice?",
+     "a": "0-2 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
+    }
+   ]
+  },
+  "fb:1001552812": {
+   "fingerprint": "zjqo5v",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Brest ha battuto l'Olympique Lyon in casa per 2-0. La partita, valida per la 10ª giornata di Ligue 1, si è giocata domenica 8 novembre; il primo tempo si era chiuso 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Brest è all'11° posto con 12 punti, mentre l'Olympique Lyon è al 4° con 17. Puoi consultare la [classifica completa](/calcio/ligue-1/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Brest tornerà in campo sabato 21 novembre alle 20:45, in trasferta contro lo Strasbourg. L'Olympique Lyon tornerà in campo sabato 21 novembre alle 20:45, in trasferta contro il Lille."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Brest – Olympique Lyon?",
+     "a": "2-0 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
+    }
+   ]
+  },
+  "fb:559633": {
+   "fingerprint": "1qab71",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Lorient si impone in trasferta sul Le Havre per 0-2. La partita, valida per la 10ª giornata di Ligue 1, si è disputata domenica 8 novembre; il primo tempo si era chiuso 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Le Havre occupa il 18° posto con 2 punti, mentre il Lorient è al 12° con 12. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Le Havre tornerà in campo venerdì 20 novembre alle 20:45, in trasferta contro il Troyes. Il Lorient giocherà domenica 22 novembre alle 17:15, in casa contro lo Stade Rennais."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Le Havre – Lorient?",
+     "a": "0-2 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
+    }
+   ]
+  },
+  "fb:559631": {
+   "fingerprint": "1umohkp",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il match si conclude 1-1: il Monaco, in vantaggio 0-1 all'intervallo, viene raggiunto nella ripresa dal Le Mans. La partita, valida per la 10ª giornata di Ligue 1, si è disputata domenica 8 novembre."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Considerando le gare disputate finora, il Le Mans occupa il 17° posto con 7 punti, mentre il Monaco è al 7° con 15. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Le Mans tornerà in campo domenica 22 novembre alle 20:45, in trasferta contro il Marseille. Il Monaco scenderà in campo sabato 21 novembre alle 20:45, in casa contro l'Auxerre."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Le Mans – Monaco?",
+     "a": "1-1 (0-1 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
@@ -17763,6 +18188,114 @@
     }
    ]
   },
+  "fb:558839": {
+   "fingerprint": "1kylvrm",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il match termina 2-2: l'Ajax, in vantaggio 0-1 all'intervallo, viene raggiunto nella ripresa dal Twente. La partita, valida per la 12ª giornata di Eredivisie, si è giocata domenica 8 novembre."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite giocate finora, il Twente è al 3° posto con 24 punti, mentre l'Ajax è al 2° con 25. [Consulta la classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Twente tornerà in campo domenica 22 novembre alle 12:15 in casa contro il Willem II. L'Ajax tornerà in campo domenica 22 novembre alle 14:30 in casa contro il Den Haag."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Twente – Ajax?",
+     "a": "2-2 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
+  "fb:558837": {
+   "fingerprint": "1abwdrf",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Di misura, ma in casa: l'AZ ha battuto il Groningen 4-3. La partita, valida per la 12ª giornata di Eredivisie, si è giocata domenica 8 novembre; il primo tempo si era chiuso 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora l'AZ è al 6° posto con 20 punti, mentre il Groningen è al 9° con 15. [Vai alla classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'AZ tornerà in campo domenica 22 novembre alle 14:30, in trasferta contro lo Sparta. Il Groningen giocherà sabato 21 novembre alle 21:00, in casa contro l'Heerenveen."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita AZ – Groningen?",
+     "a": "4-3 (1-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
+  "fb:558842": {
+   "fingerprint": "qcogz9",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Lo PSV ha vinto in trasferta contro il Cambuur con il punteggio di 2-5. La partita, valida per la 12ª giornata di Eredivisie, si è giocata domenica 8 novembre; il primo tempo si era chiuso 1-3."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Cambuur è al 10° posto con 15 punti, mentre lo PSV è al 4° con 23. [Vai alla classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Cambuur tornerà in campo sabato 21 novembre alle 18:45 in trasferta contro l'Utrecht. Lo PSV tornerà in campo sabato 21 novembre alle 16:30 in trasferta contro il NEC."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Cambuur – PSV?",
+     "a": "2-5 (1-3 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
   "fb:567353": {
    "fingerprint": "zzfj8d",
    "sections": [
@@ -17843,6 +18376,64 @@
     {
      "q": "Com'è finita Sporting CP – Moreirense?",
      "a": "1-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
+    }
+   ]
+  },
+  "fb:567352": {
+   "fingerprint": "zw0yi3",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Successo di misura del CD Nacional in casa, che ha battuto l'Acad. Viseu per 1-0. La partita, valida per la 11ª giornata di Primeira Liga, si è giocata domenica 8 novembre; il primo tempo si era chiuso 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il CD Nacional è al 16° posto con 7 punti, mentre l'Acad. Viseu è al 6° con 20. [Classifica completa](/calcio/primeira-liga/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita CD Nacional – Acad. Viseu?",
+     "a": "1-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
+    }
+   ]
+  },
+  "fb:567351": {
+   "fingerprint": "1kjggg6",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Rimonta del Gil Vicente: dopo il primo tempo in svantaggio, vince in trasferta 1-2 contro il Santa Clara. La partita, valida per la 11ª giornata di Primeira Liga, si è giocata domenica 8 novembre; il primo tempo si era chiuso 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Santa Clara è al 4° posto con 21 punti, mentre il Gil Vicente è al 7° con 15. [Consulta la classifica completa](/calcio/primeira-liga/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Santa Clara – Gil Vicente?",
+     "a": "1-2 (1-0 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
