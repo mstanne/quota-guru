@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+<title>Codice di prenotazione sullo smartphone convalidato al terminale dell'agenzia che stampa la bolletta</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0F1A2C"/><stop offset="1" stop-color="#0A1220"/>
+  </linearGradient>
+  <radialGradient id="glowO"><stop offset="0" stop-color="#FB6801" stop-opacity=".22"/><stop offset="1" stop-color="#FB6801" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowG"><stop offset="0" stop-color="#06BA55" stop-opacity=".18"/><stop offset="1" stop-color="#06BA55" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#EEF0F3" fill-opacity=".07"/></pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="url(#dots)"/>
+<circle cx="1330" cy="170" r="520" fill="url(#glowO)"/>
+<circle cx="260" cy="780" r="520" fill="url(#glowG)"/>
+<g font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="700">
+<rect x="170" y="170" width="320" height="580" rx="44" fill="#0A1220" stroke="#BECED8" stroke-width="6"/><rect x="190" y="226" width="280" height="470" rx="18" fill="#16243B"/><rect x="280.0" y="192" width="100" height="14" rx="7" fill="#2A3D59"/><text x="330" y="290" font-size="30" fill="#EEF0F3" text-anchor="middle" font-weight="700" fill-opacity="1">Prenota</text><rect x="210" y="320" width="240" height="56" rx="12" fill="#0A1220" stroke="#2A3D59" stroke-width="2"/><rect x="230" y="341" width="110" height="14" rx="7" fill="#BECED8" fill-opacity=".5"/><rect x="210" y="392" width="240" height="56" rx="12" fill="#0A1220" stroke="#2A3D59" stroke-width="2"/><rect x="230" y="413" width="110" height="14" rx="7" fill="#BECED8" fill-opacity=".5"/><rect x="210" y="464" width="240" height="56" rx="12" fill="#0A1220" stroke="#2A3D59" stroke-width="2"/><rect x="230" y="485" width="110" height="14" rx="7" fill="#BECED8" fill-opacity=".5"/><rect x="210" y="560" width="240" height="70" rx="35.0" fill="#FBBF24"/><text x="330.0" y="607.24" font-size="34" fill="#0A1220" text-anchor="middle" font-weight="700" fill-opacity="1">A7K 29Q</text><text x="330" y="690" font-size="24" fill="#7F93AE" text-anchor="middle" font-weight="600" fill-opacity="1">codice</text><path d="M560,450 L820,450" stroke="#FB6801" stroke-width="14" stroke-linecap="round" stroke-dasharray="2 30"/><path d="M800,415 L850,450 L800,485" fill="none" stroke="#FB6801" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><rect x="920" y="400" width="520" height="300" rx="24" fill="#16243B" stroke="#2A3D59" stroke-width="2"/><rect x="960" y="440" width="260" height="150" rx="12" fill="#0A1220"/><text x="1090" y="530" font-size="34" fill="#FBBF24" text-anchor="middle" font-weight="700" fill-opacity="1">A7K 29Q</text><rect x="1260" y="440" width="140" height="40" rx="8" fill="#2A3D59"/><rect x="1270" y="230" width="120" height="230" fill="#EEF0F3"/><rect x="1286" y="256" width="88" height="12" rx="6" fill="#BECED8"/><rect x="1286" y="290" width="58" height="12" rx="6" fill="#BECED8"/><rect x="1286" y="324" width="88" height="12" rx="6" fill="#BECED8"/><rect x="1286" y="358" width="58" height="12" rx="6" fill="#BECED8"/><rect x="1286" y="392" width="88" height="12" rx="6" fill="#BECED8"/><rect x="960" y="620" width="260" height="56" rx="28.0" fill="#06BA55"/><text x="1090.0" y="658.08" font-size="28" fill="#0A1220" text-anchor="middle" font-weight="700" fill-opacity="1">Convalida</text>
+</g>
+</svg>

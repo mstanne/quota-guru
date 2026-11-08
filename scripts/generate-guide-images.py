@@ -807,7 +807,126 @@ def bonus_costo():
     return frame("".join(b), "Calcolo del costo medio di un bonus casinò confrontato con l'importo del bonus")
 
 
+def _ticket(x, y, w, rows, title="BOLLETTA", total=None):
+    """Receipt-style betting ticket: zigzag bottom edge, event rows with code, pick and odds, barcode."""
+    h = 200 + len(rows) * 74 + (90 if total else 0) + 110
+    teeth = "".join(f" L{x + w - (k + 0.5) * w / 12:.1f},{y + h + 16} L{x + w - (k + 1) * w / 12:.1f},{y + h}" for k in range(12))
+    out = [f'<path d="M{x},{y} L{x+w},{y} L{x+w},{y+h}{teeth} Z" fill="{LIGHT}"/>']
+    out.append(text(x + w / 2, y + 70, title, 36, NAVY, "middle"))
+    out.append(f'<line x1="{x+30}" y1="{y+100}" x2="{x+w-30}" y2="{y+100}" stroke="{GREY}" stroke-width="3" stroke-dasharray="10 8"/>')
+    out.append(f'<rect x="{x+30}" y="{y+124}" width="{w*0.45:.0f}" height="14" rx="7" fill="{GREY}"/>')
+    for i, (code, pick, odd, col) in enumerate(rows):
+        yy = y + 170 + i * 74
+        out.append(text(x + 30, yy + 34, code, 26, MUTED, weight=600))
+        out.append(f'<rect x="{x+130}" y="{yy+18}" width="{w*0.32:.0f}" height="14" rx="7" fill="{GREY}"/>')
+        out.append(chip(x + w - 210, yy + 2, 70, 44, pick, col, LIGHT if col != AMBER else DEEP, 24))
+        out.append(text(x + w - 30, yy + 34, odd, 28, NAVY, "end"))
+    yy = y + 170 + len(rows) * 74
+    if total:
+        out.append(f'<line x1="{x+30}" y1="{yy+4}" x2="{x+w-30}" y2="{yy+4}" stroke="{GREY}" stroke-width="3" stroke-dasharray="10 8"/>')
+        out.append(text(x + 30, yy + 58, total[0], 26, MUTED, weight=600))
+        out.append(text(x + w - 30, yy + 58, total[1], 34, NAVY, "end"))
+        yy += 90
+    for k in range(34):
+        bw = 3 + (k * 7 % 5) * 2
+        out.append(f'<rect x="{x + 40 + k * (w - 80) / 34:.1f}" y="{yy+20}" width="{bw}" height="66" fill="{NAVY}"/>')
+    return "".join(out)
+
+
+def _phone(x, y, w=300, h=560):
+    return (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="44" fill="{DEEP}" stroke="{GREY}" stroke-width="6"/>'
+            f'<rect x="{x+20}" y="{y+56}" width="{w-40}" height="{h-110}" rx="18" fill="{PANEL}"/>'
+            f'<rect x="{x+w/2-50}" y="{y+22}" width="100" height="14" rx="7" fill="{LINE}"/>')
+
+
+def _shop(x, y, w=560, h=470):
+    out = [f'<rect x="{x}" y="{y+90}" width="{w}" height="{h-90}" rx="10" fill="{PANEL}" stroke="{LINE}" stroke-width="3"/>']
+    n = 8
+    for k in range(n):
+        col = ORANGE if k % 2 == 0 else LIGHT
+        out.append(f'<path d="M{x + k*w/n:.1f},{y} L{x + (k+1)*w/n:.1f},{y} L{x + (k+1)*w/n:.1f},{y+90} '
+                   f'Q{x + (k+0.5)*w/n:.1f},{y+130} {x + k*w/n:.1f},{y+90} Z" fill="{col}"/>')
+    # window with monitors, door
+    out.append(f'<rect x="{x+40}" y="{y+160}" width="{w*0.5:.0f}" height="200" rx="10" fill="{DEEP}" stroke="{LINE}" stroke-width="3"/>')
+    for i in range(2):
+        mx = x + 64 + i * (w * 0.23)
+        out.append(f'<rect x="{mx:.0f}" y="{y+190}" width="{w*0.2:.0f}" height="90" rx="6" fill="{GREEN}" fill-opacity=".55"/>')
+        out.append(f'<line x1="{mx + w*0.1:.0f}" y1="{y+190}" x2="{mx + w*0.1:.0f}" y2="{y+280}" stroke="{LIGHT}" stroke-opacity=".6" stroke-width="3"/>')
+    out.append(f'<rect x="{x+w*0.67:.0f}" y="{y+180}" width="{w*0.24:.0f}" height="{h-180}" rx="8" fill="{DEEP}" stroke="{LINE}" stroke-width="3"/>')
+    out.append(f'<circle cx="{x+w*0.7:.0f}" cy="{y+330}" r="7" fill="{AMBER}"/>')
+    return "".join(out)
+
+
+def agenzie_fisico_online():
+    b = [_shop(130, 210)]
+    b.append(text(410, 760, "agenzia", 34, GREY, "middle", 600))
+    b.append(chip(745, 380, 110, 110, "vs", LINE, LIGHT, 44))
+    b.append(_phone(1030, 170, 320, 580))
+    b.append(text(1190, 290, "Conto di gioco", 26, LIGHT, "middle"))
+    for i, (pick, odd) in enumerate([("1", "2,05"), ("X", "3,30"), ("2", "3,60")]):
+        yy = 330 + i * 90
+        b.append(f'<rect x="1070" y="{yy}" width="240" height="70" rx="12" fill="{DEEP}" stroke="{LINE}" stroke-width="2"/>')
+        b.append(text(1100, yy + 46, pick, 30, ORANGE))
+        b.append(text(1290, yy + 46, odd, 28, LIGHT, "end"))
+    b.append(chip(1070, 620, 240, 56, "Limiti attivi", GREEN, DEEP, 26))
+    b.append(text(1190, 800, "online", 34, GREY, "middle", 600))
+    return frame("".join(b), "Agenzia scommesse con vetrina e smartphone con il conto di gioco online a confronto")
+
+
+def prenotatore():
+    b = [_phone(170, 170, 320, 580)]
+    b.append(text(330, 290, "Prenota", 30, LIGHT, "middle"))
+    for i in range(3):
+        yy = 320 + i * 72
+        b.append(f'<rect x="210" y="{yy}" width="240" height="56" rx="12" fill="{DEEP}" stroke="{LINE}" stroke-width="2"/>')
+        b.append(f'<rect x="230" y="{yy+21}" width="110" height="14" rx="7" fill="{GREY}" fill-opacity=".5"/>')
+    b.append(chip(210, 560, 240, 70, "A7K 29Q", AMBER, DEEP, 34))
+    b.append(text(330, 690, "codice", 24, MUTED, "middle", 600))
+    # arrow
+    b.append(f'<path d="M560,450 L820,450" stroke="{ORANGE}" stroke-width="14" stroke-linecap="round" stroke-dasharray="2 30"/>')
+    b.append(f'<path d="M800,415 L850,450 L800,485" fill="none" stroke="{ORANGE}" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>')
+    # counter terminal printing a ticket
+    b.append(panel(920, 400, 520, 300, 24))
+    b.append(f'<rect x="960" y="440" width="260" height="150" rx="12" fill="{DEEP}"/>')
+    b.append(text(1090, 530, "A7K 29Q", 34, AMBER, "middle"))
+    b.append(f'<rect x="1260" y="440" width="140" height="40" rx="8" fill="{LINE}"/>')
+    b.append(f'<rect x="1270" y="230" width="120" height="230" fill="{LIGHT}"/>')
+    for i in range(5):
+        b.append(f'<rect x="1286" y="{256 + i*34}" width="{88 - (i % 2)*30}" height="12" rx="6" fill="{GREY}"/>')
+    b.append(chip(960, 620, 260, 56, "Convalida", GREEN, DEEP, 28))
+    return frame("".join(b), "Codice di prenotazione sullo smartphone convalidato al terminale dell'agenzia che stampa la bolletta")
+
+
+def bolletta():
+    rows = [("1043", "1", "1,85", ORANGE), ("1057", "GG", "1,70", GREEN), ("2210", "O2,5", "1,95", AMBER)]
+    b = [_ticket(560, 120, 480, rows, "BOLLETTA", ("Possibile vincita", "61,33 €"))]
+    labels = [(250, 310, "codice evento"), (250, 470, "esito scelto"), (1350, 330, "quota"), (1350, 590, "importo e vincita")]
+    for x, y, s in labels:
+        b.append(chip(x - 150, y - 34, 300, 60, s, PANEL, LIGHT, 26))
+    b.append(f'<line x1="400" y1="306" x2="580" y2="326" stroke="{LINE}" stroke-width="4"/>')
+    b.append(f'<line x1="400" y1="466" x2="830" y2="400" stroke="{LINE}" stroke-width="4"/>')
+    b.append(f'<line x1="1200" y1="326" x2="1020" y2="326" stroke="{LINE}" stroke-width="4"/>')
+    b.append(f'<line x1="1200" y1="586" x2="1020" y2="560" stroke="{LINE}" stroke-width="4"/>')
+    return frame("".join(b), "Bolletta delle scommesse con codice evento, esito, quota e possibile vincita evidenziati")
+
+
+def controllo_bolletta():
+    rows = [("1043", "1", "1,85", GREEN), ("1057", "GG", "1,70", GREEN), ("2210", "O2,5", "1,00", LINE)]
+    b = [_ticket(180, 120, 480, rows, "BOLLETTA", ("Stato", "Vincente"))]
+    # magnifier
+    b.append(f'<circle cx="980" cy="400" r="150" fill="{PANEL}" fill-opacity=".85" stroke="{LIGHT}" stroke-width="18"/>')
+    b.append(f'<line x1="1088" y1="508" x2="1230" y2="650" stroke="{LIGHT}" stroke-width="30" stroke-linecap="round"/>')
+    b.append(check(980, 395, 3.2, GREEN, 22))
+    for i, (s, col) in enumerate([("vinto", GREEN), ("vinto", GREEN), ("annullato = 1,00", GREY)]):
+        b.append(chip(1150, 220 + i * 84, 300 if i == 2 else 150, 60, s, col, DEEP, 26))
+    return frame("".join(b), "Controllo di una bolletta con lente d'ingrandimento: eventi vinti e un evento annullato valutato a quota 1,00")
+
+
 SCENES2 = {
+    "agenzie-scommesse-fisiche-o-online": agenzie_fisico_online,
+    "prenotatore-scommesse": prenotatore,
+    "bolletta-scommesse": bolletta,
+    "controllare-una-bolletta": controllo_bolletta,
     "siti-scommesse-legali": siti_legali,
     "aprire-un-conto-di-gioco": aprire_conto,
     "glossario-scommesse": glossario,
