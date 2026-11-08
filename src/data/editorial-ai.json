@@ -1,14 +1,14 @@
 {
- "generatedAt": "2026-11-08T14:18:48.143Z",
+ "generatedAt": "2026-11-08T15:23:07.831Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558530": {
-   "fingerprint": "dlm8xs",
+   "fingerprint": "yek47i",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 8 novembre alle 18:00 l'Inter riceve il Como per la 11ª giornata di Serie A. Si tratta di un incontro tra due squadre di alta classifica: l'Inter è terza con 25 punti, il Como quarto con 23."
+      "Domenica 8 novembre alle 18:00 l'Inter ospita il Como nella 11ª giornata di Serie A. Il match mette di fronte due squadre della parte alta della classifica: l'Inter è al 3° posto con 25 punti, il Como al 4° con 23."
      ],
      "bullets": []
     },
@@ -26,6 +26,7 @@
      "bullets": [
       "Media gol segnati a partita: Inter 2,6, Como 1,8.",
       "Gol subiti finora: Inter 13, Como 8.",
+      "Il Como ha la miglior difesa del torneo.",
       "In 4 delle ultime 5 partite dell'Inter sono stati segnati almeno tre gol.",
       "Il Como non ha subito gol in 3 delle ultime 5 partite."
      ]
@@ -33,7 +34,7 @@
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 4 vittorie per l'Inter, nessuna per il Como e 1 pareggio, con 18 gol complessivi (media di 3,6 a partita). L'ultimo incrocio, ad aprile 2026 in Coppa Italia, si è concluso Inter 3-2 Como."
+      "Negli ultimi 5 confronti diretti il bilancio è di 4 vittorie per l'Inter, 0 vittorie per il Como e 1 pareggio, con 18 gol complessivi (media di 3,6 a partita). L'ultimo incontro, ad aprile 2026 in Coppa Italia, si è concluso Inter 3-2 Como."
      ],
      "bullets": []
     }
@@ -49,7 +50,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -104,12 +105,12 @@
    ]
   },
   "fb:1001550202": {
-   "fingerprint": "13k76cz",
+   "fingerprint": "108bifg",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Lazio e Lecce si sfidano sabato 21 novembre alle 15:00, nella 12ª giornata di Serie A. In classifica la Lazio occupa il 1° posto con 28 punti, mentre il Lecce è 14° con 10 punti."
+      "Lazio e Lecce si sfidano sabato 21 novembre alle 15:00, nell'ambito della 12ª giornata di Serie A. In classifica la Lazio occupa il 1° posto con 29 punti, mentre il Lecce è al 14° con 10 punti."
      ],
      "bullets": []
     },
@@ -117,7 +118,7 @@
      "id": "momento",
      "paragraphs": [
       "Nelle ultime 5 partite di Serie A la Lazio ha ottenuto 4 vittorie e 1 pareggio (sequenza V-V-V-V-N), segnando 14 gol e subendone 5. Non perde da 6 partite. In casa ha vinto tutte le 3 partite disputate.",
-      "Nelle ultime 5 partite di Serie A il Lecce ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-P-P-N), con 6 gol fatti e 10 subiti. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
+      "Nelle ultime 5 partite di Serie A il Lecce ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-P-P-N), con 6 gol fatti e 10 subiti. In trasferta, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -125,8 +126,8 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Lazio 2,4, Lecce 1,1 a partita.",
-      "Gol subiti finora: Lazio 8, Lecce 22.",
+      "Media gol segnati: Lazio 2,3, Lecce 1,1 a partita.",
+      "Gol subiti finora: Lazio 9, Lecce 22.",
       "In 4 delle ultime 5 partite della Lazio si sono segnati almeno tre gol.",
       "In 3 delle ultime 5 partite del Lecce si sono segnati almeno tre gol."
      ]
@@ -138,29 +139,29 @@
      "a": "Sabato 21 novembre alle 15:00, ora italiana."
     },
     {
-     "q": "Dove si possono consultare classifica e risultati?",
-     "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Serie A](/calcio/serie-a) e la [classifica aggiornata](/calcio/serie-a/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001550200": {
-   "fingerprint": "10dbr5",
+   "fingerprint": "5q0ngx",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 15:00 il Como ospita il Cagliari per la 12ª giornata di Serie A. In classifica il Como occupa il 4° posto con 23 punti, mentre il Cagliari è 9° con 16."
+      "Sabato 21 novembre alle 15:00 il Como ospita il Cagliari, in occasione della 12ª giornata di Serie A. In classifica il Como occupa il 4° posto con 23 punti, mentre il Cagliari è al 9° con 16."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie A il Como ha ottenuto 4 vittorie e 1 pareggio (sequenza N-V-V-V-V), segnando 9 gol e subendone 2. Arriva da 4 vittorie consecutive. In casa, in questa stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Serie A il Como ha ottenuto 4 vittorie e 1 pareggio (sequenza N-V-V-V-V), segnando 9 gol e subendone 2. Arriva da 4 vittorie consecutive. In casa, nel bilancio stagionale, conta 2 vittorie e 1 pareggio, senza sconfitte.",
       "Nelle ultime 5 partite di Serie A il Cagliari ha raccolto 1 vittoria e 4 sconfitte (sequenza P-P-P-P-V), con 4 gol fatti e 12 subiti. In trasferta ha perso tutte le 3 partite disputate."
      ],
      "bullets": []
@@ -171,8 +172,9 @@
      "bullets": [
       "Media gol segnati a partita: Como 1,8, Cagliari 0,9.",
       "Gol subiti finora: Como 8, Cagliari 15.",
+      "Il Como ha la difesa migliore del torneo.",
       "Il Como non ha subito gol in 3 delle ultime 5 partite.",
-      "In 3 delle ultime 5 partite del Cagliari si sono segnati almeno tre gol."
+      "In 3 delle ultime 5 partite del Cagliari sono stati segnati almeno tre gol."
      ]
     }
    ],
@@ -187,7 +189,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Le spiegazioni si trovano nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -237,20 +239,20 @@
    ]
   },
   "fb:1001550204": {
-   "fingerprint": "hcj3x3",
+   "fingerprint": "1nwlfyi",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 20:45 il Napoli ospita il Torino nella 12ª giornata di Serie A. Le due squadre sono appaiate a 14 punti."
+      "Sabato 21 novembre alle 20:45 il Napoli ospita il Torino per la 12ª giornata di Serie A. In classifica il Napoli è al 10° posto con 15 punti, il Torino all'11° con 14."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie A il Napoli ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-N-V-P-N), con 8 gol fatti e 8 subiti. In casa, nel bilancio stagionale, il Napoli ha 1 vittoria e 2 pareggi, senza sconfitte.",
-      "Nelle ultime 5 partite di Serie A il Torino ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-V-P-P-N), con 8 gol fatti e 8 subiti. In trasferta, nel bilancio stagionale, il Torino ha 1 vittoria e 1 sconfitta."
+      "Nelle ultime 5 partite di Serie A il Napoli ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-N-V-P-N), con 8 gol fatti e 8 subiti. In casa il bilancio stagionale è di 1 vittoria e 2 pareggi, senza sconfitte.",
+      "Nelle ultime 5 partite di Serie A il Torino ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-V-P-P-N), con 8 gol fatti e 8 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -258,8 +260,8 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Napoli 1,7, Torino 1,4 a partita.",
-      "Gol subiti finora: Napoli 13, Torino 17.",
+      "Media gol segnati: Napoli 1,6, Torino 1,4 a partita.",
+      "Gol subiti finora: Napoli 14, Torino 17.",
       "In 3 delle ultime 5 partite del Torino si sono segnati almeno tre gol."
      ]
     }
@@ -1495,56 +1497,6 @@
     }
    ]
   },
-  "fb:565855": {
-   "fingerprint": "1rh5x3f",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "1. FC Köln e Leverkusen si affronteranno domenica 8 novembre alle 15:30 per la 9ª giornata di Bundesliga. In classifica il 1. FC Köln occupa il 15° posto con 9 punti, mentre il Leverkusen è al 6° con 13."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di Bundesliga il 1. FC Köln ha ottenuto 1 vittoria, 2 pareggi e 1 sconfitta (sequenza V-P-N-N), segnando 3 gol e subendone 3. In casa, in stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Bundesliga il Leverkusen ha ottenuto 2 vittorie e 2 sconfitte (sequenza V-V-P-P), segnando 8 gol e subendone 11. Ha perso le ultime 2 gare. In trasferta, in stagione, il bilancio è di 1 vittoria e 1 sconfitta."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: 1. FC Köln 1,1, Leverkusen 2,3 a partita.",
-      "Gol subiti finora: 1. FC Köln 12, Leverkusen 16.",
-      "In tutte le ultime 4 partite del Leverkusen sono stati segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 0 vittorie per il 1. FC Köln, 5 vittorie per il Leverkusen e nessun pareggio, con 15 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, ad aprile 2026 in Bundesliga, è terminato 1. FC Köln 1-2 Leverkusen."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca 1. FC Köln – Leverkusen?",
-     "a": "Domenica 8 novembre alle 15:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:565854": {
    "fingerprint": "1u7nrmk",
    "sections": [
@@ -1948,6 +1900,50 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001575224": {
+   "fingerprint": "1mv8zwc",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Augsburg e Mainz si affrontano domenica 22 novembre alle 15:30 nella 10ª giornata di Bundesliga. In classifica l'Augsburg occupa il 13° posto con 9 punti, mentre il Mainz è all'11° con 10."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Bundesliga l'Augsburg ha ottenuto 2 pareggi e 3 sconfitte (sequenza N-P-N-P-P), segnando 9 gol e subendone 14. Ha perso le ultime 2 partite. In casa, nella stagione, il bilancio è di 2 pareggi e 1 sconfitta, senza vittorie.",
+      "Nelle ultime 5 partite di Bundesliga il Mainz ha ottenuto 1 vittoria e 4 sconfitte (sequenza P-V-P-P-P), segnando 8 gol e subendone 13. Ha perso le ultime 3 partite. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Augsburg 2,2, Mainz 2,0 a partita.",
+      "Gol subiti finora: Augsburg 20, Mainz 19.",
+      "Nelle ultime 5 partite dell'Augsburg, in 4 si sono segnati almeno tre gol.",
+      "Nelle ultime 5 partite del Mainz, in 4 si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Augsburg – Mainz?",
+     "a": "Domenica 22 novembre alle 15:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2505,20 +2501,20 @@
    ]
   },
   "fb:558837": {
-   "fingerprint": "o2xp4l",
+   "fingerprint": "x323um",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento domenica 8 novembre alle 16:45: l'AZ ospita il Groningen per la 12ª giornata di Eredivisie. In classifica l'AZ occupa il 5° posto con 20 punti, mentre il Groningen è al 9° con 15."
+      "Domenica 8 novembre alle 16:45 l'AZ ospita il Groningen per la 12ª giornata di Eredivisie. In classifica l'AZ occupa il 6° posto con 20 punti, mentre il Groningen è al 9° con 15."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie l'AZ ha ottenuto 1 pareggio e 3 sconfitte, con sequenza P-N-P-P, segnando 2 gol e subendone 7. Ha perso le ultime 2 gare.",
-      "Nelle ultime 4 partite di Eredivisie il Groningen ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con sequenza V-P-N-P, segnando 11 gol e subendone 11. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 4 partite di Eredivisie l'AZ ha ottenuto 1 pareggio e 3 sconfitte (sequenza P-N-P-P), segnando 2 gol e subendone 7. Ha perso le ultime 2.",
+      "Nelle ultime 4 partite di Eredivisie il Groningen ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza V-P-N-P), con 11 gol fatti e 11 subiti. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     },
@@ -2526,7 +2522,7 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: AZ 1,8, Groningen 2,4 a partita.",
+      "Media gol segnati a partita: AZ 1,8, Groningen 2,4.",
       "Gol subiti finora: AZ 13, Groningen 24.",
       "In tutte le ultime 4 partite del Groningen si sono segnati almeno tre gol."
      ]
@@ -2534,7 +2530,7 @@
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per l'AZ, 1 vittoria per il Groningen e 1 pareggio, con 15 gol complessivi, pari a una media di 3,0 a partita. L'ultimo incrocio, a marzo 2026 in Eredivisie, è finito Groningen 3-0 AZ."
+      "Negli ultimi 5 confronti diretti il bilancio è di 3 vittorie per l'AZ, 1 vittoria per il Groningen e 1 pareggio, con 15 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, a marzo 2026 in Eredivisie, è terminato Groningen 3-0 AZ."
      ],
      "bullets": []
     }
@@ -2555,19 +2551,19 @@
    ]
   },
   "fb:558842": {
-   "fingerprint": "hhayr",
+   "fingerprint": "1fr0rvt",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Cambuur e PSV si sfidano domenica 8 novembre alle 16:45, nella 12ª giornata di Eredivisie. In classifica il Cambuur occupa il 10° posto con 15 punti, mentre lo PSV è al 3° con 23."
+      "Cambuur e PSV si affrontano domenica 8 novembre alle 16:45 per la 12ª giornata di Eredivisie. In classifica il Cambuur è al 10° posto con 15 punti, lo PSV al 3° con 23."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie il Cambuur ha ottenuto 3 vittorie e 1 pareggio (sequenza V-N-V-V), segnando 13 gol e subendone 3. Non perde da 4 partite. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 4 partite di Eredivisie il Cambuur ha raccolto 3 vittorie e 1 pareggio (sequenza V-N-V-V), con 13 gol fatti e 3 subiti. Non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
       "Nelle ultime 4 partite di Eredivisie lo PSV ha raccolto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V), con 11 gol fatti e 3 subiti."
      ],
      "bullets": []
@@ -2578,14 +2574,13 @@
      "bullets": [
       "Media gol segnati: Cambuur 2,1, PSV 3,2 a partita.",
       "Gol subiti finora: Cambuur 22, PSV 13.",
-      "Lo PSV ha il miglior attacco del torneo.",
       "In 3 delle ultime 4 partite del Cambuur si sono segnati almeno tre gol."
      ]
     },
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 5 confronti diretti il Cambuur ha vinto 1 volta e lo PSV 4 volte, con nessun pareggio e 26 gol complessivi (media di 5,2 a partita). L'ultimo incontro, a marzo 2023 in Eredivisie, è terminato PSV 5-2 Cambuur."
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il Cambuur, 4 vittorie per lo PSV e nessun pareggio, con 26 gol complessivi (media di 5,2 a partita). L'ultimo incrocio, a marzo 2023 in Eredivisie, è finito PSV 5-2 Cambuur."
      ],
      "bullets": []
     }
@@ -2596,7 +2591,7 @@
      "a": "Domenica 8 novembre alle 16:45, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
     },
     {
@@ -2656,20 +2651,20 @@
    ]
   },
   "fb:1001552229": {
-   "fingerprint": "1k4jhkq",
+   "fingerprint": "6gseom",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 16:30 il NEC ospita lo PSV nella 13ª giornata di Eredivisie. In classifica il NEC è al 14° posto con 11 punti, mentre lo PSV è al 3° con 23 punti."
+      "Sabato 21 novembre alle 16:30 il NEC ospita lo PSV nella 13ª giornata di Eredivisie. In classifica il NEC occupa il 14° posto con 11 punti, mentre lo PSV è al 3° posto con 23 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie il NEC ha ottenuto 3 pareggi e 1 sconfitta (sequenza N-N-N-P), segnando 5 gol e subendone 6. In casa il bilancio stagionale è di 2 pareggi, senza vittorie.",
-      "Nelle ultime 4 partite di Eredivisie lo PSV ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V), con 11 gol fatti e 3 subiti."
+      "Nelle ultime 4 partite di Eredivisie il NEC ha ottenuto 3 pareggi e 1 sconfitta (sequenza N-N-N-P), segnando 5 gol e subendone 6. In casa, nella stagione, il bilancio è di 2 pareggi, senza vittorie.",
+      "Nelle ultime 4 partite di Eredivisie lo PSV ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V), segnando 11 gol e subendone 3."
      ],
      "bullets": []
     },
@@ -2677,9 +2672,8 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: NEC 1,5, PSV 3,2 a partita.",
-      "Gol subiti finora: NEC 19, PSV 13.",
-      "Lo PSV ha il miglior attacco del torneo."
+      "Media gol segnati a partita: NEC 1,5, PSV 3,2.",
+      "Gol subiti finora: NEC 19, PSV 13."
      ]
     }
    ],
@@ -2690,11 +2684,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la [pagina dedicata all'Eredivisie](/calcio/eredivisie) e la [classifica aggiornata](/calcio/eredivisie/classifica)."
+     "a": "Puoi consultare la pagina [Eredivisie](/calcio/eredivisie) e la [classifica aggiornata](/calcio/eredivisie/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Trovi spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -2743,20 +2737,20 @@
    ]
   },
   "fb:1001552226": {
-   "fingerprint": "24faza",
+   "fingerprint": "cnh1j1",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 18:45 il Feyenoord ospita l'Excelsior per la 13ª giornata di Eredivisie. In classifica il Feyenoord è al 1° posto con 25 punti, mentre l'Excelsior è al 15° con 11."
+      "Sabato 21 novembre alle 18:45 il Feyenoord ospita l'Excelsior nella 13ª giornata di Eredivisie. In classifica il Feyenoord è al 1° posto con 25 punti, mentre l'Excelsior è al 15° con 11."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Eredivisie il Feyenoord ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-V-N-N-P), con 11 gol fatti e 10 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 5 partite di Eredivisie l'Excelsior ha collezionato 5 sconfitte (sequenza P-P-P-P-P), con 1 gol fatto e 20 subiti. Ha perso le ultime 5 partite. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 5 partite di Eredivisie il Feyenoord ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-V-N-N-P), segnando 11 gol e subendone 10. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 5 partite di Eredivisie l'Excelsior ha collezionato 5 sconfitte (sequenza P-P-P-P-P), con 1 gol fatto e 20 subiti. Ha perso tutte le ultime 5 gare. In trasferta ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     },
@@ -2765,7 +2759,8 @@
      "paragraphs": [],
      "bullets": [
       "Media gol segnati: Feyenoord 3,0, Excelsior 1,3 a partita.",
-      "Gol subiti finora: Feyenoord 12, Excelsior 29.",
+      "Gol subiti finora: Feyenoord 17, Excelsior 29.",
+      "Il Feyenoord ha il miglior attacco del torneo.",
       "In 3 delle ultime 5 partite dell'Excelsior si sono segnati almeno tre gol."
      ]
     }
@@ -2777,29 +2772,29 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
+     "a": "Puoi consultare la pagina dedicata all'[Eredivisie](/calcio/eredivisie) e la [classifica aggiornata](/calcio/eredivisie/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001552228": {
-   "fingerprint": "bxzb4o",
+   "fingerprint": "tdx165",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 21:00 il Groningen ospita l'Heerenveen nella 13ª giornata di Eredivisie. In classifica il Groningen occupa il 9° posto con 15 punti, mentre l'Heerenveen è al 7° con 18."
+      "Sabato 21 novembre alle 21:00 il Groningen ospita l'Heerenveen nella 13ª giornata di Eredivisie. In classifica il Groningen occupa il 9° posto con 15 punti, mentre l'Heerenveen è al 5° con 21."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Eredivisie il Groningen ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con sequenza V-P-N-P. Ha segnato 11 gol e ne ha subiti 11. In casa ha perso tutte le 2 partite disputate.",
-      "Nelle ultime 5 partite di Eredivisie l'Heerenveen ha ottenuto 4 vittorie e 1 sconfitta, con sequenza P-V-V-V-V. Ha segnato 13 gol e ne ha subiti 7. Arriva da 4 vittorie consecutive. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 4 partite di Eredivisie il Groningen ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza V-P-N-P), segnando 11 gol e subendone 11. In casa ha perso tutte le 2 partite disputate.",
+      "Nelle ultime 5 partite di Eredivisie l'Heerenveen ha ottenuto 4 vittorie e 1 sconfitta (sequenza P-V-V-V-V), segnando 13 gol e subendone 7. Arriva da 4 vittorie consecutive. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -2807,8 +2802,8 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Groningen 2,4, Heerenveen 1,7.",
-      "Gol subiti finora: Groningen 24, Heerenveen 13.",
+      "Media gol segnati: Groningen 2,4, Heerenveen 2,0 a partita.",
+      "Gol subiti finora: Groningen 24, Heerenveen 16.",
       "In tutte le ultime 4 partite del Groningen si sono segnati almeno tre gol.",
       "In 3 delle ultime 5 partite dell'Heerenveen si sono segnati almeno tre gol."
      ]
@@ -2821,7 +2816,7 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina dedicata all' [Eredivisie](/calcio/eredivisie) e la [classifica aggiornata](/calcio/eredivisie/classifica)."
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -2960,20 +2955,20 @@
    ]
   },
   "fb:1001552230": {
-   "fingerprint": "2q9ohh",
+   "fingerprint": "1i08tyc",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 22 novembre alle 14:30 lo Sparta ospita l'AZ nella 13ª giornata di Eredivisie. In classifica lo Sparta occupa il 12° posto con 12 punti, mentre l'AZ è al 5° con 20."
+      "Domenica 22 novembre alle 14:30 lo Sparta ospita l'AZ nella 13ª giornata di Eredivisie. In classifica lo Sparta occupa il 12° posto con 12 punti, mentre l'AZ è al 6° con 20."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Eredivisie lo Sparta ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza N-V-P-V-P. Ha segnato 11 gol e ne ha subiti 12. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Eredivisie l'AZ ha ottenuto 1 pareggio e 3 sconfitte, con la sequenza P-N-P-P. Ha segnato 2 gol e ne ha subiti 7. Le ultime 2 gare sono state perse. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
+      "Nelle ultime 5 partite di Eredivisie lo Sparta ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza N-V-P-V-P. Ha segnato 11 gol e ne ha subiti 12. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 4 partite di Eredivisie l'AZ ha ottenuto 1 pareggio e 3 sconfitte, con la sequenza P-N-P-P. Ha segnato 2 gol e ne ha subiti 7. Le ultime 2 gare sono state perse. In trasferta, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
      ],
      "bullets": []
     },
@@ -2981,9 +2976,9 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Sparta 1,8, AZ 1,8 a partita.",
+      "Media gol segnati a partita: Sparta 1,8, AZ 1,8.",
       "Gol subiti finora: Sparta 29, AZ 13.",
-      "In tutte le ultime 5 partite dello Sparta si sono segnati almeno tre gol."
+      "In tutte le ultime 5 partite dello Sparta sono stati segnati almeno tre gol."
      ]
     }
    ],
@@ -2994,7 +2989,7 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -10783,6 +10778,729 @@
     }
    ]
   },
+  "fb:1001649023": {
+   "fingerprint": "1o8zbsr",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Turkey U18 e Germany U18 si sfideranno martedì 17 novembre alle 10:00 nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Amichevoli internazionali, il Turkey U18 ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-V-P), segnando 4 gol e subendone 5."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si disputa Turkey U18 – Germany U18?",
+     "a": "Martedì 17 novembre alle 10:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001640087": {
+   "fingerprint": "9dcabl",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 11:00 il Singapore ospita il Brasile in una partita valida per le Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Amichevoli internazionali il Brasile ha ottenuto 2 vittorie e 1 pareggio, con sequenza N-V-V, segnando 9 gol e subendone 3. In trasferta il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Singapore – Brasile?",
+     "a": "Martedì 17 novembre alle 11:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001649024": {
+   "fingerprint": "1xouwcd",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Korea Republic U21 e Mexico U23 si affrontano martedì 17 novembre alle 11:00 per Amichevoli internazionali."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Korea Republic U21 – Mexico U23?",
+     "a": "Martedì 17 novembre alle 11:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001649025": {
+   "fingerprint": "132vo4o",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 12:00 il Norway U19 ospita il Netherlands U18 nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Amichevoli internazionali il Norway U19 ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-V-P-N), segnando 10 gol e subendone 7. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 3 partite di Amichevoli internazionali il Netherlands U18 ha ottenuto 2 vittorie e 1 pareggio (sequenza V-V-N), con 5 gol fatti e 3 subiti. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "In 3 delle ultime 5 partite del Norway U19 sono stati segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Norway U19 – Netherlands U18?",
+     "a": "Martedì 17 novembre alle 12:00, ora italiana."
+    },
+    {
+     "q": "Dove posso vedere classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001647368": {
+   "fingerprint": "kyfzi9",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento martedì 17 novembre alle 13:00: il Cina riceve il Bahrein per le Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di Amichevoli internazionali il Cina ha raccolto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), con 3 gol fatti e 9 subiti. Ha perso le ultime 3. In casa il bilancio stagionale è di 1 vittoria e 3 sconfitte."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "In 3 delle ultime 4 partite del Cina si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Cina – Bahrein?",
+     "a": "Martedì 17 novembre alle 13:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001647643": {
+   "fingerprint": "b79z8j",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 14:00 il Kuwait ospita l'Honduras in una partita valida per le Amichevoli internazionali."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Kuwait – Honduras?",
+     "a": "Martedì 17 novembre alle 14:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina dedicata alle [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001649026": {
+   "fingerprint": "1nqc4xl",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento martedì 17 novembre alle 14:00, quando l'Ukraine U21 ospita l'USA U21 nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Finora l'Ukraine U21 ha disputato una sola partita nelle Amichevoli internazionali, terminata 2-2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Ukraine U21 – USA U21?",
+     "a": "Martedì 17 novembre alle 14:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001640088": {
+   "fingerprint": "138y3mv",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 14:10 il Giappone ospita il Paraguay in una partita valida per le Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Amichevoli internazionali il Giappone ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 2. In casa ha vinto tutte le 2 partite disputate.",
+      "Nelle ultime 2 partite di Amichevoli internazionali il Paraguay ha ottenuto 2 vittorie (sequenza V-V), segnando 3 gol senza subirne. In trasferta ha vinto tutte le 2 partite disputate."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Giappone – Paraguay?",
+     "a": "Martedì 17 novembre alle 14:10, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001647369": {
+   "fingerprint": "x36p00",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Qatar e Corea del Sud si sfidano martedì 17 novembre alle 15:00 nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 4 partite di Amichevoli internazionali, la Corea del Sud ha raccolto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V), segnando 6 gol e subendone 4."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "La Corea del Sud non ha subito gol in 3 delle ultime 4 partite."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Qatar – Corea del Sud?",
+     "a": "Martedì 17 novembre alle 15:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001647370": {
+   "fingerprint": "1jn3049",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "L'Arabia Saudita ospita l'Uzbekistan martedì 17 novembre alle 16:30, in una partita di Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Amichevoli internazionali l'Uzbekistan ha ottenuto 2 vittorie e 1 sconfitta, con sequenza V-V-P. Nello stesso periodo ha segnato 7 gol e ne ha subiti 4."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Arabia Saudita – Uzbekistan?",
+     "a": "Martedì 17 novembre alle 16:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001647371": {
+   "fingerprint": "10sf7gr",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Russia e Venezuela si affrontano martedì 17 novembre alle 17:00, nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Amichevoli internazionali, la Russia ha ottenuto 2 vittorie e 1 pareggio (sequenza V-V-N), segnando 11 gol e subendone 3. In casa il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 3 partite di Amichevoli internazionali, il Venezuela ha ottenuto 2 pareggi e 1 sconfitta (sequenza P-N-N), con 1 gol fatto e 2 subiti. In trasferta il bilancio stagionale è di 2 pareggi e 1 sconfitta, senza ancora vittorie."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Russia – Venezuela?",
+     "a": "Martedì 17 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "È possibile consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001640089": {
+   "fingerprint": "12v5soe",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 17:00 la Giordania affronta l'Australia nella partita valida per le Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Amichevoli internazionali la Giordania ha raccolto 2 pareggi (sequenza N-N), con 1 gol fatto e 1 subito. In casa il bilancio stagionale è di 2 pareggi, senza ancora alcuna vittoria.",
+      "Nelle ultime 2 partite di Amichevoli internazionali l'Australia ha raccolto 1 pareggio e 1 sconfitta (sequenza N-P), con 3 gol fatti e 5 subiti."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Giordania – Australia?",
+     "a": "Martedì 17 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001647644": {
+   "fingerprint": "1wg9pwr",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 18:00 il Croatia U21 ospita il Germany U21 nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Croatia U21 – Germany U21?",
+     "a": "Martedì 17 novembre alle 18:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ti spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001648288": {
+   "fingerprint": "rm2ird",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento martedì 17 novembre alle 18:00: lo Switzerland U17 riceve il Czech Republic U17 per le Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Finora lo Switzerland U17 ha disputato una sola partita di Amichevoli internazionali, persa per 2-3.",
+      "Nelle ultime 3 partite di Amichevoli internazionali il Czech Republic U17 ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-V-P), segnando 6 gol e subendone 9. In trasferta ha perso tutte le 2 partite disputate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "In tutte le ultime 3 partite del Czech Republic U17 sono stati segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Switzerland U17 – Czech Republic U17?",
+     "a": "Martedì 17 novembre alle 18:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001649027": {
+   "fingerprint": "11f77gw",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 18:30 il Portugal U21 ospita il Norway U21 nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Portugal U21 – Norway U21?",
+     "a": "Martedì 17 novembre alle 18:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ti spiegano come funzionano le quote le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001649028": {
+   "fingerprint": "ncgaer",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 19:00 l'Albania U21 ospita lo Spain U21 nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Finora l'Albania U21 ha giocato una sola partita nelle Amichevoli internazionali, terminata con un pareggio per 2-2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Albania U21 – Spain U21?",
+     "a": "Martedì 17 novembre alle 19:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001647372": {
+   "fingerprint": "1s94nvd",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento martedì 17 novembre alle 22:00: l'Argentina riceve il Costa Rica nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Amichevoli internazionali l'Argentina ha raccolto 3 vittorie (sequenza V-V-V), con 14 gol fatti e 0 subiti. La squadra arriva da 3 vittorie consecutive. In casa ha vinto tutte le 3 partite giocate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "In tutte le ultime 3 partite dell'Argentina si sono segnati almeno tre gol.",
+      "L'Argentina non ha subito gol in tutte le ultime 3."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Argentina – Costa Rica?",
+     "a": "Martedì 17 novembre alle 22:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001640519": {
+   "fingerprint": "19z5ye0",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "La partita si gioca martedì 17 novembre alle 22:00, quando il Cile ospita la Colombia nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Amichevoli internazionali il Cile ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-P-V), segnando 4 gol e subendone 5.",
+      "Nelle ultime 3 partite di Amichevoli internazionali la Colombia ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-P-V), segnando 3 gol e subendone 2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Cile – Colombia?",
+     "a": "Martedì 17 novembre alle 22:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001648287": {
+   "fingerprint": "1o4e5c5",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Mercoledì 18 novembre alle 00:30 l'Uruguay ospita la Repubblica Dominicana in una partita valida per le Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Amichevoli internazionali l'Uruguay ha raccolto 2 vittorie e 1 sconfitta (sequenza P-V-V), con 11 gol fatti e 5 subiti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "In tutte le ultime 3 partite dell'Uruguay si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Uruguay – Repubblica Dominicana?",
+     "a": "Mercoledì 18 novembre alle 00:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001647373": {
+   "fingerprint": "v7cai",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Mercoledì 18 novembre alle 00:30 l'Ecuador ospita la Bolivia nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Finora l'Ecuador ha giocato una sola partita di Amichevoli internazionali, persa 0-3.",
+      "Nelle ultime 2 partite di Amichevoli internazionali la Bolivia ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 6 subiti. Ha perso entrambe le ultime gare."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Ecuador – Bolivia?",
+     "a": "Mercoledì 18 novembre alle 00:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001648286": {
+   "fingerprint": "1csxfoe",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Switzerland U17 e Czech Republic U17 si sfidano giovedì 19 novembre alle 11:00, nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Finora lo Switzerland U17 ha disputato una sola partita di Amichevoli internazionali, persa 2-3.",
+      "Nelle ultime 3 gare di Amichevoli internazionali il Czech Republic U17 ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-V-P), segnando 6 gol e subendone 9. In trasferta ha perso tutte le 2 partite disputate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "In tutte le ultime 3 partite del Czech Republic U17 sono stati segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Switzerland U17 – Czech Republic U17?",
+     "a": "Giovedì 19 novembre alle 11:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina dedicate alle [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "nba:21718059": {
    "fingerprint": "160pmg8",
    "sections": [
@@ -15283,6 +16001,42 @@
     }
    ]
   },
+  "fb:558533": {
+   "fingerprint": "l3goxh",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il match termina 1-1: la Lazio, in vantaggio all'intervallo sul punteggio di 0-1, viene raggiunta dal Napoli nella ripresa. La partita, valida per l'11ª giornata di Serie A, si è disputata domenica 8 novembre."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite giocate finora, il Napoli occupa il 10° posto con 15 punti, mentre la Lazio è al 1° posto con 29. Puoi consultare la [classifica completa](/calcio/serie-a/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Napoli tornerà in campo sabato 21 novembre alle 20:45 in casa contro il Torino. La Lazio giocherà sabato 21 novembre alle 15:00 in casa contro il Lecce."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Napoli – Lazio?",
+     "a": "1-1 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina di [Serie A](/calcio/serie-a)."
+    }
+   ]
+  },
   "fb:1001601593": {
    "fingerprint": "cz1aa0",
    "sections": [
@@ -16910,6 +17664,42 @@
     }
    ]
   },
+  "fb:564738": {
+   "fingerprint": "bkmeu6",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Real Betis ha battuto l'Elche in trasferta per 0-2. La partita, valida per la 12ª giornata di LaLiga, si è disputata domenica 8 novembre; il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, l'Elche occupa il 17° posto con 10 punti, mentre il Real Betis è al 4° con 23. [Classifica completa](/calcio/liga/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Elche tornerà in campo domenica 22 novembre alle 17:00, in trasferta contro il Levante. Anche il Real Betis giocherà domenica 22 novembre alle 17:00, in trasferta contro il Sevilla FC."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Qual è il risultato di Elche – Real Betis?",
+     "a": "0-2 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [LaLiga](/calcio/liga)."
+    }
+   ]
+  },
   "fb:565852": {
    "fingerprint": "1v56dx9",
    "sections": [
@@ -17271,26 +18061,26 @@
    ]
   },
   "fb:1001552217": {
-   "fingerprint": "9e0ml5",
+   "fingerprint": "9bv1kc",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Sittard e il Telstar si dividono la posta con un 2-2. La partita, valida per la 12ª giornata di Eredivisie, si è giocata sabato 7 novembre; il primo tempo si era chiuso 2-2."
+      "Sittard e Telstar si dividono la posta con un pareggio per 2-2. La partita, valida per la 12ª giornata di Eredivisie, si è giocata sabato 7 novembre; il primo tempo si era chiuso 2-2."
      ],
      "bullets": []
     },
     {
      "id": "classifica",
      "paragraphs": [
-      "Con le partite giocate finora il Sittard è al 6° posto con 20 punti e il Telstar al 16° con 10. [Classifica completa](/calcio/eredivisie/classifica)."
+      "Con le partite giocate finora il Sittard è al 7° posto con 20 punti, mentre il Telstar è al 16° con 10. [Classifica completa](/calcio/eredivisie/classifica)."
      ],
      "bullets": []
     },
     {
      "id": "prossimi",
      "paragraphs": [
-      "Il Sittard tornerà in campo domenica 22 novembre alle 16:45 in trasferta contro il Go Ahead. Il Telstar tornerà in campo sabato 21 novembre alle 21:00 in casa contro lo Zwolle."
+      "Il Sittard tornerà in campo domenica 22 novembre alle 16:45 in trasferta contro il Go Ahead. Il Telstar giocherà sabato 21 novembre alle 21:00 in casa contro lo Zwolle."
      ],
      "bullets": []
     }
@@ -17371,6 +18161,42 @@
     {
      "q": "Com'è finita Excelsior – Go Ahead?",
      "a": "0-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
+  "fb:558840": {
+   "fingerprint": "1w6r24j",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Rimonta dell'Heerenveen: sotto all'intervallo, vince in casa 5-3 contro il Feyenoord. La partita, valida per la 12ª giornata di Eredivisie, si è giocata domenica 8 novembre; il primo tempo si era chiuso 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora l'Heerenveen è al 5° posto con 21 punti e il Feyenoord al 1° con 25. [Classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Heerenveen tornerà in campo sabato 21 novembre alle 21:00 in trasferta contro il Groningen. Il Feyenoord tornerà in campo sabato 21 novembre alle 18:45 in casa contro l'Excelsior."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Heerenveen – Feyenoord?",
+     "a": "5-3 (1-2 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
