@@ -20,6 +20,33 @@ export const categoryIcons: Record<GuideCategory["icon"], LucideIcon> = {
 
 export { Rich, linksIn } from "../content/Rich";
 
+/** Large "Articoli correlati" card: full-bleed illustration, dark overlay, title, update date and "Leggi di più". */
+export function RelatedGuideCard({ guide }: { guide: Guide }) {
+  return (
+    <Link
+      to={guidePath(guide)}
+      className="group relative block h-80 sm:h-96 overflow-hidden rounded-xl bg-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action"
+    >
+      <ImageSlot
+        placeholder="[PLACEHOLDER_IMMAGINE_GUIDA_800x450]"
+        src={guide.image}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+      />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/10" />
+      <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+        <h3 className="text-white text-xl sm:text-2xl font-bold uppercase leading-tight tracking-wide mb-3 group-hover:underline underline-offset-4">
+          {guide.title}
+        </h3>
+        <p className="text-slate-300 text-sm mb-5">Aggiornata il {guide.updatedAt}</p>
+        <span className="inline-flex items-center rounded-md bg-action px-6 py-2.5 text-sm font-semibold uppercase text-action-foreground group-hover:bg-action-hover transition-colors">
+          Leggi di più
+        </span>
+      </div>
+    </Link>
+  );
+}
+
 export function GuideCard({ guide, featured = false }: { guide: Guide; featured?: boolean }) {
   const category = findCategory(guide.category);
   return (

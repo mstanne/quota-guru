@@ -14,6 +14,7 @@ import img4 from "../assets/guides/scommesse-sul-tennis.svg";
 import img5 from "../assets/guides/basket-over-under-handicap.svg";
 import img6 from "../assets/guides/scommesse-in-diretta.svg";
 import { principiantiGuides } from "./guides/principianti";
+import { agenzieGuides } from "./guides/agenzie";
 import { quoteGuides } from "./guides/quote";
 import { analisiGuides } from "./guides/analisi";
 import { budgetGuides } from "./guides/budget";
@@ -605,6 +606,7 @@ const categoryOrder = guideCategories.map((c) => c.slug);
 export const guides: Guide[] = [
   ...coreGuides.map((g) => ({ ...g, ...coreExtras[g.slug] })),
   ...principiantiGuides,
+  ...agenzieGuides,
   ...quoteGuides,
   ...analisiGuides,
   ...budgetGuides,
@@ -613,12 +615,12 @@ export const guides: Guide[] = [
   ...academyGuides,
 ].sort((a, b) => categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category));
 
-/** Related guides: the explicit list, completed with same-category guides, max 3. */
+/** Related guides ("Articoli correlati"): the explicit list, completed with same-category guides, max 4. */
 export function relatedGuides(g: Guide): Guide[] {
   const picked = (g.related ?? []).map((s) => guides.find((x) => x.slug === s)).filter((x): x is Guide => !!x);
   const fill = guides.filter((x) => x.slug !== g.slug && x.category === g.category && !picked.includes(x));
   const others = guides.filter((x) => x.slug !== g.slug && !picked.includes(x) && !fill.includes(x));
-  return [...picked, ...fill, ...others].slice(0, 3);
+  return [...picked, ...fill, ...others].slice(0, 4);
 }
 
 export const guidePath = (g: Pick<Guide, "slug">) => `/guide/${g.slug}`;

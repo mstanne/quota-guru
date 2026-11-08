@@ -6,7 +6,7 @@ import { Link } from "../../lib/links";
 import { PageHeader, MetaItems } from "../layout/PageHeader";
 import { ImageSlot } from "../media/ImageSlot";
 import { NotFoundPage } from "../NotFoundPage";
-import { categoryIcons, GuideBlockView, GuideCard, Rich } from "./GuideUi";
+import { categoryIcons, GuideBlockView, RelatedGuideCard, Rich } from "./GuideUi";
 import { categoryPath, findCategory, findGuide, guideMeta, relatedGuides, type Guide } from "../../data/guides";
 import { responsibleGambling as rg } from "../../data/operators";
 import { usePageMeta } from "../../lib/pageMeta";
@@ -120,13 +120,13 @@ export function GuideArticlePage() {
             </div>
           </nav>
         </div>
-        <section aria-labelledby="related" className="mt-12">
-          <h2 id="related" className="text-white text-xl mb-6">
-            Altre guide
+        <section aria-labelledby="related" className="mt-16">
+          <h2 id="related" className="text-white text-2xl sm:text-3xl font-bold uppercase text-center mb-8">
+            Articoli <span className="text-action-text">correlati</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {related.map((g) => (
-              <GuideCard key={g.slug} guide={g} />
+              <RelatedGuideCard key={g.slug} guide={g} />
             ))}
           </div>
         </section>
