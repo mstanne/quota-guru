@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T12:20:06.079Z",
+  "updatedAt": "2026-11-08T14:15:43.036Z",
   "football": {
     "details": {
       "ok": true
@@ -8,9 +8,9 @@
       "ok": true
     },
     "ok": true,
-    "requests": 1,
-    "remainingToday": 5730,
-    "matches": 219,
+    "requests": 11,
+    "remainingToday": 5367,
+    "matches": 221,
     "teamSeasons": 588
   },
   "nba": {
@@ -22,12 +22,12 @@
     },
     "ok": true,
     "requests": 9,
-    "remainingToday": 7363,
+    "remainingToday": 7354,
     "games": 38,
     "teamSeasons": 60
   },
   "calendarioCalcio": {
-    "updatedAt": "2026-11-08T12:18:02.998Z",
+    "updatedAt": "2026-11-08T14:13:36.371Z",
     "source": "API-Football",
     "ok": true,
     "competitions": {
@@ -160,15 +160,15 @@
         "matches": 309
       }
     },
-    "requests": 174,
-    "remainingToday": 5731
+    "requests": 182,
+    "remainingToday": 5384
   },
   "calendarioNba": {
-    "updatedAt": "2026-11-08T12:18:47.001Z",
+    "updatedAt": "2026-11-08T14:14:23.654Z",
     "source": "API-NBA",
     "ok": true,
     "games": 241,
     "requests": 1,
-    "remainingToday": 7372
+    "remainingToday": 7362
   }
 }
