@@ -6,7 +6,7 @@ import { Link } from "../../lib/links";
 import { paths } from "../../routes";
 import { formatShortDate } from "../../lib/footballCore";
 import { pct } from "../../lib/predictionsCore";
-import { footballTrackRecord } from "../../lib/trackRecordFootball";
+import { footballTrackRecord, nationalTrackRecord } from "../../lib/trackRecordFootball";
 import { nbaTrackRecord } from "../../lib/trackRecordNba";
 import type { TrackRecord } from "../../lib/trackRecord";
 import { PageHeader } from "../layout/PageHeader";
@@ -64,10 +64,10 @@ function Table({
   );
 }
 
-function SportSection({ sport, record }: { sport: "calcio" | "nba"; record: TrackRecord }) {
-  const title = sport === "calcio" ? "Calcio" : "NBA";
+function SportSection({ sport, record }: { sport: "calcio" | "nazionali" | "nba"; record: TrackRecord }) {
+  const title = sport === "calcio" ? "Calcio" : sport === "nazionali" ? "Calcio, nazionali" : "NBA";
   const outcomes =
-    sport === "calcio"
+    sport !== "nba"
       ? "tre esiti (1, X, 2): tirando a caso si azzecca 1 volta su 3"
       : "due esiti: tirando a caso si azzecca 1 volta su 2";
   return (
@@ -155,6 +155,7 @@ function SportSection({ sport, record }: { sport: "calcio" | "nba"; record: Trac
 export function TrackRecordPage() {
   const football = footballTrackRecord();
   const nba = nbaTrackRecord();
+  const nationals = nationalTrackRecord();
   usePageMeta(trackRecordMeta());
   return (
     <div className="min-h-screen bg-slate-950">
@@ -168,6 +169,7 @@ export function TrackRecordPage() {
         {/* the figures in one sentence, the part search engines and AI assistants quote */}
         <p className="text-slate-200 text-lg leading-relaxed">{trackLead(football, nba)}</p>
         <SportSection sport="calcio" record={football} />
+        {nationals.all.n > 0 && <SportSection sport="nazionali" record={nationals} />}
         {nba.all.n > 0 && <SportSection sport="nba" record={nba} />}
         <CalibrationSection />
         <section aria-labelledby="scarica" className="rounded-xl border border-slate-800 bg-slate-900 p-5">

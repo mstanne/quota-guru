@@ -18,6 +18,8 @@ export interface CompetitionInfo {
   hasStandings: boolean;
   /** The competition has a league phase (Champions League): its rounds are "fase-campionato-giornata-<n>". */
   leaguePhase?: boolean;
+  /** Competition of national teams. */
+  national?: boolean;
 }
 interface CompetitionFile {
   generatedAt: string;
@@ -58,11 +60,18 @@ const idx = index as unknown as {
   generatedAt: string;
   competitions: CompetitionInfo[];
   trackRecord: Omit<TrackRecord, "source">;
+  /** Same for the national teams (missing in data built before they were added). */
+  trackRecordNational?: Omit<TrackRecord, "source">;
 };
 export const footballIndex = idx.competitions;
 export const footballGeneratedAt = idx.generatedAt;
 /** Recalculated track record, computed at build time (see src/lib/trackRecord.ts). */
 export const recalculatedFootballTrack = idx.trackRecord;
+export const recalculatedNationalTrack: Omit<TrackRecord, "source"> = idx.trackRecordNational ?? {
+  all: { n: 0, hits: 0 },
+  last30: { n: 0, hits: 0 },
+  recent: [],
+};
 export const findCompetitionInfo = (slug?: string) => idx.competitions.find((c) => c.slug === slug);
 
 /** One competition with the lookups its pages need. */

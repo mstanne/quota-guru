@@ -85,7 +85,8 @@ async function football(api, progress, budget) {
   // work list: most recent seasons first, competitions in site order (archive-only ones last)
   const jobs = [];
   for (let back = 0; back <= SEASONS_BACK; back++)
-    for (const c of [...COMPETITIONS, ...extra]) {
+    // national teams: no past-season archive (their recent results are in the model history)
+    for (const c of [...COMPETITIONS.filter((c) => !c.national), ...extra]) {
       const current = seasons[c.code]?.year ?? (c.code === "BSA" ? year : new Date().getUTCMonth() >= 6 ? year : year - 1);
       jobs.push({ c, y: current - back, current: back === 0 });
     }

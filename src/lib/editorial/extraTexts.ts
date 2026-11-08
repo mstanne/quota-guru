@@ -332,7 +332,8 @@ function roundListSection(c: Competition, rows: Row[]): ArticleSection | null {
 
 function tableSection(c: Competition): ArticleSection | null {
   const table = mainTable(c);
-  if (table.length < 6 || !table[0].playedGames) return null;
+  // one table only: in a competition with groups the first group says nothing about the others
+  if (c.standings.length > 1 || table.length < 6 || !table[0].playedGames) return null;
   const [first, second] = table;
   const L = name(first.team);
   const gap = first.points - second.points;

@@ -43,7 +43,8 @@ sugli accordi.
 1. `git fetch origin dati` e poi `node scripts/tv-schedule.mjs list --days 2`: elenca le partite di oggi e domani
    con la **chiave** di ognuna, ciò che dicono gli accordi e ciò che c'è già nel palinsesto.
 2. Controlla sulle fonti ufficiali almeno le partite segnate `DA VERIFICARE` e quelle di Serie A, Champions League,
-   Europa League e Conference League. Fonti valide, in quest'ordine: pagine palinsesto o guida TV delle emittenti
+   Europa League e Conference League; nelle settimane delle nazionali anche le partite di Nations League e delle
+   altre competizioni di nazionali in elenco (quelle trasmesse in Italia: Sky, TV8, Mediaset, Rai). Fonti valide, in quest'ordine: pagine palinsesto o guida TV delle emittenti
    (DAZN, Sky Sport, Prime Video, Rai, Mediaset, TV8), comunicati della Lega Serie A sulla programmazione
    televisiva, testate sportive nazionali. Ignora siti di streaming, forum e siti che non citano l'emittente.
    Per le partite NBA basta controllare la guida di Sky Sport (quali partite sono su Sky Sport Basket).

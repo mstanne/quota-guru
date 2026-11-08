@@ -115,7 +115,8 @@ async function main() {
     const football = readJson(path.join(root, "src", "data", "football.json"), { competitions: [] });
     const unavailable = {};
     let complete = true;
-    for (const c of COMPETITIONS) {
+    // national teams: their absences come with the fixtures (/injuries?ids=, scripts/fetch-football.mjs)
+    for (const c of COMPETITIONS.filter((c) => !c.national)) {
       const y = Number(football.competitions.find((x) => x.slug === c.slug)?.season?.startDate?.slice(0, 4));
       if (!y) continue;
       try {

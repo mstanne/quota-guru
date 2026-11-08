@@ -1,5 +1,5 @@
 // Title, description and structured data of the team pages (used by the pages and by the pre-render).
-import type { FootballTeam, NbaTeam } from "./teams";
+import type { FootballTeam, NationalTeam, NbaTeam } from "./teams";
 import { teamPaths } from "./teams";
 
 export function footballTeamMeta(t: FootballTeam) {
@@ -50,6 +50,44 @@ export function nbaTeamMeta(t: NbaTeam) {
         url: path,
         memberOf: { "@type": "SportsOrganization", name: "NBA" },
         location: t.city ? { "@type": "Place", name: t.city } : undefined,
+      },
+    ],
+  };
+}
+
+const CONFED_IT: Record<string, string> = {
+  UEFA: "UEFA (Europa)",
+  CONMEBOL: "CONMEBOL (Sudamerica)",
+  CAF: "CAF (Africa)",
+  AFC: "AFC (Asia)",
+  CONCACAF: "CONCACAF (Nord e Centro America)",
+  OFC: "OFC (Oceania)",
+};
+export const confedLabel = (c: string | null) => (c ? (CONFED_IT[c] ?? c) : null);
+
+export function nationalTeamMeta(t: NationalTeam) {
+  const path = `${teamPaths.football}/${t.slug}`;
+  const next = t.upcoming[0];
+  const description =
+    `Nazionale di calcio ${t.name === "Italia" ? "italiana" : `di ${t.name}`}: ` +
+    (next ? `prossima partita contro ${next.opponent} (${next.competition}) con il pronostico, ` : "") +
+    "ultimi risultati, bilancio anno per anno, convocati e commissario tecnico.";
+  return {
+    path,
+    title: `Nazionale ${t.name}: pronostici, risultati e convocati`,
+    description,
+    image: undefined,
+    jsonLd: [
+      {
+        "@type": "SportsTeam",
+        "@id": `${path}#squadra`,
+        name: `Nazionale di calcio: ${t.name}`,
+        alternateName: t.name,
+        sport: "Calcio",
+        url: path,
+        logo: t.crest ?? undefined,
+        memberOf: t.confed ? { "@type": "SportsOrganization", name: t.confed } : undefined,
+        coach: t.coach ? { "@type": "Person", name: t.coach.name } : undefined,
       },
     ],
   };

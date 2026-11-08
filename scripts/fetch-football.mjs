@@ -16,7 +16,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { apiSports, BudgetError, loadDotEnv, PlanError } from "./lib/api-sports.mjs";
-import { footballTeamResolver, loadIdMap, matchIdResolver, MATCH_OFFSET, saveIdMap } from "./lib/id-map.mjs";
+import { footballTeamResolver, loadIdMap, matchIdResolver, MATCH_OFFSET, saveIdMap, TEAM_OFFSET, tlaOf } from "./lib/id-map.mjs";
+import { nationalTeamName, sameCountry } from "./lib/national-teams.mjs";
+import { NATIONAL_HISTORY_YEARS } from "./lib/national-fit.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "data", "football.json");
@@ -26,7 +28,7 @@ const IDMAP = path.join(root, "data", "id-map.json");
 const STORE = path.join(root, ".cache", "match-details", "football-store.json");
 const STATUS = path.join(root, "public", "stato-dati.json");
 
-import { COMPETITIONS } from "./lib/leagues.mjs";
+import { COMPETITIONS, NATIONAL } from "./lib/leagues.mjs";
 export { COMPETITIONS };
 
 const DAYS_BACK = 45;
@@ -38,6 +40,7 @@ const SQUAD_DAYS = 3; // squads refreshed every N days...
 const COACH_DAYS = 7;
 const TEAM_STATS_DAYS = 3; // season statistics of a club (/teams/statistics)
 const CLUBS_PER_RUN = 80; // ...a few clubs per run
+const VENUES_PER_RUN = 40; // stadium countries of national-team matches (home or neutral ground), kept forever
 const DAY = 86400e3;
 
 const readJson = (file, fallback) => {
@@ -63,8 +66,16 @@ const STATUS_MAP = {
   PEN: "FINISHED", AWD: "AWARDED", WO: "AWARDED", PST: "POSTPONED", CANC: "CANCELLED", ABD: "CANCELLED",
 };
 
-/** API-Football round name → stage and matchday as the site uses them. */
-export function roundOf(round = "") {
+/** API-Football round name → stage and matchday as the site uses them. `national`: competitions of national teams,
+ *  whose group rounds are named in many ways ("League A - 5", "Group Stage - 3", "2nd Round - 4"). */
+export function roundOf(round = "", national = false) {
+  if (national) {
+    if (/friendl/i.test(round)) return { stage: "FRIENDLY", matchday: null };
+    const k = round.toLowerCase();
+    const knockout = /final|semi|quarter|round of|play-?off|8th|16th|relegation|promotion|3rd place/.test(k);
+    const n = round.match(/-\s*(\d{1,2})\s*$/);
+    if (n && !knockout) return { stage: "REGULAR_SEASON", matchday: Number(n[1]) };
+  }
   let m = round.match(/^Regular Season - (\d+)/i);
   if (m) return { stage: "REGULAR_SEASON", matchday: Number(m[1]) };
   m = round.match(/^League Stage - (\d+)/i);
@@ -78,6 +89,7 @@ export function roundOf(round = "") {
   const r = round.toLowerCase();
   if (r.includes("qualifying") || r.startsWith("preliminary")) return { stage: "QUALIFICATION", matchday: null };
   if (r.includes("knockout round play-offs") || r === "play-offs" || r.includes("play-off")) return { stage: "PLAYOFFS", matchday: null };
+  if (r.includes("3rd place")) return { stage: "THIRD_PLACE", matchday: null };
   if (r.includes("round of 32") || r.includes("16th finals")) return { stage: "LAST_32", matchday: null };
   if (r.includes("round of 16") || r.includes("8th finals")) return { stage: "LAST_16", matchday: null };
   if (r.includes("quarter")) return { stage: "QUARTER_FINALS", matchday: null };
@@ -98,13 +110,14 @@ const H2H_NAMES = {
   "Club Friendlies": "Amichevole",
   "League Cup": "League Cup",
 };
+for (const c of NATIONAL) H2H_NAMES[c.apiName] = c.name;
 const h2hCompetition = (name, country) =>
   country === "Brazil" && name === "Serie A" ? "Brasileirão" : (H2H_NAMES[name] ?? name);
 
-export function compactFixture(f, teamOf, idOf) {
+export function compactFixture(f, teamOf, idOf, national = false) {
   const short = f.fixture?.status?.short;
   const status = STATUS_MAP[short] ?? "SCHEDULED";
-  const { stage, matchday } = roundOf(f.league?.round);
+  const { stage, matchday } = roundOf(f.league?.round, national);
   const g = f.goals ?? {};
   const played = ["FINISHED", "AWARDED", "IN_PLAY", "PAUSED", "SUSPENDED"].includes(status);
   const ft = played ? { home: g.home ?? null, away: g.away ?? null } : { home: null, away: null };
@@ -231,7 +244,19 @@ async function main() {
   for (const [slug, ids] of Object.entries(teamsFile.competitions ?? {}))
     for (const id of ids) if (teamsFile.teams?.[id]) addTeam(teamsFile.teams[id], slug);
   const teamReport = [];
-  const resolveTeam = footballTeamResolver(map, [...prevTeams.values()], logo, teamReport);
+  const resolveClub = footballTeamResolver(map, [...prevTeams.values()], logo, teamReport);
+  // national teams are never paired with clubs of the previous data: their own id, Italian name
+  const nationalSlugs = new Set(NATIONAL.map((c) => c.slug));
+  let newNationalTeams = 0;
+  const resolveTeam = (t, slug) => {
+    if (!nationalSlugs.has(slug) || map.footballTeams[String(t.id)]) return resolveClub(t, slug);
+    const { name, shortName } = nationalTeamName(t.name);
+    const entry = { id: TEAM_OFFSET + t.id, name, shortName, tla: /^[A-Z]{3}$/.test(t.code ?? "") ? t.code : tlaOf(name), national: true };
+    // not in the daily report (nothing to check: no pairing), only counted
+    map.footballTeams[String(t.id)] = entry;
+    newNationalTeams++;
+    return { ...entry, crest: logo(t.logo) };
+  };
   const prevMatches = (previous.competitions ?? []).flatMap((c) => (c.matches ?? []).map((match) => ({ match, comp: c.slug })));
   const resolveMatch = matchIdResolver(map.footballMatches, prevMatches);
 
@@ -242,6 +267,7 @@ async function main() {
   history.seasons ??= {};
   const keepHistory = new Map((history.results ?? []).map((r) => [String(r.id), r]));
   let stopped = null;
+  const venueOf = new Map(); // API fixture id → stadium id, matches of national teams being shown
 
   for (const c of COMPETITIONS) {
     const prev = (previous.competitions ?? []).find((x) => x.code === c.code);
@@ -250,6 +276,13 @@ async function main() {
       continue;
     }
     try {
+      if (c.national) {
+        const comp = await nationalCompetition(api, c, { store, prev, from, to, now, history, keepHistory, venueOf, resolveTeam, resolveMatch });
+        if (comp) competitions.push(comp);
+        status.competitions[c.code] = { ok: true, matches: comp?.matches.length ?? 0 };
+        console.log(`${c.name}: ${comp ? `${comp.matches.length} partite, classifica ${comp.standings.length ? "sì" : "no"}` : "nessuna partita in questo periodo"}`);
+        continue;
+      }
       // current season (refreshed daily): year, start and end dates
       if (!fresh(store.seasons[c.code]?.at, 1)) {
         const lg = await api.get(`/leagues?id=${c.api}&current=true`);
@@ -344,7 +377,8 @@ async function main() {
           });
         if (!list.length && y !== season.year) continue;
         // a season comes from one source only: drop what an older source left for it
-        for (const [k, r] of keepHistory) if (r.comp === c.code && seasonStartOf(r.date, c.code) === y) keepHistory.delete(k);
+        for (const [k, r] of keepHistory)
+          if (r.comp === c.code && seasonStartOf(r.date, c.code) === y) keepHistory.delete(k);
         for (const r of list) keepHistory.set(String(r.id), r);
         history.seasons[hk] = { n: list.length, source: "api-football" };
         if (y !== season.year) console.log(`  storico ${hk}: ${list.length} risultati`);
@@ -354,6 +388,19 @@ async function main() {
       console.warn(`${c.name}: non aggiornata (${err.message})`);
       if (prev) competitions.push(prev);
       if (err instanceof BudgetError || err instanceof PlanError) stopped = err.message;
+    }
+  }
+
+  if (newNationalTeams) console.log(`Nazionali nuove: ${newNationalTeams}`);
+  // national teams: home or neutral ground, from the country of the stadium (see neutralGround)
+  if (!stopped) {
+    try {
+      const names = new Map(Object.values(map.footballTeams).map((t) => [t.id, t.name]));
+      const nameOf = (siteId) => names.get(siteId) ?? null;
+      await neutralGround(api, store, competitions, keepHistory, venueOf, nameOf);
+    } catch (err) {
+      if (err instanceof BudgetError || err instanceof PlanError) stopped = err.message;
+      console.warn(`Stadi delle nazionali non verificati: ${err.message}`);
     }
   }
 
@@ -469,9 +516,12 @@ async function main() {
     console.warn("Nessuna competizione scaricata: mantengo i dati esistenti.");
     return;
   }
-  const oldest = Math.min(...competitions.map((c) => Number(c.season?.startDate?.slice(0, 4)) || 9999)) - HISTORY_SEASONS;
+  const clubs = competitions.filter((c) => !nationalSlugs.has(c.slug));
+  const oldest = Math.min(...clubs.map((c) => Number(c.season?.startDate?.slice(0, 4)) || 9999)) - HISTORY_SEASONS;
+  const oldestNational = new Date(now).getUTCFullYear() - NATIONAL_HISTORY_YEARS;
+  const nationalCodes = new Set(NATIONAL.map((c) => c.code));
   history.results = [...keepHistory.values()]
-    .filter((r) => Number(r.date.slice(0, 4)) >= oldest)
+    .filter((r) => Number(r.date.slice(0, 4)) >= (nationalCodes.has(r.comp) ? oldestNational : oldest))
     .sort((a, b) => a.date.localeCompare(b.date));
   history.updatedAt = new Date(now).toISOString();
   writeJson(HISTORY, history);
@@ -498,6 +548,170 @@ async function main() {
   writeJson(STATUS, st);
   const total = competitions.reduce((n, c) => n + c.matches.length, 0);
   console.log(`Salvato src/data/football.json: ${competitions.length} competizioni, ${total} partite (${api.stats().requests} richieste).`);
+}
+
+// ------------------------------------------------------------------------------------------- national teams
+/**
+ * One competition of national teams: the seasons are chosen by date (qualifiers last two years and API-Football
+ * may name them after the tournament, e.g. season 2026 for qualifiers played in 2024-25), fixtures of every season
+ * under way, standings with their groups, top scorers, and the history of the last years for the model.
+ * Returns the competition in the site's format, or null when it has no match in the period shown.
+ */
+async function nationalCompetition(api, c, ctx) {
+  const { store, prev, from, to, now, history, keepHistory, venueOf, resolveTeam, resolveMatch } = ctx;
+  store.leagueInfo ??= {};
+  if (!fresh(store.leagueInfo[c.code]?.at, 1) || !store.leagueInfo[c.code]?.name) {
+    const [l] = await api.get(`/leagues?id=${c.api}`);
+    store.leagueInfo[c.code] = {
+      at: new Date(now).toISOString(),
+      name: l?.league?.name ?? null,
+      seasons: (l?.seasons ?? []).map((x) => ({ year: x.year, start: x.start, end: x.end })),
+    };
+  }
+  const info = store.leagueInfo[c.code];
+  // a wrong id would publish another competition under this name: stop here and report it
+  if ((info.name ?? "").toLowerCase() !== c.apiName.toLowerCase())
+    throw new Error(`l'id ${c.api} corrisponde a "${info.name}", non a "${c.apiName}"`);
+  const teamOf = (t) => resolveTeam(t, c.slug);
+  const idOf = (apiId, home, away, date) => resolveMatch(apiId, c.slug, home, away, date);
+  const live = info.seasons.filter((x) => x.start && x.end && x.start <= to && x.end >= from);
+
+  // history for the model: every season ended in the last years; past seasons once, those under way at every run
+  const since = isoDay(now - NATIONAL_HISTORY_YEARS * 365 * DAY);
+  for (const x of info.seasons.filter((x) => x.end && x.end >= since && x.start <= isoDay(now))) {
+    const hk = `${c.code}-${x.year}`;
+    const ongoing = x.end >= isoDay(now - 7 * DAY);
+    if (!ongoing && history.seasons[hk]?.n > 0) continue;
+    if (!ongoing && history.seasons[hk] && fresh(history.seasons[hk].at, 30)) continue; // empty: asked again monthly
+    const list = (await api.get(`/fixtures?league=${c.api}&season=${x.year}&status=FT-AET-PEN-AWD`))
+      .filter((f) => f.goals?.home != null)
+      .map((f) => {
+        const home = teamOf(f.teams.home).id;
+        const away = teamOf(f.teams.away).id;
+        const date = new Date(f.fixture.date).toISOString().replace(".000Z", "Z");
+        // same id as the match pages (national teams are never paired with older data)
+        const id = MATCH_OFFSET + f.fixture.id;
+        const old = keepHistory.get(String(id));
+        return {
+          id, date, comp: c.code, home, away, hg: f.goals.home, ag: f.goals.away,
+          ...(f.fixture?.venue?.id ? { venue: f.fixture.venue.id } : {}),
+          ...(old?.neutral != null ? { neutral: old.neutral } : {}),
+        };
+      });
+    for (const r of list) keepHistory.set(String(r.id), r);
+    history.seasons[hk] = { n: list.length, source: "api-football", at: new Date(now).toISOString() };
+    if (!ongoing) console.log(`  storico ${hk}: ${list.length} risultati`);
+  }
+  if (!live.length) return null;
+
+  // the season shown: the one that ends last among those under way
+  const main = [...live].sort((a, b) => a.end.localeCompare(b.end)).at(-1);
+  store.seasons[c.code] = { at: new Date(now).toISOString(), year: main.year, start: main.start, end: main.end };
+  const matches = [];
+  for (const x of live) {
+    const list = await api.get(`/fixtures?league=${c.api}&season=${x.year}&from=${from}&to=${to}`);
+    for (const f of list) {
+      if (f.fixture?.venue?.id) venueOf.set(f.fixture.id, f.fixture.venue.id);
+      matches.push(compactFixture(f, teamOf, idOf, true));
+    }
+  }
+  matches.sort((a, b) => a.utcDate.localeCompare(b.utcDate));
+  // the decision taken by an earlier run stays until the stadium is checked again (see neutralGround)
+  const before = new Map((prev?.matches ?? []).map((m) => [m.id, m]));
+  for (const m of matches) if (before.get(m.id)?.neutral != null) m.neutral = before.get(m.id).neutral;
+
+  let standings = prev?.standings ?? [];
+  if (c.standings !== false) {
+    try {
+      const st = compactStandings((await api.get(`/standings?league=${c.api}&season=${main.year}`))[0]?.league?.standings ?? [], teamOf);
+      for (const g of st) g.group = groupIt(g.group);
+      if (st.length) standings = st;
+    } catch (err) {
+      if (err instanceof BudgetError || err instanceof PlanError) throw err;
+      console.warn(`  classifica ${c.name} non disponibile: ${err.message}`);
+    }
+    // group of every match, from the tables (API-Football gives it only there)
+    const groupOf = new Map();
+    for (const g of standings) if (g.group) for (const r of g.table) groupOf.set(r.team.id, g.group);
+    for (const m of matches) {
+      const g = groupOf.get(m.homeTeam.id);
+      if (g && g === groupOf.get(m.awayTeam.id)) m.group = g;
+    }
+  } else standings = [];
+
+  const regular = matches.filter((m) => m.matchday != null);
+  const next = regular.find((m) => !["FINISHED", "AWARDED", "CANCELLED"].includes(m.status));
+  const comp = {
+    code: c.code,
+    slug: c.slug,
+    name: c.name,
+    area: c.area,
+    national: true,
+    season: { startDate: main.start, endDate: main.end, currentMatchday: next?.matchday ?? regular.at(-1)?.matchday ?? null },
+    matches,
+    standings,
+  };
+  if (c.leaders !== false) {
+    store.leaders ??= {};
+    if (!fresh(store.leaders[c.code]?.at, 1) || store.leaders[c.code]?.season !== main.year) {
+      const row = (r) => {
+        const st = r.statistics?.find((x) => x.league?.id === c.api) ?? r.statistics?.[0] ?? {};
+        const t = st.team ? teamOf(st.team) : null;
+        return {
+          id: r.player?.id ?? null, name: r.player?.name ?? "", first: r.player?.firstname ?? null, last: r.player?.lastname ?? null,
+          nationality: r.player?.nationality ?? null, team: t ? { id: t.id, shortName: t.shortName, crest: t.crest } : null,
+          apps: st.games?.appearences ?? 0, min: st.games?.minutes ?? 0, goals: st.goals?.total ?? 0, assists: st.goals?.assists ?? 0,
+          pen: st.penalty?.scored ?? 0, yellow: st.cards?.yellow ?? 0, red: (st.cards?.red ?? 0) + (st.cards?.yellowred ?? 0),
+        };
+      };
+      const get = async (what) => (await api.get(`/players/${what}?league=${c.api}&season=${main.year}`)).slice(0, 20).map(row);
+      store.leaders[c.code] = { at: new Date(now).toISOString(), season: main.year, scorers: await get("topscorers"), assists: await get("topassists"), yellow: await get("topyellowcards"), red: await get("topredcards") };
+    }
+    const { at, season: _s, ...lists } = store.leaders[c.code];
+    if (lists.scorers?.length) comp.leaders = { updatedAt: at, ...lists };
+  }
+  return matches.length || standings.length ? comp : null;
+}
+
+/** Group names in Italian: "League A - Group 1" → "Lega A · Gruppo 1", "Group C" → "Gruppo C". */
+export function groupIt(name) {
+  if (!name) return name;
+  if (/third/i.test(name)) return "Classifica delle terze";
+  return String(name)
+    .replace(/\bLeague\b/g, "Lega")
+    .replace(/\bGroup\b/g, "Gruppo")
+    .replace(/\s+-\s+/g, " · ")
+    .trim();
+}
+
+/**
+ * National teams often play on neutral ground (tournaments, some friendlies): a match is at home only when its
+ * stadium is in the home team's country. The country of each stadium comes from /venues (1 request per stadium,
+ * kept forever), the next matches first. Until a stadium is known: neutral in the final phase of a tournament,
+ * at home otherwise.
+ */
+async function neutralGround(api, store, competitions, keepHistory, venueOf, nameOf) {
+  store.venues ??= {};
+  const tournament = new Set(NATIONAL.filter((c) => c.tournament).map((c) => c.code));
+  const nationalCodes = new Set(NATIONAL.map((c) => c.code));
+  // next matches first, then the history (a few stadiums per run)
+  const items = [];
+  for (const c of competitions.filter((c) => c.national))
+    for (const m of c.matches) items.push({ code: c.code, venue: venueOf.get(m.apiId), home: m.homeTeam.name, row: m });
+  for (const r of keepHistory.values())
+    if (nationalCodes.has(r.comp)) items.push({ code: r.comp, venue: r.venue, home: nameOf(r.home), row: r });
+  let asked = 0;
+  for (const it of items) {
+    if (it.venue && store.venues[it.venue] === undefined && asked < VENUES_PER_RUN) {
+      asked++;
+      const [v] = await api.get(`/venues?id=${it.venue}`);
+      store.venues[it.venue] = v?.country ?? null;
+    }
+    const country = it.venue ? store.venues[it.venue] : null;
+    if (country && it.home) it.row.neutral = !sameCountry(it.home, country);
+    else it.row.neutral ??= tournament.has(it.code);
+  }
+  console.log(`Stadi delle nazionali: ${Object.keys(store.venues).length} noti (${asked} richieste)`);
 }
 
 const seasonStartOf = (date, code) => {
@@ -613,6 +827,38 @@ async function updateClubs(api, competitions, teamsFile, store, map, now) {
     }
     if (ids.length) teamsFile.competitions[comp.slug] = ids;
   }
+  // national teams with a match in the period shown: call-ups (/players/squads gives the latest list) and coach
+  const apiOf = new Map(Object.entries(map.footballTeams).map(([apiId, t]) => [t.id, Number(apiId)]));
+  const soon = competitions
+    .filter((c) => c.national)
+    .flatMap((c) => c.matches)
+    .filter((m) => ["SCHEDULED", "TIMED"].includes(m.status))
+    .sort((a, b) => a.utcDate.localeCompare(b.utcDate))
+    .flatMap((m) => [m.homeTeam, m.awayTeam]);
+  for (const t of new Map(soon.map((t) => [t.id, t])).values()) {
+    const apiId = apiOf.get(t.id);
+    if (!apiId || budget <= 0) continue;
+    const old = teamsFile.teams[t.id] ?? {};
+    const out = { id: t.id, name: t.name, shortName: t.shortName, tla: t.tla, crest: t.crest ?? old.crest ?? null, national: true, coach: old.coach ?? null, squad: old.squad ?? [], updatedAt: old.updatedAt ?? null };
+    if (!fresh(store.squads[apiId], SQUAD_DAYS)) {
+      budget--;
+      const players = (await api.get(`/players/squads?team=${apiId}`))[0]?.players ?? [];
+      if (players.length) {
+        out.squad = players.map((p) => ({ id: p.id ?? null, name: p.name ?? "", position: POSITION[p.position] ?? p.position ?? null, born: null, nationality: null, number: p.number ?? null, age: p.age ?? null }));
+        out.updatedAt = new Date(now).toISOString();
+      }
+      store.squads[apiId] = new Date(now).toISOString();
+    }
+    if (budget > 0 && !fresh(store.coaches[apiId], COACH_DAYS)) {
+      budget--;
+      const coaches = await api.get(`/coachs?team=${apiId}`);
+      const current = coaches.find((c) => c.career?.[0]?.team?.id === apiId && !c.career[0].end);
+      if (current) out.coach = { name: current.name, nationality: current.nationality ?? null, since: current.career[0].start ?? null };
+      store.coaches[apiId] = new Date(now).toISOString();
+    }
+    teamsFile.teams[t.id] = out;
+  }
+
   teamsFile.updatedAt = new Date(now).toISOString();
   writeJson(TEAMS, teamsFile);
   console.log(`Squadre: ${Object.keys(teamsFile.teams).length} club (${CLUBS_PER_RUN - budget} richieste per rose e allenatori)`);

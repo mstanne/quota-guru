@@ -50,11 +50,18 @@ export const MIN_GAMES = 3;
  *   asOf: only matches before this date are used and weights are computed from it
  *   cups: competition codes that are not domestic leagues (e.g. ["CL"])
  *   leaguePriors: prior strength of each domestic league (log scale); learnt from cross-league games
+ *   leagueOf: (comp) → "league" a non-cup competition belongs to (default: the competition itself). National teams:
+ *     the confederation, so Euro qualifiers and Nations League both mean "UEFA"
+ *   compWeights: weight of each competition's games (default 1), e.g. friendlies count less
+ *   crossAll: league strength is learnt from every game between teams of different leagues, not only from cups
+ *     (national teams: a team never changes confederation, so a Copa América guest is a fair link)
  */
 export function fitModel(results, cfg = {}) {
   const o = { ...DEFAULTS, ...(cfg.options || {}) };
   const asOf = cfg.asOf ? Date.parse(cfg.asOf) : Date.now();
   const cups = new Set(cfg.cups || []);
+  const leagueOf = cfg.leagueOf || ((c) => c);
+  const compWeight = (c) => cfg.compWeights?.[c] ?? 1;
   const games = results.filter(
     (r) => Number.isFinite(r.hg) && Number.isFinite(r.ag) && Date.parse(r.date) < asOf && r.home !== r.away,
   );
@@ -63,9 +70,11 @@ export function fitModel(results, cfg = {}) {
   const leagueCount = new Map();
   for (const g of games) {
     if (cups.has(g.comp)) continue;
+    const lg = leagueOf(g.comp);
+    if (!lg) continue;
     for (const t of [g.home, g.away]) {
       const m = leagueCount.get(t) || new Map();
-      m.set(g.comp, (m.get(g.comp) || 0) + 1);
+      m.set(lg, (m.get(lg) || 0) + 1);
       leagueCount.set(t, m);
     }
   }
@@ -80,7 +89,7 @@ export function fitModel(results, cfg = {}) {
   const firstLeagueGame = new Map();
   const leagueFirst = new Map();
   for (const g of games) {
-    if (cups.has(g.comp)) continue;
+    if (cups.has(g.comp) || cfg.crossAll) continue; // national teams are never "promoted"
     const d = Date.parse(g.date);
     leagueFirst.set(g.comp, Math.min(leagueFirst.get(g.comp) ?? Infinity, d));
     for (const t of [g.home, g.away]) {
@@ -100,13 +109,13 @@ export function fitModel(results, cfg = {}) {
   /** @type {{ y:number, w:number, comp:string, att:number, def:number, home:boolean, lA?:string, lD?:string }[]} */
   const obs = [];
   for (const g of games) {
-    const w = Math.exp((-lambda * (asOf - Date.parse(g.date))) / DAY);
+    const w = Math.exp((-lambda * (asOf - Date.parse(g.date))) / DAY) * compWeight(g.comp);
     if (w < 1e-4) continue;
     const lh = teamLeague.get(g.home);
     const la = teamLeague.get(g.away);
     // league strength is learnt only from cup games between leagues: in domestic games a promoted or
     // relegated side would otherwise link two leagues with a team that changed level
-    const cross = cups.has(g.comp) && lh && la && lh !== la;
+    const cross = (cfg.crossAll || cups.has(g.comp)) && lh && la && lh !== la;
     const withXg = o.xgWeight > 0 && Number.isFinite(g.hxg) && Number.isFinite(g.axg);
     const yh = withXg ? (1 - o.xgWeight) * g.hg + o.xgWeight * g.hxg : g.hg;
     const ya = withXg ? (1 - o.xgWeight) * g.ag + o.xgWeight * g.axg : g.ag;

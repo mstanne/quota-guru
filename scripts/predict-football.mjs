@@ -17,6 +17,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { fitModel, predict } from "./lib/poisson-model.mjs";
 import { CUPS, FIT, XG_WEIGHT } from "./lib/football-fit.mjs";
+import { NATIONAL_CODES, NATIONAL_FIT } from "./lib/national-fit.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SNAPSHOT = path.join(root, "src", "data", "football.json");
@@ -38,23 +39,36 @@ for (const c of snapshot.competitions) {
     // expected goals of the match, when the history has them (scripts/archive-data.mjs)
     const h = byId.get(m.id);
     const xg = Number.isFinite(h?.hxg) ? { hxg: h.hxg, axg: h.axg } : {};
-    byId.set(m.id, { id: m.id, date: m.utcDate, comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, hg: ft.home, ag: ft.away, ...xg });
+    const neutral = m.neutral ?? h?.neutral;
+    byId.set(m.id, {
+      id: m.id, date: m.utcDate, comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, hg: ft.home, ag: ft.away, ...xg,
+      ...(neutral ? { neutral: true } : {}),
+    });
   }
 }
-const results = [...byId.values()].sort((a, b) => a.date.localeCompare(b.date));
-// European cup finals are on neutral ground
-const neutral = (c, m) => CUPS.includes(c.code) && m.stage === "FINAL";
+const all = [...byId.values()].sort((a, b) => a.date.localeCompare(b.date));
+// clubs and national teams are two separate models (scripts/lib/national-fit.mjs)
+const isNational = (code) => NATIONAL_CODES.has(code);
+const results = all.filter((r) => !isNational(r.comp));
+const nationalResults = all.filter((r) => isNational(r.comp));
+// European cup finals are on neutral ground; national teams: from the stadium's country (scripts/fetch-football.mjs)
+const neutral = (c, m) => (isNational(c.code) ? !!m.neutral : CUPS.includes(c.code) && m.stage === "FINAL");
+const fitFor = (code, asOf) =>
+  isNational(code) ? fitModel(nationalResults, { ...NATIONAL_FIT, asOf }) : fitModel(results, { ...FIT, asOf });
 
 const asOf = snapshot.generatedAt;
-console.log(`Risultati usati: ${results.length} (storico: ${(history.results || []).length})`);
+console.log(`Risultati usati: ${results.length} club, ${nationalResults.length} nazionali (storico: ${(history.results || []).length})`);
 
 // ---- upcoming matches: one fit with everything known now ----
 const model = fitModel(results, { ...FIT, asOf });
+const nationalModel = fitModel(nationalResults, { ...NATIONAL_FIT, asOf });
 const predictions = {};
 for (const c of snapshot.competitions) {
   for (const m of c.matches) {
     if (!OPEN.has(m.status)) continue;
-    const p = predict(model, { comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, neutral: neutral(c, m) });
+    const p = predict(isNational(c.code) ? nationalModel : model, {
+      comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, neutral: neutral(c, m),
+    });
     if (p) predictions[m.id] = { ...p, pre: false };
   }
 }
@@ -64,27 +78,33 @@ const finished = snapshot.competitions.flatMap((c) =>
   c.matches.filter((m) => PLAYED.has(m.status) && m.score?.fullTime?.home != null).map((m) => ({ c, m })),
 );
 const days = [...new Set(finished.map(({ m }) => m.utcDate.slice(0, 10)))].sort();
+// national teams have their own track record: they play few games, and mixing them would change the clubs' figures
 const track = { n: 0, hits: 0, logLoss: 0, brier: 0 };
+const trackNational = { n: 0, hits: 0, logLoss: 0, brier: 0 };
 for (const day of days) {
-  const dayModel = fitModel(results, { ...FIT, asOf: `${day}T00:00:00Z` });
+  const models = new Map(); // one refit per day and per model, only when that day has games of that kind
   for (const { c, m } of finished.filter(({ m }) => m.utcDate.startsWith(day))) {
-    const p = predict(dayModel, { comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, neutral: neutral(c, m) });
+    const kind = isNational(c.code) ? "national" : "club";
+    if (!models.has(kind)) models.set(kind, fitFor(c.code, `${day}T00:00:00Z`));
+    const p = predict(models.get(kind), { comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, neutral: neutral(c, m) });
     if (!p) continue;
     const ft = m.score.fullTime;
     const outcome = ft.home > ft.away ? 0 : ft.home === ft.away ? 1 : 2;
     predictions[m.id] = { ...p, pre: true };
     // the track record counts only matches where both teams had some history
     if (p.confidence === "bassa") continue;
-    track.n++;
-    if (p.p.indexOf(Math.max(...p.p)) === outcome) track.hits++;
-    track.logLoss += -Math.log(Math.max(1e-6, p.p[outcome]));
-    track.brier += p.p.reduce((s, v, i) => s + (v - (i === outcome ? 1 : 0)) ** 2, 0);
+    const t = kind === "national" ? trackNational : track;
+    t.n++;
+    if (p.p.indexOf(Math.max(...p.p)) === outcome) t.hits++;
+    t.logLoss += -Math.log(Math.max(1e-6, p.p[outcome]));
+    t.brier += p.p.reduce((s, v, i) => s + (v - (i === outcome ? 1 : 0)) ** 2, 0);
   }
 }
-if (track.n) {
-  track.logLoss = Math.round((track.logLoss / track.n) * 1000) / 1000;
-  track.brier = Math.round((track.brier / track.n) * 1000) / 1000;
-}
+for (const t of [track, trackNational])
+  if (t.n) {
+    t.logLoss = Math.round((t.logLoss / t.n) * 1000) / 1000;
+    t.brier = Math.round((t.brier / t.n) * 1000) / 1000;
+  }
 
 const out = {
   generatedAt: asOf,
@@ -96,13 +116,22 @@ const out = {
     from: results[0]?.date ?? null,
   },
   track,
+  national: {
+    name: "Poisson con correzione Dixon-Coles (nazionali)",
+    results: nationalResults.length,
+    rho: nationalModel.rho,
+    halfLifeDays: nationalModel.options.halfLifeDays,
+    from: nationalResults[0]?.date ?? null,
+    track: trackNational,
+  },
   predictions,
 };
 const next = JSON.stringify(out) + "\n";
 if (!fs.existsSync(OUT) || fs.readFileSync(OUT, "utf8") !== next) fs.writeFileSync(OUT, next);
 console.log(
   `football-predictions.json: ${Object.keys(predictions).length} partite · track record ${track.hits}/${track.n}` +
-    (track.n ? ` (log-loss ${track.logLoss}, Brier ${track.brier})` : ""),
+    (track.n ? ` (log-loss ${track.logLoss}, Brier ${track.brier})` : "") +
+    ` · nazionali ${trackNational.hits}/${trackNational.n}`,
 );
 
 // ---- optional walk-forward backtest on the whole history ----

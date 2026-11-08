@@ -6,6 +6,7 @@
 // (scripts/telegram/rubriche.mjs), so both show the same three matches:
 //   weekend  on Saturday, Saturday and Sunday matches of the five top leagues
 //   cups     one per cup, on the first day of each matchweek (Champions: Tuesday and Wednesday together)
+//   national teams  on the first day of each international window, official matches of the European teams
 // The site build locks each three in the predictions archive (`archivio-pronostici` branch, tris.json) at its first
 // build of that day; Telegram posts the locked three and picks its own only if the lock is missing.
 //
@@ -55,6 +56,17 @@ export const TRIS = {
     days: [3, 4],
     min: 4,
     when: "la mattina del primo giorno di ogni giornata",
+  },
+  "tris-nazionali": {
+    slug: "nazionali",
+    title: "Il tris delle nazionali",
+    short: "Nazionali",
+    emoji: "🌍",
+    leagues: ["Nations League", "Qualificazioni Mondiali Europa", "Qualificazioni Europei", "Mondiali", "Europei"],
+    cup: true, // first day of each international window
+    days: [0, 1, 2, 3, 4, 5, 6],
+    min: 4,
+    when: "la mattina del primo giorno di ogni finestra delle nazionali, con le partite ufficiali di quel giorno e del successivo",
   },
 };
 export const TRIS_IDS = Object.keys(TRIS);

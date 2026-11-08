@@ -27,6 +27,13 @@ const PRIORITY = [
   "Primeira Liga",
   "Championship",
   "Brasileirão",
+  // national teams (scripts/lib/leagues.mjs), the main European ones first
+  "Mondiali",
+  "Europei",
+  "Nations League",
+  "Qualificazioni Mondiali Europa",
+  "Qualificazioni Europei",
+  "Amichevoli internazionali",
 ];
 const CUPS = new Set(["Champions League", "Europa League", "Conference League"]);
 const rank = (where) => (PRIORITY.includes(where) ? PRIORITY.indexOf(where) : PRIORITY.length);
@@ -487,6 +494,20 @@ export const RUBRICHE = [
     build: makeTris("tris-conference"),
   },
   {
+    id: "tris-nazionali",
+    name: "Il tris delle nazionali",
+    days: EVERY_DAY,
+    time: "10:30",
+    build: makeTris("tris-nazionali"),
+  },
+  {
+    id: "nazionale-italia",
+    name: "L'Italia di oggi",
+    days: EVERY_DAY,
+    time: "11:30",
+    build: italyToday,
+  },
+  {
     id: "dove-vederla",
     name: "Dove vederla in TV",
     days: [5],
@@ -744,6 +765,63 @@ function makeTris(id) {
   };
 }
 
+/**
+ * Match day of the Italian national team: the model's prediction and where to watch it (Rai). One post per match
+ * (Italy plays at most once a day); null on the other days.
+ */
+function italyToday({ data, today, nowMs }) {
+  const ids = currentIds(data);
+  const comps = (data.football?.competitions ?? []).filter((c) => c.national);
+  const matches = comps.flatMap((c) =>
+    c.matches
+      .filter((m) => m.homeTeam.name === "Italia" || m.awayTeam.name === "Italia")
+      .map((m) => ({ c, m })),
+  );
+  const archived = new Map(data.archive.calcio.map((e) => [e.id, e]));
+  const hit = matches.find(({ m }) => ids.has(m.id) && rome(Date.parse(m.utcDate)).day === today && Date.parse(m.utcDate) > nowMs);
+  if (!hit) return null;
+  const e = archived.get(hit.m.id);
+  if (!open(e)) return null;
+  const p = e.prediction;
+  const tv = footballBroadcast(hit.c.slug, hit.m.utcDate, [], [hit.m.homeTeam.name, hit.m.awayTeam.name], true);
+  const goals = p.xg ? (p.xg[0] + p.xg[1]).toFixed(1).replace(".", ",") : null;
+  const caption = post(
+    `🇮🇹 <b>${esc(e.label)}</b> – ${esc(hit.c.name)}, ore ${timeOf(e)}`,
+    `Le probabilità del modello delle nazionali: ${p1x2(p.p)}.`,
+    [
+      goals ? `Gol attesi in tutto: ${goals}.` : null,
+      p.over?.["2.5"] != null ? `Over 2,5 al ${pct(p.over["2.5"])}, Goal (segnano entrambe) al ${pct(p.btts)}.` : null,
+    ]
+      .filter(Boolean)
+      .join(" ") || null,
+    tv ? `In TV: ${esc(tv.channels)}.` : null,
+    `Analisi completa: ${anchor(e.path, e.label, "nazionale-italia")}`,
+  );
+  // the other matches of the same competition today, under Italy's (the card has room for ten rows)
+  const sameDay = data.archive.calcio.filter(
+    (x) => open(x) && ids.has(x.id) && x.where === hit.c.name && dayOf(x) === today && x.id !== e.id,
+  );
+  const top = p.p.indexOf(Math.max(...p.p));
+  const [home, away] = e.label.split(" – ");
+  return {
+    caption,
+    card: {
+      type: "preview",
+      badge: "Nazionale",
+      title: e.label,
+      subtitle: `${hit.c.name} · ${capital(dayLabel(today))}, ore ${timeOf(e)}${tv ? ` · ${tv.channels}` : ""}`,
+      highlights: [
+        { label: "Più probabile", match: e.label, value: `${top === 1 ? "pareggio" : top === 0 ? home : away} ${pct(p.p[top])}` },
+        p.over?.["2.5"] != null ? { label: "Over 2,5", match: e.label, value: pct(p.over["2.5"]), color: "#FBBF24" } : null,
+        p.btts != null ? { label: "Goal", match: e.label, value: pct(p.btts) } : null,
+      ].filter(Boolean),
+      matches: [e, ...sameDay.sort((a, b) => a.kickoff.localeCompare(b.kickoff))]
+        .slice(0, 10)
+        .map((x) => ({ when: shortDayTime(x.kickoff), label: x.label, p: x.prediction.p })),
+    },
+  };
+}
+
 /** Competitions whose line-ups are posted: every Serie A match, cup matches only with an Italian club. */
 const LINEUP_LEAGUES = new Set(["serie-a", "champions-league", "europa-league", "conference-league"]);
 
@@ -759,10 +837,13 @@ function lineupPosts({ data, nowMs }) {
   const posts = [];
   for (const x of data.lineups ?? []) {
     const ko = Date.parse(x.kickoff);
-    if (!LINEUP_LEAGUES.has(x.league) || ko <= nowMs || ko > nowMs + 90 * 60000) continue;
+    if (ko <= nowMs || ko > nowMs + 90 * 60000) continue;
     const site = byApi.get(x.id);
     if (!site) continue;
-    if (x.league !== "serie-a" && !italian.has(site.m.homeTeam.id) && !italian.has(site.m.awayTeam.id)) continue;
+    // the Italian national team too, whatever the competition
+    const italy = site.c.national && [site.m.homeTeam.name, site.m.awayTeam.name].includes("Italia");
+    if (!LINEUP_LEAGUES.has(x.league) && !italy) continue;
+    if (!italy && x.league !== "serie-a" && !italian.has(site.m.homeTeam.id) && !italian.has(site.m.awayTeam.id)) continue;
     const home = shortName(site.m.homeTeam);
     const away = shortName(site.m.awayTeam);
     const e = archived.get(site.m.id);

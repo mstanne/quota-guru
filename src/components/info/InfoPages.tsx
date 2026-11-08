@@ -277,6 +277,15 @@ export function MetodologiaPage() {
           europee, la differenza di livello fra i campionati.
         </li>
         <li>
+          <strong>Le nazionali:</strong> hanno un modello a parte, uguale nel metodo ma stimato solo sulle partite fra
+          nazionali degli ultimi anni (Mondiali, Europei, Nations League, qualificazioni, tornei continentali e
+          amichevoli). Le nazionali giocano poche partite, quindi il modello ricorda più a lungo (il peso di una
+          partita si dimezza dopo tre anni), le amichevoli contano meno delle partite ufficiali, il fattore campo vale
+          solo quando si gioca nel proprio Paese e il livello delle confederazioni (UEFA, CONMEBOL e le altre) si
+          ricava dalle partite fra squadre di continenti diversi. Il bilancio dei pronostici delle nazionali è tenuto
+          separato da quello dei club.
+        </li>
+        <li>
           <strong>Dai gol attesi alle probabilità:</strong> i gol attesi delle due squadre diventano una distribuzione
           di Poisson per ciascuna, con la correzione di Dixon e Coles per i risultati con pochi gol. Da qui si
           ricavano 1X2, doppia chance, over/under, goal/no goal e i risultati esatti più probabili.

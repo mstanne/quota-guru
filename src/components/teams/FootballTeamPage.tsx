@@ -11,7 +11,8 @@ import { PageHeader } from "../layout/PageHeader";
 import { TeamBadge } from "../calcio/MatchRow";
 import { NotFoundPage } from "../NotFoundPage";
 import { usePageMeta } from "../../lib/pageMeta";
-import { footballTeam, type FootballSeason, type FootballTeam } from "../../lib/teams";
+import { footballTeam, nationalTeam, type FootballSeason, type FootballTeam } from "../../lib/teams";
+import { NationalTeamPage } from "./NationalTeamPage";
 import { playerPath } from "../../lib/players";
 import { FootballPlayerLink } from "../players/FootballPlayerLink";
 import { footballTeamMeta } from "../../lib/teamMeta";
@@ -180,7 +181,15 @@ function Season({ s, open }: { s: FootballSeason; open: boolean }) {
   );
 }
 
+/** Club or national team: two different pages (a different component, so hooks never mix between the two). */
 export function FootballTeamPage() {
+  const { squadra } = useParams();
+  const nat = nationalTeam(squadra);
+  if (nat instanceof Promise) throw nat; // data still loading (Suspense)
+  return nat ? <NationalTeamPage key={squadra} t={nat} /> : <ClubTeamPage key={squadra} />;
+}
+
+function ClubTeamPage() {
   const { squadra } = useParams();
   const t = footballTeam(squadra);
   if (t instanceof Promise) throw t; // league data still loading (Suspense)
