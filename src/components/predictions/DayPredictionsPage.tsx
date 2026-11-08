@@ -183,6 +183,10 @@ export function DayPredictionsPage({ day }: { day: DayKey }) {
           <Link to={`${paths.metodologia}#pronostici`} className="text-action-text hover:text-action-text-hover">
             Come funzionano
           </Link>
+          {" · "}
+          <Link to="/calcio-in-tv-oggi" className="text-action-text hover:text-action-text-hover">
+            Dove vederle in TV
+          </Link>
         </p>
       </div>
     </div>

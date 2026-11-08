@@ -45,7 +45,7 @@ import { usePageMeta } from "../../lib/pageMeta";
 import { nbaReasonsFor } from "../../lib/basketReasons";
 import { nbaEditorial } from "../../lib/editorial";
 import { MatchEditorial } from "../editorial/MatchEditorial";
-import { nbaBroadcast } from "../../lib/broadcast";
+import { gameBroadcast } from "../../lib/tvSchedule";
 import { BroadcastRow } from "../media/BroadcastInfo";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
@@ -257,7 +257,7 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
               <dt className="text-slate-400">Stato</dt>
               <dd className="text-white">{gameStatusLabel(game)}</dd>
             </div>
-            {game.status !== "final" && <BroadcastRow broadcast={nbaBroadcast()} className="sm:col-span-2" />}
+            {game.status !== "final" && <BroadcastRow broadcast={gameBroadcast(game)} className="sm:col-span-2" />}
           </dl>
         </section>
 
