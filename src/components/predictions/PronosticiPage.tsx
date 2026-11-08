@@ -1,6 +1,7 @@
 // /pronostici – hub of the model's predictions: next football and NBA matches, the round pages,
 // the tennis predictor and the verifiable track record of both models.
-import { CalendarDays, ChartColumn, ChevronRight, CircleDot, Goal, Dribbble, Target } from "lucide-react";
+import { CalendarDays, ChartColumn, ChevronRight, CircleDot, Flag, Goal, Dribbble, Target } from "lucide-react";
+import { NATIONAL_HUB_PATH } from "../../lib/nationalHub";
 import { dayPath } from "../../lib/dayPages";
 import { TRIS_PATH } from "../../lib/trisPage";
 import type { ReactNode } from "react";
@@ -73,14 +74,15 @@ export function PronosticiPage() {
       />
 
       <div className="container mx-auto px-4 py-8">
-        {/* one row on mobile too: three short, equal buttons */}
+        {/* four short, equal buttons: two rows on mobile, one row from sm */}
         <div className="mb-8">
-          <nav aria-label="Pronostici per giorno" className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap">
+          <nav aria-label="Pronostici per giorno" className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
             {(
               [
                 { to: dayPath("oggi"), icon: CalendarDays, label: "Oggi", sr: "Pronostici di " },
                 { to: dayPath("domani"), icon: CalendarDays, label: "Domani", sr: "Pronostici di " },
                 { to: TRIS_PATH, icon: Target, label: "Tris", sr: "Il " },
+                { to: NATIONAL_HUB_PATH, icon: Flag, label: "Nazionali", sr: "Pronostici " },
               ] as const
             ).map(({ to, icon: Icon, label, sr }) => (
               <Link

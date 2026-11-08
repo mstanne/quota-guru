@@ -137,3 +137,22 @@ export function sameCountry(teamName, country) {
   const nb = nationalTeamName(country.replace(/-/g, " ")).name;
   return countryKey(na) === countryKey(nb);
 }
+
+/**
+ * Site team of a national team (API-Football team in a fixture): its entry in the id map, created the first time with
+ * the Italian name and id TEAM_OFFSET + API id. National teams are never paired with clubs of older data.
+ * `onNew()` is called for every team created. Shared by scripts/fetch-football.mjs and scripts/backfill-archive.mjs.
+ */
+export function nationalTeamResolver(map, logo, teamOffset, onNew = () => {}) {
+  return (t) => {
+    const key = String(t.id);
+    let entry = map.footballTeams[key];
+    if (!entry) {
+      const { name, shortName } = nationalTeamName(t.name);
+      const tla = /^[A-Z]{3}$/.test(t.code ?? "") ? t.code : name.normalize("NFD").replace(/[^A-Za-z]/g, "").toUpperCase().slice(0, 3);
+      entry = map.footballTeams[key] = { id: teamOffset + t.id, name, shortName, tla, national: true };
+      onNew(entry);
+    }
+    return { ...entry, crest: logo(t.logo) };
+  };
+}

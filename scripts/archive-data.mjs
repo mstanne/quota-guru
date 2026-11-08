@@ -64,6 +64,7 @@ export function archivedMatch(m, details, highlight) {
     status: m.status,
     stage: m.stage ?? null,
     matchday: m.matchday ?? null,
+    ...(m.group ? { group: m.group } : {}),
     home: team(m.homeTeam),
     away: team(m.awayTeam),
     score: m.score,
@@ -263,7 +264,8 @@ async function main() {
     const bySeason = new Map();
     for (const m of c.matches ?? []) {
       if (!FINAL.has(m.status)) continue;
-      const y = seasonOf(m.utcDate, c.code);
+      // national teams: the API-Football season of the edition (qualifiers span two years), kept on the match
+      const y = c.national ? (m.season ?? c.apiSeason ?? seasonOf(m.utcDate, c.code)) : seasonOf(m.utcDate, c.code);
       const list = bySeason.get(y) ?? [];
       // full details, or the live data of the quick updates until they arrive
       const details = fDetails[m.id] ? { ...fDetails[m.id], players: fLines[m.id] } : m.live?.timeline?.length ? m.live : undefined;
