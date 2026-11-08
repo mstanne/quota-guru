@@ -141,7 +141,7 @@ export const agenzieGuides: Guide[] = [
         blocks: [
           {
             type: "p",
-            text: "Molti operatori hanno sia una rete di agenzie sia un sito. Il ponte tra i due è il [prenotatore](/guide/prenotatore-scommesse): si prepara la giocata online, si ottiene un codice e la si convalida e paga in agenzia. Alcuni concessionari permettono anche di caricare il conto online o riscuotere le vincite nei propri punti vendita: sono servizi del singolo operatore, da verificare nelle sue condizioni.",
+            text: "Molti operatori hanno sia una rete di agenzie sia un sito. Il ponte tra i due è il [prenotatore](/guide/prenotatore-scommesse): si prepara la giocata online, si ottiene un codice e la si convalida e paga in agenzia. In alcuni punti vendita si può anche ricaricare il conto online, ma le ricariche in contanti hanno un tetto settimanale fissato dalla legge e il saldo del conto non si può prelevare al banco: le vincite online si incassano solo sul conto bancario o sulla carta intestati al titolare del conto.",
           },
           {
             type: "p",
@@ -175,7 +175,7 @@ export const agenzieGuides: Guide[] = [
       },
       {
         q: "Posso riscuotere in agenzia una vincita fatta online?",
-        a: "Le vincite online vengono accreditate sul conto di gioco. Alcuni operatori permettono il prelievo in contanti nei propri punti vendita: è un servizio facoltativo, da controllare nelle condizioni del conto.",
+        a: "No. Le vincite online vengono accreditate sul conto di gioco e si prelevano solo verso un conto o una carta intestati al titolare: le regole ADM vietano di restituire il saldo in contanti nei punti vendita, anche se appartengono allo stesso concessionario.",
       },
       {
         q: "Un corner in un bar è legale come un'agenzia?",
