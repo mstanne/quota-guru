@@ -581,52 +581,181 @@ function academy(card) {
 }
 
 /** Weekend three: card.picks = [{ when, where, label, sign, outcome, p }], card.all (product of the three) */
+/**
+ * A few outcomes and the chance they all come in (the threes, the predictions of the day).
+ * card.picks = [{ when, where, label, sign, outcome, p }], card.all, card.allLabel
+ */
 function tris(card) {
   let out = "";
-  const ph = 192;
+  const n = card.picks.length;
+  const compact = n > 3;
+  const ph = compact ? 136 : 192;
+  const gap = compact ? 12 : 16;
+  const r = compact ? 44 : 62;
+  const textMax = W - 2 * M - (compact ? 200 : 260);
   let y = TOP - 6;
   card.picks.forEach((k) => {
     out += rect(M, y, W - 2 * M, ph, { r: 26 });
-    out += caps(M + 30, y + 44, `${k.where} · ${k.when}`, { size: 19, max: W - 2 * M - 260 });
-    out += text(M + 30, y + 98, k.label, {
-      size: fitSize(k.label, 36, 700, W - 2 * M - 260, 26),
-      max: W - 2 * M - 260,
+    out += caps(M + 30, y + (compact ? 36 : 44), `${k.where} · ${k.when}`, { size: compact ? 17 : 19, max: textMax });
+    out += text(M + 30, y + (compact ? 78 : 98), k.label, {
+      size: fitSize(k.label, compact ? 30 : 36, 700, textMax, 24),
+      max: textMax,
     });
-    out += text(M + 30, y + 146, `${k.sign} · ${k.outcome}`, {
-      size: 26,
+    out += text(M + 30, y + (compact ? 116 : 146), `${k.sign} · ${k.outcome}`, {
+      size: compact ? 22 : 26,
       weight: 400,
       fill: C.grey,
-      max: W - 2 * M - 260,
+      max: textMax,
     });
-    const cx = W - M - 110;
+    const cx = W - M - (compact ? 84 : 110);
     const cy = y + ph / 2;
-    const r = 62;
     const len = 2 * Math.PI * r;
-    out += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${C.line}" stroke-width="14"/>`;
-    out += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${C.green}" stroke-width="14" stroke-linecap="round" stroke-dasharray="${(len * k.p).toFixed(1)} ${len.toFixed(1)}" transform="rotate(-90 ${cx} ${cy})"/>`;
-    out += text(cx, cy + 12, pct(k.p), { size: 34, anchor: "middle" });
-    y += ph + 16;
+    const sw = compact ? 11 : 14;
+    out += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${C.line}" stroke-width="${sw}"/>`;
+    out += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${C.green}" stroke-width="${sw}" stroke-linecap="round" stroke-dasharray="${(len * k.p).toFixed(1)} ${len.toFixed(1)}" transform="rotate(-90 ${cx} ${cy})"/>`;
+    out += text(cx, cy + (compact ? 9 : 12), pct(k.p), { size: compact ? 26 : 34, anchor: "middle" });
+    y += ph + gap;
   });
   y += 4;
   const bh = BOTTOM - y;
-  out += rect(M, y, W - 2 * M, bh, { r: 26, fill: C.panel2 });
-  out += caps(M + 30, y + 60, "Tutte e tre insieme", { fill: C.amber });
-  out += text(M + 30, y + 128, card.picks.map((k) => pct(k.p)).join("  ×  "), { size: 32, weight: 400, fill: C.grey });
-  out += text(W - M - 30, y + 140, pct(card.all), { size: 92, fill: C.amber, anchor: "end" });
-  const bx = M + 30;
   const bw = W - 2 * M - 60;
-  out += rect(bx, y + 180, bw, 26, { r: 13, fill: C.line, stroke: null });
-  out += rect(bx, y + 180, Math.max(26, bw * card.all), 26, { r: 13, fill: C.amber, stroke: null });
-  out += text(M + 30, y + bh - 34, "Esiti probabili, presi insieme, sbagliano spesso.", {
-    size: 24,
+  out += rect(M, y, W - 2 * M, bh, { r: 26, fill: C.panel2 });
+  out += caps(M + 30, y + (compact ? 50 : 60), card.allLabel ?? "Tutte e tre insieme", { fill: C.amber });
+  out += text(M + 30, y + (compact ? 104 : 128), card.picks.map((k) => pct(k.p)).join("  ×  "), {
+    size: compact ? 24 : 32,
     weight: 400,
-    fill: C.muted,
-    max: bw,
+    fill: C.grey,
+    max: bw - 260,
   });
+  out += text(W - M - 30, y + (compact ? 116 : 140), pct(card.all), {
+    size: compact ? 80 : 92,
+    fill: C.amber,
+    anchor: "end",
+  });
+  const barY = y + (compact ? 142 : 180);
+  out += rect(M + 30, barY, bw, 22, { r: 11, fill: C.line, stroke: null });
+  out += rect(M + 30, barY, Math.max(22, bw * card.all), 22, { r: 11, fill: C.amber, stroke: null });
+  if (bh > (compact ? 200 : 250))
+    out += text(M + 30, y + bh - 30, "Esiti probabili, presi insieme, sbagliano spesso.", {
+      size: 24,
+      weight: 400,
+      fill: C.muted,
+      max: bw,
+    });
   return out;
 }
 
-const LAYOUTS = { tris, matchList, results, trackRecord, standings, numbers, nba, preview, tv, lineups, academy };
+/**
+ * Study of one match: 1X2 with fair odds, goals, likeliest scores, recent form, the model's outcome.
+ * card = { home, away, p, xg, over25, btts, scores: [[h, a, p]], form: [home, away] | null, pick: { sign, text, p } }
+ */
+function study(card) {
+  let out = "";
+  const inner = W - 2 * M;
+  let y = TOP - 6;
+  // 1X2: three panels, probability and fair odds
+  const tw = (inner - 2 * 16) / 3;
+  const top = card.p.indexOf(Math.max(...card.p));
+  const heads = [card.home, "Pareggio", card.away];
+  card.p.forEach((p, i) => {
+    const x = M + i * (tw + 16);
+    const on = i === top;
+    out += rect(x, y, tw, 196, { r: 24, fill: on ? C.panel2 : C.panel, stroke: on ? C.green : C.line, sw: on ? 3 : 2 });
+    out += caps(x + 24, y + 40, `${["1", "X", "2"][i]} · ${heads[i]}`, {
+      size: 18,
+      max: tw - 48,
+      fill: on ? C.green : C.grey,
+    });
+    out += text(x + 24, y + 116, pct(p), { size: 60, fill: on ? C.green : C.light });
+    out += text(x + 24, y + 164, `quota equa ${dec(1 / p, 2)}`, { size: 22, weight: 400, fill: C.muted, max: tw - 48 });
+  });
+  y += 196 + 18;
+  // goals
+  const stats = [
+    card.xg ? ["Gol attesi", `${dec(card.xg[0])} – ${dec(card.xg[1])}`] : null,
+    card.over25 != null ? ["Over 2,5", pct(card.over25)] : null,
+    card.btts != null ? ["Goal", pct(card.btts)] : null,
+  ].filter(Boolean);
+  if (stats.length) {
+    const sw = (inner - (stats.length - 1) * 16) / stats.length;
+    stats.forEach(([label, value], i) => {
+      const x = M + i * (sw + 16);
+      out += rect(x, y, sw, 126, { r: 22 });
+      out += caps(x + 24, y + 42, label, { size: 18, max: sw - 48 });
+      out += text(x + 24, y + 100, value, { size: 40, max: sw - 48 });
+    });
+    y += 126 + 18;
+  }
+  // likeliest scores
+  if (card.scores?.length) {
+    out += rect(M, y, inner, 118, { r: 22 });
+    out += caps(M + 24, y + 42, "Risultati più probabili", { size: 18 });
+    let x = M + 24;
+    for (const [h, a, p] of card.scores) {
+      const label = `${h}-${a}`;
+      out += text(x, y + 96, label, { size: 36 });
+      x += textWidth(label, 36) + 12;
+      out += text(x, y + 96, pct(p), { size: 24, weight: 400, fill: C.muted });
+      x += textWidth(pct(p), 24, 400) + 44;
+    }
+    y += 118 + 18;
+  }
+  // recent form
+  if (card.form) {
+    out += rect(M, y, inner, 176, { r: 22 });
+    out += caps(M + 24, y + 42, "Ultime partite", { size: 18 });
+    [card.home, card.away].forEach((name, t) => {
+      const ry = y + 66 + t * 54; // top of the row
+      out += text(M + 24, ry + 31, name, { size: 26, max: 380 });
+      [...card.form[t]].forEach((r, j) => {
+        const fill = r === "V" ? C.green : r === "S" ? C.red : C.line;
+        out += rect(M + 430 + j * 52, ry + 4, 42, 38, { r: 8, fill, stroke: null });
+        out += text(M + 451 + j * 52, ry + 31, r, { size: 20, anchor: "middle", fill: "#ffffff" });
+      });
+    });
+    out += text(W - M - 24, y + 42, "V vinta · P pari · S persa", {
+      size: 20,
+      weight: 400,
+      fill: C.muted,
+      anchor: "end",
+    });
+    y += 176 + 18;
+  }
+  // the model's outcome, centred in the space left
+  const bh = BOTTOM - y;
+  if (bh >= 110) {
+    out += rect(M, y, inner, bh, { r: 26, fill: C.panel2 });
+    const mid = y + bh / 2;
+    const note = bh >= 200;
+    const base = note ? mid - 20 : mid;
+    out += caps(M + 30, base - 22, "Per il modello", { fill: C.amber, size: 19 });
+    const label = `${card.pick.sign} · ${card.pick.text}`;
+    out += text(M + 30, base + 30, label, { size: fitSize(label, 40, 700, inner - 280, 26), max: inner - 280 });
+    out += text(W - M - 30, base + 34, pct(card.pick.p), { size: 72, fill: C.amber, anchor: "end" });
+    if (note)
+      out += text(M + 30, y + bh - 30, "Stima statistica, non un consiglio di gioco.", {
+        size: 22,
+        weight: 400,
+        fill: C.muted,
+      });
+  }
+  return out;
+}
+
+const LAYOUTS = {
+  tris,
+  study,
+  matchList,
+  results,
+  trackRecord,
+  standings,
+  numbers,
+  nba,
+  preview,
+  tv,
+  lineups,
+  academy,
+};
 
 /** SVG, PNG and words of a card. */
 export function renderCard(card) {
