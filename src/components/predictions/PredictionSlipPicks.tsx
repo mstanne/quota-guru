@@ -8,6 +8,7 @@ const GROUPS: { title: string; market: FootballMarket }[] = [
   { title: "Doppia chance", market: "dc" },
   { title: "Under/Over 2,5", market: "uo" },
   { title: "Goal/No goal", market: "gg" },
+  { title: "Multigol", market: "mg" },
 ];
 // longer button texts than the list cells, where space is short
 const BUTTON_LABEL: Record<string, string> = { under25: "Under 2,5", over25: "Over 2,5", gg: "Goal", ng: "No goal" };
@@ -36,7 +37,9 @@ export function PredictionSlipPicks({ prediction, slip }: { prediction: Predicti
                         : "bg-slate-900 border-slate-700 text-white hover:border-slate-500"
                     }`}
                   >
-                    <span className="font-medium">{BUTTON_LABEL[c.key] ?? c.label}</span>
+                    <span className="font-medium">
+                      {BUTTON_LABEL[c.key] ?? (g.market === "mg" ? c.slipLabel : c.label)}
+                    </span>
                     <span className={on ? "text-slate-600" : "text-slate-400"}>{pct(c.value)}</span>
                   </button>
                 );

@@ -16,6 +16,9 @@ export interface Prediction {
   combo?: { ou: Pair3; gg: Pair3 };
   /** Most likely scores [home, away, probability], best first. */
   scores: [number, number, number][];
+  /** Goal distributions for the multigoal markets: total 0…6 and 7+ (`t`), each team 0…4 and 5+ (`h`, `a`).
+   *  Missing on predictions made before the model wrote it: goalDistributions() rebuilds them from `xg`. */
+  goals?: { t: number[]; h: number[]; a: number[] };
   /** Most likely outcome: "1" | "X" | "2", or a double chance when no outcome reaches 45%. */
   pick: "1" | "X" | "2" | "1X" | "X2";
   /** How much data the model had on the two teams. */
@@ -116,13 +119,14 @@ export function pickHit(p: Prediction, home: number, away: number) {
 // ---------------------------------------------------------------------------------------------
 // Markets for the quick filter on the match lists
 
-export type FootballMarket = "1x2" | "dc" | "uo" | "gg" | "combo";
+export type FootballMarket = "1x2" | "dc" | "uo" | "gg" | "mg" | "combo";
 
 export const FOOTBALL_MARKETS: { id: FootballMarket; label: string; short: string }[] = [
   { id: "1x2", label: "1X2", short: "1X2" },
   { id: "dc", label: "Doppia chance", short: "DC" },
   { id: "uo", label: "Under/Over 2,5", short: "U/O" },
   { id: "gg", label: "Goal/No goal", short: "GG/NG" },
+  { id: "mg", label: "Multigol", short: "Multigol" },
   { id: "combo", label: "Combo", short: "Combo" },
 ];
 
@@ -164,6 +168,39 @@ function comboFromXg([lh, la]: [number, number]): { ou: Pair3; gg: Pair3 } {
 
 const OUT = ["1", "X", "2"] as const;
 
+// ---------------------------------------------------------------------------------------------
+// Multigoal: total goals (or one team's goals) between two numbers, both included
+
+/** Ranges of total goals, as in the Italian multigoal markets (1-2 … 5-6). */
+export const MULTIGOAL_RANGES: [number, number][] = [
+  [1, 2], [1, 3], [1, 4], [1, 5], [1, 6],
+  [2, 3], [2, 4], [2, 5], [2, 6],
+  [3, 4], [3, 5], [3, 6],
+  [4, 5], [4, 6],
+  [5, 6],
+];
+/** Ranges of one team's goals (multigol casa / ospite). */
+export const TEAM_MULTIGOAL_RANGES: [number, number][] = [[1, 2], [1, 3], [2, 3]];
+/** The three ranges of the "Multigol" column of the match lists. */
+export const LIST_MULTIGOAL: [number, number][] = [[1, 3], [2, 4], [3, 5]];
+
+/** Goal distributions of a prediction; plain Poisson from the expected goals for predictions without `goals`. */
+export function goalDistributions(p: Prediction): { t: number[]; h: number[]; a: number[] } {
+  if (p.goals) return p.goals;
+  const team = (l: number, last: number) => {
+    const d = Array.from({ length: last }, (_, k) => poisson(l, k));
+    return [...d, Math.max(0, 1 - d.reduce((a, b) => a + b, 0))];
+  };
+  return { t: team(p.xg[0] + p.xg[1], 7), h: team(p.xg[0], 5), a: team(p.xg[1], 5) };
+}
+
+/** Probability that the goals (distribution `d`, last bucket = "that many or more") are between lo and hi. */
+export function multigoal(d: number[], lo: number, hi: number) {
+  let s = 0;
+  for (let k = lo; k <= Math.min(hi, d.length - 2); k++) s += d[k] ?? 0;
+  return s;
+}
+
 /** Cells shown in a match row for the selected market. */
 export function marketCells(p: Prediction, market: FootballMarket, home: string, away: string): MarketCell[] {
   const mark = (cells: Omit<MarketCell, "top">[], skip: number[] = []) => {
@@ -200,6 +237,19 @@ export function marketCells(p: Prediction, market: FootballMarket, home: string,
         { label: "Goal", value: p.btts, spoken: "entrambe segnano", key: "gg", slipLabel: "Goal (entrambe segnano)" },
         { label: "NoGoal", value: 1 - p.btts, spoken: "almeno una non segna", key: "ng", slipLabel: "No goal" },
       ]);
+    case "mg": {
+      // fixed ranges, the same on every row; the most likely of the three highlighted
+      const t = goalDistributions(p).t;
+      return mark(
+        LIST_MULTIGOAL.map(([lo, hi]) => ({
+          label: `${lo}-${hi}`,
+          value: multigoal(t, lo, hi),
+          spoken: `multigol ${lo}-${hi}, da ${lo} a ${hi} gol in totale`,
+          key: `mg${lo}-${hi}`,
+          slipLabel: `Multigol ${lo}-${hi}`,
+        })),
+      );
+    }
     case "combo": {
       const c = p.combo ?? comboFromXg(p.xg);
       const best = (t: Pair3, names: [string, string], spoken: [string, string], slip: [string, string]) => {

@@ -9,8 +9,13 @@ import { paths } from "../../routes";
 import {
   CONFIDENCE_LABEL,
   FOOTBALL_MARKETS,
+  LIST_MULTIGOAL,
+  MULTIGOAL_RANGES,
+  TEAM_MULTIGOAL_RANGES,
   fairOdds,
+  goalDistributions,
   marketCells,
+  multigoal,
   pct,
   pickHit,
   pickLabel,
@@ -98,6 +103,8 @@ export function marketColumns(market: FootballMarket): { labels: string[] | null
       return { labels: ["Under", "Over"], width: "w-12" };
     case "gg":
       return { labels: ["Goal", "No goal"], width: "w-14" };
+    case "mg":
+      return { labels: LIST_MULTIGOAL.map(([lo, hi]) => `${lo}-${hi}`), width: "w-12" };
     default:
       return { labels: null, width: "w-[6.5rem]" };
   }
@@ -210,6 +217,60 @@ function Stat({ label, p, strong = false }: { label: string; p: number; strong?:
           {fairOdds(p)}
         </span>
       </dd>
+    </div>
+  );
+}
+
+/**
+ * Multigoal: probability (and fair odds) that the total goals, or one team's goals, fall in a range. Ranges in rows
+ * by their lower end, as they are usually listed. Nothing is highlighted: the widest range would always win.
+ */
+function MultigoalTable({ prediction, home, away }: { prediction: Prediction; home: string; away: string }) {
+  const d = goalDistributions(prediction);
+  const rows = [1, 2, 3, 4, 5].map((lo) => MULTIGOAL_RANGES.filter(([a]) => a === lo));
+  const cell = (label: string, p: number) => (
+    <div key={label} className="rounded-md border border-slate-800 bg-slate-950/40 px-2.5 py-1.5 tabular-nums">
+      <div className="text-slate-400 text-xs">{label}</div>
+      <div className="text-white text-sm">
+        {pct(p)}
+        <span className="ml-1.5 text-slate-500 text-xs" title="Quota equa: 1 ÷ probabilità">
+          {fairOdds(p)}
+        </span>
+      </div>
+    </div>
+  );
+  return (
+    <div className="mt-6">
+      <h3 className="text-white text-base mb-1">Multigol</h3>
+      <p className="text-slate-400 text-xs mb-2">
+        Probabilità che i gol della partita siano tra i due numeri, estremi compresi (es. 2-4: 2, 3 o 4 gol).
+      </p>
+      {/* phones: the 15 ranges in a 3-column grid; wider screens: one row per lower end */}
+      <div className="grid grid-cols-3 gap-2 sm:hidden">
+        {MULTIGOAL_RANGES.map(([lo, hi]) => cell(`${lo}-${hi}`, multigoal(d.t, lo, hi)))}
+      </div>
+      <div className="hidden sm:block space-y-2">
+        {rows.map((r) => (
+          <div key={r[0][0]} className="grid grid-cols-5 gap-2">
+            {r.map(([lo, hi]) => cell(`${lo}-${hi}`, multigoal(d.t, lo, hi)))}
+          </div>
+        ))}
+      </div>
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        {(
+          [
+            [`Multigol ${home}`, d.h],
+            [`Multigol ${away}`, d.a],
+          ] as const
+        ).map(([title, dist]) => (
+          <div key={title}>
+            <h4 className="text-slate-300 text-sm mb-1.5">{title}</h4>
+            <div className="grid grid-cols-3 gap-2">
+              {TEAM_MULTIGOAL_RANGES.map(([lo, hi]) => cell(`${lo}-${hi}`, multigoal(dist, lo, hi)))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -364,6 +425,8 @@ export function PredictionPanel({
           </dl>
         </div>
       </div>
+
+      <MultigoalTable prediction={p} home={home} away={away} />
 
       <p className="mt-5 flex items-start gap-2 text-slate-400 text-xs">
         <Info className="w-4 h-4 shrink-0 mt-px" aria-hidden="true" />

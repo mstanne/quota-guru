@@ -980,8 +980,34 @@ function results({ data, today }, campaign) {
 const LEAGUES5 = new Set(["Serie A", "Premier League", "LaLiga", "Bundesliga", "Ligue 1"]);
 const fair = (p) => (1 / p).toFixed(2).replace(".", ",");
 
+const poissonPmf = (l, k) => {
+  let f = 1;
+  for (let i = 2; i <= k; i++) f *= i;
+  return (Math.exp(-l) * l ** k) / f;
+};
+/** Total goals distribution 0…6 and 7+ (the model's, or plain Poisson from the expected goals on older entries). */
+function totalGoals(pr) {
+  if (pr.goals?.t) return pr.goals.t;
+  if (!pr.xg) return null;
+  const d = Array.from({ length: 7 }, (_, k) => poissonPmf(pr.xg[0] + pr.xg[1], k));
+  return [...d, Math.max(0, 1 - d.reduce((a, b) => a + b, 0))];
+}
+/** The likeliest of the multigoal ranges 1-3, 2-4, 3-5: { lo, hi, p }. */
+function bestMultigoal(pr) {
+  const t = totalGoals(pr);
+  if (!t) return null;
+  return [
+    [1, 3],
+    [2, 4],
+    [3, 5],
+  ]
+    .map(([lo, hi]) => ({ lo, hi, p: t.slice(lo, hi + 1).reduce((a, b) => a + b, 0) }))
+    .reduce((a, b) => (b.p > a.p ? b : a));
+}
+
 /**
- * The most telling outcome of a match among 1X2, Goal/No Goal, Over/Under 2,5, double chance and Over 1,5: the first
+ * The most telling outcome of a match among 1X2, Goal/No Goal, Over/Under 2,5, multigoal, double chance and Over 1,5:
+ * the first
  * one, in that order (most specific first), above its threshold, else the closest to it; `edge` = how far above it
  * is (for the ranking).
  */
@@ -1010,6 +1036,8 @@ function bestMarket(e) {
         ? { min: 0.62, p: o25, sign: "Over 2,5", text: "almeno 3 gol" }
         : { min: 0.62, p: 1 - o25, sign: "Under 2,5", text: "al massimo 2 gol" },
     );
+  const mg = bestMultigoal(pr);
+  if (mg) out.push({ min: 0.64, p: mg.p, sign: `Multigol ${mg.lo}-${mg.hi}`, text: `da ${mg.lo} a ${mg.hi} gol` });
   if (pr.dc && i !== 1)
     out.push(
       i === 0
@@ -1052,8 +1080,11 @@ function dailyPicks({ data, today, nowMs }) {
       .sort((a, b) => b.m.edge - a.m.edge || rank(a.e.where) - rank(b.e.where) || a.e.id - b.e.id);
     const out = [];
     const perComp = new Map();
+    const isMg = (x) => x.m.sign.startsWith("Multigol");
     for (const x of ranked) {
       if ((perComp.get(x.e.where) ?? 0) >= (cupDay ? 3 : 2)) continue;
+      // variety: at most two multigoal outcomes
+      if (isMg(x) && out.filter(isMg).length >= 2) continue;
       perComp.set(x.e.where, (perComp.get(x.e.where) ?? 0) + 1);
       out.push(x);
       if (out.length === 5) break;
@@ -1183,6 +1214,7 @@ function studyPosts({ data, today, nowMs }) {
     const best = bestMarket(e);
     const i = topOf(pr.p);
     const pickText = i === 1 ? "X · pareggio" : `${i === 0 ? "1" : "2"} · vittoria ${i === 0 ? home : away}`;
+    const mgBest = bestMultigoal(pr);
     const formH = formOf(comps, m.homeTeam.id, m.utcDate);
     const formA = formOf(comps, m.awayTeam.id, m.utcDate);
     // league table only for Serie A matches (a cup table says little)
@@ -1194,7 +1226,7 @@ function studyPosts({ data, today, nowMs }) {
     const lines = [
       `📊 Il modello: ${p1x2(pr.p)}\nQuote eque: ${pr.p.map(fair).join(" · ")}`,
       pr.xg
-        ? `⚽ Gol attesi ${dec1(pr.xg[0])} – ${dec1(pr.xg[1])}${pr.over?.["2.5"] != null ? ` · Over 2,5 ${pct(pr.over["2.5"])}` : ""}${pr.btts != null ? ` · Goal ${pct(pr.btts)}` : ""}`
+        ? `⚽ Gol attesi ${dec1(pr.xg[0])} – ${dec1(pr.xg[1])}${pr.over?.["2.5"] != null ? ` · Over 2,5 ${pct(pr.over["2.5"])}` : ""}${pr.btts != null ? ` · Goal ${pct(pr.btts)}` : ""}${mgBest ? ` · Multigol ${mgBest.lo}-${mgBest.hi} ${pct(mgBest.p)}` : ""}`
         : null,
       scores.length ? `🎯 Risultati più probabili: ${scores.map(([h, a]) => `${h}-${a}`).join(", ")}` : null,
       formH.length >= 3 && formA.length >= 3
