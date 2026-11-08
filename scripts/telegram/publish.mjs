@@ -65,10 +65,11 @@ if (only && !RUBRICHE.some((r) => r.id === only)) {
 
 const keyOf = (r) => `${mode}:${r.id}:${today}`;
 let register = null;
-// event rubrics (official line-ups) have no slot: every run checks them, when their data source is configured
-const eventReady = () => !!(process.env.LIVE_URL || process.env.TG_LIVE_FILE);
+// event rubrics (official line-ups, match studies) have no slot: every run checks them; the line-ups only when their
+// data source (live worker) is configured
+const eventReady = (r) => !r.live || !!(process.env.LIVE_URL || process.env.TG_LIVE_FILE);
 const isDue = (r) => {
-  if (r.event) return (!only || only === r.id) && eventReady();
+  if (r.event) return (!only || only === r.id) && eventReady(r);
   if (only) return r.id === only && (flag("force") || dueByClock(r));
   if (flag("all")) return true;
   return dueByClock(r);
@@ -95,7 +96,7 @@ register.data.sent ??= {};
 // the register keeps 60 days: enough to stop any repeat, small enough to stay one short file
 for (const [k, v] of Object.entries(register.data.sent))
   if (nowMs - Date.parse(v.at) > 60 * 86400000) delete register.data.sent[k];
-const data = await loadData(nowMs, { live: candidates.some((r) => r.event) });
+const data = await loadData(nowMs, { live: candidates.some((r) => r.event && r.live) });
 let failed = 0;
 
 for (const r of candidates) {

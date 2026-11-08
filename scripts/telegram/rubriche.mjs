@@ -7,7 +7,19 @@ import path from "node:path";
 import { teamGoalStats } from "../../src/lib/goalStats.mjs";
 import { footballBroadcast } from "../../src/lib/broadcast.ts";
 import { TRIS, chooseTris, lockKey } from "../lib/tris.mjs";
-import { FOOTER, addDays, anchor, dayLabel, esc, pct, rome, romeInstant, root, shortDayTime } from "./lib.mjs";
+import {
+  CAPTION_MAX,
+  FOOTER,
+  addDays,
+  anchor,
+  dayLabel,
+  esc,
+  pct,
+  rome,
+  romeInstant,
+  root,
+  shortDayTime,
+} from "./lib.mjs";
 
 // days: 0 = Sunday … 6 = Saturday
 const EVERY_DAY = [0, 1, 2, 3, 4, 5, 6];
@@ -55,6 +67,8 @@ const dayOf = (e) => rome(Date.parse(e.kickoff)).day;
 /** Ids of the matches in the current data: the archive can still hold a match under an older id (stale duplicate). */
 const currentIds = (data) => new Set((data.football?.competitions ?? []).flatMap((c) => c.matches.map((m) => m.id)));
 const open = (e) => !e.void && e.prediction?.p;
+/** "al 46%", "all'81%", "all'11%". */
+const alPct = (p) => `${/^(8|11$)/.test(String(Math.round(p * 100))) ? "all'" : "al "}${pct(p)}`;
 const p1x2 = (p) => `1 ${pct(p[0])} · X ${pct(p[1])} · 2 ${pct(p[2])}`;
 const timeOf = (e) => rome(Date.parse(e.kickoff)).time;
 const post = (...parts) => [...parts.filter((x) => x !== null && x !== undefined && x !== ""), FOOTER].join("\n\n");
@@ -501,6 +515,20 @@ export const RUBRICHE = [
     build: makeTris("tris-nazionali"),
   },
   {
+    id: "pronostici-del-giorno",
+    name: "I pronostici del giorno",
+    // weekends with the leagues, European cup days; skipped on the other days (dailyPicks)
+    days: [0, 2, 3, 4, 6],
+    time: "11:45",
+    build: dailyPicks,
+  },
+  {
+    id: "studio-pronostico",
+    name: "Lo studio del pronostico",
+    event: true,
+    build: studyPosts,
+  },
+  {
     id: "nazionale-italia",
     name: "L'Italia di oggi",
     days: EVERY_DAY,
@@ -586,6 +614,7 @@ export const RUBRICHE = [
     id: "formazioni",
     name: "Formazioni ufficiali",
     event: true,
+    live: true,
     build: lineupPosts,
   },
   {
@@ -685,7 +714,7 @@ function roundPreview({ id, code, flag, days, time, dayBefore = false }) {
       const most = list.reduce((a, b) => (goals(b) > goals(a) ? b : a));
       const title = `${flag} <b>${esc(league)}, ${round.n}ª giornata</b> – cosa dice il modello`;
       const lines = [
-        `Più probabile: <b>${esc(name(fav))}</b>, ${sign(fav)} al ${pct(top(fav))}`,
+        `Più probabile: <b>${esc(name(fav))}</b>, ${sign(fav)} ${alPct(top(fav))}`,
         `Più incerta: <b>${esc(name(uncertain))}</b>, nessun esito oltre il ${pct(top(uncertain))}`,
         goals(most) ? `Più gol attesi: <b>${esc(name(most))}</b>, ${dec1(goals(most))} gol` : null,
       ]
@@ -704,7 +733,7 @@ function roundPreview({ id, code, flag, days, time, dayBefore = false }) {
           title: `${league}, ${round.n}ª giornata`,
           subtitle: "Cosa dice il modello, partita per partita",
           highlights: [
-            { label: "Più probabile", match: name(fav), value: `${sign(fav)} al ${pct(top(fav))}` },
+            { label: "Più probabile", match: name(fav), value: `${sign(fav)} ${alPct(top(fav))}` },
             { label: "Più incerta", match: name(uncertain), value: `max ${pct(top(uncertain))}`, color: "#FBBF24" },
             goals(most) ? { label: "Più gol attesi", match: name(most), value: `${dec1(goals(most))} gol` } : null,
           ].filter(Boolean),
@@ -731,7 +760,7 @@ function makeTris(id) {
     const all = lock.all;
     const rows = three.map(
       (e) =>
-        `${esc(shortDayTime(e.kickoff))} <b>${esc(e.label)}</b>${t.cup ? "" : ` (${esc(e.where)})`}\n${e.sign} · ${esc(e.outcome)} al ${pct(e.p)}`,
+        `${esc(shortDayTime(e.kickoff))} <b>${esc(e.label)}</b>${t.cup ? "" : ` (${esc(e.where)})`}\n${e.sign} · ${esc(e.outcome)} ${alPct(e.p)}`,
     );
     const title = `${t.emoji} <b>${t.title}</b> – le 3 partite più prevedibili secondo il modello`;
     const miss = Math.round((1 - all) * 10);
@@ -773,12 +802,12 @@ function italyToday({ data, today, nowMs }) {
   const ids = currentIds(data);
   const comps = (data.football?.competitions ?? []).filter((c) => c.national);
   const matches = comps.flatMap((c) =>
-    c.matches
-      .filter((m) => m.homeTeam.name === "Italia" || m.awayTeam.name === "Italia")
-      .map((m) => ({ c, m })),
+    c.matches.filter((m) => m.homeTeam.name === "Italia" || m.awayTeam.name === "Italia").map((m) => ({ c, m })),
   );
   const archived = new Map(data.archive.calcio.map((e) => [e.id, e]));
-  const hit = matches.find(({ m }) => ids.has(m.id) && rome(Date.parse(m.utcDate)).day === today && Date.parse(m.utcDate) > nowMs);
+  const hit = matches.find(
+    ({ m }) => ids.has(m.id) && rome(Date.parse(m.utcDate)).day === today && Date.parse(m.utcDate) > nowMs,
+  );
   if (!hit) return null;
   const e = archived.get(hit.m.id);
   if (!open(e)) return null;
@@ -790,7 +819,7 @@ function italyToday({ data, today, nowMs }) {
     `Le probabilità del modello delle nazionali: ${p1x2(p.p)}.`,
     [
       goals ? `Gol attesi in tutto: ${goals}.` : null,
-      p.over?.["2.5"] != null ? `Over 2,5 al ${pct(p.over["2.5"])}, Goal (segnano entrambe) al ${pct(p.btts)}.` : null,
+      p.over?.["2.5"] != null ? `Over 2,5 ${alPct(p.over["2.5"])}, Goal (segnano entrambe) ${alPct(p.btts)}.` : null,
     ]
       .filter(Boolean)
       .join(" ") || null,
@@ -811,8 +840,14 @@ function italyToday({ data, today, nowMs }) {
       title: e.label,
       subtitle: `${hit.c.name} · ${capital(dayLabel(today))}, ore ${timeOf(e)}${tv ? ` · ${tv.channels}` : ""}`,
       highlights: [
-        { label: "Più probabile", match: e.label, value: `${top === 1 ? "pareggio" : top === 0 ? home : away} ${pct(p.p[top])}` },
-        p.over?.["2.5"] != null ? { label: "Over 2,5", match: e.label, value: pct(p.over["2.5"]), color: "#FBBF24" } : null,
+        {
+          label: "Più probabile",
+          match: e.label,
+          value: `${top === 1 ? "pareggio" : top === 0 ? home : away} ${pct(p.p[top])}`,
+        },
+        p.over?.["2.5"] != null
+          ? { label: "Over 2,5", match: e.label, value: pct(p.over["2.5"]), color: "#FBBF24" }
+          : null,
         p.btts != null ? { label: "Goal", match: e.label, value: pct(p.btts) } : null,
       ].filter(Boolean),
       matches: [e, ...sameDay.sort((a, b) => a.kickoff.localeCompare(b.kickoff))]
@@ -843,7 +878,8 @@ function lineupPosts({ data, nowMs }) {
     // the Italian national team too, whatever the competition
     const italy = site.c.national && [site.m.homeTeam.name, site.m.awayTeam.name].includes("Italia");
     if (!LINEUP_LEAGUES.has(x.league) && !italy) continue;
-    if (!italy && x.league !== "serie-a" && !italian.has(site.m.homeTeam.id) && !italian.has(site.m.awayTeam.id)) continue;
+    if (!italy && x.league !== "serie-a" && !italian.has(site.m.homeTeam.id) && !italian.has(site.m.awayTeam.id))
+      continue;
     const home = shortName(site.m.homeTeam);
     const away = shortName(site.m.awayTeam);
     const e = archived.get(site.m.id);
@@ -889,7 +925,7 @@ function results({ data, today }, campaign) {
   const { text, more } = listByCompetition(
     list,
     (e) =>
-      `${e.hit ? "✅" : "❌"} ${esc(e.label)} ${e.result.home}-${e.result.away} (modello: ${esc(e.pick.label.split(" · ")[0])} al ${pct(e.pick.prob)})`,
+      `${e.hit ? "✅" : "❌"} ${esc(e.label)} ${e.result.home}-${e.result.away} (modello: ${esc(e.pick.label.split(" · ")[0])} ${alPct(e.pick.prob)})`,
     16,
   );
   const misses = list.filter((e) => !e.hit);
@@ -906,10 +942,10 @@ function results({ data, today }, campaign) {
       `Esito più probabile verificato in <b>${hits} partite su ${list.length}</b> (${pct(hits / list.length)}).`,
       [
         surprise
-          ? `La sorpresa: <b>${esc(surprise.label)}</b> ${surprise.result.home}-${surprise.result.away}, il modello dava ${esc(surprise.pick.label.split(" · ")[0])} al ${pct(surprise.pick.prob)}.`
+          ? `La sorpresa: <b>${esc(surprise.label)}</b> ${surprise.result.home}-${surprise.result.away}, il modello dava ${esc(surprise.pick.label.split(" · ")[0])} ${alPct(surprise.pick.prob)}.`
           : null,
         sure
-          ? `Il più netto e azzeccato: <b>${esc(sure.label)}</b> ${sure.result.home}-${sure.result.away} (${esc(sure.pick.label.split(" · ")[0])} al ${pct(sure.pick.prob)}).`
+          ? `Il più netto e azzeccato: <b>${esc(sure.label)}</b> ${sure.result.home}-${sure.result.away} (${esc(sure.pick.label.split(" · ")[0])} ${alPct(sure.pick.prob)}).`
           : null,
       ]
         .filter(Boolean)
@@ -934,8 +970,266 @@ function results({ data, today }, campaign) {
         label: e.label,
         score: `${e.result.home}-${e.result.away}`,
         hit: e.hit,
-        pick: `${e.pick.label.split(" · ")[0]} al ${pct(e.pick.prob)}`,
+        pick: `${e.pick.label.split(" · ")[0]} ${alPct(e.pick.prob)}`,
       })),
     },
   };
+}
+
+// ---------------------------------------------------------------------------------------------- predictions of the day
+const LEAGUES5 = new Set(["Serie A", "Premier League", "LaLiga", "Bundesliga", "Ligue 1"]);
+const fair = (p) => (1 / p).toFixed(2).replace(".", ",");
+
+/**
+ * The most telling outcome of a match among 1X2, Goal/No Goal, Over/Under 2,5, double chance and Over 1,5: the first
+ * one, in that order (most specific first), above its threshold, else the closest to it; `edge` = how far above it
+ * is (for the ranking).
+ */
+function bestMarket(e) {
+  const pr = e.prediction;
+  const [home, away] = e.label.split(" – ");
+  const i = topOf(pr.p);
+  const out = [
+    {
+      min: 0.6,
+      p: pr.p[i],
+      sign: ["1", "X", "2"][i],
+      text: i === 1 ? "pareggio" : `vittoria ${i === 0 ? home : away}`,
+    },
+  ];
+  if (typeof pr.btts === "number")
+    out.push(
+      pr.btts >= 0.5
+        ? { min: 0.62, p: pr.btts, sign: "Goal", text: "segnano entrambe" }
+        : { min: 0.62, p: 1 - pr.btts, sign: "No Goal", text: "almeno una non segna" },
+    );
+  const o25 = pr.over?.["2.5"];
+  if (typeof o25 === "number")
+    out.push(
+      o25 >= 0.5
+        ? { min: 0.62, p: o25, sign: "Over 2,5", text: "almeno 3 gol" }
+        : { min: 0.62, p: 1 - o25, sign: "Under 2,5", text: "al massimo 2 gol" },
+    );
+  if (pr.dc && i !== 1)
+    out.push(
+      i === 0
+        ? { min: 0.75, p: pr.dc[0], sign: "1X", text: `${home} o pareggio` }
+        : { min: 0.75, p: pr.dc[2], sign: "X2", text: `${away} o pareggio` },
+    );
+  const o15 = pr.over?.["1.5"];
+  if (typeof o15 === "number") out.push({ min: 0.8, p: o15, sign: "Over 1,5", text: "almeno 2 gol" });
+  // none above its threshold (balanced match): the one closest to it
+  const ok = out.find((m) => m.p >= m.min) ?? out.reduce((a, b) => (b.p - b.min > a.p - a.min ? b : a));
+  return { ...ok, edge: ok.p - ok.min };
+}
+
+/**
+ * Weekend days with league matches and European cup days: five matches of the day, one outcome each (the most telling
+ * of several markets, bestMarket), with probability, fair odds and the chance that all five come in.
+ */
+function dailyPicks({ data, today, nowMs }) {
+  const { weekday } = rome(nowMs);
+  const ids = currentIds(data);
+  const todays = data.archive.calcio.filter(
+    (e) => open(e) && ids.has(e.id) && dayOf(e) === today && Date.parse(e.kickoff) > nowMs,
+  );
+  const cupDay = [2, 3, 4].includes(weekday) && todays.filter((e) => CUPS.has(e.where)).length >= 2;
+  const leagueDay = [0, 6].includes(weekday) && todays.filter((e) => LEAGUES5.has(e.where)).length >= 4;
+  if (!cupDay && !leagueDay) return null;
+  const pool = new Set([...LEAGUES5, ...CUPS, "Serie B"]);
+  const inTris = new Set(
+    Object.entries(data.tris ?? {})
+      .filter(([k]) => k.endsWith(`/${today}`))
+      .flatMap(([, l]) => l.picks.map((p) => p.id)),
+  );
+  // at most two per competition (three on cup days) while others are left; the matches of today's threes left out,
+  // unless without them there are not five
+  const choose = (skipTris) => {
+    const ranked = todays
+      .filter((e) => pool.has(e.where) && !(skipTris && inTris.has(e.id)))
+      .map((e) => ({ e, m: bestMarket(e) }))
+      .filter((x) => x.m)
+      .sort((a, b) => b.m.edge - a.m.edge || rank(a.e.where) - rank(b.e.where) || a.e.id - b.e.id);
+    const out = [];
+    const perComp = new Map();
+    for (const x of ranked) {
+      if ((perComp.get(x.e.where) ?? 0) >= (cupDay ? 3 : 2)) continue;
+      perComp.set(x.e.where, (perComp.get(x.e.where) ?? 0) + 1);
+      out.push(x);
+      if (out.length === 5) break;
+    }
+    // too few competitions today for the cap (Wednesday: Champions League almost alone): fill up without it
+    for (const x of ranked) if (out.length < 5 && !out.includes(x)) out.push(x);
+    return out;
+  };
+  let five = choose(true);
+  if (five.length < 5) five = choose(false);
+  if (five.length < 5) return null;
+  five.sort((a, b) => a.e.kickoff.localeCompare(b.e.kickoff) || a.e.id - b.e.id);
+  const all = five.reduce((x, { m }) => x * m.p, 1);
+  const caption = (withFair) =>
+    post(
+      `📋 <b>I pronostici del giorno</b> – ${dayLabel(today)}`,
+      five
+        .map(
+          ({ e, m }) =>
+            `${timeOf(e)} <b>${esc(e.label)}</b>\n${esc(m.sign)} · ${esc(m.text)}: ${pct(m.p)}${withFair ? ` · quota equa ${fair(m.p)}` : ""}`,
+        )
+        .join("\n"),
+      `Ognuno è l'esito più netto della sua partita per il modello. Tutti e cinque insieme: <b>${pct(all)}</b>, cioè in circa ${Math.round((1 - all) * 10)} casi su 10 almeno uno va diversamente. Quota equa = 1 ÷ probabilità, non è la quota di un operatore.`,
+      `Tutte le partite di oggi: ${anchor("/pronostici/oggi", "quotaguru.it/pronostici/oggi", "pronostici-del-giorno")}`,
+    );
+  return {
+    // within Telegram's 1.024 characters: without the fair odds (they are on the image) when it does not fit
+    caption: caption(true).length <= CAPTION_MAX ? caption(true) : caption(false),
+    card: {
+      type: "tris",
+      badge: "Pronostici del giorno",
+      title: "I pronostici del giorno",
+      subtitle: `${capital(dayLabel(today))} · un esito per partita, secondo il modello`,
+      picks: five.map(({ e, m }) => ({
+        when: timeOf(e),
+        where: e.where,
+        label: e.label,
+        sign: m.sign,
+        outcome: `${m.text} · quota equa ${fair(m.p)}`,
+        p: m.p,
+      })),
+      all,
+      allLabel: "Tutti e cinque insieme",
+    },
+  };
+}
+
+// ---------------------------------------------------------------------------------------------- match study
+const STUDY_MAX_PER_DAY = 2;
+
+/** Position and points of a club in its league table (null when not found). */
+function standingOf(comp, teamId) {
+  const table =
+    comp?.standings?.find((s) => s.stage === "REGULAR_SEASON" && !s.group)?.table ?? comp?.standings?.[0]?.table;
+  return table?.find((r) => r.team.id === teamId) ?? null;
+}
+
+/** Last five results of a club in any competition of the data: "VVPSV" (oldest first). */
+function formOf(comps, teamId, beforeIso) {
+  const played = comps
+    .flatMap((c) => c.matches)
+    .filter(
+      (m) =>
+        m.status === "FINISHED" &&
+        m.utcDate < beforeIso &&
+        (m.homeTeam.id === teamId || m.awayTeam.id === teamId) &&
+        m.score.fullTime.home !== null,
+    )
+    .sort((a, b) => a.utcDate.localeCompare(b.utcDate))
+    .slice(-5);
+  return played
+    .map((m) => {
+      const mine = m.homeTeam.id === teamId ? m.score.fullTime.home : m.score.fullTime.away;
+      const theirs = m.homeTeam.id === teamId ? m.score.fullTime.away : m.score.fullTime.home;
+      return mine > theirs ? "V" : mine < theirs ? "S" : "P";
+    })
+    .join("");
+}
+
+/**
+ * The matches of the day worth a study (at most STUDY_MAX_PER_DAY): Italian clubs in the European cups (Champions
+ * first) and the Serie A match of the day between the best-placed clubs (lowest average position). The same list all
+ * day long, so every match is posted once, in its own slot.
+ */
+function studyMatches(data, today) {
+  const comps = data.football?.competitions ?? [];
+  const sa = comps.find((c) => c.code === "SA");
+  const italian = new Set(sa?.matches.flatMap((m) => [m.homeTeam.id, m.awayTeam.id]) ?? []);
+  const archived = new Map(data.archive.calcio.map((e) => [e.id, e]));
+  const out = [];
+  const cupScore = { CL: 100, EL: 90, ECL: 80 };
+  for (const c of comps) {
+    for (const m of c.matches) {
+      if (rome(Date.parse(m.utcDate)).day !== today || ["POSTPONED", "CANCELLED"].includes(m.status)) continue;
+      const e = archived.get(m.id);
+      if (!e || !open(e)) continue;
+      if (cupScore[c.code] && (italian.has(m.homeTeam.id) || italian.has(m.awayTeam.id)))
+        out.push({ c, m, e, score: cupScore[c.code] });
+      if (c.code === "SA") {
+        const a = standingOf(c, m.homeTeam.id)?.position;
+        const b = standingOf(c, m.awayTeam.id)?.position;
+        if (a && b) out.push({ c, m, e, score: 70 - (a + b) / 2, serieA: true });
+      }
+    }
+  }
+  out.sort((x, y) => y.score - x.score || x.m.utcDate.localeCompare(y.m.utcDate) || x.m.id - y.m.id);
+  // one Serie A match a day: the best-placed pair
+  const picked = [];
+  for (const x of out) {
+    if (x.serieA && picked.some((p) => p.serieA)) continue;
+    picked.push(x);
+    if (picked.length === STUDY_MAX_PER_DAY) break;
+  }
+  return picked;
+}
+
+/** Event rubric: the study of a chosen match (studyMatches), posted about four hours before kick-off. */
+function studyPosts({ data, today, nowMs }) {
+  const comps = data.football?.competitions ?? [];
+  const posts = [];
+  for (const { c, m, e } of studyMatches(data, today)) {
+    const ko = Date.parse(m.utcDate);
+    if (nowMs < ko - 4 * 3600000 || nowMs > ko - 90 * 60000) continue;
+    const home = shortName(m.homeTeam);
+    const away = shortName(m.awayTeam);
+    const pr = e.prediction;
+    const best = bestMarket(e);
+    const i = topOf(pr.p);
+    const pickText = i === 1 ? "X · pareggio" : `${i === 0 ? "1" : "2"} · vittoria ${i === 0 ? home : away}`;
+    const formH = formOf(comps, m.homeTeam.id, m.utcDate);
+    const formA = formOf(comps, m.awayTeam.id, m.utcDate);
+    // league table only for Serie A matches (a cup table says little)
+    const posH = c.code === "SA" ? standingOf(c, m.homeTeam.id) : null;
+    const posA = c.code === "SA" ? standingOf(c, m.awayTeam.id) : null;
+    const scores = (pr.scores ?? []).slice(0, 3);
+    const inj = m.injuries;
+    const round = m.matchday && m.stage !== "LEAGUE_STAGE" ? `, ${m.matchday}ª giornata` : "";
+    const lines = [
+      `📊 Il modello: ${p1x2(pr.p)}\nQuote eque: ${pr.p.map(fair).join(" · ")}`,
+      pr.xg
+        ? `⚽ Gol attesi ${dec1(pr.xg[0])} – ${dec1(pr.xg[1])}${pr.over?.["2.5"] != null ? ` · Over 2,5 ${pct(pr.over["2.5"])}` : ""}${pr.btts != null ? ` · Goal ${pct(pr.btts)}` : ""}`
+        : null,
+      scores.length ? `🎯 Risultati più probabili: ${scores.map(([h, a]) => `${h}-${a}`).join(", ")}` : null,
+      formH.length >= 3 && formA.length >= 3
+        ? `📈 Ultime partite: ${esc(home)} ${formH} · ${esc(away)} ${formA}`
+        : null,
+      posH && posA
+        ? `🏆 Classifica: ${esc(home)} ${posH.position}ª (${posH.points} pt), ${esc(away)} ${posA.position}ª (${posA.points} pt)`
+        : null,
+      inj ? `🚑 Indisponibili: ${esc(home)} ${inj.home.length}, ${esc(away)} ${inj.away.length}` : null,
+    ];
+    posts.push({
+      key: String(m.id),
+      caption: post(
+        `🔎 <b>Lo studio del pronostico</b> – ${esc(home)} – ${esc(away)}`,
+        `${esc(c.name)}${round} · oggi alle ${rome(ko).time}`,
+        lines.filter(Boolean).join("\n"),
+        `➡️ Per il modello: <b>${esc(pickText)}</b> ${alPct(pr.p[i])}${best && best.sign !== ["1", "X", "2"][i] ? `; l'esito più netto tra gli altri mercati: ${esc(best.sign)} (${esc(best.text)}) ${alPct(best.p)}` : ""}.`,
+        `Lo studio completo, con statistiche e confronto: ${anchor(e.path, `${home} – ${away}`, "studio-pronostico")}`,
+      ),
+      card: {
+        type: "study",
+        badge: "Lo studio del pronostico",
+        title: `${home} – ${away}`,
+        subtitle: `${c.name}${round} · oggi alle ${rome(ko).time}`,
+        home,
+        away,
+        p: pr.p,
+        xg: pr.xg ?? null,
+        over25: pr.over?.["2.5"] ?? null,
+        btts: pr.btts ?? null,
+        scores,
+        form: formH.length >= 3 && formA.length >= 3 ? [formH, formA] : null,
+        pick: { sign: ["1", "X", "2"][i], text: pickText.split(" · ")[1], p: pr.p[i] },
+      },
+    });
+  }
+  return posts;
 }
