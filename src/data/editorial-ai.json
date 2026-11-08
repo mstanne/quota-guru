@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-08T00:22:23.012Z",
+ "generatedAt": "2026-11-08T00:44:48.200Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:558533": {
@@ -3301,6 +3301,56 @@
     }
    ]
   },
+  "fb:567352": {
+   "fingerprint": "i534rm",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 7 novembre alle 16:30 CD Nacional e Acad. Viseu si affrontano nella 11ª giornata di Primeira Liga. In classifica il CD Nacional è al 16° posto con 7 punti, mentre l'Acad. Viseu è al 6° posto con 20 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Primeira Liga il CD Nacional ha ottenuto 1 vittoria e 2 sconfitte, con sequenza P-V-P, segnando 3 gol e subendone 4.",
+      "Nelle ultime 3 partite di Primeira Liga l'Acad. Viseu ha ottenuto 3 vittorie, con sequenza V-V-V, segnando 6 gol e subendone 3. La squadra arriva da 3 vittorie consecutive."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: CD Nacional 1,0, Acad. Viseu 1,5 a partita.",
+      "Gol subiti finora: CD Nacional 19, Acad. Viseu 12.",
+      "In tutte le ultime 3 partite dell'Acad. Viseu sono stati segnati almeno tre gol."
+     ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 1 vittoria per il CD Nacional, 1 vittoria per l'Acad. Viseu e 3 pareggi, con 14 gol complessivi, pari a una media di 2,8 a partita. L'ultimo confronto, disputato a marzo 2024 in Segunda Liga, è terminato CD Nacional 1-1 Acad. Viseu."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca CD Nacional – Acad. Viseu?",
+     "a": "Sabato 7 novembre alle 16:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:567351": {
    "fingerprint": "1klyrbb",
    "sections": [
@@ -5328,7 +5378,7 @@
    ]
   },
   "nba:21718070": {
-   "fingerprint": "1w2bfkh",
+   "fingerprint": "28pwvy",
    "sections": [
     {
      "id": "presentazione",
@@ -5341,7 +5391,7 @@
      "id": "momento",
      "paragraphs": [
       "I Mavericks hanno un record di 5-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 112,1 punti segnati e 110,9 subiti. In casa il bilancio è 3-2.",
-      "I Pacers hanno un record di 3-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,2 punti segnati e 114,2 subiti. In trasferta il bilancio è 3-2."
+      "I Pacers hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 110,3 punti segnati e 114,2 subiti. In trasferta il bilancio è 3-2."
      ],
      "bullets": []
     },
@@ -5362,16 +5412,16 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
   "nba:21718071": {
-   "fingerprint": "19tgvca",
+   "fingerprint": "fyxrgr",
    "sections": [
     {
      "id": "presentazione",
@@ -5384,7 +5434,7 @@
      "id": "momento",
      "paragraphs": [
       "I Rockets hanno un record di 7-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 117,9 punti segnati e 107,6 subiti. In casa il bilancio è 4-1.",
-      "I Nuggets hanno un record di 4-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,4 punti segnati e 114,7 subiti. In trasferta il bilancio è 2-1."
+      "I Nuggets hanno un record di 5-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 115,3 punti segnati e 113,1 subiti. In trasferta il bilancio è 3-1."
      ],
      "bullets": []
     },
@@ -5408,7 +5458,7 @@
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta la pagina su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -5751,19 +5801,19 @@
    ]
   },
   "nba:21718081": {
-   "fingerprint": "1yj2eao",
+   "fingerprint": "6ir8am",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "I Wizards fanno visita ai Pacers giovedì 12 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
+      "I Washington Wizards fanno visita agli Indiana Pacers giovedì 12 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "I Pacers hanno un record di 3-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,2 punti segnati e 114,2 subiti. In casa il bilancio è 0-4.",
+      "I Pacers hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 110,3 punti segnati e 114,2 subiti. In casa il bilancio è 0-5.",
       "I Wizards hanno un record di 4-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 111,4 punti segnati e 112,3 subiti. In trasferta il bilancio è 2-3."
      ],
      "bullets": []
@@ -5784,7 +5834,7 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
@@ -5921,7 +5971,7 @@
    ]
   },
   "nba:21718085": {
-   "fingerprint": "pqcmu7",
+   "fingerprint": "1ir8u0m",
    "sections": [
     {
      "id": "presentazione",
@@ -5934,7 +5984,7 @@
      "id": "momento",
      "paragraphs": [
       "I Grizzlies hanno un record di 6-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 111,8 subiti. In casa il bilancio è 2-3.",
-      "I Nuggets hanno un record di 4-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,4 punti segnati e 114,7 subiti. In trasferta il bilancio è 2-1."
+      "I Nuggets hanno un record di 5-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 115,3 punti segnati e 113,1 subiti. In trasferta il bilancio è 3-1."
      ],
      "bullets": []
     },
@@ -5954,7 +6004,7 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
@@ -6348,7 +6398,7 @@
    ]
   },
   "nba:21718095": {
-   "fingerprint": "476d9b",
+   "fingerprint": "1lgdz99",
    "sections": [
     {
      "id": "presentazione",
@@ -6360,7 +6410,7 @@
     {
      "id": "momento",
      "paragraphs": [
-      "I Pacers hanno un record di 3-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,2 punti segnati e 114,2 subiti. In casa il bilancio è 0-4.",
+      "I Pacers hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 110,3 punti segnati e 114,2 subiti. In casa il bilancio è 0-5.",
       "I Knicks hanno un record di 4-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 110,0 punti segnati e 105,1 subiti. In trasferta il bilancio è 1-2."
      ],
      "bullets": []
@@ -6726,7 +6776,7 @@
    ]
   },
   "nba:21718104": {
-   "fingerprint": "qxojdg",
+   "fingerprint": "v4ekir",
    "sections": [
     {
      "id": "presentazione",
@@ -6739,7 +6789,7 @@
      "id": "momento",
      "paragraphs": [
       "I Pelicans hanno un record di 4-5 in stagione e hanno vinto 4 delle ultime 5, con una media di 120,2 punti segnati e 118,8 subiti. In casa il bilancio è 3-3.",
-      "I Nuggets hanno un record di 4-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,4 punti segnati e 114,7 subiti. In trasferta il bilancio è 2-1."
+      "I Nuggets hanno un record di 5-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 115,3 punti segnati e 113,1 subiti. In trasferta il bilancio è 3-1."
      ],
      "bullets": []
     },
@@ -6764,7 +6814,7 @@
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi tutti i dettagli su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -6941,7 +6991,7 @@
    ]
   },
   "nba:21718109": {
-   "fingerprint": "vlcb28",
+   "fingerprint": "12rsln",
    "sections": [
     {
      "id": "presentazione",
@@ -6954,7 +7004,7 @@
      "id": "momento",
      "paragraphs": [
       "I 76ers hanno un record di 8-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 109,4 punti segnati e 106,6 subiti. In casa il bilancio è 4-1.",
-      "I Pacers hanno un record di 3-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,2 punti segnati e 114,2 subiti. In trasferta il bilancio è 3-2."
+      "I Pacers hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 110,3 punti segnati e 114,2 subiti. In trasferta il bilancio è 3-2."
      ],
      "bullets": []
     },
@@ -6978,7 +7028,7 @@
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -7152,7 +7202,7 @@
    ]
   },
   "nba:1000017134": {
-   "fingerprint": "i09ejf",
+   "fingerprint": "1iwelng",
    "sections": [
     {
      "id": "presentazione",
@@ -7174,7 +7224,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 3 gare."
+      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 4 gare."
      ]
     }
    ],
@@ -7185,11 +7235,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -7533,7 +7583,7 @@
    ]
   },
   "nba:1000017143": {
-   "fingerprint": "1pgxms6",
+   "fingerprint": "19hgx0n",
    "sections": [
     {
      "id": "presentazione",
@@ -7555,7 +7605,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 3 gare."
+      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 4 gare."
      ]
     }
    ],
@@ -7566,7 +7616,7 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
@@ -7617,7 +7667,7 @@
    ]
   },
   "nba:1000017145": {
-   "fingerprint": "1j6wbjd",
+   "fingerprint": "113i65p",
    "sections": [
     {
      "id": "presentazione",
@@ -7629,7 +7679,7 @@
     {
      "id": "momento",
      "paragraphs": [
-      "I Nuggets hanno un record di 4-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,4 punti segnati e 114,7 subiti. In casa il bilancio è 2-2.",
+      "I Nuggets hanno un record di 5-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 115,3 punti segnati e 113,1 subiti. In casa il bilancio è 2-2.",
       "I Suns hanno un record di 2-5 in stagione e hanno vinto 1 delle ultime 5, con una media di 113,9 punti segnati e 121,4 subiti. In trasferta il bilancio è 0-3."
      ],
      "bullets": []
@@ -7660,7 +7710,7 @@
    ]
   },
   "nba:1000017146": {
-   "fingerprint": "7e5yrc",
+   "fingerprint": "dt892z",
    "sections": [
     {
      "id": "presentazione",
@@ -7672,8 +7722,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "I Raptors hanno un record di 5-4 in stagione e hanno vinto 2 delle ultime 5 partite, con una media di 118,2 punti segnati e 112,8 subiti. In casa il bilancio è 2-1.",
-      "I Knicks hanno un record di 4-4 in stagione e hanno vinto 4 delle ultime 5 partite, con una media di 110,0 punti segnati e 105,1 subiti. In trasferta il bilancio è 1-2."
+      "I Raptors hanno un record di 5-4 in stagione e nelle ultime 5 partite ne hanno vinte 2, con una media di 118,2 punti segnati e 112,8 subiti. In casa il bilancio è 2-1.",
+      "I Knicks hanno un record di 4-4 in stagione e nelle ultime 5 partite ne hanno vinte 4, con una media di 110,0 punti segnati e 105,1 subiti. In trasferta il bilancio è 1-2."
      ],
      "bullets": []
     },
@@ -7682,7 +7732,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 2 gare."
+      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 3 gare."
      ]
     }
    ],
@@ -7693,7 +7743,7 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
@@ -7702,7 +7752,7 @@
    ]
   },
   "nba:1000017147": {
-   "fingerprint": "10mjyuk",
+   "fingerprint": "gzrr13",
    "sections": [
     {
      "id": "presentazione",
@@ -7726,7 +7776,7 @@
       "I Timberwolves giocano la seconda partita in due giorni (back-to-back).",
       "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 2 gare.",
       "I Trail Blazers giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 2 gare."
+      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 3 gare."
      ]
     }
    ],
@@ -7914,7 +7964,7 @@
    ]
   },
   "nba:1000017152": {
-   "fingerprint": "1vsezpw",
+   "fingerprint": "14bfmzi",
    "sections": [
     {
      "id": "presentazione",
@@ -7926,7 +7976,7 @@
     {
      "id": "momento",
      "paragraphs": [
-      "I Pacers hanno un record di 3-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,2 punti segnati e 114,2 subiti. In casa il bilancio è 0-4.",
+      "I Pacers hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 110,3 punti segnati e 114,2 subiti. In casa il bilancio è 0-5.",
       "I Rockets hanno un record di 7-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 117,9 punti segnati e 107,6 subiti. In trasferta il bilancio è 3-1."
      ],
      "bullets": []
@@ -7947,11 +7997,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Trovi una spiegazione nella guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8210,7 +8260,7 @@
    ]
   },
   "nba:1000017159": {
-   "fingerprint": "1o7g4om",
+   "fingerprint": "u04eia",
    "sections": [
     {
      "id": "presentazione",
@@ -8222,7 +8272,7 @@
     {
      "id": "momento",
      "paragraphs": [
-      "I Nuggets hanno un record di 4-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,4 punti segnati e 114,7 subiti. In casa il bilancio è 2-2.",
+      "I Nuggets hanno un record di 5-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 115,3 punti segnati e 113,1 subiti. In casa il bilancio è 2-2.",
       "I Celtics hanno un record di 7-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 114,8 punti segnati e 105,1 subiti. In trasferta il bilancio è 2-2."
      ],
      "bullets": []
@@ -8243,11 +8293,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la pagina su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8424,7 +8474,7 @@
    ]
   },
   "nba:1000017164": {
-   "fingerprint": "1edkwri",
+   "fingerprint": "1wq4b05",
    "sections": [
     {
      "id": "presentazione",
@@ -8447,7 +8497,7 @@
      "bullets": [
       "I Bucks giocano la seconda partita in due giorni (back-to-back).",
       "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 1 gara."
+      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 2 gare."
      ]
     }
    ],
@@ -8458,16 +8508,16 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Trovi tutto nella guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
   "nba:1000017165": {
-   "fingerprint": "1ai1wp1",
+   "fingerprint": "tlkbmi",
    "sections": [
     {
      "id": "presentazione",
@@ -8489,7 +8539,7 @@
      "paragraphs": [],
      "bullets": [
       "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 1 gara."
+      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 2 gare."
      ]
     }
    ],
@@ -8500,11 +8550,11 @@
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8635,7 +8685,7 @@
    ]
   },
   "nba:1000017169": {
-   "fingerprint": "174ejzm",
+   "fingerprint": "1qexzyn",
    "sections": [
     {
      "id": "presentazione",
@@ -8648,7 +8698,7 @@
      "id": "momento",
      "paragraphs": [
       "I Cavaliers hanno un record di 5-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 119,2 punti segnati e 114,7 subiti. In casa il bilancio è 4-1.",
-      "I Pacers hanno un record di 3-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,2 punti segnati e 114,2 subiti. In trasferta il bilancio è 3-2."
+      "I Pacers hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 110,3 punti segnati e 114,2 subiti. In trasferta il bilancio è 3-2."
      ],
      "bullets": []
     },
@@ -8672,7 +8722,7 @@
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8845,20 +8895,20 @@
    ]
   },
   "nba:1000017174": {
-   "fingerprint": "1p7i296",
+   "fingerprint": "kyqlm6",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 21 novembre alle 04:00, ora italiana, i Nuggets ospitano i Rockets in una partita della regular season NBA 2026-27."
+      "Sabato 21 novembre alle 04:00, ora italiana, i Nuggets affrontano i Rockets in una gara di regular season NBA 2026-27."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "I Nuggets hanno un record di 4-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,4 punti segnati e 114,7 subiti. In casa il bilancio è 2-2.",
-      "I Rockets hanno un record di 7-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 117,9 punti segnati e 107,6 subiti. In trasferta il bilancio è 3-1."
+      "I Nuggets sono in stagione con un record di 5-3 e nelle ultime 5 partite hanno vinto 4 volte. Segnano in media 115,3 punti a partita e ne subiscono 113,1. In casa il loro bilancio è 2-2.",
+      "I Rockets sono in stagione con un record di 7-2 e nelle ultime 5 partite hanno vinto 3 volte. Segnano in media 117,9 punti a partita e ne subiscono 107,6. In trasferta il loro bilancio è 3-1."
      ],
      "bullets": []
     },
@@ -8866,23 +8916,23 @@
      "id": "calendario",
      "paragraphs": [],
      "bullets": [
-      "Nei 7 giorni a partire da questa partita i Nuggets hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 1 gara."
+      "Nei 7 giorni a partire da questa partita, i Nuggets hanno in programma 1 gara.",
+      "Nei 7 giorni a partire da questa partita, i Rockets hanno in programma 1 gara."
      ]
     }
    ],
    "faq": [
     {
      "q": "A che ora si gioca Denver Nuggets – Houston Rockets in Italia?",
-     "a": "Sabato 21 novembre alle 04:00."
+     "a": "La partita si gioca sabato 21 novembre alle 04:00."
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+     "a": "Per le spiegazioni, consulta la guida [Basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
     },
     {
      "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la pagina su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+     "a": "Per il quadro generale, consulta [Regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -8967,6 +9017,48 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    }
+   ]
+  },
+  "nba:1000017177": {
+   "fingerprint": "az6ue0",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "I Trail Blazers fanno visita ai Knicks domenica 22 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "I Knicks hanno un record di 4-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 110,0 punti segnati e 105,1 subiti. In casa il bilancio è 3-2.",
+      "I Trail Blazers hanno un record di 6-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 121,4 punti segnati e 112,4 subiti. In trasferta il bilancio è 5-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "calendario",
+     "paragraphs": [],
+     "bullets": [
+      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 1 gara.",
+      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 1 gara."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "A che ora si gioca New York Knicks – Portland Trail Blazers in Italia?",
+     "a": "Domenica 22 novembre alle 01:30."
+    },
+    {
+     "q": "Come funzionano totali e handicap nel basket?",
+     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    },
+    {
+     "q": "Come è organizzata la stagione NBA?",
+     "a": "Trovi i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -11173,6 +11265,78 @@
     }
    ]
   },
+  "fb:1001552220": {
+   "fingerprint": "1rugrhf",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Den Haag ha battuto lo Sparta in casa per 3-1. La partita, valida per la 12ª giornata di Eredivisie, si è giocata sabato 7 novembre; il primo tempo si era chiuso 1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Den Haag occupa il 17° posto con 9 punti, mentre lo Sparta è al 12° con 12. [Classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Den Haag tornerà in campo domenica 22 novembre alle 14:30 in trasferta contro l'Ajax. Lo Sparta tornerà in campo domenica 22 novembre alle 14:30 in casa contro l'AZ."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Den Haag – Sparta?",
+     "a": "3-1 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
+  "fb:558843": {
+   "fingerprint": "c9u2oh",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Go Ahead vince di misura in trasferta contro l'Excelsior: 0-1. La partita, valida per la 12ª giornata di Eredivisie, si è giocata sabato 7 novembre; il primo tempo si era chiuso 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora l'Excelsior è al 15° posto con 11 punti e il Go Ahead all'8° con 17. [Consulta la classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Excelsior tornerà in campo sabato 21 novembre alle 18:45 in trasferta contro il Feyenoord. Il Go Ahead tornerà in campo domenica 22 novembre alle 16:45 in casa contro il Sittard."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Excelsior – Go Ahead?",
+     "a": "0-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
   "fb:567353": {
    "fingerprint": "zzfj8d",
    "sections": [
@@ -11228,6 +11392,35 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina dedicata alla [Primeira Liga](/calcio/primeira-liga)."
+    }
+   ]
+  },
+  "fb:567350": {
+   "fingerprint": "qebzn0",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Lo Sporting CP si è imposto di misura in casa per 1-0 sul Moreirense. La gara, valida per la 11ª giornata di Primeira Liga, si è disputata sabato 7 novembre; il primo tempo si era chiuso 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora lo Sporting CP occupa il 3° posto con 24 punti, mentre il Moreirense è al 9° con 14. [Classifica completa](/calcio/primeira-liga/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Sporting CP – Moreirense?",
+     "a": "1-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
     }
    ]
   },
@@ -11411,6 +11604,42 @@
     }
    ]
   },
+  "fb:561930": {
+   "fingerprint": "kq1428",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Cardiff ha ribaltato la partita e ha vinto in casa per 5-4 contro il Burnley. L'incontro, valido per la 15ª giornata di Championship, si è disputato sabato 7 novembre; il primo tempo si era concluso 1-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Cardiff occupa il 14° posto con 18 punti, mentre il Burnley è al 22° con 10. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Cardiff tornerà in campo sabato 21 novembre alle 13:30 in trasferta contro il Norwich. Il Burnley giocherà domenica 22 novembre alle 13:00 in casa contro il Blackburn."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Cardiff – Burnley?",
+     "a": "5-4 (1-2 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
   "fb:561940": {
    "fingerprint": "gb8dke",
    "sections": [
@@ -11519,6 +11748,42 @@
     }
    ]
   },
+  "fb:561935": {
+   "fingerprint": "1cyxu7u",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Blackburn ha superato in casa il West Ham per 2-1. Il match, valido per la 15ª giornata di Championship, si è disputato sabato 7 novembre; alla fine del primo tempo il punteggio era di 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, il Blackburn occupa il 13° posto con 21 punti, mentre il West Ham è al 9° con 23. [Consulta la classifica completa](/calcio/championship/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Blackburn tornerà in campo domenica 22 novembre alle 13:00, in trasferta contro il Burnley. Il West Ham giocherà sabato 21 novembre alle 16:00, in casa contro il Preston NE."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Qual è stato il risultato di Blackburn – West Ham?",
+     "a": "2-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship)."
+    }
+   ]
+  },
   "fb:1001563259": {
    "fingerprint": "18x0uiq",
    "sections": [
@@ -11588,78 +11853,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Championship](/calcio/championship)."
-    }
-   ]
-  },
-  "fb:1001492441": {
-   "fingerprint": "1044shl",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Botafogo si impone in casa di misura, con un 1-0 sul Mineiro. La partita, valida per la 34ª giornata di Brasileirão, si è giocata giovedì 5 novembre; il primo tempo si era chiuso 1-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Botafogo è all'11° posto con 42 punti, mentre il Mineiro è al 7° con 50. [Vai alla classifica completa](/calcio/brasileirao/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Botafogo tornerà in campo giovedì 19 novembre alle 01:30 in trasferta contro il Corinthians. Il Mineiro giocherà sabato 14 novembre alle 22:30 in trasferta contro il Mirassol."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Botafogo – Mineiro?",
-     "a": "1-0 (1-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Brasileirão](/calcio/brasileirao)."
-    }
-   ]
-  },
-  "fb:555078": {
-   "fingerprint": "z0wetg",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Lo São Paulo e il Corinthians hanno pareggiato 0-0. La partita, valida per la 34ª giornata di Brasileirão, si è disputata giovedì 5 novembre; il primo tempo si era chiuso anch'esso 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora lo São Paulo è al 10° posto con 44 punti, mentre il Corinthians è al 17° con 37. [Consulta la classifica completa](/calcio/brasileirao/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Lo São Paulo tornerà in campo venerdì 20 novembre alle 01:30 in casa contro il Fluminense. Il Corinthians tornerà in campo giovedì 19 novembre alle 01:30 in casa contro il Botafogo."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita São Paulo – Corinthians?",
-     "a": "È finita 0-0 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Brasileirão](/calcio/brasileirao)."
     }
    ]
   },
@@ -11768,102 +11961,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Brasileirão](/calcio/brasileirao)."
-    }
-   ]
-  },
-  "nba:21718029": {
-   "fingerprint": "1uulh8o",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Celtics hanno superato i Bucks per 109-102. La partita si è giocata giovedì 5 novembre.",
-      "All'intervallo i Celtics conducevano 62-41.",
-      "Il parziale più netto è arrivato nel 1º quarto, vinto dai Celtics per 28-14."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 211.",
-      "Parziali (Celtics–Bucks): 28-14, 34-27, 25-38, 22-23."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Boston Celtics – Milwaukee Bucks?",
-     "a": "109-102 per i Celtics."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718030": {
-   "fingerprint": "z67wum",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Nets battono gli Hornets 114-104. La partita si è giocata giovedì 5 novembre.",
-      "All'intervallo erano avanti gli Hornets 57-50: i Nets hanno recuperato 7 punti di svantaggio nella ripresa.",
-      "Il parziale più netto è arrivato nel 4º quarto, vinto dai Nets 34-24."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 218.",
-      "Parziali (Nets–Hornets): 21-24, 29-33, 30-23, 34-24."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Brooklyn Nets – Charlotte Hornets?",
-     "a": "114-104 per i Nets."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718031": {
-   "fingerprint": "bw2h7t",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Knicks hanno battuto i Bulls 135-105. La partita si è giocata giovedì 5 novembre.",
-      "All'intervallo i Knicks conducevano 84-52.",
-      "Il parziale più netto è arrivato nel 1º quarto, vinto dai Knicks 43-21."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 240.",
-      "Parziali (Knicks–Bulls): 43-21, 41-31, 29-27, 22-26."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita New York Knicks – Chicago Bulls?",
-     "a": "135-105 per i Knicks."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
     }
    ]
   },
@@ -12504,6 +12601,38 @@
     {
      "q": "Dove trovo le altre partite NBA?",
      "a": "Nella sezione [pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21718052": {
+   "fingerprint": "97krk",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Nuggets si impongono sui Pacers per 114-102. La sfida si è disputata sabato 7 novembre.",
+      "All'intervallo i Nuggets erano avanti 64-41.",
+      "Il divario più ampio si è visto nel 2º quarto, vinto dai Nuggets 37-22."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Somma dei punti segnati: 216.",
+      "Parziali (Pacers–Nuggets): 19-27, 22-37, 37-26, 24-24."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Qual è stato il risultato finale di Indiana Pacers – Denver Nuggets?",
+     "a": "Il risultato finale è stato 102-114 per i Nuggets."
+    },
+    {
+     "q": "Dove si trovano le altre partite NBA?",
+     "a": "Le altre partite NBA sono nella pagina dei [pronostici NBA](/pronostici/nba)."
     }
    ]
   }
