@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-09T18:21:22.743Z",
+ "generatedAt": "2026-11-09T19:54:53.706Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:1001550202": {
@@ -390,6 +390,48 @@
     {
      "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001550201": {
+   "fingerprint": "ose9gh",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Juventus e Venezia si affrontano lunedì 23 novembre alle 20:45 per la 12ª giornata di Serie A. In classifica la Juventus è al 7° posto con 18 punti, il Venezia al 19° con 6."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Serie A la Juventus ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-P-V-N), con 6 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 5 partite di Serie A il Venezia ha raccolto 2 vittorie e 3 sconfitte (sequenza V-P-P-P-V), con 3 gol fatti e 5 subiti. In trasferta ha perso tutte le 3 partite giocate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Juventus 1,4, Venezia 0,7 a partita.",
+      "Gol subiti finora: Juventus 12, Venezia 21."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Juventus – Venezia?",
+     "a": "Lunedì 23 novembre alle 20:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Serie A](/calcio/serie-a) e la [classifica aggiornata](/calcio/serie-a/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -15919,42 +15961,6 @@
     }
    ]
   },
-  "fb:558537": {
-   "fingerprint": "hyxm9f",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Venezia si impone in casa sull'Udinese per 2-1. La partita, valida per la 11ª giornata di Serie A, si è disputata venerdì 6 novembre; al termine del primo tempo il punteggio era 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Dopo le partite disputate finora, il Venezia occupa il 19° posto con 6 punti, mentre l'Udinese è al 20° con 5. [Consulta la classifica completa](/calcio/serie-a/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Venezia tornerà in campo lunedì 23 novembre alle 20:45, in trasferta contro la Juventus. L'Udinese tornerà in campo domenica 22 novembre alle 18:00, in trasferta contro il Bologna."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Venezia – Udinese?",
-     "a": "2-1 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Serie A](/calcio/serie-a)."
-    }
-   ]
-  },
   "fb:558534": {
    "fingerprint": "1yjw09y",
    "sections": [
@@ -16276,42 +16282,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Serie A](/calcio/serie-a)."
-    }
-   ]
-  },
-  "fb:1001601593": {
-   "fingerprint": "ch2lnl",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il match si chiude 1-1: l'Ascoli, in vantaggio 1-0 all'intervallo, viene raggiunto dal Palermo nella ripresa. L'incontro, valido per l'11ª giornata di Serie B, si è disputato venerdì 6 novembre."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Considerando le partite disputate finora, l'Ascoli occupa il 3° posto con 20 punti, mentre il Palermo è al 1° posto con 27. [Consulta la classifica completa](/calcio/serie-b/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Ascoli tornerà in campo sabato 21 novembre alle 15:00, giocando in casa contro il Vicenza Virtus. Anche il Palermo scenderà in campo sabato 21 novembre alle 15:00, ma in trasferta contro il Catanzaro."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Ascoli – Palermo?",
-     "a": "1-1 (1-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Serie B](/calcio/serie-b)."
     }
    ]
   },
@@ -17359,42 +17329,6 @@
     }
    ]
   },
-  "fb:565852": {
-   "fingerprint": "19y0g7l",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "L'HSV ha battuto il M'gladbach in casa per 3-1. La partita, valida per la 9ª giornata di Bundesliga, si è giocata venerdì 6 novembre; il primo tempo si era chiuso 1-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora l'HSV è all'11° posto con 12 punti, mentre il M'gladbach è al 18° con 4. Puoi consultare la [classifica completa](/calcio/bundesliga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'HSV tornerà in campo domenica 22 novembre alle 17:30, in trasferta contro il Bremen. Il M'gladbach tornerà in campo sabato 21 novembre alle 15:30, in casa contro il Dortmund."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita HSV – M'gladbach?",
-     "a": "3-1 (1-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
-    }
-   ]
-  },
   "fb:565851": {
    "fingerprint": "hacty6",
    "sections": [
@@ -17683,42 +17617,6 @@
     }
    ]
   },
-  "fb:559638": {
-   "fingerprint": "146gm9s",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Toulouse ha battuto lo Strasbourg in casa per 3-1. La partita, valida per la 10ª giornata di Ligue 1, si è giocata venerdì 6 novembre; il primo tempo si era chiuso sull'1-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Toulouse è al 12° posto con 13 punti, mentre lo Strasbourg è al 13° con 10. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Toulouse tornerà in campo sabato 21 novembre alle 20:45, in trasferta contro il RC Lens. Lo Strasbourg tornerà in campo sabato 21 novembre alle 20:45, in casa contro il Brest."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Toulouse – Strasbourg?",
-     "a": "3-1 (1-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
-    }
-   ]
-  },
   "fb:559637": {
    "fingerprint": "tiya4d",
    "sections": [
@@ -18004,42 +17902,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
-    }
-   ]
-  },
-  "fb:558845": {
-   "fingerprint": "dbjp8i",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Willem II e Zwolle hanno chiuso la sfida con un pareggio per 1-1. La partita, valida per la 12ª giornata di Eredivisie, si è giocata venerdì 6 novembre; al primo tempo il punteggio era già di 1-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Willem II occupa il 18° posto con 3 punti, mentre lo Zwolle è al 13° con 12. Per il quadro completo è disponibile la [classifica completa](/calcio/eredivisie/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Willem II tornerà in campo domenica 22 novembre alle 12:15 in trasferta contro il Twente. Lo Zwolle giocherà sabato 21 novembre alle 21:00 in trasferta contro il Telstar."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Willem II – Zwolle?",
-     "a": "1-1 (1-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
     }
    ]
   },

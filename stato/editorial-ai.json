@@ -30276,5 +30276,49 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-09T18:21:14.244Z"
+ },
+ "fb:1001550201": {
+  "fingerprint": "ose9gh",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Juventus e Venezia si affrontano lunedì 23 novembre alle 20:45 per la 12ª giornata di Serie A. In classifica la Juventus è al 7° posto con 18 punti, il Venezia al 19° con 6."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie A la Juventus ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-P-V-N), con 6 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Serie A il Venezia ha raccolto 2 vittorie e 3 sconfitte (sequenza V-P-P-P-V), con 3 gol fatti e 5 subiti. In trasferta ha perso tutte le 3 partite giocate."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Juventus 1,4, Venezia 0,7 a partita.",
+     "Gol subiti finora: Juventus 12, Venezia 21."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Juventus – Venezia?",
+    "a": "Lunedì 23 novembre alle 20:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Serie A](/calcio/serie-a) e la [classifica aggiornata](/calcio/serie-a/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-09T19:54:53.699Z"
  }
 }
