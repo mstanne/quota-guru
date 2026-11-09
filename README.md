@@ -334,6 +334,13 @@ Regole:
   reindirizzamento immediato (`meta refresh` 0 e `location.replace`), che i motori di ricerca trattano come
   spostamento permanente. Elenco e regole in `src/lib/legacyUrls.ts`; nel browser le stesse rotte reindirizzano con
   `<Navigate replace>`. I link salvati nelle pagine archiviate vengono riscritti verso i nuovi URL.
+- **URL che cambiano da soli.** Se la fonte cambia il nome breve di una squadra o sposta una partita a un altro
+  giorno, cambia anche l'URL. Ogni pagina partita (datata ed evento, calcio e NBA) ha una chiave stabile (`key` in
+  `src/routes.ts`: id della partita o coppia di id delle squadre); il pre-render ricorda l'ultimo URL di ogni chiave
+  (`keys` in `.cache/seo/state.json`) e, quando la stessa chiave torna con un URL diverso, pubblica il vecchio come
+  pagina-ponte verso il nuovo (`moved` nello stesso file, tenuto finché il vecchio URL non torna a servire). Gli
+  spostamenti avvenuti prima di questo meccanismo sono in `scripts/url-spostati-noti.json`. Anche le vecchie
+  giornate `/calcio/<lega>/giornata/<n>` pubblicate solo dall'archivio hanno la loro pagina-ponte.
 
 Per aggiungere una pagina: aggiungi il percorso in `src/routes.ts` (con title e description) e la `<Route>` in
 `src/App.tsx`; il pre-rendering e la sitemap la includono automaticamente.
