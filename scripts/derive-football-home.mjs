@@ -18,7 +18,9 @@ const predFile = path.join(root, "src", "data", "football-predictions.json");
 const out = path.join(root, "src", "data", "football-home.json");
 
 const PRIORITY = ["SA", "CL", "EL", "PL", "PD", "ECL"]; // hero cards: order of the competitions within a day
-const HOME = ["SA", "CL", "EL", "ECL", "PL", "PD", "BL1", "FL1"]; // "Prossime partite" list and its filter
+const NOT_FEATURED = ["CNL"]; // in the list, never in the hero cards (far from the Italian public)
+// "Prossime partite" list and its filter; the national-team competitions last (friendlies left out)
+const HOME = ["SA", "CL", "EL", "ECL", "PL", "PD", "BL1", "FL1", "UNL", "CNL"];
 const LIMIT = 8;
 const FEATURED = 3;
 const FEATURED_DAYS = 7; // hero cards only for matches in the next week
@@ -62,17 +64,21 @@ const romeDay = (ms) => new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Rom
 const candidates = all.filter(
   (x) =>
     x.prediction &&
+    !NOT_FEATURED.includes(x.competition.code) &&
     ["SCHEDULED", "TIMED"].includes(x.match.status) &&
     Date.parse(x.match.utcDate) > buildMs &&
     Date.parse(x.match.utcDate) <= horizon,
 );
 const rank = (code) => (PRIORITY.includes(code) ? PRIORITY.indexOf(code) : PRIORITY.length + HOME.indexOf(code));
-// in the European cups, matches of Italian clubs (teams of the Serie A / Serie B data) come first
+// in the European cups, matches of Italian clubs (teams of the Serie A / Serie B data) come first; in the
+// national-team competitions, Italy's
 const italian = new Set(
   data.competitions
     .filter((c) => c.code === "SA" || c.code === "SB")
     .flatMap((c) => c.matches.flatMap((m) => [m.homeTeam.id, m.awayTeam.id])),
 );
+for (const c of data.competitions.filter((c) => c.national))
+  for (const m of c.matches) for (const t of [m.homeTeam, m.awayTeam]) if (t.name === "Italy" || t.shortName === "Italia") italian.add(t.id);
 const local = (x) => (italian.has(x.match.homeTeam.id) || italian.has(x.match.awayTeam.id) ? 0 : 1);
 const days = [...new Set(candidates.map((x) => romeDay(Date.parse(x.match.utcDate))))].sort();
 const featured = [];
