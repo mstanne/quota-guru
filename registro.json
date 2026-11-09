@@ -59,7 +59,13 @@
   "test:classifica:2026-11-09": {
    "at": "2026-11-09T11:47:52.001Z",
    "messageId": 16
+  },
+  "test:academy:2026-11-09": {
+   "at": "2026-11-09T17:07:46.758Z",
+   "messageId": 17
   }
  },
- "academy": {}
+ "academy": {
+  "test": 1
+ }
 }
