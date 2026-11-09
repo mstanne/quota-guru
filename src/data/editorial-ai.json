@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-09T12:19:56.087Z",
+ "generatedAt": "2026-11-09T15:22:03.713Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:1001550202": {
@@ -4142,7 +4142,7 @@
    ]
   },
   "fb:1001528962": {
-   "fingerprint": "lum8an",
+   "fingerprint": "r3i54i",
    "sections": [
     {
      "id": "presentazione",
@@ -4154,8 +4154,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League l'Inghilterra ha ottenuto 3 vittorie e 1 sconfitta (sequenza P-V-V-V), con 14 gol fatti e 3 subiti. Arriva da 3 vittorie consecutive. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Nations League la Croazia ha ottenuto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), con 4 gol fatti e 14 subiti. Ha perso le ultime 3. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 4 partite di Nations League l'Inghilterra ha ottenuto 3 vittorie e 1 sconfitta (sequenza P-V-V-V), con 14 gol fatti e 3 subiti. Arriva da 3 vittorie consecutive. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 4 partite di Nations League la Croazia ha ottenuto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), con 4 gol fatti e 14 subiti. Ha perso le ultime 3. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -4164,9 +4164,16 @@
      "paragraphs": [],
      "bullets": [
       "In 3 delle ultime 4 partite dell'Inghilterra si sono segnati almeno tre gol.",
-      "L'Inghilterra non ha subito gol in 3 delle ultime 4.",
+      "L'Inghilterra non ha subito gol in 3 delle ultime 4 partite.",
       "In tutte le ultime 4 partite della Croazia si sono segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 5 confronti diretti il bilancio è di 4 vittorie per l'Inghilterra, 0 vittorie per la Croazia e 1 pareggio, con 17 gol complessivi (media di 3,4 a partita). L'ultimo incrocio, a ottobre 2026 in Nations League, è finito Croazia 0-7 Inghilterra."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -4175,22 +4182,22 @@
      "a": "Giovedì 12 novembre alle 20:45, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Trovi classifica e risultati nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+     "q": "Dove trovo classifica e risultati?",
+     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001528960": {
-   "fingerprint": "3n8kw0",
+   "fingerprint": "1r6udpl",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento giovedì 12 novembre alle 20:45: l'Italia ospita la Francia per la 5ª giornata di Nations League. Si tratta di una sfida tra squadre di alta classifica: l'Italia è al 2° posto con 7 punti, mentre la Francia è al 1° posto con 10 punti."
+      "Giovedì 12 novembre alle 20:45 l'Italia riceve la Francia per la 5ª giornata di Nations League. È un confronto tra due squadre in alta classifica: l'Italia è al 2° posto con 7 punti, la Francia al 1° con 10."
      ],
      "bullets": []
     },
@@ -4198,7 +4205,7 @@
      "id": "momento",
      "paragraphs": [
       "Nelle ultime 4 partite di Nations League l'Italia ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-N-V), segnando 8 gol e subendone 5. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Nations League la Francia ha ottenuto 3 vittorie e 1 pareggio (sequenza V-V-N-V), segnando 7 gol e subendone 2. Non perde da 4 partite. In trasferta ha vinto tutte le 2 partite giocate."
+      "Nelle ultime 4 partite di Nations League la Francia ha ottenuto 3 vittorie e 1 pareggio (sequenza V-V-N-V), segnando 7 gol e subendone 2. Non perde da 4 partite. In trasferta ha vinto tutte e 2 le partite giocate."
      ],
      "bullets": []
     },
@@ -4211,6 +4218,13 @@
       "L'Italia ha il miglior attacco del torneo.",
       "La Francia ha la miglior difesa del torneo."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 4 confronti diretti il bilancio è di 2 vittorie per l'Italia, 1 vittoria per la Francia e 1 pareggio, con 12 gol complessivi (media di 3,0 a partita). L'ultimo incontro, a ottobre 2026 in Nations League, è finito Francia 1-1 Italia."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -4219,17 +4233,17 @@
      "a": "Giovedì 12 novembre alle 20:45, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
+     "q": "Dove si trovano classifica e risultati?",
      "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001528961": {
-   "fingerprint": "1xbawm6",
+   "fingerprint": "13ygo5j",
    "sections": [
     {
      "id": "presentazione",
@@ -4241,8 +4255,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League il Repubblica Ceca ha raccolto 4 sconfitte (sequenza P-P-P-P), con 2 gol fatti e 10 subiti. Ha perso le ultime 4. In casa ha perso tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di Nations League lo Spagna ha raccolto 4 vittorie (sequenza V-V-V-V), con 12 gol fatti e 5 subiti. È reduce da 4 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
+      "Nelle ultime 4 partite di Nations League la Repubblica Ceca ha collezionato 4 sconfitte (sequenza P-P-P-P), segnando 2 gol e subendone 10. Ha perso le ultime 4 gare. In casa ha perso tutte le 2 partite disputate.",
+      "Nelle ultime 4 partite di Nations League la Spagna ha ottenuto 4 vittorie (sequenza V-V-V-V), con 12 gol fatti e 5 subiti. Arriva da 4 vittorie consecutive. In trasferta ha vinto tutte le 2 partite disputate."
      ],
      "bullets": []
     },
@@ -4250,9 +4264,16 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "In 3 delle ultime 4 partite del Repubblica Ceca si sono segnati almeno tre gol.",
-      "In tutte le ultime 4 partite dello Spagna si sono segnati almeno tre gol."
+      "In 3 delle ultime 4 partite della Repubblica Ceca si sono segnati almeno tre gol.",
+      "In tutte le ultime 4 partite della Spagna si sono segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 4 confronti diretti il bilancio è di 0 vittorie per la Repubblica Ceca, 3 per la Spagna e 1 pareggio, con 11 gol complessivi (media di 2,8 a partita). L'ultimo incrocio, a ottobre 2026 in Nations League, è terminato Spagna 3-1 Repubblica Ceca."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -4271,20 +4292,20 @@
    ]
   },
   "fb:1001528963": {
-   "fingerprint": "1827kn3",
+   "fingerprint": "mj0pal",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "La sfida è in programma giovedì 12 novembre alle 20:45: l'Albania ospita il Finlandia nella 5ª giornata di Nations League."
+      "Giovedì 12 novembre alle 20:45 l'Albania ospita la Finlandia nella 5ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League l'Albania ha ottenuto 3 vittorie e 1 sconfitta, con la sequenza V-V-P-V, segnando 8 gol e subendone 3. In casa ha vinto tutte le 2 partite disputate.",
-      "Nelle ultime 4 partite di Nations League il Finlandia ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-N-V-P, segnando 9 gol e subendone 2. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 4 partite di Nations League l'Albania ha ottenuto 3 vittorie e 1 sconfitta, con sequenza V-V-P-V, segnando 8 gol e subendone 3. In casa ha vinto tutte e 2 le partite disputate.",
+      "Nelle ultime 4 partite di Nations League la Finlandia ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta, con sequenza V-N-V-P, segnando 9 gol e subendone 2. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -4292,8 +4313,15 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Nelle ultime 4 partite dell'Albania, in 3 occasioni sono stati segnati almeno tre gol."
+      "In 3 delle ultime 4 partite dell'Albania si sono segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Nel confronto diretto più recente il bilancio è favorevole alla Finlandia: nessuna vittoria per l'Albania, 1 vittoria per la Finlandia e nessun pareggio, con 3 gol complessivi (media di 3,0 a partita). L'ultimo incontro, disputato a ottobre 2026 in Nations League, è terminato Finlandia 2-1 Albania."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -4302,30 +4330,30 @@
      "a": "Giovedì 12 novembre alle 20:45, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001545613": {
-   "fingerprint": "b4w4mi",
+   "fingerprint": "1xskl6y",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Montenegro e Lettonia si affrontano giovedì 12 novembre alle 20:45 per la 5ª giornata di Nations League."
+      "Montenegro e Lettonia si sfidano giovedì 12 novembre alle 20:45, nella 5ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League il Montenegro ha ottenuto 3 vittorie e 1 pareggio (sequenza V-V-V-N), segnando 7 gol e subendone 4. Non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Nations League la Lettonia ha ottenuto 1 pareggio e 3 sconfitte (sequenza P-N-P-P), segnando 2 gol e subendone 6. Ha perso le ultime 2. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 4 partite di Nations League il Montenegro ha ottenuto 3 vittorie e 1 pareggio (sequenza V-V-V-N), segnando 7 gol e subendone 4. Non perde da 4 partite. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 4 partite di Nations League la Lettonia ha ottenuto 1 pareggio e 3 sconfitte (sequenza P-N-P-P), segnando 2 gol e subendone 6. Ha perso le ultime 2 gare. In trasferta ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     },
@@ -4333,8 +4361,15 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "In 3 delle ultime 4 partite del Montenegro si sono segnati almeno tre gol."
+      "In 3 delle ultime 4 partite del Montenegro sono stati segnati almeno tre gol."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 3 confronti diretti il bilancio è di 2 vittorie per il Montenegro, 0 per la Lettonia e 1 pareggio, con 6 gol complessivi (media di 2,0 a partita). L'ultimo incontro, a ottobre 2026 in Nations League, è terminato Lettonia 1-2 Montenegro."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -4348,12 +4383,12 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001528964": {
-   "fingerprint": "ajyzl4",
+   "fingerprint": "tvp9pn",
    "sections": [
     {
      "id": "presentazione",
@@ -4365,8 +4400,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League, il San Marino ha collezionato 4 sconfitte (sequenza P-P-P-P), con 1 gol fatto e 16 subiti. Ha perso le ultime 4 gare. In casa ha perso tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di Nations League, la Bielorussia ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza P-N-V-V), con 5 gol fatti e 2 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie."
+      "Nelle ultime 4 partite di Nations League il San Marino ha raccolto 4 sconfitte (sequenza P-P-P-P), con 1 gol fatto e 16 subiti. Ha perso le ultime 4. In casa ha perso tutte le 2 partite giocate.",
+      "Nelle ultime 4 partite di Nations League il Bielorussia ha raccolto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza P-N-V-V), con 5 gol fatti e 2 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
      ],
      "bullets": []
     },
@@ -4375,8 +4410,15 @@
      "paragraphs": [],
      "bullets": [
       "In tutte le ultime 4 partite del San Marino si sono segnati almeno tre gol.",
-      "La Bielorussia non ha subito gol in 3 delle ultime 4 partite."
+      "Il Bielorussia non ha subito gol in 3 delle ultime 4."
      ]
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 3 confronti diretti il bilancio è di 0 vittorie per il San Marino, 3 vittorie per il Bielorussia e nessun pareggio, con 11 gol complessivi (media di 3,7 a partita). L'ultimo incrocio, a ottobre 2026 in Nations League, è finito Bielorussia 4-0 San Marino."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -5953,600 +5995,6 @@
     }
    ]
   },
-  "fb:1001545862": {
-   "fingerprint": "1mmghz4",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 11 novembre, alle 18:00, l'Algeria ospita il Togo per la 3ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, l'Algeria ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 5 gol e subendone 3.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, il Togo ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 1 gol e subendone 2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 4 confronti diretti il bilancio è di 4 vittorie per l'Algeria, 0 per il Togo e nessun pareggio, con 13 gol complessivi (media di 3,3 a partita). L'ultimo incontro, disputato a ottobre 2024 in Qualificazioni Coppa d'Africa, si è chiuso Togo 0-1 Algeria."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Algeria – Togo?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Risultati e classifica sono disponibili nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Per capire il funzionamento delle quote è possibile consultare le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545863": {
-   "fingerprint": "cx0fmr",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Appuntamento mercoledì 11 novembre alle 18:00: l'Angola ospita il Sud Sudan nella 3ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, l'Angola ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 3 gol e subendone 1.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, il Sud Sudan ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 7. Ha perso entrambe le ultime sfide."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Angola – Sud Sudan?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545865": {
-   "fingerprint": "11vlq7x",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Appuntamento mercoledì 11 novembre alle 18:00: il Burkina Faso ospita il Mauritania nella 3ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Burkina Faso ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1.",
-      "Il Mauritania ha disputato finora una sola partita delle Qualificazioni Coppa d'Africa, persa 1-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 4 confronti diretti il bilancio è di 2 vittorie per il Burkina Faso, 2 vittorie per il Mauritania e nessun pareggio, con 5 gol complessivi (media di 1,3 a partita). L'ultimo incrocio, ad agosto 2025 nell'African Nations Championship, si è concluso Mauritania 1-0 Burkina Faso."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Burkina Faso – Mauritania?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545867": {
-   "fingerprint": "hn223v",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 11 novembre alle 18:00 il Capo Verde ospita il Liberia nella 3ª giornata di Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Capo Verde ha collezionato 2 sconfitte (sequenza P-P), con 2 gol fatti e 5 subiti. Ha perso entrambe le ultime gare.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Liberia ha collezionato 2 sconfitte (sequenza P-P), con 1 gol fatto e 4 subiti. Ha perso entrambe le ultime gare."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per il Capo Verde, 0 vittorie per il Liberia e nessun pareggio, con 4 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, disputato a ottobre 2021 in Qualificazioni Mondiali Africa, si è concluso Capo Verde 1-0 Liberia."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Capo Verde – Liberia?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545868": {
-   "fingerprint": "1xyz9la",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Comore e Congo si affrontano mercoledì 11 novembre alle 18:00 per la 3ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Finora il Comore ha giocato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 1-0.",
-      "Anche il Congo ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, pareggiata 1-1."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Comore – Congo?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545870": {
-   "fingerprint": "1gggukh",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Appuntamento mercoledì 11 novembre alle 18:00: l'Egitto ospita il Malawi per la 3ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Egitto ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 5 gol fatti e 0 subiti.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Malawi ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 3 gol fatti e 4 subiti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per l'Egitto, 0 vittorie per il Malawi e nessun pareggio, con 6 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, a marzo 2023 in Qualificazioni Coppa d'Africa, è finito Malawi 0-4 Egitto."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Egitto – Malawi?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545872": {
-   "fingerprint": "ireb15",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Gabon e Lesotho si affrontano mercoledì 11 novembre alle 18:00 per la 3ª giornata di Qualificazioni Coppa d'Africa. Si tratta di un confronto tra squadre posizionate in alto in classifica: il Gabon è al 2° posto con 3 punti, il Lesotho al 4° con 0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Gabon ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 2 gol fatti e 2 subiti.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Lesotho ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 4 subiti. Ha perso entrambe le ultime partite."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 2 confronti diretti il bilancio è di 1 vittoria per il Gabon, 0 vittorie per il Lesotho e 1 pareggio, con 2 gol complessivi (media di 1,0 a partita). L'ultimo incrocio, a ottobre 2024 in Qualificazioni Coppa d'Africa, è finito Lesotho 0-2 Gabon."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Gabon – Lesotho?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545877": {
-   "fingerprint": "uvalyb",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 11 novembre alle 18:00 il Mali ospita il Ruanda nella 3ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Mali ha ottenuto 2 vittorie (sequenza V-V), segnando 4 gol e subendone 1.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Ruanda ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per il Mali, 0 vittorie per il Ruanda e nessun pareggio, con 4 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, a novembre 2021 nelle Qualificazioni Mondiali Africa, è terminato Ruanda 0-3 Mali."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Mali – Ruanda?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545878": {
-   "fingerprint": "1iiu1mb",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Marocco e Niger si affrontano mercoledì 11 novembre alle 18:00 nella 3ª giornata delle Qualificazioni Coppa d'Africa. Si tratta di un match tra due squadre di alta classifica: il Marocco è al 1° posto con 6 punti, mentre il Niger è al 3° con 3 punti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Marocco ha ottenuto 2 vittorie (sequenza V-V), segnando 4 gol e non subendone nessuno.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Niger ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per il Marocco, nessuna per il Niger e nessun pareggio, con 8 gol complessivi (media di 4,0 a partita). L'ultimo incontro, disputato a settembre 2025 nelle Qualificazioni Mondiali Africa, è terminato Marocco 5-0 Niger."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Marocco – Niger?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina dedicata alle [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545879": {
-   "fingerprint": "11fn6xf",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Appuntamento mercoledì 11 novembre alle 18:00: il Mozambico riceve l'Etiopia per la 3ª giornata di Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Mozambico ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 5 gol fatti e 2 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Etiopia ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 2 subiti. Ha perso le ultime 2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 1 confronti diretti il bilancio è di 0 vittorie per il Mozambico, 0 vittorie per l'Etiopia e 1 pareggio, con 0 gol complessivi (media di 0,0 a partita). L'ultimo incrocio, a gennaio 2023 in African Nations Championship, è finito Etiopia 0-0 Mozambico."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Mozambico – Etiopia?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545880": {
-   "fingerprint": "4wh2i8",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Nigeria e Tanzania si affrontano mercoledì 11 novembre alle 18:00 per la 3ª giornata di Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Nigeria ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 4 subiti.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Tanzania ha raccolto 1 pareggio e 1 sconfitta (sequenza P-N), con 1 gol fatto e 3 subiti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 1 confronti diretti il bilancio è di 1 vittoria per il Nigeria, 0 vittorie per il Tanzania e nessun pareggio, con 3 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, a dicembre 2025 in Coppa d'Africa, è finito Nigeria 2-1 Tanzania."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Nigeria – Tanzania?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545882": {
-   "fingerprint": "jm019s",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 11 novembre alle 18:00 il Sudafrica ospita il Kenya nella 3ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Sudafrica ha ottenuto 2 vittorie (sequenza V-V), segnando 7 gol e subendone 1.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Kenya ha raccolto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 1 gol e subendone 2."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Sudafrica – Kenya?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545883": {
-   "fingerprint": "kfnsr4",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "La partita si gioca mercoledì 11 novembre alle 18:00: il Tunisia ospita il Libia nella 3ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Finora il Tunisia ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, terminata 2-2.",
-      "Anche il Libia ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, sconfitta per 0-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 5 vittorie per il Tunisia, 0 per il Libia e nessun pareggio, con 19 gol complessivi (media di 3,8 a partita). L'ultimo incrocio, disputato a marzo 2023 nelle Qualificazioni Coppa d'Africa, si è chiuso con il risultato Libia 0-1 Tunisia."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Tunisia – Libia?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545884": {
-   "fingerprint": "1yjapq9",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 11 novembre alle 18:00 l'Uganda ospita il Botswana nella 3ª giornata delle Qualificazioni alla Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Finora l'Uganda ha disputato una sola partita nelle Qualificazioni alla Coppa d'Africa, vinta 1-0.",
-      "Anche il Botswana ha giocato finora una sola partita nelle Qualificazioni alla Coppa d'Africa, terminata 2-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per l'Uganda, nessuna per il Botswana e nessun pareggio, con 2 gol complessivi (media di 1,0 a partita). L'ultimo incrocio, disputato a ottobre 2025 nelle Qualificazioni ai Mondiali Africa, è finito Botswana 0-1 Uganda."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Uganda – Botswana?",
-     "a": "Mercoledì 11 novembre alle 18:00."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545885": {
-   "fingerprint": "z38n8b",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 11 novembre alle 18:00 lo Zambia ospita il Burundi nella 3ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa lo Zambia ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 3 gol e subendone 3.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Burundi ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 2 gol e subendone 3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 2 confronti diretti il bilancio è di 1 vittoria per lo Zambia, nessuna per il Burundi e 1 pareggio, con 1 gol complessivo (media di 0,5 a partita). L'ultimo incontro, nel dicembre 2013 nella CECAFA Senior Challenge Cup, è terminato Zambia 0-0 Burundi."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Zambia – Burundi?",
-     "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001545873": {
    "fingerprint": "1kz03n6",
    "sections": [
@@ -6874,33 +6322,101 @@
     }
    ]
   },
-  "fb:1001545886": {
-   "fingerprint": "o8t7f4",
+  "fb:1001545868": {
+   "fingerprint": "bn14bi",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Botswana ospita l'Uganda nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+      "Comore e Congo si affrontano venerdì 13 novembre alle 14:00 per la 3ª giornata di Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Finora il Botswana ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, terminata 2-2.",
-      "Anche l'Uganda ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, vinta 1-0."
+      "Finora il Comore ha giocato una sola partita di Qualificazioni Coppa d'Africa, vinta 1-0.",
+      "Anche il Congo ha giocato finora una sola partita di Qualificazioni Coppa d'Africa, pareggiata 1-1."
      ],
      "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Quando si gioca Botswana – Uganda?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
+     "q": "Quando si gioca Comore – Congo?",
+     "a": "Venerdì 13 novembre alle 14:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545879": {
+   "fingerprint": "rbs14f",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento venerdì 13 novembre alle 14:00: il Mozambico riceve l'Etiopia per la 3ª giornata di Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Mozambico ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 5 gol fatti e 2 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Etiopia ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 2 subiti. Ha perso le ultime 2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Mozambico – Etiopia?",
+     "a": "Venerdì 13 novembre alle 14:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545885": {
+   "fingerprint": "duxz6j",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Venerdì 13 novembre alle 14:00 lo Zambia ospita il Burundi nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, lo Zambia ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 3 gol e subendone 3.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, il Burundi ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 2 gol e subendone 3."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Zambia – Burundi?",
+     "a": "Venerdì 13 novembre alle 14:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -6908,29 +6424,63 @@
     }
    ]
   },
-  "fb:1001545887": {
-   "fingerprint": "eylsun",
+  "fb:1001545865": {
+   "fingerprint": "wkrbdh",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Burundi e Zambia si sfidano domenica 15 novembre alle 18:00, nell'ambito della 4ª giornata di Qualificazioni Coppa d'Africa."
+      "Venerdì 13 novembre alle 17:00 il Burkina Faso ospita il Mauritania nella 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Burundi ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 2 gol e subendone 3.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa lo Zambia ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 3 gol e subendone 3."
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Burkina Faso ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1.",
+      "Finora il Mauritania ha disputato una sola partita delle Qualificazioni Coppa d'Africa, persa per 1-2."
      ],
      "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Quando si gioca Burundi – Zambia?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
+     "q": "Quando si gioca Burkina Faso – Mauritania?",
+     "a": "Venerdì 13 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545867": {
+   "fingerprint": "hl2c0y",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Venerdì 13 novembre alle 17:00 il Capo Verde ospita il Liberia per la 3ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Capo Verde ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 5 subiti. Ha perso le ultime 2.",
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Liberia ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 4 subiti. Ha perso le ultime 2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Capo Verde – Liberia?",
+     "a": "Venerdì 13 novembre alle 17:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -6938,101 +6488,305 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545888": {
-   "fingerprint": "yl5reh",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 18:00 la Repubblica Centrafricana ospita il Benin nella 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "La Repubblica Centrafricana ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, perdendola 0-1.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Benin ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 3 gol e subendone 2."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Repubblica Centrafricana – Benin?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545889": {
-   "fingerprint": "1kc68mq",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Congo e Comore si affrontano domenica 15 novembre alle 18:00 per la 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Finora il Congo ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, terminata 1-1.",
-      "Finora il Comore ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 1-0."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Congo – Comore?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
      "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
-  "fb:1001545890": {
-   "fingerprint": "pjg7x7",
+  "fb:1001545872": {
+   "fingerprint": "13upmcw",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Eritrea e Guinea si sfidano domenica 15 novembre alle 18:00, nell'ambito della 4ª giornata delle Qualificazioni Coppa d'Africa."
+      "Gabon e Lesotho si affrontano venerdì 13 novembre alle 17:00 per la 3ª giornata delle Qualificazioni Coppa d'Africa. È un confronto tra squadre di alta classifica: il Gabon è al 2° posto con 3 punti, il Lesotho al 4° con 0."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, l'Eritrea ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 1 gol e subendone 6.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, la Guinea ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 2 gol e subendone 2."
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Gabon ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 2 gol e subendone 2.",
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Lesotho ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le ultime partite."
      ],
      "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Quando si gioca Eritrea – Guinea?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
+     "q": "Quando si gioca Gabon – Lesotho?",
+     "a": "Venerdì 13 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545880": {
+   "fingerprint": "68mupg",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Nigeria e Tanzania si sfidano venerdì 13 novembre alle 17:00, nella 3ª giornata delle Qualificazioni alla Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite delle Qualificazioni alla Coppa d'Africa, la Nigeria ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 4.",
+      "Nelle ultime 2 partite delle Qualificazioni alla Coppa d'Africa, la Tanzania ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 1 gol e subendone 3."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Nigeria – Tanzania?",
+     "a": "Venerdì 13 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545882": {
+   "fingerprint": "k8pebk",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Venerdì 13 novembre alle 17:00 il Sudafrica ospita il Kenya nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Sudafrica ha ottenuto 2 vittorie (sequenza V-V), con 7 gol fatti e 1 subito.",
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Kenya ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), con 1 gol fatto e 2 subiti."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Sudafrica – Kenya?",
+     "a": "Venerdì 13 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545883": {
+   "fingerprint": "1uowsm7",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "La partita si giocherà venerdì 13 novembre alle 17:00, quando la Tunisia ospiterà la Libia nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Finora la Tunisia ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, conclusa con un pareggio per 2-2.",
+      "Anche la Libia ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, persa per 0-1."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Tunisia – Libia?",
+     "a": "Venerdì 13 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina dedicata alle [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545870": {
+   "fingerprint": "7ruuf5",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Venerdì 13 novembre alle 20:00 l'Egitto ospita il Malawi nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, l'Egitto ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 5 gol e non subendone nessuno.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, il Malawi ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 3 gol e subendone 4."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Egitto – Malawi?",
+     "a": "Venerdì 13 novembre alle 20:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545877": {
+   "fingerprint": "15hd3bh",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Venerdì 13 novembre alle 20:00 il Mali ospita il Ruanda nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Mali ha ottenuto 2 vittorie (sequenza V-V), segnando 4 gol e subendone 1.",
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Ruanda ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Mali – Ruanda?",
+     "a": "Venerdì 13 novembre alle 20:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545878": {
+   "fingerprint": "jyz1zo",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Marocco e Niger si affrontano venerdì 13 novembre alle 21:00 per la 3ª giornata di Qualificazioni Coppa d'Africa. Il match mette di fronte due squadre di alta classifica: il Marocco è al 1° posto con 6 punti, il Niger al 3° con 3."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Marocco ha raccolto 2 vittorie (sequenza V-V), con 4 gol fatti e 0 subiti.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Niger ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 3 subiti."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Marocco – Niger?",
+     "a": "Venerdì 13 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545884": {
+   "fingerprint": "1t3148z",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 14 novembre alle 17:00 l'Uganda ospita il Botswana per la 3ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Finora l'Uganda ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 1-0.",
+      "Anche il Botswana ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, pareggiata 2-2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Uganda – Botswana?",
+     "a": "Sabato 14 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545862": {
+   "fingerprint": "1j54wt",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 14 novembre alle 20:00 l'Algeria ospita il Togo nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, l'Algeria ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 5 gol e subendone 3.",
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, il Togo ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 1 gol e subendone 2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Algeria – Togo?",
+     "a": "Sabato 14 novembre alle 20:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -7044,29 +6798,29 @@
     }
    ]
   },
-  "fb:1001545891": {
-   "fingerprint": "1gpma9o",
+  "fb:1001545863": {
+   "fingerprint": "1bo9spz",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento domenica 15 novembre alle 18:00: l'Etiopia ospita il Mozambico per la 4ª giornata delle Qualificazioni Coppa d'Africa."
+      "Sabato 14 novembre alle 20:00 l'Angola ospita il Sud Sudan nella 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa l'Etiopia ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 2 subiti. Ha perso entrambe le ultime partite.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Mozambico ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 5 gol fatti e 2 subiti."
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Angola ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 3 gol e subendone 1.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Sud Sudan ha subito 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 7. Ha perso entrambe le ultime partite."
      ],
      "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Quando si gioca Etiopia – Mozambico?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
+     "q": "Quando si gioca Angola – Sud Sudan?",
+     "a": "Sabato 14 novembre alle 20:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -7075,296 +6829,24 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545892": {
-   "fingerprint": "1w9batx",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Gambia riceve il Costa d'Avorio nella 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Gambia ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 3.",
-      "Il Costa d'Avorio ha disputato finora una sola partita delle Qualificazioni Coppa d'Africa, vinta 2-0."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Gambia – Costa d'Avorio?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545893": {
-   "fingerprint": "nu3w7c",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Guinea-Bissau ospita il Madagascar nella 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, il Guinea-Bissau ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 0.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, il Madagascar ha raccolto 1 pareggio e 1 sconfitta (sequenza P-N), con 2 gol fatti e 3 subiti."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Guinea-Bissau – Madagascar?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Te lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545894": {
-   "fingerprint": "710kaq",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Kenya riceve il Sudafrica nella 4ª giornata delle Qualificazioni alla Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni alla Coppa d'Africa il Kenya ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 1 gol e subendone 2.",
-      "Nelle ultime 2 partite delle Qualificazioni alla Coppa d'Africa il Sudafrica ha ottenuto 2 vittorie (sequenza V-V), segnando 7 gol e subendone 1."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Kenya – Sudafrica?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545895": {
-   "fingerprint": "83wdrr",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Lesotho ospita il Gabon per la 4ª giornata di Qualificazioni Coppa d'Africa. Si tratta di un incontro di alta classifica: il Lesotho è al 4° posto con 0 punti, mentre il Gabon è al 2° con 3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Lesotho ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 4 subiti. Ha perso le ultime 2.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Gabon ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 2 gol fatti e 2 subiti."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Lesotho – Gabon?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545896": {
-   "fingerprint": "17lnlhb",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Liberia ospita il Capo Verde per la 4ª giornata di Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Liberia ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 4 subiti. Ha perso le ultime 2.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Capo Verde ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 5 subiti. Ha perso le ultime 2."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Liberia – Capo Verde?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545897": {
-   "fingerprint": "1u0hze0",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Libia e Tunisia si sfidano domenica 15 novembre alle 18:00, nell'ambito della 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "La Libia ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, persa 0-1.",
-      "La Tunisia ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, pareggiata 2-2."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Libia – Tunisia?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545898": {
-   "fingerprint": "1l2ynra",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Malawi riceve l'Egitto nella 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Malawi ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 3 gol e subendone 4.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Egitto ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 5 gol e non subendone nessuno."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Malawi – Egitto?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545899": {
-   "fingerprint": "1u3xbu1",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Mauritania ospita il Burkina Faso per la 4ª giornata di Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Finora il Mauritania ha disputato una sola partita di Qualificazioni Coppa d'Africa, persa per 1-2.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Burkina Faso ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Mauritania – Burkina Faso?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001545900": {
-   "fingerprint": "f7awe6",
+   "fingerprint": "wzifn6",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Namibia ospita il Camerun nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+      "Lunedì 16 novembre alle 14:00 la Namibia ospita il Camerun per la 4ª giornata delle Qualificazioni alla Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Finora il Namibia ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, perdendola 0-1.",
-      "Finora anche il Camerun ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, pareggiandola 1-1."
+      "Finora la Namibia ha disputato una sola partita nelle Qualificazioni alla Coppa d'Africa, persa 0-1.",
+      "Il Camerun ha disputato finora una sola partita nelle Qualificazioni alla Coppa d'Africa, pareggiata 1-1."
      ],
      "bullets": []
     }
@@ -7372,75 +6854,7 @@
    "faq": [
     {
      "q": "Quando si gioca Namibia – Camerun?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545901": {
-   "fingerprint": "1yv3cpe",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Niger e Marocco si affrontano domenica 15 novembre alle 18:00 per la 4ª giornata di Qualificazioni Coppa d'Africa. Si tratta di un confronto tra squadre di alta classifica: il Niger è al 3° posto con 3 punti, mentre il Marocco è al 1° con 6."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Niger ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 3 subiti.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Marocco ha ottenuto 2 vittorie (sequenza V-V), con 4 gol fatti e 0 subiti."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Niger – Marocco?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545902": {
-   "fingerprint": "1whyyuh",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Ruanda ospita il Mali nella 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Ruanda ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 2.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Mali ha ottenuto 2 vittorie (sequenza V-V), segnando 4 gol e subendone 1."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Ruanda – Mali?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
+     "a": "Lunedì 16 novembre alle 14:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -7448,127 +6862,25 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545903": {
-   "fingerprint": "1jy2g7j",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Sierra Leone ospita il RD Congo nella 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Finora il Sierra Leone ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, sconfitta per 0-1.",
-      "Anche il RD Congo ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, vinta per 2-1."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "In che giorno e a che ora si gioca Sierra Leone – RD Congo?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove trovo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Dove posso approfondire la lettura delle quote di questa partita?",
-     "a": "Puoi consultare le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545904": {
-   "fingerprint": "hl5lqc",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Somalia ospita il Ghana nella 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Somalia ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le ultime gare.",
-      "Il Ghana ha disputato finora una sola partita di Qualificazioni Coppa d'Africa, persa per 2-4."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Somalia – Ghana?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545905": {
-   "fingerprint": "ucj1xd",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Sud Sudan ospita l'Angola per la 4ª giornata di Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Sud Sudan ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 7 subiti. Ha perso le ultime 2.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Angola ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 3 gol fatti e 1 subito."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Sud Sudan – Angola?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001545906": {
-   "fingerprint": "gybxzw",
+   "fingerprint": "xnwx3o",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sudan e Senegal si affrontano domenica 15 novembre alle 18:00 per la 4ª giornata di Qualificazioni Coppa d'Africa."
+      "Sudan e Senegal si sfidano lunedì 16 novembre alle 14:00, nell'ambito della 4ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Sudan ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 4 subiti.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Senegal ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 2 gol fatti e 1 subito. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, il Sudan ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 4.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, il Senegal ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     }
@@ -7576,79 +6888,11 @@
    "faq": [
     {
      "q": "Quando si gioca Sudan – Senegal?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545907": {
-   "fingerprint": "aie59e",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 18:00 il Tanzania riceve il Nigeria nella 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Tanzania ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 1 gol e subendone 3.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Nigeria ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 4."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Tanzania – Nigeria?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
+     "a": "Lunedì 16 novembre alle 14:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
      "a": "Puoi consultare la pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545908": {
-   "fingerprint": "er9xio",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Togo e Algeria si sfidano domenica 15 novembre alle 18:00, nell'ambito della 4ª giornata di Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, il Togo ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 1 gol e subendone 2.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, l'Algeria ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 5 gol e subendone 3."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Togo – Algeria?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -7657,12 +6901,12 @@
    ]
   },
   "fb:1001545909": {
-   "fingerprint": "16wca25",
+   "fingerprint": "12sm1ih",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento domenica 15 novembre alle 18:00: lo Zimbabwe riceve il Guinea Equatoriale per la 4ª giornata di Qualificazioni Coppa d'Africa."
+      "Lunedì 16 novembre alle 14:00 lo Zimbabwe ospita il Guinea Equatoriale nella 4ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
@@ -7678,7 +6922,551 @@
    "faq": [
     {
      "q": "Quando si gioca Zimbabwe – Guinea Equatoriale?",
-     "a": "Domenica 15 novembre alle 18:00, ora italiana."
+     "a": "Lunedì 16 novembre alle 14:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545904": {
+   "fingerprint": "42os2s",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Il match è in programma lunedì 16 novembre alle 16:00: il Somalia ospita il Ghana per la 4ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Somalia ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le gare.",
+      "Il Ghana ha disputato finora una sola partita delle Qualificazioni Coppa d'Africa, persa per 2-4."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Somalia – Ghana?",
+     "a": "Lunedì 16 novembre alle 16:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545888": {
+   "fingerprint": "edvms1",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Lunedì 16 novembre alle 17:00 la Repubblica Centrafricana ospita il Benin nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "La Repubblica Centrafricana ha disputato finora una sola partita di Qualificazioni Coppa d'Africa, perdendola per 0-1.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Benin ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 3 gol e subendone 2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Repubblica Centrafricana – Benin?",
+     "a": "Lunedì 16 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545890": {
+   "fingerprint": "1wmfzyz",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Eritrea e Guinea si affrontano lunedì 16 novembre alle 17:00 nella 4ª giornata delle Qualificazioni di Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite delle Qualificazioni di Coppa d'Africa, l'Eritrea ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 1 gol e subendone 6.",
+      "Nelle ultime 2 partite delle Qualificazioni di Coppa d'Africa, la Guinea ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 2 gol e subendone 2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Eritrea – Guinea?",
+     "a": "Lunedì 16 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545887": {
+   "fingerprint": "7alw19",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Burundi e Zambia si sfidano martedì 17 novembre alle 14:00, nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Burundi ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 2 gol e subendone 3.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa lo Zambia ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 3 gol e subendone 3."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Burundi – Zambia?",
+     "a": "Martedì 17 novembre alle 14:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545891": {
+   "fingerprint": "19wqyd8",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "La partita si giocherà martedì 17 novembre alle 14:00, quando l'Etiopia riceverà il Mozambico per la 4ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, l'Etiopia ha collezionato 2 sconfitte (sequenza P-P), con 0 gol fatti e 2 subiti. Nelle ultime due gare ha perso entrambe.",
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, il Mozambico ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), con 5 gol fatti e 2 subiti."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Etiopia – Mozambico?",
+     "a": "La partita si gioca martedì 17 novembre alle 14:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545895": {
+   "fingerprint": "162zobz",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 14:00 il Lesotho ospita il Gabon per la 4ª giornata di Qualificazioni Coppa d'Africa. Si tratta di un incontro di alta classifica: il Lesotho è al 4° posto con 0 punti, mentre il Gabon è al 2° con 3."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Lesotho ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 4 subiti. Ha perso le ultime 2.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Gabon ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 2 gol fatti e 2 subiti."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Lesotho – Gabon?",
+     "a": "Martedì 17 novembre alle 14:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545898": {
+   "fingerprint": "1swi23k",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 14:00 il Malawi ospita l'Egitto nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Malawi ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 3 gol e subendone 4.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Egitto ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 5 gol e non subendone nessuno."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Malawi – Egitto?",
+     "a": "Martedì 17 novembre alle 14:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545905": {
+   "fingerprint": "1avbe61",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 14:00 il Sud Sudan ospita l'Angola per la 4ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Sud Sudan ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 7 subiti. Ha perso le ultime 2.",
+      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Angola ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 3 gol fatti e 1 subito."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Sud Sudan – Angola?",
+     "a": "Martedì 17 novembre alle 14:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545907": {
+   "fingerprint": "1gjfpgy",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 14:00 il Tanzania ospita il Nigeria per la 4ª giornata delle Qualificazioni alla Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite delle Qualificazioni alla Coppa d'Africa, il Tanzania ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 1 gol e subendone 3.",
+      "Nelle ultime 2 partite delle Qualificazioni alla Coppa d'Africa, il Nigeria ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 4."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Tanzania – Nigeria?",
+     "a": "Martedì 17 novembre alle 14:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545892": {
+   "fingerprint": "v5sajr",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Il appuntamento è fissato per martedì 17 novembre alle 17:00: il Gambia ospita il Costa d'Avorio nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Gambia ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 3.",
+      "Il Costa d'Avorio ha disputato finora una sola partita delle Qualificazioni Coppa d'Africa, vinta 2-0."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Gambia – Costa d'Avorio?",
+     "a": "Martedì 17 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545893": {
+   "fingerprint": "9g5d2w",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 17:00 il Guinea-Bissau ospita il Madagascar nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Guinea-Bissau ha raccolto 2 vittorie (sequenza V-V), con 5 gol fatti e 0 subiti.",
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Madagascar ha raccolto 1 pareggio e 1 sconfitta (sequenza P-N), con 2 gol fatti e 3 subiti."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Guinea-Bissau – Madagascar?",
+     "a": "Martedì 17 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545894": {
+   "fingerprint": "ddc4ui",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 17:00 il Kenya ospita il Sudafrica nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, il Kenya ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 1 gol e subendone 2.",
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, il Sudafrica ha ottenuto 2 vittorie (sequenza V-V), segnando 7 gol e subendone 1."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Kenya – Sudafrica?",
+     "a": "Martedì 17 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545897": {
+   "fingerprint": "d2whgg",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 17:00 Libia e Tunisia si sfidano nella 4ª giornata delle Qualificazioni di Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "La Libia ha giocato finora una sola partita nelle Qualificazioni di Coppa d'Africa, persa 0-1.",
+      "La Tunisia ha giocato finora una sola partita nelle Qualificazioni di Coppa d'Africa, pareggiata 2-2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Libia – Tunisia?",
+     "a": "Martedì 17 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545903": {
+   "fingerprint": "18irox9",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 17:00 il Sierra Leone affronta il RD Congo nella 4ª giornata delle Qualificazioni di Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Finora il Sierra Leone ha disputato una sola partita nelle Qualificazioni di Coppa d'Africa, sconfitta per 0-1.",
+      "Il RD Congo ha disputato finora una sola partita nelle Qualificazioni di Coppa d'Africa, vinta per 2-1."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Sierra Leone – RD Congo?",
+     "a": "La partita si disputa martedì 17 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545908": {
+   "fingerprint": "1vac4ja",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Togo e Algeria si sfidano martedì 17 novembre alle 17:00, nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, il Togo ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 1 gol e subendone 2.",
+      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, l'Algeria ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 5 gol e subendone 3."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Togo – Algeria?",
+     "a": "Martedì 17 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545886": {
+   "fingerprint": "1td6gw0",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento martedì 17 novembre alle 20:00: il Botswana ospita l'Uganda per la 4ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Finora il Botswana ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, conclusa con un pareggio per 2-2.",
+      "Anche l'Uganda ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, vinta per 1-0."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Botswana – Uganda?",
+     "a": "Martedì 17 novembre alle 20:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -7739,82 +7527,6 @@
     }
    ]
   },
-  "fb:1001640008": {
-   "fingerprint": "18xlvyj",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Isole Cayman e Guyana si affrontano giovedì 12 novembre alle 20:00 per la 1ª giornata di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League le Isole Cayman hanno raccolto 1 pareggio e 3 sconfitte (sequenza N-P-P-P), con 0 gol fatti e 6 subiti. Hanno perso le ultime 3. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie.",
-      "Nelle ultime 3 partite di CONCACAF Nations League il Guyana ha raccolto 3 vittorie (sequenza V-V-V), con 15 gol fatti e 2 subiti. È reduce da 3 vittorie consecutive."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Isole Cayman – Guyana?",
-     "a": "Giovedì 12 novembre alle 20:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001640007": {
-   "fingerprint": "15ghe3r",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Bonaire e Cuba si affrontano giovedì 12 novembre alle 21:00 per la 3ª giornata di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Bonaire ha raccolto 1 vittoria e 3 sconfitte (sequenza P-P-P-V), con 7 gol fatti e 8 subiti. In casa ha perso tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di CONCACAF Nations League il Cuba ha raccolto 2 vittorie e 2 pareggi (sequenza V-V-N-N), con 10 gol fatti e 5 subiti. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In 3 delle ultime 4 partite del Bonaire si sono segnati almeno tre gol.",
-      "In 3 delle ultime 4 partite del Cuba si sono segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Bonaire – Cuba?",
-     "a": "Giovedì 12 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001649029": {
    "fingerprint": "1pg54x4",
    "sections": [
@@ -7845,80 +7557,6 @@
     {
      "q": "Quando si gioca Aruba – Martinica?",
      "a": "Giovedì 12 novembre alle 23:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001649030": {
-   "fingerprint": "164gpx8",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Antigua e Barbuda e Trinidad e Tobago si affrontano venerdì 13 novembre alle 00:00 per i playoff di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 3 partite di CONCACAF Nations League l'Antigua e Barbuda ha raccolto 3 vittorie (sequenza V-V-V), con 11 gol fatti e 2 subiti. È reduce da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di CONCACAF Nations League il Trinidad e Tobago ha raccolto 1 pareggio e 3 sconfitte (sequenza P-P-P-N), con 4 gol fatti e 7 subiti. In trasferta ha perso tutte le 2 partite giocate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 3 partite dell'Antigua e Barbuda si sono segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Antigua e Barbuda – Trinidad e Tobago?",
-     "a": "Venerdì 13 novembre alle 00:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001644690": {
-   "fingerprint": "8jr147",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Venerdì 13 novembre alle 01:30 il Curaçao ospita il Panama nei quarti di finale della CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Curaçao ha ottenuto 3 vittorie e 1 pareggio (sequenza V-V-V-N), segnando 12 gol e subendone 5. Non perde da 4 partite. In casa ha vinto tutte le 2 partite disputate."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Curaçao – Panama?",
-     "a": "Venerdì 13 novembre alle 01:30, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -11030,40 +10668,6 @@
     }
    ]
   },
-  "fb:1001640519": {
-   "fingerprint": "19z5ye0",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "La partita si gioca martedì 17 novembre alle 22:00, quando il Cile ospita la Colombia nell'ambito delle Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 3 partite di Amichevoli internazionali il Cile ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-P-V), segnando 4 gol e subendone 5.",
-      "Nelle ultime 3 partite di Amichevoli internazionali la Colombia ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-P-V), segnando 3 gol e subendone 2."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Cile – Colombia?",
-     "a": "Martedì 17 novembre alle 22:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001648287": {
    "fingerprint": "144m9n9",
    "sections": [
@@ -13798,90 +13402,6 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017149": {
-   "fingerprint": "qd3hrl",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 18 novembre alle 04:00, ora italiana, i Lakers ospitano gli Hornets in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Lakers hanno un record di 9-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 121,9 punti segnati e 114,5 subiti. In casa il bilancio è 5-1.",
-      "Gli Hornets hanno un record di 3-7 in stagione e hanno vinto 0 delle ultime 5, con una media di 96,3 punti segnati e 110,2 subiti. In trasferta il bilancio è 1-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Los Angeles Lakers – Charlotte Hornets in Italia?",
-     "a": "Mercoledì 18 novembre alle 04:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017150": {
-   "fingerprint": "5n4pyh",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 18 novembre alle 05:00, ora italiana, i Clippers ospitano i Jazz in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Clippers hanno un record di 2-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 112,4 punti segnati e 116,4 subiti. In casa il bilancio è 2-3.",
-      "I Jazz hanno un record di 1-9 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,2 punti segnati e 117,9 subiti. In trasferta il bilancio è 0-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca LA Clippers – Utah Jazz in Italia?",
-     "a": "Mercoledì 18 novembre alle 05:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
