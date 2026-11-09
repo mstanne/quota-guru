@@ -37,3 +37,12 @@ Poi *Actions* → **Statistiche sito** → *Run workflow*. Il riepilogo del run 
 manca, la sezione *Problemi* dice cosa (di solito un accesso non ancora concesso: riprova dopo qualche minuto).
 
 Facoltativo: variabile `GSC_SITE` se la proprietà Search Console non è `sc-domain:quotaguru.it`.
+
+## Clic verso i bookmaker
+
+Il riepilogo ha la sezione **Clic verso i bookmaker**, con i clic sui pulsanti "Vai al sito" (evento `outbound_click`)
+degli ultimi 28 e 7 giorni, divisi per operatore, posizione del pulsante e pagina di partenza. Per avere il dettaglio,
+in GA4 → **Amministrazione** → *Definizioni personalizzate* → **Crea dimensione personalizzata** vanno create tre
+dimensioni con ambito **Evento**, con parametro `operator`, `placement` e `page`. Finché mancano, il riepilogo
+mostra solo il totale e una nota. I clic registrati prima della loro creazione compaiono come "(not set)".
+Lo stesso riepilogo arriva ogni lunedì per email con un'attività pianificata di Claude, fuori dal repository.
