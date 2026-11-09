@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-09T06:21:36.206Z",
+ "generatedAt": "2026-11-09T06:46:01.017Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:1001550202": {
@@ -15493,6 +15493,42 @@
     }
    ]
   },
+  "fb:558537": {
+   "fingerprint": "hyxm9f",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Venezia si impone in casa sull'Udinese per 2-1. La partita, valida per la 11ª giornata di Serie A, si è disputata venerdì 6 novembre; al termine del primo tempo il punteggio era 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, il Venezia occupa il 19° posto con 6 punti, mentre l'Udinese è al 20° con 5. [Consulta la classifica completa](/calcio/serie-a/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Venezia tornerà in campo lunedì 23 novembre alle 20:45, in trasferta contro la Juventus. L'Udinese tornerà in campo domenica 22 novembre alle 18:00, in trasferta contro il Bologna."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Venezia – Udinese?",
+     "a": "2-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Serie A](/calcio/serie-a)."
+    }
+   ]
+  },
   "fb:558534": {
    "fingerprint": "1yjw09y",
    "sections": [
@@ -15709,6 +15745,42 @@
     }
    ]
   },
+  "fb:558538": {
+   "fingerprint": "17hiio9",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Successo di misura dell'Atalanta in trasferta: 0-1 contro il Monza. La partita, valida per la 11ª giornata di Serie A, si è giocata domenica 8 novembre; il primo tempo si era chiuso 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Monza è al 18° posto con 7 punti e l'Atalanta al 12° con 14. [Classifica completa](/calcio/serie-a/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Monza tornerà in campo lunedì 23 novembre alle 18:30 in casa contro la Fiorentina. L'Atalanta tornerà in campo domenica 22 novembre alle 20:45 in casa contro l'Inter."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Monza – Atalanta?",
+     "a": "0-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Serie A](/calcio/serie-a)."
+    }
+   ]
+  },
   "fb:558530": {
    "fingerprint": "8pswc6",
    "sections": [
@@ -15745,6 +15817,42 @@
     }
    ]
   },
+  "fb:558529": {
+   "fingerprint": "1228503",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "La Fiorentina e la Juventus hanno pareggiato 2-2. La partita, valida per la 11ª giornata di Serie A, si è giocata domenica 8 novembre; il primo tempo si era chiuso 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora la Fiorentina è al 15° posto con 9 punti, mentre la Juventus è al 7° con 18. [Consulta la classifica completa](/calcio/serie-a/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "La Fiorentina tornerà in campo lunedì 23 novembre alle 18:30, in trasferta contro il Monza. La Juventus tornerà in campo lunedì 23 novembre alle 20:45, in casa contro il Venezia."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Fiorentina – Juventus?",
+     "a": "2-2 (1-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Serie A](/calcio/serie-a)."
+    }
+   ]
+  },
   "fb:1001601593": {
    "fingerprint": "ch2lnl",
    "sections": [
@@ -15774,6 +15882,150 @@
     {
      "q": "Com'è finita Ascoli – Palermo?",
      "a": "1-1 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Serie B](/calcio/serie-b)."
+    }
+   ]
+  },
+  "fb:1001601596": {
+   "fingerprint": "19o6j5e",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Cesena ha vinto di misura in casa contro il Catanzaro, con il risultato di 1-0. La partita, valida per la 11ª giornata di Serie B, si è giocata sabato 7 novembre; al termine del primo tempo il punteggio era di 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Cesena è all'11° posto con 15 punti, mentre il Catanzaro è al 20° con 6. [Consulta la classifica completa](/calcio/serie-b/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Cesena tornerà in campo sabato 21 novembre alle 15:00, in trasferta contro l'Hellas Verona. Anche il Catanzaro tornerà in campo sabato 21 novembre alle 15:00, giocando in casa contro il Palermo."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Cesena – Catanzaro?",
+     "a": "Il risultato finale è 1-0, con il punteggio di 0-0 all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina [Serie B](/calcio/serie-b)."
+    }
+   ]
+  },
+  "fb:1001601602": {
+   "fingerprint": "utmad0",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Pisa e Sudtirol hanno chiuso la partita con il punteggio di 2-2. Il match, valido per la 11ª giornata di Serie B, si è giocato sabato 7 novembre; al primo tempo il risultato era di 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Pisa occupa l'8° posto con 16 punti, mentre il Sudtirol è al 12° con 15. Puoi consultare la [classifica completa](/calcio/serie-b/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Pisa tornerà in campo sabato 21 novembre alle 15:00 in trasferta contro l'Empoli. Anche il Sudtirol giocherà sabato 21 novembre alle 15:00, ma in casa contro la Cremonese."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Pisa – Sudtirol?",
+     "a": "2-2 (1-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi trovarli nella pagina [Serie B](/calcio/serie-b)."
+    }
+   ]
+  },
+  "fb:1001601598": {
+   "fingerprint": "1wpjnhv",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Juve Stabia si impone di misura in casa sull'Arezzo, con il risultato finale di 1-0. La partita, valida per l'11ª giornata di Serie B, si è disputata sabato 7 novembre; il primo tempo si era già chiuso sull'1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Juve Stabia occupa il 13° posto con 12 punti, mentre l'Arezzo è al 14° con 11. Per consultare la [classifica completa](/calcio/serie-b/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Juve Stabia tornerà in campo sabato 21 novembre alle 15:00, in trasferta contro il Modena. L'Arezzo tornerà in campo sabato 21 novembre alle 15:00, in casa contro il Padova."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Juve Stabia – Arezzo?",
+     "a": "1-0 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Serie B](/calcio/serie-b)."
+    }
+   ]
+  },
+  "fb:1001601601": {
+   "fingerprint": "1epujua",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il match si chiude 2-2: il Padova, in vantaggio 2-1 all'intervallo, viene raggiunto nella ripresa dall'Empoli. La gara, valida per la 11ª giornata di Serie B, si è disputata sabato 7 novembre."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora il Padova occupa il 10° posto con 15 punti, mentre l'Empoli è al 19° con 9. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/serie-b/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Padova tornerà in campo sabato 21 novembre alle 15:00, in trasferta contro l'Arezzo. Anche l'Empoli giocherà sabato 21 novembre alle 15:00, ma in casa contro il Pisa."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Padova – Empoli?",
+     "a": "2-2 (2-1 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
@@ -15925,6 +16177,78 @@
     }
    ]
   },
+  "fb:1001601599": {
+   "fingerprint": "4x6xr3",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "La Cremonese ha vinto in trasferta contro il Vicenza Virtus con il punteggio di 1-4. La partita, valida per la 11ª giornata di Serie B, si è giocata domenica 8 novembre; il primo tempo era terminato 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Vicenza Virtus occupa il 18° posto con 9 punti, mentre la Cremonese è al 9° con 15. [Consulta la classifica completa](/calcio/serie-b/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Vicenza Virtus tornerà in campo sabato 21 novembre alle 15:00 in trasferta contro l'Ascoli. La Cremonese tornerà in campo sabato 21 novembre alle 15:00 in trasferta contro il Sudtirol."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Vicenza Virtus – Cremonese?",
+     "a": "1-4 (1-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Serie B](/calcio/serie-b)."
+    }
+   ]
+  },
+  "fb:560634": {
+   "fingerprint": "1vf7xap",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "L'Everton ha battuto il Coventry City in casa per 3-1. La partita, valida per la 10ª giornata di Premier League, si è giocata venerdì 6 novembre; il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Dopo le partite disputate finora, l'Everton occupa il 6° posto con 16 punti, mentre il Coventry City è al 17° con 9 punti. Per l'intera tabella si può consultare la [classifica completa](/calcio/premier-league/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Everton tornerà in campo lunedì 23 novembre alle 21:00, in trasferta contro il Brentford. Il Coventry City giocherà sabato 21 novembre alle 16:00 in casa contro il Crystal Palace."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Everton – Coventry City?",
+     "a": "3-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Sono consultabili nella [pagina dedicata alla Premier League](/calcio/premier-league)."
+    }
+   ]
+  },
   "fb:560632": {
    "fingerprint": "1pc3lzi",
    "sections": [
@@ -16066,6 +16390,42 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Premier League](/calcio/premier-league)."
+    }
+   ]
+  },
+  "fb:560638": {
+   "fingerprint": "7o0797",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Brighton ha battuto il Brentford in casa per 2-0. La partita, valida per la 10ª giornata di Premier League, si è giocata domenica 8 novembre; il primo tempo si era chiuso 2-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Brighton è al 2° posto con 22 punti, mentre il Brentford è all'8° con 14. [Consulta la classifica completa](/calcio/premier-league/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Brighton tornerà in campo domenica 22 novembre alle 15:00 in trasferta contro l'Hull City. Il Brentford tornerà in campo lunedì 23 novembre alle 21:00 in casa contro l'Everton."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Brighton – Brentford?",
+     "a": "2-0 (2-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina [Premier League](/calcio/premier-league)."
     }
    ]
   },
@@ -16537,6 +16897,42 @@
     }
    ]
   },
+  "fb:1001570443": {
+   "fingerprint": "1lw6f6k",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Barcellona ha vinto in trasferta contro l'Atlético Madrid con il punteggio di 1-2. La partita, valida per la 12ª giornata di LaLiga, si è giocata domenica 8 novembre; il primo tempo era terminato 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora l'Atlético Madrid occupa il 3° posto con 28 punti, mentre il Barcellona è al 1° posto con 33. [Vai alla classifica completa](/calcio/liga/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Atlético Madrid tornerà in campo domenica 22 novembre alle 17:00 in trasferta contro il Getafe. Il Barcellona tornerà in campo domenica 22 novembre alle 17:00 in casa contro il Villarreal."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Atlético Madrid – Barcellona?",
+     "a": "Il risultato finale è stato 1-2, con 1-1 all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [LaLiga](/calcio/liga)."
+    }
+   ]
+  },
   "fb:565852": {
    "fingerprint": "19y0g7l",
    "sections": [
@@ -16969,6 +17365,114 @@
     }
    ]
   },
+  "fb:1001552816": {
+   "fingerprint": "1k6rsa7",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Lille si è imposto in trasferta sullo Stade Rennais per 1-2. La partita, valida per la 10ª giornata di Ligue 1, si è giocata domenica 8 novembre; il primo tempo era terminato 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora lo Stade Rennais occupa l'8° posto con 16 punti, mentre il Lille è al 2° con 21. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Lo Stade Rennais tornerà in campo domenica 22 novembre alle 17:15 in trasferta contro il Lorient. Il Lille giocherà sabato 21 novembre alle 20:45 in casa contro l'Olympique Lyon."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Stade Rennais – Lille?",
+     "a": "1-2 (1-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
+    }
+   ]
+  },
+  "fb:559634": {
+   "fingerprint": "8ho1kn",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Nice ha vinto 0-2 in trasferta contro l'Angers SCO. La partita, valida per la 10ª giornata di Ligue 1, si è giocata domenica 8 novembre; il primo tempo si era chiuso 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora l'Angers SCO è al 16° posto con 8 punti, mentre il Nice è al 6° con 17. [Consulta la classifica completa](/calcio/ligue-1/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Angers SCO tornerà in campo domenica 22 novembre alle 15:00 in trasferta contro il Paris FC. Il Nice giocherà sabato 21 novembre alle 17:15 in casa contro il Paris Saint-Germain."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Angers SCO – Nice?",
+     "a": "0-2 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
+    }
+   ]
+  },
+  "fb:1001552812": {
+   "fingerprint": "ub01ed",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Brest ha battuto in casa l'Olympique Lyon per 2-0. La partita, valida per la 10ª giornata di Ligue 1, si è giocata domenica 8 novembre; il primo tempo si era chiuso sull'1-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Brest è al 9° posto con 15 punti, mentre l'Olympique Lyon è al 5° con 17. Puoi consultare la [classifica completa](/calcio/ligue-1/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Brest tornerà in campo sabato 21 novembre alle 20:45, in trasferta contro lo Strasbourg. L'Olympique Lyon tornerà in campo sabato 21 novembre alle 20:45, in trasferta contro il Lille."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Brest – Olympique Lyon?",
+     "a": "2-0 (1-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
+    }
+   ]
+  },
   "fb:559633": {
    "fingerprint": "1398luo",
    "sections": [
@@ -16998,6 +17502,78 @@
     {
      "q": "Com'è finita Le Havre – Lorient?",
      "a": "0-2 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
+    }
+   ]
+  },
+  "fb:559631": {
+   "fingerprint": "154u1zd",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il match si chiude 1-1: il Monaco, in vantaggio all'intervallo 0-1, viene raggiunto nella ripresa dal Le Mans. La partita, valida per la 10ª giornata di Ligue 1, si è giocata domenica 8 novembre."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Le Mans occupa il 15° posto con 8 punti, mentre il Monaco è al 7° con 16. Puoi consultare la [classifica completa](/calcio/ligue-1/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Le Mans tornerà in campo domenica 22 novembre alle 20:45 in trasferta contro il Marseille. Il Monaco giocherà sabato 21 novembre alle 20:45 in casa contro l'Auxerre."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Le Mans – Monaco?",
+     "a": "1-1 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
+    }
+   ]
+  },
+  "fb:559630": {
+   "fingerprint": "1t1fk2j",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Marseille ha vinto in trasferta contro il RC Lens per 1-2, di misura. La partita, valida per la 10ª giornata di Ligue 1, si è giocata domenica 8 novembre; il primo tempo era terminato 1-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il RC Lens è all'11° posto con 13 punti, mentre il Marseille è al 4° con 18. [Classifica completa](/calcio/ligue-1/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il RC Lens tornerà in campo sabato 21 novembre alle 20:45 in casa contro il Toulouse. Il Marseille tornerà in campo domenica 22 novembre alle 20:45 in casa contro il Le Mans."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita RC Lens – Marseille?",
+     "a": "1-2 (1-1 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
@@ -17293,6 +17869,42 @@
     }
    ]
   },
+  "fb:558838": {
+   "fingerprint": "1k7h8mq",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il NEC si impone in trasferta contro l'Utrecht per 2-3. La partita, valida per la 12ª giornata di Eredivisie, si è disputata domenica 8 novembre; il primo tempo si era concluso 0-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora, l'Utrecht occupa il 14° posto con 12 punti, mentre il NEC è all'11° con 14. [Vai alla classifica completa](/calcio/eredivisie/classifica)."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "L'Utrecht tornerà in campo sabato 21 novembre alle 18:45 in casa contro il Cambuur. Il NEC tornerà in campo sabato 21 novembre alle 16:30 in casa contro lo PSV."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Utrecht – NEC?",
+     "a": "2-3 (0-2 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
+    }
+   ]
+  },
   "fb:567353": {
    "fingerprint": "zzfj8d",
    "sections": [
@@ -17464,6 +18076,64 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina dedicata alla [Primeira Liga](/calcio/primeira-liga)."
+    }
+   ]
+  },
+  "fb:567354": {
+   "fingerprint": "5eag1t",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Braga ha conquistato una vittoria di misura in trasferta sul campo del Rio Ave, con il punteggio di 0-1. La sfida, valida per l'11ª giornata di Primeira Liga, si è disputata domenica 8 novembre; il primo tempo si era chiuso sullo 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora il Rio Ave occupa il 17° posto con 7 punti, mentre il Braga è all'8° posto con 17. [Consulta la classifica completa](/calcio/primeira-liga/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Rio Ave – Braga?",
+     "a": "Il risultato è 0-1, con lo 0-0 registrato all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina [Primeira Liga](/calcio/primeira-liga)."
+    }
+   ]
+  },
+  "fb:567355": {
+   "fingerprint": "12rn7s7",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Lo SL Benfica vince in trasferta contro l'Amadora per 2-3. La partita, valida per la 11ª giornata di Primeira Liga, si è giocata domenica 8 novembre; il primo tempo si era chiuso 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "classifica",
+     "paragraphs": [
+      "Con le partite giocate finora l'Amadora è al 12° posto con 10 punti, mentre lo SL Benfica è al 2° con 28. [Classifica completa](/calcio/primeira-liga/classifica)."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Amadora – SL Benfica?",
+     "a": "2-3 (0-1 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
     }
    ]
   },
@@ -18444,6 +19114,230 @@
     {
      "q": "Dove trovo le altre partite NBA?",
      "a": "Sono disponibili nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21718059": {
+   "fingerprint": "1u0e54l",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I 76ers si impongono sui Bulls per 127-121. La partita si è giocata domenica 8 novembre.",
+      "All'intervallo i 76ers erano avanti 68-61.",
+      "Il parziale più netto è arrivato nel 2º quarto, vinto dai 76ers per 34-28."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 248.",
+      "Parziali (Bulls–76ers): 33-34, 28-34, 32-31, 28-28."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Chicago Bulls – Philadelphia 76ers?",
+     "a": "La partita è finita 121-127 a favore dei 76ers."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Le altre partite NBA sono nella pagina [dedicata ai pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21718060": {
+   "fingerprint": "m37ne3",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Lakers si sono imposti sui Pistons per 121-116. La partita si è giocata lunedì 9 novembre.",
+      "All'intervallo i Lakers conducevano 61-48.",
+      "Il parziale più netto è stato quello del 1º quarto, vinto dai Lakers 38-14."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 237.",
+      "Parziali (Pistons–Lakers): 14-38, 34-23, 33-27, 35-33."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Detroit Pistons – Los Angeles Lakers?",
+     "a": "116-121 per i Lakers."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Puoi consultare la pagina dei [pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21718061": {
+   "fingerprint": "7kdyx2",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Timberwolves hanno superato i Jazz per 115-100. La gara si è disputata lunedì 9 novembre.",
+      "All'intervallo i Timberwolves erano in vantaggio per 57-51.",
+      "Il parziale più marcato è arrivato nel 3º quarto, vinto dai Timberwolves per 33-27."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 215.",
+      "Parziali (Timberwolves–Jazz): 28-25, 29-26, 33-27, 25-22."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Minnesota Timberwolves – Utah Jazz?",
+     "a": "115-100 per i Timberwolves."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21718062": {
+   "fingerprint": "1br1lyp",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Mavericks battono i Nets 130-93. La partita si è giocata lunedì 9 novembre.",
+      "All'intervallo i Mavericks conducevano 66-46.",
+      "Il parziale più ampio è arrivato nel 2º quarto, vinto dai Mavericks 33-20."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 223.",
+      "Parziali (Mavericks–Nets): 33-26, 33-20, 34-25, 30-22."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Qual è stato il risultato di Dallas Mavericks – Brooklyn Nets?",
+     "a": "I Mavericks hanno vinto 130-93."
+    },
+    {
+     "q": "Dove si trovano le altre partite NBA?",
+     "a": "Nella sezione dedicata alla [NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21718063": {
+   "fingerprint": "12npml4",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Celtics si sono imposti sui Bucks per 117-97. La partita si è giocata lunedì 9 novembre.",
+      "All'intervallo i Celtics conducevano 58-45.",
+      "Il parziale più netto è arrivato nel 2º quarto, vinto dai Celtics 33-18."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 214.",
+      "Parziali (Bucks–Celtics): 27-25, 18-33, 29-33, 23-26."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Milwaukee Bucks – Boston Celtics?",
+     "a": "97-117 per i Celtics."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21718064": {
+   "fingerprint": "ndkkef",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "I Clippers hanno superato i Pelicans 139-123. La partita si è giocata lunedì 9 novembre.",
+      "All'intervallo i Clippers conducevano 67-60.",
+      "Il parziale più netto è arrivato nel 4º quarto, vinto dai Clippers per 37-28."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti complessivi: 262.",
+      "Parziali (Clippers–Pelicans): 28-28, 39-32, 35-35, 37-28."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita LA Clippers – New Orleans Pelicans?",
+     "a": "139-123 per i Clippers."
+    },
+    {
+     "q": "Dove trovo le altre partite NBA?",
+     "a": "Nella sezione dedicata alla [NBA](/pronostici/nba)."
+    }
+   ]
+  },
+  "nba:21718065": {
+   "fingerprint": "2b9nhb",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Gli Heat hanno superato i Kings per 114-108. La sfida si è disputata lunedì 9 novembre.",
+      "All'intervallo gli Heat erano avanti 68-59.",
+      "Il parziale più netto è arrivato nel 2º quarto, vinto dagli Heat per 34-29."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Punti totali: 222.",
+      "Parziali (Kings–Heat): 30-34, 29-34, 22-23, 27-23."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Sacramento Kings – Miami Heat?",
+     "a": "Il risultato finale è stato 108-114 in favore degli Heat."
+    },
+    {
+     "q": "Dove posso consultare le altre partite NBA?",
+     "a": "Puoi consultare la pagina dedicata alla [NBA](/pronostici/nba)."
     }
    ]
   }
