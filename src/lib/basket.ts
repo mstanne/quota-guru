@@ -203,6 +203,7 @@ export function gameMeta(
       : `${teams(g)}, NBA: si gioca ${when} (ora italiana).${predicted ? " Orario e pronostico con le probabilità di vittoria." : ""}`;
   return {
     path,
+    key: `nba:${g.id}`,
     ...(canonical !== path ? { canonical } : {}),
     title: isGameFinished(g)
       ? `${teams(g)} ${g.score.home}-${g.score.away}: risultato NBA`
@@ -221,6 +222,7 @@ export function nbaEventMeta(slug: string, predicted = false, venue?: EventVenue
   if (!last) return null;
   const next = nextOfNbaPair(list);
   const path = nbaEventPath(last);
+  const key = `pronostici:nba:${last.home.id}-${last.away.id}`;
   if (next) {
     const when = `${formatDay(next.utcDate)} ore ${formatTime(next.utcDate)}`;
     const description = isGamePending(next)
@@ -228,6 +230,7 @@ export function nbaEventMeta(slug: string, predicted = false, venue?: EventVenue
       : `Pronostico ${teams(next)} (NBA), ${when} ora italiana: ${predicted ? "probabilità di vittoria e punti attesi calcolati dal modello statistico" : "orario"}, forma recente e precedenti.`;
     return {
       path,
+      key,
       event: true,
       article: { headline: gameHeadline(next), section: "NBA" },
       title: `Pronostico ${teams(next)} (${formatDayMonth(next.utcDate)}): ${predicted ? "probabilità e orario" : "orario"} NBA`,
@@ -238,6 +241,7 @@ export function nbaEventMeta(slug: string, predicted = false, venue?: EventVenue
   }
   return {
     path,
+    key,
     event: true,
     title: `${teams(last)} (NBA): ultimo risultato e precedenti`,
     description: `${teams(last)}: l'ultima sfida NBA è finita ${last.score.home}-${last.score.away}. Il risultato, i precedenti della stagione e la prossima partita appena sarà in calendario.`,

@@ -39,14 +39,17 @@ const { render, routes, notFoundMeta, fullTitle, snippet, llmsTxt, preloadAllPag
   await import(pathToFileURL(ssrEntry).href);
 // URLs moved by data corrections (src/lib/legacyUrls.ts): archived copies and stored links follow them, and every
 // one gets a bridge page (below)
-const movedUrls = (() => {
+function readJsonFile(file) {
   try {
-    return JSON.parse(fs.readFileSync(path.join(root, "data", "url-spostati.json"), "utf8"));
+    return JSON.parse(fs.readFileSync(file, "utf8"));
   } catch {
     return {};
   }
-})();
+}
+const movedUrls = readJsonFile(path.join(root, "data", "url-spostati.json"));
 setMovedUrls(movedUrls);
+// match pages whose URL changed before the automatic tracking below existed (found in Search Console as 404)
+const knownMoves = readJsonFile(path.join(root, "scripts", "url-spostati-noti.json"));
 // lazy page chunks must be loaded before rendering synchronously with renderToString
 await preloadAllPages();
 const template = fs.readFileSync(path.join(dist, "index.html"), "utf8");
@@ -72,6 +75,18 @@ function readJson(file, fallback) {
 }
 const prevState = readJson(stateFile, { pages: {} });
 const nextState = { updatedAt: new Date().toISOString(), pages: {} };
+
+// Pages that changed URL by themselves (src/routes.ts, `key`): `keys` remembers the last path of every match or pair,
+// `moved` every old URL still to redirect (old path → new path). Both are kept in state.json between builds.
+const keyPaths = { ...(prevState.keys ?? {}) };
+const autoMoved = { ...(prevState.moved ?? {}) };
+for (const [from, to] of Object.entries(knownMoves)) autoMoved[from] ??= to;
+/** Records where `key` lives now; if it lived elsewhere before, the old path is redirected to the new one. */
+function trackKey(key, p) {
+  const before = keyPaths[key];
+  if (before && before !== p) autoMoved[before] = p;
+  keyPaths[key] = p;
+}
 
 const archiveFile = (p) => path.join(archiveDir, `${sha1(p).slice(0, 20)}.json.gz`);
 function readArchive(file) {
@@ -336,9 +351,13 @@ function withCard(meta) {
   return { ...meta, image, jsonLd };
 }
 
+/** Title of every page written, live or archived (for the bridge pages that point to it). */
+const pageTitles = new Map();
+
 /** Writes one page and records when its content last changed (`main`: the page content, see mainContent). */
 function emit(meta0, appHtml, main = mainContent(appHtml)) {
   const meta = withCard(meta0);
+  pageTitles.set(meta.path, meta.title);
   const out = outFile(meta.path);
   fs.mkdirSync(path.dirname(out), { recursive: true });
   const hash = contentHash(main);
@@ -366,7 +385,8 @@ function emit(meta0, appHtml, main = mainContent(appHtml)) {
 }
 
 // ---------- live pages (from the current data) ----------
-const metaOnly = ({ path: p, title, description, index, jsonLd: ld, image, event, article: art, card }) => ({
+const metaOnly = ({ path: p, title, description, index, jsonLd: ld, image, event, article: art, card, key }) => ({
+  ...(key ? { key } : {}),
   ...(event ? { event } : {}),
   ...(art ? { article: art } : {}),
   ...(card ? { card } : {}),
@@ -389,6 +409,7 @@ for (const meta of routes) {
   const appHtml = render(pageUrl(meta.path), basename);
   emit(meta, appHtml);
   live.add(meta.path);
+  if (meta.key) trackKey(meta.key, meta.path);
   if (meta.archive && appHtml.includes("data-not-found")) {
     // the route list and the page data disagree: never store a "page not found" over a good archived copy
     console.warn(`prerender: ${meta.path} non trovata nei dati della pagina, archivio non aggiornato`);
@@ -414,6 +435,12 @@ if (fs.existsSync(archiveDir)) {
       continue;
     }
     if (live.has(entry.meta.path)) continue;
+    // the same match is published under its new URL (renamed team, new date): the old copy becomes a bridge below
+    const now = entry.meta.key && keyPaths[entry.meta.key];
+    if (now && now !== entry.meta.path && live.has(now)) {
+      autoMoved[entry.meta.path] = now;
+      continue;
+    }
     // archived under a URL that has moved since (old round pages): publish a bridge to the new URL
     const moved = legacyTarget(entry.meta.path);
     if (moved) {
@@ -433,9 +460,51 @@ if (fs.existsSync(archiveDir)) {
     // same hash as when the page was live: archiving alone does not change its lastmod
     emit(entry.meta, appHtml, stored === slashLinks(entry.html) ? entry.html : stored);
     live.add(entry.meta.path);
+    if (entry.meta.key) keyPaths[entry.meta.key] ??= entry.meta.path;
     restored++;
   }
 }
+
+// ---------- URLs changed by themselves (same match or pair under a new name or date) ----------
+// GitHub Pages has no redirects: the old URL gets a bridge page while its target exists. An old URL used again by a
+// real page is forgotten; one whose target is gone (match out of the data and not archived) waits for later builds.
+let autoBridges = 0;
+const finalTarget = (p) => {
+  const seen = new Set();
+  while (autoMoved[p] && !seen.has(p)) {
+    seen.add(p);
+    p = autoMoved[p];
+  }
+  return p;
+};
+for (const from of Object.keys(autoMoved)) {
+  const to = finalTarget(from);
+  if (live.has(from) || to === from) {
+    delete autoMoved[from];
+    continue;
+  }
+  autoMoved[from] = to;
+  if (!live.has(to)) continue;
+  emitBridge(from, to, pageTitles.get(to) ?? "Pagina spostata");
+  live.add(from);
+  autoBridges++;
+}
+nextState.keys = keyPaths;
+nextState.moved = autoMoved;
+if (autoBridges) console.log(`prerender: ${autoBridges} pagine ponte per partite che hanno cambiato indirizzo`);
+
+// old round URLs (/calcio/<lega>/giornata/<n>) of rounds published only from the archive: bridge to the new URL
+let roundBridges = 0;
+for (const p of [...live]) {
+  const m = p.match(/^\/pronostici\/([^/]+)\/(?:fase-campionato-)?giornata-(\d{1,3})$/);
+  if (!m) continue;
+  const from = `/calcio/${m[1]}/giornata/${m[2]}`;
+  if (live.has(from) || legacyTarget(from) !== p) continue;
+  emitBridge(from, p, pageTitles.get(p) ?? `Giornata ${m[2]}`);
+  live.add(from);
+  roundBridges++;
+}
+if (roundBridges) console.log(`prerender: ${roundBridges} pagine ponte per giornate archiviate`);
 
 // moved by a data correction and not met above (pages that were live, never archived): bridge to the new URL
 const titles = new Map(routes.map((r) => [r.path, r.title]));

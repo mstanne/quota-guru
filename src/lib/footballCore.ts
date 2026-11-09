@@ -573,6 +573,7 @@ export function matchMeta(
         }${hasInjuries(m) ? ", indisponibili" : ""}, forma recente e precedenti delle due squadre.`;
   return {
     path,
+    key: `calcio:${m.id}`,
     ...(canonical !== path ? { canonical } : {}),
     title: isFinished(m)
       ? // one extra at most (highlights first), so the title stays near the ~60 characters Google shows
@@ -634,6 +635,7 @@ export function eventMeta(
   const next = nextOfPair(list);
   const teams = `${last.homeTeam.shortName} – ${last.awayTeam.shortName}`;
   const path = eventPath(c, last);
+  const key = `pronostici:${c.slug}:${last.homeTeam.id}-${last.awayTeam.id}`;
   if (next) {
     const when = `${formatDay(next.utcDate)} ore ${formatTime(next.utcDate)}`;
     const p = predicted(next.id);
@@ -650,6 +652,7 @@ export function eventMeta(
           }, classifica, forma e precedenti.`;
     return {
       path,
+      key,
       event: true,
       article: { headline: matchHeadline(next), section: c.name },
       title: live
@@ -666,6 +669,7 @@ export function eventMeta(
   const ft = last.score.fullTime;
   return {
     path,
+    key,
     event: true,
     title: `${teams} (${c.name}): ultimo risultato e precedenti`,
     description: `${teams} in ${c.name}: l'ultima sfida è finita ${ft.home}-${ft.away} (${formatShortDate(last.utcDate)}). Il risultato, i precedenti tra le due squadre e la prossima sfida appena sarà in calendario.`,

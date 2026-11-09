@@ -37,6 +37,10 @@ export interface RouteMeta {
   article?: { headline: string; section: string };
   /** Evergreen event page (listed with the matches in sitemap-partite.xml, also while it rests). */
   event?: boolean;
+  /** Stable identity of what the page shows (a match id, a pair of team ids). The pre-render remembers the path of
+   *  every key: when the same key comes back under another path (team renamed, match moved to another day), the old
+   *  URL becomes a bridge page to the new one instead of a 404. */
+  key?: string;
 }
 
 export const SITE_NAME = "QuotaGuru";
