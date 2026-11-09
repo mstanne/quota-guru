@@ -2192,96 +2192,8 @@
   "model": "claude-haiku-5-5",
   "at": "2026-11-07T06:07:24.925Z"
  },
- "nba:21718064": {
-  "fingerprint": "hxt4rr",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Lunedì 9 novembre alle 03:00, ora italiana, i Clippers ospitano i Pelicans in una partita della regular season NBA 2026-27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "I Clippers hanno un record di 1-7 in stagione e hanno vinto 0 delle ultime 5, con una media di 109,1 punti segnati e 115,6 subiti. In casa il bilancio è 1-3.",
-     "I Pelicans hanno un record di 4-5 in stagione e hanno vinto 4 delle ultime 5, con una media di 120,2 punti segnati e 118,8 subiti. In trasferta il bilancio è 1-2."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
-    "paragraphs": [],
-    "bullets": [
-     "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 4 gare.",
-     "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 5 gare."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "A che ora si gioca LA Clippers – New Orleans Pelicans in Italia?",
-    "a": "Lunedì 9 novembre alle 03:00."
-   },
-   {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Puoi consultare la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi tutte le informazioni nella guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:07:27.180Z"
- },
- "nba:21718065": {
-  "fingerprint": "1w6125v",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Gli Heat fanno visita ai Kings lunedì 9 novembre alle 03:00, ora italiana, in una partita della regular season NBA 2026-27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "I Kings hanno un record di 1-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 109,2 punti segnati e 123,3 subiti. In casa il bilancio è 0-4.",
-     "Gli Heat hanno un record di 3-6 in stagione e hanno vinto 3 delle ultime 5, con una media di 116,0 punti segnati e 122,6 subiti. In trasferta il bilancio è 2-3."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
-    "paragraphs": [],
-    "bullets": [
-     "Nei 7 giorni a partire da questa partita i Kings hanno in calendario 4 gare.",
-     "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 4 gare."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "A che ora si gioca Sacramento Kings – Miami Heat in Italia?",
-    "a": "Lunedì 9 novembre alle 03:00."
-   },
-   {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:07:28.988Z"
- },
  "nba:21718066": {
-  "fingerprint": "3vptvy",
+  "fingerprint": "1v6x5ub",
   "sections": [
    {
     "id": "presentazione",
@@ -2294,7 +2206,7 @@
     "id": "momento",
     "paragraphs": [
      "Gli Hawks hanno un record di 7-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,6 punti segnati e 115,5 subiti. In casa il bilancio è 3-2.",
-     "I Lakers hanno un record di 8-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 122,0 punti segnati e 114,3 subiti. In trasferta il bilancio è 3-1."
+     "I Lakers hanno un record di 9-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 121,9 punti segnati e 114,5 subiti. In trasferta il bilancio è 4-1."
     ],
     "bullets": []
    },
@@ -2315,15 +2227,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T03:20:13.883Z"
+  "at": "2026-11-09T03:21:30.689Z"
  },
  "nba:21718067": {
   "fingerprint": "qexmr9",
@@ -2370,7 +2282,7 @@
   "at": "2026-11-08T06:20:05.614Z"
  },
  "nba:21718068": {
-  "fingerprint": "kkruog",
+  "fingerprint": "1nupq3r",
   "sections": [
    {
     "id": "presentazione",
@@ -2382,7 +2294,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Pistons hanno un record di 6-2 in stagione e hanno vinto 3 delle ultime 5, con una media di 111,1 punti segnati e 101,8 subiti. In casa il bilancio è 2-1.",
+     "I Pistons hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 111,7 punti segnati e 103,9 subiti. In casa il bilancio è 2-2.",
      "I Wizards hanno un record di 4-6 in stagione e hanno vinto 2 delle ultime 5, con una media di 107,8 punti segnati e 112,5 subiti. In trasferta il bilancio è 2-4."
     ],
     "bullets": []
@@ -2412,7 +2324,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T06:20:07.791Z"
+  "at": "2026-11-09T03:21:34.057Z"
  },
  "nba:21718069": {
   "fingerprint": "u7q63k",
@@ -2459,7 +2371,7 @@
   "at": "2026-11-07T06:07:30.888Z"
  },
  "nba:21718070": {
-  "fingerprint": "28pwvy",
+  "fingerprint": "1e395iv",
   "sections": [
    {
     "id": "presentazione",
@@ -2471,7 +2383,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Mavericks hanno un record di 5-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 112,1 punti segnati e 110,9 subiti. In casa il bilancio è 3-2.",
+     "I Mavericks hanno un record di 6-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 113,9 punti segnati e 109,1 subiti. In casa il bilancio è 4-2.",
      "I Pacers hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 110,3 punti segnati e 114,2 subiti. In trasferta il bilancio è 3-2."
     ],
     "bullets": []
@@ -2497,11 +2409,11 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T00:43:53.483Z"
+  "at": "2026-11-09T03:21:36.249Z"
  },
  "nba:21718071": {
   "fingerprint": "13hx33x",
@@ -2637,7 +2549,7 @@
   "at": "2026-11-08T06:20:13.778Z"
  },
  "nba:21718074": {
-  "fingerprint": "y9rp5j",
+  "fingerprint": "dqfad4",
   "sections": [
    {
     "id": "presentazione",
@@ -2650,7 +2562,7 @@
     "id": "momento",
     "paragraphs": [
      "I Knicks hanno un record di 5-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 109,9 punti segnati e 104,2 subiti. In casa il bilancio è 3-2.",
-     "I Bucks hanno un record di 1-8 in stagione e hanno vinto 0 delle ultime 5, con una media di 109,7 punti segnati e 122,1 subiti. In trasferta il bilancio è 0-4."
+     "I Bucks hanno un record di 1-9 in stagione e hanno vinto 0 delle ultime 5, con una media di 108,4 punti segnati e 121,6 subiti. In trasferta il bilancio è 0-4."
     ],
     "bullets": []
    },
@@ -2670,18 +2582,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Puoi consultare la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi tutti i dettagli su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T06:20:16.229Z"
+  "at": "2026-11-09T03:21:39.128Z"
  },
  "nba:21718075": {
-  "fingerprint": "1ocmqm0",
+  "fingerprint": "71395a",
   "sections": [
    {
     "id": "presentazione",
@@ -2693,8 +2605,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I 76ers hanno un record di 8-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 109,4 punti segnati e 106,6 subiti. In casa il bilancio è 4-1.",
-     "I Celtics hanno un record di 7-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 114,8 punti segnati e 105,1 subiti. In trasferta il bilancio è 2-2."
+     "I 76ers hanno un record di 9-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,0 punti segnati e 107,9 subiti. In casa il bilancio è 4-1.",
+     "I Celtics hanno un record di 8-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 115,0 punti segnati e 104,3 subiti. In trasferta il bilancio è 3-2."
     ],
     "bullets": []
    },
@@ -2714,15 +2626,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Puoi approfondire nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi una spiegazione in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T03:21:05.711Z"
+  "at": "2026-11-09T03:21:41.054Z"
  },
  "nba:21718076": {
   "fingerprint": "17osfzu",
@@ -2770,7 +2682,7 @@
   "at": "2026-11-08T06:20:18.205Z"
  },
  "nba:21718078": {
-  "fingerprint": "f6agqj",
+  "fingerprint": "w1iz9r",
   "sections": [
    {
     "id": "presentazione",
@@ -2782,7 +2694,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Jazz hanno un record di 1-8 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,9 punti segnati e 118,2 subiti. In casa il bilancio è 1-4.",
+     "I Jazz hanno un record di 1-9 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,2 punti segnati e 117,9 subiti. In casa il bilancio è 1-4.",
      "Gli Heat hanno un record di 3-6 in stagione e hanno vinto 3 delle ultime 5, con una media di 116,0 punti segnati e 122,6 subiti. In trasferta il bilancio è 2-3."
     ],
     "bullets": []
@@ -2803,15 +2715,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Puoi consultare la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Trovi tutto su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:07:40.491Z"
+  "at": "2026-11-09T03:21:43.087Z"
  },
  "nba:21718079": {
   "fingerprint": "88560q",
@@ -2991,7 +2903,7 @@
   "at": "2026-11-08T06:20:25.888Z"
  },
  "nba:21718083": {
-  "fingerprint": "blx70a",
+  "fingerprint": "1dg6gwy",
   "sections": [
    {
     "id": "presentazione",
@@ -3004,7 +2916,7 @@
     "id": "momento",
     "paragraphs": [
      "I Raptors hanno un record di 5-4 in stagione e hanno vinto 2 delle ultime 5, con una media di 118,2 punti segnati e 112,8 subiti. In casa il bilancio è 2-1.",
-     "I Celtics hanno un record di 7-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 114,8 punti segnati e 105,1 subiti. In trasferta il bilancio è 2-2."
+     "I Celtics hanno un record di 8-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 115,0 punti segnati e 104,3 subiti. In trasferta il bilancio è 3-2."
     ],
     "bullets": []
    },
@@ -3025,18 +2937,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Puoi consultare la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:07:46.369Z"
+  "at": "2026-11-09T03:21:45.176Z"
  },
  "nba:21718084": {
-  "fingerprint": "1w491o9",
+  "fingerprint": "jnhnl4",
   "sections": [
    {
     "id": "presentazione",
@@ -3048,7 +2960,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Bulls hanno un record di 1-7 in stagione e hanno vinto 0 delle ultime 5, con una media di 111,6 punti segnati e 129,6 subiti. In casa il bilancio è 0-2.",
+     "I Bulls hanno un record di 1-8 in stagione e hanno vinto 0 delle ultime 5, con una media di 112,7 punti segnati e 129,3 subiti. In casa il bilancio è 0-3.",
      "Gli Spurs hanno un record di 8-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 118,4 punti segnati e 108,1 subiti. In trasferta il bilancio è 4-0."
     ],
     "bullets": []
@@ -3069,15 +2981,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T06:20:27.790Z"
+  "at": "2026-11-09T03:21:47.179Z"
  },
  "nba:21718085": {
   "fingerprint": "1ir8u0m",
@@ -3124,7 +3036,7 @@
   "at": "2026-11-08T00:43:59.649Z"
  },
  "nba:21718086": {
-  "fingerprint": "by5e2j",
+  "fingerprint": "ycou88",
   "sections": [
    {
     "id": "presentazione",
@@ -3136,8 +3048,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Bucks hanno un record di 1-8 in stagione e hanno vinto 0 delle ultime 5, con una media di 109,7 punti segnati e 122,1 subiti. In casa il bilancio è 1-4.",
-     "I Lakers hanno un record di 8-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 122,0 punti segnati e 114,3 subiti. In trasferta il bilancio è 3-1."
+     "I Bucks hanno un record di 1-9 in stagione e hanno vinto 0 delle ultime 5, con una media di 108,4 punti segnati e 121,6 subiti. In casa il bilancio è 1-5.",
+     "I Lakers hanno un record di 9-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 121,9 punti segnati e 114,5 subiti. In trasferta il bilancio è 4-1."
     ],
     "bullets": []
    },
@@ -3158,15 +3070,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-07T06:20:51.868Z"
+  "at": "2026-11-09T03:21:49.314Z"
  },
  "nba:21718087": {
   "fingerprint": "1vw1p15",
@@ -22159,27 +22071,27 @@
   "at": "2026-11-08T09:21:52.313Z"
  },
  "fb:1001545883": {
-  "fingerprint": "1dkawxe",
+  "fingerprint": "kfnsr4",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "La sfida è in programma mercoledì 11 novembre alle 18:00: la Tunisia ospita la Libia nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+     "La partita si gioca mercoledì 11 novembre alle 18:00: il Tunisia ospita il Libia nella 3ª giornata delle Qualificazioni Coppa d'Africa."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa la Tunisia ha ottenuto 2 pareggi (sequenza N-N), segnando 3 gol e subendone 3. In casa il bilancio stagionale è di 2 pareggi, senza vittorie finora.",
-     "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa la Libia ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 2 gol e subendone 3."
+     "Finora il Tunisia ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, terminata 2-2.",
+     "Anche il Libia ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, sconfitta per 0-1."
     ],
     "bullets": []
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 5 vittorie per la Tunisia, 0 per la Libia e nessun pareggio, con 19 gol complessivi (media di 3,8 a partita). L'ultimo incontro, a marzo 2023 nelle Qualificazioni Coppa d'Africa, è terminato Libia 0-1 Tunisia."
+     "Negli ultimi 5 confronti diretti il bilancio è di 5 vittorie per il Tunisia, 0 per il Libia e nessun pareggio, con 19 gol complessivi (media di 3,8 a partita). L'ultimo incrocio, disputato a marzo 2023 nelle Qualificazioni Coppa d'Africa, si è chiuso con il risultato Libia 0-1 Tunisia."
     ],
     "bullets": []
    }
@@ -22195,34 +22107,34 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T16:43:25.143Z"
+  "at": "2026-11-09T03:20:00.871Z"
  },
  "fb:1001545884": {
-  "fingerprint": "xa5aw3",
+  "fingerprint": "1yjapq9",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Mercoledì 11 novembre alle 18:00 l'Uganda ospita il Botswana per la 3ª giornata di Qualificazioni Coppa d'Africa."
+     "Mercoledì 11 novembre alle 18:00 l'Uganda ospita il Botswana nella 3ª giornata delle Qualificazioni alla Coppa d'Africa."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Uganda ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 2 gol fatti e 1 subito.",
-     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Botswana ha raccolto 2 pareggi (sequenza N-N), con 4 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 2 pareggi, ancora senza vittorie."
+     "Finora l'Uganda ha disputato una sola partita nelle Qualificazioni alla Coppa d'Africa, vinta 1-0.",
+     "Anche il Botswana ha giocato finora una sola partita nelle Qualificazioni alla Coppa d'Africa, terminata 2-2."
     ],
     "bullets": []
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per l'Uganda, 0 vittorie per il Botswana e nessun pareggio, con 2 gol complessivi (media di 1,0 a partita). L'ultimo incrocio, a ottobre 2025 in Qualificazioni Mondiali Africa, è finito Botswana 0-1 Uganda."
+     "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per l'Uganda, nessuna per il Botswana e nessun pareggio, con 2 gol complessivi (media di 1,0 a partita). L'ultimo incrocio, disputato a ottobre 2025 nelle Qualificazioni ai Mondiali Africa, è finito Botswana 0-1 Uganda."
     ],
     "bullets": []
    }
@@ -22230,7 +22142,7 @@
   "faq": [
    {
     "q": "Quando si gioca Uganda – Botswana?",
-    "a": "Mercoledì 11 novembre alle 18:00, ora italiana."
+    "a": "Mercoledì 11 novembre alle 18:00."
    },
    {
     "q": "Dove vedo classifica e risultati?",
@@ -22238,11 +22150,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T18:01:32.842Z"
+  "at": "2026-11-09T03:20:04.288Z"
  },
  "fb:1001545885": {
   "fingerprint": "z38n8b",
@@ -22288,20 +22200,20 @@
   "at": "2026-11-08T18:01:36.408Z"
  },
  "fb:1001545886": {
-  "fingerprint": "oc3ykb",
+  "fingerprint": "o8t7f4",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "La partita si giocherà domenica 15 novembre alle 18:00, quando il Botswana ospiterà l'Uganda per la 4ª giornata delle Qualificazioni Coppa d'Africa."
+     "Domenica 15 novembre alle 18:00 il Botswana ospita l'Uganda nella 4ª giornata delle Qualificazioni Coppa d'Africa."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Botswana ha ottenuto 2 pareggi (sequenza N-N), segnando 4 gol e subendone 4.",
-     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Uganda ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1."
+     "Finora il Botswana ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, terminata 2-2.",
+     "Anche l'Uganda ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, vinta 1-0."
     ],
     "bullets": []
    }
@@ -22317,11 +22229,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T09:22:00.952Z"
+  "at": "2026-11-09T03:20:06.171Z"
  },
  "fb:1001545887": {
   "fingerprint": "eylsun",
@@ -22360,20 +22272,20 @@
   "at": "2026-11-08T09:22:03.003Z"
  },
  "fb:1001545888": {
-  "fingerprint": "1n6trwr",
+  "fingerprint": "yl5reh",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 15 novembre alle 18:00 la Repubblica Centrafricana ospita il Benin per la 4ª giornata delle Qualificazioni alla Coppa d'Africa."
+     "Domenica 15 novembre alle 18:00 la Repubblica Centrafricana ospita il Benin nella 4ª giornata delle Qualificazioni Coppa d'Africa."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite delle Qualificazioni alla Coppa d'Africa la Repubblica Centrafricana ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le gare.",
-     "Nelle ultime 2 partite delle Qualificazioni alla Coppa d'Africa il Benin ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), con 3 gol fatti e 2 subiti."
+     "La Repubblica Centrafricana ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, perdendola 0-1.",
+     "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Benin ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 3 gol e subendone 2."
     ],
     "bullets": []
    }
@@ -22393,23 +22305,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T10:30:33.163Z"
+  "at": "2026-11-09T03:20:08.564Z"
  },
  "fb:1001545889": {
-  "fingerprint": "1oe54we",
+  "fingerprint": "1kc68mq",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Congo e Comore scendono in campo domenica 15 novembre alle 18:00, nell'ambito della 4ª giornata di Qualificazioni Coppa d'Africa."
+     "Congo e Comore si affrontano domenica 15 novembre alle 18:00 per la 4ª giornata delle Qualificazioni Coppa d'Africa."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Congo ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 1 gol e subendone 2.",
-     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Comore ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 2 gol e subendone 3."
+     "Finora il Congo ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, terminata 1-1.",
+     "Finora il Comore ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 1-0."
     ],
     "bullets": []
    }
@@ -22421,15 +22333,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina dedicate alle [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Puoi trovare le spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T10:30:36.246Z"
+  "at": "2026-11-09T03:20:11.543Z"
  },
  "fb:1001545890": {
   "fingerprint": "pjg7x7",
@@ -22504,12 +22416,12 @@
   "at": "2026-11-08T10:30:42.575Z"
  },
  "fb:1001545892": {
-  "fingerprint": "1vni34a",
+  "fingerprint": "1w9batx",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 15 novembre alle 18:00 il Gambia ospita il Costa d'Avorio nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+     "Domenica 15 novembre alle 18:00 il Gambia riceve il Costa d'Avorio nella 4ª giornata delle Qualificazioni Coppa d'Africa."
     ],
     "bullets": []
    },
@@ -22517,7 +22429,7 @@
     "id": "momento",
     "paragraphs": [
      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Gambia ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 3.",
-     "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Costa d'Avorio ha ottenuto 2 vittorie (sequenza V-V), segnando 4 gol e non subendone nessuno."
+     "Il Costa d'Avorio ha disputato finora una sola partita delle Qualificazioni Coppa d'Africa, vinta 2-0."
     ],
     "bullets": []
    }
@@ -22533,11 +22445,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T10:30:44.544Z"
+  "at": "2026-11-09T03:20:14.103Z"
  },
  "fb:1001545893": {
   "fingerprint": "nu3w7c",
@@ -22684,20 +22596,20 @@
   "at": "2026-11-08T10:30:54.653Z"
  },
  "fb:1001545897": {
-  "fingerprint": "hsg7yj",
+  "fingerprint": "1u0hze0",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Libia e Tunisia si affrontano domenica 15 novembre alle 18:00 per la 4ª giornata di Qualificazioni Coppa d'Africa."
+     "Libia e Tunisia si sfidano domenica 15 novembre alle 18:00, nell'ambito della 4ª giornata delle Qualificazioni Coppa d'Africa."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa la Libia ha raccolto 1 pareggio e 1 sconfitta (sequenza N-P), con 2 gol fatti e 3 subiti.",
-     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa la Tunisia ha raccolto 2 pareggi (sequenza N-N), con 3 gol fatti e 3 subiti."
+     "La Libia ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, persa 0-1.",
+     "La Tunisia ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, pareggiata 2-2."
     ],
     "bullets": []
    }
@@ -22713,11 +22625,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T10:30:56.327Z"
+  "at": "2026-11-09T03:20:17.441Z"
  },
  "fb:1001545898": {
   "fingerprint": "1l2ynra",
@@ -22756,31 +22668,31 @@
   "at": "2026-11-08T10:30:58.187Z"
  },
  "fb:1001545899": {
-  "fingerprint": "1bcg8ph",
+  "fingerprint": "1u3xbu1",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 15 novembre alle 18:00 il Mauritania ospita il Burkina Faso nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+     "Domenica 15 novembre alle 18:00 il Mauritania ospita il Burkina Faso per la 4ª giornata di Qualificazioni Coppa d'Africa."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, il Mauritania ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 4 gol e subendone 3.",
-     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, il Burkina Faso ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1."
+     "Finora il Mauritania ha disputato una sola partita di Qualificazioni Coppa d'Africa, persa per 1-2.",
+     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Burkina Faso ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1."
     ],
     "bullets": []
    }
   ],
   "faq": [
    {
-    "q": "Quando si disputa Mauritania – Burkina Faso?",
+    "q": "Quando si gioca Mauritania – Burkina Faso?",
     "a": "Domenica 15 novembre alle 18:00, ora italiana."
    },
    {
-    "q": "Dove consultare classifica e risultati?",
+    "q": "Dove vedo classifica e risultati?",
     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
    },
    {
@@ -22789,23 +22701,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T10:31:02.761Z"
+  "at": "2026-11-09T03:20:20.400Z"
  },
  "fb:1001545900": {
-  "fingerprint": "9jsvkq",
+  "fingerprint": "f7awe6",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 15 novembre alle 18:00 il Namibia ospita il Camerun per la 4ª giornata di Qualificazioni Coppa d'Africa."
+     "Domenica 15 novembre alle 18:00 il Namibia ospita il Camerun nella 4ª giornata delle Qualificazioni Coppa d'Africa."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Namibia ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 1 gol fatto e 1 subito.",
-     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Camerun ha raccolto 1 vittoria e 1 pareggio (sequenza V-N), con 4 gol fatti e 2 subiti."
+     "Finora il Namibia ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, perdendola 0-1.",
+     "Finora anche il Camerun ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, pareggiandola 1-1."
     ],
     "bullets": []
    }
@@ -22817,15 +22729,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T10:31:04.562Z"
+  "at": "2026-11-09T03:20:23.239Z"
  },
  "fb:1001545901": {
   "fingerprint": "1yv3cpe",
@@ -22900,7 +22812,7 @@
   "at": "2026-11-08T10:31:08.778Z"
  },
  "fb:1001545903": {
-  "fingerprint": "1un5aih",
+  "fingerprint": "1jy2g7j",
   "sections": [
    {
     "id": "presentazione",
@@ -22912,44 +22824,44 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Sierra Leone ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 4 subiti. Ha perso le ultime 2.",
-     "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il RD Congo ha raccolto 2 vittorie (sequenza V-V), con 4 gol fatti e 1 subito."
+     "Finora il Sierra Leone ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, sconfitta per 0-1.",
+     "Anche il RD Congo ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, vinta per 2-1."
     ],
     "bullets": []
    }
   ],
   "faq": [
    {
-    "q": "Quando si gioca Sierra Leone – RD Congo?",
+    "q": "In che giorno e a che ora si gioca Sierra Leone – RD Congo?",
     "a": "Domenica 15 novembre alle 18:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
+    "q": "Dove trovo classifica e risultati?",
     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
    },
    {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "q": "Dove posso approfondire la lettura delle quote di questa partita?",
+    "a": "Puoi consultare le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T10:31:10.573Z"
+  "at": "2026-11-09T03:20:28.455Z"
  },
  "fb:1001545904": {
-  "fingerprint": "1jjyq4s",
+  "fingerprint": "hl5lqc",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento domenica 15 novembre alle 18:00: il Somalia riceve il Ghana per la 4ª giornata delle Qualificazioni Coppa d'Africa."
+     "Domenica 15 novembre alle 18:00 il Somalia ospita il Ghana nella 4ª giornata delle Qualificazioni Coppa d'Africa."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Somalia ha collezionato 2 sconfitte (sequenza P-P), con 1 gol fatto e 4 subiti. Ha perso le ultime 2.",
-     "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Ghana ha collezionato 2 sconfitte (sequenza P-P), con 2 gol fatti e 6 subiti. Ha perso le ultime 2."
+     "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Somalia ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le ultime gare.",
+     "Il Ghana ha disputato finora una sola partita di Qualificazioni Coppa d'Africa, persa per 2-4."
     ],
     "bullets": []
    }
@@ -22961,15 +22873,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T10:31:12.547Z"
+  "at": "2026-11-09T03:20:30.274Z"
  },
  "fb:1001545905": {
   "fingerprint": "ucj1xd",
@@ -23116,20 +23028,20 @@
   "at": "2026-11-08T10:31:20.269Z"
  },
  "fb:1001545909": {
-  "fingerprint": "j65ogd",
+  "fingerprint": "16wca25",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 15 novembre alle 18:00 lo Zimbabwe ospita il Guinea Equatoriale nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+     "Appuntamento domenica 15 novembre alle 18:00: lo Zimbabwe riceve il Guinea Equatoriale per la 4ª giornata di Qualificazioni Coppa d'Africa."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa lo Zimbabwe ha ottenuto 1 vittoria e 1 sconfitta, con sequenza V-P. Ha segnato 4 gol e ne ha subiti 4.",
-     "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Guinea Equatoriale ha ottenuto 1 vittoria e 1 sconfitta, con sequenza P-V. Ha segnato 1 gol e ne ha subiti 2."
+     "Finora lo Zimbabwe ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, persa 1-2.",
+     "Anche il Guinea Equatoriale ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, vinta 1-0."
     ],
     "bullets": []
    }
@@ -23149,7 +23061,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T10:31:23.274Z"
+  "at": "2026-11-09T03:20:32.151Z"
  },
  "fb:1001640004": {
   "fingerprint": "14nof7f",
@@ -23246,7 +23158,7 @@
   "at": "2026-11-08T10:31:29.141Z"
  },
  "fb:1001640008": {
-  "fingerprint": "9h4ffq",
+  "fingerprint": "18xlvyj",
   "sections": [
    {
     "id": "presentazione",
@@ -23258,8 +23170,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di CONCACAF Nations League le Isole Cayman hanno ottenuto 1 pareggio e 3 sconfitte (sequenza N-P-P-P), con 0 gol fatti e 6 subiti. Hanno perso le ultime 3. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza ancora vittorie.",
-     "Nelle ultime 4 partite di CONCACAF Nations League il Guyana ha raccolto 4 vittorie (sequenza V-V-V-V), con 16 gol fatti e 2 subiti. È reduce da 4 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
+     "Nelle ultime 4 partite di CONCACAF Nations League le Isole Cayman hanno raccolto 1 pareggio e 3 sconfitte (sequenza N-P-P-P), con 0 gol fatti e 6 subiti. Hanno perso le ultime 3. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 3 partite di CONCACAF Nations League il Guyana ha raccolto 3 vittorie (sequenza V-V-V), con 15 gol fatti e 2 subiti. È reduce da 3 vittorie consecutive."
     ],
     "bullets": []
    }
@@ -23279,7 +23191,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T10:31:31.241Z"
+  "at": "2026-11-09T03:20:34.044Z"
  },
  "fb:1001640007": {
   "fingerprint": "15ghe3r",
@@ -23447,7 +23359,7 @@
   "at": "2026-11-08T10:31:42.089Z"
  },
  "fb:1001640015": {
-  "fingerprint": "1ydtuw2",
+  "fingerprint": "q0kyzq",
   "sections": [
    {
     "id": "presentazione",
@@ -23459,7 +23371,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di CONCACAF Nations League il Portorico ha raccolto 3 vittorie e 1 sconfitta (sequenza P-V-V-V), con 6 gol fatti e 1 subito. È reduce da 3 vittorie consecutive. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 3 partite di CONCACAF Nations League il Portorico ha raccolto 3 vittorie (sequenza V-V-V), con 6 gol fatti e 0 subiti. È reduce da 3 vittorie consecutive.",
      "Nelle ultime 4 partite di CONCACAF Nations League il Dominica ha raccolto 1 pareggio e 3 sconfitte (sequenza N-P-P-P), con 2 gol fatti e 15 subiti. Ha perso le ultime 3. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
     ],
     "bullets": []
@@ -23468,7 +23380,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Il Portorico non ha subito gol in 3 delle ultime 4."
+     "Il Portorico non ha subito gol in tutte le ultime 3."
     ]
    }
   ],
@@ -23487,7 +23399,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T10:31:44.172Z"
+  "at": "2026-11-09T03:20:36.131Z"
  },
  "fb:1001640012": {
   "fingerprint": "1sfqyzr",
@@ -23846,7 +23758,7 @@
   "at": "2026-11-08T10:32:02.812Z"
  },
  "fb:1001640014": {
-  "fingerprint": "o4o49t",
+  "fingerprint": "4wi6td",
   "sections": [
    {
     "id": "presentazione",
@@ -23858,8 +23770,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di CONCACAF Nations League il Guyana ha raccolto 4 vittorie (sequenza V-V-V-V), con 16 gol fatti e 2 subiti. È reduce da 4 vittorie consecutive. In casa ha vinto tutte le 2 partite giocate.",
-     "Nelle ultime 4 partite di CONCACAF Nations League il Portorico ha raccolto 3 vittorie e 1 sconfitta (sequenza P-V-V-V), con 6 gol fatti e 1 subito. È reduce da 3 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
+     "Nelle ultime 3 partite di CONCACAF Nations League il Guyana ha raccolto 3 vittorie (sequenza V-V-V), con 15 gol fatti e 2 subiti. È reduce da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite giocate.",
+     "Nelle ultime 3 partite di CONCACAF Nations League il Portorico ha raccolto 3 vittorie (sequenza V-V-V), con 6 gol fatti e 0 subiti. È reduce da 3 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
     ],
     "bullets": []
    },
@@ -23867,7 +23779,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Il Portorico non ha subito gol in 3 delle ultime 4."
+     "Il Portorico non ha subito gol in tutte le ultime 3."
     ]
    }
   ],
@@ -23886,7 +23798,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T10:32:04.758Z"
+  "at": "2026-11-09T03:20:38.243Z"
  },
  "fb:1001550206": {
   "fingerprint": "1hfljbp",
@@ -24799,20 +24711,20 @@
   "at": "2026-11-08T12:21:22.034Z"
  },
  "fb:1001586134": {
-  "fingerprint": "t0y764",
+  "fingerprint": "v81mqo",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento giovedì 12 novembre alle 07:00: la Nuova Zelanda riceve l'India per le Amichevoli internazionali."
+     "Giovedì 12 novembre alle 07:00 il Nuova Zelanda riceve l'India in una partita valida per le Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali la Nuova Zelanda ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 5 gol fatti e 2 subiti.",
-     "Nelle ultime 3 partite di Amichevoli internazionali l'India ha raccolto 1 pareggio e 2 sconfitte (sequenza N-P-P), con 2 gol fatti e 11 subiti. Ha perso le ultime 2."
+     "Finora il Nuova Zelanda ha disputato una sola partita nelle Amichevoli internazionali, vinta per 3-0.",
+     "Nelle ultime 3 partite di Amichevoli internazionali l'India ha ottenuto 1 pareggio e 2 sconfitte (sequenza N-P-P), segnando 2 gol e subendone 11. Ha perso le ultime 2."
     ],
     "bullets": []
    }
@@ -24824,15 +24736,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T12:21:23.795Z"
+  "at": "2026-11-09T03:20:40.168Z"
  },
  "fb:1001649008": {
   "fingerprint": "10t03b2",
@@ -24940,20 +24852,20 @@
   "at": "2026-11-08T12:21:30.774Z"
  },
  "fb:1001647358": {
-  "fingerprint": "gvbk9t",
+  "fingerprint": "lt2vzq",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento giovedì 12 novembre alle 16:00: l'Uzbekistan ospita il Russia nell'ambito delle Amichevoli internazionali."
+     "Appuntamento giovedì 12 novembre alle 16:00: l'Uzbekistan riceve il Russia nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Amichevoli internazionali, l'Uzbekistan ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-V-P), segnando 7 gol e subendone 4. Nelle partite giocate in casa ha vinto tutte e 2.",
-     "Nelle ultime 3 partite di Amichevoli internazionali, il Russia ha ottenuto 2 vittorie e 1 pareggio (sequenza V-V-N), segnando 11 gol e subendone 3."
+     "Nelle ultime 2 partite di Amichevoli internazionali l'Uzbekistan ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 4 gol fatti e 3 subiti.",
+     "Nelle ultime 3 partite di Amichevoli internazionali il Russia ha raccolto 2 vittorie e 1 pareggio (sequenza V-V-N), con 11 gol fatti e 3 subiti."
     ],
     "bullets": []
    }
@@ -24965,15 +24877,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T12:21:33.748Z"
+  "at": "2026-11-09T03:20:42.323Z"
  },
  "fb:1001649011": {
   "fingerprint": "1y0n6pg",
@@ -25151,12 +25063,12 @@
   "at": "2026-11-08T12:21:43.375Z"
  },
  "fb:1001647636": {
-  "fingerprint": "msnq3w",
+  "fingerprint": "kt2tqk",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Emirati Arabi Uniti e Honduras si affrontano venerdì 13 novembre alle 14:00 per le Amichevoli internazionali."
+     "Emirati Arabi Uniti e Honduras si affrontano venerdì 13 novembre alle 15:10 per Amichevoli internazionali."
     ],
     "bullets": []
    }
@@ -25164,7 +25076,7 @@
   "faq": [
    {
     "q": "Quando si gioca Emirati Arabi Uniti – Honduras?",
-    "a": "Venerdì 13 novembre alle 14:00, ora italiana."
+    "a": "Venerdì 13 novembre alle 15:10, ora italiana."
    },
    {
     "q": "Dove vedo classifica e risultati?",
@@ -25176,31 +25088,24 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T12:21:44.679Z"
+  "at": "2026-11-09T03:20:43.604Z"
  },
  "fb:1001647361": {
-  "fingerprint": "s4c1sd",
+  "fingerprint": "x18iez",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Venerdì 13 novembre alle 15:30 l'Arabia Saudita ospita la Corea del Sud in una partita valida per le Amichevoli internazionali."
+     "Venerdì 13 novembre alle 15:30 l'Arabia Saudita ospita la Corea del Sud nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Amichevoli internazionali la Corea del Sud ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V), segnando 6 gol e subendone 4."
+     "Nelle ultime 3 partite di Amichevoli internazionali la Corea del Sud ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza P-N-V), con 3 gol fatti e 4 subiti."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "La Corea del Sud non ha subito gol in 3 delle ultime 4 partite."
-    ]
    }
   ],
   "faq": [
@@ -25209,16 +25114,16 @@
     "a": "Venerdì 13 novembre alle 15:30, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T12:21:48.835Z"
+  "at": "2026-11-09T03:20:47.382Z"
  },
  "fb:1001640084": {
   "fingerprint": "dq9t2q",
@@ -25317,41 +25222,6 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-08T12:21:53.754Z"
- },
- "fb:1001640085": {
-  "fingerprint": "1nany17",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Giordania e Indonesia si affrontano venerdì 13 novembre alle 19:00 nell'ambito delle Amichevoli internazionali."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali la Giordania ha ottenuto 2 pareggi (sequenza N-N), con 1 gol fatto e 1 subito. In casa, il bilancio stagionale è di 2 pareggi e ancora nessuna vittoria."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Giordania – Indonesia?",
-    "a": "Venerdì 13 novembre alle 19:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio) spiegano il funzionamento."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-08T12:21:57.840Z"
  },
  "fb:1001649014": {
   "fingerprint": "u0bqg7",
@@ -25680,20 +25550,20 @@
   "at": "2026-11-08T14:17:45.171Z"
  },
  "fb:1001647362": {
-  "fingerprint": "1dzpt80",
+  "fingerprint": "hd0o50",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento sabato 14 novembre alle 00:00: l'Argentina riceve l'Uruguay nell'ambito delle Amichevoli internazionali."
+     "Sabato 14 novembre alle 00:00 l'Argentina riceve l'Uruguay in una partita valida per le Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Amichevoli internazionali l'Argentina ha raccolto 3 vittorie (sequenza V-V-V), con 14 gol fatti e 0 subiti. È reduce da 3 vittorie consecutive. In casa ha vinto tutte le 3 partite giocate.",
-     "Nelle ultime 3 partite di Amichevoli internazionali l'Uruguay ha raccolto 2 vittorie e 1 sconfitta (sequenza P-V-V), con 11 gol fatti e 5 subiti. In trasferta il bilancio stagionale è di 2 vittorie e 1 sconfitta."
+     "Nelle ultime 3 partite di Amichevoli internazionali, l'Argentina ha ottenuto 3 vittorie (sequenza V-V-V), segnando 14 gol e subendone 0. Arriva da 3 vittorie consecutive. In casa ha vinto tutte e 3 le partite disputate.",
+     "Nelle ultime 2 partite di Amichevoli internazionali, l'Uruguay ha ottenuto 2 vittorie (sequenza V-V), segnando 10 gol e subendone 2. In trasferta ha vinto tutte e 2 le partite disputate."
     ],
     "bullets": []
    },
@@ -25702,8 +25572,7 @@
     "paragraphs": [],
     "bullets": [
      "In tutte le ultime 3 partite dell'Argentina si sono segnati almeno tre gol.",
-     "L'Argentina non ha subito gol in tutte le ultime 3.",
-     "In tutte le ultime 3 partite dell'Uruguay si sono segnati almeno tre gol."
+     "L'Argentina non ha subito gol in tutte le ultime 3 partite."
     ]
    }
   ],
@@ -25722,7 +25591,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T14:17:47.508Z"
+  "at": "2026-11-09T03:20:49.666Z"
  },
  "fb:1001640518": {
   "fingerprint": "1d8qxbs",
@@ -25761,19 +25630,12 @@
   "at": "2026-11-08T14:17:52.323Z"
  },
  "fb:1001647363": {
-  "fingerprint": "1695r35",
+  "fingerprint": "ie65h6",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Ecuador e Costa Rica si affrontano sabato 14 novembre alle 01:00 per Amichevoli internazionali."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "L'Ecuador ha giocato finora una sola partita di Amichevoli internazionali, persa 0-3."
+     "Ecuador e Costa Rica si sfidano sabato 14 novembre alle 01:00 nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    }
@@ -25793,7 +25655,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T14:17:53.711Z"
+  "at": "2026-11-09T03:20:50.969Z"
  },
  "fb:1001647364": {
   "fingerprint": "1w3fhoh",
@@ -25951,7 +25813,7 @@
   "at": "2026-11-08T14:18:05.042Z"
  },
  "fb:1001640086": {
-  "fingerprint": "ny65fr",
+  "fingerprint": "wleary",
   "sections": [
    {
     "id": "presentazione",
@@ -25963,8 +25825,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali il Giappone ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 2. In casa ha vinto tutte le 2 partite disputate.",
-     "Nelle ultime 3 partite di Amichevoli internazionali il Brasile ha ottenuto 2 vittorie e 1 pareggio (sequenza N-V-V), segnando 9 gol e subendone 3. In trasferta il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
+     "Finora il Giappone ha disputato una sola partita nelle Amichevoli internazionali, vinta per 2-1.",
+     "Nelle ultime 3 gare di Amichevoli internazionali il Brasile ha ottenuto 2 vittorie e 1 pareggio (sequenza N-V-V), segnando 9 gol e subendone 3. In trasferta il bilancio stagionale riporta 2 vittorie e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    }
@@ -25975,16 +25837,16 @@
     "a": "Sabato 14 novembre alle 11:15, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
+    "q": "Dove posso consultare classifica e risultati?",
     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio) spiegano questo aspetto."
+    "a": "Le spiegazioni si trovano nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T14:18:09.570Z"
+  "at": "2026-11-09T03:20:55.399Z"
  },
  "fb:1001647639": {
   "fingerprint": "1akccw4",
@@ -26065,28 +25927,21 @@
   "at": "2026-11-08T14:18:15.906Z"
  },
  "fb:1001647365": {
-  "fingerprint": "9a1qwy",
+  "fingerprint": "1nawm76",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 13:00 il Cina ospita il Malaysia nell'ambito delle Amichevoli internazionali."
+     "La partita si giocherà sabato 14 novembre alle 13:00: il Cina ospiterà il Malaysia nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Amichevoli internazionali il Cina ha ottenuto 1 vittoria e 3 sconfitte, con sequenza V-P-P-P, segnando 3 gol e subendone 9. Le ultime 3 gare sono state tutte perse. In casa, il bilancio stagionale è di 1 vittoria e 3 sconfitte."
+     "Nelle ultime 3 partite di Amichevoli internazionali il Cina ha collezionato 3 sconfitte (sequenza P-P-P), segnando 0 gol e subendone 9. Ha perso tutte e ultime 3 gare. In casa ha perso tutte le 3 partite disputate."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Nelle ultime 4 partite del Cina, in 3 occasioni sono stati segnati almeno tre gol."
-    ]
    }
   ],
   "faq": [
@@ -26096,15 +25951,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T14:18:20.014Z"
+  "at": "2026-11-09T03:20:57.640Z"
  },
  "fb:1001649019": {
   "fingerprint": "hjrm7h",
@@ -26135,20 +25990,20 @@
   "at": "2026-11-08T14:18:21.499Z"
  },
  "fb:1001648285": {
-  "fingerprint": "rxextr",
+  "fingerprint": "1h4jch6",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Palestina e Iran si affrontano sabato 14 novembre alle 17:00 in un'amichevole internazionale."
+     "Palestina e Iran si affrontano sabato 14 novembre alle 17:00 nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Amichevoli internazionali, il Palestina ha ottenuto 2 vittorie e 2 pareggi (sequenza N-V-N-V), segnando 13 gol e subendone 6. Non perde da 4 partite.",
-     "Nelle ultime 2 partite di Amichevoli internazionali, l'Iran ha subito 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 5. Ha perso entrambe le ultime gare. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 3 partite di Amichevoli internazionali, il Palestina ha ottenuto 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 11 gol e subendone 4.",
+     "Finora l'Iran ha disputato una sola partita di Amichevoli internazionali, persa 0-2."
     ],
     "bullets": []
    },
@@ -26156,7 +26011,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "In tutte le ultime 4 partite del Palestina si sono segnati almeno tre gol."
+     "In tutte le ultime 3 partite del Palestina sono stati segnati almeno tre gol."
     ]
    }
   ],
@@ -26175,7 +26030,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T14:18:24.519Z"
+  "at": "2026-11-09T03:21:00.943Z"
  },
  "fb:1001647641": {
   "fingerprint": "f2wmkx",
@@ -26213,20 +26068,20 @@
   "at": "2026-11-08T14:18:27.572Z"
  },
  "fb:1001586133": {
-  "fingerprint": "1mceqpm",
+  "fingerprint": "xi77c6",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "La Nuova Zelanda e l'India si affrontano domenica 15 novembre alle 04:00, nell'ambito delle Amichevoli internazionali."
+     "Nuova Zelanda e India si affrontano domenica 15 novembre alle 04:00 nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali la Nuova Zelanda ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 5 gol e subendone 2.",
-     "Nelle ultime 3 partite di Amichevoli internazionali l'India ha ottenuto 1 pareggio e 2 sconfitte (sequenza N-P-P), segnando 2 gol e subendone 11. Nelle ultime 2 partite ha perso."
+     "La Nuova Zelanda ha giocato finora una sola partita di Amichevoli internazionali, vinta per 3-0.",
+     "Nelle ultime 3 partite di Amichevoli internazionali l'India ha raccolto 1 pareggio e 2 sconfitte (sequenza N-P-P), con 2 gol fatti e 11 subiti. Ha perso le ultime 2."
     ],
     "bullets": []
    }
@@ -26237,8 +26092,8 @@
     "a": "Domenica 15 novembre alle 04:00, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -26246,7 +26101,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T14:18:31.252Z"
+  "at": "2026-11-09T03:21:05.871Z"
  },
  "fb:1001647366": {
   "fingerprint": "17zwkmj",
@@ -26702,28 +26557,21 @@
   "at": "2026-11-08T15:22:18.028Z"
  },
  "fb:1001647368": {
-  "fingerprint": "kyfzi9",
+  "fingerprint": "1luimmb",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento martedì 17 novembre alle 13:00: il Cina riceve il Bahrein per le Amichevoli internazionali."
+     "Appuntamento martedì 17 novembre alle 13:00: il Cina riceve il Bahrein nella gara valida per le Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Amichevoli internazionali il Cina ha raccolto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), con 3 gol fatti e 9 subiti. Ha perso le ultime 3. In casa il bilancio stagionale è di 1 vittoria e 3 sconfitte."
+     "Nelle ultime 3 partite di Amichevoli internazionali il Cina ha raccolto 3 sconfitte (sequenza P-P-P), con 0 gol fatti e 9 subiti. Ha perso le ultime 3. In casa ha perso tutte le 3 partite giocate."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "In 3 delle ultime 4 partite del Cina si sono segnati almeno tre gol."
-    ]
    }
   ],
   "faq": [
@@ -26741,7 +26589,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T15:22:19.817Z"
+  "at": "2026-11-09T03:21:08.137Z"
  },
  "fb:1001647643": {
   "fingerprint": "b79z8j",
@@ -26807,20 +26655,20 @@
   "at": "2026-11-08T15:22:23.505Z"
  },
  "fb:1001640088": {
-  "fingerprint": "138y3mv",
+  "fingerprint": "wv6g5s",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Martedì 17 novembre alle 14:10 il Giappone ospita il Paraguay in una partita valida per le Amichevoli internazionali."
+     "Martedì 17 novembre alle 14:10 il Giappone ospita il Paraguay nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali il Giappone ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 2. In casa ha vinto tutte le 2 partite disputate.",
-     "Nelle ultime 2 partite di Amichevoli internazionali il Paraguay ha ottenuto 2 vittorie (sequenza V-V), segnando 3 gol senza subirne. In trasferta ha vinto tutte le 2 partite disputate."
+     "Il Giappone ha giocato finora una sola partita nelle Amichevoli internazionali, vinta 2-1.",
+     "Nelle ultime 2 partite delle Amichevoli internazionali il Paraguay ha ottenuto 2 vittorie (sequenza V-V), segnando 3 gol e non subendone nessuno. In trasferta ha vinto tutte le 2 partite giocate."
     ],
     "bullets": []
    }
@@ -26840,10 +26688,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T15:22:25.402Z"
+  "at": "2026-11-09T03:21:10.732Z"
  },
  "fb:1001647369": {
-  "fingerprint": "x36p00",
+  "fingerprint": "10yez6q",
   "sections": [
    {
     "id": "presentazione",
@@ -26855,16 +26703,9 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di Amichevoli internazionali, la Corea del Sud ha raccolto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V), segnando 6 gol e subendone 4."
+     "Nelle ultime 3 partite di Amichevoli internazionali, la Corea del Sud ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza P-N-V), con 3 gol fatti e 4 subiti."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "La Corea del Sud non ha subito gol in 3 delle ultime 4 partite."
-    ]
    }
   ],
   "faq": [
@@ -26873,8 +26714,8 @@
     "a": "Martedì 17 novembre alle 15:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -26882,22 +26723,22 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T15:22:28.850Z"
+  "at": "2026-11-09T03:21:15.138Z"
  },
  "fb:1001647370": {
-  "fingerprint": "1jn3049",
+  "fingerprint": "1tl4v78",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "L'Arabia Saudita ospita l'Uzbekistan martedì 17 novembre alle 16:30, in una partita di Amichevoli internazionali."
+     "Martedì 17 novembre alle 16:30 l'Arabia Saudita ospita l'Uzbekistan in una partita delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Amichevoli internazionali l'Uzbekistan ha ottenuto 2 vittorie e 1 sconfitta, con sequenza V-V-P. Nello stesso periodo ha segnato 7 gol e ne ha subiti 4."
+     "Nelle ultime 2 partite di Amichevoli internazionali, l'Uzbekistan ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 4 gol e subendone 3."
     ],
     "bullets": []
    }
@@ -26908,16 +26749,16 @@
     "a": "Martedì 17 novembre alle 16:30, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "q": "Dove posso vedere classifica e risultati?",
+    "a": "Puoi consultare la pagina dedicata alle [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Per capire come leggere le quote puoi consultare la guida [come leggere le quote](/guide/come-leggere-le-quote) e la pagina sui [mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T15:22:33.408Z"
+  "at": "2026-11-09T03:21:19.938Z"
  },
  "fb:1001647371": {
   "fingerprint": "10sf7gr",
@@ -27205,28 +27046,21 @@
   "at": "2026-11-08T15:22:51.421Z"
  },
  "fb:1001648287": {
-  "fingerprint": "1o4e5c5",
+  "fingerprint": "144m9n9",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Mercoledì 18 novembre alle 00:30 l'Uruguay ospita la Repubblica Dominicana in una partita valida per le Amichevoli internazionali."
+     "Mercoledì 18 novembre alle 00:30 l'Uruguay ospita la Repubblica Dominicana nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Amichevoli internazionali l'Uruguay ha raccolto 2 vittorie e 1 sconfitta (sequenza P-V-V), con 11 gol fatti e 5 subiti."
+     "Nelle ultime 2 partite di Amichevoli internazionali l'Uruguay ha ottenuto 2 vittorie di fila (sequenza V-V), segnando 10 gol e subendone 2."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "In tutte le ultime 3 partite dell'Uruguay si sono segnati almeno tre gol."
-    ]
    }
   ],
   "faq": [
@@ -27244,10 +27078,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T15:22:53.178Z"
+  "at": "2026-11-09T03:21:23.904Z"
  },
  "fb:1001647373": {
-  "fingerprint": "v7cai",
+  "fingerprint": "1q6nho2",
   "sections": [
    {
     "id": "presentazione",
@@ -27259,8 +27093,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Finora l'Ecuador ha giocato una sola partita di Amichevoli internazionali, persa 0-3.",
-     "Nelle ultime 2 partite di Amichevoli internazionali la Bolivia ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 6 subiti. Ha perso entrambe le ultime gare."
+     "Nelle ultime 2 partite di Amichevoli internazionali la Bolivia ha collezionato 2 sconfitte (sequenza P-P), segnando 0 gol e subendone 6. Ha perso entrambe le ultime 2 gare."
     ],
     "bullets": []
    }
@@ -27272,15 +27105,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T15:22:54.804Z"
+  "at": "2026-11-09T03:21:28.473Z"
  },
  "fb:1001648286": {
   "fingerprint": "1csxfoe",
