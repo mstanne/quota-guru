@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-09T19:54:53.706Z",
+ "generatedAt": "2026-11-09T21:19:57.856Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:1001550202": {
@@ -1249,6 +1249,48 @@
     {
      "q": "Quando si gioca Liverpool – Manchester United?",
      "a": "Domenica 22 novembre alle 17:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001557469": {
+   "fingerprint": "rdnfzr",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Lunedì 23 novembre alle 21:00 il Brentford ospita l'Everton per la 11ª giornata di Premier League. In classifica il Brentford è all'8° posto con 14 punti, l'Everton al 6° con 16."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Premier League il Brentford ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-P-N-V-P), con 6 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 5 partite di Premier League l'Everton ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-P-V-V), con 6 gol fatti e 7 subiti. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Brentford 1,6, Everton 1,2 a partita.",
+      "Gol subiti finora: Brentford 11, Everton 10."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Brentford – Everton?",
+     "a": "Lunedì 23 novembre alle 21:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -16609,42 +16651,6 @@
     }
    ]
   },
-  "fb:560634": {
-   "fingerprint": "1vf7xap",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "L'Everton ha battuto il Coventry City in casa per 3-1. La partita, valida per la 10ª giornata di Premier League, si è giocata venerdì 6 novembre; il primo tempo era terminato 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Dopo le partite disputate finora, l'Everton occupa il 6° posto con 16 punti, mentre il Coventry City è al 17° con 9 punti. Per l'intera tabella si può consultare la [classifica completa](/calcio/premier-league/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Everton tornerà in campo lunedì 23 novembre alle 21:00, in trasferta contro il Brentford. Il Coventry City giocherà sabato 21 novembre alle 16:00 in casa contro il Crystal Palace."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Everton – Coventry City?",
-     "a": "3-1 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Sono consultabili nella [pagina dedicata alla Premier League](/calcio/premier-league)."
-    }
-   ]
-  },
   "fb:560632": {
    "fingerprint": "1pc3lzi",
    "sections": [
@@ -16966,42 +16972,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Premier League](/calcio/premier-league)."
-    }
-   ]
-  },
-  "fb:564740": {
-   "fingerprint": "enb9ov",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Reti inviolate tra il Sevilla FC e l'Alavés: è finita 0-0. La partita, valida per la 12ª giornata di LaLiga, si è giocata venerdì 6 novembre; il primo tempo si era chiuso anch'esso 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Sevilla FC è al 6° posto con 18 punti, mentre l'Alavés è al 12° con 13. [Classifica completa](/calcio/liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Sevilla FC tornerà in campo domenica 22 novembre alle 17:00 in casa contro il Real Betis. L'Alavés tornerà in campo domenica 22 novembre alle 17:00 in casa contro il Deportivo."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Sevilla FC – Alavés?",
-     "a": "È finita 0-0, con lo 0-0 anche all'intervallo."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [LaLiga](/calcio/liga)."
     }
    ]
   },
@@ -18193,35 +18163,6 @@
     }
    ]
   },
-  "fb:567353": {
-   "fingerprint": "zzfj8d",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Famalicão ha battuto l'Arouca per 1-0 in casa. La partita, valida per l'11ª giornata di Primeira Liga, si è giocata venerdì 6 novembre; al termine del primo tempo il punteggio era 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite disputate finora il Famalicão occupa il 10° posto con 13 punti, mentre l'Arouca è al 5° con 20. Per la tabella completa consulta la [classifica completa](/calcio/primeira-liga/classifica)."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Famalicão – Arouca?",
-     "a": "1-0 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
-    }
-   ]
-  },
   "fb:567347": {
    "fingerprint": "oq33xp",
    "sections": [
@@ -18422,42 +18363,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
-    }
-   ]
-  },
-  "fb:561932": {
-   "fingerprint": "1hw4r89",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Derby County ha ribaltato la partita e ha vinto in casa per 3-1 contro il Bolton. Il match, valido per la 15ª giornata di Championship, si è disputato venerdì 6 novembre; al termine del primo tempo il punteggio era 0-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Dopo le partite disputate finora, il Derby County occupa il 23° posto con 10 punti, mentre il Bolton è al 18° con 17. Consulta la [classifica completa](/calcio/championship/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Derby County tornerà in campo sabato 21 novembre alle 13:30, in trasferta contro il Southampton. Il Bolton giocherà sabato 21 novembre alle 16:00 in casa contro il Portsmouth."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Derby County – Bolton?",
-     "a": "Il risultato finale è 3-1, con 0-1 al termine del primo tempo."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Championship](/calcio/championship)."
     }
    ]
   },

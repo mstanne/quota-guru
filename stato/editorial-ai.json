@@ -30320,5 +30320,49 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-09T19:54:53.699Z"
+ },
+ "fb:1001557469": {
+  "fingerprint": "rdnfzr",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Lunedì 23 novembre alle 21:00 il Brentford ospita l'Everton per la 11ª giornata di Premier League. In classifica il Brentford è all'8° posto con 14 punti, l'Everton al 6° con 16."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Premier League il Brentford ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-P-N-V-P), con 6 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Premier League l'Everton ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-P-V-V), con 6 gol fatti e 7 subiti. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Brentford 1,6, Everton 1,2 a partita.",
+     "Gol subiti finora: Brentford 11, Everton 10."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Brentford – Everton?",
+    "a": "Lunedì 23 novembre alle 21:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-09T21:19:57.849Z"
  }
 }
