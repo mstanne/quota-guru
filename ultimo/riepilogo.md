@@ -1,40 +1,40 @@
-# Statistiche Quota Guru — 2026-11-02
+# Statistiche Quota Guru — 2026-11-09
 
-## Visitatori (GA4, 2026-10-05 → 2026-11-01)
+## Visitatori (GA4, 2026-10-12 → 2026-11-08)
 
-Utenti 10 (nuovi 10) · sessioni 35 · pagine viste 94 · coinvolgimento 71.4% · durata media 314 s
+Utenti 23 (nuovi 23) · sessioni 64 · pagine viste 364 · coinvolgimento 71.9% · durata media 382 s
 
-**Canali:** Direct 28 · Organic Search 6 · AI Assistant 1
+**Canali:** Direct 34 · Organic Search 18 · AI Assistant 11 · Unassigned 1
 
 **Pagine più viste:**
-- / — 23
-- /pronostici/serie-a/juventus-napoli/ — 8
-- /calcio/ — 7
-- /siti-scommesse/ — 7
-- /bonus/ — 3
-- /calcio/serie-a/roma-cagliari-2026-10-27/ — 3
-- /calcio/serie-a/udinese-milan-2026-10-25/ — 3
-- /calcio/squadre/lazio/ — 3
-- /pronostici/serie-a/ — 3
-- /calcio/serie-a/ — 2
+- / — 66
+- /calcio/ — 35
+- /pronostici/oggi/ — 24
+- /pronostici/ — 20
+- /pronostici/domani/ — 15
+- /pronostici/serie-a/juventus-napoli/ — 9
+- /siti-scommesse/ — 9
+- /pronostici/serie-a/sassuolo-fiorentina/ — 8
+- /basket/ — 7
+- /calcio/champions-league/classifica/ — 6
 
-## Ricerche Google (Search Console, 2026-10-03 → 2026-10-30)
+## Ricerche Google (Search Console, 2026-10-10 → 2026-11-06)
 
-Clic 20 · impressioni 3572 · CTR 0.6% · posizione media 13.4
+Clic 112 · impressioni 12.318 · CTR 0.9% · posizione media 17.5
 
 **Ricerche con più impressioni:**
-- classifica serie a — 1163 impr., 0 clic, pos. 11.9
-- classifica serie a oggi — 996 impr., 0 clic, pos. 10.8
-- serie a classifica — 153 impr., 0 clic, pos. 14.4
-- nba regular season — 99 impr., 0 clic, pos. 9.4
+- classifica serie a — 2515 impr., 0 clic, pos. 11.6
+- classifica serie a oggi — 1353 impr., 0 clic, pos. 10.8
+- hornets - pistons — 946 impr., 0 clic, pos. 11.9
+- classifica di serie a — 146 impr., 0 clic, pos. 28
+- nba regular season — 115 impr., 0 clic, pos. 9.5
+- cavaliers - sixers — 75 impr., 0 clic, pos. 16.5
 - classifica di racing club de lens - como 1907 — 72 impr., 0 clic, pos. 10.2
-- classifica di serie a — 69 impr., 0 clic, pos. 26.1
-- hawks — 25 impr., 0 clic, pos. 10
-- statistiche giocatore della partita knicks - orlando magic — 21 impr., 0 clic, pos. 10.4
-- classifica — 19 impr., 0 clic, pos. 12.9
-- pelicans — 13 impr., 0 clic, pos. 9.5
-- nba season — 11 impr., 0 clic, pos. 11
-- rankingi serie a — 11 impr., 0 clic, pos. 11.4
-- classifiche — 10 impr., 0 clic, pos. 32.8
-- classifica di orlando magic — 9 impr., 0 clic, pos. 26.6
-- hornets - heat — 9 impr., 0 clic, pos. 17.3
+- hawks — 48 impr., 0 clic, pos. 9.1
+- clippers — 45 impr., 0 clic, pos. 9.4
+- bundesliga classifica — 37 impr., 0 clic, pos. 14.5
+- classifica di hornets - pistons — 36 impr., 0 clic, pos. 10.4
+- classifica — 29 impr., 0 clic, pos. 15.6
+- giocatori chicago bulls — 26 impr., 0 clic, pos. 22.7
+- los angeles clippers — 25 impr., 0 clic, pos. 11.7
+- classifiche — 24 impr., 0 clic, pos. 29.8
