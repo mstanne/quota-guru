@@ -12,6 +12,19 @@
   "newUsers": 23,
   "bounceRate": 0.28125
  },
+ "periodo7giorni": {
+  "da": "2026-11-02",
+  "a": "2026-11-08"
+ },
+ "totali7giorni": {
+  "activeUsers": 15,
+  "sessions": 29,
+  "screenPageViews": 270,
+  "engagementRate": 0.7241379310344828,
+  "averageSessionDuration": 464.14531403448274,
+  "newUsers": 13,
+  "bounceRate": 0.27586206896551724
+ },
  "perGiorno": [
   {
    "date": "20261025",
@@ -1078,5 +1091,26 @@
    "eventCount": 1,
    "totalUsers": 1
   }
- ]
+ ],
+ "clicBookmaker": {
+  "evento": "outbound_click",
+  "totali": {
+   "eventCount": 1,
+   "totalUsers": 1
+  },
+  "totali7giorni": {
+   "eventCount": 0,
+   "totalUsers": 0
+  },
+  "dettaglio": [
+   {
+    "customEvent:operator": "(not set)",
+    "customEvent:placement": "(not set)",
+    "customEvent:page": "(not set)",
+    "eventCount": 1,
+    "totalUsers": 1
+   }
+  ],
+  "perOperatore7giorni": []
+ }
 }

@@ -10,6 +10,16 @@
   "ctr": 0.0091,
   "posizione": 17.5
  },
+ "periodo7giorni": {
+  "da": "2026-10-31",
+  "a": "2026-11-06"
+ },
+ "totali7giorni": {
+  "clic": 92,
+  "impressioni": 8746,
+  "ctr": 0.0105,
+  "posizione": 19.1
+ },
  "perGiorno": [
   {
    "date": "2026-10-24",
