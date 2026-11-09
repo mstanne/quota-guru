@@ -4,6 +4,7 @@ import { CalendarDays, ChartColumn, ChevronRight, CircleDot, Flag, Goal, Dribbbl
 import { NATIONAL_HUB_PATH } from "../../lib/nationalHub";
 import { dayPath } from "../../lib/dayPages";
 import { TRIS_PATH } from "../../lib/trisPage";
+import { marketPath } from "../../lib/marketPages";
 import type { ReactNode } from "react";
 import { Link } from "../../lib/links";
 import { PageHeader, MetaItems } from "../layout/PageHeader";
@@ -95,6 +96,20 @@ export function PronosticiPage() {
                   <span className="sr-only">{sr}</span>
                   {label}
                 </span>
+              </Link>
+            ))}
+          </nav>
+          <nav aria-label="Pronostici per tipo di esito" className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+            <span className="text-slate-400">Per tipo di esito:</span>
+            {(
+              [
+                ["under-over", "Under/Over 2,5"],
+                ["goal-no-goal", "Goal/No goal"],
+                ["multigol", "Multigol"],
+              ] as const
+            ).map(([k, label]) => (
+              <Link key={k} to={marketPath(k)} className="text-action-text hover:text-action-text-hover">
+                {label}
               </Link>
             ))}
           </nav>
