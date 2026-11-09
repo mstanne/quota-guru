@@ -34,6 +34,9 @@ const TrackRecordPage = lazyPage(() =>
 );
 const TvGuidePage = lazyPage(() => import("./components/tv/TvGuidePage").then((m) => m.TvGuidePage));
 const TrisPage = lazyPage(() => import("./components/predictions/TrisPage").then((m) => m.TrisPage));
+const MarketPredictionsPage = lazyPage(() =>
+  import("./components/predictions/MarketPredictionsPage").then((m) => m.MarketPredictionsPage),
+);
 const NationalHubPage = lazyPage(() =>
   import("./components/predictions/NationalHubPage").then((m) => m.NationalHubPage),
 );
@@ -110,6 +113,9 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/pronostici/nazionali", [NationalHubPage]],
   ["/pronostici/oggi", [DayPredictionsPage]],
   ["/pronostici/domani", [DayPredictionsPage]],
+  ["/pronostici/under-over", [MarketPredictionsPage]],
+  ["/pronostici/goal-no-goal", [MarketPredictionsPage]],
+  ["/pronostici/multigol", [MarketPredictionsPage]],
   ["/calcio-in-tv-oggi", [TvGuidePage]],
   ["/pronostici/nba", [BasketPage]],
   ["/pronostici/nba/:evento", [BasketEventPage, NotFoundPage]],
@@ -258,6 +264,9 @@ export default function App() {
             <Route path="/pronostici/nazionali" element={<NationalHubPage />} />
             <Route path="/pronostici/oggi" element={<DayPredictionsPage day="oggi" />} />
             <Route path="/pronostici/domani" element={<DayPredictionsPage day="domani" />} />
+            <Route path="/pronostici/under-over" element={<MarketPredictionsPage market="under-over" />} />
+            <Route path="/pronostici/goal-no-goal" element={<MarketPredictionsPage market="goal-no-goal" />} />
+            <Route path="/pronostici/multigol" element={<MarketPredictionsPage market="multigol" />} />
             <Route path="/calcio-in-tv-oggi" element={<TvGuidePage />} />
             <Route path="/pronostici/nba" element={<BasketPage league="nba" />} />
             <Route path="/pronostici/nba/:evento" element={<BasketEventPage />} />
