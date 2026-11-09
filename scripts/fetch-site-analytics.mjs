@@ -12,7 +12,8 @@
 // or fails, the other is still exported.
 //
 // Output (OUT_DIR, default .cache/statistiche):
-//   ga4.json   last 28 days: totals, by day, pages, landing pages, channels, sources, devices, countries, events
+//   ga4.json   last 28 days: totals, by day, pages, landing pages, channels, sources, devices, countries, events,
+//              clicks to the bookmakers (outbound_click by operator, CTA position and page; also last 7 days)
 //   gsc.json   last 28 days (Search Console data arrive with ~3 days of delay): totals, by day, queries, pages,
 //              query+page pairs, devices, countries, sitemaps
 //   riepilogo.md  short readable summary
@@ -69,9 +70,11 @@ const daysAgo = (n) => day(new Date(Date.now() - n * 86400000));
 async function ga4(token) {
   const url = `https://analyticsdata.googleapis.com/v1beta/properties/${GA4_PROPERTY}:runReport`;
   const range = [{ startDate: `${DAYS}daysAgo`, endDate: "yesterday" }];
-  const report = async (dimensions, metrics, { limit = 100, orderBy } = {}) => {
+  const report = async (dimensions, metrics, { limit = 100, orderBy, event, days } = {}) => {
     const r = await call(token, url, {
-      dateRanges: range,
+      dateRanges: days ? [{ startDate: `${days}daysAgo`, endDate: "yesterday" }] : range,
+      // only one event (e.g. outbound_click) when `event` is given
+      ...(event ? { dimensionFilter: { filter: { fieldName: "eventName", stringFilter: { matchType: "EXACT", value: event } } } } : {}),
       dimensions: dimensions.map((name) => ({ name })),
       metrics: metrics.map((name) => ({ name })),
       limit,
@@ -97,7 +100,29 @@ async function ga4(token) {
     dispositivi: await report(["deviceCategory"], ["sessions", "activeUsers", "engagementRate"], { limit: 10 }),
     paesi: await report(["country"], ["sessions", "activeUsers"], { limit: 30 }),
     eventi: await report(["eventName"], ["eventCount", "totalUsers"], { limit: 60 }),
+    clicBookmaker: await outboundClicks(report),
   };
+}
+
+// Clicks on the "Vai al sito" buttons (event outbound_click, see src/lib/analytics.ts). The breakdown needs the
+// event-scoped custom dimensions operator, placement and page registered in GA4 (Amministrazione → Definizioni
+// personalizzate); without them the API rejects customEvent:* and only the total is exported, with a note.
+const CLICK = "outbound_click";
+async function outboundClicks(report) {
+  const opts = { event: CLICK, limit: 1000 };
+  const [tot] = await report([], ["eventCount", "totalUsers"], { ...opts, limit: 1 });
+  const [tot7] = await report([], ["eventCount", "totalUsers"], { ...opts, limit: 1, days: 7 });
+  const out = { evento: CLICK, totali: tot ?? { eventCount: 0, totalUsers: 0 }, totali7giorni: tot7 ?? { eventCount: 0, totalUsers: 0 } };
+  try {
+    const dims = ["customEvent:operator", "customEvent:placement", "customEvent:page"];
+    out.dettaglio = await report(dims, ["eventCount", "totalUsers"], opts);
+    out.perOperatore7giorni = await report(["customEvent:operator"], ["eventCount", "totalUsers"], { ...opts, days: 7 });
+  } catch (e) {
+    out.nota =
+      "Dimensioni personalizzate operator/placement/page non registrate in GA4 (Amministrazione → Definizioni personalizzate): " +
+      e.message.split("\n")[0];
+  }
+  return out;
 }
 
 // ---------- Search Console ----------
@@ -140,6 +165,40 @@ async function gsc(token) {
 const pct = (x) => (x == null ? "–" : `${(x * 100).toFixed(1)}%`);
 const n = (x) => (x == null ? "–" : Math.round(x).toLocaleString("it-IT"));
 
+const sumBy = (rows, key) => {
+  const m = new Map();
+  for (const r of rows) m.set(r[key], (m.get(r[key]) ?? 0) + r.eventCount);
+  return [...m].sort((a, b) => b[1] - a[1]);
+};
+
+/** "Clic verso i bookmaker" section of riepilogo.md. */
+function clickSummary(c) {
+  if (!c) return [];
+  const out = [
+    "## Clic verso i bookmaker (pulsanti \"Vai al sito\")",
+    "",
+    `Ultimi ${DAYS} giorni: ${n(c.totali.eventCount)} clic da ${n(c.totali.totalUsers)} utenti · ultimi 7 giorni: ${n(c.totali7giorni.eventCount)} clic da ${n(c.totali7giorni.totalUsers)} utenti`,
+    "",
+  ];
+  if (c.nota) return [...out, `Dettaglio non disponibile. ${c.nota}`, ""];
+  if (!c.dettaglio.length) return [...out, "Nessun clic nel periodo.", ""];
+  const seven = new Map(c.perOperatore7giorni.map((r) => [r["customEvent:operator"], r.eventCount]));
+  out.push(
+    "**Per operatore** (28 giorni / 7 giorni):",
+    ...sumBy(c.dettaglio, "customEvent:operator").map(([op, v]) => `- ${op} — ${n(v)} / ${n(seven.get(op) ?? 0)}`),
+    "",
+    "**Per posizione del pulsante:**",
+    ...sumBy(c.dettaglio, "customEvent:placement").map(([p, v]) => `- ${p} — ${n(v)}`),
+    "",
+    "**Pagine da cui partono più clic:**",
+    ...sumBy(c.dettaglio, "customEvent:page").slice(0, 10).map(([p, v]) => `- ${p} — ${n(v)}`),
+    "",
+  );
+  if (c.dettaglio.some((r) => Object.values(r).includes("(not set)")))
+    out.push("\"(not set)\": clic registrati prima che le dimensioni personalizzate fossero create in GA4.", "");
+  return out;
+}
+
 function summary(g, s, errors) {
   const out = [`# Statistiche Quota Guru — ${day(new Date())}`, ""];
   if (g) {
@@ -154,6 +213,7 @@ function summary(g, s, errors) {
       "**Pagine più viste:**",
       ...g.pagine.slice(0, 10).map((p) => `- ${p.pagePath} — ${n(p.screenPageViews)}`),
       "",
+      ...clickSummary(g.clicBookmaker),
     );
   }
   if (s) {
