@@ -270,7 +270,8 @@ export function scoreMatrix(lh, la, rho, max = DEFAULTS.maxGoals) {
 const r3 = (x) => Math.round(x * 1000) / 1000;
 
 /**
- * Prediction for one fixture: 1X2, double chance, over/under, both teams to score, likely scores.
+ * Prediction for one fixture: 1X2, double chance, over/under, both teams to score, likely scores, and the goal
+ * distributions of the multigoal markets (`goals`: total 0…6 and 7+, each team 0…4 and 5+).
  * Probabilities are rounded to 3 decimals. Returns null when a team has too little data (see MIN_GAMES).
  */
 export function predict(model, f) {
@@ -282,6 +283,10 @@ export function predict(model, f) {
   const ou = [[0, 0], [0, 0], [0, 0]];
   const gg = [[0, 0], [0, 0], [0, 0]];
   const scores = [];
+  // goal distributions for the multigoal markets: total 0…6 and 7+, each team 0…4 and 5+
+  const total = new Array(8).fill(0);
+  const homeGoals = new Array(6).fill(0);
+  const awayGoals = new Array(6).fill(0);
   for (let i = 0; i < m.length; i++) {
     for (let j = 0; j < m[i].length; j++) {
       const v = m[i][j];
@@ -294,6 +299,9 @@ export function predict(model, f) {
       gg[o][i > 0 && j > 0 ? 1 : 0] += v;
       for (const k of Object.keys(over)) if (i + j > Number(k)) over[k] += v;
       scores.push([i, j, v]);
+      total[Math.min(i + j, 7)] += v;
+      homeGoals[Math.min(i, 5)] += v;
+      awayGoals[Math.min(j, 5)] += v;
     }
   }
   scores.sort((a, b) => b[2] - a[2]);
@@ -320,6 +328,7 @@ export function predict(model, f) {
     btts: r3(btts),
     combo: { ou: ou.map((r) => r.map(r3)), gg: gg.map((r) => r.map(r3)) },
     scores: scores.slice(0, 5).map(([h, a, v]) => [h, a, r3(v)]),
+    goals: { t: total.map(r3), h: homeGoals.map(r3), a: awayGoals.map(r3) },
     pick,
     confidence,
     games: n.map((x) => Math.round(x * 10) / 10),
