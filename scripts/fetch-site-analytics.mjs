@@ -12,9 +12,9 @@
 // or fails, the other is still exported.
 //
 // Output (OUT_DIR, default .cache/statistiche):
-//   ga4.json   last 28 days: totals, by day, pages, landing pages, channels, sources, devices, countries, events,
+//   ga4.json   last 28 days: totals (also last 7 days), by day, pages, landing pages, channels, sources, devices, countries, events,
 //              clicks to the bookmakers (outbound_click by operator, CTA position and page; also last 7 days)
-//   gsc.json   last 28 days (Search Console data arrive with ~3 days of delay): totals, by day, queries, pages,
+//   gsc.json   last 28 days (Search Console data arrive with ~3 days of delay): totals (also last 7 days), by day, queries, pages,
 //              query+page pairs, devices, countries, sitemaps
 //   riepilogo.md  short readable summary
 import { createSign } from "node:crypto";
@@ -23,6 +23,8 @@ import path from "node:path";
 
 const OUT = process.env.OUT_DIR || ".cache/statistiche";
 const DAYS = Number(process.env.ANALYTICS_DAYS || 28);
+// Short window shown next to the main one, so that each weekly summary also says what happened in the last week.
+const WEEK = 7;
 const GSC_SITE = process.env.GSC_SITE || "sc-domain:quotaguru.it";
 const GA4_PROPERTY = (process.env.GA4_PROPERTY_ID || "").replace(/^properties\//, "").trim();
 
@@ -89,9 +91,12 @@ async function ga4(token) {
   };
   const core = ["activeUsers", "sessions", "screenPageViews", "engagementRate", "averageSessionDuration"];
   const [totali] = await report([], [...core, "newUsers", "bounceRate"], { limit: 1 });
+  const [totali7] = await report([], [...core, "newUsers", "bounceRate"], { limit: 1, days: WEEK });
   return {
     periodo: { da: daysAgo(DAYS), a: daysAgo(1) },
     totali: totali ?? null,
+    periodo7giorni: { da: daysAgo(WEEK), a: daysAgo(1) },
+    totali7giorni: totali7 ?? null,
     perGiorno: await report(["date"], ["activeUsers", "sessions", "screenPageViews"], { limit: 400, orderBy: "date" }),
     pagine: await report(["pagePath"], ["screenPageViews", "activeUsers", "userEngagementDuration"], { limit: 250 }),
     pagineDiIngresso: await report(["landingPage"], ["sessions", "engagementRate", "bounceRate", "averageSessionDuration"], { limit: 150 }),
@@ -111,12 +116,12 @@ const CLICK = "outbound_click";
 async function outboundClicks(report) {
   const opts = { event: CLICK, limit: 1000 };
   const [tot] = await report([], ["eventCount", "totalUsers"], { ...opts, limit: 1 });
-  const [tot7] = await report([], ["eventCount", "totalUsers"], { ...opts, limit: 1, days: 7 });
+  const [tot7] = await report([], ["eventCount", "totalUsers"], { ...opts, limit: 1, days: WEEK });
   const out = { evento: CLICK, totali: tot ?? { eventCount: 0, totalUsers: 0 }, totali7giorni: tot7 ?? { eventCount: 0, totalUsers: 0 } };
   try {
     const dims = ["customEvent:operator", "customEvent:placement", "customEvent:page"];
     out.dettaglio = await report(dims, ["eventCount", "totalUsers"], opts);
-    out.perOperatore7giorni = await report(["customEvent:operator"], ["eventCount", "totalUsers"], { ...opts, days: 7 });
+    out.perOperatore7giorni = await report(["customEvent:operator"], ["eventCount", "totalUsers"], { ...opts, days: WEEK });
   } catch (e) {
     out.nota =
       "Dimensioni personalizzate operator/placement/page non registrate in GA4 (Amministrazione → Definizioni personalizzate): " +
@@ -131,9 +136,11 @@ async function gsc(token) {
   // Search Console data arrive with ~2-3 days of delay
   const startDate = daysAgo(DAYS + 2);
   const endDate = daysAgo(3);
-  const query = async (dimensions, rowLimit = 1000) => {
+  // last WEEK days with data, same delay as the main period
+  const startDate7 = daysAgo(WEEK + 2);
+  const query = async (dimensions, rowLimit = 1000, from = startDate) => {
     const r = await call(token, `https://www.googleapis.com/webmasters/v3/sites/${site}/searchAnalytics/query`, {
-      startDate,
+      startDate: from,
       endDate,
       dimensions,
       rowLimit,
@@ -146,11 +153,14 @@ async function gsc(token) {
     });
   };
   const [totali] = await query([], 1);
+  const [totali7] = await query([], 1, startDate7);
   const sitemaps = await call(token, `https://www.googleapis.com/webmasters/v3/sites/${site}/sitemaps`).catch((e) => ({ errore: e.message }));
   return {
     proprieta: GSC_SITE,
     periodo: { da: startDate, a: endDate },
     totali: totali ?? null,
+    periodo7giorni: { da: startDate7, a: endDate },
+    totali7giorni: totali7 ?? null,
     perGiorno: await query(["date"], 400),
     ricerche: await query(["query"], 1000),
     pagine: await query(["page"], 1000),
@@ -177,14 +187,14 @@ function clickSummary(c) {
   const out = [
     "## Clic verso i bookmaker (pulsanti \"Vai al sito\")",
     "",
-    `Ultimi ${DAYS} giorni: ${n(c.totali.eventCount)} clic da ${n(c.totali.totalUsers)} utenti · ultimi 7 giorni: ${n(c.totali7giorni.eventCount)} clic da ${n(c.totali7giorni.totalUsers)} utenti`,
+    `Ultimi ${DAYS} giorni: ${n(c.totali.eventCount)} clic da ${n(c.totali.totalUsers)} utenti · ultimi ${WEEK} giorni: ${n(c.totali7giorni.eventCount)} clic da ${n(c.totali7giorni.totalUsers)} utenti`,
     "",
   ];
   if (c.nota) return [...out, `Dettaglio non disponibile. ${c.nota}`, ""];
   if (!c.dettaglio.length) return [...out, "Nessun clic nel periodo.", ""];
   const seven = new Map(c.perOperatore7giorni.map((r) => [r["customEvent:operator"], r.eventCount]));
   out.push(
-    "**Per operatore** (28 giorni / 7 giorni):",
+    `**Per operatore** (${DAYS} giorni / ${WEEK} giorni):`,
     ...sumBy(c.dettaglio, "customEvent:operator").map(([op, v]) => `- ${op} — ${n(v)} / ${n(seven.get(op) ?? 0)}`),
     "",
     "**Per posizione del pulsante:**",
@@ -199,6 +209,13 @@ function clickSummary(c) {
   return out;
 }
 
+/** "Ultimi 7 giorni" line under the main totals; nothing when the main period is already that short. */
+function weekLine(src, format) {
+  if (DAYS <= WEEK) return [];
+  const w = src.totali7giorni;
+  return [`Ultimi ${WEEK} giorni (${src.periodo7giorni.da} → ${src.periodo7giorni.a}): ${w ? format(w) : "nessun dato"}`, ""];
+}
+
 function summary(g, s, errors) {
   const out = [`# Statistiche Quota Guru — ${day(new Date())}`, ""];
   if (g) {
@@ -206,8 +223,9 @@ function summary(g, s, errors) {
     out.push(
       `## Visitatori (GA4, ${g.periodo.da} → ${g.periodo.a})`,
       "",
-      `Utenti ${n(t.activeUsers)} (nuovi ${n(t.newUsers)}) · sessioni ${n(t.sessions)} · pagine viste ${n(t.screenPageViews)} · coinvolgimento ${pct(t.engagementRate)} · durata media ${n(t.averageSessionDuration)} s`,
+      `Ultimi ${DAYS} giorni: utenti ${n(t.activeUsers)} (nuovi ${n(t.newUsers)}) · sessioni ${n(t.sessions)} · pagine viste ${n(t.screenPageViews)} · coinvolgimento ${pct(t.engagementRate)} · durata media ${n(t.averageSessionDuration)} s`,
       "",
+      ...weekLine(g, (w) => `utenti ${n(w.activeUsers)} (nuovi ${n(w.newUsers)}) · sessioni ${n(w.sessions)} · pagine viste ${n(w.screenPageViews)} · coinvolgimento ${pct(w.engagementRate)} · durata media ${n(w.averageSessionDuration)} s`),
       "**Canali:** " + g.canali.slice(0, 6).map((c) => `${c.sessionDefaultChannelGroup} ${n(c.sessions)}`).join(" · "),
       "",
       "**Pagine più viste:**",
@@ -221,8 +239,9 @@ function summary(g, s, errors) {
     out.push(
       `## Ricerche Google (Search Console, ${s.periodo.da} → ${s.periodo.a})`,
       "",
-      `Clic ${n(t.clic)} · impressioni ${n(t.impressioni)} · CTR ${pct(t.ctr)} · posizione media ${t.posizione ?? "–"}`,
+      `Ultimi ${DAYS} giorni: clic ${n(t.clic)} · impressioni ${n(t.impressioni)} · CTR ${pct(t.ctr)} · posizione media ${t.posizione ?? "–"}`,
       "",
+      ...weekLine(s, (w) => `clic ${n(w.clic)} · impressioni ${n(w.impressioni)} · CTR ${pct(w.ctr)} · posizione media ${w.posizione ?? "–"}`),
       "**Ricerche con più impressioni:**",
       ...[...s.ricerche]
         .sort((a, b) => b.impressioni - a.impressioni)

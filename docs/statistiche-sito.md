@@ -2,7 +2,9 @@
 
 Ogni lunedì `.github/workflows/analytics.yml` scarica gli ultimi 28 giorni di Google Analytics 4 (visitatori, pagine,
 canali, eventi) e di Search Console (ricerche Google, impressioni, clic, posizione, sitemap) e li salva nel ramo
-`statistiche-sito` (`ultimo/` e `storico/<data>/`). Solo lettura: non cambia nulla su Google.
+`statistiche-sito` (`ultimo/` e `storico/<data>/`). Solo lettura: non cambia nulla su Google. Nel riepilogo, sotto i
+totali dei 28 giorni di GA4 e di Search Console c'è anche la riga degli ultimi 7 giorni, per vedere com'è andata la
+settimana (per Search Console sono gli ultimi 7 giorni con dati, circa 3 giorni indietro).
 Script: `scripts/fetch-site-analytics.mjs`. Avvio: worker live (lunedì 05:37 UTC), cron di riserva, o a mano da
 Actions → **Statistiche sito** → *Run workflow*.
 
