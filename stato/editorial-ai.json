@@ -17526,26 +17526,26 @@
   "at": "2026-11-08T18:01:48.464Z"
  },
  "fb:564745": {
-  "fingerprint": "6w5wke",
+  "fingerprint": "1a68rad",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il match tra l'Espanyol e il Deportivo si è concluso senza reti. La sfida, valida per la 12ª giornata di LaLiga, si è disputata sabato 7 novembre; il primo tempo era già terminato 0-0."
+     "Finisce senza gol il match tra Espanyol e Deportivo. La partita, valida per la 12ª giornata di LaLiga, si è giocata sabato 7 novembre; il primo tempo si era chiuso sul 0-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Dopo le partite disputate finora, l'Espanyol occupa il 13° posto con 12 punti, mentre il Deportivo è al 9° con 15. Per l'intera graduatoria è disponibile la [classifica completa](/calcio/liga/classifica)."
+     "Con le partite giocate finora l'Espanyol occupa il 13° posto con 12 punti, mentre il Deportivo è al 9° con 15. [Vai alla classifica completa](/calcio/liga/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "L'Espanyol tornerà in campo domenica 22 novembre alle 17:00, in trasferta contro l'Athletic. Anche il Deportivo giocherà domenica 22 novembre alle 17:00, in trasferta contro l'Alavés."
+     "L'Espanyol tornerà in campo venerdì 20 novembre alle 21:00, in trasferta contro l'Athletic. Il Deportivo sarà impegnato sabato 21 novembre alle 14:00, in trasferta contro l'Alavés."
     ],
     "bullets": []
    }
@@ -17553,45 +17553,7 @@
   "faq": [
    {
     "q": "Com'è finita Espanyol – Deportivo?",
-    "a": "È finita 0-0, con lo stesso punteggio anche all'intervallo."
-   },
-   {
-    "q": "Dove trovo gli altri risultati?",
-    "a": "Nella pagina dedicata alla [LaLiga](/calcio/liga)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-08T21:22:03.422Z"
- },
- "fb:564739": {
-  "fingerprint": "1ij3w5v",
-  "sections": [
-   {
-    "id": "resoconto",
-    "paragraphs": [
-     "Osasuna e Athletic hanno pareggiato 1-1. La partita, valida per la 12ª giornata di LaLiga, si è giocata sabato 7 novembre; il primo tempo era terminato 0-0."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "classifica",
-    "paragraphs": [
-     "Dopo le partite giocate finora, l'Osasuna occupa il 16° posto con 12 punti, mentre l'Athletic è al 7° con 16. [Consulta la classifica completa](/calcio/liga/classifica)."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "prossimi",
-    "paragraphs": [
-     "L'Osasuna tornerà in campo domenica 22 novembre alle 17:00 in casa contro il Málaga. L'Athletic tornerà in campo domenica 22 novembre alle 17:00 in casa contro l'Espanyol."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Com'è finita Osasuna – Athletic?",
-    "a": "1-1 (0-0 all'intervallo)."
+    "a": "0-0 (0-0 all'intervallo)."
    },
    {
     "q": "Dove trovo gli altri risultati?",
@@ -17599,7 +17561,45 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T00:22:05.068Z"
+  "at": "2026-11-10T15:01:07.969Z"
+ },
+ "fb:564739": {
+  "fingerprint": "vq743e",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Osasuna e Athletic si dividono la posta con un pareggio per 1-1. La partita, valida per la 12ª giornata di LaLiga, si è giocata sabato 7 novembre; il primo tempo si era chiuso 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "classifica",
+    "paragraphs": [
+     "Con le partite giocate finora l'Osasuna è al 16° posto con 12 punti, mentre l'Athletic è al 7° con 16. [Consulta la classifica completa](/calcio/liga/classifica)."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "L'Osasuna tornerà in campo domenica 22 novembre alle 18:30 in casa contro il Málaga. L'Athletic tornerà in campo venerdì 20 novembre alle 21:00 in casa contro l'Espanyol."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Osasuna – Athletic?",
+    "a": "È finita 1-1 (0-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [LaLiga](/calcio/liga)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T15:01:09.580Z"
  },
  "fb:565851": {
   "fingerprint": "hacty6",
@@ -18325,26 +18325,26 @@
   "at": "2026-11-08T00:21:36.334Z"
  },
  "fb:564741": {
-  "fingerprint": "5ubc6i",
+  "fingerprint": "ytbima",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Real Madrid si impone in trasferta sul Valencia con il punteggio di 0-3. La partita, valida per la 12ª giornata di LaLiga, si è giocata sabato 7 novembre; al termine del primo tempo il risultato era di 0-2."
+     "Il Real Madrid si impone in trasferta sul Valencia con un ampio 0-3. La gara, valida per la 12ª giornata di LaLiga, si è disputata sabato 7 novembre; il primo tempo si era chiuso 0-2."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Valencia occupa il 19° posto con 9 punti, mentre il Real Madrid è al 2° posto con 30. [Consulta la classifica completa](/calcio/liga/classifica)."
+     "Con le partite giocate finora il Valencia occupa il 19° posto con 9 punti, mentre il Real Madrid è al 2° con 30. [Classifica completa](/calcio/liga/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Valencia tornerà in campo domenica 22 novembre alle 17:00 in trasferta contro il Rayo Vallecano. Il Real Madrid tornerà in campo domenica 22 novembre alle 17:00 in casa contro il Celta."
+     "Il Valencia tornerà in campo sabato 21 novembre alle 16:15 in trasferta contro il Rayo Vallecano. Il Real Madrid giocherà sabato 21 novembre alle 21:00 in casa contro il Celta."
     ],
     "bullets": []
    }
@@ -18352,7 +18352,7 @@
   "faq": [
    {
     "q": "Com'è finita Valencia – Real Madrid?",
-    "a": "Il risultato finale è 0-3, con 0-2 all'intervallo."
+    "a": "0-3 (0-2 all'intervallo)."
    },
    {
     "q": "Dove trovo gli altri risultati?",
@@ -18360,7 +18360,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T00:22:06.808Z"
+  "at": "2026-11-10T15:01:11.523Z"
  },
  "fb:559635": {
   "fingerprint": "1owq60m",
@@ -24362,26 +24362,27 @@
   "at": "2026-11-10T03:21:22.693Z"
  },
  "fb:1001649008": {
-  "fingerprint": "mkfsa",
+  "fingerprint": "k7uyee",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Giovedì 12 novembre alle 09:00 Thailand U23 e Qatar U23 si sfidano nell'ambito delle Amichevoli internazionali."
+     "Thailand U23 e Qatar U23 si affrontano giovedì 12 novembre alle 09:00 per le Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Finora il Qatar U23 ha disputato una sola partita nelle Amichevoli internazionali, terminata 0-0."
+     "Il Thailand U23 ha giocato finora una sola partita di Amichevoli internazionali, persa 0-3.",
+     "Il Qatar U23 ha giocato finora una sola partita di Amichevoli internazionali, pareggiata 0-0."
     ],
     "bullets": []
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 1 confronti diretti il bilancio è di 0 vittorie per il Thailand U23, 0 vittorie per il Qatar U23 e 1 pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incontro, ad agosto 2018 nei Asian Games, si è concluso Thailand U23 1-1 Qatar U23."
+     "Negli ultimi confronti diretti (1 in totale) il bilancio è di 0 vittorie per il Thailand U23, 0 vittorie per il Qatar U23 e 1 pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, ad agosto 2018 in Asian Games, è finito Thailand U23 1-1 Qatar U23."
     ],
     "bullets": []
    }
@@ -24401,29 +24402,30 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T12:19:56.445Z"
+  "at": "2026-11-10T15:00:56.836Z"
  },
  "fb:1001649009": {
-  "fingerprint": "tkmhz8",
+  "fingerprint": "14o775y",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Giovedì 12 novembre alle 13:00 il Singapore U23 ospita il Vietnam U23 in una partita valida per le Amichevoli internazionali."
+     "Appuntamento giovedì 12 novembre alle 13:00: il Singapore U23 ospita il Vietnam U23 nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Finora il Singapore U23 ha disputato una sola partita nelle Amichevoli internazionali, conclusa con un pareggio 0-0."
+     "Finora il Singapore U23 ha disputato una sola partita di Amichevoli internazionali, terminata 0-0.",
+     "Anche il Vietnam U23 ha disputato finora una sola partita di Amichevoli internazionali, vinta 3-0."
     ],
     "bullets": []
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 3 confronti diretti il Singapore U23 non ha mai vinto, il Vietnam U23 ne ha ottenute 2 e ne è arrivato 1 pareggio, con 12 gol complessivi (media di 4,0 a partita). L'ultimo incrocio, a settembre 2025 nelle qualificazioni dell'AFC U23 Asian Cup, si è chiuso con il successo del Vietnam U23 per 0-1."
+     "Negli ultimi 3 confronti diretti il bilancio è di 0 vittorie per il Singapore U23, 2 vittorie per il Vietnam U23 e 1 pareggio, con 12 gol complessivi (media di 4,0 a partita). L'ultimo incrocio, disputato a settembre 2025 in AFC U23 Asian Cup - Qualification, si è concluso Singapore U23 0-1 Vietnam U23."
     ],
     "bullets": []
    }
@@ -24439,11 +24441,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T12:19:59.729Z"
+  "at": "2026-11-10T15:01:00.370Z"
  },
  "fb:1001649010": {
   "fingerprint": "mj98uw",
@@ -25386,19 +25388,20 @@
   "at": "2026-11-08T14:18:00.522Z"
  },
  "fb:1001649017": {
-  "fingerprint": "kf581x",
+  "fingerprint": "1nrajsd",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 09:00 il Thailand U23 ospita il Singapore U23 nell'ambito delle Amichevoli internazionali."
+     "Appuntamento sabato 14 novembre alle 09:00: il Thailand U23 ospita il Singapore U23 nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Finora il Singapore U23 ha disputato una sola partita nelle Amichevoli internazionali, terminata 0-0."
+     "Finora il Thailand U23 ha disputato una sola partita di Amichevoli internazionali, persa per 0-3.",
+     "Anche il Singapore U23 ha disputato finora una sola partita di Amichevoli internazionali, terminata 0-0."
     ],
     "bullets": []
    }
@@ -25409,16 +25412,16 @@
     "a": "Sabato 14 novembre alle 09:00, ora italiana."
    },
    {
-    "q": "Dove si possono consultare classifica e risultati?",
+    "q": "Dove vedo classifica e risultati?",
     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
-    "q": "Come si interpretano le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T12:20:03.827Z"
+  "at": "2026-11-10T15:01:02.927Z"
  },
  "fb:1001649018": {
   "fingerprint": "1jp792g",
@@ -25605,19 +25608,20 @@
   "at": "2026-11-09T03:20:57.640Z"
  },
  "fb:1001649019": {
-  "fingerprint": "1e9jq55",
+  "fingerprint": "1v46nkb",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 13:00 Vietnam U23 e Qatar U23 scendono in campo per una partita valida per le Amichevoli internazionali."
+     "Vietnam U23 e Qatar U23 si sfidano sabato 14 novembre alle 13:00, nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Finora il Qatar U23 ha disputato una sola partita nelle Amichevoli internazionali, terminata 0-0."
+     "Finora il Vietnam U23 ha disputato una sola partita nelle Amichevoli internazionali, vinta 3-0.",
+     "Anche il Qatar U23 ha giocato finora una sola partita nelle Amichevoli internazionali, terminata 0-0."
     ],
     "bullets": []
    }
@@ -25629,15 +25633,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T12:20:06.351Z"
+  "at": "2026-11-10T15:01:06.300Z"
  },
  "fb:1001648285": {
   "fingerprint": "mazbo4",
@@ -26833,26 +26837,26 @@
   "at": "2026-11-08T15:23:01.031Z"
  },
  "fb:564738": {
-  "fingerprint": "kzvlwe",
+  "fingerprint": "1sp3sdb",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Real Betis ha vinto in trasferta contro l'Elche per 0-2. La partita, valida per la 12ª giornata di LaLiga, si è disputata domenica 8 novembre; il primo tempo era terminato 0-0."
+     "Il Real Betis ha vinto in trasferta contro l'Elche per 0-2. La partita, valida per la 12ª giornata di LaLiga, si è giocata domenica 8 novembre; al termine del primo tempo il punteggio era 0-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite disputate finora, l'Elche occupa il 18° posto con 10 punti, mentre il Real Betis è al 4° posto con 26. Consulta la [classifica completa](/calcio/liga/classifica)."
+     "Con le partite giocate finora, l'Elche è al 18° posto con 10 punti, mentre il Real Betis è al 4° con 26. [Consulta la classifica completa](/calcio/liga/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "L'Elche tornerà in campo domenica 22 novembre alle 17:00, in trasferta contro il Levante. Anche il Real Betis giocherà domenica 22 novembre alle 17:00, in trasferta contro il Sevilla FC."
+     "L'Elche tornerà in campo lunedì 23 novembre alle 21:00, in trasferta contro il Levante. Il Real Betis giocherà sabato 21 novembre alle 18:30, in trasferta contro il Sevilla FC."
     ],
     "bullets": []
    }
@@ -26864,11 +26868,11 @@
    },
    {
     "q": "Dove trovo gli altri risultati?",
-    "a": "Sono disponibili nella pagina [LaLiga](/calcio/liga)."
+    "a": "Nella pagina [LaLiga](/calcio/liga)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T18:21:02.345Z"
+  "at": "2026-11-10T15:01:14.726Z"
  },
  "fb:558840": {
   "fingerprint": "4jka8r",
@@ -26954,12 +26958,12 @@
   "at": "2026-11-08T20:48:13.624Z"
  },
  "fb:1001570455": {
-  "fingerprint": "1ar1uos",
+  "fingerprint": "eo4mb2",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Barcellona e Villarreal si sfidano domenica 22 novembre alle 17:00, nell'ambito della 13ª giornata di LaLiga. In classifica il Barcellona occupa il 1° posto con 33 punti, mentre il Villarreal è all'8° posto con 15 punti."
+     "Barcellona e Villarreal scendono in campo domenica 22 novembre alle 14:00, nella 13ª giornata di LaLiga. In classifica il Barcellona occupa il 1° posto con 33 punti, mentre il Villarreal è all'8° posto con 15 punti."
     ],
     "bullets": []
    },
@@ -26978,18 +26982,18 @@
      "Media gol segnati: Barcellona 4,0 e Villarreal 1,4 a partita.",
      "Gol subiti finora: Barcellona 13 e Villarreal 15.",
      "Il Barcellona ha il miglior attacco del torneo.",
-     "In tutte le ultime 5 partite del Barcellona sono stati segnati almeno tre gol."
+     "In tutte le ultime 5 partite del Barcellona si sono segnati almeno tre gol."
     ]
    }
   ],
   "faq": [
    {
     "q": "Quando si gioca Barcellona – Villarreal?",
-    "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    "a": "Domenica 22 novembre alle 14:00, ora italiana."
    },
    {
-    "q": "Dove si possono consultare classifica e risultati?",
-    "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -26997,15 +27001,15 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:20:41.877Z"
+  "at": "2026-11-10T15:00:32.614Z"
  },
  "fb:1001570454": {
-  "fingerprint": "1rdbszg",
+  "fingerprint": "1tymwtu",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 22 novembre alle 17:00 l'Athletic ospita l'Espanyol per la 13ª giornata di LaLiga. In classifica l'Athletic occupa il 7° posto con 16 punti, mentre l'Espanyol è al 13° con 12."
+     "Venerdì 20 novembre alle 21:00 l'Athletic ospita l'Espanyol nella 13ª giornata di LaLiga. In classifica l'Athletic è settimo con 16 punti, mentre l'Espanyol è tredicesimo con 12."
     ],
     "bullets": []
    },
@@ -27023,17 +27027,17 @@
     "bullets": [
      "Media gol segnati a partita: Athletic 1,4, Espanyol 1,1.",
      "Gol subiti finora: Athletic 11, Espanyol 14.",
-     "In 3 delle ultime 5 partite dell'Athletic si sono segnati almeno tre gol."
+     "In 3 delle ultime 5 partite dell'Athletic sono stati segnati almeno tre gol."
     ]
    }
   ],
   "faq": [
    {
     "q": "Quando si gioca Athletic – Espanyol?",
-    "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    "a": "Venerdì 20 novembre alle 21:00, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
+    "q": "Dove si possono consultare classifica e risultati?",
     "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
    },
    {
@@ -27042,23 +27046,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T16:41:45.193Z"
+  "at": "2026-11-10T15:00:13.121Z"
  },
  "fb:1001570462": {
-  "fingerprint": "15w8but",
+  "fingerprint": "1d1lgkt",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 22 novembre alle 17:00 il Sevilla FC ospita il Real Betis nella 13ª giornata di LaLiga. Si tratta di una sfida tra squadre di alta classifica: il Sevilla FC è al 6° posto con 18 punti, mentre il Real Betis è al 4° con 26."
+     "Sabato 21 novembre alle 18:30 il Sevilla FC riceve il Real Betis per la 13ª giornata di LaLiga. Si tratta di un incontro tra due squadre della parte alta della classifica: il Sevilla FC è al 6° posto con 18 punti, mentre il Real Betis è al 4° con 26."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di LaLiga il Sevilla FC ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-P-V-P-N), con 7 gol fatti e 10 subiti. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di LaLiga il Real Betis ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V-V), con 11 gol fatti e 8 subiti. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 5 partite di LaLiga il Sevilla FC ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-P-V-P-N), segnando 7 gol e subendone 10. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di LaLiga il Real Betis ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-P-N-V-V), segnando 11 gol e subendone 8. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -27076,35 +27080,35 @@
   "faq": [
    {
     "q": "Quando si gioca Sevilla FC – Real Betis?",
-    "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    "a": "Sabato 21 novembre alle 18:30, ora italiana."
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina dedicata a [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Trovi le spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T18:00:40.699Z"
+  "at": "2026-11-10T15:00:24.158Z"
  },
  "fb:1001570457": {
-  "fingerprint": "mkc675",
+  "fingerprint": "154g98h",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento domenica 22 novembre alle 17:00: il Levante riceve l'Elche per la 13ª giornata di LaLiga. In classifica il Levante occupa il 17° posto con 11 punti, mentre l'Elche è al 18° con 10."
+     "Lunedì 23 novembre alle 21:00 il Levante ospita l'Elche per la 13ª giornata di LaLiga. In classifica il Levante è al 17° posto con 11 punti, mentre l'Elche è al 18° con 10."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di LaLiga il Levante ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-V-P-P-N), con 5 gol fatti e 6 subiti. In casa, il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta.",
-     "Nelle ultime 5 partite di LaLiga l'Elche ha raccolto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-N-V-P-P), con 3 gol fatti e 3 subiti. Ha perso le ultime 2 gare. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 5 partite di LaLiga il Levante ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-V-P-P-N), segnando 5 gol e subendone 6. In casa, il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+     "Nelle ultime 5 partite di LaLiga l'Elche ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-N-V-P-P), con 3 gol fatti e 3 subiti. Ha perso le ultime 2. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -27121,11 +27125,11 @@
   "faq": [
    {
     "q": "Quando si gioca Levante – Elche?",
-    "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    "a": "Lunedì 23 novembre alle 21:00, ora italiana."
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    "a": "Nella pagina dedicata alla [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -27133,23 +27137,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T21:20:45.314Z"
+  "at": "2026-11-10T15:00:51.978Z"
  },
  "fb:1001570461": {
-  "fingerprint": "18kbybu",
+  "fingerprint": "17jod62",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 22 novembre alle 17:00 il Real Madrid ospita il Celta nella 13ª giornata di LaLiga. In classifica il Real Madrid occupa il 2° posto con 30 punti, mentre il Celta è all'11° con 13."
+     "Sabato 21 novembre alle 21:00 il Real Madrid ospita il Celta nella 13ª giornata di LaLiga. In classifica il Real Madrid occupa il 2° posto con 30 punti, mentre il Celta è all'11° posto con 13."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di LaLiga il Real Madrid ha ottenuto 5 vittorie (sequenza V-V-V-V-V), segnando 13 gol e subendone 2. Arriva da 5 vittorie consecutive. In casa ha vinto tutte e 2 le partite giocate.",
-     "Nelle ultime 5 partite di LaLiga il Celta ha raccolto 1 vittoria, 3 pareggi e 1 sconfitta (sequenza N-V-N-P-N), con 2 gol fatti e 4 subiti. In trasferta il bilancio stagionale comprende 1 pareggio e 1 sconfitta, senza vittorie."
+     "Nelle ultime 5 partite di LaLiga il Real Madrid ha ottenuto 5 vittorie (sequenza V-V-V-V-V), segnando 13 gol e subendone 2. Arriva da 5 vittorie consecutive. In casa ha vinto tutte le 2 partite giocate.",
+     "Nelle ultime 5 partite di LaLiga il Celta ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta (sequenza N-V-N-P-N), con 2 gol segnati e 4 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie."
     ],
     "bullets": []
    },
@@ -27157,46 +27161,46 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Real Madrid 2,6, Celta 0,8 a partita.",
+     "Media gol segnati a partita: Real Madrid 2,6, Celta 0,8.",
      "Gol subiti finora: Real Madrid 10, Celta 10.",
-     "In 4 delle ultime 5 partite del Real Madrid si sono segnati almeno tre gol.",
-     "Il Real Madrid non ha subito gol in 3 delle ultime 5.",
-     "Il Celta non ha subito gol in 3 delle ultime 5."
+     "Nelle ultime 5 partite del Real Madrid si sono segnati almeno tre gol in 4 occasioni.",
+     "Il Real Madrid non ha subito gol in 3 delle ultime 5 partite.",
+     "Il Celta non ha subito gol in 3 delle ultime 5 partite."
     ]
    }
   ],
   "faq": [
    {
     "q": "Quando si gioca Real Madrid – Celta?",
-    "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    "a": "Sabato 21 novembre alle 21:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina dedicata a [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T21:20:50.830Z"
+  "at": "2026-11-10T15:00:28.547Z"
  },
  "fb:1001570453": {
-  "fingerprint": "ho2fwz",
+  "fingerprint": "2qnhp7",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Alavés e Deportivo si sfidano domenica 22 novembre alle 17:00, nell'ambito della 13ª giornata di LaLiga. In classifica l'Alavés occupa il 12° posto con 13 punti, mentre il Deportivo è al 9° con 15."
+     "Alavés e Deportivo si sfidano sabato 21 novembre alle 14:00 nella 13ª giornata di LaLiga. In classifica l'Alavés occupa il 12° posto con 13 punti, mentre il Deportivo è al 9° con 15."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di LaLiga l'Alavés ha ottenuto 2 pareggi e 3 sconfitte, con la sequenza P-P-N-P-N. Ha segnato 4 gol e ne ha subiti 11. In casa, il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie.",
-     "Nelle ultime 5 partite di LaLiga il Deportivo ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza P-N-P-V-N. Ha segnato 5 gol e ne ha subiti 6. In trasferta, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
+     "Nelle ultime 5 partite di LaLiga l'Alavés ha ottenuto 2 pareggi e 3 sconfitte, con sequenza P-P-N-P-N, segnando 4 gol e subendone 11. In casa, il bilancio stagionale riporta 1 pareggio e 1 sconfitta, senza vittorie.",
+     "Nelle ultime 5 partite di LaLiga il Deportivo ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con sequenza P-N-P-V-N, segnando 5 gol e subendone 6. In trasferta, il bilancio stagionale riporta 1 pareggio e 2 sconfitte, senza vittorie."
     ],
     "bullets": []
    },
@@ -27206,42 +27210,42 @@
     "bullets": [
      "Media gol segnati: Alavés 1,3, Deportivo 1,3 a partita.",
      "Gol subiti finora: Alavés 17, Deportivo 14.",
-     "In 3 delle ultime 5 partite dell'Alavés sono stati segnati almeno tre gol."
+     "In 3 delle ultime 5 partite dell'Alavés si sono segnati almeno tre gol."
     ]
    }
   ],
   "faq": [
    {
     "q": "Quando si gioca Alavés – Deportivo?",
-    "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    "a": "Sabato 21 novembre alle 14:00, ora italiana."
    },
    {
-    "q": "Dove si possono consultare classifica e risultati?",
-    "a": "Nella pagina dedicata alla [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina di [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T21:20:55.302Z"
+  "at": "2026-11-10T15:00:16.970Z"
  },
  "fb:1001570456": {
-  "fingerprint": "1afb200",
+  "fingerprint": "yb8bpy",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Getafe e Atlético Madrid si sfidano domenica 22 novembre alle 17:00, nell'ambito della 13ª giornata di LaLiga. In classifica il Getafe occupa il 15° posto con 12 punti, mentre l'Atlético Madrid è al 3° posto con 28."
+     "Getafe e Atlético Madrid si affrontano domenica 22 novembre alle 21:00, nell'ambito della 13ª giornata di LaLiga. In classifica il Getafe occupa il 15° posto con 12 punti, mentre l'Atlético Madrid è al 3° posto con 28 punti."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di LaLiga il Getafe ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con sequenza P-N-P-V-P, segnando 4 gol e subendone 11. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di LaLiga l'Atlético Madrid ha ottenuto 4 vittorie e 1 sconfitta, con sequenza V-V-V-V-P, segnando 7 gol e subendone 3. In trasferta ha vinto tutte le 3 partite disputate."
+     "Nelle ultime 5 partite di LaLiga il Getafe ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza P-N-P-V-P. Ha segnato 4 gol e ne ha subiti 11. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di LaLiga l'Atlético Madrid ha ottenuto 4 vittorie e 1 sconfitta, con la sequenza V-V-V-V-P. Ha segnato 7 gol e ne ha subiti 3. In trasferta ha vinto tutte le 3 partite giocate."
     ],
     "bullets": []
    },
@@ -27259,11 +27263,11 @@
   "faq": [
    {
     "q": "Quando si gioca Getafe – Atlético Madrid?",
-    "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    "a": "Domenica 22 novembre alle 21:00, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    "q": "Dove si possono consultare classifica e risultati?",
+    "a": "Nella pagina dedicata alla [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -27271,23 +27275,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:20:46.066Z"
+  "at": "2026-11-10T15:00:48.340Z"
  },
  "fb:1001570458": {
-  "fingerprint": "na8lmm",
+  "fingerprint": "10615t2",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 22 novembre alle 17:00 l'Osasuna ospita il Málaga per la 13ª giornata di LaLiga. In classifica l'Osasuna è al 16° posto con 12 punti, il Málaga al 20° con 5."
+     "Domenica 22 novembre alle 18:30 l'Osasuna affronta in casa il Málaga, nella 13ª giornata di LaLiga. In classifica l'Osasuna occupa il 16° posto con 12 punti, mentre il Málaga è al 20° con 5."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di LaLiga l'Osasuna ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-V-P-P-N), con 6 gol fatti e 10 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 5 partite di LaLiga il Málaga ha raccolto 2 pareggi e 3 sconfitte (sequenza N-P-N-P-P), con 6 gol fatti e 11 subiti. Ha perso le ultime 2. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
+     "Nelle ultime 5 partite di LaLiga l'Osasuna ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza P-V-P-P-N. Ha segnato 6 gol e ne ha subiti 10. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di LaLiga il Málaga ha ottenuto 2 pareggi e 3 sconfitte, con la sequenza N-P-N-P-P. Ha segnato 6 gol e ne ha subiti 11. Le ultime 2 partite si sono chiuse con una sconfitta. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
     ],
     "bullets": []
    },
@@ -27295,7 +27299,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Osasuna 1,0, Málaga 0,8 a partita.",
+     "Media gol segnati a partita: Osasuna 1,0, Málaga 0,8.",
      "Gol subiti finora: Osasuna 23, Málaga 23.",
      "In 3 delle ultime 5 partite del Málaga si sono segnati almeno tre gol."
     ]
@@ -27304,102 +27308,11 @@
   "faq": [
    {
     "q": "Quando si gioca Osasuna – Málaga?",
-    "a": "Domenica 22 novembre alle 17:00, ora italiana."
+    "a": "Domenica 22 novembre alle 18:30, ora italiana."
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-08T16:42:09.237Z"
- },
- "fb:1001570460": {
-  "fingerprint": "6hurus",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Rayo Vallecano e Valencia si sfidano domenica 22 novembre alle 17:00 nell'ambito della 13ª giornata di LaLiga. In classifica il Rayo Vallecano occupa il 14° posto con 12 punti, mentre il Valencia è al 19° con 9."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 4 partite di LaLiga il Rayo Vallecano ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-V-P), segnando 4 gol e subendone 5. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 5 partite di LaLiga il Valencia ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-N-P-V-P), segnando 4 gol e subendone 7. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati a partita: Rayo Vallecano 1,4, Valencia 0,7.",
-     "Gol subiti finora: Rayo Vallecano 21, Valencia 20.",
-     "Nelle ultime 5 partite del Valencia, in 3 occasioni si sono segnati almeno tre gol."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Rayo Vallecano – Valencia?",
-    "a": "Domenica 22 novembre alle 17:00, ora italiana."
-   },
-   {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina di [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-08T20:48:34.161Z"
- },
- "fb:1001570459": {
-  "fingerprint": "6xvks5",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Santander e Real Sociedad si sfidano domenica 22 novembre alle 17:00, nella 13ª giornata di LaLiga. In classifica il Santander occupa il 10° posto con 14 punti, mentre il Real Sociedad è al 5° posto con 22."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 5 partite di LaLiga il Santander ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza N-P-V-P-V. Ha segnato 6 gol e ne ha subiti 9. In casa, il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta.",
-     "Nelle ultime 5 partite di LaLiga il Real Sociedad ha ottenuto 4 vittorie e 1 sconfitta, con la sequenza V-V-V-P-V. Ha segnato 12 gol e ne ha subiti 7. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati a partita: Santander 1,4, Real Sociedad 1,8.",
-     "Gol subiti finora: Santander 30, Real Sociedad 20.",
-     "Nelle ultime 5 partite del Santander, in 4 si sono segnati almeno tre gol.",
-     "Nelle ultime 5 partite del Real Sociedad, in 4 si sono segnati almeno tre gol."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Santander – Real Sociedad?",
-    "a": "Domenica 22 novembre alle 17:00, ora italiana."
-   },
-   {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina dedicata a [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+    "a": "Puoi consultarli nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -27407,7 +27320,98 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T21:21:03.386Z"
+  "at": "2026-11-10T15:00:44.300Z"
+ },
+ "fb:1001570460": {
+  "fingerprint": "rppyh0",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Rayo Vallecano e Valencia si sfidano sabato 21 novembre alle 16:15, nella 13ª giornata di LaLiga. In classifica il Rayo Vallecano occupa il 14° posto con 12 punti, mentre il Valencia è al 19° con 9."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 4 partite di LaLiga il Rayo Vallecano ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-V-P), segnando 4 gol e subendone 5. In casa, nel bilancio stagionale, ha 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di LaLiga il Valencia ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-N-P-V-P), segnando 4 gol e subendone 7. In trasferta, nel bilancio stagionale, ha 1 vittoria e 1 pareggio, senza sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Rayo Vallecano 1,4, Valencia 0,7 a partita.",
+     "Gol subiti finora: Rayo Vallecano 21, Valencia 20.",
+     "In 3 delle ultime 5 partite del Valencia sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Rayo Vallecano – Valencia?",
+    "a": "Sabato 21 novembre alle 16:15, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T15:00:20.569Z"
+ },
+ "fb:1001570459": {
+  "fingerprint": "17qibwf",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Santander e Real Sociedad si affrontano domenica 22 novembre alle 16:15 nella 13ª giornata di LaLiga. In classifica il Santander è 10° con 14 punti, mentre il Real Sociedad è 5° con 22."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di LaLiga il Santander ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-V-P-V), con 6 gol fatti e 9 subiti. In casa, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+     "Nelle ultime 5 partite di LaLiga il Real Sociedad ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-V-V-P-V), con 12 gol fatti e 7 subiti. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Santander 1,4, Real Sociedad 1,8 a partita.",
+     "Gol subiti finora: Santander 30, Real Sociedad 20.",
+     "In 4 delle ultime 5 partite del Santander si sono segnati almeno tre gol.",
+     "In 4 delle ultime 5 partite del Real Sociedad si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Santander – Real Sociedad?",
+    "a": "Domenica 22 novembre alle 16:15, ora italiana."
+   },
+   {
+    "q": "Dove si consultano classifica e risultati?",
+    "a": "Nella pagina dedicata alla [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T15:00:39.796Z"
  },
  "fb:1001575227": {
   "fingerprint": "10lslye",
@@ -27897,12 +27901,12 @@
   "at": "2026-11-08T21:21:54.906Z"
  },
  "fb:564743": {
-  "fingerprint": "gadup5",
+  "fingerprint": "pkszzw",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Real Sociedad ha vinto di misura in casa contro il Rayo Vallecano, imponendosi 1-0. La partita, valida per la 12ª giornata di LaLiga, si è giocata domenica 8 novembre; il primo tempo era terminato 0-0."
+     "Il Real Sociedad ha vinto di misura in casa contro il Rayo Vallecano, con il punteggio di 1-0. La partita, valida per la 12ª giornata di LaLiga, si è giocata domenica 8 novembre; il primo tempo era terminato 0-0."
     ],
     "bullets": []
    },
@@ -27916,7 +27920,7 @@
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Real Sociedad tornerà in campo domenica 22 novembre alle 17:00 in trasferta contro il Santander. Il Rayo Vallecano giocherà sempre domenica 22 novembre alle 17:00, in casa contro il Valencia."
+     "Il Real Sociedad tornerà in campo domenica 22 novembre alle 16:15, in trasferta contro il Santander. Il Rayo Vallecano giocherà sabato 21 novembre alle 16:15, in casa contro il Valencia."
     ],
     "bullets": []
    }
@@ -27932,7 +27936,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T21:22:05.098Z"
+  "at": "2026-11-10T15:01:16.735Z"
  },
  "fb:565855": {
   "fingerprint": "14ib0n5",
@@ -28594,26 +28598,26 @@
   "at": "2026-11-08T21:21:56.736Z"
  },
  "fb:564747": {
-  "fingerprint": "12gs3e7",
+  "fingerprint": "1nv2j3f",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Villarreal ha battuto il Getafe in casa per 2-0. La partita, valida per la 12ª giornata di LaLiga, si è giocata domenica 8 novembre; il primo tempo era terminato 0-0."
+     "Il Villarreal ha battuto il Getafe in casa per 2-0. La partita, valida per la 12ª giornata di LaLiga, si è giocata domenica 8 novembre; il primo tempo si era concluso 0-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora il Villarreal occupa l'8° posto con 15 punti, mentre il Getafe è al 15° con 12. [Consulta la classifica completa](/calcio/liga/classifica)."
+     "Con le partite giocate finora, il Villarreal occupa l'8° posto con 15 punti, mentre il Getafe è al 15° con 12. Puoi consultare la [classifica completa](/calcio/liga/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Villarreal tornerà in campo domenica 22 novembre alle 17:00 in trasferta contro il Barcellona. Il Getafe giocherà domenica 22 novembre alle 17:00 in casa contro l'Atlético Madrid."
+     "Il Villarreal tornerà in campo domenica 22 novembre alle 14:00, in trasferta contro il Barcellona. Il Getafe tornerà in campo domenica 22 novembre alle 21:00, in casa contro l'Atlético Madrid."
     ],
     "bullets": []
    }
@@ -28629,29 +28633,29 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T21:22:06.730Z"
+  "at": "2026-11-10T15:01:19.986Z"
  },
  "fb:564742": {
-  "fingerprint": "1h74xv2",
+  "fingerprint": "izagwi",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Celta e il Levante hanno pareggiato 0-0. La partita, valida per la 12ª giornata di LaLiga, si è giocata domenica 8 novembre e il primo tempo era già terminato 0-0."
+     "Il Celta e il Levante hanno chiuso la partita senza reti, sul punteggio di 0-0. L'incontro, valido per la 12ª giornata di LaLiga, si è giocato domenica 8 novembre e il primo tempo era già terminato 0-0."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Dopo le partite giocate finora, il Celta occupa l'11° posto con 13 punti, mentre il Levante è al 17° con 11. [Consulta la classifica completa](/calcio/liga/classifica)."
+     "Con le partite giocate finora il Celta è all'11° posto con 13 punti, mentre il Levante è al 17° con 11. Per consultare la situazione completa, vai alla [classifica completa](/calcio/liga/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "Il Celta tornerà in campo domenica 22 novembre alle 17:00, in trasferta contro il Real Madrid. Anche il Levante giocherà domenica 22 novembre alle 17:00, ma in casa contro l'Elche."
+     "Il Celta tornerà in campo sabato 21 novembre alle 21:00, in trasferta contro il Real Madrid. Il Levante giocherà lunedì 23 novembre alle 21:00, in casa contro l'Elche."
     ],
     "bullets": []
    }
@@ -28667,7 +28671,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T21:22:09.016Z"
+  "at": "2026-11-10T15:01:21.675Z"
  },
  "fb:565854": {
   "fingerprint": "mywlgh",
@@ -28791,26 +28795,26 @@
   "at": "2026-11-09T06:44:47.175Z"
  },
  "fb:1001570443": {
-  "fingerprint": "1lw6f6k",
+  "fingerprint": "1fc5uug",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Barcellona ha vinto in trasferta contro l'Atlético Madrid con il punteggio di 1-2. La partita, valida per la 12ª giornata di LaLiga, si è giocata domenica 8 novembre; il primo tempo era terminato 1-1."
+     "Il Barcellona ha vinto in trasferta contro l'Atlético Madrid per 1-2. La partita, valida per la 12ª giornata di LaLiga, si è giocata domenica 8 novembre; il primo tempo era terminato 1-1."
     ],
     "bullets": []
    },
    {
     "id": "classifica",
     "paragraphs": [
-     "Con le partite giocate finora l'Atlético Madrid occupa il 3° posto con 28 punti, mentre il Barcellona è al 1° posto con 33. [Vai alla classifica completa](/calcio/liga/classifica)."
+     "Con le partite giocate finora, l'Atlético Madrid occupa il 3° posto con 28 punti, mentre il Barcellona è al 1° con 33. [Consulta la classifica completa](/calcio/liga/classifica)."
     ],
     "bullets": []
    },
    {
     "id": "prossimi",
     "paragraphs": [
-     "L'Atlético Madrid tornerà in campo domenica 22 novembre alle 17:00 in trasferta contro il Getafe. Il Barcellona tornerà in campo domenica 22 novembre alle 17:00 in casa contro il Villarreal."
+     "L'Atlético Madrid tornerà in campo domenica 22 novembre alle 21:00, in trasferta contro il Getafe. Il Barcellona tornerà in campo domenica 22 novembre alle 14:00, in casa contro il Villarreal."
     ],
     "bullets": []
    }
@@ -28818,7 +28822,7 @@
   "faq": [
    {
     "q": "Com'è finita Atlético Madrid – Barcellona?",
-    "a": "Il risultato finale è stato 1-2, con 1-1 all'intervallo."
+    "a": "1-2 (1-1 all'intervallo)."
    },
    {
     "q": "Dove trovo gli altri risultati?",
@@ -28826,7 +28830,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T06:45:07.808Z"
+  "at": "2026-11-10T15:01:23.608Z"
  },
  "fb:559630": {
   "fingerprint": "1t1fk2j",
@@ -30881,5 +30885,487 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-10T12:20:07.961Z"
+ },
+ "fb:1001601613": {
+  "fingerprint": "o6do7o",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 24 novembre alle 15:00 il Benevento ospita l'Empoli per la 13ª giornata di Serie B. In classifica il Benevento è al 6° posto con 16 punti, l'Empoli al 19° con 9."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B il Benevento ha raccolto 1 vittoria, 3 pareggi e 1 sconfitta (sequenza N-V-N-P-N), con 7 gol fatti e 6 subiti. In casa il bilancio stagionale è di 1 vittoria e 3 pareggi, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie B l'Empoli ha raccolto 3 pareggi e 2 sconfitte (sequenza N-P-P-N-N), con 6 gol fatti e 9 subiti. In trasferta il bilancio stagionale è di 2 pareggi e 1 sconfitta, ancora senza vittorie."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Benevento 1,4, Empoli 1,1 a partita.",
+     "Gol subiti finora: Benevento 11, Empoli 19.",
+     "In 3 delle ultime 5 partite dell'Empoli si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Benevento – Empoli?",
+    "a": "Martedì 24 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T14:59:35.087Z"
+ },
+ "fb:1001601614": {
+  "fingerprint": "162py0k",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Cesena e Ascoli si affrontano martedì 24 novembre alle 15:00 per la 13ª giornata di Serie B. In classifica il Cesena occupa l'11° posto con 15 punti, mentre l'Ascoli è al 3° posto con 20 punti."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B il Cesena ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-P-V-N-V), segnando 5 gol e subendone 6. In casa, nel corso della stagione, il bilancio è di 2 vittorie e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie B l'Ascoli ha ottenuto 2 vittorie e 3 pareggi (sequenza N-V-V-N-N), segnando 10 gol e subendone 3. Non perde da 6 partite. In trasferta, nel corso della stagione, il bilancio è di 1 vittoria e 2 pareggi, senza sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Cesena 1,1, Ascoli 1,5.",
+     "Gol subiti finora: Cesena 14, Ascoli 7.",
+     "L'Ascoli ha la miglior difesa del torneo."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Cesena – Ascoli?",
+    "a": "Martedì 24 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina dedicata alla [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T14:59:39.243Z"
+ },
+ "fb:1001601615": {
+  "fingerprint": "1x6w211",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 24 novembre alle 15:00 la Cremonese ospita l'Avellino nella 13ª giornata di Serie B. In classifica la Cremonese occupa il 9° posto con 15 punti, mentre l'Avellino è al 5° con 16."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B la Cremonese ha ottenuto 3 vittorie e 2 sconfitte (sequenza P-P-V-V-V), segnando 9 gol e subendone 5. Arriva da 3 vittorie consecutive. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Serie B l'Avellino ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta (sequenza N-P-N-V-N), segnando 5 gol e subendone 4. In trasferta, il bilancio stagionale è di 3 pareggi e nessuna vittoria."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Cremonese 1,3, Avellino 1,5 a partita.",
+     "Gol subiti finora: Cremonese 12, Avellino 11."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Cremonese – Avellino?",
+    "a": "Martedì 24 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T14:59:43.347Z"
+ },
+ "fb:1001601621": {
+  "fingerprint": "mrjf9r",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 24 novembre alle 15:00 il Palermo ospita il Sudtirol nella 13ª giornata di Serie B. In classifica il Palermo occupa il 1° posto con 27 punti, mentre il Sudtirol è al 12° posto con 15."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B il Palermo ha ottenuto 3 vittorie e 2 pareggi (sequenza V-V-N-V-N), segnando 11 gol e subendone 6. Non perde da 6 partite. In casa ha vinto tutte le 2 partite disputate.",
+     "Nelle ultime 5 partite di Serie B il Sudtirol ha ottenuto 3 pareggi e 2 sconfitte (sequenza P-N-P-N-N), segnando 4 gol e subendone 9. In trasferta, nel bilancio stagionale, figurano 1 pareggio e 2 sconfitte, senza alcuna vittoria."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Palermo 2,3, Sudtirol 1,2.",
+     "Gol subiti finora: Palermo 13, Sudtirol 12.",
+     "Il Palermo ha il miglior attacco del torneo.",
+     "In 3 delle ultime 5 partite del Palermo si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Palermo – Sudtirol?",
+    "a": "Martedì 24 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T14:59:46.860Z"
+ },
+ "fb:1001601616": {
+  "fingerprint": "1izrghs",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 24 novembre alle 15:00 il Virtus Entella ospita l'Hellas Verona nella 13ª giornata di Serie B. In classifica il Virtus Entella occupa il 16° posto con 10 punti, mentre l'Hellas Verona è al 7° con 16."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B il Virtus Entella ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-N-P-P), segnando 3 gol e subendone 7. Ha perso le ultime 2 gare. In casa, il bilancio stagionale è di 2 pareggi e 2 sconfitte, senza vittorie.",
+     "Nelle ultime 5 partite di Serie B l'Hellas Verona ha ottenuto 2 vittorie e 3 pareggi (sequenza N-N-V-V-N), segnando 7 gol e subendone 3. Non perde da 5 partite. In trasferta, il bilancio stagionale comprende 1 vittoria, 1 pareggio e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Virtus Entella 1,0, Hellas Verona 1,7.",
+     "Gol subiti finora: Virtus Entella 14, Hellas Verona 13.",
+     "L'Hellas Verona non ha subito gol in 3 delle ultime 5 partite."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Virtus Entella – Hellas Verona?",
+    "a": "Martedì 24 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T14:59:50.503Z"
+ },
+ "fb:1001601622": {
+  "fingerprint": "1p9leo1",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Pisa e Modena si sfidano martedì 24 novembre alle 15:00, nell'ambito della 13ª giornata di Serie B. In classifica il Pisa occupa l'8° posto con 16 punti, mentre il Modena è al 2° con 23."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B il Pisa ha ottenuto 1 vittoria, 3 pareggi e 1 sconfitta, con la sequenza V-N-N-P-N. Ha segnato 9 gol e ne ha subiti 9. In casa, nel corso della stagione, il bilancio è di 1 vittoria e 2 pareggi, senza sconfitte.",
+     "Nelle ultime 5 partite di Serie B il Modena ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza P-V-V-N-V. Ha segnato 9 gol e ne ha subiti 4. Non perde da 4 partite. In trasferta, nel corso della stagione, il bilancio è di 2 vittorie e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Pisa 1,8, Modena 1,8.",
+     "Gol subiti finora: Pisa 17, Modena 10.",
+     "In 3 delle ultime 5 partite del Pisa sono stati segnati almeno tre gol.",
+     "In 3 delle ultime 5 partite del Modena sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Pisa – Modena?",
+    "a": "Martedì 24 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T14:59:54.525Z"
+ },
+ "fb:1001601617": {
+  "fingerprint": "1fp5ufh",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 24 novembre alle 15:00 il Juve Stabia riceve il Catanzaro per la 13ª giornata di Serie B. In classifica il Juve Stabia è al 13° posto con 12 punti, mentre il Catanzaro è al 20° con 6."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B il Juve Stabia ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-P-N-V), segnando 7 gol e subendone 3. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+     "Nelle ultime 5 partite di Serie B il Catanzaro ha ottenuto 3 pareggi e 2 sconfitte (sequenza N-P-N-N-P), segnando 5 gol e subendone 11. In trasferta, il bilancio stagionale è di 2 pareggi e 1 sconfitta, senza vittorie."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Juve Stabia 1,1, Catanzaro 1,0 a partita.",
+     "Gol subiti finora: Juve Stabia 11, Catanzaro 23.",
+     "Il Juve Stabia non ha subito gol in 3 delle ultime 5 partite."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Juve Stabia – Catanzaro?",
+    "a": "Martedì 24 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T14:59:56.905Z"
+ },
+ "fb:1001601620": {
+  "fingerprint": "fbxmgz",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 24 novembre alle 15:00 il Padova ospita la Sampdoria per la 13ª giornata di Serie B. In classifica il Padova è al 10° posto con 15 punti, mentre la Sampdoria è al 15° con 11."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B il Padova ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza P-V-V-N-N), con 7 gol fatti e 5 subiti. Non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria, 1 pareggio e 2 sconfitte.",
+     "Nelle ultime 5 partite di Serie B la Sampdoria ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-N-P-V-V), con 5 gol fatti e 5 subiti. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 2 sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Padova 1,1, Sampdoria 1,0 a partita.",
+     "Gol subiti finora: Padova 13, Sampdoria 18."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Padova – Sampdoria?",
+    "a": "Martedì 24 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Serie B](/calcio/serie-b) e la [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T14:59:59.335Z"
+ },
+ "fb:1001601618": {
+  "fingerprint": "1oov3cu",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Vicenza Virtus e Carrarese si affrontano martedì 24 novembre alle 15:00 per la 13ª giornata di Serie B. In classifica il Vicenza Virtus occupa il 18° posto con 9 punti, mentre il Carrarese è al 17° con 10 punti."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B il Vicenza Virtus ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte, con la sequenza N-V-P-P-P. Ha segnato 7 gol e ne ha subiti 11. Le ultime 3 partite sono state tutte perse. In casa ha perso tutte le 3 partite disputate.",
+     "Nelle ultime 5 partite di Serie B il Carrarese ha ottenuto 2 vittorie e 3 sconfitte, con la sequenza V-P-V-P-P. Ha segnato 5 gol e ne ha subiti 8. Le ultime 2 partite sono state perse. In trasferta il bilancio stagionale è di 1 vittoria e 2 sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Vicenza Virtus 1,3, Carrarese 0,8 a partita.",
+     "Gol subiti finora: Vicenza Virtus 24, Carrarese 14.",
+     "In 4 delle ultime 5 partite del Vicenza Virtus si sono segnati almeno tre gol.",
+     "In 4 delle ultime 5 partite del Carrarese si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Vicenza Virtus – Carrarese?",
+    "a": "Martedì 24 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T15:00:03.132Z"
+ },
+ "fb:1001601619": {
+  "fingerprint": "meetpl",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 24 novembre alle 15:00 il Mantova affronta in casa l'Arezzo, nella 13ª giornata di Serie B. In classifica il Mantova occupa il 4° posto con 19 punti, mentre l'Arezzo è 14° con 11 punti."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie B il Mantova ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-V-P-N-N), segnando 2 gol e subendone 5. In casa, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza ancora alcuna vittoria.",
+     "Nelle ultime 5 partite di Serie B l'Arezzo ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-P-N-P), segnando 3 gol e subendone 7. In trasferta, nella stagione, il bilancio è di 1 vittoria e 2 sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Mantova 1,4, Arezzo 0,8.",
+     "Gol subiti finora: Mantova 11, Arezzo 20.",
+     "In 3 delle ultime 5 partite dell'Arezzo sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Mantova – Arezzo?",
+    "a": "Martedì 24 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T15:00:08.340Z"
+ },
+ "fb:1001649006": {
+  "fingerprint": "1i2c34",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il Vietnam U23 ha vinto con un ampio 3-0 sul Thailand U23, giocando in casa. La partita, valida per le Amichevoli internazionali, si è disputata martedì 10 novembre; al termine del primo tempo il punteggio era di 2-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Vietnam U23 tornerà in campo giovedì 12 novembre alle 13:00, in trasferta contro il Singapore U23. Il Thailand U23 giocherà giovedì 12 novembre alle 09:00, in casa contro il Qatar U23."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Vietnam U23 – Thailand U23?",
+    "a": "3-0 (2-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T15:01:25.151Z"
  }
 }
