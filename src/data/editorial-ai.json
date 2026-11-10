@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-10T15:19:58.234Z",
+ "generatedAt": "2026-11-10T18:20:10.387Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:1001550202": {
@@ -1294,6 +1294,92 @@
     {
      "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Serie B](/calcio/serie-b) e nella [classifica aggiornata](/calcio/serie-b/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001635641": {
+   "fingerprint": "1n22f29",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Bodo/Glimt e LASK si affrontano martedì 24 novembre alle 18:45 per la 5ª giornata della fase a campionato di Champions League. In classifica il Bodo/Glimt è al 25° posto con 4 punti, il LASK al 16° con 6."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Champions League il Bodo/Glimt ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza V-P-N), con 4 gol fatti e 4 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 3 partite di Champions League il LASK ha raccolto 2 vittorie e 1 sconfitta (sequenza P-V-V), con 10 gol fatti e 8 subiti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Bodo/Glimt 1,0, LASK 2,5 a partita.",
+      "Gol subiti finora: Bodo/Glimt 9, LASK 9.",
+      "In tutte le ultime 3 partite del LASK si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Bodo/Glimt – LASK?",
+     "a": "Martedì 24 novembre alle 18:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001635667": {
+   "fingerprint": "1g23xqx",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 24 novembre alle 18:45 il Galatasaray ospita l'Aston Villa per la 5ª giornata della fase a campionato di Champions League. In classifica il Galatasaray è al 18° posto con 6 punti, mentre l'Aston Villa è al 6° con 9."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Champions League il Galatasaray ha raccolto 2 vittorie e 1 sconfitta (sequenza P-V-V), con 7 gol fatti e 6 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 3 partite di Champions League l'Aston Villa ha raccolto 2 vittorie e 1 sconfitta (sequenza V-V-P), con 9 gol fatti e 4 subiti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Galatasaray 2,0, Aston Villa 3,0 a partita.",
+      "Gol subiti finora: Galatasaray 9, Aston Villa 6.",
+      "In tutte le ultime 3 partite dell'Aston Villa si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Galatasaray – Aston Villa?",
+     "a": "Martedì 24 novembre alle 18:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -16661,42 +16747,6 @@
     }
    ]
   },
-  "fb:558535": {
-   "fingerprint": "1at12w7",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Bologna ha vinto di misura in trasferta contro il Parma, con il punteggio di 1-2. La partita, valida per l'11ª giornata di Serie A, si è giocata sabato 7 novembre; il primo tempo si era chiuso 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Parma è al 16° posto con 8 punti, mentre il Bologna è all'8° posto con 17. [Consulta la classifica completa](/calcio/serie-a/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Parma tornerà in campo sabato 21 novembre alle 18:00 in casa contro la Roma. Il Bologna tornerà in campo domenica 22 novembre alle 18:00 in casa contro l'Udinese."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Parma – Bologna?",
-     "a": "1-2 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Serie A](/calcio/serie-a)."
-    }
-   ]
-  },
   "fb:558531": {
    "fingerprint": "1g8ywya",
    "sections": [
@@ -16913,42 +16963,6 @@
     }
    ]
   },
-  "fb:1001601600": {
-   "fingerprint": "vu84kh",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Finisce senza reti il match tra Mantova e Hellas Verona. La partita, valida per l'11ª giornata di Serie B, si è disputata sabato 7 novembre; il primo tempo si era concluso 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Dopo le partite disputate finora, il Mantova occupa il 4° posto con 19 punti, mentre l'Hellas Verona è al 7° con 16. Consulta la [classifica completa](/calcio/serie-b/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Mantova tornerà in campo sabato 21 novembre alle 15:00 in trasferta contro l'Avellino. L'Hellas Verona giocherà sabato 21 novembre alle 15:00 in casa contro il Cesena."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Mantova – Hellas Verona?",
-     "a": "0-0 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Serie B](/calcio/serie-b)."
-    }
-   ]
-  },
   "fb:1001601594": {
    "fingerprint": "cechpm",
    "sections": [
@@ -17090,42 +17104,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Serie B](/calcio/serie-b)."
-    }
-   ]
-  },
-  "fb:560641": {
-   "fingerprint": "hq4zk2",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Nottingham Forest ha battuto il Manchester City in casa per 3-1. La partita, valida per la 10ª giornata di Premier League, si è giocata sabato 7 novembre; il primo tempo si era chiuso sul 2-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Nottingham Forest è al 16° posto con 9 punti, mentre il Manchester City è al 3° con 21. Puoi consultare la [classifica completa](/calcio/premier-league/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Nottingham Forest tornerà in campo sabato 21 novembre alle 16:00, in trasferta contro il Bournemouth. Il Manchester City tornerà in campo sabato 21 novembre alle 13:30, in casa contro il Fulham."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Nottingham Forest – Manchester City?",
-     "a": "3-1 (2-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Premier League](/calcio/premier-league)."
     }
    ]
   },
@@ -17306,42 +17284,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Premier League](/calcio/premier-league)."
-    }
-   ]
-  },
-  "fb:564739": {
-   "fingerprint": "vq743e",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Osasuna e Athletic si dividono la posta con un pareggio per 1-1. La partita, valida per la 12ª giornata di LaLiga, si è giocata sabato 7 novembre; il primo tempo si era chiuso 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora l'Osasuna è al 16° posto con 12 punti, mentre l'Athletic è al 7° con 16. [Consulta la classifica completa](/calcio/liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Osasuna tornerà in campo domenica 22 novembre alle 18:30 in casa contro il Málaga. L'Athletic tornerà in campo venerdì 20 novembre alle 21:00 in casa contro l'Espanyol."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Osasuna – Athletic?",
-     "a": "È finita 1-1 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [LaLiga](/calcio/liga)."
     }
    ]
   },
@@ -17561,42 +17503,6 @@
     }
    ]
   },
-  "fb:565849": {
-   "fingerprint": "1kj12nl",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Lo Stuttgart ha vinto di misura in casa contro il Bremen, imponendosi 1-0. La partita, valida per la 9ª giornata di Bundesliga, si è giocata sabato 7 novembre; il primo tempo si era chiuso 1-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora lo Stuttgart è all'8° posto con 12 punti, mentre il Bremen è al 6° con 15. [Consulta la classifica completa](/calcio/bundesliga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Lo Stuttgart tornerà in campo sabato 21 novembre alle 18:30, in trasferta contro lo Schalke. Il Bremen giocherà domenica 22 novembre alle 17:30, in casa contro l'HSV."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Stuttgart – Bremen?",
-     "a": "1-0 (1-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
-    }
-   ]
-  },
   "fb:565855": {
    "fingerprint": "14ib0n5",
    "sections": [
@@ -17702,42 +17608,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
-    }
-   ]
-  },
-  "fb:559637": {
-   "fingerprint": "tiya4d",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Paris FC ha vinto di misura in trasferta contro l'Auxerre, con il risultato di 0-1. La partita, valida per la 10ª giornata di Ligue 1, si è giocata sabato 7 novembre e il primo tempo si era chiuso 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora, l'Auxerre è al 14° posto con 10 punti, mentre il Paris FC è al 3° con 20. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/ligue-1/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Auxerre tornerà in campo sabato 21 novembre alle 20:45 in trasferta contro il Monaco. Il Paris FC giocherà domenica 22 novembre alle 15:00 in casa contro l'Angers SCO."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Auxerre – Paris FC?",
-     "a": "0-1 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
     }
    ]
   },
@@ -17993,78 +17863,6 @@
     }
    ]
   },
-  "fb:1001552217": {
-   "fingerprint": "9bv1kc",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Sittard e Telstar si dividono la posta con un pareggio per 2-2. La partita, valida per la 12ª giornata di Eredivisie, si è giocata sabato 7 novembre; il primo tempo si era chiuso 2-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Sittard è al 7° posto con 20 punti, mentre il Telstar è al 16° con 10. [Classifica completa](/calcio/eredivisie/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Sittard tornerà in campo domenica 22 novembre alle 16:45 in trasferta contro il Go Ahead. Il Telstar giocherà sabato 21 novembre alle 21:00 in casa contro lo Zwolle."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Sittard – Telstar?",
-     "a": "2-2 (2-2 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
-    }
-   ]
-  },
-  "fb:1001552220": {
-   "fingerprint": "1rugrhf",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Den Haag ha battuto lo Sparta in casa per 3-1. La partita, valida per la 12ª giornata di Eredivisie, si è giocata sabato 7 novembre; il primo tempo si era chiuso 1-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Den Haag occupa il 17° posto con 9 punti, mentre lo Sparta è al 12° con 12. [Classifica completa](/calcio/eredivisie/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Den Haag tornerà in campo domenica 22 novembre alle 14:30 in trasferta contro l'Ajax. Lo Sparta tornerà in campo domenica 22 novembre alle 14:30 in casa contro l'AZ."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Den Haag – Sparta?",
-     "a": "3-1 (1-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
-    }
-   ]
-  },
   "fb:558843": {
    "fingerprint": "c9u2oh",
    "sections": [
@@ -18278,35 +18076,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
-    }
-   ]
-  },
-  "fb:567347": {
-   "fingerprint": "oq33xp",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il match si chiude 1-1: il Casa Pia, in vantaggio all'intervallo per 0-1, viene raggiunto nella ripresa dall'Alverca. La sfida, valida per la 11ª giornata di Primeira Liga, si è disputata sabato 7 novembre."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite disputate finora, l'Alverca occupa l'11° posto con 12 punti, mentre il Casa Pia è al 16° con 8. Per consultare l'intera graduatoria, vai alla [classifica completa](/calcio/primeira-liga/classifica)."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Alverca – Casa Pia?",
-     "a": "1-1 (0-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
     }
    ]
   },

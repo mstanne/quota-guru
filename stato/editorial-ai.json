@@ -31367,5 +31367,95 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-10T15:01:25.151Z"
+ },
+ "fb:1001635641": {
+  "fingerprint": "1n22f29",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Bodo/Glimt e LASK si affrontano martedì 24 novembre alle 18:45 per la 5ª giornata della fase a campionato di Champions League. In classifica il Bodo/Glimt è al 25° posto con 4 punti, il LASK al 16° con 6."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 3 partite di Champions League il Bodo/Glimt ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza V-P-N), con 4 gol fatti e 4 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 3 partite di Champions League il LASK ha raccolto 2 vittorie e 1 sconfitta (sequenza P-V-V), con 10 gol fatti e 8 subiti."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Bodo/Glimt 1,0, LASK 2,5 a partita.",
+     "Gol subiti finora: Bodo/Glimt 9, LASK 9.",
+     "In tutte le ultime 3 partite del LASK si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Bodo/Glimt – LASK?",
+    "a": "Martedì 24 novembre alle 18:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T18:20:08.081Z"
+ },
+ "fb:1001635667": {
+  "fingerprint": "1g23xqx",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Martedì 24 novembre alle 18:45 il Galatasaray ospita l'Aston Villa per la 5ª giornata della fase a campionato di Champions League. In classifica il Galatasaray è al 18° posto con 6 punti, mentre l'Aston Villa è al 6° con 9."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 3 partite di Champions League il Galatasaray ha raccolto 2 vittorie e 1 sconfitta (sequenza P-V-V), con 7 gol fatti e 6 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 3 partite di Champions League l'Aston Villa ha raccolto 2 vittorie e 1 sconfitta (sequenza V-V-P), con 9 gol fatti e 4 subiti."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Galatasaray 2,0, Aston Villa 3,0 a partita.",
+     "Gol subiti finora: Galatasaray 9, Aston Villa 6.",
+     "In tutte le ultime 3 partite dell'Aston Villa si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Galatasaray – Aston Villa?",
+    "a": "Martedì 24 novembre alle 18:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T18:20:10.379Z"
  }
 }
