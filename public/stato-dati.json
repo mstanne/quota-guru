@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T21:19:41.865Z",
+  "updatedAt": "2026-11-10T00:19:52.416Z",
   "football": {
     "details": {
       "ok": true
@@ -9,7 +9,7 @@
     },
     "ok": true,
     "requests": 2,
-    "remainingToday": 5838,
+    "remainingToday": 7401,
     "matches": 255,
     "teamSeasons": 588
   },
@@ -21,13 +21,13 @@
       "ok": true
     },
     "ok": true,
-    "requests": 13,
-    "remainingToday": 7224,
+    "requests": 12,
+    "remainingToday": 7485,
     "games": 42,
     "teamSeasons": 60
   },
   "calendarioCalcio": {
-    "updatedAt": "2026-11-09T21:18:06.321Z",
+    "updatedAt": "2026-11-10T00:18:08.629Z",
     "source": "API-Football",
     "ok": true,
     "competitions": {
@@ -37,11 +37,11 @@
       },
       "SB": {
         "ok": true,
-        "matches": 70
+        "matches": 80
       },
       "CL": {
         "ok": true,
-        "matches": 54
+        "matches": 63
       },
       "EL": {
         "ok": true,
@@ -77,11 +77,11 @@
       },
       "ELC": {
         "ok": true,
-        "matches": 97
+        "matches": 105
       },
       "BSA": {
         "ok": true,
-        "matches": 81
+        "matches": 83
       },
       "WC": {
         "ok": true,
@@ -89,7 +89,7 @@
       },
       "UNL": {
         "ok": true,
-        "matches": 148
+        "matches": 140
       },
       "EURO": {
         "ok": true,
@@ -121,7 +121,7 @@
       },
       "AFCONQ": {
         "ok": true,
-        "matches": 88
+        "matches": 74
       },
       "WCQAS": {
         "ok": true,
@@ -145,7 +145,7 @@
       },
       "CNL": {
         "ok": true,
-        "matches": 102
+        "matches": 96
       },
       "WCQOC": {
         "ok": true,
@@ -157,18 +157,18 @@
       },
       "FRI": {
         "ok": true,
-        "matches": 307
+        "matches": 294
       }
     },
-    "requests": 64,
-    "remainingToday": 5840
+    "requests": 97,
+    "remainingToday": 7403
   },
   "calendarioNba": {
-    "updatedAt": "2026-11-09T21:18:22.485Z",
+    "updatedAt": "2026-11-10T00:18:33.255Z",
     "source": "API-NBA",
     "ok": true,
-    "games": 248,
+    "games": 250,
     "requests": 1,
-    "remainingToday": 7236
+    "remainingToday": 7497
   }
 }

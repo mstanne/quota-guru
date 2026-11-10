@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-09T21:19:57.856Z",
+ "generatedAt": "2026-11-10T00:22:01.203Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:1001550202": {
@@ -4178,8 +4178,135 @@
     }
    ]
   },
+  "fb:1001492467": {
+   "fingerprint": "1yat372",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Internacional e Vitória si sfidano lunedì 23 novembre alle 23:30 per la 36ª giornata di Brasileirão. Le due squadre sono appaiate a 38 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Brasileirão, l'Internacional ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-V-P-V), segnando 6 gol e subendone 5. In casa ha vinto tutte le 3 gare disputate.",
+      "Nelle ultime 5 partite di Brasileirão, il Vitória ha ottenuto 2 pareggi e 3 sconfitte (sequenza P-N-N-P-P), segnando 3 gol e subendone 9. Ha perso le ultime 2 gare. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Internacional 1,1 e Vitória 1,0 a partita.",
+      "Gol subiti finora: Internacional 42, Vitória 51."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Internacional – Vitória?",
+     "a": "Lunedì 23 novembre alle 23:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001492463": {
+   "fingerprint": "t09a96",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 24 novembre alle 00:00 il Botafogo ospita lo São Paulo per la 36ª giornata di Brasileirão. In classifica il Botafogo è all'11° posto con 42 punti, lo São Paulo al 10° con 44."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Brasileirão il Botafogo ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-V-P-P-V), segnando 4 gol e subendone 6. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Brasileirão lo São Paulo ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza V-V-N-P-N), segnando 6 gol e subendone 5. In trasferta, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Botafogo 1,4, São Paulo 1,1 a partita.",
+      "Gol subiti finora: Botafogo 53, São Paulo 39."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Botafogo – São Paulo?",
+     "a": "Martedì 24 novembre alle 00:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001492469": {
+   "fingerprint": "tjt8b6",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Santos e Grêmio si affrontano martedì 24 novembre alle 01:00, nell'ambito della 36ª giornata di Brasileirão. In classifica il Santos occupa il 9° posto con 47 punti, mentre il Grêmio è al 18° con 37."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Brasileirão il Santos ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte, con la sequenza P-V-N-N-P. Ha segnato 5 gol e ne ha subiti 6. In casa, il bilancio stagionale comprende 3 pareggi e nessuna vittoria.",
+      "Nelle ultime 5 partite di Brasileirão il Grêmio ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte, con la sequenza N-P-V-V-P. Ha segnato 7 gol e ne ha subiti 8. In trasferta, il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Santos 1,5, Grêmio 1,1.",
+      "Gol subiti finora: Santos 49, Grêmio 47.",
+      "In 3 delle ultime 5 partite del Santos sono stati segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Santos – Grêmio?",
+     "a": "Martedì 24 novembre alle 01:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Brasileirão](/calcio/brasileirao) e nella [classifica aggiornata](/calcio/brasileirao/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:1001528958": {
-   "fingerprint": "yjehv7",
+   "fingerprint": "1hpukp2",
    "sections": [
     {
      "id": "presentazione",
@@ -4191,8 +4318,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League la Turchia ha raccolto 4 sconfitte (sequenza P-P-P-P), con 2 gol fatti e 11 subiti. Ha perso le ultime 4. In casa ha perso tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di Nations League il Belgio ha raccolto 2 vittorie e 2 sconfitte (sequenza V-P-V-P), con 6 gol fatti e 5 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 3 partite di Nations League la Turchia ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 10 subiti. Ha perso le ultime 3.",
+      "Nelle ultime 3 partite di Nations League il Belgio ha raccolto 1 vittoria e 2 sconfitte (sequenza P-V-P), con 4 gol fatti e 5 subiti."
      ],
      "bullets": []
     },
@@ -4202,13 +4329,13 @@
      "bullets": [
       "Media gol segnati: Turchia 0,5, Belgio 1,5 a partita.",
       "Gol subiti finora: Turchia 11, Belgio 5.",
-      "In 3 delle ultime 4 partite della Turchia si sono segnati almeno tre gol."
+      "In tutte le ultime 3 partite della Turchia si sono segnati almeno tre gol."
      ]
     },
     {
      "id": "precedenti",
      "paragraphs": [
-      "Nell'ultimo confronto diretto tra le due squadre (1 gara considerata) il bilancio è di 0 vittorie per la Turchia, 1 vittoria per il Belgio e nessun pareggio, con 3 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, a ottobre 2026 in Nations League, è finito Belgio 3-0 Turchia."
+      "Nel confronto diretto più recente il bilancio è di 0 vittorie per la Turchia, 1 vittoria per il Belgio e nessun pareggio, con 3 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, a ottobre 2026 in Nations League, è finito Belgio 3-0 Turchia."
      ],
      "bullets": []
     }
@@ -4216,7 +4343,7 @@
    "faq": [
     {
      "q": "Quando si gioca Turchia – Belgio?",
-     "a": "Giovedì 12 novembre alle 18:00, ora italiana."
+     "a": "Giovedì 12 novembre alle 18:00."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -4229,7 +4356,7 @@
    ]
   },
   "fb:1001528959": {
-   "fingerprint": "u9nj2n",
+   "fingerprint": "14n1zyw",
    "sections": [
     {
      "id": "presentazione",
@@ -4241,15 +4368,15 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League l'Armenia ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con sequenza V-P-P-N. Ha segnato 4 gol e ne ha subiti 5. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Nations League il Cipro ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta, con sequenza P-N-V-V. Ha segnato 5 gol e ne ha subiti 3. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
+      "Nelle ultime 3 partite di Nations League l'Armenia ha ottenuto 1 pareggio e 2 sconfitte, con sequenza P-P-N, segnando 2 gol e subendone 5.",
+      "Nelle ultime 3 partite di Nations League il Cipro ha ottenuto 2 vittorie e 1 pareggio, con sequenza N-V-V, segnando 4 gol e subendone 1."
      ],
      "bullets": []
     },
     {
      "id": "precedenti",
      "paragraphs": [
-      "Nel confronto diretto più recente il bilancio complessivo è di 0 vittorie per l'Armenia, 1 vittoria per il Cipro e nessun pareggio, con 2 gol totali, cioè una media di 2,0 a partita. L'ultimo incrocio, disputato a ottobre 2026 in Nations League, è terminato Cipro 2-0 Armenia."
+      "Nell'ultimo confronto diretto il bilancio è di 0 vittorie per l'Armenia, 1 vittoria per il Cipro e nessun pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, disputato a ottobre 2026 in Nations League, è terminato Cipro 2-0 Armenia."
      ],
      "bullets": []
     }
@@ -4261,11 +4388,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina dedicata alla [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+     "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ti spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -4320,20 +4447,20 @@
    ]
   },
   "fb:1001528960": {
-   "fingerprint": "1r6udpl",
+   "fingerprint": "mwrxwr",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Giovedì 12 novembre alle 20:45 l'Italia riceve la Francia per la 5ª giornata di Nations League. È un confronto tra due squadre in alta classifica: l'Italia è al 2° posto con 7 punti, la Francia al 1° con 10."
+      "Giovedì 12 novembre alle 20:45 l'Italia ospita la Francia per la 5ª giornata di Nations League. È una sfida tra due squadre di alta classifica: l'Italia è al 2° posto con 7 punti, la Francia al 1° con 10."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League l'Italia ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza P-V-N-V), segnando 8 gol e subendone 5. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Nations League la Francia ha ottenuto 3 vittorie e 1 pareggio (sequenza V-V-N-V), segnando 7 gol e subendone 2. Non perde da 4 partite. In trasferta ha vinto tutte e 2 le partite giocate."
+      "Nelle ultime 3 partite di Nations League l'Italia ha ottenuto 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 8 gol e subendone 3.",
+      "Nelle ultime 3 partite di Nations League la Francia ha ottenuto 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 6 gol e subendone 2."
      ],
      "bullets": []
     },
@@ -4350,7 +4477,7 @@
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 4 confronti diretti il bilancio è di 2 vittorie per l'Italia, 1 vittoria per la Francia e 1 pareggio, con 12 gol complessivi (media di 3,0 a partita). L'ultimo incontro, a ottobre 2026 in Nations League, è finito Francia 1-1 Italia."
+      "Negli ultimi 4 confronti diretti il bilancio è di 2 vittorie per l'Italia, 1 vittoria per la Francia e 1 pareggio, con 12 gol complessivi (media di 3,0 a partita). L'ultimo incrocio, disputato a ottobre 2026 in Nations League, è terminato Francia 1-1 Italia."
      ],
      "bullets": []
     }
@@ -4361,8 +4488,8 @@
      "a": "Giovedì 12 novembre alle 20:45, ora italiana."
     },
     {
-     "q": "Dove si trovano classifica e risultati?",
-     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -4468,7 +4595,7 @@
    ]
   },
   "fb:1001545613": {
-   "fingerprint": "1xskl6y",
+   "fingerprint": "1p6ftjw",
    "sections": [
     {
      "id": "presentazione",
@@ -4480,22 +4607,15 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League il Montenegro ha ottenuto 3 vittorie e 1 pareggio (sequenza V-V-V-N), segnando 7 gol e subendone 4. Non perde da 4 partite. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Nations League la Lettonia ha ottenuto 1 pareggio e 3 sconfitte (sequenza P-N-P-P), segnando 2 gol e subendone 6. Ha perso le ultime 2 gare. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 3 partite di Nations League il Montenegro ha ottenuto 2 vittorie e 1 pareggio (sequenza V-V-N), segnando 5 gol e subendone 3.",
+      "Nelle ultime 3 partite di Nations League la Lettonia ha ottenuto 1 pareggio e 2 sconfitte (sequenza N-P-P), segnando 2 gol e subendone 4. Ha perso le ultime 2."
      ],
      "bullets": []
     },
     {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In 3 delle ultime 4 partite del Montenegro sono stati segnati almeno tre gol."
-     ]
-    },
-    {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 3 confronti diretti il bilancio è di 2 vittorie per il Montenegro, 0 per la Lettonia e 1 pareggio, con 6 gol complessivi (media di 2,0 a partita). L'ultimo incontro, a ottobre 2026 in Nations League, è terminato Lettonia 1-2 Montenegro."
+      "Negli ultimi 3 confronti diretti il bilancio è di 2 vittorie per il Montenegro, 0 per la Lettonia e 1 pareggio, con 6 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, disputato a ottobre 2026 in Nations League, è terminato Lettonia 1-2 Montenegro."
      ],
      "bullets": []
     }
@@ -4511,7 +4631,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -4975,7 +5095,7 @@
    ]
   },
   "fb:1001528973": {
-   "fingerprint": "19k48gc",
+   "fingerprint": "urhuot",
    "sections": [
     {
      "id": "presentazione",
@@ -4987,8 +5107,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League la Georgia ha raccolto 2 pareggi e 2 sconfitte (sequenza P-N-P-N), con 0 gol fatti e 2 subiti. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie.",
-      "Nelle ultime 4 partite di Nations League l'Ungheria ha raccolto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza P-N-V-V), con 3 gol fatti e 2 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 3 partite di Nations League la Georgia ha raccolto 2 pareggi e 1 sconfitta (sequenza N-P-N), con 0 gol fatti e 1 subito.",
+      "Nelle ultime 3 partite di Nations League l'Ungheria ha raccolto 2 vittorie e 1 pareggio (sequenza N-V-V), con 3 gol fatti e 1 subito. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     }
@@ -5009,20 +5129,20 @@
    ]
   },
   "fb:1001528978": {
-   "fingerprint": "1xiuyn6",
+   "fingerprint": "279bdy",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 14 novembre alle 20:45 lo Svezia ospita il Bosnia ed Erzegovina nella 5ª giornata di Nations League."
+      "Sabato 14 novembre alle 20:45 la Svezia ospita la Bosnia ed Erzegovina, nell'ambito della 5ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League la Svezia ha ottenuto 3 vittorie e 1 pareggio (sequenza V-V-N-V), segnando 7 gol e subendone 3. Non perde da 4 partite. In casa ha vinto tutte le 2 partite disputate.",
-      "Nelle ultime 4 partite di Nations League il Bosnia ed Erzegovina ha ottenuto 2 vittorie e 2 pareggi (sequenza N-V-N-V), segnando 6 gol e subendone 3. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 3 partite di Nations League la Svezia ha ottenuto 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 5 gol e subendone 2.",
+      "Nelle ultime 3 partite di Nations League la Bosnia ed Erzegovina ha ottenuto 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 6 gol e subendone 3."
      ],
      "bullets": []
     }
@@ -5033,12 +5153,12 @@
      "a": "Sabato 14 novembre alle 20:45, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -5084,20 +5204,20 @@
    ]
   },
   "fb:1001528975": {
-   "fingerprint": "lzligy",
+   "fingerprint": "1sv2tx2",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Irlanda del Nord e Ucraina si sfidano sabato 14 novembre alle 20:45, in occasione della 5ª giornata di Nations League."
+      "Irlanda del Nord e Ucraina si affrontano sabato 14 novembre alle 20:45 per la 5ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League l'Irlanda del Nord ha ottenuto 2 vittorie e 2 pareggi, con sequenza V-N-V-N, segnando 4 gol e non subendone nessuno. La squadra non perde da 4 partite. In casa, il bilancio stagionale comprende 2 pareggi e nessuna vittoria.",
-      "Nelle ultime 4 partite di Nations League l'Ucraina ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte, con sequenza V-N-P-P, segnando 2 gol e subendone 5. Ha perso le ultime 2 gare. In trasferta, il bilancio stagionale comprende 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 3 partite di Nations League l'Irlanda del Nord ha raccolto 1 vittoria e 2 pareggi (sequenza N-V-N), con 3 gol fatti e 0 subiti. In casa il bilancio stagionale è di 2 pareggi, ancora senza vittorie.",
+      "Nelle ultime 3 partite di Nations League l'Ucraina ha raccolto 1 pareggio e 2 sconfitte (sequenza N-P-P), con 1 gol fatto e 5 subiti. Ha perso le ultime 2."
      ],
      "bullets": []
     },
@@ -5105,7 +5225,7 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "L'Irlanda del Nord non ha subito gol in nessuna delle ultime 4 partite."
+      "L'Irlanda del Nord non ha subito gol in tutte le ultime 3."
      ]
     }
    ],
@@ -5115,12 +5235,46 @@
      "a": "Sabato 14 novembre alle 20:45, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001528977": {
+   "fingerprint": "ubjus3",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 14 novembre alle 20:45 la Romania ospita la Polonia per la 5ª giornata di Nations League."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Nations League la Romania ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 11 subiti. Ha perso le ultime 3. In casa ha perso tutte le 2 partite giocate.",
+      "Nelle ultime 3 partite di Nations League la Polonia ha raccolto 1 vittoria e 2 sconfitte (sequenza P-V-P), con 7 gol fatti e 4 subiti. In trasferta ha perso tutte le 2 partite giocate."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Romania – Polonia?",
+     "a": "Sabato 14 novembre alle 20:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -5159,20 +5313,20 @@
    ]
   },
   "fb:1001545616": {
-   "fingerprint": "1s6bfd6",
+   "fingerprint": "1107iva",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Lettonia e Armenia si sfidano domenica 15 novembre alle 15:00, nell'ambito della 6ª giornata di Nations League."
+      "Lettonia e Armenia si affrontano domenica 15 novembre alle 15:00, per la 6ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League, la Lettonia ha ottenuto 1 pareggio e 3 sconfitte (sequenza P-N-P-P), segnando 2 gol e subendone 6. Ha perso le ultime 2 gare. In casa, il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza ancora alcuna vittoria.",
-      "Nelle ultime 4 partite di Nations League, l'Armenia ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza V-P-P-N), segnando 4 gol e subendone 5. In trasferta, il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza ancora alcuna vittoria."
+      "Nelle ultime 3 partite di Nations League la Lettonia ha ottenuto 1 pareggio e 2 sconfitte (sequenza N-P-P), segnando 2 gol e subendone 4. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
+      "Nelle ultime 3 partite di Nations League l'Armenia ha ottenuto 1 pareggio e 2 sconfitte (sequenza P-P-N), con 2 gol fatti e 5 subiti. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
      ],
      "bullets": []
     }
@@ -5188,34 +5342,27 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Puoi trovare le spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Possono aiutarti le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001528979": {
-   "fingerprint": "wtmako",
+   "fingerprint": "jhdmwl",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 15 novembre alle 15:00 il Cipro riceve il Montenegro nella 6ª giornata di Nations League."
+      "Domenica 15 novembre alle 15:00 il Cipro ospita il Montenegro per la 6ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League il Cipro ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta, con sequenza P-N-V-V, segnando 5 gol e subendone 3. In casa ha vinto entrambe le partite giocate.",
-      "Nelle ultime 4 partite di Nations League il Montenegro ha ottenuto 3 vittorie e 1 pareggio, con sequenza V-V-V-N, segnando 7 gol e subendone 4. Non perde da 4 partite. In trasferta ha vinto entrambe le partite giocate."
+      "Nelle ultime 3 partite di Nations League il Cipro ha raccolto 2 vittorie e 1 pareggio (sequenza N-V-V), con 4 gol fatti e 1 subito. In casa ha vinto tutte le 2 partite giocate.",
+      "Nelle ultime 3 partite di Nations League il Montenegro ha raccolto 2 vittorie e 1 pareggio (sequenza V-V-N), con 5 gol fatti e 3 subiti. In trasferta ha vinto tutte le 2 partite giocate."
      ],
      "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In 3 delle ultime 4 partite del Montenegro si sono segnati almeno tre gol."
-     ]
     }
    ],
    "faq": [
@@ -5225,11 +5372,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+     "a": "Puoi consultare la pagina [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -5317,20 +5464,20 @@
    ]
   },
   "fb:1001528983": {
-   "fingerprint": "1aguvu0",
+   "fingerprint": "bs3uuf",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Belgio e Italia si sfidano domenica 15 novembre alle 20:45, per la 6ª giornata di Nations League. Il match mette di fronte due squadre ai vertici della classifica: il Belgio è al 3° posto con 6 punti, l'Italia è al 2° con 7."
+      "Belgio e Italia si affrontano domenica 15 novembre alle 20:45 per la 6ª giornata di Nations League. È uno scontro di alta classifica: il Belgio è al 3° posto con 6 punti, l'Italia al 2° con 7."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League il Belgio ha ottenuto 2 vittorie e 2 sconfitte, con sequenza V-P-V-P. Ha segnato 6 gol e ne ha subiti 5. In casa, la stagione del Belgio registra 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 4 partite di Nations League l'Italia ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta, con sequenza P-V-N-V. Ha segnato 8 gol e ne ha subiti 5. In trasferta, la stagione dell'Italia registra 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 3 partite di Nations League il Belgio ha raccolto 1 vittoria e 2 sconfitte (sequenza P-V-P), con 4 gol fatti e 5 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 3 partite di Nations League l'Italia ha raccolto 2 vittorie e 1 pareggio (sequenza V-N-V), con 8 gol fatti e 3 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     },
@@ -5351,29 +5498,29 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001528982": {
-   "fingerprint": "1fawimv",
+   "fingerprint": "12ejj6k",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "La partita si gioca domenica 15 novembre alle 20:45, quando il Francia ospita il Turchia nella 6ª giornata di Nations League. In classifica il Francia è al 1° posto con 10 punti, mentre il Turchia è al 4° con 0 punti."
+      "Appuntamento domenica 15 novembre alle 20:45: la Francia riceve la Turchia per la 6ª giornata di Nations League. In classifica la Francia è al 1° posto con 10 punti, la Turchia al 4° con 0."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League il Francia ha ottenuto 3 vittorie e 1 pareggio, con sequenza V-V-N-V, segnando 7 gol e subendone 2. Non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Nations League il Turchia ha subito 4 sconfitte, con sequenza P-P-P-P, segnando 2 gol e subendone 11. Ha perso tutte le ultime 4 gare. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 3 partite di Nations League la Francia ha raccolto 2 vittorie e 1 pareggio (sequenza V-N-V), con 6 gol fatti e 2 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 3 partite di Nations League la Turchia ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 10 subiti. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     },
@@ -5381,10 +5528,10 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "La media dei gol segnati è di 1,8 a partita per il Francia e di 0,5 per il Turchia.",
-      "I gol subiti finora sono 2 per il Francia e 11 per il Turchia.",
-      "Il Francia ha la difesa migliore del torneo.",
-      "Nelle ultime 4 partite del Turchia, in 3 si sono segnati almeno tre gol."
+      "Media gol segnati: Francia 1,8, Turchia 0,5 a partita.",
+      "Gol subiti finora: Francia 2, Turchia 11.",
+      "La Francia ha la miglior difesa del torneo.",
+      "In tutte le ultime 3 partite della Turchia si sono segnati almeno tre gol."
      ]
     }
    ],
@@ -5395,11 +5542,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la [pagina della Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
+     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -5906,20 +6053,20 @@
    ]
   },
   "fb:1001528998": {
-   "fingerprint": "hcdxxa",
+   "fingerprint": "16mgf54",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento martedì 17 novembre alle 20:45: il Polonia riceve lo Svezia per la 6ª giornata di Nations League."
+      "Appuntamento martedì 17 novembre alle 20:45: la Polonia ospita la Svezia per la 6ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League il Polonia ha raccolto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza N-P-V-P), con 7 gol fatti e 4 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Nations League lo Svezia ha raccolto 3 vittorie e 1 pareggio (sequenza V-V-N-V), con 7 gol fatti e 3 subiti. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 3 partite di Nations League la Polonia ha raccolto 1 vittoria e 2 sconfitte (sequenza P-V-P), con 7 gol fatti e 4 subiti.",
+      "Nelle ultime 3 partite di Nations League la Svezia ha raccolto 2 vittorie e 1 pareggio (sequenza V-N-V), con 5 gol fatti e 2 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
      ],
      "bullets": []
     }
@@ -5980,8 +6127,49 @@
     }
    ]
   },
+  "fb:1001528995": {
+   "fingerprint": "1q1jq8q",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Ungheria e Irlanda del Nord si affrontano martedì 17 novembre alle 20:45 nella 6ª giornata di Nations League."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Nations League l'Ungheria ha raccolto 2 vittorie e 1 pareggio (sequenza N-V-V), con 3 gol fatti e 1 subito.",
+      "Nelle ultime 3 partite di Nations League l'Irlanda del Nord ha raccolto 1 vittoria e 2 pareggi (sequenza N-V-N), con 3 gol fatti e 0 subiti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "L'Irlanda del Nord non ha subito gol in nessuna delle ultime 3 partite."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Ungheria – Irlanda del Nord?",
+     "a": "Martedì 17 novembre alle 20:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:1001528994": {
-   "fingerprint": "17f2qn1",
+   "fingerprint": "1az47rl",
    "sections": [
     {
      "id": "presentazione",
@@ -5993,8 +6181,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League l'Ucraina ha raccolto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza V-N-P-P), con 2 gol fatti e 5 subiti. Ha perso le ultime 2. In casa ha perso tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di Nations League il Georgia ha raccolto 2 pareggi e 2 sconfitte (sequenza P-N-P-N), con 0 gol fatti e 2 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
+      "Nelle ultime 3 partite di Nations League l'Ucraina ha raccolto 1 pareggio e 2 sconfitte (sequenza N-P-P), con 1 gol fatto e 5 subiti. Ha perso le ultime 2. In casa ha perso tutte le 2 partite giocate.",
+      "Nelle ultime 3 partite di Nations League il Georgia ha raccolto 2 pareggi e 1 sconfitta (sequenza N-P-N), con 0 gol fatti e 1 subito. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
      ],
      "bullets": []
     }
@@ -6049,7 +6237,7 @@
    ]
   },
   "fb:1001528999": {
-   "fingerprint": "1893wfq",
+   "fingerprint": "1faym01",
    "sections": [
     {
      "id": "presentazione",
@@ -6061,17 +6249,10 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di Nations League la Bosnia ed Erzegovina ha raccolto 2 vittorie e 2 pareggi (sequenza N-V-N-V), con 6 gol fatti e 3 subiti. Non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di Nations League la Romania ha raccolto 4 sconfitte (sequenza P-P-P-P), con 3 gol fatti e 13 subiti. Ha perso le ultime 4. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 3 partite di Nations League la Bosnia ed Erzegovina ha conquistato 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 6 gol e subendone 3. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+      "Nelle ultime 3 partite di Nations League la Romania ha collezionato 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 11 subiti. Ha perso tutte e 3 le partite."
      ],
      "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In 3 delle ultime 4 partite della Romania si sono segnati almeno tre gol."
-     ]
     }
    ],
    "faq": [
@@ -6081,11 +6262,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+     "a": "Puoi consultare la pagina [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Le spiegazioni si trovano nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -6124,20 +6305,20 @@
    ]
   },
   "fb:1001545873": {
-   "fingerprint": "1kz03n6",
+   "fingerprint": "g6t64z",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento giovedì 12 novembre alle 16:00: il Ghana riceve il Somalia per la 3ª giornata di Qualificazioni Coppa d'Africa."
+      "Giovedì 12 novembre alle 16:00 il Ghana ospita il Somalia nella 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Il Ghana ha giocato finora una sola partita di Qualificazioni Coppa d'Africa, persa 2-4.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Somalia ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 4 subiti. Ha perso le ultime 2."
+      "Finora il Ghana ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, persa 2-4.",
+      "Anche il Somalia ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, persa 0-2."
      ],
      "bullets": []
     }
@@ -6149,11 +6330,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -6260,20 +6441,20 @@
    ]
   },
   "fb:1001545876": {
-   "fingerprint": "1jxfw1g",
+   "fingerprint": "q74myw",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento giovedì 12 novembre alle 17:00: il Madagascar ospita il Guinea-Bissau per la 3ª giornata delle Qualificazioni Coppa d'Africa."
+      "Giovedì 12 novembre alle 17:00 il Madagascar ospita il Guinea-Bissau, in programma per la 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Madagascar ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 2 gol e subendone 3.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Guinea-Bissau ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e non subendone nessuno."
+      "Il Madagascar ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, terminata 1-1.",
+      "Il Guinea-Bissau ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, vinta 3-0."
      ],
      "bullets": []
     }
@@ -6284,30 +6465,30 @@
      "a": "Giovedì 12 novembre alle 17:00, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
+     "q": "Dove consultare classifica e risultati?",
      "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "q": "Dove trovare spiegazioni sulla lettura delle quote?",
+     "a": "Ne trattano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001545864": {
-   "fingerprint": "t6a3ag",
+   "fingerprint": "1jfri0u",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Giovedì 12 novembre alle 20:00 il Benin ospita il Repubblica Centrafricana nella 3ª giornata di Qualificazioni Coppa d'Africa."
+      "Giovedì 12 novembre alle 20:00 il Benin ospita il Repubblica Centrafricana nella 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Benin ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 3 gol e subendone 2.",
-      "Il Repubblica Centrafricana ha disputato finora una sola partita di Qualificazioni Coppa d'Africa, persa 0-1."
+      "Il Benin ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, vinta 2-1.",
+      "Il Repubblica Centrafricana ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, persa 0-1."
      ],
      "bullets": []
     }
@@ -6323,7 +6504,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -6369,27 +6550,27 @@
    ]
   },
   "fb:1001545875": {
-   "fingerprint": "494f8c",
+   "fingerprint": "1fi3ak8",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Costa d'Avorio e Gambia si affrontano giovedì 12 novembre alle 20:00 per la 3ª giornata di Qualificazioni Coppa d'Africa."
+      "Costa d'Avorio e Gambia si affrontano giovedì 12 novembre alle 20:00 nella 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Il Costa d'Avorio ha giocato finora una sola partita di Qualificazioni Coppa d'Africa, vinta 2-0.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Gambia ha raccolto 2 vittorie (sequenza V-V), con 6 gol fatti e 3 subiti."
+      "La Costa d'Avorio ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, vinta 2-0.",
+      "Il Gambia ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, vinta 4-2."
      ],
      "bullets": []
     },
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per il Costa d'Avorio, 0 vittorie per il Gambia e nessun pareggio, con 3 gol complessivi (media di 1,5 a partita). L'ultimo incrocio, a marzo 2025 in Qualificazioni Mondiali Africa, è finito Costa d'Avorio 1-0 Gambia."
+      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per la Costa d'Avorio, 0 vittorie per il Gambia e nessun pareggio, con 3 gol complessivi (media di 1,5 a partita). L'ultimo incrocio, disputato a marzo 2025 nelle Qualificazioni Mondiali Africa, è terminato Costa d'Avorio 1-0 Gambia."
      ],
      "bullets": []
     }
@@ -6405,32 +6586,32 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001545881": {
-   "fingerprint": "103khfw",
+   "fingerprint": "p4ot1j",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Giovedì 12 novembre alle 20:00 il Senegal ospita il Sudan per la 3ª giornata delle Qualificazioni alla Coppa d'Africa."
+      "Giovedì 12 novembre alle 20:00 il Senegal ospita il Sudan nella 3ª giornata delle Qualificazioni alla Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni alla Coppa d'Africa il Senegal ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 2 gol fatti e 1 subito.",
-      "Nelle ultime 2 partite di Qualificazioni alla Coppa d'Africa il Sudan ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 4 subiti."
+      "Finora il Senegal ha disputato una sola partita nelle Qualificazioni alla Coppa d'Africa, vinta 1-0.",
+      "Anche il Sudan ha disputato finora una sola partita nelle Qualificazioni alla Coppa d'Africa, persa 1-4."
      ],
      "bullets": []
     },
     {
      "id": "precedenti",
      "paragraphs": [
-      "Negli ultimi 5 confronti diretti il bilancio è di 2 vittorie per il Senegal, 0 vittorie per il Sudan e 3 pareggi, con 8 gol complessivi (media di 1,6 a partita). L'ultimo incrocio, a gennaio 2026 in Coppa d'Africa, è finito Senegal 3-1 Sudan."
+      "Negli ultimi 5 confronti diretti il Senegal ha ottenuto 2 vittorie, il Sudan nessuna e le squadre hanno pareggiato 3 volte, con 8 gol complessivi (media di 1,6 a partita). L'ultimo incrocio, disputato a gennaio 2026 in Coppa d'Africa, è terminato Senegal 3-1 Sudan."
      ],
      "bullets": []
     }
@@ -6442,11 +6623,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -6485,20 +6666,20 @@
    ]
   },
   "fb:1001545879": {
-   "fingerprint": "rbs14f",
+   "fingerprint": "1ip5qua",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento venerdì 13 novembre alle 14:00: il Mozambico riceve l'Etiopia per la 3ª giornata di Qualificazioni Coppa d'Africa."
+      "Appuntamento venerdì 13 novembre alle 14:00: il Mozambico ospita l'Etiopia nella 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Mozambico ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 5 gol fatti e 2 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Etiopia ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 2 subiti. Ha perso le ultime 2."
+      "Finora il Mozambico ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 4-1.",
+      "Finora l'Etiopia ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, persa 0-1."
      ],
      "bullets": []
     }
@@ -6519,7 +6700,7 @@
    ]
   },
   "fb:1001545885": {
-   "fingerprint": "duxz6j",
+   "fingerprint": "1kyw6rj",
    "sections": [
     {
      "id": "presentazione",
@@ -6531,8 +6712,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, lo Zambia ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 3 gol e subendone 3.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, il Burundi ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 2 gol e subendone 3."
+      "Finora lo Zambia ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 2-0.",
+      "Anche il Burundi ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, pareggiata 2-2."
      ],
      "bullets": []
     }
@@ -6543,30 +6724,30 @@
      "a": "Venerdì 13 novembre alle 14:00, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001545865": {
-   "fingerprint": "wkrbdh",
+   "fingerprint": "1nq3u9x",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Venerdì 13 novembre alle 17:00 il Burkina Faso ospita il Mauritania nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+      "Appuntamento venerdì 13 novembre alle 17:00: il Burkina Faso ospita la Mauritania per la 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Burkina Faso ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1.",
-      "Finora il Mauritania ha disputato una sola partita delle Qualificazioni Coppa d'Africa, persa per 1-2."
+      "Finora il Burkina Faso ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 1-0.",
+      "Finora anche la Mauritania ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, persa 1-2."
      ],
      "bullets": []
     }
@@ -6577,30 +6758,30 @@
      "a": "Venerdì 13 novembre alle 17:00, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "q": "Dove trovo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Le spiegazioni si trovano nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001545867": {
-   "fingerprint": "hl2c0y",
+   "fingerprint": "jcfl0c",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Venerdì 13 novembre alle 17:00 il Capo Verde ospita il Liberia per la 3ª giornata delle Qualificazioni Coppa d'Africa."
+      "Venerdì 13 novembre alle 17:00 il Capo Verde ospita il Liberia per la 3ª giornata delle Qualificazioni alla Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Capo Verde ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 5 subiti. Ha perso le ultime 2.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Liberia ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 4 subiti. Ha perso le ultime 2."
+      "Finora il Capo Verde ha giocato una sola partita nelle Qualificazioni alla Coppa d'Africa, persa 1-2.",
+      "Anche il Liberia ha giocato finora una sola partita nelle Qualificazioni alla Coppa d'Africa, persa 0-1."
      ],
      "bullets": []
     }
@@ -6612,29 +6793,29 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001545872": {
-   "fingerprint": "13upmcw",
+   "fingerprint": "1dau14g",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Gabon e Lesotho si affrontano venerdì 13 novembre alle 17:00 per la 3ª giornata delle Qualificazioni Coppa d'Africa. È un confronto tra squadre di alta classifica: il Gabon è al 2° posto con 3 punti, il Lesotho al 4° con 0."
+      "Gabon e Lesotho si affrontano venerdì 13 novembre alle 17:00 nella 3ª giornata delle Qualificazioni Coppa d'Africa. Si tratta di una sfida di rilievo in classifica: il Gabon occupa il 2° posto con 3 punti, mentre il Lesotho è al 4° posto con 0 punti."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Gabon ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 2 gol e subendone 2.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Lesotho ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le ultime partite."
+      "Finora il Gabon ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 2-0.",
+      "Anche il Lesotho ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, persa 0-2."
      ],
      "bullets": []
     }
@@ -6646,29 +6827,29 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001545880": {
-   "fingerprint": "68mupg",
+   "fingerprint": "svkolb",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Nigeria e Tanzania si sfidano venerdì 13 novembre alle 17:00, nella 3ª giornata delle Qualificazioni alla Coppa d'Africa."
+      "Nigeria e Tanzania scendono in campo venerdì 13 novembre alle 17:00, nell'ambito della 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni alla Coppa d'Africa, la Nigeria ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 4.",
-      "Nelle ultime 2 partite delle Qualificazioni alla Coppa d'Africa, la Tanzania ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 1 gol e subendone 3."
+      "Finora il Nigeria ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, persa 0-3.",
+      "Finora il Tanzania ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, conclusa con un pareggio 1-1."
      ],
      "bullets": []
     }
@@ -6679,12 +6860,12 @@
      "a": "Venerdì 13 novembre alle 17:00, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
+     "q": "Dove posso consultare classifica e risultati?",
      "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -6757,20 +6938,20 @@
    ]
   },
   "fb:1001545870": {
-   "fingerprint": "7ruuf5",
+   "fingerprint": "13la8ty",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Venerdì 13 novembre alle 20:00 l'Egitto ospita il Malawi nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+      "Appuntamento venerdì 13 novembre alle 20:00, quando l'Egitto ospita il Malawi nella 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, l'Egitto ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 5 gol e non subendone nessuno.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, il Malawi ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 3 gol e subendone 4."
+      "Finora l'Egitto ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 5-0.",
+      "Anche il Malawi ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, persa 1-3."
      ],
      "bullets": []
     }
@@ -6791,20 +6972,20 @@
    ]
   },
   "fb:1001545877": {
-   "fingerprint": "15hd3bh",
+   "fingerprint": "1dy0hrf",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Venerdì 13 novembre alle 20:00 il Mali ospita il Ruanda nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+      "Venerdì 13 novembre alle 20:00 il Mali ospita il Ruanda per la 3ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Mali ha ottenuto 2 vittorie (sequenza V-V), segnando 4 gol e subendone 1.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Ruanda ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 2."
+      "Finora il Mali ha giocato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 1-0.",
+      "Anche il Ruanda ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, vinta 2-1."
      ],
      "bullets": []
     }
@@ -6825,7 +7006,7 @@
    ]
   },
   "fb:1001545878": {
-   "fingerprint": "jyz1zo",
+   "fingerprint": "pibs4g",
    "sections": [
     {
      "id": "presentazione",
@@ -6837,8 +7018,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Marocco ha raccolto 2 vittorie (sequenza V-V), con 4 gol fatti e 0 subiti.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Niger ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 3 subiti."
+      "Il Marocco ha giocato finora una sola partita di Qualificazioni Coppa d'Africa, vinta 2-0.",
+      "Il Niger ha giocato finora una sola partita di Qualificazioni Coppa d'Africa, persa 0-2."
      ],
      "bullets": []
     }
@@ -6846,7 +7027,7 @@
    "faq": [
     {
      "q": "Quando si gioca Marocco – Niger?",
-     "a": "Venerdì 13 novembre alle 21:00, ora italiana."
+     "a": "La partita si disputa venerdì 13 novembre alle 21:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -6893,7 +7074,7 @@
    ]
   },
   "fb:1001545862": {
-   "fingerprint": "1j54wt",
+   "fingerprint": "34f0rf",
    "sections": [
     {
      "id": "presentazione",
@@ -6905,8 +7086,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, l'Algeria ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 5 gol e subendone 3.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, il Togo ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 1 gol e subendone 2."
+      "Finora l'Algeria ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, conclusa con un pareggio per 2-2.",
+      "Anche il Togo ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, sconfitta per 0-2."
      ],
      "bullets": []
     }
@@ -6918,16 +7099,16 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "a": "Puoi consultarli nella pagina dedicata alle [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001545863": {
-   "fingerprint": "1bo9spz",
+   "fingerprint": "75gz4c",
    "sections": [
     {
      "id": "presentazione",
@@ -6939,8 +7120,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Angola ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 3 gol e subendone 1.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Sud Sudan ha subito 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 7. Ha perso entrambe le ultime partite."
+      "Finora l'Angola ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 3-1.",
+      "Anche il Sud Sudan ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, persa 0-5."
      ],
      "bullets": []
     }
@@ -6952,11 +7133,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "a": "Puoi consultare la pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -6995,20 +7176,20 @@
    ]
   },
   "fb:1001545906": {
-   "fingerprint": "xnwx3o",
+   "fingerprint": "1b4gyun",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sudan e Senegal si sfidano lunedì 16 novembre alle 14:00, nell'ambito della 4ª giornata delle Qualificazioni Coppa d'Africa."
+      "Sudan e Senegal si affrontano lunedì 16 novembre alle 14:00 per la 4ª giornata di Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, il Sudan ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 4.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa, il Senegal ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Il Sudan ha giocato finora una sola partita di Qualificazioni Coppa d'Africa, persa 1-4.",
+      "Il Senegal ha giocato finora una sola partita di Qualificazioni Coppa d'Africa, vinta 1-0."
      ],
      "bullets": []
     }
@@ -7020,11 +7201,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -7063,20 +7244,20 @@
    ]
   },
   "fb:1001545904": {
-   "fingerprint": "42os2s",
+   "fingerprint": "12hp7hx",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Il match è in programma lunedì 16 novembre alle 16:00: il Somalia ospita il Ghana per la 4ª giornata delle Qualificazioni Coppa d'Africa."
+      "La partita si giocherà lunedì 16 novembre alle 16:00, quando il Somalia ospiterà il Ghana per la 4ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Somalia ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le gare.",
-      "Il Ghana ha disputato finora una sola partita delle Qualificazioni Coppa d'Africa, persa per 2-4."
+      "Finora il Somalia ha disputato una sola gara nelle Qualificazioni Coppa d'Africa, persa per 0-2.",
+      "Anche il Ghana ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, persa per 2-4."
      ],
      "bullets": []
     }
@@ -7092,25 +7273,25 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001545888": {
-   "fingerprint": "edvms1",
+   "fingerprint": "1c9bqsv",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Lunedì 16 novembre alle 17:00 la Repubblica Centrafricana ospita il Benin nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+      "Lunedì 16 novembre alle 17:00 la Repubblica Centrafricana ospita il Benin nella 4ª giornata delle Qualificazioni alla Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "La Repubblica Centrafricana ha disputato finora una sola partita di Qualificazioni Coppa d'Africa, perdendola per 0-1.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Benin ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 3 gol e subendone 2."
+      "Finora la Repubblica Centrafricana ha disputato una sola partita nelle Qualificazioni alla Coppa d'Africa, persa 0-1.",
+      "Anche il Benin ha giocato finora una sola partita nelle Qualificazioni alla Coppa d'Africa, vinta 2-1."
      ],
      "bullets": []
     }
@@ -7122,11 +7303,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -7165,20 +7346,20 @@
    ]
   },
   "fb:1001545887": {
-   "fingerprint": "7alw19",
+   "fingerprint": "1bc0q33",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Burundi e Zambia si sfidano martedì 17 novembre alle 14:00, nella 4ª giornata delle Qualificazioni Coppa d'Africa."
+      "Burundi e Zambia si affrontano martedì 17 novembre alle 14:00, nell'ambito della 4ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Burundi ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 2 gol e subendone 3.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa lo Zambia ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 3 gol e subendone 3."
+      "Finora il Burundi ha giocato una sola partita nelle Qualificazioni Coppa d'Africa, terminata con un pareggio per 2-2.",
+      "Anche lo Zambia ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, vinta per 2-0."
      ],
      "bullets": []
     }
@@ -7190,29 +7371,29 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001545891": {
-   "fingerprint": "19wqyd8",
+   "fingerprint": "ag90kl",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "La partita si giocherà martedì 17 novembre alle 14:00, quando l'Etiopia riceverà il Mozambico per la 4ª giornata delle Qualificazioni Coppa d'Africa."
+      "La partita si giocherà martedì 17 novembre alle 14:00, quando l'Etiopia ospiterà il Mozambico per la 4ª giornata delle Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, l'Etiopia ha collezionato 2 sconfitte (sequenza P-P), con 0 gol fatti e 2 subiti. Nelle ultime due gare ha perso entrambe.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, il Mozambico ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), con 5 gol fatti e 2 subiti."
+      "Finora l'Etiopia ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, persa per 0-1.",
+      "Il Mozambico ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, vinta per 4-1."
      ],
      "bullets": []
     }
@@ -7220,142 +7401,6 @@
    "faq": [
     {
      "q": "Quando si gioca Etiopia – Mozambico?",
-     "a": "La partita si gioca martedì 17 novembre alle 14:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545895": {
-   "fingerprint": "162zobz",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 14:00 il Lesotho ospita il Gabon per la 4ª giornata di Qualificazioni Coppa d'Africa. Si tratta di un incontro di alta classifica: il Lesotho è al 4° posto con 0 punti, mentre il Gabon è al 2° con 3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Lesotho ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 4 subiti. Ha perso le ultime 2.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Gabon ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 2 gol fatti e 2 subiti."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Lesotho – Gabon?",
-     "a": "Martedì 17 novembre alle 14:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545898": {
-   "fingerprint": "1swi23k",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 14:00 il Malawi ospita l'Egitto nella 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Malawi ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 3 gol e subendone 4.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Egitto ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 5 gol e non subendone nessuno."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Malawi – Egitto?",
-     "a": "Martedì 17 novembre alle 14:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545905": {
-   "fingerprint": "1avbe61",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 14:00 il Sud Sudan ospita l'Angola per la 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Sud Sudan ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 7 subiti. Ha perso le ultime 2.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa l'Angola ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 3 gol fatti e 1 subito."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Sud Sudan – Angola?",
-     "a": "Martedì 17 novembre alle 14:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545907": {
-   "fingerprint": "1gjfpgy",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 14:00 il Tanzania ospita il Nigeria per la 4ª giornata delle Qualificazioni alla Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni alla Coppa d'Africa, il Tanzania ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 1 gol e subendone 3.",
-      "Nelle ultime 2 partite delle Qualificazioni alla Coppa d'Africa, il Nigeria ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 4."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Tanzania – Nigeria?",
      "a": "Martedì 17 novembre alle 14:00, ora italiana."
     },
     {
@@ -7365,74 +7410,6 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545892": {
-   "fingerprint": "v5sajr",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Il appuntamento è fissato per martedì 17 novembre alle 17:00: il Gambia ospita il Costa d'Avorio nella 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Gambia ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 3.",
-      "Il Costa d'Avorio ha disputato finora una sola partita delle Qualificazioni Coppa d'Africa, vinta 2-0."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Gambia – Costa d'Avorio?",
-     "a": "Martedì 17 novembre alle 17:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545893": {
-   "fingerprint": "9g5d2w",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 17:00 il Guinea-Bissau ospita il Madagascar nella 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Guinea-Bissau ha raccolto 2 vittorie (sequenza V-V), con 5 gol fatti e 0 subiti.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Madagascar ha raccolto 1 pareggio e 1 sconfitta (sequenza P-N), con 2 gol fatti e 3 subiti."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Guinea-Bissau – Madagascar?",
-     "a": "Martedì 17 novembre alle 17:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -7538,40 +7515,6 @@
     }
    ]
   },
-  "fb:1001545908": {
-   "fingerprint": "1vac4ja",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Togo e Algeria si sfidano martedì 17 novembre alle 17:00, nella 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, il Togo ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 1 gol e subendone 2.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa, l'Algeria ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 5 gol e subendone 3."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Togo – Algeria?",
-     "a": "Martedì 17 novembre alle 17:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001545886": {
    "fingerprint": "1td6gw0",
    "sections": [
@@ -7640,281 +7583,6 @@
     }
    ]
   },
-  "fb:1001545896": {
-   "fingerprint": "1xj60wr",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 20:00 il Liberia ospita il Capo Verde per la 4ª giornata di Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Liberia ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 4 subiti. Ha perso le ultime 2.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Capo Verde ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 5 subiti. Ha perso le ultime 2."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Liberia – Capo Verde?",
-     "a": "Martedì 17 novembre alle 20:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545899": {
-   "fingerprint": "89wrsd",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 20:00 il Mauritania ospita il Burkina Faso per la 4ª giornata di Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Il Mauritania ha giocato finora una sola partita di Qualificazioni Coppa d'Africa, persa 1-2.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Burkina Faso ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 2 gol fatti e 1 subito."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Mauritania – Burkina Faso?",
-     "a": "Martedì 17 novembre alle 20:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545902": {
-   "fingerprint": "sisd4v",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 20:00 il Ruanda ospita il Mali per la 4ª giornata delle Qualificazioni Coppa d'Africa."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Ruanda ha ottenuto 2 vittorie (sequenza V-V), segnando 5 gol e subendone 2.",
-      "Nelle ultime 2 partite di Qualificazioni Coppa d'Africa il Mali ha ottenuto 2 vittorie (sequenza V-V), segnando 4 gol e subendone 1."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Ruanda – Mali?",
-     "a": "Martedì 17 novembre alle 20:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001545901": {
-   "fingerprint": "183ho8g",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Niger e Marocco si affrontano martedì 17 novembre alle 21:00 per la 4ª giornata delle Qualificazioni Coppa d'Africa. Si tratta di un incontro tra due squadre in alta classifica: il Niger è al 3° posto con 3 punti, il Marocco è al 1° con 6."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Niger ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 3 subiti.",
-      "Nelle ultime 2 partite delle Qualificazioni Coppa d'Africa il Marocco ha ottenuto 2 vittorie (sequenza V-V), con 4 gol fatti e 0 subiti."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Niger – Marocco?",
-     "a": "Martedì 17 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001640004": {
-   "fingerprint": "14nof7f",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Barbados e Guadalupa si affrontano giovedì 12 novembre alle 20:00 per la 2ª giornata di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Barbados ha raccolto 3 vittorie e 1 pareggio (sequenza V-N-V-V), con 10 gol fatti e 4 subiti. Non perde da 4 partite. In casa ha vinto tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di CONCACAF Nations League il Guadalupa ha raccolto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza V-N-P-P), con 4 gol fatti e 7 subiti. Ha perso le ultime 2. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In 3 delle ultime 4 partite del Barbados si sono segnati almeno tre gol.",
-      "In 3 delle ultime 4 partite del Guadalupa si sono segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 3 confronti diretti il bilancio è di 0 vittorie per il Barbados, 2 vittorie per il Guadalupa e 1 pareggio, con 8 gol complessivi (media di 2,7 a partita). L'ultimo incrocio, a settembre 2026 in CONCACAF Nations League, è finito Guadalupa 2-2 Barbados."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Barbados – Guadalupa?",
-     "a": "Giovedì 12 novembre alle 20:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001640008": {
-   "fingerprint": "hfjsuc",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Isole Cayman e Guyana si affrontano giovedì 12 novembre alle 20:00 per la 1ª giornata di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League l'Isole Cayman ha raccolto 1 pareggio e 3 sconfitte (sequenza N-P-P-P), con 0 gol fatti e 6 subiti. Ha perso le ultime 3. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie.",
-      "Nelle ultime 3 partite di CONCACAF Nations League il Guyana ha raccolto 3 vittorie (sequenza V-V-V), con 15 gol fatti e 2 subiti. È reduce da 3 vittorie consecutive."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 1 confronti diretti il bilancio è di 0 vittorie per l'Isole Cayman, 1 vittoria per il Guyana e nessun pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, a settembre 2026 in CONCACAF Nations League, è finito Guyana 2-0 Isole Cayman."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Isole Cayman – Guyana?",
-     "a": "Giovedì 12 novembre alle 20:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001640007": {
-   "fingerprint": "2xipfa",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Bonaire e Cuba si affrontano giovedì 12 novembre alle 21:00 per la 3ª giornata di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Bonaire ha raccolto 1 vittoria e 3 sconfitte (sequenza P-P-P-V), con 7 gol fatti e 8 subiti. In casa ha perso tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di CONCACAF Nations League il Cuba ha raccolto 2 vittorie e 2 pareggi (sequenza V-V-N-N), con 10 gol fatti e 5 subiti. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In 3 delle ultime 4 partite del Bonaire si sono segnati almeno tre gol.",
-      "In 3 delle ultime 4 partite del Cuba si sono segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 1 confronti diretti il bilancio è di 0 vittorie per il Bonaire, 1 vittoria per il Cuba e nessun pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, a settembre 2026 in CONCACAF Nations League, è finito Cuba 2-0 Bonaire."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Bonaire – Cuba?",
-     "a": "Giovedì 12 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001649029": {
    "fingerprint": "1pg54x4",
    "sections": [
@@ -7956,218 +7624,6 @@
     }
    ]
   },
-  "fb:1001649030": {
-   "fingerprint": "1eogyfc",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Antigua e Barbuda e Trinidad e Tobago si affrontano venerdì 13 novembre alle 00:00 per i playoff di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 3 partite di CONCACAF Nations League, l'Antigua e Barbuda ha raccolto 3 vittorie (sequenza V-V-V), con 11 gol fatti e 2 subiti. È reduce da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di CONCACAF Nations League, il Trinidad e Tobago ha raccolto 1 pareggio e 3 sconfitte (sequenza P-P-P-N), con 4 gol fatti e 7 subiti. In trasferta ha perso tutte le 2 partite giocate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 3 partite dell'Antigua e Barbuda si sono segnati almeno tre gol."
-     ]
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 2 confronti diretti il bilancio è di 1 vittoria per l'Antigua e Barbuda, 1 vittoria per il Trinidad e Tobago e nessun pareggio, con 3 gol complessivi (media di 1,5 a partita). L'ultimo incrocio, a ottobre 2014 in Caribbean Cup, è finito Trinidad e Tobago 1-0 Antigua e Barbuda."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Antigua e Barbuda – Trinidad e Tobago?",
-     "a": "Venerdì 13 novembre alle 00:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001644690": {
-   "fingerprint": "npi5ko",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Venerdì 13 novembre alle 01:30 il Curaçao ospita il Panama nei quarti di finale della CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Curaçao ha ottenuto 3 vittorie e 1 pareggio (sequenza V-V-V-N), segnando 12 gol e subendone 5. La squadra non perde da 4 partite. In casa ha vinto tutte le 2 gare disputate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 3 confronti diretti il bilancio è di 0 vittorie per il Curaçao, 2 vittorie per il Panama e 1 pareggio, con 6 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, disputato a ottobre 2023 in CONCACAF Nations League, si è concluso Curaçao 1-2 Panama."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Curaçao – Panama?",
-     "a": "Venerdì 13 novembre alle 01:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001640006": {
-   "fingerprint": "1pfappl",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Venerdì 13 novembre alle 20:00 il Bermuda ospita il Santa Lucia nella 2ª giornata di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Bermuda ha raccolto 4 sconfitte (sequenza P-P-P-P), segnando 5 gol e subendone 13. Ha perso le ultime 4 gare. In casa ha perso tutte le 2 partite disputate.",
-      "Nelle ultime 4 partite di CONCACAF Nations League il Santa Lucia ha ottenuto 3 vittorie e 1 sconfitta (sequenza P-V-V-V), con 9 gol fatti e 4 subiti. Arriva da 3 vittorie consecutive. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 4 partite del Bermuda sono stati segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Bermuda – Santa Lucia?",
-     "a": "Venerdì 13 novembre alle 20:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Trovi spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001640015": {
-   "fingerprint": "q0kyzq",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Portorico e Dominica si affrontano venerdì 13 novembre alle 20:00 per la 1ª giornata di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 3 partite di CONCACAF Nations League il Portorico ha raccolto 3 vittorie (sequenza V-V-V), con 6 gol fatti e 0 subiti. È reduce da 3 vittorie consecutive.",
-      "Nelle ultime 4 partite di CONCACAF Nations League il Dominica ha raccolto 1 pareggio e 3 sconfitte (sequenza N-P-P-P), con 2 gol fatti e 15 subiti. Ha perso le ultime 3. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Il Portorico non ha subito gol in tutte le ultime 3."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Portorico – Dominica?",
-     "a": "Venerdì 13 novembre alle 20:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001640012": {
-   "fingerprint": "1sfqyzr",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Grenada e Saint Kitts e Nevis si affrontano venerdì 13 novembre alle 21:00 nell'ambito della 3ª giornata di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League, il Grenada ha ottenuto 1 vittoria e 3 sconfitte, con la sequenza P-P-V-P. Ha segnato 4 gol e ne ha subiti 12. In casa ha perso tutte le 2 partite disputate.",
-      "Nelle ultime 4 partite di CONCACAF Nations League, il Saint Kitts e Nevis ha ottenuto 2 vittorie e 2 pareggi, con la sequenza V-V-N-N. Ha segnato 10 gol e ne ha subiti 6. Non perde da 4 partite. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 4 partite del Grenada sono stati segnati almeno tre gol.",
-      "In tutte le ultime 4 partite del Saint Kitts e Nevis sono stati segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Grenada – Saint Kitts e Nevis?",
-     "a": "Venerdì 13 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina dedicata alla [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001649031": {
    "fingerprint": "12g0bee",
    "sections": [
@@ -8191,47 +7647,6 @@
     {
      "q": "Quando si gioca Saint Martin – El Salvador?",
      "a": "Sabato 14 novembre alle 00:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001649032": {
-   "fingerprint": "1he8lyn",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 14 novembre alle 01:00 il Montserrat ospita il Nicaragua per i playoff di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 3 partite di CONCACAF Nations League il Montserrat ha raccolto 3 vittorie (sequenza V-V-V), con 9 gol fatti e 1 subito. È reduce da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di CONCACAF Nations League il Nicaragua ha raccolto 4 sconfitte (sequenza P-P-P-P), con 4 gol fatti e 14 subiti. Ha perso le ultime 4. In trasferta ha perso tutte le 2 partite giocate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 4 partite del Nicaragua si sono segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Montserrat – Nicaragua?",
-     "a": "Sabato 14 novembre alle 01:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -8324,39 +7739,6 @@
     }
    ]
   },
-  "fb:1001644693": {
-   "fingerprint": "1t78ibb",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Haiti e Stati Uniti si sfidano sabato 14 novembre alle 22:30 nei quarti di finale della CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League, l'Haiti ha ottenuto 3 vittorie e 1 sconfitta (sequenza V-V-V-P), segnando 9 gol e subendone 5. In casa ha vinto tutte le 2 partite giocate."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Haiti – Stati Uniti?",
-     "a": "Sabato 14 novembre alle 22:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001640018": {
    "fingerprint": "1l3oos6",
    "sections": [
@@ -8431,39 +7813,6 @@
     }
    ]
   },
-  "fb:1001644696": {
-   "fingerprint": "4bz4s3",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Lunedì 16 novembre alle 00:00 il Panama ospita il Curaçao per i quarti di finale della CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Curaçao ha ottenuto 3 vittorie e 1 pareggio, con sequenza V-V-V-N, segnando 12 gol e subendone 5. La squadra non perde da 4 partite. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Panama – Curaçao?",
-     "a": "Lunedì 16 novembre alle 00:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001640014": {
    "fingerprint": "4wi6td",
    "sections": [
@@ -8494,131 +7843,6 @@
     {
      "q": "Quando si gioca Guyana – Portorico?",
      "a": "Lunedì 16 novembre alle 20:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001640013": {
-   "fingerprint": "7c4atm",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Lunedì 16 novembre alle 20:00 il Guadalupa ospita il Bermuda nella 2ª giornata di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Guadalupa ha ottenuto 1 vittoria, 1 pareggio e 2 sconfitte (sequenza V-N-P-P), segnando 4 gol e subendone 7. Ha perso le ultime 2. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
-      "Nelle ultime 4 partite di CONCACAF Nations League il Bermuda ha collezionato 4 sconfitte (sequenza P-P-P-P), con 5 gol fatti e 13 subiti. Ha perso le ultime 4. In trasferta ha perso tutte le 2 partite giocate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In 3 delle ultime 4 partite del Guadalupa si sono segnati almeno tre gol.",
-      "In tutte le ultime 4 partite del Bermuda si sono segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Guadalupa – Bermuda?",
-     "a": "Lunedì 16 novembre alle 20:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001640009": {
-   "fingerprint": "14gzqlu",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Lunedì 16 novembre alle 21:00 il Cuba ospita il Grenada nella 3ª giornata di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Cuba ha raccolto 2 vittorie e 2 pareggi (sequenza V-V-N-N), con 10 gol fatti e 5 subiti. Non perde da 4 partite. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-      "Nelle ultime 4 partite di CONCACAF Nations League il Grenada ha raccolto 1 vittoria e 3 sconfitte (sequenza P-P-V-P), con 4 gol fatti e 12 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In 3 delle ultime 4 partite del Cuba si sono segnati almeno tre gol.",
-      "In tutte le ultime 4 partite del Grenada si sono segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Cuba – Grenada?",
-     "a": "Lunedì 16 novembre alle 21:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001649034": {
-   "fingerprint": "6w3qn6",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 01:00 il Trinidad e Tobago ospita l'Antigua e Barbuda per i playoff di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Trinidad e Tobago ha raccolto 1 pareggio e 3 sconfitte (sequenza P-P-P-N), con 4 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie.",
-      "Nelle ultime 3 partite di CONCACAF Nations League l'Antigua e Barbuda ha raccolto 3 vittorie (sequenza V-V-V), con 11 gol fatti e 2 subiti. Arriva da 3 vittorie consecutive."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 3 partite dell'Antigua e Barbuda si sono segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Trinidad e Tobago – Antigua e Barbuda?",
-     "a": "Martedì 17 novembre alle 01:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -8745,40 +7969,6 @@
     }
    ]
   },
-  "fb:1001640010": {
-   "fingerprint": "h4czj8",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 20:00 il Dominica ospita le Isole Cayman nella 1ª giornata di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Dominica ha raccolto 1 pareggio e 3 sconfitte (sequenza N-P-P-P), con 2 gol fatti e 15 subiti. Ha perso le ultime 3. In casa ha perso tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di CONCACAF Nations League le Isole Cayman hanno raccolto 1 pareggio e 3 sconfitte (sequenza N-P-P-P), con 0 gol fatti e 6 subiti. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Dominica – Isole Cayman?",
-     "a": "Martedì 17 novembre alle 20:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001640017": {
    "fingerprint": "1qbi93t",
    "sections": [
@@ -8859,39 +8049,6 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001644697": {
-   "fingerprint": "xhtob3",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 18 novembre alle 01:00 gli Stati Uniti ospitano l'Haiti nei quarti di finale della CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League l'Haiti ha ottenuto 3 vittorie e 1 sconfitta (sequenza V-V-V-P), segnando 9 gol e subendone 5. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Stati Uniti – Haiti?",
-     "a": "Mercoledì 18 novembre alle 01:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -8993,47 +8150,6 @@
     {
      "q": "Quando si gioca Messico – Giamaica?",
      "a": "Mercoledì 18 novembre alle 03:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001649036": {
-   "fingerprint": "yuedh0",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Nicaragua e Montserrat si affrontano mercoledì 18 novembre alle 04:00 per i playoff di CONCACAF Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Nicaragua ha raccolto 4 sconfitte (sequenza P-P-P-P), con 4 gol fatti e 14 subiti. Ha perso le ultime 4. In casa ha perso tutte le 2 partite giocate.",
-      "Nelle ultime 3 partite di CONCACAF Nations League il Montserrat ha raccolto 3 vittorie (sequenza V-V-V), con 9 gol fatti e 1 subito. È reduce da 3 vittorie consecutive."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 4 partite del Nicaragua si sono segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Nicaragua – Montserrat?",
-     "a": "Mercoledì 18 novembre alle 04:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -9260,40 +8376,6 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001586134": {
-   "fingerprint": "v81mqo",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 12 novembre alle 07:00 il Nuova Zelanda riceve l'India in una partita valida per le Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Finora il Nuova Zelanda ha disputato una sola partita nelle Amichevoli internazionali, vinta per 3-0.",
-      "Nelle ultime 3 partite di Amichevoli internazionali l'India ha ottenuto 1 pareggio e 2 sconfitte (sequenza N-P-P), segnando 2 gol e subendone 11. Ha perso le ultime 2."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Nuova Zelanda – India?",
-     "a": "Giovedì 12 novembre alle 07:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -9720,39 +8802,6 @@
     }
    ]
   },
-  "fb:1001640084": {
-   "fingerprint": "dq9t2q",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Venerdì 13 novembre alle 15:45 il Qatar ospita l'Australia in una partita valida per le Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Amichevoli internazionali l'Australia ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 3 gol e subendone 5."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Qatar – Australia?",
-     "a": "Venerdì 13 novembre alle 15:45, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001649543": {
    "fingerprint": "eho5bn",
    "sections": [
@@ -9802,39 +8851,6 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001647637": {
-   "fingerprint": "1rpuxo1",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Venerdì 13 novembre alle 18:30 il France U21 ospita l'Italy U21 nell'ambito delle Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Amichevoli internazionali il France U21 ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 3. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca France U21 – Italy U21?",
-     "a": "Venerdì 13 novembre alle 18:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti spiegano come funzionano le quote le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -10237,40 +9253,6 @@
     }
    ]
   },
-  "fb:1001640086": {
-   "fingerprint": "wleary",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 14 novembre alle 11:15 il Giappone ospita il Brasile nell'ambito delle Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Finora il Giappone ha disputato una sola partita nelle Amichevoli internazionali, vinta per 2-1.",
-      "Nelle ultime 3 gare di Amichevoli internazionali il Brasile ha ottenuto 2 vittorie e 1 pareggio (sequenza N-V-V), segnando 9 gol e subendone 3. In trasferta il bilancio stagionale riporta 2 vittorie e 1 pareggio, senza sconfitte."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Giappone – Brasile?",
-     "a": "Sabato 14 novembre alle 11:15, ora italiana."
-    },
-    {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Le spiegazioni si trovano nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001647639": {
    "fingerprint": "1akccw4",
    "sections": [
@@ -10471,40 +9453,6 @@
     {
      "q": "Dove vedo classifica e risultati?",
      "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001586133": {
-   "fingerprint": "xi77c6",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Nuova Zelanda e India si affrontano domenica 15 novembre alle 04:00 nell'ambito delle Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "La Nuova Zelanda ha giocato finora una sola partita di Amichevoli internazionali, vinta per 3-0.",
-      "Nelle ultime 3 partite di Amichevoli internazionali l'India ha raccolto 1 pareggio e 2 sconfitte (sequenza N-P-P), con 2 gol fatti e 11 subiti. Ha perso le ultime 2."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Nuova Zelanda – India?",
-     "a": "Domenica 15 novembre alle 04:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -10788,39 +9736,6 @@
     }
    ]
   },
-  "fb:1001646121": {
-   "fingerprint": "16govtz",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Lunedì 16 novembre alle 20:30 l'England U21 ospita il France U21 per le Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Amichevoli internazionali il France U21 ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 3 subiti."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca England U21 – France U21?",
-     "a": "Lunedì 16 novembre alle 20:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001649549": {
    "fingerprint": "17vg4r8",
    "sections": [
@@ -10911,39 +9826,6 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001640087": {
-   "fingerprint": "9dcabl",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 11:00 il Singapore ospita il Brasile in una partita valida per le Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 3 partite di Amichevoli internazionali il Brasile ha ottenuto 2 vittorie e 1 pareggio, con sequenza N-V-V, segnando 9 gol e subendone 3. In trasferta il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Singapore – Brasile?",
-     "a": "Martedì 17 novembre alle 11:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -11240,40 +10122,6 @@
     }
    ]
   },
-  "fb:1001640089": {
-   "fingerprint": "12v5soe",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 17:00 la Giordania affronta l'Australia nella partita valida per le Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Amichevoli internazionali la Giordania ha raccolto 2 pareggi (sequenza N-N), con 1 gol fatto e 1 subito. In casa il bilancio stagionale è di 2 pareggi, senza ancora alcuna vittoria.",
-      "Nelle ultime 2 partite di Amichevoli internazionali l'Australia ha raccolto 1 pareggio e 1 sconfitta (sequenza N-P), con 3 gol fatti e 5 subiti."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Giordania – Australia?",
-     "a": "Martedì 17 novembre alle 17:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
   "fb:1001649550": {
    "fingerprint": "kud1e9",
    "sections": [
@@ -11330,87 +10178,6 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ti spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001649552": {
-   "fingerprint": "1t5ft17",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Poland U21 e Serbia U21 si affrontano martedì 17 novembre alle 18:00 nell'ambito delle Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 4 partite di Amichevoli internazionali il Serbia U21 ha raccolto 3 vittorie e 1 sconfitta (sequenza V-V-P-V), con 9 gol fatti e 4 subiti."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 4 partite del Serbia U21 si sono segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Poland U21 – Serbia U21?",
-     "a": "Martedì 17 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001648288": {
-   "fingerprint": "rm2ird",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Appuntamento martedì 17 novembre alle 18:00: lo Switzerland U17 riceve il Czech Republic U17 per le Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Finora lo Switzerland U17 ha disputato una sola partita di Amichevoli internazionali, persa per 2-3.",
-      "Nelle ultime 3 partite di Amichevoli internazionali il Czech Republic U17 ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-V-P), segnando 6 gol e subendone 9. In trasferta ha perso tutte le 2 partite disputate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 3 partite del Czech Republic U17 sono stati segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Switzerland U17 – Czech Republic U17?",
-     "a": "Martedì 17 novembre alle 18:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -11637,175 +10404,6 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001648286": {
-   "fingerprint": "1csxfoe",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Switzerland U17 e Czech Republic U17 si sfidano giovedì 19 novembre alle 11:00, nell'ambito delle Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Finora lo Switzerland U17 ha disputato una sola partita di Amichevoli internazionali, persa 2-3.",
-      "Nelle ultime 3 gare di Amichevoli internazionali il Czech Republic U17 ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-V-P), segnando 6 gol e subendone 9. In trasferta ha perso tutte le 2 partite disputate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 3 partite del Czech Republic U17 sono stati segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Switzerland U17 – Czech Republic U17?",
-     "a": "Giovedì 19 novembre alle 11:00, ora italiana."
-    },
-    {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina dedicate alle [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "nba:21718066": {
-   "fingerprint": "1v6x5ub",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 10 novembre alle 01:00, ora italiana, gli Hawks ospitano i Lakers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Hawks hanno un record di 7-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,6 punti segnati e 115,5 subiti. In casa il bilancio è 3-2.",
-      "I Lakers hanno un record di 9-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 121,9 punti segnati e 114,5 subiti. In trasferta il bilancio è 4-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 3 gare.",
-      "I Lakers giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Atlanta Hawks – Los Angeles Lakers in Italia?",
-     "a": "Martedì 10 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718067": {
-   "fingerprint": "qexmr9",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Cavaliers fanno visita agli Hornets martedì 10 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Hornets hanno un record di 3-7 in stagione e hanno vinto 0 delle ultime 5, con una media di 96,3 punti segnati e 110,2 subiti. In casa il bilancio è 2-4.",
-      "I Cavaliers hanno un record di 5-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,0 punti segnati e 114,1 subiti. In trasferta il bilancio è 1-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 5 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Charlotte Hornets – Cleveland Cavaliers in Italia?",
-     "a": "Martedì 10 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718068": {
-   "fingerprint": "1nupq3r",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 10 novembre alle 01:00, ora italiana, i Pistons ospitano i Wizards in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Pistons hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 111,7 punti segnati e 103,9 subiti. In casa il bilancio è 2-2.",
-      "I Wizards hanno un record di 4-6 in stagione e hanno vinto 2 delle ultime 5, con una media di 107,8 punti segnati e 112,5 subiti. In trasferta il bilancio è 2-4."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Pistons giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 5 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Detroit Pistons – Washington Wizards in Italia?",
-     "a": "Martedì 10 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -13928,91 +12526,6 @@
     }
    ]
   },
-  "nba:1000017140": {
-   "fingerprint": "1471hmm",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Grizzlies fanno visita ai Wizards martedì 17 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Wizards hanno un record di 4-6 in stagione e hanno vinto 2 delle ultime 5, con una media di 107,8 punti segnati e 112,5 subiti. In casa il bilancio è 2-2.",
-      "I Grizzlies hanno un record di 6-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 111,8 subiti. In trasferta il bilancio è 4-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Wizards giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Washington Wizards – Memphis Grizzlies in Italia?",
-     "a": "Martedì 17 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017141": {
-   "fingerprint": "1x3la14",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 01:30, ora italiana, i Nets ospitano i 76ers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Nets hanno un record di 2-8 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,7 punti segnati e 115,7 subiti. In casa il bilancio è 1-3.",
-      "I 76ers hanno un record di 9-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,0 punti segnati e 107,9 subiti. In trasferta il bilancio è 5-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Brooklyn Nets – Philadelphia 76ers in Italia?",
-     "a": "Martedì 17 novembre alle 01:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017142": {
    "fingerprint": "6xc9tx",
    "sections": [
@@ -14053,48 +12566,6 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017143": {
-   "fingerprint": "ra87ms",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 02:00, ora italiana, i Timberwolves ospitano i Trail Blazers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Timberwolves hanno un record di 8-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 107,0 subiti. In casa il bilancio è 4-1.",
-      "I Trail Blazers hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,3 punti segnati e 113,8 subiti. In trasferta il bilancio è 5-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Minnesota Timberwolves – Portland Trail Blazers in Italia?",
-     "a": "Martedì 17 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -14225,50 +12696,6 @@
     }
    ]
   },
-  "nba:1000017147": {
-   "fingerprint": "1952e4g",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 18 novembre alle 02:00, ora italiana, i Timberwolves ospitano i Trail Blazers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Timberwolves hanno un record di 8-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 107,0 subiti. In casa il bilancio è 4-1.",
-      "I Trail Blazers hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,3 punti segnati e 113,8 subiti. In trasferta il bilancio è 5-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Timberwolves giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 3 gare.",
-      "I Trail Blazers giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Minnesota Timberwolves – Portland Trail Blazers in Italia?",
-     "a": "Mercoledì 18 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017148": {
    "fingerprint": "1jxa6e7",
    "sections": [
@@ -14353,90 +12780,6 @@
     }
    ]
   },
-  "nba:1000017149": {
-   "fingerprint": "tjnq69",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 18 novembre alle 05:00, ora italiana, i Lakers ospitano gli Hornets in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Lakers hanno un record di 9-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 121,9 punti segnati e 114,5 subiti. In casa il bilancio è 5-1.",
-      "Gli Hornets hanno un record di 3-7 in stagione e hanno vinto 0 delle ultime 5, con una media di 96,3 punti segnati e 110,2 subiti. In trasferta il bilancio è 1-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Los Angeles Lakers – Charlotte Hornets in Italia?",
-     "a": "Mercoledì 18 novembre alle 05:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017151": {
-   "fingerprint": "5cxx7r",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Grizzlies fanno visita ai Cavaliers giovedì 19 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Cavaliers hanno un record di 5-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,0 punti segnati e 114,1 subiti. In casa il bilancio è 4-2.",
-      "I Grizzlies hanno un record di 6-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 111,8 subiti. In trasferta il bilancio è 4-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Cleveland Cavaliers – Memphis Grizzlies in Italia?",
-     "a": "Giovedì 19 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017152": {
    "fingerprint": "12uiz0m",
    "sections": [
@@ -14518,48 +12861,6 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017154": {
-   "fingerprint": "1mpmla4",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 19 novembre alle 01:00, ora italiana, i Magic ospitano i 76ers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Magic hanno un record di 2-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 107,0 punti segnati e 116,2 subiti. In casa il bilancio è 0-4.",
-      "I 76ers hanno un record di 9-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,0 punti segnati e 107,9 subiti. In trasferta il bilancio è 5-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Orlando Magic – Philadelphia 76ers in Italia?",
-     "a": "Giovedì 19 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -14903,93 +13204,6 @@
     }
    ]
   },
-  "nba:1000017163": {
-   "fingerprint": "18gfu03",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Venerdì 20 novembre alle 02:00, ora italiana, i Grizzlies ospitano i Warriors in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Grizzlies hanno un record di 6-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 111,8 subiti. In casa il bilancio è 2-3.",
-      "I Warriors hanno un record di 7-3 in stagione e hanno vinto 5 delle ultime 5, con una media di 118,6 punti segnati e 113,6 subiti. In trasferta il bilancio è 2-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Grizzlies giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 2 gare.",
-      "I Warriors giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Memphis Grizzlies – Golden State Warriors in Italia?",
-     "a": "Venerdì 20 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017164": {
-   "fingerprint": "kfb9rx",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Trail Blazers fanno visita ai Bucks venerdì 20 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Bucks hanno un record di 1-9 in stagione e hanno vinto 0 delle ultime 5, con una media di 108,4 punti segnati e 121,6 subiti. In casa il bilancio è 1-5.",
-      "I Trail Blazers hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,3 punti segnati e 113,8 subiti. In trasferta il bilancio è 5-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Bucks giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Milwaukee Bucks – Portland Trail Blazers in Italia?",
-     "a": "Venerdì 20 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017165": {
    "fingerprint": "vwu7vd",
    "sections": [
@@ -15071,48 +13285,6 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Per capirne la struttura, leggi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017167": {
-   "fingerprint": "fbezyy",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 21 novembre alle 01:00, ora italiana, gli Hawks ospitano gli Hornets in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Hawks hanno un record di 7-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,6 punti segnati e 115,5 subiti. In casa il bilancio è 3-2.",
-      "Gli Hornets hanno un record di 3-7 in stagione e hanno vinto 0 delle ultime 5, con una media di 96,3 punti segnati e 110,2 subiti. In trasferta il bilancio è 1-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Atlanta Hawks – Charlotte Hornets in Italia?",
-     "a": "Sabato 21 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -15452,90 +13624,6 @@
     }
    ]
   },
-  "nba:1000017176": {
-   "fingerprint": "13shtou",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 21 novembre alle 19:00, ora italiana, i 76ers ospitano i Bucks in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I 76ers hanno un record di 9-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,0 punti segnati e 107,9 subiti. In casa il bilancio è 4-1.",
-      "I Bucks hanno un record di 1-9 in stagione e hanno vinto 0 delle ultime 5, con una media di 108,4 punti segnati e 121,6 subiti. In trasferta il bilancio è 0-4."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Philadelphia 76ers – Milwaukee Bucks in Italia?",
-     "a": "Sabato 21 novembre alle 19:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017177": {
-   "fingerprint": "165k2vp",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Trail Blazers fanno visita ai Knicks domenica 22 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Knicks hanno un record di 5-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 109,9 punti segnati e 104,2 subiti. In casa il bilancio è 3-2.",
-      "I Trail Blazers hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,3 punti segnati e 113,8 subiti. In trasferta il bilancio è 5-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca New York Knicks – Portland Trail Blazers in Italia?",
-     "a": "Domenica 22 novembre alle 01:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017178": {
    "fingerprint": "1merwwu",
    "sections": [
@@ -15566,48 +13654,6 @@
    "faq": [
     {
      "q": "A che ora si gioca Dallas Mavericks – LA Clippers in Italia?",
-     "a": "Domenica 22 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017179": {
-   "fingerprint": "1lie1w6",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Grizzlies fanno visita ai Timberwolves domenica 22 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Timberwolves hanno un record di 8-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 107,0 subiti. In casa il bilancio è 4-1.",
-      "I Grizzlies hanno un record di 6-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 111,8 subiti. In trasferta il bilancio è 4-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Minnesota Timberwolves – Memphis Grizzlies in Italia?",
      "a": "Domenica 22 novembre alle 02:00."
     },
     {
@@ -18759,106 +16805,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Championship](/calcio/championship)."
-    }
-   ]
-  },
-  "fb:555079": {
-   "fingerprint": "9hvs0v",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Fluminense ha vinto in trasferta contro il Vitória con il punteggio di 0-3. La partita, valida per la 34ª giornata di Brasileirão, si è giocata sabato 7 novembre; il primo tempo si era chiuso 0-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Vitória è al 15° posto con 38 punti, mentre il Fluminense è al 4° con 57. [Consulta la classifica completa](/calcio/brasileirao/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Vitória tornerà in campo giovedì 19 novembre alle 23:30 in casa contro il Bragantino. Il Fluminense tornerà in campo venerdì 20 novembre alle 01:30 in trasferta contro lo São Paulo."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Vitória – Fluminense?",
-     "a": "0-3 (0-2 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Brasileirão](/calcio/brasileirao)."
-    }
-   ]
-  },
-  "nba:21718043": {
-   "fingerprint": "un1vcr",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Gli Hawks hanno superato i Wizards 139-132. La partita si è disputata sabato 7 novembre.",
-      "All'intervallo gli Hawks erano in vantaggio 66-59.",
-      "Il divario più ampio si è registrato nel 2º quarto, chiuso dagli Hawks 38-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 271.",
-      "Parziali (Hawks–Wizards): 28-32, 38-27, 39-35, 34-38."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Atlanta Hawks – Washington Wizards?",
-     "a": "Gli Hawks hanno vinto 139-132."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718044": {
-   "fingerprint": "189tch6",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Boston Celtics hanno battuto i Charlotte Hornets per 119-80. Il match si è disputato sabato 7 novembre.",
-      "All'intervallo i Celtics conducevano 70-39.",
-      "Il periodo decisivo è stato il 1º quarto, vinto dai Celtics per 40-20."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti complessivi: 199.",
-      "Parziali (Hornets–Celtics): 20-40, 19-30, 18-26, 23-23."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Qual è stato il risultato di Charlotte Hornets – Boston Celtics?",
-     "a": "Il risultato finale è stato 80-119 a favore dei Celtics."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Sono disponibili nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
     }
    ]
   },
