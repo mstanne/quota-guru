@@ -24184,41 +24184,6 @@
   "model": "claude-haiku-5-5",
   "at": "2026-11-10T03:21:19.896Z"
  },
- "fb:1001649006": {
-  "fingerprint": "1xzjhol",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Vietnam U23 e Thailand U23 si sfidano martedì 10 novembre alle 13:00 nell'ambito delle Amichevoli internazionali."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 5 confronti diretti il bilancio è di 4 vittorie per il Vietnam U23, nessuna per il Thailand U23 e 1 pareggio, con 11 gol complessivi (media di 2,2 a partita). L'ultimo incrocio, disputato a giugno 2022 nell'AFC U23 Asian Cup, è terminato Thailand U23 2-2 Vietnam U23."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Vietnam U23 – Thailand U23?",
-    "a": "Martedì 10 novembre alle 13:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-08T12:21:10.039Z"
- },
  "fb:1001649007": {
   "fingerprint": "12ep33b",
   "sections": [
@@ -24397,19 +24362,26 @@
   "at": "2026-11-10T03:21:22.693Z"
  },
  "fb:1001649008": {
-  "fingerprint": "10t03b2",
+  "fingerprint": "mkfsa",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Thailand U23 e Qatar U23 si affrontano giovedì 12 novembre alle 09:00 per Amichevoli internazionali."
+     "Giovedì 12 novembre alle 09:00 Thailand U23 e Qatar U23 si sfidano nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Finora il Qatar U23 ha disputato una sola partita nelle Amichevoli internazionali, terminata 0-0."
     ],
     "bullets": []
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 1 confronti diretti il bilancio è di 0 vittorie per il Thailand U23, 0 vittorie per il Qatar U23 e 1 pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, a agosto 2018 in Asian Games, è finito Thailand U23 1-1 Qatar U23."
+     "Negli ultimi 1 confronti diretti il bilancio è di 0 vittorie per il Thailand U23, 0 vittorie per il Qatar U23 e 1 pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incontro, ad agosto 2018 nei Asian Games, si è concluso Thailand U23 1-1 Qatar U23."
     ],
     "bullets": []
    }
@@ -24429,22 +24401,29 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T18:20:53.268Z"
+  "at": "2026-11-10T12:19:56.445Z"
  },
  "fb:1001649009": {
-  "fingerprint": "fc4trz",
+  "fingerprint": "tkmhz8",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Giovedì 12 novembre alle 13:00 il Singapore U23 ospita il Vietnam U23 in una partita valida per Amichevoli internazionali."
+     "Giovedì 12 novembre alle 13:00 il Singapore U23 ospita il Vietnam U23 in una partita valida per le Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Finora il Singapore U23 ha disputato una sola partita nelle Amichevoli internazionali, conclusa con un pareggio 0-0."
     ],
     "bullets": []
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Negli ultimi 3 confronti diretti il Singapore U23 non ha mai vinto, il Vietnam U23 ne ha vinti 2 e c'è stato 1 pareggio, per un totale di 12 gol (media di 4,0 a partita). L'ultimo precedente risale a settembre 2025, in AFC U23 Asian Cup - Qualification, ed è finito con il punteggio Singapore U23 0-1 Vietnam U23."
+     "Negli ultimi 3 confronti diretti il Singapore U23 non ha mai vinto, il Vietnam U23 ne ha ottenute 2 e ne è arrivato 1 pareggio, con 12 gol complessivi (media di 4,0 a partita). L'ultimo incrocio, a settembre 2025 nelle qualificazioni dell'AFC U23 Asian Cup, si è chiuso con il successo del Vietnam U23 per 0-1."
     ],
     "bullets": []
    }
@@ -24455,16 +24434,16 @@
     "a": "Giovedì 12 novembre alle 13:00, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Puoi vederli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T21:21:25.542Z"
+  "at": "2026-11-10T12:19:59.729Z"
  },
  "fb:1001649010": {
   "fingerprint": "mj98uw",
@@ -25407,12 +25386,19 @@
   "at": "2026-11-08T14:18:00.522Z"
  },
  "fb:1001649017": {
-  "fingerprint": "ccnnec",
+  "fingerprint": "kf581x",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 09:00 il Thailand U23 ospita il Singapore U23 in una partita valida per le Amichevoli internazionali."
+     "Sabato 14 novembre alle 09:00 il Thailand U23 ospita il Singapore U23 nell'ambito delle Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Finora il Singapore U23 ha disputato una sola partita nelle Amichevoli internazionali, terminata 0-0."
     ],
     "bullets": []
    }
@@ -25423,16 +25409,16 @@
     "a": "Sabato 14 novembre alle 09:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "q": "Dove si possono consultare classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
-    "q": "Come si leggono le quote di questa partita?",
+    "q": "Come si interpretano le quote di questa partita?",
     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T14:18:02.110Z"
+  "at": "2026-11-10T12:20:03.827Z"
  },
  "fb:1001649018": {
   "fingerprint": "1jp792g",
@@ -25619,12 +25605,19 @@
   "at": "2026-11-09T03:20:57.640Z"
  },
  "fb:1001649019": {
-  "fingerprint": "hjrm7h",
+  "fingerprint": "1e9jq55",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Vietnam U23 e Qatar U23 si affrontano sabato 14 novembre alle 13:00 per Amichevoli internazionali."
+     "Sabato 14 novembre alle 13:00 Vietnam U23 e Qatar U23 scendono in campo per una partita valida per le Amichevoli internazionali."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Finora il Qatar U23 ha disputato una sola partita nelle Amichevoli internazionali, terminata 0-0."
     ],
     "bullets": []
    }
@@ -25644,7 +25637,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T14:18:21.499Z"
+  "at": "2026-11-10T12:20:06.351Z"
  },
  "fb:1001648285": {
   "fingerprint": "mazbo4",
@@ -30857,5 +30850,36 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-10T09:21:18.638Z"
+ },
+ "fb:1001649005": {
+  "fingerprint": "167fjgz",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il Qatar U23 e il Singapore U23 hanno pareggiato 0-0 senza segnare reti. La partita, valida per le Amichevoli internazionali, si è giocata martedì 10 novembre; al termine del primo tempo il punteggio era già 0-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Qatar U23 tornerà in campo giovedì 12 novembre alle 09:00, in trasferta contro il Thailand U23. Il Singapore U23 scenderà di nuovo in campo giovedì 12 novembre alle 13:00, in casa contro il Vietnam U23."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Qatar U23 – Singapore U23?",
+    "a": "0-0 (0-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-10T12:20:07.961Z"
  }
 }
