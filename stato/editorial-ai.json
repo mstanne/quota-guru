@@ -23951,82 +23951,66 @@
   "at": "2026-11-11T03:20:30.840Z"
  },
  "fb:1001649007": {
-  "fingerprint": "12ep33b",
+  "fingerprint": "bufy8q",
   "sections": [
    {
-    "id": "presentazione",
+    "id": "resoconto",
     "paragraphs": [
-     "Mercoledì 11 novembre alle 15:00 lo Switzerland U18 ospita il Norway U19 nell'ambito delle Amichevoli internazionali."
+     "Lo Switzerland U18 ha vinto di misura in casa per 2-1 contro il Norway U19. La partita, valida per le Amichevoli internazionali, si è giocata mercoledì 11 novembre; il primo tempo si era concluso 1-1."
     ],
     "bullets": []
    },
    {
-    "id": "momento",
+    "id": "prossimi",
     "paragraphs": [
-     "Nelle ultime 5 partite di Amichevoli internazionali il Norway U19 ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-V-P-N), con 10 gol fatti e 7 subiti. In trasferta, il bilancio stagionale è di 1 vittoria, 1 pareggio e 2 sconfitte."
+     "Lo Switzerland U18 tornerà in campo sabato 14 novembre alle 12:00, in trasferta contro il Netherlands U18. Anche il Norway U19 tornerà in campo sabato 14 novembre alle 12:00, in trasferta contro l'England U18."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "In 3 delle ultime 5 partite del Norway U19 si sono segnati almeno tre gol."
-    ]
    }
   ],
   "faq": [
    {
-    "q": "Quando si gioca Switzerland U18 – Norway U19?",
-    "a": "Mercoledì 11 novembre alle 15:00, ora italiana."
+    "q": "Com'è finita Switzerland U18 – Norway U19?",
+    "a": "2-1 (1-1 all'intervallo)."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T04:44:30.986Z"
+  "at": "2026-11-11T17:15:03.017Z"
  },
  "fb:1001647635": {
-  "fingerprint": "lous1a",
+  "fingerprint": "msfgo4",
   "sections": [
    {
-    "id": "presentazione",
+    "id": "resoconto",
     "paragraphs": [
-     "England U18 e Netherlands U18 si affrontano mercoledì 11 novembre alle 15:00 per Amichevoli internazionali."
+     "L'England U18 si impone di misura in casa sul Netherlands U18 per 3-2. Il match, valido per le Amichevoli internazionali, si è disputato mercoledì 11 novembre."
     ],
     "bullets": []
    },
    {
-    "id": "momento",
+    "id": "prossimi",
     "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali l'England U18 ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 3 subiti.",
-     "Nelle ultime 3 partite di Amichevoli internazionali il Netherlands U18 ha raccolto 2 vittorie e 1 pareggio (sequenza V-V-N), con 5 gol fatti e 3 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "L'England U18 tornerà in campo sabato 14 novembre alle 12:00 in casa contro il Norway U19. Il Netherlands U18 tornerà in campo sabato 14 novembre alle 12:00 in casa contro lo Switzerland U18."
     ],
     "bullets": []
    }
   ],
   "faq": [
    {
-    "q": "Quando si gioca England U18 – Netherlands U18?",
-    "a": "Mercoledì 11 novembre alle 15:00, ora italiana."
+    "q": "Com'è finita England U18 – Netherlands U18?",
+    "a": "3-2."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T12:21:22.034Z"
+  "at": "2026-11-11T17:15:01.510Z"
  },
  "fb:1001586134": {
   "fingerprint": "1x8p9rs",
@@ -24433,19 +24417,26 @@
   "at": "2026-11-09T03:20:43.604Z"
  },
  "fb:1001647361": {
-  "fingerprint": "x18iez",
+  "fingerprint": "abjv9l",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Venerdì 13 novembre alle 15:30 l'Arabia Saudita ospita la Corea del Sud nell'ambito delle Amichevoli internazionali."
+     "Venerdì 13 novembre alle 15:30 l'Arabia Saudita affronta la Corea del Sud in una gara valida per le Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Amichevoli internazionali la Corea del Sud ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza P-N-V), con 3 gol fatti e 4 subiti."
+     "Nelle ultime 3 partite di Amichevoli internazionali la Corea del Sud ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta, con la sequenza P-N-V. In questo periodo ha segnato 3 gol e ne ha subiti 4."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Nei confronti diretti disputati (1 in totale) non si registrano vittorie per l'Arabia Saudita né per la Corea del Sud, mentre c'è stato 1 pareggio. Le reti complessive sono 2, con una media di 2,0 a partita. L'ultimo incrocio, disputato a gennaio 2024 in Coppa d'Asia, è terminato Arabia Saudita 1-1 Corea del Sud."
     ],
     "bullets": []
    }
@@ -24456,8 +24447,8 @@
     "a": "Venerdì 13 novembre alle 15:30, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -24465,7 +24456,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T03:20:47.382Z"
+  "at": "2026-11-11T17:14:47.874Z"
  },
  "fb:1001640084": {
   "fingerprint": "ua372u",
@@ -25199,20 +25190,20 @@
   "at": "2026-11-10T03:21:30.290Z"
  },
  "fb:1001647639": {
-  "fingerprint": "1akccw4",
+  "fingerprint": "1qy2dwg",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 12:00 l'England U18 ospita il Norway U19 nell'ambito delle Amichevoli internazionali."
+     "Sabato 14 novembre alle 12:00 l'England U18 affronta il Norway U19 in una partita valida per le Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali l'England U18 ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 3.",
-     "Nelle ultime 5 partite di Amichevoli internazionali il Norway U19 ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-V-P-N), con 10 gol fatti e 7 subiti. In trasferta, il bilancio stagionale è di 1 vittoria, 1 pareggio e 2 sconfitte."
+     "Nelle ultime 3 partite delle Amichevoli internazionali l'England U18 ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), segnando 5 gol e subendone 5. In casa, la stagione registra 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite delle Amichevoli internazionali il Norway U19 ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-V-P-N-P), segnando 10 gol e subendone 7. In trasferta, la stagione registra 1 vittoria, 1 pareggio e 3 sconfitte."
     ],
     "bullets": []
    },
@@ -25220,7 +25211,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "In 3 delle ultime 5 partite del Norway U19 si sono segnati almeno tre gol."
+     "Nelle ultime 5 partite del Norway U19, in 3 occasioni sono stati segnati almeno tre gol."
     ]
    }
   ],
@@ -25230,33 +25221,41 @@
     "a": "Sabato 14 novembre alle 12:00, ora italiana."
    },
    {
-    "q": "Dove si possono consultare classifica e risultati?",
+    "q": "Dove vedo classifica e risultati?",
     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T14:18:14.222Z"
+  "at": "2026-11-11T17:14:51.106Z"
  },
  "fb:1001647640": {
-  "fingerprint": "1dynlc9",
+  "fingerprint": "l1hpua",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 12:00 il Netherlands U18 riceve lo Switzerland U18 in una partita valida per le Amichevoli internazionali."
+     "Sabato 14 novembre alle 12:00 il Netherlands U18 ospita lo Switzerland U18 nel quadro delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Amichevoli internazionali il Netherlands U18 ha raccolto 2 vittorie e 1 pareggio (sequenza V-V-N), con 5 gol fatti e 3 subiti."
+     "Nelle ultime 4 partite di Amichevoli internazionali, il Netherlands U18 ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-N-P), segnando 7 gol e subendone 6.",
+     "Lo Switzerland U18 ha disputato finora una sola partita di Amichevoli internazionali, vinta 2-1."
     ],
     "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "In 3 delle ultime 4 partite del Netherlands U18 sono stati segnati almeno tre gol."
+    ]
    }
   ],
   "faq": [
@@ -25266,15 +25265,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ti spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T14:18:15.906Z"
+  "at": "2026-11-11T17:14:54.182Z"
  },
  "fb:1001647365": {
   "fingerprint": "1nawm76",
@@ -25561,19 +25560,20 @@
   "at": "2026-11-08T14:18:37.588Z"
  },
  "fb:1001647642": {
-  "fingerprint": "10lbg0t",
+  "fingerprint": "963qze",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Switzerland U18 e England U18 si affrontano lunedì 16 novembre alle 16:00 per Amichevoli internazionali."
+     "Switzerland U18 ed England U18 si affrontano lunedì 16 novembre alle 16:00 nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali l'England U18 ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 3 subiti."
+     "Lo Switzerland U18 ha disputato finora una sola partita nelle Amichevoli internazionali, vinta per 2-1.",
+     "Nelle ultime 3 partite di Amichevoli internazionali l'England U18 ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), segnando 5 gol e subendone 5."
     ],
     "bullets": []
    }
@@ -25593,7 +25593,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T14:18:39.076Z"
+  "at": "2026-11-11T17:14:57.488Z"
  },
  "fb:1001638605": {
   "fingerprint": "448w3l",
@@ -25873,20 +25873,20 @@
   "at": "2026-11-08T15:22:12.198Z"
  },
  "fb:1001649025": {
-  "fingerprint": "132vo4o",
+  "fingerprint": "buxt9u",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Martedì 17 novembre alle 12:00 il Norway U19 ospita il Netherlands U18 nell'ambito delle Amichevoli internazionali."
+     "Appuntamento martedì 17 novembre alle 12:00: il Norway U19 ospita il Netherlands U18 nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 5 partite di Amichevoli internazionali il Norway U19 ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-V-P-N), segnando 10 gol e subendone 7. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 3 partite di Amichevoli internazionali il Netherlands U18 ha ottenuto 2 vittorie e 1 pareggio (sequenza V-V-N), con 5 gol fatti e 3 subiti. In trasferta, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 5 partite di Amichevoli internazionali il Norway U19 ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-V-P-N-P), segnando 10 gol e subendone 7. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 4 partite di Amichevoli internazionali il Netherlands U18 ha ottenuto 2 vittorie, 1 pareggio e 1 sconfitta (sequenza V-V-N-P), segnando 7 gol e subendone 6. In trasferta il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -25894,7 +25894,8 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "In 3 delle ultime 5 partite del Norway U19 sono stati segnati almeno tre gol."
+     "In 3 delle ultime 5 partite del Norway U19 si sono segnati almeno tre gol.",
+     "In 3 delle ultime 4 partite del Netherlands U18 si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -25904,16 +25905,16 @@
     "a": "Martedì 17 novembre alle 12:00, ora italiana."
    },
    {
-    "q": "Dove posso vedere classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T15:22:18.028Z"
+  "at": "2026-11-11T17:14:59.890Z"
  },
  "fb:1001647368": {
   "fingerprint": "1luimmb",
