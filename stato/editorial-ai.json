@@ -2206,48 +2206,38 @@
   "at": "2026-11-10T09:21:02.910Z"
  },
  "nba:21718074": {
-  "fingerprint": "dqfad4",
+  "fingerprint": "49lw4m",
   "sections": [
    {
-    "id": "presentazione",
+    "id": "resoconto",
     "paragraphs": [
-     "I Bucks fanno visita ai Knicks mercoledì 11 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
+     "I New York Knicks hanno superato i Milwaukee Bucks per 117-85. Il match si è disputato mercoledì 11 novembre.",
+     "All'intervallo i Knicks erano avanti 58-34.",
+     "Il parziale più ampio è arrivato nel 2º quarto, vinto dai Knicks 32-13."
     ],
     "bullets": []
    },
    {
-    "id": "momento",
-    "paragraphs": [
-     "I Knicks hanno un record di 5-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 109,9 punti segnati e 104,2 subiti. In casa il bilancio è 3-2.",
-     "I Bucks hanno un record di 1-9 in stagione e hanno vinto 0 delle ultime 5, con una media di 108,4 punti segnati e 121,6 subiti. In trasferta il bilancio è 0-4."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
+    "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 5 gare.",
-     "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 4 gare."
+     "Punti complessivi: 202.",
+     "Parziali (Knicks–Bucks): 26-21, 32-13, 27-38, 32-13."
     ]
    }
   ],
   "faq": [
    {
-    "q": "A che ora si gioca New York Knicks – Milwaukee Bucks in Italia?",
-    "a": "Mercoledì 11 novembre alle 01:30."
+    "q": "Qual è il risultato finale di New York Knicks – Milwaukee Bucks?",
+    "a": "Il risultato finale è 117-85 per i Knicks."
    },
    {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Puoi consultare la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Puoi consultare la pagina dei [pronostici NBA](/pronostici/nba)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T03:21:39.128Z"
+  "at": "2026-11-11T06:36:09.428Z"
  },
  "nba:21718081": {
   "fingerprint": "1o4nggg",
@@ -2651,7 +2641,7 @@
   "at": "2026-11-10T06:20:14.173Z"
  },
  "nba:21718090": {
-  "fingerprint": "rn9cya",
+  "fingerprint": "2ja9wb",
   "sections": [
    {
     "id": "presentazione",
@@ -2663,8 +2653,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Trail Blazers hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,3 punti segnati e 113,8 subiti. In casa il bilancio è 1-2.",
-     "I Thunder hanno un record di 7-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 104,2 subiti. In trasferta il bilancio è 2-2."
+     "I Trail Blazers hanno un record di 7-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,7 punti segnati e 112,7 subiti. In casa il bilancio è 2-2.",
+     "I Thunder hanno un record di 7-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 110,9 punti segnati e 106,1 subiti. In trasferta il bilancio è 2-3."
     ],
     "bullets": []
    },
@@ -2694,7 +2684,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T03:20:48.276Z"
+  "at": "2026-11-11T06:35:15.120Z"
  },
  "fb:558552": {
   "fingerprint": "7eagyt",
@@ -4823,7 +4813,7 @@
   "at": "2026-11-11T03:20:56.027Z"
  },
  "nba:21718102": {
-  "fingerprint": "1dmpf32",
+  "fingerprint": "qo7609",
   "sections": [
    {
     "id": "presentazione",
@@ -4836,7 +4826,7 @@
     "id": "momento",
     "paragraphs": [
      "I Kings hanno un record di 1-10 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,3 punti segnati e 121,0 subiti. In casa il bilancio è 0-6.",
-     "I Trail Blazers hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,3 punti segnati e 113,8 subiti. In trasferta il bilancio è 5-1."
+     "I Trail Blazers hanno un record di 7-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,7 punti segnati e 112,7 subiti. In trasferta il bilancio è 5-1."
     ],
     "bullets": []
    },
@@ -4856,18 +4846,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T06:20:27.591Z"
+  "at": "2026-11-11T06:35:17.085Z"
  },
  "nba:21718103": {
-  "fingerprint": "1yvchp6",
+  "fingerprint": "1opfpvb",
   "sections": [
    {
     "id": "presentazione",
@@ -4880,7 +4870,7 @@
     "id": "momento",
     "paragraphs": [
      "I Clippers hanno un record di 2-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 112,2 punti segnati e 118,1 subiti. In casa il bilancio è 2-3.",
-     "I Thunder hanno un record di 7-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 104,2 subiti. In trasferta il bilancio è 2-2."
+     "I Thunder hanno un record di 7-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 110,9 punti segnati e 106,1 subiti. In trasferta il bilancio è 2-3."
     ],
     "bullets": []
    },
@@ -4900,15 +4890,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T06:20:29.491Z"
+  "at": "2026-11-11T06:35:19.015Z"
  },
  "nba:21718104": {
   "fingerprint": "p2dpqr",
@@ -7979,7 +7969,7 @@
   "at": "2026-11-11T03:21:05.690Z"
  },
  "nba:1000017137": {
-  "fingerprint": "c861j1",
+  "fingerprint": "ni6xvk",
   "sections": [
    {
     "id": "presentazione",
@@ -7992,7 +7982,7 @@
     "id": "momento",
     "paragraphs": [
      "I Kings hanno un record di 1-10 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,3 punti segnati e 121,0 subiti. In casa il bilancio è 0-6.",
-     "I Thunder hanno un record di 7-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 104,2 subiti. In trasferta il bilancio è 2-2."
+     "I Thunder hanno un record di 7-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 110,9 punti segnati e 106,1 subiti. In trasferta il bilancio è 2-3."
     ],
     "bullets": []
    },
@@ -8012,15 +8002,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T06:20:43.275Z"
+  "at": "2026-11-11T06:35:20.971Z"
  },
  "fb:564729": {
   "fingerprint": "n9g3st",
@@ -8470,7 +8460,7 @@
   "at": "2026-11-11T06:20:49.303Z"
  },
  "nba:1000017143": {
-  "fingerprint": "12hb4q",
+  "fingerprint": "1yju4xp",
   "sections": [
    {
     "id": "presentazione",
@@ -8483,7 +8473,7 @@
     "id": "momento",
     "paragraphs": [
      "I Timberwolves hanno un record di 8-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 107,0 subiti. In casa il bilancio è 4-1.",
-     "I Trail Blazers hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,3 punti segnati e 113,8 subiti. In trasferta il bilancio è 5-1."
+     "I Trail Blazers hanno un record di 7-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,7 punti segnati e 112,7 subiti. In trasferta il bilancio è 5-1."
     ],
     "bullets": []
    },
@@ -8507,11 +8497,11 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per capirne la struttura, leggi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Per i dettagli sul formato del campionato, leggi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T03:39:28.172Z"
+  "at": "2026-11-11T06:35:23.430Z"
  },
  "nba:1000017144": {
   "fingerprint": "1gpc5co",
@@ -9806,7 +9796,7 @@
   "at": "2026-11-11T03:21:11.706Z"
  },
  "nba:1000017147": {
-  "fingerprint": "e3ps6g",
+  "fingerprint": "11bpiql",
   "sections": [
    {
     "id": "presentazione",
@@ -9819,7 +9809,7 @@
     "id": "momento",
     "paragraphs": [
      "I Timberwolves hanno un record di 8-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 107,0 subiti. In casa il bilancio è 4-1.",
-     "I Trail Blazers hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,3 punti segnati e 113,8 subiti. In trasferta il bilancio è 5-1."
+     "I Trail Blazers hanno un record di 7-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,7 punti segnati e 112,7 subiti. In trasferta il bilancio è 5-1."
     ],
     "bullets": []
    },
@@ -9841,15 +9831,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T03:39:36.176Z"
+  "at": "2026-11-11T06:35:25.552Z"
  },
  "nba:1000017148": {
   "fingerprint": "upf4jm",
@@ -10952,7 +10942,7 @@
   "at": "2026-11-11T03:21:21.490Z"
  },
  "nba:1000017158": {
-  "fingerprint": "1syre7b",
+  "fingerprint": "18w01nd",
   "sections": [
    {
     "id": "presentazione",
@@ -10964,8 +10954,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Thunder hanno un record di 7-2 in stagione e nelle ultime 5 partite ne hanno vinte 4, con una media di 111,8 punti segnati e 104,2 subiti. In casa il bilancio è 5-0.",
-     "Gli Hawks hanno un record di 7-5 in stagione e nelle ultime 5 partite ne hanno vinte 4, con una media di 118,3 punti segnati e 116,2 subiti. In trasferta il bilancio è 4-2."
+     "I Thunder hanno un record di 7-3 in stagione e nelle ultime 5 gare ne hanno vinte 4, con una media di 110,9 punti segnati e 106,1 subiti. In casa il bilancio è 5-0.",
+     "Gli Hawks hanno un record di 7-5 in stagione e nelle ultime 5 gare ne hanno vinte 4, con una media di 118,3 punti segnati e 116,2 subiti. In trasferta il bilancio è 4-2."
     ],
     "bullets": []
    },
@@ -10985,15 +10975,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Per approfondire, consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per approfondire, consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Trovi tutto nella guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T03:21:23.510Z"
+  "at": "2026-11-11T06:35:27.940Z"
  },
  "nba:1000017159": {
   "fingerprint": "1yfszqx",
@@ -13038,7 +13028,7 @@
   "at": "2026-11-10T06:21:11.069Z"
  },
  "nba:1000017164": {
-  "fingerprint": "1kfmrzc",
+  "fingerprint": "cnzh1d",
   "sections": [
    {
     "id": "presentazione",
@@ -13051,7 +13041,7 @@
     "id": "momento",
     "paragraphs": [
      "I Bucks hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,3 punti segnati e 121,2 subiti. In casa il bilancio è 1-5.",
-     "I Trail Blazers hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,3 punti segnati e 113,8 subiti. In trasferta il bilancio è 5-1."
+     "I Trail Blazers hanno un record di 7-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,7 punti segnati e 112,7 subiti. In trasferta il bilancio è 5-1."
     ],
     "bullets": []
    },
@@ -13072,15 +13062,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T03:21:29.528Z"
+  "at": "2026-11-11T06:35:30.003Z"
  },
  "nba:1000017165": {
   "fingerprint": "i7krnw",
@@ -13923,20 +13913,20 @@
   "at": "2026-11-11T03:21:39.346Z"
  },
  "nba:1000017172": {
-  "fingerprint": "pvk0d0",
+  "fingerprint": "xlrpjq",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 21 novembre alle 02:00, ora italiana, i Thunder ospitano i Pelicans in una partita della regular season NBA 2026-27."
+     "Sabato 21 novembre alle 02:00, ora italiana, gli Oklahoma City Thunder ospitano i New Orleans Pelicans in una partita della regular season NBA 2026-27."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "I Thunder hanno un record di 7-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 104,2 subiti. In casa il bilancio è 5-0.",
-     "I Pelicans hanno un record di 4-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,5 punti segnati e 122,4 subiti. In trasferta il bilancio è 1-4."
+     "Gli Oklahoma City Thunder hanno un record di 7-3 in stagione e hanno vinto 4 delle ultime 5 partite, con una media di 110,9 punti segnati e 106,1 subiti. In casa il bilancio è 5-0.",
+     "I New Orleans Pelicans hanno un record di 4-7 in stagione e hanno vinto 2 delle ultime 5 partite, con una media di 117,5 punti segnati e 122,4 subiti. In trasferta il bilancio è 1-4."
     ],
     "bullets": []
    },
@@ -13944,8 +13934,8 @@
     "id": "calendario",
     "paragraphs": [],
     "bullets": [
-     "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 3 gare."
+     "Nei 7 giorni a partire da questa partita, i Thunder hanno in calendario 3 gare.",
+     "Nei 7 giorni a partire da questa partita, i Pelicans hanno in calendario 3 gare."
     ]
    }
   ],
@@ -13960,11 +13950,11 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per i dettagli sul formato del campionato, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Per capirne la struttura, consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T03:21:41.372Z"
+  "at": "2026-11-11T06:35:32.312Z"
  },
  "nba:1000017173": {
   "fingerprint": "1rfgea8",
@@ -18180,7 +18170,7 @@
   "at": "2026-11-08T21:22:17.899Z"
  },
  "nba:1000017177": {
-  "fingerprint": "kfwtfs",
+  "fingerprint": "1mq02mj",
   "sections": [
    {
     "id": "presentazione",
@@ -18193,7 +18183,7 @@
     "id": "momento",
     "paragraphs": [
      "I Knicks hanno un record di 6-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 101,9 subiti. In casa il bilancio è 4-1.",
-     "I Trail Blazers hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,3 punti segnati e 113,8 subiti. In trasferta il bilancio è 5-1."
+     "I Trail Blazers hanno un record di 7-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,7 punti segnati e 112,7 subiti. In trasferta il bilancio è 5-1."
     ],
     "bullets": []
    },
@@ -18217,11 +18207,11 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T06:21:18.510Z"
+  "at": "2026-11-11T06:35:34.235Z"
  },
  "fb:567350": {
   "fingerprint": "qebzn0",
@@ -28748,7 +28738,7 @@
   "at": "2026-11-09T00:21:16.437Z"
  },
  "nba:1000017183": {
-  "fingerprint": "1w4wv7a",
+  "fingerprint": "qpml7d",
   "sections": [
    {
     "id": "presentazione",
@@ -28761,7 +28751,7 @@
     "id": "momento",
     "paragraphs": [
      "Gli Heat hanno un record di 5-6 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,7 punti segnati e 120,0 subiti. In casa il bilancio è 1-3.",
-     "I Thunder hanno un record di 7-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 104,2 subiti. In trasferta il bilancio è 2-2."
+     "I Thunder hanno un record di 7-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 110,9 punti segnati e 106,1 subiti. In trasferta il bilancio è 2-3."
     ],
     "bullets": []
    },
@@ -28781,15 +28771,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Per approfondire, consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Per capire la struttura del campionato, leggi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T06:21:30.194Z"
+  "at": "2026-11-11T06:35:37.117Z"
  },
  "nba:1000017184": {
   "fingerprint": "1xm8wz8",
@@ -28880,7 +28870,7 @@
   "at": "2026-11-11T06:21:34.072Z"
  },
  "nba:1000017186": {
-  "fingerprint": "gxfme",
+  "fingerprint": "36o9f4",
   "sections": [
    {
     "id": "presentazione",
@@ -28892,7 +28882,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Jazz hanno un record di 1-9 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,2 punti segnati e 117,9 subiti. In casa il bilancio è 1-4.",
+     "I Jazz hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 117,6 subiti. In casa il bilancio è 1-5.",
      "I Mavericks hanno un record di 7-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 114,9 punti segnati e 110,3 subiti. In trasferta il bilancio è 2-2."
     ],
     "bullets": []
@@ -28903,7 +28893,7 @@
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 2 gare.",
      "I Mavericks giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 1 gara."
+     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 2 gare."
     ]
    }
   ],
@@ -28914,18 +28904,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi tutto nella guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T09:20:22.638Z"
+  "at": "2026-11-11T06:35:39.101Z"
  },
  "nba:1000017187": {
-  "fingerprint": "1t3x274",
+  "fingerprint": "121y9x4",
   "sections": [
    {
     "id": "presentazione",
@@ -28937,7 +28927,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Knicks hanno un record di 5-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 109,9 punti segnati e 104,2 subiti. In casa il bilancio è 3-2.",
+     "I Knicks hanno un record di 6-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 101,9 subiti. In casa il bilancio è 4-1.",
      "I Pacers hanno un record di 3-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,4 punti segnati e 115,2 subiti. In trasferta il bilancio è 3-3."
     ],
     "bullets": []
@@ -28959,18 +28949,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Trovi tutte le informazioni in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T09:20:24.674Z"
+  "at": "2026-11-11T06:35:41.258Z"
  },
  "nba:1000017188": {
-  "fingerprint": "1y5nxcz",
+  "fingerprint": "1qx1j1q",
   "sections": [
    {
     "id": "presentazione",
@@ -28983,7 +28973,7 @@
     "id": "momento",
     "paragraphs": [
      "I Warriors hanno un record di 8-3 in stagione e hanno vinto 5 delle ultime 5, con una media di 120,4 punti segnati e 111,2 subiti. In casa il bilancio è 6-1.",
-     "I Celtics hanno un record di 8-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 115,2 punti segnati e 102,4 subiti. In trasferta il bilancio è 3-1."
+     "I Celtics hanno un record di 9-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 116,0 punti segnati e 102,3 subiti. In trasferta il bilancio è 4-1."
     ],
     "bullets": []
    },
@@ -28993,7 +28983,7 @@
     "bullets": [
      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 1 gara.",
      "I Celtics giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 1 gara."
+     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 2 gare."
     ]
    }
   ],
@@ -29004,15 +28994,15 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Un quadro generale è disponibile in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Trovi i dettagli su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T21:23:36.903Z"
+  "at": "2026-11-11T06:35:43.993Z"
  },
  "fb:567354": {
   "fingerprint": "5eag1t",
@@ -29980,7 +29970,7 @@
   "at": "2026-11-10T09:20:28.882Z"
  },
  "nba:1000017190": {
-  "fingerprint": "1hpg10t",
+  "fingerprint": "zl22xh",
   "sections": [
    {
     "id": "presentazione",
@@ -29992,8 +29982,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I 76ers hanno un record di 9-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,0 punti segnati e 107,9 subiti. In casa il bilancio è 4-1.",
-     "I Trail Blazers hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,3 punti segnati e 113,8 subiti. In trasferta il bilancio è 5-1."
+     "I 76ers hanno un record di 8-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 110,5 punti segnati e 110,0 subiti. In casa il bilancio è 4-2.",
+     "I Trail Blazers hanno un record di 7-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,7 punti segnati e 112,7 subiti. In trasferta il bilancio è 5-1."
     ],
     "bullets": []
    },
@@ -30013,7 +30003,7 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
@@ -30021,10 +30011,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T09:20:30.824Z"
+  "at": "2026-11-11T06:35:45.907Z"
  },
  "nba:1000017191": {
-  "fingerprint": "14yu0x2",
+  "fingerprint": "1t8sne8",
   "sections": [
    {
     "id": "presentazione",
@@ -30037,7 +30027,7 @@
     "id": "momento",
     "paragraphs": [
      "I Pacers hanno un record di 3-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,4 punti segnati e 115,2 subiti. In casa il bilancio è 0-5.",
-     "I Thunder hanno un record di 8-2 in stagione e hanno vinto 4 delle ultime 5, con una media di 112,2 punti segnati e 104,2 subiti. In trasferta il bilancio è 3-2."
+     "I Thunder hanno un record di 7-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 110,9 punti segnati e 106,1 subiti. In trasferta il bilancio è 2-3."
     ],
     "bullets": []
    },
@@ -30059,18 +30049,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Trovi i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T09:20:33.686Z"
+  "at": "2026-11-11T06:35:47.961Z"
  },
  "nba:1000017192": {
-  "fingerprint": "ovizsg",
+  "fingerprint": "1gnvzjg",
   "sections": [
    {
     "id": "presentazione",
@@ -30083,7 +30073,7 @@
     "id": "momento",
     "paragraphs": [
      "I Raptors hanno un record di 5-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 116,6 punti segnati e 113,3 subiti. In casa il bilancio è 2-2.",
-     "I Bucks hanno un record di 1-9 in stagione e hanno vinto 0 delle ultime 5, con una media di 108,4 punti segnati e 121,6 subiti. In trasferta il bilancio è 0-4."
+     "I Bucks hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,3 punti segnati e 121,2 subiti. In trasferta il bilancio è 0-5."
     ],
     "bullets": []
    },
@@ -30111,7 +30101,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T09:20:35.606Z"
+  "at": "2026-11-11T06:35:50.013Z"
  },
  "nba:1000017193": {
   "fingerprint": "17k3o6j",
@@ -30203,7 +30193,7 @@
   "at": "2026-11-10T09:20:39.870Z"
  },
  "nba:1000017195": {
-  "fingerprint": "a61ssk",
+  "fingerprint": "nt96wu",
   "sections": [
    {
     "id": "presentazione",
@@ -30216,7 +30206,7 @@
     "id": "momento",
     "paragraphs": [
      "I Pelicans hanno un record di 4-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,5 punti segnati e 122,4 subiti. In casa il bilancio è 3-3.",
-     "I Suns hanno un record di 3-6 in stagione e hanno vinto 2 delle ultime 5, con una media di 110,6 punti segnati e 119,0 subiti. In trasferta il bilancio è 0-3."
+     "I Suns hanno un record di 4-6 in stagione e hanno vinto 3 delle ultime 5, con una media di 112,8 punti segnati e 118,1 subiti. In trasferta il bilancio è 0-3."
     ],
     "bullets": []
    },
@@ -30232,22 +30222,22 @@
   "faq": [
    {
     "q": "A che ora si gioca New Orleans Pelicans – Phoenix Suns in Italia?",
-    "a": "Martedì 24 novembre alle 02:00."
+    "a": "La partita si disputa martedì 24 novembre alle 02:00."
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Puoi consultare la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
+    "a": "Per capirlo puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Puoi leggere di più su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T09:20:41.996Z"
+  "at": "2026-11-11T06:35:51.961Z"
  },
  "nba:1000017196": {
-  "fingerprint": "130y1xq",
+  "fingerprint": "1gp0suf",
   "sections": [
    {
     "id": "presentazione",
@@ -30260,7 +30250,7 @@
     "id": "momento",
     "paragraphs": [
      "I Rockets hanno un record di 8-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,5 punti segnati e 106,4 subiti. In casa il bilancio è 5-1.",
-     "I Clippers hanno un record di 2-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 112,4 punti segnati e 116,4 subiti. In trasferta il bilancio è 0-4."
+     "I Clippers hanno un record di 2-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 112,2 punti segnati e 118,1 subiti. In trasferta il bilancio è 0-5."
     ],
     "bullets": []
    },
@@ -30280,18 +30270,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la pagina su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T09:20:44.193Z"
+  "at": "2026-11-11T06:35:54.410Z"
  },
  "nba:1000017197": {
-  "fingerprint": "1pdk62",
+  "fingerprint": "1ldptty",
   "sections": [
    {
     "id": "presentazione",
@@ -30304,7 +30294,7 @@
     "id": "momento",
     "paragraphs": [
      "I Lakers hanno un record di 10-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 122,1 punti segnati e 114,4 subiti. In casa il bilancio è 5-1.",
-     "I Jazz hanno un record di 1-9 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,2 punti segnati e 117,9 subiti. In trasferta il bilancio è 0-5."
+     "I Jazz hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 117,6 subiti. In trasferta il bilancio è 0-5."
     ],
     "bullets": []
    },
@@ -30325,18 +30315,18 @@
    },
    {
     "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T09:20:46.357Z"
+  "at": "2026-11-11T06:35:56.890Z"
  },
  "nba:1000017198": {
-  "fingerprint": "guyqrc",
+  "fingerprint": "1yjxd5w",
   "sections": [
    {
     "id": "presentazione",
@@ -30348,8 +30338,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "I Kings hanno un record di 1-9 in stagione e hanno vinto 1 delle ultime 5, con una media di 109,1 punti segnati e 122,4 subiti. In casa il bilancio è 0-5.",
-     "Gli Spurs hanno un record di 9-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 118,7 punti segnati e 107,0 subiti. In trasferta il bilancio è 5-0."
+     "I Kings hanno un record di 1-10 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,3 punti segnati e 121,0 subiti. In casa il bilancio è 0-6.",
+     "Gli Spurs hanno un record di 9-1 in stagione e hanno vinto 5 delle ultime 5, con una media di 120,2 punti segnati e 106,1 subiti. In trasferta il bilancio è 5-0."
     ],
     "bullets": []
    },
@@ -30373,11 +30363,11 @@
    },
    {
     "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+    "a": "Consulta la pagina su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T09:20:48.346Z"
+  "at": "2026-11-11T06:35:58.817Z"
  },
  "nba:21718066": {
   "fingerprint": "pw70df",
@@ -31946,5 +31936,307 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-10T21:23:10.334Z"
+ },
+ "nba:1000017199": {
+  "fingerprint": "4qoj3o",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "I Pistons fanno visita ai Magic mercoledì 25 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "I Magic hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 107,0 punti segnati e 114,6 subiti. In casa il bilancio è 0-4.",
+     "I Pistons hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 111,8 punti segnati e 103,7 subiti. In trasferta il bilancio è 4-1."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "calendario",
+    "paragraphs": [],
+    "bullets": [
+     "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 1 gara."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "A che ora si gioca Orlando Magic – Detroit Pistons in Italia?",
+    "a": "Mercoledì 25 novembre alle 01:00."
+   },
+   {
+    "q": "Come funzionano totali e handicap nel basket?",
+    "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+   },
+   {
+    "q": "Come è organizzata la stagione NBA?",
+    "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-11T06:36:00.843Z"
+ },
+ "nba:1000017200": {
+  "fingerprint": "1iwvv0z",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Mercoledì 25 novembre alle 02:00, ora italiana, i Wizards ospitano i Celtics in una partita della regular season NBA 2026-27."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "I Wizards hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,1 punti segnati e 113,4 subiti. In casa il bilancio è 2-2.",
+     "I Celtics hanno un record di 9-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 116,0 punti segnati e 102,3 subiti. In trasferta il bilancio è 4-1."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "calendario",
+    "paragraphs": [],
+    "bullets": [
+     "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 1 gara."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "A che ora si gioca Washington Wizards – Boston Celtics in Italia?",
+    "a": "Mercoledì 25 novembre alle 02:00."
+   },
+   {
+    "q": "Come funzionano totali e handicap nel basket?",
+    "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+   },
+   {
+    "q": "Come è organizzata la stagione NBA?",
+    "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-11T06:36:03.227Z"
+ },
+ "nba:1000017201": {
+  "fingerprint": "136g416",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "I Mavericks fanno visita ai Nuggets mercoledì 25 novembre alle 04:00, ora italiana, in una partita della regular season NBA 2026-27."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "I Nuggets hanno un record di 5-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 113,6 punti segnati e 112,8 subiti. In casa il bilancio è 2-2.",
+     "I Mavericks hanno un record di 7-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 114,9 punti segnati e 110,3 subiti. In trasferta il bilancio è 2-2."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "calendario",
+    "paragraphs": [],
+    "bullets": [
+     "Nei 7 giorni a partire da questa partita i Nuggets hanno in calendario 1 gara.",
+     "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 1 gara."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "A che ora si gioca Denver Nuggets – Dallas Mavericks in Italia?",
+    "a": "Mercoledì 25 novembre alle 04:00."
+   },
+   {
+    "q": "Come funzionano totali e handicap nel basket?",
+    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
+   },
+   {
+    "q": "Come è organizzata la stagione NBA?",
+    "a": "Trovi tutto su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-11T06:36:05.226Z"
+ },
+ "nba:21718075": {
+  "fingerprint": "1libtox",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Celtics hanno superato i 76ers per 123-101. Il match si è disputato mercoledì 11 novembre.",
+     "All'intervallo i Celtics erano avanti 62-51.",
+     "Il parziale più netto è arrivato nel 4º quarto, vinto dai Celtics per 32-19."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 224.",
+     "Parziali (76ers–Celtics): 23-30, 28-32, 31-29, 19-32."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Philadelphia 76ers – Boston Celtics?",
+    "a": "Il risultato finale è 101-123 per i Celtics."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella sezione [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-11T06:36:14.752Z"
+ },
+ "nba:21718076": {
+  "fingerprint": "whunww",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Suns hanno battuto i Clippers per 133-110. L'incontro si è disputato mercoledì 11 novembre.",
+     "All'intervallo i Suns conducevano 64-47.",
+     "Il parziale più netto è arrivato nel 1º quarto, chiuso dai Suns 29-18."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 243.",
+     "Parziali (Suns–Clippers): 29-18, 35-29, 35-25, 34-38."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Qual è stato il risultato di Phoenix Suns – LA Clippers?",
+    "a": "I Suns hanno vinto 133-110."
+   },
+   {
+    "q": "Dove posso consultare le altre partite NBA?",
+    "a": "Nella [pagina dedicata alla NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-11T06:36:19.070Z"
+ },
+ "nba:21718078": {
+  "fingerprint": "1l4kqaf",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Gli Heat hanno battuto i Jazz 115-109. La partita si è giocata mercoledì 11 novembre.",
+     "All'intervallo gli Heat conducevano 64-54.",
+     "Il parziale più netto è arrivato nel 4º quarto, vinto dai Jazz 37-23."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 224.",
+     "Parziali (Jazz–Heat): 25-29, 29-35, 18-28, 37-23."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Utah Jazz – Miami Heat?",
+    "a": "109-115 per gli Heat."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Puoi consultare la [pagina dei pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-11T06:36:23.623Z"
+ },
+ "nba:21718079": {
+  "fingerprint": "141h1cp",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Orlando Magic ha battuto Sacramento Kings per 107-100. La partita si è disputata mercoledì 11 novembre.",
+     "All'intervallo i Magic conducevano 57-52.",
+     "Il parziale più ampio è arrivato nel 1º quarto, chiuso dai Magic 34-27."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 207.",
+     "I parziali (Kings–Magic) sono stati 27-34, 25-23, 24-27 e 24-23."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Sacramento Kings – Orlando Magic?",
+    "a": "Il risultato finale è stato 100-107 in favore dei Magic."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Sono disponibili nella pagina dedicata ai [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-11T06:36:28.348Z"
+ },
+ "nba:21718080": {
+  "fingerprint": "1150w3s",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "I Trail Blazers hanno battuto i Thunder 123-103. La partita si è giocata mercoledì 11 novembre.",
+     "All'intervallo il punteggio era in parità, 59-59.",
+     "Il parziale più netto è arrivato nel 3º quarto, vinto dai Trail Blazers 38-21."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Punti totali: 226.",
+     "Parziali (Trail Blazers–Thunder): 26-27, 33-32, 38-21, 26-23."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Portland Trail Blazers – Oklahoma City Thunder?",
+    "a": "123-103 per i Trail Blazers."
+   },
+   {
+    "q": "Dove trovo le altre partite NBA?",
+    "a": "Nella pagina dei [pronostici NBA](/pronostici/nba)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-11T06:36:29.733Z"
  }
 }
