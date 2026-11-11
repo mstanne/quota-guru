@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-11T18:21:08.755Z",
+ "generatedAt": "2026-11-11T21:20:28.464Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:1001550202": {
@@ -1772,6 +1772,307 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001635682": {
+   "fingerprint": "bw9a34",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Mercoledì 25 novembre alle 21:00 il Lille ospita il Bayern Monaco per la 5ª giornata della fase a campionato di Champions League. In classifica il Lille è al 35° posto con 1 punto, mentre il Bayern Monaco è al 13° con 8."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Champions League il Lille ha raccolto 1 pareggio e 2 sconfitte (sequenza P-P-N), con 2 gol fatti e 7 subiti.",
+      "Nelle ultime 3 partite di Champions League il Bayern Monaco ha raccolto 1 vittoria e 2 pareggi (sequenza N-N-V), con 7 gol fatti e 5 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Lille 1,0, Bayern Monaco 3,0 a partita.",
+      "Gol subiti finora: Lille 10, Bayern Monaco 5."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Lille – Bayern Monaco?",
+     "a": "Mercoledì 25 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001635703": {
+   "fingerprint": "1z04ibh",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Paris Saint-Germain e Roma si affrontano mercoledì 25 novembre alle 21:00, nella 5ª giornata della fase a campionato di Champions League. In classifica il Paris Saint-Germain occupa il 1° posto con 12 punti, mentre la Roma è al 20° posto con 4 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Champions League il Paris Saint-Germain ha ottenuto 3 vittorie (sequenza V-V-V), segnando 14 gol e subendone 4. Arriva da 3 vittorie consecutive.",
+      "Nelle ultime 3 partite di Champions League la Roma ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-V-P), segnando 9 gol e subendone 7."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Paris Saint-Germain 5,0, Roma 2,5.",
+      "Gol subiti finora: Paris Saint-Germain 5, Roma 8.",
+      "Il Paris Saint-Germain ha il miglior attacco del torneo.",
+      "In tutte le ultime 3 partite del Paris Saint-Germain sono stati segnati almeno tre gol.",
+      "In tutte le ultime 3 partite della Roma sono stati segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Paris Saint-Germain – Roma?",
+     "a": "Mercoledì 25 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001635735": {
+   "fingerprint": "1omffn0",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento mercoledì 25 novembre alle 21:00: lo Sporting CP riceve il Manchester United per la 5ª giornata della fase a campionato di Champions League. In classifica lo Sporting CP è al 10° posto con 9 punti, il Manchester United al 17° con 6."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Champions League lo Sporting CP ha raccolto 2 vittorie e 1 sconfitta (sequenza V-P-V), con 5 gol fatti e 3 subiti.",
+      "Nelle ultime 3 partite di Champions League il Manchester United ha raccolto 1 vittoria e 2 sconfitte (sequenza P-P-V), con 4 gol fatti e 8 subiti. In trasferta ha perso tutte le 2 partite giocate."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Sporting CP 2,0, Manchester United 2,0 a partita.",
+      "Gol subiti finora: Sporting CP 4, Manchester United 8."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Sporting CP – Manchester United?",
+     "a": "Mercoledì 25 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001635673": {
+   "fingerprint": "1n52rqw",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Inter e Stuttgart si sfidano mercoledì 25 novembre alle 21:00, nella 5ª giornata della fase a campionato di Champions League. In classifica l'Inter occupa il 15° posto con 6 punti, lo Stuttgart il 14° con 7."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Champions League l'Inter ha ottenuto 2 vittorie e 1 sconfitta (sequenza P-V-V), con 7 gol fatti e 4 subiti. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 3 partite di Champions League lo Stuttgart ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza V-N-P), con 4 gol fatti e 3 subiti. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Inter 2,0, Stuttgart 1,8 a partita.",
+      "Gol subiti finora: Inter 6, Stuttgart 4."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Inter – Stuttgart?",
+     "a": "Mercoledì 25 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001635625": {
+   "fingerprint": "ok396k",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento mercoledì 25 novembre alle 21:00: l'Atlético Madrid riceve il Viking per la 5ª giornata della fase a campionato di Champions League. Le due squadre sono appaiate a 4 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Champions League l'Atlético Madrid ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza V-N-P), con 3 gol fatti e 3 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 3 partite di Champions League il Viking ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-P-V), con 8 gol fatti e 7 subiti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Atlético Madrid 1,0, Viking 2,3 a partita.",
+      "Gol subiti finora: Atlético Madrid 5, Viking 10.",
+      "In tutte le ultime 3 partite del Viking si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Atlético Madrid – Viking?",
+     "a": "Mercoledì 25 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001635724": {
+   "fingerprint": "112gunx",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Shakhtar e Fenerbahçe si affrontano mercoledì 25 novembre alle 21:00 per la 5ª giornata della fase a campionato di Champions League. In classifica lo Shakhtar è al 21° posto con 4 punti, il Fenerbahçe al 19° con 5."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Champions League lo Shakhtar ha raccolto 1 vittoria e 2 sconfitte (sequenza V-P-P), con 3 gol fatti e 3 subiti. Ha perso le ultime 2. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 3 partite di Champions League il Fenerbahçe ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza P-N-V), con 5 gol fatti e 10 subiti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Shakhtar 1,0, Fenerbahçe 1,5 a partita.",
+      "Gol subiti finora: Shakhtar 4, Fenerbahçe 11.",
+      "In tutte le ultime 3 partite del Fenerbahçe si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Shakhtar – Fenerbahçe?",
+     "a": "Mercoledì 25 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001635642": {
+   "fingerprint": "mnm8j1",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Club Brugge e Liverpool si affrontano mercoledì 25 novembre alle 21:00 per la 5ª giornata della fase a campionato di Champions League. Le due squadre sono appaiate a 9 punti."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Champions League il Club Brugge ha raccolto 3 vittorie (sequenza V-V-V), con 9 gol fatti e 4 subiti. È reduce da 3 vittorie consecutive.",
+      "Nelle ultime 3 partite di Champions League il Liverpool ha raccolto 2 vittorie e 1 sconfitta (sequenza V-V-P), con 12 gol fatti e 9 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Club Brugge 2,8, Liverpool 3,5 a partita.",
+      "Gol subiti finora: Club Brugge 7, Liverpool 10.",
+      "In tutte le ultime 3 partite del Club Brugge si sono segnati almeno tre gol.",
+      "In tutte le ultime 3 partite del Liverpool si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Club Brugge – Liverpool?",
+     "a": "Mercoledì 25 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -4691,6 +4992,183 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001563286": {
+   "fingerprint": "87ecm1",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Mercoledì 25 novembre alle 20:45 il Watford ospita il Blackburn per la 17ª giornata di Championship. In classifica il Watford è al 20° posto con 15 punti, il Blackburn al 13° con 21."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Championship il Watford ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza V-P-P-V-N), con 5 gol fatti e 4 subiti. In casa il bilancio stagionale è di 2 vittorie, 1 pareggio e 1 sconfitta.",
+      "Nelle ultime 5 partite di Championship il Blackburn ha raccolto 2 vittorie e 3 sconfitte (sequenza P-V-P-P-V), con 7 gol fatti e 10 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 2 sconfitte."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Watford 0,9, Blackburn 1,5 a partita.",
+      "Gol subiti finora: Watford 23, Blackburn 23.",
+      "Il Watford non ha subito gol in 3 delle ultime 5.",
+      "In 4 delle ultime 5 partite del Blackburn si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Watford – Blackburn?",
+     "a": "Mercoledì 25 novembre alle 20:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001563284": {
+   "fingerprint": "hwrikr",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Mercoledì 25 novembre alle 20:45 il Burnley ospita il Birmingham per la 17ª giornata di Championship. In classifica il Burnley occupa il 22° posto con 10 punti, mentre il Birmingham è al 1° con 29."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Championship il Burnley ha ottenuto 2 pareggi e 3 sconfitte (sequenza P-P-N-N-P), con 7 gol fatti e 12 subiti. In casa il bilancio stagionale è di 2 pareggi e 1 sconfitta, senza vittorie.",
+      "Nelle ultime 5 partite di Championship il Birmingham ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-P-V-V-V), con 11 gol fatti e 3 subiti. Arriva da 3 vittorie consecutive. In trasferta il bilancio stagionale è di 2 vittorie e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Burnley 1,5, Birmingham 1,9 a partita.",
+      "Gol subiti finora: Burnley 31, Birmingham 14.",
+      "Il Birmingham ha la miglior difesa del torneo.",
+      "In 3 delle ultime 5 partite del Burnley si sono segnati almeno tre gol.",
+      "In 4 delle ultime 5 partite del Birmingham si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Burnley – Birmingham?",
+     "a": "Mercoledì 25 novembre alle 20:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Championship](/calcio/championship) e la [classifica aggiornata](/calcio/championship/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001563283": {
+   "fingerprint": "6gvvh2",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Mercoledì 25 novembre alle 20:45 il Bolton ospita il West Brom per la 17ª giornata di Championship. In classifica il Bolton è al 18° posto con 17 punti, il West Brom al 5° con 28."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Championship il Bolton ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza N-P-P-V-P), con 5 gol fatti e 11 subiti. In casa ha perso tutte le 3 partite giocate.",
+      "Nelle ultime 5 partite di Championship il West Brom ha raccolto 3 vittorie e 2 pareggi (sequenza V-N-V-N-V), con 11 gol fatti e 5 subiti. Non perde da 6 partite. In trasferta il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Bolton 1,3, West Brom 1,5 a partita.",
+      "Gol subiti finora: Bolton 29, West Brom 15.",
+      "In 3 delle ultime 5 partite del Bolton si sono segnati almeno tre gol.",
+      "In 3 delle ultime 5 partite del West Brom si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Bolton – West Brom?",
+     "a": "Mercoledì 25 novembre alle 20:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001563285": {
+   "fingerprint": "1hwa1wc",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Stoke e Millwall si affrontano mercoledì 25 novembre alle 21:00 per la 17ª giornata di Championship. In classifica lo Stoke è al 3° posto con 29 punti, il Millwall al 16° con 18."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Championship lo Stoke ha raccolto 4 vittorie e 1 pareggio (sequenza V-N-V-V-V), con 7 gol fatti e 2 subiti. È reduce da 3 vittorie consecutive. In casa il bilancio stagionale è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+      "Nelle ultime 5 partite di Championship il Millwall ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza N-P-V-P-P), con 7 gol fatti e 11 subiti. Ha perso le ultime 2. In trasferta il bilancio stagionale è di 1 vittoria e 3 sconfitte."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Stoke 1,6, Millwall 1,5 a partita.",
+      "Gol subiti finora: Stoke 18, Millwall 27.",
+      "Lo Stoke non ha subito gol in 3 delle ultime 5.",
+      "In tutte le ultime 5 partite del Millwall si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Stoke – Millwall?",
+     "a": "Mercoledì 25 novembre alle 21:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -17266,280 +17744,6 @@
     }
    ]
   },
-  "fb:558529": {
-   "fingerprint": "1228503",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "La Fiorentina e la Juventus hanno pareggiato 2-2. La partita, valida per la 11ª giornata di Serie A, si è giocata domenica 8 novembre; il primo tempo si era chiuso 1-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora la Fiorentina è al 15° posto con 9 punti, mentre la Juventus è al 7° con 18. [Consulta la classifica completa](/calcio/serie-a/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "La Fiorentina tornerà in campo lunedì 23 novembre alle 18:30, in trasferta contro il Monza. La Juventus tornerà in campo lunedì 23 novembre alle 20:45, in casa contro il Venezia."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Fiorentina – Juventus?",
-     "a": "2-2 (1-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Serie A](/calcio/serie-a)."
-    }
-   ]
-  },
-  "fb:1001601599": {
-   "fingerprint": "4x6xr3",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "La Cremonese ha vinto in trasferta contro il Vicenza Virtus con il punteggio di 1-4. La partita, valida per la 11ª giornata di Serie B, si è giocata domenica 8 novembre; il primo tempo era terminato 1-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Vicenza Virtus occupa il 18° posto con 9 punti, mentre la Cremonese è al 9° con 15. [Consulta la classifica completa](/calcio/serie-b/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Vicenza Virtus tornerà in campo sabato 21 novembre alle 15:00 in trasferta contro l'Ascoli. La Cremonese tornerà in campo sabato 21 novembre alle 15:00 in trasferta contro il Sudtirol."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Vicenza Virtus – Cremonese?",
-     "a": "1-4 (1-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Serie B](/calcio/serie-b)."
-    }
-   ]
-  },
-  "fb:1001570443": {
-   "fingerprint": "1fc5uug",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Barcellona ha vinto in trasferta contro l'Atlético Madrid per 1-2. La partita, valida per la 12ª giornata di LaLiga, si è giocata domenica 8 novembre; il primo tempo era terminato 1-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora, l'Atlético Madrid occupa il 3° posto con 28 punti, mentre il Barcellona è al 1° con 33. [Consulta la classifica completa](/calcio/liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Atlético Madrid tornerà in campo domenica 22 novembre alle 21:00, in trasferta contro il Getafe. Il Barcellona tornerà in campo domenica 22 novembre alle 14:00, in casa contro il Villarreal."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Atlético Madrid – Barcellona?",
-     "a": "1-2 (1-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [LaLiga](/calcio/liga)."
-    }
-   ]
-  },
-  "fb:565856": {
-   "fingerprint": "nbj2t5",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "L'Hoffenheim ha vinto di misura in casa contro lo Schalke, con il risultato di 2-1. La partita, valida per la 9ª giornata di Bundesliga, si è giocata domenica 8 novembre; il primo tempo si era chiuso 2-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora l'Hoffenheim è al 9° posto con 12 punti, mentre lo Schalke è al 17° con 6. [Consulta la classifica completa](/calcio/bundesliga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Hoffenheim tornerà in campo sabato 21 novembre alle 15:30, in trasferta contro il Frankfurt. Lo Schalke tornerà in campo sabato 21 novembre alle 18:30, in casa contro lo Stuttgart."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Hoffenheim – Schalke?",
-     "a": "2-1 (2-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Bundesliga](/calcio/bundesliga)."
-    }
-   ]
-  },
-  "fb:559630": {
-   "fingerprint": "1t1fk2j",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Marseille ha vinto in trasferta contro il RC Lens per 1-2, di misura. La partita, valida per la 10ª giornata di Ligue 1, si è giocata domenica 8 novembre; il primo tempo era terminato 1-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il RC Lens è all'11° posto con 13 punti, mentre il Marseille è al 4° con 18. [Classifica completa](/calcio/ligue-1/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il RC Lens tornerà in campo sabato 21 novembre alle 20:45 in casa contro il Toulouse. Il Marseille tornerà in campo domenica 22 novembre alle 20:45 in casa contro il Le Mans."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita RC Lens – Marseille?",
-     "a": "1-2 (1-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
-    }
-   ]
-  },
-  "fb:558838": {
-   "fingerprint": "1k7h8mq",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il NEC si impone in trasferta contro l'Utrecht per 2-3. La partita, valida per la 12ª giornata di Eredivisie, si è disputata domenica 8 novembre; il primo tempo si era concluso 0-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora, l'Utrecht occupa il 14° posto con 12 punti, mentre il NEC è all'11° con 14. [Vai alla classifica completa](/calcio/eredivisie/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Utrecht tornerà in campo sabato 21 novembre alle 18:45 in casa contro il Cambuur. Il NEC tornerà in campo sabato 21 novembre alle 16:30 in casa contro lo PSV."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Utrecht – NEC?",
-     "a": "2-3 (0-2 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
-    }
-   ]
-  },
-  "fb:567354": {
-   "fingerprint": "5eag1t",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Braga ha conquistato una vittoria di misura in trasferta sul campo del Rio Ave, con il punteggio di 0-1. La sfida, valida per l'11ª giornata di Primeira Liga, si è disputata domenica 8 novembre; il primo tempo si era chiuso sullo 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Rio Ave occupa il 17° posto con 7 punti, mentre il Braga è all'8° posto con 17. [Consulta la classifica completa](/calcio/primeira-liga/classifica)."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Rio Ave – Braga?",
-     "a": "Il risultato è 0-1, con lo 0-0 registrato all'intervallo."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Puoi consultarli nella pagina [Primeira Liga](/calcio/primeira-liga)."
-    }
-   ]
-  },
-  "fb:567355": {
-   "fingerprint": "12rn7s7",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Lo SL Benfica vince in trasferta contro l'Amadora per 2-3. La partita, valida per la 11ª giornata di Primeira Liga, si è giocata domenica 8 novembre; il primo tempo si era chiuso 0-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora l'Amadora è al 12° posto con 10 punti, mentre lo SL Benfica è al 2° con 28. [Classifica completa](/calcio/primeira-liga/classifica)."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Amadora – SL Benfica?",
-     "a": "2-3 (0-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Primeira Liga](/calcio/primeira-liga)."
-    }
-   ]
-  },
   "fb:1001649005": {
    "fingerprint": "167fjgz",
    "sections": [
@@ -17726,38 +17930,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
-    }
-   ]
-  },
-  "nba:21718059": {
-   "fingerprint": "1u0e54l",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I 76ers si impongono sui Bulls per 127-121. La partita si è giocata domenica 8 novembre.",
-      "All'intervallo i 76ers erano avanti 68-61.",
-      "Il parziale più netto è arrivato nel 2º quarto, vinto dai 76ers per 34-28."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 248.",
-      "Parziali (Bulls–76ers): 33-34, 28-34, 32-31, 28-28."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Chicago Bulls – Philadelphia 76ers?",
-     "a": "La partita è finita 121-127 a favore dei 76ers."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Le altre partite NBA sono nella pagina [dedicata ai pronostici NBA](/pronostici/nba)."
     }
    ]
   },
