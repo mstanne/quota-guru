@@ -24362,18 +24362,19 @@
   "at": "2026-11-08T12:21:41.917Z"
  },
  "fb:1001647360": {
-  "fingerprint": "ixha0v",
+  "fingerprint": "180g3cu",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Taipei Cinese e Kirghizistan si affrontano venerdì 13 novembre alle 13:00 per Amichevoli internazionali."
+     "Taipei Cinese e Kirghizistan si affrontano venerdì 13 novembre alle 13:00 nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
+     "Il Taipei Cinese ha giocato finora una sola partita di Amichevoli internazionali, persa 0-2.",
      "Nelle ultime 2 partite di Amichevoli internazionali il Kirghizistan ha raccolto 2 vittorie (sequenza V-V), con 8 gol fatti e 1 subito."
     ],
     "bullets": []
@@ -24401,7 +24402,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T09:19:58.310Z"
+  "at": "2026-11-11T15:21:00.966Z"
  },
  "fb:1001647636": {
   "fingerprint": "kt2tqk",
@@ -25461,19 +25462,20 @@
   "at": "2026-11-10T03:21:32.235Z"
  },
  "fb:1001647366": {
-  "fingerprint": "17zwkmj",
+  "fingerprint": "148bvw8",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Kirghizistan e Vietnam si affrontano domenica 15 novembre alle 13:00 per Amichevoli internazionali."
+     "Kirghizistan e Vietnam si sfidano domenica 15 novembre alle 13:00 nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali il Kirghizistan ha raccolto 2 vittorie (sequenza V-V), con 8 gol fatti e 1 subito. In casa ha vinto tutte le 2 partite giocate."
+     "Nelle ultime 2 partite di Amichevoli internazionali il Kirghizistan ha ottenuto 2 vittorie (sequenza V-V), segnando 8 gol e subendone 1. In casa ha vinto tutte le 2 gare disputate.",
+     "Il Vietnam ha finora giocato una sola partita di Amichevoli internazionali, vinta 2-0."
     ],
     "bullets": []
    }
@@ -25489,11 +25491,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T14:18:32.713Z"
+  "at": "2026-11-11T15:21:04.129Z"
  },
  "fb:1001649020": {
   "fingerprint": "qfhi4k",
@@ -32185,5 +32187,60 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-11T06:36:29.733Z"
+ },
+ "fb:1001647634": {
+  "fingerprint": "1kdn9y0",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "La China U19 si impone in casa sul Vietnam U19 con il punteggio di 3-1. La partita, valida per Amichevoli internazionali, si è giocata mercoledì 11 novembre; il primo tempo si era chiuso sull'1-0."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita China U19 – Vietnam U19?",
+    "a": "3-1 (1-0 all'intervallo)."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-11T15:21:05.304Z"
+ },
+ "fb:1001647357": {
+  "fingerprint": "107a8y4",
+  "sections": [
+   {
+    "id": "resoconto",
+    "paragraphs": [
+     "Il Vietnam ha battuto il Taipei Cinese per 2-0 in casa. La partita, valida per le Amichevoli internazionali, si è giocata mercoledì 11 novembre; il primo tempo si era chiuso sull'1-0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "prossimi",
+    "paragraphs": [
+     "Il Vietnam tornerà in campo domenica 15 novembre alle 13:00 in trasferta contro il Kirghizistan. Il Taipei Cinese tornerà in campo venerdì 13 novembre alle 13:00 in casa contro il Kirghizistan."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Com'è finita Vietnam – Taipei Cinese?",
+    "a": "Il risultato finale è 2-0, con 1-0 all'intervallo."
+   },
+   {
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-11T15:21:06.867Z"
  }
 }
