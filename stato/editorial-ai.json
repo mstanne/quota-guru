@@ -21391,12 +21391,12 @@
   "at": "2026-11-10T00:21:45.368Z"
  },
  "fb:1001545879": {
-  "fingerprint": "1ip5qua",
+  "fingerprint": "dcfkog",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento venerdì 13 novembre alle 14:00: il Mozambico ospita l'Etiopia nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+     "L'incontro si gioca venerdì 13 novembre alle 14:00, valido per la 3ª giornata delle Qualificazioni Coppa d'Africa: il Mozambico ospita l'Etiopia."
     ],
     "bullets": []
    },
@@ -21404,7 +21404,14 @@
     "id": "momento",
     "paragraphs": [
      "Finora il Mozambico ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 4-1.",
-     "Finora l'Etiopia ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, persa 0-1."
+     "Anche l'Etiopia ha giocato una sola partita nelle Qualificazioni Coppa d'Africa, persa 0-1."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Nell'ultimo confronto diretto disponibile, cioè 1 incontro, il bilancio è di 0 vittorie per il Mozambico, 0 vittorie per l'Etiopia e 1 pareggio, con 0 gol complessivi (media di 0,0 a partita). L'ultimo precedente risale a gennaio 2023, nell'African Nations Championship, e si è chiuso Etiopia 0-0 Mozambico."
     ],
     "bullets": []
    }
@@ -21416,15 +21423,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    "a": "Puoi consultare la pagina dedicate alle [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:21:24.476Z"
+  "at": "2026-11-11T09:20:27.525Z"
  },
  "fb:1001545880": {
   "fingerprint": "svkolb",
@@ -24014,12 +24021,12 @@
   "at": "2026-11-08T12:21:18.625Z"
  },
  "fb:1001647634": {
-  "fingerprint": "1342rc3",
+  "fingerprint": "1xnalqd",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Mercoledì 11 novembre alle 13:35 il China U19 ospita il Vietnam U19 in una partita valida per le Amichevoli internazionali."
+     "Mercoledì 11 novembre alle 12:35 il China U19 ospita il Vietnam U19 nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    }
@@ -24027,11 +24034,11 @@
   "faq": [
    {
     "q": "Quando si gioca China U19 – Vietnam U19?",
-    "a": "Mercoledì 11 novembre alle 13:35, ora italiana."
+    "a": "Mercoledì 11 novembre alle 12:35, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -24039,7 +24046,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T12:21:20.053Z"
+  "at": "2026-11-11T09:20:31.046Z"
  },
  "fb:1001647635": {
   "fingerprint": "lous1a",
@@ -29283,32 +29290,28 @@
   "at": "2026-11-09T18:20:28.138Z"
  },
  "fb:1001649540": {
-  "fingerprint": "1a6uq44",
+  "fingerprint": "9sda21",
   "sections": [
    {
-    "id": "presentazione",
+    "id": "resoconto",
     "paragraphs": [
-     "Sint Maarten e Anguilla si sfidano mercoledì 11 novembre alle 01:30 nell'ambito delle Amichevoli internazionali."
+     "Il Sint Maarten supera l'Anguilla in casa con il punteggio di 5-1. La partita, valida per Amichevoli internazionali, si è giocata mercoledì 11 novembre."
     ],
     "bullets": []
    }
   ],
   "faq": [
    {
-    "q": "Quando si gioca Sint Maarten – Anguilla?",
-    "a": "Mercoledì 11 novembre alle 01:30, ora italiana."
+    "q": "Com'è finita Sint Maarten – Anguilla?",
+    "a": "5-1."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "q": "Dove trovo gli altri risultati?",
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T18:20:49.268Z"
+  "at": "2026-11-11T09:20:32.230Z"
  },
  "fb:1001649541": {
   "fingerprint": "mgz03j",
