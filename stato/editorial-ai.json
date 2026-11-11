@@ -29237,12 +29237,12 @@
   "at": "2026-11-09T18:20:28.138Z"
  },
  "fb:1001649540": {
-  "fingerprint": "9sda21",
+  "fingerprint": "1lspkfh",
   "sections": [
    {
     "id": "resoconto",
     "paragraphs": [
-     "Il Sint Maarten supera l'Anguilla in casa con il punteggio di 5-1. La partita, valida per Amichevoli internazionali, si è giocata mercoledì 11 novembre."
+     "Il Sint Maarten supera l'Anguilla in casa con un netto 5-1. La partita, valida per Amichevoli internazionali, si è giocata mercoledì 11 novembre; il primo tempo si era chiuso 2-0."
     ],
     "bullets": []
    }
@@ -29250,7 +29250,7 @@
   "faq": [
    {
     "q": "Com'è finita Sint Maarten – Anguilla?",
-    "a": "5-1."
+    "a": "5-1 (2-0 all'intervallo)."
    },
    {
     "q": "Dove trovo gli altri risultati?",
@@ -29258,7 +29258,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T09:20:32.230Z"
+  "at": "2026-11-11T18:21:08.747Z"
  },
  "fb:1001649541": {
   "fingerprint": "mgz03j",
@@ -32243,5 +32243,95 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-11T15:21:06.867Z"
+ },
+ "fb:1001635728": {
+  "fingerprint": "1p83po7",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Slavia Praha e Villarreal si affrontano mercoledì 25 novembre alle 18:45 per la 5ª giornata della fase a campionato di Champions League. In classifica lo Slavia Praha è al 34° posto con 1 punto, il Villarreal al 28° con 3."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 3 partite di Champions League lo Slavia Praha ha raccolto 1 pareggio e 2 sconfitte (sequenza P-N-P), con 3 gol fatti e 6 subiti.",
+     "Nelle ultime 3 partite di Champions League il Villarreal ha raccolto 1 vittoria e 2 sconfitte (sequenza V-P-P), con 6 gol fatti e 11 subiti. Ha perso le ultime 2."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Slavia Praha 1,3, Villarreal 2,0 a partita.",
+     "Gol subiti finora: Slavia Praha 9, Villarreal 14.",
+     "In tutte le ultime 3 partite del Villarreal si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Slavia Praha – Villarreal?",
+    "a": "Mercoledì 25 novembre alle 18:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-11T18:21:05.258Z"
+ },
+ "fb:1001635718": {
+  "fingerprint": "yipdav",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabah FA e Barcellona si sfidano mercoledì 25 novembre alle 18:45 per la 5ª giornata della fase a campionato di Champions League. In classifica il Sabah FA occupa il 31° posto con 3 punti, mentre il Barcellona è al 5° con 9."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 3 partite di Champions League il Sabah FA ha ottenuto 1 vittoria e 2 sconfitte (sequenza V-P-P), con 4 gol fatti e 6 subiti. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 3 partite di Champions League il Barcellona ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), con 9 gol fatti e 5 subiti. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Sabah FA 1,0, Barcellona 3,5 a partita.",
+     "Gol subiti finora: Sabah FA 10, Barcellona 6.",
+     "In tutte le ultime 3 partite del Barcellona si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Sabah FA – Barcellona?",
+    "a": "Mercoledì 25 novembre alle 18:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Champions League](/calcio/champions-league) e la [classifica aggiornata](/calcio/champions-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-11T18:21:07.675Z"
  }
 }

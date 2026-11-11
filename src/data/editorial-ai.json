@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-11T17:15:03.024Z",
+ "generatedAt": "2026-11-11T18:21:08.755Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:1001550202": {
@@ -1686,6 +1686,92 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001635728": {
+   "fingerprint": "1p83po7",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Slavia Praha e Villarreal si affrontano mercoledì 25 novembre alle 18:45 per la 5ª giornata della fase a campionato di Champions League. In classifica lo Slavia Praha è al 34° posto con 1 punto, il Villarreal al 28° con 3."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Champions League lo Slavia Praha ha raccolto 1 pareggio e 2 sconfitte (sequenza P-N-P), con 3 gol fatti e 6 subiti.",
+      "Nelle ultime 3 partite di Champions League il Villarreal ha raccolto 1 vittoria e 2 sconfitte (sequenza V-P-P), con 6 gol fatti e 11 subiti. Ha perso le ultime 2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Slavia Praha 1,3, Villarreal 2,0 a partita.",
+      "Gol subiti finora: Slavia Praha 9, Villarreal 14.",
+      "In tutte le ultime 3 partite del Villarreal si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Slavia Praha – Villarreal?",
+     "a": "Mercoledì 25 novembre alle 18:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Champions League](/calcio/champions-league) e nella [classifica aggiornata](/calcio/champions-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001635718": {
+   "fingerprint": "yipdav",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabah FA e Barcellona si sfidano mercoledì 25 novembre alle 18:45 per la 5ª giornata della fase a campionato di Champions League. In classifica il Sabah FA occupa il 31° posto con 3 punti, mentre il Barcellona è al 5° con 9."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 3 partite di Champions League il Sabah FA ha ottenuto 1 vittoria e 2 sconfitte (sequenza V-P-P), con 4 gol fatti e 6 subiti. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 3 partite di Champions League il Barcellona ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), con 9 gol fatti e 5 subiti. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Sabah FA 1,0, Barcellona 3,5 a partita.",
+      "Gol subiti finora: Sabah FA 10, Barcellona 6.",
+      "In tutte le ultime 3 partite del Barcellona si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Sabah FA – Barcellona?",
+     "a": "Mercoledì 25 novembre alle 18:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Champions League](/calcio/champions-league) e la [classifica aggiornata](/calcio/champions-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -17252,78 +17338,6 @@
     }
    ]
   },
-  "fb:564747": {
-   "fingerprint": "1nv2j3f",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Villarreal ha battuto il Getafe in casa per 2-0. La partita, valida per la 12ª giornata di LaLiga, si è giocata domenica 8 novembre; il primo tempo si era concluso 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora, il Villarreal occupa l'8° posto con 15 punti, mentre il Getafe è al 15° con 12. Puoi consultare la [classifica completa](/calcio/liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Villarreal tornerà in campo domenica 22 novembre alle 14:00, in trasferta contro il Barcellona. Il Getafe tornerà in campo domenica 22 novembre alle 21:00, in casa contro l'Atlético Madrid."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Villarreal – Getafe?",
-     "a": "2-0 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [LaLiga](/calcio/liga)."
-    }
-   ]
-  },
-  "fb:564742": {
-   "fingerprint": "izagwi",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Celta e il Levante hanno chiuso la partita senza reti, sul punteggio di 0-0. L'incontro, valido per la 12ª giornata di LaLiga, si è giocato domenica 8 novembre e il primo tempo era già terminato 0-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora il Celta è all'11° posto con 13 punti, mentre il Levante è al 17° con 11. Per consultare la situazione completa, vai alla [classifica completa](/calcio/liga/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Celta tornerà in campo sabato 21 novembre alle 21:00, in trasferta contro il Real Madrid. Il Levante giocherà lunedì 23 novembre alle 21:00, in casa contro l'Elche."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Celta – Levante?",
-     "a": "0-0 (0-0 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [LaLiga](/calcio/liga)."
-    }
-   ]
-  },
   "fb:1001570443": {
    "fingerprint": "1fc5uug",
    "sections": [
@@ -17468,35 +17482,6 @@
     }
    ]
   },
-  "fb:567349": {
-   "fingerprint": "ma79fw",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il Porto ha conquistato in trasferta una vittoria di misura contro il Vitória SC, finita 1-2. La partita, valida per la 11ª giornata di Primeira Liga, si è disputata domenica 8 novembre e al termine del primo tempo il punteggio era 0-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Dopo le partite disputate finora, il Vitória SC occupa il 14° posto con 9 punti, mentre il Porto è al 1° posto con 33. [Classifica completa](/calcio/primeira-liga/classifica)."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Vitória SC – Porto?",
-     "a": "1-2 (0-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina dedicata alla [Primeira Liga](/calcio/primeira-liga)."
-    }
-   ]
-  },
   "fb:567354": {
    "fingerprint": "5eag1t",
    "sections": [
@@ -17614,12 +17599,12 @@
    ]
   },
   "fb:1001649540": {
-   "fingerprint": "9sda21",
+   "fingerprint": "1lspkfh",
    "sections": [
     {
      "id": "resoconto",
      "paragraphs": [
-      "Il Sint Maarten supera l'Anguilla in casa con il punteggio di 5-1. La partita, valida per Amichevoli internazionali, si è giocata mercoledì 11 novembre."
+      "Il Sint Maarten supera l'Anguilla in casa con un netto 5-1. La partita, valida per Amichevoli internazionali, si è giocata mercoledì 11 novembre; il primo tempo si era chiuso 2-0."
      ],
      "bullets": []
     }
@@ -17627,7 +17612,7 @@
    "faq": [
     {
      "q": "Com'è finita Sint Maarten – Anguilla?",
-     "a": "5-1."
+     "a": "5-1 (2-0 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
