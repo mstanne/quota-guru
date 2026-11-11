@@ -21621,20 +21621,27 @@
   "at": "2026-11-09T15:21:08.106Z"
  },
  "fb:1001545885": {
-  "fingerprint": "1kyw6rj",
+  "fingerprint": "1b0tg99",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Venerdì 13 novembre alle 14:00 lo Zambia ospita il Burundi nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+     "Appuntamento venerdì 13 novembre alle 14:00: lo Zambia riceve il Burundi per la 3ª giornata di Qualificazioni Coppa d'Africa."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Finora lo Zambia ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 2-0.",
-     "Anche il Burundi ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, pareggiata 2-2."
+     "Finora lo Zambia ha giocato una sola partita di Qualificazioni Coppa d'Africa, vinta 2-0.",
+     "Anche il Burundi ha giocato finora una sola partita di Qualificazioni Coppa d'Africa, pareggiata 2-2."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 2 confronti diretti il bilancio è di 1 vittoria per lo Zambia, 0 vittorie per il Burundi e 1 pareggio, con 1 gol complessivi (media di 0,5 a partita). L'ultimo incrocio, a dicembre 2013 in CECAFA Senior Challenge Cup, è finito Zambia 0-0 Burundi."
     ],
     "bullets": []
    }
@@ -21654,7 +21661,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:21:26.189Z"
+  "at": "2026-11-11T12:20:14.719Z"
  },
  "fb:1001545886": {
   "fingerprint": "1td6gw0",
@@ -23984,69 +23991,6 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-09T04:44:30.986Z"
- },
- "fb:1001647357": {
-  "fingerprint": "1knkwhi",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Mercoledì 11 novembre alle 13:00 il Vietnam ospita il Taipei Cinese nell'ambito delle Amichevoli internazionali."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "precedenti",
-    "paragraphs": [
-     "Negli ultimi 2 confronti diretti il Vietnam ha ottenuto 2 vittorie, il Taipei Cinese nessuna e non ci sono stati pareggi. In totale sono stati segnati 8 gol, con una media di 4,0 a partita. L'ultimo incontro, disputato a marzo 2016 nelle Qualificazioni Mondiali Asia, si è concluso con il successo del Vietnam per 4-1 sul Taipei Cinese."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Vietnam – Taipei Cinese?",
-    "a": "Mercoledì 11 novembre alle 13:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-08T12:21:18.625Z"
- },
- "fb:1001647634": {
-  "fingerprint": "1xnalqd",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Mercoledì 11 novembre alle 12:35 il China U19 ospita il Vietnam U19 nell'ambito delle Amichevoli internazionali."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca China U19 – Vietnam U19?",
-    "a": "Mercoledì 11 novembre alle 12:35, ora italiana."
-   },
-   {
-    "q": "Dove posso consultare classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-11T09:20:31.046Z"
  },
  "fb:1001647635": {
   "fingerprint": "lous1a",

@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-11T09:20:32.240Z",
+ "generatedAt": "2026-11-11T12:20:14.725Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:1001550202": {
@@ -7954,20 +7954,27 @@
    ]
   },
   "fb:1001545885": {
-   "fingerprint": "1kyw6rj",
+   "fingerprint": "1b0tg99",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Venerdì 13 novembre alle 14:00 lo Zambia ospita il Burundi nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+      "Appuntamento venerdì 13 novembre alle 14:00: lo Zambia riceve il Burundi per la 3ª giornata di Qualificazioni Coppa d'Africa."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Finora lo Zambia ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 2-0.",
-      "Anche il Burundi ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, pareggiata 2-2."
+      "Finora lo Zambia ha giocato una sola partita di Qualificazioni Coppa d'Africa, vinta 2-0.",
+      "Anche il Burundi ha giocato finora una sola partita di Qualificazioni Coppa d'Africa, pareggiata 2-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 2 confronti diretti il bilancio è di 1 vittoria per lo Zambia, 0 vittorie per il Burundi e 1 pareggio, con 1 gol complessivi (media di 0,5 a partita). L'ultimo incrocio, a dicembre 2013 in CECAFA Senior Challenge Cup, è finito Zambia 0-0 Burundi."
      ],
      "bullets": []
     }
@@ -10425,65 +10432,6 @@
     {
      "q": "Dove posso consultare classifica e risultati?",
      "a": "Nella pagina dedicata alla [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001647634": {
-   "fingerprint": "1xnalqd",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 11 novembre alle 12:35 il China U19 ospita il Vietnam U19 nell'ambito delle Amichevoli internazionali."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca China U19 – Vietnam U19?",
-     "a": "Mercoledì 11 novembre alle 12:35, ora italiana."
-    },
-    {
-     "q": "Dove posso consultare classifica e risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001647357": {
-   "fingerprint": "1knkwhi",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 11 novembre alle 13:00 il Vietnam ospita il Taipei Cinese nell'ambito delle Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "precedenti",
-     "paragraphs": [
-      "Negli ultimi 2 confronti diretti il Vietnam ha ottenuto 2 vittorie, il Taipei Cinese nessuna e non ci sono stati pareggi. In totale sono stati segnati 8 gol, con una media di 4,0 a partita. L'ultimo incontro, disputato a marzo 2016 nelle Qualificazioni Mondiali Asia, si è concluso con il successo del Vietnam per 4-1 sul Taipei Cinese."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Vietnam – Taipei Cinese?",
-     "a": "Mercoledì 11 novembre alle 13:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -17287,42 +17235,6 @@
     }
    ]
   },
-  "fb:558533": {
-   "fingerprint": "l3goxh",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Il match termina 1-1: la Lazio, in vantaggio all'intervallo sul punteggio di 0-1, viene raggiunta dal Napoli nella ripresa. La partita, valida per l'11ª giornata di Serie A, si è disputata domenica 8 novembre."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Dopo le partite giocate finora, il Napoli occupa il 10° posto con 15 punti, mentre la Lazio è al 1° posto con 29. Puoi consultare la [classifica completa](/calcio/serie-a/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "Il Napoli tornerà in campo sabato 21 novembre alle 20:45 in casa contro il Torino. La Lazio giocherà sabato 21 novembre alle 15:00 in casa contro il Lecce."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Napoli – Lazio?",
-     "a": "1-1 (0-1 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina di [Serie A](/calcio/serie-a)."
-    }
-   ]
-  },
   "fb:558536": {
    "fingerprint": "1wjwab",
    "sections": [
@@ -18256,42 +18168,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Ligue 1](/calcio/ligue-1)."
-    }
-   ]
-  },
-  "fb:558840": {
-   "fingerprint": "4jka8r",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "Rimonta dell'Heerenveen, che dopo essere stato sotto all'intervallo ha vinto in casa per 5-3 contro il Feyenoord. La partita, valida per la 12ª giornata di Eredivisie, si è giocata domenica 8 novembre; il primo tempo si era chiuso 1-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "classifica",
-     "paragraphs": [
-      "Con le partite giocate finora l'Heerenveen è al 6° posto con 21 punti, mentre il Feyenoord è al 2° con 25. [Classifica completa](/calcio/eredivisie/classifica)."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'Heerenveen tornerà in campo sabato 21 novembre alle 21:00 in trasferta contro il Groningen. Il Feyenoord tornerà in campo sabato 21 novembre alle 18:45 in casa contro l'Excelsior."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Heerenveen – Feyenoord?",
-     "a": "Si è conclusa 5-3 (1-2 all'intervallo)."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Eredivisie](/calcio/eredivisie)."
     }
    ]
   },
