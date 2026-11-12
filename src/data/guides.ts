@@ -22,6 +22,8 @@ import { sportGuides } from "./guides/sport";
 import { direttaGuides } from "./guides/diretta";
 import { academyGuides } from "./guides/academy";
 import { multipleGuides } from "./guides/multiple";
+import { altriSportGuides } from "./guides/altri-sport";
+import { metodiGuides } from "./guides/metodi";
 import { site } from "./site";
 import type { RouteMeta } from "../routes";
 import { isoFromItalianDate, plainText } from "../lib/schema";
@@ -615,6 +617,8 @@ export const guides: Guide[] = [
   ...sportGuides,
   ...direttaGuides,
   ...academyGuides,
+  ...altriSportGuides,
+  ...metodiGuides,
 ].sort((a, b) => categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category));
 
 /** Related guides ("Articoli correlati"): the explicit list, completed with same-category guides, max 4. */
