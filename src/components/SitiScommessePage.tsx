@@ -365,8 +365,8 @@ function OfferSummary({ offer }: { offer?: WelcomeOffer }) {
   return (
     <div className="text-center md:text-right">
       <div className="text-slate-400 text-sm mb-1">Offerta di benvenuto {label}</div>
-      <div className="text-white text-2xl leading-tight">fino a {formatEuro(totals.main)}</div>
-      {totals.extraLabel && <div className="text-white text-lg leading-tight">{totals.extraLabel}</div>}
+      <div className="text-white text-2xl leading-tight">fino a {formatEuro(totals.total)}</div>
+      {totals.partLabel && <div className="text-white text-lg leading-tight">{totals.partLabel}</div>}
       <div className="mb-1" />
       <p className="text-slate-400 text-xs">
         18+ · Si applicano i termini dell'operatore ·{" "}

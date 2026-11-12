@@ -69,7 +69,7 @@ export function sportOffer(op: OperatorData, offers = visibleOffers()): WelcomeO
 export const offerAmount = (o: WelcomeOffer | null) => {
   if (!o) return null;
   const t = offerTotals(o, "sport");
-  return [`Fino a ${formatEuro(t.main)}`, t.extraLabel].filter(Boolean).join(" ");
+  return [`Fino a ${formatEuro(t.total)}`, t.partLabel].filter(Boolean).join(", ");
 };
 
 /** Whether the method can be used for the first deposit of the sports offer: excluded / not excluded / no offer. */

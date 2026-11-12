@@ -98,7 +98,7 @@ function OperatorProfile({ op }: { op: OperatorData }) {
     [
       "Offerta sport",
       sport
-        ? [`Fino a ${formatEuro(amountFor(sport, "sport"))}`, offerTotals(sport, "sport").extraLabel].filter(Boolean).join(" ")
+        ? [`Fino a ${formatEuro(offerTotals(sport, "sport").total)}`, offerTotals(sport, "sport").partLabel].filter(Boolean).join(", ")
         : "Nessuna offerta verificata",
     ],
   ];
@@ -660,7 +660,10 @@ function buildFaq(op: OperatorData, sport?: WelcomeOffer, profile?: OperatorProf
     out.push({
       q: `Come funziona il bonus di benvenuto ${op.name}?`,
       a:
-        `L'offerta "${sport.title}" vale fino a ${formatEuro(amountFor(sport, "sport"))} sulle scommesse sportive` +
+        `L'offerta "${sport.title}" vale fino a ${formatEuro(offerTotals(sport, "sport").total)}` +
+        (offerTotals(sport, "sport").partLabel
+          ? `, di cui ${formatEuro(amountFor(sport, "sport"))} sulle scommesse sportive`
+          : " sulle scommesse sportive") +
         (vol !== null ? `; per sbloccare tutte le sue parti servono in totale ${formatEuro(vol)} di giocate` : "") +
         ". Il dettaglio è nella pagina delle condizioni spiegate.",
     });

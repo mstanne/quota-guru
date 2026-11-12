@@ -183,22 +183,16 @@ export interface OfferTotals {
   total: number;
   /** total − main, 0 when the whole offer is on the product shown. */
   extra: number;
-  /** "+ 2.150 € extra casinò", null when there is no extra. */
-  extraLabel: string | null;
+  /** "di cui 200 € sport", null when the whole offer is on the product shown. */
+  partLabel: string | null;
 }
 
-/** Amount on one product plus the rest of the offer's maximum total (e.g. the casinò part of a combined offer). */
+/** Maximum total of the offer and the part usable on one product: "fino a 2.350 €, di cui 200 € sport". */
 export function offerTotals(o: WelcomeOffer, product: OfferProduct): OfferTotals {
   const main = amountFor(o, product);
   const total = Math.max(main, o.advertisedTotal ?? o.components.reduce((s, c) => s + c.maxAmount, 0));
   const extra = total - main;
-  const others = [...new Set(o.components.filter((c) => c.product !== product).map((c) => SHORT_PRODUCT[c.product]))];
-  return {
-    main,
-    total,
-    extra,
-    extraLabel: extra > 0 ? `+ ${formatEuro(extra)} extra${others.length ? ` ${others.join(" e ")}` : ""}` : null,
-  };
+  return { main, total, extra, partLabel: extra > 0 ? `di cui ${formatEuro(main)} ${SHORT_PRODUCT[product]}` : null };
 }
 
 /** "2.150 €", "537,50 €" – always with the thousands separator (it-IT omits it on 4-digit numbers). */

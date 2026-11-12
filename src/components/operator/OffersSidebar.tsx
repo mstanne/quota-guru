@@ -90,9 +90,9 @@ export function OffersSidebar({
                     {twins.has(name) && <span className="text-slate-400 font-normal text-sm"> · {o.title}</span>}
                   </span>
                   <span className="block text-slate-400 text-sm tabular-nums">
-                    Fino a {formatEuro(offerTotals(o, product).main)}
-                    {offerTotals(o, product).extraLabel && (
-                      <span className="text-slate-200"> {offerTotals(o, product).extraLabel}</span>
+                    Fino a {formatEuro(offerTotals(o, product).total)}
+                    {offerTotals(o, product).partLabel && (
+                      <span className="text-slate-200">, {offerTotals(o, product).partLabel}</span>
                     )}
                   </span>
                 </span>
