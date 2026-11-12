@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-12T09:46:07.892Z",
+ "generatedAt": "2026-11-12T11:25:14.583Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:1001550202": {
@@ -178,21 +178,21 @@
     }
    ]
   },
-  "fb:1001550206": {
-   "fingerprint": "1hfljbp",
+  "fb:1001550201": {
+   "fingerprint": "1dlxspx",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "La partita si giocherà domenica 22 novembre alle 12:30, quando il Sassuolo ospiterà il Genoa nella 12ª giornata di Serie A. In classifica il Sassuolo occupa il 17° posto con 8 punti, mentre il Genoa è al 13° con 13 punti."
+      "Domenica 22 novembre alle 12:30 Juventus e Venezia si affrontano nella 12ª giornata di Serie A. In classifica la Juventus occupa il 7° posto con 18 punti, mentre il Venezia è al 19° con 6."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie A il Sassuolo ha collezionato 5 sconfitte (sequenza P-P-P-P-P), segnando 6 gol e subendone 19. Ha perso tutte le ultime 5 gare. Quanto al rendimento interno, la stagione del Sassuolo in casa registra 1 pareggio e 2 sconfitte, senza alcuna vittoria.",
-      "Nelle ultime 5 partite di Serie A il Genoa ha ottenuto 3 vittorie e 2 sconfitte (sequenza P-V-V-V-P), con 6 gol fatti e 5 subiti. In trasferta il bilancio stagionale del Genoa è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 5 partite di Serie A la Juventus ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte, con sequenza P-V-P-V-N. Ha segnato 6 gol e ne ha subiti 7. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 5 partite di Serie A il Venezia ha raccolto 2 vittorie e 3 sconfitte, con sequenza V-P-P-P-V. Ha segnato 3 gol e ne ha subiti 5. In trasferta ha perso tutte le 3 partite giocate."
      ],
      "bullets": []
     },
@@ -200,64 +200,19 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati a partita: Sassuolo 1,5, Genoa 1,0.",
-      "Gol subiti finora: Sassuolo 29, Genoa 16.",
-      "In 4 delle ultime 5 partite del Sassuolo sono stati segnati almeno tre gol."
+      "Media gol segnati a partita: Juventus 1,4, Venezia 0,7.",
+      "Gol subiti finora: Juventus 12, Venezia 21."
      ]
     }
    ],
    "faq": [
     {
-     "q": "Quando si gioca Sassuolo – Genoa?",
+     "q": "Quando si gioca Juventus – Venezia?",
      "a": "Domenica 22 novembre alle 12:30, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Serie A](/calcio/serie-a) e la [classifica aggiornata](/calcio/serie-a/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001550197": {
-   "fingerprint": "gecp03",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Milan e Frosinone si affrontano domenica 22 novembre alle 15:00 nella 12ª giornata di Serie A. Si tratta di una sfida tra squadre di alta classifica: il Milan è quarto con 24 punti, il Frosinone sesto con 20."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Serie A il Milan ha ottenuto 4 vittorie e 1 sconfitta, con la sequenza V-V-P-V-V. In questo periodo ha segnato 12 gol e ne ha subiti 8. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
-      "Nelle ultime 5 partite di Serie A il Frosinone ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-N-V-V-P. In questo periodo ha segnato 15 gol e ne ha subiti 8. In trasferta, il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Milan 2,1, Frosinone 2,2 a partita.",
-      "Gol subiti finora: Milan 13, Frosinone 15.",
-      "In 4 delle ultime 5 partite del Milan si sono segnati almeno tre gol.",
-      "In 3 delle ultime 5 partite del Frosinone si sono segnati almeno tre gol."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Milan – Frosinone?",
-     "a": "Domenica 22 novembre alle 15:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Serie A](/calcio/serie-a) e la [classifica aggiornata](/calcio/serie-a/classifica)."
+     "a": "Puoi consultare la pagina di [Serie A](/calcio/serie-a) e la [classifica aggiornata](/calcio/serie-a/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -265,21 +220,21 @@
     }
    ]
   },
-  "fb:1001550199": {
-   "fingerprint": "103oyez",
+  "fb:1001550206": {
+   "fingerprint": "j2wlb9",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Domenica 22 novembre alle 18:00 il Bologna ospita l'Udinese per la 12ª giornata di Serie A. In classifica il Bologna è all'8° posto con 17 punti, mentre l'Udinese è al 20° con 5."
+      "Il Sassuolo ospita il Genoa domenica 22 novembre alle 15:00, per la 12ª giornata di Serie A. In classifica il Sassuolo occupa il 17° posto con 8 punti, il Genoa il 13° con 13."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 5 partite di Serie A il Bologna ha raccolto 4 vittorie e 1 sconfitta (sequenza P-V-V-V-V), con 11 gol fatti e 7 subiti. Arriva da 4 vittorie consecutive. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 5 partite di Serie A l'Udinese ha raccolto 1 pareggio e 4 sconfitte (sequenza P-P-N-P-P), con 3 gol fatti e 12 subiti. Ha perso le ultime 2 gare. In trasferta il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie."
+      "Nelle ultime 5 partite di Serie A il Sassuolo ha collezionato 5 sconfitte (sequenza P-P-P-P-P), segnando 6 gol e subendone 19. Ha perso le ultime 5. In casa il bilancio stagionale è di 1 pareggio e 2 sconfitte, senza vittorie finora.",
+      "Nelle ultime 5 partite di Serie A il Genoa ha ottenuto 3 vittorie e 2 sconfitte (sequenza P-V-V-V-P), segnando 6 gol e subendone 5. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     },
@@ -287,16 +242,103 @@
      "id": "numeri",
      "paragraphs": [],
      "bullets": [
-      "Media gol segnati: Bologna 1,5, Udinese 1,1 a partita.",
+      "Media gol segnati: Sassuolo 1,5, Genoa 1,0 a partita.",
+      "Gol subiti finora: Sassuolo 29, Genoa 16.",
+      "In 4 delle ultime 5 partite del Sassuolo si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Sassuolo – Genoa?",
+     "a": "Domenica 22 novembre alle 15:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001550199": {
+   "fingerprint": "1xi6spv",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "La partita si giocherà domenica 22 novembre alle 15:00, quando il Bologna ospiterà l'Udinese per la 12ª giornata di Serie A. In classifica il Bologna occupa l'8° posto con 17 punti, mentre l'Udinese è al 20° con 5."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Serie A il Bologna ha ottenuto 4 vittorie e 1 sconfitta (sequenza P-V-V-V-V), segnando 11 gol e subendone 7. Arriva da 4 vittorie consecutive. In casa, la stagione del Bologna registra 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 5 partite di Serie A l'Udinese ha ottenuto 1 pareggio e 4 sconfitte (sequenza P-P-N-P-P), segnando 3 gol e subendone 12. Ha perso le ultime 2 partite. In trasferta, il bilancio stagionale dell'Udinese è di 1 pareggio e 2 sconfitte, senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Bologna 1,5, Udinese 1,1.",
       "Gol subiti finora: Bologna 14, Udinese 25.",
-      "In 4 delle ultime 5 partite del Bologna si sono segnati almeno tre gol.",
-      "In 3 delle ultime 5 partite dell'Udinese si sono segnati almeno tre gol."
+      "In 4 delle ultime 5 partite del Bologna sono stati segnati almeno tre gol.",
+      "In 3 delle ultime 5 partite dell'Udinese sono stati segnati almeno tre gol."
      ]
     }
    ],
    "faq": [
     {
      "q": "Quando si gioca Bologna – Udinese?",
+     "a": "Domenica 22 novembre alle 15:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella sezione [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001550197": {
+   "fingerprint": "1jvr46t",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Milan e Frosinone si sfidano domenica 22 novembre alle 18:00, nell'ambito della 12ª giornata di Serie A. Il Milan occupa il 4° posto con 24 punti, il Frosinone il 6° con 20."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Serie A il Milan ha ottenuto 4 vittorie e 1 sconfitta (sequenza V-V-P-V-V), segnando 12 gol e subendone 8. In casa, nella stagione, il bilancio è di 2 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Serie A il Frosinone ha ottenuto 3 vittorie, 1 pareggio e 1 sconfitta (sequenza V-N-V-V-P), con 15 gol fatti e 8 subiti. In trasferta, nella stagione, il bilancio è di 1 pareggio e 2 sconfitte, senza ancora vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati a partita: Milan 2,1, Frosinone 2,2.",
+      "Gol subiti finora: Milan 13, Frosinone 15.",
+      "Nelle ultime 5 partite del Milan, in 4 si sono segnati almeno tre gol.",
+      "Nelle ultime 5 partite del Frosinone, in 3 si sono segnati almeno tre gol."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Milan – Frosinone?",
      "a": "Domenica 22 novembre alle 18:00, ora italiana."
     },
     {
@@ -354,12 +396,12 @@
    ]
   },
   "fb:1001550203": {
-   "fingerprint": "14cx8ux",
+   "fingerprint": "gd5nsz",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Lunedì 23 novembre alle 18:30 il Monza ospita la Fiorentina per la 12ª giornata di Serie A. In classifica il Monza è al 18° posto con 7 punti, la Fiorentina al 15° con 9."
+      "Lunedì 23 novembre alle 20:45 il Monza ospita la Fiorentina per la 12ª giornata di Serie A. In classifica il Monza è al 18° posto con 7 punti, la Fiorentina al 15° con 9."
      ],
      "bullets": []
     },
@@ -385,53 +427,11 @@
    "faq": [
     {
      "q": "Quando si gioca Monza – Fiorentina?",
-     "a": "Lunedì 23 novembre alle 18:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001550201": {
-   "fingerprint": "ose9gh",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Juventus e Venezia si affrontano lunedì 23 novembre alle 20:45 per la 12ª giornata di Serie A. In classifica la Juventus è al 7° posto con 18 punti, il Venezia al 19° con 6."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 5 partite di Serie A la Juventus ha raccolto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza P-V-P-V-N), con 6 gol fatti e 7 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 5 partite di Serie A il Venezia ha raccolto 2 vittorie e 3 sconfitte (sequenza V-P-P-P-V), con 3 gol fatti e 5 subiti. In trasferta ha perso tutte le 3 partite giocate."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Media gol segnati: Juventus 1,4, Venezia 0,7 a partita.",
-      "Gol subiti finora: Juventus 12, Venezia 21."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Juventus – Venezia?",
      "a": "Lunedì 23 novembre alle 20:45, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Serie A](/calcio/serie-a) e la [classifica aggiornata](/calcio/serie-a/classifica)."
+     "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -11868,20 +11868,20 @@
    ]
   },
   "fb:1001649017": {
-   "fingerprint": "1nrajsd",
+   "fingerprint": "4yqjaq",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento sabato 14 novembre alle 09:00: il Thailand U23 ospita il Singapore U23 nell'ambito delle Amichevoli internazionali."
+      "Sabato 14 novembre alle 09:00 il Thailand U23 ospita il Singapore U23 nell'ambito delle Amichevoli internazionali."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Finora il Thailand U23 ha disputato una sola partita di Amichevoli internazionali, persa per 0-3.",
-      "Anche il Singapore U23 ha disputato finora una sola partita di Amichevoli internazionali, terminata 0-0."
+      "Nelle ultime 2 gare di Amichevoli internazionali il Thailand U23 ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 5. Le ultime due partite le ha perse entrambe.",
+      "Il Singapore U23 ha disputato finora una sola gara di Amichevoli internazionali, terminata 0-0."
      ],
      "bullets": []
     }
@@ -11892,12 +11892,12 @@
      "a": "Sabato 14 novembre alle 09:00, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+     "q": "Dove trovo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "q": "Come si interpretano le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -12084,20 +12084,20 @@
    ]
   },
   "fb:1001649019": {
-   "fingerprint": "1v46nkb",
+   "fingerprint": "133c4xd",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Vietnam U23 e Qatar U23 si sfidano sabato 14 novembre alle 13:00, nell'ambito delle Amichevoli internazionali."
+      "Vietnam U23 e Qatar U23 si affrontano sabato 14 novembre alle 13:00, nell'ambito delle Amichevoli internazionali."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Finora il Vietnam U23 ha disputato una sola partita nelle Amichevoli internazionali, vinta 3-0.",
-      "Anche il Qatar U23 ha giocato finora una sola partita nelle Amichevoli internazionali, terminata 0-0."
+      "Finora il Vietnam U23 ha disputato una sola partita nelle Amichevoli internazionali, vinta per 3-0.",
+      "Nelle ultime 2 partite delle Amichevoli internazionali, il Qatar U23 ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1."
      ],
      "bullets": []
     }
@@ -12109,11 +12109,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+     "a": "Puoi consultare i risultati nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Le spiegazioni sono nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -17824,6 +17824,35 @@
     {
      "q": "Com'è finita Nuova Zelanda – India?",
      "a": "5-0 (3-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
+    }
+   ]
+  },
+  "fb:1001649008": {
+   "fingerprint": "awmf7l",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Qatar U23 si impone di misura in trasferta sul Thailand U23 con il punteggio di 1-2. La partita, valida per Amichevoli internazionali, si è giocata giovedì 12 novembre; al termine del primo tempo il punteggio era 0-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Thailand U23 tornerà in campo sabato 14 novembre alle 09:00 in casa contro il Singapore U23. Il Qatar U23 tornerà in campo sabato 14 novembre alle 13:00 in trasferta contro il Vietnam U23."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Thailand U23 – Qatar U23?",
+     "a": "1-2 (0-2 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",
