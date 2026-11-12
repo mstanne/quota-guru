@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+<title>Giocata persa che torna come bonus con condizioni, non come denaro prelevabile</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0F1A2C"/><stop offset="1" stop-color="#0A1220"/>
+  </linearGradient>
+  <radialGradient id="glowO"><stop offset="0" stop-color="#FB6801" stop-opacity=".22"/><stop offset="1" stop-color="#FB6801" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowG"><stop offset="0" stop-color="#06BA55" stop-opacity=".18"/><stop offset="1" stop-color="#06BA55" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#EEF0F3" fill-opacity=".07"/></pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="url(#dots)"/>
+<circle cx="1330" cy="170" r="520" fill="url(#glowO)"/>
+<circle cx="260" cy="780" r="520" fill="url(#glowG)"/>
+<g font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="700">
+<rect x="150" y="200" width="520" height="420" rx="24" fill="#16243B" stroke="#2A3D59" stroke-width="2"/><text x="410" y="270" font-size="36" fill="#EEF0F3" text-anchor="middle" font-weight="700" fill-opacity="1">Giocata 10 €</text><rect x="300" y="320" width="220" height="64" rx="32.0" fill="#E5484D"/><text x="410.0" y="363.52" font-size="32" fill="#EEF0F3" text-anchor="middle" font-weight="700" fill-opacity="1">Persa</text><path d="M720,410 L900,410" stroke="#BECED8" stroke-width="8" stroke-linecap="round"/><path d="M880,385 L910,410 L880,435" fill="none" stroke="#BECED8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><rect x="960" y="200" width="500" height="420" rx="24" fill="#16243B" stroke="#FB6801" stroke-width="2"/><text x="1210" y="270" font-size="36" fill="#EEF0F3" text-anchor="middle" font-weight="700" fill-opacity="1">Rimborso</text><rect x="1090" y="310" width="240" height="70" rx="35.0" fill="#FB6801"/><text x="1210.0" y="356.52" font-size="32" fill="#0A1220" text-anchor="middle" font-weight="700" fill-opacity="1">10 € bonus</text><path d="M1007.4,440.0 L1016.5,449.1 L1034.0,430.2" fill="none" stroke="#FBBF24" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><text x="1060" y="452" font-size="28" fill="#BECED8" text-anchor="start" font-weight="600" fill-opacity="1">da giocare più volte</text><path d="M1007.4,496.0 L1016.5,505.1 L1034.0,486.2" fill="none" stroke="#FBBF24" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><text x="1060" y="508" font-size="28" fill="#BECED8" text-anchor="start" font-weight="600" fill-opacity="1">quota minima</text><path d="M1007.4,552.0 L1016.5,561.1 L1034.0,542.2" fill="none" stroke="#FBBF24" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><text x="1060" y="564" font-size="28" fill="#BECED8" text-anchor="start" font-weight="600" fill-opacity="1">scadenza</text><text x="410" y="460" font-size="28" fill="#7F93AE" text-anchor="middle" font-weight="600" fill-opacity="1">denaro reale</text><text x="800" y="700" font-size="30" fill="#7F93AE" text-anchor="middle" font-weight="600" fill-opacity="1">il rimborso non vale quanto il suo importo nominale</text>
+</g>
+</svg>

@@ -994,6 +994,132 @@ def scommesse_multiple():
         b.append(text(1370, y + 45, f"{str(r).replace('.', ',')}%", 30, LIGHT))
     return frame("".join(b), "Multipla: la probabilità di vincere e il ritorno teorico scendono a ogni evento aggiunto")
 
+
+# ------------------------------------------------------------------------------------------- other sports
+
+def ippica():
+    """Race track with three numbered saddle cloths finishing, and the two ways of betting."""
+    b = [panel(140, 170, 820, 560)]
+    for i, y in enumerate([300, 420, 540]):
+        b.append(f'<line x1="190" y1="{y+60}" x2="910" y2="{y+60}" stroke="{LINE}" stroke-width="3" stroke-dasharray="14 12"/>')
+    b.append(f'<rect x="820" y="230" width="14" height="440" fill="{LIGHT}"/>')
+    for x, y, n, col in [(700, 290, "3", ORANGE), (620, 410, "7", GREEN), (520, 530, "1", AMBER)]:
+        b.append(chip(x, y, 120, 80, n, col, DEEP, 46))
+    b.append(text(190, 250, "Arrivo", 36, LIGHT))
+    b.append(chip(1020, 230, 440, 110, "Quota fissa", LINE, LIGHT, 38))
+    b.append(text(1240, 390, "quota nota alla giocata", 26, MUTED, "middle", 600))
+    b.append(chip(1020, 450, 440, 110, "Totalizzatore", ORANGE, DEEP, 38))
+    b.append(text(1240, 610, "quota calcolata dopo l'arrivo", 26, MUTED, "middle", 600))
+    return frame("".join(b), "Corsa ippica all'arrivo con tre cavalli numerati, quota fissa e totalizzatore")
+
+
+def formula1():
+    """Chequered flag, podium with three positions and a head-to-head card."""
+    b = []
+    sq = 44
+    for r in range(5):
+        for c in range(7):
+            col = LIGHT if (r + c) % 2 == 0 else DEEP
+            b.append(f'<rect x="{170+c*sq}" y="{190+r*sq}" width="{sq}" height="{sq}" fill="{col}"/>')
+    b.append(f'<rect x="160" y="180" width="6" height="520" fill="{GREY}"/>')
+    for x, h, n, col in [(650, 230, "2", GREY), (850, 310, "1", ORANGE), (1050, 170, "3", AMBER)]:
+        b.append(f'<rect x="{x}" y="{730-h}" width="180" height="{h}" rx="12" fill="{PANEL}" stroke="{LINE}" stroke-width="2"/>')
+        b.append(text(x + 90, 730 - h + 90, n, 72, col, "middle"))
+    b.append(panel(1260, 220, 220, 250, 24))
+    b.append(text(1370, 290, "Testa", 30, GREY, "middle", 600))
+    b.append(text(1370, 330, "a testa", 30, GREY, "middle", 600))
+    b.append(chip(1290, 370, 160, 60, "A  vs  B", LINE, LIGHT, 28))
+    return frame("".join(b), "Bandiera a scacchi, podio con i primi tre e scheda testa a testa")
+
+
+def hockey():
+    """Rink with goal and puck, regulation/overtime timeline."""
+    b = [f'<rect x="140" y="170" width="760" height="440" rx="180" fill="{PANEL}" stroke="{LIGHT}" stroke-opacity=".5" stroke-width="4"/>']
+    b.append(f'<line x1="520" y1="170" x2="520" y2="610" stroke="{RED}" stroke-width="6" stroke-opacity=".8"/>')
+    b.append(f'<circle cx="520" cy="390" r="70" fill="none" stroke="{ORANGE}" stroke-width="4" stroke-opacity=".7"/>')
+    b.append(f'<path d="M210,340 L250,340 L250,440 L210,440" fill="none" stroke="{RED}" stroke-width="6"/>')
+    b.append(f'<ellipse cx="640" cy="420" rx="34" ry="14" fill="{DEEP}" stroke="{GREY}" stroke-width="2"/>')
+    labels = [("20'", 960), ("20'", 1080), ("20'", 1200)]
+    for lab, x in labels:
+        b.append(chip(x, 260, 110, 70, lab, LINE, LIGHT, 32))
+    b.append(chip(1320, 260, 130, 70, "OT", ORANGE, DEEP, 32))
+    b.append(text(1120, 400, "1X2: solo 60 minuti", 30, GREY, "middle", 600))
+    b.append(text(1180, 470, "testa a testa: tutto compreso", 30, GREY, "middle", 600))
+    b.append(chip(960, 530, 490, 80, "puck line ±1,5", GREEN, DEEP, 32))
+    return frame("".join(b), "Pista da hockey, tre tempi da 20 minuti più overtime e mercati principali")
+
+
+def esports():
+    """Controller and a best-of-3 series scoreboard."""
+    b = [f'<path d="M260,330 Q260,260 340,260 L700,260 Q780,260 780,330 L820,560 Q830,640 760,640 Q710,640 670,560 L630,500 L410,500 L370,560 Q330,640 280,640 Q210,640 220,560 Z" fill="{PANEL}" stroke="{LINE}" stroke-width="3"/>']
+    b.append(f'<rect x="330" y="350" width="40" height="120" rx="8" fill="{GREY}"/><rect x="290" y="390" width="120" height="40" rx="8" fill="{GREY}"/>')
+    for cx, cy, col in [(640, 360, GREEN), (700, 410, ORANGE), (580, 410, AMBER), (640, 460, RED)]:
+        b.append(f'<circle cx="{cx}" cy="{cy}" r="24" fill="{col}"/>')
+    b.append(panel(940, 230, 520, 420, 24))
+    b.append(text(1200, 300, "Serie al meglio di 3", 32, LIGHT, "middle"))
+    for i, (m, w) in enumerate([("Mappa 1", "A"), ("Mappa 2", "B"), ("Mappa 3", "A")]):
+        y = 350 + i * 90
+        b.append(f'<rect x="980" y="{y}" width="440" height="68" rx="14" fill="{DEEP}" stroke="{LINE}" stroke-width="2"/>')
+        b.append(text(1010, y + 45, m, 28, GREY, weight=600))
+        b.append(chip(1320, y + 12, 80, 44, w, ORANGE if w == "A" else LINE, DEEP if w == "A" else LIGHT, 26))
+    return frame("".join(b), "Controller e serie al meglio di tre mappe")
+
+
+def nazionali():
+    """Trophy silhouette, tournament bracket and 90' / supplementari / rigori."""
+    b = [f'<path d="M330,220 L530,220 L520,330 Q510,420 430,440 Q350,420 340,330 Z" fill="{AMBER}"/>']
+    b.append(f'<rect x="405" y="440" width="50" height="90" fill="{AMBER}"/><rect x="350" y="530" width="160" height="40" rx="8" fill="{AMBER}"/>')
+    b.append(f'<path d="M330,250 Q260,250 270,310 Q285,360 345,360" fill="none" stroke="{AMBER}" stroke-width="14"/>')
+    b.append(f'<path d="M530,250 Q600,250 590,310 Q575,360 515,360" fill="none" stroke="{AMBER}" stroke-width="14"/>')
+    for i in range(4):
+        b.append(f'<rect x="700" y="{200+i*110}" width="200" height="70" rx="12" fill="{PANEL}" stroke="{LINE}" stroke-width="2"/>')
+    for i in range(2):
+        y = 235 + i * 220
+        b.append(f'<path d="M900,{y} L950,{y} L950,{y+110} L900,{y+110} M950,{y+55} L1000,{y+55}" fill="none" stroke="{LINE}" stroke-width="4"/>')
+        b.append(f'<rect x="1000" y="{y+20}" width="200" height="70" rx="12" fill="{PANEL}" stroke="{LINE}" stroke-width="2"/>')
+    b.append(f'<path d="M1200,290 L1250,290 L1250,510 L1200,510 M1250,400 L1290,400" fill="none" stroke="{LINE}" stroke-width="4"/>')
+    b.append(f'<rect x="1290" y="365" width="190" height="70" rx="12" fill="{PANEL}" stroke="{ORANGE}" stroke-width="3"/>')
+    b.append(chip(180, 640, 200, 70, "90'", LINE, LIGHT, 34))
+    b.append(chip(400, 640, 300, 70, "supplementari", PANEL, GREY, 30))
+    b.append(chip(720, 640, 200, 70, "rigori", PANEL, GREY, 30))
+    return frame("".join(b), "Coppa, tabellone a eliminazione diretta e la differenza tra novanta minuti, supplementari e rigori")
+
+
+def surebet():
+    """Two odds from two different books, the implied probabilities summing under 100%."""
+    b = [panel(150, 200, 420, 300, 24), panel(650, 200, 420, 300, 24)]
+    b.append(text(360, 270, "Operatore 1 · A", 30, GREY, "middle", 600))
+    b.append(text(360, 380, "2,10", 80, LIGHT, "middle"))
+    b.append(text(360, 450, "47,6%", 32, MUTED, "middle", 600))
+    b.append(text(860, 270, "Operatore 2 · B", 30, GREY, "middle", 600))
+    b.append(text(860, 380, "2,05", 80, LIGHT, "middle"))
+    b.append(text(860, 450, "48,8%", 32, MUTED, "middle", 600))
+    b.append(text(610, 370, "+", 60, MUTED, "middle"))
+    b.append(chip(1130, 300, 330, 110, "96,4%", GREEN, DEEP, 54))
+    b.append(text(1295, 470, "sotto il 100%", 28, GREY, "middle", 600))
+    b.append(f'<rect x="150" y="580" width="1310" height="56" rx="14" fill="{PANEL}"/>')
+    b.append(f'<rect x="150" y="580" width="{1310*0.964:.0f}" height="56" rx="14" fill="{GREEN}" fill-opacity=".8"/>')
+    b.append(f'<line x1="1460" y1="560" x2="1460" y2="656" stroke="{ORANGE}" stroke-width="6"/>')
+    b.append(text(150, 700, "quote che cambiano, giocate rifiutate, regole diverse", 28, MUTED, weight=600))
+    return frame("".join(b), "Surebet: quote di due operatori le cui probabilità implicite sommano meno del cento per cento")
+
+
+def senza_rischi():
+    """A ticket marked 'persa' returning as a bonus with conditions, not cash."""
+    b = [panel(150, 200, 520, 420, 24)]
+    b.append(text(410, 270, "Giocata 10 €", 36, LIGHT, "middle"))
+    b.append(chip(300, 320, 220, 64, "Persa", RED, LIGHT, 32))
+    b.append(f'<path d="M720,410 L900,410" stroke="{GREY}" stroke-width="8" stroke-linecap="round"/><path d="M880,385 L910,410 L880,435" fill="none" stroke="{GREY}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>')
+    b.append(panel(960, 200, 500, 420, 24, stroke=ORANGE))
+    b.append(text(1210, 270, "Rimborso", 36, LIGHT, "middle"))
+    b.append(chip(1090, 310, 240, 70, "10 € bonus", ORANGE, DEEP, 32))
+    for i, lab in enumerate(["da giocare più volte", "quota minima", "scadenza"]):
+        b.append(check(1020, 440 + i * 56, 0.7, AMBER, 7))
+        b.append(text(1060, 452 + i * 56, lab, 28, GREY, weight=600))
+    b.append(text(410, 460, "denaro reale", 28, MUTED, "middle", 600))
+    b.append(text(800, 700, "il rimborso non vale quanto il suo importo nominale", 30, MUTED, "middle", 600))
+    return frame("".join(b), "Giocata persa che torna come bonus con condizioni, non come denaro prelevabile")
+
 SCENES = {
     "guida-completa-scommesse-sportive": guida_completa,
     "come-leggere-le-quote": come_leggere_quote,
@@ -1005,6 +1131,13 @@ SCENES = {
     **SCENES2,
     "bet-builder": bet_builder,
     "scommesse-multiple": scommesse_multiple,
+    "scommesse-ippiche": ippica,
+    "scommesse-formula-1": formula1,
+    "scommesse-hockey-su-ghiaccio": hockey,
+    "scommesse-esports": esports,
+    "nazionali-mondiali-europei": nazionali,
+    "surebet": surebet,
+    "scommessa-senza-rischi": senza_rischi,
 }
 
 
