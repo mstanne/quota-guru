@@ -21,6 +21,7 @@ import { budgetGuides } from "./guides/budget";
 import { sportGuides } from "./guides/sport";
 import { direttaGuides } from "./guides/diretta";
 import { academyGuides } from "./guides/academy";
+import { multipleGuides } from "./guides/multiple";
 import { site } from "./site";
 import type { RouteMeta } from "../routes";
 import { isoFromItalianDate, plainText } from "../lib/schema";
@@ -608,6 +609,7 @@ export const guides: Guide[] = [
   ...principiantiGuides,
   ...agenzieGuides,
   ...quoteGuides,
+  ...multipleGuides,
   ...analisiGuides,
   ...budgetGuides,
   ...sportGuides,
