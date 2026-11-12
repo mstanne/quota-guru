@@ -1126,7 +1126,7 @@ export function MethodPage({ method: m }: { method: PaymentMethodInfo }) {
   const depositOnly = list.filter((o) => methodRows(o, m).every((r) => r.withdrawal === null));
   const excluded = list.filter((o) => bonusStatus(sportOffer(o), m) === "escluso");
   const fast = list.filter((o) =>
-    methodRows(o, m).some((r) => r.withdrawalTime && /^(generalmente )?immediat|pochi minuti/i.test(r.withdrawalTime)),
+    methodRows(o, m).some((r) => r.withdrawalTime && /^(generalmente )?immediat|pochi minuti(?! a)/i.test(r.withdrawalTime)),
   );
   const label = m.id === "carte" ? "carta di credito o debito" : m.name;
   const rows = list.flatMap((op) => {

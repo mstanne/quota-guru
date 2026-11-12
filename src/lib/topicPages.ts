@@ -120,8 +120,8 @@ export const speedLabels: Record<Speed, string> = {
 };
 
 function speedOf(time: string): Speed {
-  if (/^(generalmente )?immediat|pochi minuti/i.test(time)) return "immediato";
-  if (/entro (1 giorno|12 ore|24 ore)|^generalmente entro 24|in giornata|^1-4 ore/i.test(time)) return "24h";
+  if (/^(generalmente )?immediat|pochi minuti(?! a)/i.test(time)) return "immediato";
+  if (/entro (1 giorno|12 ore|24 ore)|^generalmente entro 24|in giornata|^1-4 ore|pochi minuti a 24 ore/i.test(time)) return "24h";
   return "oltre";
 }
 

@@ -269,6 +269,88 @@
         }
       ],
       "notes": "Stessa società di Goldbet (GBO Italy S.p.A.). Termini in sezioni a scomparsa: leggere il textContent di <main>. L’offerta scommesse scade il 1/11/2026: controllare la nuova versione."
+    },
+    {
+      "operatorId": "daznbet",
+      "operatorName": "DAZN Bet",
+      "listing": "https://www.daznbet.it/promozioni",
+      "pages": [
+        {
+          "offerId": "daznbet-sport",
+          "sections": [
+            "sport"
+          ],
+          "url": "https://www.daznbet.it/promo/sport/BWS_FBET/"
+        }
+      ],
+      "notes": "Offerte casinò (WBCDAZNBET_new, Welcome_CASINOLIVE) non ancora inserite: da compilare. Piattaforma con funzioni cg_*: le pagine di aiuto (modalità di versamento e prelievo, FAQ) si leggono con una richiesta POST a /supporto/<pagina>/ (vedi cg_openSupportPage)."
+    },
+    {
+      "operatorId": "betflag",
+      "operatorName": "BetFlag",
+      "listing": "https://info.betflag.it/promozioni-e-bonus/welcome-bonus/",
+      "pages": [
+        {
+          "offerId": "betflag-sport",
+          "sections": [
+            "sport"
+          ],
+          "url": "https://info.betflag.it/promozioni-e-bonus/promo-sport/welcome-bonus-sport/"
+        }
+      ],
+      "notes": "Promozioni e FAQ su info.betflag.it. Offerte casinò (Welcome Bonus Slot, Casinò, Casinò Live) non ancora inserite: da compilare."
+    },
+    {
+      "operatorId": "netwin",
+      "operatorName": "Netwin",
+      "listing": "https://www.netwin.it/promo",
+      "pages": [
+        {
+          "offerId": "netwin-sport",
+          "sections": [
+            "sport"
+          ],
+          "url": "https://www.netwin.it/promo"
+        }
+      ],
+      "notes": "Le offerte si aprono cliccando le card nella scheda 'Welcome Bonus' di /promo (nessun URL di dettaglio). Bonus casinò e 'Welcome bonus SPID' non ancora inseriti: da compilare. Piattaforma con funzioni cg_*: le pagine di aiuto (modalità di versamento e prelievo, FAQ) si leggono con una richiesta POST a /supporto/<pagina>/ (vedi cg_openSupportPage)."
+    },
+    {
+      "operatorId": "quigioco",
+      "operatorName": "Quigioco",
+      "listing": "https://www.quigioco.it/promo",
+      "pages": [],
+      "notes": "Al 12/11/2026 solo offerte casinò (/promo/welcome/bonus-classica e /promo/welcome/bonus-spid), non ancora inserite: da compilare. Piattaforma con funzioni cg_*: le pagine di aiuto (modalità di versamento e prelievo, FAQ) si leggono con una richiesta POST a /supporto/<pagina>/ (vedi cg_openSupportPage)."
+    },
+    {
+      "operatorId": "sportium",
+      "operatorName": "Sportium",
+      "listing": "https://sportium.it/promozioni",
+      "pages": [
+        {
+          "offerId": "sportium-sport",
+          "sections": [
+            "sport"
+          ],
+          "url": "https://sportium.it/games/promozione/bonus-benvenuto-sport-freebet"
+        }
+      ],
+      "notes": "Pagine caricate via JavaScript: serve il browser. Offerta casinò (/games/promozione/bonus-di-benvenuto-casino) non ancora inserita: da compilare."
+    },
+    {
+      "operatorId": "marathonbet",
+      "operatorName": "Marathonbet",
+      "listing": "https://www.marathonbet.it/promotions",
+      "pages": [
+        {
+          "offerId": "marathonbet-sport",
+          "sections": [
+            "sport"
+          ],
+          "url": "https://www.marathonbet.it/promo/sport/bonus-benvenuto-sport"
+        }
+      ],
+      "notes": "Offerte casinò (/promo/casino/benvenuto-casino-2000, /promo/casino/bonus-benvenuto-casino-live) non ancora inserite: da compilare. Tabella pagamenti: /supporto/pagamenti."
     }
   ],
   "tvRights": {
