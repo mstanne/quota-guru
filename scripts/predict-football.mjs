@@ -16,7 +16,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { fitModel, predict } from "./lib/poisson-model.mjs";
-import { CUPS, FIT, XG_WEIGHT } from "./lib/football-fit.mjs";
+import { CUPS, FIT, WITH_NEW_DATA, XG_WEIGHT } from "./lib/football-fit.mjs";
+import { qualifyChance } from "./lib/knockout.mjs";
+import { COMPETITIONS, isInfoLeague, isNationalCup } from "./lib/leagues.mjs";
 import { NATIONAL_CODES, NATIONAL_FIT } from "./lib/national-fit.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -34,7 +36,8 @@ const byId = new Map();
 for (const r of history.results || []) byId.set(r.id, r);
 for (const c of snapshot.competitions) {
   for (const m of c.matches) {
-    const ft = m.score?.fullTime;
+    // ties decided in extra time: the 90-minute score (the model predicts 90 minutes)
+    const ft = m.score?.regularTime?.home != null ? m.score.regularTime : m.score?.fullTime;
     if (!PLAYED.has(m.status) || ft?.home == null || ft?.away == null) continue;
     // expected goals of the match, when the history has them (scripts/archive-data.mjs)
     const h = byId.get(m.id);
@@ -46,15 +49,48 @@ for (const c of snapshot.competitions) {
     });
   }
 }
-const all = [...byId.values()].sort((a, b) => a.date.localeCompare(b.date));
+let all = [...byId.values()].sort((a, b) => a.date.localeCompare(b.date));
+// backtest comparison (MODEL_NATIONAL_CUPS=0): without the national cups and the lower divisions added in November 2026
+if (!WITH_NEW_DATA) all = all.filter((r) => !isNationalCup(r.comp) && !isInfoLeague(r.comp));
+// national cups: only the games of clubs the model follows (a league in the data); early rounds between amateur
+// clubs would add hundreds of teams the site never predicts
+{
+  const cups = new Set(CUPS);
+  const inLeague = new Set();
+  for (const r of all) if (!cups.has(r.comp) && !NATIONAL_CODES.has(r.comp)) inLeague.add(r.home), inLeague.add(r.away);
+  all = all.filter((r) => !isNationalCup(r.comp) || inLeague.has(r.home) || inLeague.has(r.away));
+}
 // clubs and national teams are two separate models (scripts/lib/national-fit.mjs)
 const isNational = (code) => NATIONAL_CODES.has(code);
 const results = all.filter((r) => !isNational(r.comp));
 const nationalResults = all.filter((r) => isNational(r.comp));
 // European cup finals are on neutral ground; national teams: from the stadium's country (scripts/fetch-football.mjs)
-const neutral = (c, m) => (isNational(c.code) ? !!m.neutral : CUPS.includes(c.code) && m.stage === "FINAL");
+// national cups: finals and super cups, from scripts/fetch-football.mjs (neutralGame)
+const neutral = (c, m) =>
+  isNational(c.code) || isNationalCup(c.code) ? !!m.neutral : CUPS.includes(c.code) && m.stage === "FINAL";
 const fitFor = (code, asOf) =>
   isNational(code) ? fitModel(nationalResults, { ...NATIONAL_FIT, asOf }) : fitModel(results, { ...FIT, asOf });
+
+// ---- knockout ties of the cups: chance of going through (scripts/lib/knockout.mjs) ----
+const DEF = new Map(COMPETITIONS.map((c) => [c.code, c]));
+const EUROPEAN = new Set(["CL", "EL", "ECL"]);
+const NOT_KNOCKOUT = new Set(["REGULAR_SEASON", "LEAGUE_STAGE", "GROUP_STAGE", "THIRD_PLACE"]);
+/** [home, away] chance of going through, or null (not a knockout tie, or a first leg whose return is not known yet). */
+function qualifyOf(mdl, c, m) {
+  if (!CUPS.includes(c.code) || !m.stage || NOT_KNOCKOUT.has(m.stage)) return null;
+  const twoLegs = EUROPEAN.has(c.code) ? m.stage !== "FINAL" : !!DEF.get(c.code)?.twoLegs?.includes(m.stage);
+  const f = { comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, neutral: neutral(c, m), date: m.utcDate };
+  if (!twoLegs) return qualifyChance(mdl, f);
+  const leg = c.matches.find(
+    (x) => x.id !== m.id && x.stage === m.stage && x.homeTeam.id === m.awayTeam.id && x.awayTeam.id === m.homeTeam.id,
+  );
+  if (!leg || leg.status === "CANCELLED") return null;
+  const ft = leg.score?.regularTime?.home != null ? leg.score.regularTime : leg.score?.fullTime;
+  const played = PLAYED.has(leg.status) && ft?.home != null ? [ft.home, ft.away] : null;
+  // a second leg already played (this match is the first one, finished in the data): nothing left to predict
+  if (played && leg.utcDate > m.utcDate) return null;
+  return qualifyChance(mdl, f, { comp: c.code, home: leg.homeTeam.id, away: leg.awayTeam.id, neutral: neutral(c, leg), date: leg.utcDate, played });
+}
 
 const asOf = snapshot.generatedAt;
 console.log(`Risultati usati: ${results.length} club, ${nationalResults.length} nazionali (storico: ${(history.results || []).length})`);
@@ -64,12 +100,14 @@ const model = fitModel(results, { ...FIT, asOf });
 const nationalModel = fitModel(nationalResults, { ...NATIONAL_FIT, asOf });
 const predictions = {};
 for (const c of snapshot.competitions) {
+  if (isInfoLeague(c.code)) continue; // lower divisions: information only, no predictions
   for (const m of c.matches) {
     if (!OPEN.has(m.status)) continue;
-    const p = predict(isNational(c.code) ? nationalModel : model, {
-      comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, neutral: neutral(c, m),
-    });
-    if (p) predictions[m.id] = { ...p, pre: false };
+    const mdl = isNational(c.code) ? nationalModel : model;
+    const p = predict(mdl, { comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, neutral: neutral(c, m) });
+    if (!p) continue;
+    const q = isNational(c.code) ? null : qualifyOf(mdl, c, m);
+    predictions[m.id] = { ...p, ...(q ? { qualify: q } : {}), pre: false };
   }
 }
 
@@ -83,12 +121,12 @@ const track = { n: 0, hits: 0, logLoss: 0, brier: 0 };
 const trackNational = { n: 0, hits: 0, logLoss: 0, brier: 0 };
 for (const day of days) {
   const models = new Map(); // one refit per day and per model, only when that day has games of that kind
-  for (const { c, m } of finished.filter(({ m }) => m.utcDate.startsWith(day))) {
+  for (const { c, m } of finished.filter(({ m }) => m.utcDate.startsWith(day) && !isInfoLeague(c.code))) {
     const kind = isNational(c.code) ? "national" : "club";
     if (!models.has(kind)) models.set(kind, fitFor(c.code, `${day}T00:00:00Z`));
     const p = predict(models.get(kind), { comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, neutral: neutral(c, m) });
     if (!p) continue;
-    const ft = m.score.fullTime;
+    const ft = m.score.regularTime?.home != null ? m.score.regularTime : m.score.fullTime; // 1X2 on 90 minutes
     const outcome = ft.home > ft.away ? 0 : ft.home === ft.away ? 1 : 2;
     predictions[m.id] = { ...p, pre: true };
     // the track record counts only matches where both teams had some history
@@ -137,7 +175,9 @@ console.log(
 // ---- optional walk-forward backtest on the whole history ----
 if (process.argv.includes("--backtest")) {
   const minDate = Date.parse(results[0]?.date ?? 0) + 60 * 86400000; // skip the first two months (no history)
-  const tests = results.filter((r) => Date.parse(r.date) >= minDate);
+  // BACKTEST_COMPS=SA,PL,…: only these competitions are scored (the fit still uses every result)
+  const only = process.env.BACKTEST_COMPS ? new Set(process.env.BACKTEST_COMPS.split(",")) : null;
+  const tests = results.filter((r) => Date.parse(r.date) >= minDate && (!only || only.has(r.comp)));
   const weeks = [...new Set(tests.map((r) => r.date.slice(0, 10)))].sort();
   const s = { model: [0, 0, 0, 0], base: [0, 0, 0, 0] }; // n, hits, logLoss, brier
   const freq = [0.44, 0.27, 0.29]; // simple baseline: typical league 1X2 frequencies

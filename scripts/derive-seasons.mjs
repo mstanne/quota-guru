@@ -19,6 +19,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { COMPETITIONS } from "./lib/leagues.mjs";
+import { isCalendarSeason } from "./lib/leagues.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ARCHIVE = path.join(root, "data", "archivio");
@@ -362,7 +363,7 @@ function main() {
     const dir = path.join(calcio, c.slug);
     if (!fs.existsSync(dir)) continue;
     const cup = c.cup ?? !c.domestic;
-    const calendar = c.code === "BSA";
+    const calendar = isCalendarSeason(c.code);
     const snap = football.competitions.find((x) => x.code === c.code);
     const current =
       Number(snap?.season?.startDate?.slice(0, 4)) ||

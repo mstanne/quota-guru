@@ -25,6 +25,7 @@ import { footballDetails } from "./lib/match-details.mjs";
 import { COMPETITIONS, compactFixture, compactStandings, groupIt } from "./fetch-football.mjs";
 import { nationalTeamResolver } from "./lib/national-teams.mjs";
 import { ARCHIVE, archivedMatch, readJson, upsertMatches, writeJson } from "./archive-data.mjs";
+import { isCalendarSeason } from "./lib/leagues.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PROGRESS = path.join(ARCHIVE, "recupero.json");
@@ -88,7 +89,7 @@ async function football(api, progress, budget) {
   for (let back = 0; back <= SEASONS_BACK; back++)
     // national teams: no past-season archive (their recent results are in the model history)
     for (const c of [...COMPETITIONS.filter((c) => !c.national), ...extra]) {
-      const current = seasons[c.code]?.year ?? (c.code === "BSA" ? year : new Date().getUTCMonth() >= 6 ? year : year - 1);
+      const current = seasons[c.code]?.year ?? (isCalendarSeason(c.code) ? year : new Date().getUTCMonth() >= 6 ? year : year - 1);
       jobs.push({ c, y: current - back, current: back === 0 });
     }
 
@@ -149,7 +150,7 @@ async function standingsJobs(api, progress, budget, { resolve, seasons, year }) 
   for (let back = 1; back <= SEASONS_BACK; back++)
     for (const c of COMPETITIONS.filter((c) => c.domestic)) {
       if (budget.left <= 0) return;
-      const current = seasons[c.code]?.year ?? (c.code === "BSA" ? year : new Date().getUTCMonth() >= 6 ? year : year - 1);
+      const current = seasons[c.code]?.year ?? (isCalendarSeason(c.code) ? year : new Date().getUTCMonth() >= 6 ? year : year - 1);
       const y = current - back;
       const key = `${c.code}-${y}`;
       const done = progress.standings[key];

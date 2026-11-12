@@ -27,6 +27,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { PLAYER_LINE } from "./lib/match-details.mjs";
+import { isCalendarSeason } from "./lib/leagues.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const ARCHIVE = path.join(root, "data", "archivio");
@@ -51,7 +52,7 @@ const FINAL = new Set(["FINISHED", "AWARDED"]);
 /** Season start year: European seasons start in July, the Brasileirão follows the calendar year. */
 export const seasonOf = (date, code) => {
   const y = Number(date.slice(0, 4));
-  return code === "BSA" ? y : Number(date.slice(5, 7)) >= 7 ? y : y - 1;
+  return isCalendarSeason(code) ? y : Number(date.slice(5, 7)) >= 7 ? y : y - 1;
 };
 const team = (t) => ({ id: t.id, name: t.name, shortName: t.shortName, tla: t.tla ?? t.abbr ?? "" });
 

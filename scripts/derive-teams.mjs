@@ -33,6 +33,7 @@ const bHistory = read("data/basket-history.json", { games: [] });
 
 import { country, slugify } from "./lib/italian.mjs";
 import { NATIONAL } from "./lib/leagues.mjs";
+import { isCalendarSeason } from "./lib/leagues.mjs";
 
 const COLOURS = {
   red: "rosso", black: "nero", white: "bianco", blue: "blu", "navy blue": "blu scuro", "sky blue": "celeste",
@@ -54,9 +55,9 @@ const romeDay = (iso) => new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Ro
 /** Season start year of a result: European seasons start in July, the Brasileirão follows the calendar year. */
 const seasonOf = (date, code) => {
   const y = Number(date.slice(0, 4));
-  return code === "BSA" ? y : Number(date.slice(5, 7)) >= 7 ? y : y - 1;
+  return isCalendarSeason(code) ? y : Number(date.slice(5, 7)) >= 7 ? y : y - 1;
 };
-const seasonLabel = (y, code) => (code === "BSA" ? String(y) : `${y}/${String(y + 1).slice(2)}`);
+const seasonLabel = (y, code) => (isCalendarSeason(code) ? String(y) : `${y}/${String(y + 1).slice(2)}`);
 
 /** League table and home/away records from a list of results of one competition-season. */
 function table(results) {

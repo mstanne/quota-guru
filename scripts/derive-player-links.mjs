@@ -7,6 +7,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { isCalendarSeason } from "./lib/leagues.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (rel, fallback) => {
@@ -68,7 +69,7 @@ function main() {
   const api = read("data/team-seasons-api.json", { football: {} });
   const seasonOf = (date, code) => {
     const y = Number(date.slice(0, 4));
-    return code === "BSA" ? y : Number(date.slice(5, 7)) >= 7 ? y : y - 1;
+    return isCalendarSeason(code) ? y : Number(date.slice(5, 7)) >= 7 ? y : y - 1;
   };
   let filled = 0;
   let missing = 0;
