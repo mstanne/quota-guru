@@ -1,0 +1,43 @@
+# Temporary (branch prova-coppe-dati only): downloads the data with the new competitions and runs the model backtest.
+# Nothing is committed or deployed: the files are kept as a run artifact for the checks of the pull request.
+name: Prova coppe con dati reali
+on:
+  push:
+    branches: [prova-coppe-dati]
+permissions:
+  contents: read
+jobs:
+  prova:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Dati salvati (ramo dati, sola lettura)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: scripts/data-branch.sh restore-data
+      - name: Scarica le competizioni
+        run: node scripts/fetch-football.mjs
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+      - name: Backtest con coppe e serie minori
+        run: BACKTEST_COMPS=SA,SB,PL,PD,BL1,FL1,DED,PPL,ELC,BSA,CL,EL,ECL node scripts/predict-football.mjs --backtest
+      - name: Backtest senza
+        run: MODEL_NATIONAL_CUPS=0 BACKTEST_COMPS=SA,SB,PL,PD,BL1,FL1,DED,PPL,ELC,BSA,CL,EL,ECL node scripts/predict-football.mjs --backtest
+      - name: Pronostici finali
+        run: node scripts/predict-football.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dati-prova
+          retention-days: 3
+          path: |
+            src/data/football.json
+            src/data/football-predictions.json
+            data/football-history.json
+            data/football-teams.json
+            data/id-map.json
+            public/stato-dati.json
