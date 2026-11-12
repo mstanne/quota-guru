@@ -25,7 +25,7 @@ import { ComponentTable, OfferPractice } from "./BonusPage";
 import { OfferDisclaimer, OperatorLogo } from "./operator/OperatorUi";
 import { OffersSidebar } from "./operator/OffersSidebar";
 import { isPlaceholder, responsibleGambling as rg, type OperatorData } from "../data/operators";
-import { amountFor, formatDate, formatEuro, productLabels, type WelcomeOffer } from "../data/offers";
+import { amountFor, formatDate, formatEuro, offerTotals, productLabels, type WelcomeOffer } from "../data/offers";
 import { offerVolume, offerPath } from "../lib/offerPages";
 import {
   findOperator,
@@ -95,7 +95,12 @@ function OperatorProfile({ op }: { op: OperatorData }) {
         : "Non ancora indicata",
     ],
     ["Vincita massima", profile?.limits?.maxWin ?? "Non ancora indicata"],
-    ["Offerta sport", sport ? `Fino a ${formatEuro(amountFor(sport, "sport"))}` : "Nessuna offerta verificata"],
+    [
+      "Offerta sport",
+      sport
+        ? [`Fino a ${formatEuro(amountFor(sport, "sport"))}`, offerTotals(sport, "sport").extraLabel].filter(Boolean).join(" ")
+        : "Nessuna offerta verificata",
+    ],
   ];
 
   return (

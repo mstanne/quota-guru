@@ -5,7 +5,7 @@ import { useState } from "react";
 import { ChevronRight, Scale } from "lucide-react";
 import { Link } from "../../lib/links";
 import { getOperator, isPlaceholder } from "../../data/operators";
-import { amountFor, formatEuro, offersInSection, visibleOffers, type WelcomeOffer } from "../../data/offers";
+import { formatEuro, offerTotals, offersInSection, visibleOffers, type WelcomeOffer } from "../../data/offers";
 import { offerPath, operatorNameFor } from "../../lib/offerPages";
 import { paths } from "../../routes";
 import { OperatorLogo } from "./OperatorUi";
@@ -90,7 +90,10 @@ export function OffersSidebar({
                     {twins.has(name) && <span className="text-slate-400 font-normal text-sm"> · {o.title}</span>}
                   </span>
                   <span className="block text-slate-400 text-sm tabular-nums">
-                    Fino a {formatEuro(amountFor(o, product))}
+                    Fino a {formatEuro(offerTotals(o, product).main)}
+                    {offerTotals(o, product).extraLabel && (
+                      <span className="text-slate-200"> {offerTotals(o, product).extraLabel}</span>
+                    )}
                   </span>
                 </span>
                 {!current && (

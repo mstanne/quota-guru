@@ -8,7 +8,7 @@
  */
 import { isPlaceholder, type OperatorData } from "../data/operators";
 import { profileOf } from "../data/operatorProfiles";
-import { amountFor, formatEuro, visibleOffers, type WelcomeOffer } from "../data/offers";
+import { formatEuro, offerTotals, visibleOffers, type WelcomeOffer } from "../data/offers";
 import { publishedOperators } from "./operatorPages";
 import { type RouteMeta } from "../routes";
 import { paymentMethods, methodPath, topics, topicPath, type PaymentMethodInfo, type Topic, type TopicId } from "./topicDefs";
@@ -66,7 +66,11 @@ export function sportOffer(op: OperatorData, offers = visibleOffers()): WelcomeO
   return offers.find((o) => o.operatorId === op.id && o.sections.includes("sport")) ?? null;
 }
 
-export const offerAmount = (o: WelcomeOffer | null) => (o ? `Fino a ${formatEuro(amountFor(o, "sport"))}` : null);
+export const offerAmount = (o: WelcomeOffer | null) => {
+  if (!o) return null;
+  const t = offerTotals(o, "sport");
+  return [`Fino a ${formatEuro(t.main)}`, t.extraLabel].filter(Boolean).join(" ");
+};
 
 /** Whether the method can be used for the first deposit of the sports offer: excluded / not excluded / no offer. */
 export function bonusStatus(offer: WelcomeOffer | null, m: PaymentMethodInfo): "escluso" | "valido" | null {

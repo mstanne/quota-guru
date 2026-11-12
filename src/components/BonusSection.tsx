@@ -1,7 +1,7 @@
 import { Gift } from "lucide-react";
 import { Button } from "./ui/button";
 import { getOperator, isPlaceholder, type OperatorData } from "../data/operators";
-import { amountFor, formatEuro, offersInSection, visibleOffers, type WelcomeOffer } from "../data/offers";
+import { formatEuro, offerTotals, offersInSection, visibleOffers, type WelcomeOffer } from "../data/offers";
 import { OfferDisclaimer, OperatorCta, OperatorLogo } from "./operator/OperatorUi";
 
 interface BonusSectionProps {
@@ -49,7 +49,7 @@ export function BonusSection({
             const resolved = resolveOperator(offer.operatorId);
             const name = isPlaceholder(resolved.name) ? offer.operatorName : resolved.name;
             const operator = { ...resolved, name, logoAlt: `Logo ${name}` };
-            const sport = amountFor(offer, "sport");
+            const { main: sport, extraLabel } = offerTotals(offer, "sport");
             return (
               <li
                 key={offer.id}
@@ -67,10 +67,8 @@ export function BonusSection({
                   <p className="shrink-0 text-right leading-tight" title="Utilizzabile sulle scommesse sportive">
                     <span className="block text-slate-400 text-[10px]">fino a</span>
                     <span className="block text-white text-lg whitespace-nowrap">{formatEuro(sport)}</span>
-                    {offer.advertisedTotal !== null && offer.advertisedTotal !== sport && (
-                      <span className="block text-slate-400 text-[10px] whitespace-nowrap">
-                        su {formatEuro(offer.advertisedTotal)} totali
-                      </span>
+                    {extraLabel && (
+                      <span className="block text-slate-200 text-xs whitespace-nowrap">{extraLabel}</span>
                     )}
                   </p>
                 </div>

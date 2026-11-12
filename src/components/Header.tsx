@@ -171,7 +171,7 @@ export function Header() {
 
 /**
  * "Siti scommesse" with a dropdown of the thematic comparisons (icon tiles) and the payment methods.
- * Opens on hover and with the arrow button (keyboard, touch); closes on Escape, on leaving and on navigation.
+ * Opens on hover and when the link gets keyboard focus; closes on Escape, on leaving and on navigation.
  * The panel is always in the HTML (hidden when closed), so its links are in the pre-rendered pages too.
  */
 function SitiMenuDesktop({ label }: { label: string }) {
@@ -193,6 +193,7 @@ function SitiMenuDesktop({ label }: { label: string }) {
       className="flex items-center gap-1 self-stretch"
       onMouseEnter={show}
       onMouseLeave={hide}
+      onFocus={show}
       onKeyDown={(e) => {
         if (e.key === "Escape") setOpen(false);
       }}
@@ -203,16 +204,6 @@ function SitiMenuDesktop({ label }: { label: string }) {
       <NavLink to={paths.sitiScommesse} className={desktopLink}>
         {label}
       </NavLink>
-      <button
-        type="button"
-        aria-expanded={open}
-        aria-controls="menu-siti-scommesse"
-        aria-label={open ? "Chiudi il menu Siti scommesse" : "Apri il menu Siti scommesse"}
-        onClick={() => setOpen((v) => !v)}
-        className="p-1 rounded text-slate-300 hover:text-white cursor-pointer"
-      >
-        <ChevronDown className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
-      </button>
       <div
         id="menu-siti-scommesse"
         hidden={!open}
