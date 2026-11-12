@@ -31,7 +31,7 @@ export function BonusSection({
             <h2 id="offerte-benvenuto" className="text-white text-lg sm:text-xl whitespace-nowrap">
               Offerte di benvenuto
             </h2>
-            <span className="hidden sm:inline text-slate-400 text-sm">· importi per le scommesse sportive</span>
+            <span className="hidden sm:inline text-slate-400 text-sm">· totale massimo e quota per lo sport</span>
           </div>
           <Button
             variant="outline"
@@ -49,7 +49,7 @@ export function BonusSection({
             const resolved = resolveOperator(offer.operatorId);
             const name = isPlaceholder(resolved.name) ? offer.operatorName : resolved.name;
             const operator = { ...resolved, name, logoAlt: `Logo ${name}` };
-            const { main: sport, extraLabel } = offerTotals(offer, "sport");
+            const { total, partLabel } = offerTotals(offer, "sport");
             return (
               <li
                 key={offer.id}
@@ -64,11 +64,11 @@ export function BonusSection({
                       {offer.title}
                     </p>
                   </div>
-                  <p className="shrink-0 text-right leading-tight" title="Utilizzabile sulle scommesse sportive">
+                  <p className="shrink-0 text-right leading-tight">
                     <span className="block text-slate-400 text-[10px]">fino a</span>
-                    <span className="block text-white text-lg whitespace-nowrap">{formatEuro(sport)}</span>
-                    {extraLabel && (
-                      <span className="block text-slate-200 text-xs whitespace-nowrap">{extraLabel}</span>
+                    <span className="block text-white text-lg whitespace-nowrap">{formatEuro(total)}</span>
+                    {partLabel && (
+                      <span className="block text-slate-200 text-xs whitespace-nowrap">{partLabel}</span>
                     )}
                   </p>
                 </div>

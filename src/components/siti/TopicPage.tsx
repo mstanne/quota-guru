@@ -367,9 +367,9 @@ const offerCell = (op: OperatorData) => {
   const offer = sportOffer(op);
   return offer ? (
     <>
-      <span className="block text-white text-base">Fino a {formatEuro(offerTotals(offer, "sport").main)}</span>
-      {offerTotals(offer, "sport").extraLabel && (
-        <span className="block text-white">{offerTotals(offer, "sport").extraLabel}</span>
+      <span className="block text-white text-base">Fino a {formatEuro(offerTotals(offer, "sport").total)}</span>
+      {offerTotals(offer, "sport").partLabel && (
+        <span className="block text-white">{offerTotals(offer, "sport").partLabel}</span>
       )}
       {offer.minDeposit !== null && (
         <span className="block text-slate-400 text-xs">deposito minimo per l'offerta {formatEuro(offer.minDeposit)}</span>

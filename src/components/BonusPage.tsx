@@ -269,15 +269,10 @@ function OfferCard({
               </div>
             </div>
             <div className="mt-4 bg-slate-800 border border-slate-700 rounded-lg p-4">
-              <div className="text-slate-400 text-xs mb-1">Utilizzabile su {productLabels[section].toLowerCase()}</div>
-              <div className="text-white text-2xl leading-tight">fino a {formatEuro(amountFor(offer, section))}</div>
-              {offerTotals(offer, section).extraLabel && (
-                <>
-                  <div className="text-white text-lg leading-tight mt-1">{offerTotals(offer, section).extraLabel}</div>
-                  <div className="text-slate-400 text-xs mt-2">
-                    Totale massimo dell'offerta: {formatEuro(offerTotals(offer, section).total)}
-                  </div>
-                </>
+              <div className="text-slate-400 text-xs mb-1">Offerta di benvenuto {productLabels[section].toLowerCase()}</div>
+              <div className="text-white text-2xl leading-tight">fino a {formatEuro(offerTotals(offer, section).total)}</div>
+              {offerTotals(offer, section).partLabel && (
+                <div className="text-white text-lg leading-tight mt-1">{offerTotals(offer, section).partLabel}</div>
               )}
             </div>
           </div>

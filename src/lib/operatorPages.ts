@@ -4,7 +4,7 @@
  * call to action. Operators still to be filled in ([NOME_OPERATORE_n]) get no page.
  */
 import { isPlaceholder, operators, type OperatorData } from "../data/operators";
-import { amountFor, formatEuro, visibleOffers, type WelcomeOffer } from "../data/offers";
+import { formatEuro, offerTotals, visibleOffers, type WelcomeOffer } from "../data/offers";
 import { paths, type RouteMeta } from "../routes";
 
 export const operatorPath = (o: Pick<OperatorData, "id">) => `${paths.sitiScommesse}/${o.id}`;
@@ -33,7 +33,8 @@ export function operatorSite(o: OperatorData) {
 
 export function operatorMeta(o: OperatorData): RouteMeta {
   const sport = offersOfOperator(o.id).find((x) => x.sections.includes("sport"));
-  const bonus = sport ? `, offerta di benvenuto sport fino a ${formatEuro(amountFor(sport, "sport"))}` : "";
+  const t = sport ? offerTotals(sport, "sport") : null;
+  const bonus = t ? `, offerta di benvenuto fino a ${formatEuro(t.total)}${t.partLabel ? ` (${t.partLabel})` : ""}` : "";
   return {
     path: operatorPath(o),
     title: `${o.name}: scommesse, pagamenti, prelievi e bonus`,
