@@ -134,6 +134,8 @@ const fPred = readJson(path.join(root, "src/data/football-predictions.json"), { 
 const fLog = loadArchive("calcio");
 const fStats = { added: 0, updated: 0, graded: 0 };
 const OUT = ["1", "X", "2"];
+// 1X2 is settled on 90 minutes: cup ties that went to extra time count with their regular-time score
+const outcomeIndex = (s) => (s.home > s.away ? 0 : s.home === s.away ? 1 : 2);
 for (const c of football.competitions) {
   for (const m of c.matches) {
     const p = fPred[m.id];
@@ -151,11 +153,13 @@ for (const c of football.competitions) {
         where: c.name,
         // national teams: their own track record (summary "nazionali" below), same archive file
         ...(c.national ? { national: true } : {}),
+        // cup finals (Telegram: "chi alza il trofeo" instead of "passa il turno")
+        ...(m.stage === "FINAL" ? { final: true } : {}),
         path: footballPath(c, m),
         prediction: pred,
         pick: pred ? { index: top, label: `${OUT[top]} · ${names[top]}`, prob: pred.p[top] } : null,
         result: played
-          ? { home: ft.home, away: ft.away, index: ft.home > ft.away ? 0 : ft.home === ft.away ? 1 : 2 }
+          ? { home: ft.home, away: ft.away, index: outcomeIndex(m.score.regularTime?.home != null ? m.score.regularTime : ft) }
           : null,
         void: m.status === "CANCELLED",
       },

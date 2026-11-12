@@ -13,7 +13,12 @@
 //   National teams  every match of Italy on Rai 1 and RaiPlay; Nations League 2026/27: Sky and NOW hold the rights
 //                and show a selection of the other matches (some free-to-air on TV8 or Mediaset), so the page says to
 //                check the schedule (Calcio e Finanza, 1 October 2026). Other national-team competitions: not shown.
-// Ligue 1, Eredivisie, Primeira Liga, Championship and Brasileirão: no verified 2026/27 deal, so nothing is shown.
+//   Coppa Italia, Supercoppa Italiana   Mediaset (Canale 5, Italia 1, Mediaset Infinity), deal 2024/25–2026/27
+//   FA Cup       DAZN and Eurosport (Discovery+), co-exclusive, to 2027/28 (not every match: the page says to check)
+//   Copa del Rey DAZN, to 2028/29;   Supercopa de España   free streaming on Cronache di Spogliatoio
+//                (Calcio e Finanza, 20 June 2026 and 4 November 2025)
+// Ligue 1, Eredivisie, Primeira Liga, Championship, Brasileirão, the other national cups and super cups and the lower
+// divisions: no verified 2026/27 deal, so nothing is shown.
 
 export const BROADCAST_SEASON = "2026/27";
 
@@ -66,6 +71,9 @@ export const CHANNELS = [
   "NBA League Pass",
   "Ligue 1+",
   "OneFootball",
+  "Eurosport",
+  "Discovery+",
+  "Cronache di Spogliatoio",
 ];
 
 /** Who holds the rights of each competition in Italy, in one line (TV guide page). */
@@ -78,6 +86,11 @@ export const COMPETITION_RIGHTS: { slug: string; name: string; text: string }[] 
   { slug: "premier-league", name: "Premier League", text: "Sky e NOW" },
   { slug: "bundesliga", name: "Bundesliga", text: "Sky e NOW" },
   { slug: "liga", name: "LaLiga", text: "DAZN" },
+  { slug: "coppa-italia", name: "Coppa Italia", text: "Mediaset: in chiaro su Canale 5 o Italia 1 e in streaming su Mediaset Infinity" },
+  { slug: "supercoppa-italiana", name: "Supercoppa Italiana", text: "Mediaset, in chiaro su Canale 5 e su Mediaset Infinity" },
+  { slug: "fa-cup", name: "FA Cup", text: "DAZN ed Eurosport (Discovery+), in co-esclusiva" },
+  { slug: "copa-del-rey", name: "Copa del Rey", text: "DAZN" },
+  { slug: "supercopa-de-espana", name: "Supercopa de España", text: "in streaming gratis su Cronache di Spogliatoio" },
   {
     slug: "nations-league",
     name: "Nations League",
@@ -145,7 +158,22 @@ export function footballBroadcast(
     case "bundesliga":
       return { channels: "Sky e NOW" };
     case "liga":
+    case "copa-del-rey":
       return { channels: "DAZN" };
+    case "coppa-italia":
+      return {
+        channels: "Canale 5, Italia 1 e Mediaset Infinity",
+        note: "Mediaset trasmette tutta la Coppa Italia in chiaro: controlla il palinsesto per sapere su quale dei due canali.",
+      };
+    case "supercoppa-italiana":
+      return { channels: "Canale 5 e Mediaset Infinity" };
+    case "fa-cup":
+      return {
+        channels: "DAZN ed Eurosport",
+        note: "DAZN ed Eurosport (Discovery+) trasmettono una selezione delle partite di ogni turno: controlla il palinsesto.",
+      };
+    case "supercopa-de-espana":
+      return { channels: "Cronache di Spogliatoio", note: "In streaming gratuito." };
     default:
       return null;
   }

@@ -30,6 +30,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { checkArticle, footballArticle, nbaArticle, withRewrite } from "../src/lib/editorial/engine.mjs";
+import { isInfoLeague } from "./lib/leagues.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = path.join(root, "src", "data");
@@ -81,7 +82,8 @@ function buildArticles() {
     fb.competitions.forEach((comp, ci) => {
       for (const match of comp.matches) {
         const art = footballArticle({ comp, match, h2h: fb.headToHead?.[String(match.id)], generatedAt: fb.generatedAt });
-        if (art) list.push({ art, date: match.utcDate, priority: ci, generatedAt: fb.generatedAt });
+        // lower divisions (information only, pages not indexed): template texts, never rewritten
+        if (art) list.push({ art, date: match.utcDate, priority: ci, generatedAt: fb.generatedAt, info: isInfoLeague(comp.code) });
       }
     });
   }
@@ -97,8 +99,8 @@ function buildArticles() {
 /** Texts worth rewriting first: previews by kick-off, then recent recaps; main competitions first. */
 function aiCandidates(list) {
   return list
-    .filter(({ art, date, generatedAt }) =>
-      art.kind === "preview" ? true : new Date(generatedAt) - new Date(date) <= RECAP_AI_DAYS * 86400000,
+    .filter(({ art, date, generatedAt, info }) =>
+      info ? false : art.kind === "preview" ? true : new Date(generatedAt) - new Date(date) <= RECAP_AI_DAYS * 86400000,
     )
     .sort((a, b) => (a.art.kind === b.art.kind ? 0 : a.art.kind === "preview" ? -1 : 1) || a.priority - b.priority || a.date.localeCompare(b.date));
 }

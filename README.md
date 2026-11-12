@@ -164,12 +164,41 @@ comprese Serie B, Europa League e Conference League) e API-NBA per il basket. Un
   di tennis vale la data di fine del torneo.
 - **Archivio permanente** (`data/archivio/`, salvato nel branch `dati`): ogni partita finita con tutti i dettagli.
   Le stagioni passate le recupera `scripts/backfill-archive.mjs`, al massimo 150 richieste per giro: tutte le
-  competizioni del sito più la **Coppa Italia** (per ora solo in archivio, senza pagine), fino a 10 stagioni prima
-  di quella in corso. Per cambiare il numero di stagioni imposta la variabile del repository `ARCHIVE_SEASONS`
+  competizioni del sito (coppe nazionali comprese; delle serie minori solo le ultime 3 stagioni), fino a 10 stagioni
+  prima di quella in corso. Per cambiare il numero di stagioni imposta la variabile del repository `ARCHIVE_SEASONS`
   (Settings → Secrets and variables → Actions → Variables). Ogni stagione di una competizione costa circa 20
   richieste e 2 MB nel branch `dati`; le stagioni che il piano non copre vengono segnate e saltate.
 - Il workflow aggiorna i dati e ripubblica il sito ogni 3 ore e, durante le partite, aggiorna punteggi e classifiche
   ogni 15 minuti (`live-scores.yml`). Senza chiave usa gli ultimi dati salvati.
+
+## Coppe nazionali e serie minori (novembre 2026)
+
+Elenco in `scripts/lib/leagues.mjs` (codici, id API-Football, nome e paese che l'API deve restituire: se non
+corrispondono la competizione si ferma e non pubblica nulla).
+
+- **Coppe nazionali** (`cup`): Coppa Italia, FA Cup, Carabao Cup, Copa del Rey, DFB-Pokal, Coupe de France, KNVB
+  Beker, Taça de Portugal, Copa do Brasil. **Supercoppe** (`supercup`): Supercoppa Italiana, Community Shield,
+  Supercopa de España, Supercoppa di Germania, Trophée des Champions, Johan Cruijff Schaal, Supertaça, Supercopa do
+  Brasil. Pagine, pronostici 1X2 sui 90 minuti e, nelle partite a eliminazione diretta, la **probabilità di passare
+  il turno** (`scripts/lib/knockout.mjs`: supplementari con un terzo dei gol attesi, poi rigori 50/50; andata e
+  ritorno sommati, con il risultato dell'andata se già giocata; turni a doppia sfida in `twoLegs`). Finali e
+  supercoppe in campo neutro, salvo `homeFinal`. Si tengono solo le partite con almeno un club dei campionati del
+  sito (i turni tra dilettanti restano fuori); le partite senza pronostico non vanno nell'indice dei motori di ricerca.
+- **Serie minori** (`info`): Serie C (gironi A, B, C), League One, Segunda División, 2. Bundesliga, Ligue 2, Eerste
+  Divisie, Liga Portugal 2, Brasileirão Série B. Solo informative: classifica, calendario, risultati, squadre e
+  marcatori, **senza pronostici**. L'hub è `/calcio/<lega>` (non `/pronostici/<lega>`), niente pagine giornata o
+  evento, pagine partita in `noindex`, fuori dalla guida TV e dal widget live del worker (punteggi ogni 15 minuti).
+  Servono al modello come dati: i loro club incontrano quelli dei campionati maggiori nelle coppe.
+- **Modello**: coppe nazionali come coppe europee (`CUPS` in `scripts/lib/football-fit.mjs`): le partite tra club di
+  campionati diversi insegnano al modello la forza di ogni campionato (Serie A contro Serie B e C in Coppa Italia).
+  Peso 0,4 (turnover delle big). **Due modelli**: quello principale (coppe sì, serie minori no) fa tutti i
+  pronostici; quello esteso (anche le serie minori) solo le partite di coppa di un club che il principale non segue
+  (Serie C, League One…). Backtest di novembre 2026 su 9.366 partite di campionati maggiori e coppe europee
+  (log-loss 1X2): senza coppe 0,9972, con le coppe 0,9963, con coppe e serie minori 0,9978. Forza iniziale delle
+  serie minori in `LEAGUE_PRIORS`. Confronto: `MODEL_NATIONAL_CUPS=0 BACKTEST_COMPS=SA,PL,… node
+  scripts/predict-football.mjs --backtest` (con `BACKTEST_OUT=<file>` salva ogni partita per confrontare due giri).
+- **Esito 1X2 sui 90 minuti**: per le partite finite ai supplementari o ai rigori il bilancio dei pronostici, i
+  mercati e il modello usano il risultato dei tempi regolamentari.
 
 ## Pronostici calcio (modello Poisson)
 

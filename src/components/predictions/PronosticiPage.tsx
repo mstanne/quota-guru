@@ -60,6 +60,7 @@ export function PronosticiPage() {
     .filter(({ match }) => (isUpcoming(match) || isLive(match)) && predictionFor(match.id))
     .slice(0, 12);
   const rounds = competitions
+    .filter((c) => !c.info) // lower divisions: no predictions, no round pages
     .map((c) => ({ c, d: featuredMatchday(c) }))
     .filter((x): x is { c: (typeof competitions)[number]; d: NonNullable<ReturnType<typeof featuredMatchday>> } => !!x.d);
   const nba = nbaGames.filter((g) => isGameUpcoming(g) && basketPredictionFor(g.id)).slice(0, 8);

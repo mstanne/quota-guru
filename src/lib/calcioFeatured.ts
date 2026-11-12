@@ -17,6 +17,9 @@ export const FEATURED_COMPETITIONS = new Set([
   "PD",
   "BL1",
   "FL1",
+  // national cups (November 2026): the Italian ones in full, the foreign ones in the summary lines
+  "CI",
+  "SCI",
   // national teams
   "WC",
   "EURO",

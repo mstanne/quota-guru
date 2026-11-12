@@ -30,7 +30,9 @@ export function tvDay(d: DayKey) {
   const { iso, label } = dayOf(d);
   const rows: TvRow[] = allMatches
     .filter(
-      ({ match }) => romeDay(match.utcDate) === iso && match.status !== "POSTPONED" && match.status !== "CANCELLED",
+      ({ competition, match }) =>
+        // lower divisions shown only for information stay out of the TV guide
+        !competition.info && romeDay(match.utcDate) === iso && match.status !== "POSTPONED" && match.status !== "CANCELLED",
     )
     .map(({ competition, match }) => ({ competition, match, broadcast: matchBroadcast(competition, match) }));
   return {

@@ -18,6 +18,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { sameTeam, team } from "./lib/teams.mjs";
 import { footballDetails, num } from "./lib/match-details.mjs";
+import { INFO_LEAGUES, isInfoLeague, isNationalCup } from "./lib/leagues.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const FOOTBALL = path.join(root, "src", "data", "football.json");
@@ -57,6 +58,8 @@ const LEAGUES = [
   ["europa-league", 3],
   ["conference-league", 848],
 ];
+// team pages: the leagues above, then the lower divisions (shown for information), last when the budget is short
+const SEASON_LEAGUES = [...LEAGUES, ...INFO_LEAGUES.map((c) => [c.slug, c.api])];
 
 function loadDotEnv() {
   const file = path.join(root, ".env");
@@ -163,10 +166,11 @@ async function footballRun(api, store, data, now) {
       console.log(`  ${slug}: ${m.homeTeam.shortName}-${m.awayTeam.shortName} ✓`);
     }
   }
-  // national teams: their matches already carry API-Football's fixture id (scripts/fetch-football.mjs), and one
-  // /fixtures?ids= request returns events, line-ups, statistics and players of 20 matches at once
+  // national teams, national cups and lower divisions: their matches already carry API-Football's fixture id
+  // (scripts/fetch-football.mjs), and one /fixtures?ids= request returns events, line-ups, statistics and players of
+  // 20 matches at once
   const todo = all
-    .filter((c) => c.national)
+    .filter((c) => c.national || isNationalCup(c.code) || isInfoLeague(c.code))
     .flatMap((c) => c.matches.map((m) => ({ c, m })))
     .filter(({ m }) => m.apiId && finished(m) && !store.football[m.id] && now - Date.parse(m.utcDate) < DAYS_BACK * 86400000);
   for (let i = 0; i < todo.length; i += 20) {
@@ -366,7 +370,7 @@ async function footballSeasonsRun(api, seasons, data, now, allowed) {
   const teamsFile = readJson(TEAMS, { teams: {}, competitions: {} });
   seasons.football ??= {};
   seasons.afTeams ??= {};
-  for (const [slug, league] of LEAGUES) {
+  for (const [slug, league] of SEASON_LEAGUES) {
     const comp = data.competitions.find((c) => c.slug === slug);
     if (!comp || ["champions-league", "europa-league", "conference-league"].includes(slug)) continue; // team pages follow the domestic league
     const season = Number(comp.season?.startDate?.slice(0, 4));

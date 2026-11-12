@@ -28,7 +28,8 @@ export function legacyTarget(pathname: string): string | null {
   const hub = p.match(/^\/calcio\/([^/]+)$/);
   if (hub) {
     const c = findCompetitionInfo(hub[1]);
-    return c ? competitionPath(c) : null;
+    const target = c ? competitionPath(c) : null;
+    return target === p ? null : target; // lower divisions: their hub is /calcio/<lega> itself
   }
   const round = p.match(/^\/calcio\/([^/]+)\/giornata\/(\d{1,3})$/);
   if (round) {

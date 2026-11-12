@@ -17,10 +17,10 @@ const src = path.join(root, "src", "data", "football.json");
 const predFile = path.join(root, "src", "data", "football-predictions.json");
 const out = path.join(root, "src", "data", "football-home.json");
 
-const PRIORITY = ["SA", "CL", "EL", "PL", "PD", "ECL"]; // hero cards: order of the competitions within a day
+const PRIORITY = ["SA", "CL", "SCI", "CI", "EL", "PL", "PD", "ECL"]; // hero cards: order of the competitions within a day
 const NOT_FEATURED = ["CNL"]; // in the list, never in the hero cards (far from the Italian public)
 // "Prossime partite" list and its filter; the national-team competitions last (friendlies left out)
-const HOME = ["SA", "CL", "EL", "ECL", "PL", "PD", "BL1", "FL1", "UNL", "CNL"];
+const HOME = ["SA", "CL", "EL", "ECL", "CI", "SCI", "PL", "PD", "BL1", "FL1", "UNL", "CNL"];
 const LIMIT = 8;
 const FEATURED = 3;
 const FEATURED_DAYS = 7; // hero cards only for matches in the next week

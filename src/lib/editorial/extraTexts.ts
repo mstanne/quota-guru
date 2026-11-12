@@ -6,6 +6,7 @@
 import type { Article, ArticleSection } from "./engine.mjs";
 import { al, cap, dec, fmtDay, fmtMonthYear, joinIt, num, pick, prep, teamName, the } from "./engine.mjs";
 import {
+  competitionPath,
   cornersCardsPath,
   goalStatsPath,
   isFinished,
@@ -514,10 +515,10 @@ export { fmtDay };
  * minutes), so the page keeps a stable description of itself.
  */
 export function calcioHubText(
-  competitions: { code: string; slug: string; name: string; national?: boolean }[],
+  competitions: { code: string; slug: string; name: string; national?: boolean; cup?: string; info?: boolean }[],
   featured: Set<string>,
 ): ArticleSection[] {
-  const hub = (c: { slug: string; name: string }) => link(c.name, `/pronostici/${c.slug}`);
+  const hub = (c: { slug: string; name: string }) => link(c.name, competitionPath(c));
   const group = (codes: string[]) =>
     joinIt(
       codes
@@ -529,7 +530,9 @@ export function calcioHubText(
   const foreign = group(["PL", "PD", "BL1", "FL1"]);
   const cups = group(["CL", "EL", "ECL"]);
   const national = joinIt(competitions.filter((c) => c.national && featured.has(c.code)).map(hub));
-  const others = joinIt(competitions.filter((c) => !featured.has(c.code)).map(hub));
+  const domesticCups = joinIt(competitions.filter((c) => c.cup).map(hub));
+  const minor = joinIt(competitions.filter((c) => c.info).map(hub));
+  const others = joinIt(competitions.filter((c) => !featured.has(c.code) && !c.cup && !c.info).map(hub));
   return keep([
     sec("cosa-trovi", "Cosa trovi in questa pagina", [
       "Il calendario delle partite dei prossimi giorni, in ordine di orario e divise per giorno. Per ogni partita ancora da giocare ci sono le probabilità dei tre esiti (1, X, 2) stimate dal modello statistico di QuotaGuru, con accanto la quota equa: 1 diviso la probabilità, cioè la quota che pagherebbe esattamente quanto rischi se la stima fosse giusta. Dal filtro dei mercati si passa a Doppia chance, Under/Over 2,5, Goal/No goal, Multigol e Combo.",
@@ -545,6 +548,10 @@ export function calcioHubText(
         italian && `Campionati italiani: ${italian}.`,
         foreign && `Campionati esteri: ${foreign}.`,
         cups && `Coppe europee: ${cups}.`,
+        domesticCups &&
+          `Coppe e supercoppe nazionali: ${domesticCups}. Nelle partite a eliminazione diretta c'è anche la probabilità di passare il turno, supplementari e rigori compresi.`,
+        minor &&
+          `Serie minori, seguite solo per informazione (classifiche, risultati e squadre, senza pronostici): ${minor}. Servono al modello per stimare la forza delle squadre che incontrano i club maggiori nelle coppe.`,
         national && `Nazionali: ${national}, più tutte le partite delle nazionali italiane.`,
         others &&
           `Le altre competizioni (${others}) sono riassunte in fondo all'elenco, con il numero di partite e il collegamento alla loro pagina.`,

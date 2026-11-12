@@ -85,7 +85,9 @@ for (const c of football.competitions)
     const played = (m.status === "FINISHED" || m.status === "AWARDED") && ft?.home != null && ft?.away != null;
     if (!p || !p.pre || p.confidence === "bassa" || !played) continue;
     const top = p.p.indexOf(Math.max(...p.p));
-    const outcome = ft.home > ft.away ? 0 : ft.home === ft.away ? 1 : 2;
+    // 1X2 on 90 minutes: the regular-time score of cup ties that went to extra time
+    const rt = m.score.regularTime?.home != null ? m.score.regularTime : ft;
+    const outcome = rt.home > rt.away ? 0 : rt.home === rt.away ? 1 : 2;
     const names = [m.homeTeam.shortName, "pareggio", m.awayTeam.shortName];
     (c.national ? nationalEntries : entries).push({
       key: `f${m.id}`,
@@ -130,8 +132,9 @@ fs.writeFileSync(
     generatedAt: football.generatedAt,
     competitions: football.competitions
       .filter((c) => c.matches.length || c.standings.length)
-      .map(({ code, slug, name, area, season, standings, matches, national }) => ({
+      .map(({ code, slug, name, area, season, standings, matches, national, cup, info }) => ({
         code, slug, name, area, season, hasStandings: standings.length > 0, ...(national ? { national: true } : {}),
+        ...(cup ? { cup } : {}), ...(info ? { info: true } : {}),
         // rounds of the league phase of the cups are "fase-campionato-giornata-<n>" (src/lib/footballCore.ts)
         leaguePhase: matches.some((m) => m.stage === "LEAGUE_STAGE"),
       })),

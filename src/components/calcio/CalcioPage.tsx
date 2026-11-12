@@ -121,7 +121,9 @@ export function CalcioPage() {
   }, [competizione]);
 
   if (competizione && !competition) return <NotFoundPage />;
-  const round = competition ? featuredMatchday(competition) : undefined;
+  // lower divisions shown only for information: no predictions, hub at /calcio/<lega> (src/lib/competitionKinds.ts)
+  const info = !!competition?.info;
+  const round = competition && !info ? featuredMatchday(competition) : undefined;
 
   // /calcio shows the days of the period up to MAX_DAYS (the competition pages show every match)
   const dayWindow = competizione
@@ -178,14 +180,26 @@ export function CalcioPage() {
     <div className="min-h-screen bg-slate-950">
       <PageHeader
         icon={Trophy}
-        title={competition ? `Pronostici ${competition.name}: calendario e risultati` : "Calcio: calendario e risultati"}
+        title={
+          competition
+            ? info
+              ? `${competition.name}: classifica, calendario e risultati`
+              : `Pronostici ${competition.name}: calendario e risultati`
+            : "Calcio: calendario e risultati"
+        }
         subtitle={
           competition
-            ? undefined
+            ? info
+              ? "Campionato seguito per informazione: risultati, classifica e squadre, senza pronostici. I suoi club entrano nei nostri pronostici quando incontrano le squadre dei campionati principali, per esempio nelle coppe nazionali."
+              : undefined
             : "Le partite dei prossimi giorni con le probabilità di ogni esito stimate dal nostro modello statistico, i risultati e i collegamenti a classifiche, squadre e statistiche delle competizioni seguite."
         }
         breadcrumb={
-          competition ? [{ label: "Pronostici", to: PRONOSTICI }, { label: competition.name }] : [{ label: "Calcio" }]
+          competition
+            ? info
+              ? [{ label: "Calcio", to: "/calcio" }, { label: competition.name }]
+              : [{ label: "Pronostici", to: PRONOSTICI }, { label: competition.name }]
+            : [{ label: "Calcio" }]
         }
         meta={<DataUpdatedNote generatedAt={generatedAt} short />}
       >
@@ -232,11 +246,13 @@ export function CalcioPage() {
       <div className="container mx-auto px-4 py-6">
         {/* the list keeps a readable width on wide screens (and leaves room for the slip beside it) */}
         <div className="max-w-6xl">
-          <TrackRecordBox
-            record={competition?.national ? nationalTrackRecord() : footballTrackRecord()}
-            sport="calcio"
-            className="mb-4"
-          />
+          {!info && (
+            <TrackRecordBox
+              record={competition?.national ? nationalTrackRecord() : footballTrackRecord()}
+              sport="calcio"
+              className="mb-4"
+            />
+          )}
 
           {/* filters: one sticky bar under the site header (competitions scroll sideways, period and market on one row) */}
           <div
@@ -258,7 +274,8 @@ export function CalcioPage() {
                   {counts && <Count n={periodRows.length} />}
                 </Link>
                 {footballIndex
-                  .filter((c) => !counts || counts.get(c.slug) || c.slug === competition?.slug)
+                  // lower divisions (information only): always listed, without a count (their matches are not loaded here)
+                  .filter((c) => !counts || counts.get(c.slug) || c.info || c.slug === competition?.slug)
                   .map((c) => (
                     <Link
                       key={c.code}
@@ -268,7 +285,7 @@ export function CalcioPage() {
                       data-active={c.slug === competition?.slug || undefined}
                     >
                       {c.name}
-                      {counts && <Count n={counts.get(c.slug) ?? 0} />}
+                      {counts && !c.info && <Count n={counts.get(c.slug) ?? 0} />}
                     </Link>
                   ))}
               </div>
@@ -286,7 +303,7 @@ export function CalcioPage() {
                   "data-track-value": id,
                 })}
               />
-              {filter !== "results" ? (
+              {filter !== "results" && !info ? (
                 <MarketFilter options={FOOTBALL_MARKETS} value={market} onChange={setMarket} className="" />
               ) : (
                 <span className="sm:hidden" />
@@ -374,7 +391,7 @@ export function CalcioPage() {
             />
           )}
 
-          {single && competition && (
+          {single && competition && !info && (
             <TextSections
               id="analisi-competizione"
               className="mt-10"
