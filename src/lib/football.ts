@@ -3,6 +3,7 @@
 // Importing this module includes the whole snapshot in the JS chunk: use ./footballCore for pure helpers.
 import raw from "../data/football.json";
 import { matchSlug, settleMatch, type Competition, type HeadToHead, type Match } from "./footballCore";
+import { withKind } from "./competitionKinds";
 
 export * from "./footballCore";
 
@@ -17,7 +18,7 @@ const raw0 = raw as unknown as Snapshot;
 // Matches past their expected end but not yet finished at the source become RESULT_PENDING (see settleMatch).
 const data: Snapshot = {
   ...raw0,
-  competitions: raw0.competitions.map((c) => ({ ...c, matches: c.matches.map((m) => settleMatch(m)) })),
+  competitions: raw0.competitions.map((c) => withKind({ ...c, matches: c.matches.map((m) => settleMatch(m)) })),
 };
 
 export const generatedAt = data.generatedAt;

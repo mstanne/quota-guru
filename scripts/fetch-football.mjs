@@ -29,7 +29,7 @@ const STORE = path.join(root, ".cache", "match-details", "football-store.json");
 const STATUS = path.join(root, "public", "stato-dati.json");
 
 import { COMPETITIONS, NATIONAL } from "./lib/leagues.mjs";
-import { isCalendarSeason } from "./lib/leagues.mjs";
+import { isCalendarSeason, isInfoLeague, isNationalCup } from "./lib/leagues.mjs";
 export { COMPETITIONS };
 
 const DAYS_BACK = 45;
@@ -431,6 +431,27 @@ async function main() {
     }
   }
 
+  // national cups: only matches with at least one club of the leagues on the site (lower divisions included). The
+  // early rounds between amateur sides (FA Cup qualifying, Coupe de France regional rounds) would add hundreds of
+  // pages with nothing to say about them
+  {
+    const leagueTeams = new Set();
+    for (const c of competitions) {
+      const def = COMPETITIONS.find((d) => d.code === c.code);
+      if (!def?.domestic) continue;
+      for (const g of c.standings ?? []) for (const r of g.table ?? []) leagueTeams.add(r.team.id);
+      for (const m of c.matches) leagueTeams.add(m.homeTeam.id), leagueTeams.add(m.awayTeam.id);
+    }
+    for (const c of competitions) {
+      if (!isNationalCup(c.code) || !leagueTeams.size) continue;
+      const before = c.matches.length;
+      c.matches = c.matches.filter((m) => leagueTeams.has(m.homeTeam.id) || leagueTeams.has(m.awayTeam.id));
+      if (c.matches.length < before) console.log(`  ${c.name}: ${before - c.matches.length} partite tra squadre di serie non seguite escluse`);
+    }
+    for (let i = competitions.length - 1; i >= 0; i--)
+      if (isNationalCup(competitions[i].code) && !competitions[i].matches.length) competitions.splice(i, 1);
+  }
+
   // head-to-head of the next matches (1 request per pairing, kept for a day)
   const headToHead = {};
   const soon = now + H2H_DAYS * DAY;
@@ -558,7 +579,14 @@ async function main() {
   status.ok = !stopped && Object.values(status.competitions).every((s) => s.ok);
   if (stopped) status.message = stopped;
   Object.assign(status, api.stats());
-  // clubs met for the first time in this run (new id, or paired with a club of the previous data): checked by hand
+  // clubs met for the first time in this run (new id, or paired with a club of the previous data): checked by hand.
+  // New clubs of the national cups and of the lower divisions (amateur sides of the FA Cup, Serie C…) get their own
+  // new id and need no check: only counted, so the daily e-mail is not flooded (pairings are always listed)
+  const quiet = teamReport.filter((r) => r.kind === "nuova" && (isNationalCup(r.competition) || isInfoLeague(r.competition)));
+  if (quiet.length) {
+    console.log(`Squadre nuove di coppe nazionali e serie minori: ${quiet.length}`);
+    teamReport.splice(0, teamReport.length, ...teamReport.filter((r) => !quiet.includes(r)));
+  }
   if (teamReport.length) {
     status.squadreNuove = teamReport;
     for (const r of teamReport)

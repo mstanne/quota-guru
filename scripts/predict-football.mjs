@@ -121,7 +121,7 @@ const track = { n: 0, hits: 0, logLoss: 0, brier: 0 };
 const trackNational = { n: 0, hits: 0, logLoss: 0, brier: 0 };
 for (const day of days) {
   const models = new Map(); // one refit per day and per model, only when that day has games of that kind
-  for (const { c, m } of finished.filter(({ m }) => m.utcDate.startsWith(day) && !isInfoLeague(c.code))) {
+  for (const { c, m } of finished.filter(({ c, m }) => m.utcDate.startsWith(day) && !isInfoLeague(c.code))) {
     const kind = isNational(c.code) ? "national" : "club";
     if (!models.has(kind)) models.set(kind, fitFor(c.code, `${day}T00:00:00Z`));
     const p = predict(models.get(kind), { comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, neutral: neutral(c, m) });
