@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "../../lib/links";
-import { Check, ChevronRight, X } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { compactTeamName } from "../../lib/teamNames";
 import {
   formatTime,
@@ -33,15 +33,11 @@ export function TeamBadge({
   size?: "xs" | "sm" | "lg";
 }) {
   const [failed, setFailed] = useState(false);
-  const box =
-    size === "lg" ? "w-16 h-16 rounded-xl p-2" : size === "xs" ? "w-7 h-7 rounded-md p-0.5" : "w-9 h-9 rounded-lg p-1";
+  const box = size === "lg" ? "w-16 h-16 rounded-xl p-2" : size === "xs" ? "team-badge-xs" : "w-9 h-9 rounded-lg p-1";
   const px = size === "lg" ? 64 : size === "xs" ? 28 : 36;
   if (team.crest && !failed) {
     return (
-      <span
-        aria-hidden="true"
-        className={`${box} shrink-0 inline-flex items-center justify-center bg-slate-800 border border-slate-700`}
-      >
+      <span aria-hidden="true" className={`team-badge ${box}`}>
         <img
           src={team.crest}
           alt=""
@@ -50,17 +46,13 @@ export function TeamBadge({
           loading="lazy"
           decoding="async"
           onError={() => setFailed(true)}
-          className="w-full h-full object-contain"
         />
       </span>
     );
   }
   const text = size === "lg" ? "text-lg" : size === "xs" ? "text-[9px]" : "text-[11px]";
   return (
-    <span
-      aria-hidden="true"
-      className={`${box} ${text} shrink-0 inline-flex items-center justify-center bg-slate-800 border border-slate-700 text-slate-200 font-semibold tracking-wide`}
-    >
+    <span aria-hidden="true" className={`team-badge ${box} ${text} text-slate-200 font-semibold tracking-wide`}>
       {team.tla || "–"}
     </span>
   );
@@ -105,16 +97,8 @@ export function MatchRow({
   const quickPick = !!prediction && !prediction.pre && !finished && !live && !pending;
 
   return (
-    <div
-      className={`group relative flex items-center gap-2.5 sm:gap-4 px-3 sm:px-4 py-2.5 border-b border-slate-800 last:border-b-0 hover:bg-slate-800/40 focus-within:bg-slate-800/40 transition-colors ${
-        live ? "bg-red-500/5" : ""
-      }`}
-    >
-      <Link
-        to={matchHref(competition, match)}
-        aria-label={label}
-        className="flex flex-1 min-w-0 items-center gap-2.5 sm:gap-4 after:absolute after:inset-0 after:content-[''] focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-action focus-visible:after:-outline-offset-2"
-      >
+    <div className={live ? "mrow bg-red-500/5" : "mrow"}>
+      <Link to={matchHref(competition, match)} aria-label={label} className="mrow-link">
         <div className="w-11 sm:w-14 shrink-0 text-center">
           {finished ? (
             <span className="text-slate-400 text-xs uppercase tracking-wide">Finale</span>
@@ -171,10 +155,7 @@ export function MatchRow({
           <div>{roundLabel(match)}</div>
         </div>
       )}
-      <ChevronRight
-        className="hidden sm:block w-4 h-4 text-slate-400 group-hover:text-white shrink-0"
-        aria-hidden="true"
-      />
+      <span className="row-chev" aria-hidden="true" />
     </div>
   );
 }
@@ -183,12 +164,12 @@ export function MatchRow({
 export function TeamName({ name, short: given, className = "" }: { name: string; short?: string; className?: string }) {
   const short = given || compactTeamName(name);
   // a bit smaller on phones: the short names then fit next to the probability cells
-  const cls = `truncate text-[15px] sm:text-base ${className}`;
+  const cls = `team-name ${className}`;
   if (short === name) return <span className={cls}>{name}</span>;
+  // the full name once in the HTML; phones show data-short instead (CSS .team-name, src/styles/globals.css)
   return (
-    <span className={cls} title={name}>
-      <span className="sm:hidden">{short}</span>
-      <span className="hidden sm:inline">{name}</span>
+    <span className={cls} title={name} data-short={short}>
+      <span>{name}</span>
     </span>
   );
 }

@@ -37,7 +37,8 @@ import { HeaderLinks, headerLinkClass, PageHeader } from "../layout/PageHeader";
 import { ListChecks } from "lucide-react";
 import { hasResults, resultsPath } from "../../lib/results";
 import { featuredMatchday } from "../../lib/matchdaysCore";
-import { competitionText } from "../../lib/editorial/extraTexts";
+import { calcioHubText, competitionText } from "../../lib/editorial/extraTexts";
+import { FEATURED_COMPETITIONS, isFeaturedMatch } from "../../lib/calcioFeatured";
 import { TextSections } from "../editorial/TextSections";
 import { goalStatsPath, leadersPath, matchdayPath, PRONOSTICI } from "../../lib/footballCore";
 
@@ -79,6 +80,8 @@ export function CalcioPage() {
   const [filter, setFilter] = useQueryChoice<Filter>("periodo", FILTER_IDS, "upcoming");
   const [market, setMarket] = useQueryChoice<FootballMarket>("mercato", MARKET_IDS, "1x2");
   const [query, setQuery] = useState("");
+  // /calcio: matches of the minor competitions summarised at the bottom until the visitor asks for all of them
+  const [showAll, setShowAll] = useState(false);
   usePageMeta(competition ? competitionMeta(competition) : null);
 
   const periodRows = useMemo(() => {
@@ -120,13 +123,24 @@ export function CalcioPage() {
   if (competizione && !competition) return <NotFoundPage />;
   const round = competition ? featuredMatchday(competition) : undefined;
 
+  // /calcio shows the days of the period up to MAX_DAYS (the competition pages show every match)
+  const dayWindow = competizione
+    ? null
+    : new Set([...new Set(rows.filter((r) => !isLive(r.match)).map((r) => romeDay(r.match.utcDate)))].slice(0, MAX_DAYS));
+  const inWindow = (r: (typeof rows)[number]) => !dayWindow || isLive(r.match) || dayWindow.has(romeDay(r.match.utcDate));
+  // /calcio: the main competitions in full, the others as one summary line each (src/lib/calcioFeatured.ts);
+  // a team search or "show all" lists everything
+  const collapse = !competizione && !words.length && !showAll;
+  const shown = rows.filter((r) => inWindow(r) && (!collapse || isFeaturedMatch(r.competition, r.match)));
+  const others = collapse ? rows.filter((r) => inWindow(r) && !isFeaturedMatch(r.competition, r.match)) : [];
+
   // column headers of the probability cells, in the sticky bar (not for results, nor for combos: labels in the cells)
   const columns =
-    filter !== "results" && !!marketColumns(market).labels && rows.some((r) => !!predictionOf(r.competition, r.match));
+    filter !== "results" && !!marketColumns(market).labels && shown.some((r) => !!predictionOf(r.competition, r.match));
   // matches being played: their own group on top ("Prossime" only)
-  const live = filter === "upcoming" ? rows.filter((r) => isLive(r.match)) : [];
+  const live = filter === "upcoming" ? shown.filter((r) => isLive(r.match)) : [];
   // by Italian calendar day; inside a day, in time order with a heading whenever the competition changes
-  const listRows = rows
+  const listRows = shown
     .filter((r) => !live.includes(r))
     .map((r) => ({ ...r, prediction: predictionOf(r.competition, r.match) }));
   const dayCount = new Set(listRows.map((r) => romeDay(r.match.utcDate))).size;
@@ -165,6 +179,11 @@ export function CalcioPage() {
       <PageHeader
         icon={Trophy}
         title={competition ? `Pronostici ${competition.name}: calendario e risultati` : "Calcio: calendario e risultati"}
+        subtitle={
+          competition
+            ? undefined
+            : "Le partite dei prossimi giorni con le probabilità di ogni esito stimate dal nostro modello statistico, i risultati e i collegamenti a classifiche, squadre e statistiche delle competizioni seguite."
+        }
         breadcrumb={
           competition ? [{ label: "Pronostici", to: PRONOSTICI }, { label: competition.name }] : [{ label: "Calcio" }]
         }
@@ -278,7 +297,7 @@ export function CalcioPage() {
           </div>
           <SlipHint />
 
-          {live.length === 0 && dayCount === 0 ? (
+          {live.length === 0 && dayCount === 0 && others.length === 0 ? (
             words.length ? (
               <EmptyList
                 title={`Nessuna partita trovata per «${query.trim()}»`}
@@ -336,10 +355,23 @@ export function CalcioPage() {
                 columnHeader={false}
                 heads={competition ? "round" : "competition"}
                 linkQuery={q}
-                maxDays={competition ? undefined : 7}
+                maxDays={competition ? undefined : MAX_DAYS}
                 outcome={filter === "results" ? (r) => outcomeOf(r.competition, r.match) : undefined}
               />
+              {others.length > 0 && (
+                <OtherCompetitions rows={others} linkQuery={q} onShowAll={() => setShowAll(true)} />
+              )}
             </div>
+          )}
+
+          {!competizione && (
+            <TextSections
+              id="guida-pagina-calcio"
+              className="mt-10"
+              title="Pronostici calcio: come leggere questa pagina"
+              sections={calcioHubText(footballIndex, FEATURED_COMPETITIONS)}
+              note="Stime statistiche, non consigli di gioco. Il gioco è vietato ai minori di 18 anni e può causare dipendenza patologica."
+            />
           )}
 
           {single && competition && (
@@ -359,6 +391,72 @@ export function CalcioPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+/** Days listed on /calcio. */
+const MAX_DAYS = 7;
+
+const shortDay = (iso: string) =>
+  new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", day: "numeric", month: "short" }).format(new Date(iso));
+
+/**
+ * /calcio: the competitions not listed in full, one line each (matches in the period, first and last day), linking
+ * to the competition page where all their matches are; a button lists them here too.
+ */
+function OtherCompetitions({
+  rows,
+  linkQuery,
+  onShowAll,
+}: {
+  rows: { competition: Competition; match: Match }[];
+  linkQuery: string;
+  onShowAll: () => void;
+}) {
+  const groups = new Map<string, { competition: Competition; n: number; first: string; last: string }>();
+  for (const { competition: c, match: m } of rows) {
+    const g = groups.get(c.slug);
+    if (!g) groups.set(c.slug, { competition: c, n: 1, first: m.utcDate, last: m.utcDate });
+    else {
+      g.n++;
+      if (m.utcDate < g.first) g.first = m.utcDate;
+      if (m.utcDate > g.last) g.last = m.utcDate;
+    }
+  }
+  const order = new Map(footballIndex.map((c, i) => [c.slug, i]));
+  const list = [...groups.values()].sort((a, b) => (order.get(a.competition.slug) ?? 0) - (order.get(b.competition.slug) ?? 0));
+  const days = (g: { first: string; last: string }) => {
+    const a = shortDay(g.first);
+    const b = shortDay(g.last);
+    return a === b ? a : `${a} – ${b}`;
+  };
+  return (
+    <section aria-labelledby="altre-competizioni">
+      <div className="flex items-end gap-2.5 sm:gap-4 px-3 sm:px-4 mb-1.5">
+        <h2 id="altre-competizioni" className="flex-1 min-w-0 text-sm uppercase tracking-wide text-slate-300">
+          Altre competizioni
+        </h2>
+      </div>
+      <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
+        {list.map((g) => (
+          <Link key={g.competition.slug} to={`${competitionPath(g.competition)}${linkQuery}`} className="mrow">
+            <span className="flex-1 min-w-0">
+              <span className="block truncate text-white">{g.competition.name}</span>
+              <span className="block text-xs text-slate-400">
+                {g.n === 1 ? "1 partita" : `${g.n} partite`} · {days(g)}
+              </span>
+            </span>
+            <span className="row-chev" aria-hidden="true" />
+          </Link>
+        ))}
+      </div>
+      <p className="mt-2 px-3 sm:px-4 text-sm text-slate-400">
+        Tutte le partite di ogni competizione sono nella sua pagina.{" "}
+        <button type="button" onClick={onShowAll} className="text-action-text hover:text-action-text-hover underline">
+          Mostrale anche qui
+        </button>
+      </p>
+    </section>
   );
 }
 

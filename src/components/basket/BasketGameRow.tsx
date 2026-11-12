@@ -1,5 +1,4 @@
 import { Link } from "../../lib/links";
-import { ChevronRight } from "lucide-react";
 import { formatTime, romeDay } from "../../lib/footballCore";
 import {
   gameHref,
@@ -54,16 +53,8 @@ export function BasketGameRow({
     : undefined;
   const pickOutcome = outcome && finished ? nbaOutcome(game) : undefined;
   return (
-    <div
-      className={`group relative flex items-center gap-2.5 sm:gap-4 px-3 sm:px-4 py-2.5 border-b border-slate-800 last:border-b-0 hover:bg-slate-800/40 focus-within:bg-slate-800/40 transition-colors ${
-        live ? "bg-red-500/5" : ""
-      }`}
-    >
-      <Link
-        to={gameHref(game)}
-        aria-label={label}
-        className="flex flex-1 min-w-0 items-center gap-2.5 sm:gap-4 after:absolute after:inset-0 after:content-[''] focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-action focus-visible:after:-outline-offset-2"
-      >
+    <div className={live ? "mrow bg-red-500/5" : "mrow"}>
+      <Link to={gameHref(game)} aria-label={label} className="mrow-link">
         <div className="w-11 sm:w-14 shrink-0 text-center">
           {finished ? (
             <span className="text-slate-400 text-xs uppercase tracking-wide">Finale</span>
@@ -119,10 +110,7 @@ export function BasketGameRow({
           <div>{gameRoundLabel(game)}</div>
         </div>
       )}
-      <ChevronRight
-        className="hidden sm:block w-4 h-4 text-slate-400 group-hover:text-white shrink-0"
-        aria-hidden="true"
-      />
+      <span className="row-chev" aria-hidden="true" />
     </div>
   );
 }
