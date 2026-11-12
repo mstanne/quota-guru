@@ -130,8 +130,9 @@ fs.writeFileSync(
     generatedAt: football.generatedAt,
     competitions: football.competitions
       .filter((c) => c.matches.length || c.standings.length)
-      .map(({ code, slug, name, area, season, standings, matches, national }) => ({
+      .map(({ code, slug, name, area, season, standings, matches, national, cup, info }) => ({
         code, slug, name, area, season, hasStandings: standings.length > 0, ...(national ? { national: true } : {}),
+        ...(cup ? { cup } : {}), ...(info ? { info: true } : {}),
         // rounds of the league phase of the cups are "fase-campionato-giornata-<n>" (src/lib/footballCore.ts)
         leaguePhase: matches.some((m) => m.stage === "LEAGUE_STAGE"),
       })),

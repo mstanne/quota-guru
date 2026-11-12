@@ -10,6 +10,7 @@ import { BetSlip } from "./components/BetSlip";
 import { AgeGate } from "./components/responsible/ResponsibleGambling";
 import { ConsentBanner } from "./components/privacy/ConsentBanner";
 import { lazyPage } from "./lib/lazyPage";
+import { isInfoLeague } from "./lib/competitionKinds";
 import { findStaticRoute, fullTitle, paths } from "./routes";
 
 // Pages are split into separate JS chunks (T1). Home components above stay in the main bundle.
@@ -86,6 +87,14 @@ const TerminiPage = lazyPage(() => info().then((m) => m.TerminiPage));
 const PrivacyPage = lazyPage(() => info().then((m) => m.PrivacyPage));
 const CookiePage = lazyPage(() => info().then((m) => m.CookiePage));
 
+/** /calcio/<lega>: the hub of a lower division shown only for information; the old hubs of the other competitions
+ *  moved to /pronostici/<lega> (src/lib/legacyUrls.ts). */
+function CalcioHubOrRedirect() {
+  const { pathname } = useLocation();
+  const slug = pathname.replace(/\/+$/, "").split("/")[2] ?? "";
+  return isInfoLeague(slug) ? <CalcioPage /> : <LegacyRedirect />;
+}
+
 /** Which lazy chunks a URL needs – preloaded before hydration (see main.tsx). */
 const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/", [UpcomingMatches]],
@@ -102,7 +111,7 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/calcio/:competizione/stagioni/:stagione", [SeasonPage, NotFoundPage]],
   ["/basket/nba/risultati", [NbaResultsPage]],
   ["/basket/nba/risultati/:mese", [NbaResultsPage, NotFoundPage]],
-  ["/calcio/:competizione", [LegacyRedirect, NotFoundPage]],
+  ["/calcio/:competizione", [CalcioPage, LegacyRedirect, NotFoundPage]],
   ["/calcio/:competizione/classifica", [StandingsPage, NotFoundPage]],
   ["/calcio/:competizione/statistiche-under-over", [GoalStatsPage, NotFoundPage]],
   ["/calcio/:competizione/marcatori", [LeadersPage, NotFoundPage]],
@@ -252,7 +261,7 @@ export default function App() {
             <Route path="/basket/nba/risultati" element={<NbaResultsPage />} />
             <Route path="/basket/nba/risultati/:mese" element={<NbaResultsPage />} />
             {/* moved URLs (src/lib/legacyUrls.ts) */}
-            <Route path="/calcio/:competizione" element={<LegacyRedirect />} />
+            <Route path="/calcio/:competizione" element={<CalcioHubOrRedirect />} />
             <Route path="/calcio/:competizione/giornata/:numero" element={<LegacyRedirect />} />
             <Route path="/basket/nba" element={<LegacyRedirect />} />
             <Route path="/calcio/:competizione/classifica" element={<StandingsPage />} />

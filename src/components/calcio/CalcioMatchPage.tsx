@@ -40,6 +40,7 @@ import { PredictionPanel } from "../predictions/PredictionUi";
 import { footballSlip } from "../predictions/SlipPicks";
 import { MatchList } from "./MatchList";
 import { SectionNav } from "../layout/SectionNav";
+import { QualifyChance } from "./QualifyChance";
 import { SiteOffers } from "../SiteOffers";
 import { TeamBadge } from "./MatchRow";
 import { FootballBoxScore } from "./FootballBoxScore";
@@ -68,6 +69,18 @@ function SectionTitle({ icon: Icon, children }: { icon: typeof Info; children: R
       {children}
     </h2>
   );
+}
+
+/** Score of the first leg of a two-legged tie, when this match is the second one and the first is played. */
+function firstLegOf(c: Competition, m: Match) {
+  const leg = c.matches.find(
+    (x) =>
+      x.id !== m.id && x.stage === m.stage && x.homeTeam.id === m.awayTeam.id && x.awayTeam.id === m.homeTeam.id &&
+      x.utcDate < m.utcDate && isFinished(x),
+  );
+  if (!leg) return undefined;
+  const s = leg.score.regularTime?.home != null ? leg.score.regularTime : leg.score.fullTime;
+  return `${leg.homeTeam.shortName} – ${leg.awayTeam.shortName} ${s.home}-${s.away}`;
 }
 
 function FormRow({ competition, teamId }: { competition: Competition; teamId: number }) {
@@ -253,7 +266,9 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
   const score = onAir ? { home: onAir.score.home, away: onAir.score.away } : ft;
   const half = onAir ? (onAir.score.halftime ?? { home: null, away: null }) : ht;
   const sofascoreId = sofascoreEventFor(match.id);
-  const roundPage = isMatchdayStage(match)
+  // lower divisions shown only for information: no predictions, no round or event pages
+  const info = !!competition.info;
+  const roundPage = isMatchdayStage(match) && !info
     ? matchdaysOf(competition).find((d) => d.n === match.matchday)
     : undefined;
   const sameRound = competition.matches
@@ -269,15 +284,15 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               Home
             </Link>
             <span aria-hidden="true">›</span>
-            <Link to={PRONOSTICI} className="hover:text-white">
-              Pronostici
+            <Link to={info ? "/calcio" : PRONOSTICI} className="hover:text-white">
+              {info ? "Calcio" : "Pronostici"}
             </Link>
             <span aria-hidden="true">›</span>
             <Link to={competitionPath(competition)} className="hover:text-white">
               {competition.name}
             </Link>
             <span aria-hidden="true">›</span>
-            {event ? (
+            {event || info ? (
               <span className="text-slate-300">{teams}</span>
             ) : (
               <>
@@ -290,7 +305,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
             )}
           </nav>
 
-          <h1 className="text-white text-2xl sm:text-3xl leading-tight text-center mb-4">{matchHeadline(match)}</h1>
+          <h1 className="text-white text-2xl sm:text-3xl leading-tight text-center mb-4">{matchHeadline(match, !info)}</h1>
           <div className="flex flex-wrap items-center justify-center gap-2 mb-6 text-sm">
             <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300">{competition.name}</span>
             {roundLabel(match) &&
@@ -414,6 +429,9 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               publishedAt={archived?.published}
               slip={isUpcoming(match) && !prediction.pre ? footballSlip(competition.name, match) : undefined}
             />
+          )}
+          {prediction?.qualify && (!finished || prediction.pre) && (
+            <QualifyChance match={match} prediction={prediction} firstLeg={firstLegOf(competition, match)} />
           )}
           {!finished && match.injuries && <MatchUnavailable match={match} />}
           {isUpcoming(match) && (
@@ -559,13 +577,13 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
           </section>
         )}
 
-        <PairHistory
+        {!info && <PairHistory
           competition={competition}
           match={match}
           previous={pairPrevious.filter((m) => isFinished(m) && m.utcDate < match.utcDate)}
           next={nextMeeting}
           event={!!event}
-        />
+        />}
 
         <div className="lg:col-span-3">
           <Link
