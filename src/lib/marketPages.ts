@@ -169,7 +169,8 @@ export function marketRecord(k: MarketKey): MarketRecord[] {
   const out = MARKETS[k].sides.map((s) => ({ side: s.name, n: 0, hits: 0, sum: 0 }));
   for (const { competition: c, match: m } of allMatches) {
     const p = predictionFor(m.id);
-    const { home, away } = m.score.fullTime;
+    // markets are settled on 90 minutes: the regular-time score of cup ties that went to extra time
+    const { home, away } = m.score.regularTime?.home != null ? m.score.regularTime : m.score.fullTime;
     if (!p || !isFinished(m) || p.confidence === "bassa" || EXCLUDED.has(c.slug) || home == null || away == null) continue;
     MARKETS[k].sides.forEach((s, i) => {
       const q = s.prob(p);

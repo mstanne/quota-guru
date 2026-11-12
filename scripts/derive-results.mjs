@@ -9,6 +9,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { isCalendarSeason } from "./lib/leagues.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const LEDGER = path.resolve(root, process.env.SEO_CACHE_DIR ?? path.join(".cache", "seo"), "results.json");
@@ -89,7 +90,7 @@ fs.mkdirSync(path.dirname(LEDGER), { recursive: true });
 fs.writeFileSync(LEDGER, JSON.stringify(ledger));
 
 // ---------- pages ----------
-const seasonLabel = (y, comp) => (comp === "brasileirao" ? String(y) : `${y}/${String(y + 1).slice(2)}`);
+const seasonLabel = (y, comp) => (isCalendarSeason(comp) ? String(y) : `${y}/${String(y + 1).slice(2)}`);
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT, { recursive: true });
 const index = { football: [], nba: [] };

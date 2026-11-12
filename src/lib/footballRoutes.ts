@@ -29,7 +29,8 @@ export function footballRoutes(venueOf: (teamId: number) => EventVenue | null = 
       const card = meta.article ? footballCard(competition, match, shownPrediction(match)) : null;
       return card ? { ...meta, card } : meta;
     }),
-    ...competitions.flatMap((c) => eventRoutes(c, venueOf)),
+    // evergreen "pronostico" pages: not for the lower divisions shown only for information
+    ...competitions.filter((c) => !c.info).flatMap((c) => eventRoutes(c, venueOf)),
   ];
 }
 
@@ -58,7 +59,8 @@ function eventRoutes(c: Competition, venueOf: (teamId: number) => EventVenue | n
 
 /** Bridge pages of the URLs moved to /pronostici (src/lib/legacyUrls.ts): old hub of every competition. */
 export function legacyFootballRoutes(): RouteMeta[] {
-  return competitions.map((c) => ({
+  // the lower divisions shown only for information have their hub at /calcio/<lega> itself
+  return competitions.filter((c) => !c.info).map((c) => ({
     path: `/calcio/${c.slug}`,
     redirect: competitionPath(c),
     title: `Pronostici ${c.name}`,

@@ -19,14 +19,16 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { COMPETITIONS } from "./lib/leagues.mjs";
+import { isCalendarSeason, isNationalCup } from "./lib/leagues.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ARCHIVE = path.join(root, "data", "archivio");
 const OUT = path.join(root, "src", "data", "seasons");
 const KEEP = path.join(root, "data", "stagioni");
 
-// competitions kept in the archive only (scripts/backfill-archive.mjs), shown after the site's ones
-const EXTRA = [{ code: "CI", slug: "coppa-italia", name: "Coppa Italia", area: "Italy", cup: true }];
+// competitions kept in the archive only (scripts/backfill-archive.mjs), shown after the site's ones. Coppa Italia was
+// one of them until it became a competition of the site (November 2026, scripts/lib/leagues.mjs)
+const EXTRA = [];
 // tie-breaks of the computed tables (only when the official table is missing): head-to-head first in these leagues
 const H2H = new Set(["SA", "SB", "PD", "PPL"]);
 
@@ -64,6 +66,11 @@ const STAGES = {
   GROUP_STAGE: ["Fase a gironi", 30],
   LEAGUE_STAGE: ["Fase campionato", 30],
   PLAYOFFS: ["Playoff", 40],
+  // national cups: the rounds before the round of 32
+  LAST_512: ["Primo turno", 41],
+  LAST_256: ["Turno eliminatorio", 42],
+  LAST_128: ["Sessantaquattresimi di finale", 43],
+  LAST_64: ["Trentaduesimi di finale", 44],
   LAST_32: ["Sedicesimi di finale", 45],
   LAST_16: ["Ottavi di finale", 50],
   QUARTER_FINALS: ["Quarti di finale", 60],
@@ -89,7 +96,7 @@ function stageOf(m, code) {
     if (EUROPEAN.has(code)) {
       if (month >= 7 && month <= 8) return "QUALIFYING_PLAYOFFS";
       if (month >= 9) return "GROUP_STAGE";
-    } else if (code === "CI") return "EARLY_ROUNDS";
+    } else if (isNationalCup(code)) return "EARLY_ROUNDS";
   }
   return m.stage ?? "REGULAR_SEASON";
 }
@@ -362,7 +369,7 @@ function main() {
     const dir = path.join(calcio, c.slug);
     if (!fs.existsSync(dir)) continue;
     const cup = c.cup ?? !c.domestic;
-    const calendar = c.code === "BSA";
+    const calendar = isCalendarSeason(c.code);
     const snap = football.competitions.find((x) => x.code === c.code);
     const current =
       Number(snap?.season?.startDate?.slice(0, 4)) ||

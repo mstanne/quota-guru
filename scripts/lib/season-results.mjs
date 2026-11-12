@@ -4,13 +4,14 @@
 // by match id, the snapshot winning (it is the fresher of the two).
 // Without the history (local build without token) only the snapshot is available: `complete` is then false and the
 // pages say how many matches the numbers are based on.
+import { isCalendarSeason } from "./leagues.mjs";
 
 const played = (m) => ["FINISHED", "AWARDED"].includes(m.status) && m.score?.fullTime?.home != null;
 
 /** Season start year of a result: European seasons start in July, the Brasileirão follows the calendar year. */
 export const seasonOfDate = (date, code) => {
   const y = Number(date.slice(0, 4));
-  return code === "BSA" ? y : Number(date.slice(5, 7)) >= 7 ? y : y - 1;
+  return isCalendarSeason(code) ? y : Number(date.slice(5, 7)) >= 7 ? y : y - 1;
 };
 
 /**

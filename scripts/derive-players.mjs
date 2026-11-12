@@ -17,6 +17,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { absenceIt, country, leagueIt, placeIt, positionIt, transferTypeIt } from "./lib/italian.mjs";
 import { playerName, playerPart, playerUrl } from "../src/lib/playerNames.mjs";
+import { isCalendarSeason } from "./lib/leagues.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "data", "players");
@@ -39,7 +40,7 @@ const ledger = read(path.join(process.env.SEO_CACHE_DIR ?? path.join(".cache", "
 const teamById = new Map(teams.map((t) => [t.id, t]));
 const compBySlug = new Map(football.competitions.map((c) => [c.slug, c]));
 const currentOf = (slug) => Number(compBySlug.get(slug)?.season?.startDate?.slice(0, 4)) || null;
-const label = (y, code) => (code === "BSA" ? String(y) : `${y}/${String(y + 1).slice(2)}`);
+const label = (y, code) => (isCalendarSeason(code) ? String(y) : `${y}/${String(y + 1).slice(2)}`);
 const fields = playerMatches.fields ?? [];
 const lineOf = (row) => Object.fromEntries(fields.map((k, i) => [k, row[i] ?? null]));
 

@@ -116,7 +116,8 @@ async function main() {
     const unavailable = {};
     let complete = true;
     // national teams: their absences come with the fixtures (/injuries?ids=, scripts/fetch-football.mjs)
-    for (const c of COMPETITIONS.filter((c) => !c.national)) {
+    // national cups and lower divisions: API-Football has no injury list for them (coverage checked November 2026)
+    for (const c of COMPETITIONS.filter((c) => !c.national && !c.cup && !c.info)) {
       const y = Number(football.competitions.find((x) => x.slug === c.slug)?.season?.startDate?.slice(0, 4));
       if (!y) continue;
       try {

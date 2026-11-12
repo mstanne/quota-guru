@@ -29,6 +29,7 @@ const STORE = path.join(root, ".cache", "match-details", "football-store.json");
 const STATUS = path.join(root, "public", "stato-dati.json");
 
 import { COMPETITIONS, NATIONAL } from "./lib/leagues.mjs";
+import { isCalendarSeason, isInfoLeague, isNationalCup } from "./lib/leagues.mjs";
 export { COMPETITIONS };
 
 const DAYS_BACK = 45;
@@ -78,11 +79,16 @@ export function roundOf(round = "", national = false) {
   }
   let m = round.match(/^Regular Season - (\d+)/i);
   if (m) return { stage: "REGULAR_SEASON", matchday: Number(m[1]) };
+  // Serie C: "Girone A - 13" (each group is its own API-Football league)
+  m = round.match(/^Girone [A-Z] - (\d+)$/i);
+  if (m) return { stage: "REGULAR_SEASON", matchday: Number(m[1]) };
   m = round.match(/^League Stage - (\d+)/i);
   if (m) return { stage: "LEAGUE_STAGE", matchday: Number(m[1]) };
   // European cups until 2023/24 (and the past seasons of the archive)
   m = round.match(/^Group Stage - (\d+)/i);
   if (m) return { stage: "GROUP_STAGE", matchday: Number(m[1]) };
+  // qualifying rounds of the national cups too: "1st Round Qualifying" (FA Cup), "2nd Preliminary Round" (KNVB Beker)
+  if (/qualifying|preliminary/i.test(round)) return { stage: "QUALIFICATION", matchday: null };
   // national cups (Coppa Italia): "1st Round", "2nd Round"…
   m = round.match(/^(\d)(?:st|nd|rd|th) Round/i);
   if (m) return { stage: `ROUND_${m[1]}`, matchday: null };
@@ -90,6 +96,13 @@ export function roundOf(round = "", national = false) {
   if (r.includes("qualifying") || r.startsWith("preliminary")) return { stage: "QUALIFICATION", matchday: null };
   if (r.includes("knockout round play-offs") || r === "play-offs" || r.includes("play-off")) return { stage: "PLAYOFFS", matchday: null };
   if (r.includes("3rd place")) return { stage: "THIRD_PLACE", matchday: null };
+  // national cups: "Round of 128", "1/128-finals" (128 ties, 256 clubs), "… Replays" (FA Cup) in the same round
+  const last = r.match(/round of (\d+)/);
+  if (last && ["256", "128", "64"].includes(last[1])) return { stage: `LAST_${last[1]}`, matchday: null };
+  const fin = r.match(/^1\/(\d+)-finals/);
+  if (fin && Number(fin[1]) >= 32) return { stage: `LAST_${Number(fin[1]) * 2}`, matchday: null };
+  if (fin && fin[1] === "16") return { stage: "LAST_32", matchday: null };
+  if (fin && fin[1] === "8") return { stage: "LAST_16", matchday: null };
   if (r.includes("round of 32") || r.includes("16th finals")) return { stage: "LAST_32", matchday: null };
   if (r.includes("round of 16") || r.includes("8th finals")) return { stage: "LAST_16", matchday: null };
   if (r.includes("quarter")) return { stage: "QUARTER_FINALS", matchday: null };
@@ -113,6 +126,11 @@ const H2H_NAMES = {
 for (const c of NATIONAL) H2H_NAMES[c.apiName] = c.name;
 const h2hCompetition = (name, country) =>
   country === "Brazil" && name === "Serie A" ? "Brasileirão" : (H2H_NAMES[name] ?? name);
+
+/** National cups: finals (and super cups) on neutral ground, unless the competition plays them at a club's ground. */
+export function neutralGame(c, f) {
+  return !c.homeFinal && (c.supercup || roundOf(f.league?.round).stage === "FINAL");
+}
 
 export function compactFixture(f, teamOf, idOf, national = false) {
   const short = f.fixture?.status?.short;
@@ -278,18 +296,31 @@ async function main() {
         continue;
       }
       // current season (refreshed daily): year, start and end dates
-      if (!fresh(store.seasons[c.code]?.at, 1)) {
+      if (!fresh(store.seasons[c.code]?.at, 1) || (c.apiName && !store.seasons[c.code]?.name)) {
         const lg = await api.get(`/leagues?id=${c.api}&current=true`);
         const s = lg[0]?.seasons?.find((x) => x.current) ?? lg[0]?.seasons?.[0];
-        if (s) store.seasons[c.code] = { at: new Date(now).toISOString(), year: s.year, start: s.start, end: s.end };
+        if (s)
+          store.seasons[c.code] = {
+            at: new Date(now).toISOString(), year: s.year, start: s.start, end: s.end,
+            name: lg[0]?.league?.name ?? null, country: lg[0]?.country?.name ?? null,
+          };
       }
       const season = store.seasons[c.code];
       if (!season) throw new Error("stagione corrente non trovata");
+      // competitions added in November 2026 (national cups, lower divisions): a wrong id would publish another
+      // competition under this name (several super cups are all called "Super Cup": the country tells them apart)
+      if (c.apiName && ((season.name ?? "").toLowerCase() !== c.apiName.toLowerCase() || (season.country ?? "") !== c.country))
+        throw new Error(`l'id ${c.api} corrisponde a "${season.name}" (${season.country}), non a "${c.apiName}" (${c.country})`);
       const teamOf = (t) => resolveTeam(t, c.slug);
       const idOf = (apiId, home, away, date) => resolveMatch(apiId, c.slug, home, away, date);
 
       const fixtures = await api.get(`/fixtures?league=${c.api}&season=${season.year}&from=${from}&to=${to}`);
-      const matches = fixtures.map((f) => compactFixture(f, teamOf, idOf)).sort((a, b) => a.utcDate.localeCompare(b.utcDate));
+      const matches = fixtures
+        .map((f) => {
+          const m = compactFixture(f, teamOf, idOf);
+          return c.cup && neutralGame(c, f) ? { ...m, neutral: true } : m;
+        })
+        .sort((a, b) => a.utcDate.localeCompare(b.utcDate));
       let standings = prev?.standings ?? [];
       try {
         const s = await api.get(`/standings?league=${c.api}&season=${season.year}`);
@@ -306,6 +337,9 @@ async function main() {
         slug: c.slug,
         name: c.name,
         area: c.area,
+        // kind of competition for the site (scripts/lib/leagues.mjs): national cup / super cup, lower division
+        ...(c.cup ? { cup: c.supercup ? "super" : "national" } : {}),
+        ...(c.info ? { info: true } : {}),
         season: {
           startDate: season.start,
           endDate: season.end,
@@ -316,7 +350,7 @@ async function main() {
       };
       // top scorers, assists and cards (4 requests, refreshed daily): /calcio/<competition>/marcatori
       store.leaders ??= {};
-      if (!fresh(store.leaders[c.code]?.at, 1) || store.leaders[c.code]?.season !== season.year) {
+      if (c.leaders !== false && !fresh(store.leaders[c.code]?.at, 1) || store.leaders[c.code]?.season !== season.year) {
         const row = (r) => {
           const st = r.statistics?.find((x) => x.league?.id === c.api) ?? r.statistics?.[0] ?? {};
           const t = st.team ? teamOf(st.team) : null;
@@ -346,7 +380,7 @@ async function main() {
           red: await get("topredcards"),
         };
       }
-      {
+      if (store.leaders[c.code]) {
         const { at, season: _s, ...lists } = store.leaders[c.code];
         if (lists.scorers?.length) comp.leaders = { updatedAt: at, ...lists };
       }
@@ -367,7 +401,9 @@ async function main() {
             const date = new Date(f.fixture.date).toISOString().replace(".000Z", "Z");
             // the current season shares ids with the matches above; past seasons need no pairing
             const id = y === season.year ? idOf(f.fixture.id, home, away, date) : MATCH_OFFSET + f.fixture.id;
-            return { id, date, comp: c.code, home, away, hg: f.goals.home, ag: f.goals.away };
+            // ties decided in extra time: the 90-minute score (the model predicts 90 minutes)
+            const rt = ["AET", "PEN"].includes(f.fixture?.status?.short) && f.score?.fulltime?.home != null ? f.score.fulltime : f.goals;
+            return { id, date, comp: c.code, home, away, hg: rt.home, ag: rt.away, ...(c.cup && neutralGame(c, f) ? { neutral: true } : {}) };
           });
         if (!list.length && y !== season.year) continue;
         // a season comes from one source only: drop what an older source left for it
@@ -396,6 +432,27 @@ async function main() {
       if (err instanceof BudgetError || err instanceof PlanError) stopped = err.message;
       console.warn(`Stadi delle nazionali non verificati: ${err.message}`);
     }
+  }
+
+  // national cups: only matches with at least one club of the leagues on the site (lower divisions included). The
+  // early rounds between amateur sides (FA Cup qualifying, Coupe de France regional rounds) would add hundreds of
+  // pages with nothing to say about them
+  {
+    const leagueTeams = new Set();
+    for (const c of competitions) {
+      const def = COMPETITIONS.find((d) => d.code === c.code);
+      if (!def?.domestic) continue;
+      for (const g of c.standings ?? []) for (const r of g.table ?? []) leagueTeams.add(r.team.id);
+      for (const m of c.matches) leagueTeams.add(m.homeTeam.id), leagueTeams.add(m.awayTeam.id);
+    }
+    for (const c of competitions) {
+      if (!isNationalCup(c.code) || !leagueTeams.size) continue;
+      const before = c.matches.length;
+      c.matches = c.matches.filter((m) => leagueTeams.has(m.homeTeam.id) || leagueTeams.has(m.awayTeam.id));
+      if (c.matches.length < before) console.log(`  ${c.name}: ${before - c.matches.length} partite tra squadre di serie non seguite escluse`);
+    }
+    for (let i = competitions.length - 1; i >= 0; i--)
+      if (isNationalCup(competitions[i].code) && !competitions[i].matches.length) competitions.splice(i, 1);
   }
 
   // head-to-head of the next matches (1 request per pairing, kept for a day)
@@ -525,7 +582,14 @@ async function main() {
   status.ok = !stopped && Object.values(status.competitions).every((s) => s.ok);
   if (stopped) status.message = stopped;
   Object.assign(status, api.stats());
-  // clubs met for the first time in this run (new id, or paired with a club of the previous data): checked by hand
+  // clubs met for the first time in this run (new id, or paired with a club of the previous data): checked by hand.
+  // New clubs of the national cups and of the lower divisions (amateur sides of the FA Cup, Serie C…) get their own
+  // new id and need no check: only counted, so the daily e-mail is not flooded (pairings are always listed)
+  const quiet = teamReport.filter((r) => r.kind === "nuova" && (isNationalCup(r.competition) || isInfoLeague(r.competition)));
+  if (quiet.length) {
+    console.log(`Squadre nuove di coppe nazionali e serie minori: ${quiet.length}`);
+    teamReport.splice(0, teamReport.length, ...teamReport.filter((r) => !quiet.includes(r)));
+  }
   if (teamReport.length) {
     status.squadreNuove = teamReport;
     for (const r of teamReport)
@@ -712,7 +776,7 @@ async function neutralGround(api, store, competitions, keepHistory, venueOf, nam
 
 const seasonStartOf = (date, code) => {
   const y = Number(date.slice(0, 4));
-  return code === "BSA" ? y : Number(date.slice(5, 7)) >= 7 ? y : y - 1;
+  return isCalendarSeason(code) ? y : Number(date.slice(5, 7)) >= 7 ? y : y - 1;
 };
 
 /** API-Football team id of a site team id (from the id map). */

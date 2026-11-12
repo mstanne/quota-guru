@@ -38,7 +38,7 @@ const byId = new Map();
 for (const r of history.results ?? []) byId.set(r.id, r);
 for (const c of snapshot.competitions)
   for (const m of c.matches) {
-    const ft = m.score?.fullTime;
+    const ft = m.score?.regularTime?.home != null ? m.score.regularTime : m.score?.fullTime; // 90 minutes
     if (!["FINISHED", "AWARDED"].includes(m.status) || ft?.home == null) continue;
     if (!byId.has(m.id))
       byId.set(m.id, { id: m.id, date: m.utcDate, comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, hg: ft.home, ag: ft.away });

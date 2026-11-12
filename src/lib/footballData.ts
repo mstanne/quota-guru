@@ -7,6 +7,7 @@ import index from "../data/football/index.json";
 import { settleMatch, matchSlug, type Competition, type HeadToHead, type Match } from "./footballCore";
 import type { Prediction } from "./predictionsCore";
 import type { TrackRecord } from "./trackRecord";
+import { withKind } from "./competitionKinds";
 import { leagueGoalStats, teamGoalStats, type GoalResult } from "./goalStats.mjs";
 
 export interface CompetitionInfo {
@@ -20,6 +21,10 @@ export interface CompetitionInfo {
   leaguePhase?: boolean;
   /** Competition of national teams. */
   national?: boolean;
+  /** National cup or super cup. */
+  cup?: "national" | "super";
+  /** Lower division shown only for information (no predictions). */
+  info?: boolean;
 }
 interface CompetitionFile {
   generatedAt: string;
@@ -63,7 +68,7 @@ const idx = index as unknown as {
   /** Same for the national teams (missing in data built before they were added). */
   trackRecordNational?: Omit<TrackRecord, "source">;
 };
-export const footballIndex = idx.competitions;
+export const footballIndex = idx.competitions.map(withKind);
 export const footballGeneratedAt = idx.generatedAt;
 /** Recalculated track record, computed at build time (see src/lib/trackRecord.ts). */
 export const recalculatedFootballTrack = idx.trackRecord;
@@ -72,7 +77,7 @@ export const recalculatedNationalTrack: Omit<TrackRecord, "source"> = idx.trackR
   last30: { n: 0, hits: 0 },
   recent: [],
 };
-export const findCompetitionInfo = (slug?: string) => idx.competitions.find((c) => c.slug === slug);
+export const findCompetitionInfo = (slug?: string) => footballIndex.find((c) => c.slug === slug);
 
 /** One competition with the lookups its pages need. */
 export class CompetitionData {
@@ -83,7 +88,7 @@ export class CompetitionData {
     this.file = file;
     this.generatedAt = file.generatedAt;
     // matches past their expected end but not finished at the source become RESULT_PENDING (see settleMatch)
-    this.competition = { ...file.competition, matches: file.competition.matches.map((m) => settleMatch(m)) };
+    this.competition = withKind({ ...file.competition, matches: file.competition.matches.map((m) => settleMatch(m)) });
   }
   findMatch(slug?: string) {
     return this.competition.matches.find((m) => matchSlug(m) === slug);
@@ -126,6 +131,10 @@ export function loadCompetitionData(slug: string): Promise<unknown> {
   return load().then((m) => void cache.set(slug, new CompetitionData(m.default)));
 }
 export const loadAllCompetitionData = () => Promise.all(idx.competitions.map((c) => loadCompetitionData(c.slug)));
+/** Competitions listed with their matches on /calcio: the lower divisions shown only for information stay out (their
+ *  data would make the page much heavier); they are reached through their own chip and page. */
+const onCalcioHub = () => footballIndex.filter((c) => !c.info);
+const loadHubCompetitionData = () => Promise.all(onCalcioHub().map((c) => loadCompetitionData(c.slug)));
 
 /** The competition's data; while it downloads, a promise is thrown for Suspense. null = no such competition. */
 export function useCompetitionData(slug?: string): CompetitionData | null {
@@ -137,9 +146,10 @@ export function useCompetitionData(slug?: string): CompetitionData | null {
 
 /** Every competition (the "/calcio" page); throws a promise for Suspense until all are downloaded. */
 export function useAllCompetitionData(): CompetitionData[] {
-  const missing = idx.competitions.filter((c) => !cache.has(c.slug) && loaders[fileOf(c.slug)]);
-  if (missing.length) throw loadAllCompetitionData();
-  return idx.competitions.map((c) => cache.get(c.slug)).filter((d): d is CompetitionData => !!d);
+  const list = onCalcioHub();
+  const missing = list.filter((c) => !cache.has(c.slug) && loaders[fileOf(c.slug)]);
+  if (missing.length) throw loadHubCompetitionData();
+  return list.map((c) => cache.get(c.slug)).filter((d): d is CompetitionData => !!d);
 }
 
 /** Competitions of national teams (the /pronostici/nazionali page); Suspense like useAllCompetitionData. */
@@ -151,7 +161,7 @@ export function useNationalCompetitionData(): CompetitionData[] {
 
 /** Data a URL needs before hydration (see preloadForPath in App.tsx). */
 export function preloadFootballData(pathname: string): Promise<unknown> {
-  if (/^\/calcio\/?$/.test(pathname)) return loadAllCompetitionData();
+  if (/^\/calcio\/?$/.test(pathname)) return loadHubCompetitionData();
   if (/^\/pronostici\/nazionali\/?$/.test(pathname))
     return Promise.all(idx.competitions.filter((c) => c.national).map((c) => loadCompetitionData(c.slug)));
   const m = pathname.match(/^\/(?:calcio|pronostici)\/([^/]+)/);

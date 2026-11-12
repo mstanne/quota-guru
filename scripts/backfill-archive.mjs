@@ -1,7 +1,8 @@
 // Fills the permanent archive (data/archivio/, see scripts/archive-data.mjs) with past seasons, a small block at a
 // time, from API-Sports (Pro plan).
 //
-// Football: for every competition on the site, plus the archive-only ones in ARCHIVE_ONLY (Coppa Italia), the current
+// Football: for every competition on the site (national cups included; lower divisions only INFO_SEASONS_BACK seasons
+// back), plus the archive-only ones in ARCHIVE_ONLY (none at the moment), the current
 // season (matches older than 3 days) and the ARCHIVE_SEASONS before it (default 10, i.e. back to 2016/17; set the
 // repository variable ARCHIVE_SEASONS to change it): first the list of finished matches (1 request per season), then the
 // matches with all their details, 20 per request (/fixtures?ids=…: result, scorers, cards, substitutions, line-ups,
@@ -25,6 +26,7 @@ import { footballDetails } from "./lib/match-details.mjs";
 import { COMPETITIONS, compactFixture, compactStandings, groupIt } from "./fetch-football.mjs";
 import { nationalTeamResolver } from "./lib/national-teams.mjs";
 import { ARCHIVE, archivedMatch, readJson, upsertMatches, writeJson } from "./archive-data.mjs";
+import { isCalendarSeason } from "./lib/leagues.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PROGRESS = path.join(ARCHIVE, "recupero.json");
@@ -35,17 +37,11 @@ const MAX = Number(process.env.ARCHIVE_BACKFILL_MAX ?? 150);
 const FINAL = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
 // Competitions kept in the archive only (no pages, no predictions yet). `check`: the league name the API must return
 // for `api` before anything is archived, so a wrong id can never write another competition into the folder.
-const ARCHIVE_ONLY = [
-  {
-    code: "CI",
-    slug: "coppa-italia",
-    name: "Coppa Italia",
-    api: 137,
-    check: /coppa italia/i,
-    country: "Italy",
-    archiveOnly: true,
-  },
-];
+// Coppa Italia was archived here before it became a competition of the site (November 2026, scripts/lib/leagues.mjs):
+// same code and folder, so its archive goes on where it was.
+const ARCHIVE_ONLY = [];
+// lower divisions (shown only for information): fewer past seasons, they matter less to the site
+const INFO_SEASONS_BACK = 3;
 
 const logo = (u) => (typeof u === "string" && /^https:\/\/media\.api-sports\.io\/football\/teams\/\d+\.png$/.test(u) ? u : null);
 
@@ -88,7 +84,12 @@ async function football(api, progress, budget) {
   for (let back = 0; back <= SEASONS_BACK; back++)
     // national teams: no past-season archive (their recent results are in the model history)
     for (const c of [...COMPETITIONS.filter((c) => !c.national), ...extra]) {
-      const current = seasons[c.code]?.year ?? (c.code === "BSA" ? year : new Date().getUTCMonth() >= 6 ? year : year - 1);
+      if (c.info && back > INFO_SEASONS_BACK) continue;
+      // competitions checked by name (national cups, lower divisions): only once scripts/fetch-football.mjs has seen
+      // that the id is the right one (a wrong id would archive another competition under this name)
+      const seen = seasons[c.code];
+      if (c.apiName && (!seen?.name || seen.name.toLowerCase() !== c.apiName.toLowerCase() || seen.country !== c.country)) continue;
+      const current = seen?.year ?? (isCalendarSeason(c.code) ? year : new Date().getUTCMonth() >= 6 ? year : year - 1);
       jobs.push({ c, y: current - back, current: back === 0 });
     }
 
@@ -147,9 +148,11 @@ async function football(api, progress, budget) {
 async function standingsJobs(api, progress, budget, { resolve, seasons, year }) {
   progress.standings ??= {};
   for (let back = 1; back <= SEASONS_BACK; back++)
-    for (const c of COMPETITIONS.filter((c) => c.domestic)) {
+    for (const c of COMPETITIONS.filter((c) => c.domestic && !(c.info && back > INFO_SEASONS_BACK))) {
       if (budget.left <= 0) return;
-      const current = seasons[c.code]?.year ?? (c.code === "BSA" ? year : new Date().getUTCMonth() >= 6 ? year : year - 1);
+      const seen = seasons[c.code];
+      if (c.apiName && (!seen?.name || seen.name.toLowerCase() !== c.apiName.toLowerCase())) continue;
+      const current = seasons[c.code]?.year ?? (isCalendarSeason(c.code) ? year : new Date().getUTCMonth() >= 6 ? year : year - 1);
       const y = current - back;
       const key = `${c.code}-${y}`;
       const done = progress.standings[key];

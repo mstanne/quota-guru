@@ -24,8 +24,11 @@
 import { footballDetails } from "../../../scripts/lib/match-details.mjs";
 import { COMPETITIONS } from "../../../scripts/lib/leagues.mjs";
 
-const LEAGUES = new Set(COMPETITIONS.map((c) => c.api));
-const SLUG = Object.fromEntries(COMPETITIONS.map((c) => [c.api, c.slug]));
+// lower divisions (`info`, shown only for information) stay out: up to ~100 more matches on a Saturday would eat the
+// day's requests of the competitions with predictions; their scores come from the 15-minute runs (live-scores.yml)
+const LIVE = COMPETITIONS.filter((c) => !c.info);
+const LEAGUES = new Set(LIVE.map((c) => c.api));
+const SLUG = Object.fromEntries(LIVE.map((c) => [c.api, c.slug]));
 const BEFORE_MS = 75 * 60e3; // official line-ups come about an hour before kick-off
 const AFTER_MS = 3.5 * 3600e3; // longest match (extra time, penalties, delays)
 const KEEP_FINISHED_MS = 20 * 60e3; // a finished match stays available for a while

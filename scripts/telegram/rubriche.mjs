@@ -28,6 +28,8 @@ const EVERY_DAY = [0, 1, 2, 3, 4, 5, 6];
 const PRIORITY = [
   "Serie A",
   "Champions League",
+  "Supercoppa Italiana",
+  "Coppa Italia",
   "Europa League",
   "Conference League",
   "Premier League",
@@ -48,6 +50,7 @@ const PRIORITY = [
   "Amichevoli internazionali",
 ];
 const CUPS = new Set(["Champions League", "Europa League", "Conference League"]);
+const ITALIAN_CUPS = new Set(["Coppa Italia", "Supercoppa Italiana"]);
 const rank = (where) => (PRIORITY.includes(where) ? PRIORITY.indexOf(where) : PRIORITY.length);
 const byCompThenTime = (a, b) =>
   rank(a.where) - rank(b.where) || a.where.localeCompare(b.where) || a.kickoff.localeCompare(b.kickoff);
@@ -361,6 +364,42 @@ export const RUBRICHE = [
               ? `gol attesi ${(e.prediction.xg[0] + e.prediction.xg[1]).toFixed(1).replace(".", ",")}`
               : null,
           })),
+        },
+      };
+    },
+  },
+  {
+    // Coppa Italia and Supercoppa Italiana (November 2026): the matches of the day with the chance of going through
+    id: "coppa-italia",
+    name: "Coppa Italia e Supercoppa",
+    days: EVERY_DAY,
+    time: "11:30",
+    build({ data, today, nowMs }) {
+      const ids = currentIds(data);
+      const list = data.archive.calcio.filter(
+        (e) => open(e) && ids.has(e.id) && ITALIAN_CUPS.has(e.where) && dayOf(e) === today && Date.parse(e.kickoff) > nowMs,
+      );
+      if (!list.length) return null;
+      const comps = [...new Set(list.map((e) => e.where))].sort((a, b) => rank(a) - rank(b));
+      const through = (e) => {
+        const q = e.prediction.qualify;
+        if (!q) return null;
+        const [h, a] = e.label.split(" – ");
+        const fav = q[0] >= q[1] ? [h, q[0]] : [a, q[1]];
+        return `${e.final || e.where === "Supercoppa Italiana" ? "Alza il trofeo" : "Passa il turno"}: ${esc(fav[0])} ${pct(fav[1])}`;
+      };
+      const line = (e) => [`${timeOf(e)} ${esc(e.label)}`, p1x2(e.prediction.p), through(e)].filter(Boolean).join("\n");
+      const title = `🇮🇹 <b>${comps.join(" e ")}</b> – le partite di oggi`;
+      const link = `Tutte le probabilità: ${anchor(`/pronostici/${compSlug(data, comps[0])}`, `pronostici ${comps[0]}`, "coppa-italia")}`;
+      return {
+        caption: post(title, `${plural(list.length, "partita", "partite")} in programma.`, highlights(list), link),
+        text: post(title, list.map(line).join("\n\n"), link),
+        card: {
+          type: "matchList",
+          badge: comps.length === 1 ? comps[0] : "Coppe italiane",
+          title: comps.length === 1 ? `${comps[0]}, oggi` : "Coppe italiane, oggi",
+          subtitle: `${capital(dayLabel(today))} · probabilità 1X2 sui 90 minuti`,
+          groups: groups(list, (e) => ({ ...matchRow(e), note: through(e)?.replace(/<[^>]+>/g, "") ?? null })),
         },
       };
     },
@@ -858,7 +897,14 @@ function italyToday({ data, today, nowMs }) {
 }
 
 /** Competitions whose line-ups are posted: every Serie A match, cup matches only with an Italian club. */
-const LINEUP_LEAGUES = new Set(["serie-a", "champions-league", "europa-league", "conference-league"]);
+const LINEUP_LEAGUES = new Set([
+  "serie-a",
+  "champions-league",
+  "europa-league",
+  "conference-league",
+  "coppa-italia",
+  "supercoppa-italiana",
+]);
 
 /** Official line-ups, one post per match, as soon as the live worker has them (event rubric: no time slot). */
 function lineupPosts({ data, nowMs }) {

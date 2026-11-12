@@ -29,7 +29,9 @@ export function llmsTxt(url: (path: string) => string) {
     link("Pronostici di domani", "/pronostici/domani"),
     link("Bilancio dei pronostici", TRACK_RECORD_PATH, "percentuale di esiti azzeccati per competizione e mese"),
     link("Metodologia", paths.metodologia, "come sono calcolate le probabilità e da dove arrivano i dati"),
-    ...footballIndex.map((c) => link(`Pronostici ${c.name}`, competitionPath(c))),
+    ...footballIndex.map((c) =>
+      c.info ? link(`${c.name}: classifica e risultati`, competitionPath(c), "senza pronostici") : link(`Pronostici ${c.name}`, competitionPath(c)),
+    ),
     link("Pronostici NBA", "/pronostici/nba"),
     link("Tennis: pronostico testa a testa", paths.tennis),
     "",

@@ -8,13 +8,16 @@ import type { RouteMeta } from "../routes";
 
 export * from "./matchdaysCore";
 
+/** Round pages of predictions: not for the lower divisions shown only for information. */
+const withPredictions = () => competitions.filter((c) => !c.info);
+
 export function matchdayRoutes(): RouteMeta[] {
-  return competitions.flatMap((c) => matchdaysOf(c).map((d) => matchdayMeta(c, d, (id) => !!predictionFor(id))));
+  return withPredictions().flatMap((c) => matchdaysOf(c).map((d) => matchdayMeta(c, d, (id) => !!predictionFor(id))));
 }
 
 /** Bridge pages of the old round URLs /calcio/<lega>/giornata/<n> (src/lib/legacyUrls.ts). */
 export function legacyMatchdayRoutes(): RouteMeta[] {
-  return competitions.flatMap((c) =>
+  return withPredictions().flatMap((c) =>
     matchdaysOf(c).map((d) => ({
       path: `/calcio/${c.slug}/giornata/${d.n}`,
       redirect: matchdayPath(c, d),

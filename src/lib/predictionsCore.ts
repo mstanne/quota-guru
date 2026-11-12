@@ -23,6 +23,9 @@ export interface Prediction {
   pick: "1" | "X" | "2" | "1X" | "X2";
   /** How much data the model had on the two teams. */
   confidence: "alta" | "media" | "bassa";
+  /** Knockout ties of the cups: chance that each side goes through [home, away] (extra time and penalties included;
+   *  two legs: the aggregate, with the first leg's score once played). Missing elsewhere. */
+  qualify?: [number, number];
   /** true = made before kick-off of a match that is now finished. */
   pre: boolean;
 }

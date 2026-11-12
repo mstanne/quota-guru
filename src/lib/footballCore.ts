@@ -7,6 +7,7 @@ import { pickHit, pickLabel, pickProbability, type Prediction } from "./predicti
 import type { OgCard } from "../routes";
 import type { FootballDetails } from "./matchDetails";
 import { playerName } from "./playerNames.mjs";
+import { isCalendarSeason, isInfoLeague } from "./competitionKinds";
 
 export interface Team {
   id: number;
@@ -116,6 +117,10 @@ export interface Competition {
   standings: { stage: string; group: string | null; table: StandingRow[] }[];
   /** Competition of national teams (separate prediction model and track record). */
   national?: boolean;
+  /** National cup or super cup (scripts/lib/leagues.mjs): knockout rounds, chance of going through. */
+  cup?: "national" | "super";
+  /** Lower division shown only for information: standings, clubs and matches, no predictions. */
+  info?: boolean;
   /** Top scorers, assists and cards of the season (API-Football, refreshed daily). */
   leaders?: Leaders;
 }
@@ -250,8 +255,10 @@ export type CompetitionRef = Pick<Competition, "code" | "slug" | "name">;
 //   /pronostici/<lega>/<casa>-<trasferta>      evergreen event page: always the next meeting of that fixture
 //   /calcio/<lega>/<casa>-<trasferta>-<data>   one match, kept forever as the archive of its prediction
 //   /calcio/<lega>/classifica, /risultati      standings and results stay under /calcio
+//   /calcio/<lega>                             hub of a lower division shown only for information (no predictions)
 export const PRONOSTICI = "/pronostici";
-export const competitionPath = (c: Pick<CompetitionRef, "slug">) => `${PRONOSTICI}/${c.slug}`;
+export const competitionPath = (c: Pick<CompetitionRef, "slug">) =>
+  isInfoLeague(c.slug) ? `/calcio/${c.slug}` : `${PRONOSTICI}/${c.slug}`;
 export const standingsPath = (c: CompetitionRef) => `/calcio/${c.slug}/classifica`;
 /** Top scorers, assists and cards of a competition (src/components/stats/LeadersPage.tsx). */
 export const leadersPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slug}/marcatori`;
@@ -259,7 +266,7 @@ export const leadersPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slu
 export const cornersCardsPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slug}/statistiche-corner-cartellini`;
 /** Under/Over and Goal statistics of every team of a competition (src/components/stats/GoalStatsPage.tsx). */
 export const goalStatsPath = (c: Pick<CompetitionRef, "slug">) => `/calcio/${c.slug}/statistiche-under-over`;
-/** "2026/27", or "2026" for calendar-year seasons (Brasileirão, and national-team competitions within one year). */
+/** "2026/27", or "2026" for calendar-year seasons (Brazil, and national-team competitions within one year). */
 export function seasonName(c: Pick<Competition, "code" | "season"> & { national?: boolean }) {
   const y = Number(c.season?.startDate?.slice(0, 4));
   if (!y) return "";
@@ -267,7 +274,7 @@ export function seasonName(c: Pick<Competition, "code" | "season"> & { national?
     const end = Number(c.season?.endDate?.slice(0, 4)) || y;
     return end === y ? String(y) : `${y}/${String(end).slice(2)}`;
   }
-  return c.code === "BSA" ? String(y) : `${y}/${String(y + 1).slice(2)}`;
+  return isCalendarSeason(c.code) ? String(y) : `${y}/${String(y + 1).slice(2)}`;
 }
 export const matchPath = (c: CompetitionRef, m: Match) => `/calcio/${c.slug}/${matchSlug(m)}`;
 export const eventPath = (c: Pick<CompetitionRef, "slug">, m: Pick<Match, "homeTeam" | "awayTeam">) =>
@@ -310,6 +317,7 @@ export const nextOfPair = (list: Match[]) => list.find((m) => !isClosed(m));
 /** True when `m` is the meeting shown by its evergreen page (its canonical URL is then the evergreen one). */
 export function isOnEventPage(c: CompetitionRef | Competition, m: Match) {
   if (isClosed(m)) return false;
+  if (isInfoLeague(c.slug)) return false; // lower divisions (no predictions) have no evergreen event pages
   // without the whole competition (home page extract) the first open meeting in sight is assumed to be the next
   if (!("matches" in c)) return true;
   return nextOfPair(pairMatches(c, pairSlug(m)))?.id === m.id;
@@ -393,6 +401,16 @@ export function roundLabel(m: Match) {
   if (m.stage === "LEAGUE_STAGE" && m.matchday) return `Fase campionato · ${m.matchday}ª giornata`;
   const stages: Record<string, string> = {
     PLAYOFFS: "Playoff",
+    QUALIFICATION: "Turni preliminari",
+    ROUND_1: "Primo turno",
+    ROUND_2: "Secondo turno",
+    ROUND_3: "Terzo turno",
+    ROUND_4: "Quarto turno",
+    LAST_512: "Primo turno",
+    LAST_256: "Turno eliminatorio",
+    LAST_128: "Sessantaquattresimi di finale",
+    LAST_64: "Trentaduesimi di finale",
+    LAST_32: "Sedicesimi di finale",
     LAST_16: "Ottavi di finale",
     QUARTER_FINALS: "Quarti di finale",
     SEMI_FINALS: "Semifinali",
@@ -427,6 +445,12 @@ export function recentForm(c: Competition, teamId: number, limit = 5) {
 
 // ---------- SEO metadata for generated pages ----------
 export function competitionMeta(c: Competition) {
+  if (c.info)
+    return {
+      path: competitionPath(c),
+      title: `${c.name} ${seasonName(c)}: classifica, calendario e risultati`.replace("  ", " "),
+      description: `Classifica, calendario, orari e risultati di ${c.name}${c.area ? ` (${c.area})` : ""}, aggiornati durante le partite, con le squadre e i marcatori. Campionato seguito per informazione: niente pronostici.`,
+    };
   return {
     path: competitionPath(c),
     title: `Pronostici ${c.name}: calendario e risultati`,
@@ -522,9 +546,14 @@ export function footballCard(c: CompetitionRef, m: Match, p: Prediction | undefi
 }
 
 /** Visible H1 of a match page: "Pronostico Juventus – Inter (22 novembre 2026)" / "Juventus – Inter 2-1: …". */
-export function matchHeadline(m: Match) {
+/** `predictions`: false for the lower divisions shown only for information (no prediction on their pages). */
+export function matchHeadline(m: Match, predictions = true) {
   const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
   const date = formatLongDate(m.utcDate);
+  if (!predictions)
+    return isFinished(m)
+      ? `${teams} ${m.score.fullTime.home}-${m.score.fullTime.away}: risultato e tabellino (${date})`
+      : `${teams}: orario, classifica e precedenti (${date})`;
   return isFinished(m)
     ? `${teams} ${m.score.fullTime.home}-${m.score.fullTime.away}: risultato e pronostico (${date})`
     : `Pronostico ${teams} (${date})`;
@@ -585,7 +614,10 @@ export function matchMeta(
           : `${teams} (${formatDayMonth(m.utcDate)}): ${predicted ? "pronostico, orario e precedenti" : "orario, classifica e precedenti"}`,
     description,
     archive: isFinished(m),
-    ...(canonical === path ? { article: { headline: matchHeadline(m), section: c.name } } : {}),
+    ...(canonical === path ? { article: { headline: matchHeadline(m, !c.info), section: c.name } } : {}),
+    // lower divisions (information only, no prediction) and cup matches the model cannot predict (clubs of leagues it
+    // does not follow): reachable, but kept out of the index and of the sitemap
+    ...(c.info || (c.cup && !predicted) ? { index: false } : {}),
     // the event is described once, on its canonical page
     jsonLd: canonical !== path ? [] : footballEventLd(c, m, path, description, video, venue),
   };
