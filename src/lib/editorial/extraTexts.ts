@@ -507,3 +507,62 @@ export function dayIntro({
 }
 
 export { fmtDay };
+
+/**
+ * Fixed text of /calcio: what the page shows, the competitions followed, how the predictions are made and where to
+ * find standings, teams and past seasons. It does not change with the matches (the list above it does every 15
+ * minutes), so the page keeps a stable description of itself.
+ */
+export function calcioHubText(
+  competitions: { code: string; slug: string; name: string; national?: boolean }[],
+  featured: Set<string>,
+): ArticleSection[] {
+  const hub = (c: { slug: string; name: string }) => link(c.name, `/pronostici/${c.slug}`);
+  const group = (codes: string[]) =>
+    joinIt(
+      codes
+        .map((code) => competitions.find((c) => c.code === code))
+        .filter((c) => !!c)
+        .map(hub),
+    );
+  const italian = group(["SA", "SB"]);
+  const foreign = group(["PL", "PD", "BL1", "FL1"]);
+  const cups = group(["CL", "EL", "ECL"]);
+  const national = joinIt(competitions.filter((c) => c.national && featured.has(c.code)).map(hub));
+  const others = joinIt(competitions.filter((c) => !featured.has(c.code)).map(hub));
+  return keep([
+    sec("cosa-trovi", "Cosa trovi in questa pagina", [
+      "Il calendario delle partite dei prossimi giorni, in ordine di orario e divise per giorno. Per ogni partita ancora da giocare ci sono le probabilità dei tre esiti (1, X, 2) stimate dal modello statistico di QuotaGuru, con accanto la quota equa: 1 diviso la probabilità, cioè la quota che pagherebbe esattamente quanto rischi se la stima fosse giusta. Dal filtro dei mercati si passa a Doppia chance, Under/Over 2,5, Goal/No goal, Multigol e Combo.",
+      "Le partite in corso sono in cima, con il punteggio aggiornato circa ogni 15 minuti (non in tempo reale). Con il filtro Risultati si vedono le partite finite e, per ognuna, se l'esito indicato come più probabile si è verificato.",
+    ]),
+    sec(
+      "competizioni",
+      "Le competizioni seguite",
+      [
+        "In questa pagina le partite sono elencate per intero per le competizioni principali; ogni competizione ha poi la sua pagina con tutte le partite, le giornate e i numeri della stagione.",
+      ],
+      [
+        italian && `Campionati italiani: ${italian}.`,
+        foreign && `Campionati esteri: ${foreign}.`,
+        cups && `Coppe europee: ${cups}.`,
+        national && `Nazionali: ${national}, più tutte le partite delle nazionali italiane.`,
+        others &&
+          `Le altre competizioni (${others}) sono riassunte in fondo all'elenco, con il numero di partite e il collegamento alla loro pagina.`,
+      ],
+    ),
+    sec("come-nascono", "Come nascono i pronostici", [
+      `Le probabilità vengono da un modello statistico (Poisson, nella variante di Dixon e Coles) che stima i gol attesi di ogni squadra dalla forza in attacco e in difesa mostrata nei risultati, tenendo conto del fattore campo e dando più peso alle partite più recenti. Il metodo, le fonti dei dati e i limiti sono spiegati nella pagina ${link("metodologia", "/metodologia")}.`,
+      `Ogni pronostico viene archiviato prima del calcio d'inizio e non viene più modificato: il riquadro in cima alla pagina mostra quante volte l'esito più probabile si è verificato. Per leggere una partita oltre ai numeri ci sono le guide ${link("come analizzare una partita di calcio", "/guide/analizzare-una-partita-di-calcio")} e ${link("i mercati del calcio", "/guide/mercati-del-calcio")}.`,
+    ]),
+    sec(
+      "altre-pagine",
+      "Squadre, stagioni passate e partite in TV",
+      [],
+      [
+        `${link("Squadre di calcio", "/calcio/squadre")}: rosa, risultati e statistiche di ogni club e nazionale.`,
+        `${link("Albo d'oro e stagioni passate", "/calcio/stagioni")}: classifiche e vincitori delle stagioni precedenti.`,
+        `${link("Calcio in TV oggi", "/calcio-in-tv-oggi")}: su quali canali vedere le partite di oggi in Italia.`,
+      ],
+    ),
+  ]);
+}

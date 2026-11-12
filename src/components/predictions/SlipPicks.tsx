@@ -134,12 +134,8 @@ export function PickCells({
             aria-pressed={on}
             aria-label={`${c.spoken}, probabilità ${pct(c.value)}, quota equa ${fairOdds(c.value)}. ${on ? "Togli dalla" : "Aggiungi alla"} schedina`}
             title={on ? "Togli dalla schedina" : "Aggiungi alla schedina"}
-            className={`relative ${width} rounded-md px-1 ${cellClassName} text-center leading-tight border transition-colors cursor-pointer ${
-              on
-                ? "bg-selected text-selected-foreground border-selected"
-                : c.top
-                  ? "bg-predict/15 text-predict border-transparent hover:border-predict/60"
-                  : `${raised ? "bg-slate-900" : "bg-slate-800"} text-slate-300 border-transparent hover:border-slate-500`
+            className={`pick ${width} ${cellClassName} ${
+              on ? "pick-on" : c.top ? "pick-top" : raised ? "pick-off-raised" : "pick-off"
             }`}
           >
             <CellText cell={c} hideLabels={hideLabels} inline={inline} on={on} />
@@ -185,8 +181,8 @@ function CellText({
   return (
     <>
       {!hideLabels && <span className={`block text-[10px] whitespace-nowrap ${label}`}>{cell.label}</span>}
-      <span className={`block tabular-nums font-medium ${hideLabels ? "text-sm" : "text-xs"}`}>{pct(cell.value)}</span>
-      <span className="block tabular-nums text-[10px] opacity-70" title="Quota equa: 1 ÷ probabilità">
+      <span className={`pick-pct ${hideLabels ? "text-sm" : "text-xs"}`}>{pct(cell.value)}</span>
+      <span className="pick-odds" title="Quota equa: 1 ÷ probabilità">
         {fairOdds(cell.value)}
       </span>
     </>
