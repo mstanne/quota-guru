@@ -2239,140 +2239,6 @@
   "model": "claude-haiku-5-5",
   "at": "2026-11-11T06:36:09.428Z"
  },
- "nba:21718081": {
-  "fingerprint": "1o4nggg",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "I Wizards fanno visita ai Pacers giovedì 12 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "I Pacers hanno un record di 3-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,4 punti segnati e 115,2 subiti. In casa il bilancio è 0-5.",
-     "I Wizards hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,1 punti segnati e 113,4 subiti. In trasferta il bilancio è 2-5."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
-    "paragraphs": [],
-    "bullets": [
-     "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 4 gare.",
-     "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 4 gare."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "A che ora si gioca Indiana Pacers – Washington Wizards in Italia?",
-    "a": "Giovedì 12 novembre alle 01:00."
-   },
-   {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la pagina su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-10T06:20:04.058Z"
- },
- "nba:21718082": {
-  "fingerprint": "e7gegj",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Giovedì 12 novembre alle 01:00, ora italiana, i Knicks ospitano i Cavaliers in una partita della regular season NBA 2026-27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "I Knicks hanno un record di 6-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 101,9 subiti. In casa il bilancio è 4-1.",
-     "I Cavaliers hanno un record di 5-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,5 punti segnati e 115,0 subiti. In trasferta il bilancio è 1-4."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
-    "paragraphs": [],
-    "bullets": [
-     "I Knicks giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 4 gare.",
-     "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 5 gare."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "A che ora si gioca New York Knicks – Cleveland Cavaliers in Italia?",
-    "a": "Giovedì 12 novembre alle 01:00."
-   },
-   {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-11T03:20:42.320Z"
- },
- "nba:21718083": {
-  "fingerprint": "5vk745",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "I Celtics fanno visita ai Raptors giovedì 12 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "I Raptors hanno un record di 5-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 116,6 punti segnati e 113,3 subiti. In casa il bilancio è 2-2.",
-     "I Celtics hanno un record di 9-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 116,0 punti segnati e 102,3 subiti. In trasferta il bilancio è 4-1."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
-    "paragraphs": [],
-    "bullets": [
-     "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 4 gare.",
-     "I Celtics giocano la seconda partita in due giorni (back-to-back).",
-     "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 3 gare."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "A che ora si gioca Toronto Raptors – Boston Celtics in Italia?",
-    "a": "Giovedì 12 novembre alle 01:00."
-   },
-   {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-11T06:20:13.340Z"
- },
  "nba:21718084": {
   "fingerprint": "g0pz8w",
   "sections": [
@@ -19063,20 +18929,20 @@
   "at": "2026-11-11T00:20:40.570Z"
  },
  "fb:1001528965": {
-  "fingerprint": "17eobek",
+  "fingerprint": "2dhr1q",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Venerdì 13 novembre alle 20:45 la Serbia ospita la Germania per la 5ª giornata di Nations League."
+     "Venerdì 13 novembre alle 20:45 la Serbia ospita la Germania nella 5ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Serbia ha collezionato 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 6 subiti. Ha perso tutte e ultime 3.",
-     "Nelle ultime 3 partite di Nations League la Germania ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza P-V-N), con 2 gol fatti e 1 subito."
+     "Nelle ultime 2 partite di Nations League la Serbia ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le gare.",
+     "Nelle ultime 2 partite di Nations League la Germania ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), con 2 gol fatti e nessuno subito."
     ],
     "bullets": []
    }
@@ -19088,15 +18954,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:19.587Z"
+  "at": "2026-11-12T00:20:07.362Z"
  },
  "fb:1001528967": {
   "fingerprint": "dt7bcd",
@@ -19264,7 +19130,7 @@
   "at": "2026-11-11T00:20:50.859Z"
  },
  "fb:1001528970": {
-  "fingerprint": "s3h0ml",
+  "fingerprint": "2w37dh",
   "sections": [
    {
     "id": "presentazione",
@@ -19277,7 +19143,7 @@
     "id": "momento",
     "paragraphs": [
      "Il Liechtenstein ha giocato finora una sola partita di Nations League, terminata 0-0.",
-     "Nelle ultime 3 partite di Nations League l'Azerbaigian ha ottenuto 1 vittoria e 2 pareggi (sequenza N-N-V), con 2 gol fatti e 1 subito."
+     "Nelle ultime 2 partite di Nations League l'Azerbaigian ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 1 gol fatto e 0 subiti."
     ],
     "bullets": []
    }
@@ -19293,11 +19159,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ti spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ti consigliamo le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:21.500Z"
+  "at": "2026-11-12T00:20:09.137Z"
  },
  "fb:1001545659": {
   "fingerprint": "174jen7",
@@ -19336,43 +19202,43 @@
   "at": "2026-11-11T00:20:54.221Z"
  },
  "fb:1001545615": {
-  "fingerprint": "18jgs83",
+  "fingerprint": "z6ue2i",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Venerdì 13 novembre alle 20:45 l'Andorra ospita il Gibilterra nella 5ª giornata di Nations League."
+     "Venerdì 13 novembre, alle 20:45, l'Andorra ospita il Gibilterra nell'ambito della 5ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Nations League l'Andorra ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 0 gol e subendone 1.",
-     "Nelle ultime 2 partite di Nations League il Gibilterra ha ottenuto 2 pareggi (sequenza N-N), segnando 1 gol e subendone 1."
+     "Finora l'Andorra ha disputato una sola partita di Nations League, persa per 0-1.",
+     "Anche il Gibilterra ha giocato finora un'unica gara di Nations League, conclusa con un pareggio per 1-1."
     ],
     "bullets": []
    }
   ],
   "faq": [
    {
-    "q": "Quando si gioca Andorra – Gibilterra?",
+    "q": "Quando si disputa Andorra – Gibilterra?",
     "a": "Venerdì 13 novembre alle 20:45, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina dedicata alla [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne spiegano il funzionamento le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:23.101Z"
+  "at": "2026-11-12T00:20:12.942Z"
  },
  "fb:1001528966": {
-  "fingerprint": "x7aw9d",
+  "fingerprint": "c8nntk",
   "sections": [
    {
     "id": "presentazione",
@@ -19384,59 +19250,16 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League il Paesi Bassi ha ottenuto 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 6 gol e subendone 4.",
-     "Nelle ultime 3 partite di Nations League il Grecia ha ottenuto 1 vittoria e 2 pareggi (sequenza V-N-N), segnando 3 gol e subendone 2."
+     "Nelle ultime 2 partite di Nations League il Paesi Bassi ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 4 gol e subendone 3.",
+     "Nelle ultime 2 partite di Nations League il Grecia ha ottenuto 2 pareggi (sequenza N-N), segnando 2 gol e subendone 2."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "In tutte le ultime 3 partite del Paesi Bassi si sono segnati almeno tre gol."
-    ]
    }
   ],
   "faq": [
    {
     "q": "Quando si gioca Paesi Bassi – Grecia?",
     "a": "Venerdì 13 novembre alle 20:45, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina di [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:25.149Z"
- },
- "fb:1001528971": {
-  "fingerprint": "15buce2",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 14 novembre alle 15:00 il Kosovo ospita l'Israele nella 5ª giornata di Nations League."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 3 partite di Nations League il Kosovo ha ottenuto 2 pareggi e 1 sconfitta (sequenza P-N-N), segnando 2 gol e subendone 4.",
-     "Nelle ultime 3 partite di Nations League l'Israele ha ottenuto 2 pareggi e 1 sconfitta (sequenza P-N-N), segnando 1 gol e subendone 4."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Kosovo – Israele?",
-    "a": "Sabato 14 novembre alle 15:00, ora italiana."
    },
    {
     "q": "Dove vedo classifica e risultati?",
@@ -19448,32 +19271,61 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:27.900Z"
+  "at": "2026-11-12T00:20:14.588Z"
  },
- "fb:1001528972": {
-  "fingerprint": "lq81ct",
+ "fb:1001528971": {
+  "fingerprint": "1x10mhd",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 18:00 la Norvegia ospita il Galles nella 5ª giornata di Nations League."
+     "Sabato 14 novembre alle 15:00 il Kosovo ospita l'Israele nella 5ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Norvegia ha raccolto 3 sconfitte (sequenza P-P-P), con 3 gol fatti e 6 subiti. Ha perso le ultime 3.",
-     "Nelle ultime 3 partite di Nations League il Galles ha raccolto 1 vittoria e 2 sconfitte (sequenza P-V-P), con 2 gol fatti e 4 subiti."
+     "Nelle ultime 2 partite di Nations League il Kosovo ha ottenuto 2 pareggi (sequenza N-N), segnando 1 gol e subendone 1.",
+     "Nelle ultime 2 partite di Nations League anche l'Israele ha ottenuto 2 pareggi (sequenza N-N), segnando 1 gol e subendone 1."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Kosovo – Israele?",
+    "a": "Sabato 14 novembre alle 15:00, ora italiana."
+   },
+   {
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-12T00:20:18.199Z"
+ },
+ "fb:1001528972": {
+  "fingerprint": "2xk1eu",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 14 novembre alle 18:00 il Norvegia ospita il Galles per la 5ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "In tutte le ultime 3 partite della Norvegia si sono segnati almeno tre gol."
-    ]
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 2 partite di Nations League il Norvegia ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 4 subiti. Ha perso le ultime 2.",
+     "Nelle ultime 2 partite di Nations League il Galles ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 2 subiti."
+    ],
+    "bullets": []
    }
   ],
   "faq": [
@@ -19483,15 +19335,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:32.200Z"
+  "at": "2026-11-12T00:20:19.913Z"
  },
  "fb:1001528973": {
   "fingerprint": "urhuot",
@@ -19566,29 +19418,22 @@
   "at": "2026-11-10T00:20:38.935Z"
  },
  "fb:1001528974": {
-  "fingerprint": "sbkam4",
+  "fingerprint": "1sxkx5a",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 20:45 il Portogallo ospita il Danimarca per la 5ª giornata di Nations League."
+     "Sabato 14 novembre alle 20:45 il Portogallo ospita la Danimarca per la 5ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League il Portogallo ha ottenuto 3 vittorie (sequenza V-V-V), segnando 8 gol e subendone 4. Arriva da 3 vittorie consecutive.",
-     "Nelle ultime 3 partite di Nations League il Danimarca ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), segnando 5 gol e subendone 4."
+     "Nelle ultime 2 partite di Nations League il Portogallo ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 3.",
+     "Nelle ultime 2 partite di Nations League la Danimarca ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 3 gol e subendone 4."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "In tutte le ultime 3 partite del Portogallo si sono segnati almeno tre gol."
-    ]
    }
   ],
   "faq": [
@@ -19602,11 +19447,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:34.020Z"
+  "at": "2026-11-12T00:20:22.914Z"
  },
  "fb:1001528975": {
   "fingerprint": "1sv2tx2",
@@ -19688,20 +19533,20 @@
   "at": "2026-11-10T00:20:43.051Z"
  },
  "fb:1001528976": {
-  "fingerprint": "1q1sodj",
+  "fingerprint": "17h9mo2",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 20:45 l'Austria ospita il Rep. Of Ireland nella 5ª giornata di Nations League."
+     "Sabato 14 novembre alle 20:45 l'Austria ospita il Rep. Of Ireland per la 5ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League l'Austria ha ottenuto 1 vittoria e 2 pareggi (sequenza V-N-N), segnando 6 gol e subendone 4.",
-     "Nelle ultime 3 partite di Nations League il Rep. Of Ireland ha ottenuto 1 vittoria e 2 pareggi (sequenza V-N-N), segnando 6 gol e subendone 3."
+     "Nelle ultime 2 partite di Nations League l'Austria ha ottenuto 2 pareggi (sequenza N-N), segnando 3 gol e subendone 3.",
+     "Nelle ultime 2 partite di Nations League il Rep. Of Ireland ha ottenuto 2 pareggi (sequenza N-N), segnando 3 gol e subendone 3."
     ],
     "bullets": []
    }
@@ -19713,15 +19558,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:35.781Z"
+  "at": "2026-11-12T00:20:24.552Z"
  },
  "fb:1001545616": {
   "fingerprint": "1107iva",
@@ -20183,20 +20028,20 @@
   "at": "2026-11-11T00:21:21.745Z"
  },
  "fb:1001528989": {
-  "fingerprint": "m005t",
+  "fingerprint": "18ys2yf",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Lituania e Liechtenstein si affrontano lunedì 16 novembre alle 18:00 per la 6ª giornata di Nations League."
+     "Lituania e Liechtenstein si affrontano lunedì 16 novembre alle 18:00, nella 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Nations League la Lituania ha raccolto 1 pareggio e 1 sconfitta (sequenza N-P), con 1 gol fatto e 2 subiti.",
-     "Il Liechtenstein ha giocato finora una sola partita di Nations League, pareggiata 0-0."
+     "La Lituania ha disputato finora una sola partita di Nations League, persa 0-1.",
+     "Il Liechtenstein ha disputato finora una sola partita di Nations League, terminata 0-0."
     ],
     "bullets": []
    }
@@ -20216,7 +20061,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:37.294Z"
+  "at": "2026-11-12T00:20:27.114Z"
  },
  "fb:1001528988": {
   "fingerprint": "1nvch1w",
@@ -20305,29 +20150,22 @@
   "at": "2026-11-11T00:21:28.122Z"
  },
  "fb:1001528990": {
-  "fingerprint": "npsek7",
+  "fingerprint": "idkem3",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Germania e Paesi Bassi si affrontano lunedì 16 novembre alle 20:45 per la 6ª giornata di Nations League."
+     "Germania e Paesi Bassi si affrontano lunedì 16 novembre alle 20:45, nell'ambito della 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Germania ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza P-V-N), con 2 gol fatti e 1 subito. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 3 partite di Nations League i Paesi Bassi hanno raccolto 2 vittorie e 1 pareggio (sequenza V-N-V), con 6 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 2 partite di Nations League, la Germania ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 2 gol e subendone 0.",
+     "Nelle ultime 2 partite di Nations League, i Paesi Bassi hanno ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 4 gol e subendone 3."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "In tutte le ultime 3 partite dei Paesi Bassi si sono segnati almeno tre gol."
-    ]
    }
   ],
   "faq": [
@@ -20345,22 +20183,22 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:39.289Z"
+  "at": "2026-11-12T00:20:29.977Z"
  },
  "fb:1001545618": {
-  "fingerprint": "1t75bg0",
+  "fingerprint": "djmuzj",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Lunedì 16 novembre alle 20:45 il Gibilterra ospita il Malta nella 6ª giornata di Nations League."
+     "Lunedì 16 novembre alle 20:45 il Gibilterra ospita il Malta, valevole per la 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Nations League il Gibilterra ha ottenuto 2 pareggi (sequenza N-N), segnando 1 gol e subendone 1.",
+     "Finora il Gibilterra ha disputato una sola partita di Nations League, conclusa con un pareggio 1-1.",
      "Nelle ultime 2 partite di Nations League il Malta ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1."
     ],
     "bullets": []
@@ -20373,15 +20211,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    "a": "Puoi consultare la pagina [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:41.820Z"
+  "at": "2026-11-12T00:20:31.763Z"
  },
  "fb:1001545662": {
   "fingerprint": "7axdm6",
@@ -20420,20 +20258,20 @@
   "at": "2026-11-11T00:21:29.937Z"
  },
  "fb:1001528991": {
-  "fingerprint": "1n7ozi4",
+  "fingerprint": "14ersse",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento lunedì 16 novembre alle 20:45: la Grecia ospita la Serbia per la 6ª giornata di Nations League."
+     "La partita si giocherà lunedì 16 novembre alle 20:45, quando il Grecia ospiterà il Serbia per la 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Grecia ha ottenuto 1 vittoria e 2 pareggi (sequenza V-N-N), con 3 gol fatti e 2 subiti. In casa il bilancio stagionale è di 2 pareggi, senza vittorie.",
-     "Nelle ultime 3 partite di Nations League la Serbia ha collezionato 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 6 subiti. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 2 partite di Nations League la Grecia ha ottenuto 2 pareggi (sequenza N-N), segnando 2 gol e subendone 2. In casa il bilancio stagionale è di 2 pareggi, senza ancora alcuna vittoria.",
+     "Nelle ultime 2 partite di Nations League la Serbia ha subito 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le ultime gare. In trasferta ha perso tutte le 2 partite disputate."
     ],
     "bullets": []
    }
@@ -20453,10 +20291,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:43.679Z"
+  "at": "2026-11-12T00:20:33.628Z"
  },
  "fb:1001528993": {
-  "fingerprint": "19a8oi2",
+  "fingerprint": "gkvvqg",
   "sections": [
    {
     "id": "presentazione",
@@ -20468,17 +20306,10 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Danimarca ha raccolto 2 vittorie e 1 sconfitta (sequenza V-P-V), con 5 gol fatti e 4 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 3 partite di Nations League la Norvegia ha raccolto 3 sconfitte (sequenza P-P-P), con 3 gol fatti e 6 subiti. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 2 partite di Nations League la Danimarca ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 3 gol e subendone 4.",
+     "Nelle ultime 2 partite di Nations League la Norvegia ha collezionato 2 sconfitte (sequenza P-P), segnando 2 gol e subendone 4. Ha perso entrambe le ultime partite. In trasferta ha perso tutte le 2 partite giocate."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "In tutte le ultime 3 partite della Norvegia sono stati segnati almeno tre gol."
-    ]
    }
   ],
   "faq": [
@@ -20487,16 +20318,16 @@
     "a": "Martedì 17 novembre alle 20:45, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
+    "q": "Dove vedo classifica e risultati?",
     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:48.455Z"
+  "at": "2026-11-12T00:20:37.096Z"
  },
  "fb:1001528998": {
   "fingerprint": "16mgf54",
@@ -20535,29 +20366,22 @@
   "at": "2026-11-10T00:20:58.734Z"
  },
  "fb:1001528992": {
-  "fingerprint": "1yzboov",
+  "fingerprint": "1suf4hx",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Il appuntamento è per martedì 17 novembre alle 20:45, quando il Galles ospita il Portogallo nella 6ª giornata di Nations League."
+     "Martedì 17 novembre alle 20:45 il Galles ospita il Portogallo nella 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League il Galles ha ottenuto 1 vittoria e 2 sconfitte, con sequenza P-V-P, segnando 2 gol e subendone 4. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 3 partite di Nations League il Portogallo ha ottenuto 3 vittorie, con sequenza V-V-V, segnando 8 gol e subendone 4. Arriva da 3 vittorie consecutive. In trasferta ha vinto tutte le 2 partite disputate."
+     "Nelle ultime 2 partite di Nations League il Galles ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 2. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 2 partite di Nations League il Portogallo ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 3."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "In tutte le ultime 3 partite del Portogallo sono stati segnati almeno tre gol."
-    ]
    }
   ],
   "faq": [
@@ -20566,16 +20390,16 @@
     "a": "Martedì 17 novembre alle 20:45, ora italiana."
    },
    {
-    "q": "Dove trovo classifica e risultati?",
-    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:51.829Z"
+  "at": "2026-11-12T00:20:38.871Z"
  },
  "fb:1001528995": {
   "fingerprint": "1q1jq8q",
@@ -20657,20 +20481,20 @@
   "at": "2026-11-10T00:21:02.444Z"
  },
  "fb:1001528997": {
-  "fingerprint": "dgbpjz",
+  "fingerprint": "kod6n7",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "La partita si giocherà martedì 17 novembre alle 20:45, quando il Rep. Of Ireland ospiterà il Kosovo nella 6ª giornata di Nations League."
+     "Martedì 17 novembre alle 20:45 il Rep. Of Ireland ospita il Kosovo nella 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League il Rep. Of Ireland ha ottenuto 1 vittoria e 2 pareggi (sequenza V-N-N), segnando 6 gol e subendone 3. In casa, nella stagione, il bilancio è di 2 pareggi, senza vittorie.",
-     "Nelle ultime 3 partite di Nations League il Kosovo ha ottenuto 2 pareggi e 1 sconfitta (sequenza P-N-N), segnando 2 gol e subendone 4. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
+     "Nelle ultime 2 partite di Nations League il Rep. Of Ireland ha ottenuto 2 pareggi (sequenza N-N), segnando 3 gol e subendone 3. In casa il bilancio stagionale è di 2 pareggi, senza vittorie.",
+     "Nelle ultime 2 partite di Nations League il Kosovo ha ottenuto 2 pareggi (sequenza N-N), segnando 1 gol e subendone 1."
     ],
     "bullets": []
    }
@@ -20681,16 +20505,16 @@
     "a": "Martedì 17 novembre alle 20:45, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
+    "q": "Dove vedo classifica e risultati?",
     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
-    "q": "Dove trovo spiegazioni sulle quote di questa partita?",
-    "a": "Le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio) illustrano il funzionamento delle quote e dei mercati."
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:54.797Z"
+  "at": "2026-11-12T00:20:41.144Z"
  },
  "fb:1001528999": {
   "fingerprint": "1faym01",
@@ -20729,7 +20553,7 @@
   "at": "2026-11-10T00:21:07.617Z"
  },
  "fb:1001528996": {
-  "fingerprint": "1xrb8sp",
+  "fingerprint": "10fb2n3",
   "sections": [
    {
     "id": "presentazione",
@@ -20741,8 +20565,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League l'Israele ha raccolto 2 pareggi e 1 sconfitta (sequenza P-N-N), con 1 gol fatto e 4 subiti. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie.",
-     "Nelle ultime 3 partite di Nations League l'Austria ha raccolto 1 vittoria e 2 pareggi (sequenza V-N-N), con 6 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 2 pareggi, ancora senza vittorie."
+     "Nelle ultime 2 partite di Nations League, l'Israele ha collezionato 2 pareggi (sequenza N-N), con 1 gol fatto e 1 subito.",
+     "Nelle ultime 2 partite di Nations League, l'Austria ha collezionato 2 pareggi (sequenza N-N), con 3 gol fatti e 3 subiti. In trasferta il bilancio stagionale è di 2 pareggi, senza vittorie."
     ],
     "bullets": []
    }
@@ -20754,15 +20578,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    "a": "Puoi consultare la pagina [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Puoi trovare spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T00:21:56.649Z"
+  "at": "2026-11-12T00:20:42.809Z"
  },
  "fb:1001545862": {
   "fingerprint": "34f0rf",
@@ -22614,7 +22438,7 @@
   "at": "2026-11-11T00:21:45.565Z"
  },
  "fb:1001640008": {
-  "fingerprint": "1avftew",
+  "fingerprint": "exg1ml",
   "sections": [
    {
     "id": "presentazione",
@@ -22626,15 +22450,15 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di CONCACAF Nations League le Isole Cayman hanno collezionato 3 sconfitte (sequenza P-P-P), segnando 0 gol e subendone 6. Hanno perso le ultime 3 gare.",
-     "Nelle ultime 3 partite di CONCACAF Nations League il Guyana ha ottenuto 3 vittorie (sequenza V-V-V), con 15 gol fatti e 2 subiti. Arriva da 3 vittorie consecutive."
+     "Nelle ultime 2 partite di CONCACAF Nations League, l'Isole Cayman ha collezionato 2 sconfitte (sequenza P-P), con 0 gol fatti e 4 subiti. Ha perso entrambe le ultime gare.",
+     "Nelle ultime 2 partite di CONCACAF Nations League, il Guyana ha collezionato 2 vittorie (sequenza V-V), con 13 gol fatti e 2 subiti."
     ],
     "bullets": []
    },
    {
     "id": "precedenti",
     "paragraphs": [
-     "Nell'ultimo confronto diretto il bilancio è di 0 vittorie per le Isole Cayman, 1 vittoria per il Guyana e nessun pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, a settembre 2026 in CONCACAF Nations League, è terminato Guyana 2-0 Isole Cayman."
+     "Negli ultimi 1 confronti diretti il bilancio è di 0 vittorie per l'Isole Cayman, 1 vittoria per il Guyana e nessun pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, disputato a settembre 2026 in CONCACAF Nations League, si è concluso con il Guyana che ha vinto 2-0 sull'Isole Cayman."
     ],
     "bullets": []
    }
@@ -22654,7 +22478,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T03:20:40.058Z"
+  "at": "2026-11-12T00:20:46.150Z"
  },
  "fb:1001640007": {
   "fingerprint": "ho5mhw",
@@ -23036,7 +22860,7 @@
   "at": "2026-11-11T00:22:03.721Z"
  },
  "fb:1001640019": {
-  "fingerprint": "1tb12lj",
+  "fingerprint": "tq8yui",
   "sections": [
    {
     "id": "presentazione",
@@ -23048,7 +22872,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di CONCACAF Nations League il Sint Maarten ha raccolto 4 sconfitte (sequenza P-P-P-P), con 2 gol fatti e 10 subiti. Ha perso le ultime 4. In casa ha perso tutte le 2 partite giocate.",
+     "Nelle ultime 3 partite di CONCACAF Nations League il Sint Maarten ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 9 subiti. Ha perso le ultime 3.",
      "Nelle ultime 3 partite di CONCACAF Nations League il French Guyana ha raccolto 3 vittorie (sequenza V-V-V), con 4 gol fatti e 0 subiti. È reduce da 3 vittorie consecutive."
     ],
     "bullets": []
@@ -23076,10 +22900,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:22:05.679Z"
+  "at": "2026-11-12T00:20:48.134Z"
  },
  "fb:1001644693": {
-  "fingerprint": "1oxytw9",
+  "fingerprint": "e52soa",
   "sections": [
    {
     "id": "presentazione",
@@ -23091,7 +22915,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di CONCACAF Nations League, l'Haiti ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-V-P), segnando 6 gol e subendone 3."
+     "Nelle ultime 2 partite di CONCACAF Nations League, l'Haiti ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 4 gol e subendone 3."
     ],
     "bullets": []
    }
@@ -23111,10 +22935,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T03:21:03.011Z"
+  "at": "2026-11-12T00:20:49.730Z"
  },
  "fb:1001640018": {
-  "fingerprint": "14shr2j",
+  "fingerprint": "1ii8rx3",
   "sections": [
    {
     "id": "presentazione",
@@ -23127,7 +22951,7 @@
     "id": "momento",
     "paragraphs": [
      "Nelle ultime 3 partite di CONCACAF Nations League lo St. Vincent / Grenadines ha raccolto 3 vittorie (sequenza V-V-V), con 9 gol fatti e 2 subiti. È reduce da 3 vittorie consecutive.",
-     "Nelle ultime 4 partite di CONCACAF Nations League il Belize ha raccolto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), con 1 gol fatto e 4 subiti. Ha perso le ultime 3. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     "Nelle ultime 3 partite di CONCACAF Nations League il Belize ha raccolto 3 sconfitte (sequenza P-P-P), con 0 gol fatti e 4 subiti. Ha perso le ultime 3."
     ],
     "bullets": []
    }
@@ -23135,19 +22959,19 @@
   "faq": [
    {
     "q": "Quando si gioca St. Vincent / Grenadines – Belize?",
-    "a": "La partita si disputa domenica 15 novembre alle 01:00, ora italiana."
+    "a": "Domenica 15 novembre alle 01:00, ora italiana."
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ti spiegano come funzionano le quote le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:22:07.704Z"
+  "at": "2026-11-12T00:20:51.640Z"
  },
  "fb:1001644691": {
   "fingerprint": "1luke0j",
@@ -23220,7 +23044,7 @@
   "at": "2026-11-10T03:21:06.707Z"
  },
  "fb:1001640014": {
-  "fingerprint": "4wi6td",
+  "fingerprint": "1elkk7m",
   "sections": [
    {
     "id": "presentazione",
@@ -23232,8 +23056,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di CONCACAF Nations League il Guyana ha raccolto 3 vittorie (sequenza V-V-V), con 15 gol fatti e 2 subiti. È reduce da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite giocate.",
-     "Nelle ultime 3 partite di CONCACAF Nations League il Portorico ha raccolto 3 vittorie (sequenza V-V-V), con 6 gol fatti e 0 subiti. È reduce da 3 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
+     "Nelle ultime 2 partite di CONCACAF Nations League il Guyana ha raccolto 2 vittorie (sequenza V-V), con 13 gol fatti e 2 subiti.",
+     "Nelle ultime 3 partite di CONCACAF Nations League il Portorico ha raccolto 3 vittorie (sequenza V-V-V), con 6 gol fatti e 0 subiti. Arriva da 3 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
     ],
     "bullets": []
    },
@@ -23260,7 +23084,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T03:20:38.243Z"
+  "at": "2026-11-12T00:20:53.676Z"
  },
  "fb:1001550206": {
   "fingerprint": "1hfljbp",
@@ -23601,20 +23425,20 @@
   "at": "2026-11-11T00:22:16.941Z"
  },
  "fb:1001640005": {
-  "fingerprint": "1vv6e29",
+  "fingerprint": "avwo2m",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Martedì 17 novembre alle 20:00 il Belize ospita il Sint Maarten nella 4ª giornata di CONCACAF Nations League."
+     "Martedì 17 novembre alle 20:00 il Belize ospita il Sint Maarten per la 4ª giornata di CONCACAF Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 4 partite di CONCACAF Nations League il Belize ha ottenuto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), segnando 1 gol e subendone 4. Ha perso le ultime 3. In casa ha perso tutte le 2 partite giocate.",
-     "Nelle ultime 4 partite di CONCACAF Nations League il Sint Maarten ha collezionato 4 sconfitte (sequenza P-P-P-P), segnando 2 gol e subendone 10. Ha perso le ultime 4. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 3 partite di CONCACAF Nations League il Belize ha raccolto 3 sconfitte (sequenza P-P-P), con 0 gol fatti e 4 subiti. Ha perso le ultime 3. In casa ha perso tutte le 2 partite giocate.",
+     "Nelle ultime 3 partite di CONCACAF Nations League il Sint Maarten ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 9 subiti. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
     ],
     "bullets": []
    }
@@ -23634,23 +23458,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T12:20:43.756Z"
+  "at": "2026-11-12T00:20:55.466Z"
  },
  "fb:1001640010": {
-  "fingerprint": "163rz8s",
+  "fingerprint": "f5b7ht",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Martedì 17 novembre alle 20:00 il Dominica riceve le Isole Cayman per la 1ª giornata di CONCACAF Nations League."
+     "Martedì 17 novembre alle 20:00 il Dominica ospita le Isole Cayman per la 1ª giornata di CONCACAF Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di CONCACAF Nations League il Dominica ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 15 subiti. Ha perso le ultime 3. In casa ha perso tutte le 2 partite giocate.",
-     "Nelle ultime 3 partite di CONCACAF Nations League le Isole Cayman hanno raccolto 3 sconfitte (sequenza P-P-P), con 0 gol fatti e 6 subiti. Hanno perso le ultime 3. In trasferta hanno perso tutte le 2 partite giocate."
+     "Nelle ultime 3 partite di CONCACAF Nations League il Dominica ha subito 3 sconfitte consecutive (sequenza P-P-P), segnando 2 gol e subendone 15. Ha perso tutte e 3 le gare. In casa ha perso entrambe le partite disputate.",
+     "Nelle ultime 2 partite di CONCACAF Nations League le Isole Cayman hanno subito 2 sconfitte consecutive (sequenza P-P), senza segnare e subendo 4 gol. Ha perso entrambe le gare."
     ],
     "bullets": []
    }
@@ -23662,15 +23486,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+    "a": "Puoi consultare la pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T03:21:16.325Z"
+  "at": "2026-11-12T00:20:57.656Z"
  },
  "fb:1001640017": {
   "fingerprint": "1vwc2pq",
@@ -23759,7 +23583,7 @@
   "at": "2026-11-11T03:20:21.454Z"
  },
  "fb:1001644697": {
-  "fingerprint": "1c999ff",
+  "fingerprint": "1x3nymw",
   "sections": [
    {
     "id": "presentazione",
@@ -23771,7 +23595,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite della CONCACAF Nations League l'Haiti ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-V-P), segnando 6 gol e subendone 3. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     "Nelle ultime 2 partite di CONCACAF Nations League l'Haiti ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 4 gol e subendone 3. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
     ],
     "bullets": []
    }
@@ -23783,15 +23607,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+    "a": "Puoi consultare la pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T03:21:17.939Z"
+  "at": "2026-11-12T00:20:59.376Z"
  },
  "fb:1001640011": {
   "fingerprint": "i9kike",
@@ -24013,20 +23837,19 @@
   "at": "2026-11-11T17:15:01.510Z"
  },
  "fb:1001586134": {
-  "fingerprint": "1x8p9rs",
+  "fingerprint": "1cj4w0m",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento giovedì 12 novembre alle 07:00: la Nuova Zelanda ospita l'India in una partita valida per le Amichevoli internazionali."
+     "Giovedì 12 novembre alle 07:00 il Nuova Zelanda ospita l'India in una partita valida per le Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "La Nuova Zelanda ha disputato finora una sola partita di Amichevoli internazionali, vinta 3-0.",
-     "Nelle ultime 2 partite di Amichevoli internazionali, l'India ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 10. Ha perso entrambe le ultime due gare."
+     "Nelle ultime 2 partite di Amichevoli internazionali l'India ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 10. Ha perso entrambe le ultime gare."
     ],
     "bullets": []
    }
@@ -24038,15 +23861,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T03:21:22.693Z"
+  "at": "2026-11-12T00:21:01.157Z"
  },
  "fb:1001649008": {
   "fingerprint": "k7uyee",
@@ -24241,19 +24064,12 @@
   "at": "2026-11-08T12:21:35.089Z"
  },
  "fb:1001647359": {
-  "fingerprint": "14hyh04",
+  "fingerprint": "1wwhypj",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Giovedì 12 novembre alle 18:30 il Malta ospita l'Eswatini in una partita valida per le Amichevoli internazionali."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Finora il Malta ha giocato una sola partita di Amichevoli internazionali, vinta per 2-0."
+     "Giovedì 12 novembre alle 18:30 il Malta ospita l'Eswatini in un incontro valido per le Amichevoli internazionali."
     ],
     "bullets": []
    }
@@ -24261,7 +24077,7 @@
   "faq": [
    {
     "q": "Quando si gioca Malta – Eswatini?",
-    "a": "La partita si disputa giovedì 12 novembre alle 18:30, ora italiana."
+    "a": "Giovedì 12 novembre alle 18:30, ora italiana."
    },
    {
     "q": "Dove vedo classifica e risultati?",
@@ -24269,11 +24085,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T12:21:36.723Z"
+  "at": "2026-11-12T00:21:02.518Z"
  },
  "fb:1001649012": {
   "fingerprint": "1dh5x00",
@@ -24311,7 +24127,7 @@
   "at": "2026-11-08T12:21:40.373Z"
  },
  "fb:1001640083": {
-  "fingerprint": "alomg4",
+  "fingerprint": "dfgtaf",
   "sections": [
    {
     "id": "presentazione",
@@ -24323,7 +24139,7 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali il Paraguay ha raccolto 2 vittorie (sequenza V-V), con 3 gol fatti e 0 subiti. In trasferta ha vinto tutte le 2 partite giocate."
+     "Il Paraguay ha giocato finora una sola partita di Amichevoli internazionali, vinta 1-0."
     ],
     "bullets": []
    }
@@ -24335,15 +24151,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-08T12:21:41.917Z"
+  "at": "2026-11-12T00:21:04.057Z"
  },
  "fb:1001647360": {
   "fingerprint": "180g3cu",
@@ -24522,19 +24338,12 @@
   "at": "2026-11-08T12:21:52.029Z"
  },
  "fb:1001647637": {
-  "fingerprint": "95wfo7",
+  "fingerprint": "1bpwsfb",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
      "Venerdì 13 novembre alle 18:30 il France U21 ospita l'Italy U21 per Amichevoli internazionali."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Il France U21 ha giocato finora una sola partita di Amichevoli internazionali, persa 1-3."
     ],
     "bullets": []
    }
@@ -24546,15 +24355,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T03:21:25.601Z"
+  "at": "2026-11-12T00:21:06.857Z"
  },
  "fb:1001649014": {
   "fingerprint": "u0bqg7",
@@ -24927,20 +24736,20 @@
   "at": "2026-11-09T03:20:49.666Z"
  },
  "fb:1001640518": {
-  "fingerprint": "1y1fp0l",
+  "fingerprint": "vyu0lm",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 01:00 la Colombia ospita il Cile in una partita valida per le Amichevoli internazionali."
+     "Sabato 14 novembre, alle 01:00, la Colombia ospita il Cile nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Amichevoli internazionali la Colombia ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-P-V), segnando 3 gol e subendone 2. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 2 partite di Amichevoli internazionali il Cile ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 4 gol e subendone 4. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+     "Nelle ultime 2 partite di Amichevoli internazionali, la Colombia ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 2 gol e subendone 1. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 2 partite di Amichevoli internazionali, il Cile ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 4 gol e subendone 4. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
     ],
     "bullets": []
    }
@@ -24951,16 +24760,16 @@
     "a": "Sabato 14 novembre alle 01:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "q": "Dove posso consultare risultati e classifica?",
+    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "q": "Dove trovo spiegazioni sulle quote di questa partita?",
+    "a": "Puoi leggere le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T03:20:34.802Z"
+  "at": "2026-11-12T00:21:11.547Z"
  },
  "fb:1001647363": {
   "fingerprint": "ie65h6",
@@ -24991,20 +24800,20 @@
   "at": "2026-11-09T03:20:50.969Z"
  },
  "fb:1001647364": {
-  "fingerprint": "1kufz4x",
+  "fingerprint": "whgowd",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 02:00 il Perù ospita il Bolivia per le Amichevoli internazionali."
+     "Sabato 14 novembre alle 02:00 il Perù ospita la Bolivia nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Amichevoli internazionali il Perù ha raccolto 1 pareggio e 2 sconfitte (sequenza N-P-P), con 1 gol fatto e 5 subiti. Ha perso le ultime 2.",
-     "Nelle ultime 2 partite di Amichevoli internazionali il Bolivia ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 6 subiti. Ha perso le ultime 2."
+     "Nelle ultime 3 partite di Amichevoli internazionali il Perù ha ottenuto 1 pareggio e 2 sconfitte (sequenza N-P-P), segnando 1 gol e subendone 5. Ha perso le ultime 2 gare.",
+     "La Bolivia ha disputato finora una sola partita di Amichevoli internazionali, persa 0-4."
     ],
     "bullets": []
    }
@@ -25016,15 +24825,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T03:20:36.561Z"
+  "at": "2026-11-12T00:21:14.500Z"
  },
  "fb:1001647638": {
   "fingerprint": "4ud552",
@@ -25276,19 +25085,19 @@
   "at": "2026-11-11T17:14:54.182Z"
  },
  "fb:1001647365": {
-  "fingerprint": "1nawm76",
+  "fingerprint": "vxze62",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "La partita si giocherà sabato 14 novembre alle 13:00: il Cina ospiterà il Malaysia nell'ambito delle Amichevoli internazionali."
+     "Sabato 14 novembre alle 13:00 il Cina riceve il Malaysia in una partita valida per le Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Amichevoli internazionali il Cina ha collezionato 3 sconfitte (sequenza P-P-P), segnando 0 gol e subendone 9. Ha perso tutte e ultime 3 gare. In casa ha perso tutte le 3 partite disputate."
+     "Nelle ultime 2 partite di Amichevoli internazionali il Cina ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 6 subiti. Ha perso le ultime 2. In casa ha perso tutte le 2 partite giocate."
     ],
     "bullets": []
    }
@@ -25300,15 +25109,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T03:20:57.640Z"
+  "at": "2026-11-12T00:21:16.033Z"
  },
  "fb:1001649019": {
   "fingerprint": "1v46nkb",
@@ -25425,7 +25234,7 @@
   "at": "2026-11-08T14:18:27.572Z"
  },
  "fb:1001586133": {
-  "fingerprint": "s5z7oe",
+  "fingerprint": "tevcq0",
   "sections": [
    {
     "id": "presentazione",
@@ -25437,7 +25246,6 @@
    {
     "id": "momento",
     "paragraphs": [
-     "La Nuova Zelanda ha giocato finora una sola partita di Amichevoli internazionali, vinta 3-0.",
      "Nelle ultime 2 partite di Amichevoli internazionali l'India ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 10 subiti. Ha perso le ultime 2."
     ],
     "bullets": []
@@ -25450,15 +25258,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T03:21:32.235Z"
+  "at": "2026-11-12T00:21:17.500Z"
  },
  "fb:1001647366": {
   "fingerprint": "148bvw8",
@@ -25666,19 +25474,12 @@
   "at": "2026-11-08T14:18:45.278Z"
  },
  "fb:1001646121": {
-  "fingerprint": "187q06c",
+  "fingerprint": "k828yc",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Lunedì 16 novembre alle 20:30 l'England U21 ospita il France U21 per le Amichevoli internazionali."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Il France U21 ha giocato finora una sola partita di Amichevoli internazionali, persa 1-3."
+     "Lunedì 16 novembre alle 20:30 l'England U21 ospita il France U21 nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    }
@@ -25690,15 +25491,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ti spiegano come funzionano le quote le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T03:21:33.563Z"
+  "at": "2026-11-12T00:21:18.836Z"
  },
  "fb:1001647367": {
   "fingerprint": "15yjnne",
@@ -25917,19 +25718,19 @@
   "at": "2026-11-11T17:14:59.890Z"
  },
  "fb:1001647368": {
-  "fingerprint": "1luimmb",
+  "fingerprint": "5vetbn",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento martedì 17 novembre alle 13:00: il Cina riceve il Bahrein nella gara valida per le Amichevoli internazionali."
+     "Appuntamento martedì 17 novembre alle 13:00: la Cina ospita il Bahrein nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Amichevoli internazionali il Cina ha raccolto 3 sconfitte (sequenza P-P-P), con 0 gol fatti e 9 subiti. Ha perso le ultime 3. In casa ha perso tutte le 3 partite giocate."
+     "Nelle ultime 2 partite di Amichevoli internazionali la Cina ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 6 subiti. Ha perso le ultime 2. In casa ha perso tutte le 2 partite giocate."
     ],
     "bullets": []
    }
@@ -25949,7 +25750,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T03:21:08.137Z"
+  "at": "2026-11-12T00:21:20.561Z"
  },
  "fb:1001647643": {
   "fingerprint": "b79z8j",
@@ -26015,20 +25816,20 @@
   "at": "2026-11-08T15:22:23.505Z"
  },
  "fb:1001640088": {
-  "fingerprint": "wv6g5s",
+  "fingerprint": "104gi3d",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Martedì 17 novembre alle 14:10 il Giappone ospita il Paraguay nell'ambito delle Amichevoli internazionali."
+     "Martedì 17 novembre alle 14:10 il Giappone ospita il Paraguay in una partita valida per le Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Il Giappone ha giocato finora una sola partita nelle Amichevoli internazionali, vinta 2-1.",
-     "Nelle ultime 2 partite delle Amichevoli internazionali il Paraguay ha ottenuto 2 vittorie (sequenza V-V), segnando 3 gol e non subendone nessuno. In trasferta ha vinto tutte le 2 partite giocate."
+     "Finora il Giappone ha disputato una sola partita di Amichevoli internazionali, vinta 2-1.",
+     "Anche il Paraguay ha disputato finora una sola partita di Amichevoli internazionali, vinta 1-0."
     ],
     "bullets": []
    }
@@ -26040,15 +25841,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T03:21:10.732Z"
+  "at": "2026-11-12T00:21:23.444Z"
  },
  "fb:1001647369": {
   "fingerprint": "10yez6q",
@@ -26157,20 +25958,20 @@
   "at": "2026-11-08T15:22:38.228Z"
  },
  "fb:1001640089": {
-  "fingerprint": "rq9tnc",
+  "fingerprint": "tp87qk",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Martedì 17 novembre alle 17:00 la Giordania ospita l'Australia in una partita valida per le Amichevoli internazionali."
+     "Martedì 17 novembre alle 17:00 la Giordania riceve l'Australia in una partita valida per le Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali la Giordania ha ottenuto 2 pareggi (sequenza N-N), con 1 gol fatto e 1 subito. In casa il bilancio stagionale è di 2 pareggi, senza vittorie.",
-     "L'Australia ha disputato finora una sola partita di Amichevoli internazionali, persa 2-4."
+     "Finora la Giordania ha disputato una sola partita di Amichevoli internazionali, terminata 0-0.",
+     "Anche l'Australia ha giocato finora una sola partita di Amichevoli internazionali, persa 2-4."
     ],
     "bullets": []
    }
@@ -26190,7 +25991,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T03:21:38.336Z"
+  "at": "2026-11-12T00:21:27.719Z"
  },
  "fb:1001647644": {
   "fingerprint": "1wg9pwr",
@@ -26221,20 +26022,20 @@
   "at": "2026-11-08T15:22:41.502Z"
  },
  "fb:1001648288": {
-  "fingerprint": "pgmp9e",
+  "fingerprint": "v8js4r",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Martedì 17 novembre alle 18:00 lo Switzerland U17 riceve il Czech Republic U17 nell'ambito delle Amichevoli internazionali."
+     "Martedì 17 novembre alle 18:00 lo Switzerland U17 ospita il Czech Republic U17 nell'ambito delle Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Lo Switzerland U17 ha giocato finora una sola partita di Amichevoli internazionali, persa 2-3.",
-     "Nelle ultime 2 partite di Amichevoli internazionali il Czech Republic U17 ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), con 5 gol fatti e 5 subiti."
+     "Finora lo Switzerland U17 ha disputato una sola partita di Amichevoli internazionali, sconfitta per 2-3.",
+     "Anche il Czech Republic U17 ha disputato finora una sola partita di Amichevoli internazionali, sconfitta per 2-3."
     ],
     "bullets": []
    }
@@ -26250,11 +26051,11 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T03:21:41.779Z"
+  "at": "2026-11-12T00:21:30.187Z"
  },
  "fb:1001649027": {
   "fingerprint": "11f77gw",
@@ -26363,20 +26164,20 @@
   "at": "2026-11-08T15:22:48.289Z"
  },
  "fb:1001640519": {
-  "fingerprint": "1lelbiy",
+  "fingerprint": "13cqhh3",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Mercoledì 18 novembre alle 00:00 il Cile affronta il Colombia nella partita valida per le Amichevoli internazionali."
+     "Appuntamento mercoledì 18 novembre alle 00:00: il Cile riceve la Colombia per le Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali il Cile ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 4 gol e subendone 4.",
-     "Nelle ultime 3 partite di Amichevoli internazionali il Colombia ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-P-V), segnando 3 gol e subendone 2."
+     "Nelle ultime 2 partite di Amichevoli internazionali il Cile ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 4 gol fatti e 4 subiti.",
+     "Nelle ultime 2 partite di Amichevoli internazionali la Colombia ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 2 gol fatti e 1 subito."
     ],
     "bullets": []
    }
@@ -26388,15 +26189,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T03:20:38.417Z"
+  "at": "2026-11-12T00:21:32.034Z"
  },
  "fb:1001648287": {
   "fingerprint": "144m9n9",
@@ -29296,19 +29097,19 @@
   "at": "2026-11-09T18:20:52.311Z"
  },
  "fb:1001649542": {
-  "fingerprint": "arskw5",
+  "fingerprint": "12sybrf",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Venerdì 13 novembre alle 15:00 il Kuwait ospita il Siria nell'ambito delle Amichevoli internazionali."
+     "Venerdì 13 novembre alle 15:00 il Kuwait ospita il Siria per le Amichevoli internazionali."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali il Siria ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 2 gol e subendone 5. In trasferta, nel corso della stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza ancora registrare vittorie."
+     "Il Siria ha giocato finora una sola partita di Amichevoli internazionali, persa 1-4."
     ],
     "bullets": []
    }
@@ -29328,7 +29129,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T18:20:56.396Z"
+  "at": "2026-11-12T00:21:05.452Z"
  },
  "fb:1001649543": {
   "fingerprint": "eho5bn",
@@ -32833,5 +32634,49 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-11T21:20:28.454Z"
+ },
+ "fb:1001492461": {
+  "fingerprint": "1iu2xwx",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Giovedì 26 novembre alle 00:00 il Mineiro ospita il Corinthians nella 36ª giornata di Brasileirão. In classifica il Mineiro occupa il 7° posto con 50 punti, il Corinthians il 17° con 37."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Brasileirão il Mineiro ha ottenuto 2 vittorie e 3 sconfitte, con sequenza V-V-P-P-P, segnando 5 gol e subendone 6. Ha perso le ultime 3 gare. In casa, in questa stagione, il bilancio è di 3 vittorie e 1 sconfitta.",
+     "Nelle ultime 5 partite di Brasileirão il Corinthians ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-N-P-V-N), con 6 gol fatti e 8 subiti. In trasferta, in stagione, il bilancio è di 1 pareggio e 3 sconfitte, senza vittorie."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Mineiro 1,3, Corinthians 1,1 a partita.",
+     "Gol subiti finora: Mineiro 40, Corinthians 42."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Mineiro – Corinthians?",
+    "a": "Giovedì 26 novembre alle 00:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Brasileirão](/calcio/brasileirao) e la [classifica aggiornata](/calcio/brasileirao/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-12T00:20:04.219Z"
  }
 }

@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-11T21:20:28.464Z",
+ "generatedAt": "2026-11-12T00:21:32.045Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:1001550202": {
@@ -6081,6 +6081,48 @@
     }
    ]
   },
+  "fb:1001492461": {
+   "fingerprint": "1iu2xwx",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Giovedì 26 novembre alle 00:00 il Mineiro ospita il Corinthians nella 36ª giornata di Brasileirão. In classifica il Mineiro occupa il 7° posto con 50 punti, il Corinthians il 17° con 37."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 5 partite di Brasileirão il Mineiro ha ottenuto 2 vittorie e 3 sconfitte, con sequenza V-V-P-P-P, segnando 5 gol e subendone 6. Ha perso le ultime 3 gare. In casa, in questa stagione, il bilancio è di 3 vittorie e 1 sconfitta.",
+      "Nelle ultime 5 partite di Brasileirão il Corinthians ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza P-N-P-V-N), con 6 gol fatti e 8 subiti. In trasferta, in stagione, il bilancio è di 1 pareggio e 3 sconfitte, senza vittorie."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "numeri",
+     "paragraphs": [],
+     "bullets": [
+      "Media gol segnati: Mineiro 1,3, Corinthians 1,1 a partita.",
+      "Gol subiti finora: Mineiro 40, Corinthians 42."
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Mineiro – Corinthians?",
+     "a": "Giovedì 26 novembre alle 00:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Brasileirão](/calcio/brasileirao) e la [classifica aggiornata](/calcio/brasileirao/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:1001528958": {
    "fingerprint": "1hpukp2",
    "sections": [
@@ -6500,20 +6542,20 @@
    ]
   },
   "fb:1001528965": {
-   "fingerprint": "17eobek",
+   "fingerprint": "2dhr1q",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Venerdì 13 novembre alle 20:45 la Serbia ospita la Germania per la 5ª giornata di Nations League."
+      "Venerdì 13 novembre alle 20:45 la Serbia ospita la Germania nella 5ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Nations League la Serbia ha collezionato 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 6 subiti. Ha perso tutte e ultime 3.",
-      "Nelle ultime 3 partite di Nations League la Germania ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza P-V-N), con 2 gol fatti e 1 subito."
+      "Nelle ultime 2 partite di Nations League la Serbia ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le gare.",
+      "Nelle ultime 2 partite di Nations League la Germania ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), con 2 gol fatti e nessuno subito."
      ],
      "bullets": []
     }
@@ -6525,11 +6567,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+     "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -6691,7 +6733,7 @@
    ]
   },
   "fb:1001528970": {
-   "fingerprint": "s3h0ml",
+   "fingerprint": "2w37dh",
    "sections": [
     {
      "id": "presentazione",
@@ -6704,7 +6746,7 @@
      "id": "momento",
      "paragraphs": [
       "Il Liechtenstein ha giocato finora una sola partita di Nations League, terminata 0-0.",
-      "Nelle ultime 3 partite di Nations League l'Azerbaigian ha ottenuto 1 vittoria e 2 pareggi (sequenza N-N-V), con 2 gol fatti e 1 subito."
+      "Nelle ultime 2 partite di Nations League l'Azerbaigian ha raccolto 1 vittoria e 1 pareggio (sequenza N-V), con 1 gol fatto e 0 subiti."
      ],
      "bullets": []
     }
@@ -6720,7 +6762,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ti consigliamo le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -6759,41 +6801,41 @@
    ]
   },
   "fb:1001545615": {
-   "fingerprint": "18jgs83",
+   "fingerprint": "z6ue2i",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Venerdì 13 novembre alle 20:45 l'Andorra ospita il Gibilterra nella 5ª giornata di Nations League."
+      "Venerdì 13 novembre, alle 20:45, l'Andorra ospita il Gibilterra nell'ambito della 5ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Nations League l'Andorra ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 0 gol e subendone 1.",
-      "Nelle ultime 2 partite di Nations League il Gibilterra ha ottenuto 2 pareggi (sequenza N-N), segnando 1 gol e subendone 1."
+      "Finora l'Andorra ha disputato una sola partita di Nations League, persa per 0-1.",
+      "Anche il Gibilterra ha giocato finora un'unica gara di Nations League, conclusa con un pareggio per 1-1."
      ],
      "bullets": []
     }
    ],
    "faq": [
     {
-     "q": "Quando si gioca Andorra – Gibilterra?",
+     "q": "Quando si disputa Andorra – Gibilterra?",
      "a": "Venerdì 13 novembre alle 20:45, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina dedicata alla [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne spiegano il funzionamento le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
   "fb:1001528966": {
-   "fingerprint": "x7aw9d",
+   "fingerprint": "c8nntk",
    "sections": [
     {
      "id": "presentazione",
@@ -6805,57 +6847,16 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Nations League il Paesi Bassi ha ottenuto 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 6 gol e subendone 4.",
-      "Nelle ultime 3 partite di Nations League il Grecia ha ottenuto 1 vittoria e 2 pareggi (sequenza V-N-N), segnando 3 gol e subendone 2."
+      "Nelle ultime 2 partite di Nations League il Paesi Bassi ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 4 gol e subendone 3.",
+      "Nelle ultime 2 partite di Nations League il Grecia ha ottenuto 2 pareggi (sequenza N-N), segnando 2 gol e subendone 2."
      ],
      "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 3 partite del Paesi Bassi si sono segnati almeno tre gol."
-     ]
     }
    ],
    "faq": [
     {
      "q": "Quando si gioca Paesi Bassi – Grecia?",
      "a": "Venerdì 13 novembre alle 20:45, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina di [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001528971": {
-   "fingerprint": "15buce2",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 14 novembre alle 15:00 il Kosovo ospita l'Israele nella 5ª giornata di Nations League."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 3 partite di Nations League il Kosovo ha ottenuto 2 pareggi e 1 sconfitta (sequenza P-N-N), segnando 2 gol e subendone 4.",
-      "Nelle ultime 3 partite di Nations League l'Israele ha ottenuto 2 pareggi e 1 sconfitta (sequenza P-N-N), segnando 1 gol e subendone 4."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Kosovo – Israele?",
-     "a": "Sabato 14 novembre alle 15:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -6867,30 +6868,57 @@
     }
    ]
   },
-  "fb:1001528972": {
-   "fingerprint": "lq81ct",
+  "fb:1001528971": {
+   "fingerprint": "1x10mhd",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 14 novembre alle 18:00 la Norvegia ospita il Galles nella 5ª giornata di Nations League."
+      "Sabato 14 novembre alle 15:00 il Kosovo ospita l'Israele nella 5ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Nations League la Norvegia ha raccolto 3 sconfitte (sequenza P-P-P), con 3 gol fatti e 6 subiti. Ha perso le ultime 3.",
-      "Nelle ultime 3 partite di Nations League il Galles ha raccolto 1 vittoria e 2 sconfitte (sequenza P-V-P), con 2 gol fatti e 4 subiti."
+      "Nelle ultime 2 partite di Nations League il Kosovo ha ottenuto 2 pareggi (sequenza N-N), segnando 1 gol e subendone 1.",
+      "Nelle ultime 2 partite di Nations League anche l'Israele ha ottenuto 2 pareggi (sequenza N-N), segnando 1 gol e subendone 1."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Kosovo – Israele?",
+     "a": "Sabato 14 novembre alle 15:00, ora italiana."
+    },
+    {
+     "q": "Dove posso consultare classifica e risultati?",
+     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001528972": {
+   "fingerprint": "2xk1eu",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Sabato 14 novembre alle 18:00 il Norvegia ospita il Galles per la 5ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 3 partite della Norvegia si sono segnati almeno tre gol."
-     ]
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Nations League il Norvegia ha raccolto 2 sconfitte (sequenza P-P), con 2 gol fatti e 4 subiti. Ha perso le ultime 2.",
+      "Nelle ultime 2 partite di Nations League il Galles ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 2 gol fatti e 2 subiti."
+     ],
+     "bullets": []
     }
    ],
    "faq": [
@@ -6900,11 +6928,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -6977,29 +7005,22 @@
    ]
   },
   "fb:1001528974": {
-   "fingerprint": "sbkam4",
+   "fingerprint": "1sxkx5a",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 14 novembre alle 20:45 il Portogallo ospita il Danimarca per la 5ª giornata di Nations League."
+      "Sabato 14 novembre alle 20:45 il Portogallo ospita la Danimarca per la 5ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Nations League il Portogallo ha ottenuto 3 vittorie (sequenza V-V-V), segnando 8 gol e subendone 4. Arriva da 3 vittorie consecutive.",
-      "Nelle ultime 3 partite di Nations League il Danimarca ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), segnando 5 gol e subendone 4."
+      "Nelle ultime 2 partite di Nations League il Portogallo ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 3.",
+      "Nelle ultime 2 partite di Nations League la Danimarca ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 3 gol e subendone 4."
      ],
      "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 3 partite del Portogallo si sono segnati almeno tre gol."
-     ]
     }
    ],
    "faq": [
@@ -7013,7 +7034,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -7093,20 +7114,20 @@
    ]
   },
   "fb:1001528976": {
-   "fingerprint": "1q1sodj",
+   "fingerprint": "17h9mo2",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 14 novembre alle 20:45 l'Austria ospita il Rep. Of Ireland nella 5ª giornata di Nations League."
+      "Sabato 14 novembre alle 20:45 l'Austria ospita il Rep. Of Ireland per la 5ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Nations League l'Austria ha ottenuto 1 vittoria e 2 pareggi (sequenza V-N-N), segnando 6 gol e subendone 4.",
-      "Nelle ultime 3 partite di Nations League il Rep. Of Ireland ha ottenuto 1 vittoria e 2 pareggi (sequenza V-N-N), segnando 6 gol e subendone 3."
+      "Nelle ultime 2 partite di Nations League l'Austria ha ottenuto 2 pareggi (sequenza N-N), segnando 3 gol e subendone 3.",
+      "Nelle ultime 2 partite di Nations League il Rep. Of Ireland ha ottenuto 2 pareggi (sequenza N-N), segnando 3 gol e subendone 3."
      ],
      "bullets": []
     }
@@ -7118,11 +7139,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -7564,20 +7585,20 @@
    ]
   },
   "fb:1001528989": {
-   "fingerprint": "m005t",
+   "fingerprint": "18ys2yf",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Lituania e Liechtenstein si affrontano lunedì 16 novembre alle 18:00 per la 6ª giornata di Nations League."
+      "Lituania e Liechtenstein si affrontano lunedì 16 novembre alle 18:00, nella 6ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Nations League la Lituania ha raccolto 1 pareggio e 1 sconfitta (sequenza N-P), con 1 gol fatto e 2 subiti.",
-      "Il Liechtenstein ha giocato finora una sola partita di Nations League, pareggiata 0-0."
+      "La Lituania ha disputato finora una sola partita di Nations League, persa 0-1.",
+      "Il Liechtenstein ha disputato finora una sola partita di Nations League, terminata 0-0."
      ],
      "bullets": []
     }
@@ -7680,29 +7701,22 @@
    ]
   },
   "fb:1001528990": {
-   "fingerprint": "npsek7",
+   "fingerprint": "idkem3",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Germania e Paesi Bassi si affrontano lunedì 16 novembre alle 20:45 per la 6ª giornata di Nations League."
+      "Germania e Paesi Bassi si affrontano lunedì 16 novembre alle 20:45, nell'ambito della 6ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Nations League la Germania ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza P-V-N), con 2 gol fatti e 1 subito. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 3 partite di Nations League i Paesi Bassi hanno raccolto 2 vittorie e 1 pareggio (sequenza V-N-V), con 6 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+      "Nelle ultime 2 partite di Nations League, la Germania ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 2 gol e subendone 0.",
+      "Nelle ultime 2 partite di Nations League, i Paesi Bassi hanno ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 4 gol e subendone 3."
      ],
      "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 3 partite dei Paesi Bassi si sono segnati almeno tre gol."
-     ]
     }
    ],
    "faq": [
@@ -7721,19 +7735,19 @@
    ]
   },
   "fb:1001545618": {
-   "fingerprint": "1t75bg0",
+   "fingerprint": "djmuzj",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Lunedì 16 novembre alle 20:45 il Gibilterra ospita il Malta nella 6ª giornata di Nations League."
+      "Lunedì 16 novembre alle 20:45 il Gibilterra ospita il Malta, valevole per la 6ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Nations League il Gibilterra ha ottenuto 2 pareggi (sequenza N-N), segnando 1 gol e subendone 1.",
+      "Finora il Gibilterra ha disputato una sola partita di Nations League, conclusa con un pareggio 1-1.",
       "Nelle ultime 2 partite di Nations League il Malta ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1."
      ],
      "bullets": []
@@ -7746,11 +7760,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+     "a": "Puoi consultare la pagina [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -7789,20 +7803,20 @@
    ]
   },
   "fb:1001528991": {
-   "fingerprint": "1n7ozi4",
+   "fingerprint": "14ersse",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento lunedì 16 novembre alle 20:45: la Grecia ospita la Serbia per la 6ª giornata di Nations League."
+      "La partita si giocherà lunedì 16 novembre alle 20:45, quando il Grecia ospiterà il Serbia per la 6ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Nations League la Grecia ha ottenuto 1 vittoria e 2 pareggi (sequenza V-N-N), con 3 gol fatti e 2 subiti. In casa il bilancio stagionale è di 2 pareggi, senza vittorie.",
-      "Nelle ultime 3 partite di Nations League la Serbia ha collezionato 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 6 subiti. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 2 partite di Nations League la Grecia ha ottenuto 2 pareggi (sequenza N-N), segnando 2 gol e subendone 2. In casa il bilancio stagionale è di 2 pareggi, senza ancora alcuna vittoria.",
+      "Nelle ultime 2 partite di Nations League la Serbia ha subito 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le ultime gare. In trasferta ha perso tutte le 2 partite disputate."
      ],
      "bullets": []
     }
@@ -7823,7 +7837,7 @@
    ]
   },
   "fb:1001528993": {
-   "fingerprint": "19a8oi2",
+   "fingerprint": "gkvvqg",
    "sections": [
     {
      "id": "presentazione",
@@ -7835,17 +7849,10 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Nations League la Danimarca ha raccolto 2 vittorie e 1 sconfitta (sequenza V-P-V), con 5 gol fatti e 4 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 3 partite di Nations League la Norvegia ha raccolto 3 sconfitte (sequenza P-P-P), con 3 gol fatti e 6 subiti. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 2 partite di Nations League la Danimarca ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 3 gol e subendone 4.",
+      "Nelle ultime 2 partite di Nations League la Norvegia ha collezionato 2 sconfitte (sequenza P-P), segnando 2 gol e subendone 4. Ha perso entrambe le ultime partite. In trasferta ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 3 partite della Norvegia sono stati segnati almeno tre gol."
-     ]
     }
    ],
    "faq": [
@@ -7854,12 +7861,12 @@
      "a": "Martedì 17 novembre alle 20:45, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -7898,29 +7905,22 @@
    ]
   },
   "fb:1001528992": {
-   "fingerprint": "1yzboov",
+   "fingerprint": "1suf4hx",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Il appuntamento è per martedì 17 novembre alle 20:45, quando il Galles ospita il Portogallo nella 6ª giornata di Nations League."
+      "Martedì 17 novembre alle 20:45 il Galles ospita il Portogallo nella 6ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Nations League il Galles ha ottenuto 1 vittoria e 2 sconfitte, con sequenza P-V-P, segnando 2 gol e subendone 4. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 3 partite di Nations League il Portogallo ha ottenuto 3 vittorie, con sequenza V-V-V, segnando 8 gol e subendone 4. Arriva da 3 vittorie consecutive. In trasferta ha vinto tutte le 2 partite disputate."
+      "Nelle ultime 2 partite di Nations League il Galles ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 2 gol e subendone 2. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 2 partite di Nations League il Portogallo ha ottenuto 2 vittorie (sequenza V-V), segnando 6 gol e subendone 3."
      ],
      "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "In tutte le ultime 3 partite del Portogallo sono stati segnati almeno tre gol."
-     ]
     }
    ],
    "faq": [
@@ -7929,12 +7929,12 @@
      "a": "Martedì 17 novembre alle 20:45, ora italiana."
     },
     {
-     "q": "Dove trovo classifica e risultati?",
-     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -8014,20 +8014,20 @@
    ]
   },
   "fb:1001528997": {
-   "fingerprint": "dgbpjz",
+   "fingerprint": "kod6n7",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "La partita si giocherà martedì 17 novembre alle 20:45, quando il Rep. Of Ireland ospiterà il Kosovo nella 6ª giornata di Nations League."
+      "Martedì 17 novembre alle 20:45 il Rep. Of Ireland ospita il Kosovo nella 6ª giornata di Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Nations League il Rep. Of Ireland ha ottenuto 1 vittoria e 2 pareggi (sequenza V-N-N), segnando 6 gol e subendone 3. In casa, nella stagione, il bilancio è di 2 pareggi, senza vittorie.",
-      "Nelle ultime 3 partite di Nations League il Kosovo ha ottenuto 2 pareggi e 1 sconfitta (sequenza P-N-N), segnando 2 gol e subendone 4. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
+      "Nelle ultime 2 partite di Nations League il Rep. Of Ireland ha ottenuto 2 pareggi (sequenza N-N), segnando 3 gol e subendone 3. In casa il bilancio stagionale è di 2 pareggi, senza vittorie.",
+      "Nelle ultime 2 partite di Nations League il Kosovo ha ottenuto 2 pareggi (sequenza N-N), segnando 1 gol e subendone 1."
      ],
      "bullets": []
     }
@@ -8038,12 +8038,12 @@
      "a": "Martedì 17 novembre alle 20:45, ora italiana."
     },
     {
-     "q": "Dove posso consultare classifica e risultati?",
+     "q": "Dove vedo classifica e risultati?",
      "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
-     "q": "Dove trovo spiegazioni sulle quote di questa partita?",
-     "a": "Le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio) illustrano il funzionamento delle quote e dei mercati."
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -8082,7 +8082,7 @@
    ]
   },
   "fb:1001528996": {
-   "fingerprint": "1xrb8sp",
+   "fingerprint": "10fb2n3",
    "sections": [
     {
      "id": "presentazione",
@@ -8094,8 +8094,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Nations League l'Israele ha raccolto 2 pareggi e 1 sconfitta (sequenza P-N-N), con 1 gol fatto e 4 subiti. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie.",
-      "Nelle ultime 3 partite di Nations League l'Austria ha raccolto 1 vittoria e 2 pareggi (sequenza V-N-N), con 6 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 2 pareggi, ancora senza vittorie."
+      "Nelle ultime 2 partite di Nations League, l'Israele ha collezionato 2 pareggi (sequenza N-N), con 1 gol fatto e 1 subito.",
+      "Nelle ultime 2 partite di Nations League, l'Austria ha collezionato 2 pareggi (sequenza N-N), con 3 gol fatti e 3 subiti. In trasferta il bilancio stagionale è di 2 pareggi, senza vittorie."
      ],
      "bullets": []
     }
@@ -8107,11 +8107,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+     "a": "Puoi consultare la pagina [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Puoi trovare spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -9831,7 +9831,7 @@
    ]
   },
   "fb:1001640008": {
-   "fingerprint": "1avftew",
+   "fingerprint": "exg1ml",
    "sections": [
     {
      "id": "presentazione",
@@ -9843,15 +9843,15 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di CONCACAF Nations League le Isole Cayman hanno collezionato 3 sconfitte (sequenza P-P-P), segnando 0 gol e subendone 6. Hanno perso le ultime 3 gare.",
-      "Nelle ultime 3 partite di CONCACAF Nations League il Guyana ha ottenuto 3 vittorie (sequenza V-V-V), con 15 gol fatti e 2 subiti. Arriva da 3 vittorie consecutive."
+      "Nelle ultime 2 partite di CONCACAF Nations League, l'Isole Cayman ha collezionato 2 sconfitte (sequenza P-P), con 0 gol fatti e 4 subiti. Ha perso entrambe le ultime gare.",
+      "Nelle ultime 2 partite di CONCACAF Nations League, il Guyana ha collezionato 2 vittorie (sequenza V-V), con 13 gol fatti e 2 subiti."
      ],
      "bullets": []
     },
     {
      "id": "precedenti",
      "paragraphs": [
-      "Nell'ultimo confronto diretto il bilancio è di 0 vittorie per le Isole Cayman, 1 vittoria per il Guyana e nessun pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, a settembre 2026 in CONCACAF Nations League, è terminato Guyana 2-0 Isole Cayman."
+      "Negli ultimi 1 confronti diretti il bilancio è di 0 vittorie per l'Isole Cayman, 1 vittoria per il Guyana e nessun pareggio, con 2 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, disputato a settembre 2026 in CONCACAF Nations League, si è concluso con il Guyana che ha vinto 2-0 sull'Isole Cayman."
      ],
      "bullets": []
     }
@@ -10267,7 +10267,7 @@
    ]
   },
   "fb:1001640019": {
-   "fingerprint": "1tb12lj",
+   "fingerprint": "tq8yui",
    "sections": [
     {
      "id": "presentazione",
@@ -10279,7 +10279,7 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Sint Maarten ha raccolto 4 sconfitte (sequenza P-P-P-P), con 2 gol fatti e 10 subiti. Ha perso le ultime 4. In casa ha perso tutte le 2 partite giocate.",
+      "Nelle ultime 3 partite di CONCACAF Nations League il Sint Maarten ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 9 subiti. Ha perso le ultime 3.",
       "Nelle ultime 3 partite di CONCACAF Nations League il French Guyana ha raccolto 3 vittorie (sequenza V-V-V), con 4 gol fatti e 0 subiti. È reduce da 3 vittorie consecutive."
      ],
      "bullets": []
@@ -10308,7 +10308,7 @@
    ]
   },
   "fb:1001644693": {
-   "fingerprint": "1oxytw9",
+   "fingerprint": "e52soa",
    "sections": [
     {
      "id": "presentazione",
@@ -10320,7 +10320,7 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di CONCACAF Nations League, l'Haiti ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-V-P), segnando 6 gol e subendone 3."
+      "Nelle ultime 2 partite di CONCACAF Nations League, l'Haiti ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 4 gol e subendone 3."
      ],
      "bullets": []
     }
@@ -10341,7 +10341,7 @@
    ]
   },
   "fb:1001640018": {
-   "fingerprint": "14shr2j",
+   "fingerprint": "1ii8rx3",
    "sections": [
     {
      "id": "presentazione",
@@ -10354,7 +10354,7 @@
      "id": "momento",
      "paragraphs": [
       "Nelle ultime 3 partite di CONCACAF Nations League lo St. Vincent / Grenadines ha raccolto 3 vittorie (sequenza V-V-V), con 9 gol fatti e 2 subiti. È reduce da 3 vittorie consecutive.",
-      "Nelle ultime 4 partite di CONCACAF Nations League il Belize ha raccolto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), con 1 gol fatto e 4 subiti. Ha perso le ultime 3. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 3 partite di CONCACAF Nations League il Belize ha raccolto 3 sconfitte (sequenza P-P-P), con 0 gol fatti e 4 subiti. Ha perso le ultime 3."
      ],
      "bullets": []
     }
@@ -10362,15 +10362,15 @@
    "faq": [
     {
      "q": "Quando si gioca St. Vincent / Grenadines – Belize?",
-     "a": "La partita si disputa domenica 15 novembre alle 01:00, ora italiana."
+     "a": "Domenica 15 novembre alle 01:00, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti spiegano come funzionano le quote le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -10441,7 +10441,7 @@
    ]
   },
   "fb:1001640014": {
-   "fingerprint": "4wi6td",
+   "fingerprint": "1elkk7m",
    "sections": [
     {
      "id": "presentazione",
@@ -10453,8 +10453,8 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di CONCACAF Nations League il Guyana ha raccolto 3 vittorie (sequenza V-V-V), con 15 gol fatti e 2 subiti. È reduce da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite giocate.",
-      "Nelle ultime 3 partite di CONCACAF Nations League il Portorico ha raccolto 3 vittorie (sequenza V-V-V), con 6 gol fatti e 0 subiti. È reduce da 3 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
+      "Nelle ultime 2 partite di CONCACAF Nations League il Guyana ha raccolto 2 vittorie (sequenza V-V), con 13 gol fatti e 2 subiti.",
+      "Nelle ultime 3 partite di CONCACAF Nations League il Portorico ha raccolto 3 vittorie (sequenza V-V-V), con 6 gol fatti e 0 subiti. Arriva da 3 vittorie consecutive. In trasferta ha vinto tutte le 2 partite giocate."
      ],
      "bullets": []
     },
@@ -10672,20 +10672,20 @@
    ]
   },
   "fb:1001640005": {
-   "fingerprint": "1vv6e29",
+   "fingerprint": "avwo2m",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Martedì 17 novembre alle 20:00 il Belize ospita il Sint Maarten nella 4ª giornata di CONCACAF Nations League."
+      "Martedì 17 novembre alle 20:00 il Belize ospita il Sint Maarten per la 4ª giornata di CONCACAF Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 4 partite di CONCACAF Nations League il Belize ha ottenuto 1 vittoria e 3 sconfitte (sequenza V-P-P-P), segnando 1 gol e subendone 4. Ha perso le ultime 3. In casa ha perso tutte le 2 partite giocate.",
-      "Nelle ultime 4 partite di CONCACAF Nations League il Sint Maarten ha collezionato 4 sconfitte (sequenza P-P-P-P), segnando 2 gol e subendone 10. Ha perso le ultime 4. In trasferta ha perso tutte le 2 partite giocate."
+      "Nelle ultime 3 partite di CONCACAF Nations League il Belize ha raccolto 3 sconfitte (sequenza P-P-P), con 0 gol fatti e 4 subiti. Ha perso le ultime 3. In casa ha perso tutte le 2 partite giocate.",
+      "Nelle ultime 3 partite di CONCACAF Nations League il Sint Maarten ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 9 subiti. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     }
@@ -10706,20 +10706,20 @@
    ]
   },
   "fb:1001640010": {
-   "fingerprint": "163rz8s",
+   "fingerprint": "f5b7ht",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Martedì 17 novembre alle 20:00 il Dominica riceve le Isole Cayman per la 1ª giornata di CONCACAF Nations League."
+      "Martedì 17 novembre alle 20:00 il Dominica ospita le Isole Cayman per la 1ª giornata di CONCACAF Nations League."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di CONCACAF Nations League il Dominica ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 15 subiti. Ha perso le ultime 3. In casa ha perso tutte le 2 partite giocate.",
-      "Nelle ultime 3 partite di CONCACAF Nations League le Isole Cayman hanno raccolto 3 sconfitte (sequenza P-P-P), con 0 gol fatti e 6 subiti. Hanno perso le ultime 3. In trasferta hanno perso tutte le 2 partite giocate."
+      "Nelle ultime 3 partite di CONCACAF Nations League il Dominica ha subito 3 sconfitte consecutive (sequenza P-P-P), segnando 2 gol e subendone 15. Ha perso tutte e 3 le gare. In casa ha perso entrambe le partite disputate.",
+      "Nelle ultime 2 partite di CONCACAF Nations League le Isole Cayman hanno subito 2 sconfitte consecutive (sequenza P-P), senza segnare e subendo 4 gol. Ha perso entrambe le gare."
      ],
      "bullets": []
     }
@@ -10731,11 +10731,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+     "a": "Puoi consultare la pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -10822,7 +10822,7 @@
    ]
   },
   "fb:1001644697": {
-   "fingerprint": "1c999ff",
+   "fingerprint": "1x3nymw",
    "sections": [
     {
      "id": "presentazione",
@@ -10834,7 +10834,7 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite della CONCACAF Nations League l'Haiti ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-V-P), segnando 6 gol e subendone 3. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 2 partite di CONCACAF Nations League l'Haiti ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 4 gol e subendone 3. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     }
@@ -10846,11 +10846,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
+     "a": "Puoi consultare la pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -11004,20 +11004,19 @@
    ]
   },
   "fb:1001586134": {
-   "fingerprint": "1x8p9rs",
+   "fingerprint": "1cj4w0m",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento giovedì 12 novembre alle 07:00: la Nuova Zelanda ospita l'India in una partita valida per le Amichevoli internazionali."
+      "Giovedì 12 novembre alle 07:00 il Nuova Zelanda ospita l'India in una partita valida per le Amichevoli internazionali."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "La Nuova Zelanda ha disputato finora una sola partita di Amichevoli internazionali, vinta 3-0.",
-      "Nelle ultime 2 partite di Amichevoli internazionali, l'India ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 10. Ha perso entrambe le ultime due gare."
+      "Nelle ultime 2 partite di Amichevoli internazionali l'India ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 10. Ha perso entrambe le ultime gare."
      ],
      "bullets": []
     }
@@ -11029,11 +11028,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -11253,19 +11252,12 @@
    ]
   },
   "fb:1001647359": {
-   "fingerprint": "14hyh04",
+   "fingerprint": "1wwhypj",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Giovedì 12 novembre alle 18:30 il Malta ospita l'Eswatini in una partita valida per le Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Finora il Malta ha giocato una sola partita di Amichevoli internazionali, vinta per 2-0."
+      "Giovedì 12 novembre alle 18:30 il Malta ospita l'Eswatini in un incontro valido per le Amichevoli internazionali."
      ],
      "bullets": []
     }
@@ -11273,7 +11265,7 @@
    "faq": [
     {
      "q": "Quando si gioca Malta – Eswatini?",
-     "a": "La partita si disputa giovedì 12 novembre alle 18:30, ora italiana."
+     "a": "Giovedì 12 novembre alle 18:30, ora italiana."
     },
     {
      "q": "Dove vedo classifica e risultati?",
@@ -11281,7 +11273,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -11319,7 +11311,7 @@
    ]
   },
   "fb:1001640083": {
-   "fingerprint": "alomg4",
+   "fingerprint": "dfgtaf",
    "sections": [
     {
      "id": "presentazione",
@@ -11331,7 +11323,7 @@
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Amichevoli internazionali il Paraguay ha raccolto 2 vittorie (sequenza V-V), con 3 gol fatti e 0 subiti. In trasferta ha vinto tutte le 2 partite giocate."
+      "Il Paraguay ha giocato finora una sola partita di Amichevoli internazionali, vinta 1-0."
      ],
      "bullets": []
     }
@@ -11343,11 +11335,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -11393,19 +11385,19 @@
    ]
   },
   "fb:1001649542": {
-   "fingerprint": "arskw5",
+   "fingerprint": "12sybrf",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Venerdì 13 novembre alle 15:00 il Kuwait ospita il Siria nell'ambito delle Amichevoli internazionali."
+      "Venerdì 13 novembre alle 15:00 il Kuwait ospita il Siria per le Amichevoli internazionali."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Amichevoli internazionali il Siria ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 2 gol e subendone 5. In trasferta, nel corso della stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza ancora registrare vittorie."
+      "Il Siria ha giocato finora una sola partita di Amichevoli internazionali, persa 1-4."
      ],
      "bullets": []
     }
@@ -11577,19 +11569,12 @@
    ]
   },
   "fb:1001647637": {
-   "fingerprint": "95wfo7",
+   "fingerprint": "1bpwsfb",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
       "Venerdì 13 novembre alle 18:30 il France U21 ospita l'Italy U21 per Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Il France U21 ha giocato finora una sola partita di Amichevoli internazionali, persa 1-3."
      ],
      "bullets": []
     }
@@ -11601,11 +11586,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -11804,20 +11789,20 @@
    ]
   },
   "fb:1001640518": {
-   "fingerprint": "1y1fp0l",
+   "fingerprint": "vyu0lm",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 14 novembre alle 01:00 la Colombia ospita il Cile in una partita valida per le Amichevoli internazionali."
+      "Sabato 14 novembre, alle 01:00, la Colombia ospita il Cile nell'ambito delle Amichevoli internazionali."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Amichevoli internazionali la Colombia ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-P-V), segnando 3 gol e subendone 2. In casa, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta.",
-      "Nelle ultime 2 partite di Amichevoli internazionali il Cile ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 4 gol e subendone 4. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+      "Nelle ultime 2 partite di Amichevoli internazionali, la Colombia ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 2 gol e subendone 1. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+      "Nelle ultime 2 partite di Amichevoli internazionali, il Cile ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 4 gol e subendone 4. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
      ],
      "bullets": []
     }
@@ -11828,12 +11813,12 @@
      "a": "Sabato 14 novembre alle 01:00, ora italiana."
     },
     {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+     "q": "Dove posso consultare risultati e classifica?",
+     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "q": "Dove trovo spiegazioni sulle quote di questa partita?",
+     "a": "Puoi leggere le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -11864,20 +11849,20 @@
    ]
   },
   "fb:1001647364": {
-   "fingerprint": "1kufz4x",
+   "fingerprint": "whgowd",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Sabato 14 novembre alle 02:00 il Perù ospita il Bolivia per le Amichevoli internazionali."
+      "Sabato 14 novembre alle 02:00 il Perù ospita la Bolivia nell'ambito delle Amichevoli internazionali."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Amichevoli internazionali il Perù ha raccolto 1 pareggio e 2 sconfitte (sequenza N-P-P), con 1 gol fatto e 5 subiti. Ha perso le ultime 2.",
-      "Nelle ultime 2 partite di Amichevoli internazionali il Bolivia ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 6 subiti. Ha perso le ultime 2."
+      "Nelle ultime 3 partite di Amichevoli internazionali il Perù ha ottenuto 1 pareggio e 2 sconfitte (sequenza N-P-P), segnando 1 gol e subendone 5. Ha perso le ultime 2 gare.",
+      "La Bolivia ha disputato finora una sola partita di Amichevoli internazionali, persa 0-4."
      ],
      "bullets": []
     }
@@ -11889,11 +11874,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -12133,19 +12118,19 @@
    ]
   },
   "fb:1001647365": {
-   "fingerprint": "1nawm76",
+   "fingerprint": "vxze62",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "La partita si giocherà sabato 14 novembre alle 13:00: il Cina ospiterà il Malaysia nell'ambito delle Amichevoli internazionali."
+      "Sabato 14 novembre alle 13:00 il Cina riceve il Malaysia in una partita valida per le Amichevoli internazionali."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Amichevoli internazionali il Cina ha collezionato 3 sconfitte (sequenza P-P-P), segnando 0 gol e subendone 9. Ha perso tutte e ultime 3 gare. In casa ha perso tutte le 3 partite disputate."
+      "Nelle ultime 2 partite di Amichevoli internazionali il Cina ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 6 subiti. Ha perso le ultime 2. In casa ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     }
@@ -12157,11 +12142,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -12274,7 +12259,7 @@
    ]
   },
   "fb:1001586133": {
-   "fingerprint": "s5z7oe",
+   "fingerprint": "tevcq0",
    "sections": [
     {
      "id": "presentazione",
@@ -12286,7 +12271,6 @@
     {
      "id": "momento",
      "paragraphs": [
-      "La Nuova Zelanda ha giocato finora una sola partita di Amichevoli internazionali, vinta 3-0.",
       "Nelle ultime 2 partite di Amichevoli internazionali l'India ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 10 subiti. Ha perso le ultime 2."
      ],
      "bullets": []
@@ -12299,11 +12283,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -12586,19 +12570,12 @@
    ]
   },
   "fb:1001646121": {
-   "fingerprint": "187q06c",
+   "fingerprint": "k828yc",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Lunedì 16 novembre alle 20:30 l'England U21 ospita il France U21 per le Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Il France U21 ha giocato finora una sola partita di Amichevoli internazionali, persa 1-3."
+      "Lunedì 16 novembre alle 20:30 l'England U21 ospita il France U21 nell'ambito delle Amichevoli internazionali."
      ],
      "bullets": []
     }
@@ -12610,11 +12587,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ti spiegano come funzionano le quote le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -12813,19 +12790,19 @@
    ]
   },
   "fb:1001647368": {
-   "fingerprint": "1luimmb",
+   "fingerprint": "5vetbn",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Appuntamento martedì 17 novembre alle 13:00: il Cina riceve il Bahrein nella gara valida per le Amichevoli internazionali."
+      "Appuntamento martedì 17 novembre alle 13:00: la Cina ospita il Bahrein nell'ambito delle Amichevoli internazionali."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 3 partite di Amichevoli internazionali il Cina ha raccolto 3 sconfitte (sequenza P-P-P), con 0 gol fatti e 9 subiti. Ha perso le ultime 3. In casa ha perso tutte le 3 partite giocate."
+      "Nelle ultime 2 partite di Amichevoli internazionali la Cina ha raccolto 2 sconfitte (sequenza P-P), con 0 gol fatti e 6 subiti. Ha perso le ultime 2. In casa ha perso tutte le 2 partite giocate."
      ],
      "bullets": []
     }
@@ -12905,20 +12882,20 @@
    ]
   },
   "fb:1001640088": {
-   "fingerprint": "wv6g5s",
+   "fingerprint": "104gi3d",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Martedì 17 novembre alle 14:10 il Giappone ospita il Paraguay nell'ambito delle Amichevoli internazionali."
+      "Martedì 17 novembre alle 14:10 il Giappone ospita il Paraguay in una partita valida per le Amichevoli internazionali."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Il Giappone ha giocato finora una sola partita nelle Amichevoli internazionali, vinta 2-1.",
-      "Nelle ultime 2 partite delle Amichevoli internazionali il Paraguay ha ottenuto 2 vittorie (sequenza V-V), segnando 3 gol e non subendone nessuno. In trasferta ha vinto tutte le 2 partite giocate."
+      "Finora il Giappone ha disputato una sola partita di Amichevoli internazionali, vinta 2-1.",
+      "Anche il Paraguay ha disputato finora una sola partita di Amichevoli internazionali, vinta 1-0."
      ],
      "bullets": []
     }
@@ -12930,11 +12907,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -13039,20 +13016,20 @@
    ]
   },
   "fb:1001640089": {
-   "fingerprint": "rq9tnc",
+   "fingerprint": "tp87qk",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Martedì 17 novembre alle 17:00 la Giordania ospita l'Australia in una partita valida per le Amichevoli internazionali."
+      "Martedì 17 novembre alle 17:00 la Giordania riceve l'Australia in una partita valida per le Amichevoli internazionali."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Amichevoli internazionali la Giordania ha ottenuto 2 pareggi (sequenza N-N), con 1 gol fatto e 1 subito. In casa il bilancio stagionale è di 2 pareggi, senza vittorie.",
-      "L'Australia ha disputato finora una sola partita di Amichevoli internazionali, persa 2-4."
+      "Finora la Giordania ha disputato una sola partita di Amichevoli internazionali, terminata 0-0.",
+      "Anche l'Australia ha giocato finora una sola partita di Amichevoli internazionali, persa 2-4."
      ],
      "bullets": []
     }
@@ -13172,20 +13149,20 @@
    ]
   },
   "fb:1001648288": {
-   "fingerprint": "pgmp9e",
+   "fingerprint": "v8js4r",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Martedì 17 novembre alle 18:00 lo Switzerland U17 riceve il Czech Republic U17 nell'ambito delle Amichevoli internazionali."
+      "Martedì 17 novembre alle 18:00 lo Switzerland U17 ospita il Czech Republic U17 nell'ambito delle Amichevoli internazionali."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Lo Switzerland U17 ha giocato finora una sola partita di Amichevoli internazionali, persa 2-3.",
-      "Nelle ultime 2 partite di Amichevoli internazionali il Czech Republic U17 ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), con 5 gol fatti e 5 subiti."
+      "Finora lo Switzerland U17 ha disputato una sola partita di Amichevoli internazionali, sconfitta per 2-3.",
+      "Anche il Czech Republic U17 ha disputato finora una sola partita di Amichevoli internazionali, sconfitta per 2-3."
      ],
      "bullets": []
     }
@@ -13201,7 +13178,7 @@
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -13332,20 +13309,20 @@
    ]
   },
   "fb:1001640519": {
-   "fingerprint": "1lelbiy",
+   "fingerprint": "13cqhh3",
    "sections": [
     {
      "id": "presentazione",
      "paragraphs": [
-      "Mercoledì 18 novembre alle 00:00 il Cile affronta il Colombia nella partita valida per le Amichevoli internazionali."
+      "Appuntamento mercoledì 18 novembre alle 00:00: il Cile riceve la Colombia per le Amichevoli internazionali."
      ],
      "bullets": []
     },
     {
      "id": "momento",
      "paragraphs": [
-      "Nelle ultime 2 partite di Amichevoli internazionali il Cile ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 4 gol e subendone 4.",
-      "Nelle ultime 3 partite di Amichevoli internazionali il Colombia ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-P-V), segnando 3 gol e subendone 2."
+      "Nelle ultime 2 partite di Amichevoli internazionali il Cile ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 4 gol fatti e 4 subiti.",
+      "Nelle ultime 2 partite di Amichevoli internazionali la Colombia ha raccolto 1 vittoria e 1 sconfitta (sequenza P-V), con 2 gol fatti e 1 subito."
      ],
      "bullets": []
     }
@@ -13357,11 +13334,11 @@
     },
     {
      "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
-     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -13395,414 +13372,6 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001647373": {
-   "fingerprint": "1q6nho2",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 18 novembre alle 00:30 l'Ecuador ospita la Bolivia nell'ambito delle Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Nelle ultime 2 partite di Amichevoli internazionali la Bolivia ha collezionato 2 sconfitte (sequenza P-P), segnando 0 gol e subendone 6. Ha perso entrambe le ultime 2 gare."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Ecuador – Bolivia?",
-     "a": "Mercoledì 18 novembre alle 00:30, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "fb:1001648286": {
-   "fingerprint": "6fces9",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Switzerland U17 e Czech Republic U17 si affrontano giovedì 19 novembre alle 11:00 per Amichevoli internazionali."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Lo Switzerland U17 ha giocato finora una sola partita di Amichevoli internazionali, persa 2-3.",
-      "Nelle ultime 2 partite di Amichevoli internazionali il Czech Republic U17 ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 5 gol fatti e 5 subiti."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Quando si gioca Switzerland U17 – Czech Republic U17?",
-     "a": "Giovedì 19 novembre alle 11:00, ora italiana."
-    },
-    {
-     "q": "Dove vedo classifica e risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-    },
-    {
-     "q": "Come si leggono le quote di questa partita?",
-     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-    }
-   ]
-  },
-  "nba:21718081": {
-   "fingerprint": "1o4nggg",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Wizards fanno visita ai Pacers giovedì 12 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Pacers hanno un record di 3-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,4 punti segnati e 115,2 subiti. In casa il bilancio è 0-5.",
-      "I Wizards hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,1 punti segnati e 113,4 subiti. In trasferta il bilancio è 2-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Indiana Pacers – Washington Wizards in Italia?",
-     "a": "Giovedì 12 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la pagina su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718082": {
-   "fingerprint": "e7gegj",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 12 novembre alle 01:00, ora italiana, i Knicks ospitano i Cavaliers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Knicks hanno un record di 6-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 101,9 subiti. In casa il bilancio è 4-1.",
-      "I Cavaliers hanno un record di 5-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,5 punti segnati e 115,0 subiti. In trasferta il bilancio è 1-4."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Knicks giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 5 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca New York Knicks – Cleveland Cavaliers in Italia?",
-     "a": "Giovedì 12 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718083": {
-   "fingerprint": "5vk745",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Celtics fanno visita ai Raptors giovedì 12 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Raptors hanno un record di 5-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 116,6 punti segnati e 113,3 subiti. In casa il bilancio è 2-2.",
-      "I Celtics hanno un record di 9-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 116,0 punti segnati e 102,3 subiti. In trasferta il bilancio è 4-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 4 gare.",
-      "I Celtics giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Toronto Raptors – Boston Celtics in Italia?",
-     "a": "Giovedì 12 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718084": {
-   "fingerprint": "g0pz8w",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 12 novembre alle 02:00, ora italiana, i Bulls ospitano gli Spurs in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Bulls hanno un record di 1-8 in stagione e hanno vinto 0 delle ultime 5, con una media di 112,7 punti segnati e 129,3 subiti. In casa il bilancio è 0-3.",
-      "Gli Spurs hanno un record di 9-1 in stagione e hanno vinto 5 delle ultime 5, con una media di 120,2 punti segnati e 106,1 subiti. In trasferta il bilancio è 5-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 5 gare.",
-      "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Chicago Bulls – San Antonio Spurs in Italia?",
-     "a": "Giovedì 12 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Per approfondire, consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per capirne la struttura, leggi la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718085": {
-   "fingerprint": "u5cjou",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Nuggets fanno visita ai Grizzlies giovedì 12 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Grizzlies hanno un record di 7-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 110,8 subiti. In casa il bilancio è 2-3.",
-      "I Nuggets hanno un record di 5-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 113,6 punti segnati e 112,8 subiti. In trasferta il bilancio è 3-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 5 gare.",
-      "Nei 7 giorni a partire da questa partita i Nuggets hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Memphis Grizzlies – Denver Nuggets in Italia?",
-     "a": "Giovedì 12 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718086": {
-   "fingerprint": "1m45nzm",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 12 novembre alle 02:00, ora italiana, i Bucks ospitano i Lakers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Bucks hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,3 punti segnati e 121,2 subiti. In casa il bilancio è 1-5.",
-      "I Lakers hanno un record di 10-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 122,1 punti segnati e 114,4 subiti. In trasferta il bilancio è 5-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Bucks giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Milwaukee Bucks – Los Angeles Lakers in Italia?",
-     "a": "Giovedì 12 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718087": {
-   "fingerprint": "fhesp",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Nets fanno visita ai Pelicans giovedì 12 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Pelicans hanno un record di 4-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,5 punti segnati e 122,4 subiti. In casa il bilancio è 3-3.",
-      "I Nets hanno un record di 2-8 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,7 punti segnati e 115,7 subiti. In trasferta il bilancio è 1-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 5 gare.",
-      "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca New Orleans Pelicans – Brooklyn Nets in Italia?",
-     "a": "Giovedì 12 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718088": {
-   "fingerprint": "ic9wg2",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 12 novembre alle 03:00, ora italiana, i Jazz ospitano i Magic in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Jazz hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 117,6 subiti. In casa il bilancio è 1-5.",
-      "I Magic hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 107,0 punti segnati e 114,6 subiti. In trasferta il bilancio è 3-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Jazz giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 4 gare.",
-      "I Magic giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Utah Jazz – Orlando Magic in Italia?",
-     "a": "Giovedì 12 novembre alle 03:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -13881,428 +13450,6 @@
     {
      "q": "A che ora si gioca Portland Trail Blazers – Oklahoma City Thunder in Italia?",
      "a": "Giovedì 12 novembre alle 04:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718091": {
-   "fingerprint": "vlqv0n",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Venerdì 13 novembre alle 01:00, ora italiana, i 76ers ospitano i Raptors in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I 76ers hanno un record di 8-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 110,5 punti segnati e 110,0 subiti. In casa il bilancio è 4-2.",
-      "I Raptors hanno un record di 5-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 116,6 punti segnati e 113,3 subiti. In trasferta il bilancio è 3-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 4 gare.",
-      "I Raptors giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Philadelphia 76ers – Toronto Raptors in Italia?",
-     "a": "Venerdì 13 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718092": {
-   "fingerprint": "tvj3wi",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Pistons fanno visita ai Wizards venerdì 13 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Wizards hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,1 punti segnati e 113,4 subiti. In casa il bilancio è 2-2.",
-      "I Pistons hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 111,8 punti segnati e 103,7 subiti. In trasferta il bilancio è 4-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Wizards giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Washington Wizards – Detroit Pistons in Italia?",
-     "a": "Venerdì 13 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718093": {
-   "fingerprint": "7uikz4",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Venerdì 13 novembre alle 02:00, ora italiana, i Timberwolves ospitano i Mavericks in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Timberwolves hanno un record di 8-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 107,0 subiti. In casa il bilancio è 4-1.",
-      "I Mavericks hanno un record di 7-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 114,9 punti segnati e 110,3 subiti. In trasferta il bilancio è 2-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 5 gare.",
-      "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Minnesota Timberwolves – Dallas Mavericks in Italia?",
-     "a": "Venerdì 13 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718094": {
-   "fingerprint": "1179ci9",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Gli Hornets fanno visita ai Suns venerdì 13 novembre alle 03:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Suns hanno un record di 4-6 in stagione e hanno vinto 3 delle ultime 5, con una media di 112,8 punti segnati e 118,1 subiti. In casa il bilancio è 4-3.",
-      "Gli Hornets hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 98,8 punti segnati e 110,4 subiti. In trasferta il bilancio è 1-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Phoenix Suns – Charlotte Hornets in Italia?",
-     "a": "Venerdì 13 novembre alle 03:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718095": {
-   "fingerprint": "zazqew",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 14 novembre alle 01:00, ora italiana, i Pacers ospitano i Knicks in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Pacers hanno un record di 3-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,4 punti segnati e 115,2 subiti. In casa il bilancio è 0-5.",
-      "I Knicks hanno un record di 6-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 101,9 subiti. In trasferta il bilancio è 2-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Indiana Pacers – New York Knicks in Italia?",
-     "a": "Sabato 14 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718096": {
-   "fingerprint": "rjxsbj",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Bucks fanno visita ai Magic sabato 14 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Magic hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 107,0 punti segnati e 114,6 subiti. In casa il bilancio è 0-4.",
-      "I Bucks hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,3 punti segnati e 121,2 subiti. In trasferta il bilancio è 0-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Orlando Magic – Milwaukee Bucks in Italia?",
-     "a": "Sabato 14 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718097": {
-   "fingerprint": "1ayh50i",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 14 novembre alle 02:00, ora italiana, gli Heat ospitano i Cavaliers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Heat hanno un record di 5-6 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,7 punti segnati e 120,0 subiti. In casa il bilancio è 1-3.",
-      "I Cavaliers hanno un record di 5-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,5 punti segnati e 115,0 subiti. In trasferta il bilancio è 1-4."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 5 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Miami Heat – Cleveland Cavaliers in Italia?",
-     "a": "Sabato 14 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718098": {
-   "fingerprint": "1jyp23s",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Gli Hawks fanno visita ai Bulls sabato 14 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Bulls hanno un record di 1-8 in stagione e hanno vinto 0 delle ultime 5, con una media di 112,7 punti segnati e 129,3 subiti. In casa il bilancio è 0-3.",
-      "Gli Hawks hanno un record di 7-5 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,3 punti segnati e 116,2 subiti. In trasferta il bilancio è 4-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 5 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Chicago Bulls – Atlanta Hawks in Italia?",
-     "a": "Sabato 14 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718099": {
-   "fingerprint": "ufxepz",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 14 novembre alle 02:00, ora italiana, i Pelicans ospitano i Grizzlies in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Pelicans hanno un record di 4-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,5 punti segnati e 122,4 subiti. In casa il bilancio è 3-3.",
-      "I Grizzlies hanno un record di 7-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 110,8 subiti. In trasferta il bilancio è 5-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 5 gare.",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 5 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca New Orleans Pelicans – Memphis Grizzlies in Italia?",
-     "a": "Sabato 14 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718100": {
-   "fingerprint": "qsiq8a",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Jazz fanno visita ai Rockets sabato 14 novembre alle 02:30, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Rockets hanno un record di 8-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,5 punti segnati e 106,4 subiti. In casa il bilancio è 5-1.",
-      "I Jazz hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 117,6 subiti. In trasferta il bilancio è 0-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Houston Rockets – Utah Jazz in Italia?",
-     "a": "Sabato 14 novembre alle 02:30."
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
@@ -14440,49 +13587,6 @@
     }
    ]
   },
-  "nba:21718104": {
-   "fingerprint": "p2dpqr",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Nuggets fanno visita ai Pelicans domenica 15 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Pelicans hanno un record di 4-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,5 punti segnati e 122,4 subiti. In casa il bilancio è 3-3.",
-      "I Nuggets hanno un record di 5-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 113,6 punti segnati e 112,8 subiti. In trasferta il bilancio è 3-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Pelicans giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Nuggets hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca New Orleans Pelicans – Denver Nuggets in Italia?",
-     "a": "Domenica 15 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:21718105": {
    "fingerprint": "tcm71v",
    "sections": [
@@ -14526,177 +13630,6 @@
     }
    ]
   },
-  "nba:21718106": {
-   "fingerprint": "ocami3",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Pistons fanno visita agli Heat domenica 15 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Heat hanno un record di 5-6 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,7 punti segnati e 120,0 subiti. In casa il bilancio è 1-3.",
-      "I Pistons hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 111,8 punti segnati e 103,7 subiti. In trasferta il bilancio è 4-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Gli Heat giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Miami Heat – Detroit Pistons in Italia?",
-     "a": "Domenica 15 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718107": {
-   "fingerprint": "15mtrrh",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 02:00, ora italiana, i Grizzlies ospitano i Nets in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Grizzlies hanno un record di 7-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 110,8 subiti. In casa il bilancio è 2-3.",
-      "I Nets hanno un record di 2-8 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,7 punti segnati e 115,7 subiti. In trasferta il bilancio è 1-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Grizzlies giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 5 gare.",
-      "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Memphis Grizzlies – Brooklyn Nets in Italia?",
-     "a": "Domenica 15 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718108": {
-   "fingerprint": "1hh66h2",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Bulls fanno visita ai Timberwolves domenica 15 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Timberwolves hanno un record di 8-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 107,0 subiti. In casa il bilancio è 4-1.",
-      "I Bulls hanno un record di 1-8 in stagione e hanno vinto 0 delle ultime 5, con una media di 112,7 punti segnati e 129,3 subiti. In trasferta il bilancio è 1-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 5 gare.",
-      "I Bulls giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Minnesota Timberwolves – Chicago Bulls in Italia?",
-     "a": "Domenica 15 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:21718109": {
-   "fingerprint": "1xgqtyr",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 19:00, ora italiana, i 76ers ospitano i Pacers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I 76ers hanno un record di 8-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 110,5 punti segnati e 110,0 subiti. In casa il bilancio è 4-2.",
-      "I Pacers hanno un record di 3-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,4 punti segnati e 115,2 subiti. In trasferta il bilancio è 3-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Philadelphia 76ers – Indiana Pacers in Italia?",
-     "a": "Domenica 15 novembre alle 19:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017130": {
    "fingerprint": "gak0au",
    "sections": [
@@ -14736,90 +13669,6 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017131": {
-   "fingerprint": "9iww32",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Gli Hornets fanno visita ai Clippers domenica 15 novembre alle 22:30, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Clippers hanno un record di 2-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 112,2 punti segnati e 118,1 subiti. In casa il bilancio è 2-3.",
-      "Gli Hornets hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 98,8 punti segnati e 110,4 subiti. In trasferta il bilancio è 1-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca LA Clippers – Charlotte Hornets in Italia?",
-     "a": "Domenica 15 novembre alle 22:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017132": {
-   "fingerprint": "1s0191z",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Domenica 15 novembre alle 23:00, ora italiana, i Jazz ospitano gli Spurs in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Jazz hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 117,6 subiti. In casa il bilancio è 1-5.",
-      "Gli Spurs hanno un record di 9-1 in stagione e hanno vinto 5 delle ultime 5, con una media di 120,2 punti segnati e 106,1 subiti. In trasferta il bilancio è 5-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Utah Jazz – San Antonio Spurs in Italia?",
-     "a": "La partita si disputa domenica 15 novembre alle 23:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per approfondire leggi la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -14866,132 +13715,6 @@
     }
    ]
   },
-  "nba:1000017134": {
-   "fingerprint": "1akp8bb",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Lunedì 16 novembre alle 00:00, ora italiana, i Raptors ospitano i Knicks in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Raptors hanno un record di 5-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 116,6 punti segnati e 113,3 subiti. In casa il bilancio è 2-2.",
-      "I Knicks hanno un record di 6-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 101,9 subiti. In trasferta il bilancio è 2-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Toronto Raptors – New York Knicks in Italia?",
-     "a": "Lunedì 16 novembre alle 00:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017135": {
-   "fingerprint": "qq3uw2",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Rockets fanno visita ai Wizards lunedì 16 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Wizards hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,1 punti segnati e 113,4 subiti. In casa il bilancio è 2-2.",
-      "I Rockets hanno un record di 8-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,5 punti segnati e 106,4 subiti. In trasferta il bilancio è 3-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 5 gare.",
-      "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Washington Wizards – Houston Rockets in Italia?",
-     "a": "Lunedì 16 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017136": {
-   "fingerprint": "13u84uw",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Lunedì 16 novembre alle 02:00, ora italiana, i Bucks ospitano gli Hawks in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Bucks hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,3 punti segnati e 121,2 subiti. In casa il bilancio è 1-5.",
-      "Gli Hawks hanno un record di 7-5 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,3 punti segnati e 116,2 subiti. In trasferta il bilancio è 4-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Milwaukee Bucks – Atlanta Hawks in Italia?",
-     "a": "Lunedì 16 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017137": {
    "fingerprint": "ni6xvk",
    "sections": [
@@ -15034,303 +13757,6 @@
     }
    ]
   },
-  "nba:1000017138": {
-   "fingerprint": "tz9qsa",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 01:00, ora italiana, i Celtics ospitano i Magic in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Celtics hanno un record di 9-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 116,0 punti segnati e 102,3 subiti. In casa il bilancio è 5-0.",
-      "I Magic hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 107,0 punti segnati e 114,6 subiti. In trasferta il bilancio è 3-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Celtics giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Boston Celtics – Orlando Magic in Italia?",
-     "a": "Martedì 17 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017139": {
-   "fingerprint": "a3h91f",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Bulls fanno visita ai Cavaliers martedì 17 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Cavaliers hanno un record di 5-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,5 punti segnati e 115,0 subiti. In casa il bilancio è 4-2.",
-      "I Bulls hanno un record di 1-8 in stagione e hanno vinto 0 delle ultime 5, con una media di 112,7 punti segnati e 129,3 subiti. In trasferta il bilancio è 1-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Cleveland Cavaliers – Chicago Bulls in Italia?",
-     "a": "Martedì 17 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017140": {
-   "fingerprint": "x5kley",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Grizzlies fanno visita ai Wizards martedì 17 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Wizards hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,1 punti segnati e 113,4 subiti. In casa il bilancio è 2-2.",
-      "I Grizzlies hanno un record di 7-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 110,8 subiti. In trasferta il bilancio è 5-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Wizards giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 5 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Washington Wizards – Memphis Grizzlies in Italia?",
-     "a": "Martedì 17 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017141": {
-   "fingerprint": "11epdw9",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 01:30, ora italiana, i Nets ospitano i 76ers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Nets hanno un record di 2-8 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,7 punti segnati e 115,7 subiti. In casa il bilancio è 1-3.",
-      "I 76ers hanno un record di 8-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 110,5 punti segnati e 110,0 subiti. In trasferta il bilancio è 4-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Brooklyn Nets – Philadelphia 76ers in Italia?",
-     "a": "Martedì 17 novembre alle 01:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017142": {
-   "fingerprint": "3mvpri",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Rockets fanno visita agli Heat martedì 17 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Heat hanno un record di 5-6 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,7 punti segnati e 120,0 subiti. In casa il bilancio è 1-3.",
-      "I Rockets hanno un record di 8-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,5 punti segnati e 106,4 subiti. In trasferta il bilancio è 3-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 3 gare.",
-      "I Rockets giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Miami Heat – Houston Rockets in Italia?",
-     "a": "Martedì 17 novembre alle 01:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017143": {
-   "fingerprint": "1yju4xp",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 17 novembre alle 02:00, ora italiana, i Timberwolves ospitano i Trail Blazers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Timberwolves hanno un record di 8-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 107,0 subiti. In casa il bilancio è 4-1.",
-      "I Trail Blazers hanno un record di 7-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,7 punti segnati e 112,7 subiti. In trasferta il bilancio è 5-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 5 gare.",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 5 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Minnesota Timberwolves – Portland Trail Blazers in Italia?",
-     "a": "Martedì 17 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Per approfondire, consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli sul formato del campionato, leggi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017144": {
-   "fingerprint": "1gpc5co",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Warriors fanno visita ai Pelicans martedì 17 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Pelicans hanno un record di 4-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,5 punti segnati e 122,4 subiti. In casa il bilancio è 3-3.",
-      "I Warriors hanno un record di 8-3 in stagione e hanno vinto 5 delle ultime 5, con una media di 120,4 punti segnati e 111,2 subiti. In trasferta il bilancio è 2-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 5 gare.",
-      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca New Orleans Pelicans – Golden State Warriors in Italia?",
-     "a": "Martedì 17 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017145": {
    "fingerprint": "4k5dcc",
    "sections": [
@@ -15363,92 +13789,6 @@
     {
      "q": "A che ora si gioca Denver Nuggets – Phoenix Suns in Italia?",
      "a": "Martedì 17 novembre alle 03:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017146": {
-   "fingerprint": "1c9snxa",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I New York Knicks fanno visita ai Toronto Raptors mercoledì 18 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Raptors hanno un record di 5-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 116,6 punti segnati e 113,3 subiti. In casa il bilancio è 2-2.",
-      "I Knicks hanno un record di 6-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 101,9 subiti. In trasferta il bilancio è 2-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Toronto Raptors – New York Knicks in Italia?",
-     "a": "Mercoledì 18 novembre alle 01:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Il formato è spiegato in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017147": {
-   "fingerprint": "11bpiql",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 18 novembre alle 02:00, ora italiana, i Timberwolves ospitano i Trail Blazers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Timberwolves hanno un record di 8-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 107,0 subiti. In casa il bilancio è 4-1.",
-      "I Trail Blazers hanno un record di 7-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,7 punti segnati e 112,7 subiti. In trasferta il bilancio è 5-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Timberwolves giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 4 gare.",
-      "I Trail Blazers giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Minnesota Timberwolves – Portland Trail Blazers in Italia?",
-     "a": "Mercoledì 18 novembre alle 02:00."
     },
     {
      "q": "Come funzionano totali e handicap nel basket?",
@@ -15499,428 +13839,6 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Puoi consultare [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017150": {
-   "fingerprint": "baqqov",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 18 novembre alle 04:30, ora italiana, i Clippers ospitano i Jazz in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Clippers hanno un record di 2-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 112,2 punti segnati e 118,1 subiti. In casa il bilancio è 2-3.",
-      "I Jazz hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 117,6 subiti. In trasferta il bilancio è 0-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Clippers hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 5 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca LA Clippers – Utah Jazz in Italia?",
-     "a": "Mercoledì 18 novembre alle 04:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017149": {
-   "fingerprint": "zoe92y",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 18 novembre alle 05:00, ora italiana, i Lakers ospitano gli Hornets in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Lakers hanno un record di 10-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 122,1 punti segnati e 114,4 subiti. In casa il bilancio è 5-1.",
-      "Gli Hornets hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 98,8 punti segnati e 110,4 subiti. In trasferta il bilancio è 1-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Los Angeles Lakers – Charlotte Hornets in Italia?",
-     "a": "Mercoledì 18 novembre alle 05:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017151": {
-   "fingerprint": "dah5c2",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Grizzlies fanno visita ai Cavaliers giovedì 19 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Cavaliers hanno un record di 5-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,5 punti segnati e 115,0 subiti. In casa il bilancio è 4-2.",
-      "I Grizzlies hanno un record di 7-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 110,8 subiti. In trasferta il bilancio è 5-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Cleveland Cavaliers – Memphis Grizzlies in Italia?",
-     "a": "Giovedì 19 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017152": {
-   "fingerprint": "w4579p",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 19 novembre alle 01:00, ora italiana, i Pacers ospitano i Rockets in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Pacers hanno un record di 3-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,4 punti segnati e 115,2 subiti. In casa il bilancio è 0-5.",
-      "I Rockets hanno un record di 8-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,5 punti segnati e 106,4 subiti. In trasferta il bilancio è 3-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i Rockets hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Indiana Pacers – Houston Rockets in Italia?",
-     "a": "Giovedì 19 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017153": {
-   "fingerprint": "1gsyarg",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Bucks fanno visita agli Heat giovedì 19 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Heat hanno un record di 5-6 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,7 punti segnati e 120,0 subiti. In casa il bilancio è 1-3.",
-      "I Bucks hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,3 punti segnati e 121,2 subiti. In trasferta il bilancio è 0-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Miami Heat – Milwaukee Bucks in Italia?",
-     "a": "Giovedì 19 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi tutto su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017154": {
-   "fingerprint": "1sacujg",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 19 novembre alle 01:00, ora italiana, i Magic ospitano i 76ers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Magic hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 107,0 punti segnati e 114,6 subiti. In casa il bilancio è 0-4.",
-      "I 76ers hanno un record di 8-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 110,5 punti segnati e 110,0 subiti. In trasferta il bilancio è 4-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Orlando Magic – Philadelphia 76ers in Italia?",
-     "a": "Giovedì 19 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento disponibile nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017155": {
-   "fingerprint": "1wcr2td",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Bulls fanno visita ai Nets giovedì 19 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Nets hanno un record di 2-8 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,7 punti segnati e 115,7 subiti. In casa il bilancio è 1-3.",
-      "I Bulls hanno un record di 1-8 in stagione e hanno vinto 0 delle ultime 5, con una media di 112,7 punti segnati e 129,3 subiti. In trasferta il bilancio è 1-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Brooklyn Nets – Chicago Bulls in Italia?",
-     "a": "Giovedì 19 novembre alle 01:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017156": {
-   "fingerprint": "1nu49nk",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 19 novembre alle 01:30, ora italiana, i Raptors ospitano i Wizards in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Raptors hanno un record di 5-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 116,6 punti segnati e 113,3 subiti. In casa il bilancio è 2-2.",
-      "I Wizards hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,1 punti segnati e 113,4 subiti. In trasferta il bilancio è 2-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Raptors giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Toronto Raptors – Washington Wizards in Italia?",
-     "a": "Giovedì 19 novembre alle 01:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Maggiori dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017157": {
-   "fingerprint": "kirolq",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Pistons fanno visita ai Pelicans giovedì 19 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Pelicans hanno un record di 4-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,5 punti segnati e 122,4 subiti. In casa il bilancio è 3-3.",
-      "I Pistons hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 111,8 punti segnati e 103,7 subiti. In trasferta il bilancio è 4-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 4 gare.",
-      "I Pistons giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca New Orleans Pelicans – Detroit Pistons in Italia?",
-     "a": "Giovedì 19 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017158": {
-   "fingerprint": "18w01nd",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 19 novembre alle 02:00, ora italiana, gli Oklahoma City Thunder ospitano gli Atlanta Hawks in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Thunder hanno un record di 7-3 in stagione e nelle ultime 5 gare ne hanno vinte 4, con una media di 110,9 punti segnati e 106,1 subiti. In casa il bilancio è 5-0.",
-      "Gli Hawks hanno un record di 7-5 in stagione e nelle ultime 5 gare ne hanno vinte 4, con una media di 118,3 punti segnati e 116,2 subiti. In trasferta il bilancio è 4-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 4 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Oklahoma City Thunder – Atlanta Hawks in Italia?",
-     "a": "Giovedì 19 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi tutto nella guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -16008,50 +13926,6 @@
     }
    ]
   },
-  "nba:1000017161": {
-   "fingerprint": "13qr5pd",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Giovedì 19 novembre alle 04:00, ora italiana, i Lakers ospitano i Jazz in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Lakers hanno un record di 10-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 122,1 punti segnati e 114,4 subiti. In casa il bilancio è 5-1.",
-      "I Jazz hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 117,6 subiti. In trasferta il bilancio è 0-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Lakers giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 3 gare.",
-      "I Jazz giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 4 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Los Angeles Lakers – Utah Jazz in Italia?",
-     "a": "Giovedì 19 novembre alle 04:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Per approfondire, consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli, consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017162": {
    "fingerprint": "f58vir",
    "sections": [
@@ -16094,135 +13968,6 @@
     }
    ]
   },
-  "nba:1000017163": {
-   "fingerprint": "18zrlj2",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Venerdì 20 novembre alle 02:00, ora italiana, i Grizzlies ospitano i Warriors in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Grizzlies hanno un record di 7-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 110,8 subiti. In casa il bilancio è 2-3.",
-      "I Warriors hanno un record di 8-3 in stagione e hanno vinto 5 delle ultime 5, con una media di 120,4 punti segnati e 111,2 subiti. In trasferta il bilancio è 2-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Grizzlies giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 3 gare.",
-      "I Warriors giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Warriors hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Memphis Grizzlies – Golden State Warriors in Italia?",
-     "a": "Venerdì 20 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017164": {
-   "fingerprint": "cnzh1d",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Trail Blazers fanno visita ai Bucks venerdì 20 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Bucks hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,3 punti segnati e 121,2 subiti. In casa il bilancio è 1-5.",
-      "I Trail Blazers hanno un record di 7-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,7 punti segnati e 112,7 subiti. In trasferta il bilancio è 5-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Bucks giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Milwaukee Bucks – Portland Trail Blazers in Italia?",
-     "a": "Venerdì 20 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017165": {
-   "fingerprint": "i7krnw",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Venerdì 20 novembre alle 02:00, ora italiana, i Timberwolves ospitano i Knicks in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Timberwolves hanno un record di 8-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 107,0 subiti. In casa il bilancio è 4-1.",
-      "I Knicks hanno un record di 6-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 101,9 subiti. In trasferta il bilancio è 2-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Minnesota Timberwolves – New York Knicks in Italia?",
-     "a": "Venerdì 20 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017166": {
    "fingerprint": "nkgoef",
    "sections": [
@@ -16262,300 +14007,6 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Trovi tutto su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017167": {
-   "fingerprint": "1smvv3z",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 21 novembre alle 01:00, ora italiana, gli Hawks ospitano gli Hornets in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Hawks hanno un record di 7-5 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,3 punti segnati e 116,2 subiti. In casa il bilancio è 3-3.",
-      "Gli Hornets hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 98,8 punti segnati e 110,4 subiti. In trasferta il bilancio è 1-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Atlanta Hawks – Charlotte Hornets in Italia?",
-     "a": "Sabato 21 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017168": {
-   "fingerprint": "okq3wg",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Magic fanno visita ai Nets sabato 21 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Nets hanno un record di 2-8 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,7 punti segnati e 115,7 subiti. In casa il bilancio è 1-3.",
-      "I Magic hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 107,0 punti segnati e 114,6 subiti. In trasferta il bilancio è 3-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Brooklyn Nets – Orlando Magic in Italia?",
-     "a": "La partita si disputa sabato 21 novembre alle 01:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Per approfondire leggi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017169": {
-   "fingerprint": "mbiszl",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 21 novembre alle 01:30, ora italiana, i Cavaliers ospitano i Pacers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Cavaliers hanno un record di 5-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,5 punti segnati e 115,0 subiti. In casa il bilancio è 4-2.",
-      "I Pacers hanno un record di 3-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,4 punti segnati e 115,2 subiti. In trasferta il bilancio è 3-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Cleveland Cavaliers – Indiana Pacers in Italia?",
-     "a": "Sabato 21 novembre alle 01:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017170": {
-   "fingerprint": "1lu5xoq",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 21 novembre alle 01:30, ora italiana, i Pistons ospitano i Raptors in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Pistons hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 111,8 punti segnati e 103,7 subiti. In casa il bilancio è 2-2.",
-      "I Raptors hanno un record di 5-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 116,6 punti segnati e 113,3 subiti. In trasferta il bilancio è 3-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Detroit Pistons – Toronto Raptors in Italia?",
-     "a": "Sabato 21 novembre alle 01:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017171": {
-   "fingerprint": "1yxze35",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Washington Wizards fanno visita ai Chicago Bulls sabato 21 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Chicago Bulls hanno un record di 1-8 in stagione e hanno vinto 0 delle ultime 5, con una media di 112,7 punti segnati e 129,3 subiti. In casa il bilancio è 0-3.",
-      "I Washington Wizards hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,1 punti segnati e 113,4 subiti. In trasferta il bilancio è 2-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Chicago Bulls hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Washington Wizards hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Chicago Bulls – Washington Wizards in Italia?",
-     "a": "La partita si gioca sabato 21 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Per approfondire, consulta la guida [Over/Under e handicap nel basket](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli, leggi la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017172": {
-   "fingerprint": "xlrpjq",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 21 novembre alle 02:00, ora italiana, gli Oklahoma City Thunder ospitano i New Orleans Pelicans in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Oklahoma City Thunder hanno un record di 7-3 in stagione e hanno vinto 4 delle ultime 5 partite, con una media di 110,9 punti segnati e 106,1 subiti. In casa il bilancio è 5-0.",
-      "I New Orleans Pelicans hanno un record di 4-7 in stagione e hanno vinto 2 delle ultime 5 partite, con una media di 117,5 punti segnati e 122,4 subiti. In trasferta il bilancio è 1-4."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita, i Thunder hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita, i Pelicans hanno in calendario 3 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Oklahoma City Thunder – New Orleans Pelicans in Italia?",
-     "a": "Sabato 21 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Per approfondire, consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per capirne la struttura, consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017173": {
-   "fingerprint": "1rfgea8",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Suns fanno visita ai Jazz sabato 21 novembre alle 03:30, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Jazz hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 117,6 subiti. In casa il bilancio è 1-5.",
-      "I Suns hanno un record di 4-6 in stagione e hanno vinto 3 delle ultime 5, con una media di 112,8 punti segnati e 118,1 subiti. In trasferta il bilancio è 0-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 3 gare.",
-      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Utah Jazz – Phoenix Suns in Italia?",
-     "a": "Sabato 21 novembre alle 03:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi i dettagli su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -16643,48 +14094,6 @@
     }
    ]
   },
-  "nba:1000017176": {
-   "fingerprint": "14ay787",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Sabato 21 novembre alle 19:00, ora italiana, i 76ers ospitano i Bucks in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I 76ers hanno un record di 8-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 110,5 punti segnati e 110,0 subiti. In casa il bilancio è 4-2.",
-      "I Bucks hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,3 punti segnati e 121,2 subiti. In trasferta il bilancio è 0-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Philadelphia 76ers – Milwaukee Bucks in Italia?",
-     "a": "Sabato 21 novembre alle 19:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Per approfondire, consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per capire la struttura del campionato, leggi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017177": {
    "fingerprint": "1mq02mj",
    "sections": [
@@ -16769,91 +14178,6 @@
     }
    ]
   },
-  "nba:1000017179": {
-   "fingerprint": "178tlxn",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Grizzlies fanno visita ai Timberwolves domenica 22 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Timberwolves hanno un record di 8-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 107,0 subiti. In casa il bilancio è 4-1.",
-      "I Grizzlies hanno un record di 7-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 110,8 subiti. In trasferta il bilancio è 5-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Minnesota Timberwolves – Memphis Grizzlies in Italia?",
-     "a": "Domenica 22 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017180": {
-   "fingerprint": "yu2f9o",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Pelicans fanno visita agli Spurs domenica 22 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Spurs hanno un record di 9-1 in stagione e hanno vinto 5 delle ultime 5, con una media di 120,2 punti segnati e 106,1 subiti. In casa il bilancio è 4-1.",
-      "I Pelicans hanno un record di 4-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,5 punti segnati e 122,4 subiti. In trasferta il bilancio è 1-4."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Spurs hanno in calendario 2 gare.",
-      "I Pelicans giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca San Antonio Spurs – New Orleans Pelicans in Italia?",
-     "a": "Domenica 22 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017181": {
    "fingerprint": "qhk0yd",
    "sections": [
@@ -16894,260 +14218,6 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017182": {
-   "fingerprint": "1trlmnz",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Pistons fanno visita agli Hawks domenica 22 novembre alle 21:30, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Hawks hanno un record di 7-5 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,3 punti segnati e 116,2 subiti. In casa il bilancio è 3-3.",
-      "I Pistons hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 111,8 punti segnati e 103,7 subiti. In trasferta il bilancio è 4-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Hawks hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Atlanta Hawks – Detroit Pistons in Italia?",
-     "a": "Domenica 22 novembre alle 21:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017183": {
-   "fingerprint": "qpml7d",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Lunedì 23 novembre alle 00:00, ora italiana, gli Heat ospitano i Thunder in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Heat hanno un record di 5-6 in stagione e hanno vinto 3 delle ultime 5, con una media di 115,7 punti segnati e 120,0 subiti. In casa il bilancio è 1-3.",
-      "I Thunder hanno un record di 7-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 110,9 punti segnati e 106,1 subiti. In trasferta il bilancio è 2-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Heat hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Miami Heat – Oklahoma City Thunder in Italia?",
-     "a": "Lunedì 23 novembre alle 00:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi tutti i dettagli in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017184": {
-   "fingerprint": "1xm8wz8",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Magic fanno visita ai Wizards lunedì 23 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Wizards hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,1 punti segnati e 113,4 subiti. In casa il bilancio è 2-2.",
-      "I Magic hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 107,0 punti segnati e 114,6 subiti. In trasferta il bilancio è 3-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Washington Wizards – Orlando Magic in Italia?",
-     "a": "Lunedì 23 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017185": {
-   "fingerprint": "1gvdzn5",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Lunedì 23 novembre alle 01:00, ora italiana, i Bulls ospitano i Nuggets in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Bulls hanno un record di 1-8 in stagione e hanno vinto 0 delle ultime 5, con una media di 112,7 punti segnati e 129,3 subiti. In casa il bilancio è 0-3.",
-      "I Nuggets hanno un record di 5-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 113,6 punti segnati e 112,8 subiti. In trasferta il bilancio è 3-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 2 gare.",
-      "Nei 7 giorni a partire da questa partita i Nuggets hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Chicago Bulls – Denver Nuggets in Italia?",
-     "a": "Lunedì 23 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017186": {
-   "fingerprint": "36o9f4",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Mavericks fanno visita ai Jazz lunedì 23 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Jazz hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 117,6 subiti. In casa il bilancio è 1-5.",
-      "I Mavericks hanno un record di 7-4 in stagione e hanno vinto 3 delle ultime 5, con una media di 114,9 punti segnati e 110,3 subiti. In trasferta il bilancio è 2-2."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 2 gare.",
-      "I Mavericks giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Mavericks hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Utah Jazz – Dallas Mavericks in Italia?",
-     "a": "Lunedì 23 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017187": {
-   "fingerprint": "121y9x4",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Lunedì 23 novembre alle 02:00, ora italiana, i Knicks ospitano i Pacers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Knicks hanno un record di 6-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,8 punti segnati e 101,9 subiti. In casa il bilancio è 4-1.",
-      "I Pacers hanno un record di 3-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,4 punti segnati e 115,2 subiti. In trasferta il bilancio è 3-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Knicks giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 2 gare."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca New York Knicks – Indiana Pacers in Italia?",
-     "a": "Lunedì 23 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Trovi tutte le informazioni in [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -17194,303 +14264,6 @@
     }
    ]
   },
-  "nba:1000017189": {
-   "fingerprint": "bvzkqs",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 24 novembre alle 01:00, ora italiana, gli Hornets ospitano i Grizzlies in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "Gli Hornets hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 98,8 punti segnati e 110,4 subiti. In casa il bilancio è 3-4.",
-      "I Grizzlies hanno un record di 7-3 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,9 punti segnati e 110,8 subiti. In trasferta il bilancio è 5-0."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita gli Hornets hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Grizzlies hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Charlotte Hornets – Memphis Grizzlies in Italia?",
-     "a": "Martedì 24 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Qui trovi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Qui trovi la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017190": {
-   "fingerprint": "zl22xh",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 24 novembre alle 01:00, ora italiana, i 76ers ospitano i Trail Blazers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I 76ers hanno un record di 8-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 110,5 punti segnati e 110,0 subiti. In casa il bilancio è 4-2.",
-      "I Trail Blazers hanno un record di 7-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 119,7 punti segnati e 112,7 subiti. In trasferta il bilancio è 5-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i 76ers hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Trail Blazers hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Philadelphia 76ers – Portland Trail Blazers in Italia?",
-     "a": "Martedì 24 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017191": {
-   "fingerprint": "1t8sne8",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Thunder fanno visita ai Pacers martedì 24 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Pacers hanno un record di 3-8 in stagione e hanno vinto 1 delle ultime 5, con una media di 111,4 punti segnati e 115,2 subiti. In casa il bilancio è 0-5.",
-      "I Thunder hanno un record di 7-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 110,9 punti segnati e 106,1 subiti. In trasferta il bilancio è 2-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Pacers giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 1 gara.",
-      "I Thunder giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Thunder hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Indiana Pacers – Oklahoma City Thunder in Italia?",
-     "a": "Martedì 24 novembre alle 01:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Vedi la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Vedi [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017192": {
-   "fingerprint": "1gnvzjg",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 24 novembre alle 01:30, ora italiana, i Raptors ospitano i Bucks in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Raptors hanno un record di 5-5 in stagione e hanno vinto 2 delle ultime 5, con una media di 116,6 punti segnati e 113,3 subiti. In casa il bilancio è 2-2.",
-      "I Bucks hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,3 punti segnati e 121,2 subiti. In trasferta il bilancio è 0-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Raptors hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Toronto Raptors – Milwaukee Bucks in Italia?",
-     "a": "Martedì 24 novembre alle 01:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017193": {
-   "fingerprint": "17k3o6j",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Nets fanno visita ai Timberwolves martedì 24 novembre alle 01:30, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Timberwolves hanno un record di 8-3 in stagione e hanno vinto 4 delle ultime 5, con una media di 118,1 punti segnati e 107,0 subiti. In casa il bilancio è 4-1.",
-      "I Nets hanno un record di 2-8 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,7 punti segnati e 115,7 subiti. In trasferta il bilancio è 1-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Timberwolves hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Nets hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Minnesota Timberwolves – Brooklyn Nets in Italia?",
-     "a": "Martedì 24 novembre alle 01:30."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la pagina su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017194": {
-   "fingerprint": "spqpwa",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Martedì 24 novembre alle 02:00, ora italiana, i Bulls ospitano i Cavaliers in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Bulls hanno un record di 1-8 in stagione e hanno vinto 0 delle ultime 5, con una media di 112,7 punti segnati e 129,3 subiti. In casa il bilancio è 0-3.",
-      "I Cavaliers hanno un record di 5-6 in stagione e hanno vinto 1 delle ultime 5, con una media di 116,5 punti segnati e 115,0 subiti. In trasferta il bilancio è 1-4."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "I Bulls giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Bulls hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Cavaliers hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Chicago Bulls – Cleveland Cavaliers in Italia?",
-     "a": "Martedì 24 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondisci nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017195": {
-   "fingerprint": "nt96wu",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Suns fanno visita ai Pelicans martedì 24 novembre alle 02:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Pelicans hanno un record di 4-7 in stagione e hanno vinto 2 delle ultime 5, con una media di 117,5 punti segnati e 122,4 subiti. In casa il bilancio è 3-3.",
-      "I Suns hanno un record di 4-6 in stagione e hanno vinto 3 delle ultime 5, con una media di 112,8 punti segnati e 118,1 subiti. In trasferta il bilancio è 0-3."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Pelicans hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Suns hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca New Orleans Pelicans – Phoenix Suns in Italia?",
-     "a": "La partita si disputa martedì 24 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Per capirlo puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Puoi leggere di più su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017196": {
    "fingerprint": "1gp0suf",
    "sections": [
@@ -17533,49 +14306,6 @@
     }
    ]
   },
-  "nba:1000017197": {
-   "fingerprint": "1ldptty",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Jazz fanno visita ai Lakers martedì 24 novembre alle 04:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Lakers hanno un record di 10-2 in stagione e hanno vinto 5 delle ultime 5, con una media di 122,1 punti segnati e 114,4 subiti. In casa il bilancio è 5-1.",
-      "I Jazz hanno un record di 1-10 in stagione e hanno vinto 0 delle ultime 5, con una media di 106,5 punti segnati e 117,6 subiti. In trasferta il bilancio è 0-5."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Lakers hanno in calendario 1 gara.",
-      "I Jazz giocano la seconda partita in due giorni (back-to-back).",
-      "Nei 7 giorni a partire da questa partita i Jazz hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Los Angeles Lakers – Utah Jazz in Italia?",
-     "a": "Martedì 24 novembre alle 04:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
   "nba:1000017198": {
    "fingerprint": "1yjxd5w",
    "sections": [
@@ -17615,90 +14345,6 @@
     {
      "q": "Come è organizzata la stagione NBA?",
      "a": "Consulta la pagina su [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017199": {
-   "fingerprint": "4qoj3o",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "I Pistons fanno visita ai Magic mercoledì 25 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Magic hanno un record di 3-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 107,0 punti segnati e 114,6 subiti. In casa il bilancio è 0-4.",
-      "I Pistons hanno un record di 6-3 in stagione e hanno vinto 3 delle ultime 5, con una media di 111,8 punti segnati e 103,7 subiti. In trasferta il bilancio è 4-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Pistons hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Orlando Magic – Detroit Pistons in Italia?",
-     "a": "Mercoledì 25 novembre alle 01:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Approfondimento nella guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Per i dettagli consulta [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-    }
-   ]
-  },
-  "nba:1000017200": {
-   "fingerprint": "1iwvv0z",
-   "sections": [
-    {
-     "id": "presentazione",
-     "paragraphs": [
-      "Mercoledì 25 novembre alle 02:00, ora italiana, i Wizards ospitano i Celtics in una partita della regular season NBA 2026-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "momento",
-     "paragraphs": [
-      "I Wizards hanno un record di 4-7 in stagione e hanno vinto 1 delle ultime 5, con una media di 108,1 punti segnati e 113,4 subiti. In casa il bilancio è 2-2.",
-      "I Celtics hanno un record di 9-1 in stagione e hanno vinto 4 delle ultime 5, con una media di 116,0 punti segnati e 102,3 subiti. In trasferta il bilancio è 4-1."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "calendario",
-     "paragraphs": [],
-     "bullets": [
-      "Nei 7 giorni a partire da questa partita i Wizards hanno in calendario 1 gara.",
-      "Nei 7 giorni a partire da questa partita i Celtics hanno in calendario 1 gara."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "A che ora si gioca Washington Wizards – Boston Celtics in Italia?",
-     "a": "Mercoledì 25 novembre alle 02:00."
-    },
-    {
-     "q": "Come funzionano totali e handicap nel basket?",
-     "a": "Puoi consultare la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-    },
-    {
-     "q": "Come è organizzata la stagione NBA?",
-     "a": "Puoi consultare la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
     }
    ]
   },
@@ -17875,35 +14521,6 @@
     }
    ]
   },
-  "fb:1001647635": {
-   "fingerprint": "msfgo4",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "L'England U18 si impone di misura in casa sul Netherlands U18 per 3-2. Il match, valido per le Amichevoli internazionali, si è disputato mercoledì 11 novembre."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "prossimi",
-     "paragraphs": [
-      "L'England U18 tornerà in campo sabato 14 novembre alle 12:00 in casa contro il Norway U19. Il Netherlands U18 tornerà in campo sabato 14 novembre alle 12:00 in casa contro lo Switzerland U18."
-     ],
-     "bullets": []
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita England U18 – Netherlands U18?",
-     "a": "3-2."
-    },
-    {
-     "q": "Dove trovo gli altri risultati?",
-     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
-    }
-   ]
-  },
   "fb:1001649007": {
    "fingerprint": "bufy8q",
    "sections": [
@@ -17930,70 +14547,6 @@
     {
      "q": "Dove trovo gli altri risultati?",
      "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
-    }
-   ]
-  },
-  "nba:21718060": {
-   "fingerprint": "m37ne3",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Lakers si sono imposti sui Pistons per 121-116. La partita si è giocata lunedì 9 novembre.",
-      "All'intervallo i Lakers conducevano 61-48.",
-      "Il parziale più netto è stato quello del 1º quarto, vinto dai Lakers 38-14."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 237.",
-      "Parziali (Pistons–Lakers): 14-38, 34-23, 33-27, 35-33."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Detroit Pistons – Los Angeles Lakers?",
-     "a": "116-121 per i Lakers."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Puoi consultare la pagina dei [pronostici NBA](/pronostici/nba)."
-    }
-   ]
-  },
-  "nba:21718061": {
-   "fingerprint": "7kdyx2",
-   "sections": [
-    {
-     "id": "resoconto",
-     "paragraphs": [
-      "I Timberwolves hanno superato i Jazz per 115-100. La gara si è disputata lunedì 9 novembre.",
-      "All'intervallo i Timberwolves erano in vantaggio per 57-51.",
-      "Il parziale più marcato è arrivato nel 3º quarto, vinto dai Timberwolves per 33-27."
-     ],
-     "bullets": []
-    },
-    {
-     "id": "numeri",
-     "paragraphs": [],
-     "bullets": [
-      "Punti totali: 215.",
-      "Parziali (Timberwolves–Jazz): 28-25, 29-26, 33-27, 25-22."
-     ]
-    }
-   ],
-   "faq": [
-    {
-     "q": "Com'è finita Minnesota Timberwolves – Utah Jazz?",
-     "a": "115-100 per i Timberwolves."
-    },
-    {
-     "q": "Dove trovo le altre partite NBA?",
-     "a": "Nella sezione dedicata ai [pronostici NBA](/pronostici/nba)."
     }
    ]
   },

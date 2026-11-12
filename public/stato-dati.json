@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T21:19:47.971Z",
+  "updatedAt": "2026-11-12T00:19:47.663Z",
   "football": {
     "details": {
       "ok": true
@@ -22,12 +22,12 @@
     },
     "ok": true,
     "requests": 13,
-    "remainingToday": 7336,
+    "remainingToday": 7484,
     "games": 49,
     "teamSeasons": 60
   },
   "calendarioCalcio": {
-    "updatedAt": "2026-11-11T21:18:13.570Z",
+    "updatedAt": "2026-11-12T00:18:02.011Z",
     "source": "API-Football",
     "ok": true,
     "competitions": {
@@ -45,11 +45,11 @@
       },
       "EL": {
         "ok": true,
-        "matches": 54
+        "matches": 72
       },
       "ECL": {
         "ok": true,
-        "matches": 54
+        "matches": 72
       },
       "PL": {
         "ok": true,
@@ -81,7 +81,7 @@
       },
       "BSA": {
         "ok": true,
-        "matches": 84
+        "matches": 85
       },
       "WC": {
         "ok": true,
@@ -89,7 +89,7 @@
       },
       "UNL": {
         "ok": true,
-        "matches": 130
+        "matches": 122
       },
       "EURO": {
         "ok": true,
@@ -145,7 +145,7 @@
       },
       "CNL": {
         "ok": true,
-        "matches": 87
+        "matches": 84
       },
       "WCQOC": {
         "ok": true,
@@ -157,18 +157,18 @@
       },
       "FRI": {
         "ok": true,
-        "matches": 287
+        "matches": 269
       }
     },
-    "requests": 56,
-    "remainingToday": 4726
+    "requests": 106,
+    "remainingToday": 7394
   },
   "calendarioNba": {
-    "updatedAt": "2026-11-11T21:18:28.507Z",
+    "updatedAt": "2026-11-12T00:18:28.728Z",
     "source": "API-NBA",
     "ok": true,
-    "games": 258,
+    "games": 253,
     "requests": 1,
-    "remainingToday": 7349
+    "remainingToday": 7497
   }
 }
