@@ -83,9 +83,34 @@
   "test:partite-oggi:2026-11-12": {
    "at": "2026-11-12T08:47:50.358Z",
    "messageId": 22
+  },
+  "test:tris-nazionali:2026-11-12": {
+   "at": "2026-11-12T09:47:45.384Z",
+   "messageId": 23
   }
  },
  "academy": {
   "test": 2
+ },
+ "tris": {
+  "test": {
+   "tris-nazionali": {
+    "day": "2026-11-12",
+    "picks": [
+     {
+      "id": 1001528961,
+      "index": 2
+     },
+     {
+      "id": 1001528962,
+      "index": 0
+     },
+     {
+      "id": 1001528964,
+      "index": 2
+     }
+    ]
+   }
+  }
  }
 }
