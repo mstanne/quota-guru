@@ -1598,6 +1598,288 @@
           "usableOn": "Slot di Amusnet, Games Global, Greentube, Elk e Inspired (1.000 € per provider)"
         }
       ]
+    },
+    {
+      "requirements": [
+        "Offerta da scegliere in fase di registrazione",
+        "Conto convalidato",
+        "Primo deposito di almeno 10 €, da giocare per intero entro 7 giorni su multiple con almeno 5 eventi e quota totale 5,00 (esclusi sistemi e giocate con cash out)",
+        "Valida per un solo codice fiscale, nucleo familiare, indirizzo IP e dispositivo, e solo senza altri bonus di benvenuto della stessa concessione"
+      ],
+      "excludedPaymentMethods": [
+        "Skrill",
+        "Neteller",
+        "Bonifico bancario",
+        "Scratch Card",
+        "OnShop"
+      ],
+      "validFrom": "2026-09-07",
+      "validUntil": null,
+      "verifiedAt": "2026-11-12",
+      "status": "approvata",
+      "issues": [],
+      "sections": [
+        "sport"
+      ],
+      "depositWithinDays": null,
+      "id": "daznbet-sport",
+      "operatorId": "daznbet",
+      "operatorName": "DAZN Bet",
+      "title": "Bonus Benvenuto Sport",
+      "advertisedTotal": 100,
+      "minDeposit": 10,
+      "sourceUrl": "https://www.daznbet.it/promo/sport/BWS_FBET/",
+      "termsUrl": "https://www.daznbet.it/promo/sport/BWS_FBET/",
+      "description": "Freebet da 5 € alla convalida del conto e real bonus pari al 50% del primo deposito, fino a 100 €, accreditato dopo aver giocato l'intero deposito su multiple.",
+      "components": [
+        {
+          "id": "freebet-registrazione",
+          "product": "sport",
+          "kind": "senza-deposito",
+          "percent": null,
+          "maxAmount": 5,
+          "maxConvertible": null,
+          "wagering": 1,
+          "wageringDays": null,
+          "validityDays": 7,
+          "minEvents": 5,
+          "minOddsPerEvent": null,
+          "usableOn": "Multiple pre-partita e live con almeno 5 eventi e quota totale 5,00",
+          "notes": [
+            "Freebet da giocare in un'unica schedina",
+            "Esclusi antepost, sistemi e mercati giocatori/marcatori",
+            "La vincita diventa real bonus, fino a 100 €, da giocare alle stesse condizioni entro 7 giorni"
+          ]
+        },
+        {
+          "id": "bonus-deposito",
+          "product": "sport",
+          "kind": "bonus-real",
+          "percent": 50,
+          "maxAmount": 100,
+          "maxConvertible": null,
+          "wagering": 1,
+          "wageringDays": null,
+          "validityDays": 3,
+          "minEvents": 5,
+          "minOddsPerEvent": null,
+          "usableOn": "Multiple pre-partita e live con almeno 5 eventi e quota totale 5,00",
+          "notes": [
+            "Accreditato quando tutti gli eventi delle giocate sul deposito sono refertati",
+            "Esclusi antepost, sistemi e mercati giocatori/marcatori"
+          ]
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Primo versamento di almeno 5 € scegliendo la voce Sport",
+        "Scommesse pre-partita, live e miste con quota totale di almeno 3,50, esclusi exchange, cash out, sistemi e ticket rimborsati",
+        "90 giorni dall'attivazione per sbloccare tutti gli scaglioni"
+      ],
+      "excludedPaymentMethods": [],
+      "validFrom": null,
+      "validUntil": null,
+      "verifiedAt": "2026-11-12",
+      "status": "approvata",
+      "issues": [],
+      "sections": [
+        "sport"
+      ],
+      "depositWithinDays": null,
+      "id": "betflag-sport",
+      "operatorId": "betflag",
+      "operatorName": "BetFlag",
+      "title": "Welcome Bonus Sport",
+      "advertisedTotal": 5000,
+      "minDeposit": 5,
+      "sourceUrl": "https://info.betflag.it/promozioni-e-bonus/promo-sport/welcome-bonus-sport/",
+      "termsUrl": "https://info.betflag.it/promozioni-e-bonus/promo-sport/welcome-bonus-sport/",
+      "description": "Accrediti sul saldo pari in totale al 100% del primo versamento, fino a 5.000 €, sbloccati a scaglioni in base all'importo giocato sulle scommesse sportive entro 90 giorni.",
+      "components": [
+        {
+          "id": "accrediti-saldo",
+          "product": "sport",
+          "kind": "bonus-real",
+          "percent": 100,
+          "maxAmount": 5000,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": 90,
+          "validityDays": null,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Qualsiasi sezione di gioco",
+          "notes": [
+            "Gli accrediti arrivano a scaglioni: per esempio 5 € ogni 20 € giocati per un versamento di 5 €; per sbloccare 100 € servono 2.400 € di giocate",
+            "Ogni accredito va rigiocato almeno una volta prima di poterlo prelevare",
+            "Conta solo il primo versamento"
+          ]
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Conto verificato con documento d'identità",
+        "Consenso a ricevere le comunicazioni di Netwin",
+        "Prima ricarica di almeno 20 € con il codice SPORT-50",
+        "Giocare 3 volte il deposito entro 7 giorni su multiple pre-partita con almeno 3 eventi a quota 2,00 e quota totale 10,00 (esclusi sistemi, antepost, live e cash out)",
+        "Una sola adesione per persona, nucleo familiare, indirizzo IP e metodo di pagamento"
+      ],
+      "excludedPaymentMethods": [],
+      "validFrom": null,
+      "validUntil": null,
+      "verifiedAt": "2026-11-12",
+      "status": "approvata",
+      "issues": [],
+      "sections": [
+        "sport"
+      ],
+      "depositWithinDays": null,
+      "id": "netwin-sport",
+      "operatorId": "netwin",
+      "operatorName": "Netwin",
+      "title": "Bonus Sport 100%",
+      "advertisedTotal": 50,
+      "minDeposit": 20,
+      "sourceUrl": "https://www.netwin.it/promo",
+      "termsUrl": "https://www.netwin.it/promo",
+      "description": "Real bonus pari al 100% della prima ricarica, fino a 50 €, accreditato dopo aver giocato tre volte l'importo depositato su multiple.",
+      "components": [
+        {
+          "id": "real-bonus",
+          "product": "sport",
+          "kind": "bonus-real",
+          "percent": 100,
+          "maxAmount": 50,
+          "maxConvertible": null,
+          "wagering": 1,
+          "wageringDays": null,
+          "validityDays": 3,
+          "minEvents": 4,
+          "minOddsPerEvent": 1.5,
+          "usableOn": "Multiple con almeno 4 eventi a quota 1,50 e quota totale 5,00, solo sul mercato 1X2",
+          "notes": [
+            "Accreditato entro 30 giorni dal completamento del requisito",
+            "Le vincite sono prelevabili"
+          ]
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Conto attivo e verificato",
+        "Deposito di almeno 10 € entro 7 giorni dalla registrazione",
+        "Scommessa di almeno 10 € con quota minima 1,80 per evento entro 7 giorni dalla registrazione"
+      ],
+      "excludedPaymentMethods": [],
+      "validFrom": null,
+      "validUntil": null,
+      "verifiedAt": "2026-11-12",
+      "status": "approvata",
+      "issues": [],
+      "sections": [
+        "sport"
+      ],
+      "depositWithinDays": 7,
+      "id": "sportium-sport",
+      "operatorId": "sportium",
+      "operatorName": "Sportium",
+      "title": "Bonus Benvenuto Sport Freebet",
+      "advertisedTotal": 30,
+      "minDeposit": 10,
+      "sourceUrl": "https://sportium.it/games/promozione/bonus-benvenuto-sport-freebet",
+      "termsUrl": "https://sportium.it/games/promozione/bonus-benvenuto-sport-freebet",
+      "description": "Dopo una prima scommessa di almeno 10 € arrivano tre freebet da 10 € se la scommessa vince, due da 5 € se perde.",
+      "components": [
+        {
+          "id": "freebet",
+          "product": "sport",
+          "kind": "bonus-deposito",
+          "percent": null,
+          "maxAmount": 30,
+          "maxConvertible": null,
+          "wagering": null,
+          "wageringDays": null,
+          "validityDays": null,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Scommesse sportive",
+          "notes": [
+            "30 € in freebet (3 da 10 €) se la scommessa qualificante vince, 10 € (2 da 5 €) se perde"
+          ]
+        }
+      ]
+    },
+    {
+      "requirements": [
+        "Conto convalidato",
+        "Prima ricarica di almeno 10 € entro 7 giorni dalla registrazione, con il codice WSPORT1000X o scegliendo l'offerta in registrazione",
+        "Sblocco entro 30 giorni giocando saldo reale su multiple con almeno 2 eventi a quota 1,50 e quota totale 3,00 (esclusi live, sistemi, scommesse a 2 esiti, marcatori, antepost e cash out)",
+        "Una sola adesione per persona, indirizzo, email, IP, dispositivo e metodo di pagamento"
+      ],
+      "excludedPaymentMethods": [
+        "Neteller",
+        "Skrill"
+      ],
+      "validFrom": null,
+      "validUntil": null,
+      "verifiedAt": "2026-11-12",
+      "status": "approvata",
+      "issues": [],
+      "sections": [
+        "sport"
+      ],
+      "depositWithinDays": 7,
+      "id": "marathonbet-sport",
+      "operatorId": "marathonbet",
+      "operatorName": "Marathonbet",
+      "title": "Bonus Benvenuto Sport",
+      "advertisedTotal": 1000,
+      "minDeposit": 10,
+      "sourceUrl": "https://www.marathonbet.it/promo/sport/bonus-benvenuto-sport",
+      "termsUrl": "https://www.marathonbet.it/promo/sport/bonus-benvenuto-sport",
+      "description": "Real bonus pari al 100% della prima ricarica, fino a 1.000 €, che si sblocca in quote del 10% del saldo reale giocato su multiple, più 200 free spin su slot selezionate.",
+      "components": [
+        {
+          "id": "real-bonus",
+          "product": "sport",
+          "kind": "bonus-real",
+          "percent": 100,
+          "maxAmount": 1000,
+          "maxConvertible": null,
+          "wagering": 10,
+          "wageringDays": 30,
+          "validityDays": 7,
+          "minEvents": 4,
+          "minOddsPerEvent": 1.6,
+          "usableOn": "Bonus sbloccato: multiple pre-partita con almeno 4 eventi a quota 1,60",
+          "notes": [
+            "Si sblocca 1 € di bonus ogni 10 € di saldo reale giocato: per sbloccare 1.000 € servono 10.000 € di giocate",
+            "Il bonus sbloccato va poi giocato una volta prima di poter prelevare le vincite",
+            "Esclusi live, sistemi, scommesse a 2 esiti, marcatori, antepost e cash out",
+            "Una richiesta di prelievo prima del completamento dei requisiti annulla il bonus"
+          ]
+        },
+        {
+          "id": "free-spin",
+          "product": "casino",
+          "kind": "bonus-deposito",
+          "percent": null,
+          "maxAmount": 200,
+          "maxConvertible": 10,
+          "wagering": 15,
+          "wageringDays": 3,
+          "validityDays": 3,
+          "minEvents": null,
+          "minOddsPerEvent": null,
+          "usableOn": "Slot selezionate del fornitore Tuko",
+          "notes": [
+            "200 free spin da 1 €",
+            "Le vincite diventano fun bonus fino a 10 €, da giocare 15 volte per ottenere al massimo 10 € di real bonus"
+          ]
+        }
+      ]
     }
   ]
 }

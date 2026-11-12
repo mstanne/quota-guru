@@ -38,6 +38,12 @@ const DOMAINS = {
   admiralbet: ["admiralbet.it"],
   leovegas: ["leovegas.it"],
   lottomatica: ["lottomatica.it"],
+  daznbet: ["daznbet.it"],
+  betflag: ["betflag.it"],
+  netwin: ["netwin.it"],
+  quigioco: ["quigioco.it"],
+  sportium: ["sportium.it"],
+  marathonbet: ["marathonbet.it"],
 };
 
 // Promotional wording that must not appear in text written for the site (D.L. 87/2018, art. 9;

@@ -883,6 +883,28 @@ export const operatorProfiles: Record<string, OperatorProfile> = {
     sources: [{ label: "Link alle app nel sito", url: "https://www.codere.it/" }],
     checkedAt: CHECKED,
   },
+  marathonbet: {
+    // marathonbet.it/supporto/pagamenti, 12/11/2026: no fees on any method
+    payments: [
+      { method: "Visa", deposit: "da 10 €", withdrawal: "da 10 €", withdrawalTime: "3-5 giorni lavorativi", fee: "Nessuna" },
+      { method: "Mastercard", deposit: "da 10 €", withdrawal: "da 10 €", withdrawalTime: "3-5 giorni lavorativi", fee: "Nessuna" },
+      { method: "Postepay", deposit: "da 5 €", withdrawal: "da 10 €", withdrawalTime: "Da pochi minuti a 24 ore", fee: "Nessuna" },
+      { method: "PayPal", deposit: "da 10 €", withdrawal: "da 10 €", withdrawalTime: "Da pochi minuti a 24 ore", fee: "Nessuna" },
+      { method: "Skrill", deposit: "da 10 €", withdrawal: "da 10 €", withdrawalTime: "Da pochi minuti a 24 ore", fee: "Nessuna" },
+      { method: "Neteller", deposit: "Secondo le condizioni del metodo", withdrawal: "da 10 €", withdrawalTime: "Da pochi minuti a 24 ore", fee: "Nessuna" },
+      { method: "MuchBetter", deposit: "da 10 €", withdrawal: "da 10 €", withdrawalTime: "Da pochi minuti a 24 ore", fee: "Nessuna" },
+      { method: "Paysafecard", deposit: "da 10 €", withdrawal: "da 10 €", withdrawalTime: "Da pochi minuti a 24 ore", fee: "Nessuna" },
+      { method: "Apple Pay", deposit: "da 10 €", withdrawal: "—", withdrawalTime: "—", fee: "Nessuna" },
+      { method: "Google Pay", deposit: "da 10 €", withdrawal: "—", withdrawalTime: "—", fee: "Nessuna" },
+      { method: "MyBank", deposit: "da 10 €", withdrawal: "da 10 €", withdrawalTime: "Da pochi minuti a 24 ore", fee: "Nessuna" },
+      { method: "Open Banking", deposit: "da 10 €", withdrawal: "da 10 €", withdrawalTime: "Da pochi minuti a 24 ore", fee: "Nessuna" },
+      { method: "OnShop", deposit: "da 10 €", withdrawal: "da 10 €", withdrawalTime: "Da pochi minuti a 24 ore", fee: "Nessuna" },
+      { method: "Pin Voucher", deposit: "da 5 €", withdrawal: "—", withdrawalTime: "—", fee: "Nessuna" },
+    ],
+    paymentNotes: ["Apple Pay, Google Pay e Pin Voucher servono solo per depositare: si preleva con un altro metodo."],
+    sources: [{ label: "Pagamenti", url: "https://www.marathonbet.it/supporto/pagamenti" }],
+    checkedAt: "2026-11-12",
+  },
 };
 
 export const profileOf = (id: string): OperatorProfile | undefined => operatorProfiles[id];

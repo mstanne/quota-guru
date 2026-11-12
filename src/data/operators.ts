@@ -634,6 +634,166 @@ const snai: OperatorData = {
 };
 
 /** Operators shown across the site (comparison tables, offers, bet slip). Order = display order. */
+// The six operators below were read on 12/11/2026 from their official sites (footer, payment and help pages).
+const daznbet: OperatorData = {
+  id: "daznbet",
+  name: "DAZN Bet",
+  shortName: "DZ",
+  logoUrl: "operators/daznbet-logo.png",
+  logoAlt: "Logo DAZN Bet",
+  affiliateUrl: "https://www.daznbet.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "nomeSocietaGara2: Scommettendo s.r.l., numeroConcessione: 16041" (site data of daznbet.it)
+  admLicense: "16041",
+  company: "Scommettendo S.r.l.",
+  description:
+    "Concessionario ADM gestito da Scommettendo S.r.l. con il marchio DAZN Bet, con scommesse sportive, Totocalcio, ippica, virtuali, casinò e poker.",
+  // daznbet.it/supporto/modalita-versamento: no minimum stated
+  minDeposit: "[DEPOSITO_MINIMO]",
+  withdrawalTime: "24-48 ore lavorative con Postepay, carte, PayPal e Skrill; 3-5 giorni lavorativi con Neteller e bonifico",
+  paymentMethods: ["Postepay", "Carte di credito/prepagate", "PayPal", "Skrill", "Neteller", "Bonifico bancario o postale", "Scratch card (solo depositi)", "OnShop (solo depositi)"],
+  features: ["Scommesse sportive e live", "Totocalcio e ippica", "Virtuali", "Casinò e poker"],
+  pros: ["Prelievo con Postepay, carte, PayPal e Skrill in 24-48 ore lavorative", "Depositi immediati con tutti i metodi tranne il bonifico"],
+  cons: ["Deposito minimo non indicato nelle pagine di aiuto", "Neteller e bonifico richiedono 3-5 giorni lavorativi per il prelievo"],
+  liveStreaming: false,
+  // the sports welcome terms exclude "ticket sui quali è stato fatto Cashout"
+  cashOut: true,
+  fastestWithdrawal: { speed: "oltre", methods: ["Postepay", "Carte", "PayPal", "Skrill"], time: "24-48 ore lavorative" },
+};
+
+const betflag: OperatorData = {
+  id: "betflag",
+  name: "BetFlag",
+  shortName: "BF",
+  logoUrl: "operators/betflag-logo.png",
+  logoAlt: "Logo BetFlag",
+  affiliateUrl: "https://www.betflag.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "BetFlag Spa | ... | Gruppo IVA 15432831004 | C.F. 01779160769 | Conc. n. 16008" (footer of betflag.it)
+  admLicense: "16008",
+  company: "BetFlag S.p.A.",
+  description:
+    "Concessionario ADM gestito da BetFlag S.p.A., con scommesse sportive e live, betting exchange, ippica, virtuali, slot, casinò, poker, bingo e lotterie.",
+  // info.betflag.it/faq/prelievi: first card deposit "importo minimo 5 euro"; sports welcome offer from 5 €
+  minDeposit: "5 €",
+  withdrawalTime: "Prelievo immediato (evasione istantanea) con carte, PayPal, Skrill, Neteller e MuchBetter; con Postepay e portafogli dal secondo prelievo",
+  paymentMethods: ["Carte di credito/prepagate", "Postepay (solo prelievi)", "PayPal", "Skrill", "Neteller", "MuchBetter", "Bonifico bancario", "Bonifico istantaneo (solo depositi)", "Bonifico domiciliato (solo prelievi)", "Paysafecard (solo depositi)", "Ricarica BetFlag nei punti vendita (solo depositi)", "OnShop (solo depositi)"],
+  features: ["Scommesse sportive e live", "Betting exchange", "Ippica e virtuali", "Slot, casinò, poker, bingo e lotterie"],
+  pros: ["Funzione di prelievo immediato con carte e portafogli elettronici", "Deposito minimo di 5 €"],
+  cons: ["Postepay e portafogli elettronici hanno il prelievo immediato solo dal secondo prelievo"],
+  liveStreaming: false,
+  // the sports welcome terms exclude bets with "Cashout"
+  cashOut: true,
+  fastestWithdrawal: {
+    speed: "immediato",
+    methods: ["Carta di credito", "PayPal", "Skrill", "Neteller", "MuchBetter"],
+    time: "Evasione immediata (portafogli dal secondo prelievo)",
+  },
+};
+
+const netwin: OperatorData = {
+  id: "netwin",
+  name: "Netwin",
+  shortName: "NW",
+  logoUrl: "operators/netwin-logo-white.svg",
+  logoAlt: "Logo Netwin",
+  affiliateUrl: "https://www.netwin.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "Concessione GAD n. 16035 rilasciata da ADM" and "concessione n.16035 di NETWIN ITALIA S.P.A" (netwin.it)
+  admLicense: "GAD 16035",
+  company: "Netwin Italia S.p.A.",
+  description:
+    "Concessionario ADM gestito da Netwin Italia S.p.A., con scommesse sportive, casinò, slot, bingo, virtuali e lotterie.",
+  // netwin.it/supporto/modalita-versamento: "Transazione minima €10,00" (PayPal 20 €)
+  minDeposit: "10 € (PayPal 20 €)",
+  withdrawalTime: "Immediato con SEPA Payout e bonifico istantaneo (da 50 €); PayPal 24-48 ore lavorative; Skrill entro 72 ore; carte e bonifico entro 7 giorni",
+  paymentMethods: ["Carte di credito", "PayPal", "Skrill", "Apple Pay (solo depositi)", "Google Pay (solo depositi)", "Paysafecard (solo depositi)", "MyBank (solo depositi)", "OnShop (solo depositi)", "Bonifico bancario o postale", "Bonifico istantaneo (solo prelievi)"],
+  features: ["Scommesse sportive e live", "Casinò e slot", "Bingo", "Virtuali e lotterie"],
+  pros: ["Prelievo indicato come immediato con SEPA Payout e bonifico istantaneo", "Registrazione anche con SPID"],
+  cons: ["Prelievo con carta o bonifico ordinario entro 7 giorni", "Bonifico istantaneo da almeno 50 €"],
+  liveStreaming: false,
+  // the sports welcome terms mention bets "su cui è stata abilitata la funzione cashout"
+  cashOut: true,
+  // "Welcome bonus SPID" on netwin.it/promo
+  spidRegistration: true,
+  fastestWithdrawal: { speed: "immediato", methods: ["SEPA Payout", "Bonifico istantaneo"], time: "Immediato" },
+};
+
+const quigioco: OperatorData = {
+  id: "quigioco",
+  name: "Quigioco",
+  shortName: "QG",
+  logoUrl: "operators/quigioco-logo-white.png",
+  logoAlt: "Logo Quigioco",
+  affiliateUrl: "https://www.quigioco.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "HBG ONLINE GAMING SRL P.I. 11473051008 Conc. GAD 16015" (footer of quigioco.it)
+  admLicense: "GAD 16015",
+  company: "HBG Online Gaming S.r.l.",
+  description:
+    "Concessionario ADM gestito da HBG Online Gaming S.r.l., con scommesse sportive e live, slot, casinò live, poker, giochi di carte, ippica, virtuali, bingo e lotterie.",
+  // quigioco.it FAQ Ricariche e Prelievi: "versamento minimo di 5,00 €"; prelievo minimo 10 €
+  minDeposit: "5 € (PayPal 10 €)",
+  withdrawalTime: "[TEMPI_PRELIEVO]",
+  paymentMethods: ["Carte di credito/prepagate (Visa, Mastercard, Diners)", "PayPal", "Skrill", "Bonifico bancario"],
+  features: ["Scommesse sportive e live", "Slot e casinò live", "Poker e giochi di carte", "Ippica, virtuali, bingo e lotterie"],
+  pros: ["Deposito minimo di 5 €", "Registrazione anche con SPID"],
+  cons: ["Tempi di prelievo non indicati nelle pagine di aiuto", "Al 12/11/2026 l'offerta di benvenuto è solo per il casinò"],
+  liveStreaming: false,
+  cashOut: false,
+  // "Bonus di benvenuto con SPID" on quigioco.it/promo
+  spidRegistration: true,
+};
+
+const sportium: OperatorData = {
+  id: "sportium",
+  name: "Sportium",
+  shortName: "SP",
+  logoUrl: "operators/sportium-logo-white.png",
+  logoAlt: "Logo Sportium",
+  affiliateUrl: "https://sportium.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "E-PLAY24 ITA LTD, titolare della concessione GAD 16005 ... Malta VAT MT20357525" (footer of sportium.it)
+  admLicense: "GAD 16005",
+  company: "E-Play24 ITA Ltd",
+  description:
+    "Concessionario ADM gestito da E-Play24 ITA Ltd (Malta) con il marchio Sportium, con scommesse sportive pre-partita e live, slot, casinò live, poker, giochi di carte e lotterie.",
+  // sportium.it/faq/ricariche: 10 € - 2.000 € per transaction (MyBank 10-100 €, bonifico fino a 5.000 €)
+  minDeposit: "10 €",
+  withdrawalTime: "[TEMPI_PRELIEVO]",
+  paymentMethods: ["Carte bancarie", "Postepay", "PayPal", "Skrill", "Neteller", "Apple Pay", "Google Pay", "Paysafecard", "MyBank", "Bonifico bancario"],
+  features: ["Scommesse sportive e live", "Slot e casinò live", "Poker e giochi di carte", "Lotterie"],
+  pros: ["Depositi senza costi e istantanei con tutti i metodi tranne bonifico e MyBank", "Dieci metodi di deposito, Apple Pay e Google Pay compresi"],
+  cons: ["Tempi di prelievo non indicati nelle pagine di aiuto"],
+  liveStreaming: false,
+  cashOut: false,
+};
+
+const marathonbet: OperatorData = {
+  id: "marathonbet",
+  name: "Marathonbet",
+  shortName: "MB",
+  logoUrl: "operators/marathonbet-logo-white.svg",
+  logoAlt: "Logo Marathonbet",
+  affiliateUrl: "https://www.marathonbet.it",
+  reviewUrl: "[URL_RECENSIONE_OPERATORE]",
+  // "nomeConcessionario: Marathonbet Italy S.r.l, numeroConcessione: 16050" (site data of marathonbet.it)
+  admLicense: "16050",
+  company: "Marathonbet Italy S.r.l.",
+  description:
+    "Concessionario ADM gestito da Marathonbet Italy S.r.l., con scommesse sportive, casinò e casinò live, virtuali, poker, ippica e bingo.",
+  // marathonbet.it/supporto/pagamenti (per-method table in operatorProfiles.ts)
+  minDeposit: "10 € (Postepay e voucher 5 €)",
+  withdrawalTime: "Da pochi minuti a 24 ore con PayPal, Skrill, Neteller, Postepay e portafogli; 3-5 giorni lavorativi con carta",
+  paymentMethods: ["Visa", "Mastercard", "Postepay", "PayPal", "Skrill", "Neteller", "MuchBetter", "Paysafecard", "Apple Pay (solo depositi)", "Google Pay (solo depositi)", "MyBank", "Open Banking", "OnShop", "Pin Voucher (solo depositi)"],
+  features: ["Scommesse sportive e live", "Casinò e casinò live", "Virtuali e ippica", "Poker e bingo"],
+  pros: ["Nessuna commissione su depositi e prelievi", "Prelievi da pochi minuti a 24 ore con i portafogli elettronici"],
+  cons: ["Prelievo con carta in 3-5 giorni lavorativi", "Skrill e Neteller esclusi dall'offerta di benvenuto sport"],
+  liveStreaming: false,
+  // the sports welcome terms exclude "cashout"
+  cashOut: true,
+};
+
 export const operators: OperatorData[] = [
   eurobet,
   goldbet,
@@ -648,6 +808,12 @@ export const operators: OperatorData[] = [
   codere,
   eight88,
   leovegas,
+  daznbet,
+  betflag,
+  netwin,
+  quigioco,
+  sportium,
+  marathonbet,
 ];
 
 /** Operators used in odds comparison tables (subset, same order). */

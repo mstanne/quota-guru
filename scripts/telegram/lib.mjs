@@ -180,6 +180,14 @@ const OPERATORS = [
   "betway",
   "better",
   "pokerstars",
+  // "dazn bet" only: plain "DAZN" is a TV channel named in match posts
+  "daznbet",
+  "dazn bet",
+  "netwin",
+  "quigioco",
+  "sportium",
+  "marathonbet",
+  "marathon bet",
 ];
 const BANNED = [
   /\bbonus\b/i,
