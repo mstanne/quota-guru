@@ -46,6 +46,7 @@ const teamRoutes = () => [
 import { guideRoutes } from "./data/guides";
 import { offerRoutes } from "./lib/offerPages";
 import { operatorRoutes } from "./lib/operatorPages";
+import { topicRoutes } from "./lib/topicPages";
 import { tennisRoutes } from "./lib/tennis";
 import { preloadAllPages } from "./lib/lazyPage";
 import { setArchivedHtml } from "./lib/archive";
@@ -110,7 +111,7 @@ export const routes = [trackRecordMeta(), ...legacyRoutes, ...goalStatsRoutes(),
     const p = archived ?? basketPredictionFor(g.id);
     return g.status === "final" && !archived && !basketPredictionFor(g.id)?.pre ? undefined : p;
   },
-), ...tennisRoutes(), ...guideRoutes(), ...offerRoutes(), ...operatorRoutes(), ...teamRoutes(), ...resultsRoutes(), ...seasonsRoutes()];
+), ...tennisRoutes(), ...guideRoutes(), ...offerRoutes(), ...operatorRoutes(), ...topicRoutes(), ...teamRoutes(), ...resultsRoutes(), ...seasonsRoutes()];
 
 /** `archivedHtml`: stored HTML of a finished match no longer in the data (see src/lib/archive.tsx). */
 export function render(url: string, basename: string, archivedHtml: string | null = null) {

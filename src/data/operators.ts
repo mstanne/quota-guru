@@ -52,6 +52,12 @@ export interface OperatorData {
    * `undefined` = not verified yet (shown as "Non verificato"; never guessed from third-party sites).
    */
   spidRegistration?: boolean;
+  /**
+   * Fastest withdrawal stated by the operator, for the operators without a per-method payments table in
+   * operatorProfiles.ts (that table is used when present). Taken from `withdrawalTime`, never estimated:
+   * "immediato" = immediate or within minutes, "24h" = within the day / 24 hours, "oltre" = more than a day.
+   */
+  fastestWithdrawal?: { speed: "immediato" | "24h" | "oltre"; methods: string[]; time: string };
 }
 
 export interface OfferData {
@@ -279,6 +285,7 @@ const bet365: OperatorData = {
   cons: ["L'offerta di benvenuto è visibile solo dopo l'accesso al sito"],
   liveStreaming: false,
   cashOut: true,
+  fastestWithdrawal: { speed: "24h", methods: ["Carta", "Bonifico bancario"], time: "1-4 ore" },
 };
 
 // Betsson, bwin and Sisal: data from the footers, promotions and help pages of the official sites, 25/10/2026.
@@ -328,6 +335,8 @@ const betsson: OperatorData = {
   cashOut: true,
   // SPID/CIE registration bonus on offerte.betsson.it, 08/11/2026
   spidRegistration: true,
+  // every withdrawal is first approved (24-48 working hours), then credited
+  fastestWithdrawal: { speed: "oltre", methods: ["Portafogli elettronici", "Bonifico istantaneo"], time: "Approvazione entro 24-48 ore lavorative, poi fino a 24 ore lavorative" },
 };
 
 const bwin: OperatorData = {
@@ -371,6 +380,7 @@ const bwin: OperatorData = {
   cashOut: true,
   // bwin.it/it/myaccount/register: e-mail form only, no SPID option, 08/11/2026
   spidRegistration: false,
+  fastestWithdrawal: { speed: "24h", methods: ["PayPal"], time: "Entro 12 ore" },
 };
 
 const sisal: OperatorData = {
@@ -441,6 +451,7 @@ const codere: OperatorData = {
   cons: ["Cinque metodi di deposito, senza Postepay né Apple Pay", "Skrill escluso dall'offerta di benvenuto casinò"],
   liveStreaming: false,
   cashOut: true,
+  fastestWithdrawal: { speed: "immediato", methods: ["Skrill"], time: "Immediato" },
 };
 
 const eight88: OperatorData = {
@@ -466,6 +477,7 @@ const eight88: OperatorData = {
   cashOut: false,
   // SPID registration bonus on 888casino.it/promozioni, 08/11/2026
   spidRegistration: true,
+  fastestWithdrawal: { speed: "24h", methods: ["PayPal", "Skrill", "Bonifico rapido"], time: "In giornata (elaborazione entro 24 ore lavorative)" },
 };
 
 const admiralbet: OperatorData = {
@@ -491,6 +503,7 @@ const admiralbet: OperatorData = {
   cashOut: true,
   // SPID registration bonus on admiralbet.it/promozioni/offerta-registrazione, 08/11/2026
   spidRegistration: true,
+  fastestWithdrawal: { speed: "oltre", methods: [], time: "2-5 giorni lavorativi" },
 };
 
 const leovegas: OperatorData = {
