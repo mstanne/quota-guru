@@ -951,6 +951,49 @@ SCENES2 = {
     "quanto-costa-un-bonus": bonus_costo,
 }
 
+
+# ------------------------------------------------------------------------------------------- multiple
+
+def bet_builder():
+    """One match card with three combined picks and the odds: product of the singles vs the combined price."""
+    b = [panel(140, 160, 760, 580)]
+    b.append(text(190, 240, "Casa – Ospiti", 40, LIGHT))
+    b.append(football(820, 222, 38))
+    rows = [("Vittoria casa", "1,80"), ("Over 2,5", "1,90"), ("Marcatore", "2,40")]
+    for i, (lab, q) in enumerate(rows):
+        y = 300 + i * 120
+        b.append(f'<rect x="190" y="{y}" width="660" height="92" rx="18" fill="{DEEP}" stroke="{LINE}" stroke-width="2"/>')
+        b.append(check(222, y + 46, 0.9, GREEN, 9))
+        b.append(text(290, y + 58, lab, 32, GREY, weight=600))
+        b.append(chip(700, y + 22, 120, 48, q, LINE, LIGHT, 26))
+    b.append(panel(1000, 220, 460, 200, 24))
+    b.append(text(1230, 290, "prodotto delle quote", 28, MUTED, "middle", 600))
+    b.append(text(1230, 375, "8,21", 64, MUTED, "middle"))
+    b.append(f'<line x1="1150" y1="355" x2="1310" y2="355" stroke="{RED}" stroke-width="6"/>')
+    b.append(panel(1000, 470, 460, 200, 24, stroke=ORANGE))
+    b.append(text(1230, 540, "quota bet builder", 28, GREY, "middle", 600))
+    b.append(text(1230, 625, "6,50", 72, ORANGE, "middle"))
+    return frame("".join(b), "Bet builder: tre esiti della stessa partita combinati, con quota più bassa del prodotto delle singole quote")
+
+
+def scommesse_multiple():
+    """Bars: probability of winning and theoretical return falling as events are added."""
+    b = []
+    data = [(1, 60.0, 95.2), (3, 21.6, 86.4), (5, 7.8, 78.4), (8, 1.7, 67.7), (10, 0.6, 61.4)]
+    b.append(text(150, 200, "eventi", 30, MUTED, weight=600))
+    b.append(text(330, 200, "probabilità di vincere", 30, GREEN, weight=600))
+    b.append(text(900, 200, "ritorno teorico", 30, ORANGE, weight=600))
+    for i, (n, p, r) in enumerate(data):
+        y = 250 + i * 100
+        b.append(chip(150, y, 120, 64, str(n), LINE, LIGHT, 32))
+        b.append(f'<rect x="330" y="{y+8}" width="500" height="48" rx="12" fill="{PANEL}"/>')
+        b.append(f'<rect x="330" y="{y+8}" width="{max(8, 500*p/100):.0f}" height="48" rx="12" fill="{GREEN}"/>')
+        b.append(text(845, y + 45, "", 26))
+        b.append(f'<rect x="900" y="{y+8}" width="450" height="48" rx="12" fill="{PANEL}"/>')
+        b.append(f'<rect x="900" y="{y+8}" width="{450*r/100:.0f}" height="48" rx="12" fill="{ORANGE}"/>')
+        b.append(text(1370, y + 45, f"{str(r).replace('.', ',')}%", 30, LIGHT))
+    return frame("".join(b), "Multipla: la probabilità di vincere e il ritorno teorico scendono a ogni evento aggiunto")
+
 SCENES = {
     "guida-completa-scommesse-sportive": guida_completa,
     "come-leggere-le-quote": come_leggere_quote,
@@ -960,6 +1003,8 @@ SCENES = {
     "basket-over-under-handicap": basket,
     "scommesse-in-diretta": in_diretta,
     **SCENES2,
+    "bet-builder": bet_builder,
+    "scommesse-multiple": scommesse_multiple,
 }
 
 
