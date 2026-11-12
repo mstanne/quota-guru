@@ -166,6 +166,41 @@ export const offersInSection = (offers: WelcomeOffer[], section: OfferProduct) =
 export const amountFor = (o: WelcomeOffer, product: OfferProduct) =>
   o.components.filter((c) => c.product === product).reduce((sum, c) => sum + c.maxAmount, 0);
 
+const SHORT_PRODUCT: Record<OfferProduct, string> = {
+  sport: "sport",
+  casino: "casinò",
+  lotterie: "lotterie",
+  poker: "poker",
+  bingo: "bingo",
+  ippica: "ippica",
+  virtual: "virtual",
+};
+
+export interface OfferTotals {
+  /** Amount usable on the product shown (sum of its components). */
+  main: number;
+  /** Maximum total of the whole offer: the operator's advertised total, or the sum of all components. */
+  total: number;
+  /** total − main, 0 when the whole offer is on the product shown. */
+  extra: number;
+  /** "+ 2.150 € extra casinò", null when there is no extra. */
+  extraLabel: string | null;
+}
+
+/** Amount on one product plus the rest of the offer's maximum total (e.g. the casinò part of a combined offer). */
+export function offerTotals(o: WelcomeOffer, product: OfferProduct): OfferTotals {
+  const main = amountFor(o, product);
+  const total = Math.max(main, o.advertisedTotal ?? o.components.reduce((s, c) => s + c.maxAmount, 0));
+  const extra = total - main;
+  const others = [...new Set(o.components.filter((c) => c.product !== product).map((c) => SHORT_PRODUCT[c.product]))];
+  return {
+    main,
+    total,
+    extra,
+    extraLabel: extra > 0 ? `+ ${formatEuro(extra)} extra${others.length ? ` ${others.join(" e ")}` : ""}` : null,
+  };
+}
+
 /** "2.150 €", "537,50 €" – always with the thousands separator (it-IT omits it on 4-digit numbers). */
 export function formatEuro(n: number) {
   const [int, dec] = n.toFixed(2).split(".");

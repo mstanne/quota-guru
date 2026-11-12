@@ -11,7 +11,7 @@ import { OperatorLogo } from "../operator/OperatorUi";
 import { OffersSidebar } from "../operator/OffersSidebar";
 import { NotFoundPage } from "../NotFoundPage";
 import { isPlaceholder, responsibleGambling as rg, type OperatorData } from "../../data/operators";
-import { formatEuro } from "../../data/offers";
+import { formatEuro, offerTotals } from "../../data/offers";
 import { operatorPath, publishedOperators } from "../../lib/operatorPages";
 import {
   bonusStatus,
@@ -367,7 +367,10 @@ const offerCell = (op: OperatorData) => {
   const offer = sportOffer(op);
   return offer ? (
     <>
-      {offerAmount(offer)}
+      <span className="block text-white text-base">Fino a {formatEuro(offerTotals(offer, "sport").main)}</span>
+      {offerTotals(offer, "sport").extraLabel && (
+        <span className="block text-white">{offerTotals(offer, "sport").extraLabel}</span>
+      )}
       {offer.minDeposit !== null && (
         <span className="block text-slate-400 text-xs">deposito minimo per l'offerta {formatEuro(offer.minDeposit)}</span>
       )}

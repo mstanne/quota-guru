@@ -11,7 +11,7 @@ import {
   responsibleGambling as rg,
   type OperatorData,
 } from "../data/operators";
-import { amountFor, formatEuro, visibleOffers, type WelcomeOffer } from "../data/offers";
+import { formatEuro, offerTotals, visibleOffers, type WelcomeOffer } from "../data/offers";
 import { paths } from "../routes";
 import { operatorPath } from "../lib/operatorPages";
 import { OperatorCta, OperatorLogo } from "./operator/OperatorUi";
@@ -361,10 +361,13 @@ function OfferSummary({ offer }: { offer?: WelcomeOffer }) {
   }
   const product = offer.sections.includes("sport") ? "sport" : offer.sections[0];
   const label = product === "sport" ? "sulle scommesse sportive" : "su casinò e slot";
+  const totals = offerTotals(offer, product);
   return (
     <div className="text-center md:text-right">
       <div className="text-slate-400 text-sm mb-1">Offerta di benvenuto {label}</div>
-      <div className="text-white text-2xl mb-1">fino a {formatEuro(amountFor(offer, product))}</div>
+      <div className="text-white text-2xl leading-tight">fino a {formatEuro(totals.main)}</div>
+      {totals.extraLabel && <div className="text-white text-lg leading-tight">{totals.extraLabel}</div>}
+      <div className="mb-1" />
       <p className="text-slate-400 text-xs">
         18+ · Si applicano i termini dell'operatore ·{" "}
         <Link
