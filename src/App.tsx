@@ -12,6 +12,10 @@ import { ConsentBanner } from "./components/privacy/ConsentBanner";
 import { lazyPage } from "./lib/lazyPage";
 import { isInfoLeague } from "./lib/competitionKinds";
 import { findStaticRoute, fullTitle, paths } from "./routes";
+import { methodPath, paymentMethods, topicPath, topics } from "./lib/topicDefs";
+
+/** Thematic comparison pages and payment method pages under /siti-scommesse (static, ranked before :operatore). */
+const TOPIC_PATHS = [...topics.map(topicPath), ...paymentMethods.map(methodPath)];
 
 // Pages are split into separate JS chunks (T1). Home components above stay in the main bundle.
 const UpcomingMatches = lazyPage(() => import("./components/calcio/UpcomingMatches").then((m) => m.UpcomingMatches));
@@ -59,6 +63,7 @@ const TennisCalendarPage = lazyPage(() =>
 const SitiScommessePage = lazyPage(() => import("./components/SitiScommessePage").then((m) => m.SitiScommessePage));
 const BonusPage = lazyPage(() => import("./components/BonusPage").then((m) => m.BonusPage));
 const OperatorPage = lazyPage(() => import("./components/OperatorPage").then((m) => m.OperatorPage));
+const SitiTopicRoute = lazyPage(() => import("./components/siti/TopicPage").then((m) => m.SitiTopicRoute));
 const OfferDetailPage = lazyPage(() => import("./components/OfferDetailPage").then((m) => m.OfferDetailPage));
 const GuidesPage = lazyPage(() => import("./components/GuidesPage").then((m) => m.GuidesPage));
 const GuideArticlePage = lazyPage(() =>
@@ -141,6 +146,7 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/basket/serie-a/classifica", [BasketStandingsPage, NotFoundPage]],
   ["/basket/nba/:partita", [BasketGamePage, NotFoundPage]],
   [paths.sitiScommesse, [SitiScommessePage]],
+  ...TOPIC_PATHS.map((p): [string, { preload: () => Promise<unknown> }[]] => [p, [SitiTopicRoute, NotFoundPage]]),
   ["/siti-scommesse/:operatore", [OperatorPage, NotFoundPage]],
   [paths.bonus, [BonusPage]],
   ["/bonus/:offerta", [OfferDetailPage, NotFoundPage]],
@@ -291,6 +297,9 @@ export default function App() {
             <Route path="/tennis/calendario-atp" element={<TennisCalendarPage tour="atp" />} />
             <Route path="/tennis/calendario-wta" element={<TennisCalendarPage tour="wta" />} />
             <Route path={paths.sitiScommesse} element={<SitiScommessePage />} />
+            {TOPIC_PATHS.map((p) => (
+              <Route key={p} path={p} element={<SitiTopicRoute />} />
+            ))}
             <Route path="/siti-scommesse/:operatore" element={<OperatorPage />} />
             <Route path={paths.bonus} element={<BonusPage />} />
             <Route path="/bonus/:offerta" element={<OfferDetailPage />} />

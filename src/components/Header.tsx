@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router";
 import {
   BookOpen,
   CalendarDays,
+  ChevronDown,
   ChartColumn,
   CircleDot,
   Dribbble,
@@ -19,6 +21,7 @@ import { Sheet, SheetHeader, SheetContent, SheetTitle } from "./ui/sheet";
 import { BrandLogo } from "./brand/BrandLogo";
 import { paths } from "../routes";
 import { ResponsibleBar } from "./responsible/ResponsibleGambling";
+import { methodMenu, sitiMenu } from "./siti/topicMenu";
 
 
 const NAV = [
@@ -68,11 +71,15 @@ export function Header() {
                 <BrandLogo height={44} alt="" />
               </Link>
               <nav aria-label="Principale" className="hidden lg:flex items-center gap-6">
-                {NAV.map((item) => (
-                  <NavLink key={item.to} to={item.to} className={desktopLink}>
-                    {item.label}
-                  </NavLink>
-                ))}
+                {NAV.map((item) =>
+                  item.to === paths.sitiScommesse ? (
+                    <SitiMenuDesktop key={item.to} label={item.label} />
+                  ) : (
+                    <NavLink key={item.to} to={item.to} className={desktopLink}>
+                      {item.label}
+                    </NavLink>
+                  ),
+                )}
               </nav>
             </div>
             <div className="flex items-center gap-4">
@@ -97,12 +104,16 @@ export function Header() {
             </SheetTitle>
           </SheetHeader>
           <nav aria-label="Menu mobile" className="mt-8 space-y-1">
-            {NAV.map((item) => (
-              <NavLink key={item.to} to={item.to} className={mobileLink} onClick={closeMenu}>
-                <item.icon className="w-5 h-5 text-slate-400" aria-hidden="true" />
-                {item.label}
-              </NavLink>
-            ))}
+            {NAV.map((item) =>
+              item.to === paths.sitiScommesse ? (
+                <SitiMenuMobile key={item.to} label={item.label} icon={item.icon} onNavigate={closeMenu} />
+              ) : (
+                <NavLink key={item.to} to={item.to} className={mobileLink} onClick={closeMenu}>
+                  <item.icon className="w-5 h-5 text-slate-400" aria-hidden="true" />
+                  {item.label}
+                </NavLink>
+              ),
+            )}
           </nav>
 
           {/* shortcuts: today's and tomorrow's predictions, the slip, the helpline */}
@@ -155,5 +166,158 @@ export function Header() {
         </SheetContent>
       </Sheet>
     </>
+  );
+}
+
+/**
+ * "Siti scommesse" with a dropdown of the thematic comparisons (icon tiles) and the payment methods.
+ * Opens on hover and with the arrow button (keyboard, touch); closes on Escape, on leaving and on navigation.
+ * The panel is always in the HTML (hidden when closed), so its links are in the pre-rendered pages too.
+ */
+function SitiMenuDesktop({ label }: { label: string }) {
+  const [open, setOpen] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const { pathname } = useLocation();
+  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const show = () => {
+    clearTimeout(timer.current);
+    setOpen(true);
+  };
+  const hide = () => {
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => setOpen(false), 150);
+  };
+  return (
+    <div
+      className="flex items-center gap-1 self-stretch"
+      onMouseEnter={show}
+      onMouseLeave={hide}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") setOpen(false);
+      }}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setOpen(false);
+      }}
+    >
+      <NavLink to={paths.sitiScommesse} className={desktopLink}>
+        {label}
+      </NavLink>
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-controls="menu-siti-scommesse"
+        aria-label={open ? "Chiudi il menu Siti scommesse" : "Apri il menu Siti scommesse"}
+        onClick={() => setOpen((v) => !v)}
+        className="p-1 rounded text-slate-300 hover:text-white cursor-pointer"
+      >
+        <ChevronDown className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
+      </button>
+      <div
+        id="menu-siti-scommesse"
+        hidden={!open}
+        className="absolute left-0 right-0 top-full bg-slate-900 border-y border-slate-700 shadow-2xl shadow-black/40"
+      >
+        <div className="container mx-auto px-4 py-6">
+          <ul className="grid grid-cols-4 xl:grid-cols-7 gap-3">
+            {sitiMenu.map((i) => (
+              <li key={i.to}>
+                <NavLink
+                  to={i.to}
+                  end
+                  onClick={() => setOpen(false)}
+                  className={({ isActive }) =>
+                    `flex h-full flex-col items-center gap-2 rounded-lg border px-3 py-4 text-center text-sm transition-colors ${
+                      isActive
+                        ? "border-selected bg-slate-800 text-white"
+                        : "border-slate-800 text-slate-200 hover:border-slate-600 hover:bg-slate-800 hover:text-white"
+                    }`
+                  }
+                >
+                  <i.icon className="w-8 h-8 text-slate-300" strokeWidth={1.5} aria-hidden="true" />
+                  {i.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-5 pt-4 border-t border-slate-800 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+            <span className="text-slate-400">Per metodo di pagamento:</span>
+            {methodMenu.map((m) => (
+              <NavLink
+                key={m.to}
+                to={m.to}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) => (isActive ? "text-white" : "text-slate-300 hover:text-white")}
+              >
+                {m.label}
+              </NavLink>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Mobile menu: "Siti scommesse" with an expandable list of the comparisons. */
+function SitiMenuMobile({
+  label,
+  icon: Icon,
+  onNavigate,
+}: {
+  label: string;
+  icon: (typeof NAV)[number]["icon"];
+  onNavigate: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div>
+      <div className="flex items-center">
+        <NavLink to={paths.sitiScommesse} end className={(s) => `${mobileLink(s)} flex-1`} onClick={onNavigate}>
+          <Icon className="w-5 h-5 text-slate-400" aria-hidden="true" />
+          {label}
+        </NavLink>
+        <button
+          type="button"
+          aria-expanded={open}
+          aria-controls="menu-mobile-siti"
+          aria-label={open ? "Chiudi i confronti tra siti scommesse" : "Apri i confronti tra siti scommesse"}
+          onClick={() => setOpen((v) => !v)}
+          className="size-11 shrink-0 inline-flex items-center justify-center rounded-md text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer"
+        >
+          <ChevronDown className={`w-5 h-5 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
+        </button>
+      </div>
+      <div id="menu-mobile-siti" hidden={!open} className="pl-4">
+        <ul className="grid grid-cols-2 gap-2 py-2">
+          {sitiMenu.slice(1).map((i) => (
+            <li key={i.to}>
+              <NavLink
+                to={i.to}
+                onClick={onNavigate}
+                className={({ isActive }) =>
+                  `flex items-center gap-2 h-full rounded-md border px-3 py-2.5 text-sm ${
+                    isActive ? "border-selected text-white" : "border-slate-700 text-slate-300 hover:text-white"
+                  }`
+                }
+              >
+                <i.icon className="w-4 h-4 text-slate-400 shrink-0" aria-hidden="true" />
+                {i.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+        <p className="text-slate-400 text-xs mt-2 mb-1">Per metodo di pagamento</p>
+        <ul className="flex flex-wrap gap-x-4 gap-y-1 pb-2 text-sm">
+          {methodMenu.map((m) => (
+            <li key={m.to}>
+              <NavLink to={m.to} onClick={onNavigate} className="inline-block py-1 text-slate-300 hover:text-white">
+                {m.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
