@@ -447,7 +447,7 @@ const eight88: OperatorData = {
   id: "888",
   name: "888",
   shortName: "888",
-  logoUrl: "operators/888_logo.svg",
+  logoUrl: "operators/888_logo.png",
   logoAlt: "Logo 888",
   affiliateUrl: "https://sport.888casino.it",
   reviewUrl: "[URL_RECENSIONE_OPERATORE]",
