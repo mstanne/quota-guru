@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-12T16:39:59.517Z",
+ "generatedAt": "2026-11-12T17:41:56.769Z",
  "model": "claude-haiku-5-5",
  "items": {
   "fb:1001550202": {
@@ -7286,6 +7286,66 @@
     }
    ]
   },
+  "fb:1001647585": {
+   "fingerprint": "1kethaz",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "União de Leiria e Leça si affrontano domenica 22 novembre alle 20:30 per la Taça de Portugal."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "L'União de Leiria ha finora disputato una sola partita di Taça de Portugal, vinta per 2-1.",
+      "Anche il Leça ha finora disputato una sola partita di Taça de Portugal, vinta per 1-0."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca União de Leiria – Leça?",
+     "a": "Domenica 22 novembre alle 20:30, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Taça de Portugal](/calcio/taca-de-portugal) e nella [classifica aggiornata](/calcio/taca-de-portugal/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001647592": {
+   "fingerprint": "xlzclm",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Torreense e SL Benfica si sfidano domenica 22 novembre alle 21:45 nel match valido per la Taça de Portugal."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Torreense – SL Benfica?",
+     "a": "Domenica 22 novembre alle 21:45, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultare la pagina [Taça de Portugal](/calcio/taca-de-portugal) e la [classifica aggiornata](/calcio/taca-de-portugal/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:1001528958": {
    "fingerprint": "1hpukp2",
    "sections": [
@@ -9619,6 +9679,88 @@
     {
      "q": "Dove vedo classifica e risultati?",
      "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545867": {
+   "fingerprint": "1x836oh",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Venerdì 13 novembre alle 17:00 il Capo Verde ospita il Liberia nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Finora il Capo Verde ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, persa 1-2.",
+      "Anche il Liberia ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, persa 0-1."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per il Capo Verde, 0 vittorie per il Liberia e nessun pareggio, con 4 gol complessivi (media di 2,0 a partita). L'ultimo incrocio, disputato a ottobre 2021 nelle Qualificazioni Mondiali Africa, è terminato Capo Verde 1-0 Liberia."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Capo Verde – Liberia?",
+     "a": "Venerdì 13 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001545872": {
+   "fingerprint": "mhilvl",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Gabon e Lesotho si affrontano venerdì 13 novembre alle 17:00 per la 3ª giornata delle Qualificazioni Coppa d'Africa. Si tratta di un confronto tra squadre di alta classifica: il Gabon è al 2° posto con 3 punti, mentre il Lesotho è al 4° con 0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Finora il Gabon ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 2-0.",
+      "Finora anche il Lesotho ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, persa 0-2."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "precedenti",
+     "paragraphs": [
+      "Negli ultimi 2 confronti diretti il bilancio è di 1 vittoria per il Gabon, nessuna per il Lesotho e 1 pareggio, con 2 gol complessivi (media di 1,0 a partita). L'ultimo incontro, dell'ottobre 2024 nelle Qualificazioni Coppa d'Africa, è terminato Lesotho 0-2 Gabon."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Gabon – Lesotho?",
+     "a": "Venerdì 13 novembre alle 17:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
     },
     {
      "q": "Come si leggono le quote di questa partita?",
@@ -12685,6 +12827,40 @@
     }
    ]
   },
+  "fb:1001649017": {
+   "fingerprint": "4rotj5",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento sabato 14 novembre alle 09:00: il Thailand U23 ospita il Singapore U23 nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Amichevoli internazionali il Thailand U23 ha collezionato 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 5. Ha perso le ultime 2 gare disputate.",
+      "Nelle ultime 2 partite di Amichevoli internazionali il Singapore U23 ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), senza segnare e subendo 1 gol."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Thailand U23 – Singapore U23?",
+     "a": "Sabato 14 novembre alle 09:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:1001649018": {
    "fingerprint": "1jp792g",
    "sections": [
@@ -12867,6 +13043,40 @@
     }
    ]
   },
+  "fb:1001649019": {
+   "fingerprint": "16og0uz",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Vietnam U23 e Qatar U23 si sfidano sabato 14 novembre alle 13:00 nell'ambito delle Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Amichevoli internazionali, il Vietnam U23 ha ottenuto 2 vittorie (sequenza V-V), segnando 4 gol e subendone 0.",
+      "Nelle ultime 2 partite di Amichevoli internazionali, il Qatar U23 ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Vietnam U23 – Qatar U23?",
+     "a": "Sabato 14 novembre alle 13:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:1001648285": {
    "fingerprint": "mazbo4",
    "sections": [
@@ -13046,6 +13256,39 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001649020": {
+   "fingerprint": "5vdthg",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Domenica 15 novembre alle 15:00 lo Scotland U21 riceve l'USA U21 in una partita valida per le Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Finora lo Scotland U21 ha disputato una sola partita nelle Amichevoli internazionali, vinta 4-0."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Scotland U21 – USA U21?",
+     "a": "Domenica 15 novembre alle 15:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -13513,6 +13756,39 @@
     }
    ]
   },
+  "fb:1001649026": {
+   "fingerprint": "6xxtnv",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Martedì 17 novembre alle 14:00 l'Ukraine U21 ospita l'USA U21 in una partita valida per le Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Nelle ultime 2 partite di Amichevoli internazionali l'Ukraine U21 ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), segnando 2 gol e subendone 6."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Ukraine U21 – USA U21?",
+     "a": "Martedì 17 novembre alle 14:00, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Puoi consultarli nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Se ne occupano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
   "fb:1001640088": {
    "fingerprint": "104gi3d",
    "sections": [
@@ -13577,6 +13853,39 @@
     {
      "q": "Come si leggono le quote di questa partita?",
      "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    }
+   ]
+  },
+  "fb:1001650001": {
+   "fingerprint": "k8q5b1",
+   "sections": [
+    {
+     "id": "presentazione",
+     "paragraphs": [
+      "Appuntamento martedì 17 novembre alle 15:10: l'Emirati Arabi Uniti riceve il Siria per le Amichevoli internazionali."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "momento",
+     "paragraphs": [
+      "Finora il Siria ha giocato una sola partita di Amichevoli internazionali, persa 1-4."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Quando si gioca Emirati Arabi Uniti – Siria?",
+     "a": "Martedì 17 novembre alle 15:10, ora italiana."
+    },
+    {
+     "q": "Dove vedo classifica e risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
+    },
+    {
+     "q": "Come si leggono le quote di questa partita?",
+     "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
     }
    ]
   },
@@ -18304,6 +18613,152 @@
     }
    ]
   },
+  "fb:1001644365": {
+   "fingerprint": "1ny07np",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "L'Eibar si impone in trasferta sul Pamplona con il punteggio di 0-3. L'incontro, valido per la Copa del Rey, si è disputato martedì 10 novembre; il primo tempo si era concluso sul 0-2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Pamplona – Eibar?",
+     "a": "0-3 (0-2 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Copa del Rey](/calcio/copa-del-rey)."
+    }
+   ]
+  },
+  "fb:1001644336": {
+   "fingerprint": "17hasnj",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Successo netto dell'Alavés, che si impone per 1-6 in trasferta sull'Anaitasuna. La gara, valida per la Copa del Rey, si è disputata martedì 10 novembre; al termine del primo tempo il punteggio era di 1-2."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Anaitasuna – Alavés?",
+     "a": "1-6 (1-2 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Copa del Rey](/calcio/copa-del-rey)."
+    }
+   ]
+  },
+  "fb:1001644382": {
+   "fingerprint": "1lbgs60",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Leganes si impone di misura in trasferta sul campo del Trival Valderas, con il risultato di 0-1. La sfida, valida per la Copa del Rey, si è disputata martedì 10 novembre e il primo tempo si era concluso 0-0."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Trival Valderas – Leganes?",
+     "a": "0-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Copa del Rey](/calcio/copa-del-rey)."
+    }
+   ]
+  },
+  "fb:1001644380": {
+   "fingerprint": "1qglpu6",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Valencia ha superato il Tavernes in trasferta con un netto 0-6. La partita, valida per la Copa del Rey, si è giocata martedì 10 novembre; il primo tempo si era chiuso sul punteggio di 0-4."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Tavernes – Valencia?",
+     "a": "Il risultato finale è 0-6, con 0-4 all'intervallo."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Puoi consultarli nella pagina dedicata alla [Copa del Rey](/calcio/copa-del-rey)."
+    }
+   ]
+  },
+  "fb:1001649005": {
+   "fingerprint": "14vpyan",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Qatar U23 e il Singapore U23 hanno chiuso a reti inviolate, con il risultato di 0-0. La partita, valida per Amichevoli internazionali, si è giocata martedì 10 novembre; il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Qatar U23 tornerà in campo sabato 14 novembre alle 13:00 in trasferta contro il Vietnam U23. Il Singapore U23 tornerà in campo sabato 14 novembre alle 09:00 in trasferta contro il Thailand U23."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Qatar U23 – Singapore U23?",
+     "a": "0-0 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [consulta le Amichevoli internazionali](/calcio/amichevoli-nazionali)."
+    }
+   ]
+  },
+  "fb:1001649006": {
+   "fingerprint": "rjeoq4",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Vietnam U23 ha vinto in casa per 3-0 contro il Thailand U23, con una vittoria netta. La partita, valida per le Amichevoli internazionali, si è giocata martedì 10 novembre; il primo tempo si era concluso sul 2-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Vietnam U23 tornerà in campo sabato 14 novembre alle 13:00, in casa contro il Qatar U23. Il Thailand U23 tornerà in campo sabato 14 novembre alle 09:00, in casa contro il Singapore U23."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Vietnam U23 – Thailand U23?",
+     "a": "3-0 (2-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
+    }
+   ]
+  },
   "fb:1001649540": {
    "fingerprint": "1lspkfh",
    "sections": [
@@ -18486,6 +18941,64 @@
     {
      "q": "Com'è finita Thailand U23 – Qatar U23?",
      "a": "1-2 (0-2 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
+    }
+   ]
+  },
+  "fb:1001649009": {
+   "fingerprint": "18tzveb",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Il Vietnam U23 ha vinto in trasferta per 0-1 contro il Singapore U23. La partita, valida per le Amichevoli internazionali, si è giocata giovedì 12 novembre e il primo tempo era terminato 0-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Il Singapore U23 tornerà in campo sabato 14 novembre alle 09:00, in trasferta contro il Thailand U23. Il Vietnam U23 giocherà sabato 14 novembre alle 13:00, in casa contro il Qatar U23."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Singapore U23 – Vietnam U23?",
+     "a": "0-1 (0-0 all'intervallo)."
+    },
+    {
+     "q": "Dove trovo gli altri risultati?",
+     "a": "Nella sezione dedicata alle [Amichevoli internazionali](/calcio/amichevoli-nazionali)."
+    }
+   ]
+  },
+  "fb:1001649010": {
+   "fingerprint": "2o915i",
+   "sections": [
+    {
+     "id": "resoconto",
+     "paragraphs": [
+      "Lo Scotland U21 supera in casa l'Ukraine U21 con un netto 4-0. La partita, valida per Amichevoli internazionali, si è giocata giovedì 12 novembre; il primo tempo si era chiuso 2-0."
+     ],
+     "bullets": []
+    },
+    {
+     "id": "prossimi",
+     "paragraphs": [
+      "Lo Scotland U21 tornerà in campo domenica 15 novembre alle 15:00 in casa contro l'USA U21. L'Ukraine U21 tornerà in campo martedì 17 novembre alle 14:00 in casa contro l'USA U21."
+     ],
+     "bullets": []
+    }
+   ],
+   "faq": [
+    {
+     "q": "Com'è finita Scotland U21 – Ukraine U21?",
+     "a": "4-0 (2-0 all'intervallo)."
     },
     {
      "q": "Dove trovo gli altri risultati?",

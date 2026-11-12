@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-11-12T16:38:15.756Z",
+  "updatedAt": "2026-11-12T17:41:08.634Z",
   "football": {
     "details": {
       "ok": true
     },
     "seasons": {
       "ok": false,
-      "message": "richieste del giorno esaurite"
+      "message": "You have reached the request limit for the day, Go to https://dashboard.api-football.com to upgrade your plan."
     },
     "ok": false,
-    "requests": 46,
-    "remainingToday": 4,
+    "requests": 1,
+    "remainingToday": 7499,
     "matches": 278,
     "teamSeasons": 622
   },
@@ -23,261 +23,30 @@
     },
     "ok": true,
     "requests": 13,
-    "remainingToday": 7288,
+    "remainingToday": 7274,
     "games": 56,
     "teamSeasons": 60
   },
   "calendarioCalcio": {
-    "updatedAt": "2026-11-12T16:35:05.493Z",
+    "updatedAt": "2026-11-12T17:39:48.608Z",
     "source": "API-Football",
-    "ok": true,
+    "ok": false,
     "competitions": {
       "SA": {
-        "ok": true,
-        "matches": 70
-      },
-      "SB": {
-        "ok": true,
-        "matches": 80
-      },
-      "CL": {
-        "ok": true,
-        "matches": 72
-      },
-      "EL": {
-        "ok": true,
-        "matches": 72
-      },
-      "ECL": {
-        "ok": true,
-        "matches": 72
-      },
-      "PL": {
-        "ok": true,
-        "matches": 60
-      },
-      "PD": {
-        "ok": true,
-        "matches": 61
-      },
-      "BL1": {
-        "ok": true,
-        "matches": 54
-      },
-      "FL1": {
-        "ok": true,
-        "matches": 54
-      },
-      "DED": {
-        "ok": true,
-        "matches": 54
-      },
-      "PPL": {
-        "ok": true,
-        "matches": 36
-      },
-      "ELC": {
-        "ok": true,
-        "matches": 109
-      },
-      "BSA": {
-        "ok": true,
-        "matches": 85
-      },
-      "CI": {
-        "ok": true,
-        "matches": 0
-      },
-      "FAC": {
-        "ok": true,
-        "matches": 128
-      },
-      "EFL": {
-        "ok": true,
-        "matches": 8
-      },
-      "CDR": {
-        "ok": true,
-        "matches": 66
-      },
-      "DFB": {
-        "ok": true,
-        "matches": 16
-      },
-      "CDF": {
-        "ok": true,
-        "matches": 92
-      },
-      "KNVB": {
-        "ok": true,
-        "matches": 26
-      },
-      "TP": {
-        "ok": true,
-        "matches": 43
-      },
-      "CDB": {
-        "ok": true,
-        "matches": 4
-      },
-      "SCI": {
-        "ok": true,
-        "matches": 0
-      },
-      "CS": {
-        "ok": true,
-        "matches": 0
-      },
-      "SCE": {
-        "ok": true,
-        "matches": 0
-      },
-      "DFLS": {
-        "ok": true,
-        "matches": 0
-      },
-      "TDC": {
-        "ok": true,
-        "matches": 0
-      },
-      "JCS": {
-        "ok": true,
-        "matches": 0
-      },
-      "SPT": {
-        "ok": true,
-        "matches": 0
-      },
-      "SCB": {
-        "ok": true,
-        "matches": 0
-      },
-      "SCA": {
-        "ok": true,
-        "matches": 80
-      },
-      "SCBG": {
-        "ok": true,
-        "matches": 81
-      },
-      "SCC": {
-        "ok": true,
-        "matches": 81
-      },
-      "LO": {
-        "ok": true,
-        "matches": 103
-      },
-      "SD": {
-        "ok": true,
-        "matches": 89
-      },
-      "BL2": {
-        "ok": true,
-        "matches": 54
-      },
-      "FL2": {
-        "ok": true,
-        "matches": 54
-      },
-      "ED": {
-        "ok": true,
-        "matches": 78
-      },
-      "PPL2": {
-        "ok": true,
-        "matches": 43
-      },
-      "BSB": {
-        "ok": true,
-        "matches": 82
-      },
-      "WC": {
-        "ok": true,
-        "matches": 0
-      },
-      "UNL": {
-        "ok": true,
-        "matches": 122
-      },
-      "EURO": {
-        "ok": true,
-        "matches": 0
-      },
-      "EUROQ": {
-        "ok": true,
-        "matches": 0
-      },
-      "WCQE": {
-        "ok": true,
-        "matches": 0
-      },
-      "WCQSA": {
-        "ok": true,
-        "matches": 0
-      },
-      "COPA": {
-        "ok": true,
-        "matches": 0
-      },
-      "WCQAF": {
-        "ok": true,
-        "matches": 0
-      },
-      "AFCON": {
-        "ok": true,
-        "matches": 0
-      },
-      "AFCONQ": {
-        "ok": true,
-        "matches": 72
-      },
-      "WCQAS": {
-        "ok": true,
-        "matches": 0
-      },
-      "ASIA": {
-        "ok": true,
-        "matches": 0
-      },
-      "ASIAQ": {
-        "ok": true,
-        "matches": 0
-      },
-      "WCQNA": {
-        "ok": true,
-        "matches": 0
-      },
-      "GOLD": {
-        "ok": true,
-        "matches": 0
-      },
-      "CNL": {
-        "ok": true,
-        "matches": 84
-      },
-      "WCQOC": {
-        "ok": true,
-        "matches": 0
-      },
-      "WCQPO": {
-        "ok": true,
-        "matches": 0
-      },
-      "FRI": {
-        "ok": true,
-        "matches": 270
+        "ok": false,
+        "message": "You have reached the request limit for the day, Go to https://dashboard.api-football.com to upgrade your plan."
       }
     },
-    "requests": 443,
-    "remainingToday": 50
+    "message": "You have reached the request limit for the day, Go to https://dashboard.api-football.com to upgrade your plan.",
+    "requests": 1,
+    "remainingToday": 7499
   },
   "calendarioNba": {
-    "updatedAt": "2026-11-12T16:36:56.697Z",
+    "updatedAt": "2026-11-12T17:39:49.261Z",
     "source": "API-NBA",
     "ok": true,
     "games": 256,
     "requests": 1,
-    "remainingToday": 7301
+    "remainingToday": 7287
   }
 }
