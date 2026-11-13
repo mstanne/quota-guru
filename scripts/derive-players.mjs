@@ -18,6 +18,7 @@ import { fileURLToPath } from "node:url";
 import { absenceIt, country, leagueIt, placeIt, positionIt, transferTypeIt } from "./lib/italian.mjs";
 import { playerName, playerPart, playerUrl } from "../src/lib/playerNames.mjs";
 import { isCalendarSeason } from "./lib/leagues.mjs";
+import { scorerModel } from "./lib/scorers.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "data", "players");
@@ -37,7 +38,40 @@ const idMap = read("data/id-map.json", { footballTeams: {} });
 const buildTime = Date.now();
 const ledger = read(path.join(process.env.SEO_CACHE_DIR ?? path.join(".cache", "seo"), "results.json"), { football: {} });
 
+const predictions = read("src/data/football-predictions.json", { predictions: {} }).predictions ?? {};
+
 const teamById = new Map(teams.map((t) => [t.id, t]));
+
+// Next match of the player's club with a prediction: his chances in it (scripts/lib/scorers.mjs propsFor): goal,
+// booking, and where they apply clean sheet, penalty scored (usual taker) and penalty saved (goalkeeper). The
+// goal chance is the same as in the "probabili marcatori" of the match page. Data no other site publishes.
+const nextMatch = new Map();
+{
+  const props = scorerModel(root, buildTime)?.propsFor;
+  const upcoming = football.competitions
+    .flatMap((c) => c.matches.map((m) => ({ c, m })))
+    .filter(({ m }) => ["SCHEDULED", "TIMED"].includes(m.status) && Date.parse(m.utcDate) > buildTime)
+    .sort((a, b) => a.m.utcDate.localeCompare(b.m.utcDate));
+  const done = new Set();
+  const team = (t) => ({ id: t.id, shortName: t.shortName });
+  for (const { c, m } of props ? upcoming : []) {
+    const pr = predictions[m.id];
+    if (!pr?.lam || !pr.goals) continue;
+    for (const side of ["h", "a"]) {
+      const club = side === "h" ? m.homeTeam : m.awayTeam;
+      if (done.has(club.id)) continue;
+      done.add(club.id);
+      const i = side === "h" ? 0 : 1;
+      const list = props(club.id, {
+        xg: pr.lam[i],
+        cards: pr.cards?.[i] ?? null,
+        concedeNone: (side === "h" ? pr.goals.a : pr.goals.h)[0],
+      });
+      for (const [pid, x] of list ?? [])
+        nextMatch.set(pid, { competition: { slug: c.slug, name: c.name }, date: m.utcDate, home: team(m.homeTeam), away: team(m.awayTeam), side, ...x });
+    }
+  }
+}
 const compBySlug = new Map(football.competitions.map((c) => [c.slug, c]));
 const currentOf = (slug) => Number(compBySlug.get(slug)?.season?.startDate?.slice(0, 4)) || null;
 const label = (y, code) => (isCalendarSeason(code) ? String(y) : `${y}/${String(y + 1).slice(2)}`);
@@ -217,6 +251,7 @@ for (const [id, list] of rows) {
     team: { id: now.team.id, slug: now.team.slug, name: now.team.name, shortName: now.team.shortName, crest: now.team.crest ?? null },
     competition: comp ? { slug: comp.slug, name: comp.name, season: label(now.y, comp.code) } : null,
     ranks: ranks.get(id) ?? null,
+    nextMatch: nextMatch.get(id) ?? null,
     availability: availability(id),
     history: history(id),
     // the current season in detail (v3 season data: detailed statistics and split by competition)

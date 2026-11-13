@@ -22,11 +22,13 @@ import { COMPETITIONS, isInfoLeague, isNationalCup } from "./lib/leagues.mjs";
 import { NATIONAL_CODES, NATIONAL_FIT } from "./lib/national-fit.mjs";
 import { expectedCounts } from "./lib/counts-model.mjs";
 import { scorerModel } from "./lib/scorers.mjs";
+import { simulateSeason } from "./lib/season-sim.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SNAPSHOT = path.join(root, "src", "data", "football.json");
 const HISTORY = path.join(root, "data", "football-history.json");
 const OUT = path.join(root, "src", "data", "football-predictions.json");
+const SIM_OUT = path.join(root, "src", "data", "football-season-sim.json");
 const PLAYED = new Set(["FINISHED", "AWARDED"]);
 const OPEN = new Set(["SCHEDULED", "TIMED", "IN_PLAY", "PAUSED", "POSTPONED"]);
 
@@ -221,6 +223,27 @@ console.log(
     (track.n ? ` (log-loss ${track.logLoss}, Brier ${track.brier})` : "") +
     ` · nazionali ${trackNational.hits}/${trackNational.n}`,
 );
+
+// ---- end-of-season projection of the leagues (scripts/lib/season-sim.mjs) ----
+// Domestic leagues with predictions and one table: the European cups (league phase of 36 teams, play-offs), the
+// national cups and the lower divisions shown only for information are not simulated.
+const SIM_RUNS = 10000;
+const sim = { generatedAt: asOf, runs: SIM_RUNS, competitions: {} };
+for (const c of snapshot.competitions) {
+  if (CUPS.includes(c.code) || isInfoLeague(c.code) || isNational(c.code)) continue;
+  const tables = (c.standings ?? []).filter((s) => !s.stage || s.stage === "REGULAR_SEASON");
+  if (tables.length !== 1 || !tables[0].table?.length) continue;
+  const start = c.season?.startDate;
+  const played = results.filter((r) => r.comp === c.code && (!start || r.date.slice(0, 10) >= start));
+  const out = simulateSeason(model, c.code, tables[0].table, played, { runs: SIM_RUNS, seed: c.code.length * 7919 + 17 });
+  if (out) sim.competitions[c.slug] = out;
+  else console.warn(`Proiezione ${c.name}: classifica e risultati non coincidono (o formato non a girone doppio), saltata`);
+}
+{
+  const next = JSON.stringify(sim) + "\n";
+  if (!fs.existsSync(SIM_OUT) || fs.readFileSync(SIM_OUT, "utf8") !== next) fs.writeFileSync(SIM_OUT, next);
+  console.log(`football-season-sim.json: ${Object.keys(sim.competitions).join(", ") || "nessun campionato"} (${SIM_RUNS} stagioni simulate)`);
+}
 
 // ---- optional walk-forward backtest on the whole history ----
 if (process.argv.includes("--backtest")) {

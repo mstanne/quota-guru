@@ -25,13 +25,19 @@ import { TeamBadge } from "./MatchRow";
 import { NotFoundPage } from "../NotFoundPage";
 import { PageHeader } from "../layout/PageHeader";
 import { TeamName } from "../teams/TeamLink";
+import { SeasonOutlook } from "./SeasonOutlook";
+import { outlookSentence } from "../../lib/seasonOutlook";
 
 /** /calcio/:competizione/classifica */
 export function StandingsPage() {
   const { competizione } = useParams();
   const data = useCompetitionData(competizione);
   const competition = data?.competition;
-  usePageMeta(competition ? standingsMeta(competition) : null);
+  usePageMeta(
+    competition
+      ? standingsMeta(competition, competition.standings.length === 1 ? outlookSentence(competition.slug, competition.standings[0].table) : null)
+      : null,
+  );
   if (!competition || competition.standings.length === 0) return <NotFoundPage />;
 
   return (
@@ -122,6 +128,7 @@ export function StandingsPage() {
             </div>
           </section>
         ))}
+        <SeasonOutlook competition={competition} />
         <Rounds competition={competition} />
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           <Link to={competitionPath(competition)} className="text-action-text hover:text-action-text-hover">

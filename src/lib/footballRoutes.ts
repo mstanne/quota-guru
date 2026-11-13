@@ -8,6 +8,7 @@ import { highlightFor } from "./highlights";
 import { footballDetailsFor } from "./footballDetails";
 import { eventMeta, footballCard, isFinished, isUpcoming, pairMatches, pairSlug, nextOfPair, competitionPath, type Competition, type Match } from "./footballCore";
 import type { EventVenue } from "./schema";
+import { outlookSentence } from "./seasonOutlook";
 
 /** Official highlights from YouTube, for the competitions covered by scripts/fetch-highlights.mjs. */
 export const highlightOf = (c: Competition, m: Match) => highlightFor(c.slug, m.id);
@@ -16,7 +17,9 @@ export const highlightOf = (c: Competition, m: Match) => highlightFor(c.slug, m.
 export function footballRoutes(venueOf: (teamId: number) => EventVenue | null = () => null): RouteMeta[] {
   return [
     ...competitions.map(competitionMeta),
-    ...competitions.filter((c) => c.standings.length > 0).map(standingsMeta),
+    ...competitions
+      .filter((c) => c.standings.length > 0)
+      .map((c) => standingsMeta(c, c.standings.length === 1 ? outlookSentence(c.slug, c.standings[0].table) : null)),
     ...allMatches.map(({ competition, match }) => {
       const meta: RouteMeta = matchMeta(
         competition,

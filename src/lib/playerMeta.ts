@@ -15,7 +15,7 @@ export function playerMeta(p: FootballPlayer) {
     title: `${p.name}: statistiche ${cur?.label ?? ""} e carriera`.replace(/\s+/g, " "),
     description: `${p.name}, ${role}del ${p.team.shortName}${p.nationality ? ` (${p.nationality})` : ""}: ${stats}, ${
       p.current?.detail ? "tiri, passaggi chiave, duelli, " : ""
-    }voto medio, ${p.current?.last.length ? "ultime partite " : ""}e statistiche stagione per stagione.`,
+    }voto medio, ${p.current?.last.length ? "ultime partite " : ""}e statistiche stagione per stagione.${nextScorerText(p)}`,
     jsonLd: [
       {
         "@type": "Person",
@@ -31,4 +31,17 @@ export function playerMeta(p: FootballPlayer) {
       },
     ],
   };
+}
+
+/** " Prossima partita contro il Torino: probabilità di gol 31%." (scripts/derive-players.mjs), or "". */
+function nextScorerText(p: FootballPlayer) {
+  const n = p.nextMatch;
+  if (!n) return "";
+  const opponent = n.side === "h" ? n.away.shortName : n.home.shortName;
+  const v = (x: number) => `${Math.max(1, Math.round(x * 100))}%`;
+  const what =
+    n.cleanSheet != null
+      ? `porta inviolata ${v(n.cleanSheet)}`
+      : [n.goal != null ? `gol ${v(n.goal)}` : "", n.card != null ? `cartellino ${v(n.card)}` : ""].filter(Boolean).join(", ");
+  return what ? ` Prossima partita contro ${opponent}, probabilità: ${what}.` : "";
 }

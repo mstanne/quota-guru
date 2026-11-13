@@ -111,9 +111,32 @@ export interface PlayerHistory {
   /** which kinds have been downloaded at least once (an empty list then means "none") */
   complete: { transfers: boolean; trophies: boolean; sidelined: boolean };
 }
+/**
+ * The player's chances in the next match of his club with a prediction (scripts/derive-players.mjs, model in
+ * scripts/lib/scorers.mjs): each one only where it applies.
+ */
+export interface NextMatch {
+  competition: { slug: string; name: string };
+  date: string;
+  home: { id: number; shortName: string };
+  away: { id: number; shortName: string };
+  /** the player's club: "h" home, "a" away */
+  side: "h" | "a";
+  /** at least one goal in the 90 minutes */
+  goal?: number;
+  /** booked (yellow or red card) */
+  card?: number;
+  /** goalkeeper expected to start: no goal conceded */
+  cleanSheet?: number;
+  /** usual penalty taker: scores a penalty */
+  penScored?: number;
+  /** goalkeeper expected to start: saves a penalty */
+  penSaved?: number;
+}
 export interface FootballPlayer {
   id: number;
   url: string;
+  nextMatch?: NextMatch | null;
   /** false: kept out of search engines (few minutes this season, scripts/derive-players.mjs). */
   index?: false;
   name: string;
