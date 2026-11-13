@@ -203,6 +203,8 @@ export function predict(model, f) {
     // win by 10+ points
     big: [r3(1 - phi((10 - m) / model.sdMargin)), r3(phi((-10 - m) / model.sdMargin))],
     b2b: f.b2b ?? [0, 0],
+    // spread of the final margin and total (the site derives team points and first-half markets from them)
+    sd: [Math.round(model.sdMargin * 10) / 10, Math.round(model.sdTotal * 10) / 10],
     confidence: minGames >= 30 ? "alta" : minGames >= 15 ? "media" : "bassa",
   };
 }

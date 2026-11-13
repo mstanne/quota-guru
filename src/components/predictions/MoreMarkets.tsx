@@ -93,6 +93,26 @@ export function MoreMarkets({
       extra: <AsianHandicap grid={grid} home={home} away={away} />,
     },
     { title: "Combo", groups: [...comboGroups(home, away), ...pick("dc-ou", "dc-gg")] },
+    ...(prediction.scorers
+      ? [
+          {
+            title: "Marcatori",
+            note: "Probabilità che il giocatore segni almeno un gol nei 90 minuti (autogol esclusi). Dai suoi gol e minuti in stagione, e un po' da quelli della scorsa, divisi in proporzione ai gol attesi della squadra. Non conosce le formazioni ufficiali: chi parte dalla panchina ha meno probabilità. Non si combina con gli altri mercati della partita in schedina.",
+            groups: (["h", "a"] as const).map((side) => ({
+              id: `sc-${side}`,
+              title: side === "h" ? home : away,
+              outcomes: prediction.scorers![side].map(([id, name, v]) => ({
+                key: `sc:${id}`,
+                label: name,
+                slipLabel: `Marcatore – ${name}`,
+                spoken: `${name} segna`,
+                p: v,
+                test: () => false,
+              })),
+            })),
+          },
+        ]
+      : []),
     {
       title: "Primo e secondo tempo",
       note: "I gol di ogni tempo sono una quota fissa dei gol attesi (nel primo tempo circa il 44%, misurato sulle partite dell'archivio). Gli esiti dei tempi non si combinano con gli altri mercati della partita in schedina.",
@@ -155,7 +175,8 @@ export function MoreMarkets({
   );
 }
 
-function OutcomeGroup({
+/** One market: its outcomes as buttons (with `slip`) or plain cells. Exported for the NBA panel (outcomes with `p`). */
+export function OutcomeGroup({
   group,
   grid,
   slip,
@@ -163,10 +184,11 @@ function OutcomeGroup({
   lam,
 }: {
   group: MarketGroup;
-  grid: Grid;
+  /** Score matrix of the match: needed only for outcomes without `p`. */
+  grid?: Grid;
   slip?: SlipMatch;
   result?: { home: number; away: number } | null;
-  lam: [number, number, number];
+  lam?: [number, number, number];
 }) {
   const { picked, toggle } = useSlipPicks(slip);
   return (
@@ -178,11 +200,11 @@ function OutcomeGroup({
           <OutcomeCell
             key={o.key}
             outcome={o}
-            p={o.p ?? chance(grid, [o.test])}
+            p={o.p ?? (grid ? chance(grid, [o.test]) : 0)}
             on={!!slip && picked(o.key)}
             came={result && o.p === undefined ? o.test(result.home, result.away) : null}
             // first half, corners, cards: no matrix parameters, so they replace the other picks of the match
-            onToggle={slip ? (p) => toggle({ key: o.key, slipLabel: o.slipLabel, value: p, ...(o.p === undefined ? { lam } : {}) }) : undefined}
+            onToggle={slip ? (p) => toggle({ key: o.key, slipLabel: o.slipLabel, value: p, ...(o.p === undefined && lam ? { lam } : {}) }) : undefined}
           />
         ))}
       </div>

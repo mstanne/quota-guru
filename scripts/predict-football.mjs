@@ -21,6 +21,7 @@ import { qualifyChance } from "./lib/knockout.mjs";
 import { COMPETITIONS, isInfoLeague, isNationalCup } from "./lib/leagues.mjs";
 import { NATIONAL_CODES, NATIONAL_FIT } from "./lib/national-fit.mjs";
 import { expectedCounts } from "./lib/counts-model.mjs";
+import { scorerModel } from "./lib/scorers.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SNAPSHOT = path.join(root, "src", "data", "football.json");
@@ -37,7 +38,18 @@ const counts = fs.existsSync(COUNTS_FILE) ? JSON.parse(fs.readFileSync(COUNTS_FI
  * First half and, for club matches, expected corners and cards [home, away, dispersion] of a fixture. National teams:
  * first half only (too few games with statistics).
  */
-function extras(c, m, kind) {
+const scorersFor = scorerModel(root, Date.parse(snapshot.generatedAt ?? new Date().toISOString()));
+function extras(c, m, kind, p) {
+  return { ...countExtras(c, m, kind), ...scorerExtras(m, kind, p) };
+}
+/** Most likely goalscorers of each club (scripts/lib/scorers.mjs): { h: [[id, name, p]…], a: […] }. */
+function scorerExtras(m, kind, p) {
+  if (!scorersFor || kind === "national") return {};
+  const h = scorersFor(m.homeTeam.id, p.lam[0]);
+  const a = scorersFor(m.awayTeam.id, p.lam[1]);
+  return h && a ? { scorers: { h, a } } : {};
+}
+function countExtras(c, m, kind) {
   const half = counts?.half ?? 0.444;
   if (!counts || kind === "national") return { half };
   const f = { comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, neutral: neutral(c, m) };
@@ -143,7 +155,7 @@ for (const c of snapshot.competitions) {
     const p = predict(mdl, { comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, neutral: neutral(c, m) });
     if (!p) continue;
     const q = isNational(c.code) ? null : qualifyOf(mdl, c, m);
-    predictions[m.id] = { ...p, ...extras(c, m, kind), ...(q ? { qualify: q } : {}), pre: false };
+    predictions[m.id] = { ...p, ...extras(c, m, kind, p), ...(q ? { qualify: q } : {}), pre: false };
   }
 }
 
