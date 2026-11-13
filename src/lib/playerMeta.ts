@@ -15,7 +15,7 @@ export function playerMeta(p: FootballPlayer) {
     title: `${p.name}: statistiche ${cur?.label ?? ""} e carriera`.replace(/\s+/g, " "),
     description: `${p.name}, ${role}del ${p.team.shortName}${p.nationality ? ` (${p.nationality})` : ""}: ${stats}, ${
       p.current?.detail ? "tiri, passaggi chiave, duelli, " : ""
-    }voto medio, ${p.current?.last.length ? "ultime partite " : ""}e statistiche stagione per stagione.`,
+    }voto medio, ${p.current?.last.length ? "ultime partite " : ""}e statistiche stagione per stagione.${nextScorerText(p)}`,
     jsonLd: [
       {
         "@type": "Person",
@@ -31,4 +31,12 @@ export function playerMeta(p: FootballPlayer) {
       },
     ],
   };
+}
+
+/** " Probabilità che segni contro l'Inter: 31%." (next match, scripts/derive-players.mjs), or "". */
+function nextScorerText(p: FootballPlayer) {
+  const n = p.nextScorer;
+  if (!n) return "";
+  const opponent = n.side === "h" ? n.away.shortName : n.home.shortName;
+  return ` Probabilità che segni contro ${opponent}: ${Math.max(1, Math.round(n.p * 100))}%.`;
 }

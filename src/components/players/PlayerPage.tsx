@@ -1,12 +1,12 @@
 // /calcio/giocatori/:giocatore – a player: profile and season by season statistics (API-Football data, built by
 // scripts/derive-players.mjs).
 import { useParams } from "react-router";
-import { User } from "lucide-react";
+import { Target, User } from "lucide-react";
 import { Link } from "../../lib/links";
 import { usePageMeta } from "../../lib/pageMeta";
 import { footballPlayer } from "../../lib/players";
 import { playerMeta } from "../../lib/playerMeta";
-import { leadersPath } from "../../lib/footballCore";
+import { eventPath, formatDay, formatTime, leadersPath } from "../../lib/footballCore";
 import { teamPaths } from "../../lib/teams";
 import { NotFoundPage } from "../NotFoundPage";
 import { PlayerSeasonDetail } from "./PlayerSeasonDetail";
@@ -89,6 +89,8 @@ export function PlayerPage() {
           )}
         </Card>
 
+        <NextScorerCard player={p} />
+
         <PlayerSeasonDetail player={p} />
 
         <Card id="stagioni">
@@ -149,3 +151,50 @@ export function PlayerPage() {
 }
 
 type FootballPlayer = Exclude<ReturnType<typeof footballPlayer>, Promise<unknown> | null>;
+
+/** Chance that the player scores in his next match (model of the predictions, scripts/lib/scorers.mjs). */
+function NextScorerCard({ player: p }: { player: FootballPlayer }) {
+  const n = p.nextScorer;
+  if (!n) return null;
+  const pct = Math.round(n.p * 100);
+  const opponent = n.side === "h" ? n.away.shortName : n.home.shortName;
+  const fair = n.p > 0 ? (1 / n.p).toFixed(2).replace(".", ",") : null;
+  return (
+    <Card id="prossima-partita">
+      <SectionTitle id="prossima-partita-titolo" icon={Target}>
+        Probabilità di gol nella prossima partita
+      </SectionTitle>
+      <div className="flex flex-wrap items-end gap-x-8 gap-y-3">
+        <p className="text-slate-300">
+          {n.home.shortName} – {n.away.shortName} · {n.competition.name}
+          <br />
+          <span className="text-slate-400 text-sm">
+            {formatDay(n.date)} ore {formatTime(n.date)}
+          </span>
+        </p>
+        <p>
+          <span className="block text-slate-400 text-xs">Segna almeno un gol</span>
+          <span className="text-predict text-3xl font-semibold tabular-nums">{pct < 1 ? "<1" : pct}%</span>
+        </p>
+        {fair && (
+          <p>
+            <span className="block text-slate-400 text-xs">Quota equa</span>
+            <span className="text-white text-xl font-semibold tabular-nums">{fair}</span>
+          </p>
+        )}
+      </div>
+      <p className="text-slate-400 text-sm mt-3 max-w-3xl">
+        Stima del modello: i gol attesi della squadra contro {opponent}, divisi tra i giocatori in base ai gol ogni 90
+        minuti di questa stagione e ai minuti che gioca di solito. Non tiene conto della formazione ufficiale. La quota
+        equa è 1 diviso la probabilità: una quota più alta del bookmaker indica un valore secondo il modello.
+      </p>
+      <Link
+        // eventPath needs only the short names (teamSlug)
+        to={eventPath(n.competition, { homeTeam: n.home, awayTeam: n.away } as unknown as Parameters<typeof eventPath>[1])}
+        className="inline-block mt-3 text-action-text hover:text-action-text-hover"
+      >
+        Pronostico {n.home.shortName} – {n.away.shortName} e probabili marcatori →
+      </Link>
+    </Card>
+  );
+}

@@ -37,7 +37,35 @@ const idMap = read("data/id-map.json", { footballTeams: {} });
 const buildTime = Date.now();
 const ledger = read(path.join(process.env.SEO_CACHE_DIR ?? path.join(".cache", "seo"), "results.json"), { football: {} });
 
+const predictions = read("src/data/football-predictions.json", { predictions: {} }).predictions ?? {};
+
 const teamById = new Map(teams.map((t) => [t.id, t]));
+
+// Next match with a goalscorer estimate (scripts/lib/scorers.mjs, in the predictions): the earliest upcoming match in
+// which the player is among the likeliest scorers of his club. Data that no other site publishes for every player.
+const nextScorer = new Map();
+{
+  const upcoming = football.competitions
+    .flatMap((c) => c.matches.map((m) => ({ c, m })))
+    .filter(({ m }) => ["SCHEDULED", "TIMED"].includes(m.status) && Date.parse(m.utcDate) > buildTime)
+    .sort((a, b) => a.m.utcDate.localeCompare(b.m.utcDate));
+  for (const { c, m } of upcoming) {
+    const sc = predictions[m.id]?.scorers;
+    if (!sc) continue;
+    const team = (t) => ({ id: t.id, shortName: t.shortName });
+    for (const [side, list] of [["h", sc.h], ["a", sc.a]])
+      for (const [pid, , pr] of list ?? [])
+        if (!nextScorer.has(pid))
+          nextScorer.set(pid, {
+            competition: { slug: c.slug, name: c.name },
+            date: m.utcDate,
+            home: team(m.homeTeam),
+            away: team(m.awayTeam),
+            side,
+            p: pr,
+          });
+  }
+}
 const compBySlug = new Map(football.competitions.map((c) => [c.slug, c]));
 const currentOf = (slug) => Number(compBySlug.get(slug)?.season?.startDate?.slice(0, 4)) || null;
 const label = (y, code) => (isCalendarSeason(code) ? String(y) : `${y}/${String(y + 1).slice(2)}`);
@@ -211,6 +239,7 @@ for (const [id, list] of rows) {
     team: { id: now.team.id, slug: now.team.slug, name: now.team.name, shortName: now.team.shortName, crest: now.team.crest ?? null },
     competition: comp ? { slug: comp.slug, name: comp.name, season: label(now.y, comp.code) } : null,
     ranks: ranks.get(id) ?? null,
+    nextScorer: nextScorer.get(id) ?? null,
     availability: availability(id),
     history: history(id),
     // the current season in detail (v3 season data: detailed statistics and split by competition)

@@ -510,14 +510,17 @@ export function standingsSummary(c: Competition) {
   return { played, leader: a, second: b, text: `Dopo ${played} ${played === 1 ? "giornata" : "giornate"}, ${lead}` };
 }
 
-export function standingsMeta(c: Competition) {
+/** `outlook`: sentence of the end-of-season projection (src/lib/seasonOutlook.ts outlookSentence), when there is one. */
+export function standingsMeta(c: Competition, outlook: string | null = null) {
   const season = seasonName(c);
   const sum = standingsSummary(c);
   return {
     path: standingsPath(c),
-    title: `Classifica ${c.name}${season ? ` ${season}` : ""} aggiornata oggi: punti e forma`,
+    title: `Classifica ${c.name}${season ? ` ${season}` : ""} aggiornata oggi: punti e ${outlook ? "proiezione" : "forma"}`,
     description: sum
-      ? `Classifica ${c.name} aggiornata dopo ogni partita. ${sum.text}. Forma delle ultime 5, gol fatti e subiti, risultati dell'ultima giornata e partite della prossima.`
+      ? outlook
+        ? `Classifica ${c.name} aggiornata dopo ogni partita. ${sum.text}. ${outlook}. Punti attesi a fine stagione, forma e prossima giornata.`
+        : `Classifica ${c.name} aggiornata dopo ogni partita. ${sum.text}. Forma delle ultime 5, gol fatti e subiti, risultati dell'ultima giornata e partite della prossima.`
       : `Classifica aggiornata di ${c.name}, rivista dopo ogni partita mentre si gioca: punti, forma delle ultime 5, vittorie, pareggi, sconfitte e differenza reti.`,
   };
 }

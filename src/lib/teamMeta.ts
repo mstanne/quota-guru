@@ -1,14 +1,23 @@
 // Title, description and structured data of the team pages (used by the pages and by the pre-render).
 import type { FootballTeam, NationalTeam, NbaTeam } from "./teams";
 import { teamPaths } from "./teams";
+import { leagueOutlook, pct } from "./seasonOutlook";
 
 export function footballTeamMeta(t: FootballTeam) {
   const path = `${teamPaths.football}/${t.slug}`;
   const cur = t.seasons.find((s) => s.current);
   const where = cur?.record ? `, ${cur.record.position}ª in ${t.competition.name}` : "";
-  const description =
+  // end-of-season projection (src/lib/seasonOutlook.ts): expected points and the chance of the main zone
+  const o = leagueOutlook(t.competition.slug)?.team(t.id);
+  // the zone that says most about the team: the likeliest one after the first place (Champions, playoff, relegation…)
+  const z = o?.zones.slice(1).sort((a, b) => b.p - a.p)[0];
+  const outlook = o
+    ? ` Proiezione del modello: ${o.xpts.toFixed(0)} punti attesi a fine stagione${z && z.p >= 0.01 ? ` (${z.zone.short.toLowerCase()}: ${pct(z.p)})` : ""}.`
+    : "";
+  const description = (
     `${t.name}${t.founded ? ` (fondata nel ${t.founded})` : ""}: informazioni sulla società, rosa ${cur?.label ?? ""}` +
-    `${where} e statistiche stagione per stagione.`.replace(/\s+/g, " ");
+    `${where} e statistiche stagione per stagione.${outlook}`
+  ).replace(/\s+/g, " ");
   return {
     path,
     title: `${t.shortName}: rosa, statistiche e stagioni`,

@@ -17,6 +17,7 @@ import { playerPath } from "../../lib/players";
 import { FootballPlayerLink } from "../players/FootballPlayerLink";
 import { footballTeamMeta } from "../../lib/teamMeta";
 import { TeamSeasonStats } from "./TeamSeasonStats";
+import { TeamSeasonOutlook } from "../calcio/SeasonOutlook";
 import { Card, Facts, SectionTitle, age, formatDate, num } from "./TeamUi";
 
 const GROUPS: [string, RegExp][] = [
@@ -267,6 +268,7 @@ function ClubTeamPage() {
           matches={next}
           label={`${t.competition.name}: probabilità 1X2, Under/Over e Goal calcolate dal modello statistico.`}
         />
+        <TeamSeasonOutlook slug={t.competition.slug} name={t.shortName} teamId={t.id} competitionName={t.competition.name} />
         <TeamSeasonStats team={t} />
         <Squad team={t} />
         <TeamGoals team={t} />

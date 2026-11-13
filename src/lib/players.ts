@@ -111,9 +111,21 @@ export interface PlayerHistory {
   /** which kinds have been downloaded at least once (an empty list then means "none") */
   complete: { transfers: boolean; trophies: boolean; sidelined: boolean };
 }
+/** Next match in which the player is among the likeliest scorers of his club (scripts/derive-players.mjs). */
+export interface NextScorer {
+  competition: { slug: string; name: string };
+  date: string;
+  home: { id: number; shortName: string };
+  away: { id: number; shortName: string };
+  /** the player's club: "h" home, "a" away */
+  side: "h" | "a";
+  /** chance of at least one goal in the 90 minutes (scripts/lib/scorers.mjs) */
+  p: number;
+}
 export interface FootballPlayer {
   id: number;
   url: string;
+  nextScorer?: NextScorer | null;
   /** false: kept out of search engines (few minutes this season, scripts/derive-players.mjs). */
   index?: false;
   name: string;
