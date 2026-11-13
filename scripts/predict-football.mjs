@@ -20,6 +20,8 @@ import { CUPS, FIT, FULL_FIT, WITH_NEW_DATA, XG_WEIGHT } from "./lib/football-fi
 import { qualifyChance } from "./lib/knockout.mjs";
 import { COMPETITIONS, isInfoLeague, isNationalCup } from "./lib/leagues.mjs";
 import { NATIONAL_CODES, NATIONAL_FIT } from "./lib/national-fit.mjs";
+import { expectedCounts } from "./lib/counts-model.mjs";
+import { scorerModel } from "./lib/scorers.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SNAPSHOT = path.join(root, "src", "data", "football.json");
@@ -29,6 +31,36 @@ const PLAYED = new Set(["FINISHED", "AWARDED"]);
 const OPEN = new Set(["SCHEDULED", "TIMED", "IN_PLAY", "PAUSED", "POSTPONED"]);
 
 const snapshot = JSON.parse(fs.readFileSync(SNAPSHOT, "utf8"));
+// corners, cards and first-half share (scripts/fit-counts.mjs); missing file: goal markets only
+const COUNTS_FILE = path.join(root, "data", "modello-corner-cartellini.json");
+const counts = fs.existsSync(COUNTS_FILE) ? JSON.parse(fs.readFileSync(COUNTS_FILE, "utf8")) : null;
+/**
+ * First half and, for club matches, expected corners and cards [home, away, dispersion] of a fixture. National teams:
+ * first half only (too few games with statistics).
+ */
+const scorersFor = scorerModel(root, Date.parse(snapshot.generatedAt ?? new Date().toISOString()));
+function extras(c, m, kind, p) {
+  return { ...countExtras(c, m, kind), ...scorerExtras(m, kind, p) };
+}
+/** Most likely goalscorers of each club (scripts/lib/scorers.mjs): { h: [[id, name, p]…], a: […] }. */
+function scorerExtras(m, kind, p) {
+  if (!scorersFor || kind === "national") return {};
+  const h = scorersFor(m.homeTeam.id, p.lam[0]);
+  const a = scorersFor(m.awayTeam.id, p.lam[1]);
+  return h && a ? { scorers: { h, a } } : {};
+}
+function countExtras(c, m, kind) {
+  const half = counts?.half ?? 0.444;
+  if (!counts || kind === "national") return { half };
+  const f = { comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, neutral: neutral(c, m) };
+  const corners = expectedCounts(counts.corners, f);
+  const cards = expectedCounts(counts.cards, f);
+  return {
+    half,
+    ...(corners ? { corners: [...corners, counts.corners.phi] } : {}),
+    ...(cards ? { cards: [...cards, counts.cards.phi] } : {}),
+  };
+}
 const history = fs.existsSync(HISTORY) ? JSON.parse(fs.readFileSync(HISTORY, "utf8")) : { results: [] };
 
 // ---- results: history + snapshot, de-duplicated by match id ----
@@ -123,7 +155,7 @@ for (const c of snapshot.competitions) {
     const p = predict(mdl, { comp: c.code, home: m.homeTeam.id, away: m.awayTeam.id, neutral: neutral(c, m) });
     if (!p) continue;
     const q = isNational(c.code) ? null : qualifyOf(mdl, c, m);
-    predictions[m.id] = { ...p, ...(q ? { qualify: q } : {}), pre: false };
+    predictions[m.id] = { ...p, ...extras(c, m, kind, p), ...(q ? { qualify: q } : {}), pre: false };
   }
 }
 

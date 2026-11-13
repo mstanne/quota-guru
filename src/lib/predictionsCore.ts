@@ -7,6 +7,13 @@ export interface Prediction {
   /** Exact expected goals and Dixon-Coles ρ of the score matrix [home, away, ρ] (src/lib/footballMarkets.ts rebuilds
    *  the matrix from them). Missing on predictions made before November 2026: the matrix then comes from `xg`. */
   lam?: [number, number, number];
+  /** Share of the goals scored in the first half (first-half markets). Missing on older predictions. */
+  half?: number;
+  /** Expected corners and cards [home, away, dispersion = variance ÷ mean] (club matches with enough statistics). */
+  corners?: [number, number, number];
+  cards?: [number, number, number];
+  /** Most likely goalscorers of each club [player id, name, probability of at least one goal in 90 minutes]. */
+  scorers?: { h: [number, string, number][]; a: [number, string, number][] };
   /** Probabilities of 1, X, 2. */
   p: [number, number, number];
   /** Double chance 1X, 12, X2. */

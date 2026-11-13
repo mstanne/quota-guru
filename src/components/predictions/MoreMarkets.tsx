@@ -1,5 +1,5 @@
 // "Altri mercati" on the football match page: every other goal market of the match from the model's score matrix
-// (src/lib/footballMarkets.ts), with probability and fair odds. Upcoming matches: each outcome goes in the slip, and
+// (src/lib/footballMarkets.ts), first and second half, corners and cards, with probability and fair odds. Upcoming matches: each outcome goes in the slip, and
 // outcomes of different markets of this match can be combined there (joint probability). Finished matches: the
 // outcomes that came true are marked. Informational: no operator odds, no link to any operator.
 import { Check, ChevronDown } from "lucide-react";
@@ -7,6 +7,8 @@ import type { ReactNode } from "react";
 import {
   asianTable,
   chance,
+  countMarkets,
+  halfMarkets,
   drawNoBet,
   exactScores,
   goalMarkets,
@@ -80,7 +82,8 @@ export function MoreMarkets({
     note: "I nove risultati più probabili.",
     outcomes: exactScores(grid),
   };
-  const sections: { title: string; groups: MarketGroup[]; extra?: ReactNode }[] = [
+  const num = (x: number) => x.toFixed(1).replace(".", ",");
+  const sections: { title: string; note?: string; groups: MarketGroup[]; extra?: ReactNode }[] = [
     { title: "Gol della partita", groups: pick("ou05", "ou15", "ou35", "ou45", "ou55", "oe") },
     { title: `Gol di ${home} e ${away}`, groups: pick("hou05", "hou15", "hou25", "aou05", "aou15", "aou25", "w2n") },
     { title: "Risultato esatto e margine", groups: [scores, ...pick("margin")] },
@@ -90,6 +93,49 @@ export function MoreMarkets({
       extra: <AsianHandicap grid={grid} home={home} away={away} />,
     },
     { title: "Combo", groups: [...comboGroups(home, away), ...pick("dc-ou", "dc-gg")] },
+    ...(prediction.scorers
+      ? [
+          {
+            title: "Marcatori",
+            note: "Probabilità che il giocatore segni almeno un gol nei 90 minuti (autogol esclusi). Dai suoi gol e minuti in stagione, e un po' da quelli della scorsa, divisi in proporzione ai gol attesi della squadra. Non conosce le formazioni ufficiali: chi parte dalla panchina ha meno probabilità. Non si combina con gli altri mercati della partita in schedina.",
+            groups: (["h", "a"] as const).map((side) => ({
+              id: `sc-${side}`,
+              title: side === "h" ? home : away,
+              outcomes: prediction.scorers![side].map(([id, name, v]) => ({
+                key: `sc:${id}`,
+                label: name,
+                slipLabel: `Marcatore – ${name}`,
+                spoken: `${name} segna`,
+                p: v,
+                test: () => false,
+              })),
+            })),
+          },
+        ]
+      : []),
+    {
+      title: "Primo e secondo tempo",
+      note: "I gol di ogni tempo sono una quota fissa dei gol attesi (nel primo tempo circa il 44%, misurato sulle partite dell'archivio). Gli esiti dei tempi non si combinano con gli altri mercati della partita in schedina.",
+      groups: halfMarkets(prediction, home, away),
+    },
+    ...(prediction.corners
+      ? [
+          {
+            title: "Corner",
+            note: `Corner attesi: ${num(prediction.corners[0])} ${home}, ${num(prediction.corners[1])} ${away}. Stima da corner battuti e concessi dalle squadre: meno precisa di quella sui gol (le differenze fra squadre sono piccole). Non si combina con gli altri mercati della partita in schedina.`,
+            groups: countMarkets("corners", prediction.corners, home, away),
+          },
+        ]
+      : []),
+    ...(prediction.cards
+      ? [
+          {
+            title: "Cartellini",
+            note: `Cartellini attesi (gialli e rossi): ${num(prediction.cards[0])} ${home}, ${num(prediction.cards[1])} ${away}. Il modello non conosce l'arbitro. Non si combina con gli altri mercati della partita in schedina.`,
+            groups: countMarkets("cards", prediction.cards, home, away),
+          },
+        ]
+      : []),
   ];
 
   return (
@@ -116,6 +162,7 @@ export function MoreMarkets({
               />
             </summary>
             <div className="space-y-4 px-4 pb-4 pt-1">
+              {s.note && <p className="text-slate-400 text-xs">{s.note}</p>}
               {s.groups.map((g) => (
                 <OutcomeGroup key={g.id} group={g} grid={grid} slip={slip} result={result} lam={lam} />
               ))}
@@ -128,7 +175,8 @@ export function MoreMarkets({
   );
 }
 
-function OutcomeGroup({
+/** One market: its outcomes as buttons (with `slip`) or plain cells. Exported for the NBA panel (outcomes with `p`). */
+export function OutcomeGroup({
   group,
   grid,
   slip,
@@ -136,25 +184,27 @@ function OutcomeGroup({
   lam,
 }: {
   group: MarketGroup;
-  grid: Grid;
+  /** Score matrix of the match: needed only for outcomes without `p`. */
+  grid?: Grid;
   slip?: SlipMatch;
   result?: { home: number; away: number } | null;
-  lam: [number, number, number];
+  lam?: [number, number, number];
 }) {
   const { picked, toggle } = useSlipPicks(slip);
   return (
     <div>
       <h4 className="text-slate-300 text-sm">{group.title}</h4>
       {group.note && <p className="text-slate-500 text-xs">{group.note}</p>}
-      <div className="mt-1.5 flex flex-wrap gap-2" role="group" aria-label={group.title}>
+      <div className={`mt-1.5 grid gap-2 ${gridCols(group.outcomes.length)}`} role="group" aria-label={group.title}>
         {group.outcomes.map((o) => (
           <OutcomeCell
             key={o.key}
             outcome={o}
-            p={chance(grid, [o.test])}
+            p={o.p ?? (grid ? chance(grid, [o.test]) : 0)}
             on={!!slip && picked(o.key)}
-            came={result ? o.test(result.home, result.away) : null}
-            onToggle={slip ? (p) => toggle({ key: o.key, slipLabel: o.slipLabel, value: p, lam }) : undefined}
+            came={result && o.p === undefined ? o.test(result.home, result.away) : null}
+            // first half, corners, cards: no matrix parameters, so they replace the other picks of the match
+            onToggle={slip ? (p) => toggle({ key: o.key, slipLabel: o.slipLabel, value: p, ...(o.p === undefined && lam ? { lam } : {}) }) : undefined}
           />
         ))}
       </div>
@@ -176,24 +226,28 @@ function OutcomeCell({
   came: boolean | null;
   onToggle?: (p: number) => void;
 }) {
+  // label on the first line, probability and fair odds on the second: every cell of the grid has the same shape
   const body = (
     <>
-      <span className="font-medium">{o.label}</span>
-      <span className={on ? "text-slate-600" : "text-slate-400"}>{pct(p)}</span>
-      <span className={`text-xs ${on ? "text-slate-500" : "text-slate-500"}`} title="Quota equa: 1 ÷ probabilità">
-        {fairOdds(p)}
+      <span className="flex items-center gap-1.5 min-w-0">
+        {came && <Check className="w-3.5 h-3.5 shrink-0 text-best" aria-hidden="true" />}
+        <span className="font-medium truncate">{o.label}</span>
+      </span>
+      <span className="flex items-baseline justify-between gap-2">
+        <span className={on ? "text-slate-700" : "text-slate-300"}>{pct(p)}</span>
+        <span className={`text-xs ${on ? "text-slate-600" : "text-slate-500"}`} title="Quota equa: 1 ÷ probabilità">
+          {fairOdds(p)}
+        </span>
       </span>
     </>
   );
+  const cell = "flex flex-col gap-0.5 w-full min-w-0 rounded-md border px-3 py-2 text-left text-sm tabular-nums";
   if (!onToggle)
     return (
       <span
-        className={`inline-flex items-baseline gap-2 rounded-md border px-3 py-1.5 text-sm tabular-nums ${
-          came ? "border-best/60 bg-best/10 text-white" : "border-slate-800 bg-slate-900 text-white"
-        }`}
+        className={`${cell} ${came ? "border-best/60 bg-best/10 text-white" : "border-slate-800 bg-slate-900 text-white"}`}
         aria-label={`${o.spoken}: probabilità stimata ${pct(p)}${came ? ", esito verificato" : ""}`}
       >
-        {came && <Check className="w-3.5 h-3.5 self-center text-best" aria-hidden="true" />}
         {body}
       </span>
     );
@@ -203,13 +257,20 @@ function OutcomeCell({
       onClick={() => onToggle(p)}
       aria-pressed={on}
       aria-label={`${o.slipLabel}: probabilità stimata ${pct(p)}, quota equa ${fairOdds(p)}. ${on ? "Togli dalla" : "Aggiungi alla"} schedina`}
-      className={`inline-flex items-baseline gap-2 rounded-md border px-3 py-1.5 text-sm tabular-nums transition-colors ${
+      className={`${cell} transition-colors ${
         on ? "bg-selected text-selected-foreground border-selected" : "bg-slate-900 border-slate-700 text-white hover:border-slate-500"
       }`}
     >
       {body}
     </button>
   );
+}
+
+/** Columns of an outcome grid: 1X2-like markets and parziale/finale in threes, the rest in twos (threes on wider screens). */
+function gridCols(n: number) {
+  if (n === 2) return "grid-cols-2";
+  if (n === 3 || n === 9) return "grid-cols-3";
+  return "grid-cols-2 sm:grid-cols-3";
 }
 
 /** Asian handicap lines around the most balanced one, and draw no bet: fair odds only (stake refunds included). */
