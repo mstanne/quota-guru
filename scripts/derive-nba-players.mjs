@@ -28,6 +28,10 @@ const teams = read("src/data/teams/index.json", { nba: [] }).nba;
 const ledger = read(path.join(process.env.SEO_CACHE_DIR ?? path.join(".cache", "seo"), "results.json"), { nba: {} });
 
 const season = basket.nba.season;
+const MIN_AVG_MINUTES = 15;
+const MIN_GAMES = 3;
+const MIN_GAMES_PREV = 20;
+let belowThreshold = 0;
 const label = (y) => `${y}-${String(y + 1).slice(2)}`;
 const teamById = new Map(teams.map((t) => [t.id, t]));
 // order of the per-game rows: NBA_LINE in scripts/fetch-match-details.mjs
@@ -163,9 +167,12 @@ for (const id of allIds) {
       };
     });
 
+  const index = searchIndexed(current, seasons);
+  if (!index) belowThreshold++;
   const player = {
     id,
     url: nbaPlayerUrl({ name, id }),
+    ...(index ? {} : { index: false }),
     name,
     team: { id: team.id, slug: team.slug, name: team.name, shortName: team.shortName },
     number: rp.number ?? null,
@@ -185,8 +192,21 @@ for (const id of allIds) {
   ids.push(id);
 }
 
+/**
+ * Search engines (November 2026, Search Console): pages of players with few minutes were almost never shown by Google.
+ * They stay on the site but out of the index and the sitemap ("noindex") unless the player averages MIN_AVG_MINUTES
+ * minutes a game this season (from MIN_GAMES games); before that, last season counts (from MIN_GAMES_PREV games:
+ * players back from injury, start of the season). Checked at every build, like the football players.
+ */
+function searchIndexed(current, seasons) {
+  const t = current?.totals;
+  if (t && t.g >= MIN_GAMES) return t.min / t.g >= MIN_AVG_MINUTES;
+  const prev = seasons.find((s) => s.season < season);
+  return !!prev && prev.g >= MIN_GAMES_PREV && prev.min / prev.g >= MIN_AVG_MINUTES;
+}
+
 fs.mkdirSync(OUT, { recursive: true });
 for (const f of fs.readdirSync(OUT)) if (/^part-\d+\.json$/.test(f)) fs.rmSync(path.join(OUT, f));
 parts.forEach((part, i) => fs.writeFileSync(path.join(OUT, `part-${i}.json`), JSON.stringify(part) + "\n"));
 fs.writeFileSync(path.join(OUT, "ids.json"), JSON.stringify(ids.sort((a, b) => a - b)) + "\n");
-console.log(`Pagine giocatore NBA: ${ids.length}`);
+console.log(`Pagine giocatore NBA: ${ids.length} (fuori dall'indice: ${belowThreshold}, meno di ${MIN_AVG_MINUTES} minuti a partita)`);
