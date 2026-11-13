@@ -296,6 +296,19 @@ export function MetodologiaPage() {
           gol, handicap europeo e asiatico, draw no bet e le combo. Tutti valgono sul risultato dei 90 minuti.
         </li>
         <li>
+          <strong>Primo tempo:</strong> nell'archivio delle ultime stagioni circa il 44% dei gol arriva nel primo tempo.
+          I gol di ciascun tempo sono stimati come quella quota dei gol attesi, con i due tempi indipendenti; da qui
+          esito e under/over di ogni tempo, tempo con più gol e parziale/finale (ricalibrato sull'1X2 finale).
+        </li>
+        <li>
+          <strong>Corner e cartellini:</strong> lo stesso modello delle squadre (attacco, difesa, fattore campo, partite
+          recenti più importanti) stimato sui corner battuti e sui cartellini ricevuti (gialli e rossi) delle ultime tre
+          stagioni, dalle statistiche ufficiali delle partite. I corner variano più di un conteggio regolare e la
+          distribuzione ne tiene conto. Verificato sulle partite della stagione 2026-27: sui cartellini il modello è
+          nettamente più preciso della media del campionato, sui corner solo di poco. Non conosce l'arbitro. Solo
+          per i club con abbastanza partite con statistiche.
+        </li>
+        <li>
           <strong>Schedina:</strong> la probabilità che si verifichino tutti gli esiti è il prodotto delle probabilità
           delle singole partite, considerate indipendenti. Più esiti della stessa partita invece dipendono l'uno
           dall'altro (chi fa Over 2,5 ha più probabilità di fare anche Goal): per loro la probabilità si calcola
