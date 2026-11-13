@@ -195,7 +195,7 @@ export function OutcomeGroup({
     <div>
       <h4 className="text-slate-300 text-sm">{group.title}</h4>
       {group.note && <p className="text-slate-500 text-xs">{group.note}</p>}
-      <div className="mt-1.5 flex flex-wrap gap-2" role="group" aria-label={group.title}>
+      <div className={`mt-1.5 grid gap-2 ${gridCols(group.outcomes.length)}`} role="group" aria-label={group.title}>
         {group.outcomes.map((o) => (
           <OutcomeCell
             key={o.key}
@@ -226,24 +226,28 @@ function OutcomeCell({
   came: boolean | null;
   onToggle?: (p: number) => void;
 }) {
+  // label on the first line, probability and fair odds on the second: every cell of the grid has the same shape
   const body = (
     <>
-      <span className="font-medium">{o.label}</span>
-      <span className={on ? "text-slate-600" : "text-slate-400"}>{pct(p)}</span>
-      <span className={`text-xs ${on ? "text-slate-500" : "text-slate-500"}`} title="Quota equa: 1 ÷ probabilità">
-        {fairOdds(p)}
+      <span className="flex items-center gap-1.5 min-w-0">
+        {came && <Check className="w-3.5 h-3.5 shrink-0 text-best" aria-hidden="true" />}
+        <span className="font-medium truncate">{o.label}</span>
+      </span>
+      <span className="flex items-baseline justify-between gap-2">
+        <span className={on ? "text-slate-700" : "text-slate-300"}>{pct(p)}</span>
+        <span className={`text-xs ${on ? "text-slate-600" : "text-slate-500"}`} title="Quota equa: 1 ÷ probabilità">
+          {fairOdds(p)}
+        </span>
       </span>
     </>
   );
+  const cell = "flex flex-col gap-0.5 w-full min-w-0 rounded-md border px-3 py-2 text-left text-sm tabular-nums";
   if (!onToggle)
     return (
       <span
-        className={`inline-flex items-baseline gap-2 rounded-md border px-3 py-1.5 text-sm tabular-nums ${
-          came ? "border-best/60 bg-best/10 text-white" : "border-slate-800 bg-slate-900 text-white"
-        }`}
+        className={`${cell} ${came ? "border-best/60 bg-best/10 text-white" : "border-slate-800 bg-slate-900 text-white"}`}
         aria-label={`${o.spoken}: probabilità stimata ${pct(p)}${came ? ", esito verificato" : ""}`}
       >
-        {came && <Check className="w-3.5 h-3.5 self-center text-best" aria-hidden="true" />}
         {body}
       </span>
     );
@@ -253,13 +257,20 @@ function OutcomeCell({
       onClick={() => onToggle(p)}
       aria-pressed={on}
       aria-label={`${o.slipLabel}: probabilità stimata ${pct(p)}, quota equa ${fairOdds(p)}. ${on ? "Togli dalla" : "Aggiungi alla"} schedina`}
-      className={`inline-flex items-baseline gap-2 rounded-md border px-3 py-1.5 text-sm tabular-nums transition-colors ${
+      className={`${cell} transition-colors ${
         on ? "bg-selected text-selected-foreground border-selected" : "bg-slate-900 border-slate-700 text-white hover:border-slate-500"
       }`}
     >
       {body}
     </button>
   );
+}
+
+/** Columns of an outcome grid: 1X2-like markets and parziale/finale in threes, the rest in twos (threes on wider screens). */
+function gridCols(n: number) {
+  if (n === 2) return "grid-cols-2";
+  if (n === 3 || n === 9) return "grid-cols-3";
+  return "grid-cols-2 sm:grid-cols-3";
 }
 
 /** Asian handicap lines around the most balanced one, and draw no bet: fair odds only (stake refunds included). */
