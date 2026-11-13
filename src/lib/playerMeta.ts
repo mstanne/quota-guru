@@ -33,10 +33,15 @@ export function playerMeta(p: FootballPlayer) {
   };
 }
 
-/** " Probabilità che segni contro l'Inter: 31%." (next match, scripts/derive-players.mjs), or "". */
+/** " Prossima partita contro il Torino: probabilità di gol 31%." (scripts/derive-players.mjs), or "". */
 function nextScorerText(p: FootballPlayer) {
-  const n = p.nextScorer;
+  const n = p.nextMatch;
   if (!n) return "";
   const opponent = n.side === "h" ? n.away.shortName : n.home.shortName;
-  return ` Probabilità che segni contro ${opponent}: ${Math.max(1, Math.round(n.p * 100))}%.`;
+  const v = (x: number) => `${Math.max(1, Math.round(x * 100))}%`;
+  const what =
+    n.cleanSheet != null
+      ? `porta inviolata ${v(n.cleanSheet)}`
+      : [n.goal != null ? `gol ${v(n.goal)}` : "", n.card != null ? `cartellino ${v(n.card)}` : ""].filter(Boolean).join(", ");
+  return what ? ` Prossima partita contro ${opponent}, probabilità: ${what}.` : "";
 }

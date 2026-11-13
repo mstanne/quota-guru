@@ -89,7 +89,7 @@ export function PlayerPage() {
           )}
         </Card>
 
-        <NextScorerCard player={p} />
+        <NextMatchCard player={p} />
 
         <PlayerSeasonDetail player={p} />
 
@@ -152,41 +152,55 @@ export function PlayerPage() {
 
 type FootballPlayer = Exclude<ReturnType<typeof footballPlayer>, Promise<unknown> | null>;
 
-/** Chance that the player scores in his next match (model of the predictions, scripts/lib/scorers.mjs). */
-function NextScorerCard({ player: p }: { player: FootballPlayer }) {
-  const n = p.nextScorer;
+/** One chance of the next match: share and fair odds. */
+function Chance({ label, p, hint }: { label: string; p: number; hint: string }) {
+  const pct = Math.round(p * 100);
+  return (
+    <div className="rounded-lg bg-slate-950/60 p-3" title={hint}>
+      <p className="text-slate-400 text-xs">{label}</p>
+      <p className="text-predict text-2xl font-semibold tabular-nums">{pct < 1 ? "<1" : pct}%</p>
+      {p > 0 && <p className="text-slate-400 text-xs tabular-nums">quota equa {(1 / p).toFixed(2).replace(".", ",")}</p>}
+    </div>
+  );
+}
+
+/** The player's chances in his next match (model of the predictions, scripts/lib/scorers.mjs). */
+function NextMatchCard({ player: p }: { player: FootballPlayer }) {
+  const n = p.nextMatch;
   if (!n) return null;
-  const pct = Math.round(n.p * 100);
   const opponent = n.side === "h" ? n.away.shortName : n.home.shortName;
-  const fair = n.p > 0 ? (1 / n.p).toFixed(2).replace(".", ",") : null;
+  const chances: { label: string; p: number | undefined; hint: string }[] = [
+    { label: "Segna almeno un gol", p: n.goal, hint: "Gol nei 90 minuti, rigori compresi" },
+    { label: "Porta inviolata", p: n.cleanSheet, hint: `${opponent} non segna e lui gioca` },
+    { label: "Ammonito o espulso", p: n.card, hint: "Almeno un cartellino nella partita" },
+    { label: "Segna un rigore", p: n.penScored, hint: "È tra i rigoristi della squadra" },
+    { label: "Para un rigore", p: n.penSaved, hint: "Rigore contro e parata" },
+  ];
+  const shown = chances.filter((c): c is { label: string; p: number; hint: string } => c.p != null);
+  if (!shown.length) return null;
   return (
     <Card id="prossima-partita">
       <SectionTitle id="prossima-partita-titolo" icon={Target}>
-        Probabilità di gol nella prossima partita
+        Probabilità nella prossima partita
       </SectionTitle>
-      <div className="flex flex-wrap items-end gap-x-8 gap-y-3">
-        <p className="text-slate-300">
-          {n.home.shortName} – {n.away.shortName} · {n.competition.name}
-          <br />
-          <span className="text-slate-400 text-sm">
-            {formatDay(n.date)} ore {formatTime(n.date)}
-          </span>
-        </p>
-        <p>
-          <span className="block text-slate-400 text-xs">Segna almeno un gol</span>
-          <span className="text-predict text-3xl font-semibold tabular-nums">{pct < 1 ? "<1" : pct}%</span>
-        </p>
-        {fair && (
-          <p>
-            <span className="block text-slate-400 text-xs">Quota equa</span>
-            <span className="text-white text-xl font-semibold tabular-nums">{fair}</span>
-          </p>
-        )}
+      <p className="text-slate-300">
+        {n.home.shortName} – {n.away.shortName} · {n.competition.name}{" "}
+        <span className="text-slate-400 text-sm">
+          ({formatDay(n.date)} ore {formatTime(n.date)})
+        </span>
+      </p>
+      <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+        {shown.map((c) => (
+          <Chance key={c.label} {...c} />
+        ))}
       </div>
       <p className="text-slate-400 text-sm mt-3 max-w-3xl">
-        Stima del modello: i gol attesi della squadra contro {opponent}, divisi tra i giocatori in base ai gol ogni 90
-        minuti di questa stagione e ai minuti che gioca di solito. Non tiene conto della formazione ufficiale. La quota
-        equa è 1 diviso la probabilità: una quota più alta del bookmaker indica un valore secondo il modello.
+        Stime del modello dei nostri pronostici. Gol: i gol attesi della squadra contro {opponent}, divisi tra i giocatori
+        in base ai gol ogni 90 minuti di questa stagione e ai minuti che gioca di solito. Cartellini: i cartellini attesi
+        della squadra, divisi in base ai suoi ogni 90 minuti. Porta inviolata e rigori: per il portiere titolare e per i
+        rigoristi abituali, dai rigori della squadra in questa stagione e nella scorsa. Non tiene conto della formazione
+        ufficiale. La quota equa è 1 diviso la probabilità: una quota più alta del bookmaker indica un valore secondo il
+        modello.
       </p>
       <Link
         // eventPath needs only the short names (teamSlug)
