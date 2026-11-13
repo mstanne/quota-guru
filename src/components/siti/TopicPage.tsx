@@ -3,7 +3,21 @@
 // operators in alphabetical order, no ratings, no ranking, no buttons to the operators, only verified data.
 import type { ReactNode } from "react";
 import { useLocation } from "react-router";
-import { BookOpen, CircleAlert, Info, Phone, Scale, Table2, type LucideIcon } from "lucide-react";
+import {
+  ArrowLeftRight,
+  BookOpen,
+  CircleAlert,
+  Coins,
+  IdCard,
+  Info,
+  ListOrdered,
+  Phone,
+  Scale,
+  ShieldCheck,
+  Table2,
+  ThumbsUp,
+  type LucideIcon,
+} from "lucide-react";
 import { Link } from "../../lib/links";
 import { usePageMeta } from "../../lib/pageMeta";
 import { PageHeader, MetaItems } from "../layout/PageHeader";
@@ -15,12 +29,14 @@ import { formatEuro, offerTotals } from "../../data/offers";
 import { operatorPath, publishedOperators } from "../../lib/operatorPages";
 import {
   bonusStatus,
+  cardsWithoutCircuit,
   fastestWithdrawal,
   findTopic,
   hasMethodTable,
   lowDeposit,
   methodMeta,
   methodOperators,
+  methodHighlights,
   methodPath,
   methodRows,
   offerAmount,
@@ -35,6 +51,7 @@ import {
   type Topic,
   type TopicId,
 } from "../../lib/topicPages";
+import { admPaymentRules, methodGuides, type Source } from "../../lib/methodGuides";
 import { paths } from "../../routes";
 import { methodMenu, sitiMenu } from "./topicMenu";
 
@@ -215,15 +232,25 @@ interface ShellProps {
   intro: ReactNode;
   table: ReactNode;
   tableTitle: string;
-  detail: ReactNode;
-  detailTitle: string;
+  detail?: ReactNode;
+  detailTitle?: string;
+  /** Extra sections after "In dettaglio" (payment method pages). */
+  extra?: { id: string; title: string; nav: string; icon: LucideIcon; node: ReactNode }[];
   know: ReactNode;
   knowTitle: string;
   faqs: Faq[];
   faqTitle: string;
+  /** Sources of the facts that do not come from the operators. */
+  sources?: Source[];
 }
 
 function Shell(p: ShellProps) {
+  const nav = [
+    SECTIONS[0],
+    ...(p.detail ? [SECTIONS[1]] : []),
+    ...(p.extra ?? []).map((e) => ({ id: e.id, title: e.nav })),
+    ...SECTIONS.slice(2),
+  ];
   return (
     <div className="min-h-screen bg-slate-950">
       <PageHeader
@@ -248,7 +275,7 @@ function Shell(p: ShellProps) {
             <Prose>{p.intro}</Prose>
             <nav aria-label="In questa pagina" className="mt-5">
               <ul className="flex flex-wrap gap-2">
-                {SECTIONS.map((s) => (
+                {nav.map((s) => (
                   <li key={s.id}>
                     <a
                       href={`#${s.id}`}
@@ -264,9 +291,16 @@ function Shell(p: ShellProps) {
           <Section id="confronto" icon={Table2} title={p.tableTitle}>
             {p.table}
           </Section>
-          <Section id="dettaglio" icon={Info} title={p.detailTitle}>
-            {p.detail}
-          </Section>
+          {p.detail && (
+            <Section id="dettaglio" icon={Info} title={p.detailTitle ?? "In dettaglio"}>
+              {p.detail}
+            </Section>
+          )}
+          {p.extra?.map((e) => (
+            <Section key={e.id} id={e.id} icon={e.icon} title={e.title}>
+              {e.node}
+            </Section>
+          ))}
           <Section id="cosa-sapere" icon={BookOpen} title={p.knowTitle}>
             <Prose>{p.know}</Prose>
           </Section>
@@ -294,6 +328,20 @@ function Shell(p: ShellProps) {
                 </Link>
                 .
               </p>
+              {p.sources && p.sources.length > 0 && (
+                <>
+                  <p>Le informazioni sul metodo di pagamento (costi, regole, società) vengono da queste fonti:</p>
+                  <ul className="list-disc pl-5 space-y-1 text-sm">
+                    {p.sources.map((src) => (
+                      <li key={src.url}>
+                        <a href={src.url} rel="noopener nofollow" target="_blank" className={linkCls}>
+                          {src.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </Prose>
           </Section>
           <Section id="domande" icon={BookOpen} title={p.faqTitle}>
@@ -951,11 +999,12 @@ function SpidPage({ t }: { t: Topic }) {
 function MethodsHubPage({ t }: { t: Topic }) {
   const path = `${paths.sitiScommesse}/${t.slug}`;
   const list = topicOperators(t.id);
+  const hubMethods = paymentMethods.filter((m) => m.hub);
   return (
     <Shell
       path={path}
       heading={t.heading}
-      subtitle="Quali operatori ADM accettano PayPal, Postepay, carte, Apple Pay, Skrill e gli altri metodi"
+      subtitle="Quali operatori ADM accettano PayPal, Postepay, carte, Apple Pay, Skrill, bonifico e gli altri metodi"
       icon={iconOf(path)}
       crumbs={[{ label: t.label }]}
       count={list.length}
@@ -974,7 +1023,9 @@ function MethodsHubPage({ t }: { t: Topic }) {
                   className="flex h-full items-center justify-between gap-2 rounded-lg border border-slate-800 bg-slate-900 px-4 py-3 text-white hover:border-slate-600"
                 >
                   <span>{m.name}</span>
-                  <span className="text-slate-400 text-sm whitespace-nowrap">{methodOperators(m).length} siti</span>
+                  <span className="text-slate-400 text-sm whitespace-nowrap">
+                    {methodOperators(m).length ? `${methodOperators(m).length} siti` : "nessun sito"}
+                  </span>
                 </Link>
               </li>
             ))}
@@ -991,7 +1042,7 @@ function MethodsHubPage({ t }: { t: Topic }) {
                 <th scope="col" className="p-3 font-normal text-left sticky left-0 bg-slate-800">
                   Operatore
                 </th>
-                {paymentMethods.map((m) => (
+                {hubMethods.map((m) => (
                   <th key={m.id} scope="col" className="p-3 font-normal text-center">
                     <Link to={methodPath(m)} className="hover:text-white">
                       {m.id === "carte" ? "Carte" : m.id === "bonifico" ? "Bonifico" : m.name}
@@ -1008,7 +1059,7 @@ function MethodsHubPage({ t }: { t: Topic }) {
                       {op.name}
                     </Link>
                   </th>
-                  {paymentMethods.map((m) => {
+                  {hubMethods.map((m) => {
                     const rows = methodRows(op, m);
                     const depositOnly = rows.length > 0 && rows.every((r) => r.withdrawal === null);
                     const withdrawOnly = rows.length > 0 && rows.every((r) => r.deposit === null);
@@ -1052,10 +1103,12 @@ function MethodsHubPage({ t }: { t: Topic }) {
                 </h3>
                 <p className="text-slate-300 text-sm leading-relaxed">{m.about}</p>
                 <p className="text-slate-400 text-sm mt-2">
-                  Accettato da {ops.length} operatori: {opNames(ops)}.
+                  {ops.length
+                    ? `Accettato da ${ops.length} operatori: ${opNames(ops)}.`
+                    : "Non accettato dagli operatori che confrontiamo."}
                 </p>
                 <Link to={methodPath(m)} className={`inline-block mt-2 text-sm ${linkCls}`}>
-                  Limiti e tempi con {m.name} →
+                  {ops.length ? `Limiti, tempi e costi con ${m.name}` : `${m.name}: perché no e alternative`} →
                 </Link>
               </div>
             );
@@ -1116,9 +1169,66 @@ function MethodsHubPage({ t }: { t: Topic }) {
 
 // ---------- one payment method ----------
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="space-y-3">
+      {items.map((t, i) => (
+        <li key={t} className="flex gap-3">
+          <span
+            className="size-7 shrink-0 inline-flex items-center justify-center rounded-full bg-slate-800 text-white text-sm"
+            aria-hidden="true"
+          >
+            {i + 1}
+          </span>
+          <span className="text-slate-300 leading-relaxed pt-0.5">{t}</span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function ProsCons({ pros, cons }: { pros: string[]; cons: string[] }) {
+  const col = (title: string, items: string[], mark: string, cls: string) => (
+    <div className="rounded-lg border border-slate-800 bg-slate-900 p-5">
+      <h3 className="text-white text-lg mb-3">{title}</h3>
+      <ul className="space-y-2">
+        {items.map((t) => (
+          <li key={t} className="flex gap-2 text-slate-300 text-sm leading-relaxed">
+            <span className={`${cls} shrink-0`} aria-hidden="true">
+              {mark}
+            </span>
+            {t}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+  return (
+    <div className="grid gap-4 md:grid-cols-2">
+      {pros.length > 0 && col("Vantaggi", pros, "+", "text-best")}
+      {cons.length > 0 && col("Svantaggi", cons, "−", "text-warn")}
+    </div>
+  );
+}
+
+const methodLabel = (m: PaymentMethodInfo) =>
+  m.id === "carte" ? "carta di credito o debito" : m.id === "bitcoin" ? "Bitcoin e criptovalute" : m.name;
+
+/** Operators' own fees for the method, grouped by the stated value ("Gratis": A, B; "2 €": C). */
+function operatorFees(list: OperatorData[], m: PaymentMethodInfo) {
+  const byFee = new Map<string, string[]>();
+  for (const op of list)
+    for (const r of methodRows(op, m))
+      if (r.fee) byFee.set(r.fee, [...new Set([...(byFee.get(r.fee) ?? []), op.name])]);
+  return [...byFee.entries()];
+}
+
 export function MethodPage({ method: m }: { method: PaymentMethodInfo }) {
   usePageMeta(methodMeta(m));
+  const g = methodGuides[m.id];
   const path = methodPath(m);
+  const hubPath = `${paths.sitiScommesse}/metodi-di-pagamento`;
+  const total = publishedOperators().length;
   const list = methodOperators(m);
   const noTable = list.filter((o) => !hasMethodTable(o));
   const without = others(list);
@@ -1128,151 +1238,266 @@ export function MethodPage({ method: m }: { method: PaymentMethodInfo }) {
   const fast = list.filter((o) =>
     methodRows(o, m).some((r) => r.withdrawalTime && /^(generalmente )?immediat|pochi minuti(?! a)/i.test(r.withdrawalTime)),
   );
-  const label = m.id === "carte" ? "carta di credito o debito" : m.name;
+  const noCircuit = cardsWithoutCircuit(m);
+  const highlights = methodHighlights(m);
+  const fees = operatorFees(list, m);
+  const label = methodLabel(m);
   const rows = list.flatMap((op) => {
     const offer = sportOffer(op);
     return methodRows(op, m).map((r, i) => ({ op, r, first: i === 0, offer }));
   });
-  return (
-    <Shell
-      path={path}
-      heading={`Siti scommesse con ${label}`}
-      subtitle={`Gli operatori ADM che accettano ${m.name}, con limiti, tempi di prelievo e validità per le offerte di benvenuto`}
-      icon={iconOf(`${paths.sitiScommesse}/metodi-di-pagamento`)}
-      crumbs={[{ label: "Metodi di pagamento", to: `${paths.sitiScommesse}/metodi-di-pagamento` }, { label: m.name }]}
-      count={list.length}
-      intro={
+  const alternatives = g.alternatives.map((id) => paymentMethods.find((x) => x.id === id)!);
+  const none = list.length === 0;
+
+  const table = none ? (
+    <Prose>
+      {g.instead?.paragraphs.map((t) => <p key={t}>{t}</p>)}
+      <h3>I metodi più diffusi tra gli operatori che confrontiamo</h3>
+      <ul className="flex flex-wrap gap-2">
+        {paymentMethods
+          .filter((x) => x.hub)
+          .map((x) => ({ x, n: methodOperators(x).length }))
+          .sort((a, b) => b.n - a.n)
+          .slice(0, 6)
+          .map(({ x, n }) => (
+            <li key={x.id}>
+              <Link
+                to={methodPath(x)}
+                className="inline-block px-3 py-1.5 rounded-md border border-slate-700 bg-slate-900 text-slate-200 hover:text-white text-sm"
+              >
+                {x.name} · {n} operatori
+              </Link>
+            </li>
+          ))}
+      </ul>
+    </Prose>
+  ) : (
+    <>
+      <div className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900">
+        <table className="w-full text-sm">
+          <caption className="sr-only">Siti scommesse che accettano {m.name}</caption>
+          <thead className="bg-slate-800/60 text-slate-400 text-xs text-left">
+            <tr>
+              {["Operatore", "Metodo", "Deposito", "Prelievo", "Tempi di prelievo", "Costo", "Primo deposito per il bonus sport"].map(
+                (c) => (
+                  <th key={c} scope="col" className="p-3 font-normal">
+                    {c}
+                  </th>
+                ),
+              )}
+            </tr>
+          </thead>
+          <tbody className="text-slate-200">
+            {rows.map(({ op, r, first, offer }) => {
+              const bonus = r.deposit === null ? null : bonusStatus(offer, m);
+              return (
+                <tr key={`${op.id}-${r.method}`} className={`align-top ${first ? "border-t border-slate-800" : ""}`}>
+                  <th scope="row" className="p-3 text-left font-normal whitespace-nowrap">
+                    {first && (
+                      <Link to={operatorPath(op)} className="text-white hover:underline underline-offset-4">
+                        {op.name}
+                      </Link>
+                    )}
+                  </th>
+                  <td className="p-3">{r.method}</td>
+                  <td className="p-3 whitespace-nowrap">{r.deposit ?? <Muted>No</Muted>}</td>
+                  <td className="p-3 whitespace-nowrap">{r.withdrawal ?? <Muted>No</Muted>}</td>
+                  <td className="p-3">{r.withdrawalTime ?? <Muted>{r.withdrawal ? "Non indicato" : "—"}</Muted>}</td>
+                  <td className="p-3">{r.fee ?? <Muted>Non indicato</Muted>}</td>
+                  <td className="p-3">
+                    {bonus === "escluso" ? (
+                      <span className="text-warn">Escluso dall'offerta</span>
+                    ) : bonus === "valido" ? (
+                      "Non escluso"
+                    ) : (
+                      <Muted>{offer ? "—" : "Nessuna offerta sport"}</Muted>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      {noTable.length > 0 && (
+        <p className="text-slate-400 text-xs mt-2">
+          {opNames(noTable)} non pubblicano limiti e tempi per singolo metodo nelle pagine che abbiamo verificato: i valori
+          generali sono nella scheda dell'operatore.
+        </p>
+      )}
+      {noCircuit.length > 0 && (
+        <p className="text-slate-400 text-xs mt-2">
+          {opNames(noCircuit)} accettano carte ma non indicano i circuiti nelle pagine che abbiamo verificato: sono nella
+          pagina sulle{" "}
+          <Link to={`${paths.sitiScommesse}/carte-di-credito`} className={linkCls}>
+            carte di credito e debito
+          </Link>
+          .
+        </p>
+      )}
+      {highlights.length > 0 && (
         <>
-          <p>{m.about}</p>
-          <p>
-            {list.length} dei {publishedOperators().length} operatori che confrontiamo accettano {m.name}:{" "}
-            {opNames(list)}.
-            {depositOnly.length ? ` Con ${opNames(depositOnly)} serve solo per depositare.` : ""}
+          <h3 className="text-white text-lg mt-8 mb-3">Come si differenziano gli operatori con {m.name}</h3>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {highlights.map((h) => (
+              <li key={h.label} className="rounded-lg border border-slate-800 bg-slate-900 p-4">
+                <span className="block text-slate-400 text-xs">{h.label}</span>
+                <span className="block text-white text-xl mt-1">{h.value}</span>
+                <span className="block text-slate-300 text-sm mt-1">{opNames(h.ops)}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-slate-400 text-xs mt-2">
+            Valori dichiarati dagli operatori che pubblicano limiti e tempi per metodo; non è una classifica.
           </p>
         </>
-      }
-      tableTitle={`${m.name}: limiti e tempi operatore per operatore`}
-      table={
-        <>
-          <div className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900">
-            <table className="w-full text-sm">
-              <caption className="sr-only">Siti scommesse che accettano {m.name}</caption>
-              <thead className="bg-slate-800/60 text-slate-400 text-xs text-left">
-                <tr>
-                  {["Operatore", "Metodo", "Deposito", "Prelievo", "Tempi di prelievo", "Costo", "Primo deposito per il bonus sport"].map(
-                    (c) => (
-                      <th key={c} scope="col" className="p-3 font-normal">
-                        {c}
-                      </th>
-                    ),
-                  )}
-                </tr>
-              </thead>
-              <tbody className="text-slate-200">
-                {rows.map(({ op, r, first, offer }) => {
-                  const bonus = r.deposit === null ? null : bonusStatus(offer, m);
-                  return (
-                    <tr key={`${op.id}-${r.method}`} className={`align-top ${first ? "border-t border-slate-800" : ""}`}>
-                      <th scope="row" className="p-3 text-left font-normal whitespace-nowrap">
-                        {first && (
-                          <Link to={operatorPath(op)} className="text-white hover:underline underline-offset-4">
-                            {op.name}
-                          </Link>
-                        )}
-                      </th>
-                      <td className="p-3">{r.method}</td>
-                      <td className="p-3 whitespace-nowrap">{r.deposit ?? <Muted>No</Muted>}</td>
-                      <td className="p-3 whitespace-nowrap">{r.withdrawal ?? <Muted>No</Muted>}</td>
-                      <td className="p-3">{r.withdrawalTime ?? <Muted>{r.withdrawal ? "Non indicato" : "—"}</Muted>}</td>
-                      <td className="p-3">{r.fee ?? <Muted>Non indicato</Muted>}</td>
-                      <td className="p-3">
-                        {bonus === "escluso" ? (
-                          <span className="text-warn">Escluso dall'offerta</span>
-                        ) : bonus === "valido" ? (
-                          "Non escluso"
-                        ) : (
-                          <Muted>{offer ? "—" : "Nessuna offerta sport"}</Muted>
-                        )}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+      )}
+    </>
+  );
+
+  const extra: NonNullable<ShellProps["extra"]> = [];
+  if (g.deposit)
+    extra.push({
+      id: "come-funziona",
+      nav: "Come funziona",
+      title: `Come si usa ${m.name} sui siti scommesse`,
+      icon: ListOrdered,
+      node: (
+        <div className="space-y-8">
+          <div>
+            <h3 className="text-white text-lg mb-3">Depositare con {m.name}</h3>
+            <Steps items={g.deposit} />
           </div>
-          {noTable.length > 0 && (
-            <p className="text-slate-400 text-xs mt-2">
-              {opNames(noTable)} non pubblicano limiti e tempi per singolo metodo nelle pagine che abbiamo verificato: i
-              valori generali sono nella scheda dell'operatore.
+          <div>
+            <h3 className="text-white text-lg mb-3">Prelevare con {m.name}</h3>
+            {g.withdraw && withdrawals.length > 0 ? (
+              <Steps items={g.withdraw} />
+            ) : (
+              <Prose>
+                <p>
+                  {withdrawals.length
+                    ? `Con ${m.name} si preleva solo su ${opNames(withdrawals)}; presso gli altri operatori le vincite vanno prelevate con un altro metodo intestato a te, di solito bonifico, carta o portafoglio elettronico.`
+                    : `${m.name} serve solo per depositare: le vincite vanno prelevate con un altro metodo intestato a te, di solito bonifico, carta o portafoglio elettronico.`}
+                </p>
+              </Prose>
+            )}
+          </div>
+        </div>
+      ),
+    });
+  if (g.costs.length || fees.length)
+    extra.push({
+      id: "costi",
+      nav: "Costi",
+      title: `Quanto costa usare ${m.name}`,
+      icon: Coins,
+      node: (
+        <Prose>
+          {g.costs.map((t) => (
+            <p key={t}>{t}</p>
+          ))}
+          {fees.length > 0 && (
+            <p>
+              Costi indicati dagli operatori per {m.name}:{" "}
+              {fees.map(([fee, ops], i) => (
+                <span key={fee}>
+                  {i > 0 && "; "}
+                  {fee.toLowerCase()} per {names(ops)}
+                </span>
+              ))}
+              . Gli altri non pubblicano il dato.
             </p>
           )}
-        </>
-      }
-      detailTitle={`${m.name} sui siti scommesse in dettaglio`}
-      detail={
-        <DetailList
-          items={list.map((op) => {
-            const rs = methodRows(op, m);
-            const offer = sportOffer(op);
-            const st = bonusStatus(offer, m);
-            const dep = rs.find((r) => r.deposit && r.deposit !== "Non indicato");
-            const wd = rs.find((r) => r.withdrawalTime);
-            return {
-              op,
-              text: [
-                `${op.name} accetta ${rs.map((r) => r.method).join(", ")}`,
-                dep ? ` (deposito ${dep.deposit})` : "",
-                ". ",
-                wd ? `Prelievo: ${wd.withdrawalTime.toLowerCase()}. ` : rs.every((r) => r.withdrawal === null) ? "Non vale per i prelievi. " : "",
-                st === "escluso"
-                  ? `Le condizioni dell'offerta di benvenuto sport escludono ${m.name} per il primo deposito.`
-                  : st === "valido"
-                    ? `Le condizioni dell'offerta di benvenuto sport non escludono ${m.name}.`
-                    : "",
-              ].join(""),
-            };
-          })}
-        />
-      }
-      knowTitle={`Pagare con ${m.name}: cosa sapere`}
-      know={
-        <>
-          {excluded.length > 0 && (
-            <>
-              <h3>Escluso da alcune offerte di benvenuto</h3>
-              <p>
-                Le condizioni dell'offerta sport di {opNames(excluded)} escludono {m.name}: un primo deposito con questo
-                metodo non attiva l'offerta. Le altre esclusioni sono nelle condizioni di ogni offerta, nella pagina{" "}
-                <Link to={paths.bonus} className={linkCls}>
-                  offerte di benvenuto
-                </Link>
-                .
-              </p>
-            </>
-          )}
-          <h3>Prelievi</h3>
-          <p>
-            {withdrawals.length
-              ? `Si può prelevare con ${m.name} su ${opNames(withdrawals)}.`
-              : `Nessun operatore che confrontiamo paga le vincite con ${m.name}.`}{" "}
-            {fast.length ? `Tempi indicati come immediati da ${opNames(fast)}.` : ""} Il primo prelievo arriva solo dopo
-            la verifica del conto, e molti operatori pagano sullo stesso metodo usato per depositare: confronto completo
-            nella pagina sul{" "}
-            <Link to={`${paths.sitiScommesse}/prelievo-immediato`} className={linkCls}>
-              prelievo immediato
-            </Link>
-            .
-          </p>
-          <h3>Intestazione</h3>
-          <p>
-            {m.name} deve essere intestato alla stessa persona del conto di gioco: pagamenti da metodi di altre persone
-            vengono bloccati.
-          </p>
-          <NotListed list={without} what={`Operatori che non accettano ${m.name}`} value={() => "Non nell'elenco dei metodi"} />
-        </>
-      }
-      faqTitle={`Domande frequenti su ${m.name}`}
-      faqs={[
+        </Prose>
+      ),
+    });
+  if (g.pros.length || g.cons.length)
+    extra.push({
+      id: "pro-contro",
+      nav: "Pro e contro",
+      title: `${m.name}: vantaggi e svantaggi`,
+      icon: ThumbsUp,
+      node: <ProsCons pros={g.pros} cons={g.cons} />,
+    });
+  extra.push({
+    id: "sicurezza",
+    nav: "Sicurezza",
+    title: none ? "Sicurezza e tutele" : `${m.name} è sicuro?`,
+    icon: ShieldCheck,
+    node: (
+      <Prose>
+        {g.security.map((t) => (
+          <p key={t}>{t}</p>
+        ))}
+        <p>
+          Qualunque metodo usi, gioca solo su siti con concessione ADM: il numero di concessione è in fondo alla pagina
+          dell'operatore e in ogni{" "}
+          <Link to={paths.sitiScommesse} className={linkCls}>
+            scheda operatore
+          </Link>{" "}
+          di questo sito.
+        </p>
+      </Prose>
+    ),
+  });
+  extra.push({
+    id: "scheda",
+    nav: "Scheda",
+    title: `${m.name} in breve`,
+    icon: IdCard,
+    node: (
+      <div className="rounded-xl border border-slate-800 bg-slate-900 overflow-hidden">
+        <dl className="text-sm">
+          {[
+            { label: "Tipo", value: g.kind },
+            ...g.facts.filter((f) => f.label !== "Tipo"),
+            {
+              label: "Operatori che lo accettano",
+              value: none ? `Nessuno su ${total}` : `${list.length} su ${total}`,
+            },
+          ].map((f) => (
+            <div key={f.label} className="grid sm:grid-cols-[220px_1fr] gap-1 sm:gap-4 p-3 border-t border-slate-800 first:border-t-0">
+              <dt className="text-slate-400">{f.label}</dt>
+              <dd className="text-slate-200">{f.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    ),
+  });
+  extra.push({
+    id: "alternative",
+    nav: "Alternative",
+    title: `Le alternative ${/^[aeiou]/i.test(m.name) ? "ad" : "a"} ${m.name}`,
+    icon: ArrowLeftRight,
+    node: (
+      <ul className="grid gap-3 sm:grid-cols-2">
+        {alternatives.map((a) => {
+          const ops = methodOperators(a);
+          return (
+            <li key={a.id} className="rounded-lg border border-slate-800 bg-slate-900 p-5">
+              <Link to={methodPath(a)} className="text-white text-lg hover:underline underline-offset-4">
+                {a.name}
+              </Link>
+              <span className="block text-slate-400 text-sm mt-1">
+                Accettato da {ops.length} operatori su {total}
+              </span>
+              <p className="text-slate-300 text-sm leading-relaxed mt-2">{a.about}</p>
+            </li>
+          );
+        })}
+      </ul>
+    ),
+  });
+
+  const genericFaqs: Faq[] = none
+    ? [
+        {
+          q: `Quali siti scommesse accettano ${m.name}?`,
+          a: `Nessuno dei ${total} operatori ADM che confrontiamo lo indica tra i metodi di pagamento. Le alternative più diffuse sono ${names(alternatives.map((a) => `${a.name} (${methodOperators(a).length} operatori)`))}.`,
+        },
+      ]
+    : [
         { q: `Quali siti scommesse accettano ${m.name}?`, a: `Tra gli operatori ADM che confrontiamo: ${opNames(list)}.` },
         {
           q: `Si può prelevare con ${m.name}?`,
@@ -1288,9 +1513,125 @@ export function MethodPage({ method: m }: { method: PaymentMethodInfo }) {
         },
         {
           q: `Ci sono commissioni con ${m.name}?`,
-          a: "Gli operatori che confrontiamo non applicano spese sui depositi online; i costi del prelievo, quando l'operatore li pubblica, sono nella colonna Costo della tabella.",
+          a: `Gli operatori che confrontiamo non applicano spese sui depositi online. ${g.costs[0] ?? ""}`.trim(),
         },
-      ]}
+      ];
+
+  return (
+    <Shell
+      path={path}
+      heading={`Siti scommesse con ${label}`}
+      subtitle={
+        none
+          ? `${m.name} sui siti di scommesse ADM: chi lo accetta e quali metodi usare al suo posto`
+          : `Gli operatori ADM che accettano ${m.name}: limiti, tempi, costi, come si usa e validità per le offerte di benvenuto`
+      }
+      icon={iconOf(hubPath)}
+      crumbs={[{ label: "Metodi di pagamento", to: hubPath }, { label: m.name }]}
+      count={list.length}
+      intro={
+        <>
+          <p>{m.about}</p>
+          <p>
+            {none ? (
+              `Nessuno dei ${total} operatori che confrontiamo lo accetta: qui sotto spieghiamo perché, cosa usare al suo posto e come funzionano le alternative.`
+            ) : (
+              <>
+                {list.length === total ? `Tutti i ${total}` : `${list.length} dei ${total}`} operatori che confrontiamo
+                accettano {m.name}: {opNames(list)}.
+                {depositOnly.length ? ` Con ${opNames(depositOnly)} serve solo per depositare.` : ""}
+              </>
+            )}
+          </p>
+        </>
+      }
+      tableTitle={none ? (g.instead?.title ?? `${m.name} sui siti scommesse`) : `${m.name}: limiti e tempi operatore per operatore`}
+      table={table}
+      detailTitle={`${m.name} sui siti scommesse in dettaglio`}
+      detail={
+        none ? undefined : (
+          <DetailList
+            items={list.map((op) => {
+              const rs = methodRows(op, m);
+              const offer = sportOffer(op);
+              const st = bonusStatus(offer, m);
+              const dep = rs.find((r) => r.deposit && r.deposit !== "Non indicato");
+              const wd = rs.find((r) => r.withdrawalTime);
+              return {
+                op,
+                text: [
+                  `${op.name} accetta ${rs.map((r) => r.method).join(", ")}`,
+                  dep ? ` (deposito ${dep.deposit})` : "",
+                  ". ",
+                  wd
+                    ? `Prelievo: ${wd.withdrawalTime!.toLowerCase()}. `
+                    : rs.every((r) => r.withdrawal === null)
+                      ? "Non vale per i prelievi. "
+                      : "",
+                  st === "escluso"
+                    ? `Le condizioni dell'offerta di benvenuto sport escludono ${m.name} per il primo deposito.`
+                    : st === "valido"
+                      ? `Le condizioni dell'offerta di benvenuto sport non escludono ${m.name}.`
+                      : "",
+                ].join(""),
+              };
+            })}
+          />
+        )
+      }
+      extra={extra}
+      knowTitle={none ? "Cosa sapere sui pagamenti nel gioco online" : `Pagare con ${m.name}: cosa sapere`}
+      know={
+        <>
+          {excluded.length > 0 && (
+            <>
+              <h3>Escluso da alcune offerte di benvenuto</h3>
+              <p>
+                Le condizioni dell'offerta sport di {opNames(excluded)} escludono {m.name}: un primo deposito con questo
+                metodo non attiva l'offerta. Le altre esclusioni sono nelle condizioni di ogni offerta, nella pagina{" "}
+                <Link to={paths.bonus} className={linkCls}>
+                  offerte di benvenuto
+                </Link>
+                .
+              </p>
+            </>
+          )}
+          {!none && (
+            <>
+              <h3>Prelievi</h3>
+              <p>
+                {withdrawals.length
+                  ? `Si può prelevare con ${m.name} su ${opNames(withdrawals)}.`
+                  : `Nessun operatore che confrontiamo paga le vincite con ${m.name}.`}{" "}
+                {fast.length ? `Tempi indicati come immediati da ${opNames(fast)}.` : ""} Il primo prelievo arriva solo
+                dopo la verifica del conto, e molti operatori pagano sullo stesso metodo usato per depositare: confronto
+                completo nella pagina sul{" "}
+                <Link to={`${paths.sitiScommesse}/prelievo-immediato`} className={linkCls}>
+                  prelievo immediato
+                </Link>
+                .
+              </p>
+            </>
+          )}
+          <h3>Le regole ADM sui pagamenti</h3>
+          {admPaymentRules.paragraphs.map((t) => (
+            <p key={t}>{t}</p>
+          ))}
+          {!none && (
+            <>
+              <h3>Intestazione</h3>
+              <p>
+                {m.name} deve essere intestato alla stessa persona del conto di gioco: pagamenti da metodi di altre persone
+                vengono bloccati e le vincite non vengono pagate su strumenti intestati ad altri.
+              </p>
+              <NotListed list={without} what={`Operatori che non accettano ${m.name}`} value={() => "Non nell'elenco dei metodi"} />
+            </>
+          )}
+        </>
+      }
+      faqTitle={`Domande frequenti su ${m.name}`}
+      faqs={[...genericFaqs, ...g.faqs]}
+      sources={[...g.sources, admPaymentRules.source]}
     />
   );
 }

@@ -10,12 +10,21 @@ export type MethodId =
   | "paypal"
   | "postepay"
   | "carte"
+  | "visa"
+  | "mastercard"
+  | "maestro"
+  | "american-express"
   | "apple-pay"
   | "google-pay"
   | "skrill"
   | "neteller"
+  | "muchbetter"
   | "paysafecard"
-  | "bonifico";
+  | "bonifico"
+  | "mybank"
+  | "bancoposta"
+  | "klarna"
+  | "bitcoin";
 
 export interface PaymentMethodInfo {
   id: MethodId;
@@ -27,6 +36,10 @@ export interface PaymentMethodInfo {
   excluded: RegExp;
   /** What the method is, one or two neutral sentences. */
   about: string;
+  /** Column in the table of the "Metodi di pagamento" page (card circuits are covered by "Carte"). */
+  hub: boolean;
+  /** Card circuit page: operators that write only "carte di credito" are listed apart, circuit not stated. */
+  circuit?: boolean;
 }
 
 export const paymentMethods: PaymentMethodInfo[] = [
@@ -36,6 +49,7 @@ export const paymentMethods: PaymentMethodInfo[] = [
     name: "PayPal",
     match: /paypal/i,
     excluded: /paypal/i,
+    hub: true,
     about:
       "PayPal è un portafoglio elettronico: si collega una carta o un conto e si paga con email e password, senza inserire i dati della carta sul sito dell'operatore. Il conto PayPal deve essere intestato alla stessa persona del conto di gioco.",
   },
@@ -45,17 +59,62 @@ export const paymentMethods: PaymentMethodInfo[] = [
     name: "Postepay",
     match: /postepay/i,
     excluded: /postepay/i,
+    hub: true,
     about:
-      "Postepay è la carta prepagata di Poste Italiane (anche nella versione Evolution con IBAN). Sui siti di scommesse si usa come una normale carta del circuito Visa o Mastercard.",
+      "Postepay è la carta prepagata di Poste Italiane (anche nella versione Evolution con IBAN). Sui siti di scommesse si usa come una normale carta di pagamento, con la conferma nell'app.",
   },
   {
     id: "carte",
     slug: "carte-di-credito",
     name: "Carte di credito e debito",
-    match: /visa|mastercard|maestro|cart[ae] di (credito|debito)/i,
-    excluded: /visa|mastercard|maestro|carta/i,
+    match: /visa|mastercard|maestro|cart[ae] (di (credito|debito)|bancari|prepagat)/i,
+    excluded: /^cart[ae]\b|visa|mastercard/i,
+    hub: true,
     about:
-      "Carte di credito, di debito e prepagate dei circuiti Visa, Mastercard e Maestro. Il deposito è accreditato subito; il prelievo sulla carta richiede in genere più tempo dei portafogli elettronici.",
+      "Carte di credito, di debito e prepagate dei circuiti Visa e Mastercard (e le Maestro ancora in corso di validità). Il deposito è accreditato subito; il prelievo sulla carta richiede in genere più tempo dei portafogli elettronici.",
+  },
+  {
+    id: "visa",
+    slug: "visa",
+    name: "Visa",
+    match: /visa/i,
+    excluded: /^cart[ae]\b|visa/i,
+    hub: false,
+    circuit: true,
+    about:
+      "Visa è un circuito di pagamento: la carta la emette la tua banca o un istituto di pagamento, Visa gestisce la rete che collega carta e operatore. Sui siti di scommesse si usano carte Visa di debito, prepagate e di credito.",
+  },
+  {
+    id: "mastercard",
+    slug: "mastercard",
+    name: "Mastercard",
+    match: /mastercard/i,
+    excluded: /^cart[ae]\b|mastercard/i,
+    hub: false,
+    circuit: true,
+    about:
+      "Mastercard è un circuito di pagamento: la carta la emette la tua banca o un istituto di pagamento. Dal 2023 le nuove carte di debito che sostituiscono le Maestro sono Debit Mastercard, quindi è il circuito di molte carte collegate al conto corrente.",
+  },
+  {
+    id: "maestro",
+    slug: "maestro",
+    name: "Maestro",
+    match: /maestro/i,
+    excluded: /maestro/i,
+    hub: false,
+    circuit: true,
+    about:
+      "Maestro era il circuito delle carte di debito di Mastercard. Dal 1° luglio 2023 in Europa non si emettono più carte Maestro: quelle già emesse funzionano fino alla scadenza, poi la banca le sostituisce con una Debit Mastercard.",
+  },
+  {
+    id: "american-express",
+    slug: "american-express",
+    name: "American Express",
+    match: /american express|amex/i,
+    excluded: /american express|amex/i,
+    hub: false,
+    about:
+      "American Express è insieme circuito ed emittente delle proprie carte di credito. Nessuno degli operatori che confrontiamo la indica tra i metodi accettati nelle pagine di pagamento che abbiamo verificato.",
   },
   {
     id: "apple-pay",
@@ -63,6 +122,7 @@ export const paymentMethods: PaymentMethodInfo[] = [
     name: "Apple Pay",
     match: /apple pay/i,
     excluded: /apple pay/i,
+    hub: true,
     about:
       "Apple Pay usa una carta salvata nel Wallet di iPhone, iPad o Mac: il pagamento si conferma con Face ID o Touch ID e l'operatore non riceve il numero della carta.",
   },
@@ -72,6 +132,7 @@ export const paymentMethods: PaymentMethodInfo[] = [
     name: "Google Pay",
     match: /google pay/i,
     excluded: /google pay/i,
+    hub: true,
     about:
       "Google Pay usa una carta salvata nel portafoglio Google dello smartphone Android: il pagamento si conferma con lo sblocco del telefono, senza inserire i dati della carta.",
   },
@@ -81,8 +142,9 @@ export const paymentMethods: PaymentMethodInfo[] = [
     name: "Skrill",
     match: /skrill/i,
     excluded: /skrill/i,
+    hub: true,
     about:
-      "Skrill è un portafoglio elettronico diffuso nel gioco online. Molti operatori lo escludono dalle offerte di benvenuto: conviene controllarlo prima del primo deposito.",
+      "Skrill è un portafoglio elettronico del gruppo Paysafe, diffuso nel gioco online. Molti operatori lo escludono dalle offerte di benvenuto: conviene controllarlo prima del primo deposito.",
   },
   {
     id: "neteller",
@@ -90,8 +152,19 @@ export const paymentMethods: PaymentMethodInfo[] = [
     name: "Neteller",
     match: /neteller/i,
     excluded: /neteller/i,
+    hub: true,
     about:
-      "Neteller è un portafoglio elettronico dello stesso gruppo di Skrill. Come Skrill, è spesso escluso dalle offerte di benvenuto.",
+      "Neteller è un portafoglio elettronico dello stesso gruppo di Skrill (Paysafe), con un conto separato. Come Skrill, è spesso escluso dalle offerte di benvenuto.",
+  },
+  {
+    id: "muchbetter",
+    slug: "muchbetter",
+    name: "MuchBetter",
+    match: /muchbetter/i,
+    excluded: /muchbetter/i,
+    hub: true,
+    about:
+      "MuchBetter è un portafoglio elettronico che si usa dall'app sullo smartphone. Si ricarica con carta, bonifico o con un voucher comprato in contanti nei negozi convenzionati.",
   },
   {
     id: "paysafecard",
@@ -99,8 +172,9 @@ export const paymentMethods: PaymentMethodInfo[] = [
     name: "Paysafecard",
     match: /paysafe/i,
     excluded: /paysafe/i,
+    hub: true,
     about:
-      "Paysafecard è una carta prepagata con un codice PIN, che si compra in contanti in tabaccherie e ricevitorie. Serve quasi sempre solo per depositare: per prelevare va usato un altro metodo.",
+      "Paysafecard è un credito prepagato con un codice PIN di 16 cifre, che si compra in tabaccherie e ricevitorie. Serve quasi sempre solo per depositare: per prelevare va usato un altro metodo.",
   },
   {
     id: "bonifico",
@@ -108,8 +182,49 @@ export const paymentMethods: PaymentMethodInfo[] = [
     name: "Bonifico bancario",
     match: /bonifico/i,
     excluded: /bonifico|movimentazione bancaria/i,
+    hub: true,
     about:
-      "Il bonifico parte dal conto corrente in banca o in posta. Con il bonifico istantaneo il denaro arriva in pochi secondi se la banca lo supporta; il bonifico ordinario richiede uno o più giorni lavorativi.",
+      "Il bonifico parte dal conto corrente in banca o in posta. Il bonifico istantaneo arriva in pochi secondi e per legge non può costare più di quello ordinario, che richiede uno o più giorni lavorativi.",
+  },
+  {
+    id: "mybank",
+    slug: "mybank",
+    name: "MyBank",
+    match: /mybank/i,
+    excluded: /mybank/i,
+    hub: true,
+    about:
+      "MyBank permette di pagare con un bonifico immediato direttamente dal proprio home banking: dal sito dell'operatore si sceglie la banca, si accede e si conferma un bonifico già compilato.",
+  },
+  {
+    id: "bancoposta",
+    slug: "bancoposta",
+    name: "BancoPosta",
+    match: /bancoposta|postale|postagiro/i,
+    excluded: /bancoposta|postale|postagiro/i,
+    hub: true,
+    about:
+      "I servizi di Poste Italiane per il conto di gioco: bonifico postale e Postagiro dal conto BancoPosta, bollettino postale per ricaricare, bonifico sull'IBAN BancoPosta o bonifico domiciliato (ritiro in ufficio postale) per le vincite. Postepay ha una pagina a parte.",
+  },
+  {
+    id: "klarna",
+    slug: "klarna",
+    name: "Klarna",
+    match: /klarna/i,
+    excluded: /klarna/i,
+    hub: false,
+    about:
+      "Klarna è conosciuta soprattutto per i pagamenti a rate o posticipati negli acquisti online. Nessuno degli operatori che confrontiamo la indica tra i metodi per ricaricare il conto di gioco.",
+  },
+  {
+    id: "bitcoin",
+    slug: "bitcoin",
+    name: "Bitcoin e criptovalute",
+    match: /bitcoin|cripto|crypto/i,
+    excluded: /bitcoin|cripto|crypto/i,
+    hub: false,
+    about:
+      "Nessun concessionario ADM accetta Bitcoin o altre criptovalute per depositare o prelevare. I siti che le accettano da giocatori italiani operano senza concessione: in Italia non sono legali e non offrono le tutele dei siti autorizzati.",
   },
 ];
 
