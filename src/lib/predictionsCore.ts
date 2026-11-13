@@ -12,6 +12,8 @@ export interface Prediction {
   /** Expected corners and cards [home, away, dispersion = variance ÷ mean] (club matches with enough statistics). */
   corners?: [number, number, number];
   cards?: [number, number, number];
+  /** Most likely goalscorers of each club [player id, name, probability of at least one goal in 90 minutes]. */
+  scorers?: { h: [number, string, number][]; a: [number, string, number][] };
   /** Probabilities of 1, X, 2. */
   p: [number, number, number];
   /** Double chance 1X, 12, X2. */
