@@ -7,6 +7,7 @@ import path from "node:path";
 import { teamGoalStats } from "../../src/lib/goalStats.mjs";
 import { footballBroadcast } from "../../src/lib/broadcast.ts";
 import { TRIS, chooseTris, lockKey } from "../lib/tris.mjs";
+import { MULTIPLE, MULTIPLE_IDS, chooseMultiples, lockKey as multipleKey, pickTest } from "../lib/multiple.mjs";
 import {
   CAPTION_MAX,
   FOOTER,
@@ -553,6 +554,8 @@ export const RUBRICHE = [
     time: "10:30",
     build: makeTris("tris-nazionali"),
   },
+  // every day, after the site has locked the day's multiples (first build of the day) and before the first matches
+  { id: "multiple", name: "Le multiple del giorno", days: EVERY_DAY, time: "11:15", build: dailyMultiples },
   {
     id: "pronostici-del-giorno",
     name: "I pronostici del giorno",
@@ -1310,4 +1313,70 @@ function studyPosts({ data, today, nowMs }) {
     });
   }
   return posts;
+}
+
+// ---------------------------------------------------------------------------------------------- multiples of the day
+const fairOf = (p) => (1 / p).toFixed(2).replace(".", ",");
+
+/**
+ * The multiples of the day (/pronostici/multiple): a double and three accumulators at fair odds near 2, 5 and 10, from
+ * the model's probabilities (rules: scripts/lib/multiple.mjs). The site locks them at its first build of the day
+ * (`multiple.json` in the archive branch): the post shows those, so channel and site agree; without a lock (build late
+ * or failed) they are chosen here with the same rules. Also how yesterday's went, graded with the archive's results.
+ * The picks are in the image; the caption has one line per multiple (Telegram's 1.024 characters).
+ */
+function dailyMultiples({ data, today, nowMs }) {
+  const locked = MULTIPLE_IDS.map((id) => data.multiple?.[multipleKey(id, today)]).filter(Boolean);
+  const list = locked.length
+    ? locked
+    : Object.values(chooseMultiples(data.archive.calcio, { nowMs, currentIds: currentIds(data) }));
+  // only multiples still entirely to play
+  const todays = list.filter((m) => m.picks.every((p) => Date.parse(p.kickoff) > nowMs));
+  if (!todays.length) return null;
+  const short = (m) => MULTIPLE[m.id]?.short ?? m.id;
+
+  // yesterday: lost as soon as a pick is wrong, won when every played pick came in
+  const byId = new Map(data.archive.calcio.map((e) => [e.id, e]));
+  const yesterday = addDays(today, -1);
+  const past = MULTIPLE_IDS.map((id) => data.multiple?.[multipleKey(id, yesterday)])
+    .filter(Boolean)
+    .map((m) => {
+      const marks = m.picks.map((p) => {
+        const r = byId.get(p.id)?.result;
+        return r ? pickTest(p.key, r.home, r.away) : null;
+      });
+      const played = marks.filter((x) => x !== null);
+      const lost = played.some((x) => !x);
+      const done = played.length === m.picks.length;
+      if (!lost && !done) return null;
+      return `${short(m)} ${lost ? "❌" : "✅"} (${played.filter(Boolean).length} su ${m.picks.length})`;
+    })
+    .filter(Boolean);
+
+  const lines = todays.map(
+    (m) =>
+      `<b>${esc(short(m))}</b>: ${m.picks.length} esiti, insieme ${alPct(m.all)} · quota equa ${fairOf(m.all)}`,
+  );
+  const caption = post(
+    `🧮 <b>Le multiple del giorno</b> – ${dayLabel(today)}`,
+    lines.join("\n"),
+    "Costruite solo con le probabilità del modello. Ogni esito da solo è probabile, ma devono entrare tutti: le probabilità si moltiplicano. Quota equa = 1 ÷ probabilità, non è la quota di un operatore.",
+    past.length ? `Ieri: ${past.join(" · ")}` : null,
+    `Gli esiti e com'è andata ogni multipla: ${anchor("/pronostici/multiple", "quotaguru.it/pronostici/multiple", "multiple")}`,
+  );
+  return {
+    caption,
+    card: {
+      type: "multiple",
+      badge: "Multiple",
+      title: "Le multiple del giorno",
+      subtitle: `${capital(dayLabel(today))} · dalle probabilità del modello`,
+      multiple: todays.map((m) => ({
+        name: MULTIPLE[m.id]?.title ?? m.id,
+        all: m.all,
+        fair: fairOf(m.all),
+        picks: m.picks.map((p) => ({ when: timeOf(p), label: p.label, sign: p.sign, p: p.p })),
+      })),
+    },
+  };
 }

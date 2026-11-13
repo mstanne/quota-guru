@@ -9,7 +9,7 @@ coda delle guide Academy (`academy.json`).
 - `publish.mjs` invia le rubriche il cui orario è arrivato negli ultimi 100 minuti e che non risultano già inviate.
   Un ritardo di GitHub o un'esecuzione ripetuta non producono doppioni; il cambio dell'ora legale non richiede modifiche.
 - I dati vengono letti dal branch `dati` (calendario, classifiche, marcatori) e dal branch `archivio-pronostici`
-  (ogni pronostico pubblicato con esito): i numeri sul canale sono gli stessi del sito.
+  (ogni pronostico pubblicato con esito, tris e multiple del giorno): i numeri sul canale sono gli stessi del sito.
 - Il registro dei post inviati e la posizione nella coda Academy stanno nel branch `telegram-registro`, file `registro.json`.
 - Il live worker (`workers/live`) avvia il workflow puntuale ai minuti 07, 27 e 47 e, appena escono formazioni
   ufficiali nuove, subito con la rubrica `formazioni`. Il cron di GitHub resta come riserva.
@@ -44,6 +44,7 @@ node scripts/telegram/publish.mjs --dry-run --all --cards /percorso/cartella
 | `tris-weekend` | sabato 10:30 | le 3 partite del weekend (5 grandi campionati) più prevedibili e la probabilità che si verifichino tutte e tre; lunedì il track record dice com'è andata. Lo stesso tris è sul sito, `/pronostici/tris`: la build del sito lo fissa la mattina (`tris.json` nel branch `archivio-pronostici`, regole in `scripts/lib/tris.mjs`) e il post usa quello |
 | `tris-champions`, `tris-europa-league`, `tris-conference` | 10:30 / 10:30 / 11:00 del primo giorno di ogni giornata di coppa | lo stesso per ogni coppa (Champions: martedì e mercoledì insieme); anche questi nel track record del lunedì |
 | `tris-nazionali` | 10:30 del primo giorno di ogni finestra delle nazionali | le 3 partite ufficiali delle nazionali europee (Nations League, qualificazioni, Mondiali, Europei) più prevedibili di quel giorno e del successivo |
+| `multiple` | ogni giorno 11:15 | le multiple del giorno del sito (`/pronostici/multiple`): doppia e multiple a quota equa 2, 5 e 10, ognuna con la probabilità che entri e la quota equa; gli esiti sono nell'immagine. In più com'è andata ogni multipla del giorno prima. Le multiple le fissa la build del sito la mattina (`multiple.json` nel branch `archivio-pronostici`, regole in `scripts/lib/multiple.mjs`) e il post usa quelle; saltata se non ce ne sono o se sono già cominciate |
 | `nazionale-italia` | 11:30 il giorno di ogni partita dell'Italia | pronostico del modello delle nazionali e canale TV (Rai) |
 | `pronostici-del-giorno` | 11:45 di sabato e domenica con i campionati e di martedì, mercoledì e giovedì con le coppe | 5 partite del giorno, per ognuna l'esito più netto tra 1X2, Goal/No Goal, Over/Under 2,5, doppia chance e Over 1,5, con probabilità e quota equa (1 ÷ probabilità) e la probabilità che si verifichino tutti e cinque. Massimo 2 per competizione (3 nelle giornate di coppa) finché ce ne sono altre; esclude le partite del tris del giorno |
 | `studio-pronostico` | circa 4 ore prima del calcio d'inizio, massimo 2 partite al giorno | lo studio di una partita: 1X2 con quote eque, gol attesi, Over 2,5 e Goal, risultati più probabili, ultime 5 partite, classifica e indisponibili, l'esito del modello. Partite scelte: le squadre italiane nelle coppe europee (prima la Champions) e il big match di Serie A del giorno (la coppia meglio piazzata in classifica) |
