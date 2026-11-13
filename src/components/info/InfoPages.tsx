@@ -291,6 +291,18 @@ export function MetodologiaPage() {
           ricavano 1X2, doppia chance, over/under, goal/no goal e i risultati esatti più probabili.
         </li>
         <li>
+          <strong>Altri mercati:</strong> dalla stessa tabella delle probabilità di ogni risultato (0-0, 1-0, 1-1…) si
+          ricavano anche multigol, gol delle singole squadre, pari/dispari, margine di vittoria, vittoria senza subire
+          gol, handicap europeo e asiatico, draw no bet e le combo. Tutti valgono sul risultato dei 90 minuti.
+        </li>
+        <li>
+          <strong>Schedina:</strong> la probabilità che si verifichino tutti gli esiti è il prodotto delle probabilità
+          delle singole partite, considerate indipendenti. Più esiti della stessa partita invece dipendono l'uno
+          dall'altro (chi fa Over 2,5 ha più probabilità di fare anche Goal): per loro la probabilità si calcola
+          insieme, sommando i risultati in cui si verificano tutti. Draw no bet e handicap asiatico prevedono il
+          rimborso della puntata e per questo non si aggiungono alla schedina.
+        </li>
+        <li>
           <strong>Affidabilità:</strong> alta, media o bassa a seconda di quante partite recenti il modello ha sulle due
           squadre. Se una squadra ha troppo pochi dati (per esempio un club alla prima partita europea contro squadre che
           non seguiamo) il pronostico non viene pubblicato.

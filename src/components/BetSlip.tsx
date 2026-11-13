@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { getOperator, oddsOperators } from "../data/operators";
 import { formatOdd, productOfOdds } from "../lib/odds";
 import { OperatorCta, OperatorLogo } from "./operator/OperatorUi";
-import { formatChance, oneIn, slipChance, slipFairOdds } from "../lib/slip";
+import { formatChance, matchCombos, oneIn, slipChance, slipFairOdds } from "../lib/slip";
 import { pct } from "../lib/predictionsCore";
 import { paths } from "../routes";
 
@@ -23,7 +23,17 @@ export function BetSlip() {
   // when every pick has them, the probability whenever at least one pick has it.
   const withOdds = selections.length > 0 && selections.every((s) => s.selectedOdds !== undefined && s.allBookmakers);
   const chance = slipChance(selections);
-  const chanceLabel = chance.probability === null ? null : formatChance(chance.probability);
+  // picks of the same match that cannot all come true (e.g. Under 1,5 and Over 2,5): probability 0
+  const impossible = chance.probability === 0;
+  const chanceLabel = chance.probability === null || impossible ? null : formatChance(chance.probability);
+  const combos = matchCombos(selections);
+  // the picks grouped by match, in the order the matches were added
+  const groups: BetSelection[][] = [];
+  for (const s of selections) {
+    const g = groups.find((x) => x[0].matchId === s.matchId);
+    if (g) g.push(s);
+    else groups.push([s]);
+  }
   // Accumulator odds: null while any odd is still a placeholder (template mode).
   const totalOdds = withOdds ? productOfOdds(selections.map((s) => s.selectedOdds!)) : null;
   const totalLabel = totalOdds === null ? "[QUOTA_TOT]" : totalOdds.toFixed(2);
@@ -118,13 +128,38 @@ export function BetSlip() {
             <>
               <div className="flex-1 overflow-y-auto">
                 <ul className="divide-y divide-slate-200 bg-white border-b border-slate-200">
-                  {selections.map((s) => (
-                    <SlipRow key={s.id} selection={s} onRemove={() => removeSelection(s.id!)} />
-                  ))}
+                  {groups.map((g) =>
+                    g.length === 1 ? (
+                      <SlipRow key={g[0].id} selection={g[0]} onRemove={() => removeSelection(g[0].id!)} />
+                    ) : (
+                      <li key={g[0].matchId}>
+                        <ul className="divide-y divide-slate-100">
+                          {g.map((s, i) => (
+                            <SlipRow
+                              key={s.id}
+                              selection={s}
+                              onRemove={() => removeSelection(s.id!)}
+                              sameMatch={i > 0}
+                            />
+                          ))}
+                        </ul>
+                        {combos.has(g[0].matchId) && (
+                          <div className="flex items-center justify-between gap-2 bg-sky-50 pl-4 pr-12 py-1.5 text-xs">
+                            <span className="text-slate-700">
+                              {g.length} esiti della stessa partita insieme
+                            </span>
+                            <span className="text-sky-700 font-semibold tabular-nums">
+                              {combos.get(g[0].matchId)! > 0 ? pct(combos.get(g[0].matchId)!) : "incompatibili"}
+                            </span>
+                          </div>
+                        )}
+                      </li>
+                    ),
+                  )}
                 </ul>
 
                 <div className="px-4 py-3 flex items-center justify-between">
-                  <span className="text-slate-500 text-xs">Un esito per partita</span>
+                  <span className="text-slate-500 text-xs">Più mercati della stessa partita: calcolati insieme</span>
                   <button
                     type="button"
                     onClick={clearAll}
@@ -187,6 +222,12 @@ export function BetSlip() {
 
               {/* summary, always visible under the list */}
               <div className="shrink-0 bg-white border-t border-slate-300 px-4 pt-3 pb-4 shadow-[0_-6px_16px_-10px_rgba(0,0,0,0.35)]">
+                {impossible && (
+                  <p className="text-slate-800 text-sm">
+                    Alcuni esiti della stessa partita non possono verificarsi insieme: togline uno per calcolare la
+                    probabilità.
+                  </p>
+                )}
                 {chance.probability !== null && chanceLabel && (
                   <div className="flex items-end justify-between gap-4">
                     <div>
@@ -225,8 +266,8 @@ export function BetSlip() {
                 )}
                 {chance.probability !== null && (
                   <p className="mt-2 text-slate-500 text-[11px] leading-snug">
-                    Prodotto delle probabilità stimate dal modello: una stima, non un consiglio di gioco. Ogni esito in
-                    più la riduce.{" "}
+                    Prodotto delle probabilità stimate dal modello (gli esiti della stessa partita contano insieme): una
+                    stima, non un consiglio di gioco. Ogni esito in più la riduce.{" "}
                     <Link
                       to={`${paths.metodologia}#pronostici`}
                       onClick={closeBetSlip}
@@ -246,17 +287,30 @@ export function BetSlip() {
 }
 
 /** One pick: teams, outcome and match time on the left, odds or probability on the right. */
-function SlipRow({ selection: s, onRemove }: { selection: BetSelection; onRemove: () => void }) {
+function SlipRow({
+  selection: s,
+  onRemove,
+  sameMatch = false,
+}: {
+  selection: BetSelection;
+  onRemove: () => void;
+  /** Second or later pick of a match already listed: the teams are not repeated. */
+  sameMatch?: boolean;
+}) {
   return (
     <li className="flex items-center gap-2 pl-4 pr-1.5 py-2">
       <div className="flex-1 min-w-0">
-        <div className="text-slate-900 text-sm font-medium truncate">
-          {s.homeTeam} – {s.awayTeam}
-        </div>
+        {!sameMatch && (
+          <div className="text-slate-900 text-sm font-medium truncate">
+            {s.homeTeam} – {s.awayTeam}
+          </div>
+        )}
         <div className="text-slate-700 text-sm truncate">{s.betTypeLabel}</div>
-        <div className="text-slate-500 text-xs truncate">
-          {s.competition} · {s.time}
-        </div>
+        {!sameMatch && (
+          <div className="text-slate-500 text-xs truncate">
+            {s.competition} · {s.time}
+          </div>
+        )}
       </div>
       {s.selectedOdds !== undefined ? (
         <span className="text-slate-900 font-semibold tabular-nums">{formatOdd(s.selectedOdds)}</span>

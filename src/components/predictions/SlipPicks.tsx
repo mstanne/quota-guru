@@ -7,6 +7,7 @@ import { useBetSlip } from "../../context/BetSlipContext";
 import { Link } from "../../lib/links";
 import { fairOdds, pct } from "../../lib/predictionsCore";
 import { formatTime, romeDay, type Match } from "../../lib/footballCore";
+import type { Lam } from "../../lib/footballMarkets";
 
 /** The match a pick belongs to. `slipId`: "football-<id>" / "nba-<id>", the same ids as the odds blocks. */
 export interface SlipMatch {
@@ -35,19 +36,21 @@ export interface PickCell {
   top?: boolean;
   spoken: string;
   slipLabel: string;
+  /** Football: score-matrix parameters, so the pick can be combined with other markets of the same match. */
+  lam?: Lam;
 }
 
 /** Selection state and toggle for the picks of one match. `open`: open the slip after adding (match page only). */
 export function useSlipPicks(match: SlipMatch | undefined, { open = false }: { open?: boolean } = {}) {
   const { selections, addSelection, removeSelection } = useBetSlip();
-  const current = match ? selections.find((s) => s.matchId === match.slipId) : undefined;
   const idOf = (key: string) => `${match?.slipId}-pred-${key}`;
+  const inSlip = (key: string) => selections.some((s) => s.id === idOf(key));
   return {
-    picked: (key: string) => !!current && current.id === idOf(key),
-    toggle: (cell: Pick<PickCell, "key" | "slipLabel" | "value">) => {
+    picked: inSlip,
+    toggle: (cell: Pick<PickCell, "key" | "slipLabel" | "value" | "lam">) => {
       if (!match) return;
       const id = idOf(cell.key);
-      if (current?.id === id) return removeSelection(id);
+      if (inSlip(cell.key)) return removeSelection(id);
       addSelection(
         {
           id,
@@ -60,6 +63,7 @@ export function useSlipPicks(match: SlipMatch | undefined, { open = false }: { o
           betType: cell.key,
           betTypeLabel: cell.slipLabel,
           probability: cell.value,
+          ...(cell.lam ? { lam: cell.lam } : {}),
         },
         { open },
       );
@@ -198,7 +202,8 @@ export function SlipPicksBox({ children }: { children: ReactNode }) {
         Aggiungi un esito alla schedina
       </h3>
       <p className="mt-1 text-slate-400 text-xs leading-relaxed">
-        La schedina calcola la probabilità stimata che si verifichino tutti gli esiti scelti. Un esito per partita.
+        La schedina calcola la probabilità stimata che si verifichino tutti gli esiti scelti. Puoi unire più mercati della
+        stessa partita (es. 1 + Over 1,5): la probabilità tiene conto di come dipendono l'uno dall'altro.
       </p>
       {children}
     </div>
