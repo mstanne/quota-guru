@@ -22,9 +22,12 @@ permissions:
   pages: write
   id-token: write
 
+# One run at a time. A run already started is never cancelled: it publishes its build, and the newest run waiting
+# goes next (GitHub keeps only the latest waiting run). With cancel-in-progress a new start (every 3 hours, or a
+# merge) threw away a build that had already finished, a few seconds before publishing it (13 November 2026).
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
