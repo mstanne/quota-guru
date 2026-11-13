@@ -74,7 +74,10 @@ export interface Outcome {
   slipLabel: string;
   /** For screen readers. */
   spoken: string;
+  /** Test on the final score (outcomes of the score matrix). */
   test: Test;
+  /** Probability given directly (first half, corners, cards): not a test on the final score, `test` is unused. */
+  p?: number;
 }
 export interface MarketGroup {
   /** Market id: two picks of the same match and the same market replace each other in the slip. */
@@ -350,4 +353,181 @@ export function asianTable(grid: Grid): AsianLine[] {
 export function drawNoBet(grid: Grid) {
   const [l] = asianLines(grid, [0]);
   return { home: l.home, away: l.away, pHome: l.win / (1 - l.push), draw: l.push };
+}
+
+// ------------------------------------------------------------------------------------------------ first half
+
+export const DEFAULT_HALF = 0.444;
+
+function poissonGrid(lh: number, la: number, max = 8): Grid {
+  const ph = pmf(lh).slice(0, max + 1);
+  const pa = pmf(la).slice(0, max + 1);
+  const g = ph.map((x) => pa.map((y) => x * y));
+  const t = g.flat().reduce((s, v) => s + v, 0);
+  return g.map((r) => r.map((v) => v / t));
+}
+
+/**
+ * First half, second half and half-time/full-time. The goals of each half follow a Poisson count with a share of the
+ * match's expected goals (`half`: first half, measured on the archive, ~44%); the halves are independent. The 9
+ * half-time/full-time outcomes are then rescaled so that their full-time totals match the 1X2 of the main matrix.
+ */
+export function halfMarkets(p: Prediction, home: string, away: string): MarketGroup[] {
+  const [lh, la] = lamOf(p);
+  const s = p.half ?? DEFAULT_HALF;
+  const h1 = poissonGrid(s * lh, s * la);
+  const h2 = poissonGrid((1 - s) * lh, (1 - s) * la);
+  const sum = (g: Grid, t: Test) => chance(g, [t]);
+  const prob = (key: string, label: string, slipLabel: string, spoken: string, v: number): Outcome => ({
+    key, label, slipLabel, spoken, p: v, test: () => false,
+  });
+  const names = [home, "pareggio", away];
+  const o1x2 = (g: Grid, tag: string, pre: string): MarketGroup => ({
+    id: `${tag}1x2`,
+    title: `Esito ${pre}`,
+    outcomes: OUT.map((o, i) =>
+      prob(`${tag}:${o}`, o, `Esito ${pre} – ${o} (${i === 1 ? "pareggio" : `${names[i]} avanti`})`, `${pre}: ${i === 1 ? "pareggio" : `${names[i]} avanti`}`, sum(g, out(i))),
+    ),
+  });
+  const ou = (g: Grid, tag: string, pre: string, line: number): MarketGroup => ({
+    id: `${tag}ou${k10(line)}`,
+    title: `Under/Over ${dec(line)} ${pre}`,
+    outcomes: [
+      prob(`${tag}:under${k10(line)}`, `Under ${dec(line)}`, `Under ${dec(line)} ${pre}`, `${pre}: meno di ${line} gol`, sum(g, (h, a) => h + a < line)),
+      prob(`${tag}:over${k10(line)}`, `Over ${dec(line)}`, `Over ${dec(line)} ${pre}`, `${pre}: più di ${line} gol`, sum(g, (h, a) => h + a > line)),
+    ],
+  });
+  // half-time / full-time: HT outcome i, FT outcome j (FT score = sum of the two halves)
+  const raw = [0, 1, 2].map(() => [0, 0, 0]);
+  h1.forEach((r1, a) => r1.forEach((v1, b) => h2.forEach((r2, c) => r2.forEach((v2, d) => {
+    const i = a > b ? 0 : a === b ? 1 : 2;
+    const ft = a + c - (b + d);
+    raw[i][ft > 0 ? 0 : ft === 0 ? 1 : 2] += v1 * v2;
+  }))));
+  const ftMain = [0, 1, 2].map((j) => chance(scoreGrid(lamOf(p)), [out(j)]));
+  const ftRaw = [0, 1, 2].map((j) => raw[0][j] + raw[1][j] + raw[2][j]);
+  const htft = raw.map((r) => r.map((v, j) => (ftRaw[j] > 0 ? (v * ftMain[j]) / ftRaw[j] : 0)));
+  // goals: more in the first half, in the second, as many
+  const totals = (g: Grid) => {
+    const t: number[] = [];
+    g.forEach((row, i) => row.forEach((v, j) => (t[i + j] = (t[i + j] ?? 0) + v)));
+    return t;
+  };
+  const t1 = totals(h1);
+  const t2 = totals(h2);
+  let more1 = 0, more2 = 0, same = 0;
+  t1.forEach((x, i) => t2.forEach((y, j) => (i > j ? (more1 += x * y) : i < j ? (more2 += x * y) : (same += x * y))));
+  return [
+    o1x2(h1, "ht", "primo tempo"),
+    ou(h1, "ht", "primo tempo", 0.5),
+    ou(h1, "ht", "primo tempo", 1.5),
+    ou(h1, "ht", "primo tempo", 2.5),
+    {
+      id: "htgg",
+      title: "Goal/No goal primo tempo",
+      outcomes: [
+        prob("ht:gg", "Goal", "Goal primo tempo", "primo tempo: segnano entrambe", sum(h1, (h, a) => h > 0 && a > 0)),
+        prob("ht:ng", "No goal", "No goal primo tempo", "primo tempo: almeno una non segna", sum(h1, (h, a) => h === 0 || a === 0)),
+      ],
+    },
+    o1x2(h2, "st", "secondo tempo"),
+    ou(h2, "st", "secondo tempo", 0.5),
+    ou(h2, "st", "secondo tempo", 1.5),
+    {
+      id: "half-more",
+      title: "Tempo con più gol",
+      outcomes: [
+        prob("hm:1", "1° tempo", "Tempo con più gol – primo", "più gol nel primo tempo", more1),
+        prob("hm:X", "Uguale", "Tempo con più gol – stessi gol", "stessi gol nei due tempi", same),
+        prob("hm:2", "2° tempo", "Tempo con più gol – secondo", "più gol nel secondo tempo", more2),
+      ],
+    },
+    {
+      id: "htft",
+      title: "Parziale/Finale",
+      note: "Esito a fine primo tempo / esito finale.",
+      outcomes: OUT.flatMap((a, i) =>
+        OUT.map((b, j) => prob(`htft:${a}/${b}`, `${a}/${b}`, `Parziale/Finale ${a}/${b}`, `${names[i]} a metà, ${names[j]} alla fine`, htft[i][j])),
+      ),
+    },
+  ];
+}
+
+// ------------------------------------------------------------------------------------------------ corners and cards
+
+function lgamma(x: number): number {
+  const c = [0.99999999999980993, 676.5203681218851, -1259.1392167224028, 771.32342877765313, -176.61502916214059,
+    12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7];
+  if (x < 0.5) return Math.log(Math.PI / Math.sin(Math.PI * x)) - lgamma(1 - x);
+  x -= 1;
+  let a = c[0];
+  const t = x + 7.5;
+  for (let i = 1; i < 9; i++) a += c[i] / (x + i);
+  return 0.5 * Math.log(2 * Math.PI) + (x + 0.5) * Math.log(t) - t + Math.log(a);
+}
+/** Count distribution 0…max with mean `mu` and variance `phi`·mu: Poisson (phi ≤ 1) or negative binomial. */
+function countPmf(mu: number, phi: number, max = 30) {
+  const out: number[] = [];
+  if (phi <= 1.0001) {
+    let v = Math.exp(-mu);
+    for (let k = 0; k <= max; k++) {
+      out.push(v);
+      v = (v * mu) / (k + 1);
+    }
+    return out;
+  }
+  const r = mu / (phi - 1);
+  const q = r / (r + mu);
+  for (let k = 0; k <= max; k++)
+    out.push(Math.exp(lgamma(k + r) - lgamma(r) - lgamma(k + 1) + r * Math.log(q) + k * Math.log(1 - q)));
+  return out;
+}
+
+/** Corner or card markets of a match from [expected home, expected away, dispersion]. */
+export function countMarkets(
+  kind: "corners" | "cards",
+  [mh, ma, phi]: [number, number, number],
+  home: string,
+  away: string,
+): MarketGroup[] {
+  const ph = countPmf(mh, phi);
+  const pa = countPmf(ma, phi);
+  const joint = (t: Test) => {
+    let s = 0;
+    ph.forEach((x, i) => pa.forEach((y, j) => t(i, j) && (s += x * y)));
+    return s;
+  };
+  const word = kind === "corners" ? "corner" : "cartellini";
+  const tag = kind === "corners" ? "c" : "k";
+  const lines = kind === "corners" ? [7.5, 8.5, 9.5, 10.5, 11.5, 12.5] : [2.5, 3.5, 4.5, 5.5, 6.5];
+  const teamLines = kind === "corners" ? [3.5, 4.5, 5.5] : [1.5, 2.5];
+  const prob = (key: string, label: string, slipLabel: string, spoken: string, v: number): Outcome => ({
+    key, label, slipLabel, spoken, p: v, test: () => false,
+  });
+  const ou = (who: "t" | "h" | "a", line: number): MarketGroup => {
+    const name = who === "t" ? "" : ` ${who === "h" ? home : away}`;
+    const val = (h: number, a: number) => (who === "t" ? h + a : who === "h" ? h : a);
+    return {
+      id: `${tag}${who}ou${k10(line)}`,
+      title: who === "t" ? `Totale ${word} ${dec(line)}` : `${word[0].toUpperCase()}${word.slice(1)}${name} ${dec(line)}`,
+      outcomes: [
+        prob(`${tag}${who}:under${k10(line)}`, `Under ${dec(line)}`, `${word[0].toUpperCase()}${word.slice(1)}${name} – Under ${dec(line)}`, `meno di ${line} ${word}${name}`, joint((h, a) => val(h, a) < line)),
+        prob(`${tag}${who}:over${k10(line)}`, `Over ${dec(line)}`, `${word[0].toUpperCase()}${word.slice(1)}${name} – Over ${dec(line)}`, `più di ${line} ${word}${name}`, joint((h, a) => val(h, a) > line)),
+      ],
+    };
+  };
+  return [
+    {
+      id: `${tag}1x2`,
+      title: kind === "corners" ? "Chi batte più corner" : "Chi riceve più cartellini",
+      outcomes: [
+        prob(`${tag}:1`, home, `Più ${word} – ${home}`, `più ${word} ${home}`, joint((h, a) => h > a)),
+        prob(`${tag}:X`, "Pari", `Più ${word} – stesso numero`, `stesso numero di ${word}`, joint((h, a) => h === a)),
+        prob(`${tag}:2`, away, `Più ${word} – ${away}`, `più ${word} ${away}`, joint((h, a) => h < a)),
+      ],
+    },
+    ...lines.map((l) => ou("t", l)),
+    ...teamLines.map((l) => ou("h", l)),
+    ...teamLines.map((l) => ou("a", l)),
+  ];
 }
