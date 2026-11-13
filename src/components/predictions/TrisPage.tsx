@@ -234,6 +234,10 @@ export function TrisPage() {
             ·{" "}
             <Link to="/bilancio-pronostici" className="text-action-text hover:text-action-text-hover">
               Bilancio di tutti i pronostici
+            </Link>{" "}
+            ·{" "}
+            <Link to="/pronostici/multiple" className="text-action-text hover:text-action-text-hover">
+              Le multiple del giorno
             </Link>
           </p>
         </section>
