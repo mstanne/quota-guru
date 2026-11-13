@@ -65,6 +65,8 @@ export interface NbaTeamRef {
 export interface NbaPlayer {
   id: number;
   url: string;
+  /** Few minutes a game: the page stays for visitors, out of the index and the sitemap (scripts/derive-nba-players.mjs). */
+  index?: false;
   name: string;
   team: { id: number; slug: string; name: string; shortName: string };
   number: string | number | null;
@@ -134,6 +136,7 @@ export function nbaPlayerMeta(p: NbaPlayer) {
   const role = p.position ? `${p.position.toLowerCase()} ` : "";
   return {
     path: p.url,
+    index: p.index !== false,
     title: `${p.name}: statistiche NBA ${c?.label ?? ""} e ultime partite`.replace(/\s+/g, " "),
     description: `${p.name}, ${role}dei ${p.team.shortName}${p.country ? ` (${p.country})` : ""}: ${stats}, percentuali al tiro, migliori prestazioni, ultime partite e medie stagione per stagione.`,
     jsonLd: [

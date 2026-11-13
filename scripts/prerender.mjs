@@ -21,6 +21,7 @@ import zlib from "node:zlib";
 import crypto from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { writeCard } from "./lib/og-cards.mjs";
+import { outOfIndex } from "./lib/search-index.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dist = path.join(root, "dist");
@@ -53,6 +54,12 @@ const knownMoves = readJsonFile(path.join(root, "scripts", "url-spostati-noti.js
 // lazy page chunks must be loaded before rendering synchronously with renderToString
 await preloadAllPages();
 const template = fs.readFileSync(path.join(dist, "index.html"), "utf8");
+// pages kept out of the index by URL (scripts/lib/search-index.mjs), live or archived: club pages need their league
+const teamLeague = new Map(
+  (readJsonFile(path.join(root, "src", "data", "teams", "index.json")).football ?? []).map((t) => [t.slug, t.competition]),
+);
+const searchPolicy = { teamCompetition: (slug) => teamLeague.get(slug) };
+const keptOut = new Map();
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 const publicUrl = (p) => (siteUrl ? `${siteUrl}${p === "/" ? "/" : `${p}/`}` : "");
@@ -356,7 +363,9 @@ const pageTitles = new Map();
 
 /** Writes one page and records when its content last changed (`main`: the page content, see mainContent). */
 function emit(meta0, appHtml, main = mainContent(appHtml)) {
-  const meta = withCard(meta0);
+  const reason = meta0.index !== false && outOfIndex(meta0.path, searchPolicy);
+  if (reason) keptOut.set(reason, (keptOut.get(reason) ?? 0) + 1);
+  const meta = withCard(reason ? { ...meta0, index: false } : meta0);
   pageTitles.set(meta.path, meta.title);
   const out = outFile(meta.path);
   fs.mkdirSync(path.dirname(out), { recursive: true });
@@ -607,3 +616,5 @@ console.log(
     `  archivio: ${archivedNow} partite finite salvate/aggiornate${unreadable ? `, ${unreadable} voci ignorate` : ""}; ` +
     `pagine con data di modifica di oggi: ${changed}; nuove o cambiate in questa build: ${changedNow.length}`,
 );
+if (keptOut.size)
+  console.log(`  fuori dall'indice per regola (scripts/lib/search-index.mjs): ${[...keptOut].map(([r, n]) => `${n} ${r}`).join(", ")}`);
