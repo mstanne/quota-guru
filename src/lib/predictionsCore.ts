@@ -218,8 +218,10 @@ export function multigoal(d: number[], lo: number, hi: number) {
 
 /** Cells shown in a match row for the selected market. */
 export function marketCells(p: Prediction, market: FootballMarket, home: string, away: string): MarketCell[] {
-  const lam: [number, number, number] = p.lam ?? [p.xg[0], p.xg[1], 0];
-  return marketCellsOf(p, market, home, away).map((c) => ({ ...c, lam }));
+  // slim predictions (the home list rows, scripts/derive-football-home.mjs) may carry neither: no `lam`, the cell
+  // still renders (a missing field here broke the pre-rendered home page, 13 November 2026)
+  const lam: [number, number, number] | undefined = p.lam ?? (p.xg ? [p.xg[0], p.xg[1], 0] : undefined);
+  return marketCellsOf(p, market, home, away).map((c) => (lam ? { ...c, lam } : c));
 }
 
 function marketCellsOf(p: Prediction, market: FootballMarket, home: string, away: string): MarketCell[] {
