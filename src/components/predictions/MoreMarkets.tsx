@@ -1,5 +1,5 @@
 // "Altri mercati" on the football match page: every other goal market of the match from the model's score matrix
-// (src/lib/footballMarkets.ts), with probability and fair odds. Upcoming matches: each outcome goes in the slip, and
+// (src/lib/footballMarkets.ts), first and second half, corners and cards, with probability and fair odds. Upcoming matches: each outcome goes in the slip, and
 // outcomes of different markets of this match can be combined there (joint probability). Finished matches: the
 // outcomes that came true are marked. Informational: no operator odds, no link to any operator.
 import { Check, ChevronDown } from "lucide-react";
@@ -7,6 +7,8 @@ import type { ReactNode } from "react";
 import {
   asianTable,
   chance,
+  countMarkets,
+  halfMarkets,
   drawNoBet,
   exactScores,
   goalMarkets,
@@ -80,7 +82,8 @@ export function MoreMarkets({
     note: "I nove risultati più probabili.",
     outcomes: exactScores(grid),
   };
-  const sections: { title: string; groups: MarketGroup[]; extra?: ReactNode }[] = [
+  const num = (x: number) => x.toFixed(1).replace(".", ",");
+  const sections: { title: string; note?: string; groups: MarketGroup[]; extra?: ReactNode }[] = [
     { title: "Gol della partita", groups: pick("ou05", "ou15", "ou35", "ou45", "ou55", "oe") },
     { title: `Gol di ${home} e ${away}`, groups: pick("hou05", "hou15", "hou25", "aou05", "aou15", "aou25", "w2n") },
     { title: "Risultato esatto e margine", groups: [scores, ...pick("margin")] },
@@ -90,6 +93,29 @@ export function MoreMarkets({
       extra: <AsianHandicap grid={grid} home={home} away={away} />,
     },
     { title: "Combo", groups: [...comboGroups(home, away), ...pick("dc-ou", "dc-gg")] },
+    {
+      title: "Primo e secondo tempo",
+      note: "I gol di ogni tempo sono una quota fissa dei gol attesi (nel primo tempo circa il 44%, misurato sulle partite dell'archivio). Gli esiti dei tempi non si combinano con gli altri mercati della partita in schedina.",
+      groups: halfMarkets(prediction, home, away),
+    },
+    ...(prediction.corners
+      ? [
+          {
+            title: "Corner",
+            note: `Corner attesi: ${num(prediction.corners[0])} ${home}, ${num(prediction.corners[1])} ${away}. Stima da corner battuti e concessi dalle squadre: meno precisa di quella sui gol (le differenze fra squadre sono piccole). Non si combina con gli altri mercati della partita in schedina.`,
+            groups: countMarkets("corners", prediction.corners, home, away),
+          },
+        ]
+      : []),
+    ...(prediction.cards
+      ? [
+          {
+            title: "Cartellini",
+            note: `Cartellini attesi (gialli e rossi): ${num(prediction.cards[0])} ${home}, ${num(prediction.cards[1])} ${away}. Il modello non conosce l'arbitro. Non si combina con gli altri mercati della partita in schedina.`,
+            groups: countMarkets("cards", prediction.cards, home, away),
+          },
+        ]
+      : []),
   ];
 
   return (
@@ -116,6 +142,7 @@ export function MoreMarkets({
               />
             </summary>
             <div className="space-y-4 px-4 pb-4 pt-1">
+              {s.note && <p className="text-slate-400 text-xs">{s.note}</p>}
               {s.groups.map((g) => (
                 <OutcomeGroup key={g.id} group={g} grid={grid} slip={slip} result={result} lam={lam} />
               ))}
@@ -151,10 +178,11 @@ function OutcomeGroup({
           <OutcomeCell
             key={o.key}
             outcome={o}
-            p={chance(grid, [o.test])}
+            p={o.p ?? chance(grid, [o.test])}
             on={!!slip && picked(o.key)}
-            came={result ? o.test(result.home, result.away) : null}
-            onToggle={slip ? (p) => toggle({ key: o.key, slipLabel: o.slipLabel, value: p, lam }) : undefined}
+            came={result && o.p === undefined ? o.test(result.home, result.away) : null}
+            // first half, corners, cards: no matrix parameters, so they replace the other picks of the match
+            onToggle={slip ? (p) => toggle({ key: o.key, slipLabel: o.slipLabel, value: p, ...(o.p === undefined ? { lam } : {}) }) : undefined}
           />
         ))}
       </div>
