@@ -1,9 +1,10 @@
 // /pronostici – hub of the model's predictions: next football and NBA matches, the round pages,
 // the tennis predictor and the verifiable track record of both models.
-import { CalendarDays, ChartColumn, ChevronRight, CircleDot, Flag, Goal, Dribbble, Target } from "lucide-react";
+import { CalendarDays, ChartColumn, ChevronRight, CircleDot, Flag, Goal, Dribbble, Layers, Target } from "lucide-react";
 import { NATIONAL_HUB_PATH } from "../../lib/nationalHub";
 import { dayPath } from "../../lib/dayPages";
 import { TRIS_PATH } from "../../lib/trisPage";
+import { MULTIPLE_PATH } from "../../lib/multiplePage";
 import { marketPath } from "../../lib/marketPages";
 import type { ReactNode } from "react";
 import { Link } from "../../lib/links";
@@ -84,6 +85,7 @@ export function PronosticiPage() {
                 { to: dayPath("oggi"), icon: CalendarDays, label: "Oggi", sr: "Pronostici di " },
                 { to: dayPath("domani"), icon: CalendarDays, label: "Domani", sr: "Pronostici di " },
                 { to: TRIS_PATH, icon: Target, label: "Tris", sr: "Il " },
+                { to: MULTIPLE_PATH, icon: Layers, label: "Multiple", sr: "Le " },
                 { to: NATIONAL_HUB_PATH, icon: Flag, label: "Nazionali", sr: "Pronostici " },
               ] as const
             ).map(({ to, icon: Icon, label, sr }) => (

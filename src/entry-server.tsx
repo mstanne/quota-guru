@@ -21,6 +21,7 @@ import { dayRoutes } from "./lib/dayPages";
 import { marketRoutes } from "./lib/marketPages";
 import { tvGuideMeta } from "./lib/tvGuide";
 import { trisMeta } from "./lib/trisPage";
+import { multipleMeta } from "./lib/multiplePage";
 import { nationalHubMeta } from "./lib/nationalHub";
 import { basketRoutes, nbaGames } from "./lib/basket";
 import { nbaDetailsFor } from "./lib/basketDetails";
@@ -100,7 +101,7 @@ const cornersCardsRoutes = () =>
   Object.values(competitionFiles).flatMap(({ default: f }) =>
     f.matchStats?.n && f.competition.standings.length ? [cornersCardsMeta(f.competition, f.matchStats.league)] : [],
   );
-export const routes = [trackRecordMeta(), ...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...nbaPlayerRoutes(), ...staticRoutes.map((r) => (r.path === "/" ? { ...r, jsonLd: [...(r.jsonLd ?? []), ...homeItemList()] } : r)), ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...marketRoutes(), tvGuideMeta(), trisMeta(), nationalHubMeta(), ...basketRoutes(
+export const routes = [trackRecordMeta(), ...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...nbaPlayerRoutes(), ...staticRoutes.map((r) => (r.path === "/" ? { ...r, jsonLd: [...(r.jsonLd ?? []), ...homeItemList()] } : r)), ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...marketRoutes(), tvGuideMeta(), trisMeta(), multipleMeta(), nationalHubMeta(), ...basketRoutes(
   (id) => !!basketPredictionFor(id),
   (id) => highlightFor("nba", id),
   (g) => nbaVenues.get(g.home.id) ?? null,
