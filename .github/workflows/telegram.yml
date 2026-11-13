@@ -43,6 +43,7 @@ on:
           - tris-champions
           - tris-europa-league
           - tris-conference
+          - multiple
           - dove-vederla
           - risultati
           - risultati-domenica
@@ -72,6 +73,7 @@ jobs:
           sparse-checkout: |
             scripts/telegram
             scripts/lib/tris.mjs
+            scripts/lib/multiple.mjs
             scripts/assets/fonts
             src/assets/brand/quotaguru-logo-dark-bg.svg
             src/assets/guides

@@ -742,7 +742,44 @@ function study(card) {
   return out;
 }
 
+/**
+ * The multiples of the day: one panel per multiple, its picks one per line, the joint probability and fair odds.
+ * card.multiple = [{ name, all, fair, picks: [{ when, label, sign, p }] }]
+ */
+function multiple(card) {
+  let out = "";
+  const list = card.multiple;
+  const rows = list.reduce((n, m) => n + m.picks.length, 0);
+  const head = 64;
+  const pad = 18;
+  const gap = 14;
+  const rowH = Math.min(44, Math.floor((BOTTOM - TOP + 6 - list.length * (head + pad) - (list.length - 1) * gap) / rows));
+  const size = rowH >= 40 ? 24 : 21;
+  const right = W - M - 28;
+  let y = TOP - 6;
+  for (const m of list) {
+    const h = head + pad + m.picks.length * rowH;
+    out += rect(M, y, W - 2 * M, h, { r: 24 });
+    out += caps(M + 28, y + 44, m.name, { size: 20, max: 560 });
+    out += text(right, y + 46, `${pct(m.all)} · quota equa ${m.fair}`, { size: 28, fill: C.amber, anchor: "end" });
+    let ry = y + head + Math.round(rowH * 0.62);
+    for (const k of m.picks) {
+      const signW = textWidth(k.sign, size, 700);
+      out += text(M + 28, ry, k.when, { size, weight: 400, fill: C.muted });
+      out += text(M + 110, ry, k.label, { size, weight: 400, fill: C.light, max: right - 90 - signW - 30 - (M + 110) });
+      out += text(right - 90, ry, k.sign, { size, fill: C.green, anchor: "end" });
+      out += text(right, ry, pct(k.p), { size, weight: 400, fill: C.grey, anchor: "end" });
+      ry += rowH;
+    }
+    y += h + gap;
+  }
+  if (BOTTOM - y > 60)
+    out += text(M, y + 40, "Esiti probabili, presi insieme, sbagliano spesso.", { size: 24, weight: 400, fill: C.muted });
+  return out;
+}
+
 const LAYOUTS = {
+  multiple,
   tris,
   study,
   matchList,
