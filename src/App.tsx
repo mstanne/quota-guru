@@ -1,4 +1,5 @@
 import { Suspense, useEffect } from "react";
+import { PageErrorBoundary } from "./lib/staleBuild";
 import { matchPath, Outlet, Route, Routes, useLocation, useNavigate } from "react-router";
 import { BetSlipProvider } from "./context/BetSlipContext";
 import { Header } from "./components/Header";
@@ -217,14 +218,17 @@ function RouteEffects() {
 
 /** Pages with header, footer and bet slip. */
 function SiteLayout() {
+  const { pathname } = useLocation();
   return (
     <BetSlipProvider>
       <div className="min-h-screen bg-slate-950">
         <Header />
         <main>
-          <Suspense fallback={<PageLoading />}>
-            <Outlet />
-          </Suspense>
+          <PageErrorBoundary resetKey={pathname}>
+            <Suspense fallback={<PageLoading />}>
+              <Outlet />
+            </Suspense>
+          </PageErrorBoundary>
         </main>
         <Footer />
         <BetSlip />

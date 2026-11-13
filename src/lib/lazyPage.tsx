@@ -5,6 +5,7 @@
 // the current URL before hydrating. A preloaded page renders synchronously, so the server HTML and the first
 // client render match exactly. Pages reached later by client-side navigation load on demand (Suspense).
 import { lazy, type ComponentType } from "react";
+import { isChunkError, reloadOnce } from "./staleBuild";
 
 type Loader<P> = () => Promise<ComponentType<P>>;
 
@@ -22,10 +23,19 @@ export function lazyPage<P extends object = Record<string, never>>(loader: Loade
   let loaded: ComponentType<P> | undefined;
   let promise: Promise<ComponentType<P>> | undefined;
   const load = () =>
-    (promise ??= loader().then((c) => {
-      loaded = c;
-      return c;
-    }));
+    (promise ??= loader().then(
+      (c) => {
+        loaded = c;
+        return c;
+      },
+      (e) => {
+        // file of an older build gone after a new publication: reload once (src/lib/staleBuild.tsx); a later
+        // attempt can try again instead of reusing the failure
+        promise = undefined;
+        if (isChunkError(e) && reloadOnce()) return new Promise<ComponentType<P>>(() => undefined);
+        throw e;
+      },
+    ));
   const Lazy = lazy(() => load().then((c) => ({ default: c })));
   const Page = ((props: P) => {
     const C = loaded;
