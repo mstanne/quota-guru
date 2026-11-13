@@ -24,6 +24,6 @@ export const sitiMenu: MenuItem[] = [
 ];
 
 /** Shorter names for the list of payment methods in the menu. */
-const SHORT: Record<string, string> = { carte: "Carte di credito", bonifico: "Bonifico" };
+const SHORT: Record<string, string> = { carte: "Carte di credito", bonifico: "Bonifico", bitcoin: "Bitcoin" };
 
 export const methodMenu = paymentMethods.map((m) => ({ to: methodPath(m), label: SHORT[m.id] ?? m.name }));

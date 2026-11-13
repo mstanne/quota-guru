@@ -182,11 +182,84 @@ export function topicMeta(t: Topic): RouteMeta {
 
 export function methodMeta(m: PaymentMethodInfo): RouteMeta {
   const n = methodOperators(m).length;
+  const subject = m.id === "carte" ? "con carta di credito" : m.id === "bitcoin" ? "con Bitcoin e criptovalute" : `con ${m.name}`;
+  if (!n)
+    return {
+      path: methodPath(m),
+      title: `Siti scommesse ${subject}: si può usare?`,
+      description: `${m.name} sui siti di scommesse ADM: quali operatori lo accettano, perché e quali metodi usare al suo posto, con costi e tempi dai dati degli operatori.`,
+    };
   return {
     path: methodPath(m),
-    title: `Siti scommesse ${m.id === "carte" ? "con carta di credito" : `con ${m.name}`}: limiti e tempi`,
-    description: `${n} operatori ADM accettano ${m.name}: deposito minimo e massimo, tempi di prelievo, commissioni e validità del metodo per le offerte di benvenuto, dai dati degli operatori.`,
+    title: `Siti scommesse ${subject}: limiti, tempi e costi`,
+    description: `${n} operatori ADM accettano ${m.name}: deposito minimo e massimo, tempi di prelievo, costi, come depositare e prelevare e validità per le offerte di benvenuto.`,
   };
+}
+
+/** Card circuit pages: operators that accept cards but do not name this circuit. */
+export const cardsWithoutCircuit = (m: PaymentMethodInfo) => {
+  if (!m.circuit) return [];
+  const carte = paymentMethods.find((x) => x.id === "carte")!;
+  return methodOperators(carte).filter((o) => !acceptsMethod(o, m));
+};
+
+/** Upper bound of a range ("10 – 2.000 €" → 2000, "fino a 50.000 €" → 50000, "da 10 €" → null). */
+const upperBound = (v: string | null) => {
+  if (!v || /^da /i.test(v)) return null;
+  const nums = [...v.matchAll(/(\d+(?:\.\d{3})*(?:,\d+)?)/g)].map((x) => Number(x[1].replace(/\./g, "").replace(",", ".")));
+  return nums.length ? nums[nums.length - 1] : null;
+};
+const lower = (v: string | null) => {
+  if (!v || /^fino a/i.test(v)) return null;
+  const x = v.match(/(\d+(?:\.\d{3})*(?:,\d+)?)/);
+  return x ? Number(x[1].replace(/\./g, "").replace(",", ".")) : null;
+};
+
+export interface Highlight {
+  label: string;
+  value: string;
+  ops: OperatorData[];
+}
+
+/** Facts that stand out among the operators' stated values for one method (no ranking: only the extremes). */
+export function methodHighlights(m: PaymentMethodInfo): Highlight[] {
+  const rows = methodOperators(m).flatMap((op) => methodRows(op, m).map((r) => ({ op, r })));
+  const out: Highlight[] = [];
+  const pick = (vals: { op: OperatorData; v: number }[], best: (a: number, b: number) => number) => {
+    if (!vals.length) return null;
+    const top = vals.reduce((a, b) => (best(a.v, b.v) === a.v ? a : b)).v;
+    return { v: top, ops: [...new Map(vals.filter((x) => x.v === top).map((x) => [x.op.id, x.op])).values()] };
+  };
+  const fmt = (n: number) => `${n.toLocaleString("it-IT")} €`;
+  const minDep = pick(
+    rows.map(({ op, r }) => ({ op, v: lower(r.deposit) })).filter((x): x is { op: OperatorData; v: number } => x.v !== null),
+    Math.min,
+  );
+  if (minDep) out.push({ label: "Deposito minimo più basso", value: fmt(minDep.v), ops: minDep.ops });
+  const maxDep = pick(
+    rows.map(({ op, r }) => ({ op, v: upperBound(r.deposit) })).filter((x): x is { op: OperatorData; v: number } => x.v !== null),
+    Math.max,
+  );
+  if (maxDep) out.push({ label: "Deposito massimo più alto", value: fmt(maxDep.v), ops: maxDep.ops });
+  const maxWd = pick(
+    rows.map(({ op, r }) => ({ op, v: upperBound(r.withdrawal) })).filter((x): x is { op: OperatorData; v: number } => x.v !== null),
+    Math.max,
+  );
+  if (maxWd) out.push({ label: "Prelievo massimo più alto", value: fmt(maxWd.v), ops: maxWd.ops });
+  const timed = rows.filter(({ r }) => r.withdrawal && r.withdrawalTime);
+  const order: Speed[] = ["immediato", "24h", "oltre"];
+  for (const sp of order) {
+    const hit = timed.filter(({ r }) => speedOf(r.withdrawalTime!) === sp);
+    if (hit.length) {
+      out.push({
+        label: "Prelievo più rapido dichiarato",
+        value: speedLabels[sp],
+        ops: [...new Map(hit.map(({ op }) => [op.id, op])).values()],
+      });
+      break;
+    }
+  }
+  return out;
 }
 
 export const topicRoutes = (): RouteMeta[] => [...topics.map(topicMeta), ...paymentMethods.map(methodMeta)];
