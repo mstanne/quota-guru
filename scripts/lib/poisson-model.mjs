@@ -268,6 +268,7 @@ export function scoreMatrix(lh, la, rho, max = DEFAULTS.maxGoals) {
 }
 
 const r3 = (x) => Math.round(x * 1000) / 1000;
+const r4 = (x) => Math.round(x * 10000) / 10000;
 
 /**
  * Prediction for one fixture: 1X2, double chance, over/under, both teams to score, likely scores, and the goal
@@ -322,6 +323,9 @@ export function predict(model, f) {
   if (!confidence) return null;
   return {
     xg: [Math.round(xg.home * 100) / 100, Math.round(xg.away * 100) / 100],
+    // exact parameters of the score matrix (expected goals and Dixon-Coles ρ): the site rebuilds the matrix from them
+    // for every other market (handicap, team goals, margins…) and for several picks of the same match in the slip
+    lam: [r4(xg.home), r4(xg.away), model.rho],
     p: [r3(p1), r3(pX), r3(p2)],
     dc: [r3(p1 + pX), r3(p1 + p2), r3(pX + p2)],
     over: Object.fromEntries(Object.entries(over).map(([k, v]) => [k, r3(v)])),

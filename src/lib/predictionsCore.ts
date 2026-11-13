@@ -4,6 +4,9 @@
 export interface Prediction {
   /** Expected goals [home, away]. */
   xg: [number, number];
+  /** Exact expected goals and Dixon-Coles ρ of the score matrix [home, away, ρ] (src/lib/footballMarkets.ts rebuilds
+   *  the matrix from them). Missing on predictions made before November 2026: the matrix then comes from `xg`. */
+  lam?: [number, number, number];
   /** Probabilities of 1, X, 2. */
   p: [number, number, number];
   /** Double chance 1X, 12, X2. */
@@ -144,6 +147,8 @@ export interface MarketCell {
   key: string;
   /** Text of the pick in the bet slip, e.g. "Esito finale – Inter vincente". */
   slipLabel: string;
+  /** Score-matrix parameters of the match (src/lib/footballMarkets.ts lamOf): picks of the same match can be combined. */
+  lam?: [number, number, number];
 }
 
 const poisson = (l: number, k: number) => {
@@ -206,6 +211,11 @@ export function multigoal(d: number[], lo: number, hi: number) {
 
 /** Cells shown in a match row for the selected market. */
 export function marketCells(p: Prediction, market: FootballMarket, home: string, away: string): MarketCell[] {
+  const lam: [number, number, number] = p.lam ?? [p.xg[0], p.xg[1], 0];
+  return marketCellsOf(p, market, home, away).map((c) => ({ ...c, lam }));
+}
+
+function marketCellsOf(p: Prediction, market: FootballMarket, home: string, away: string): MarketCell[] {
   const mark = (cells: Omit<MarketCell, "top">[], skip: number[] = []) => {
     let best = -1;
     cells.forEach((c, i) => {

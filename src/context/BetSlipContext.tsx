@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
 import type { OddValue } from "../lib/odds";
 import { currentPage, track } from "../lib/analytics";
+import { keyInfo, type Lam } from "../lib/footballMarkets";
 
 export interface BookmakerOdds {
   /** References OperatorData.id (src/data/operators.ts). */
@@ -30,6 +31,18 @@ export interface BetSelection {
   allBookmakers?: BookmakerOdds[];
   /** Probability of the pick estimated by the model (0–1), when it was added from a prediction. */
   probability?: number;
+  /** Football predictions: parameters of the match's score matrix (src/lib/footballMarkets.ts). With them, picks of
+   *  the same match that are tests on the final score can stay together in the slip (their joint probability is
+   *  computed exactly); without them a new pick replaces the previous one of the same match. */
+  lam?: Lam;
+}
+
+/** Can the two picks of the same match stay together? Both final-score tests of one matrix, on different markets. */
+function combinable(a: BetSelection, b: BetSelection) {
+  if (!a.lam || !b.lam || a.lam.join() !== b.lam.join()) return false;
+  const ka = keyInfo(a.betType);
+  const kb = keyInfo(b.betType);
+  return !!ka && !!kb && ka.group !== kb.group;
 }
 
 interface BetSlipContextValue {
@@ -61,10 +74,14 @@ export function BetSlipProvider({ children }: { children: ReactNode }) {
   const [lastChange, setLastChange] = useState<{ message: string; n: number } | null>(null);
   const announce = (message: string) => setLastChange((prev) => ({ message, n: (prev?.n ?? 0) + 1 }));
 
-  // Only one pick per match: a new pick replaces the previous one for the same match.
+  // A new pick replaces the picks of the same match, except those it can be combined with (football: other markets
+  // of the same match, see `combinable`): one outcome per market and match.
   const addSelection = (selection: BetSelection, { open = true }: { open?: boolean } = {}) => {
     const withId = { ...selection, id: selection.id ?? `${selection.matchId}-${selection.betType}` };
-    setSelections((prev) => [...prev.filter((s) => s.matchId !== withId.matchId), withId]);
+    setSelections((prev) => [
+      ...prev.filter((s) => s.matchId !== withId.matchId || (s.id !== withId.id && combinable(s, withId))),
+      withId,
+    ]);
     // wide screens: the slip is a column beside the page (see BetSlip), so it opens with the first pick too
     if (open || slipDocked()) setIsOpen(true);
     announce(`Aggiunto alla schedina: ${withId.homeTeam} – ${withId.awayTeam}, ${withId.betTypeLabel}`);

@@ -1,8 +1,10 @@
 // Probability that every pick of the bet slip ("schedina") comes true, from the model's estimates.
 // No data import: the picks carry their own probability (set when they are added from a prediction).
 //
-// The product of the single probabilities is exact only for independent events. The slip keeps at most one pick per
-// match (BetSlipContext), so two outcomes of the same match – the clearly dependent case – can never be combined.
+// Different matches are taken as independent: the product of their probabilities. Several picks of the SAME match
+// (football, BetSlipContext `combinable`) depend on each other: their joint probability comes from the match's score
+// matrix (src/lib/footballMarkets.ts), and enters the product once.
+import { jointChance, type Lam } from "./footballMarkets";
 
 /** Model probability of each pick, or null when a pick has none (added from the odds, no prediction). */
 export interface SlipChance {
@@ -13,10 +15,34 @@ export interface SlipChance {
   total: number;
 }
 
-export function slipChance(picks: { probability?: number }[]): SlipChance {
+interface SlipPick {
+  probability?: number;
+  matchId?: string;
+  betType?: string;
+  lam?: Lam;
+}
+
+/** Joint probability of the picks of each match with more than one pick: { matchId: probability }. */
+export function matchCombos(picks: SlipPick[]): Map<string, number> {
+  const byMatch = new Map<string, SlipPick[]>();
+  for (const p of picks) if (p.matchId) byMatch.set(p.matchId, [...(byMatch.get(p.matchId) ?? []), p]);
+  const out = new Map<string, number>();
+  for (const [id, list] of byMatch) {
+    if (list.length < 2 || !list[0].lam) continue;
+    const j = jointChance(list[0].lam, list.map((p) => p.betType ?? ""));
+    if (j !== null) out.set(id, j);
+  }
+  return out;
+}
+
+export function slipChance(picks: SlipPick[]): SlipChance {
   const known = picks.filter((p) => typeof p.probability === "number" && p.probability > 0);
+  const combos = matchCombos(known);
+  let probability = 1;
+  for (const p of known) if (!p.matchId || !combos.has(p.matchId)) probability *= p.probability as number;
+  for (const v of combos.values()) probability *= v;
   return {
-    probability: known.length ? known.reduce((acc, p) => acc * (p.probability as number), 1) : null,
+    probability: known.length ? probability : null,
     covered: known.length,
     total: picks.length,
   };

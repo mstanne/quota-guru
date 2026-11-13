@@ -23,6 +23,7 @@ import {
   type FootballMarket,
   type Prediction,
 } from "../../lib/predictionsCore";
+import { MoreMarkets } from "./MoreMarkets";
 import { PredictionSlipPicks } from "./PredictionSlipPicks";
 import { PickCells, type SlipMatch } from "./SlipPicks";
 
@@ -427,6 +428,8 @@ export function PredictionPanel({
       </div>
 
       <MultigoalTable prediction={p} home={home} away={away} />
+
+      <MoreMarkets prediction={p} home={home} away={away} slip={finished ? undefined : slip} result={result} />
 
       <p className="mt-5 flex items-start gap-2 text-slate-400 text-xs">
         <Info className="w-4 h-4 shrink-0 mt-px" aria-hidden="true" />
