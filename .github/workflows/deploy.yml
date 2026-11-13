@@ -203,6 +203,9 @@ jobs:
       - name: Build
         run: npm run build
         env:
+          # Node's default heap (about 4 GB) is no longer enough for vite to write the bundles (the site's data is
+          # imported as JSON): the build stopped with "JavaScript heap out of memory". The runner has 16 GB.
+          NODE_OPTIONS: --max-old-space-size=7168
           # project pages are served from https://<user>.github.io/<repo>/
           BASE_PATH: /
           # used for canonical URLs, sitemap.xml and robots.txt

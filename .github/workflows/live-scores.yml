@@ -133,6 +133,9 @@ jobs:
         if: steps.live.outputs.changed == 'true'
         run: npm run build
         env:
+          # Node's default heap (about 4 GB) is no longer enough for vite to write the bundles (the site's data is
+          # imported as JSON): the build stopped with "JavaScript heap out of memory". The runner has 16 GB.
+          NODE_OPTIONS: --max-old-space-size=7168
           BASE_PATH: /
           SITE_URL: https://www.quotaguru.it
           VITE_ANALYTICS_PROVIDER: ${{ vars.ANALYTICS_PROVIDER }}
