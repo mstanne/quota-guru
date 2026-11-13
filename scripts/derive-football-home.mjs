@@ -47,10 +47,13 @@ const all = data.competitions
 
 const picked = new Set(all.slice(0, LIMIT));
 for (const code of HOME) all.filter((x) => x.competition.code === code).slice(0, LIMIT).forEach((x) => picked.add(x));
-// the list rows show only the 1X2 probabilities: keep just those (the hero cards below keep the full prediction)
+// the list rows show only the 1X2 probabilities: keep just those (the hero cards below keep the full prediction),
+// plus the score-matrix parameters `lam` the bet slip needs to combine picks of the same match (marketCells)
 const matches = all
   .filter((x) => picked.has(x))
-  .map(({ prediction, ...x }) => (prediction ? { ...x, prediction: { p: prediction.p } } : x));
+  .map(({ prediction, ...x }) =>
+    prediction ? { ...x, prediction: { p: prediction.p, ...(prediction.lam ? { lam: prediction.lam } : {}) } } : x,
+  );
 const competitions = HOME.map((code) => data.competitions.find((c) => c.code === code))
   .filter((c) => c && matches.some((x) => x.competition.code === c.code))
   .map((c) => ({ code: c.code, slug: c.slug, name: c.name }));
