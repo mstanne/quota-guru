@@ -3,7 +3,10 @@ import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import App, { preloadForPath } from "./App";
 import { captureArchivedPage } from "./lib/archive";
+import { listenForStaleBuild } from "./lib/staleBuild";
 import "./styles/globals.css";
+
+listenForStaleBuild();
 
 // Vite's BASE_URL ends with "/" (e.g. "/quota-guru/"); the router wants it without the trailing slash.
 const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
