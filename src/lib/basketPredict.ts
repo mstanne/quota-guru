@@ -20,6 +20,8 @@ export interface BasketPrediction {
   big: [number, number];
   /** Second night of a back-to-back [home, away] (1 = yes). */
   b2b: [number, number];
+  /** Standard deviation of the final margin and of the total points [margin, total]. Missing on older predictions. */
+  sd?: [number, number];
   confidence: "alta" | "media" | "bassa";
   /** true = made before tip-off of a game that is now finished. */
   pre: boolean;

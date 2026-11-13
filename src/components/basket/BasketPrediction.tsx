@@ -8,6 +8,8 @@ import { pct } from "../../lib/predictionsCore";
 import { fmtPts, type BasketPrediction } from "../../lib/basketPredict";
 import { ConfidenceBadge, FairOddsStrip, PublishedNote, ReasonList } from "../predictions/PredictionUi";
 import { PickCells, SlipPicksBox, type PickCell, type SlipMatch } from "../predictions/SlipPicks";
+import { OutcomeGroup } from "../predictions/MoreMarkets";
+import { nbaMoreMarkets } from "../../lib/basketMarkets";
 
 const label = (p: BasketPrediction, home: string, away: string) =>
   `Probabilità di vittoria stimate dal modello: ${home} ${pct(p.p[0])}, ${away} ${pct(p.p[1])}`;
@@ -243,6 +245,28 @@ export function BasketPredictionPanel({
             <Row label={`${away} di 10+ punti`} value={pct(p.big[1])} />
             <Row label="Partita entro 9 punti" value={pct(1 - p.big[0] - p.big[1])} />
           </dl>
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <h3 className="text-white text-base mb-1">Altri mercati</h3>
+        <p className="text-slate-400 text-xs mb-3">
+          Probabilità e, in grigio, quota equa.{!result && slip && " Tocca un esito per metterlo in schedina."}
+        </p>
+        <div className="space-y-2">
+          {nbaMoreMarkets(p, home, away).map((sec) => (
+            <details key={sec.title} className="group/nm rounded-lg border border-slate-800 bg-slate-950/40">
+              <summary className="cursor-pointer list-none px-4 py-2.5 text-white text-sm [&::-webkit-details-marker]:hidden">
+                {sec.title}
+              </summary>
+              <div className="space-y-4 px-4 pb-4 pt-1">
+                <p className="text-slate-400 text-xs">{sec.note}</p>
+                {sec.groups.map((g) => (
+                  <OutcomeGroup key={g.id} group={g} slip={!result ? slip : undefined} />
+                ))}
+              </div>
+            </details>
+          ))}
         </div>
       </div>
 
