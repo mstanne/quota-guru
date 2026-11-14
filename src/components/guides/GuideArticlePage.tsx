@@ -5,6 +5,8 @@ import { useParams } from "react-router";
 import { Link } from "../../lib/links";
 import { PageHeader, MetaItems } from "../layout/PageHeader";
 import { ImageSlot } from "../media/ImageSlot";
+import { GuideVideo } from "./GuideVideo";
+import { guideVideos } from "../../data/guideVideos";
 import { NotFoundPage } from "../NotFoundPage";
 import { categoryIcons, GuideBlockView, RelatedGuideCard, Rich } from "./GuideUi";
 import { categoryPath, findCategory, findGuide, guideMeta, relatedGuides, type Guide } from "../../data/guides";
@@ -57,14 +59,18 @@ export function GuideArticlePage() {
       <div className="container mx-auto px-4 py-10">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
           <article className="min-w-0 max-w-3xl">
-            <div className="mb-8 rounded-lg overflow-hidden">
-              <ImageSlot
-                placeholder="[PLACEHOLDER_IMMAGINE_COPERTINA_1200x500]"
-                src={guide.image}
-                alt=""
-                className="w-full h-56 sm:h-80 object-cover"
-              />
-            </div>
+            {guideVideos[guide.slug] ? (
+              <GuideVideo slug={guide.slug} title={guide.title} />
+            ) : (
+              <div className="mb-8 rounded-lg overflow-hidden">
+                <ImageSlot
+                  placeholder="[PLACEHOLDER_IMMAGINE_COPERTINA_1200x500]"
+                  src={guide.image}
+                  alt=""
+                  className="w-full h-56 sm:h-80 object-cover"
+                />
+              </div>
+            )}
             <nav aria-label="Indice" className="lg:hidden mb-8 rounded-lg border border-slate-800 bg-slate-900 p-5">
               <p className="text-white text-lg mb-3">In questa guida</p>
               <Toc guide={guide} />

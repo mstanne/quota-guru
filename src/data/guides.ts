@@ -25,6 +25,7 @@ import { multipleGuides } from "./guides/multiple";
 import { site } from "./site";
 import type { RouteMeta } from "../routes";
 import { isoFromItalianDate, plainText } from "../lib/schema";
+import { guideVideoFiles, guideVideos } from "./guideVideos";
 
 export type GuideBlock =
   | { type: "p"; text: string }
@@ -666,7 +667,24 @@ export const guideMeta = (g: Guide): RouteMeta => {
         },
       ]
     : [];
-  return { path, title: g.title, description: g.description, image, jsonLd: [article, ...faq] };
+  const v = guideVideos[g.slug];
+  const files = guideVideoFiles(g.slug);
+  const video = v
+    ? [
+        {
+          "@type": "VideoObject",
+          "@id": `${path}#video`,
+          name: `${g.title}: il riassunto in video`,
+          description: g.description,
+          inLanguage: "it-IT",
+          thumbnailUrl: files.poster,
+          contentUrl: files.landscape,
+          uploadDate: v.published,
+          duration: `PT${v.seconds}S`,
+        },
+      ]
+    : [];
+  return { path, title: g.title, description: g.description, image, jsonLd: [article, ...video, ...faq] };
 };
 export const categoryMeta = (c: GuideCategory) => ({
   path: categoryPath(c),

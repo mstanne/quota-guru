@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<title>Quota Guru – player video guide</title>
+<!--
+  Disegna un fotogramma di un video guida per un istante t (secondi).
+  render.py carica questa pagina, imposta window.BOARD (storyboard) e chiama window.renderAt(t)
+  per ogni fotogramma. Nessuna animazione CSS: tutto dipende solo da t, così il render è deterministico.
+-->
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #0A1220; }
+  body {
+    font-family: "Inter", "Inter Display", system-ui, sans-serif;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "tnum" 1, "cv11" 1;
+  }
+  #stage { position: absolute; inset: 0; overflow: hidden; --u: 10.8px; }
+  .bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 55% 45% at 92% 6%, rgba(251,104,1,.20), transparent 70%),
+      radial-gradient(ellipse 50% 45% at 6% 96%, rgba(6,186,85,.16), transparent 70%),
+      linear-gradient(160deg, #0F1A2C 0%, #0A1220 60%, #08101C 100%);
+  }
+  .dots {
+    position: absolute; inset: 0; opacity: .35;
+    background-image: radial-gradient(rgba(127,147,174,.35) 1px, transparent 1.2px);
+    background-size: calc(var(--u)*3.2) calc(var(--u)*3.2);
+  }
+  .chrome-logo { position: absolute; top: calc(var(--u)*4); left: calc(var(--u)*5); height: calc(var(--u)*4.4); opacity: .95; }
+  .chrome-step {
+    position: absolute; top: calc(var(--u)*4.6); right: calc(var(--u)*5);
+    font-size: calc(var(--u)*1.9); color: #7F93AE; font-weight: 500; letter-spacing: .04em;
+  }
+  .portrait .chrome-logo { height: calc(var(--u)*6); top: calc(var(--u)*6); left: calc(var(--u)*6); }
+  .portrait .chrome-step { font-size: calc(var(--u)*2.6); top: calc(var(--u)*7.4); right: calc(var(--u)*6); }
+  .portrait .rg { font-size: calc(var(--u)*2.2); bottom: calc(var(--u)*5); }
+  .progress { position: absolute; left: 0; bottom: 0; height: calc(var(--u)*.6); background: #06BA55; }
+  .rg {
+    position: absolute; bottom: calc(var(--u)*2.6); left: 0; right: 0; text-align: center;
+    font-size: calc(var(--u)*1.55); color: #7F93AE;
+  }
+
+  .scene { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center;
+    padding: calc(var(--u)*12) calc(var(--u)*9) calc(var(--u)*9); gap: calc(var(--u)*3.2); }
+  .portrait .scene { padding: calc(var(--u)*22) calc(var(--u)*7) calc(var(--u)*16); gap: calc(var(--u)*4); }
+
+  .kicker { display: inline-flex; align-self: flex-start; align-items: center; gap: calc(var(--u)*1);
+    font-size: calc(var(--u)*2.1); font-weight: 600; color: #06BA55; text-transform: uppercase; letter-spacing: .08em; }
+  .kicker::before { content: ""; width: calc(var(--u)*1.1); height: calc(var(--u)*1.1); border-radius: 50%; background: #06BA55; }
+  h1 { font-size: calc(var(--u)*8.2); line-height: 1.04; font-weight: 700; letter-spacing: -.025em; max-width: 15ch; }
+  .portrait h1 { font-size: calc(var(--u)*9.4); }
+  h2 { font-size: calc(var(--u)*5); line-height: 1.1; font-weight: 700; letter-spacing: -.02em; }
+  .portrait h2 { font-size: calc(var(--u)*6.4); }
+  .sub { font-size: calc(var(--u)*2.9); color: #BECED8; line-height: 1.35; max-width: 34ch; }
+  .portrait .sub { font-size: calc(var(--u)*3.6); }
+  .note { font-size: calc(var(--u)*2.3); color: #7F93AE; line-height: 1.4; }
+  .portrait .note { font-size: calc(var(--u)*3); }
+  .accent { color: #06BA55; } .warn { color: #FB6801; }
+
+  .grid { display: grid; gap: calc(var(--u)*2.2); }
+  .card { background: rgba(22,36,59,.88); border: 1px solid #2A3D59; border-radius: calc(var(--u)*1.8);
+    padding: calc(var(--u)*2.6) calc(var(--u)*2.8); display: flex; flex-direction: column; gap: calc(var(--u)*1.1); }
+  .card .big { font-size: calc(var(--u)*6.4); font-weight: 700; letter-spacing: -.02em; line-height: 1; }
+  .card .t { font-size: calc(var(--u)*2.7); font-weight: 650; line-height: 1.15; }
+  .card .d { font-size: calc(var(--u)*2.05); color: #BECED8; line-height: 1.4; }
+  .portrait .card { padding: calc(var(--u)*3) calc(var(--u)*3.6); }
+  .portrait .card .t { font-size: calc(var(--u)*3.6); }
+  .portrait .card .d { font-size: calc(var(--u)*2.8); }
+  .portrait .card .big { font-size: calc(var(--u)*7.4); }
+  .card.warnc { border-color: rgba(251,104,1,.45); }
+  .card.warnc .t { color: #FFB27A; }
+  .card .tag { font-size: calc(var(--u)*1.8); color: #7F93AE; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+  .portrait .card .tag { font-size: calc(var(--u)*2.4); }
+
+  .eq { display: flex; flex-direction: column; gap: calc(var(--u)*2.2); }
+  .eqrow { display: flex; align-items: baseline; gap: calc(var(--u)*2.4); flex-wrap: wrap;
+    background: rgba(22,36,59,.7); border: 1px solid #2A3D59; border-radius: calc(var(--u)*1.6); padding: calc(var(--u)*2.2) calc(var(--u)*3); }
+  .eqrow .l { font-size: calc(var(--u)*5); font-weight: 600; color: #EEF0F3; }
+  .eqrow .r { font-size: calc(var(--u)*5); font-weight: 750; }
+  .eqrow .n { flex-basis: 100%; font-size: calc(var(--u)*2.3); color: #7F93AE; }
+  .portrait .eqrow .l, .portrait .eqrow .r { font-size: calc(var(--u)*6.2); }
+  .portrait .eqrow .n { font-size: calc(var(--u)*2.9); }
+  .formula { font-size: calc(var(--u)*3.3); color: #BECED8; }
+  .portrait .formula { font-size: calc(var(--u)*4); }
+  .formula b { color: #fff; }
+
+  .marginwrap { display: flex; align-items: center; gap: calc(var(--u)*6); }
+  .portrait .marginwrap { flex-direction: column; gap: calc(var(--u)*5); }
+  .odds { display: flex; gap: calc(var(--u)*2); }
+  .odd { width: calc(var(--u)*15); text-align: center; padding: calc(var(--u)*2.2) 0; }
+  .portrait .odd { width: calc(var(--u)*25); }
+  .odd .lab { font-size: calc(var(--u)*2.6); color: #7F93AE; font-weight: 600; }
+  .odd .q { font-size: calc(var(--u)*5.4); font-weight: 700; margin: calc(var(--u)*.8) 0; }
+  .odd .p { font-size: calc(var(--u)*2.6); color: #BECED8; border-top: 1px solid #2A3D59; padding-top: calc(var(--u)*1.2); margin: 0 calc(var(--u)*1.8); }
+  .portrait .odd .lab, .portrait .odd .p { font-size: calc(var(--u)*3.4); }
+  .portrait .odd .q { font-size: calc(var(--u)*6.8); }
+  .donut { position: relative; width: calc(var(--u)*40); height: calc(var(--u)*40); flex: none; }
+  .portrait .donut { width: calc(var(--u)*58); height: calc(var(--u)*58); }
+  .donut svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .donut .c { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .donut .c .v { font-size: calc(var(--u)*6.4); font-weight: 700; }
+  .portrait .donut .c .v { font-size: calc(var(--u)*9); }
+  .donut .c .s { font-size: calc(var(--u)*2); color: #7F93AE; }
+  .portrait .donut .c .s { font-size: calc(var(--u)*2.8); }
+  .badge { position: absolute; top: calc(var(--u)*-1); left: calc(var(--u)*-3); background: #FB6801; color: #0A1220;
+    font-weight: 700; font-size: calc(var(--u)*2.5); padding: calc(var(--u)*.9) calc(var(--u)*2); border-radius: 999px; }
+  .portrait .badge { font-size: calc(var(--u)*3.4); }
+
+  .bul { display: flex; flex-direction: column; gap: calc(var(--u)*2); }
+  .bul .it { display: flex; align-items: center; gap: calc(var(--u)*2.4); font-size: calc(var(--u)*3.3); line-height: 1.3;
+    background: rgba(22,36,59,.7); border: 1px solid #2A3D59; border-radius: calc(var(--u)*1.6); padding: calc(var(--u)*2.2) calc(var(--u)*2.8); }
+  .portrait .bul .it { font-size: calc(var(--u)*3.9); }
+  .bul .num { flex: none; width: calc(var(--u)*5.2); height: calc(var(--u)*5.2); border-radius: 50%; background: rgba(6,186,85,.15);
+    color: #06BA55; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: calc(var(--u)*2.6); }
+
+  .chips { display: grid; grid-template-columns: repeat(5, 1fr); gap: calc(var(--u)*1.2); width: calc(var(--u)*42); flex: none; }
+  .portrait .chips { width: calc(var(--u)*72); gap: calc(var(--u)*1.8); }
+  .chip { aspect-ratio: 1; border-radius: 50%; background: #06BA55; display: flex; align-items: center; justify-content: center;
+    font-size: calc(var(--u)*1.9); font-weight: 700; color: #0A1220; }
+  .portrait .chip { font-size: calc(var(--u)*3); }
+  .chip.off { background: #16243B; color: #2A3D59; box-shadow: inset 0 0 0 1px #2A3D59; }
+  .budgetwrap { display: flex; align-items: center; gap: calc(var(--u)*7); }
+  .portrait .budgetwrap { flex-direction: column; align-items: stretch; gap: calc(var(--u)*5); }
+  .budgetstats { display: flex; flex-direction: column; gap: calc(var(--u)*2.4); }
+  .stat .v { font-size: calc(var(--u)*7.6); font-weight: 700; line-height: 1; }
+  .stat .k { font-size: calc(var(--u)*2.3); color: #7F93AE; margin-top: calc(var(--u)*.6); }
+  .portrait .stat .v { font-size: calc(var(--u)*9); }
+  .portrait .stat .k { font-size: calc(var(--u)*3); }
+  .portrait .budgetstats { flex-direction: row; justify-content: space-between; }
+
+  .callout { border-radius: calc(var(--u)*2); padding: calc(var(--u)*4) calc(var(--u)*4.4); display: flex; flex-direction: column; gap: calc(var(--u)*2);
+    background: rgba(6,186,85,.09); border: 1px solid rgba(6,186,85,.45); border-left-width: calc(var(--u)*.8); }
+  .callout.cwarn { background: rgba(251,104,1,.08); border-color: rgba(251,104,1,.5); }
+  .callout .ct { font-size: calc(var(--u)*2.4); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #06BA55; }
+  .callout.cwarn .ct { color: #FB6801; }
+  .callout .cx { font-size: calc(var(--u)*4.4); line-height: 1.25; font-weight: 600; letter-spacing: -.01em; }
+  .portrait .callout .cx { font-size: calc(var(--u)*5.2); }
+  .portrait .callout .ct { font-size: calc(var(--u)*3); }
+
+  .outro { align-items: center; text-align: center; }
+  .outro .logo { height: calc(var(--u)*11); }
+  .portrait .outro .logo { height: calc(var(--u)*13); }
+  .outro .sub { max-width: 40ch; }
+  .pill { display: inline-block; border: 1px solid #2A3D59; border-radius: 999px; padding: calc(var(--u)*1.2) calc(var(--u)*2.8);
+    font-size: calc(var(--u)*2.2); color: #BECED8; }
+  .portrait .pill { font-size: calc(var(--u)*2.8); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="bg"></div><div class="dots"></div>
+  <div id="scenes"></div>
+  <img class="chrome-logo" id="clogo" alt="" />
+  <div class="chrome-step" id="cstep"></div>
+  <div class="rg" id="crg">18+ · Il gioco può causare dipendenza · Gioca responsabilmente</div>
+  <div class="progress" id="cprog"></div>
+</div>
+<script>
+(() => {
+  const FADE = 0.45; // dissolvenza in entrata/uscita di ogni scena (s)
+  const IN = 0.6;    // durata dell'entrata di ogni elemento (s)
+  const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+  const ease = (x) => 1 - Math.pow(1 - clamp(x), 3);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  const fmtIt = (n, d = 1) => n.toFixed(d).replace(".", ",");
+
+  // Ogni modello restituisce l'HTML della scena. data-in = secondo (dall'inizio scena) in cui l'elemento entra.
+  const T = {
+    intro: (s) => `
+      <div class="kicker" data-in="0.2">${esc(s.kicker)}</div>
+      <h1 data-in="0.5">${esc(s.title)}</h1>
+      <div class="sub" data-in="1.1">${esc(s.subtitle)}</div>`,
+    cards: (s, P) => {
+      const cols = P ? 1 : (s.cols || Math.min(3, s.items.length));
+      const cls = s.tone === "warn" ? " warnc" : "";
+      return `<h2 data-in="0.15">${esc(s.title)}</h2>
+        <div class="grid" style="grid-template-columns:repeat(${cols},1fr)">
+        ${s.items.map((it, i) => `<div class="card${cls}" data-in="${(0.6 + i * (s.step || 0.55)).toFixed(2)}">
+          ${it.tag ? `<div class="tag">${esc(it.tag)}</div>` : ""}
+          ${it.big ? `<div class="big accent">${esc(it.big)}</div>` : ""}
+          <div class="t">${esc(it.title)}</div>${it.text ? `<div class="d">${esc(it.text)}</div>` : ""}</div>`).join("")}
+        </div>${s.note ? `<div class="note" data-in="${(0.8 + s.items.length * (s.step || 0.55)).toFixed(2)}">${esc(s.note)}</div>` : ""}`;
+    },
+    equation: (s) => `<h2 data-in="0.15">${esc(s.title)}</h2>
+      ${s.formula ? `<div class="formula" data-in="0.6">${s.formula}</div>` : ""}
+      <div class="eq">${s.lines.map((l, i) => `<div class="eqrow" data-in="${(1.2 + i * (s.step || 1.1)).toFixed(2)}">
+        <span class="l">${esc(l.lhs)}</span><span class="r ${l.tone === "warn" ? "warn" : "accent"}">${esc(l.rhs)}</span>
+        ${l.note ? `<span class="n">${esc(l.note)}</span>` : ""}</div>`).join("")}</div>`,
+    margin: (s) => `<h2 data-in="0.15">${esc(s.title)}</h2>
+      <div class="marginwrap">
+        <div>
+          <div class="odds">${s.odds.map((o, i) => `<div class="card odd" data-in="${(0.6 + i * 0.35).toFixed(2)}">
+            <div class="lab">${esc(o[0])}</div><div class="q">${esc(o[1])}</div><div class="p" data-in="${(2 + i * 0.6).toFixed(2)}">${esc(o[2])}</div></div>`).join("")}</div>
+          <div class="formula" data-in="1.6" style="margin-top:calc(var(--u)*2.6)"><b>1 ÷ quota</b> = probabilità implicita</div>
+        </div>
+        <div class="donut" data-in="3.2">
+          <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="#16243B" stroke-width="10"/>
+          ${s.odds.map((o, i) => `<circle class="seg" cx="50" cy="50" r="42" fill="none" stroke="${["#06BA55", "#BECED8", "#7F93AE"][i]}" stroke-width="10" pathLength="100"/>`).join("")}</svg>
+          <div class="c"><div class="v" id="donutv">0%</div><div class="s">somma delle probabilità</div></div>
+          <div class="badge" data-in="${(3.2 + s.odds.length * 0.9 + 0.3).toFixed(2)}">margine ${esc(s.margin)}</div>
+        </div>
+      </div>
+      <div class="note" data-in="${(3.2 + s.odds.length * 0.9 + 1).toFixed(2)}">${esc(s.note || "")}</div>`,
+    bullets: (s) => `<h2 data-in="0.15">${esc(s.title)}</h2>
+      <div class="bul">${s.items.map((it, i) => `<div class="it" data-in="${(0.7 + i * (s.step || 0.9)).toFixed(2)}"><span class="num">${i + 1}</span><span>${esc(it)}</span></div>`).join("")}</div>
+      ${s.note ? `<div class="note" data-in="${(1 + s.items.length * (s.step || 0.9)).toFixed(2)}">${esc(s.note)}</div>` : ""}`,
+    budget: (s) => {
+      const n = Math.round(s.budget / s.stake);
+      return `<h2 data-in="0.15">${esc(s.title)}</h2>
+      <div class="budgetwrap">
+        <div class="chips" data-in="0.5">${Array.from({ length: n }, (_, i) => `<div class="chip">${s.stake}€</div>`).join("")}</div>
+        <div class="budgetstats">
+          <div class="stat" data-in="0.7"><div class="v" id="bleft">${s.budget} €</div><div class="k">budget rimasto</div></div>
+          <div class="stat" data-in="0.9"><div class="v accent" id="blost">0</div><div class="k">giocate perse da ${s.stake} €</div></div>
+        </div>
+      </div>
+      <div class="sub" data-in="${(s.drainStart + s.drainDur + 0.3).toFixed(2)}">${esc(s.text)}</div>`;
+    },
+    callout: (s) => `<div class="callout ${s.tone === "warn" ? "cwarn" : ""}" data-in="0.2">
+      <div class="ct">${esc(s.title)}</div><div class="cx">${esc(s.text)}</div></div>
+      ${s.note ? `<div class="note" data-in="1.4">${esc(s.note)}</div>` : ""}`,
+    outro: (s, P, B) => `<img class="logo" src="${B.logo}" alt="" data-in="0.2"/>
+      <div class="sub" data-in="0.7">${esc(s.text)}</div>
+      <div class="pill" data-in="1.3">${esc(s.cta)}</div>`,
+  };
+
+  // Animazioni che dipendono da t oltre all'entrata degli elementi.
+  const extra = {
+    margin: (el, s, t) => {
+      const start = 3.2 + IN * 0.5, per = 0.9;
+      const ps = s.odds.map((o) => parseFloat(o[2].replace(",", ".")));
+      const total = ps.reduce((a, b) => a + b, 0);
+      let acc = 0, shown = 0;
+      el.querySelectorAll(".seg").forEach((c, i) => {
+        const k = ease((t - start - i * per) / per);
+        const len = (ps[i] / total) * 100 * k;
+        c.setAttribute("stroke-dasharray", `${Math.max(0, len - 0.8)} 100`);
+        c.setAttribute("stroke-dashoffset", String(-acc));
+        acc += (ps[i] / total) * 100;
+        shown += ps[i] * k;
+      });
+      const v = el.querySelector("#donutv");
+      if (v) v.textContent = fmtIt(shown) + "%";
+    },
+    budget: (el, s, t) => {
+      const n = Math.round(s.budget / s.stake);
+      const lost = Math.floor(clamp((t - s.drainStart) / s.drainDur) * n + 1e-6);
+      el.querySelectorAll(".chip").forEach((c, i) => c.classList.toggle("off", i >= n - lost));
+      el.querySelector("#bleft").textContent = `${s.budget - lost * s.stake} €`;
+      el.querySelector("#blost").textContent = String(lost);
+    },
+  };
+
+  let built = -1, starts = [];
+  window.setup = (board, aspect) => {
+    window.BOARD = board;
+    const st = document.getElementById("stage");
+    const P = aspect === "portrait";
+    st.classList.toggle("portrait", P);
+    const w = innerWidth, h = innerHeight;
+    st.style.setProperty("--u", (Math.min(w, h) / 100) * (P ? 1.08 : 1.14) + "px");
+    document.getElementById("clogo").src = board.logo;
+    let acc = 0; starts = board.scenes.map((s) => { const a = acc; acc += s.dur; return a; });
+    board.total = acc;
+    built = -1;
+    return acc;
+  };
+  const build = (i) => {
+    const B = window.BOARD, s = B.scenes[i];
+    const P = document.getElementById("stage").classList.contains("portrait");
+    const host = document.getElementById("scenes");
+    host.innerHTML = `<div class="scene ${s.type === "outro" ? "outro" : ""}">${T[s.type](s, P, B)}</div>`;
+    built = i;
+    return host.firstElementChild;
+  };
+  window.renderAt = (t) => {
+    const B = window.BOARD;
+    let i = starts.findIndex((a, k) => t >= a && t < a + B.scenes[k].dur);
+    if (i < 0) i = B.scenes.length - 1;
+    const s = B.scenes[i], lt = t - starts[i];
+    const el = built === i ? document.querySelector(".scene") : build(i);
+    // dissolvenza della scena intera (entrata e uscita) verso lo sfondo
+    const first = i === 0, last = i === B.scenes.length - 1;
+    const fin = first ? 1 : ease(lt / FADE), fout = last ? 1 : clamp((s.dur - lt) / FADE);
+    el.style.opacity = String(Math.min(fin, fout));
+    el.querySelectorAll("[data-in]").forEach((e) => {
+      const k = ease((lt - parseFloat(e.dataset.in)) / IN);
+      e.style.opacity = String(k);
+      e.style.transform = `translateY(${(1 - k) * 28}px)`;
+    });
+    if (extra[s.type]) extra[s.type](el, s, lt);
+    const isOutro = s.type === "outro";
+    document.getElementById("clogo").style.opacity = String(isOutro ? 1 - ease(lt / 0.4) : 0.95);
+    const stepN = B.scenes.slice(0, i + 1).filter((x) => x.type !== "intro" && x.type !== "outro").length;
+    const stepT = B.scenes.filter((x) => x.type !== "intro" && x.type !== "outro").length;
+    document.getElementById("cstep").textContent = (s.type === "intro" || isOutro) ? "" : `${stepN} / ${stepT}`;
+    document.getElementById("cprog").style.width = `${(t / B.total) * 100}%`;
+  };
+})();
+</script>
+</body>
+</html>
