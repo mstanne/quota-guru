@@ -4015,94 +4015,6 @@
   "model": "claude-haiku-5-5",
   "at": "2026-11-03T09:20:08.427Z"
  },
- "nba:21718095": {
-  "fingerprint": "a0wlpm",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 14 novembre alle 01:00, ora italiana, i Pacers ospitano i Knicks in una partita della regular season NBA 2026-27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "I Pacers hanno un record di 3-8 in stagione e hanno vinto 2 delle ultime 5, con una media di 110,5 punti segnati e 113,5 subiti. In casa il bilancio è 1-5.",
-     "I Knicks hanno un record di 6-4 in stagione e hanno vinto 4 delle ultime 5, con una media di 111,3 punti segnati e 103,2 subiti. In trasferta il bilancio è 2-2."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
-    "paragraphs": [],
-    "bullets": [
-     "Nei 7 giorni a partire da questa partita i Pacers hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Knicks hanno in calendario 4 gare."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "A che ora si gioca Indiana Pacers – New York Knicks in Italia?",
-    "a": "Sabato 14 novembre alle 01:00."
-   },
-   {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-12T03:19:58.056Z"
- },
- "nba:21718096": {
-  "fingerprint": "8flfm1",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "I Bucks fanno visita ai Magic sabato 14 novembre alle 01:00, ora italiana, in una partita della regular season NBA 2026-27."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "I Magic hanno un record di 4-6 in stagione e hanno vinto 2 delle ultime 5, con una media di 106,8 punti segnati e 112,2 subiti. In casa il bilancio è 0-3.",
-     "I Bucks hanno un record di 1-9 in stagione e hanno vinto 0 delle ultime 5, con una media di 104,0 punti segnati e 119,6 subiti. In trasferta il bilancio è 0-4."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "calendario",
-    "paragraphs": [],
-    "bullets": [
-     "Nei 7 giorni a partire da questa partita i Magic hanno in calendario 3 gare.",
-     "Nei 7 giorni a partire da questa partita i Bucks hanno in calendario 4 gare."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "A che ora si gioca Orlando Magic – Milwaukee Bucks in Italia?",
-    "a": "Sabato 14 novembre alle 01:00."
-   },
-   {
-    "q": "Come funzionano totali e handicap nel basket?",
-    "a": "Consulta la guida [basket: Over/Under e handicap](/guide/basket-over-under-handicap)."
-   },
-   {
-    "q": "Come è organizzata la stagione NBA?",
-    "a": "Consulta la guida [regular season, play-in e playoff](/guide/nba-stagione-play-in-playoff)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-13T20:16:27.462Z"
- },
  "nba:21718097": {
   "fingerprint": "11pjy59",
   "sections": [
@@ -18919,20 +18831,27 @@
   "at": "2026-11-12T00:20:14.588Z"
  },
  "fb:1001528971": {
-  "fingerprint": "1x10mhd",
+  "fingerprint": "18ihf7z",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 15:00 il Kosovo ospita l'Israele nella 5ª giornata di Nations League."
+     "Sabato 14 novembre alle 15:00 il Kosovo ospita l'Israele per la 5ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Nations League il Kosovo ha ottenuto 2 pareggi (sequenza N-N), segnando 1 gol e subendone 1.",
-     "Nelle ultime 2 partite di Nations League anche l'Israele ha ottenuto 2 pareggi (sequenza N-N), segnando 1 gol e subendone 1."
+     "Nelle ultime 2 partite di Nations League il Kosovo ha ottenuto 2 pareggi (sequenza N-N), con 1 gol fatto e 1 subito.",
+     "Nelle ultime 2 partite di Nations League anche l'Israele ha ottenuto 2 pareggi (sequenza N-N), con 1 gol fatto e 1 subito."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Negli ultimi 3 confronti diretti il bilancio è di 1 vittoria per il Kosovo, 0 vittorie per l'Israele e 2 pareggi, con 3 gol complessivi (media di 1,0 a partita). L'ultimo incontro, a ottobre 2026 in Nations League, è terminato Israele 0-0 Kosovo."
     ],
     "bullets": []
    }
@@ -18943,7 +18862,7 @@
     "a": "Sabato 14 novembre alle 15:00, ora italiana."
    },
    {
-    "q": "Dove posso consultare classifica e risultati?",
+    "q": "Dove trovo classifica e risultati?",
     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
@@ -18952,7 +18871,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-12T00:20:18.199Z"
+  "at": "2026-11-14T00:25:04.860Z"
  },
  "fb:1001528972": {
   "fingerprint": "2xk1eu",
@@ -18991,20 +18910,20 @@
   "at": "2026-11-12T00:20:19.913Z"
  },
  "fb:1001528973": {
-  "fingerprint": "urhuot",
+  "fingerprint": "ytt19x",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Georgia e Ungheria si affrontano sabato 14 novembre alle 18:00 per la 5ª giornata di Nations League."
+     "Georgia e Ungheria si sfidano sabato 14 novembre alle 18:00, nell'ambito della 5ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Georgia ha raccolto 2 pareggi e 1 sconfitta (sequenza N-P-N), con 0 gol fatti e 1 subito.",
-     "Nelle ultime 3 partite di Nations League l'Ungheria ha raccolto 2 vittorie e 1 pareggio (sequenza N-V-V), con 3 gol fatti e 1 subito. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 2 partite di Nations League la Georgia ha ottenuto 1 pareggio e 1 sconfitta (sequenza P-N), segnando 0 gol e subendone 1.",
+     "Nelle ultime 2 partite di Nations League l'Ungheria ha ottenuto 2 vittorie (sequenza V-V), segnando 3 gol e subendone 1."
     ],
     "bullets": []
    }
@@ -19013,42 +18932,6 @@
    {
     "q": "Quando si gioca Georgia – Ungheria?",
     "a": "Sabato 14 novembre alle 18:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:20:34.390Z"
- },
- "fb:1001528978": {
-  "fingerprint": "279bdy",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 14 novembre alle 20:45 la Svezia ospita la Bosnia ed Erzegovina, nell'ambito della 5ª giornata di Nations League."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Svezia ha ottenuto 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 5 gol e subendone 2.",
-     "Nelle ultime 3 partite di Nations League la Bosnia ed Erzegovina ha ottenuto 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 6 gol e subendone 3."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Svezia – Bosnia ed Erzegovina?",
-    "a": "Sabato 14 novembre alle 20:45, ora italiana."
    },
    {
     "q": "Dove posso consultare classifica e risultati?",
@@ -19060,7 +18943,43 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:20:38.935Z"
+  "at": "2026-11-14T00:25:07.956Z"
+ },
+ "fb:1001528978": {
+  "fingerprint": "bd9ary",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Sabato 14 novembre alle 20:45 la Svezia ospita la Bosnia ed Erzegovina nella 5ª giornata di Nations League."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 2 partite di Nations League la Svezia ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1.",
+     "Nelle ultime 2 partite di Nations League anche la Bosnia ed Erzegovina ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1."
+    ],
+    "bullets": []
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Svezia – Bosnia ed Erzegovina?",
+    "a": "Sabato 14 novembre alle 20:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Te lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-14T00:25:11.123Z"
  },
  "fb:1001528974": {
   "fingerprint": "1sxkx5a",
@@ -19099,7 +19018,7 @@
   "at": "2026-11-12T00:20:22.914Z"
  },
  "fb:1001528975": {
-  "fingerprint": "1sv2tx2",
+  "fingerprint": "7c3v0g",
   "sections": [
    {
     "id": "presentazione",
@@ -19111,17 +19030,10 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League l'Irlanda del Nord ha raccolto 1 vittoria e 2 pareggi (sequenza N-V-N), con 3 gol fatti e 0 subiti. In casa il bilancio stagionale è di 2 pareggi, ancora senza vittorie.",
-     "Nelle ultime 3 partite di Nations League l'Ucraina ha raccolto 1 pareggio e 2 sconfitte (sequenza N-P-P), con 1 gol fatto e 5 subiti. Ha perso le ultime 2."
+     "Nelle ultime 2 partite di Nations League l'Irlanda del Nord ha raccolto 1 vittoria e 1 pareggio (sequenza V-N), con 3 gol fatti e 0 subiti.",
+     "Nelle ultime 2 partite di Nations League l'Ucraina ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 5 subiti. Ha perso le ultime 2."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "L'Irlanda del Nord non ha subito gol in tutte le ultime 3."
-    ]
    }
   ],
   "faq": [
@@ -19139,10 +19051,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:20:40.799Z"
+  "at": "2026-11-14T00:25:12.738Z"
  },
  "fb:1001528977": {
-  "fingerprint": "ubjus3",
+  "fingerprint": "gpm0p7",
   "sections": [
    {
     "id": "presentazione",
@@ -19154,8 +19066,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Romania ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 11 subiti. Ha perso le ultime 3. In casa ha perso tutte le 2 partite giocate.",
-     "Nelle ultime 3 partite di Nations League la Polonia ha raccolto 1 vittoria e 2 sconfitte (sequenza P-V-P), con 7 gol fatti e 4 subiti. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 2 partite di Nations League la Romania ha collezionato 2 sconfitte (sequenza P-P), con 0 gol fatti e 7 subiti. Ha perso le ultime 2.",
+     "Nelle ultime 2 partite di Nations League la Polonia ha raccolto 1 vittoria e 1 sconfitta (sequenza V-P), con 6 gol fatti e 1 subito."
     ],
     "bullets": []
    }
@@ -19175,7 +19087,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:20:43.051Z"
+  "at": "2026-11-14T00:25:14.387Z"
  },
  "fb:1001528976": {
   "fingerprint": "17h9mo2",
@@ -19214,22 +19126,29 @@
   "at": "2026-11-12T00:20:24.552Z"
  },
  "fb:1001545616": {
-  "fingerprint": "1107iva",
+  "fingerprint": "1cfuao7",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Lettonia e Armenia si affrontano domenica 15 novembre alle 15:00, per la 6ª giornata di Nations League."
+     "La Lettonia e l'Armenia si affrontano domenica 15 novembre alle 15:00 per la 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Lettonia ha ottenuto 1 pareggio e 2 sconfitte (sequenza N-P-P), segnando 2 gol e subendone 4. Ha perso le ultime 2 gare. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
-     "Nelle ultime 3 partite di Nations League l'Armenia ha ottenuto 1 pareggio e 2 sconfitte (sequenza P-P-N), con 2 gol fatti e 5 subiti. In trasferta, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie."
+     "Nelle ultime 3 partite di Nations League la Lettonia ha raccolto 3 sconfitte (sequenza P-P-P), con 3 gol fatti e 6 subiti. Ha perso tutte e ultime 3 gare disputate.",
+     "Nelle ultime 3 partite di Nations League l'Armenia ha raccolto 2 pareggi e 1 sconfitta (sequenza P-N-N), con 1 gol fatto e 3 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza vittorie finora."
     ],
     "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "In tutte le ultime tre partite della Lettonia si sono segnati almeno tre gol."
+    ]
    }
   ],
   "faq": [
@@ -19243,27 +19162,27 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Possono aiutarti le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:20:48.299Z"
+  "at": "2026-11-14T00:25:19.251Z"
  },
  "fb:1001528979": {
-  "fingerprint": "jhdmwl",
+  "fingerprint": "g28erz",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Domenica 15 novembre alle 15:00 il Cipro ospita il Montenegro per la 6ª giornata di Nations League."
+     "Domenica 15 novembre alle 15:00 il Cipro ospita il Montenegro nella 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League il Cipro ha raccolto 2 vittorie e 1 pareggio (sequenza N-V-V), con 4 gol fatti e 1 subito. In casa ha vinto tutte le 2 partite giocate.",
-     "Nelle ultime 3 partite di Nations League il Montenegro ha raccolto 2 vittorie e 1 pareggio (sequenza V-V-N), con 5 gol fatti e 3 subiti. In trasferta ha vinto tutte le 2 partite giocate."
+     "Nelle ultime 3 partite di Nations League il Cipro ha ottenuto 2 vittorie e 1 pareggio, con sequenza V-V-N, segnando 5 gol e subendone 2. In casa ha vinto tutte le 2 partite giocate.",
+     "Nelle ultime 3 partite di Nations League il Montenegro ha ottenuto 2 vittorie e 1 pareggio, con sequenza V-N-V, segnando 4 gol e subendone 2."
     ],
     "bullets": []
    }
@@ -19274,19 +19193,19 @@
     "a": "Domenica 15 novembre alle 15:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:20:50.168Z"
+  "at": "2026-11-14T00:25:23.001Z"
  },
  "fb:1001528981": {
-  "fingerprint": "1pga0dl",
+  "fingerprint": "u2jbcz",
   "sections": [
    {
     "id": "presentazione",
@@ -19298,17 +19217,10 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League il Finlandia ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-V-P), segnando 2 gol e subendone 2. In casa, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 3 partite di Nations League il San Marino ha collezionato 3 sconfitte (sequenza P-P-P), segnando 1 gol e subendone 9. Ha perso tutte le ultime 3 gare. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 3 partite di Nations League il Finlandia ha ottenuto 1 vittoria e 2 sconfitte (sequenza V-P-P), con 2 gol fatti e 4 subiti. Ha perso le ultime 2.",
+     "Nelle ultime 3 partite di Nations League il San Marino ha subito 3 sconfitte (sequenza P-P-P), con 1 gol fatto e 8 subiti. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "In tutte le ultime 3 partite del San Marino si sono segnati almeno tre gol."
-    ]
    }
   ],
   "faq": [
@@ -19318,18 +19230,18 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina dedicata alla [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
+    "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ti spiegano il funzionamento le guide su [come leggere le quote](/guide/come-leggere-le-quote) e sui [mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:20:58.060Z"
+  "at": "2026-11-14T00:25:24.891Z"
  },
  "fb:1001528980": {
-  "fingerprint": "18uqag7",
+  "fingerprint": "1g3j9l3",
   "sections": [
    {
     "id": "presentazione",
@@ -19341,8 +19253,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Bielorussia ha raccolto 2 vittorie e 1 pareggio (sequenza N-V-V), con 5 gol fatti e 0 subiti. In casa ha vinto tutte e 2 le partite giocate.",
-     "Nelle ultime 3 partite di Nations League l'Albania ha raccolto 2 vittorie e 1 sconfitta (sequenza V-P-V), con 6 gol fatti e 3 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     "Nelle ultime 3 partite di Nations League la Bielorussia ha ottenuto 3 vittorie (sequenza V-V-V), segnando 7 gol e non subendone nessuno. Arriva da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
+     "Nelle ultime 3 partite di Nations League l'Albania ha ottenuto 2 vittorie e 1 sconfitta (sequenza P-V-V), con 5 gol fatti e 3 subiti."
     ],
     "bullets": []
    },
@@ -19350,8 +19262,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "La Bielorussia non ha subito gol in nessuna delle ultime 3 partite.",
-     "In tutte le ultime 3 partite dell'Albania sono stati segnati almeno tre gol."
+     "La Bielorussia non ha subito gol in nessuna delle ultime 3 partite."
     ]
    }
   ],
@@ -19359,51 +19270,6 @@
    {
     "q": "Quando si gioca Bielorussia – Albania?",
     "a": "Domenica 15 novembre alle 18:00, ora italiana."
-   },
-   {
-    "q": "Dove trovo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:21:03.283Z"
- },
- "fb:1001528983": {
-  "fingerprint": "bs3uuf",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Belgio e Italia si affrontano domenica 15 novembre alle 20:45 per la 6ª giornata di Nations League. È uno scontro di alta classifica: il Belgio è al 3° posto con 6 punti, l'Italia al 2° con 7."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 3 partite di Nations League il Belgio ha raccolto 1 vittoria e 2 sconfitte (sequenza P-V-P), con 4 gol fatti e 5 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 3 partite di Nations League l'Italia ha raccolto 2 vittorie e 1 pareggio (sequenza V-N-V), con 8 gol fatti e 3 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "Media gol segnati: Belgio 1,5, Italia 2,0 a partita.",
-     "Gol subiti finora: Belgio 5, Italia 5.",
-     "L'Italia ha il miglior attacco del torneo."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Belgio – Italia?",
-    "a": "Domenica 15 novembre alle 20:45, ora italiana."
    },
    {
     "q": "Dove vedo classifica e risultati?",
@@ -19415,23 +19281,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:20:52.386Z"
+  "at": "2026-11-14T00:25:31.345Z"
  },
- "fb:1001528982": {
-  "fingerprint": "12ejj6k",
+ "fb:1001528983": {
+  "fingerprint": "1mvd1lq",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento domenica 15 novembre alle 20:45: la Francia riceve la Turchia per la 6ª giornata di Nations League. In classifica la Francia è al 1° posto con 10 punti, la Turchia al 4° con 0."
+     "Belgio e Italia si affrontano domenica 15 novembre alle 20:45 per la 6ª giornata di Nations League. Il match mette di fronte due squadre in alta classifica: il Belgio è al 3° posto con 9 punti, mentre l'Italia è al 1° con 10."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Francia ha raccolto 2 vittorie e 1 pareggio (sequenza V-N-V), con 6 gol fatti e 2 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 3 partite di Nations League la Turchia ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 10 subiti. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 3 partite di Nations League il Belgio ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), segnando 6 gol e subendone 5.",
+     "Nelle ultime 3 partite di Nations League l'Italia ha ottenuto 2 vittorie e 1 pareggio (sequenza N-V-V), segnando 7 gol e subendone 3."
     ],
     "bullets": []
    },
@@ -19439,8 +19305,54 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "Media gol segnati: Francia 1,8, Turchia 0,5 a partita.",
-     "Gol subiti finora: Francia 2, Turchia 11.",
+     "Media gol segnati a partita: Belgio 1,6, Italia 2,2.",
+     "Gol subiti finora: Belgio 6, Italia 6.",
+     "L'Italia ha il miglior attacco del torneo.",
+     "In tutte le ultime 3 partite del Belgio si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Belgio – Italia?",
+    "a": "Domenica 15 novembre alle 20:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-14T00:25:34.746Z"
+ },
+ "fb:1001528982": {
+  "fingerprint": "1a21qmg",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Appuntamento domenica 15 novembre alle 20:45: la Francia riceve la Turchia per la 6ª giornata di Nations League. È uno scontro di alta classifica: la Francia è al 2° posto con 10 punti, la Turchia al 4° con 0."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 3 partite di Nations League la Francia ha raccolto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-V-P), con 6 gol fatti e 5 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 3 partite di Nations League la Turchia ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 8 subiti. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Francia 1,6, Turchia 0,6 a partita.",
+     "Gol subiti finora: Francia 5, Turchia 13.",
      "La Francia ha la miglior difesa del torneo.",
      "In tutte le ultime 3 partite della Turchia si sono segnati almeno tre gol."
     ]
@@ -19461,10 +19373,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:20:56.594Z"
+  "at": "2026-11-14T00:25:39.461Z"
  },
  "fb:1001528985": {
-  "fingerprint": "1qebbjp",
+  "fingerprint": "1sgapxr",
   "sections": [
    {
     "id": "presentazione",
@@ -19476,8 +19388,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Croazia ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 13 subiti. Ha perso le ultime 3. In casa ha perso tutte le 2 partite giocate.",
-     "Nelle ultime 3 partite di Nations League la Repubblica Ceca ha raccolto 3 sconfitte (sequenza P-P-P), con 1 gol fatto e 8 subiti. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
+     "Nelle ultime 3 partite di Nations League la Croazia ha collezionato 3 sconfitte (sequenza P-P-P), segnando 2 gol e subendone 11. Ha perso le ultime 3. In casa ha perso tutte le 2 partite giocate.",
+     "Nelle ultime 3 partite di Nations League la Repubblica Ceca ha collezionato 3 sconfitte (sequenza P-P-P), segnando 1 gol e subendone 8. Ha perso le ultime 3. In trasferta ha perso tutte le 2 partite giocate."
     ],
     "bullets": []
    },
@@ -19485,7 +19397,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "In tutte le ultime 3 partite della Croazia si sono segnati almeno 3 gol."
+     "In tutte le ultime 3 partite della Croazia si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -19496,18 +19408,18 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Te lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:21:08.683Z"
+  "at": "2026-11-14T00:25:43.246Z"
  },
  "fb:1001528984": {
-  "fingerprint": "tdnf8",
+  "fingerprint": "1cz942e",
   "sections": [
    {
     "id": "presentazione",
@@ -19519,8 +19431,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Spagna ha ottenuto 3 vittorie (sequenza V-V-V), segnando 9 gol e subendone 3. Arriva da 3 vittorie consecutive e in casa ha vinto entrambe le partite giocate.",
-     "Nelle ultime 3 partite di Nations League l'Inghilterra ha ottenuto 3 vittorie (sequenza V-V-V), segnando 12 gol e non subendone nessuno. Arriva da 3 vittorie consecutive e in trasferta ha vinto entrambe le partite giocate."
+     "Nelle ultime 3 partite di Nations League la Spagna ha raccolto 3 vittorie (sequenza V-V-V), con 7 gol fatti e 2 subiti. È reduce da 3 vittorie consecutive.",
+     "Nelle ultime 3 partite di Nations League l'Inghilterra ha raccolto 3 vittorie (sequenza V-V-V), con 12 gol fatti e 1 subito. È reduce da 3 vittorie consecutive."
     ],
     "bullets": []
    },
@@ -19528,8 +19440,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "In tutte le ultime 3 partite della Spagna sono stati segnati almeno tre gol.",
-     "L'Inghilterra non ha subito gol in nessuna delle ultime 3 partite."
+     "In tutte le ultime 3 partite dell'Inghilterra si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -19548,23 +19459,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:21:12.180Z"
+  "at": "2026-11-14T00:25:46.679Z"
  },
  "fb:1001528986": {
-  "fingerprint": "8w7yod",
+  "fingerprint": "595fu7",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Lunedì 16 novembre alle 16:00 il Kazakistan ospita la Slovacchia nella 6ª giornata di Nations League."
+     "Lunedì 16 novembre alle 16:00 il Kazakistan ospita la Slovacchia per la 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League il Kazakistan ha ottenuto 1 pareggio e 2 sconfitte (sequenza P-P-N), segnando 4 gol e subendone 6. In casa, nella stagione, il bilancio è di 1 pareggio e 1 sconfitta, senza vittorie.",
-     "Nelle ultime 3 partite di Nations League la Slovacchia ha ottenuto 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 7 gol e subendone 2. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 3 partite di Nations League il Kazakistan ha raccolto 1 pareggio e 2 sconfitte (sequenza P-N-P), con 4 gol fatti e 6 subiti. In casa il bilancio stagionale è di 1 pareggio e 1 sconfitta, senza ancora alcuna vittoria.",
+     "Nelle ultime 3 partite di Nations League la Slovacchia ha raccolto 1 vittoria e 2 pareggi (sequenza N-V-N), con 7 gol fatti e 3 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    },
@@ -19572,7 +19483,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "In tutte le ultime 3 partite del Kazakistan sono stati segnati almeno tre gol."
+     "In tutte le ultime 3 partite del Kazakistan si sono segnati almeno tre gol."
     ]
    }
   ],
@@ -19587,29 +19498,36 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:21:15.780Z"
+  "at": "2026-11-14T00:25:50.705Z"
  },
  "fb:1001528987": {
-  "fingerprint": "1mv4tip",
+  "fingerprint": "p5pnjv",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Lunedì 16 novembre alle 16:00 l'Isole Fær Øer ospita il Moldavia nella 6ª giornata di Nations League."
+     "La partita si giocherà lunedì 16 novembre alle 16:00, quando l'Isole Fær Øer ospiterà il Moldavia per la 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League, l'Isole Fær Øer ha ottenuto 3 pareggi (sequenza N-N-N), segnando 4 gol e subendone 4.",
-     "Nelle ultime 3 partite di Nations League, il Moldavia ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-V-P), segnando 3 gol e subendone 6."
+     "Nelle ultime 3 partite di Nations League, l'Isole Fær Øer ha ottenuto 3 pareggi (sequenza N-N-N), segnando 5 gol e subendone 5.",
+     "Nelle ultime 3 partite di Nations League, il Moldavia ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), segnando 4 gol e subendone 6."
     ],
     "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "In tutte le ultime 3 partite del Moldavia sono stati segnati almeno tre gol."
+    ]
    }
   ],
   "faq": [
@@ -19619,31 +19537,31 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    "a": "Puoi consultare la pagina dedicata alla [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Puoi trovare le spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:21:19.728Z"
+  "at": "2026-11-14T00:25:53.826Z"
  },
  "fb:1001545617": {
-  "fingerprint": "1gwpq8a",
+  "fingerprint": "m9zm5a",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento lunedì 16 novembre alle 18:00: l'Islanda ospita il Lussemburgo per la 6ª giornata di Nations League."
+     "Appuntamento lunedì 16 novembre alle 18:00: l'Islanda riceve il Lussemburgo per la 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League l'Islanda ha ottenuto 2 vittorie e 1 pareggio (sequenza V-V-N), segnando 6 gol e non subendone nessuno.",
-     "Nelle ultime 3 partite di Nations League il Lussemburgo ha collezionato 3 sconfitte (sequenza P-P-P), senza segnare e subendo 6 gol. Ha perso tutte e ultime 3."
+     "Nelle ultime 3 partite di Nations League l'Islanda ha raccolto 2 vittorie e 1 pareggio (sequenza V-N-V), con 8 gol fatti e 0 subiti.",
+     "Nelle ultime 3 partite di Nations League il Lussemburgo ha raccolto 3 sconfitte (sequenza P-P-P), con 0 gol fatti e 4 subiti. Ha perso le ultime 3."
     ],
     "bullets": []
    },
@@ -19651,7 +19569,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "L'Islanda non ha subito gol in nessuna delle ultime 3 partite."
+     "L'Islanda non ha subito gol in tutte le ultime 3."
     ]
    }
   ],
@@ -19666,27 +19584,27 @@
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:21:21.745Z"
+  "at": "2026-11-14T00:25:55.750Z"
  },
  "fb:1001528989": {
-  "fingerprint": "18ys2yf",
+  "fingerprint": "f2zz2m",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Lituania e Liechtenstein si affrontano lunedì 16 novembre alle 18:00, nella 6ª giornata di Nations League."
+     "Lituania e Liechtenstein si affrontano lunedì 16 novembre alle 18:00 per la 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "La Lituania ha disputato finora una sola partita di Nations League, persa 0-1.",
-     "Il Liechtenstein ha disputato finora una sola partita di Nations League, terminata 0-0."
+     "La Lituania ha giocato finora una sola partita di Nations League, persa 0-1.",
+     "Nelle ultime 2 partite di Nations League il Liechtenstein ha raccolto 1 pareggio e 1 sconfitta (sequenza N-P), con 0 gol fatti e 1 subito."
     ],
     "bullets": []
    }
@@ -19706,23 +19624,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-12T00:20:27.114Z"
+  "at": "2026-11-14T00:25:57.286Z"
  },
  "fb:1001528988": {
-  "fingerprint": "1nvch1w",
+  "fingerprint": "1prauaz",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "L'appuntamento è per lunedì 16 novembre alle 18:00, quando l'Estonia ospita il Bulgaria per la 6ª giornata di Nations League."
+     "Lunedì 16 novembre alle 18:00 l'Estonia ospita il Bulgaria nella 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League l'Estonia ha ottenuto 1 vittoria e 2 pareggi (sequenza N-V-N), segnando 1 gol e non subendone nessuno. In casa, il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 3 partite di Nations League il Bulgaria ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza N-P-V), con 2 gol fatti e 3 subiti. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     "Nelle ultime 3 partite di Nations League l'Estonia ha ottenuto 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 2 gol e subendone 0. In casa, la stagione registra 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 3 partite di Nations League il Bulgaria ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-V-P), segnando 2 gol e subendone 8. In trasferta, la stagione registra 1 vittoria e 1 sconfitta."
     ],
     "bullets": []
    },
@@ -19730,7 +19648,7 @@
     "id": "numeri",
     "paragraphs": [],
     "bullets": [
-     "L'Estonia non ha subito gol in tutte le ultime 3 partite."
+     "L'Estonia non ha subito gol in nessuna delle ultime 3 partite."
     ]
    }
   ],
@@ -19749,32 +19667,25 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:21:23.963Z"
+  "at": "2026-11-14T00:25:59.428Z"
  },
  "fb:1001545652": {
-  "fingerprint": "zt9c44",
+  "fingerprint": "gx8uzt",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Svizzera e Scozia si affrontano lunedì 16 novembre alle 20:45, nell'ambito della 6ª giornata di Nations League."
+     "Svizzera e Scozia si affrontano lunedì 16 novembre alle 20:45 per la 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Svizzera ha ottenuto 3 vittorie (sequenza V-V-V), segnando 8 gol e subendone 1. Arriva da 3 vittorie consecutive. In casa ha vinto tutte le 2 partite disputate.",
-     "Nelle ultime 3 partite di Nations League la Scozia ha ottenuto 1 vittoria e 2 sconfitte (sequenza P-V-P), segnando 3 gol e subendone 5."
+     "Nelle ultime 3 partite di Nations League la Svizzera ha ottenuto 2 vittorie e 1 pareggio (sequenza V-V-N), segnando 5 gol e subendone 1. In casa ha vinto tutte le 2 partite giocate.",
+     "Nelle ultime 3 partite di Nations League la Scozia ha ottenuto 2 vittorie e 1 sconfitta (sequenza V-P-V), segnando 5 gol e subendone 3."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "In tutte le ultime 3 partite della Svizzera si sono segnati almeno tre gol."
-    ]
    }
   ],
   "faq": [
@@ -19783,19 +19694,19 @@
     "a": "Lunedì 16 novembre alle 20:45, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
+    "q": "Dove si trovano classifica e risultati?",
     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:21:28.122Z"
+  "at": "2026-11-14T00:26:03.448Z"
  },
  "fb:1001528990": {
-  "fingerprint": "idkem3",
+  "fingerprint": "yi3y41",
   "sections": [
    {
     "id": "presentazione",
@@ -19807,10 +19718,17 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Nations League, la Germania ha ottenuto 1 vittoria e 1 pareggio (sequenza V-N), segnando 2 gol e subendone 0.",
-     "Nelle ultime 2 partite di Nations League, i Paesi Bassi hanno ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 4 gol e subendone 3."
+     "Nelle ultime 3 partite di Nations League la Germania ha ottenuto 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 5 gol e subendone 1.",
+     "Nelle ultime 3 partite di Nations League i Paesi Bassi hanno ottenuto 2 vittorie e 1 pareggio (sequenza N-V-V), segnando 11 gol e subendone 3."
     ],
     "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "In tutte le ultime 3 partite dei Paesi Bassi sono stati segnati almeno tre gol."
+    ]
    }
   ],
   "faq": [
@@ -19820,7 +19738,7 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -19828,23 +19746,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-12T00:20:29.977Z"
+  "at": "2026-11-14T00:26:06.734Z"
  },
  "fb:1001545618": {
-  "fingerprint": "djmuzj",
+  "fingerprint": "1um60kj",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Lunedì 16 novembre alle 20:45 il Gibilterra ospita il Malta, valevole per la 6ª giornata di Nations League."
+     "Lunedì 16 novembre alle 20:45 il Gibilterra ospita il Malta, in occasione della 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Finora il Gibilterra ha disputato una sola partita di Nations League, conclusa con un pareggio 1-1.",
-     "Nelle ultime 2 partite di Nations League il Malta ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1."
+     "Nelle ultime 2 partite di Nations League il Gibilterra ha ottenuto 1 pareggio e 1 sconfitta (sequenza N-P), con 1 gol fatto e 3 subiti.",
+     "Nelle ultime 2 partite di Nations League il Malta ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), con 2 gol fatti e 1 subito."
     ],
     "bullets": []
    }
@@ -19856,31 +19774,31 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
+    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-12T00:20:31.763Z"
+  "at": "2026-11-14T00:26:08.527Z"
  },
  "fb:1001545662": {
-  "fingerprint": "7axdm6",
+  "fingerprint": "7f8lpt",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Macedonia del Nord e Slovenia si affrontano lunedì 16 novembre alle 20:45 per la 6ª giornata di Nations League."
+     "La Macedonia del Nord e la Slovenia si sfidano lunedì 16 novembre alle 20:45 nell'ambito della 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Macedonia del Nord ha raccolto 3 sconfitte (sequenza P-P-P), con 0 gol fatti e 7 subiti. Ha perso le ultime 3.",
-     "Nelle ultime 3 partite di Nations League la Slovenia ha raccolto 2 vittorie e 1 sconfitta (sequenza V-P-V), con 5 gol fatti e 3 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+     "Nelle ultime 3 partite di Nations League la Macedonia del Nord ha ottenuto 3 sconfitte (sequenza P-P-P), segnando 1 gol e subendone 7. Ha perso tutte e ultime 3 gare.",
+     "Nelle ultime 3 partite di Nations League la Slovenia ha ottenuto 1 vittoria, 1 pareggio e 1 sconfitta (sequenza P-V-N), con 3 gol fatti e 3 subiti. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
     ],
     "bullets": []
    }
@@ -19891,7 +19809,7 @@
     "a": "Lunedì 16 novembre alle 20:45, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
+    "q": "Dove posso consultare classifica e risultati?",
     "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
@@ -19900,23 +19818,23 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:21:29.937Z"
+  "at": "2026-11-14T00:26:12.618Z"
  },
  "fb:1001528991": {
-  "fingerprint": "14ersse",
+  "fingerprint": "d1prv6",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "La partita si giocherà lunedì 16 novembre alle 20:45, quando il Grecia ospiterà il Serbia per la 6ª giornata di Nations League."
+     "L'appuntamento è per lunedì 16 novembre alle 20:45, quando il Grecia ospiterà il Serbia nella 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 2 partite di Nations League la Grecia ha ottenuto 2 pareggi (sequenza N-N), segnando 2 gol e subendone 2. In casa il bilancio stagionale è di 2 pareggi, senza ancora alcuna vittoria.",
-     "Nelle ultime 2 partite di Nations League la Serbia ha subito 2 sconfitte (sequenza P-P), segnando 1 gol e subendone 4. Ha perso entrambe le ultime gare. In trasferta ha perso tutte le 2 partite disputate."
+     "Nelle ultime 3 partite di Nations League il Grecia ha raccolto 2 pareggi e 1 sconfitta (sequenza N-N-P), segnando 2 gol e subendone 9. In casa, il bilancio stagionale è di 2 pareggi, senza vittorie.",
+     "Nelle ultime 3 partite di Nations League il Serbia ha collezionato 3 sconfitte (sequenza P-P-P), segnando 2 gol e subendone 7. Ha perso tutte e ultime 3. In trasferta ha perso tutte le 2 partite giocate."
     ],
     "bullets": []
    }
@@ -19936,7 +19854,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-12T00:20:33.628Z"
+  "at": "2026-11-14T00:26:14.590Z"
  },
  "fb:1001528993": {
   "fingerprint": "gkvvqg",
@@ -19975,20 +19893,20 @@
   "at": "2026-11-12T00:20:37.096Z"
  },
  "fb:1001528998": {
-  "fingerprint": "16mgf54",
+  "fingerprint": "jcnuts",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Appuntamento martedì 17 novembre alle 20:45: la Polonia ospita la Svezia per la 6ª giornata di Nations League."
+     "Martedì 17 novembre alle 20:45 la Polonia ospita la Svezia nella 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Polonia ha raccolto 1 vittoria e 2 sconfitte (sequenza P-V-P), con 7 gol fatti e 4 subiti.",
-     "Nelle ultime 3 partite di Nations League la Svezia ha raccolto 2 vittorie e 1 pareggio (sequenza V-N-V), con 5 gol fatti e 2 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
+     "Nelle ultime 2 partite di Nations League la Polonia ha ottenuto 1 vittoria e 1 sconfitta (sequenza V-P), segnando 6 gol e subendone 1.",
+     "Nelle ultime 2 partite di Nations League la Svezia ha ottenuto 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1. In trasferta il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte."
     ],
     "bullets": []
    }
@@ -20000,15 +19918,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
+    "a": "Puoi consultarli nella pagina [Nations League](/calcio/nations-league) e nella [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Trovi le spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:20:58.734Z"
+  "at": "2026-11-14T00:26:18.536Z"
  },
  "fb:1001528992": {
   "fingerprint": "1suf4hx",
@@ -20047,29 +19965,22 @@
   "at": "2026-11-12T00:20:38.871Z"
  },
  "fb:1001528995": {
-  "fingerprint": "1q1jq8q",
+  "fingerprint": "1iqghs1",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Ungheria e Irlanda del Nord si affrontano martedì 17 novembre alle 20:45 nella 6ª giornata di Nations League."
+     "Ungheria e Irlanda del Nord si affrontano martedì 17 novembre alle 20:45 per la 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League l'Ungheria ha raccolto 2 vittorie e 1 pareggio (sequenza N-V-V), con 3 gol fatti e 1 subito.",
-     "Nelle ultime 3 partite di Nations League l'Irlanda del Nord ha raccolto 1 vittoria e 2 pareggi (sequenza N-V-N), con 3 gol fatti e 0 subiti."
+     "Nelle ultime 2 partite di Nations League l'Ungheria ha raccolto 2 vittorie (sequenza V-V), con 3 gol fatti e 1 subito.",
+     "Nelle ultime 2 partite di Nations League l'Irlanda del Nord ha raccolto 1 vittoria e 1 pareggio (sequenza V-N), con 3 gol fatti e 0 subiti."
     ],
     "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "L'Irlanda del Nord non ha subito gol in nessuna delle ultime 3 partite."
-    ]
    }
   ],
   "faq": [
@@ -20087,10 +19998,10 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:21:00.682Z"
+  "at": "2026-11-14T00:26:20.149Z"
  },
  "fb:1001528994": {
-  "fingerprint": "1az47rl",
+  "fingerprint": "1i7a3xr",
   "sections": [
    {
     "id": "presentazione",
@@ -20102,8 +20013,8 @@
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League l'Ucraina ha raccolto 1 pareggio e 2 sconfitte (sequenza N-P-P), con 1 gol fatto e 5 subiti. Ha perso le ultime 2. In casa ha perso tutte le 2 partite giocate.",
-     "Nelle ultime 3 partite di Nations League il Georgia ha raccolto 2 pareggi e 1 sconfitta (sequenza N-P-N), con 0 gol fatti e 1 subito. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
+     "Nelle ultime 2 partite di Nations League l'Ucraina ha raccolto 2 sconfitte (sequenza P-P), con 1 gol fatto e 5 subiti. Ha perso le ultime 2. In casa ha perso tutte le 2 partite giocate.",
+     "Nelle ultime 2 partite di Nations League il Georgia ha raccolto 1 pareggio e 1 sconfitta (sequenza P-N), con 0 gol fatti e 1 subito. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
     ],
     "bullets": []
    }
@@ -20123,7 +20034,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:21:02.444Z"
+  "at": "2026-11-14T00:26:21.940Z"
  },
  "fb:1001528997": {
   "fingerprint": "kod6n7",
@@ -20162,20 +20073,20 @@
   "at": "2026-11-12T00:20:41.144Z"
  },
  "fb:1001528999": {
-  "fingerprint": "1faym01",
+  "fingerprint": "ito4fb",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Martedì 17 novembre alle 20:45 la Bosnia ed Erzegovina ospita la Romania per la 6ª giornata di Nations League."
+     "Martedì 17 novembre alle 20:45 il Bosnia ed Erzegovina ospiterà il Romania nella 6ª giornata di Nations League."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Nelle ultime 3 partite di Nations League la Bosnia ed Erzegovina ha conquistato 2 vittorie e 1 pareggio (sequenza V-N-V), segnando 6 gol e subendone 3. In casa il bilancio stagionale è di 1 vittoria e 1 pareggio, senza sconfitte.",
-     "Nelle ultime 3 partite di Nations League la Romania ha collezionato 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 11 subiti. Ha perso tutte e 3 le partite."
+     "Nelle ultime 2 partite di Nations League il Bosnia ed Erzegovina ha conquistato 1 vittoria e 1 pareggio (sequenza N-V), segnando 2 gol e subendone 1. In casa, la stagione registra 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 2 partite di Nations League il Romania ha collezionato 2 sconfitte (sequenza P-P), senza segnare e subendo 7 gol. Ha perso le ultime 2."
     ],
     "bullets": []
    }
@@ -20187,15 +20098,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
+    "a": "Si possono consultare la pagina [Nations League](/calcio/nations-league) e la [classifica aggiornata](/calcio/nations-league/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Le spiegazioni si trovano nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Per capirle, si possono consultare le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:21:07.617Z"
+  "at": "2026-11-14T00:26:26.820Z"
  },
  "fb:1001528996": {
   "fingerprint": "10fb2n3",
@@ -20234,20 +20145,12 @@
   "at": "2026-11-12T00:20:42.809Z"
  },
  "fb:1001545862": {
-  "fingerprint": "34f0rf",
+  "fingerprint": "1kmvwj6",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 20:00 l'Algeria ospita il Togo nella 3ª giornata delle Qualificazioni Coppa d'Africa."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Finora l'Algeria ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, conclusa con un pareggio per 2-2.",
-     "Anche il Togo ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, sconfitta per 0-2."
+     "Sabato 14 novembre, alle 20:00, l'Algeria ospita il Togo per la 3ª giornata delle Qualificazioni Coppa d'Africa."
     ],
     "bullets": []
    }
@@ -20259,31 +20162,30 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultarli nella pagina dedicata alle [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    "a": "Puoi consultare la pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne spiegano il funzionamento le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Per capirle meglio puoi leggere le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:21:48.089Z"
+  "at": "2026-11-14T00:26:31.842Z"
  },
  "fb:1001545863": {
-  "fingerprint": "75gz4c",
+  "fingerprint": "vpv4k0",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Sabato 14 novembre alle 20:00 l'Angola ospita il Sud Sudan nella 3ª giornata delle Qualificazioni Coppa d'Africa."
+     "Sabato 14 novembre alle 20:00 l'Angola ospita il Sud Sudan per la 3ª giornata delle Qualificazioni Coppa d'Africa."
     ],
     "bullets": []
    },
    {
     "id": "momento",
     "paragraphs": [
-     "Finora l'Angola ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 3-1.",
-     "Anche il Sud Sudan ha disputato finora una sola partita nelle Qualificazioni Coppa d'Africa, persa 0-5."
+     "Finora l'Angola ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 3-1."
     ],
     "bullets": []
    }
@@ -20295,15 +20197,15 @@
    },
    {
     "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e la [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
+    "a": "Puoi consultarli nella pagina [Qualificazioni Coppa d'Africa](/calcio/qualificazioni-coppa-d-africa) e nella [classifica aggiornata](/calcio/qualificazioni-coppa-d-africa/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
-    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+    "a": "Ti aiutano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-10T00:21:49.885Z"
+  "at": "2026-11-14T00:26:33.448Z"
  },
  "fb:1001545864": {
   "fingerprint": "1jfri0u",
@@ -20931,7 +20833,7 @@
   "at": "2026-11-09T15:20:59.167Z"
  },
  "fb:1001545884": {
-  "fingerprint": "1t3148z",
+  "fingerprint": "1a1wzcz",
   "sections": [
    {
     "id": "presentazione",
@@ -20941,10 +20843,9 @@
     "bullets": []
    },
    {
-    "id": "momento",
+    "id": "precedenti",
     "paragraphs": [
-     "Finora l'Uganda ha disputato una sola partita nelle Qualificazioni Coppa d'Africa, vinta 1-0.",
-     "Anche il Botswana ha giocato finora una sola partita nelle Qualificazioni Coppa d'Africa, pareggiata 2-2."
+     "Negli ultimi 2 confronti diretti il bilancio è di 2 vittorie per l'Uganda, 0 vittorie per il Botswana e nessun pareggio, con 2 gol complessivi (media di 1,0 a partita). L'ultimo incrocio, a ottobre 2025 nelle Qualificazioni Mondiali Africa, è finito Botswana 0-1 Uganda."
     ],
     "bullets": []
    }
@@ -20964,7 +20865,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-09T15:21:08.106Z"
+  "at": "2026-11-14T00:26:28.541Z"
  },
  "fb:1001545885": {
   "fingerprint": "1b0tg99",
@@ -22259,85 +22160,6 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-11T00:21:58.251Z"
- },
- "fb:1001649031": {
-  "fingerprint": "trv9i4",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 14 novembre alle 00:00 il Saint Martin ospita l'El Salvador per i playoff di CONCACAF Nations League."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 2 partite di CONCACAF Nations League il Saint Martin ha raccolto 2 vittorie (sequenza V-V), con 11 gol fatti e 0 subiti.",
-     "Nelle ultime 3 partite di CONCACAF Nations League l'El Salvador ha raccolto 1 pareggio e 2 sconfitte (sequenza P-P-N), con 1 gol fatto e 9 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Saint Martin – El Salvador?",
-    "a": "Sabato 14 novembre alle 00:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [CONCACAF Nations League](/calcio/concacaf-nations-league) e nella [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:21:59.997Z"
- },
- "fb:1001649032": {
-  "fingerprint": "sjtpk4",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 14 novembre alle 01:00 il Montserrat ospita il Nicaragua per i playoff di CONCACAF Nations League."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 2 partite di CONCACAF Nations League il Montserrat ha raccolto 2 vittorie (sequenza V-V), con 6 gol fatti e 1 subito.",
-     "Nelle ultime 3 partite di CONCACAF Nations League il Nicaragua ha raccolto 3 sconfitte (sequenza P-P-P), con 2 gol fatti e 11 subiti. Ha perso le ultime 3."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "In tutte le ultime 3 partite del Nicaragua si sono segnati almeno tre gol."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Montserrat – Nicaragua?",
-    "a": "Sabato 14 novembre alle 01:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina di [CONCACAF Nations League](/calcio/concacaf-nations-league) e la [classifica aggiornata](/calcio/concacaf-nations-league/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-11T00:22:01.877Z"
  },
  "fb:1001644692": {
   "fingerprint": "t21e9r",
@@ -24082,114 +23904,6 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-08T14:17:45.171Z"
- },
- "fb:1001647362": {
-  "fingerprint": "hd0o50",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 14 novembre alle 00:00 l'Argentina riceve l'Uruguay in una partita valida per le Amichevoli internazionali."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 3 partite di Amichevoli internazionali, l'Argentina ha ottenuto 3 vittorie (sequenza V-V-V), segnando 14 gol e subendone 0. Arriva da 3 vittorie consecutive. In casa ha vinto tutte e 3 le partite disputate.",
-     "Nelle ultime 2 partite di Amichevoli internazionali, l'Uruguay ha ottenuto 2 vittorie (sequenza V-V), segnando 10 gol e subendone 2. In trasferta ha vinto tutte e 2 le partite disputate."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "numeri",
-    "paragraphs": [],
-    "bullets": [
-     "In tutte le ultime 3 partite dell'Argentina si sono segnati almeno tre gol.",
-     "L'Argentina non ha subito gol in tutte le ultime 3 partite."
-    ]
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Argentina – Uruguay?",
-    "a": "Sabato 14 novembre alle 00:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-09T03:20:49.666Z"
- },
- "fb:1001640518": {
-  "fingerprint": "vyu0lm",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Sabato 14 novembre, alle 01:00, la Colombia ospita il Cile nell'ambito delle Amichevoli internazionali."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 2 partite di Amichevoli internazionali, la Colombia ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 2 gol e subendone 1. In casa, il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
-     "Nelle ultime 2 partite di Amichevoli internazionali, il Cile ha ottenuto 1 vittoria e 1 sconfitta (sequenza P-V), segnando 4 gol e subendone 4. In trasferta, il bilancio stagionale è di 1 vittoria e 1 sconfitta."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Colombia – Cile?",
-    "a": "Sabato 14 novembre alle 01:00, ora italiana."
-   },
-   {
-    "q": "Dove posso consultare risultati e classifica?",
-    "a": "Puoi consultare la pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e la [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-   },
-   {
-    "q": "Dove trovo spiegazioni sulle quote di questa partita?",
-    "a": "Puoi leggere le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-12T00:21:11.547Z"
- },
- "fb:1001647363": {
-  "fingerprint": "ie65h6",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Ecuador e Costa Rica si sfidano sabato 14 novembre alle 01:00 nell'ambito delle Amichevoli internazionali."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Ecuador – Costa Rica?",
-    "a": "Sabato 14 novembre alle 01:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-09T03:20:50.969Z"
  },
  "fb:1001647364": {
   "fingerprint": "whgowd",
@@ -28558,42 +28272,6 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-09T18:20:59.971Z"
- },
- "fb:1001649545": {
-  "fingerprint": "q9ry1i",
-  "sections": [
-   {
-    "id": "presentazione",
-    "paragraphs": [
-     "Brazil U20 e Peru U20 si affrontano sabato 14 novembre alle 00:00 per Amichevoli internazionali."
-    ],
-    "bullets": []
-   },
-   {
-    "id": "momento",
-    "paragraphs": [
-     "Nelle ultime 3 partite di Amichevoli internazionali il Brazil U20 ha raccolto 3 vittorie (sequenza V-V-V), con 10 gol fatti e 1 subito. È reduce da 3 vittorie consecutive. In casa ha vinto tutte le 3 partite giocate.",
-     "Nelle ultime 2 partite di Amichevoli internazionali il Peru U20 ha raccolto 1 pareggio e 1 sconfitta (sequenza P-N), con 3 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 1 pareggio e 1 sconfitta, ancora senza vittorie."
-    ],
-    "bullets": []
-   }
-  ],
-  "faq": [
-   {
-    "q": "Quando si gioca Brazil U20 – Peru U20?",
-    "a": "Sabato 14 novembre alle 00:00, ora italiana."
-   },
-   {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Nella pagina [Amichevoli internazionali](/calcio/amichevoli-nazionali) e nella [classifica aggiornata](/calcio/amichevoli-nazionali/classifica)."
-   },
-   {
-    "q": "Come si leggono le quote di questa partita?",
-    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
-   }
-  ],
-  "model": "claude-haiku-5-5",
-  "at": "2026-11-09T18:21:01.934Z"
  },
  "fb:1001649546": {
   "fingerprint": "1m0sj79",
@@ -33321,12 +32999,19 @@
   "at": "2026-11-12T16:39:10.573Z"
  },
  "fb:1001647949": {
-  "fingerprint": "1hopj93",
+  "fingerprint": "c9xfn4",
   "sections": [
    {
     "id": "presentazione",
     "paragraphs": [
-     "Dunkerque e Quevilly si affrontano sabato 14 novembre alle 18:00 per la Coupe de France."
+     "Dunkerque e Quevilly si sfidano sabato 14 novembre alle 18:00, in gara di Coupe de France."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "precedenti",
+    "paragraphs": [
+     "Nei cinque confronti diretti più recenti il bilancio è di 2 vittorie per il Dunkerque, 2 per il Quevilly e 1 pareggio, con 15 gol in totale (media di 3,0 a partita). L'ultimo incontro, nel maggio 2024 in Ligue 2, si è concluso con il Quevilly che ha perso 1-2 contro il Dunkerque."
     ],
     "bullets": []
    }
@@ -33337,8 +33022,8 @@
     "a": "Sabato 14 novembre alle 18:00, ora italiana."
    },
    {
-    "q": "Dove vedo classifica e risultati?",
-    "a": "Puoi consultare la pagina [Coupe de France](/calcio/coupe-de-france) e la [classifica aggiornata](/calcio/coupe-de-france/classifica)."
+    "q": "Dove trovo classifica e risultati?",
+    "a": "Nella pagina [Coupe de France](/calcio/coupe-de-france) e nella [classifica aggiornata](/calcio/coupe-de-france/classifica)."
    },
    {
     "q": "Come si leggono le quote di questa partita?",
@@ -33346,7 +33031,7 @@
    }
   ],
   "model": "claude-haiku-5-5",
-  "at": "2026-11-12T16:39:11.653Z"
+  "at": "2026-11-14T00:25:01.657Z"
  },
  "fb:1001647991": {
   "fingerprint": "1ylvucy",
@@ -35892,5 +35577,411 @@
   ],
   "model": "claude-haiku-5-5",
   "at": "2026-11-13T12:08:16.990Z"
+ },
+ "fb:1001550216": {
+  "fingerprint": "krco8c",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Venerdì 27 novembre alle 20:45 il Venezia ospita il Bologna nella 13ª giornata di Serie A. In classifica il Venezia occupa il 19° posto con 6 punti, mentre il Bologna è all'8° posto con 17."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Serie A il Venezia ha ottenuto 2 vittorie e 3 sconfitte, con la sequenza V-P-P-P-V. Ha segnato 3 gol e ne ha subiti 5. In casa, nella stagione, il bilancio è di 2 vittorie e 1 sconfitta.",
+     "Nelle ultime 5 partite di Serie A il Bologna ha ottenuto 4 vittorie e 1 sconfitta, con la sequenza P-V-V-V-V. Ha segnato 11 gol e ne ha subiti 7. Arriva da 4 vittorie consecutive e in trasferta ha vinto tutte le 4 partite giocate."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Venezia 0,7, Bologna 1,5.",
+     "Gol subiti finora: Venezia 21, Bologna 14.",
+     "In 4 delle ultime 5 partite del Bologna sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Venezia – Bologna?",
+    "a": "Venerdì 27 novembre alle 20:45, ora italiana."
+   },
+   {
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina [Serie A](/calcio/serie-a) e nella [classifica aggiornata](/calcio/serie-a/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-14T00:24:25.411Z"
+ },
+ "fb:1001557485": {
+  "fingerprint": "f0gt1b",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Nottingham Forest e Chelsea si affrontano venerdì 27 novembre alle 21:00 per la 12ª giornata di Premier League. In classifica il Nottingham Forest è al 16° posto con 9 punti, il Chelsea al 5° con 16."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Premier League il Nottingham Forest ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-N-P-V), con 5 gol fatti e 8 subiti. In casa il bilancio stagionale è di 1 vittoria e 1 sconfitta.",
+     "Nelle ultime 5 partite di Premier League il Chelsea ha raccolto 3 vittorie e 2 sconfitte (sequenza V-V-P-V-P), con 9 gol fatti e 4 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Nottingham Forest 0,9, Chelsea 1,9 a partita.",
+     "Gol subiti finora: Nottingham Forest 13, Chelsea 16."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Nottingham Forest – Chelsea?",
+    "a": "Venerdì 27 novembre alle 21:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Premier League](/calcio/premier-league) e nella [classifica aggiornata](/calcio/premier-league/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-14T00:24:27.602Z"
+ },
+ "fb:1001570468": {
+  "fingerprint": "wq8lse",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Venerdì 27 novembre alle 21:00 il Levante ospita il Santander nella 14ª giornata di LaLiga. In classifica il Levante occupa il 17° posto con 11 punti, mentre il Santander è 10° con 14."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di LaLiga il Levante ha ottenuto 1 vittoria, 2 pareggi e 2 sconfitte (sequenza N-V-P-P-N), segnando 5 gol e subendone 6. In casa, nella stagione, il bilancio è di 1 vittoria, 1 pareggio e 1 sconfitta.",
+     "Nelle ultime 5 partite di LaLiga il Santander ha ottenuto 2 vittorie, 1 pareggio e 2 sconfitte (sequenza N-P-V-P-V), segnando 6 gol e subendone 9. In trasferta, nella stagione, il bilancio è di 1 vittoria e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Levante 1,3, Santander 1,4 a partita.",
+     "Gol subiti finora: Levante 21, Santander 30.",
+     "In 4 delle ultime 5 partite del Santander si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Levante – Santander?",
+    "a": "Venerdì 27 novembre alle 21:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [LaLiga](/calcio/liga) e nella [classifica aggiornata](/calcio/liga/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-14T00:24:31.063Z"
+ },
+ "fb:1001575237": {
+  "fingerprint": "1gj8csb",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Il Bremen e il M'gladbach si sfidano venerdì 27 novembre alle 20:30, nell'11ª giornata di Bundesliga. In classifica il Bremen occupa il 6° posto con 15 punti, mentre il M'gladbach è al 18° con 4."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Bundesliga il Bremen ha ottenuto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-N-V-V-P), segnando 9 gol e subendone 7. In casa il bilancio stagionale registra 1 vittoria e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Bundesliga il M'gladbach ha raccolto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza P-P-V-N-P), con 6 gol fatti e 9 subiti. In trasferta il bilancio stagionale è di 1 vittoria e 2 sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Bremen 1,9, M'gladbach 1,3 a partita.",
+     "Gol subiti finora: Bremen 15, M'gladbach 25.",
+     "In 3 delle ultime 5 partite del Bremen sono stati segnati almeno tre gol.",
+     "In 4 delle ultime 5 partite del M'gladbach sono stati segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Bremen – M'gladbach?",
+    "a": "Venerdì 27 novembre alle 20:30, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Bundesliga](/calcio/bundesliga) e nella [classifica aggiornata](/calcio/bundesliga/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-14T00:24:36.406Z"
+ },
+ "fb:1001552830": {
+  "fingerprint": "fn41yu",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Brest e Paris FC si affronteranno venerdì 27 novembre alle 20:45, nell'ambito della 12ª giornata di Ligue 1. In classifica il Brest occupa il 9° posto con 15 punti, mentre il Paris FC è al 3° posto con 20."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Ligue 1 il Brest ha conquistato 3 vittorie, 1 pareggio e 1 sconfitta, con la sequenza V-N-P-V-V. Ha segnato 11 gol e ne ha subiti 4. Nelle partite giocate in casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+     "Nelle ultime 5 partite di Ligue 1 il Paris FC ha raccolto 3 vittorie e 2 sconfitte, con la sequenza P-V-P-V-V. Ha segnato 9 gol e ne ha subiti 7. In trasferta il bilancio stagionale è di 1 vittoria e 2 sconfitte."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "La media gol segnati è di 1,8 per il Brest e di 1,7 per il Paris FC a partita.",
+     "I gol subiti finora sono 12 per il Brest e 10 per il Paris FC.",
+     "Nelle ultime 5 partite del Paris FC, in 3 casi si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Brest – Paris FC?",
+    "a": "Venerdì 27 novembre alle 20:45, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina [Ligue 1](/calcio/ligue-1) e la [classifica aggiornata](/calcio/ligue-1/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Puoi approfondire con le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-14T00:24:43.189Z"
+ },
+ "fb:1001552238": {
+  "fingerprint": "1mlsed3",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Venerdì 27 novembre alle 20:00 il Groningen ospita il Willem II nella 14ª giornata di Eredivisie. In classifica il Groningen occupa il 9° posto con 15 punti, mentre il Willem II è al 18° con 3."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Eredivisie il Groningen ha ottenuto 1 vittoria, 1 pareggio e 3 sconfitte (sequenza V-P-N-P-P), segnando 14 gol e subendone 15. Ha perso le ultime 2 gare. In casa ha perso tutte le 2 partite disputate.",
+     "Nelle ultime 5 partite di Eredivisie il Willem II ha collezionato 1 pareggio e 4 sconfitte (sequenza P-P-P-P-N), con 5 gol fatti e 20 subiti. In trasferta ha perso tutte le 3 partite disputate."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: 2,4 per il Groningen e 0,9 per il Willem II a partita.",
+     "Gol subiti finora: 28 per il Groningen e 40 per il Willem II.",
+     "In tutte le ultime 5 partite del Groningen si sono segnati almeno tre gol.",
+     "In 4 delle ultime 5 partite del Willem II si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Groningen – Willem II?",
+    "a": "Venerdì 27 novembre alle 20:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultarli nella pagina [Eredivisie](/calcio/eredivisie) e nella [classifica aggiornata](/calcio/eredivisie/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Puoi leggere le spiegazioni nelle guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-14T00:24:49.041Z"
+ },
+ "fb:1001575551": {
+  "fingerprint": "1bal4t9",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Venerdì 27 novembre alle 21:15 il Marítimo ospita il CD Nacional nella 12ª giornata di Primeira Liga. In classifica il Marítimo occupa il 15° posto con 8 punti, mentre il CD Nacional è al 13° con 10."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 3 partite di Primeira Liga il Marítimo ha ottenuto 3 sconfitte (sequenza P-P-P), segnando 1 gol e subendone 9. Ha perso le ultime 3 gare. In casa ha perso tutte le 2 partite disputate.",
+     "Nelle ultime 4 partite di Primeira Liga il CD Nacional ha ottenuto 2 vittorie e 2 sconfitte (sequenza P-V-P-V), con 4 gol fatti e 4 subiti. In trasferta ha perso tutte le 2 partite disputate."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati a partita: Marítimo 0,9, CD Nacional 1,0.",
+     "Gol subiti finora: Marítimo 21, CD Nacional 19."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Marítimo – CD Nacional?",
+    "a": "Venerdì 27 novembre alle 21:15, ora italiana."
+   },
+   {
+    "q": "Dove posso consultare classifica e risultati?",
+    "a": "Nella pagina dedicata alla [Primeira Liga](/calcio/primeira-liga) e nella [classifica aggiornata](/calcio/primeira-liga/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-14T00:24:52.487Z"
+ },
+ "fb:1001563294": {
+  "fingerprint": "jw3x5w",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Southampton e Middlesbrough si affrontano venerdì 27 novembre alle 21:00 per la 18ª giornata di Championship. In classifica il Southampton è al 7° posto con 24 punti, il Middlesbrough al 2° con 29."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Championship il Southampton ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-V-V-N-P), con 8 gol fatti e 5 subiti. In casa il bilancio stagionale è di 2 vittorie e 1 pareggio, senza sconfitte.",
+     "Nelle ultime 5 partite di Championship il Middlesbrough ha raccolto 2 vittorie, 2 pareggi e 1 sconfitta (sequenza N-V-V-P-N), con 10 gol fatti e 5 subiti. In trasferta il bilancio stagionale è di 2 vittorie, 1 pareggio e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Southampton 1,9, Middlesbrough 2,0 a partita.",
+     "Gol subiti finora: Southampton 15, Middlesbrough 19.",
+     "In 3 delle ultime 5 partite del Middlesbrough si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Southampton – Middlesbrough?",
+    "a": "Venerdì 27 novembre alle 21:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Nella pagina [Championship](/calcio/championship) e nella [classifica aggiornata](/calcio/championship/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Lo spiegano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-14T00:24:54.763Z"
+ },
+ "fb:1001492475": {
+  "fingerprint": "151hi7u",
+  "sections": [
+   {
+    "id": "presentazione",
+    "paragraphs": [
+     "Fluminense e Cruzeiro si sfidano sabato 28 novembre alle 00:00 per la 37ª giornata di Brasileirão. Il match mette di fronte due squadre della parte alta della classifica: il Fluminense è al 4° posto con 57 punti, il Cruzeiro al 3° con 60."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "momento",
+    "paragraphs": [
+     "Nelle ultime 5 partite di Brasileirão il Fluminense ha ottenuto 2 vittorie e 3 sconfitte (sequenza P-P-P-V-V), segnando 7 gol e subendone 6. In casa, il bilancio stagionale è di 2 vittorie e 1 sconfitta.",
+     "Nelle ultime 5 partite di Brasileirão il Cruzeiro ha ottenuto 4 vittorie e 1 sconfitta (sequenza P-V-V-V-V), segnando 11 gol e subendone 8. Arriva da 4 vittorie consecutive. In trasferta, il bilancio stagionale è di 2 vittorie e 1 sconfitta."
+    ],
+    "bullets": []
+   },
+   {
+    "id": "numeri",
+    "paragraphs": [],
+    "bullets": [
+     "Media gol segnati: Fluminense 1,6, Cruzeiro 1,6 a partita.",
+     "Gol subiti finora: Fluminense 42, Cruzeiro 48.",
+     "In 4 delle ultime 5 partite del Fluminense si sono segnati almeno tre gol.",
+     "In 3 delle ultime 5 partite del Cruzeiro si sono segnati almeno tre gol."
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Quando si gioca Fluminense – Cruzeiro?",
+    "a": "Sabato 28 novembre alle 00:00, ora italiana."
+   },
+   {
+    "q": "Dove vedo classifica e risultati?",
+    "a": "Puoi consultare la pagina dedicata al [Brasileirão](/calcio/brasileirao) e la [classifica aggiornata](/calcio/brasileirao/classifica)."
+   },
+   {
+    "q": "Come si leggono le quote di questa partita?",
+    "a": "Ne parlano le guide [come leggere le quote](/guide/come-leggere-le-quote) e [i mercati del calcio](/guide/mercati-del-calcio)."
+   }
+  ],
+  "model": "claude-haiku-5-5",
+  "at": "2026-11-14T00:24:58.499Z"
  }
 }
