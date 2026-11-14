@@ -5,6 +5,7 @@
 // (football, BetSlipContext `combinable`) depend on each other: their joint probability comes from the match's score
 // matrix (src/lib/footballMarkets.ts), and enters the product once.
 import { jointChance, type Lam } from "./footballMarkets";
+import { numberFormat } from "./intl";
 
 /** Model probability of each pick, or null when a pick has none (added from the odds, no prediction). */
 export interface SlipChance {
@@ -52,17 +53,17 @@ export function slipChance(picks: SlipPick[]): SlipChance {
 export function formatChance(p: number) {
   const v = p * 100;
   const digits = v >= 10 ? 0 : v >= 1 ? 1 : 2;
-  const s = v.toLocaleString("it-IT", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+  const s = numberFormat("it-IT", { minimumFractionDigits: digits, maximumFractionDigits: digits }).format(v);
   return v > 0 && Number(v.toFixed(digits)) === 0 ? "meno dello 0,01%" : `${s}%`;
 }
 
 /** "circa 1 su 24". */
 export function oneIn(p: number) {
   const n = Math.round(1 / p);
-  return n <= 1 ? "quasi certa" : `circa 1 su ${n.toLocaleString("it-IT")}`;
+  return n <= 1 ? "quasi certa" : `circa 1 su ${numberFormat("it-IT").format(n)}`;
 }
 
 /** Fair odds of the whole slip (1 ÷ probability), Italian decimal format: "23,81". */
 export function slipFairOdds(p: number) {
-  return (1 / p).toLocaleString("it-IT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return numberFormat("it-IT", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(1 / p);
 }

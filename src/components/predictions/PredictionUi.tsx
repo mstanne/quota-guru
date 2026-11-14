@@ -26,6 +26,7 @@ import {
 import { MoreMarkets } from "./MoreMarkets";
 import { PredictionSlipPicks } from "./PredictionSlipPicks";
 import { PickCells, type SlipMatch } from "./SlipPicks";
+import { dateFormat } from "../../lib/intl";
 
 const OUTCOMES = ["1", "X", "2"] as const;
 
@@ -186,8 +187,8 @@ export function PublishedNote({ iso }: { iso: string }) {
 
 const formatUpdatedAt = (iso: string) => {
   const d = new Date(iso);
-  const day = new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", day: "numeric", month: "long" }).format(d);
-  const time = new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", hour: "2-digit", minute: "2-digit" }).format(d);
+  const day = dateFormat("it-IT", { timeZone: "Europe/Rome", day: "numeric", month: "long" }).format(d);
+  const time = dateFormat("it-IT", { timeZone: "Europe/Rome", hour: "2-digit", minute: "2-digit" }).format(d);
   return `il ${day} alle ${time}`;
 };
 

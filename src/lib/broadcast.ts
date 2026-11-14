@@ -1,3 +1,4 @@
+import { dateFormat } from "./intl.ts";
 // Where a match is shown in Italy, from the TV rights deals of the 2026/27 season (no data feed has the channels).
 // Only what the deals settle is said: when the channel of one match depends on a weekly choice (the Champions
 // League match on Prime Video, the NBA games on Sky) the text says so instead of guessing.
@@ -99,7 +100,7 @@ export const COMPETITION_RIGHTS: { slug: string; name: string; text: string }[] 
 ];
 
 const romeParts = (iso: string) => {
-  const parts = new Intl.DateTimeFormat("en-GB", {
+  const parts = dateFormat("en-GB", {
     timeZone: "Europe/Rome",
     weekday: "short",
     hour: "2-digit",
