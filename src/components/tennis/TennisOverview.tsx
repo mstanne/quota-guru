@@ -3,6 +3,7 @@ import { Link } from "../../lib/links";
 import { CalendarDays, ListOrdered } from "lucide-react";
 import { Movement, StatusBadge, SurfaceChip } from "./TennisUi";
 import { categoryLabel, currentAndNext, dateRange, tennisPaths, tourData, tourLabel, tours } from "../../lib/tennis";
+import { numberFormat } from "../../lib/intl";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 const more = "text-sm text-slate-300 hover:text-white underline underline-offset-2";
@@ -32,7 +33,7 @@ export function TennisOverview() {
                       <span className="flex-1 text-white">{r.player.name}</span>
                       <span className="text-slate-400 hidden sm:inline">{r.player.country}</span>
                       <span className="w-16 text-right text-slate-300 tabular-nums">
-                        {r.points != null ? new Intl.NumberFormat("it-IT").format(r.points) : "–"}
+                        {r.points != null ? numberFormat("it-IT").format(r.points) : "–"}
                       </span>
                       <span className="w-8 text-right tabular-nums">
                         <Movement value={r.movement} />

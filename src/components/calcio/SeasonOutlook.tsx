@@ -4,6 +4,7 @@ import { leagueOutlook, pct, type TeamOutlook, type Zone } from "../../lib/seaso
 import type { Competition } from "../../lib/footballCore";
 import { TeamBadge } from "./MatchRow";
 import { TeamName } from "../teams/TeamLink";
+import { numberFormat } from "../../lib/intl";
 
 const fmt = (n: number) => n.toFixed(1).replace(".", ",");
 const TONE: Record<Zone["tone"], string> = { top: "text-predict", europe: "text-sky-300", bottom: "text-rose-300" };
@@ -29,7 +30,7 @@ export function SeasonOutlook({ competition }: { competition: Competition }) {
     .filter((x): x is { r: (typeof x)["r"]; t: TeamOutlook } => !!x.t)
     .sort((a, b) => b.t.xpts - a.t.xpts);
   if (!rows.length) return null;
-  const runs = o.runs.toLocaleString("it-IT");
+  const runs = numberFormat("it-IT").format(o.runs);
   return (
     <section aria-labelledby="proiezione">
       <h2 id="proiezione" className="text-white text-xl">
@@ -111,7 +112,7 @@ export function TeamSeasonOutlook({ slug, name, teamId, competitionName }: { slu
         Dove può chiudere {name}: proiezione {competitionName}
       </h2>
       <p className="text-slate-300 text-sm mt-1">
-        {o.runs.toLocaleString("it-IT")} simulazioni delle {o.remaining} partite di campionato che restano, con le
+        {numberFormat("it-IT").format(o.runs)} simulazioni delle {o.remaining} partite di campionato che restano, con le
         probabilità dei nostri pronostici.
       </p>
       <dl className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">

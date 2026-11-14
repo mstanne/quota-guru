@@ -19,6 +19,7 @@ import { footballTeamMeta } from "../../lib/teamMeta";
 import { TeamSeasonStats } from "./TeamSeasonStats";
 import { TeamSeasonOutlook } from "../calcio/SeasonOutlook";
 import { Card, Facts, SectionTitle, age, formatDate, num } from "./TeamUi";
+import { numberFormat } from "../../lib/intl";
 
 const GROUPS: [string, RegExp][] = [
   ["Portieri", /keeper/i],
@@ -221,7 +222,7 @@ function ClubTeamPage() {
       ? ([
           [
             "Stadio",
-            `${t.venue.name}${t.venue.city ? `, ${t.venue.city}` : ""}${t.venue.capacity ? ` (${t.venue.capacity.toLocaleString("it-IT")} posti)` : ""}`,
+            `${t.venue.name}${t.venue.city ? `, ${t.venue.city}` : ""}${t.venue.capacity ? ` (${numberFormat("it-IT").format(t.venue.capacity)} posti)` : ""}`,
           ],
         ] as [string, string][])
       : []),

@@ -12,6 +12,7 @@
  * Validation: scripts/check-offers.mjs (runs before every build).
  */
 import raw from "./offers.json";
+import { dateFormat } from "../lib/intl";
 
 /** Products an offer component can apply to. Slot bonuses count as "casino". */
 export type OfferProduct = "sport" | "casino" | "lotterie" | "poker" | "bingo" | "ippica" | "virtual";
@@ -202,5 +203,5 @@ export function formatEuro(n: number) {
   return `${grouped}${dec === "00" ? "" : `,${dec}`} €`;
 }
 
-const dateFmt = new Intl.DateTimeFormat("it-IT", { day: "numeric", month: "long", year: "numeric" });
+const dateFmt = dateFormat("it-IT", { day: "numeric", month: "long", year: "numeric" });
 export const formatDate = (iso: string) => dateFmt.format(new Date(`${iso}T12:00:00`));
