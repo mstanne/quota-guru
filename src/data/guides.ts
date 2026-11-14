@@ -674,7 +674,7 @@ export const guideMeta = (g: Guide): RouteMeta => {
         {
           "@type": "VideoObject",
           "@id": `${path}#video`,
-          name: `${g.title} in un minuto`,
+          name: `${g.title}: il riassunto in video`,
           description: g.description,
           inLanguage: "it-IT",
           thumbnailUrl: files.poster,

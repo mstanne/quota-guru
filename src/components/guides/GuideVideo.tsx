@@ -33,9 +33,8 @@ export function GuideVideo({ slug, title }: { slug: string; title: string }) {
         poster={assetUrl(portrait ? files.posterPortrait : files.poster)}
         controls
         playsInline
-        muted
         preload="none"
-        aria-label={`Video: ${title} in un minuto`}
+        aria-label={`Video riassuntivo: ${title}`}
         onPlay={() => {
           if (played.current) return;
           played.current = true;
@@ -43,7 +42,7 @@ export function GuideVideo({ slug, title }: { slug: string; title: string }) {
         }}
       />
       <figcaption className="mt-2 text-sm text-slate-400">
-        Il riassunto in un minuto. Video senza audio: i dettagli e gli esempi sono nel testo qui sotto.
+        Il riassunto in video, con voce narrante. Dettagli ed esempi sono nel testo qui sotto.
       </figcaption>
     </figure>
   );

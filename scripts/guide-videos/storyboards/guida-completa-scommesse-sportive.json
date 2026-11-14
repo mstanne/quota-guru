@@ -1,31 +1,141 @@
 {
   "slug": "guida-completa-scommesse-sportive",
   "scenes": [
-    { "type": "intro", "dur": 4.5, "kicker": "Guida · Per principianti", "title": "Le scommesse sportive in un minuto", "subtitle": "Quote, mercati, budget ed errori da evitare: le basi prima di iniziare." },
-    { "type": "cards", "dur": 7.5, "title": "Cos'è una scommessa", "items": [
-      { "tag": "1", "title": "Una previsione", "text": "Su un esito: chi vince, quanti gol, chi vince un set." },
-      { "tag": "2", "title": "Una puntata", "text": "La somma che rischi se la previsione è sbagliata." },
-      { "tag": "3", "title": "Una quota", "text": "Quanto ti viene pagato se è corretta." }
-    ], "note": "In Italia solo con operatori che hanno una concessione ADM." },
-    { "type": "equation", "dur": 7, "title": "Come si calcola la vincita", "formula": "Vincita totale = <b>puntata × quota</b>", "step": 1.4, "lines": [
-      { "lhs": "10 € × 2,50", "rhs": "= 25 €", "note": "Se l'esito si verifica: 10 € di puntata + 15 € di guadagno netto" },
-      { "lhs": "Esito sbagliato", "rhs": "− 10 €", "tone": "warn", "note": "Se non si verifica perdi la puntata" }
-    ] },
-    { "type": "cards", "dur": 8.5, "title": "I mercati più comuni", "cols": 3, "step": 0.45, "items": [
-      { "title": "1X2", "text": "Vince la casa, pareggio o vince l'ospite." },
-      { "title": "Over/Under", "text": "Totale gol sopra o sotto una soglia, es. 2,5." },
-      { "title": "Goal/No goal", "text": "Segnano entrambe oppure no." },
-      { "title": "Handicap", "text": "Vantaggio virtuale per equilibrare un favorito." },
-      { "title": "Multipla", "text": "Quote moltiplicate, ma basta un errore per perdere tutto." }
-    ] },
-    { "type": "budget", "dur": 8.5, "title": "Decidi il budget prima", "budget": 50, "stake": 2, "drainStart": 1.6, "drainDur": 3.6, "text": "50 € al mese, puntate da 2 €: servono 25 giocate perse per finirlo. Hai il tempo di fermarti e valutare." },
-    { "type": "cards", "dur": 8, "title": "Errori da evitare", "cols": 2, "tone": "warn", "items": [
-      { "title": "Inseguire le perdite", "text": "Alzare le puntate per recuperare fa perdere di più, e più in fretta." },
-      { "title": "Giocare con il cuore", "text": "Sulla propria squadra è difficile essere obiettivi." },
-      { "title": "Quota bassa ≠ sicura", "text": "Indica un esito probabile, non certo." },
-      { "title": "Multiple troppo lunghe", "text": "Più selezioni, più crolla la probabilità di prenderle tutte." }
-    ] },
-    { "type": "callout", "tone": "warn", "dur": 6, "title": "Prima di tutto", "text": "Le scommesse sono intrattenimento a pagamento, non un modo per guadagnare. Gioca solo ciò che puoi permetterti di perdere.", "note": "Nessun metodo garantisce vincite. Diffida di chi vende pronostici \"sicuri\"." },
-    { "type": "outro", "dur": 4.5, "text": "Tutti i dettagli e il percorso consigliato nella guida completa, qui sotto.", "cta": "Per principianti · Quota Guru" }
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Per principianti",
+      "title": "Le scommesse sportive in breve",
+      "subtitle": "Quote, mercati, budget ed errori da evitare: le basi prima di iniziare.",
+      "voice": "Le scommesse sportive in breve: quote, mercati, budget ed errori da evitare."
+    },
+    {
+      "type": "cards",
+      "dur": 7.5,
+      "title": "Cos'è una scommessa",
+      "items": [
+        {
+          "tag": "1",
+          "title": "Una previsione",
+          "text": "Su un esito: chi vince, quanti gol, chi vince un set."
+        },
+        {
+          "tag": "2",
+          "title": "Una puntata",
+          "text": "La somma che rischi se la previsione è sbagliata."
+        },
+        {
+          "tag": "3",
+          "title": "Una quota",
+          "text": "Quanto ti viene pagato se è corretta."
+        }
+      ],
+      "note": "In Italia solo con operatori che hanno una concessione ADM.",
+      "voice": "Una scommessa è fatta di tre cose: una previsione su un esito, una puntata, cioè la somma che rischi, e una quota, che dice quanto ti viene pagato se hai ragione. In Italia si gioca solo con operatori autorizzati dall'Agenzia delle Dogane e dei Monopoli."
+    },
+    {
+      "type": "equation",
+      "dur": 7,
+      "title": "Come si calcola la vincita",
+      "formula": "Vincita totale = <b>puntata × quota</b>",
+      "step": 1.4,
+      "lines": [
+        {
+          "lhs": "10 € × 2,50",
+          "rhs": "= 25 €",
+          "note": "Se l'esito si verifica: 10 € di puntata + 15 € di guadagno netto"
+        },
+        {
+          "lhs": "Esito sbagliato",
+          "rhs": "− 10 €",
+          "tone": "warn",
+          "note": "Se non si verifica perdi la puntata"
+        }
+      ],
+      "voice": "La vincita totale è puntata per quota. Punti dieci euro a quota due e cinquanta: se l'esito si verifica ricevi venticinque euro, di cui quindici di guadagno. Se non si verifica, perdi i dieci euro."
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "I mercati più comuni",
+      "cols": 3,
+      "step": 0.45,
+      "items": [
+        {
+          "title": "1X2",
+          "text": "Vince la casa, pareggio o vince l'ospite."
+        },
+        {
+          "title": "Over/Under",
+          "text": "Totale gol sopra o sotto una soglia, es. 2,5."
+        },
+        {
+          "title": "Goal/No goal",
+          "text": "Segnano entrambe oppure no."
+        },
+        {
+          "title": "Handicap",
+          "text": "Vantaggio virtuale per equilibrare un favorito."
+        },
+        {
+          "title": "Multipla",
+          "text": "Quote moltiplicate, ma basta un errore per perdere tutto."
+        }
+      ],
+      "voice": "I mercati più comuni sono: uno, ics, due; over e under, sul totale dei gol; goal o no goal; l'handicap; e la multipla, dove le quote si moltiplicano, ma basta un errore per perdere tutto."
+    },
+    {
+      "type": "budget",
+      "dur": 8.5,
+      "title": "Decidi il budget prima",
+      "budget": 50,
+      "stake": 2,
+      "drainStart": 1.6,
+      "drainDur": 3.6,
+      "text": "50 € al mese, puntate da 2 €: servono 25 giocate perse per finirlo. Hai il tempo di fermarti e valutare.",
+      "voice": "Decidi il budget prima di iniziare. Con cinquanta euro al mese e puntate da due euro, servono venticinque giocate perse per finirlo: hai il tempo di fermarti e valutare."
+    },
+    {
+      "type": "cards",
+      "dur": 8,
+      "title": "Errori da evitare",
+      "cols": 2,
+      "tone": "warn",
+      "items": [
+        {
+          "title": "Inseguire le perdite",
+          "text": "Alzare le puntate per recuperare fa perdere di più, e più in fretta."
+        },
+        {
+          "title": "Giocare con il cuore",
+          "text": "Sulla propria squadra è difficile essere obiettivi."
+        },
+        {
+          "title": "Quota bassa ≠ sicura",
+          "text": "Indica un esito probabile, non certo."
+        },
+        {
+          "title": "Multiple troppo lunghe",
+          "text": "Più selezioni, più crolla la probabilità di prenderle tutte."
+        }
+      ],
+      "voice": "Gli errori da evitare: inseguire le perdite, giocare con il cuore, scambiare una quota bassa per una certezza e costruire multiple troppo lunghe."
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "dur": 6,
+      "title": "Prima di tutto",
+      "text": "Le scommesse sono intrattenimento a pagamento, non un modo per guadagnare. Gioca solo ciò che puoi permetterti di perdere.",
+      "note": "Nessun metodo garantisce vincite. Diffida di chi vende pronostici \"sicuri\".",
+      "voice": "Prima di tutto: le scommesse sono intrattenimento a pagamento, non un modo per guadagnare. Gioca solo ciò che puoi permetterti di perdere."
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli e il percorso consigliato nella guida completa, qui sotto.",
+      "cta": "Per principianti · Quota Guru",
+      "voice": "Tutti i dettagli sono nella guida completa, qui sotto."
+    }
   ]
 }
