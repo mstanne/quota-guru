@@ -80,7 +80,7 @@ def mix_audio(board, work, total):
     n = len(labels)
     out = work / "mix.m4a"
     if n == 0:  # solo musica, a volume da sottofondo
-        f = f"[0:a]atrim=0:{total:.3f},loudnorm=I=-20:TP=-2:LRA=11[out]"
+        f = f"[0:a]atrim=0:{total:.3f},loudnorm=I=-18:TP=-1.5:LRA=11[out]"
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(music), "-filter_complex", f,
                         "-map", "[out]", "-ar", "44100", "-c:a", "aac", "-b:a", "96k", str(out)], check=True)
         return out

@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """
 Musica di sottofondo originale per i video delle guide, generata via codice (nessun brano di terzi).
-Pad morbido + arpeggio pizzicato + basso, 92 BPM, giro La- Fa Do Sol. Deterministica.
+Deterministica. Due stili:
+  sport (predefinito): 124 BPM, cassa dritta, clap, charleston, basso in ottavi, accordi "stab" in levare,
+                       pad con effetto pompa; giro La- Fa Do Sol.
+  calm: pad morbido + arpeggio pizzicato + basso, 92 BPM.
 
-Uso: python3 music.py <secondi> <out.wav>
+Uso: python3 music.py <secondi> <out.wav> [sport|calm]
 """
 import sys, wave
 import numpy as np
@@ -101,9 +104,133 @@ def make(seconds):
     return (out * 0.8 * 32767).astype(np.int16)
 
 
+# ---------------------------------------------------------------- stile "sport"
+def kick():
+    t = np.arange(int(0.35 * SR)) / SR
+    f = 50 + 110 * np.exp(-t * 28)  # caduta di intonazione
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    return np.sin(ph) * np.exp(-t * 9) + 0.15 * np.sin(ph * 2) * np.exp(-t * 30)
+
+
+def noise(n, seed):
+    return np.random.default_rng(seed).uniform(-1, 1, n)
+
+
+def clap(seed):
+    from scipy.signal import butter, lfilter  # type: ignore
+
+    n = int(0.25 * SR)
+    t = np.arange(n) / SR
+    b, a = butter(2, [900 / (SR / 2), 5000 / (SR / 2)], "band")
+    x = lfilter(b, a, noise(n, seed))
+    env = np.exp(-t * 18)
+    for d in (0.0, 0.011, 0.022):  # tre colpi ravvicinati = clap
+        env += (t >= d) * np.exp(-np.clip(t - d, 0, None) * 120) * 0.8
+    tone = 0.3 * np.sin(2 * np.pi * 190 * t) * np.exp(-t * 25)
+    return x * env * 1.4 + tone
+
+
+def hat(seed, open_=False):
+    from scipy.signal import butter, lfilter  # type: ignore
+
+    n = int((0.22 if open_ else 0.05) * SR)
+    t = np.arange(n) / SR
+    b, a = butter(2, 7000 / (SR / 2), "high")
+    return lfilter(b, a, noise(n, seed)) * np.exp(-t * (14 if open_ else 70))
+
+
+def saw(f, n, harm=10):
+    t = np.arange(n) / SR
+    return sum(((-1) ** (h + 1)) * np.sin(2 * np.pi * f * h * t) / h for h in range(1, harm + 1))
+
+
+def bass_note(f, dur):
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    x = saw(f, n, 8) * 0.6 + np.sin(2 * np.pi * f * t)
+    return lowpass(x, 700) * np.exp(-t * 6) * np.minimum(1, t / 0.004) * np.minimum(1, (dur - t) / 0.01).clip(0)
+
+
+def stab(freqs, dur=0.22):
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    x = sum(saw(f * 2 ** (d / 12), n, 12) for f in freqs for d in (-0.1, 0.1))
+    return lowpass(x, 2600) * np.exp(-t * 11) * np.minimum(1, t / 0.003) / len(freqs)
+
+
+def make_sport(seconds):
+    bpm = 124
+    beat = 60 / bpm
+    bar = 4 * beat
+    n = int((seconds + 3) * SR)
+    L, R = np.zeros(n), np.zeros(n)
+
+    def put(sig, at, gl=1.0, gr=1.0):
+        add(L, sig * gl, at)
+        add(R, sig * gr, at)
+
+    K, H, HO = kick(), [hat(s) for s in range(8)], hat(99, True)
+    pump = np.ones(n)  # inviluppo "pompa" applicato a pad e stab
+    t0, k, nbar = 0.0, 0, 0
+    while t0 < seconds + bar:
+        ch = CHORDS[(nbar // 2) % 4]
+        root = ROOTS[(nbar // 2) % 4]
+        intro = nbar < 1  # prima battuta: solo charleston e basso, poi entra tutto
+        for b in range(4):
+            at = t0 + b * beat
+            if not intro:
+                put(0.9 * K, at)
+                i = int(at * SR)
+                m = min(n, i + int(beat * SR))
+                pump[i:m] = np.minimum(pump[i:m], 0.35 + 0.65 * np.minimum(1, np.arange(m - i) / (beat * SR * 0.6)))
+                if b in (1, 3):
+                    put(0.45 * clap(nbar * 4 + b), at, 0.9, 1.0)
+            for s16 in range(4):  # charleston in sedicesimi, accento in levare
+                h = H[(nbar + b + s16) % 8] * (0.22 if s16 == 2 else 0.09)
+                put(h, at + s16 * beat / 4, 0.7, 1.0)
+            if b == 3 and nbar % 2 == 1:
+                put(0.12 * HO, at + beat / 2, 1.0, 0.7)
+            # basso in ottavi: tonica, ottava in levare
+            put(0.42 * bass_note(hz(root - 12), beat / 2 * 0.9), at)
+            put(0.32 * bass_note(hz(root), beat / 2 * 0.9), at + beat / 2)
+        nbar += 1
+        t0 += bar
+    # pad + stab (passano dalla pompa)
+    P = np.zeros(n)
+    t0, nbar = 0.0, 0
+    while t0 < seconds + bar:
+        ch = CHORDS[(nbar // 2) % 4]
+        if nbar % 2 == 0:
+            for m in ch:
+                add(P, 0.5 * pad_note(hz(m), 2 * bar + 0.8), t0)
+        if nbar >= 1:
+            for b in range(4):
+                add(P, 0.28 * stab([hz(m + 12) for m in ch]), t0 + b * beat + beat / 2)
+        nbar += 1
+        t0 += bar
+    P *= pump
+    L += P
+    R += P
+    d = int(beat * 0.75 * SR)  # eco leggera
+    for _ in range(2):
+        L[d:] += 0.12 * R[:-d]
+        R[d:] += 0.12 * L[:-d]
+    return L, R
+
+
+def finish(L, R, seconds):
+    out = np.stack([L, R], 1)[: int(seconds * SR)]
+    fi, fo = int(0.3 * SR), int(2.5 * SR)
+    out[:fi] *= np.linspace(0, 1, fi)[:, None]
+    out[-fo:] *= np.linspace(1, 0, fo)[:, None]
+    out = np.tanh(out / (np.abs(out).max() + 1e-9) * 1.6) / np.tanh(1.6)  # leggera saturazione
+    return (out * 0.85 * 32767).astype(np.int16)
+
+
 if __name__ == "__main__":
     secs, path = float(sys.argv[1]), sys.argv[2]
-    data = make(secs)
+    style = sys.argv[3] if len(sys.argv) > 3 else "sport"
+    data = finish(*make_sport(secs), secs) if style == "sport" else make(secs)
     with wave.open(path, "wb") as w:
         w.setnchannels(2)
         w.setsampwidth(2)
