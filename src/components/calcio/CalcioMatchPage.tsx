@@ -59,6 +59,7 @@ import { DataUpdatedNote } from "./DataUpdatedNote";
 import { matchBroadcast } from "../../lib/tvSchedule";
 import { BroadcastRow } from "../media/BroadcastInfo";
 import { ArchivedOrNotFound } from "../../lib/archive";
+import { TelegramBanner } from "../TelegramBanner";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 
@@ -559,6 +560,9 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
             </dl>
           </section>
           <MiniStandings competition={competition} match={match} />
+          {!finished && (
+            <TelegramBanner topic={competition.slug === "serie-a" ? "formazioni" : "partita"} stacked />
+          )}
         </aside>
 
         {sameRound.length > 0 && (

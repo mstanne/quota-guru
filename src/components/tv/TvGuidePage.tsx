@@ -12,6 +12,7 @@ import { BROADCAST_SEASON, COMPETITION_RIGHTS } from "../../lib/broadcast";
 import { channelCounts, channelTokens, tvDay, tvGuideMeta, type TvRow } from "../../lib/tvGuide";
 import { dayPath } from "../../lib/dayPages";
 import { paths } from "../../routes";
+import { TelegramBanner } from "../TelegramBanner";
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const list = (xs: string[]) => (xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} e ${xs[xs.length - 1]}`);
@@ -151,6 +152,8 @@ export function TvGuidePage() {
 
           <Day d="oggi" channel={channel} />
           <Day d="domani" channel={channel} />
+
+          <TelegramBanner topic="tv" className="mb-10" />
 
           <section aria-labelledby="diritti" className="rounded-xl border border-slate-800 bg-slate-900 p-5">
             <h2 id="diritti" className="text-white text-xl mb-3">

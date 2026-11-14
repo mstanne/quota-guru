@@ -9,6 +9,8 @@ import { pct } from "../../lib/predictionsCore";
 import { usePageMeta } from "../../lib/pageMeta";
 import { PageHeader, MetaItems } from "../layout/PageHeader";
 import { TRIS_KINDS, trisData, trisLead, trisMeta, trisOf, type Tris, type TrisPick } from "../../lib/trisPage";
+import { TelegramBanner } from "../TelegramBanner";
+import { site } from "../../data/site";
 
 const STATUS: Record<Tris["status"], string> = {
   "in-attesa": "Da giocare",
@@ -211,6 +213,8 @@ export function TrisPage() {
           );
         })}
 
+        <TelegramBanner topic="tris" />
+
         <section aria-labelledby="come-tris" className="rounded-xl border border-slate-800 bg-slate-900 p-5">
           <h2 id="come-tris" className="text-white text-lg mb-2">
             Come viene scelto
@@ -224,7 +228,18 @@ export function TrisPage() {
               Il tris viene registrato la mattina in cui esce, con le probabilità di quel momento, e non viene più
               cambiato: anche quando le stime delle partite si aggiornano, qui resta quello pubblicato.
             </li>
-            <li>Lo stesso tris esce sul nostro canale Telegram; il lunedì il bilancio dice com'è andato.</li>
+            <li>
+              Lo stesso tris esce sul nostro{" "}
+              <a
+                href={site.social.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-action-text hover:text-action-text-hover"
+              >
+                canale Telegram
+              </a>
+              ; il lunedì il bilancio dice com'è andato.
+            </li>
           </ul>
           <p className="mt-3 text-slate-400 text-sm">
             Il modello non conosce infortuni, squalifiche e turnover.{" "}
