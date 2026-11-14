@@ -7,11 +7,12 @@ Uso:
 
 Legge scripts/guide-videos/storyboards/<slug>.json, disegna ogni fotogramma con player.html (Playwright/Chromium)
 e scrive in public/video/guide/:
-  <slug>-16x9.mp4, <slug>-9x16.mp4  (H.264, 30 fps, voce + musica AAC; --no-audio per il muto)
+  <slug>-16x9.mp4, <slug>-9x16.mp4  (H.264, 30 fps, musica di sottofondo AAC; --voice aggiunge la voce, --no-audio per il muto)
   <slug>-16x9.jpg, <slug>-9x16.jpg  (poster)
 Con --stills salva solo i fotogrammi indicati (in /tmp/guide-video-stills) per controllare l'impaginazione.
 
-Voce: campo "voice" di ogni scena, letto con Piper TTS (voce italiana it_IT-paola-medium, scaricata al primo uso
+Musica: music.py (generata, originale). Di default i video hanno solo la musica.
+Voce (opzionale, --voice): campo "voice" di ogni scena, letto con Piper TTS (voce italiana it_IT-paola-medium, scaricata al primo uso
 in ~/.cache/quota-guru-tts). Ogni scena dura almeno quanto la sua voce. Musica: music.py (generata, originale),
 abbassata automaticamente mentre parla la voce.
 
@@ -77,11 +78,16 @@ def mix_audio(board, work, total):
             labels.append((len(labels), ms))
         start += sc["dur"]
     n = len(labels)
+    out = work / "mix.m4a"
+    if n == 0:  # solo musica, a volume da sottofondo
+        f = f"[0:a]atrim=0:{total:.3f},loudnorm=I=-20:TP=-2:LRA=11[out]"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(music), "-filter_complex", f,
+                        "-map", "[out]", "-ar", "44100", "-c:a", "aac", "-b:a", "96k", str(out)], check=True)
+        return out
     f = "".join(f"[{k}:a]aresample=44100,aformat=channel_layouts=stereo,adelay={ms}|{ms}[d{k}];" for k, ms in labels)
     f += "".join(f"[d{k}]" for k, _ in labels) + f"amix=inputs={n}:normalize=0,apad=whole_dur={total:.3f},asplit=2[voice][key];"
     f += f"[{n}:a]volume=0.32[mus];[mus][key]sidechaincompress=threshold=0.02:ratio=6:attack=60:release=600[duck];"
     f += f"[voice][duck]amix=inputs=2:normalize=0,atrim=0:{total:.3f},loudnorm=I=-16:TP=-1.5:LRA=11[out]"
-    out = work / "mix.m4a"
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *inputs, "-i", str(music), "-filter_complex", f,
                     "-map", "[out]", "-ar", "44100", "-c:a", "aac", "-b:a", "96k", str(out)], check=True)
     return out
@@ -157,12 +163,14 @@ def main():
     ap.add_argument("--aspect", default="both", choices=["landscape", "portrait", "both"])
     ap.add_argument("--stills", default="")
     ap.add_argument("--no-audio", action="store_true")
+    ap.add_argument("--voice", action="store_true", help="aggiunge la voce narrante (Piper TTS)")
     a = ap.parse_args()
     board = load_board(a.slug)
     work = Path(tempfile.mkdtemp(prefix=f"gv-{a.slug}-"))
     audio = None
     if not a.no_audio and not a.stills:
-        synth_voices(board, work)
+        if a.voice:
+            synth_voices(board, work)
         total = sum(sc["dur"] for sc in board["scenes"])
         audio = mix_audio(board, work, total)
         print(f"  audio pronto: {total:.1f} s", flush=True)

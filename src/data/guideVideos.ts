@@ -12,8 +12,8 @@ export interface GuideVideo {
 }
 
 export const guideVideos: Record<string, GuideVideo> = {
-  "come-leggere-le-quote": { seconds: 76, published: "2026-11-14" },
-  "guida-completa-scommesse-sportive": { seconds: 76, published: "2026-11-14" },
+  "come-leggere-le-quote": { seconds: 48, published: "2026-11-14" },
+  "guida-completa-scommesse-sportive": { seconds: 55, published: "2026-11-14" },
 };
 
 /** Percorsi (relativi alla radice del sito) dei file di un video. */

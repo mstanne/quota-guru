@@ -42,7 +42,7 @@ export function GuideVideo({ slug, title }: { slug: string; title: string }) {
         }}
       />
       <figcaption className="mt-2 text-sm text-slate-400">
-        Il riassunto in video, con voce narrante. Dettagli ed esempi sono nel testo qui sotto.
+        Il riassunto in video. Dettagli ed esempi sono nel testo qui sotto.
       </figcaption>
     </figure>
   );
