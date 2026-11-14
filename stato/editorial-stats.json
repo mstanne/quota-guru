@@ -1,13 +1,13 @@
 {
- "at": "2026-11-14T01:35:13.652Z",
+ "at": "2026-11-14T03:25:16.423Z",
  "enabled": true,
  "model": "claude-haiku-5-5",
- "templates": 2486,
- "candidates": 550,
- "online": 378,
+ "templates": 2489,
+ "candidates": 555,
+ "online": 381,
  "new": 40,
  "rejected": 0,
  "errors": 0,
- "pending": 172,
+ "pending": 174,
  "requests": 40
 }
