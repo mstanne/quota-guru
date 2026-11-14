@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Mail, Twitter } from "lucide-react";
+import { Facebook, Instagram, Mail, Send, Twitter } from "lucide-react";
 import { Link } from "../lib/links";
 import { BrandLogo } from "./brand/BrandLogo";
 import { paths } from "../routes";
@@ -11,6 +11,7 @@ const socialLinks = [
   { href: site.social.facebook, label: "Facebook", Icon: Facebook },
   { href: site.social.x, label: "X (Twitter)", Icon: Twitter },
   { href: site.social.instagram, label: "Instagram", Icon: Instagram },
+  { href: site.social.telegram, label: "Canale Telegram", Icon: Send },
   { href: isFilled(site.email) ? `mailto:${site.email}` : "", label: "Scrivici una email", Icon: Mail },
 ].filter((l) => isFilled(l.href));
 

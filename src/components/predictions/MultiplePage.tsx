@@ -20,6 +20,7 @@ import {
   type Multipla,
   type MultiplePick,
 } from "../../lib/multiplePage";
+import { TelegramBanner } from "../TelegramBanner";
 
 const STATUS: Record<Multipla["status"], string> = {
   "in-attesa": "Da giocare",
@@ -249,6 +250,8 @@ export function MultiplePage() {
             </p>
           )}
         </section>
+
+        <TelegramBanner topic="multiple" />
 
         <section aria-labelledby="perche" className="rounded-xl border border-slate-800 bg-slate-900 p-5">
           <h2 id="perche" className="text-white text-lg mb-2">

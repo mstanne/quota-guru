@@ -17,6 +17,7 @@ import { dayIntro } from "../../lib/editorial/extraTexts";
 import { Rich } from "../content/Rich";
 import { dayMatches, dayMeta, dayOf, dayPath, type DayKey } from "../../lib/dayPages";
 import { paths } from "../../routes";
+import { TelegramBanner } from "../TelegramBanner";
 
 const MARKET_IDS = FOOTBALL_MARKETS.map((m) => m.id);
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -176,6 +177,8 @@ export function DayPredictionsPage({ day }: { day: DayKey }) {
             </div>
           </section>
         )}
+
+        <TelegramBanner topic="pronostici" className="mb-8 max-w-3xl" />
 
         <p className="text-slate-400 text-xs">
           Orari in ora italiana. Probabilità stimate da modelli statistici: non conoscono infortuni, squalifiche e

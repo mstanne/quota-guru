@@ -18,6 +18,8 @@ export const site = {
     facebook: "",
     x: "",
     instagram: "",
+    /** Telegram channel (posts: scripts/telegram/README.md); also shown as a banner on the prediction pages. */
+    telegram: "https://t.me/quotaguru",
   },
 };
 

@@ -21,6 +21,7 @@ import { basketPredictionFor } from "../../lib/basketPredict";
 import { footballTrackRecord } from "../../lib/trackRecordFootball";
 import { nbaTrackRecord } from "../../lib/trackRecordNba";
 import { paths } from "../../routes";
+import { TelegramBanner } from "../TelegramBanner";
 
 const more = "inline-flex items-center gap-1 text-sm text-action-text hover:text-action-text-hover";
 
@@ -151,6 +152,8 @@ export function PronosticiPage() {
           )}
           <TrackRecordBox record={footballTrackRecord()} sport="calcio" className="mt-6" />
         </Section>
+
+        <TelegramBanner topic="pronostici" className="mb-12" />
 
         <Section
           id="nba"

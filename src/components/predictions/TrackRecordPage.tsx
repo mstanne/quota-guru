@@ -14,6 +14,7 @@ import { CalibrationSection } from "./CalibrationChart";
 import { usePageMeta } from "../../lib/pageMeta";
 import { trackRecordMeta, trackLead, ARCHIVE_FILES } from "../../lib/trackRecordMeta";
 import { ARCHIVE_TERMS, PREDICTIONS_LICENSE } from "../../lib/archiveLicense.mjs";
+import { TelegramBanner } from "../TelegramBanner";
 
 const rate = (x: { n: number; hits: number }) => (x.n ? Math.round((x.hits / x.n) * 100) : 0);
 const MONTHS = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"];
@@ -169,6 +170,7 @@ export function TrackRecordPage() {
         {/* the figures in one sentence, the part search engines and AI assistants quote */}
         <p className="text-slate-200 text-lg leading-relaxed">{trackLead(football, nba)}</p>
         <SportSection sport="calcio" record={football} />
+        <TelegramBanner topic="bilancio" />
         {nationals.all.n > 0 && <SportSection sport="nazionali" record={nationals} />}
         {nba.all.n > 0 && <SportSection sport="nba" record={nba} />}
         <CalibrationSection />
