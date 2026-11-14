@@ -1,0 +1,24 @@
+{
+  "slug": "come-leggere-le-quote",
+  "scenes": [
+    { "type": "intro", "dur": 4.5, "kicker": "Guida · Quote e probabilità", "title": "Come leggere le quote sportive", "subtitle": "Formati, probabilità implicita e margine dell'operatore in meno di un minuto." },
+    { "type": "cards", "dur": 8, "title": "Stesso esito, tre formati", "items": [
+      { "tag": "Decimale · Italia", "big": "2,50", "title": "Vincita totale = puntata × 2,50" },
+      { "tag": "Frazionario · UK", "big": "3/2", "title": "Guadagni 3 ogni 2 puntati" },
+      { "tag": "Americano · USA", "big": "+150", "title": "Guadagni 150 su 100 puntati" }
+    ], "note": "Su Quota Guru tutte le quote sono in formato decimale, come sui siti italiani." },
+    { "type": "equation", "dur": 7.5, "title": "Dalla quota alla probabilità", "formula": "<b>1 ÷ quota</b> = probabilità che l'operatore sta prezzando", "lines": [
+      { "lhs": "1 ÷ 2,00", "rhs": "= 50%" },
+      { "lhs": "1 ÷ 1,50", "rhs": "≈ 66,7%" },
+      { "lhs": "1 ÷ 4,00", "rhs": "= 25%" }
+    ] },
+    { "type": "margin", "dur": 10.5, "title": "Il margine dell'operatore", "odds": [["1", "2,10", "47,6%"], ["X", "3,40", "29,4%"], ["2", "3,60", "27,8%"]], "margin": "4,8%", "note": "Le probabilità sommano più del 100%: la differenza è il margine. Per questo, nel lungo periodo, chi gioca perde in media." },
+    { "type": "bullets", "dur": 7, "title": "Perché le quote cambiano", "items": [
+      "Notizie su formazioni, infortuni e meteo",
+      "Volume di giocate su un esito",
+      "Eventi in partita: gol, espulsioni, break"
+    ], "note": "Conta sempre la quota sul sito dell'operatore al momento della giocata." },
+    { "type": "callout", "dur": 6, "title": "Perché confrontare le quote", "text": "Operatori diversi applicano margini diversi: lo stesso esito può essere pagato meglio altrove.", "note": "Confrontare non cambia la probabilità dell'evento, solo quanto ti viene pagato." },
+    { "type": "outro", "dur": 4.5, "text": "Esempi e dettagli nella guida completa, qui sotto.", "cta": "Quote e probabilità · Quota Guru" }
+  ]
+}
