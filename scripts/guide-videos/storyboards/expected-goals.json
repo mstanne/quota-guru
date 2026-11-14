@@ -1,0 +1,91 @@
+{
+  "slug": "expected-goals",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Analisi delle partite",
+      "title": "Cosa sono gli expected goals (xG)",
+      "subtitle": "Come si calcolano, cosa mostrano oltre il risultato e quali limiti hanno."
+    },
+    {
+      "type": "cards",
+      "dur": 8,
+      "title": "La probabilità che un tiro diventi gol",
+      "step": 0.5,
+      "items": [
+        {
+          "tag": "Da 30 metri",
+          "big": "0,03",
+          "title": "xG"
+        },
+        {
+          "tag": "Rigore",
+          "big": "≈ 0,78",
+          "title": "xG"
+        },
+        {
+          "tag": "Porta vuota, 2 metri",
+          "big": "> 0,9",
+          "title": "xG"
+        }
+      ],
+      "note": "Contano distanza, angolo, parte del corpo, tipo di azione e difensori."
+    },
+    {
+      "type": "equation",
+      "dur": 7,
+      "title": "Sommando i tiri",
+      "step": 1.2,
+      "lines": [
+        {
+          "lhs": "12 tiri",
+          "rhs": "= 1,8 xG",
+          "note": "Con occasioni di quella qualità, in media circa due gol"
+        }
+      ]
+    },
+    {
+      "type": "bullets",
+      "dur": 7.5,
+      "title": "A cosa servono",
+      "items": [
+        "Capire se un risultato rispecchia la partita",
+        "Valutare il rendimento su più gare",
+        "Trovare chi crea molto ma segna poco, o il contrario"
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "I limiti",
+      "cols": 2,
+      "step": 0.45,
+      "items": [
+        {
+          "title": "Modelli diversi",
+          "text": "I valori di siti diversi non coincidono."
+        },
+        {
+          "title": "Non vedono tutto",
+          "text": "Un'azione senza tiro vale zero."
+        },
+        {
+          "title": "Qualità dei giocatori",
+          "text": "Un attaccante preciso segna più dei suoi xG."
+        },
+        {
+          "title": "Campioni piccoli",
+          "text": "Su poche partite oscillano molto."
+        }
+      ],
+      "note": "Gli xG descrivono il passato, non predicono il risultato."
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Analisi delle partite · Quota Guru"
+    }
+  ]
+}

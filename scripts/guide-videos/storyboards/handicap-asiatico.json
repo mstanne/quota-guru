@@ -1,0 +1,82 @@
+{
+  "slug": "handicap-asiatico",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Sport specifici",
+      "title": "L'handicap asiatico",
+      "subtitle": "Linee intere, mezze e quarti, con esempi."
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "L'idea di base",
+      "text": "Un vantaggio o svantaggio in gol che elimina il pareggio come esito a sé.",
+      "note": "Se con l'handicap il risultato è in parità, la puntata può essere rimborsata in tutto o in parte."
+    },
+    {
+      "type": "cards",
+      "dur": 9,
+      "title": "Le linee, se la favorita vince 1-0",
+      "cols": 2,
+      "step": 0.45,
+      "items": [
+        {
+          "tag": "Linea 0",
+          "title": "Vinta",
+          "text": "Con il pareggio: rimborso, come il draw no bet."
+        },
+        {
+          "tag": "Linea -0,5",
+          "title": "Vinta",
+          "text": "Mai rimborso."
+        },
+        {
+          "tag": "Linea -1",
+          "title": "Rimborsata",
+          "text": "Serve vincere con 2 gol di scarto."
+        },
+        {
+          "tag": "Linea -1,5",
+          "title": "Persa",
+          "text": "Mai rimborso."
+        }
+      ]
+    },
+    {
+      "type": "equation",
+      "dur": 9,
+      "title": "Le linee divise",
+      "formula": "10 € a <b>-0,75</b>, quota 1,90, risultato 1-0",
+      "step": 1.1,
+      "lines": [
+        {
+          "lhs": "5 € su -0,5",
+          "rhs": "9,50 €"
+        },
+        {
+          "lhs": "5 € su -1",
+          "rhs": "5 € rimborsati"
+        },
+        {
+          "lhs": "Totale",
+          "rhs": "14,50 €",
+          "note": "Le linee in ,25 e ,75 dividono la puntata a metà su due linee vicine"
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "dur": 6,
+      "title": "Anche sui totali gol",
+      "text": "Over 2 con 1-1: puntata rimborsata. Over 2,25: metà rimborsata, metà persa."
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Sport specifici · Quota Guru"
+    }
+  ]
+}

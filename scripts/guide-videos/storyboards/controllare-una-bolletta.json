@@ -1,0 +1,77 @@
+{
+  "slug": "controllare-una-bolletta",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Per principianti",
+      "title": "Controllare una bolletta",
+      "subtitle": "Esito, eventi rinviati, riscossione e cosa fare in caso di errore."
+    },
+    {
+      "type": "bullets",
+      "dur": 7,
+      "title": "Come verificare l'esito",
+      "items": [
+        "Al banco o al terminale: scansione del codice",
+        "Sul sito del concessionario, con il codice della bolletta",
+        "Online la giocata si aggiorna da sola nello storico"
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "Se un evento è annullato",
+      "items": [
+        {
+          "title": "Singola",
+          "text": "La giocata è rimborsata."
+        },
+        {
+          "title": "Multipla",
+          "text": "L'evento vale quota 1,00: la bolletta resta valida sugli altri."
+        },
+        {
+          "title": "Sistema",
+          "text": "Stesso principio per ogni combinazione che lo contiene."
+        }
+      ],
+      "note": "È la regola più diffusa: fa sempre fede il regolamento dell'operatore."
+    },
+    {
+      "type": "equation",
+      "dur": 8,
+      "title": "Un esempio",
+      "formula": "Multipla da <b>10 €</b>, la terza partita viene annullata",
+      "step": 1.3,
+      "lines": [
+        {
+          "lhs": "1,85 × 1,70 × 1,95",
+          "rhs": "≈ 61,33 €"
+        },
+        {
+          "lhs": "1,85 × 1,70 × 1,00",
+          "rhs": "≈ 31,45 €",
+          "tone": "warn",
+          "note": "Se gli altri due esiti sono corretti, la vincita si riduce"
+        }
+      ]
+    },
+    {
+      "type": "bullets",
+      "dur": 8,
+      "title": "Riscossione e reclami",
+      "items": [
+        "Bolletta originale in un'agenzia dello stesso operatore",
+        "Per vincite alte può servire un documento",
+        "In caso di dubbio: assistenza, reclamo scritto, poi ADM"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Per principianti · Quota Guru"
+    }
+  ]
+}

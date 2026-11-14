@@ -1,0 +1,70 @@
+{
+  "slug": "gioco-problematico-dove-chiedere-aiuto",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Gestione del budget",
+      "title": "Gioco problematico: dove chiedere aiuto",
+      "subtitle": "Come riconoscere i segnali e a quali servizi gratuiti rivolgersi."
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "Quando diventa un problema",
+      "text": "Il segnale principale è la perdita di controllo: giocare più tempo o più denaro di quanto vorresti.",
+      "note": "È una dipendenza riconosciuta, e si può curare."
+    },
+    {
+      "type": "bullets",
+      "dur": 9,
+      "title": "Alcune domande da farsi",
+      "step": 0.75,
+      "items": [
+        "Senti il bisogno di giocare somme sempre più alte?",
+        "Hai mentito su quanto giochi o hai perso?",
+        "Torni a giocare per recuperare le perdite?",
+        "Ti senti irritabile quando provi a smettere?"
+      ],
+      "note": "Anche un solo sì è un buon motivo per parlarne con qualcuno."
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "A chi rivolgersi",
+      "items": [
+        {
+          "tag": "Gratuito e anonimo",
+          "title": "Telefono Verde 800 558 822",
+          "text": "Istituto Superiore di Sanità."
+        },
+        {
+          "tag": "Servizi pubblici",
+          "title": "SerD delle ASL",
+          "text": "Percorsi gratuiti e riservati."
+        },
+        {
+          "tag": "Auto-aiuto",
+          "title": "Gruppi di sostegno",
+          "text": "Come i Giocatori Anonimi."
+        }
+      ]
+    },
+    {
+      "type": "bullets",
+      "dur": 7.5,
+      "title": "Per familiari e amici",
+      "items": [
+        "Parlane con calma, senza accuse",
+        "Evita di saldare i debiti di gioco",
+        "Anche i familiari possono chiedere aiuto"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Gestione del budget · Quota Guru"
+    }
+  ]
+}

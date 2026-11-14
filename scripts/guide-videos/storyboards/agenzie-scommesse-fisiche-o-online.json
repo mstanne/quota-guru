@@ -1,0 +1,72 @@
+{
+  "slug": "agenzie-scommesse-fisiche-o-online",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Per principianti",
+      "title": "Agenzia o sito online: cosa cambia",
+      "subtitle": "Pagamenti, controllo della spesa, assistenza e legalità a confronto."
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "Le stesse regole di fondo",
+      "text": "In agenzia come online servono una concessione ADM e la maggiore età, e le quote includono il margine.",
+      "note": "Non esiste un canale migliore in assoluto: dipende da come giochi."
+    },
+    {
+      "type": "cards",
+      "dur": 9,
+      "title": "Le differenze principali",
+      "cols": 2,
+      "step": 0.45,
+      "items": [
+        {
+          "tag": "Agenzia",
+          "title": "Contanti o carta al banco",
+          "text": "Nessun conto: si paga e si ritira la bolletta."
+        },
+        {
+          "tag": "Online",
+          "title": "Conto di gioco intestato",
+          "text": "Solo metodi di pagamento tracciabili."
+        },
+        {
+          "tag": "Agenzia",
+          "title": "Spesa da annotare a mano",
+          "text": "Nessun limite automatico né registro."
+        },
+        {
+          "tag": "Online",
+          "title": "Storico automatico",
+          "text": "Limiti di deposito e autoesclusione sul conto."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "dur": 7,
+      "title": "Il controllo della spesa",
+      "text": "Online il conto è sempre disponibile; in agenzia la spesa non si somma da sola. Tieni il conto in entrambi i casi.",
+      "note": "Se giochi in più posti per non vedere il totale, fermati e chiedi aiuto."
+    },
+    {
+      "type": "bullets",
+      "dur": 7.5,
+      "title": "Usare entrambi i canali",
+      "items": [
+        "Il prenotatore: prepari online, convalidi in agenzia",
+        "Le vincite online si incassano solo su conto o carta intestati",
+        "Agenzia e online: un unico budget"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Per principianti · Quota Guru"
+    }
+  ]
+}

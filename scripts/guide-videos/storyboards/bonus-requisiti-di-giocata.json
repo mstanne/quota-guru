@@ -1,0 +1,79 @@
+{
+  "slug": "bonus-requisiti-di-giocata",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Gestione del budget",
+      "title": "Bonus: leggere i requisiti di giocata",
+      "subtitle": "Rollover, quota minima e scadenza: cosa controllare prima di accettare."
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "dur": 6.5,
+      "title": "Un bonus non è un guadagno",
+      "text": "Per sbloccarlo devi giocare una somma diverse volte superiore al bonus, con il margine su ogni giocata."
+    },
+    {
+      "type": "cards",
+      "dur": 9,
+      "title": "Le condizioni da controllare",
+      "cols": 2,
+      "step": 0.45,
+      "items": [
+        {
+          "title": "Requisito di giocata",
+          "text": "Quante volte va giocato il bonus."
+        },
+        {
+          "title": "Quota minima",
+          "text": "Contano solo le giocate da quella quota in su."
+        },
+        {
+          "title": "Scadenza",
+          "text": "Entro quando completare il requisito."
+        },
+        {
+          "title": "Deposito minimo",
+          "text": "Quanto versare per ricevere l'offerta."
+        }
+      ]
+    },
+    {
+      "type": "equation",
+      "dur": 8.5,
+      "title": "Un esempio",
+      "formula": "Bonus 10 €, requisito <b>5x</b>, quota minima 1,50, 30 giorni",
+      "step": 1.2,
+      "lines": [
+        {
+          "lhs": "10 € × 5",
+          "rhs": "= 50 € di giocate"
+        },
+        {
+          "lhs": "Giocata a quota 1,40",
+          "rhs": "non conta",
+          "tone": "warn",
+          "note": "Se al trentesimo giorno sei a 40 €, bonus e vincite collegate decadono"
+        }
+      ]
+    },
+    {
+      "type": "bullets",
+      "dur": 7.5,
+      "title": "Cosa tenere a mente",
+      "items": [
+        "Non accettarlo solo perché c'è",
+        "Un bonus attivo può bloccare i prelievi",
+        "Valgono le condizioni pubblicate dall'operatore"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Gestione del budget · Quota Guru"
+    }
+  ]
+}

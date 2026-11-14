@@ -1,0 +1,64 @@
+{
+  "slug": "emozioni-e-disciplina",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Academy",
+      "title": "Emozioni e disciplina: evitare il tilt",
+      "subtitle": "Come riconoscere le giocate impulsive e quali regole aiutano a mantenere il controllo."
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "Cos'è il tilt",
+      "text": "Lo stato in cui le emozioni prendono il posto del ragionamento: si gioca di più, più in fretta.",
+      "note": "Può arrivare dopo una perdita bruciante, ma anche dopo una grande vincita."
+    },
+    {
+      "type": "cards",
+      "dur": 8,
+      "title": "I segnali",
+      "items": [
+        {
+          "title": "Rincorrere le perdite",
+          "text": "Un'altra giocata, più alta, per rientrare subito."
+        },
+        {
+          "title": "Giocare per noia",
+          "text": "Su sport che non segui, solo perché c'è una partita."
+        },
+        {
+          "title": "Euforia",
+          "text": "Alzare le puntate dopo una vincita."
+        }
+      ]
+    },
+    {
+      "type": "bullets",
+      "dur": 9,
+      "title": "Regole personali",
+      "step": 0.75,
+      "items": [
+        "Budget del mese impostato come limite di deposito",
+        "Tempo massimo per sessione e pause obbligatorie",
+        "Partite scelte prima, a mente fredda",
+        "Un registro di tutte le giocate, anche le perse"
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "dur": 6.5,
+      "title": "Quando fermarsi",
+      "text": "Se pensi spesso a recuperare o le tue regole non reggono, fermati e chiedi aiuto.",
+      "note": "Telefono Verde 800 558 822, gratuito e anonimo."
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Academy · Quota Guru"
+    }
+  ]
+}

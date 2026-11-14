@@ -1,0 +1,108 @@
+{
+  "slug": "glossario-scommesse",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Per principianti",
+      "title": "Il glossario delle scommesse",
+      "subtitle": "I termini più usati, spiegati in parole semplici."
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "Le basi",
+      "step": 0.45,
+      "items": [
+        {
+          "title": "ADM",
+          "text": "Rilascia le concessioni e vigila sul gioco legale."
+        },
+        {
+          "title": "Quota",
+          "text": "Il moltiplicatore della puntata in caso di vincita."
+        },
+        {
+          "title": "Aggio (margine)",
+          "text": "La parte che l'operatore trattiene nelle quote."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 9,
+      "title": "I mercati",
+      "cols": 2,
+      "step": 0.45,
+      "items": [
+        {
+          "title": "Doppia chance",
+          "text": "Copre due esiti su tre: 1X, 12 o X2."
+        },
+        {
+          "title": "Draw no bet",
+          "text": "In caso di pareggio la puntata è rimborsata."
+        },
+        {
+          "title": "Over/Under",
+          "text": "Totale di gol o punti sopra o sotto una soglia."
+        },
+        {
+          "title": "Goal/No goal",
+          "text": "Segnano entrambe le squadre oppure no."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 9,
+      "title": "Le giocate",
+      "cols": 2,
+      "step": 0.45,
+      "items": [
+        {
+          "title": "Singola",
+          "text": "Una giocata su un solo esito."
+        },
+        {
+          "title": "Multipla",
+          "text": "Più selezioni: vince solo se sono tutte corrette."
+        },
+        {
+          "title": "Sistema",
+          "text": "Più multiple ricavate dalle stesse selezioni."
+        },
+        {
+          "title": "Cash out",
+          "text": "Chiusura anticipata al valore proposto dall'operatore."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8,
+      "title": "Conto e tutela",
+      "step": 0.45,
+      "items": [
+        {
+          "title": "Rollover",
+          "text": "Quanto giocare prima di convertire un bonus."
+        },
+        {
+          "title": "Autoesclusione",
+          "text": "Blocco volontario dell'accesso al gioco."
+        },
+        {
+          "title": "Probabilità implicita",
+          "text": "1 diviso la quota."
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Per principianti · Quota Guru"
+    }
+  ]
+}

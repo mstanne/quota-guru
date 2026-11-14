@@ -1,0 +1,88 @@
+{
+  "slug": "scommesse-multiple",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Quote e probabilità",
+      "title": "Scommesse multiple e bonus multipla",
+      "subtitle": "Cosa succede a probabilità e ritorno medio quando si aggiungono eventi."
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "La probabilità scende in fretta",
+      "step": 0.4,
+      "note": "Ogni evento ha il 60% di probabilità. Con dieci, in media vince meno di una multipla su 160.",
+      "items": [
+        {
+          "tag": "1 evento",
+          "big": "60%",
+          "title": "Singola"
+        },
+        {
+          "tag": "3 eventi",
+          "big": "21,6%",
+          "title": "Tripla"
+        },
+        {
+          "tag": "5 eventi",
+          "big": "7,8%",
+          "title": "Cinque eventi"
+        },
+        {
+          "tag": "10 eventi",
+          "big": "0,6%",
+          "title": "Dieci eventi"
+        }
+      ],
+      "cols": 4
+    },
+    {
+      "type": "equation",
+      "dur": 8.5,
+      "title": "Il margine si moltiplica",
+      "formula": "Quanto torna in media <b>per ogni euro giocato</b>",
+      "step": 1,
+      "lines": [
+        {
+          "lhs": "Singola",
+          "rhs": "≈ 95 cent"
+        },
+        {
+          "lhs": "5 eventi",
+          "rhs": "≈ 78 cent",
+          "tone": "warn"
+        },
+        {
+          "lhs": "10 eventi",
+          "rhs": "≈ 61 cent",
+          "tone": "warn"
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "dur": 7.5,
+      "title": "Il bonus multipla",
+      "text": "Una maggiorazione della vincita riduce l'effetto del margine, ma non lo annulla.",
+      "note": "5 eventi con bonus del 15%: il ritorno teorico sale a circa il 90%, sempre sotto il 100%."
+    },
+    {
+      "type": "bullets",
+      "dur": 7.5,
+      "title": "Cosa tenere a mente",
+      "items": [
+        "Evento rinviato o annullato: di solito vale quota 1",
+        "Perdere per un solo evento è la norma",
+        "Non recuperare le perdite con multiple più lunghe"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Quote e probabilità · Quota Guru"
+    }
+  ]
+}

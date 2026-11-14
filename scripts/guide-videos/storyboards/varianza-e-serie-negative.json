@@ -1,0 +1,77 @@
+{
+  "slug": "varianza-e-serie-negative",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Academy",
+      "title": "Varianza e serie negative",
+      "subtitle": "Perché i risultati di breve periodo non dimostrano nulla."
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "Cos'è la varianza",
+      "text": "Quanto i risultati reali si allontanano da quelli medi. Nelle scommesse è molto alta.",
+      "note": "Periodi buoni e cattivi capitano anche giocando sempre allo stesso modo."
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "Le serie negative sono normali",
+      "step": 0.5,
+      "items": [
+        {
+          "big": "54%",
+          "title": "6 perse di fila",
+          "text": "In 100 giocate al 50%."
+        },
+        {
+          "big": "32%",
+          "title": "8 perse di fila",
+          "text": "In 200 giocate al 50%."
+        },
+        {
+          "big": "39%",
+          "title": "10 perse di fila",
+          "text": "In 200 giocate a quota 2,50."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 9,
+      "cols": 2,
+      "title": "Dopo 100 giocate",
+      "items": [
+        {
+          "big": "27%",
+          "title": "è in attivo",
+          "text": "Chi gioca con lo svantaggio del margine."
+        },
+        {
+          "big": "38%",
+          "title": "è in perdita",
+          "text": "Chi avesse un vantaggio reale del 2%."
+        }
+      ],
+      "note": "Dopo 1.000 giocate gli svantaggiati in attivo scendono al 5%: nel lungo periodo vince il margine."
+    },
+    {
+      "type": "budget",
+      "dur": 8.5,
+      "title": "Pensa il budget per le serie negative",
+      "budget": 50,
+      "stake": 2,
+      "drainStart": 1.4,
+      "drainDur": 3.4,
+      "text": "Non alzare le puntate per recuperare, né dopo un buon periodo: la varianza non ti deve nulla."
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Academy · Quota Guru"
+    }
+  ]
+}

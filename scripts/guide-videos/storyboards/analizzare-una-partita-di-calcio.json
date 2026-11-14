@@ -1,0 +1,78 @@
+{
+  "slug": "analizzare-una-partita-di-calcio",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Analisi delle partite",
+      "title": "Come analizzare una partita di calcio",
+      "subtitle": "Classifica, forma, precedenti, assenze e calendario. Senza promesse di vincita."
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "dur": 6,
+      "title": "Una premessa onesta",
+      "text": "Analizzare aiuta a capire e a evitare scelte impulsive, ma non elimina l'incertezza.",
+      "note": "Il calcio è uno degli sport con più risultati a sorpresa."
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "I numeri da guardare",
+      "items": [
+        {
+          "title": "Classifica e rendimento",
+          "text": "Gol fatti e subiti, media gol, differenza reti."
+        },
+        {
+          "title": "Forma recente",
+          "text": "Le ultime cinque partite dicono più della classifica."
+        },
+        {
+          "title": "Precedenti",
+          "text": "Con cautela: rose e allenatori cambiano spesso."
+        }
+      ]
+    },
+    {
+      "type": "bullets",
+      "dur": 8.5,
+      "title": "Il contesto",
+      "step": 0.75,
+      "items": [
+        "Assenze, soprattutto di portiere e attaccanti",
+        "Impegni ravvicinati e turnover",
+        "Motivazioni: titolo, salvezza o nessun obiettivo",
+        "Fattore campo e condizioni del terreno"
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "Collegare l'analisi al mercato",
+      "step": 0.5,
+      "items": [
+        {
+          "tag": "Una squadra molto più forte",
+          "title": "1X2 o handicap"
+        },
+        {
+          "tag": "Squadre che segnano e subiscono",
+          "title": "Over/Under, Goal/No goal"
+        },
+        {
+          "tag": "Partita tattica ed equilibrata",
+          "title": "Under, pareggio"
+        }
+      ],
+      "note": "Se cerchi solo conferme per una giocata già decisa, fermati."
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Analisi delle partite · Quota Guru"
+    }
+  ]
+}

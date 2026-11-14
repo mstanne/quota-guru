@@ -1,0 +1,49 @@
+{
+  "slug": "scommesse-in-diretta",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Scommesse in diretta",
+      "title": "Scommesse in diretta: come funzionano",
+      "subtitle": "Quote live, sospensioni e cash out, e perché serve più attenzione."
+    },
+    {
+      "type": "callout",
+      "dur": 7,
+      "title": "Cosa cambia rispetto alla pre-partita",
+      "text": "Le quote vengono ricalcolate di continuo in base a punteggio, tempo ed episodi.",
+      "note": "Dopo un gol, un'espulsione o un break il mercato è spesso sospeso per qualche secondo."
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "Il cash out",
+      "text": "Puoi chiudere la giocata prima della fine, a un importo calcolato sulle quote del momento.",
+      "note": "Il valore offerto include comunque il margine dell'operatore."
+    },
+    {
+      "type": "bullets",
+      "dur": 8,
+      "title": "Perché serve più attenzione",
+      "items": [
+        "Decisioni rapide, poco tempo per riflettere",
+        "È facile perdere il conto delle giocate",
+        "Le immagini in TV possono essere in ritardo"
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "dur": 6.5,
+      "title": "Un consiglio pratico",
+      "text": "Fissa un limite di spesa per l'evento prima che inizi, e non cambiarlo durante la partita."
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Scommesse in diretta · Quota Guru"
+    }
+  ]
+}

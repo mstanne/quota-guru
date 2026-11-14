@@ -1,0 +1,71 @@
+{
+  "slug": "bet-builder",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Quote e probabilità",
+      "title": "Il bet builder",
+      "subtitle": "Più esiti della stessa partita in una sola giocata: come si calcola la quota."
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "Cos'è",
+      "text": "Una multipla su una sola partita: per esempio vittoria, Over 2,5 e gol di un giocatore. Devono verificarsi tutti.",
+      "note": "In genere gli esiti della stessa partita si influenzano a vicenda."
+    },
+    {
+      "type": "equation",
+      "dur": 8.5,
+      "title": "Perché la quota è più bassa",
+      "formula": "Esiti correlati: <b>non basta moltiplicare</b>",
+      "step": 1.2,
+      "lines": [
+        {
+          "lhs": "1,80 × 1,90",
+          "rhs": "= 3,42"
+        },
+        {
+          "lhs": "Quota bet builder",
+          "rhs": "es. 3,10",
+          "tone": "warn",
+          "note": "Se la squadra di casa vince, l'Over è più frequente: la probabilità congiunta è più alta (numeri di fantasia)"
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "dur": 6.5,
+      "title": "Il margine",
+      "text": "In una combinazione i margini si sommano, e l'operatore copre l'incertezza sulla correlazione con un margine più ampio.",
+      "note": "Quota più alta, ma ritorno medio più basso per ogni euro giocato."
+    },
+    {
+      "type": "cards",
+      "dur": 8,
+      "title": "Regole da controllare",
+      "items": [
+        {
+          "title": "Mercati ammessi",
+          "text": "Cosa si può combinare cambia da partita a partita."
+        },
+        {
+          "title": "Giocatore assente",
+          "text": "Giocata annullata o esito tolto: dipende dall'operatore."
+        },
+        {
+          "title": "Un limite prima",
+          "text": "Decidi quanto spendere e non aumentarlo durante la partita."
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Quote e probabilità · Quota Guru"
+    }
+  ]
+}

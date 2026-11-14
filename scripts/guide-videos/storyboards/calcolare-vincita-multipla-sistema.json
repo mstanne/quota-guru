@@ -1,0 +1,89 @@
+{
+  "slug": "calcolare-vincita-multipla-sistema",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Quote e probabilità",
+      "title": "Calcolare la vincita di multipla e sistema",
+      "subtitle": "Quota totale, vincita possibile e probabilità, passo per passo."
+    },
+    {
+      "type": "equation",
+      "dur": 7.5,
+      "title": "La quota totale",
+      "formula": "Vincita = <b>puntata × prodotto delle quote</b>",
+      "step": 1.3,
+      "lines": [
+        {
+          "lhs": "1,80 × 2,10 × 1,60",
+          "rhs": "= 6,05"
+        },
+        {
+          "lhs": "10 € × 6,05",
+          "rhs": "≈ 60,48 €",
+          "note": "Gli operatori arrotondano i decimali in modo diverso"
+        }
+      ]
+    },
+    {
+      "type": "equation",
+      "dur": 8.5,
+      "title": "Quanto è probabile vincerla",
+      "formula": "Anche le <b>probabilità</b> si moltiplicano",
+      "step": 0.9,
+      "lines": [
+        {
+          "lhs": "A · B · C",
+          "rhs": "55,6% · 47,6% · 62,5%"
+        },
+        {
+          "lhs": "Tutte e tre",
+          "rhs": "≈ 16,5%",
+          "tone": "warn",
+          "note": "Secondo le quote stesse, si perde più di 8 volte su 10"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "Sistema 2/3: tre doppie da 3 €",
+      "step": 0.5,
+      "items": [
+        {
+          "big": "11,34 €",
+          "title": "A + B",
+          "text": "Quota 3,78"
+        },
+        {
+          "big": "8,64 €",
+          "title": "A + C",
+          "text": "Quota 2,88"
+        },
+        {
+          "big": "10,08 €",
+          "title": "B + C",
+          "text": "Quota 3,36"
+        }
+      ],
+      "note": "Spesa totale 9 €. Con una sola doppia vincente puoi incassare anche meno di quanto speso."
+    },
+    {
+      "type": "bullets",
+      "dur": 7.5,
+      "title": "Le formule in breve",
+      "items": [
+        "Quota multipla: prodotto delle quote",
+        "Probabilità: prodotto di 1 ÷ quota",
+        "Sistema 2 su 4: 6 doppie"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Quote e probabilità · Quota Guru"
+    }
+  ]
+}

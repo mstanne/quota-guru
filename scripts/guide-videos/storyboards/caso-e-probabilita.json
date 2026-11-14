@@ -1,0 +1,70 @@
+{
+  "slug": "caso-e-probabilita",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Quote e probabilità",
+      "title": "Caso e probabilità: perché le serie ingannano",
+      "subtitle": "Gli errori di ragionamento più comuni quando si gioca, e come riconoscerli."
+    },
+    {
+      "type": "equation",
+      "dur": 7.5,
+      "title": "La fallacia del giocatore",
+      "formula": "La moneta <b>non ha memoria</b>",
+      "step": 1.3,
+      "lines": [
+        {
+          "lhs": "5 croci di fila",
+          "rhs": "…"
+        },
+        {
+          "lhs": "Testa al sesto lancio",
+          "rhs": "= 50%",
+          "note": "Un pareggio che manca da otto partite non è \"dovuto\" alla nona"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "Altre trappole",
+      "items": [
+        {
+          "title": "La \"mano calda\"",
+          "text": "Le vincite passate non cambiano le probabilità future."
+        },
+        {
+          "title": "L'illusione di controllo",
+          "text": "Informarsi aiuta a capire, non a controllare il risultato."
+        },
+        {
+          "title": "La quasi vincita",
+          "text": "Perdere per un solo risultato non vuol dire esserci vicini."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "La regressione verso la media",
+      "text": "Chi segna molto più del solito tende a tornare al proprio livello: non è un \"ritardo\" che si compensa.",
+      "note": "Gli expected goals aiutano a distinguere il rendimento dalla fortuna."
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "dur": 7,
+      "title": "Nel lungo periodo",
+      "text": "Vince la matematica: per il margine nelle quote, in media chi gioca perde una parte di quanto punta.",
+      "note": "Se giochi per \"recuperare\" o perché \"adesso tocca a te\", fermati."
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Quote e probabilità · Quota Guru"
+    }
+  ]
+}

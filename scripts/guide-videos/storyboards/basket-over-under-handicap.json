@@ -1,0 +1,83 @@
+{
+  "slug": "basket-over-under-handicap",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Sport specifici",
+      "title": "Basket: Over/Under e handicap",
+      "subtitle": "Totale punti, handicap, supplementari e differenze tra NBA ed Europa."
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "Prima di tutto: i supplementari",
+      "text": "Nel basket non c'è pareggio. Molti mercati includono i supplementari, altri no.",
+      "note": "Controlla sempre la descrizione del mercato."
+    },
+    {
+      "type": "equation",
+      "dur": 8,
+      "title": "Over/Under punti",
+      "formula": "Soglia <b>224,5</b>: il mezzo punto evita la parità",
+      "step": 1.2,
+      "lines": [
+        {
+          "lhs": "112-110 = 222",
+          "rhs": "Under"
+        },
+        {
+          "lhs": "118-109 = 227",
+          "rhs": "Over"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "Handicap punti",
+      "items": [
+        {
+          "big": "-5,5",
+          "title": "Favorita",
+          "text": "Deve vincere con almeno 6 punti di scarto."
+        },
+        {
+          "big": "+5,5",
+          "title": "Sfavorita",
+          "text": "Può anche perdere di 5."
+        },
+        {
+          "big": "-5",
+          "title": "Linea intera",
+          "text": "Con scarto esatto di 5, di solito rimborso."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8,
+      "cols": 2,
+      "title": "NBA ed Europa",
+      "items": [
+        {
+          "tag": "NBA",
+          "title": "Quarti da 12 minuti",
+          "text": "Totali più alti, molti back-to-back."
+        },
+        {
+          "tag": "Europa",
+          "title": "Quarti da 10 minuti",
+          "text": "Totali più bassi, una o due partite a settimana."
+        }
+      ],
+      "note": "Per questo le soglie non vanno confrontate tra loro."
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Sport specifici · Quota Guru"
+    }
+  ]
+}

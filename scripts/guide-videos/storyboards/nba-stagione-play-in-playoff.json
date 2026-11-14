@@ -1,0 +1,85 @@
+{
+  "slug": "nba-stagione-play-in-playoff",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Sport specifici",
+      "title": "NBA: regular season, play-in e playoff",
+      "subtitle": "Come funziona la stagione, dalla prima partita alle Finali."
+    },
+    {
+      "type": "cards",
+      "dur": 8,
+      "title": "La regular season",
+      "step": 0.5,
+      "items": [
+        {
+          "big": "30",
+          "title": "squadre",
+          "text": "In due conference, Est e Ovest."
+        },
+        {
+          "big": "82",
+          "title": "partite",
+          "text": "Da ottobre ad aprile, spesso in back-to-back."
+        },
+        {
+          "big": "NBA Cup",
+          "title": "a dicembre",
+          "text": "Le partite dei gironi contano per la classifica."
+        }
+      ]
+    },
+    {
+      "type": "bullets",
+      "dur": 8.5,
+      "title": "Il torneo play-in",
+      "step": 0.8,
+      "items": [
+        "Le prime sei di ogni conference vanno ai playoff",
+        "7ª contro 8ª: chi vince è la numero 7",
+        "9ª contro 10ª: chi perde è eliminata",
+        "Poi la perdente di 7-8 sfida la vincente di 9-10"
+      ]
+    },
+    {
+      "type": "callout",
+      "dur": 7,
+      "title": "I playoff",
+      "text": "16 squadre, quattro turni, serie al meglio delle sette: passa chi ne vince quattro.",
+      "note": "Le Finali si giocano a giugno."
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "Cosa conta",
+      "cols": 2,
+      "step": 0.45,
+      "items": [
+        {
+          "title": "Riposo e rotazioni",
+          "text": "Minuti gestiti nei back-to-back e a fine stagione."
+        },
+        {
+          "title": "Supplementari",
+          "text": "Di 5 minuti; molti mercati li includono."
+        },
+        {
+          "title": "Playoff più tattici",
+          "text": "Ritmi più bassi, adattamenti partita dopo partita."
+        },
+        {
+          "title": "Orari",
+          "text": "In Italia molte partite si giocano di notte."
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Sport specifici · Quota Guru"
+    }
+  ]
+}

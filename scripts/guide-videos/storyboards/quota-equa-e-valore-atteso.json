@@ -1,0 +1,99 @@
+{
+  "slug": "quota-equa-e-valore-atteso",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Academy",
+      "title": "Quota equa e valore atteso",
+      "subtitle": "Come si leggono le probabilità del modello, e perché un modello può sbagliare."
+    },
+    {
+      "type": "cards",
+      "dur": 8,
+      "title": "Quota equa = 1 ÷ probabilità",
+      "step": 0.4,
+      "cols": 4,
+      "items": [
+        {
+          "tag": "80%",
+          "big": "1,25",
+          "title": "quota equa"
+        },
+        {
+          "tag": "50%",
+          "big": "2,00",
+          "title": "quota equa"
+        },
+        {
+          "tag": "40%",
+          "big": "2,50",
+          "title": "quota equa"
+        },
+        {
+          "tag": "25%",
+          "big": "4,00",
+          "title": "quota equa"
+        }
+      ],
+      "note": "È il prezzo di un esito se nessuno ci guadagnasse sopra."
+    },
+    {
+      "type": "margin",
+      "dur": 10,
+      "title": "Perché le quote di mercato sono più basse",
+      "odds": [
+        [
+          "1",
+          "2,10",
+          "47,6%"
+        ],
+        [
+          "X",
+          "3,40",
+          "29,4%"
+        ],
+        [
+          "2",
+          "3,60",
+          "27,8%"
+        ]
+      ],
+      "margin": "4,8%",
+      "note": "Il margine dell'operatore rende la quota offerta quasi sempre più bassa di quella equa."
+    },
+    {
+      "type": "equation",
+      "dur": 9,
+      "title": "Il valore atteso",
+      "formula": "<b>probabilità × quota − 1</b>, con quota 2,70",
+      "step": 1.2,
+      "lines": [
+        {
+          "lhs": "Se è il 40%",
+          "rhs": "+8%"
+        },
+        {
+          "lhs": "Se è il 35%",
+          "rhs": "−5,5%",
+          "tone": "warn",
+          "note": "Cinque punti di errore nella stima cambiano segno al risultato"
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "dur": 7,
+      "title": "Il punto debole è la stima",
+      "text": "Nessuno conosce la probabilità vera. Una quota più alta della quota equa dice solo che le stime sono diverse.",
+      "note": "Per questo Quota Guru non segnala \"giocate di valore\"."
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Academy · Quota Guru"
+    }
+  ]
+}
