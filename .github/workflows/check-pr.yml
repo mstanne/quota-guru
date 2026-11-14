@@ -1,0 +1,121 @@
+# Checks every pull request before the merge, so a problem does not reach the site.
+#   controlli  types (tsc), the imports of the scripts run with node and of the workflows with a sparse checkout
+#              (scripts/check-script-imports.mjs), and which refresh the merge will start (scripts/deploy-mode.mjs)
+#   build      the full build of the site (npm run build, as deploy.yml) with the real data of the last refresh,
+#              measuring the memory: the GitHub runner has 16 GB and the build is killed when it runs out.
+# Nothing is downloaded from the APIs, saved or published: the token can only read.
+name: Controllo PR
+
+on:
+  pull_request:
+    paths-ignore:
+      - "**.md"
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: check-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  controlli:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Types
+        run: npx tsc -b
+
+      - name: Imports of the node scripts and of the sparse checkouts
+        run: node scripts/check-script-imports.mjs
+
+      - name: Refresh started by the merge
+        if: github.event.pull_request.base.ref == 'main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          gh api --paginate "repos/${GITHUB_REPOSITORY}/pulls/${PR}/files?per_page=100" --jq '.[].filename' > changed.txt
+          line=$(node scripts/deploy-mode.mjs < changed.txt)
+          echo "::notice::Al merge: $line"
+          echo "Al merge: **$line**" >> "$GITHUB_STEP_SUMMARY"
+
+  build:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: State of the last refresh (read only)
+        # the cache of deploy.yml / live-scores.yml on main (pull requests can read it, never write it)
+        uses: actions/cache/restore@v6
+        with:
+          path: |
+            .cache/seo
+            .cache/og
+            .cache/match-details
+          key: state-none
+          restore-keys: |
+            state-
+            seo-
+
+      - name: Data of the last refresh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          scripts/data-branch.sh restore-data
+          scripts/data-branch.sh restore-state
+          scripts/data-branch.sh restore-editorial || true
+          # the newest data (with the live scores), as a quick refresh of deploy.yml would use them
+          if [ -f .cache/match-details/snapshot.tgz ]; then tar xzf .cache/match-details/snapshot.tgz; fi
+          git clone --quiet --depth 1 --branch archivio-pronostici "https://github.com/${GITHUB_REPOSITORY}.git" .cache/predictions-archive \
+            || echo "::warning::Archivio pronostici non raggiungibile"
+
+      - name: Build (npm run build, as deploy.yml)
+        env:
+          # same settings as the Build step of deploy.yml
+          NODE_OPTIONS: --max-old-space-size=7168
+          BASE_PATH: /
+          SITE_URL: https://www.quotaguru.it
+          MODEL_XG_WEIGHT: ${{ vars.MODEL_XG_WEIGHT }}
+        run: |
+          # memory of the whole machine every 5 seconds, with the biggest process
+          (while true; do
+            echo "$(free -m | awk '/Mem:/{print $3}') $(ps -eo rss=,args= --sort=-rss | head -1 | awk '{printf "%d %s %s", $1/1024, $3, $4}')"
+            sleep 5
+          done) > mem.log 2>/dev/null &
+          sampler=$!
+          set +e
+          npm run build > build.log 2>&1
+          code=$?
+          kill $sampler
+          grep -E "^prerender: [0-9]|error|Error|Killed" build.log | tail -20
+          read -r used rss cmd <<< "$(sort -n mem.log | tail -1)"
+          {
+            echo "### Build"
+            if [ $code -eq 0 ]; then echo "Riuscita."; else echo "**Fallita** (codice $code): vedi il log del passo Build."; fi
+            echo
+            echo "Memoria massima della macchina: **${used} MB** su circa 16.000 (processo più grande in quel momento: \`${cmd}\`, ${rss} MB)"
+            grep -E "^prerender: [0-9]" build.log | sed 's/^/- /'
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ -n "$used" ] && [ "$used" -gt 13000 ]; then
+            echo "::warning::La build ha usato ${used} MB su circa 16.000: vicina al limite del runner, il deploy potrebbe fallire"
+          fi
+          if [ $code -ne 0 ]; then tail -40 build.log; exit $code; fi
