@@ -12,10 +12,12 @@ import {
   ListPlus,
   Menu,
   Phone,
+  Send,
   Shield,
 } from "lucide-react";
 import { useBetSlip } from "../context/BetSlipContext";
 import { Link, NavLink } from "../lib/links";
+import { isFilled, site } from "../data/site";
 import { Button } from "./ui/button";
 import { Sheet, SheetHeader, SheetContent, SheetTitle } from "./ui/sheet";
 import { BrandLogo } from "./brand/BrandLogo";
@@ -116,7 +118,7 @@ export function Header() {
             )}
           </nav>
 
-          {/* shortcuts: today's and tomorrow's predictions, the slip, the helpline */}
+          {/* shortcuts: today's and tomorrow's predictions, the Telegram channel, the slip, the helpline */}
           <div className="mt-6 pt-6 border-t border-slate-800 px-4 space-y-4">
             <div>
               <p className="text-slate-400 text-xs uppercase tracking-wide mb-2">Scorciatoie</p>
@@ -137,6 +139,18 @@ export function Header() {
                   <CalendarDays className="w-4 h-4 text-slate-300" aria-hidden="true" />
                   Domani
                 </Link>
+                {isFilled(site.social.telegram) && (
+                  <a
+                    href={site.social.telegram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={closeMenu}
+                    className="col-span-2 inline-flex items-center gap-2 px-3 py-2.5 rounded-md bg-slate-800 border border-slate-700 text-white text-sm hover:border-slate-500"
+                  >
+                    <Send className="w-4 h-4 text-slate-300" aria-hidden="true" />
+                    Canale Telegram
+                  </a>
+                )}
               </div>
               {selections.length > 0 && (
                 <button
