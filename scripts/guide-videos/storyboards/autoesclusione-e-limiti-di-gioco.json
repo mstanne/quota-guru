@@ -1,0 +1,74 @@
+{
+  "slug": "autoesclusione-e-limiti-di-gioco",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Gestione del budget",
+      "title": "Autoesclusione e limiti di gioco",
+      "subtitle": "Cosa prevede la normativa italiana e come attivarli."
+    },
+    {
+      "type": "bullets",
+      "dur": 8,
+      "title": "I limiti sul conto",
+      "items": [
+        "Ridurre un limite ha effetto subito",
+        "Aumentarlo richiede un periodo di attesa",
+        "Valgono per un conto: con più operatori, somma i limiti"
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8,
+      "cols": 2,
+      "title": "L'autoesclusione",
+      "items": [
+        {
+          "title": "Da un operatore",
+          "text": "Si chiede dall'area personale e riguarda solo quell'operatore."
+        },
+        {
+          "title": "Da tutti gli operatori",
+          "text": "Vale per tutto il gioco online legale in Italia."
+        }
+      ],
+      "note": "Non puoi depositare né giocare, e niente comunicazioni promozionali."
+    },
+    {
+      "type": "cards",
+      "dur": 8,
+      "cols": 2,
+      "title": "Quanto dura",
+      "items": [
+        {
+          "title": "Temporanea",
+          "text": "Per esempio 30, 60 o 90 giorni, poi il conto si riattiva."
+        },
+        {
+          "title": "A tempo indeterminato",
+          "text": "Si può revocare solo dopo un periodo minimo, oggi sei mesi."
+        }
+      ],
+      "note": "Le regole possono cambiare: fanno fede l'ADM e il tuo operatore."
+    },
+    {
+      "type": "bullets",
+      "dur": 8,
+      "title": "Altri strumenti",
+      "step": 0.75,
+      "items": [
+        "Pause brevi di 24 ore o qualche giorno",
+        "Software che bloccano i siti di gioco",
+        "Notifiche e promozioni disattivate",
+        "Blocco dei pagamenti verso i siti di gioco, se la banca lo offre"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Gestione del budget · Quota Guru"
+    }
+  ]
+}

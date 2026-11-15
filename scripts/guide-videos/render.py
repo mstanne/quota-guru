@@ -81,14 +81,14 @@ def mix_audio(board, work, total):
     out = work / "mix.m4a"
     if n == 0:  # solo musica, a volume da sottofondo
         f = f"[0:a]atrim=0:{total:.3f},loudnorm=I=-18:TP=-1.5:LRA=11[out]"
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(music), "-filter_complex", f,
+        subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-i", str(music), "-filter_complex", f,
                         "-map", "[out]", "-ar", "44100", "-c:a", "aac", "-b:a", "96k", str(out)], check=True)
         return out
     f = "".join(f"[{k}:a]aresample=44100,aformat=channel_layouts=stereo,adelay={ms}|{ms}[d{k}];" for k, ms in labels)
     f += "".join(f"[d{k}]" for k, _ in labels) + f"amix=inputs={n}:normalize=0,apad=whole_dur={total:.3f},asplit=2[voice][key];"
     f += f"[{n}:a]volume=0.32[mus];[mus][key]sidechaincompress=threshold=0.02:ratio=6:attack=60:release=600[duck];"
     f += f"[voice][duck]amix=inputs=2:normalize=0,atrim=0:{total:.3f},loudnorm=I=-16:TP=-1.5:LRA=11[out]"
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *inputs, "-i", str(music), "-filter_complex", f,
+    subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", *inputs, "-i", str(music), "-filter_complex", f,
                     "-map", "[out]", "-ar", "44100", "-c:a", "aac", "-b:a", "96k", str(out)], check=True)
     return out
 
@@ -123,7 +123,7 @@ def render(pw, slug, aspect, board, work, audio):
     for i, scene in enumerate(board["scenes"]):
         n = round(scene["dur"] * FPS)
         tmp, final = work / f"s{i:02d}.part.mp4", work / f"s{i:02d}.mp4"
-        ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "image2pipe", "-framerate", str(FPS),
+        ff = subprocess.Popen(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-f", "image2pipe", "-framerate", str(FPS),
                                "-c:v", "mjpeg", "-i", "-", *ENC, str(tmp)], stdin=subprocess.PIPE)
         for f in range(n):
             ff.stdin.write(shot(page, start + f / FPS))
@@ -143,13 +143,13 @@ def render(pw, slug, aspect, board, work, audio):
     dest = OUT / f"{slug}-{tag}.mp4"
     part = OUT / f".{slug}-{tag}.part.mp4"
     av = ["-i", str(audio), "-map", "0:v", "-map", "1:a", "-c:a", "copy", "-shortest"] if audio else []
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), *av,
+    subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), *av,
                     "-c:v", "copy", "-movflags", "+faststart", str(part)], check=True)
     part.rename(dest)
     # poster più leggero: JPEG ridotto alla larghezza di pagina
     pjpg = work / "poster.jpg"
     pjpg.write_bytes(poster)
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(pjpg), "-vf",
+    subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-i", str(pjpg), "-vf",
                     "scale='min(1280,iw)':-2" if aspect == "landscape" else "scale=720:-2",
                     "-q:v", "4", str(OUT / f"{slug}-{tag}.jpg")], check=True)
     for f in files:

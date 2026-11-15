@@ -1,0 +1,77 @@
+{
+  "slug": "criterio-di-kelly",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Academy",
+      "title": "Il criterio di Kelly e i suoi rischi",
+      "subtitle": "La formula per dimensionare le puntate, e perché è pericolosa con probabilità stimate."
+    },
+    {
+      "type": "equation",
+      "dur": 8,
+      "title": "La formula",
+      "formula": "Frazione = <b>(b × p − q) ÷ b</b>",
+      "lines": [
+        {
+          "lhs": "b = quota − 1",
+          "rhs": "p = vincere, q = perdere",
+          "note": "Nasce nel 1956 e presuppone di conoscere la probabilità vera"
+        }
+      ]
+    },
+    {
+      "type": "equation",
+      "dur": 9.5,
+      "title": "Quota 2,50: basta poco",
+      "step": 1.1,
+      "lines": [
+        {
+          "lhs": "Stima 45%",
+          "rhs": "8,3% del capitale"
+        },
+        {
+          "lhs": "Vera 40%",
+          "rhs": "nessun vantaggio",
+          "tone": "warn"
+        },
+        {
+          "lhs": "Vera 38%",
+          "rhs": "giocata in perdita",
+          "tone": "warn"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8,
+      "cols": 2,
+      "title": "I limiti",
+      "items": [
+        {
+          "title": "La probabilità vera non si conosce",
+          "text": "Chi sovrastima la propria precisione punta troppo."
+        },
+        {
+          "title": "Puntare troppo è peggio",
+          "text": "Al doppio della frazione di Kelly la crescita attesa scende a zero."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "dur": 7,
+      "title": "Da sapere",
+      "text": "Nessuna formula trasforma una giocata svantaggiosa in vantaggiosa: cambia solo quanto in fretta vinci o perdi.",
+      "note": "Per il gioco come intrattenimento: un budget fisso, deciso prima."
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Academy · Quota Guru"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "slug": "cash-out",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Scommesse in diretta",
+      "title": "Il cash out: come viene calcolato",
+      "subtitle": "Cos'è, come si calcola l'importo e perché non è un modo per vincere senza rischi."
+    },
+    {
+      "type": "callout",
+      "dur": 6,
+      "title": "Cos'è",
+      "text": "Chiudi la giocata prima della fine dell'evento e incassi l'importo proposto in quel momento.",
+      "note": "Può essere più alto o più basso della puntata."
+    },
+    {
+      "type": "equation",
+      "dur": 9.5,
+      "title": "Come si calcola",
+      "formula": "Circa <b>vincita possibile × probabilità attuale</b>, meno un margine",
+      "step": 1.1,
+      "lines": [
+        {
+          "lhs": "10 € a quota 3,00",
+          "rhs": "vincita 30 €"
+        },
+        {
+          "lhs": "Al 70', 1-0: quota live 1,40",
+          "rhs": "≈ 71%"
+        },
+        {
+          "lhs": "Equo ≈ 21 €",
+          "rhs": "proposto 19,80 €",
+          "tone": "warn",
+          "note": "Il margine si paga due volte: usarlo spesso riduce quanto ricevi in media"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8,
+      "title": "Le varianti",
+      "items": [
+        {
+          "title": "Totale",
+          "text": "Chiudi tutta la giocata."
+        },
+        {
+          "title": "Parziale",
+          "text": "Incassi una parte, il resto resta in gioco."
+        },
+        {
+          "title": "Automatico",
+          "text": "Si chiude da solo quando l'offerta raggiunge l'importo che hai fissato."
+        }
+      ],
+      "note": "Durante le fasi concitate il cash out viene sospeso."
+    },
+    {
+      "type": "bullets",
+      "dur": 7.5,
+      "title": "Un uso consapevole",
+      "items": [
+        "Decidi prima dell'evento se e quando usarlo",
+        "Non rigiocare subito l'importo incassato",
+        "Chiude il rischio, ma il margine resta pagato"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Scommesse in diretta · Quota Guru"
+    }
+  ]
+}

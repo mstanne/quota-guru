@@ -1,0 +1,79 @@
+{
+  "slug": "prenotatore-scommesse",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Per principianti",
+      "title": "Il prenotatore scommesse",
+      "subtitle": "Prepari la giocata online, la convalidi e la paghi in agenzia."
+    },
+    {
+      "type": "bullets",
+      "dur": 9,
+      "title": "Come si usa",
+      "step": 0.75,
+      "items": [
+        "Aggiungi gli esiti alla schedina sul sito o sull'app",
+        "Scegli \"Prenota\" invece di \"Scommetti\"",
+        "Mostra il codice in un'agenzia dello stesso operatore",
+        "Controlla il riepilogo, paga e ritira la bolletta"
+      ]
+    },
+    {
+      "type": "equation",
+      "dur": 8,
+      "title": "La prenotazione non blocca le quote",
+      "formula": "Al banco valgono le <b>quote del momento della convalida</b>",
+      "step": 1.3,
+      "lines": [
+        {
+          "lhs": "Quota prenotata",
+          "rhs": "6,13"
+        },
+        {
+          "lhs": "Quota al banco",
+          "rhs": "5,66",
+          "tone": "warn",
+          "note": "Una quota è scesa da 1,95 a 1,80: anche la possibile vincita si riduce"
+        }
+      ]
+    },
+    {
+      "type": "bullets",
+      "dur": 7,
+      "title": "Scadenza e modifiche",
+      "items": [
+        "Ogni prenotazione ha una validità limitata",
+        "Scaduta? Se ne crea una nuova, senza costi",
+        "Dopo la stampa la giocata è definitiva"
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8,
+      "title": "Errori da evitare",
+      "tone": "warn",
+      "items": [
+        {
+          "title": "Pagare senza leggere",
+          "text": "Il riepilogo al banco è l'ultimo controllo."
+        },
+        {
+          "title": "Prenotare non è giocare",
+          "text": "Senza bolletta pagata non c'è nessuna scommessa."
+        },
+        {
+          "title": "Codici \"sicuri\"",
+          "text": "Quelli venduti sui social sono giocate come le altre."
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Per principianti · Quota Guru"
+    }
+  ]
+}

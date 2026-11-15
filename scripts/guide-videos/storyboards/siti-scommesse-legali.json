@@ -1,0 +1,70 @@
+{
+  "slug": "siti-scommesse-legali",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Per principianti",
+      "title": "Riconoscere un sito di scommesse legale",
+      "subtitle": "Concessione ADM, elenco ufficiale e siti oscurati: la verifica in pochi minuti."
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "Perché conta",
+      "text": "In Italia si gioca online solo con operatori che hanno una concessione ADM: solo lì valgono le tutele di legge.",
+      "note": "Denaro dei giocatori separato, verifica dell'età, limiti di deposito, autoesclusione."
+    },
+    {
+      "type": "bullets",
+      "dur": 9,
+      "title": "La verifica in quattro passi",
+      "step": 0.8,
+      "items": [
+        "A fondo pagina: numero di concessione ADM e ragione sociale",
+        "Il dominio è nell'elenco dei siti autorizzati su adm.gov.it",
+        "Divieto ai minori e riferimenti al gioco responsabile",
+        "Diffida dei link via messaggio con indirizzi simili ma non identici"
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "dur": 6.5,
+      "title": "Siti oscurati",
+      "text": "L'ADM fa bloccare i siti non autorizzati. Usare una VPN o indirizzi alternativi non li rende legali.",
+      "note": "Senza concessione non c'è alcuna garanzia su pagamenti, vincite e dati personali."
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "Altri segnali utili",
+      "cols": 2,
+      "step": 0.45,
+      "items": [
+        {
+          "title": "Termini chiari",
+          "text": "Regolamento e condizioni pubblici e in italiano."
+        },
+        {
+          "title": "Assistenza raggiungibile",
+          "text": "Recapiti e modalità di reclamo indicati."
+        },
+        {
+          "title": "Strumenti di tutela",
+          "text": "Limiti di deposito, promemoria e autoesclusione nel conto."
+        },
+        {
+          "title": "Nessuna pressione",
+          "text": "Un operatore serio non promette vincite."
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Per principianti · Quota Guru"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "slug": "gestione-del-budget",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Gestione del budget",
+      "title": "Gestire il budget di gioco",
+      "subtitle": "Come stabilirlo, quali limiti impostare e quali strumenti offre la legge."
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "Stabilire un budget",
+      "text": "La somma che puoi perdere tutta senza conseguenze sulle altre spese. Si decide a mente fredda e non si integra.",
+      "note": "Esempio: 200 € al mese per il tempo libero, al gioco al massimo 30 €."
+    },
+    {
+      "type": "budget",
+      "dur": 8.5,
+      "title": "Puntate piccole e costanti",
+      "budget": 30,
+      "stake": 2,
+      "drainStart": 1.6,
+      "drainDur": 3.4,
+      "text": "Sempre la stessa piccola puntata: più tempo per riflettere. Alzarla dopo una perdita accelera le perdite."
+    },
+    {
+      "type": "bullets",
+      "dur": 8.5,
+      "title": "I limiti sul conto",
+      "step": 0.75,
+      "items": [
+        "Limite di deposito giornaliero, settimanale o mensile",
+        "Limite di tempo e promemoria",
+        "Autoesclusione da un operatore",
+        "Autoesclusione da tutti, gestita dall'ADM"
+      ]
+    },
+    {
+      "type": "bullets",
+      "dur": 8,
+      "title": "Segnali da non ignorare",
+      "step": 0.75,
+      "items": [
+        "Giochi più soldi o più tempo del previsto",
+        "Pensi spesso a come recuperare le perdite",
+        "Nascondi il gioco a familiari o amici",
+        "Usi soldi destinati ad altro o chiedi prestiti"
+      ]
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "Puoi chiedere aiuto",
+      "text": "Telefono Verde Nazionale 800 558 822: ascolto gratuito e anonimo.",
+      "note": "Servizio dell'Istituto Superiore di Sanità."
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Gestione del budget · Quota Guru"
+    }
+  ]
+}

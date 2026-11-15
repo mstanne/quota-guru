@@ -1,0 +1,63 @@
+{
+  "slug": "depositi-e-prelievi",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Gestione del budget",
+      "title": "Depositi e prelievi",
+      "subtitle": "Metodi, tempi e verifiche: come si versa e si preleva da un conto di gioco."
+    },
+    {
+      "type": "cards",
+      "dur": 9,
+      "title": "I metodi più diffusi",
+      "cols": 2,
+      "step": 0.45,
+      "items": [
+        {
+          "title": "Carta di debito o prepagata",
+          "text": "Deposito di solito immediato, prelievo in alcuni giorni lavorativi."
+        },
+        {
+          "title": "Bonifico bancario",
+          "text": "Uno o più giorni per depositare."
+        },
+        {
+          "title": "Portafogli elettronici",
+          "text": "Prelievi spesso più rapidi."
+        },
+        {
+          "title": "Voucher e ricariche",
+          "text": "Deposito immediato, prelievo non sempre disponibile."
+        }
+      ],
+      "note": "Ogni metodo deve essere intestato al titolare del conto."
+    },
+    {
+      "type": "callout",
+      "dur": 7,
+      "title": "La verifica prima del prelievo",
+      "text": "Finché il tuo documento non è approvato, il primo prelievo resta in attesa.",
+      "note": "Caricalo subito dopo la registrazione."
+    },
+    {
+      "type": "bullets",
+      "dur": 8.5,
+      "title": "Se un prelievo tarda",
+      "step": 0.75,
+      "items": [
+        "Controlla lo stato e i documenti nell'area personale",
+        "Verifica le condizioni di un bonus attivo",
+        "Contatta l'assistenza e conserva le comunicazioni",
+        "Se serve: reclamo all'operatore, poi all'ADM"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Gestione del budget · Quota Guru"
+    }
+  ]
+}

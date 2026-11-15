@@ -1,0 +1,67 @@
+{
+  "slug": "calendario-coppe-turnover",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Analisi delle partite",
+      "title": "Calendario, coppe e turnover",
+      "subtitle": "Come partite ravvicinate, soste e fine stagione cambiano formazioni e motivazioni."
+    },
+    {
+      "type": "cards",
+      "dur": 9,
+      "title": "Quando il calendario pesa",
+      "cols": 2,
+      "step": 0.45,
+      "items": [
+        {
+          "title": "Coppa a metà settimana",
+          "text": "Turnover nella partita di campionato vicina."
+        },
+        {
+          "title": "Trasferta lunga",
+          "text": "Recupero più breve, possibile calo fisico."
+        },
+        {
+          "title": "Sosta per le nazionali",
+          "text": "Giocatori stanchi o infortunati al rientro."
+        },
+        {
+          "title": "Ultime giornate",
+          "text": "Chi lotta per un obiettivo e chi non ha più nulla da chiedere."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "Le formazioni ufficiali",
+      "text": "Arrivano circa un'ora prima del calcio d'inizio. Prima circolano solo formazioni probabili.",
+      "note": "Notizie e indiscrezioni possono rivelarsi sbagliate."
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "dur": 6.5,
+      "title": "Le quote si muovono",
+      "text": "Quando una notizia su formazioni o assenze diventa pubblica, le quote si aggiornano in fretta.",
+      "note": "Su Quota Guru ogni quota mostra l'orario dell'ultimo aggiornamento."
+    },
+    {
+      "type": "bullets",
+      "dur": 6.5,
+      "title": "Dove trovare il calendario",
+      "items": [
+        "Nelle pagine Calcio: calendario, risultati e classifiche",
+        "Campionati e coppe europee in orario italiano"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Analisi delle partite · Quota Guru"
+    }
+  ]
+}

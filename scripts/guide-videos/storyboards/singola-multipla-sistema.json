@@ -1,0 +1,82 @@
+{
+  "slug": "singola-multipla-sistema",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Per principianti",
+      "title": "Singola, multipla e sistema",
+      "subtitle": "Tre modi di costruire una giocata, e cosa succede quando una selezione è sbagliata."
+    },
+    {
+      "type": "equation",
+      "dur": 6.5,
+      "title": "La singola",
+      "formula": "Un solo esito: vincita = <b>puntata × quota</b>",
+      "lines": [
+        {
+          "lhs": "5 € × 1,90",
+          "rhs": "= 9,50 €",
+          "note": "La forma più semplice da valutare"
+        }
+      ]
+    },
+    {
+      "type": "equation",
+      "dur": 8,
+      "title": "La multipla",
+      "formula": "Le quote si moltiplicano, ma <b>devono essere tutte corrette</b>",
+      "step": 1.3,
+      "lines": [
+        {
+          "lhs": "1,80 × 2,10 × 1,60",
+          "rhs": "= 6,05"
+        },
+        {
+          "lhs": "Un esito sbagliato",
+          "rhs": "tutto perso",
+          "tone": "warn",
+          "note": "Con 5 € la vincita possibile è 30,24 €, ma servono tre esiti su tre"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "Se sbagli una selezione",
+      "items": [
+        {
+          "tag": "1 giocata",
+          "title": "Singola",
+          "text": "Perdi la giocata."
+        },
+        {
+          "tag": "1 giocata",
+          "title": "Multipla",
+          "text": "Perdi tutto."
+        },
+        {
+          "tag": "3 doppie",
+          "title": "Sistema 2/3",
+          "text": "Una doppia può ancora vincere, ma la spesa totale è più alta."
+        }
+      ]
+    },
+    {
+      "type": "bullets",
+      "dur": 8,
+      "title": "Cosa tenere a mente",
+      "items": [
+        "Più selezioni: quota più alta, probabilità più bassa",
+        "Un sistema non elimina il rischio, lo distribuisce",
+        "Decidi la spesa prima di vedere la quota finale"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Per principianti · Quota Guru"
+    }
+  ]
+}

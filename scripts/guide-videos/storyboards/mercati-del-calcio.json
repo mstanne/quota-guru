@@ -1,0 +1,84 @@
+{
+  "slug": "mercati-del-calcio",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Sport specifici",
+      "title": "I mercati del calcio spiegati",
+      "subtitle": "Doppia chance, draw no bet, gol, marcatori, cartellini e angoli."
+    },
+    {
+      "type": "callout",
+      "dur": 6.5,
+      "title": "Prima regola: i 90 minuti",
+      "text": "Salvo indicazione diversa contano i tempi regolamentari più il recupero.",
+      "note": "Una finale decisa ai rigori, nel 1X2, è un pareggio."
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "Mercati sull'esito",
+      "step": 0.5,
+      "items": [
+        {
+          "title": "1X2",
+          "text": "Casa, pareggio o ospite."
+        },
+        {
+          "title": "Doppia chance",
+          "text": "Due esiti su tre: 1X, 12 o X2. Quote più basse."
+        },
+        {
+          "title": "Draw no bet",
+          "text": "Con il pareggio la puntata è rimborsata."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 9,
+      "title": "Mercati sui gol, con un 2-1",
+      "cols": 2,
+      "step": 0.45,
+      "items": [
+        {
+          "tag": "Vinto",
+          "title": "Over 2,5",
+          "text": "Almeno 3 gol."
+        },
+        {
+          "tag": "Perso",
+          "title": "Under 2,5",
+          "text": "Al massimo 2 gol."
+        },
+        {
+          "tag": "Vinto",
+          "title": "Goal",
+          "text": "Segnano entrambe le squadre."
+        },
+        {
+          "tag": "Vinto",
+          "title": "Multigol 1-3",
+          "text": "Gol totali tra 1 e 3."
+        }
+      ]
+    },
+    {
+      "type": "bullets",
+      "dur": 8,
+      "title": "Marcatori, cartellini, angoli",
+      "items": [
+        "Gli autogol di solito non contano per i marcatori",
+        "Giocatore non in campo: in genere rimborso",
+        "Cartellini e angoli: leggi la definizione esatta del mercato"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Sport specifici · Quota Guru"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "scommesse-sul-tennis",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Sport specifici",
+      "title": "Tennis: mercati e fattori da considerare",
+      "subtitle": "Vincente, set e game; superfici, formato del torneo e condizione fisica."
+    },
+    {
+      "type": "cards",
+      "dur": 9,
+      "title": "I mercati principali",
+      "cols": 2,
+      "step": 0.45,
+      "items": [
+        {
+          "title": "Vincente",
+          "text": "Chi vince l'incontro: niente pareggio, due esiti."
+        },
+        {
+          "title": "Risultato in set",
+          "text": "Per esempio 2-0 o 2-1 al meglio dei tre set."
+        },
+        {
+          "title": "Totale game",
+          "text": "I game giocati sopra o sotto una soglia."
+        },
+        {
+          "title": "Handicap game",
+          "text": "Un vantaggio virtuale in game a un giocatore."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "Le superfici",
+      "items": [
+        {
+          "tag": "Terra battuta",
+          "title": "Lenta",
+          "text": "Scambi lunghi, favorisce chi gioca da fondo campo."
+        },
+        {
+          "tag": "Erba",
+          "title": "Veloce",
+          "text": "Rimbalzo basso, premia servizio e volo."
+        },
+        {
+          "tag": "Cemento",
+          "title": "Intermedia",
+          "text": "Indoor le condizioni sono più costanti."
+        }
+      ]
+    },
+    {
+      "type": "bullets",
+      "dur": 8.5,
+      "title": "Altri fattori",
+      "step": 0.75,
+      "items": [
+        "Formato: negli Slam maschili si gioca al meglio dei cinque set",
+        "Condizione fisica e partite dei giorni precedenti",
+        "Ritiri: le regole cambiano da operatore a operatore",
+        "Precedenti sulla stessa superficie"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Sport specifici · Quota Guru"
+    }
+  ]
+}

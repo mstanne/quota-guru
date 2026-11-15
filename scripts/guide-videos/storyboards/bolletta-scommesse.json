@@ -1,0 +1,81 @@
+{
+  "slug": "bolletta-scommesse",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Per principianti",
+      "title": "La bolletta scommesse",
+      "subtitle": "Come si compila in agenzia e come si legge, riga per riga."
+    },
+    {
+      "type": "bullets",
+      "dur": 9,
+      "title": "Come si compila in agenzia",
+      "step": 0.75,
+      "items": [
+        "Trova il codice dell'evento nel palinsesto",
+        "Scegli l'esito: 1, X, 2, Over, Goal…",
+        "Indica tipo di giocata e importo",
+        "Controlla il riepilogo, paga e ritira la bolletta"
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 9,
+      "title": "Come si legge",
+      "cols": 2,
+      "step": 0.45,
+      "items": [
+        {
+          "title": "Codice della giocata",
+          "text": "Identifica la bolletta: serve per controllarla e riscuoterla."
+        },
+        {
+          "title": "Esito e quota",
+          "text": "La previsione giocata e la quota fissata alla stampa."
+        },
+        {
+          "title": "Quota totale",
+          "text": "Nelle multiple, il prodotto delle quote."
+        },
+        {
+          "title": "Possibile vincita",
+          "text": "Importo × quota totale."
+        }
+      ]
+    },
+    {
+      "type": "equation",
+      "dur": 7.5,
+      "title": "Un esempio",
+      "formula": "Multipla di tre eventi con <b>10 €</b>",
+      "step": 1.3,
+      "lines": [
+        {
+          "lhs": "1,85 × 1,70 × 1,95",
+          "rhs": "= 6,13"
+        },
+        {
+          "lhs": "10 € × 6,13",
+          "rhs": "≈ 61,33 €",
+          "note": "Basta un esito sbagliato e la bolletta è perdente"
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "dur": 7,
+      "title": "Conservala come contanti",
+      "text": "Chi presenta la bolletta incassa. Custodiscila e riscuoti entro i termini del regolamento.",
+      "note": "La carta termica sbiadisce: fotografala, anche se la foto non sostituisce l'originale."
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Per principianti · Quota Guru"
+    }
+  ]
+}

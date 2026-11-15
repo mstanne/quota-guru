@@ -1,0 +1,73 @@
+{
+  "slug": "aprire-un-conto-di-gioco",
+  "scenes": [
+    {
+      "type": "intro",
+      "dur": 4.5,
+      "kicker": "Guida · Per principianti",
+      "title": "Aprire un conto di gioco",
+      "subtitle": "Requisiti, documenti, verifica dell'identità e limiti da impostare subito."
+    },
+    {
+      "type": "bullets",
+      "dur": 8.5,
+      "title": "Cosa serve",
+      "step": 0.75,
+      "items": [
+        "Almeno 18 anni: la verifica dell'età è obbligatoria",
+        "Codice fiscale e documento d'identità valido",
+        "Email e cellulare intestati a te",
+        "Un metodo di pagamento intestato a te"
+      ],
+      "note": "Un solo conto per operatore, con dati veri."
+    },
+    {
+      "type": "bullets",
+      "dur": 8.5,
+      "title": "Come avviene la registrazione",
+      "step": 0.75,
+      "items": [
+        "Modulo con i tuoi dati, oppure SPID o CIE",
+        "Accetti contratto e informativa privacy",
+        "Imposti i limiti di deposito",
+        "Carichi il documento: senza verifica niente prelievi"
+      ]
+    },
+    {
+      "type": "cards",
+      "dur": 8.5,
+      "title": "I limiti da impostare subito",
+      "items": [
+        {
+          "title": "Limite di deposito",
+          "text": "Il massimo che puoi versare al giorno, alla settimana o al mese."
+        },
+        {
+          "title": "Promemoria di sessione",
+          "text": "Ti avvisa dopo un certo tempo di gioco."
+        },
+        {
+          "title": "Autoesclusione",
+          "text": "Blocca l'accesso al gioco per un periodo o a tempo indeterminato."
+        }
+      ],
+      "note": "Ridurre un limite vale subito, aumentarlo richiede un periodo di attesa."
+    },
+    {
+      "type": "bullets",
+      "dur": 7,
+      "title": "Sicurezza del conto",
+      "items": [
+        "Password unica e verifica in due passaggi",
+        "Il conto è personale: non condividerlo",
+        "Controlla spesso depositi, giocate e prelievi"
+      ]
+    },
+    {
+      "type": "outro",
+      "dur": 4.5,
+      "text": "Tutti i dettagli nella guida completa, qui sotto.",
+      "cta": "Per principianti · Quota Guru"
+    }
+  ]
+}
