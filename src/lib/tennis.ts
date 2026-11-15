@@ -2,6 +2,7 @@
 // ATP/WTA rankings (top 100) and tournament calendar. Matches are not included in the free plan.
 import raw from "../data/tennis.json";
 import { referenceTime, romeDay } from "./footballCore";
+import { dateFormat, numberFormat } from "./intl";
 
 export type Tour = "atp" | "wta";
 export interface TennisPlayer {
@@ -71,7 +72,7 @@ export function categoryRank(c: string | null) {
 }
 
 const fmt = (iso: string, opts: Intl.DateTimeFormatOptions) =>
-  new Intl.DateTimeFormat("it-IT", { timeZone: "UTC", ...opts }).format(new Date(`${iso}T12:00:00Z`));
+  dateFormat("it-IT", { timeZone: "UTC", ...opts }).format(new Date(`${iso}T12:00:00Z`));
 export const formatShort = (iso: string) => fmt(iso, { day: "numeric", month: "short" });
 export const formatLong = (iso: string) => fmt(iso, { day: "numeric", month: "long", year: "numeric" });
 export const monthLabel = (iso: string) => fmt(iso, { month: "long", year: "numeric" });
@@ -79,7 +80,7 @@ export const dateRange = (t: Tournament) =>
   t.start && t.end ? `${formatShort(t.start)} – ${formatShort(t.end)}` : t.start ? formatShort(t.start) : "";
 
 export const formatPrize = (t: Tournament) =>
-  t.prizeMoney ? `${new Intl.NumberFormat("it-IT").format(t.prizeMoney)} ${t.prizeCurrency ?? ""}`.trim() : null;
+  t.prizeMoney ? `${numberFormat("it-IT").format(t.prizeMoney)} ${t.prizeCurrency ?? ""}`.trim() : null;
 
 // ---------- status (relative to the build time, so server and browser agree) ----------
 // The build time, not the snapshot date: if the source stops updating, a tournament whose end date has

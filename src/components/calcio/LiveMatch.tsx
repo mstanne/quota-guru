@@ -10,6 +10,7 @@ import { isLive, isUpcoming, type Match } from "../../lib/footballCore";
 import type { FootballDetails } from "../../lib/matchDetails";
 import { inLiveWindow } from "../../lib/sofascore";
 import { FootballMatchDetails } from "./FootballMatchDetails";
+import { dateFormat } from "../../lib/intl";
 
 const LIVE_URL = (import.meta.env.VITE_LIVE_URL ?? "").replace(/\/+$/, "");
 const POLL_MS = 30_000;
@@ -29,7 +30,7 @@ const STATUS: Record<string, string> = {
 export const PLAYING = new Set(["1H", "2H", "ET", "P", "LIVE"]);
 export const FINAL = new Set(["FT", "AET", "PEN", "AWD", "WO", "CANC", "ABD", "PST"]);
 export const liveTime = (iso: string) =>
-  new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", hour: "2-digit", minute: "2-digit", second: "2-digit" }).format(new Date(iso));
+  dateFormat("it-IT", { timeZone: "Europe/Rome", hour: "2-digit", minute: "2-digit", second: "2-digit" }).format(new Date(iso));
 
 /** Started (or over) according to the live service. */
 export const liveStarted = (d: LiveData | null): d is LiveData => !!d && d.status.short !== "NS" && d.status.short !== "TBD";

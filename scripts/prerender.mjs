@@ -362,7 +362,14 @@ function withCard(meta) {
 const pageTitles = new Map();
 
 /** Writes one page and records when its content last changed (`main`: the page content, see mainContent). */
+// Full garbage collection every few hundred pages. Rendering leaves native memory (outside the JS heap, e.g. the ICU
+// objects behind Intl.DateTimeFormat) attached to short-lived objects that only a full collection frees; with the big
+// heap the build needs, V8 almost never runs one, and the process grew to the 16 GB of the GitHub runner, which killed
+// the build (14 November 2026: peak 15.4 GB; with this, 5 GB). Needs `node --expose-gc` (package.json, "build").
+let emitted = 0;
+const GC_EVERY = 500;
 function emit(meta0, appHtml, main = mainContent(appHtml)) {
+  if (++emitted % GC_EVERY === 0) globalThis.gc?.();
   const reason = meta0.index !== false && outOfIndex(meta0.path, searchPolicy);
   if (reason) keptOut.set(reason, (keptOut.get(reason) ?? 0) + 1);
   const meta = withCard(reason ? { ...meta0, index: false } : meta0);

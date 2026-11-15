@@ -12,6 +12,7 @@ import { NotFoundPage } from "../NotFoundPage";
 import { PageHeader } from "../layout/PageHeader";
 import { TeamBadge } from "../calcio/MatchRow";
 import { TeamName } from "../teams/TeamLink";
+import { dateFormat } from "../../lib/intl";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 const th = "font-normal py-2.5 px-2 text-right whitespace-nowrap";
@@ -95,7 +96,7 @@ export function LeadersPage() {
   if (!c?.leaders?.scorers?.length) return <NotFoundPage />;
   const l = c.leaders;
   const season = seasonName(c);
-  const updated = new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", day: "numeric", month: "long" }).format(new Date(l.updatedAt));
+  const updated = dateFormat("it-IT", { timeZone: "Europe/Rome", day: "numeric", month: "long" }).format(new Date(l.updatedAt));
 
   return (
     <div className="min-h-screen bg-slate-950">

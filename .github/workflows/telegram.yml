@@ -79,6 +79,7 @@ jobs:
             src/assets/guides
             src/lib/goalStats.mjs
             src/lib/broadcast.ts
+            src/lib/intl.ts
             src/data/offers.json
             .nvmrc
           sparse-checkout-cone-mode: false

@@ -10,13 +10,14 @@ import { teamPaths } from "../../lib/teams";
 import { NotFoundPage } from "../NotFoundPage";
 import { PageHeader } from "../layout/PageHeader";
 import { Card, Facts, SectionTitle, age, formatDate, num } from "../teams/TeamUi";
+import { dateFormat } from "../../lib/intl";
 
 const th = "text-right font-normal py-2 px-2 whitespace-nowrap";
 const td = "text-right px-2 py-2 tabular-nums";
 const avg = (v: number, g: number) => (g ? num(v / g) : "–");
 const pct = (m: number, a: number) => (a ? `${num((m / a) * 100)}%` : "–");
 const per36 = (v: number, min: number) => (min >= 36 ? num((v * 36) / min) : "–");
-const dayFmt = new Intl.DateTimeFormat("it-IT", { day: "numeric", month: "short", timeZone: "Europe/Rome" });
+const dayFmt = dateFormat("it-IT", { day: "numeric", month: "short", timeZone: "Europe/Rome" });
 
 function TeamName({ team }: { team: NbaTeamRef }) {
   return team.slug ? (
