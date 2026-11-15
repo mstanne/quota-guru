@@ -1,0 +1,82 @@
+# Videos of the predictions of the top football matches (scripts/guide-videos/match_videos.py, README in
+# scripts/guide-videos/README.md): Serie A, Champions / Europa / Conference League, Coppa Italia and Supercoppa,
+# at most 3 matches per round. Every 3 hours it makes the videos of the chosen matches that kick off in the next 36
+# hours, then rewrites the `video-partite` branch (one commit: videos + index.json). The site build copies them into
+# the match pages (deploy.yml) and the Telegram rubric `video-pronostico` posts the vertical one.
+# By hand: Actions → "Video partite" → Run workflow ("prova" only prints the matches it would make).
+name: Video partite
+
+on:
+  schedule:
+    - cron: "50 */3 * * *" # half an hour after each site build (deploy.yml runs at minute 17)
+  workflow_dispatch:
+    inputs:
+      prova:
+        description: "Prova a secco: stampa le partite scelte senza generare i video"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write # the `video-partite` branch
+
+concurrency:
+  group: video-partite
+  cancel-in-progress: false
+
+jobs:
+  videos:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            scripts/guide-videos
+            src/assets/brand/quotaguru-logo-white.svg
+          sparse-checkout-cone-mode: false
+
+      - name: Renderer (Chromium, ffmpeg, Inter font)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-inter > /dev/null
+          python3 -m venv .venv
+          .venv/bin/pip install --quiet playwright numpy scipy
+          .venv/bin/python -m playwright install --with-deps chromium > /dev/null
+
+      - name: Data, published predictions and the current videos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          mkdir -p .cache
+          gh api -H "Accept: application/vnd.github.raw+json" \
+            "repos/${GITHUB_REPOSITORY}/contents/src/data/football.json?ref=dati" > .cache/football.json
+          git clone --quiet --depth 1 --branch archivio-pronostici "$url" .cache/archivio
+          if git ls-remote --exit-code --heads "$url" video-partite >/dev/null; then
+            git clone --quiet --depth 1 --branch video-partite "$url" .cache/store
+          else
+            mkdir -p .cache/store && git -C .cache/store init --quiet -b video-partite
+            git -C .cache/store remote add origin "$url"
+          fi
+
+      - name: Make the videos
+        env:
+          PROVA: ${{ inputs.prova }}
+        run: |
+          args=()
+          if [ "$PROVA" = "true" ]; then args+=(--dry-run); fi
+          .venv/bin/python scripts/guide-videos/match_videos.py --football .cache/football.json --archive .cache/archivio \
+            --store .cache/store "${args[@]}"
+
+      - name: Save the videos branch
+        if: inputs.prova != true
+        working-directory: .cache/store
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then echo "Nessun cambiamento"; exit 0; fi
+          # one commit only: old videos do not pile up in the branch history
+          git checkout --quiet --orphan nuovo
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit --quiet -m "Video partite $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --quiet --force origin HEAD:video-partite
