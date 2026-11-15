@@ -1,0 +1,11 @@
+{
+  "name": "quotaguru-site",
+  "private": true,
+  "description": "Cloudflare Worker (static assets only) that serves the built site of quotaguru.it (see README.md)",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.156.0"
+  }
+}

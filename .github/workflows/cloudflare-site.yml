@@ -1,0 +1,117 @@
+# Publishes the site built by deploy.yml or live-scores.yml on Cloudflare (Worker "quotaguru-site", workers/site).
+# Called by those two workflows after their build, only when the repository variable SITO_CLOUDFLARE is set:
+#   prova   the site goes on Cloudflare at the test address quotaguru-site.<account>.workers.dev (not indexed) and
+#           stays on GitHub Pages at www.quotaguru.it
+#   attivo  Cloudflare also serves www.quotaguru.it and GitHub Pages is no longer updated
+# Uses the same secrets as the live worker: CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID. Steps: workers/site/README.md.
+name: Cloudflare site
+
+on:
+  workflow_call:
+    inputs:
+      mode:
+        description: "prova o attivo (variabile SITO_CLOUDFLARE)"
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-26.04
+    # one upload at a time across deploy.yml and live-scores.yml; a started upload is never cancelled
+    concurrency:
+      group: cloudflare-site
+      cancel-in-progress: false
+    steps:
+      - name: Check the Cloudflare secrets and the mode
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          MODE: ${{ inputs.mode }}
+        run: |
+          if [ -z "$TOKEN" ] || [ -z "$ACCOUNT" ]; then
+            echo "::error::Secret CLOUDFLARE_API_TOKEN o CLOUDFLARE_ACCOUNT_ID mancante (vedi workers/site/README.md)"
+            exit 1
+          fi
+          if [ "$MODE" != "prova" ] && [ "$MODE" != "attivo" ]; then
+            echo "::error::Variabile SITO_CLOUDFLARE = \"$MODE\": valori ammessi prova o attivo"
+            exit 1
+          fi
+
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            workers/site
+            .nvmrc
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+
+      - name: Install wrangler
+        working-directory: workers/site
+        run: npm ci
+
+      - name: Get the built site
+        # the same files published on GitHub Pages (artifact "github-pages", a tar of dist/)
+        uses: actions/download-artifact@v8
+        with:
+          name: github-pages
+          path: .cache/pages
+
+      - name: Unpack and count the files
+        run: |
+          mkdir -p dist
+          tar xf .cache/pages/artifact.tar -C dist
+          rm -rf .cache/pages
+          n=$(find dist -type f ! -name _headers ! -name _redirects | wc -l)
+          big=$(find dist -type f -size +25M | head -5)
+          echo "File del sito: $n (limite Workers Paid: 100.000; piano gratuito: 20.000)" >> "$GITHUB_STEP_SUMMARY"
+          if [ -n "$big" ]; then
+            echo "::error::File oltre 25 MiB, Cloudflare non li accetta: $big"
+            exit 1
+          fi
+          if [ "$n" -gt 100000 ]; then
+            echo "::error::$n file: oltre il limite di 100.000 di Cloudflare"
+            exit 1
+          fi
+          if [ "$n" -gt 90000 ]; then
+            echo "::warning::$n file: vicino al limite di 100.000 di Cloudflare"
+          fi
+
+      - name: Custom domain (mode attivo)
+        if: inputs.mode == 'attivo'
+        working-directory: workers/site
+        run: |
+          cat >> wrangler.toml <<'EOF'
+
+          # added by cloudflare-site.yml (SITO_CLOUDFLARE = attivo)
+          workers_dev = false
+          routes = [{ pattern = "www.quotaguru.it", custom_domain = true }]
+          EOF
+          cat wrangler.toml
+
+      - name: Publish
+        id: deploy
+        working-directory: workers/site
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        # only the files whose content changed are uploaded; the new version goes live all at once at the end
+        run: npx wrangler deploy 2>&1 | tee deploy.log
+
+      - name: Address of the site
+        if: always()
+        working-directory: workers/site
+        env:
+          MODE: ${{ inputs.mode }}
+        run: |
+          url=$(grep -oE 'https://[a-z0-9.-]+\.workers\.dev' deploy.log 2>/dev/null | head -1)
+          if [ "$MODE" = "attivo" ]; then
+            echo "Pubblicato su Cloudflare: https://www.quotaguru.it/" >> "$GITHUB_STEP_SUMMARY"
+          elif [ -n "$url" ]; then
+            echo "Pubblicato su Cloudflare (prova, non indicizzato): $url/" >> "$GITHUB_STEP_SUMMARY"
+          fi

@@ -1,0 +1,9 @@
+# Response headers on Cloudflare (workers/site); GitHub Pages ignores this file. At most 100 rules.
+
+# JavaScript and CSS built by Vite: the name changes with the content, so browsers can keep them for a year.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Test address of the worker (quotaguru-site.<account>.workers.dev): never indexed, the site is www.quotaguru.it.
+https://:worker.:subdomain.workers.dev/*
+  X-Robots-Tag: noindex
