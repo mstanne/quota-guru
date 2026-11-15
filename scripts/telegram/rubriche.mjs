@@ -653,6 +653,12 @@ export const RUBRICHE = [
     build: (ctx) => results(ctx, "risultati"),
   },
   {
+    id: "video-pronostico",
+    name: "Il pronostico in video",
+    event: true,
+    build: videoPosts,
+  },
+  {
     id: "formazioni",
     name: "Formazioni ufficiali",
     event: true,
@@ -1379,4 +1385,35 @@ function dailyMultiples({ data, today, nowMs }) {
       })),
     },
   };
+}
+
+// ------------------------------------------------------------------------------------------- video-pronostico
+/**
+ * Event rubric: the vertical prediction video of the top matches (Serie A, European cups, Coppa Italia, national
+ * teams: index in the `video-partite` branch, files in the R2 video bucket, made by scripts/guide-videos/match_videos.py),
+ * posted between six hours and 90 minutes
+ * before kick-off. The probabilities in the caption are the ones in the video (same moment), not the latest.
+ */
+function videoPosts({ data, nowMs }) {
+  const archived = new Map(data.archive.calcio.map((e) => [e.id, e]));
+  const posts = [];
+  for (const v of Object.values(data.videos ?? {})) {
+    const ko = Date.parse(v.kickoff);
+    if (nowMs < ko - 6 * 3600000 || nowMs > ko - 90 * 60000) continue;
+    const e = archived.get(v.id);
+    const [home, away] = v.label.split(" – ");
+    const i = topOf(v.p);
+    const when = rome(ko);
+    posts.push({
+      key: String(v.id),
+      caption: post(
+        `🎬 <b>Il pronostico in video</b> – ${esc(v.label)}`,
+        `${esc(v.where)} · ${when.day === rome(nowMs).day ? "oggi" : esc(dayLabel(when.day))} alle ${when.time}`,
+        `📊 Il modello: ${p1x2(v.p)}\n➡️ Più probabile: <b>${i === 1 ? "X · pareggio" : `${i === 0 ? "1" : "2"} · vittoria ${esc(i === 0 ? home : away)}`}</b> ${alPct(v.p[i])}, ma niente è sicuro.`,
+        `Statistiche e probabilità aggiornate: ${anchor(e?.path ?? v.path, v.label, "video-pronostico")}`,
+      ),
+      video: { file: `${v.key}-9x16.mp4`, width: 1080, height: 1920, duration: v.seconds },
+    });
+  }
+  return posts;
 }

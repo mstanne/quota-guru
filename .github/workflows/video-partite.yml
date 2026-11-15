@@ -1,0 +1,116 @@
+# Videos of the predictions of the top football matches (scripts/guide-videos/match_videos.py, README in
+# scripts/guide-videos/README.md): Serie A, Champions / Europa / Conference League, Coppa Italia and Supercoppa,
+# national teams (Italy first), at most 3 matches per round. Every 3 hours it makes the videos of the chosen matches
+# that kick off in the next 36 hours and uploads them to the R2 video bucket (analisi/calcio/<date>/<match>,
+# docs/video.md); their index goes to the `video-partite` branch (one commit, index.json). The site build copies the
+# index (deploy.yml: the match page shows the video) and the Telegram rubric `video-pronostico` posts the vertical one.
+# Needs the same Cloudflare secrets as video.yml; without them it does nothing.
+# By hand: Actions → "Video partite" → Run workflow ("prova" only prints the matches it would make).
+name: Video partite
+
+on:
+  schedule:
+    - cron: "50 */3 * * *" # half an hour after each site build (deploy.yml runs at minute 17)
+  workflow_dispatch:
+    inputs:
+      prova:
+        description: "Prova a secco: stampa le partite scelte senza generare i video"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write # the `video-partite` branch (index only)
+
+concurrency:
+  group: video-partite
+  cancel-in-progress: false
+
+jobs:
+  videos:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 90
+    steps:
+      - name: Check the Cloudflare secrets
+        id: check
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$TOKEN" ] || [ -z "$ACCOUNT" ]; then
+            echo "::warning::Segreti CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID mancanti: niente da fare"
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v7
+        if: steps.check.outputs.ready == 'true'
+
+      - name: Data, published predictions and the current index
+        if: steps.check.outputs.ready == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          mkdir -p .cache
+          gh api -H "Accept: application/vnd.github.raw+json" \
+            "repos/${GITHUB_REPOSITORY}/contents/src/data/football.json?ref=dati" > .cache/football.json
+          git clone --quiet --depth 1 --branch archivio-pronostici "$url" .cache/archivio
+          if git ls-remote --exit-code --heads "$url" video-partite >/dev/null; then
+            git clone --quiet --depth 1 --branch video-partite "$url" .cache/store
+          else
+            mkdir -p .cache/store && git -C .cache/store init --quiet -b video-partite
+            git -C .cache/store remote add origin "$url"
+          fi
+
+      - name: Which matches
+        id: plan
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          python3 scripts/guide-videos/match_videos.py --football .cache/football.json --archive .cache/archivio \
+            --store .cache/store --dry-run | tee /tmp/plan.txt
+          if [ -s /tmp/plan.txt ]; then echo "todo=true" >> "$GITHUB_OUTPUT"; fi
+          { echo "### Partite"; sed 's/^/- /' /tmp/plan.txt; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Install the video tools
+        if: steps.plan.outputs.todo == 'true' && inputs.prova != true
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-inter > /dev/null
+          python3 -m venv .venv
+          .venv/bin/pip install -q playwright numpy scipy
+          .venv/bin/python -m playwright install --with-deps chromium > /dev/null
+
+      - name: Make the videos
+        if: steps.plan.outputs.todo == 'true' && inputs.prova != true
+        run: |
+          : > /tmp/upload.txt
+          .venv/bin/python scripts/guide-videos/match_videos.py --football .cache/football.json \
+            --archive .cache/archivio --store .cache/store --out public/video --uploads /tmp/upload.txt
+
+      - uses: actions/setup-node@v7
+        if: steps.plan.outputs.todo == 'true' && inputs.prova != true
+        with:
+          node-version-file: .nvmrc
+
+      - name: Upload to R2
+        if: steps.plan.outputs.todo == 'true' && inputs.prova != true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_VIDEO_BUCKET: ${{ vars.R2_VIDEO_BUCKET }}
+        run: |
+          (cd workers/live && npm ci --silent)
+          sort -u /tmp/upload.txt | scripts/upload-videos.sh
+
+      # only after the upload: the index never lists a video that is not in the bucket
+      - name: Save the index
+        if: steps.check.outputs.ready == 'true' && inputs.prova != true
+        working-directory: .cache/store
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then echo "Indice invariato"; exit 0; fi
+          git checkout --quiet --orphan nuovo
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit --quiet -m "Video partite $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --quiet --force origin HEAD:video-partite

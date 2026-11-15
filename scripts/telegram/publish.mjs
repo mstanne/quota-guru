@@ -15,7 +15,7 @@
 //                                                             (default .cache/telegram-cards)
 //
 // Every post goes out as an image (scripts/telegram/cards.mjs) with the text as caption; if the image cannot be made,
-// the text alone is sent.
+// the text alone is sent. The rubric video-pronostico sends a video instead (R2 video bucket).
 //
 // Environment:
 //   TELEGRAM_BOT_TOKEN       token of the bot (admin of both channels)
@@ -24,7 +24,8 @@
 //   TELEGRAM_TEST_CHAT_ID    private test channel (numeric id, e.g. -1001234567890)
 //   GH_TOKEN, GITHUB_REPOSITORY   read the data branches and write the register (branch telegram-registro)
 //   LIVE_URL                 address of the live worker (workers/live): official line-ups, rubric "formazioni"
-//   TG_DATA_DIR, TG_ARCHIVE_DIR, TG_REGISTER_FILE, TG_LIVE_FILE   local copies instead of the branches (tests)
+//   VIDEO_BASE               address of the R2 video bucket (default https://video.quotaguru.it): rubric video-pronostico
+//   TG_DATA_DIR, TG_ARCHIVE_DIR, TG_VIDEO_DIR, TG_REGISTER_FILE, TG_LIVE_FILE   local copies instead of the branches (tests)
 import { RUBRICHE } from "./rubriche.mjs";
 import fs from "node:fs";
 import path from "node:path";
@@ -34,11 +35,13 @@ import {
   complianceProblems,
   loadData,
   loadRegister,
+  loadVideoFile,
   rome,
   romeInstant,
   root,
   sendTelegram,
   sendTelegramPhoto,
+  sendTelegramVideo,
 } from "./lib.mjs";
 
 const WINDOW = 100; // minutes after the slot in which a late run still sends the rubric
@@ -123,7 +126,7 @@ for (const r of candidates) {
   }
   for (const p of posts) {
     // the rubric's own short text when it has one, else the long text cut to the caption limit (lib.mjs)
-    const caption = p.card ? captionOf(p.caption ?? p.text) : p.text;
+    const caption = p.card || p.video ? captionOf(p.caption ?? p.text) : p.text;
     let image = null;
     if (p.card) {
       try {
@@ -136,7 +139,8 @@ for (const r of candidates) {
       ...complianceProblems(caption),
       ...(image ? complianceProblems(image.text, { footer: false }).map((x) => `immagine: ${x}`) : []),
     ];
-    if (!image && p.text.length > 4096) problems.push(`testo troppo lungo (${p.text.length} caratteri, massimo 4096)`);
+    if (p.video && caption.length > 1024) problems.push(`didascalia troppo lunga (${caption.length} caratteri)`);
+    if (!image && !p.video && p.text.length > 4096) problems.push(`testo troppo lungo (${p.text.length} caratteri, massimo 4096)`);
     if (problems.length) {
       console.error(`✗ ${r.id}: post bloccato dal filtro di conformità:\n  - ${problems.join("\n  - ")}\n${p.text}`);
       failed++;
@@ -151,13 +155,16 @@ for (const r of candidates) {
         fs.writeFileSync(file, image.png);
         saved = `\n[immagine: ${file}]`;
       }
-      console.log(`\n===== ${r.id} (${r.name}) =====${saved}\n${image ? caption : p.text}\n`);
+      if (p.video) saved = `\n[video: ${p.video.file}, ${p.video.duration} s]`;
+      console.log(`\n===== ${r.id} (${r.name}) =====${saved}\n${image || p.video ? caption : p.text}\n`);
       continue;
     }
     try {
-      const messageId = image
-        ? await sendTelegramPhoto(chatId, image.png, caption)
-        : await sendTelegram(chatId, p.text);
+      const messageId = p.video
+        ? await sendTelegramVideo(chatId, await loadVideoFile(p.video.file), caption, p.video)
+        : image
+          ? await sendTelegramPhoto(chatId, image.png, caption)
+          : await sendTelegram(chatId, p.text);
       register.data.sent[p.key] = { at: new Date().toISOString(), messageId };
       p.after?.();
       await register.save(`${p.key.slice(mode.length + 1)} (${mode})`);

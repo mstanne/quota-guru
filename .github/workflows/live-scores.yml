@@ -129,6 +129,21 @@ jobs:
         if: steps.live.outputs.changed == 'true'
         run: test -d .cache/predictions-archive/.git
 
+      - name: Match prediction videos (video-partite branch)
+        if: steps.live.outputs.changed == 'true'
+        # Index of the match prediction videos (.github/workflows/video-partite.yml; the files are in the R2 video
+        # bucket): copied to src/data/match-videos.json, the match pages show the video when listed. Without the branch
+        # the site builds as before, with no match videos.
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -H "Accept: application/vnd.github.raw+json" \
+            "repos/${GITHUB_REPOSITORY}/contents/index.json?ref=video-partite" > /tmp/match-videos.json \
+            && mv /tmp/match-videos.json src/data/match-videos.json \
+            && echo "Video delle partite nell'indice: $(grep -c '"key"' src/data/match-videos.json)" \
+            || echo "Nessun indice dei video delle partite"
+
       - name: Build
         if: steps.live.outputs.changed == 'true'
         run: npm run build

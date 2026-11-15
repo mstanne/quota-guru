@@ -152,11 +152,12 @@
   /* --- partite --- */
   .vs { display: flex; align-items: center; justify-content: center; gap: calc(var(--u)*6); }
   .portrait .vs { flex-direction: column; gap: calc(var(--u)*3.5); }
-  .vs .tm { display: flex; flex-direction: column; align-items: center; gap: calc(var(--u)*1.8); width: calc(var(--u)*34); text-align: center; }
+  .vs .tm { display: flex; flex-direction: column; align-items: center; gap: calc(var(--u)*1.8); width: calc(var(--u)*40); text-align: center; }
+  .portrait .vs .tm { width: auto; }
   .vs .tm img { width: calc(var(--u)*16); height: calc(var(--u)*16); object-fit: contain; }
   .portrait .vs .tm img { width: calc(var(--u)*20); height: calc(var(--u)*20); }
-  .vs .tm .nm { font-size: calc(var(--u)*5.4); font-weight: 700; letter-spacing: -.02em; line-height: 1.05; }
-  .portrait .vs .tm .nm { font-size: calc(var(--u)*6.6); }
+  .vs .tm .nm { font-size: calc(var(--u)*7); font-weight: 700; letter-spacing: -.02em; line-height: 1.05; }
+  .portrait .vs .tm .nm { font-size: calc(var(--u)*8.6); }
   .vs .x { font-size: calc(var(--u)*3); font-weight: 700; color: #7F93AE; }
   .matchhead { align-items: center; text-align: center; }
   .matchhead .kicker { align-self: center; }
@@ -222,14 +223,14 @@
   const T = {
     match: (s) => `<div class="kicker" data-in="0.2">${esc(s.kicker)}</div>
       <div class="vs">
-        <div class="tm" data-in="0.5"><img src="${s.home.crest}" alt=""/><div class="nm">${esc(s.home.name)}</div></div>
+        <div class="tm" data-in="0.5">${s.home.crest ? `<img src="${s.home.crest}" alt=""/>` : ""}<div class="nm">${esc(s.home.name)}</div></div>
         <div class="x" data-in="0.9">contro</div>
-        <div class="tm" data-in="1.1"><img src="${s.away.crest}" alt=""/><div class="nm">${esc(s.away.name)}</div></div>
+        <div class="tm" data-in="1.1">${s.away.crest ? `<img src="${s.away.crest}" alt=""/>` : ""}<div class="nm">${esc(s.away.name)}</div></div>
       </div>
       <div class="when" data-in="1.6">${esc(s.when)}</div>`,
     teams: (s) => `<h2 data-in="0.15">${esc(s.title)}</h2>
       <div class="teams">${s.teams.map((t, i) => `<div class="card tcard" data-in="${(0.6 + i * 0.7).toFixed(2)}">
-        <div class="hd"><img src="${t.crest}" alt=""/><div class="nm">${esc(t.name)}</div></div>
+        <div class="hd">${t.crest ? `<img src="${t.crest}" alt=""/>` : ""}<div class="nm">${esc(t.name)}</div></div>
         <div class="row">${t.stats.map((x) => `<div><div class="v">${esc(x[0])}</div><div class="k">${esc(x[1])}</div></div>`).join("")}</div>
         <div class="form">${t.form.map((r, k) => `<div class="b ${r}" data-in="${(1.4 + i * 0.7 + k * 0.12).toFixed(2)}">${r}</div>`).join("")}<span class="lab">${esc(s.formLabel || "")}</span></div>
       </div>`).join("")}</div>

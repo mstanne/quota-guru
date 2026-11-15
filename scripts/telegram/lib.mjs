@@ -103,6 +103,29 @@ async function branchJson(branch, file) {
   return res.json();
 }
 
+/** Index of the match prediction videos (branch `video-partite`, scripts/guide-videos/match_videos.py). */
+async function loadVideos() {
+  const dir = process.env.TG_VIDEO_DIR;
+  if (dir) {
+    const p = path.join(dir, "index.json");
+    return fs.existsSync(p) ? readJsonFile(p) : { videos: {} };
+  }
+  return (await branchJson("video-partite", "index.json")) ?? { videos: {} };
+}
+
+/**
+ * A file of the R2 video bucket (docs/video.md), e.g. "analisi/calcio/2026-11-21/como-cagliari-2026-11-21-9x16.mp4":
+ * from VIDEO_BASE (default https://video.quotaguru.it), or from TG_VIDEO_DIR in local tests.
+ */
+export async function loadVideoFile(file) {
+  const dir = process.env.TG_VIDEO_DIR;
+  if (dir) return fs.readFileSync(path.join(dir, file));
+  const base = (process.env.VIDEO_BASE || "https://video.quotaguru.it").replace(/\/+$/, "");
+  const res = await fetch(`${base}/${file}`);
+  if (!res.ok) throw new Error(`video ${file}: HTTP ${res.status}`);
+  return Buffer.from(await res.arrayBuffer());
+}
+
 /**
  * Data the rubrics read:
  *   football, basket   last data downloaded by the site (`dati` branch: src/data/football.json, basket.json)
@@ -111,7 +134,9 @@ async function branchJson(branch, file) {
  *                      (`archivio-pronostici` branch, files of the previous, current and next month)
  *   tris               the threes locked by the site build (same branch, tris.json; scripts/lib/tris.mjs)
  *   multiple           the multiples of the day locked by the site build (same branch, multiple.json; scripts/lib/multiple.mjs)
- * Local runs: TG_DATA_DIR (a folder holding src/data/…) and TG_ARCHIVE_DIR (a copy of archivio-pronostici).
+ *   videos             index of the match prediction videos (`video-partite` branch, index.json)
+ * Local runs: TG_DATA_DIR (a folder holding src/data/…), TG_ARCHIVE_DIR (a copy of archivio-pronostici) and
+ * TG_VIDEO_DIR (index.json of video-partite and the video files, with the bucket's paths).
  */
 export async function loadData(nowMs, { live = false } = {}) {
   const r = rome(nowMs);
@@ -127,7 +152,11 @@ export async function loadData(nowMs, { live = false } = {}) {
     const p = path.join(archDir, f);
     return fs.existsSync(p) ? readJsonFile(p) : null;
   };
-  const [football, basket, tris, multiple, ...files] = await Promise.all([
+  const [videos, football, basket, tris, multiple, ...files] = await Promise.all([
+    loadVideos().catch((e) => {
+      console.error(`! indice dei video non disponibile: ${e.message ?? e}`);
+      return { videos: {} };
+    }),
     data("src/data/football.json"),
     data("src/data/basket.json"),
     arch("tris.json"),
@@ -142,6 +171,7 @@ export async function loadData(nowMs, { live = false } = {}) {
     archive,
     tris: tris ?? {},
     multiple: multiple ?? {},
+    videos: videos.videos ?? {},
     lineups: live ? await loadLineups() : [],
   };
 }
@@ -356,6 +386,25 @@ export async function sendTelegramPhoto(chatId, png, caption) {
   form.append("parse_mode", "HTML");
   form.append("photo", new Blob([png], { type: "image/png" }), "quotaguru.png");
   const res = await fetch(`https://api.telegram.org/bot${token}/sendPhoto`, { method: "POST", body: form });
+  const j = await res.json().catch(() => ({}));
+  if (!j.ok) throw new Error(`Telegram: ${j.description ?? `HTTP ${res.status}`}`);
+  return j.result.message_id;
+}
+
+/** Sends an MP4 with an HTML caption; returns the message id. */
+export async function sendTelegramVideo(chatId, mp4, caption, { width, height, duration } = {}) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  if (!token) throw new Error("TELEGRAM_BOT_TOKEN mancante");
+  const form = new FormData();
+  form.append("chat_id", String(chatId));
+  form.append("caption", caption);
+  form.append("parse_mode", "HTML");
+  form.append("supports_streaming", "true");
+  if (width) form.append("width", String(width));
+  if (height) form.append("height", String(height));
+  if (duration) form.append("duration", String(duration));
+  form.append("video", new Blob([mp4], { type: "video/mp4" }), "quotaguru.mp4");
+  const res = await fetch(`https://api.telegram.org/bot${token}/sendVideo`, { method: "POST", body: form });
   const j = await res.json().catch(() => ({}));
   if (!j.ok) throw new Error(`Telegram: ${j.description ?? `HTTP ${res.status}`}`);
   return j.result.message_id;

@@ -10,6 +10,8 @@ coda delle guide Academy (`academy.json`).
   Un ritardo di GitHub o un'esecuzione ripetuta non producono doppioni; il cambio dell'ora legale non richiede modifiche.
 - I dati vengono letti dal branch `dati` (calendario, classifiche, marcatori) e dal branch `archivio-pronostici`
   (ogni pronostico pubblicato con esito, tris e multiple del giorno): i numeri sul canale sono gli stessi del sito.
+  I video della rubrica `video-pronostico`: indice dal branch `video-partite`, file dal bucket R2 (`VIDEO_BASE`; prove in
+  locale: `TG_VIDEO_DIR`).
 - Il registro dei post inviati e la posizione nella coda Academy stanno nel branch `telegram-registro`, file `registro.json`.
 - Il live worker (`workers/live`) avvia il workflow puntuale ai minuti 07, 27 e 47 e, appena escono formazioni
   ufficiali nuove, subito con la rubrica `formazioni`. Il cron di GitHub resta come riserva.
@@ -48,6 +50,7 @@ node scripts/telegram/publish.mjs --dry-run --all --cards /percorso/cartella
 | `nazionale-italia` | 11:30 il giorno di ogni partita dell'Italia | pronostico del modello delle nazionali e canale TV (Rai) |
 | `pronostici-del-giorno` | 11:45 di sabato e domenica con i campionati e di martedì, mercoledì e giovedì con le coppe | 5 partite del giorno, per ognuna l'esito più netto tra 1X2, Goal/No Goal, Over/Under 2,5, doppia chance e Over 1,5, con probabilità e quota equa (1 ÷ probabilità) e la probabilità che si verifichino tutti e cinque. Massimo 2 per competizione (3 nelle giornate di coppa) finché ce ne sono altre; esclude le partite del tris del giorno |
 | `studio-pronostico` | circa 4 ore prima del calcio d'inizio, massimo 2 partite al giorno | lo studio di una partita: 1X2 con quote eque, gol attesi, Over 2,5 e Goal, risultati più probabili, ultime 5 partite, classifica e indisponibili, l'esito del modello. Partite scelte: le squadre italiane nelle coppe europee (prima la Champions) e il big match di Serie A del giorno (la coppia meglio piazzata in classifica) |
+| `video-pronostico` | tra 6 ore e 90 minuti prima del calcio d'inizio | il video verticale del pronostico delle partite di punta (Serie A, coppe europee, Coppa Italia e Supercoppa, nazionali: al massimo 3 per giornata o turno, per le nazionali 3 al giorno), con le probabilità 1X2 del video e il link alla pagina della partita. I video li prepara il workflow `video-partite.yml` (file nel bucket R2 dei video, indice nel ramo `video-partite`, `scripts/guide-videos/README.md`); senza video la rubrica non pubblica nulla. Niente loghi dei club neanche nei video |
 | `dove-vederla` | venerdì 18:00 | canali TV della giornata di Serie A (accordi 2026/27) |
 | `formazioni` | appena escono, circa un'ora prima | formazioni ufficiali: tutte le partite di Serie A, coppe europee solo con squadre italiane, ogni partita dell'Italia |
 | `risultati` / `risultati-domenica` | sabato 23:00, domenica 23:30 | risultati del giorno contro il modello |

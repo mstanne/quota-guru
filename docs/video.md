@@ -9,7 +9,7 @@ gratuito comprende 10 GB di spazio (un video delle guide pesa circa 3 MB).
 | Percorso | Contenuto |
 | --- | --- |
 | `guide/<slug>-16x9.mp4`, `-9x16.mp4`, `-16x9.jpg`, `-9x16.jpg` | video riassuntivi delle guide |
-| `analisi/<sport>/<AAAA-MM-GG>/<partita>-16x9.mp4` (e 9x16, poster) | analisi di una partita (`calcio`, `basket`, `tennis`; `<partita>` = slug della pagina) |
+| `analisi/<sport>/<AAAA-MM-GG>/<partita>-16x9.mp4` (e 9x16, poster) | analisi di una partita (`calcio`, `basket`, `tennis`; `<partita>` = slug della pagina). Oggi: i pronostici delle partite di calcio di punta, generati da `video-partite.yml` (`scripts/guide-videos/README.md`) |
 | `tris/<AAAA-MM-GG>-16x9.mp4` (e 9x16, poster) | la tripla del giorno |
 | `multiple/<AAAA-MM-GG>-16x9.mp4` (e 9x16, poster) | le multiple del giorno |
 
@@ -25,6 +25,9 @@ Il workflow **Video** (`.github/workflows/video.yml`) usa `scripts/upload-videos
   e carica quei video, più i file di `public/video` aggiunti o cambiati;
 - a mano (Actions → Video → Run workflow): `rendi` = slug separati da spazi o `tutte`; `carica_tutto` = carica tutti i
   file di `public/video`.
+
+I video dei pronostici delle partite arrivano invece dal workflow **Video partite** (`.github/workflows/video-partite.yml`,
+ogni 3 ore), che li genera e li carica con lo stesso script; il loro indice sta nel ramo `video-partite`.
 
 I file hanno una cache di un giorno: un video rigenerato con lo stesso nome compare entro 24 ore.
 
