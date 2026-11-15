@@ -71,9 +71,9 @@ export const paths = {
 export const routes: RouteMeta[] = [
   {
     path: paths.home,
-    title: "QuotaGuru – Pronostici calcio, tennis e NBA basati sui dati",
+    title: "QuotaGuru, il guru delle quote: pronostici calcio, NBA e tennis",
     description:
-      "Probabilità di ogni esito calcolate da modelli statistici per calcio, tennis e NBA, con calendario, risultati, classifiche e guide alle scommesse.",
+      "QuotaGuru (Quota Guru), il guru delle quote: probabilità di ogni esito calcolate da modelli statistici per calcio, NBA e tennis, con risultati e classifiche.",
   },
   {
     path: paths.calcio,

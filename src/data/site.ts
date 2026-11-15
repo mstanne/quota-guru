@@ -5,6 +5,10 @@
  */
 export const site = {
   name: "QuotaGuru",
+  /** Other ways people search for the site: in the structured data (alternateName) so search engines link them to it. */
+  alternateNames: ["Quota Guru", "Il Guru delle Quote"],
+  /** Short tagline shown next to the name (home title, footer, Chi siamo). */
+  tagline: "il guru delle quote",
   company: "Francesco Torcè",
   vatNumber: "",
   address: "",

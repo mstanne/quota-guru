@@ -25,7 +25,7 @@ export function Footer() {
               <BrandLogo height={44} />
             </div>
             <p className="text-slate-400 text-sm">
-              Pronostici basati sui dati e offerte degli operatori autorizzati ADM
+              {site.name}, {site.tagline}: pronostici basati sui dati e offerte degli operatori autorizzati ADM
             </p>
           </div>
           <div>
