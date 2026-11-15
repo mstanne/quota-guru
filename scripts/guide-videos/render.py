@@ -95,7 +95,10 @@ def mix_audio(board, work, total):
 
 def load_board(slug):
     src = Path(slug) if slug.endswith(".json") else HERE / "storyboards" / f"{slug}.json"
-    board = json.loads(src.read_text("utf-8"))
+    return with_logo(json.loads(src.read_text("utf-8")))
+
+
+def with_logo(board):
     svg = (ROOT / "src" / "assets" / "brand" / "quotaguru-logo-white.svg").read_bytes()
     board["logo"] = "data:image/svg+xml;base64," + base64.b64encode(svg).decode()
     return board
@@ -156,6 +159,22 @@ def render(pw, slug, aspect, board, work, audio):
     for f in files:
         f.unlink()
     print(f"  -> {dest} ({dest.stat().st_size / 1e6:.1f} MB, {total:.1f} s)")
+
+
+def render_board(board, out_dir, aspects=("landscape", "portrait")):
+    """Rende uno storyboard già caricato (dict) in out_dir, con la musica. Usato da match_videos.py."""
+    global OUT
+    OUT = Path(out_dir).resolve()
+    board = with_logo(board)
+    slug = board["slug"]
+    work = Path(tempfile.mkdtemp(prefix=f"gv-{slug}-"))
+    total = sum(sc["dur"] for sc in board["scenes"])
+    audio = mix_audio(board, work, total)
+    with sync_playwright() as pw:
+        for aspect in aspects:
+            render(pw, slug, aspect, board, work, audio)
+    shutil.rmtree(work, ignore_errors=True)
+    return total
 
 
 def main():

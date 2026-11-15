@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { useParams } from "react-router";
 import { Link } from "../../lib/links";
-import { ArrowLeft, BarChart3, CalendarDays, History, Info, ListOrdered, TrendingUp, Users } from "lucide-react";
+import { ArrowLeft, BarChart3, CalendarDays, Film, History, Info, ListOrdered, TrendingUp, Users } from "lucide-react";
 import { GoalStatsNote, MatchGoalComparison } from "../stats/GoalStats";
 import { FootballQuickSummary } from "../predictions/QuickSummary";
 import {
@@ -60,6 +60,9 @@ import { matchBroadcast } from "../../lib/tvSchedule";
 import { BroadcastRow } from "../media/BroadcastInfo";
 import { ArchivedOrNotFound } from "../../lib/archive";
 import { TelegramBanner } from "../TelegramBanner";
+import { SummaryVideo } from "../media/SummaryVideo";
+import { matchVideo } from "../../data/matchVideos";
+import { track } from "../../lib/analytics";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 
@@ -69,6 +72,33 @@ function SectionTitle({ icon: Icon, children }: { icon: typeof Info; children: R
       <Icon className="w-5 h-5 text-slate-300" aria-hidden="true" />
       {children}
     </h2>
+  );
+}
+
+/** The prediction video of the match (top matches only, scripts/guide-videos/match_videos.py), when there is one. */
+function MatchPredictionVideo({ id, label }: { id: number; label: string }) {
+  const video = matchVideo(id);
+  if (!video) return null;
+  const at = new Date(video.generated).toLocaleString("it-IT", {
+    timeZone: "Europe/Rome",
+    day: "numeric",
+    month: "long",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  return (
+    <section className={card} aria-labelledby="video-pronostico">
+      <SectionTitle icon={Film}>
+        <span id="video-pronostico">Il pronostico in video</span>
+      </SectionTitle>
+      <SummaryVideo
+        className=""
+        files={video.files}
+        label={`Video del pronostico di ${label}`}
+        caption={`Dati del ${at}: le probabilità qui sopra sono le più aggiornate.`}
+        onFirstPlay={(format) => track("match_video_play", { match: String(id), format })}
+      />
+    </section>
   );
 }
 
@@ -434,6 +464,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
           {prediction?.qualify && (!finished || prediction.pre) && (
             <QualifyChance match={match} prediction={prediction} firstLeg={firstLegOf(competition, match)} />
           )}
+          {isUpcoming(match) && <MatchPredictionVideo id={match.id} label={`${match.homeTeam.shortName} – ${match.awayTeam.shortName}`} />}
           {!finished && match.injuries && <MatchUnavailable match={match} />}
           {isUpcoming(match) && (
             <MatchOddsSlot
