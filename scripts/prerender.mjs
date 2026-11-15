@@ -155,15 +155,18 @@ const organization = () => ({
   "@type": "Organization",
   "@id": "/#organizzazione",
   name: site.name,
+  alternateName: site.alternateNames,
   url: "/",
   logo: "/icon-512.png",
   ...(site.email ? { email: site.email } : {}),
+  ...(site.social.telegram ? { sameAs: [site.social.telegram] } : {}),
 });
 const website = () => ({
   "@type": "WebSite",
   "@id": "/#sito",
   url: "/",
   name: site.name,
+  alternateName: site.alternateNames,
   inLanguage: "it-IT",
   publisher: { "@id": "/#organizzazione" },
 });

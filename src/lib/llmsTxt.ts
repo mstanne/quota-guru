@@ -14,7 +14,7 @@ export function llmsTxt(url: (path: string) => string) {
   return [
     "# QuotaGuru",
     "",
-    "> Sito italiano di pronostici sportivi basati sui dati: per ogni partita di calcio e NBA pubblica le probabilità di ogni esito calcolate da modelli statistici (calcio: modello di Poisson/Dixon-Coles sui gol delle ultime stagioni; NBA: modello a punti per scarto e totale), con le motivazioni della stima e il bilancio di tutti i pronostici passati, giusti e sbagliati. Per il tennis stima chi vince tra due giocatori dei top 100 ATP e WTA. Elenca anche gli operatori di scommesse con concessione ADM e le loro offerte.",
+    "> QuotaGuru (anche Quota Guru, il guru delle quote) è un sito italiano di pronostici sportivi basati sui dati: per ogni partita di calcio e NBA pubblica le probabilità di ogni esito calcolate da modelli statistici (calcio: modello di Poisson/Dixon-Coles sui gol delle ultime stagioni; NBA: modello a punti per scarto e totale), con le motivazioni della stima e il bilancio di tutti i pronostici passati, giusti e sbagliati. Per il tennis stima chi vince tra due giocatori dei top 100 ATP e WTA. Elenca anche gli operatori di scommesse con concessione ADM e le loro offerte.",
     "",
     "Le probabilità sono stime statistiche, non consigli di gioco né quote di un operatore. Il gioco è vietato ai minori di 18 anni; Telefono Verde nazionale per le problematiche legate al gioco d'azzardo: 800 558 822.",
     "",
