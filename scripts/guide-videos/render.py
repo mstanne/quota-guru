@@ -94,7 +94,8 @@ def mix_audio(board, work, total):
 
 
 def load_board(slug):
-    board = json.loads((HERE / "storyboards" / f"{slug}.json").read_text("utf-8"))
+    src = Path(slug) if slug.endswith(".json") else HERE / "storyboards" / f"{slug}.json"
+    board = json.loads(src.read_text("utf-8"))
     svg = (ROOT / "src" / "assets" / "brand" / "quotaguru-logo-white.svg").read_bytes()
     board["logo"] = "data:image/svg+xml;base64," + base64.b64encode(svg).decode()
     return board
@@ -154,18 +155,23 @@ def render(pw, slug, aspect, board, work, audio):
                     "-q:v", "4", str(OUT / f"{slug}-{tag}.jpg")], check=True)
     for f in files:
         f.unlink()
-    print(f"  -> {dest.relative_to(ROOT)} ({dest.stat().st_size / 1e6:.1f} MB, {total:.1f} s)")
+    print(f"  -> {dest} ({dest.stat().st_size / 1e6:.1f} MB, {total:.1f} s)")
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("slug")
+    ap.add_argument("slug", help="slug di una guida, oppure il percorso di uno storyboard .json")
+    ap.add_argument("--out", help="cartella di destinazione (predefinita public/video/guide)")
     ap.add_argument("--aspect", default="both", choices=["landscape", "portrait", "both"])
     ap.add_argument("--stills", default="")
     ap.add_argument("--no-audio", action="store_true")
     ap.add_argument("--voice", action="store_true", help="aggiunge la voce narrante (Piper TTS)")
     a = ap.parse_args()
     board = load_board(a.slug)
+    if a.out:
+        global OUT
+        OUT = Path(a.out).resolve()
+    a.slug = board.get("slug", a.slug)
     work = Path(tempfile.mkdtemp(prefix=f"gv-{a.slug}-"))
     audio = None
     if not a.no_audio and not a.stills:
