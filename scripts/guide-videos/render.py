@@ -9,6 +9,8 @@ Legge scripts/guide-videos/storyboards/<slug>.json, disegna ogni fotogramma con 
 e scrive in public/video/guide/:
   <slug>-16x9.mp4, <slug>-9x16.mp4  (H.264, 30 fps, musica di sottofondo AAC; --voice aggiunge la voce, --no-audio per il muto)
   <slug>-16x9.jpg, <slug>-9x16.jpg  (poster)
+Il workflow "Video" (.github/workflows/video.yml) li rigenera quando cambia lo storyboard e li carica nel bucket R2
+(https://video.quotaguru.it/guide/…, docs/video.md).
 Con --stills salva solo i fotogrammi indicati (in /tmp/guide-video-stills) per controllare l'impaginazione.
 
 Musica: music.py (generata, originale). Di default i video hanno solo la musica.

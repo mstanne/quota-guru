@@ -1,9 +1,11 @@
 /**
  * VIDEO RIASSUNTIVI DELLE GUIDE
- * Ogni voce indica una guida che ha il suo video in public/video/guide/<slug>-16x9.mp4 e -9x16.mp4
- * (con i poster .jpg). I video si generano con scripts/guide-videos/render.py a partire dagli
- * storyboard in scripts/guide-videos/storyboards/<slug>.json.
+ * Ogni voce indica una guida che ha il suo video guide/<slug>-16x9.mp4 e -9x16.mp4 (con i poster .jpg) nel bucket
+ * dei video (videos.ts, docs/video.md). I video si generano con scripts/guide-videos/render.py a partire dagli
+ * storyboard in scripts/guide-videos/storyboards/<slug>.json; il workflow "Video" li genera e li carica sul bucket.
  */
+import { videoFiles, videoKeys } from "./videos";
+
 export interface GuideVideo {
   /** Durata in secondi (per i dati strutturati). */
   seconds: number;
@@ -49,13 +51,5 @@ export const guideVideos: Record<string, GuideVideo> = {
   "varianza-e-serie-negative": { seconds: 42, published: "2026-11-15" },
 };
 
-/** Percorsi (relativi alla radice del sito) dei file di un video. */
-export const guideVideoFiles = (slug: string) => {
-  const base = `/video/guide/${slug}`;
-  return {
-    landscape: `${base}-16x9.mp4`,
-    portrait: `${base}-9x16.mp4`,
-    poster: `${base}-16x9.jpg`,
-    posterPortrait: `${base}-9x16.jpg`,
-  };
-};
+/** Indirizzi dei file di un video: nel bucket R2 se la build ha VITE_VIDEO_BASE, altrimenti in public/video (videos.ts). */
+export const guideVideoFiles = (slug: string) => videoFiles(videoKeys.guide(slug));

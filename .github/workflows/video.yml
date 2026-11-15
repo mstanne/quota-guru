@@ -1,0 +1,135 @@
+# Genera i video e li carica nel bucket R2 dei video (https://video.quotaguru.it), docs/video.md.
+#   push su main  rigenera le guide il cui storyboard è cambiato (scripts/guide-videos/storyboards/<slug>.json) e
+#                 carica quei video più i file di public/video aggiunti o cambiati dal push
+#   a mano        Actions → "Video" → Run workflow: "rendi" = slug separati da spazi o "tutte" (una guida ≈ 2-3 minuti),
+#                 "carica_tutto" = carica tutti i file di public/video (il primo passaggio al bucket)
+# Configurazione (una volta sola), come per live-worker.yml:
+#   - segreti CLOUDFLARE_API_TOKEN (con il permesso "Workers R2 Storage: Edit") e CLOUDFLARE_ACCOUNT_ID
+#   - variabile R2_VIDEO_BUCKET se il bucket non si chiama quotaguru-video
+#   - variabile VIDEO_BASE = https://video.quotaguru.it quando i video sono nel bucket: da lì il sito li prende da R2
+name: Video
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/guide-videos/**"
+      - "public/video/**"
+      - "scripts/upload-videos.sh"
+      - ".github/workflows/video.yml"
+  workflow_dispatch:
+    inputs:
+      rendi:
+        description: "Guide da rigenerare: slug separati da spazi, oppure \"tutte\" (vuoto = nessuna)"
+        type: string
+        default: ""
+      carica_tutto:
+        description: "Carica nel bucket tutti i file di public/video"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: video
+  cancel-in-progress: false
+
+jobs:
+  video:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 240
+    steps:
+      - name: Check the Cloudflare secrets
+        id: check
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$TOKEN" ] || [ -z "$ACCOUNT" ]; then
+            echo "::warning::Segreti CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID mancanti: niente da fare"
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v7
+        if: steps.check.outputs.ready == 'true'
+
+      - name: What to render and upload
+        id: plan
+        if: steps.check.outputs.ready == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          RENDI: ${{ inputs.rendi }}
+          ALL: ${{ inputs.carica_tutto }}
+        run: |
+          : > /tmp/upload.txt
+          slugs=""
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            if [ "$RENDI" = "tutte" ]; then
+              slugs=$(ls scripts/guide-videos/storyboards/*.json | xargs -n1 basename | sed 's/\.json$//')
+            else
+              slugs="$RENDI"
+            fi
+            if [ "$ALL" = "true" ]; then find public/video -type f \( -name '*.mp4' -o -name '*.jpg' \) | sort > /tmp/upload.txt; fi
+          elif ! [[ "$BEFORE" =~ ^0+$ ]]; then
+            # files added or changed by the push (all its commits)
+            gh api "repos/${GITHUB_REPOSITORY}/compare/${BEFORE}...${AFTER}" \
+              --jq '.files[] | select(.status != "removed") | .filename' > /tmp/changed.txt
+            grep -E '^public/video/.*\.(mp4|jpg)$' /tmp/changed.txt > /tmp/upload.txt || true
+            slugs=$(grep -E '^scripts/guide-videos/storyboards/[^/]+\.json$' /tmp/changed.txt | xargs -rn1 basename | sed 's/\.json$//')
+          fi
+          slugs=$(echo $slugs)
+          echo "slugs=$slugs" >> "$GITHUB_OUTPUT"
+          echo "Guide da rigenerare: ${slugs:-nessuna}" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "File del repository da caricare: $(grep -c . /tmp/upload.txt || true)" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/setup-python@v6
+        if: steps.plan.outputs.slugs != ''
+        with:
+          python-version: "3.13"
+
+      - name: Install the video tools
+        if: steps.plan.outputs.slugs != ''
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q playwright numpy scipy
+          python -m playwright install --with-deps chromium
+
+      - name: Render the guide videos
+        if: steps.plan.outputs.slugs != ''
+        env:
+          SLUGS: ${{ steps.plan.outputs.slugs }}
+        run: |
+          for slug in $SLUGS; do
+            if [ ! -f "scripts/guide-videos/storyboards/$slug.json" ]; then
+              echo "::warning::Storyboard mancante: $slug"; continue
+            fi
+            echo "== $slug"
+            python scripts/guide-videos/render.py "$slug"
+            for tag in 16x9 9x16; do
+              printf 'public/video/guide/%s-%s.mp4\npublic/video/guide/%s-%s.jpg\n' "$slug" "$tag" "$slug" "$tag" >> /tmp/upload.txt
+            done
+          done
+
+      - uses: actions/setup-node@v7
+        if: steps.check.outputs.ready == 'true'
+        with:
+          node-version-file: .nvmrc
+
+      - name: Install wrangler
+        if: steps.check.outputs.ready == 'true'
+        working-directory: workers/live
+        run: npm ci
+
+      - name: Upload to R2
+        if: steps.check.outputs.ready == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_VIDEO_BUCKET: ${{ vars.R2_VIDEO_BUCKET }}
+        run: sort -u /tmp/upload.txt | scripts/upload-videos.sh
