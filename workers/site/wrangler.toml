@@ -1,0 +1,16 @@
+# Cloudflare Worker that serves the site (only static assets: no script, so the requests are not billed as Worker
+# invocations). Published by .github/workflows/cloudflare-site.yml with the dist/ folder of the GitHub build.
+# See README.md in this folder for the move from GitHub Pages.
+#
+# Keep every setting on one line (inline table for assets): when the repository variable SITO_CLOUDFLARE is
+# "attivo" the workflow appends the custom domain at the end of this file.
+name = "quotaguru-site"
+compatibility_date = "2025-09-01"
+
+# dist/: the files built by deploy.yml / live-scores.yml.
+#   not_found_handling "404-page": unknown URLs get dist/404.html with status 404 (as on GitHub Pages)
+#   html_handling "auto-trailing-slash": /calcio serves dist/calcio/index.html and redirects to /calcio/
+#     (the canonical form used by the site's links and sitemaps, as on GitHub Pages)
+# dist/_redirects (301 for the moved URLs, scripts/prerender.mjs) and dist/_headers (public/_headers) are read by
+# Cloudflare and not served as files.
+assets = { directory = "../../dist", not_found_handling = "404-page", html_handling = "auto-trailing-slash" }

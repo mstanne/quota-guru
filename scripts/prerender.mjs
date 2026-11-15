@@ -342,7 +342,10 @@ function emitBridge(from, to, title) {
   fs.mkdirSync(path.dirname(outFile(from)), { recursive: true });
   fs.writeFileSync(outFile(from), html);
   bridges.push(from);
+  bridgeTargets.set(from, target);
 }
+/** Old path → new URL of every bridge, also written to dist/_redirects (real 301s on Cloudflare, see below). */
+const bridgeTargets = new Map();
 
 // 16:9 social images of the match pages (scripts/lib/og-cards.mjs), cached between builds next to the SEO state
 const ogCacheDir = path.join(cacheDir, "..", "og");
@@ -537,7 +540,32 @@ for (const [from, to] of Object.entries(movedUrls)) {
 }
 if (movedBridges) console.log(`prerender: ${movedBridges} pagine ponte per indirizzi corretti (data/url-spostati.json)`);
 
-// GitHub Pages serves 404.html for unknown URLs; the client renders it from scratch.
+// Cloudflare (workers/site) reads dist/_redirects and answers the moved URLs with a real 301, before the bridge
+// page (kept: GitHub Pages ignores the file, and the bridges past the limit still work). Both forms of each old
+// URL, with and without the final "/". Cloudflare accepts at most 2,000 static rules: the rest keep the bridge.
+{
+  const MAX_RULES = 2000;
+  const lines = [];
+  let skipped = 0;
+  for (const [from, target] of bridgeTargets) {
+    const old = pageUrl(from); // ends with "/"
+    if (/\s/.test(old + target)) continue;
+    if (lines.length + 2 > MAX_RULES) {
+      skipped++;
+      continue;
+    }
+    lines.push(`${old.replace(/\/$/, "")} ${target} 301`, `${old} ${target} 301`);
+  }
+  const header = "# Generato da scripts/prerender.mjs: URL spostati (301 su Cloudflare; GitHub Pages ignora il file)\n";
+  fs.writeFileSync(path.join(dist, "_redirects"), header + lines.join("\n") + "\n");
+  console.log(
+    `prerender: ${lines.length / 2} URL spostati in _redirects` +
+      (skipped ? ` (${skipped} oltre il limite di Cloudflare: restano solo con la pagina ponte)` : ""),
+  );
+}
+
+// GitHub Pages and Cloudflare (not_found_handling "404-page") serve 404.html for unknown URLs; the client renders
+// it from scratch.
 fs.writeFileSync(
   path.join(dist, "404.html"),
   page(notFoundMeta, render(`${basename}/404`, basename), { prerendered: false }),

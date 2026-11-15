@@ -1,5 +1,5 @@
-# Builds the site and publishes it to GitHub Pages on every push to main and every 3 hours
-# (to refresh fixtures, results and standings from API-Sports).
+# Builds the site and publishes it on every push to main and every 3 hours (to refresh fixtures, results and standings
+# from API-Sports). Host: GitHub Pages, or Cloudflare with the repository variable SITO_CLOUDFLARE (workers/site/README.md).
 # Full refresh (downloads everything from the APIs, then builds): the runs every 3 hours, the manual runs and the
 # pushes that touch the data downloads. Quick refresh: a push that changes only the site's code starts from the data
 # of the last refresh (the snapshot in the cache, also used by live-scores.yml) and skips the downloads, so it is
@@ -315,7 +315,9 @@ jobs:
           retention-days: 1
 
   deploy:
+    # GitHub Pages: until the site moves to Cloudflare (repository variable SITO_CLOUDFLARE = attivo)
     needs: build
+    if: vars.SITO_CLOUDFLARE != 'attivo'
     runs-on: ubuntu-26.04
     environment:
       name: github-pages
@@ -324,10 +326,21 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v5
 
+  cloudflare:
+    # Cloudflare (workers/site/README.md): test address with SITO_CLOUDFLARE = prova, www.quotaguru.it with attivo
+    needs: build
+    if: (vars.SITO_CLOUDFLARE == 'prova' || vars.SITO_CLOUDFLARE == 'attivo')
+    uses: ./.github/workflows/cloudflare-site.yml
+    with:
+      mode: ${{ vars.SITO_CLOUDFLARE }}
+    secrets: inherit
+
   indexnow:
     # After the pages are live: tells Bing and the other IndexNow engines which pages are new or changed
     # (scripts/indexnow.mjs). Never affects the published site.
-    needs: deploy
+    # runs once the host serving www.quotaguru.it has the new pages (GitHub Pages, or Cloudflare when attivo)
+    needs: [deploy, cloudflare]
+    if: ${{ !cancelled() && (needs.deploy.result == 'success' || (vars.SITO_CLOUDFLARE == 'attivo' && needs.cloudflare.result == 'success')) }}
     runs-on: ubuntu-26.04
     permissions:
       contents: read

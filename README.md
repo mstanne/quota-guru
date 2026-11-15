@@ -66,6 +66,10 @@ Poi su GitHub: **Settings → Pages → Build and deployment → Source: GitHub 
 Il workflow `.github/workflows/deploy.yml` builda e pubblica il sito a ogni push su `main`
 all'indirizzo `https://<utente>.github.io/<repo>/`.
 
+**Cloudflare.** La stessa build può essere pubblicata su un Worker Cloudflare (solo file statici) al posto di
+GitHub Pages, con la variabile del repository `SITO_CLOUDFLARE` (`prova` o `attivo`): passi e ritorno indietro in
+`workers/site/README.md`.
+
 Il percorso base viene impostato automaticamente con la variabile `BASE_PATH` (= nome del repo) e l'indirizzo
 pubblico con `SITE_URL` (usato per canonical e sitemap). Se usi un dominio
 personalizzato o un repo `<utente>.github.io`, imposta nel workflow `BASE_PATH: /` e `SITE_URL` con il tuo dominio.
@@ -362,7 +366,9 @@ Regole:
   `/calcio/<lega>/giornata/<n>`, `/basket/nba`) è pubblicato come pagina-ponte con canonical verso il nuovo URL e
   reindirizzamento immediato (`meta refresh` 0 e `location.replace`), che i motori di ricerca trattano come
   spostamento permanente. Elenco e regole in `src/lib/legacyUrls.ts`; nel browser le stesse rotte reindirizzano con
-  `<Navigate replace>`. I link salvati nelle pagine archiviate vengono riscritti verso i nuovi URL.
+  `<Navigate replace>`. I link salvati nelle pagine archiviate vengono riscritti verso i nuovi URL. Su Cloudflare
+  gli stessi URL rispondono con un vero 301 (`dist/_redirects`, scritto dal pre-render, al massimo 2.000 regole);
+  le pagine-ponte restano come riserva.
 - **URL che cambiano da soli.** Se la fonte cambia il nome breve di una squadra o sposta una partita a un altro
   giorno, cambia anche l'URL. Ogni pagina partita (datata ed evento, calcio e NBA) ha una chiave stabile (`key` in
   `src/routes.ts`: id della partita o coppia di id delle squadre); il pre-render ricorda l'ultimo URL di ogni chiave

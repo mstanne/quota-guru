@@ -184,8 +184,9 @@ jobs:
           retention-days: 1
 
   deploy:
+    # GitHub Pages: until the site moves to Cloudflare (repository variable SITO_CLOUDFLARE = attivo)
     needs: build
-    if: needs.build.outputs.changed == 'true'
+    if: needs.build.outputs.changed == 'true' && vars.SITO_CLOUDFLARE != 'attivo'
     runs-on: ubuntu-26.04
     environment:
       name: github-pages
@@ -194,8 +195,19 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v5
 
+  cloudflare:
+    # Cloudflare (workers/site/README.md): test address with SITO_CLOUDFLARE = prova, www.quotaguru.it with attivo
+    needs: build
+    if: needs.build.outputs.changed == 'true' && (vars.SITO_CLOUDFLARE == 'prova' || vars.SITO_CLOUDFLARE == 'attivo')
+    uses: ./.github/workflows/cloudflare-site.yml
+    with:
+      mode: ${{ vars.SITO_CLOUDFLARE }}
+    secrets: inherit
+
   indexnow:
-    needs: deploy
+    # runs once the host serving www.quotaguru.it has the new pages (GitHub Pages, or Cloudflare when attivo)
+    needs: [deploy, cloudflare]
+    if: ${{ !cancelled() && (needs.deploy.result == 'success' || (vars.SITO_CLOUDFLARE == 'attivo' && needs.cloudflare.result == 'success')) }}
     runs-on: ubuntu-26.04
     permissions:
       contents: read
