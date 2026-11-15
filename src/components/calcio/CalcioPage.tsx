@@ -41,6 +41,7 @@ import { calcioHubText, competitionText } from "../../lib/editorial/extraTexts";
 import { FEATURED_COMPETITIONS, isFeaturedMatch } from "../../lib/calcioFeatured";
 import { TextSections } from "../editorial/TextSections";
 import { goalStatsPath, leadersPath, matchdayPath, PRONOSTICI } from "../../lib/footballCore";
+import { dateFormat } from "../../lib/intl";
 
 const MARKET_IDS = FOOTBALL_MARKETS.map((m) => m.id);
 
@@ -415,7 +416,7 @@ export function CalcioPage() {
 const MAX_DAYS = 7;
 
 const shortDay = (iso: string) =>
-  new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", day: "numeric", month: "short" }).format(new Date(iso));
+  dateFormat("it-IT", { timeZone: "Europe/Rome", day: "numeric", month: "short" }).format(new Date(iso));
 
 /**
  * /calcio: the competitions not listed in full, one line each (matches in the period, first and last day), linking

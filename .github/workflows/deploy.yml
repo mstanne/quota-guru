@@ -1,5 +1,9 @@
 # Builds the site and publishes it to GitHub Pages on every push to main and every 3 hours
 # (to refresh fixtures, results and standings from API-Sports).
+# Full refresh (downloads everything from the APIs, then builds): the runs every 3 hours, the manual runs and the
+# pushes that touch the data downloads. Quick refresh: a push that changes only the site's code starts from the data
+# of the last refresh (the snapshot in the cache, also used by live-scores.yml) and skips the downloads, so it is
+# online in a few minutes. The rule is in scripts/deploy-mode.mjs.
 # In between, live-scores.yml updates scores and standings every 15 minutes while matches are on.
 # One-time setup:
 #   - repo Settings -> Pages -> Source: "GitHub Actions"
@@ -15,6 +19,11 @@ on:
   schedule:
     - cron: "17 */3 * * *" # every 3 hours (UTC), at minute 17 to avoid the top-of-hour rush
   workflow_dispatch:
+    inputs:
+      rapido:
+        description: "Aggiornamento rapido: solo la build, con i dati dell'ultimo aggiornamento (niente download)"
+        type: boolean
+        default: false
 
 permissions:
   # write: the build commits the archive of published predictions to the `archivio-pronostici` branch
@@ -72,9 +81,51 @@ jobs:
           scripts/data-branch.sh restore-data
           scripts/data-branch.sh restore-state
 
+      - name: Full or quick refresh
+        # scripts/deploy-mode.mjs: quick only for a push whose changes do not touch the data downloads (or a manual
+        # run with "rapido"), and only if the snapshot of the last refresh is in the cache.
+        id: mode
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          MANUAL_QUICK: ${{ inputs.rapido }}
+        run: |
+          set +e
+          if [ ! -f .cache/match-details/snapshot.tgz ]; then
+            echo "rapido=false" >> "$GITHUB_OUTPUT"; echo "motivo=nessun dato salvato nella cache" >> "$GITHUB_OUTPUT"
+          elif [ "$EVENT" = "workflow_dispatch" ] && [ "$MANUAL_QUICK" = "true" ]; then
+            echo "rapido=true" >> "$GITHUB_OUTPUT"; echo "motivo=richiesto a mano" >> "$GITHUB_OUTPUT"
+          elif [ "$EVENT" = "push" ] && ! [[ "$BEFORE" =~ ^0+$ ]]; then
+            # files changed by the push (all its commits); the API lists at most 300: more means full
+            files=$(gh api "repos/${GITHUB_REPOSITORY}/compare/${BEFORE}...${AFTER}" --jq '.files[].filename')
+            if [ $? -ne 0 ] || [ "$(printf '%s\n' "$files" | grep -c .)" -ge 300 ]; then files=""; fi
+            printf '%s\n' "$files" | node scripts/deploy-mode.mjs
+          else
+            echo "rapido=false" >> "$GITHUB_OUTPUT"; echo "motivo=aggiornamento programmato o manuale, o push senza confronto" >> "$GITHUB_OUTPUT"
+          fi
+          exit 0
+
+      - name: Note the kind of refresh
+        env:
+          QUICK: ${{ steps.mode.outputs.rapido }}
+          REASON: ${{ steps.mode.outputs.motivo }}
+        run: |
+          if [ "$QUICK" = "true" ]; then kind="rapido (dati dell'ultimo aggiornamento, niente download)"; else kind="completo"; fi
+          echo "::notice::Aggiornamento $kind: $REASON"
+          echo "Aggiornamento **$kind**: $REASON" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Restore the data of the last refresh (quick refresh)
+        # The same files the full refresh keeps for live-scores.yml, with the latest scores; data/archivio comes
+        # from the data branch (step above), as in live-scores.yml.
+        if: steps.mode.outputs.rapido == 'true'
+        run: tar xzf .cache/match-details/snapshot.tgz
+
       - name: Download football data
         # API-Football (API-Sports, Pro plan): every competition on the site, including Serie B and the European cups.
         # If the API is unreachable the last saved data are published (see the data branch step above).
+        if: steps.mode.outputs.rapido != 'true'
         run: node scripts/fetch-football.mjs
         continue-on-error: true
         env:
@@ -82,6 +133,7 @@ jobs:
 
       - name: Download basket data
         # NBA from API-NBA (same API-Sports key); Lega Basket Serie A standings from BALLDONTLIE only if its key is set.
+        if: steps.mode.outputs.rapido != 'true'
         run: node scripts/fetch-basket-data.mjs
         continue-on-error: true
         env:
@@ -90,6 +142,7 @@ jobs:
 
       - name: Download tennis data
         # ATP/WTA rankings and tournament calendar (free plan); without the secret the committed snapshot is used.
+        if: steps.mode.outputs.rapido != 'true'
         run: node scripts/fetch-tennis-data.mjs
         continue-on-error: true
         env:
@@ -98,6 +151,7 @@ jobs:
       - name: Match details from API-Sports
         # Line-ups, events, statistics and ratings (football), box scores (NBA) of finished matches;
         # without the API_FOOTBALL_KEY secret the committed files are used. Results: /stato-dati.json on the site.
+        if: steps.mode.outputs.rapido != 'true'
         run: node scripts/fetch-match-details.mjs
         continue-on-error: true
         env:
@@ -105,6 +159,7 @@ jobs:
 
       - name: Find official highlights on YouTube
         # Official league / broadcaster channels; optional free YOUTUBE_API_KEY secret reads 50 uploads instead of 15.
+        if: steps.mode.outputs.rapido != 'true'
         run: node scripts/fetch-highlights.mjs
         continue-on-error: true
         env:
@@ -113,6 +168,7 @@ jobs:
       - name: Past seasons for the archive, a small block per run
         # scripts/backfill-archive.mjs: at most 150 API-Sports requests per run, progress kept in the archive.
         # Competitions of the site plus Coppa Italia (archive only), back to ARCHIVE_SEASONS seasons.
+        if: steps.mode.outputs.rapido != 'true'
         run: node scripts/backfill-archive.mjs
         continue-on-error: true
         env:
@@ -123,6 +179,7 @@ jobs:
       - name: Transfers, trophies and injuries of the players, a block per run
         # scripts/fetch-player-extras.mjs: at most 250 API-Sports requests per run (players who played most first),
         # plus who is out or doubtful for the next match. Writes data/giocatori-extra.json (player pages).
+        if: steps.mode.outputs.rapido != 'true'
         run: node scripts/fetch-player-extras.mjs
         continue-on-error: true
         env:
@@ -130,6 +187,7 @@ jobs:
 
       - name: Update the permanent archive and the site's copy of the club logos
         # scripts/archive-data.mjs: data/archivio only grows; it is saved in the `dati` branch.
+        if: steps.mode.outputs.rapido != 'true'
         run: node scripts/archive-data.mjs
         continue-on-error: true
 
@@ -150,6 +208,7 @@ jobs:
       - name: Editorial texts for match pages
         # Template texts always; Claude rewrite only if the ANTHROPIC_API_KEY secret is set.
         # On any error the site is published with the template texts.
+        if: steps.mode.outputs.rapido != 'true'
         run: node scripts/generate-editorial.mjs
         continue-on-error: true
         env:
@@ -169,6 +228,7 @@ jobs:
       - name: Keep the downloaded data for the quick live-score runs
         # live-scores.yml starts from these files and only updates scores and standings in between the full runs.
         # Stored inside .cache/match-details so the cache paths (and the existing cache) stay the same.
+        if: steps.mode.outputs.rapido != 'true'
         run: |
           mkdir -p .cache/match-details
           tar czf .cache/match-details/snapshot.tgz --ignore-failed-read --exclude=data/archivio \

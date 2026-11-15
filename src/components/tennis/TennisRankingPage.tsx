@@ -7,6 +7,7 @@ import { NotFoundPage } from "../NotFoundPage";
 import { Movement } from "./TennisUi";
 import { formatLong, rankingMeta, tennisPaths, tennisUpdatedAt, tourData, tourLabel, type Tour } from "../../lib/tennis";
 import { usePageMeta } from "../../lib/pageMeta";
+import { numberFormat } from "../../lib/intl";
 
 export function TennisRankingPage({ tour }: { tour: Tour }) {
   const meta = rankingMeta(tour);
@@ -14,7 +15,7 @@ export function TennisRankingPage({ tour }: { tour: Tour }) {
   const { rankings, rankingDate } = tourData(tour);
   if (!rankings.length) return <NotFoundPage />;
   const other: Tour = tour === "atp" ? "wta" : "atp";
-  const nf = new Intl.NumberFormat("it-IT");
+  const nf = numberFormat("it-IT");
   return (
     <div className="min-h-screen bg-slate-950">
       <PageHeader

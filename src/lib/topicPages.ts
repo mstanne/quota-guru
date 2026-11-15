@@ -12,6 +12,7 @@ import { formatEuro, offerTotals, visibleOffers, type WelcomeOffer } from "../da
 import { publishedOperators } from "./operatorPages";
 import { type RouteMeta } from "../routes";
 import { paymentMethods, methodPath, topics, topicPath, type PaymentMethodInfo, type Topic, type TopicId } from "./topicDefs";
+import { numberFormat } from "./intl";
 
 export * from "./topicDefs";
 
@@ -230,7 +231,7 @@ export function methodHighlights(m: PaymentMethodInfo): Highlight[] {
     const top = vals.reduce((a, b) => (best(a.v, b.v) === a.v ? a : b)).v;
     return { v: top, ops: [...new Map(vals.filter((x) => x.v === top).map((x) => [x.op.id, x.op])).values()] };
   };
-  const fmt = (n: number) => `${n.toLocaleString("it-IT")} €`;
+  const fmt = (n: number) => `${numberFormat("it-IT").format(n)} €`;
   const minDep = pick(
     rows.map(({ op, r }) => ({ op, v: lower(r.deposit) })).filter((x): x is { op: OperatorData; v: number } => x.v !== null),
     Math.min,

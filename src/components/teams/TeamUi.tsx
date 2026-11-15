@@ -2,6 +2,7 @@
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import { referenceTime } from "../../lib/footballCore";
+import { dateFormat } from "../../lib/intl";
 
 export function Card({ id, children }: { id: string; children: ReactNode }) {
   return (
@@ -45,6 +46,6 @@ export function age(born: string) {
 export const num = (v: number, digits = 1) => v.toFixed(digits).replace(".", ",");
 
 export const formatDate = (iso: string) =>
-  new Intl.DateTimeFormat("it-IT", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/Rome" }).format(
+  dateFormat("it-IT", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/Rome" }).format(
     new Date(iso),
   );

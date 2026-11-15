@@ -8,6 +8,7 @@ import type { OgCard } from "../routes";
 import type { FootballDetails } from "./matchDetails";
 import { playerName } from "./playerNames.mjs";
 import { isCalendarSeason, isInfoLeague } from "./competitionKinds";
+import { dateFormat } from "./intl";
 
 export interface Team {
   id: number;
@@ -171,7 +172,7 @@ export const slugify = (s: string) =>
 
 const TZ = "Europe/Rome";
 /** Calendar day of the match in Italian time, e.g. "2026-10-18". */
-export const romeDay = (iso: string) => new Intl.DateTimeFormat("sv-SE", { timeZone: TZ }).format(new Date(iso));
+export const romeDay = (iso: string) => dateFormat("sv-SE", { timeZone: TZ }).format(new Date(iso));
 
 /** Stable slug per match, e.g. "inter-juventus-2026-10-18" (the dated page: permanent archive of one match).
  *  Built from the source's short names and never changed, so published URLs keep working. */
@@ -372,23 +373,23 @@ export const liveMinute = (m: Match) =>
   m.status === "IN_PLAY" && m.elapsed != null ? `${m.elapsed}${m.elapsedExtra ? `+${m.elapsedExtra}` : ""}'` : null;
 
 export const formatTime = (iso: string) =>
-  new Intl.DateTimeFormat("it-IT", { timeZone: TZ, hour: "2-digit", minute: "2-digit" }).format(new Date(iso));
+  dateFormat("it-IT", { timeZone: TZ, hour: "2-digit", minute: "2-digit" }).format(new Date(iso));
 export const formatDay = (iso: string) =>
-  new Intl.DateTimeFormat("it-IT", { timeZone: TZ, weekday: "long", day: "numeric", month: "long" }).format(
+  dateFormat("it-IT", { timeZone: TZ, weekday: "long", day: "numeric", month: "long" }).format(
     new Date(iso),
   );
 /** "17 ottobre" (page titles). */
 export const formatDayMonth = (iso: string) =>
-  new Intl.DateTimeFormat("it-IT", { timeZone: TZ, day: "numeric", month: "long" }).format(new Date(iso));
+  dateFormat("it-IT", { timeZone: TZ, day: "numeric", month: "long" }).format(new Date(iso));
 /** "17 ottobre 2026" (headings of match pages). */
 export const formatLongDate = (iso: string) =>
-  new Intl.DateTimeFormat("it-IT", { timeZone: TZ, day: "numeric", month: "long", year: "numeric" }).format(new Date(iso));
+  dateFormat("it-IT", { timeZone: TZ, day: "numeric", month: "long", year: "numeric" }).format(new Date(iso));
 export const formatShortDate = (iso: string) =>
-  new Intl.DateTimeFormat("it-IT", { timeZone: TZ, day: "2-digit", month: "2-digit", year: "numeric" }).format(
+  dateFormat("it-IT", { timeZone: TZ, day: "2-digit", month: "2-digit", year: "numeric" }).format(
     new Date(iso),
   );
 export const formatUpdated = (iso: string) =>
-  new Intl.DateTimeFormat("it-IT", {
+  dateFormat("it-IT", {
     timeZone: TZ,
     day: "numeric",
     month: "long",

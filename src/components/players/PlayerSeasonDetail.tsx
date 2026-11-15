@@ -6,6 +6,7 @@ import { Link } from "../../lib/links";
 import type { FootballPlayer, PlayerCurrent, PlayerDetail, PlayerSide } from "../../lib/players";
 import { teamPaths } from "../../lib/teams";
 import { Card, SectionTitle, num } from "../teams/TeamUi";
+import { dateFormat } from "../../lib/intl";
 
 const th = "text-right font-normal py-2 px-2 whitespace-nowrap";
 const td = "text-right px-2 py-2 tabular-nums";
@@ -215,7 +216,7 @@ function SeasonDetail({ c, d, position }: { c: PlayerCurrent; d: PlayerDetail; p
   );
 }
 
-const dayFmt = new Intl.DateTimeFormat("it-IT", { day: "numeric", month: "short", timeZone: "Europe/Rome" });
+const dayFmt = dateFormat("it-IT", { day: "numeric", month: "short", timeZone: "Europe/Rome" });
 
 function LastMatches({ c }: { c: PlayerCurrent }) {
   const keeper = c.last.some((m) => m.saves > 0 || m.conceded > 0);

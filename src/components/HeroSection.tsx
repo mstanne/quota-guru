@@ -6,6 +6,7 @@ import { CONFIDENCE_LABEL, marketCells, pickLabel, type Prediction } from "../li
 import { TeamBadge } from "./calcio/MatchRow";
 import { PickCells, SlipHint, footballSlip } from "./predictions/SlipPicks";
 import { paths } from "../routes";
+import { dateFormat } from "../lib/intl";
 
 // Featured matches with the model's prediction, pre-computed by scripts/derive-football-home.mjs
 // (Serie A first, then Champions League, Premier League, LaLiga).
@@ -64,7 +65,7 @@ export function HeroSection({ matches = data.featured ?? [] }: { matches?: Featu
 
 /** "ven 6 nov" in Italian time. */
 const shortDay = (iso: string) =>
-  new Intl.DateTimeFormat("it-IT", {
+  dateFormat("it-IT", {
     timeZone: "Europe/Rome",
     weekday: "short",
     day: "numeric",
