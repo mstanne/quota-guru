@@ -148,6 +148,56 @@
   .pill { display: inline-block; border: 1px solid #2A3D59; border-radius: 999px; padding: calc(var(--u)*1.2) calc(var(--u)*2.8);
     font-size: calc(var(--u)*2.2); color: #BECED8; }
   .portrait .pill { font-size: calc(var(--u)*2.8); }
+
+  /* --- partite --- */
+  .vs { display: flex; align-items: center; justify-content: center; gap: calc(var(--u)*6); }
+  .portrait .vs { flex-direction: column; gap: calc(var(--u)*3.5); }
+  .vs .tm { display: flex; flex-direction: column; align-items: center; gap: calc(var(--u)*1.8); width: calc(var(--u)*34); text-align: center; }
+  .vs .tm img { width: calc(var(--u)*16); height: calc(var(--u)*16); object-fit: contain; }
+  .portrait .vs .tm img { width: calc(var(--u)*20); height: calc(var(--u)*20); }
+  .vs .tm .nm { font-size: calc(var(--u)*5.4); font-weight: 700; letter-spacing: -.02em; line-height: 1.05; }
+  .portrait .vs .tm .nm { font-size: calc(var(--u)*6.6); }
+  .vs .x { font-size: calc(var(--u)*3); font-weight: 700; color: #7F93AE; }
+  .matchhead { align-items: center; text-align: center; }
+  .matchhead .kicker { align-self: center; }
+  .when { font-size: calc(var(--u)*3); color: #BECED8; }
+  .portrait .when { font-size: calc(var(--u)*3.6); }
+  .teams { display: grid; grid-template-columns: 1fr 1fr; gap: calc(var(--u)*2.4); }
+  .portrait .teams { grid-template-columns: 1fr; }
+  .tcard { display: flex; flex-direction: column; gap: calc(var(--u)*1.8); }
+  .tcard .hd { display: flex; align-items: center; gap: calc(var(--u)*1.8); }
+  .tcard .hd img { width: calc(var(--u)*6.4); height: calc(var(--u)*6.4); object-fit: contain; }
+  .tcard .hd .nm { font-size: calc(var(--u)*3.6); font-weight: 700; }
+  .portrait .tcard .hd .nm { font-size: calc(var(--u)*4.4); }
+  .tcard .row { display: flex; gap: calc(var(--u)*4); }
+  .tcard .row .v { font-size: calc(var(--u)*4.6); font-weight: 700; line-height: 1; }
+  .tcard .row .k { font-size: calc(var(--u)*1.9); color: #7F93AE; margin-top: calc(var(--u)*.5); }
+  .portrait .tcard .row .v { font-size: calc(var(--u)*5.4); }
+  .portrait .tcard .row .k { font-size: calc(var(--u)*2.5); }
+  .form { display: flex; gap: calc(var(--u)*1); align-items: center; }
+  .form .b { width: calc(var(--u)*4.6); height: calc(var(--u)*4.6); border-radius: calc(var(--u)*.8); display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: calc(var(--u)*2.2); color: #0A1220; }
+  .portrait .form .b { width: calc(var(--u)*5.6); height: calc(var(--u)*5.6); font-size: calc(var(--u)*2.7); }
+  .form .V { background: #06BA55; } .form .N { background: #BECED8; } .form .P { background: #FB6801; }
+  .form .lab { font-size: calc(var(--u)*1.9); color: #7F93AE; margin-left: calc(var(--u)*1); }
+  .portrait .form .lab { font-size: calc(var(--u)*2.4); }
+  .probs { display: flex; flex-direction: column; gap: calc(var(--u)*2.4); }
+  .prow { display: grid; grid-template-columns: calc(var(--u)*22) 1fr calc(var(--u)*18); align-items: center; gap: calc(var(--u)*2.4); }
+  .portrait .prow { grid-template-columns: 1fr calc(var(--u)*16); grid-template-areas: "l v" "bar bar"; row-gap: calc(var(--u)*1.2); }
+  .prow .l { font-size: calc(var(--u)*3.2); font-weight: 650; display: flex; align-items: center; gap: calc(var(--u)*1.4); }
+  .prow .l img { width: calc(var(--u)*4.4); height: calc(var(--u)*4.4); object-fit: contain; }
+  .portrait .prow .l { grid-area: l; font-size: calc(var(--u)*4); }
+  .prow .bar { height: calc(var(--u)*5); background: #16243B; border: 1px solid #2A3D59; border-radius: calc(var(--u)*1); overflow: hidden; }
+  .portrait .prow .bar { grid-area: bar; height: calc(var(--u)*5.6); }
+  .prow .fill { height: 100%; width: 0; background: #7F93AE; border-radius: calc(var(--u)*1); }
+  .prow.top .fill { background: #06BA55; }
+  .prow .v { text-align: right; }
+  .portrait .prow .v { grid-area: v; }
+  .prow .v .pc { font-size: calc(var(--u)*4.2); font-weight: 750; }
+  .prow.top .v .pc { color: #06BA55; }
+  .prow .v .q { font-size: calc(var(--u)*1.9); color: #7F93AE; white-space: nowrap; }
+  .portrait .prow .v .pc { font-size: calc(var(--u)*5); }
+  .portrait .prow .v .q { font-size: calc(var(--u)*2.4); }
 </style>
 </head>
 <body>
@@ -170,6 +220,30 @@
 
   // Ogni modello restituisce l'HTML della scena. data-in = secondo (dall'inizio scena) in cui l'elemento entra.
   const T = {
+    match: (s) => `<div class="kicker" data-in="0.2">${esc(s.kicker)}</div>
+      <div class="vs">
+        <div class="tm" data-in="0.5"><img src="${s.home.crest}" alt=""/><div class="nm">${esc(s.home.name)}</div></div>
+        <div class="x" data-in="0.9">contro</div>
+        <div class="tm" data-in="1.1"><img src="${s.away.crest}" alt=""/><div class="nm">${esc(s.away.name)}</div></div>
+      </div>
+      <div class="when" data-in="1.6">${esc(s.when)}</div>`,
+    teams: (s) => `<h2 data-in="0.15">${esc(s.title)}</h2>
+      <div class="teams">${s.teams.map((t, i) => `<div class="card tcard" data-in="${(0.6 + i * 0.7).toFixed(2)}">
+        <div class="hd"><img src="${t.crest}" alt=""/><div class="nm">${esc(t.name)}</div></div>
+        <div class="row">${t.stats.map((x) => `<div><div class="v">${esc(x[0])}</div><div class="k">${esc(x[1])}</div></div>`).join("")}</div>
+        <div class="form">${t.form.map((r, k) => `<div class="b ${r}" data-in="${(1.4 + i * 0.7 + k * 0.12).toFixed(2)}">${r}</div>`).join("")}<span class="lab">${esc(s.formLabel || "")}</span></div>
+      </div>`).join("")}</div>
+      ${s.note ? `<div class="note" data-in="2.8">${esc(s.note)}</div>` : ""}`,
+    probs: (s) => {
+      const top = s.rows.reduce((a, r, i) => (r.p > s.rows[a].p ? i : a), 0);
+      return `<h2 data-in="0.15">${esc(s.title)}</h2>
+      <div class="probs">${s.rows.map((r, i) => `<div class="prow ${i === top ? "top" : ""}" data-in="${(0.6 + i * 0.4).toFixed(2)}">
+        <div class="l">${r.crest ? `<img src="${r.crest}" alt=""/>` : ""}${esc(r.label)}</div>
+        <div class="bar"><div class="fill" data-p="${r.p}"></div></div>
+        <div class="v"><div class="pc" data-p="${r.p}">0%</div>${r.fair ? `<div class="q">quota equa ${esc(r.fair)}</div>` : ""}</div>
+      </div>`).join("")}</div>
+      ${s.note ? `<div class="note" data-in="3.4">${esc(s.note)}</div>` : ""}`;
+    },
     intro: (s) => `
       <div class="kicker" data-in="0.2">${esc(s.kicker)}</div>
       <h1 data-in="0.5">${esc(s.title)}</h1>
@@ -230,6 +304,14 @@
 
   // Animazioni che dipendono da t oltre all'entrata degli elementi.
   const extra = {
+    probs: (el, s, t) => {
+      el.querySelectorAll(".prow").forEach((row, i) => {
+        const k = ease((t - 1.2 - i * 0.4) / 1.4);
+        const p = parseFloat(row.querySelector(".fill").dataset.p);
+        row.querySelector(".fill").style.width = `${p * 100 * k}%`;
+        row.querySelector(".pc").textContent = fmtIt(p * 100 * k) + "%";
+      });
+    },
     margin: (el, s, t) => {
       const start = 3.2 + IN * 0.5, per = 0.9;
       const ps = s.odds.map((o) => parseFloat(o[2].replace(",", ".")));
@@ -273,7 +355,7 @@
     const B = window.BOARD, s = B.scenes[i];
     const P = document.getElementById("stage").classList.contains("portrait");
     const host = document.getElementById("scenes");
-    host.innerHTML = `<div class="scene ${s.type === "outro" ? "outro" : ""}">${T[s.type](s, P, B)}</div>`;
+    host.innerHTML = `<div class="scene ${s.type === "outro" ? "outro" : ""} ${s.type === "match" ? "matchhead" : ""}">${T[s.type](s, P, B)}</div>`;
     built = i;
     return host.firstElementChild;
   };
@@ -295,9 +377,10 @@
     if (extra[s.type]) extra[s.type](el, s, lt);
     const isOutro = s.type === "outro";
     document.getElementById("clogo").style.opacity = String(isOutro ? 1 - ease(lt / 0.4) : 0.95);
-    const stepN = B.scenes.slice(0, i + 1).filter((x) => x.type !== "intro" && x.type !== "outro").length;
-    const stepT = B.scenes.filter((x) => x.type !== "intro" && x.type !== "outro").length;
-    document.getElementById("cstep").textContent = (s.type === "intro" || isOutro) ? "" : `${stepN} / ${stepT}`;
+    const body = (x) => !["intro", "outro", "match"].includes(x.type);
+    const stepN = B.scenes.slice(0, i + 1).filter(body).length;
+    const stepT = B.scenes.filter(body).length;
+    document.getElementById("cstep").textContent = body(s) ? `${stepN} / ${stepT}` : "";
     document.getElementById("cprog").style.width = `${(t / B.total) * 100}%`;
   };
 })();
