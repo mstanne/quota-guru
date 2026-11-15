@@ -1389,8 +1389,9 @@ function dailyMultiples({ data, today, nowMs }) {
 
 // ------------------------------------------------------------------------------------------- video-pronostico
 /**
- * Event rubric: the vertical prediction video of the top matches (Serie A, European cups, Coppa Italia: the
- * `video-partite` branch, made by scripts/guide-videos/match_videos.py), posted between six hours and 90 minutes
+ * Event rubric: the vertical prediction video of the top matches (Serie A, European cups, Coppa Italia, national
+ * teams: index in the `video-partite` branch, files in the R2 video bucket, made by scripts/guide-videos/match_videos.py),
+ * posted between six hours and 90 minutes
  * before kick-off. The probabilities in the caption are the ones in the video (same moment), not the latest.
  */
 function videoPosts({ data, nowMs }) {
@@ -1411,7 +1412,7 @@ function videoPosts({ data, nowMs }) {
         `📊 Il modello: ${p1x2(v.p)}\n➡️ Più probabile: <b>${i === 1 ? "X · pareggio" : `${i === 0 ? "1" : "2"} · vittoria ${esc(i === 0 ? home : away)}`}</b> ${alPct(v.p[i])}, ma niente è sicuro.`,
         `Statistiche e probabilità aggiornate: ${anchor(e?.path ?? v.path, v.label, "video-pronostico")}`,
       ),
-      video: { file: v.files.portrait, width: 1080, height: 1920, duration: v.seconds },
+      video: { file: `${v.key}-9x16.mp4`, width: 1080, height: 1920, duration: v.seconds },
     });
   }
   return posts;

@@ -103,16 +103,6 @@ async function branchJson(branch, file) {
   return res.json();
 }
 
-/** A file of a branch as bytes (e.g. a video); null when it does not exist. */
-async function branchBytes(branch, file) {
-  const res = await fetch(`https://api.github.com/repos/${repo()}/contents/${file}?ref=${branch}`, {
-    headers: ghHeaders(),
-  });
-  if (res.status === 404) return null;
-  if (!res.ok) throw new Error(`GitHub ${branch}/${file}: HTTP ${res.status}`);
-  return Buffer.from(await res.arrayBuffer());
-}
-
 /** Index of the match prediction videos (branch `video-partite`, scripts/guide-videos/match_videos.py). */
 async function loadVideos() {
   const dir = process.env.TG_VIDEO_DIR;
@@ -123,13 +113,17 @@ async function loadVideos() {
   return (await branchJson("video-partite", "index.json")) ?? { videos: {} };
 }
 
-/** A video file of the `video-partite` branch (path as in its index.json). */
+/**
+ * A file of the R2 video bucket (docs/video.md), e.g. "analisi/calcio/2026-11-21/como-cagliari-2026-11-21-9x16.mp4":
+ * from VIDEO_BASE (default https://video.quotaguru.it), or from TG_VIDEO_DIR in local tests.
+ */
 export async function loadVideoFile(file) {
   const dir = process.env.TG_VIDEO_DIR;
   if (dir) return fs.readFileSync(path.join(dir, file));
-  const bytes = await branchBytes("video-partite", file);
-  if (!bytes) throw new Error(`video non trovato: ${file}`);
-  return bytes;
+  const base = (process.env.VIDEO_BASE || "https://video.quotaguru.it").replace(/\/+$/, "");
+  const res = await fetch(`${base}/${file}`);
+  if (!res.ok) throw new Error(`video ${file}: HTTP ${res.status}`);
+  return Buffer.from(await res.arrayBuffer());
 }
 
 /**
@@ -142,7 +136,7 @@ export async function loadVideoFile(file) {
  *   multiple           the multiples of the day locked by the site build (same branch, multiple.json; scripts/lib/multiple.mjs)
  *   videos             index of the match prediction videos (`video-partite` branch, index.json)
  * Local runs: TG_DATA_DIR (a folder holding src/data/…), TG_ARCHIVE_DIR (a copy of archivio-pronostici) and
- * TG_VIDEO_DIR (a copy of video-partite).
+ * TG_VIDEO_DIR (index.json of video-partite and the video files, with the bucket's paths).
  */
 export async function loadData(nowMs, { live = false } = {}) {
   const r = rome(nowMs);

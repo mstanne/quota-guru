@@ -1,10 +1,15 @@
 /**
  * VIDEO DEI PRONOSTICI DELLE PARTITE
- * src/data/match-videos.json è l'indice del ramo `video-partite` (scripts/guide-videos/match_videos.py), copiato dal
- * deploy insieme ai file in public/video/partite. Nel repository resta vuoto: i video cambiano ogni giorno.
+ * I video sono nel bucket R2 (`analisi/calcio/<AAAA-MM-GG>/<partita>`, docs/video.md), generati da
+ * .github/workflows/video-partite.yml (scripts/guide-videos/match_videos.py). Il loro indice sta nel ramo
+ * `video-partite` e la build lo copia in src/data/match-videos.json: nel repository resta vuoto.
  */
 import index from "./match-videos.json";
+import { VIDEO_BASE } from "./videos";
 import type { VideoFiles } from "../components/media/SummaryVideo";
+
+/** Questi video esistono solo nel bucket: senza VIDEO_BASE si usa il suo indirizzo pubblico. */
+const BASE = VIDEO_BASE || "https://video.quotaguru.it";
 
 interface MatchVideoEntry {
   id: number;
@@ -12,23 +17,19 @@ interface MatchVideoEntry {
   kickoff: string;
   generated: string;
   seconds: number;
-  files: VideoFiles;
+  /** nome dei file nel bucket, senza formato ed estensione (videoKeys.analisi) */
+  key: string;
 }
 
 const videos = (index as { videos: Record<string, MatchVideoEntry> }).videos;
 
-/** Il video di una partita, con i percorsi dei file relativi alla radice del sito; null se non c'è. */
+/** Il video di una partita con gli indirizzi dei suoi file; null se non c'è. */
 export function matchVideo(id: number): (MatchVideoEntry & { files: VideoFiles }) | null {
   const v = videos[String(id)];
-  if (!v) return null;
-  const at = (f: string) => `/video/${f}`;
+  if (!v?.key) return null;
+  const at = (suffix: string) => `${BASE}/${v.key}-${suffix}`;
   return {
     ...v,
-    files: {
-      landscape: at(v.files.landscape),
-      portrait: at(v.files.portrait),
-      poster: at(v.files.poster),
-      posterPortrait: at(v.files.posterPortrait),
-    },
+    files: { landscape: at("16x9.mp4"), portrait: at("9x16.mp4"), poster: at("16x9.jpg"), posterPortrait: at("9x16.jpg") },
   };
 }

@@ -100,6 +100,7 @@ jobs:
           TELEGRAM_TEST_CHAT_ID: ${{ secrets.TELEGRAM_TEST_CHAT_ID }}
           TELEGRAM_MODE: ${{ vars.TELEGRAM_MODE }}
           LIVE_URL: ${{ vars.LIVE_URL }}
+          VIDEO_BASE: ${{ vars.VIDEO_BASE }}
           GH_TOKEN: ${{ github.token }}
           RUBRICA: ${{ inputs.rubrica }}
           PROVA: ${{ inputs.prova }}

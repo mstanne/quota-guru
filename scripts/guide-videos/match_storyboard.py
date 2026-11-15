@@ -85,6 +85,8 @@ def build(entry, football, now=None):
     kicker = f"Pronostico · {where}"
     if comp and comp.get("code") == "SA" and m.get("matchday"):
         kicker += f" · {m['matchday']}ª giornata"
+    elif m and where == "Nations League" and m.get("group"):
+        kicker += f" · {m['group'].split(' · ')[0]}"
 
     scenes = [{"type": "match", "dur": 5, "kicker": kicker, "when": when_text(entry["kickoff"]),
                "home": {"name": hn}, "away": {"name": an}}]

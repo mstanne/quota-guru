@@ -264,23 +264,18 @@ jobs:
           fi
 
       - name: Match prediction videos (video-partite branch)
-        # Made by .github/workflows/video-partite.yml (scripts/guide-videos/match_videos.py): the videos go to
-        # public/video/partite, their index to src/data/match-videos.json (the match pages show the video when listed).
-        # Without the branch the site builds as before, with no match videos.
+        # Index of the match prediction videos (.github/workflows/video-partite.yml; the files are in the R2 video
+        # bucket): copied to src/data/match-videos.json, the match pages show the video when listed. Without the branch
+        # the site builds as before, with no match videos.
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          dir=.cache/video-partite
-          rm -rf "$dir"
-          if git ls-remote --exit-code --heads "$url" video-partite >/dev/null; then
-            git clone --quiet --depth 1 --branch video-partite "$url" "$dir"
-            mkdir -p public/video/partite
-            cp "$dir"/partite/* public/video/partite/ 2>/dev/null || true
-            cp "$dir"/index.json src/data/match-videos.json
-            echo "Video delle partite: $(ls public/video/partite | grep -c mp4) file"
-          fi
+          gh api -H "Accept: application/vnd.github.raw+json" \
+            "repos/${GITHUB_REPOSITORY}/contents/index.json?ref=video-partite" > /tmp/match-videos.json \
+            && mv /tmp/match-videos.json src/data/match-videos.json \
+            && echo "Video delle partite nell'indice: $(grep -c '"key"' src/data/match-videos.json)" \
+            || echo "Nessun indice dei video delle partite"
 
       - name: Build
         run: npm run build

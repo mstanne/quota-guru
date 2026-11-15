@@ -15,7 +15,7 @@
 //                                                             (default .cache/telegram-cards)
 //
 // Every post goes out as an image (scripts/telegram/cards.mjs) with the text as caption; if the image cannot be made,
-// the text alone is sent. The rubric video-pronostico sends a video instead (branch video-partite).
+// the text alone is sent. The rubric video-pronostico sends a video instead (R2 video bucket).
 //
 // Environment:
 //   TELEGRAM_BOT_TOKEN       token of the bot (admin of both channels)
@@ -24,6 +24,7 @@
 //   TELEGRAM_TEST_CHAT_ID    private test channel (numeric id, e.g. -1001234567890)
 //   GH_TOKEN, GITHUB_REPOSITORY   read the data branches and write the register (branch telegram-registro)
 //   LIVE_URL                 address of the live worker (workers/live): official line-ups, rubric "formazioni"
+//   VIDEO_BASE               address of the R2 video bucket (default https://video.quotaguru.it): rubric video-pronostico
 //   TG_DATA_DIR, TG_ARCHIVE_DIR, TG_VIDEO_DIR, TG_REGISTER_FILE, TG_LIVE_FILE   local copies instead of the branches (tests)
 import { RUBRICHE } from "./rubriche.mjs";
 import fs from "node:fs";
