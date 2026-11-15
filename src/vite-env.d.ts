@@ -9,6 +9,8 @@ interface ImportMetaEnv {
   readonly VITE_COOKIE_POLICY_URL?: string;
   /** Address of the live data service (workers/live), e.g. https://quotaguru-live.<account>.workers.dev. */
   readonly VITE_LIVE_URL?: string;
+  /** Address of the video bucket (Cloudflare R2), e.g. https://video.quotaguru.it. Empty = files of the site (public/video). */
+  readonly VITE_VIDEO_BASE?: string;
 }
 
 /** ISO time of the build (vite.config.ts): reference for "upcoming / live / result pending". */

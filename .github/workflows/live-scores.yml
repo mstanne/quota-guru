@@ -143,6 +143,8 @@ jobs:
           VITE_COOKIE_POLICY_URL: ${{ vars.COOKIE_POLICY_URL }}
           # live data service (workers/live): when set, match pages update by themselves and replace SofaScore
           VITE_LIVE_URL: ${{ vars.LIVE_URL }}
+          # video bucket (Cloudflare R2, docs/video.md): when set, videos come from there instead of public/video
+          VITE_VIDEO_BASE: ${{ vars.VIDEO_BASE }}
           # share of expected goals in the prediction model (0 = off); turn on only after a backtest
           MODEL_XG_WEIGHT: ${{ vars.MODEL_XG_WEIGHT }}
 
