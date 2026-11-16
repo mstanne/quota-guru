@@ -1,29 +1,29 @@
 {
  "periodo": {
-  "da": "2026-10-12",
-  "a": "2026-11-08"
+  "da": "2026-10-19",
+  "a": "2026-11-15"
  },
  "totali": {
-  "activeUsers": 23,
-  "sessions": 64,
-  "screenPageViews": 364,
-  "engagementRate": 0.71875,
-  "averageSessionDuration": 382.0192266875,
-  "newUsers": 23,
-  "bounceRate": 0.28125
+  "activeUsers": 30,
+  "sessions": 73,
+  "screenPageViews": 483,
+  "engagementRate": 0.726027397260274,
+  "averageSessionDuration": 434.3134641232877,
+  "newUsers": 30,
+  "bounceRate": 0.273972602739726
  },
  "periodo7giorni": {
-  "da": "2026-11-02",
-  "a": "2026-11-08"
+  "da": "2026-11-09",
+  "a": "2026-11-15"
  },
  "totali7giorni": {
-  "activeUsers": 15,
-  "sessions": 29,
-  "screenPageViews": 270,
-  "engagementRate": 0.7241379310344828,
-  "averageSessionDuration": 464.14531403448274,
-  "newUsers": 13,
-  "bounceRate": 0.27586206896551724
+  "activeUsers": 7,
+  "sessions": 9,
+  "screenPageViews": 119,
+  "engagementRate": 0.7777777777777778,
+  "averageSessionDuration": 806.183597,
+  "newUsers": 7,
+  "bounceRate": 0.2222222222222222
  },
  "perGiorno": [
   {
@@ -115,32 +115,74 @@
    "activeUsers": 2,
    "sessions": 2,
    "screenPageViews": 2
+  },
+  {
+   "date": "20261109",
+   "activeUsers": 1,
+   "sessions": 2,
+   "screenPageViews": 18
+  },
+  {
+   "date": "20261110",
+   "activeUsers": 1,
+   "sessions": 1,
+   "screenPageViews": 9
+  },
+  {
+   "date": "20261111",
+   "activeUsers": 1,
+   "sessions": 1,
+   "screenPageViews": 1
+  },
+  {
+   "date": "20261112",
+   "activeUsers": 1,
+   "sessions": 1,
+   "screenPageViews": 11
+  },
+  {
+   "date": "20261113",
+   "activeUsers": 2,
+   "sessions": 2,
+   "screenPageViews": 74
+  },
+  {
+   "date": "20261115",
+   "activeUsers": 2,
+   "sessions": 2,
+   "screenPageViews": 6
   }
  ],
  "pagine": [
   {
-   "pagePath": "/",
-   "screenPageViews": 66,
-   "activeUsers": 13,
-   "userEngagementDuration": 566
+   "pagePath": "/calcio/",
+   "screenPageViews": 81,
+   "activeUsers": 11,
+   "userEngagementDuration": 1501
   },
   {
-   "pagePath": "/calcio/",
-   "screenPageViews": 35,
-   "activeUsers": 6,
-   "userEngagementDuration": 868
+   "pagePath": "/",
+   "screenPageViews": 68,
+   "activeUsers": 15,
+   "userEngagementDuration": 579
   },
   {
    "pagePath": "/pronostici/oggi/",
-   "screenPageViews": 24,
-   "activeUsers": 6,
-   "userEngagementDuration": 339
+   "screenPageViews": 26,
+   "activeUsers": 7,
+   "userEngagementDuration": 353
   },
   {
    "pagePath": "/pronostici/",
-   "screenPageViews": 20,
-   "activeUsers": 9,
-   "userEngagementDuration": 314
+   "screenPageViews": 22,
+   "activeUsers": 11,
+   "userEngagementDuration": 315
+  },
+  {
+   "pagePath": "/basket/",
+   "screenPageViews": 15,
+   "activeUsers": 4,
+   "userEngagementDuration": 96
   },
   {
    "pagePath": "/pronostici/domani/",
@@ -167,10 +209,10 @@
    "userEngagementDuration": 88
   },
   {
-   "pagePath": "/basket/",
-   "screenPageViews": 7,
-   "activeUsers": 2,
-   "userEngagementDuration": 44
+   "pagePath": "/tennis/",
+   "screenPageViews": 8,
+   "activeUsers": 3,
+   "userEngagementDuration": 108
   },
   {
    "pagePath": "/calcio/champions-league/classifica/",
@@ -179,16 +221,28 @@
    "userEngagementDuration": 319
   },
   {
+   "pagePath": "/pronostici/europa-league/",
+   "screenPageViews": 6,
+   "activeUsers": 2,
+   "userEngagementDuration": 68
+  },
+  {
+   "pagePath": "/pronostici/serie-a/",
+   "screenPageViews": 6,
+   "activeUsers": 3,
+   "userEngagementDuration": 29
+  },
+  {
    "pagePath": "/bonus/",
    "screenPageViews": 5,
    "activeUsers": 2,
    "userEngagementDuration": 169
   },
   {
-   "pagePath": "/pronostici/europa-league/",
+   "pagePath": "/pronostici/champions-league/",
    "screenPageViews": 5,
-   "activeUsers": 1,
-   "userEngagementDuration": 68
+   "activeUsers": 2,
+   "userEngagementDuration": 75
   },
   {
    "pagePath": "/pronostici/europa-league/milan-ferencvarosi-tc/",
@@ -197,28 +251,10 @@
    "userEngagementDuration": 6
   },
   {
-   "pagePath": "/tennis/",
-   "screenPageViews": 5,
-   "activeUsers": 2,
-   "userEngagementDuration": 70
-  },
-  {
-   "pagePath": "/pronostici/champions-league/",
-   "screenPageViews": 4,
-   "activeUsers": 1,
-   "userEngagementDuration": 75
-  },
-  {
    "pagePath": "/pronostici/europa-league/leverkusen-marsiglia/",
    "screenPageViews": 4,
    "activeUsers": 1,
    "userEngagementDuration": 29
-  },
-  {
-   "pagePath": "/pronostici/serie-a/",
-   "screenPageViews": 4,
-   "activeUsers": 2,
-   "userEngagementDuration": 13
   },
   {
    "pagePath": "/pronostici/serie-a/atalanta-parma/",
@@ -275,6 +311,36 @@
    "userEngagementDuration": 15
   },
   {
+   "pagePath": "/pronostici/nations-league/",
+   "screenPageViews": 3,
+   "activeUsers": 1,
+   "userEngagementDuration": 4
+  },
+  {
+   "pagePath": "/pronostici/premier-league/",
+   "screenPageViews": 3,
+   "activeUsers": 1,
+   "userEngagementDuration": 0
+  },
+  {
+   "pagePath": "/pronostici/qualificazioni-coppa-d-africa/",
+   "screenPageViews": 3,
+   "activeUsers": 1,
+   "userEngagementDuration": 44
+  },
+  {
+   "pagePath": "/pronostici/serie-b/",
+   "screenPageViews": 3,
+   "activeUsers": 2,
+   "userEngagementDuration": 48
+  },
+  {
+   "pagePath": "/pronostici/under-over/",
+   "screenPageViews": 3,
+   "activeUsers": 1,
+   "userEngagementDuration": 3
+  },
+  {
    "pagePath": "/calcio/brasileirao/sao-paulo-corinthians-2026-11-05/",
    "screenPageViews": 2,
    "activeUsers": 1,
@@ -317,6 +383,12 @@
    "userEngagementDuration": 16
   },
   {
+   "pagePath": "/pronostici/amichevoli-nazionali/",
+   "screenPageViews": 2,
+   "activeUsers": 1,
+   "userEngagementDuration": 87
+  },
+  {
    "pagePath": "/pronostici/brasileirao/palmeiras-clube-do-remo/",
    "screenPageViews": 2,
    "activeUsers": 1,
@@ -327,6 +399,18 @@
    "screenPageViews": 2,
    "activeUsers": 2,
    "userEngagementDuration": 24
+  },
+  {
+   "pagePath": "/pronostici/championship/",
+   "screenPageViews": 2,
+   "activeUsers": 1,
+   "userEngagementDuration": 28
+  },
+  {
+   "pagePath": "/pronostici/concacaf-nations-league/",
+   "screenPageViews": 2,
+   "activeUsers": 1,
+   "userEngagementDuration": 101
   },
   {
    "pagePath": "/pronostici/conference-league/fc-lugano-kauno-zalgiris/",
@@ -345,6 +429,18 @@
    "screenPageViews": 2,
    "activeUsers": 1,
    "userEngagementDuration": 183
+  },
+  {
+   "pagePath": "/pronostici/coupe-de-france/",
+   "screenPageViews": 2,
+   "activeUsers": 1,
+   "userEngagementDuration": 28
+  },
+  {
+   "pagePath": "/pronostici/eredivisie/",
+   "screenPageViews": 2,
+   "activeUsers": 1,
+   "userEngagementDuration": 0
   },
   {
    "pagePath": "/pronostici/eredivisie/willem-ii-zwolle/",
@@ -425,6 +521,12 @@
    "userEngagementDuration": 17
   },
   {
+   "pagePath": "/basket/nba/pelicans-nets-2026-11-12/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 15
+  },
+  {
    "pagePath": "/basket/nba/risultati/",
    "screenPageViews": 1,
    "activeUsers": 1,
@@ -473,6 +575,12 @@
    "userEngagementDuration": 6
   },
   {
+   "pagePath": "/calcio/bundesliga/hoffenheim-schalke-2026-11-08/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 12
+  },
+  {
    "pagePath": "/calcio/champions-league/atleti-bayern-2026-11-03/",
    "screenPageViews": 1,
    "activeUsers": 1,
@@ -509,6 +617,12 @@
    "userEngagementDuration": 142
   },
   {
+   "pagePath": "/calcio/eerste-divisie/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 5
+  },
+  {
    "pagePath": "/calcio/europa-league/milan-ferencvarosi-tc-2026-11-05/",
    "screenPageViews": 1,
    "activeUsers": 1,
@@ -519,6 +633,42 @@
    "screenPageViews": 1,
    "activeUsers": 1,
    "userEngagementDuration": 56
+  },
+  {
+   "pagePath": "/calcio/giocatori/pedri-133609/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 0
+  },
+  {
+   "pagePath": "/calcio/liga-portugal-2/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 5
+  },
+  {
+   "pagePath": "/calcio/liga/atleti-barca-2026-11-08/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 10
+  },
+  {
+   "pagePath": "/calcio/liga/real-sociedad-rayo-vallecano-2026-11-08/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 21
+  },
+  {
+   "pagePath": "/calcio/ligue-1/rc-lens-marseille-2026-11-08/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 7
+  },
+  {
+   "pagePath": "/calcio/ligue-2/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 17
   },
   {
    "pagePath": "/calcio/premier-league/aston-villa-man-city-2026-10-24/",
@@ -537,6 +687,12 @@
    "screenPageViews": 1,
    "activeUsers": 1,
    "userEngagementDuration": 3
+  },
+  {
+   "pagePath": "/calcio/premier-league/man-united-aston-villa-2026-11-08/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 6
   },
   {
    "pagePath": "/calcio/serie-a/classifica/",
@@ -611,6 +767,42 @@
    "userEngagementDuration": 7
   },
   {
+   "pagePath": "/pronostici/amichevoli-nazionali/cina-malaysia/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 124
+  },
+  {
+   "pagePath": "/pronostici/amichevoli-nazionali/korea-republic-u21-mexico-u23/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 20
+  },
+  {
+   "pagePath": "/pronostici/amichevoli-nazionali/nuova-zelanda-india/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 7
+  },
+  {
+   "pagePath": "/pronostici/amichevoli-nazionali/vietnam-taipei-cinese/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 0
+  },
+  {
+   "pagePath": "/pronostici/brasileirao/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 29
+  },
+  {
+   "pagePath": "/pronostici/bundesliga/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 0
+  },
+  {
    "pagePath": "/pronostici/champions-league/galatasaray-stuttgart/",
    "screenPageViews": 1,
    "activeUsers": 1,
@@ -623,6 +815,18 @@
    "userEngagementDuration": 14
   },
   {
+   "pagePath": "/pronostici/conference-league/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 0
+  },
+  {
+   "pagePath": "/pronostici/coupe-de-france/dijon-orleans/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 3
+  },
+  {
    "pagePath": "/pronostici/europa-league/rennes-olympiakos-piraeus/",
    "screenPageViews": 1,
    "activeUsers": 1,
@@ -633,6 +837,12 @@
    "screenPageViews": 1,
    "activeUsers": 1,
    "userEngagementDuration": 5
+  },
+  {
+   "pagePath": "/pronostici/liga/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 0
   },
   {
    "pagePath": "/pronostici/liga/malaga-racing-santander/",
@@ -653,16 +863,46 @@
    "userEngagementDuration": 5
   },
   {
+   "pagePath": "/pronostici/ligue-1/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 0
+  },
+  {
    "pagePath": "/pronostici/ligue-1/toulouse-strasbourg/",
    "screenPageViews": 1,
    "activeUsers": 1,
    "userEngagementDuration": 9
   },
   {
+   "pagePath": "/pronostici/nations-league/cipro-montenegro/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 0
+  },
+  {
+   "pagePath": "/pronostici/nations-league/italia-francia/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 6
+  },
+  {
+   "pagePath": "/pronostici/nations-league/lussemburgo-estonia/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 25
+  },
+  {
    "pagePath": "/pronostici/nba/cavaliers-knicks/",
    "screenPageViews": 1,
    "activeUsers": 1,
    "userEngagementDuration": 4
+  },
+  {
+   "pagePath": "/pronostici/nba/heat-cavaliers/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 14
   },
   {
    "pagePath": "/pronostici/nba/hornets-76ers/",
@@ -713,6 +953,18 @@
    "userEngagementDuration": 3
   },
   {
+   "pagePath": "/pronostici/primeira-liga/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 6
+  },
+  {
+   "pagePath": "/pronostici/qualificazioni-coppa-d-africa/capo-verde-liberia/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 104
+  },
+  {
    "pagePath": "/pronostici/serie-a/cagliari-frosinone/",
    "screenPageViews": 1,
    "activeUsers": 1,
@@ -743,6 +995,12 @@
    "userEngagementDuration": 36
   },
   {
+   "pagePath": "/pronostici/taca-de-portugal/",
+   "screenPageViews": 1,
+   "activeUsers": 1,
+   "userEngagementDuration": 0
+  },
+  {
    "pagePath": "/siti-scommesse",
    "screenPageViews": 1,
    "activeUsers": 1,
@@ -752,10 +1010,10 @@
  "pagineDiIngresso": [
   {
    "landingPage": "/",
-   "sessions": 21,
-   "engagementRate": 0.8571428571428571,
-   "bounceRate": 0.14285714285714285,
-   "averageSessionDuration": 467.8484807619048
+   "sessions": 22,
+   "engagementRate": 0.8636363636363636,
+   "bounceRate": 0.13636363636363635,
+   "averageSessionDuration": 611.3333213181818
   },
   {
    "landingPage": "(not set)",
@@ -766,10 +1024,10 @@
   },
   {
    "landingPage": "/calcio",
-   "sessions": 4,
+   "sessions": 7,
    "engagementRate": 1,
    "bounceRate": 0,
-   "averageSessionDuration": 786.479025
+   "averageSessionDuration": 940.0821862857143
   },
   {
    "landingPage": "/calcio/champions-league/statistiche-under-over",
@@ -784,6 +1042,13 @@
    "engagementRate": 0.5,
    "bounceRate": 0.5,
    "averageSessionDuration": 13.581674
+  },
+  {
+   "landingPage": "/pronostici",
+   "sessions": 2,
+   "engagementRate": 1,
+   "bounceRate": 0,
+   "averageSessionDuration": 120.5195235
   },
   {
    "landingPage": "/pronostici/domani",
@@ -821,6 +1086,13 @@
    "averageSessionDuration": 451.0053165
   },
   {
+   "landingPage": "/basket",
+   "sessions": 1,
+   "engagementRate": 1,
+   "bounceRate": 0,
+   "averageSessionDuration": 25.471688
+  },
+  {
    "landingPage": "/calcio/champions-league/feyenoord-inter-2026-11-03",
    "sessions": 1,
    "engagementRate": 0,
@@ -840,6 +1112,13 @@
    "engagementRate": 1,
    "bounceRate": 0,
    "averageSessionDuration": 56.282012
+  },
+  {
+   "landingPage": "/calcio/giocatori/pedri-133609",
+   "sessions": 1,
+   "engagementRate": 0,
+   "bounceRate": 1,
+   "averageSessionDuration": 0
   },
   {
    "landingPage": "/calcio/premier-league/aston-villa-man-city-2026-10-24",
@@ -870,13 +1149,6 @@
    "averageSessionDuration": 111.335998
   },
   {
-   "landingPage": "/pronostici",
-   "sessions": 1,
-   "engagementRate": 1,
-   "bounceRate": 0,
-   "averageSessionDuration": 166.316473
-  },
-  {
    "landingPage": "/pronostici/champions-league/galatasaray-stuttgart",
    "sessions": 1,
    "engagementRate": 1,
@@ -896,6 +1168,13 @@
    "engagementRate": 1,
    "bounceRate": 0,
    "averageSessionDuration": 76.139537
+  },
+  {
+   "landingPage": "/pronostici/nations-league/cipro-montenegro",
+   "sessions": 1,
+   "engagementRate": 0,
+   "bounceRate": 1,
+   "averageSessionDuration": 0
   },
   {
    "landingPage": "/pronostici/nba/hornets-76ers",
@@ -945,26 +1224,33 @@
    "engagementRate": 1,
    "bounceRate": 0,
    "averageSessionDuration": 37.245598
+  },
+  {
+   "landingPage": "/pronostici/under-over",
+   "sessions": 1,
+   "engagementRate": 1,
+   "bounceRate": 0,
+   "averageSessionDuration": 96.283934
   }
  ],
  "canali": [
   {
    "sessionDefaultChannelGroup": "Direct",
-   "sessions": 34,
-   "activeUsers": 7,
-   "engagementRate": 0.7352941176470589
+   "sessions": 36,
+   "activeUsers": 9,
+   "engagementRate": 0.75
   },
   {
    "sessionDefaultChannelGroup": "Organic Search",
-   "sessions": 18,
-   "activeUsers": 13,
-   "engagementRate": 0.7222222222222222
+   "sessions": 20,
+   "activeUsers": 14,
+   "engagementRate": 0.75
   },
   {
    "sessionDefaultChannelGroup": "AI Assistant",
-   "sessions": 11,
-   "activeUsers": 4,
-   "engagementRate": 0.7272727272727273
+   "sessions": 16,
+   "activeUsers": 8,
+   "engagementRate": 0.6875
   },
   {
    "sessionDefaultChannelGroup": "Unassigned",
@@ -976,21 +1262,21 @@
  "sorgenti": [
   {
    "sessionSourceMedium": "(direct) / (none)",
-   "sessions": 34,
-   "activeUsers": 7,
-   "engagementRate": 0.7352941176470589
+   "sessions": 36,
+   "activeUsers": 9,
+   "engagementRate": 0.75
   },
   {
    "sessionSourceMedium": "google / organic",
-   "sessions": 18,
-   "activeUsers": 13,
-   "engagementRate": 0.7222222222222222
+   "sessions": 20,
+   "activeUsers": 14,
+   "engagementRate": 0.75
   },
   {
    "sessionSourceMedium": "chatgpt.com / ai-assistant",
-   "sessions": 11,
-   "activeUsers": 4,
-   "engagementRate": 0.7272727272727273
+   "sessions": 16,
+   "activeUsers": 8,
+   "engagementRate": 0.6875
   },
   {
    "sessionSourceMedium": "(not set)",
@@ -1002,9 +1288,9 @@
  "dispositivi": [
   {
    "deviceCategory": "mobile",
-   "sessions": 42,
-   "activeUsers": 20,
-   "engagementRate": 0.6904761904761905
+   "sessions": 51,
+   "activeUsers": 27,
+   "engagementRate": 0.7058823529411765
   },
   {
    "deviceCategory": "desktop",
@@ -1016,40 +1302,55 @@
  "paesi": [
   {
    "country": "Italy",
-   "sessions": 62,
-   "activeUsers": 21
+   "sessions": 66,
+   "activeUsers": 24
+  },
+  {
+   "country": "Norway",
+   "sessions": 4,
+   "activeUsers": 3
   },
   {
    "country": "(not set)",
    "sessions": 2,
    "activeUsers": 2
+  },
+  {
+   "country": "Uganda",
+   "sessions": 1,
+   "activeUsers": 1
   }
  ],
  "eventi": [
   {
    "eventName": "page_view",
-   "eventCount": 364,
-   "totalUsers": 23
+   "eventCount": 483,
+   "totalUsers": 30
   },
   {
    "eventName": "session_start",
-   "eventCount": 63,
-   "totalUsers": 23
+   "eventCount": 72,
+   "totalUsers": 30
   },
   {
    "eventName": "user_engagement",
-   "eventCount": 56,
-   "totalUsers": 14
+   "eventCount": 58,
+   "totalUsers": 16
   },
   {
    "eventName": "first_visit",
-   "eventCount": 23,
-   "totalUsers": 23
+   "eventCount": 30,
+   "totalUsers": 30
   },
   {
    "eventName": "scroll",
-   "eventCount": 22,
-   "totalUsers": 9
+   "eventCount": 27,
+   "totalUsers": 12
+  },
+  {
+   "eventName": "market_filter",
+   "eventCount": 17,
+   "totalUsers": 5
   },
   {
    "eventName": "prediction_view",
@@ -1065,11 +1366,6 @@
    "eventName": "filter_use",
    "eventCount": 7,
    "totalUsers": 4
-  },
-  {
-   "eventName": "market_filter",
-   "eventCount": 6,
-   "totalUsers": 1
   },
   {
    "eventName": "bet_slip_add",
