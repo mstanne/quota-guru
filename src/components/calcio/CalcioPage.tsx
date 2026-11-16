@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { hasStrengthRanking, strengthRankingPath } from "../../lib/strengthRanking";
+import { PUNTO_BASE, hasPunto } from "../../lib/punto";
 import { useParams } from "react-router";
 import { Link } from "../../lib/links";
-import { BarChart3, CalendarDays, History, ListOrdered, Trophy } from "lucide-react";
+import { BarChart3, CalendarCheck, CalendarDays, History, ListOrdered, Trophy } from "lucide-react";
 import { hasSeasons, seasonsHubPath, seasonsIndex, seasonsPath } from "../../lib/seasons";
 import {
   competitionPath,
@@ -240,6 +241,12 @@ export function CalcioPage() {
             <Link to={competition ? seasonsPath(competition.slug) : seasonsHubPath} className={headerLinkClass}>
               <History className="w-4 h-4 text-slate-300" aria-hidden="true" />
               {competition ? "Stagioni passate" : "Albo d'oro e stagioni passate"}
+            </Link>
+          )}
+          {!competition && hasPunto() && (
+            <Link to={PUNTO_BASE} className={headerLinkClass}>
+              <CalendarCheck className="w-4 h-4 text-slate-300" aria-hidden="true" />
+              Il punto del lunedì
             </Link>
           )}
           {!competition && hasStrengthRanking() && (

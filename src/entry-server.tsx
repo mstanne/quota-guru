@@ -15,6 +15,7 @@ import { playerMeta } from "./lib/playerMeta";
 import { trackRecordMeta } from "./lib/trackRecordMeta";
 import { hasStrengthRanking, strengthRankingMeta } from "./lib/strengthRanking";
 import { chiSchierareMeta, fantaMeta, hasFanta } from "./lib/fantacalcio";
+import { hasPunto, loadAllPuntoData, puntoEditions, puntoHubMeta, puntoMeta } from "./lib/punto";
 import { homeItemList } from "./lib/homeMeta";
 import { loadAllNbaPlayerData, nbaPlayerMeta, type NbaPlayer } from "./lib/nbaPlayers";
 import { leagueGoalStats, type GoalResult } from "./lib/goalStats.mjs";
@@ -58,7 +59,7 @@ export { notFoundMeta, fullTitle, snippet } from "./routes";
 export { llmsTxt } from "./lib/llmsTxt";
 export { site } from "./data/site";
 /** Page chunks and the data loaded on demand (team pages) must all be ready before rendering synchronously. */
-const preloadAll = () => Promise.all([preloadAllPages(), loadAllTeamData(), loadAllResults(), loadAllSeasons(), loadAllCompetitionData(), loadAllPlayerData(), loadAllNbaPlayerData()]);
+const preloadAll = () => Promise.all([preloadAllPages(), loadAllTeamData(), loadAllResults(), loadAllSeasons(), loadAllCompetitionData(), loadAllPlayerData(), loadAllNbaPlayerData(), loadAllPuntoData()]);
 export { preloadAll as preloadAllPages };
 /** Every URL to pre-render: static pages + one page per competition, standings table and match. */
 // venues for the events' structured data: football from the team pages' data, NBA arenas from the box scores
@@ -103,7 +104,7 @@ const cornersCardsRoutes = () =>
   Object.values(competitionFiles).flatMap(({ default: f }) =>
     f.matchStats?.n && f.competition.standings.length ? [cornersCardsMeta(f.competition, f.matchStats.league)] : [],
   );
-export const routes = [trackRecordMeta(), ...(hasStrengthRanking() ? [strengthRankingMeta()] : []), ...(hasFanta() ? [fantaMeta(), chiSchierareMeta()] : []), ...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...nbaPlayerRoutes(), ...staticRoutes.map((r) => (r.path === "/" ? { ...r, jsonLd: [...(r.jsonLd ?? []), ...homeItemList()] } : r)), ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...marketRoutes(), tvGuideMeta(), trisMeta(), multipleMeta(), nationalHubMeta(), ...basketRoutes(
+export const routes = [trackRecordMeta(), ...(hasStrengthRanking() ? [strengthRankingMeta()] : []), ...(hasFanta() ? [fantaMeta(), chiSchierareMeta()] : []), ...(hasPunto() ? [puntoHubMeta(), ...puntoEditions.map(puntoMeta)] : []), ...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...nbaPlayerRoutes(), ...staticRoutes.map((r) => (r.path === "/" ? { ...r, jsonLd: [...(r.jsonLd ?? []), ...homeItemList()] } : r)), ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...marketRoutes(), tvGuideMeta(), trisMeta(), multipleMeta(), nationalHubMeta(), ...basketRoutes(
   (id) => !!basketPredictionFor(id),
   (id) => highlightFor("nba", id),
   (g) => nbaVenues.get(g.home.id) ?? null,

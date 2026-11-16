@@ -1,4 +1,5 @@
 import { useParams } from "react-router";
+import { hasPunto, longDate, puntoEditions, puntoPath } from "../../lib/punto";
 import { Link } from "../../lib/links";
 import { ListOrdered } from "lucide-react";
 import { hasSeasons, seasonsPath } from "../../lib/seasons";
@@ -131,6 +132,13 @@ export function StandingsPage() {
         <SeasonOutlook competition={competition} />
         <XgPointsTable competition={competition} />
         <CompetitionTrack competition={competition} />
+        {competition.slug === "serie-a" && hasPunto() && (
+          <p className="text-sm">
+            <Link to={puntoPath(puntoEditions[0].date)} className="text-action-text hover:text-action-text-hover">
+              Il punto del modello del {longDate(puntoEditions[0].date)}: come sono cambiate le probabilità in una settimana
+            </Link>
+          </p>
+        )}
         <Rounds competition={competition} />
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           <Link to={competitionPath(competition)} className="text-action-text hover:text-action-text-hover">

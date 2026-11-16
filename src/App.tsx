@@ -56,6 +56,8 @@ const BasketGamePage = lazyPage(() => import("./components/basket/BasketGamePage
 const BasketStandingsPage = lazyPage(() =>
   import("./components/basket/BasketStandingsPage").then((m) => m.BasketStandingsPage),
 );
+const PuntoPage = lazyPage(() => import("./components/punto/PuntoPages").then((m) => m.PuntoPage));
+const PuntoHubPage = lazyPage(() => import("./components/punto/PuntoPages").then((m) => m.PuntoHubPage));
 const FantacalcioPage = lazyPage(() => import("./components/fantacalcio/FantacalcioPage").then((m) => m.FantacalcioPage));
 const ChiSchierarePage = lazyPage(() => import("./components/fantacalcio/ChiSchierarePage").then((m) => m.ChiSchierarePage));
 const StrengthRankingPage = lazyPage(() => import("./components/stats/StrengthRankingPage").then((m) => m.StrengthRankingPage));
@@ -120,6 +122,8 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/calcio/stagioni", [SeasonsHubPage, NotFoundPage]],
   ["/calcio/ranking-squadre", [StrengthRankingPage, NotFoundPage]],
   ["/fantacalcio", [FantacalcioPage, NotFoundPage]],
+  ["/il-punto", [PuntoHubPage, NotFoundPage]],
+  ["/il-punto/:data", [PuntoPage, NotFoundPage]],
   ["/fantacalcio/chi-schierare", [ChiSchierarePage, NotFoundPage]],
   ["/calcio/:competizione/stagioni", [SeasonsIndexPage, NotFoundPage]],
   ["/calcio/:competizione/stagioni/:stagione", [SeasonPage, NotFoundPage]],
@@ -197,7 +201,8 @@ export function preloadForPath(pathname: string) {
   const nbaPlayer = /^\/basket\/nba\/giocatori\/[^/]+$/.test(clean)
     ? import("./lib/nbaPlayers").then((m) => m.preloadNbaPlayerData(clean))
     : null;
-  return Promise.all([...(hit ? hit[1] : [NotFoundPage]).map((p) => p.preload()), team, results, season, football, player, nbaPlayer]);
+  const punto = /^\/il-punto(\/|$)/.test(clean) ? import("./lib/punto").then((m) => m.preloadPuntoData(clean)) : null;
+  return Promise.all([...(hit ? hit[1] : [NotFoundPage]).map((p) => p.preload()), team, results, season, football, player, nbaPlayer, punto]);
 }
 
 function PageLoading() {
@@ -278,6 +283,8 @@ export default function App() {
             <Route path="/calcio/stagioni" element={<SeasonsHubPage />} />
             <Route path="/calcio/ranking-squadre" element={<StrengthRankingPage />} />
             <Route path="/fantacalcio" element={<FantacalcioPage />} />
+            <Route path="/il-punto" element={<PuntoHubPage />} />
+            <Route path="/il-punto/:data" element={<PuntoPage />} />
             <Route path="/fantacalcio/chi-schierare" element={<ChiSchierarePage />} />
             <Route path="/calcio/:competizione/stagioni" element={<SeasonsIndexPage />} />
             <Route path="/calcio/:competizione/stagioni/:stagione" element={<SeasonPage />} />
