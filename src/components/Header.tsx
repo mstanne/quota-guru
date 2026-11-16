@@ -14,6 +14,7 @@ import {
   Phone,
   Send,
   Shield,
+  Shirt,
 } from "lucide-react";
 import { useBetSlip } from "../context/BetSlipContext";
 import { Link, NavLink } from "../lib/links";
@@ -29,6 +30,7 @@ import { methodMenu, sitiMenu } from "./siti/topicMenu";
 const NAV = [
   { to: paths.pronostici, label: "Pronostici", icon: ChartColumn },
   { to: paths.calcio, label: "Calcio", icon: Goal },
+  { to: paths.fantacalcio, label: "Fantacalcio", icon: Shirt },
   { to: paths.tennis, label: "Tennis", icon: CircleDot },
   { to: paths.basket, label: "Basket", icon: Dribbble },
   { to: paths.sitiScommesse, label: "Siti scommesse", icon: Shield },

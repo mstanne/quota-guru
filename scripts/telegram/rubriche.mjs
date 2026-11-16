@@ -659,6 +659,14 @@ export const RUBRICHE = [
     build: videoPosts,
   },
   {
+    // the day before the first match of the Serie A round, when the game's line-ups are being made
+    id: "fantacalcio",
+    name: "Consigli fantacalcio",
+    days: EVERY_DAY,
+    time: "18:30",
+    build: fantaPost,
+  },
+  {
     id: "formazioni",
     name: "Formazioni ufficiali",
     event: true,
@@ -965,6 +973,7 @@ function lineupPosts({ data, nowMs }) {
         team(home, x.lineups.home),
         team(away, x.lineups.away),
         e?.prediction?.p ? `Il modello prima delle formazioni: ${p1x2(e.prediction.p)}` : null,
+        x.league === "serie-a" ? fantaSurprises(data.fantacalcio, site.m.id, x.lineups) : null,
         `Cronaca e statistiche in diretta: ${anchor(e?.path ?? `/pronostici/${site.c.slug}`, `${home} – ${away}`, "formazioni")}`,
       ),
     });
@@ -1416,4 +1425,78 @@ function videoPosts({ data, nowMs }) {
     });
   }
   return posts;
+}
+
+// ---------------------------------------------------------------------------------------------- fantacalcio
+const ROLE_NAMES = { P: "Portieri", D: "Difensori", C: "Centrocampisti", A: "Attaccanti" };
+const sign = (b) => `${b > 0 ? "+" : b < 0 ? "−" : ""}${Math.abs(b).toFixed(1).replace(".", ",")}`;
+const likely = (p) => ["quasi certo", "probabile", "titolare"].includes(p.band);
+
+/**
+ * Fantasy football advice for the next Serie A round (src/data/fantacalcio.json, written by the site build and kept in
+ * the predictions archive): the three players with the highest expected bonus ("fantapunti attesi" in the post) in
+ * each role, among those likely to
+ * start. Out the day before the first match of the round.
+ */
+function fantaPost({ data, nowMs }) {
+  const f = data.fantacalcio;
+  if (!f?.matchday || !f.deadline || !f.players?.length) return null;
+  const first = Date.parse(f.deadline);
+  if (!(first >= nowMs + 12 * 3600000 && first < nowMs + 36 * 3600000)) return null;
+  // data of the site build of the last few hours only
+  if (!f.generatedAt || nowMs - Date.parse(f.generatedAt) > 12 * 3600000) return null;
+  const roles = ["P", "D", "C", "A"].map((r) => ({
+    role: r,
+    name: ROLE_NAMES[r],
+    players: f.players.filter((p) => p.role === r && likely(p)).slice(0, 3),
+  }));
+  if (roles.some((r) => r.players.length < 3)) return null;
+  const who = (p) => `${p.name} (${p.team.name}${p.home ? " in casa" : " fuori"} con ${p.opp.name})`;
+  const lines = roles.map(
+    (r) => `<b>${r.name}</b>: ${r.players.map((p) => `${esc(p.name)} ${sign(p.bonus)}`).join(", ")}`,
+  );
+  const deadline = `${dayLabel(rome(first).day)} ore ${rome(first).time}`;
+  const link = `Tutti i giocatori, ruolo per ruolo, e il confronto "chi schierare": ${anchor("/fantacalcio", "consigli fantacalcio", "fantacalcio")}`;
+  const title = `⚽ <b>Fantacalcio, ${f.matchday}ª giornata di Serie A</b> – chi schierare secondo il modello`;
+  // (the word "bonus" is kept out: the compliance filter reserves it for betting promotions)
+  const how = "Fantapunti attesi oltre al voto, con le regole classiche (gol +3, assist +1, ammonizione −0,5; portieri: porta inviolata +1, gol subito −1), solo tra i titolari probabili.";
+  return {
+    caption: post(title, lines.join("\n"), how, `Formazioni entro ${esc(deadline)}.`, link),
+    text: post(
+      title,
+      roles.map((r) => `<b>${r.name}</b>\n${r.players.map((p) => `${esc(who(p))}: ${sign(p.bonus)}`).join("\n")}`).join("\n\n"),
+      how,
+      `Formazioni entro ${esc(deadline)}.`,
+      link,
+    ),
+    card: {
+      type: "fanta",
+      badge: "Fantacalcio",
+      title: `${f.matchday}ª giornata: chi schierare`,
+      subtitle: "Serie A · fantapunti attesi oltre al voto, tra i titolari probabili",
+      roles: roles.map((r) => ({
+        name: r.name,
+        players: r.players.map((p) => ({ name: p.name, team: `${p.team.name} ${p.home ? "vs" : "@"} ${p.opp.name}`, value: sign(p.bonus) })),
+      })),
+      note: `Formazioni entro ${shortDayTime(f.deadline)} · regole classiche, senza il voto`,
+    },
+  };
+}
+
+const norm = (s) =>
+  String(s)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z]/g, "");
+/**
+ * Line for the official line-ups of a Serie A match: players the model gave as almost sure starters who are not in the
+ * starting eleven (for fantasy football). Null when there are none or the advice is not there.
+ */
+function fantaSurprises(f, matchId, lineups) {
+  if (!f?.players?.length || !lineups?.home?.starters || !lineups?.away?.starters) return null;
+  const starters = new Set([...lineups.home.starters, ...lineups.away.starters].map((n) => norm(typeof n === "string" ? n : n.name)));
+  const out = f.players.filter((p) => p.match === matchId && p.band === "quasi certo" && !starters.has(norm(p.name)));
+  if (!out.length) return null;
+  return `Fantacalcio, a sorpresa fuori dagli undici: ${esc(out.map((p) => `${p.name} (${p.team.name})`).join(", "))}.`;
 }

@@ -778,7 +778,32 @@ function multiple(card) {
   return out;
 }
 
+/** Fantasy football: four role panels with three players each. card.roles = [{ name, players: [{ name, team, value }] }], card.note */
+function fanta(card) {
+  let out = "";
+  const gap = 12;
+  const ph = 212;
+  let y = TOP - 6;
+  const right = W - M - 28;
+  for (const r of card.roles.slice(0, 4)) {
+    out += rect(M, y, W - 2 * M, ph, { r: 24 });
+    out += caps(M + 28, y + 40, r.name, { size: 20 });
+    let ry = y + 88;
+    for (const p of r.players.slice(0, 3)) {
+      const vw = textWidth(p.value, 30, 700);
+      out += text(M + 28, ry, p.name, { size: 28, max: 420 });
+      out += text(M + 470, ry, p.team, { size: 22, weight: 400, fill: C.grey, max: right - vw - 30 - (M + 470) });
+      out += text(right, ry, p.value, { size: 30, fill: p.value.startsWith("+") ? C.green : C.amber, anchor: "end" });
+      ry += 46;
+    }
+    y += ph + gap;
+  }
+  if (card.note && BOTTOM - y > 24) out += text(M, y + 30, card.note, { size: 22, weight: 400, fill: C.muted, max: W - 2 * M });
+  return out;
+}
+
 const LAYOUTS = {
+  fanta,
   multiple,
   tris,
   study,

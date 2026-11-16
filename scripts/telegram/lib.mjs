@@ -140,6 +140,8 @@ export async function loadVideoFile(file) {
  *                      (`archivio-pronostici` branch, files of the previous, current and next month)
  *   tris               the threes locked by the site build (same branch, tris.json; scripts/lib/tris.mjs)
  *   multiple           the multiples of the day locked by the site build (same branch, multiple.json; scripts/lib/multiple.mjs)
+ *   fantacalcio        fantasy football advice for the next Serie A round (same branch, fantacalcio.json;
+ *                      scripts/derive-fantacalcio.mjs)
  *   videos             index of the match prediction videos (`video-partite` branch, index.json)
  * Local runs: TG_DATA_DIR (a folder holding src/data/…), TG_ARCHIVE_DIR (a copy of archivio-pronostici) and
  * TG_VIDEO_DIR (index.json of video-partite and the video files, with the bucket's paths).
@@ -163,7 +165,7 @@ export async function loadData(nowMs, { live = false } = {}) {
     const p = path.join(archDir, f);
     return fs.existsSync(p) ? readJsonFile(p) : null;
   };
-  const [videos, football, basket, tris, multiple, ...files] = await Promise.all([
+  const [videos, football, basket, tris, multiple, fantacalcio, ...files] = await Promise.all([
     loadVideos().catch((e) => {
       console.error(`! indice dei video non disponibile: ${e.message ?? e}`);
       return { videos: {} };
@@ -172,6 +174,7 @@ export async function loadData(nowMs, { live = false } = {}) {
     data("src/data/basket.json"),
     arch("tris.json"),
     arch("multiple.json"),
+    arch("fantacalcio.json"),
     ...months.flatMap((m) => [arch(`calcio/${m}.json`), arch(`nba/${m}.json`)]),
   ]);
   const archive = { calcio: [], nba: [] };
@@ -182,6 +185,7 @@ export async function loadData(nowMs, { live = false } = {}) {
     archive,
     tris: tris ?? {},
     multiple: multiple ?? {},
+    fantacalcio: fantacalcio ?? null,
     videos: videos.videos ?? {},
     lineups: live ? await loadLineups() : [],
   };
