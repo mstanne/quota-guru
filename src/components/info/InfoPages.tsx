@@ -15,6 +15,8 @@ import { responsibleGambling as rg } from "../../data/operators";
 import { analyticsConfigured, analyticsProvider } from "../../lib/analytics";
 import { paths } from "../../routes";
 import footballHome from "../../data/football-home.json";
+import { archivedTrackRecord, type TrackRecord } from "../../lib/trackRecord";
+import { TRACK_RECORD_PATH } from "../../lib/trackRecordMeta";
 
 /** Metodologia: sections about how bookmaker odds are ordered and updated. Hidden until the odds feeds are live. */
 const SHOW_ODDS_METHOD = false;
@@ -83,24 +85,113 @@ const Company = () => (
 
 // ---------------------------------------------------------------------------------------------
 
+/** Archived predictions (src/data/track-record.json): how many and since when, for the about page. */
+function archiveFacts() {
+  const sports = (["calcio", "nba", "nazionali"] as const).map((k) => archivedTrackRecord(k)).filter((r): r is TrackRecord => !!r);
+  const n = sports.reduce((t, r) => t + r.all.n, 0);
+  const hits = sports.reduce((t, r) => t + r.all.hits, 0);
+  const since = sports.map((r) => r.since).filter((d): d is string => !!d).sort()[0] ?? null;
+  return { n, hits, since };
+}
+const longDate = (iso: string) =>
+  new Date(iso).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Rome" });
+
 export function ChiSiamoPage() {
+  const a = archiveFacts();
   return (
-    <InfoLayout title="Chi siamo" icon={Info} crumb="Chi siamo" subtitle="Cos'è QuotaGuru e come lavoriamo">
+    <InfoLayout title="Chi siamo" icon={Info} crumb="Chi siamo" subtitle="Cos'è QuotaGuru, come nasce il modello e come lavoriamo">
       <p>
-        {site.name} (anche Quota Guru), {site.tagline}, è un servizio informativo che mette a confronto quote, condizioni delle offerte e caratteristiche
-        degli operatori di gioco autorizzati in Italia, insieme a calendari, risultati e classifiche sportive.
+        {site.name} (anche Quota Guru), {site.tagline}, è un sito italiano di pronostici sportivi basati sui dati. Per ogni
+        partita di calcio e NBA pubblichiamo la probabilità di ogni esito calcolata da modelli statistici, con le
+        motivazioni della stima, e teniamo un bilancio pubblico di tutti i pronostici passati, giusti e sbagliati. Per il
+        tennis stimiamo chi vince tra due giocatori dei top 100 ATP e WTA.
       </p>
       <p>
+        Accanto ai pronostici ci sono calendari, risultati, classifiche, statistiche di squadre e giocatori, i consigli per
+        il fantacalcio, le guide dell'Academy e le schede degli operatori di gioco con concessione dell'{rg.regulatorName}.
         Non accettiamo giocate, non gestiamo conti di gioco e non siamo un concessionario: le scommesse si effettuano
-        esclusivamente sui siti degli operatori con concessione dell'{rg.regulatorName}.
+        esclusivamente sui siti degli operatori autorizzati.
       </p>
-      <h2>Indipendenza</h2>
+
+      <h2>Come nasce il modello</h2>
       <p>
-        L'ordine delle quote è calcolato automaticamente in base al valore, senza che gli operatori possano influire
-        sulla posizione o sull'evidenza grafica. Come funziona il confronto è spiegato nella pagina{" "}
-        <Link to={paths.metodologia}>Metodologia</Link>; i rapporti commerciali con gli operatori sono descritti nella{" "}
-        <Link to={paths.affiliazione}>dichiarazione di affiliazione</Link>.
+        QuotaGuru nasce da una domanda semplice: quanto è davvero probabile un risultato, se si guardano solo i numeri?
+        Per rispondere servivano tre cose: un modello che si potesse spiegare, dati affidabili e la disponibilità a
+        mostrare ogni errore.
       </p>
+      <ul>
+        <li>
+          <strong>Ottobre 2026.</strong> Il sito va online con calendari, risultati e classifiche. Il 25 ottobre arrivano i
+          primi modelli: per il calcio un modello di Poisson con la correzione di Dixon-Coles, che stima la forza in
+          attacco e in difesa di ogni squadra dai risultati delle ultime stagioni, dando più peso alle partite recenti; per
+          l'NBA un modello a punti segnati e subiti; per il tennis un calcolatore testa a testa partito dalle classifiche
+          ATP e WTA.
+        </li>
+        <li>
+          <strong>27 ottobre 2026.</strong> Comincia l'archivio di ogni pronostico pubblicato (sotto).
+        </li>
+        <li>
+          <strong>Novembre 2026.</strong> I dati passano ai piani professionali di API-Football e API-NBA, con un archivio
+          storico di più stagioni per stimare meglio la forza delle squadre. Il modello delle nazionali diventa separato da
+          quello dei club; si aggiungono Under/Over, Goal/No goal, multigol, corner e cartellini, i marcatori, le
+          proiezioni di fine stagione e la difficoltà del calendario, il ranking delle squadre e i consigli per il
+          fantacalcio, tutti calcolati con le stesse stime.
+        </li>
+      </ul>
+      <p>
+        Il modello non conosce infortuni dell'ultima ora, motivazioni o scelte degli allenatori che i dati non mostrano
+        ancora: per questo pubblichiamo probabilità, non certezze. Come funziona nel dettaglio, con i suoi limiti, è
+        spiegato nella pagina <Link to={`${paths.metodologia}#pronostici`}>Metodologia</Link>.
+      </p>
+
+      <h2>L'archivio dei pronostici</h2>
+      <p>
+        Dal {a.since ? longDate(a.since) : "27 ottobre 2026"} ogni pronostico pubblicato viene salvato prima della partita,
+        con l'ora di pubblicazione. Fino al calcio d'inizio può essere aggiornato (nuovi dati, formazioni), poi viene
+        bloccato e non cambia più: gli si aggiunge solo il risultato finale. Nessun pronostico viene cancellato, nemmeno
+        quelli sbagliati.
+        {a.n > 0
+          ? ` Oggi l'archivio conta ${a.n.toLocaleString("it-IT")} pronostici già giudicati, con l'esito indicato come più probabile verificato ${a.hits.toLocaleString("it-IT")} volte (${Math.round((a.hits / a.n) * 100)}%).`
+          : ""}
+      </p>
+      <p>
+        L'archivio è pubblico: le percentuali per competizione e per mese e il confronto tra probabilità stimate e
+        risultati sono nel <Link to={TRACK_RECORD_PATH}>bilancio dei pronostici</Link>, e i file completi si possono
+        scaricare da lì. La cronologia di ogni salvataggio è conservata con data e ora, così chiunque può verificare che
+        un pronostico sia stato pubblicato prima della partita. I pronostici sono rilasciati con licenza{" "}
+        <a href={PREDICTIONS_LICENSE.url} rel="license noopener" target="_blank">
+          {PREDICTIONS_LICENSE.name}
+        </a>
+        .
+      </p>
+
+      <h2>Come lavoriamo</h2>
+      <ul>
+        <li>
+          <strong>I numeri prima delle opinioni.</strong> Ogni probabilità viene dal modello, non da sensazioni; i testi
+          delle partite spiegano i numeri, non li cambiano.
+        </li>
+        <li>
+          <strong>Anche gli errori sono pubblici.</strong> Il bilancio conta allo stesso modo pronostici giusti e
+          sbagliati; non parliamo mai di pronostici "sicuri".
+        </li>
+        <li>
+          <strong>Separati dagli operatori.</strong> Gli operatori non possono pagare per un pronostico, per cambiarne le
+          probabilità o per comparire nei contenuti informativi; i rapporti commerciali sono descritti nella{" "}
+          <Link to={paths.affiliazione}>dichiarazione di affiliazione</Link>. Sul canale Telegram e nei pronostici non
+          promuoviamo operatori né offerte.
+        </li>
+        <li>
+          <strong>Dati di fonti verificabili.</strong> Calendari, risultati, formazioni e statistiche arrivano da
+          API-Football e API-NBA (API-Sports), le classifiche ATP e WTA del tennis da BALLDONTLIE. Le pagine dicono quando
+          sono state aggiornate l'ultima volta.
+        </li>
+        <li>
+          <strong>Correzioni.</strong> Se trovi un dato sbagliato scrivici dalla pagina <Link to={paths.contatti}>contatti</Link>:
+          lo correggiamo, ma i pronostici già archiviati restano come sono stati pubblicati.
+        </li>
+      </ul>
+
       <h2>Gioco responsabile</h2>
       <p>
         Il gioco con vincita in denaro è vietato ai minori di {rg.minAge} anni e può causare dipendenza. Se hai bisogno
