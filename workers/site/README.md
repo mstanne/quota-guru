@@ -43,7 +43,8 @@ con l'archivio delle partite. Il piano gratuito accetta al massimo 20.000 file p
 5. Controlli sull'indirizzo di prova:
    - home, una pagina partita, una squadra, un giocatore, la pagina bonus;
    - un indirizzo inesistente → pagina 404 del sito;
-   - `/calcio/serie-a` (senza `/` finale) → va a `/calcio/serie-a/`;
+   - `/calcio/serie-a` (senza `/` finale) → va a `/calcio/serie-a/` (307 sull'indirizzo di prova; 301 sul dominio
+     vero con la regola del passo 5b della fase 2);
    - un vecchio URL elencato in `_redirects` (es. `/basket/nba/`) → 301 verso il nuovo;
    - video delle guide e immagini social.
 
@@ -65,6 +66,16 @@ Meglio in un momento senza partite in corso. Il sito resta irraggiungibile solo 
    - *Rules* → *Redirect Rules* → *Create rule* → modello **Redirect from Root to WWW**, codice **301**, con
      *Preserve query string*. Salva.
 5. *SSL/TLS* → *Edge Certificates*: **Always Use HTTPS** attivo.
+5b. **Barra finale con 301** (il Worker con i soli file statici, `html_handling = "auto-trailing-slash"`, risponde
+   `/calcio` → `/calcio/` con un **307**, cioè temporaneo; per Google serve un 301). *Rules* → *Redirect Rules* →
+   *Create rule* "Barra finale 301" (creata il 16/11/2026):
+   - *Custom filter expression*:
+     `(http.host eq "www.quotaguru.it" and not ends_with(http.request.uri.path, "/") and not http.request.uri.path contains ".")`
+   - *Dynamic*: `concat("https://www.quotaguru.it", http.request.uri.path, "/")`, codice **301**, *Preserve query string*.
+
+   I file (`sitemap.xml`, `robots.txt`, immagini…) hanno un punto nel nome e non sono toccati. La regola viene
+   prima del Worker: gli URL di `_redirects` rispondono comunque 301 (es. `/basket/nba` → `/basket/nba/` →
+   `/pronostici/nba/`).
 6. *Actions* → **Deploy to GitHub Pages** → *Run workflow*, poi controlla:
    - `https://www.quotaguru.it/` e le pagine della fase 1;
    - `http://quotaguru.it/calcio/` → 301 a `https://www.quotaguru.it/calcio/`;
