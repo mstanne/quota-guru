@@ -4,6 +4,11 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Data of the pages (vite.config.ts): fixed names, new content at every build, so the browser checks for a newer
+# copy at every visit (an unchanged file is not downloaded again).
+/dati-js/*
+  Cache-Control: public, max-age=0, must-revalidate
+
 # Test address of the worker (quotaguru-site.<account>.workers.dev): never indexed, the site is www.quotaguru.it.
 https://:worker.:subdomain.workers.dev/*
   X-Robots-Tag: noindex

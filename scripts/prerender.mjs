@@ -374,9 +374,11 @@ const pageTitles = new Map();
 // the build (14 November 2026: peak 15.4 GB; with this, 5 GB). Needs `node --expose-gc` (package.json, "build").
 let emitted = 0;
 const GC_EVERY = 500;
-function emit(meta0, appHtml, main = mainContent(appHtml)) {
+function emit(meta0, appHtml, main = mainContent(appHtml), { restoredFromArchive = false } = {}) {
   if (++emitted % GC_EVERY === 0) globalThis.gc?.();
-  const reason = meta0.index !== false && outOfIndex(meta0.path, searchPolicy);
+  // an evergreen match page is "resting" (only the last result) when live with `archive`, or restored from the archive
+  const resting = !!meta0.event && (meta0.archive === true || restoredFromArchive);
+  const reason = meta0.index !== false && outOfIndex(meta0.path, { ...searchPolicy, today, resting });
   if (reason) keptOut.set(reason, (keptOut.get(reason) ?? 0) + 1);
   const meta = withCard(reason ? { ...meta0, index: false } : meta0);
   pageTitles.set(meta.path, meta.title);
@@ -480,7 +482,7 @@ if (fs.existsSync(archiveDir)) {
       continue;
     }
     // same hash as when the page was live: archiving alone does not change its lastmod
-    emit(entry.meta, appHtml, stored === slashLinks(entry.html) ? entry.html : stored);
+    emit(entry.meta, appHtml, stored === slashLinks(entry.html) ? entry.html : stored, { restoredFromArchive: true });
     live.add(entry.meta.path);
     if (entry.meta.key) keyPaths[entry.meta.key] ??= entry.meta.path;
     restored++;

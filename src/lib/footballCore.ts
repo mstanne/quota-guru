@@ -342,8 +342,19 @@ export const isMatchdayStage = (m: Pick<Match, "stage" | "matchday">) =>
   !!m.matchday && (m.stage === "REGULAR_SEASON" || m.stage === "LEAGUE_STAGE");
 export const isResultPending = (m: Match) => m.status === "RESULT_PENDING";
 
-/** Reference time of this build (vite.config.ts), the same for pre-rendered pages and the browser. */
-export const referenceTime = typeof __BUILD_TIME__ === "string" ? Date.parse(__BUILD_TIME__) : Date.now();
+/**
+ * Reference time of this build (vite.config.ts), the same for pre-rendered pages and the browser: compiled into the
+ * pre-render, read from <meta name="qg-build-time"> of the page in the browser (so the code does not change at every
+ * build), the current time elsewhere.
+ */
+export const referenceTime = (() => {
+  if (typeof __BUILD_TIME__ === "string") return Date.parse(__BUILD_TIME__);
+  if (typeof document !== "undefined") {
+    const t = Date.parse(document.querySelector<HTMLMetaElement>('meta[name="qg-build-time"]')?.content ?? "");
+    if (Number.isFinite(t)) return t;
+  }
+  return Date.now();
+})();
 
 /**
  * The source is not live and sometimes leaves a match "scheduled" or "in play" long after it ended.

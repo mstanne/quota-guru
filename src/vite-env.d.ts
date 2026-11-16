@@ -13,5 +13,5 @@ interface ImportMetaEnv {
   readonly VITE_VIDEO_BASE?: string;
 }
 
-/** ISO time of the build (vite.config.ts): reference for "upcoming / live / result pending". */
+/** ISO time of the build (vite.config.ts, pre-render only): reference for "upcoming / live / result pending". */
 declare const __BUILD_TIME__: string;

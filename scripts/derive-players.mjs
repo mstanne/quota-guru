@@ -177,18 +177,18 @@ for (const c of football.competitions)
       ranks.set(r.id, e);
     });
 
-// Search engines: pages of players with few minutes are mostly empty tables. They stay on the site (links from teams
-// and matches) but are kept out of the index and the sitemap ("noindex") when the player has fewer than
-// MIN_MINUTES minutes this season (MIN_MINUTES_ITALY for clubs of Serie A and Serie B), counted only once the league
-// has played ROUNDS_BEFORE_THRESHOLD rounds (before that everybody is below the threshold). Checked again at every
-// build (every few hours, so after every round): a player who passes the threshold is indexed again and announced to
-// IndexNow (scripts/prerender.mjs).
-// November 2026 (Search Console): with 450 minutes everywhere ~3,000 player pages were in the sitemap, most of them
-// never shown by Google; the threshold went up to 900 minutes outside Italy (see also scripts/lib/search-index.mjs).
-const MIN_MINUTES = 900;
-const MIN_MINUTES_ITALY = 450;
-const ITALIAN_LEAGUES = new Set(["serie-a", "serie-b"]);
-const ROUNDS_BEFORE_THRESHOLD = 10;
+// Search engines: player pages stay on the site (links from teams and matches) but only the regular players of the
+// main leagues are offered to search engines; the others get "noindex" and stay out of the sitemap.
+// Indexed: a Serie A club (the Italian public: foreign leagues come back once the domain recovers) and at least
+// MIN_MINUTES minutes this season, a threshold scaled to the rounds played until FULL_ROUNDS (about half of the
+// minutes; never "everybody" at the start of a season). Checked again at every build: a player who passes the threshold is indexed and announced to IndexNow
+// (scripts/prerender.mjs).
+// November 2026 (Search Console): ~3,000 player pages in the sitemap had 1,448 impressions and 6 clicks in 28 days,
+// and the site as a whole lost Google's trust after thousands of generated pages (see scripts/lib/search-index.mjs):
+// the index went down to the leagues of the Italian public.
+const MIN_MINUTES = 600;
+const FULL_ROUNDS = 12;
+const INDEXED_LEAGUES = new Set(["serie-a"]);
 /** Rounds played in a league: the highest round with a finished match (postponed matches do not hold it back). */
 const roundsPlayed = new Map(
   football.competitions.map((c) => [
@@ -232,8 +232,8 @@ for (const [id, list] of rows) {
   // minutes of this season, with every club of the season (a player moved in the window counts both)
   const seasonMin = list.filter(({ team, y }) => y === currentOf(team.competition)).reduce((n, r) => n + (r.p.min ?? 0), 0);
   const rounds = comp ? (roundsPlayed.get(comp.slug) ?? 0) : 0;
-  const minMinutes = comp && ITALIAN_LEAGUES.has(comp.slug) ? MIN_MINUTES_ITALY : MIN_MINUTES;
-  const index = !comp || rounds < ROUNDS_BEFORE_THRESHOLD || seasonMin >= minMinutes;
+  const minMinutes = MIN_MINUTES * Math.min(1, rounds / FULL_ROUNDS);
+  const index = !!comp && INDEXED_LEAGUES.has(comp.slug) && rounds > 0 && seasonMin >= minMinutes;
   if (!index) belowThreshold++;
   const player = {
     id,
@@ -285,5 +285,5 @@ const slugs = {};
 for (const part of parts) for (const [id, p] of Object.entries(part)) slugs[id] = p.url.slice(p.url.lastIndexOf("/") + 1, -(`-${id}`.length));
 fs.writeFileSync(path.join(OUT, "slugs.json"), JSON.stringify(slugs) + "\n");
 console.log(
-  `Pagine giocatore: ${ids.length} (fuori dall'indice: ${belowThreshold}, meno di ${MIN_MINUTES} minuti, ${MIN_MINUTES_ITALY} in Serie A e B, dopo ${ROUNDS_BEFORE_THRESHOLD} giornate)`,
+  `Pagine giocatore: ${ids.length} (fuori dall'indice: ${belowThreshold}: fuori dalla Serie A o meno di ${MIN_MINUTES} minuti, in proporzione fino alla ${FULL_ROUNDS}ª giornata)`,
 );
