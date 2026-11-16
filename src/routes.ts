@@ -128,8 +128,8 @@ export const routes: RouteMeta[] = [
   },
   {
     path: paths.chiSiamo,
-    title: "Chi siamo",
-    description: "Cos'è QuotaGuru, come calcola i pronostici, come confronta le offerte degli operatori autorizzati e chi gestisce il sito.",
+    title: "Chi siamo: come nasce il modello di QuotaGuru",
+    description: "Cos'è QuotaGuru, come nasce il modello statistico dei pronostici, dal 27 ottobre 2026 l'archivio pubblico di ogni pronostico pubblicato, come lavoriamo e chi gestisce il sito.",
   },
   {
     path: paths.contatti,
