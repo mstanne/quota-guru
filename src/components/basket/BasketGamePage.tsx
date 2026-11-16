@@ -15,6 +15,7 @@ import { BasketBoxScore } from "./BasketBoxScore";
 import { TeamName } from "../teams/TeamLink";
 import { nbaResultsPath } from "../../lib/results";
 import { BasketPlayerStats } from "./BasketPlayerStats";
+import { NbaGameStandings } from "./NbaGameStandings";
 import { nbaDetailsFor } from "../../lib/basketDetails";
 import { HighlightVideo } from "../media/HighlightVideo";
 import { MatchOddsSlot } from "../odds/MatchOddsSlot";
@@ -234,6 +235,8 @@ export function GameView({ game, event = false }: { game: BasketGame; event?: bo
         <MatchEditorial
           article={nbaEditorial({ game, games: nbaGames, season: nbaSeasonYear, generatedAt: basketUpdatedAt })}
         />
+
+        {!finished && !game.postseason && <NbaGameStandings game={game} />}
 
         <section className={card} aria-labelledby="info">
           <h2 id="info" className="flex items-center gap-2 text-white text-xl mb-4">

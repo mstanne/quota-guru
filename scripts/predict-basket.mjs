@@ -4,6 +4,7 @@
 //        data/basket-history.json            results of the current and previous season
 //                                            (scripts/fetch-basket-data.mjs)
 // Writes src/data/basket-predictions.json    { generatedAt, model, track, predictions: { [gameId]: Prediction } }
+//        src/data/nba-season.json            regular-season standings and season projection (playoffs, title)
 //
 // Upcoming games get a prediction from a fit on everything played so far; games already finished in the
 // snapshot get the prediction the model would have made that morning (refit once per day), which feeds
@@ -15,11 +16,14 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { backToBack, fitModel, predict } from "./lib/basket-model.mjs";
+import { simulateNbaSeason, standings } from "./lib/nba-season-sim.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SNAPSHOT = path.join(root, "src", "data", "basket.json");
 const HISTORY = process.env.BASKET_HISTORY || path.join(root, "data", "basket-history.json");
 const OUT = path.join(root, "src", "data", "basket-predictions.json");
+// standings and season projection (written below)
+const SEASON_OUT = path.join(root, "src", "data", "nba-season.json");
 
 const snap = JSON.parse(fs.readFileSync(SNAPSHOT, "utf8"));
 const history = fs.existsSync(HISTORY) ? JSON.parse(fs.readFileSync(HISTORY, "utf8")) : { games: [] };
@@ -85,6 +89,52 @@ console.log(
     ? `basket-predictions.json: ${Object.keys(predictions).length} partite (storico ${results.length}) · track ${track.hits}/${track.n}`
     : "basket-predictions.json: nessuno storico NBA (npm run history:basket), pronostici non disponibili",
 );
+
+// ---- standings and season projection (scripts/lib/nba-season-sim.mjs) ----
+// Standings: regular-season games of the current season. Projection: only with the remaining schedule saved by
+// scripts/fetch-basket-data.mjs and a model; games finished since that download (live updates) leave the schedule.
+{
+  const season = snap.nba?.season;
+  const teamsById = new Map();
+  for (const g of snapGames) for (const t of [g.home, g.away]) teamsById.set(t.id, { id: t.id, name: t.name, shortName: t.shortName ?? t.name, abbr: t.abbr ?? "" });
+  // regular season of the current season: history rows carry the season; snapshot finals are all current
+  const seasonStart = (history.games || []).filter((g) => g.season === season).map((g) => g.date).sort()[0];
+  const histById = new Map((history.games || []).map((g) => [g.id, g]));
+  const snapById = new Map(snapGames.map((g) => [g.id, g]));
+  const current = results.filter((g) => {
+    const h = histById.get(g.id);
+    if (h) return h.season === season && !h.post;
+    const s = snapById.get(g.id);
+    return !!s && !s.postseason && (!seasonStart || g.date >= seasonStart);
+  });
+  const table = standings([...teamsById.values()], current);
+  const PAIR = 36 * 3600e3;
+  const playedKey = current.map((g) => [g.home, g.away, Date.parse(g.date)]);
+  const schedule =
+    history.schedule?.season === season
+      ? history.schedule.games.filter(
+          (s) => !playedKey.some(([h, a, t]) => h === s.home && a === s.away && Math.abs(t - Date.parse(s.date)) <= PAIR),
+        )
+      : null;
+  const SIM_RUNS = 10000;
+  const sim = model && schedule?.length ? simulateNbaSeason(model, table, schedule, { runs: SIM_RUNS, seed: 2026 }) : null;
+  if (model && schedule?.length && !sim) console.warn("Proiezione NBA: calendario e risultati non coincidono, saltata");
+  const doc = {
+    generatedAt: asOf,
+    season,
+    games: current.length,
+    teams: Object.fromEntries(
+      Object.entries(table).map(([id, r]) => [id, { ...r, ...(sim?.teams[id] ? { sim: sim.teams[id] } : {}) }]),
+    ),
+    ...(sim ? { runs: SIM_RUNS, remaining: sim.remaining } : {}),
+  };
+  const text = JSON.stringify(doc) + "\n";
+  if (!fs.existsSync(SEASON_OUT) || fs.readFileSync(SEASON_OUT, "utf8") !== text) fs.writeFileSync(SEASON_OUT, text);
+  console.log(
+    `nba-season.json: classifica su ${current.length} partite` +
+      (sim ? ` · proiezione su ${sim.remaining} partite restanti (${SIM_RUNS} stagioni)` : " · proiezione non disponibile (manca il calendario)"),
+  );
+}
 
 if (process.argv.includes("--backtest") && results.length) {
   const start = Date.parse(results[0].date) + 120 * 86400000;

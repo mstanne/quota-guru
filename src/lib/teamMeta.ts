@@ -2,6 +2,7 @@
 import type { FootballTeam, NationalTeam, NbaTeam } from "./teams";
 import { teamPaths } from "./teams";
 import { leagueOutlook, pct } from "./seasonOutlook";
+import { confName, nbaTeamStanding } from "./nbaSeason";
 
 export function footballTeamMeta(t: FootballTeam) {
   const path = `${teamPaths.football}/${t.slug}`;
@@ -14,9 +15,18 @@ export function footballTeamMeta(t: FootballTeam) {
   const outlook = o
     ? ` Proiezione del modello: ${o.xpts.toFixed(0)} punti attesi a fine stagione${z && z.p >= 0.01 ? ` (${z.zone.short.toLowerCase()}: ${pct(z.p)})` : ""}.`
     : "";
+  // European cup projection (league phase and knockout rounds)
+  const cup = [
+    ["champions-league", "Champions League"],
+    ["europa-league", "Europa League"],
+    ["conference-league", "Conference League"],
+  ]
+    .map(([slug, name]) => ({ name, o: leagueOutlook(slug)?.team(t.id) }))
+    .find((x) => x.o?.stage);
+  const cupText = cup ? ` ${cup.name}: ottavi ${pct(cup.o!.stage![2])}, quarti ${pct(cup.o!.stage![3])}.` : "";
   const description = (
     `${t.name}${t.founded ? ` (fondata nel ${t.founded})` : ""}: informazioni sulla società, rosa ${cur?.label ?? ""}` +
-    `${where} e statistiche stagione per stagione.${outlook}`
+    `${where} e statistiche stagione per stagione.${outlook}${cupText}`
   ).replace(/\s+/g, " ");
   return {
     path,
@@ -45,11 +55,22 @@ export function footballTeamMeta(t: FootballTeam) {
 export function nbaTeamMeta(t: NbaTeam) {
   const path = `${teamPaths.nba}/${t.slug}`;
   const cur = t.seasons.find((s) => s.current);
-  const rec = cur?.record ? ` (${cur.record.won}-${cur.record.lost} nella stagione ${cur.label})` : "";
+  // conference place and season projection (src/lib/nbaSeason.ts)
+  const st = nbaTeamStanding(t.id);
+  const rec = st?.conf && st.w + st.l > 0
+    ? `: ${st.w}-${st.l}, ${st.pos}ª nella ${confName(st.conf)} ${cur?.label ?? ""}.`
+    : cur?.record
+      ? ` (${cur.record.won}-${cur.record.lost} nella stagione ${cur.label}).`
+      : ".";
+  const outlook = st?.sim
+    ? ` Proiezione del modello: ${Math.round(st.sim.xw)} vittorie attese, playoff ${pct(st.sim.stage[1])}${
+        st.sim.stage[5] >= 0.005 ? `, titolo ${pct(st.sim.stage[5])}` : ""
+      }.`
+    : "";
   return {
     path,
-    title: `${t.name}: roster, statistiche e stagioni NBA`,
-    description: `${t.name}${rec}: roster, record e statistiche dei giocatori stagione per stagione.`,
+    title: `${t.name}: giocatori, classifica e statistiche NBA`,
+    description: `${t.name}${rec}${outlook} Roster dei giocatori e statistiche stagione per stagione.`.replace(/\s+/g, " ").replace(" .", "."),
     jsonLd: [
       {
         "@type": "SportsTeam",

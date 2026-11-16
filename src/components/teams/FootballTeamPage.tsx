@@ -18,6 +18,13 @@ import { FootballPlayerLink } from "../players/FootballPlayerLink";
 import { footballTeamMeta } from "../../lib/teamMeta";
 import { TeamSeasonStats } from "./TeamSeasonStats";
 import { TeamSeasonOutlook } from "../calcio/SeasonOutlook";
+
+/** European cups whose projection (league phase and knockout rounds) also appears on the club pages. */
+const EURO_CUPS = [
+  { slug: "champions-league", name: "Champions League" },
+  { slug: "europa-league", name: "Europa League" },
+  { slug: "conference-league", name: "Conference League" },
+];
 import { Card, Facts, SectionTitle, age, formatDate, num } from "./TeamUi";
 import { numberFormat } from "../../lib/intl";
 
@@ -270,6 +277,9 @@ function ClubTeamPage() {
           label={`${t.competition.name}: probabilità 1X2, Under/Over e Goal calcolate dal modello statistico.`}
         />
         <TeamSeasonOutlook slug={t.competition.slug} name={t.shortName} teamId={t.id} competitionName={t.competition.name} />
+        {EURO_CUPS.map((c) => (
+          <TeamSeasonOutlook key={c.slug} slug={c.slug} name={t.shortName} teamId={t.id} competitionName={c.name} />
+        ))}
         <TeamSeasonStats team={t} />
         <Squad team={t} />
         <TeamGoals team={t} />

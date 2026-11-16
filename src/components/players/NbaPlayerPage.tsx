@@ -2,10 +2,12 @@
 // games, home/away), last games and season-by-season averages (API-NBA data, built by scripts/derive-nba-players.mjs).
 import type { ReactNode } from "react";
 import { useParams } from "react-router";
-import { Activity, CalendarDays, House, Trophy, User } from "lucide-react";
+import { Activity, CalendarDays, House, Target, Trophy, User } from "lucide-react";
 import { Link } from "../../lib/links";
 import { usePageMeta } from "../../lib/pageMeta";
-import { nbaPlayer, nbaPlayerMeta, type NbaBest, type NbaPlayer, type NbaTeamRef, type NbaTotals } from "../../lib/nbaPlayers";
+import { NBA_STAT_LABEL, nbaPlayer, nbaPlayerMeta, type NbaBest, type NbaPlayer, type NbaTeamRef, type NbaTotals } from "../../lib/nbaPlayers";
+import { gameHref, nbaGames } from "../../lib/basket";
+import { formatDay, formatTime } from "../../lib/footballCore";
 import { teamPaths } from "../../lib/teams";
 import { NotFoundPage } from "../NotFoundPage";
 import { PageHeader } from "../layout/PageHeader";
@@ -76,6 +78,7 @@ export function NbaPlayerPage() {
           <Facts rows={facts} />
         </Card>
         {p.current && <Season p={p} c={p.current} />}
+        {p.next && <NextGame p={p} n={p.next} />}
         {p.current && <Best c={p.current} />}
         {p.current && p.current.last.length > 0 && <LastGames c={p.current} />}
         {p.current?.homeAway && <HomeAway c={p.current} />}
@@ -383,6 +386,68 @@ function Career({ p }: { p: NbaPlayer }) {
       <p className="text-slate-400 text-xs mt-3">
         Le stagioni scaricate finora (la stagione in corso e la precedente). Statistiche: dati API-NBA.
       </p>
+    </Card>
+  );
+}
+
+/** One chance of the next game: share and fair odds (same tile as the football player pages). */
+function Chance({ label, p }: { label: string; p: number }) {
+  const v = Math.round(p * 100);
+  return (
+    <div className="rounded-lg bg-slate-950/60 p-3">
+      <p className="text-slate-400 text-xs">{label}</p>
+      <p className="text-predict text-2xl font-semibold tabular-nums">{v < 1 ? "<1" : v > 99 ? ">99" : v}%</p>
+      {p > 0 && <p className="text-slate-400 text-xs tabular-nums">quota equa {(1 / p).toFixed(2).replace(".", ",")}</p>}
+    </div>
+  );
+}
+
+/** The player's next game: expected figures and chances from the model of the predictions. */
+function NextGame({ p, n }: { p: NbaPlayer; n: NonNullable<NbaPlayer["next"]> }) {
+  const g = nbaGames.find((x) => x.id === n.game);
+  const pair = n.home ? `${p.team.shortName} – ${n.opponent.shortName}` : `${n.opponent.shortName} – ${p.team.shortName}`;
+  const expected: [string, number][] = [
+    ["Punti attesi", n.pts],
+    ["Rimbalzi attesi", n.reb],
+    ["Assist attesi", n.ast],
+    ["Triple attese", n.tpm],
+  ];
+  return (
+    <Card id="prossima-partita">
+      <SectionTitle id="prossima-partita-titolo" icon={Target}>
+        Prossima partita: cosa si aspetta il modello
+      </SectionTitle>
+      <p className="text-slate-300">
+        {pair} · NBA{" "}
+        <span className="text-slate-400 text-sm">
+          ({formatDay(n.date)} ore {formatTime(n.date)}) · {p.team.shortName} vince al {Math.round(n.win * 100)}%
+        </span>
+      </p>
+      <dl className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {expected.map(([label, v]) => (
+          <div key={label}>
+            <dt className="text-slate-400 text-xs">{label}</dt>
+            <dd className="text-white text-2xl tabular-nums">{num(v)}</dd>
+          </div>
+        ))}
+      </dl>
+      <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+        {n.lines.map(([k, line, prob]) => (
+          <Chance key={`${k}-${line}`} label={`Almeno ${line} ${NBA_STAT_LABEL[k]}`} p={prob} />
+        ))}
+        {n.dd >= 0.03 && <Chance label="Doppia doppia" p={n.dd} />}
+      </div>
+      <p className="text-slate-400 text-sm mt-3 max-w-3xl">
+        Stime del modello dei nostri pronostici, se scende in campo con i suoi minuti abituali ({num(n.min)} a partita
+        nelle ultime 10). Le medie della stagione e delle ultime 10 partite sono adattate a questa partita: i punti in base
+        ai punti attesi della squadra contro {n.opponent.shortName}, rimbalzi e assist in base al ritmo atteso. Non
+        conosce infortuni e minutaggi decisi dall'allenatore. La quota equa è 1 diviso la probabilità.
+      </p>
+      {g && (
+        <Link to={gameHref(g)} className="inline-block mt-3 text-action-text hover:text-action-text-hover">
+          Pronostico {pair} →
+        </Link>
+      )}
     </Card>
   );
 }

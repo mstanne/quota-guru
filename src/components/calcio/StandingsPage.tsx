@@ -25,7 +25,7 @@ import { TeamBadge } from "./MatchRow";
 import { NotFoundPage } from "../NotFoundPage";
 import { PageHeader } from "../layout/PageHeader";
 import { TeamName } from "../teams/TeamLink";
-import { SeasonOutlook } from "./SeasonOutlook";
+import { CompetitionTrack, SeasonOutlook, XgPointsTable } from "./SeasonOutlook";
 import { outlookSentence } from "../../lib/seasonOutlook";
 
 /** /calcio/:competizione/classifica */
@@ -129,6 +129,8 @@ export function StandingsPage() {
           </section>
         ))}
         <SeasonOutlook competition={competition} />
+        <XgPointsTable competition={competition} />
+        <CompetitionTrack competition={competition} />
         <Rounds competition={competition} />
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           <Link to={competitionPath(competition)} className="text-action-text hover:text-action-text-hover">

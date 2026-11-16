@@ -132,3 +132,66 @@ export function simulateSeason(model, comp, table, played, { runs = 10000, seed 
   });
   return { remaining: fixtures.length, teams };
 }
+
+/** Poisson probabilities of a score with expected goals (lh, la): [home win, draw, away win]. */
+function outcome(lh, la) {
+  const m = scoreMatrix(lh, la, 0, 10);
+  let h = 0, d = 0, a = 0;
+  for (let i = 0; i < m.length; i++) for (let j = 0; j < m[i].length; j++) i > j ? (h += m[i][j]) : i === j ? (d += m[i][j]) : (a += m[i][j]);
+  return [h, d, a];
+}
+
+/**
+ * Expected points from the expected goals (xG) of the matches played: for each match, the points a team would get on
+ * average if its chances and the opponent's had gone in at the usual rate (Poisson with the two xG). Only matches with
+ * xG count. Returns teamId → { xpts, pts, n } (pts: real points in the same matches).
+ * @param {{ home: number, away: number, hg: number, ag: number, hxg?: number, axg?: number }[]} played
+ */
+export function xgPoints(played) {
+  const out = {};
+  const row = (id) => (out[id] ??= { xpts: 0, pts: 0, n: 0 });
+  for (const r of played) {
+    if (!Number.isFinite(r.hxg) || !Number.isFinite(r.axg)) continue;
+    const [h, d, a] = outcome(Math.max(0.05, r.hxg), Math.max(0.05, r.axg));
+    const H = row(r.home);
+    const A = row(r.away);
+    H.xpts += 3 * h + d;
+    A.xpts += 3 * a + d;
+    H.pts += r.hg > r.ag ? 3 : r.hg === r.ag ? 1 : 0;
+    A.pts += r.ag > r.hg ? 3 : r.hg === r.ag ? 1 : 0;
+    H.n++;
+    A.n++;
+  }
+  for (const v of Object.values(out)) v.xpts = Math.round(v.xpts * 10) / 10;
+  return out;
+}
+
+/**
+ * Difficulty of the matches still to play of every team: the points per match an average team of the league would
+ * expect in the same fixtures (same opponents, same grounds). Lower = harder. Returns teamId → { avg, n }.
+ * @param {object} model fitted model
+ * @param {string} comp competition code
+ * @param {number[]} ids teams of the table
+ * @param {{ home: number, away: number }[]} played league matches already played this season
+ */
+export function scheduleDifficulty(model, comp, ids, played) {
+  const done = new Set(played.map((r) => `${r.home}-${r.away}`));
+  const AVG = -1; // unknown team = league average (rating 0)
+  const out = {};
+  for (const t of ids) {
+    let sum = 0;
+    let n = 0;
+    for (const o of ids) {
+      if (o === t) continue;
+      for (const [h, a, home] of [[t, o, true], [o, t, false]]) {
+        if (done.has(`${h}-${a}`)) continue;
+        const xg = expectedGoals(model, { comp, home: home ? AVG : o, away: home ? o : AVG });
+        const [ph, pd, pa] = outcome(xg.home, xg.away);
+        sum += home ? 3 * ph + pd : 3 * pa + pd;
+        n++;
+      }
+    }
+    out[t] = { avg: n ? Math.round((sum / n) * 1000) / 1000 : null, n };
+  }
+  return out;
+}

@@ -520,7 +520,9 @@ export function standingsMeta(c: Competition, outlook: string | null = null) {
     title: `Classifica ${c.name}${season ? ` ${season}` : ""} aggiornata oggi: punti e ${outlook ? "proiezione" : "forma"}`,
     description: sum
       ? outlook
-        ? `Classifica ${c.name} aggiornata dopo ogni partita. ${sum.text}. ${outlook}. Punti attesi a fine stagione, forma e prossima giornata.`
+        ? `Classifica ${c.name} aggiornata dopo ogni partita. ${sum.text}. ${outlook}. ${
+            ["CL", "EL", "ECL"].includes(c.code) ? "Probabilità di ottavi, playoff, quarti e finale." : "Punti attesi a fine stagione, forma e prossima giornata."
+          }`
         : `Classifica ${c.name} aggiornata dopo ogni partita. ${sum.text}. Forma delle ultime 5, gol fatti e subiti, risultati dell'ultima giornata e partite della prossima.`
       : `Classifica aggiornata di ${c.name}, rivista dopo ogni partita mentre si gioca: punti, forma delle ultime 5, vittorie, pareggi, sconfitte e differenza reti.`,
   };

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { hasStrengthRanking, strengthRankingPath } from "../../lib/strengthRanking";
 import { useParams } from "react-router";
 import { Link } from "../../lib/links";
 import { BarChart3, CalendarDays, History, ListOrdered, Trophy } from "lucide-react";
@@ -239,6 +240,12 @@ export function CalcioPage() {
             <Link to={competition ? seasonsPath(competition.slug) : seasonsHubPath} className={headerLinkClass}>
               <History className="w-4 h-4 text-slate-300" aria-hidden="true" />
               {competition ? "Stagioni passate" : "Albo d'oro e stagioni passate"}
+            </Link>
+          )}
+          {!competition && hasStrengthRanking() && (
+            <Link to={strengthRankingPath} className={headerLinkClass}>
+              <Trophy className="w-4 h-4 text-slate-300" aria-hidden="true" />
+              Ranking squadre
             </Link>
           )}
         </HeaderLinks>

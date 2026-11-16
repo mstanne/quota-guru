@@ -24,6 +24,8 @@ const read = (file, fallback) => {
 };
 const api = read("data/team-seasons-api.json", { nba: {} });
 const basket = read("src/data/basket.json", { nba: { season: 0, games: [] } });
+// predictions of the upcoming games (scripts/predict-basket.mjs, run just before in the build)
+const predictions = read("src/data/basket-predictions.json", { predictions: {} }).predictions ?? {};
 const teams = read("src/data/teams/index.json", { nba: [] }).nba;
 const ledger = read(path.join(process.env.SEO_CACHE_DIR ?? path.join(".cache", "seo"), "results.json"), { nba: {} });
 
@@ -98,6 +100,103 @@ function gameRow(teamId, row) {
 }
 const doubles = (r) => ["pts", "reb", "ast", "stl", "blk"].filter((k) => (r[k] ?? 0) >= 10).length;
 
+// ---- next game: expected points, rebounds, assists and the chance of reaching round figures ----
+// From the player's averages this season (half the whole season, half the last 10 games), scaled to the game by the
+// model's prediction: points by the team's expected points against its season scoring, rebounds and assists by the
+// expected total of the game against the average total of the team's games (pace). Game-to-game spread from the
+// player's own games (Normal, at least √mean). Only for players in the rotation: 15+ minutes a game over the last 10
+// and on the floor in one of the team's last 3 games (injured players drop out until they play again).
+const DAYMS = 86400000;
+const phi = (x) => {
+  const t = 1 / (1 + 0.2316419 * Math.abs(x));
+  const d = 0.3989423 * Math.exp((-x * x) / 2);
+  const p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+  return x > 0 ? 1 - p : p;
+};
+const r3 = (x) => Math.round(x * 1000) / 1000;
+const r1 = (x) => Math.round(x * 10) / 10;
+// team scoring and the total of its games this season (regular season, final games of the snapshot window + history)
+const history = read("data/basket-history.json", { games: [] });
+const teamGames = new Map(); // teamId → [{ date, pf, pa }]
+{
+  const seen = new Set();
+  const add = (id, date, home, away, hp, ap) => {
+    if (seen.has(id)) return;
+    seen.add(id);
+    for (const [t, pf, pa] of [[home, hp, ap], [away, ap, hp]]) {
+      const list = teamGames.get(t) ?? [];
+      list.push({ date, pf, pa });
+      teamGames.set(t, list);
+    }
+  };
+  for (const g of history.games ?? []) if (g.season === season && !g.post) add(g.id, g.date, g.home, g.away, g.hp, g.ap);
+  for (const g of basket.nba.games)
+    if (g.status === "final" && !g.postseason && g.score?.home != null) add(g.id, g.utcDate, g.home.id, g.away.id, g.score.home, g.score.away);
+  for (const list of teamGames.values()) list.sort((a, b) => a.date.localeCompare(b.date));
+}
+const upcoming = basket.nba.games
+  .filter((g) => g.status === "scheduled" && predictions[g.id] && !predictions[g.id].pre)
+  .sort((a, b) => a.utcDate.localeCompare(b.utcDate));
+/** Thresholds of each statistic: the round figures around the player's expectation (at most two, above 3%/below 97%). */
+const LINES = { pts: [10, 15, 20, 25, 30, 35, 40], reb: [5, 8, 10, 12, 15], ast: [5, 8, 10, 12], tpm: [2, 3, 4, 5, 6] };
+const MIN_MEAN = { pts: 6, reb: 3, ast: 3, tpm: 1.2 };
+let withNext = 0;
+
+function nextGameOutlook(teamId, gl) {
+  const g = upcoming.find((x) => x.home.id === teamId || x.away.id === teamId);
+  const tg = teamGames.get(teamId) ?? [];
+  if (!g || gl.length < 5 || tg.length < 5) return null;
+  const recent = gl.slice(0, 10);
+  const avgMin = recent.reduce((a, r) => a + (r.min ?? 0), 0) / recent.length;
+  const third = tg[Math.max(0, tg.length - 3)].date;
+  if (avgMin < MIN_AVG_MINUTES || Date.parse(gl[0].date) < Date.parse(third) - DAYMS / 2) return null;
+  const pred = predictions[g.id];
+  const home = g.home.id === teamId;
+  const teamPts = tg.reduce((a, x) => a + x.pf, 0) / tg.length;
+  const teamTot = tg.reduce((a, x) => a + x.pf + x.pa, 0) / tg.length;
+  const clamp = (x) => Math.min(1.15, Math.max(0.87, x));
+  const scoring = clamp(pred.pts[home ? 0 : 1] / teamPts);
+  const pace = clamp(pred.total / teamTot);
+  const stat = {};
+  const lines = [];
+  for (const k of ["pts", "reb", "ast", "tpm"]) {
+    const vals = gl.map((r) => r[k] ?? 0);
+    const mean = (xs) => xs.reduce((a, b) => a + b, 0) / xs.length;
+    const base = 0.5 * mean(vals) + 0.5 * mean(vals.slice(0, 10));
+    const m = base * (k === "pts" || k === "tpm" ? scoring : pace);
+    const mu = mean(vals);
+    const sd = Math.max(Math.sqrt(Math.max(m, 0.5)), Math.sqrt(mean(vals.map((v) => (v - mu) ** 2))));
+    stat[k] = r1(m);
+    if (m < MIN_MEAN[k]) continue;
+    const pOver = (line) => 1 - phi((line - 0.5 - m) / sd);
+    const near = LINES[k].map((line) => ({ line, p: pOver(line) })).filter((x) => x.p > 0.03 && x.p < 0.97);
+    // the threshold just below the expectation and the one just above
+    const below = near.filter((x) => x.line <= m).at(-1);
+    const above = near.find((x) => x.line > m);
+    for (const x of [below, above]) if (x) lines.push([k, x.line, r3(x.p)]);
+  }
+  // double-double: the player's own share this season, pulled towards the share implied by the Normal figures
+  const dd2 = (k) => (stat[k] ? 1 - phi((9.5 - stat[k]) / Math.max(Math.sqrt(stat[k]), 2)) : 0);
+  const keys = ["pts", "reb", "ast"];
+  const ps = keys.map(dd2);
+  const implied = ps[0] * ps[1] + ps[0] * ps[2] + ps[1] * ps[2] - 2 * ps[0] * ps[1] * ps[2];
+  const ddGames = gl.filter((r) => doubles(r) >= 2).length;
+  const dd = (ddGames + implied * 6) / (gl.length + 6);
+  const opp = home ? g.away : g.home;
+  const ref = teamById.get(opp.id);
+  return {
+    game: g.id,
+    date: g.utcDate,
+    home,
+    opponent: { id: opp.id, shortName: ref?.shortName ?? opp.shortName ?? opp.name, slug: ref?.slug ?? null },
+    win: pred.p[home ? 0 : 1],
+    min: r1(avgMin),
+    ...stat,
+    lines,
+    dd: r3(dd),
+  };
+}
+
 const parts = Array.from({ length: 8 }, () => ({}));
 const ids = [];
 const allIds = new Set([...seasonRows.keys(), ...rosterOf.keys()]);
@@ -167,6 +266,8 @@ for (const id of allIds) {
       };
     });
 
+  const next = current ? nextGameOutlook(team.id, games.map((x) => x.g)) : null;
+  if (next) withNext++;
   const index = searchIndexed(current, seasons);
   if (!index) belowThreshold++;
   const player = {
@@ -186,6 +287,7 @@ for (const id of allIds) {
     nbaStart: rp.nbaStart ?? null,
     pro: rp.pro ?? null,
     current,
+    ...(next ? { next } : {}),
     seasons,
   };
   parts[nbaPlayerPart(id)][id] = player;
@@ -209,4 +311,6 @@ fs.mkdirSync(OUT, { recursive: true });
 for (const f of fs.readdirSync(OUT)) if (/^part-\d+\.json$/.test(f)) fs.rmSync(path.join(OUT, f));
 parts.forEach((part, i) => fs.writeFileSync(path.join(OUT, `part-${i}.json`), JSON.stringify(part) + "\n"));
 fs.writeFileSync(path.join(OUT, "ids.json"), JSON.stringify(ids.sort((a, b) => a - b)) + "\n");
-console.log(`Pagine giocatore NBA: ${ids.length} (fuori dall'indice: ${belowThreshold}, meno di ${MIN_AVG_MINUTES} minuti a partita)`);
+console.log(
+  `Pagine giocatore NBA: ${ids.length} (fuori dall'indice: ${belowThreshold}, meno di ${MIN_AVG_MINUTES} minuti a partita) · con la prossima partita: ${withNext}`,
+);

@@ -89,8 +89,29 @@ export interface NbaPlayer {
     homeAway: { home: NbaTotals | null; away: NbaTotals | null } | null;
     last: NbaPlayerGame[];
   } | null;
+  /** Next game with the model's figures (scripts/derive-nba-players.mjs), only for players in the rotation. */
+  next?: NbaNextGame;
   seasons: ({ season: number; label: string; team: NbaTeamRef } & NbaTotals)[];
 }
+export interface NbaNextGame {
+  game: number;
+  date: string;
+  home: boolean;
+  opponent: NbaTeamRef;
+  /** the team's chance of winning the game */
+  win: number;
+  /** minutes a game over the last 10 */
+  min: number;
+  pts: number;
+  reb: number;
+  ast: number;
+  tpm: number;
+  /** [statistic, threshold, chance of reaching it] */
+  lines: ["pts" | "reb" | "ast" | "tpm", number, number][];
+  /** double-double */
+  dd: number;
+}
+export const NBA_STAT_LABEL = { pts: "punti", reb: "rimbalzi", ast: "assist", tpm: "triple" } as const;
 
 const withPage = new Set(ids as number[]);
 /** URL of an NBA player's page, or undefined if the player has none. */
@@ -134,11 +155,19 @@ export function nbaPlayerMeta(p: NbaPlayer) {
     ? `${avg(c.totals.pts)} punti, ${avg(c.totals.reb)} rimbalzi e ${avg(c.totals.ast)} assist di media in ${c.totals.g} partite nel ${c.label}`
     : "statistiche della stagione";
   const role = p.position ? `${p.position.toLowerCase()} ` : "";
+  // next game (model): expected points and the most telling threshold
+  const n = p.next;
+  const pl = n?.lines.find((l) => l[0] === "pts" && l[1] > n.pts) ?? n?.lines.find((l) => l[0] === "pts");
+  const next = n
+    ? ` Contro i ${n.opponent.shortName}: ${n.pts.toFixed(1).replace(".", ",")} punti attesi${pl ? `, ${pl[1]}+ punti al ${Math.round(pl[2] * 100)}%` : ""}.`
+    : "";
   return {
     path: p.url,
     index: p.index !== false,
     title: `${p.name}: statistiche NBA ${c?.label ?? ""} e ultime partite`.replace(/\s+/g, " "),
-    description: `${p.name}, ${role}dei ${p.team.shortName}${p.country ? ` (${p.country})` : ""}: ${stats}, percentuali al tiro, migliori prestazioni, ultime partite e medie stagione per stagione.`,
+    description: n
+      ? `${p.name}, ${role}dei ${p.team.shortName}: ${stats}.${next} Ultime partite e medie stagione per stagione.`
+      : `${p.name}, ${role}dei ${p.team.shortName}${p.country ? ` (${p.country})` : ""}: ${stats}, percentuali al tiro, migliori prestazioni, ultime partite e medie stagione per stagione.`,
     jsonLd: [
       {
         "@type": "Person",
