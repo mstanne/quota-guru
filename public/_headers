@@ -9,6 +9,12 @@
 /dati-js/*
   Cache-Control: public, max-age=0, must-revalidate
 
+# Widgets embedded by other sites (scripts/build-widgets.mjs): not indexed (the page they come from is), refreshed
+# at every visit like the data.
+/embed/*
+  X-Robots-Tag: noindex
+  Cache-Control: public, max-age=0, must-revalidate
+
 # Test address of the worker (quotaguru-site.<account>.workers.dev): never indexed, the site is www.quotaguru.it.
 https://:worker.:subdomain.workers.dev/*
   X-Robots-Tag: noindex

@@ -217,6 +217,10 @@ export function NbaStandingsPage() {
           <Link to="/basket/nba/risultati" className="text-action-text hover:text-action-text-hover">
             Risultati NBA
           </Link>
+          {" · "}
+          <Link to="/widget#nba" className="text-action-text hover:text-action-text-hover">
+            Widget gratuito per il tuo sito
+          </Link>
         </p>
       </div>
     </div>

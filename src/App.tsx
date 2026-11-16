@@ -56,6 +56,7 @@ const BasketGamePage = lazyPage(() => import("./components/basket/BasketGamePage
 const BasketStandingsPage = lazyPage(() =>
   import("./components/basket/BasketStandingsPage").then((m) => m.BasketStandingsPage),
 );
+const WidgetPage = lazyPage(() => import("./components/WidgetPage").then((m) => m.WidgetPage));
 const PuntoPage = lazyPage(() => import("./components/punto/PuntoPages").then((m) => m.PuntoPage));
 const PuntoHubPage = lazyPage(() => import("./components/punto/PuntoPages").then((m) => m.PuntoHubPage));
 const FantacalcioPage = lazyPage(() => import("./components/fantacalcio/FantacalcioPage").then((m) => m.FantacalcioPage));
@@ -123,6 +124,7 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/calcio/ranking-squadre", [StrengthRankingPage, NotFoundPage]],
   ["/fantacalcio", [FantacalcioPage, NotFoundPage]],
   ["/il-punto", [PuntoHubPage, NotFoundPage]],
+  ["/widget", [WidgetPage]],
   ["/il-punto/:data", [PuntoPage, NotFoundPage]],
   ["/fantacalcio/chi-schierare", [ChiSchierarePage, NotFoundPage]],
   ["/calcio/:competizione/stagioni", [SeasonsIndexPage, NotFoundPage]],
@@ -284,6 +286,7 @@ export default function App() {
             <Route path="/calcio/ranking-squadre" element={<StrengthRankingPage />} />
             <Route path="/fantacalcio" element={<FantacalcioPage />} />
             <Route path="/il-punto" element={<PuntoHubPage />} />
+            <Route path="/widget" element={<WidgetPage />} />
             <Route path="/il-punto/:data" element={<PuntoPage />} />
             <Route path="/fantacalcio/chi-schierare" element={<ChiSchierarePage />} />
             <Route path="/calcio/:competizione/stagioni" element={<SeasonsIndexPage />} />

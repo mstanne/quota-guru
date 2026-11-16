@@ -1,0 +1,12 @@
+{
+  "widgets": [
+    { "id": "serie-a", "kind": "league", "slug": "serie-a", "name": "Serie A", "height": 820 },
+    { "id": "serie-b", "kind": "league", "slug": "serie-b", "name": "Serie B", "height": 820 },
+    { "id": "premier-league", "kind": "league", "slug": "premier-league", "name": "Premier League", "height": 820 },
+    { "id": "liga", "kind": "league", "slug": "liga", "name": "LaLiga", "height": 820 },
+    { "id": "bundesliga", "kind": "league", "slug": "bundesliga", "name": "Bundesliga", "height": 760 },
+    { "id": "ligue-1", "kind": "league", "slug": "ligue-1", "name": "Ligue 1", "height": 760 },
+    { "id": "champions-league", "kind": "cup", "slug": "champions-league", "name": "Champions League", "height": 900 },
+    { "id": "nba", "kind": "nba", "name": "NBA", "height": 640 }
+  ]
+}

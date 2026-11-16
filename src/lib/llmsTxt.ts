@@ -43,6 +43,7 @@ export function llmsTxt(url: (path: string) => string) {
     link("Squadre NBA", paths.squadreNba),
     link("Classifica NBA e proiezione", "/basket/nba/classifica", "vittorie attese e probabilità di playoff e titolo"),
     link("Ranking delle squadre di calcio", "/calcio/ranking-squadre", "forza dei club secondo il modello"),
+    link("Widget gratuiti", "/widget", "classifiche con le probabilità del modello da incorporare in altri siti"),
     link("Il punto del modello", "/il-punto", "ogni lunedì, con data: probabilità di scudetto, Champions, salvezza, coppe europee e titolo NBA e il confronto con la settimana prima"),
     link("Consigli Fantacalcio", "/fantacalcio", "prossima giornata di Serie A: titolarità, gol, assist, porta inviolata e bonus atteso di ogni giocatore"),
     link("Chi schierare al Fantacalcio", "/fantacalcio/chi-schierare", "confronto tra due o tre giocatori"),
