@@ -151,7 +151,7 @@ comprese Serie B, Europa League e Conference League) e API-NBA per il basket. Un
 - **Id stabili** (`data/id-map.json`, `scripts/lib/id-map.mjs`): fino a novembre 2026 i dati venivano da
   football-data.org e BALLDONTLIE. La prima volta che una squadra o una partita API-Sports compare viene abbinata a
   quella dei dati precedenti e ne conserva id e nomi, quindi URL, archivio dei pronostici, storico e pagine squadra non
-  cambiano. Le novità prendono l'id API-Sports più un offset. La mappa si salva con i dati nel branch `dati`.
+  cambiano. Le novità prendono l'id API-Sports più un offset. La mappa si salva con i dati nel repository privato `quota-guru-dati`.
 - La chiave **non va mai scritta nel codice**: su GitHub sta nel secret `API_FOOTBALL_KEY`
   (Settings → Secrets and variables → Actions); in locale in un file `.env` (già escluso da git):
 
@@ -166,12 +166,12 @@ comprese Serie B, Europa League e Conference League) e API-NBA per il basket. Un
   finisce in "Risultati" e mostra "Risultato in arrivo" finché la fonte non pubblica il finale. Il riferimento è
   l'ora della build (`scripts/stamp-build-time.mjs`), uguale per le pagine pre-renderizzate e il browser; per i tornei
   di tennis vale la data di fine del torneo.
-- **Archivio permanente** (`data/archivio/`, salvato nel branch `dati`): ogni partita finita con tutti i dettagli.
+- **Archivio permanente** (`data/archivio/`, salvato nel repository privato `quota-guru-dati`, vedi `docs/dati-privati.md`): ogni partita finita con tutti i dettagli.
   Le stagioni passate le recupera `scripts/backfill-archive.mjs`, al massimo 150 richieste per giro: tutte le
   competizioni del sito (coppe nazionali comprese; delle serie minori solo le ultime 3 stagioni), fino a 10 stagioni
   prima di quella in corso. Per cambiare il numero di stagioni imposta la variabile del repository `ARCHIVE_SEASONS`
   (Settings → Secrets and variables → Actions → Variables). Ogni stagione di una competizione costa circa 20
-  richieste e 2 MB nel branch `dati`; le stagioni che il piano non copre vengono segnate e saltate.
+  richieste e 2 MB nel repository dei dati; le stagioni che il piano non copre vengono segnate e saltate.
 - Il workflow aggiorna i dati e ripubblica il sito ogni 3 ore e, durante le partite, aggiorna punteggi e classifiche
   ogni 15 minuti (`live-scores.yml`). Senza chiave usa gli ultimi dati salvati.
 

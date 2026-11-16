@@ -43,9 +43,35 @@ const gameKey = (g) =>
 
 const schedule = () => JSON.parse(fs.readFileSync(FILE, "utf8"));
 
+// Last data of the site: branch `dati` of the private repository quota-guru-dati (API-Football data, not public).
+// On this PC git uses the GitHub account already signed in; fetched into a local ref, nothing else changes.
+const DATA_REPO = process.env.DATI_REPO_URL || "https://github.com/mstanne/quota-guru-dati.git";
+const DATA_REF = "refs/quotaguru/dati";
+
+let fetched = false;
 function readData(rel) {
+  if (!fetched) fetched = true;
+  else return readLocalRef(rel);
   try {
-    return { data: JSON.parse(execFileSync("git", ["show", `origin/dati:${rel}`], { cwd: root, maxBuffer: 1 << 28 })), from: "ramo dati" };
+    execFileSync("git", ["fetch", "--quiet", "--depth", "1", DATA_REPO, `+dati:${DATA_REF}`], {
+      cwd: root,
+      stdio: "ignore",
+      env: { ...process.env, GIT_TERMINAL_PROMPT: "0" },
+    });
+  } catch {
+    console.warn("! repository dei dati non raggiungibile: uso l'ultima copia scaricata, se c'è");
+  }
+  return readLocalRef(rel);
+}
+
+function readLocalRef(rel) {
+  try {
+    const out = execFileSync("git", ["show", `${DATA_REF}:${rel}`], {
+      cwd: root,
+      maxBuffer: 1 << 28,
+      stdio: ["ignore", "pipe", "ignore"],
+    });
+    return { data: JSON.parse(out), from: "repository dati" };
   } catch {
     return { data: JSON.parse(fs.readFileSync(path.join(root, rel), "utf8")), from: "file locale (può essere vecchio)" };
   }

@@ -71,12 +71,14 @@ jobs:
             seo-
 
       - name: Restore from the data branch
-        # The site has no database: the `dati` branch keeps a permanent copy of the data and of the state in the
+        # The site has no database: the `dati` branch of the private repository quota-guru-dati keeps a permanent copy of the data and of the state in the
         # cache (scripts/data-branch.sh). The last saved data replace the old snapshot committed in main; the state
         # comes back only if GitHub deleted the cache.
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
+          # private data repository (scripts/data-branch.sh, docs/dati-privati.md)
+          DATI_TOKEN: ${{ secrets.DATI_TOKEN }}
         run: |
           scripts/data-branch.sh restore-data
           scripts/data-branch.sh restore-state
@@ -186,7 +188,7 @@ jobs:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
 
       - name: Update the permanent archive and the site's copy of the club logos
-        # scripts/archive-data.mjs: data/archivio only grows; it is saved in the `dati` branch.
+        # scripts/archive-data.mjs: data/archivio only grows; it is saved in the private repository quota-guru-dati.
         if: steps.mode.outputs.rapido != 'true'
         run: node scripts/archive-data.mjs
         continue-on-error: true
@@ -203,6 +205,8 @@ jobs:
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
+          # private data repository (scripts/data-branch.sh, docs/dati-privati.md)
+          DATI_TOKEN: ${{ secrets.DATI_TOKEN }}
         run: scripts/data-branch.sh restore-editorial
 
       - name: Editorial texts for match pages
@@ -314,6 +318,8 @@ jobs:
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
+          # private data repository (scripts/data-branch.sh, docs/dati-privati.md)
+          DATI_TOKEN: ${{ secrets.DATI_TOKEN }}
         run: scripts/data-branch.sh save
 
       - uses: actions/upload-pages-artifact@v5

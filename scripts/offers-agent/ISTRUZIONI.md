@@ -40,7 +40,8 @@ anche su Sky, quale partita di Champions del mercoledì è su Prime Video, quali
 controlla ogni mattina sui palinsesti ufficiali e le scrive in `src/data/tv-schedule.json`, che ha la precedenza
 sugli accordi.
 
-1. `git fetch origin dati` e poi `node scripts/tv-schedule.mjs list --days 2`: elenca le partite di oggi e domani
+1. `node scripts/tv-schedule.mjs list --days 2` (scarica da solo gli ultimi dati dal repository privato
+   `quota-guru-dati`): elenca le partite di oggi e domani
    con la **chiave** di ognuna, ciò che dicono gli accordi e ciò che c'è già nel palinsesto.
 2. Controlla sulle fonti ufficiali almeno le partite segnate `DA VERIFICARE` e quelle di Serie A, Champions League,
    Europa League, Conference League, Coppa Italia (Canale 5 o Italia 1) e Supercoppa Italiana; nelle settimane delle nazionali anche le partite di Nations League e delle

@@ -102,6 +102,8 @@ jobs:
           LIVE_URL: ${{ vars.LIVE_URL }}
           VIDEO_BASE: ${{ vars.VIDEO_BASE }}
           GH_TOKEN: ${{ github.token }}
+          # last data of the site, in the private repository quota-guru-dati (docs/dati-privati.md)
+          DATI_TOKEN: ${{ secrets.DATI_TOKEN }}
           RUBRICA: ${{ inputs.rubrica }}
           PROVA: ${{ inputs.prova }}
         run: |

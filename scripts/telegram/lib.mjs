@@ -88,18 +88,23 @@ export const anchor = (p, text, campaign) => `<a href="${esc(link(p, campaign))}
 // ---------------------------------------------------------------------------------------------- data
 const readJsonFile = (f) => JSON.parse(fs.readFileSync(f, "utf8"));
 const repo = () => process.env.GITHUB_REPOSITORY || "mstanne/quota-guru";
-const ghHeaders = (accept = "application/vnd.github.raw+json") => ({
+/** Private repository of the site's data (API-Football / API-NBA, not to be passed on): scripts/data-branch.sh. */
+const dataRepo = () => process.env.DATI_REPO || "mstanne/quota-guru-dati";
+const ghHeaders = (accept = "application/vnd.github.raw+json", token = process.env.GH_TOKEN) => ({
   Accept: accept,
   "User-Agent": "quotaguru-telegram",
-  ...(process.env.GH_TOKEN ? { Authorization: `Bearer ${process.env.GH_TOKEN}` } : {}),
+  ...(token ? { Authorization: `Bearer ${token}` } : {}),
 });
-/** A file of a branch of the repository, parsed; null when it does not exist. */
-async function branchJson(branch, file) {
-  const res = await fetch(`https://api.github.com/repos/${repo()}/contents/${file}?ref=${branch}`, {
-    headers: ghHeaders(),
+/**
+ * A file of a branch of a repository (this one by default), parsed; null when it does not exist.
+ * The private data repository is read with the secret DATI_TOKEN.
+ */
+async function branchJson(branch, file, { repository = repo(), token = process.env.GH_TOKEN } = {}) {
+  const res = await fetch(`https://api.github.com/repos/${repository}/contents/${file}?ref=${branch}`, {
+    headers: ghHeaders(undefined, token),
   });
   if (res.status === 404) return null;
-  if (!res.ok) throw new Error(`GitHub ${branch}/${file}: HTTP ${res.status}`);
+  if (!res.ok) throw new Error(`GitHub ${repository} ${branch}/${file}: HTTP ${res.status}`);
   return res.json();
 }
 
@@ -128,7 +133,8 @@ export async function loadVideoFile(file) {
 
 /**
  * Data the rubrics read:
- *   football, basket   last data downloaded by the site (`dati` branch: src/data/football.json, basket.json)
+ *   football, basket   last data downloaded by the site (`dati` branch of the private repository quota-guru-dati,
+ *                      secret DATI_TOKEN: src/data/football.json, basket.json)
  *   lineups            official line-ups already out (live worker), only when asked
  *   archive.calcio/nba every prediction the site published, with result and hit once graded
  *                      (`archivio-pronostici` branch, files of the previous, current and next month)
@@ -146,7 +152,12 @@ export async function loadData(nowMs, { live = false } = {}) {
   });
   const dataDir = process.env.TG_DATA_DIR;
   const archDir = process.env.TG_ARCHIVE_DIR;
-  const data = async (f) => (dataDir ? readJsonFile(path.join(dataDir, f)) : branchJson("dati", f));
+  if (!dataDir && !process.env.DATI_TOKEN)
+    throw new Error("segreto DATI_TOKEN mancante: i dati del sito sono nel repository privato (docs/dati-privati.md)");
+  const data = async (f) =>
+    dataDir
+      ? readJsonFile(path.join(dataDir, f))
+      : branchJson("dati", f, { repository: dataRepo(), token: process.env.DATI_TOKEN });
   const arch = async (f) => {
     if (!archDir) return branchJson("archivio-pronostici", f);
     const p = path.join(archDir, f);
