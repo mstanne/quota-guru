@@ -11,6 +11,8 @@ import { Card, Facts, SectionTitle, age, num } from "./TeamUi";
 import { gameHref, isGameLive, isGameUpcoming, nbaGames } from "../../lib/basket";
 import { NextMatches } from "./NextMatches";
 import { NbaPlayerLink } from "../players/NbaPlayerLink";
+import { NbaTeamOutlook } from "../basket/NbaTeamOutlook";
+import { nbaStandingsPath } from "../../lib/nbaSeason";
 
 const pct = (m: number, a: number) => (a ? `${num((m / a) * 100)}%` : "–");
 
@@ -156,7 +158,7 @@ export function NbaTeamPage() {
     <div className="min-h-screen bg-slate-950">
       <PageHeader
         title={t.name}
-        subtitle="Roster e statistiche stagione per stagione."
+        subtitle="Giocatori, classifica e statistiche stagione per stagione."
         breadcrumb={[
           { label: "Basket", to: "/basket" },
           { label: "NBA", to: "/pronostici/nba" },
@@ -179,6 +181,7 @@ export function NbaTeamPage() {
             ]}
           />
         </Card>
+        <NbaTeamOutlook teamId={t.id} name={t.shortName} />
         <NextMatches team={t.name} matches={next} label="NBA: probabilità di vittoria calcolate dal modello statistico." />
         <Roster team={t} />
         <Card id="stagioni">
@@ -189,9 +192,15 @@ export function NbaTeamPage() {
             <Season key={s.season} s={s} open={i === 0} />
           ))}
         </Card>
-        <Link to="/pronostici/nba" className="text-sm text-action-text hover:text-action-text-hover">
-          Calendario e risultati NBA
-        </Link>
+        <p className="text-sm">
+          <Link to="/pronostici/nba" className="text-action-text hover:text-action-text-hover">
+            Calendario e risultati NBA
+          </Link>
+          {" · "}
+          <Link to={nbaStandingsPath} className="text-action-text hover:text-action-text-hover">
+            Classifica NBA
+          </Link>
+        </p>
       </div>
     </div>
   );

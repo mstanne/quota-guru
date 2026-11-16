@@ -32,6 +32,7 @@ import {
 } from "../../lib/basket";
 import { usePageMeta } from "../../lib/pageMeta";
 import { nbaResultsPath } from "../../lib/results";
+import { hasNbaStandings, nbaStandingsPath } from "../../lib/nbaSeason";
 
 const MARKET_IDS = BASKET_MARKETS.map((m) => m.id);
 
@@ -129,6 +130,11 @@ export function BasketPage({ league }: { league?: "nba" }) {
                 <Link to={nbaResultsPath()} className={chip(false)}>
                   NBA · risultati
                 </Link>
+                {hasNbaStandings() && (
+                  <Link to={nbaStandingsPath} className={chip(false)}>
+                    NBA · classifica
+                  </Link>
+                )}
                 {lbaStandings.length > 0 && (
                   <Link to={basketPaths.lbaStandings} className={chip(false)}>
                     Serie A · classifica

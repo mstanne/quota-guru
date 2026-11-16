@@ -56,6 +56,8 @@ const BasketGamePage = lazyPage(() => import("./components/basket/BasketGamePage
 const BasketStandingsPage = lazyPage(() =>
   import("./components/basket/BasketStandingsPage").then((m) => m.BasketStandingsPage),
 );
+const StrengthRankingPage = lazyPage(() => import("./components/stats/StrengthRankingPage").then((m) => m.StrengthRankingPage));
+const NbaStandingsPage = lazyPage(() => import("./components/basket/NbaStandingsPage").then((m) => m.NbaStandingsPage));
 const TennisRankingPage = lazyPage(() =>
   import("./components/tennis/TennisRankingPage").then((m) => m.TennisRankingPage),
 );
@@ -114,6 +116,7 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/basket/nba/squadre/:squadra", [NbaTeamPage, NotFoundPage]],
   ["/calcio/:competizione/risultati", [FootballResultsPage, NotFoundPage]],
   ["/calcio/stagioni", [SeasonsHubPage, NotFoundPage]],
+  ["/calcio/ranking-squadre", [StrengthRankingPage, NotFoundPage]],
   ["/calcio/:competizione/stagioni", [SeasonsIndexPage, NotFoundPage]],
   ["/calcio/:competizione/stagioni/:stagione", [SeasonPage, NotFoundPage]],
   ["/basket/nba/risultati", [NbaResultsPage]],
@@ -147,6 +150,7 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/tennis/calendario-wta", [TennisCalendarPage, NotFoundPage]],
   ["/basket/nba", [LegacyRedirect]],
   ["/basket/serie-a/classifica", [BasketStandingsPage, NotFoundPage]],
+  ["/basket/nba/classifica", [NbaStandingsPage, NotFoundPage]],
   ["/basket/nba/:partita", [BasketGamePage, NotFoundPage]],
   [paths.sitiScommesse, [SitiScommessePage]],
   ...TOPIC_PATHS.map((p): [string, { preload: () => Promise<unknown> }[]] => [p, [SitiTopicRoute, NotFoundPage]]),
@@ -268,6 +272,7 @@ export default function App() {
             <Route path="/basket/nba/giocatori/:giocatore" element={<NbaPlayerPage />} />
             <Route path="/calcio/:competizione/risultati" element={<FootballResultsPage />} />
             <Route path="/calcio/stagioni" element={<SeasonsHubPage />} />
+            <Route path="/calcio/ranking-squadre" element={<StrengthRankingPage />} />
             <Route path="/calcio/:competizione/stagioni" element={<SeasonsIndexPage />} />
             <Route path="/calcio/:competizione/stagioni/:stagione" element={<SeasonPage />} />
             <Route path="/basket/nba/risultati" element={<NbaResultsPage />} />
@@ -298,6 +303,7 @@ export default function App() {
             <Route path={paths.tennis} element={<TennisPage />} />
             <Route path={paths.basket} element={<BasketPage />} />
             <Route path="/basket/serie-a/classifica" element={<BasketStandingsPage />} />
+            <Route path="/basket/nba/classifica" element={<NbaStandingsPage />} />
             <Route path="/basket/nba/:partita" element={<BasketGamePage />} />
             <Route path="/tennis/classifica-atp" element={<TennisRankingPage tour="atp" />} />
             <Route path="/tennis/classifica-wta" element={<TennisRankingPage tour="wta" />} />

@@ -173,6 +173,14 @@ async function main() {
     }
   }
   history.games = [...kept, ...current].filter((g) => g.season >= season - 1).sort((a, b) => a.date.localeCompare(b.date));
+  // regular-season games still to play (postponed ones included), for the season projection of scripts/predict-basket.mjs
+  history.schedule = {
+    season,
+    games: regular
+      .filter((g) => !post(g) && statusOf(g) !== "final" && g.date?.start)
+      .map((g) => ({ date: new Date(g.date.start).toISOString(), home: teamOf(g.teams.home).id, away: teamOf(g.teams.visitors).id }))
+      .sort((a, b) => a.date.localeCompare(b.date)),
+  };
   history.updatedAt = new Date(now).toISOString();
   console.log(`  storico NBA ${season}-${String(season + 1).slice(2)}: ${current.length} partite`);
 

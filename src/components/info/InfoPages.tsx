@@ -328,6 +328,16 @@ export function MetodologiaPage() {
           non seguiamo) il pronostico non viene pubblicato.
         </li>
         <li>
+          <strong>Proiezioni e classifiche del modello:</strong> le partite che restano di un campionato (e della fase
+          campionato delle coppe europee, poi i turni a eliminazione diretta) vengono simulate 10.000 volte con le stesse
+          probabilità dei pronostici: da qui punti attesi, probabilità di ogni zona della classifica e di ogni turno. I
+          punti attesi dagli xG sono quelli che una squadra avrebbe se le occasioni create e concesse fossero finite in
+          gol con la frequenza abituale; la difficoltà del calendario sono i punti a partita che una squadra media
+          farebbe contro gli stessi avversari; il{" "}
+          <Link to="/calcio/ranking-squadre">ranking delle squadre</Link> confronta le forze di attacco e difesa di tutti
+          i club su una sola scala.
+        </li>
+        <li>
           <strong>Cosa non sa:</strong> infortuni, squalifiche, turnover, motivazioni e meteo. Per questo le
           probabilità vanno lette come un punto di partenza, non come una previsione certa.
         </li>
@@ -372,6 +382,18 @@ export function MetodologiaPage() {
           deriva da quelle di scarto e totale. Per il primo tempo, dall'archivio NBA 2023-2026: metà dei punti, scarto
           atteso circa metà di quello finale, variabilità pari a tre quarti (scarto) e due terzi (totale) di quella
           della partita intera.
+        </li>
+        <li>
+          <strong>Classifica e proiezione:</strong> le partite di stagione regolare che restano, il play-in e i playoff
+          (serie al meglio delle 7) vengono simulati 10.000 volte con le probabilità dei pronostici, aggiungendo per ogni
+          squadra un margine di incertezza sulla sua forza: da qui vittorie attese e probabilità di playoff, finale e
+          titolo nella <Link to="/basket/nba/classifica">classifica NBA</Link>.
+        </li>
+        <li>
+          <strong>Giocatori:</strong> per la prossima partita, le medie della stagione e delle ultime 10 partite adattate
+          ai punti attesi della squadra (punti e triple) e al ritmo atteso della partita (rimbalzi e assist); la
+          probabilità di arrivare a una cifra tonda usa la variabilità delle sue partite. Solo per chi gioca almeno 15
+          minuti a partita ed è sceso in campo di recente.
         </li>
         <li>
           <strong>Cosa non sa:</strong> infortuni, assenze, turni di riposo programmati e cambi di roster: a inizio

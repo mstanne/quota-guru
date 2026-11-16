@@ -34,6 +34,8 @@ export { COMPETITIONS };
 
 const DAYS_BACK = 45;
 const DAYS_AHEAD = 14;
+/** European cups with a 36-team league phase: their whole remaining league-phase calendar is downloaded. */
+const UEFA_LEAGUE_PHASE = new Set(["CL", "EL", "ECL"]);
 const HISTORY_SEASONS = 2;
 const H2H_DAYS = 7;
 const H2H_MAX = 40;
@@ -329,6 +331,29 @@ async function main() {
       } catch (err) {
         if (err instanceof BudgetError || err instanceof PlanError) throw err;
         console.warn(`  classifica ${c.name} non disponibile: ${err.message}`);
+      }
+      // European cups: the league-phase fixtures still to play (the calendar above stops two weeks ahead), for the
+      // projection of the league phase in scripts/predict-football.mjs. One request per cup; kept if it fails.
+      if (UEFA_LEAGUE_PHASE.has(c.code)) {
+        try {
+          const open = await api.get(`/fixtures?league=${c.api}&season=${season.year}&status=NS-TBD-PST`);
+          history.schedule ??= {};
+          history.schedule[c.code] = {
+            season: season.year,
+            games: open
+              .filter((f) => roundOf(f.league?.round).stage === "LEAGUE_STAGE")
+              .map((f) => ({
+                date: new Date(f.fixture.date).toISOString().replace(".000Z", "Z"),
+                home: teamOf(f.teams.home).id,
+                away: teamOf(f.teams.away).id,
+                matchday: roundOf(f.league?.round).matchday,
+              }))
+              .sort((a, b) => a.date.localeCompare(b.date)),
+          };
+        } catch (err) {
+          if (err instanceof BudgetError || err instanceof PlanError) throw err;
+          console.warn(`  calendario della fase campionato ${c.name} non disponibile: ${err.message}`);
+        }
       }
       const regular = matches.filter((m) => m.matchday != null);
       const next = regular.find((m) => !["FINISHED", "AWARDED", "CANCELLED"].includes(m.status));

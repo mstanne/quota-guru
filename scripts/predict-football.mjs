@@ -22,7 +22,9 @@ import { COMPETITIONS, isInfoLeague, isNationalCup } from "./lib/leagues.mjs";
 import { NATIONAL_CODES, NATIONAL_FIT } from "./lib/national-fit.mjs";
 import { expectedCounts } from "./lib/counts-model.mjs";
 import { scorerModel } from "./lib/scorers.mjs";
-import { simulateSeason } from "./lib/season-sim.mjs";
+import { scheduleDifficulty, simulateSeason, xgPoints } from "./lib/season-sim.mjs";
+import { expectedGoals } from "./lib/poisson-model.mjs";
+import { simulateLeaguePhase } from "./lib/uefa-sim.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SNAPSHOT = path.join(root, "src", "data", "football.json");
@@ -225,8 +227,8 @@ console.log(
 );
 
 // ---- end-of-season projection of the leagues (scripts/lib/season-sim.mjs) ----
-// Domestic leagues with predictions and one table: the European cups (league phase of 36 teams, play-offs), the
-// national cups and the lower divisions shown only for information are not simulated.
+// Domestic leagues with predictions and one table; the European cups with a league phase below. The national cups
+// and the lower divisions shown only for information are not simulated.
 const SIM_RUNS = 10000;
 const sim = { generatedAt: asOf, runs: SIM_RUNS, competitions: {} };
 for (const c of snapshot.competitions) {
@@ -236,8 +238,57 @@ for (const c of snapshot.competitions) {
   const start = c.season?.startDate;
   const played = results.filter((r) => r.comp === c.code && (!start || r.date.slice(0, 10) >= start));
   const out = simulateSeason(model, c.code, tables[0].table, played, { runs: SIM_RUNS, seed: c.code.length * 7919 + 17 });
-  if (out) sim.competitions[c.slug] = out;
+  if (out) {
+    // expected points from the xG of the matches played, and difficulty of the matches still to play
+    const ids = tables[0].table.map((r) => r.team.id);
+    const xg = xgPoints(played);
+    const hard = scheduleDifficulty(model, c.code, ids, played);
+    for (const id of ids) {
+      const t = out.teams[id];
+      if (xg[id]?.n) t.xg = [xg[id].xpts, xg[id].pts, xg[id].n];
+      if (hard[id]?.n) t.sched = hard[id].avg;
+    }
+    sim.competitions[c.slug] = out;
+  }
   else console.warn(`Proiezione ${c.name}: classifica e risultati non coincidono (o formato non a girone doppio), saltata`);
+}
+// ---- strength ranking: every club of the leagues with predictions, on a common scale ----
+// Expected goals for and against per match, on neutral ground and at the Champions League scoring level, against a
+// reference team of rating 0 and league strength 0: the club's attack and defence ratings plus the strength of its
+// league (scripts/lib/poisson-model.mjs).
+{
+  const comps = snapshot.competitions.filter((c) => !CUPS.includes(c.code) && !isInfoLeague(c.code) && !isNational(c.code));
+  const REF = -1;
+  // one scoring level for every club (the Champions League one), so that the leagues are comparable
+  const refModel = { ...model, teamLeague: { ...model.teamLeague, [REF]: "__REF__" }, league: { ...model.league, __REF__: 0 } };
+  sim.ranking = {};
+  for (const c of comps)
+    for (const table of (c.standings ?? []).filter((t) => !t.stage || t.stage === "REGULAR_SEASON"))
+      for (const r of table.table ?? []) {
+        const id = r.team.id;
+        if (sim.ranking[id] || model.att[id] == null) continue;
+        // neutral match against the reference team: league offsets apply only when the leagues differ
+        const vs = expectedGoals(refModel, { comp: "CL", home: id, away: REF, neutral: true });
+        sim.ranking[id] = [Math.round(vs.home * 100) / 100, Math.round(vs.away * 100) / 100, c.slug, r.team.shortName];
+      }
+}
+// European cups with a 36-team league phase: league phase still to play (calendar from scripts/fetch-football.mjs) and
+// knockout rounds (scripts/lib/uefa-sim.mjs)
+for (const c of snapshot.competitions) {
+  if (!["CL", "EL", "ECL"].includes(c.code)) continue;
+  const tables = (c.standings ?? []).filter((s) => !s.stage || s.stage === "REGULAR_SEASON" || s.stage === "LEAGUE_STAGE");
+  const cal = history.schedule?.[c.code];
+  if (tables.length !== 1 || tables[0].table?.length !== 36 || !cal) continue;
+  const start = c.season?.startDate;
+  const played = new Set(
+    results.filter((r) => r.comp === c.code && (!start || r.date.slice(0, 10) >= start)).map((r) => `${r.home}-${r.away}`),
+  );
+  const left = cal.games.filter((g) => !played.has(`${g.home}-${g.away}`));
+  // league phase over: the knockout rounds already under way are not simulated
+  if (!left.length) continue;
+  const out = simulateLeaguePhase(model, c.code, tables[0].table, left, { runs: SIM_RUNS, seed: c.code.length * 7919 + 29 });
+  if (out) sim.competitions[c.slug] = { ...out, kind: "uefa" };
+  else console.warn(`Proiezione ${c.name}: classifica e calendario della fase campionato non coincidono, saltata`);
 }
 {
   const next = JSON.stringify(sim) + "\n";
