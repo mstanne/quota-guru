@@ -32,6 +32,9 @@ DATI_REPO="${DATI_REPO:-mstanne/quota-guru-dati}"
 URL="${DATA_BRANCH_URL:-https://x-access-token:${DATI_TOKEN:-}@github.com/${DATI_REPO}.git}"
 # old public branch: read only, to seed the first save in the private repository
 OLD_URL="${OLD_DATA_BRANCH_URL:-https://x-access-token:${GH_TOKEN:-}@github.com/${GITHUB_REPOSITORY:-}.git}"
+# actions/checkout makes git send the workflow's own GITHUB_TOKEN to github.com (http.<url>.extraheader), and that
+# token cannot see the private repository: for it, the header is reset so the token in the URL is used.
+gitp() { git -c "http.https://github.com/.extraheader=" "$@"; }
 HAVE_TOKEN=$([ -n "${DATI_TOKEN:-}" ] || [ -n "${DATA_BRANCH_URL:-}" ] && echo 1 || echo 0)
 
 # Data written by the download steps (same list as the snapshot used by live-scores.yml).
@@ -47,7 +50,7 @@ DATA_FILES=(
 # 0: exists, 2: no such branch, other: unreachable
 branch_state() {
   set +e
-  git ls-remote --exit-code --heads "$1" "$BRANCH" >/dev/null 2>&1
+  gitp ls-remote --exit-code --heads "$1" "$BRANCH" >/dev/null 2>&1
   local r=$?
   set -e
   return $r
@@ -61,13 +64,13 @@ checkout_private() {
   local found=0
   branch_state "$URL" || found=$?
   if [ "$found" -eq 0 ]; then
-    git clone --quiet --depth 1 --branch "$BRANCH" "$URL" "$DIR"
+    gitp clone --quiet --depth 1 --branch "$BRANCH" "$URL" "$DIR"
     echo privato > "$DIR/.git/fonte"
   elif [ "$found" -eq 2 ]; then
     return 1
   else
     echo "::warning::Repository dei dati $DATI_REPO non raggiungibile (segreto DATI_TOKEN, docs/dati-privati.md)"
-    exit 1
+    return 3
   fi
 }
 
@@ -77,18 +80,25 @@ checkout() {
   if [ "$HAVE_TOKEN" = 0 ]; then
     echo "::warning::Segreto DATI_TOKEN mancante: i dati non vengono letti né salvati nel repository privato (docs/dati-privati.md)"
   fi
-  checkout_private && return 0
+  local priv=0
+  checkout_private || priv=$?
+  [ "$priv" -eq 0 ] && return 0
   local found=0
   branch_state "$OLD_URL" || found=$?
   [ "$found" -eq 0 ] || return 1
-  echo "Repository privato senza dati: leggo il vecchio branch $BRANCH di questo repository (solo lettura)"
+  echo "Repository privato senza dati o non raggiungibile: leggo il vecchio branch $BRANCH di questo repository (solo lettura)"
   git clone --quiet --depth 1 --branch "$BRANCH" "$OLD_URL" "$DIR"
   echo pubblico > "$DIR/.git/fonte"
 }
 
 case "${1:-}" in
   restore-data)
-    checkout || { echo "Branch $BRANCH non ancora creato: uso i dati del repository"; exit 0; }
+    # where the data of this run come from: save refuses to overwrite the private branch with data that did not
+    # start from it (e.g. the private repository did not answer and the archive was rebuilt from scratch)
+    mkdir -p .cache
+    echo nessuno > .cache/dati-fonte
+    checkout || { echo "Branch $BRANCH non ancora creato o non raggiungibile: uso i dati del repository"; exit 0; }
+    cat "$DIR/.git/fonte" > .cache/dati-fonte
     n=0
     for f in "${DATA_FILES[@]}"; do
       if [ -f "$DIR/$f" ]; then mkdir -p "$(dirname "$f")"; cp "$DIR/$f" "$f"; n=$((n + 1)); fi
@@ -120,7 +130,17 @@ case "${1:-}" in
       exit 0
     fi
     # only ever the private repository: a clone of the old public branch (restore) is discarded
-    if ! checkout_private; then
+    priv=0
+    checkout_private || priv=$?
+    if [ "$priv" -eq 3 ]; then
+      echo "::warning::Dati non salvati: repository privato non raggiungibile"
+      exit 1
+    fi
+    if [ "$priv" -eq 0 ] && [ "$(cat .cache/dati-fonte 2>/dev/null || echo privato)" != privato ]; then
+      echo "::warning::Dati non salvati: questo giro non è partito dai dati del repository privato (non raggiungibile all'inizio?), salvarli cancellerebbe parte dell'archivio"
+      exit 1
+    fi
+    if [ "$priv" -ne 0 ]; then
       rm -rf "$DIR"
       mkdir -p "$DIR"
       git -C "$DIR" init --quiet -b "$BRANCH"
@@ -166,7 +186,7 @@ TXT
     if git diff --cached --quiet; then echo "Dati invariati"; exit 0; fi
     git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
       commit --quiet -m "Dati $(date -u +%Y-%m-%dT%H:%MZ)"
-    git push --quiet origin "HEAD:$BRANCH"
+    gitp push --quiet origin "HEAD:$BRANCH"
     echo "Dati salvati nel branch $BRANCH di $DATI_REPO"
     ;;
   *)
