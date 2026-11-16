@@ -151,10 +151,15 @@
   "live:classifica:2026-11-16": {
    "at": "2026-11-16T11:47:44.718Z",
    "messageId": 15
+  },
+  "live:academy:2026-11-16": {
+   "at": "2026-11-16T17:07:43.197Z",
+   "messageId": 16
   }
  },
  "academy": {
-  "test": 2
+  "test": 2,
+  "live": 1
  },
  "tris": {
   "test": {
