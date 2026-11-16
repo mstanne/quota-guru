@@ -2,7 +2,7 @@
 # private repository mstanne/quota-guru-dati (docs/dati-privati.md). Run it once, after creating the private
 # repository and the secret DATI_TOKEN and before deleting the old branch. Optional: without it the first save of
 # deploy.yml starts the private branch from the current data, without the history.
-# It never overwrites: if the private branch already exists it stops. Sent in blocks of 20 commits (GitHub accepts
+# It never overwrites `dati`: if deploy.yml already created it, the history goes to the branch copia-cronologia. Sent in blocks of 20 commits (GitHub accepts
 # at most 2 GB per push; the old branch is 2.7 GB).
 name: Sposta dati nel repository privato
 
@@ -32,8 +32,7 @@ jobs:
           state=$?
           set -e
           if [ "$state" -eq 0 ]; then
-            echo "Il repository privato ha già il branch dati: niente da fare" | tee -a "$GITHUB_STEP_SUMMARY"
-            exit 0
+            echo "Il branch dati privato esiste già (creato da deploy.yml): la cronologia va nel branch copia-cronologia"
           elif [ "$state" -ne 2 ]; then
             echo "::error::Repository mstanne/quota-guru-dati non raggiungibile: esiste ed è privato? Il token ha 'Contents: Read and write' su di esso?"
             exit 1
@@ -59,10 +58,10 @@ jobs:
               fi
             fi
           done
-          # only if deploy.yml has not created `dati` in the meantime (no --force)
-          if git -C dati.git push --quiet "$priv" "dati:refs/heads/dati"; then
+          # only if deploy.yml has not created `dati` (no --force)
+          if [ "$state" -eq 2 ] && git -C dati.git push --quiet "$priv" "dati:refs/heads/dati"; then
             git -C dati.git push --quiet "$priv" --delete copia-cronologia || true
             echo "Copiati $n commit nel repository privato quota-guru-dati. Ora si può cancellare il branch dati di questo repository." >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "::warning::Il branch dati privato è stato creato nel frattempo da deploy.yml: la cronologia resta nel branch copia-cronologia del repository privato" | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "Copiati $n commit nel branch copia-cronologia del repository privato (il branch dati l'ha creato deploy.yml). Ora si può cancellare il branch dati di questo repository." | tee -a "$GITHUB_STEP_SUMMARY"
           fi
