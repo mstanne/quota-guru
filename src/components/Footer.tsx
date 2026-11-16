@@ -116,6 +116,11 @@ export function Footer() {
                   Metodologia
                 </Link>
               </li>
+              <li>
+                <Link to="/widget" className="text-slate-400 hover:text-white transition-colors">
+                  Widget per il tuo sito
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

@@ -1,4 +1,5 @@
 import { useParams } from "react-router";
+import { widgetFor } from "../../lib/widgets";
 import { hasPunto, longDate, puntoEditions, puntoPath } from "../../lib/punto";
 import { Link } from "../../lib/links";
 import { ListOrdered } from "lucide-react";
@@ -132,6 +133,13 @@ export function StandingsPage() {
         <SeasonOutlook competition={competition} />
         <XgPointsTable competition={competition} />
         <CompetitionTrack competition={competition} />
+        {widgetFor(competition.slug) && (
+          <p className="text-sm">
+            <Link to={`/widget#${widgetFor(competition.slug)!.id}`} className="text-action-text hover:text-action-text-hover">
+              Metti questa classifica con le probabilità sul tuo sito: widget gratuito
+            </Link>
+          </p>
+        )}
         {competition.slug === "serie-a" && hasPunto() && (
           <p className="text-sm">
             <Link to={puntoPath(puntoEditions[0].date)} className="text-action-text hover:text-action-text-hover">
