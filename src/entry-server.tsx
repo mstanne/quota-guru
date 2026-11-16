@@ -14,6 +14,7 @@ import { loadAllPlayerData, type FootballPlayer } from "./lib/players";
 import { playerMeta } from "./lib/playerMeta";
 import { trackRecordMeta } from "./lib/trackRecordMeta";
 import { hasStrengthRanking, strengthRankingMeta } from "./lib/strengthRanking";
+import { chiSchierareMeta, fantaMeta, hasFanta } from "./lib/fantacalcio";
 import { homeItemList } from "./lib/homeMeta";
 import { loadAllNbaPlayerData, nbaPlayerMeta, type NbaPlayer } from "./lib/nbaPlayers";
 import { leagueGoalStats, type GoalResult } from "./lib/goalStats.mjs";
@@ -102,7 +103,7 @@ const cornersCardsRoutes = () =>
   Object.values(competitionFiles).flatMap(({ default: f }) =>
     f.matchStats?.n && f.competition.standings.length ? [cornersCardsMeta(f.competition, f.matchStats.league)] : [],
   );
-export const routes = [trackRecordMeta(), ...(hasStrengthRanking() ? [strengthRankingMeta()] : []), ...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...nbaPlayerRoutes(), ...staticRoutes.map((r) => (r.path === "/" ? { ...r, jsonLd: [...(r.jsonLd ?? []), ...homeItemList()] } : r)), ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...marketRoutes(), tvGuideMeta(), trisMeta(), multipleMeta(), nationalHubMeta(), ...basketRoutes(
+export const routes = [trackRecordMeta(), ...(hasStrengthRanking() ? [strengthRankingMeta()] : []), ...(hasFanta() ? [fantaMeta(), chiSchierareMeta()] : []), ...legacyRoutes, ...goalStatsRoutes(), ...cornersCardsRoutes(), ...leadersRoutes(), ...playerRoutes(), ...nbaPlayerRoutes(), ...staticRoutes.map((r) => (r.path === "/" ? { ...r, jsonLd: [...(r.jsonLd ?? []), ...homeItemList()] } : r)), ...footballRoutes((id) => footballVenues.get(id) ?? null), ...matchdayRoutes(), ...dayRoutes(), ...marketRoutes(), tvGuideMeta(), trisMeta(), multipleMeta(), nationalHubMeta(), ...basketRoutes(
   (id) => !!basketPredictionFor(id),
   (id) => highlightFor("nba", id),
   (g) => nbaVenues.get(g.home.id) ?? null,

@@ -54,6 +54,7 @@ export const paths = {
   sitiScommesse: "/siti-scommesse",
   bonus: "/bonus",
   guide: "/guide",
+  fantacalcio: "/fantacalcio",
   // first guide (used for #responsabile links); all guides: src/data/guides.ts
   guidaDettaglio: "/guide/guida-completa-scommesse-sportive",
   squadreCalcio: "/calcio/squadre",

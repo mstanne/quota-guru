@@ -56,6 +56,8 @@ const BasketGamePage = lazyPage(() => import("./components/basket/BasketGamePage
 const BasketStandingsPage = lazyPage(() =>
   import("./components/basket/BasketStandingsPage").then((m) => m.BasketStandingsPage),
 );
+const FantacalcioPage = lazyPage(() => import("./components/fantacalcio/FantacalcioPage").then((m) => m.FantacalcioPage));
+const ChiSchierarePage = lazyPage(() => import("./components/fantacalcio/ChiSchierarePage").then((m) => m.ChiSchierarePage));
 const StrengthRankingPage = lazyPage(() => import("./components/stats/StrengthRankingPage").then((m) => m.StrengthRankingPage));
 const NbaStandingsPage = lazyPage(() => import("./components/basket/NbaStandingsPage").then((m) => m.NbaStandingsPage));
 const TennisRankingPage = lazyPage(() =>
@@ -117,6 +119,8 @@ const PRELOAD: [string, { preload: () => Promise<unknown> }[]][] = [
   ["/calcio/:competizione/risultati", [FootballResultsPage, NotFoundPage]],
   ["/calcio/stagioni", [SeasonsHubPage, NotFoundPage]],
   ["/calcio/ranking-squadre", [StrengthRankingPage, NotFoundPage]],
+  ["/fantacalcio", [FantacalcioPage, NotFoundPage]],
+  ["/fantacalcio/chi-schierare", [ChiSchierarePage, NotFoundPage]],
   ["/calcio/:competizione/stagioni", [SeasonsIndexPage, NotFoundPage]],
   ["/calcio/:competizione/stagioni/:stagione", [SeasonPage, NotFoundPage]],
   ["/basket/nba/risultati", [NbaResultsPage]],
@@ -273,6 +277,8 @@ export default function App() {
             <Route path="/calcio/:competizione/risultati" element={<FootballResultsPage />} />
             <Route path="/calcio/stagioni" element={<SeasonsHubPage />} />
             <Route path="/calcio/ranking-squadre" element={<StrengthRankingPage />} />
+            <Route path="/fantacalcio" element={<FantacalcioPage />} />
+            <Route path="/fantacalcio/chi-schierare" element={<ChiSchierarePage />} />
             <Route path="/calcio/:competizione/stagioni" element={<SeasonsIndexPage />} />
             <Route path="/calcio/:competizione/stagioni/:stagione" element={<SeasonPage />} />
             <Route path="/basket/nba/risultati" element={<NbaResultsPage />} />

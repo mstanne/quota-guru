@@ -12,7 +12,8 @@
 // The same squad figures give the other per-player chances of the player pages (propsFor, used by
 // scripts/derive-players.mjs): booking, clean sheet of the goalkeeper, penalty scored by the usual taker and penalty
 // saved by the goalkeeper. Same recipe: a rate per 90 minutes (or per team game) shrunk towards the usual value
-// (priors from the 2025 seasons of the data), times the expected minutes, then P = 1 − e^(−λ).
+// (priors from the 2025 seasons of the data), times the expected minutes, then P = 1 − e^(−λ). fantaFor (fantasy
+// football, scripts/derive-fantacalcio.mjs) adds assists (scaled to ~72% of the team's goals) and the start chance.
 //
 // Sources: data/team-seasons-api.json (season statistics per club, key "<site club id>-<season>"),
 // data/giocatori-partite.json (last appearances), data/giocatori-extra.json (`unavailable`: out for the next match).
@@ -29,6 +30,9 @@ const OWN_GOALS = 0.03;
 const TOP = 6;
 /** Cards (yellow + red) per 90 minutes of a typical player of each position, and the weight of that prior. */
 const CARD_RATE = { Attacker: 0.16, Forward: 0.16, Midfielder: 0.21, Defender: 0.21, Goalkeeper: 0.066 };
+/** Assists per 90 minutes of a typical player of each position (prior), and the share of goals with an assist. */
+const ASSIST_RATE = { Attacker: 0.13, Forward: 0.13, Midfielder: 0.11, Defender: 0.05, Goalkeeper: 0.003 };
+const ASSISTED = 0.72;
 /** Penalties a team is awarded / concedes per game, share scored, share saved by the goalkeeper; prior weights. */
 const PEN_FOR = 0.147;
 const PEN_AGAINST = 0.106;
@@ -51,6 +55,7 @@ export function scorerModel(root, nowMs = Date.now()) {
   if (!api) return null;
   const pm = read(root, "data/giocatori-partite.json", { fields: [], players: {} });
   const minIdx = (pm.fields ?? []).indexOf("min");
+  const starterIdx = (pm.fields ?? []).indexOf("starter");
   const out = new Set(Object.keys(read(root, "data/giocatori-extra.json", { unavailable: {} }).unavailable ?? {}));
 
   // seasons per API club, and last season's figures of every player (whatever his club was)
@@ -78,6 +83,7 @@ export function scorerModel(root, nowMs = Date.now()) {
             prevOf.set(p.id, {
               season,
               goals: p.goals ?? 0,
+              assists: p.assists ?? 0,
               min: p.min ?? 0,
               cards: (p.yellow ?? 0) + (p.red ?? 0),
               penScored: p.detail?.penScored ?? 0,
@@ -105,6 +111,14 @@ export function scorerModel(root, nowMs = Date.now()) {
         // no appearance for three weeks: probably injured or out of the team
         const lastDay = last[0] ? Date.parse(last[0].d) : 0;
         if (!lastDay || nowMs - lastDay > 21 * DAY) minutes *= 0.3;
+        // start chance: share of starts this season and in the last five appearances of the team
+        const seasonStart = games > 0 ? Math.min(1, (p.starts ?? 0) / games) : 0;
+        const last5 = last.slice(0, 5);
+        const recentStart = last5.length ? last5.filter((x) => x.l?.[starterIdx] === 1).length / 5 : seasonStart;
+        let start = 0.4 * seasonStart + 0.6 * recentStart;
+        if (!lastDay || nowMs - lastDay > 21 * DAY) start *= 0.3;
+        const assists = (p.assists ?? 0) + 0.5 * (prev?.assists ?? 0);
+        const assistRate = (assists + ((ASSIST_RATE[p.pos] ?? 0.08) * PRIOR_MINUTES) / 90) / ((min + PRIOR_MINUTES) / 90);
         const d = p.detail ?? {};
         const cardRate =
           ((p.yellow ?? 0) + (p.red ?? 0) + 0.5 * (prev?.cards ?? 0) + ((CARD_RATE[p.pos] ?? 0.2) * PRIOR_MINUTES) / 90) /
@@ -115,6 +129,10 @@ export function scorerModel(root, nowMs = Date.now()) {
           pos: p.pos,
           minutes,
           raw: p.pos === "Goalkeeper" ? 0 : (rate * minutes) / 90,
+          rate: p.pos === "Goalkeeper" ? 0 : rate,
+          assistRate,
+          cardRate,
+          start: Math.min(1, start),
           cardRaw: (cardRate * minutes) / 90,
           penTaken: (d.penScored ?? 0) + (d.penMissed ?? 0) + 0.5 * (prev?.penTaken ?? 0),
           penScored: (d.penScored ?? 0) + 0.5 * (prev?.penScored ?? 0),
@@ -189,6 +207,57 @@ export function scorerModel(root, nowMs = Date.now()) {
     return out;
   }
 
+  /**
+   * Fantasy football (scripts/derive-fantacalcio.mjs): every player of a club in one match with his start chance,
+   * expected minutes and expected goals, assists and cards, plus clean sheet and goals conceded for the goalkeeper
+   * expected to start. `xg` / `oppXg`: expected goals of the club and of the opponent; `cards`: the club's expected
+   * cards (null: the players' own rates); `concedeNone`: chance the opponent does not score; `lineup`: ids of the
+   * official starters when they are out (then a starter is expected to play ~80 minutes, a substitute ~15).
+   * Null when the club has no player data.
+   */
+  function fantaFor(siteTeamId, { xg, oppXg, cards = null, concedeNone, lineup = null }) {
+    const sq = squad(String(siteTeamId));
+    if (!sq?.list.length) return null;
+    const list = sq.list.map((p) => {
+      if (!lineup) return { p, start: p.start, minutes: p.minutes };
+      const starts = lineup.has(p.id);
+      const minutes = starts ? Math.max(p.minutes, 80) : Math.min(p.minutes, 15);
+      return { p, start: starts ? 1 : 0, minutes };
+    });
+    const goalRaw = (x) => (x.p.rate * x.minutes) / 90;
+    const assistRaw = (x) => (x.p.assistRate * x.minutes) / 90;
+    const cardRaw = (x) => (x.p.cardRate * x.minutes) / 90;
+    const sum = (f) => list.reduce((n, x) => n + f(x), 0);
+    const kGoal = sum(goalRaw) > 0 ? (xg * (1 - OWN_GOALS)) / sum(goalRaw) : 0;
+    const kAssist = sum(assistRaw) > 0 ? (xg * (1 - OWN_GOALS) * ASSISTED) / sum(assistRaw) : 0;
+    const kCard = cards && sum(cardRaw) > 0 ? cards / sum(cardRaw) : 1;
+    const keepers = list.filter((x) => x.p.pos === "Goalkeeper").sort((a, b) => b.minutes - a.minutes);
+    const keeper = lineup ? keepers.find((x) => x.start === 1) : keepers[0];
+    const { team } = sq;
+    return list.map((x) => {
+      const plays = Math.min(1, x.minutes / 90);
+      const out = {
+        id: x.p.id,
+        name: x.p.name,
+        pos: x.p.pos,
+        start: r3(x.start),
+        minutes: Math.round(x.minutes),
+        goals: r3(goalRaw(x) * kGoal),
+        assists: r3(assistRaw(x) * kAssist),
+        card: atLeastOne(cardRaw(x) * kCard),
+      };
+      if (keeper && x === keeper) {
+        out.cleanSheet = r3(concedeNone * plays);
+        out.conceded = r3(oppXg * plays);
+        const faced = team.gkMin > 0 ? team.committed * (x.p.min / team.gkMin) : 0;
+        const save = (x.p.penSaved + PEN_SAVE * PRIOR_PENS) / (faced + PRIOR_PENS);
+        out.penSaved = atLeastOne(team.penAgainst * Math.min(0.5, save) * plays);
+      }
+      return out;
+    });
+  }
+
   scorersFor.propsFor = propsFor;
+  scorersFor.fantaFor = fantaFor;
   return scorersFor;
 }
