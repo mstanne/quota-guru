@@ -2,7 +2,8 @@
 # private repository mstanne/quota-guru-dati (docs/dati-privati.md). Run it once, after creating the private
 # repository and the secret DATI_TOKEN and before deleting the old branch. Optional: without it the first save of
 # deploy.yml starts the private branch from the current data, without the history.
-# It never overwrites: if the private branch already exists it stops.
+# It never overwrites: if the private branch already exists it stops. Sent in blocks of 20 commits (GitHub accepts
+# at most 2 GB per push; the old branch is 2.7 GB).
 name: Sposta dati nel repository privato
 
 on:
@@ -43,10 +44,25 @@ jobs:
           fi
           git clone --quiet --bare --single-branch --branch dati "$old" dati.git
           n=$(git -C dati.git rev-list --count dati)
-          echo "Copio $n commit ($(du -sh dati.git | cut -f1))"
-          if git -C dati.git push --quiet "$priv" dati:dati; then
+          echo "Copio $n commit ($(du -sh dati.git | cut -f1)) a blocchi di 20: GitHub accetta al massimo 2 GB per invio"
+          # Oldest to newest into a temporary branch (each push sends only what is not there yet; a rerun after a
+          # failure resumes almost for free). `dati` appears only at the end, complete: deploy.yml never reads a
+          # half-copied history.
+          i=0
+          for c in $(git -C dati.git rev-list --reverse dati); do
+            i=$((i + 1))
+            if [ $((i % 20)) -eq 0 ] || [ "$i" -eq "$n" ]; then
+              echo "Invio fino al commit $i di $n"
+              if ! git -C dati.git push --quiet --force "$priv" "$c:refs/heads/copia-cronologia"; then
+                echo "::error::Invio non riuscito al commit $i di $n: rilancia il workflow, riparte quasi da dove si è fermato"
+                exit 1
+              fi
+            fi
+          done
+          # only if deploy.yml has not created `dati` in the meantime (no --force)
+          if git -C dati.git push --quiet "$priv" "dati:refs/heads/dati"; then
+            git -C dati.git push --quiet "$priv" --delete copia-cronologia || true
             echo "Copiati $n commit nel repository privato quota-guru-dati. Ora si può cancellare il branch dati di questo repository." >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "::error::Copia della cronologia non riuscita (troppo grande per un solo invio?). Non è un problema: il primo salvataggio di deploy.yml creerà il branch privato con i dati attuali, senza cronologia."
-            exit 1
+            echo "::warning::Il branch dati privato è stato creato nel frattempo da deploy.yml: la cronologia resta nel branch copia-cronologia del repository privato" | tee -a "$GITHUB_STEP_SUMMARY"
           fi

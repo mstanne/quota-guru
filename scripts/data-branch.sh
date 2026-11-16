@@ -67,7 +67,7 @@ checkout_private() {
     return 1
   else
     echo "::warning::Repository dei dati $DATI_REPO non raggiungibile (segreto DATI_TOKEN, docs/dati-privati.md)"
-    exit 1
+    return 3
   fi
 }
 
@@ -77,18 +77,25 @@ checkout() {
   if [ "$HAVE_TOKEN" = 0 ]; then
     echo "::warning::Segreto DATI_TOKEN mancante: i dati non vengono letti né salvati nel repository privato (docs/dati-privati.md)"
   fi
-  checkout_private && return 0
+  local priv=0
+  checkout_private || priv=$?
+  [ "$priv" -eq 0 ] && return 0
   local found=0
   branch_state "$OLD_URL" || found=$?
   [ "$found" -eq 0 ] || return 1
-  echo "Repository privato senza dati: leggo il vecchio branch $BRANCH di questo repository (solo lettura)"
+  echo "Repository privato senza dati o non raggiungibile: leggo il vecchio branch $BRANCH di questo repository (solo lettura)"
   git clone --quiet --depth 1 --branch "$BRANCH" "$OLD_URL" "$DIR"
   echo pubblico > "$DIR/.git/fonte"
 }
 
 case "${1:-}" in
   restore-data)
-    checkout || { echo "Branch $BRANCH non ancora creato: uso i dati del repository"; exit 0; }
+    # where the data of this run come from: save refuses to overwrite the private branch with data that did not
+    # start from it (e.g. the private repository did not answer and the archive was rebuilt from scratch)
+    mkdir -p .cache
+    echo nessuno > .cache/dati-fonte
+    checkout || { echo "Branch $BRANCH non ancora creato o non raggiungibile: uso i dati del repository"; exit 0; }
+    cat "$DIR/.git/fonte" > .cache/dati-fonte
     n=0
     for f in "${DATA_FILES[@]}"; do
       if [ -f "$DIR/$f" ]; then mkdir -p "$(dirname "$f")"; cp "$DIR/$f" "$f"; n=$((n + 1)); fi
@@ -120,7 +127,17 @@ case "${1:-}" in
       exit 0
     fi
     # only ever the private repository: a clone of the old public branch (restore) is discarded
-    if ! checkout_private; then
+    priv=0
+    checkout_private || priv=$?
+    if [ "$priv" -eq 3 ]; then
+      echo "::warning::Dati non salvati: repository privato non raggiungibile"
+      exit 1
+    fi
+    if [ "$priv" -eq 0 ] && [ "$(cat .cache/dati-fonte 2>/dev/null || echo privato)" != privato ]; then
+      echo "::warning::Dati non salvati: questo giro non è partito dai dati del repository privato (non raggiungibile all'inizio?), salvarli cancellerebbe parte dell'archivio"
+      exit 1
+    fi
+    if [ "$priv" -ne 0 ]; then
       rm -rf "$DIR"
       mkdir -p "$DIR"
       git -C "$DIR" init --quiet -b "$BRANCH"
