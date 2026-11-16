@@ -47,3 +47,4 @@ __pycache__/
 # past season pages (scripts/derive-seasons.mjs): built from the API-Football archive at every build, never
 # committed (the data must not be passed on); the committed index.json is empty, rewritten by the build
 /src/data/seasons/*/
+/src/data/punto/2*.json
