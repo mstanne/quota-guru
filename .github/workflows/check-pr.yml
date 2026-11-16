@@ -79,6 +79,8 @@ jobs:
       - name: Data of the last refresh
         env:
           GH_TOKEN: ${{ github.token }}
+          # private data repository (scripts/data-branch.sh, docs/dati-privati.md)
+          DATI_TOKEN: ${{ secrets.DATI_TOKEN }}
         run: |
           scripts/data-branch.sh restore-data
           scripts/data-branch.sh restore-state

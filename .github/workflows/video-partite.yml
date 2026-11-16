@@ -51,11 +51,13 @@ jobs:
         if: steps.check.outputs.ready == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
+          # last data of the site, in the private repository quota-guru-dati (docs/dati-privati.md)
+          DATI_TOKEN: ${{ secrets.DATI_TOKEN }}
         run: |
           url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           mkdir -p .cache
-          gh api -H "Accept: application/vnd.github.raw+json" \
-            "repos/${GITHUB_REPOSITORY}/contents/src/data/football.json?ref=dati" > .cache/football.json
+          GH_TOKEN="$DATI_TOKEN" gh api -H "Accept: application/vnd.github.raw+json" \
+            "repos/mstanne/quota-guru-dati/contents/src/data/football.json?ref=dati" > .cache/football.json
           git clone --quiet --depth 1 --branch archivio-pronostici "$url" .cache/archivio
           if git ls-remote --exit-code --heads "$url" video-partite >/dev/null; then
             git clone --quiet --depth 1 --branch video-partite "$url" .cache/store

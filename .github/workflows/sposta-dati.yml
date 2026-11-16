@@ -1,0 +1,52 @@
+# One-off (manual): copies the old `dati` branch of this public repository, with its whole history, into the
+# private repository mstanne/quota-guru-dati (docs/dati-privati.md). Run it once, after creating the private
+# repository and the secret DATI_TOKEN and before deleting the old branch. Optional: without it the first save of
+# deploy.yml starts the private branch from the current data, without the history.
+# It never overwrites: if the private branch already exists it stops.
+name: Sposta dati nel repository privato
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  copy:
+    runs-on: ubuntu-26.04
+    steps:
+      - name: Copy the branch with its history
+        env:
+          DATI_TOKEN: ${{ secrets.DATI_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$DATI_TOKEN" ]; then
+            echo "::error::Segreto DATI_TOKEN mancante (docs/dati-privati.md)"
+            exit 1
+          fi
+          priv="https://x-access-token:${DATI_TOKEN}@github.com/mstanne/quota-guru-dati.git"
+          old="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          set +e
+          git ls-remote --exit-code --heads "$priv" dati >/dev/null
+          state=$?
+          set -e
+          if [ "$state" -eq 0 ]; then
+            echo "Il repository privato ha già il branch dati: niente da fare" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          elif [ "$state" -ne 2 ]; then
+            echo "::error::Repository mstanne/quota-guru-dati non raggiungibile: esiste ed è privato? Il token ha 'Contents: Read and write' su di esso?"
+            exit 1
+          fi
+          if ! git ls-remote --exit-code --heads "$old" dati >/dev/null; then
+            echo "Il vecchio branch dati non esiste più: il primo salvataggio di deploy.yml creerà quello privato" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git clone --quiet --bare --single-branch --branch dati "$old" dati.git
+          n=$(git -C dati.git rev-list --count dati)
+          echo "Copio $n commit ($(du -sh dati.git | cut -f1))"
+          if git -C dati.git push --quiet "$priv" dati:dati; then
+            echo "Copiati $n commit nel repository privato quota-guru-dati. Ora si può cancellare il branch dati di questo repository." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::error::Copia della cronologia non riuscita (troppo grande per un solo invio?). Non è un problema: il primo salvataggio di deploy.yml creerà il branch privato con i dati attuali, senza cronologia."
+            exit 1
+          fi

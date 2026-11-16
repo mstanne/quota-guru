@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Permanent copy of the site's data in the `dati` branch of this repository (used by .github/workflows/deploy.yml).
+# Permanent copy of the site's data in the `dati` branch of the PRIVATE repository mstanne/quota-guru-dati
+# (used by .github/workflows/deploy.yml and check-pr.yml).
 #
 # The site has no database: every full run downloads the data from the APIs into JSON files and keeps the state that
 # must survive between runs (API-Sports details already downloaded, highlights found, archived pages of finished
@@ -8,20 +9,30 @@
 # history is a dated record of every change, and if the cache is lost the next run starts again from there.
 # Social images (.cache/og) and the short-lived HTTP caches are not kept: they are rebuilt automatically.
 #
-# Usage (from the repository root, GH_TOKEN and GITHUB_REPOSITORY set):
+# The data come from API-Football / API-NBA (API-Sports), whose terms do not allow passing them on: they live in a
+# private repository, never in this public one. Access with the secret DATI_TOKEN (fine-grained token, "Contents:
+# read and write" on quota-guru-dati only), see docs/dati-privati.md.
+# Until the first save there, the restore reads the old `dati` branch of this repository (read only, if it still
+# exists): nothing is ever written to this public repository again.
+#
+# Usage (from the repository root, DATI_TOKEN, GH_TOKEN and GITHUB_REPOSITORY set):
 #   scripts/data-branch.sh restore-data    before the downloads: the last saved data replace the old snapshot
 #                                          committed in main (used if an API is unreachable)
 #   scripts/data-branch.sh restore-state   after the cache restore: brings back .cache/seo and .cache/match-details
 #                                          only if the cache was lost
 #   scripts/data-branch.sh restore-editorial  same for the Claude rewrites (.cache/editorial-ai.json)
-#   scripts/data-branch.sh save            after the build: commits the current files to `dati`
+#   scripts/data-branch.sh save            after the build: commits the current files to `dati` (private repository)
 # Never meant to block the deploy: the workflow runs it with continue-on-error.
 set -euo pipefail
 
 DIR=.cache/dati-branch
 BRANCH=dati
-# DATA_BRANCH_URL overrides the remote (tests only)
-URL="${DATA_BRANCH_URL:-https://x-access-token:${GH_TOKEN:-}@github.com/${GITHUB_REPOSITORY:-}.git}"
+DATI_REPO="${DATI_REPO:-mstanne/quota-guru-dati}"
+# DATA_BRANCH_URL / OLD_DATA_BRANCH_URL override the private / old public remote (tests only)
+URL="${DATA_BRANCH_URL:-https://x-access-token:${DATI_TOKEN:-}@github.com/${DATI_REPO}.git}"
+# old public branch: read only, to seed the first save in the private repository
+OLD_URL="${OLD_DATA_BRANCH_URL:-https://x-access-token:${GH_TOKEN:-}@github.com/${GITHUB_REPOSITORY:-}.git}"
+HAVE_TOKEN=$([ -n "${DATI_TOKEN:-}" ] || [ -n "${DATA_BRANCH_URL:-}" ] && echo 1 || echo 0)
 
 # Data written by the download steps (same list as the snapshot used by live-scores.yml).
 DATA_FILES=(
@@ -33,20 +44,46 @@ DATA_FILES=(
   public/stato-dati.json
 )
 
-checkout() {
-  [ -d "$DIR/.git" ] && return 0
+# 0: exists, 2: no such branch, other: unreachable
+branch_state() {
   set +e
-  git ls-remote --exit-code --heads "$URL" "$BRANCH" >/dev/null
-  local found=$?
+  git ls-remote --exit-code --heads "$1" "$BRANCH" >/dev/null 2>&1
+  local r=$?
   set -e
+  return $r
+}
+
+# Clone of the private branch into $DIR (source "privato"); 1 when it does not exist yet.
+checkout_private() {
+  [ -d "$DIR/.git" ] && [ "$(cat "$DIR/.git/fonte" 2>/dev/null)" = privato ] && return 0
+  rm -rf "$DIR"
+  [ "$HAVE_TOKEN" = 1 ] || return 1
+  local found=0
+  branch_state "$URL" || found=$?
   if [ "$found" -eq 0 ]; then
     git clone --quiet --depth 1 --branch "$BRANCH" "$URL" "$DIR"
+    echo privato > "$DIR/.git/fonte"
   elif [ "$found" -eq 2 ]; then
-    return 1 # no branch yet: created by the first save
+    return 1
   else
-    echo "::warning::Branch $BRANCH non raggiungibile"
+    echo "::warning::Repository dei dati $DATI_REPO non raggiungibile (segreto DATI_TOKEN, docs/dati-privati.md)"
     exit 1
   fi
+}
+
+# For the restores: the private branch, or else the old public one (read only) while it exists.
+checkout() {
+  [ -d "$DIR/.git" ] && return 0
+  if [ "$HAVE_TOKEN" = 0 ]; then
+    echo "::warning::Segreto DATI_TOKEN mancante: i dati non vengono letti né salvati nel repository privato (docs/dati-privati.md)"
+  fi
+  checkout_private && return 0
+  local found=0
+  branch_state "$OLD_URL" || found=$?
+  [ "$found" -eq 0 ] || return 1
+  echo "Repository privato senza dati: leggo il vecchio branch $BRANCH di questo repository (solo lettura)"
+  git clone --quiet --depth 1 --branch "$BRANCH" "$OLD_URL" "$DIR"
+  echo pubblico > "$DIR/.git/fonte"
 }
 
 case "${1:-}" in
@@ -78,10 +115,18 @@ case "${1:-}" in
     echo "Riscritture Claude ripristinate dal branch $BRANCH"
     ;;
   save)
-    if ! checkout; then
+    if [ "$HAVE_TOKEN" = 0 ]; then
+      echo "::warning::Segreto DATI_TOKEN mancante: dati non salvati (mai nel repository pubblico, docs/dati-privati.md)"
+      exit 0
+    fi
+    # only ever the private repository: a clone of the old public branch (restore) is discarded
+    if ! checkout_private; then
+      rm -rf "$DIR"
       mkdir -p "$DIR"
       git -C "$DIR" init --quiet -b "$BRANCH"
       git -C "$DIR" remote add origin "$URL"
+      echo privato > "$DIR/.git/fonte"
+      echo "Primo salvataggio nel repository privato $DATI_REPO"
     fi
     for f in "${DATA_FILES[@]}"; do
       if [ -f "$f" ]; then mkdir -p "$DIR/$(dirname "$f")"; cp "$f" "$DIR/$f"; fi
@@ -100,7 +145,8 @@ case "${1:-}" in
 # Dati di Quota Guru
 
 Copia permanente dei dati del sito, salvata a ogni aggiornamento completo da `.github/workflows/deploy.yml`
-(script `scripts/data-branch.sh` sul ramo main). Non modificare a mano: viene sovrascritta.
+del repository mstanne/quota-guru (script `scripts/data-branch.sh`). Non modificare a mano: viene sovrascritta.
+Repository privato: i dati di API-Football e API-NBA non possono essere ridistribuiti.
 
 - `src/data/`, `data/`, `public/stato-dati.json`: dati scaricati dalle API (partite, classifiche, NBA, tennis,
   dettagli API-Sports, highlights, testi riscritti, storico per i modelli).
@@ -121,7 +167,7 @@ TXT
     git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
       commit --quiet -m "Dati $(date -u +%Y-%m-%dT%H:%MZ)"
     git push --quiet origin "HEAD:$BRANCH"
-    echo "Dati salvati nel branch $BRANCH"
+    echo "Dati salvati nel branch $BRANCH di $DATI_REPO"
     ;;
   *)
     echo "Uso: scripts/data-branch.sh restore-data|restore-state|restore-editorial|save" >&2
