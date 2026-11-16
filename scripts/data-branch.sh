@@ -32,6 +32,9 @@ DATI_REPO="${DATI_REPO:-mstanne/quota-guru-dati}"
 URL="${DATA_BRANCH_URL:-https://x-access-token:${DATI_TOKEN:-}@github.com/${DATI_REPO}.git}"
 # old public branch: read only, to seed the first save in the private repository
 OLD_URL="${OLD_DATA_BRANCH_URL:-https://x-access-token:${GH_TOKEN:-}@github.com/${GITHUB_REPOSITORY:-}.git}"
+# actions/checkout makes git send the workflow's own GITHUB_TOKEN to github.com (http.<url>.extraheader), and that
+# token cannot see the private repository: for it, the header is reset so the token in the URL is used.
+gitp() { git -c "http.https://github.com/.extraheader=" "$@"; }
 HAVE_TOKEN=$([ -n "${DATI_TOKEN:-}" ] || [ -n "${DATA_BRANCH_URL:-}" ] && echo 1 || echo 0)
 
 # Data written by the download steps (same list as the snapshot used by live-scores.yml).
@@ -47,7 +50,7 @@ DATA_FILES=(
 # 0: exists, 2: no such branch, other: unreachable
 branch_state() {
   set +e
-  git ls-remote --exit-code --heads "$1" "$BRANCH" >/dev/null 2>&1
+  gitp ls-remote --exit-code --heads "$1" "$BRANCH" >/dev/null 2>&1
   local r=$?
   set -e
   return $r
@@ -61,7 +64,7 @@ checkout_private() {
   local found=0
   branch_state "$URL" || found=$?
   if [ "$found" -eq 0 ]; then
-    git clone --quiet --depth 1 --branch "$BRANCH" "$URL" "$DIR"
+    gitp clone --quiet --depth 1 --branch "$BRANCH" "$URL" "$DIR"
     echo privato > "$DIR/.git/fonte"
   elif [ "$found" -eq 2 ]; then
     return 1
@@ -183,7 +186,7 @@ TXT
     if git diff --cached --quiet; then echo "Dati invariati"; exit 0; fi
     git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
       commit --quiet -m "Dati $(date -u +%Y-%m-%dT%H:%MZ)"
-    git push --quiet origin "HEAD:$BRANCH"
+    gitp push --quiet origin "HEAD:$BRANCH"
     echo "Dati salvati nel branch $BRANCH di $DATI_REPO"
     ;;
   *)
