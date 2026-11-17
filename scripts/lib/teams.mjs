@@ -1,9 +1,10 @@
 // Matching team names across sources (football-data.org, YouTube titles, API-Sports):
 // "FC Bayern München" ~ "FC BAYERN" ~ "Bayern Munich", "Queens Park Rangers FC" ~ "QPR".
 
-// Generic words in club names, ignored when comparing.
+// Generic words in club names, ignored when comparing. Also as a club's three-letter code: football-data.org gave
+// "FK" to FK Bodø/Glimt, and "FK Crvena Zvezda" was paired with it (November 2026).
 const STOP = new Set(
-  "FC AC AS SS SSC US ACF CFC BC CALCIO HELLAS SPA SC SV VFL VFB TSV FSV TSG BSC AFC CF CD UD RC RCD SD CA SE EC FR FBC FBPA AF CR GD CS SBV".split(
+  "FC AC AS SS SSC US ACF CFC BC CALCIO HELLAS SPA SC SV VFL VFB TSV FSV TSG BSC AFC CF CD UD RC RCD SD CA SE EC FR FBC FBPA AF CR GD CS SBV FK SK NK HNK BK IF FF KV".split(
     " ",
   ),
 );

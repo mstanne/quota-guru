@@ -17,7 +17,7 @@
 //   pronostici  before the build: predictions archive (labels and URLs of these clubs' matches, merges the 9
 //               predictions recorded twice, keeping every published version in the count)
 // Each phase runs once (marks in data/id-map.json and in the predictions archive) and can be repeated safely.
-// Options: --dry-run (report only).
+// Options: --dry-run (report only); --lotto <key> picks the batch of clubs (default: the latest, see BATCHES).
 //
 // How an old id is read. The id of a real club that a cup club took (e.g. 67, Newcastle) means the cup club in the
 // data made from API-Football (match id from 1,000,000,000) of a cup, the real club everywhere else (its league,
@@ -29,7 +29,6 @@ import { fileURLToPath } from "node:url";
 import { loadIdMap, MATCH_OFFSET, saveIdMap, TEAM_OFFSET, tlaOf } from "../lib/id-map.mjs";
 import { slugify } from "../lib/italian.mjs";
 
-const KEY = "squadre-2026-11";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const R = (...p) => path.join(root, ...p);
 const IDMAP = R("data", "id-map.json");
@@ -40,8 +39,11 @@ const PRED = path.resolve(root, process.env.PREDICTION_ARCHIVE_DIR ?? ".cache/pr
 const DRY = process.argv.includes("--dry-run");
 const phase = process.argv[2];
 
-// The 9 clubs: id before November, id now, names of before November (football-data.org).
-const CLUBS = [
+// Batches of clubs, each applied once under its own key (marks in data/id-map.json and in the predictions archive).
+// Per club: id before November, id now, names the real club keeps; `formerShort`: other short names its pages had
+// (their URLs get a bridge page too).
+// "squadre-2026-11", applied 7 November 2026: the 9 clubs, names of before November (football-data.org).
+const BATCH_1 = [
   { oldId: 67, newId: 10000034, name: "Newcastle United FC", shortName: "Newcastle", tla: "NEW" },
   { oldId: 69, newId: 10000072, name: "Queens Park Rangers FC", shortName: "QPR", tla: "QPR" },
   { oldId: 512, newId: 10000106, name: "Stade Brestois 29", shortName: "Brest", tla: "SB2" },
@@ -52,6 +54,29 @@ const CLUBS = [
   { oldId: 529, newId: 10000094, name: "Stade Rennais FC 1901", shortName: "Stade Rennais", tla: "REN" },
   { oldId: 1766, newId: 10001062, name: "CA Mineiro", shortName: "Mineiro", tla: "CAM" },
 ];
+// "squadre-2026-11-bodo", 17 November 2026: FK Crvena Zvezda (API-Football 598, Conference League and past
+// Champions League seasons of the archive) took the id 5721 and the name of FK Bodø/Glimt (football-data.org): its
+// three-letter code was "FK", a generic word, and "FK" is in "FK Crvena Zvezda". The real Bodø/Glimt (API 327) got
+// the id 10000327 with the API name "Bodo/Glimt", used by its pages since November: it keeps that short name (and
+// its URLs; "Bodø/Glimt" would make the slug "bod-glimt"), with the full name of before.
+const BATCH_2 = [
+  {
+    oldId: 5721,
+    newId: 10000327,
+    name: "FK Bodø/Glimt",
+    shortName: "Bodo/Glimt",
+    tla: "BOD",
+    formerShort: ["Bodø/Glimt"],
+  },
+];
+const BATCHES = { "squadre-2026-11": BATCH_1, "squadre-2026-11-bodo": BATCH_2 };
+const lottoArg = process.argv.indexOf("--lotto");
+const KEY = lottoArg > 0 ? process.argv[lottoArg + 1] : Object.keys(BATCHES).at(-1);
+const CLUBS = BATCHES[KEY];
+if (!CLUBS) {
+  console.error(`Lotto sconosciuto: ${KEY} (${Object.keys(BATCHES).join(", ")})`);
+  process.exit(1);
+}
 const CUPS = new Set(["CL", "EL", "ECL", "champions-league", "europa-league", "conference-league"]);
 
 // ------------------------------------------------------------------------------------------- helpers
@@ -71,7 +96,7 @@ const writeJson = (f, v) => {
   fs.renameSync(f + ".tmp", f);
 };
 const romeDay = (iso) => new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Rome" }).format(new Date(iso));
-const say = (s) => console.log(`correzione squadre (${phase}${DRY ? ", prova" : ""}): ${s}`);
+const say = (s) => console.log(`correzione squadre ${KEY} (${phase}${DRY ? ", prova" : ""}): ${s}`);
 const listFiles = (dir, re) => {
   const out = [];
   if (!fs.existsSync(dir)) return out;
@@ -128,7 +153,10 @@ function prima() {
       return;
     }
     const [realKey, realTeam] = real[0];
-    const imp = holders[0] ? { apiId: Number(holders[0][0]), id: TEAM_OFFSET + Number(holders[0][0]) } : null;
+    // the cup club, and the short name it has been shown with
+    const imp = holders[0]
+      ? { apiId: Number(holders[0][0]), id: TEAM_OFFSET + Number(holders[0][0]), shownAs: holders[0][1].shortName }
+      : null;
     if (imp && Object.values(map.footballTeams).some((t) => t.id === imp.id)) {
       say(`id ${imp.id} già usato: correzione annullata, niente modificato`);
       return;
@@ -187,14 +215,14 @@ async function dati() {
 
   // canonical team of every id involved, and the wrong names each was shown with since November
   const canon = new Map();
-  const wrongShort = new Map(); // id now → short name shown since 1 November
+  const wrongShort = new Map(); // id now → short names shown with (since 1 November, or before)
   for (const c of clubs) {
     canon.set(c.newId, { id: c.newId, name: c.name, shortName: c.shortName, tla: c.tla });
-    wrongShort.set(c.newId, c.wrong.shortName);
+    wrongShort.set(c.newId, [c.wrong.shortName, ...(c.formerShort ?? [])]);
     if (c.impostor) {
       const t = map.footballTeams[String(c.impostor.apiId)];
       canon.set(c.impostor.id, { id: c.impostor.id, name: t.name, shortName: t.shortName, tla: t.tla });
-      wrongShort.set(c.impostor.id, c.shortName);
+      wrongShort.set(c.impostor.id, [c.impostor.shownAs ?? c.shortName]);
     }
   }
   const byOld = new Map(clubs.map((c) => [c.oldId, c]));
@@ -375,7 +403,7 @@ function movedUrls(football, canon, wrongShort) {
   for (const e of predictionEntries()) if (e.path) published.add(e.path);
   const teamSlug = teamSlugs();
   const moves = {};
-  const variants = (t) => (wrongShort.has(t.id) ? [t.shortName, wrongShort.get(t.id)] : [t.shortName]);
+  const variants = (t) => [...new Set([t.shortName, ...(wrongShort.get(t.id) ?? [])])];
   for (const m of affectedMatches(football, canon)) {
     const day = romeDay(m.utcDate);
     const right = `/calcio/${m.slug}/${slugify(m.home.shortName)}-${slugify(m.away.shortName)}-${day}`;
@@ -390,12 +418,14 @@ function movedUrls(football, canon, wrongShort) {
   }
   // team pages: /calcio/squadre/<slug> of the names shown since November (only the 9 league clubs have one)
   const leagueClubs = new Set(CLUBS.map((c) => c.newId));
-  for (const [id, wrong] of wrongShort) {
+  for (const [id, wrongs] of wrongShort) {
     if (!leagueClubs.has(id)) continue;
-    const from = `/calcio/squadre/${slugify(wrong)}`;
-    const to = `/calcio/squadre/${slugify(canon.get(id).shortName)}`;
-    if (from === to) continue;
-    for (const p of published) if (p === from || p.startsWith(`${from}/`)) moves[p] = to + p.slice(from.length);
+    for (const wrong of wrongs) {
+      const from = `/calcio/squadre/${slugify(wrong)}`;
+      const to = `/calcio/squadre/${slugify(canon.get(id).shortName)}`;
+      if (from === to) continue;
+      for (const p of published) if (p === from || p.startsWith(`${from}/`)) moves[p] = to + p.slice(from.length);
+    }
   }
   return moves;
 }
