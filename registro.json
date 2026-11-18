@@ -171,11 +171,15 @@
   "live:partite-oggi:2026-11-18": {
    "at": "2026-11-18T08:47:43.967Z",
    "messageId": 20
+  },
+  "live:academy:2026-11-18": {
+   "at": "2026-11-18T17:08:02.559Z",
+   "messageId": 21
   }
  },
  "academy": {
   "test": 2,
-  "live": 1
+  "live": 2
  },
  "tris": {
   "test": {
