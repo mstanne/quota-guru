@@ -105,23 +105,13 @@ jobs:
         continue-on-error: true
 
       - name: Restore the predictions archive
+        # private repository quota-guru-dati (scripts/archive-branch.sh, docs/archivio-pronostici.md)
         if: steps.live.outputs.changed == 'true'
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          dir=.cache/predictions-archive
-          set +e
-          git ls-remote --exit-code --heads "$url" archivio-pronostici >/dev/null
-          found=$?
-          set -e
-          if [ "$found" -eq 0 ]; then
-            git clone --quiet --depth 1 --branch archivio-pronostici "$url" "$dir"
-          else
-            echo "::warning::Archivio pronostici non raggiungibile: questo giro non pubblica"
-            exit 1
-          fi
+          DATI_TOKEN: ${{ secrets.DATI_TOKEN }}
+        run: scripts/archive-branch.sh restore
 
       - name: Check the predictions archive
         # Without the archive the pages of started matches would lose the published prediction: do not publish.
@@ -164,15 +154,13 @@ jobs:
           MODEL_XG_WEIGHT: ${{ vars.MODEL_XG_WEIGHT }}
 
       - name: Save the predictions archive
+        # private working archive first, then the public copy without the API match ids (scripts/archive-branch.sh)
         if: steps.live.outputs.changed == 'true'
         continue-on-error: true
-        working-directory: .cache/predictions-archive
-        run: |
-          git add -A
-          if git diff --cached --quiet; then echo "Archivio pronostici invariato"; exit 0; fi
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-            commit --quiet -m "Archivio pronostici $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push --quiet origin HEAD:archivio-pronostici
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATI_TOKEN: ${{ secrets.DATI_TOKEN }}
+        run: scripts/archive-branch.sh save
 
       - name: Save state between runs
         if: steps.live.outputs.changed == 'true'

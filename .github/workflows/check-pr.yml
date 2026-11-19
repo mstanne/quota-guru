@@ -87,8 +87,8 @@ jobs:
           scripts/data-branch.sh restore-editorial || true
           # the newest data (with the live scores), as a quick refresh of deploy.yml would use them
           if [ -f .cache/match-details/snapshot.tgz ]; then tar xzf .cache/match-details/snapshot.tgz; fi
-          git clone --quiet --depth 1 --branch archivio-pronostici "https://github.com/${GITHUB_REPOSITORY}.git" .cache/predictions-archive \
-            || echo "::warning::Archivio pronostici non raggiungibile"
+          # predictions archive: private repository quota-guru-dati (scripts/archive-branch.sh)
+          scripts/archive-branch.sh restore || echo "::warning::Archivio pronostici non raggiungibile"
 
       - name: Build (npm run build, as deploy.yml)
         env:

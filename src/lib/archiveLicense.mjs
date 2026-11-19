@@ -1,5 +1,5 @@
-// Terms of the downloadable archive of predictions (public/dati/archivio-pronostici-*.json and the
-// `archivio-pronostici` branch). The predictions are QuotaGuru's own work, licensed CC BY-NC 4.0; the match data in
+// Terms of the downloadable archive of predictions (public/dati/archivio-pronostici-*.json and the public copy in
+// the `archivio-pronostici` branch, docs/archivio-pronostici.md). The predictions are QuotaGuru's own work, licensed CC BY-NC 4.0; the match data in
 // the same files (dates, teams, results) come from API-Football (API-Sports) and may not be reproduced.
 // Shared by the build scripts and the site (track record page, structured data, llms.txt).
 export const PREDICTIONS_LICENSE = {

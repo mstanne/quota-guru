@@ -26,7 +26,7 @@ on:
         default: false
 
 permissions:
-  # write: the build commits the archive of published predictions to the `archivio-pronostici` branch
+  # write: the build commits the public copy of the archive of published predictions to the `archivio-pronostici` branch
   contents: write
   pages: write
   id-token: write
@@ -242,30 +242,16 @@ jobs:
         continue-on-error: true
 
       - name: Restore the predictions archive
-        # Every published prediction is kept in the `archivio-pronostici` branch (scripts/archive-predictions.mjs):
-        # its commit history is the public, timestamped record of when each prediction was published.
+        # Every published prediction is kept in the `archivio-pronostici` branch of the private repository
+        # quota-guru-dati (scripts/archive-predictions.mjs, scripts/archive-branch.sh, docs/archivio-pronostici.md);
+        # the public copy without the API match ids goes to the `archivio-pronostici` branch of this repository, whose
+        # commit history is the public, timestamped record of when each prediction was published.
         # Pushing to that branch does not trigger this workflow (it runs on pushes to main only).
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          dir=.cache/predictions-archive
-          set +e
-          git ls-remote --exit-code --heads "$url" archivio-pronostici >/dev/null
-          found=$?
-          set -e
-          if [ "$found" -eq 0 ]; then
-            git clone --quiet --depth 1 --branch archivio-pronostici "$url" "$dir"
-          elif [ "$found" -eq 2 ]; then
-            # first run: the branch is created by the save step below
-            mkdir -p "$dir"
-            git -C "$dir" init --quiet -b archivio-pronostici
-            git -C "$dir" remote add origin "$url"
-          else
-            echo "::warning::Archivio pronostici non raggiungibile: questa build non lo aggiorna"
-            exit 1
-          fi
+          DATI_TOKEN: ${{ secrets.DATI_TOKEN }}
+        run: scripts/archive-branch.sh restore
 
       - name: Match prediction videos (video-partite branch)
         # Index of the match prediction videos (.github/workflows/video-partite.yml; the files are in the R2 video
@@ -303,15 +289,13 @@ jobs:
           MODEL_XG_WEIGHT: ${{ vars.MODEL_XG_WEIGHT }}
 
       - name: Save the predictions archive
+        # private working archive first, then the public copy without the API match ids (scripts/archive-branch.sh)
         if: github.ref == 'refs/heads/main'
         continue-on-error: true
-        working-directory: .cache/predictions-archive
-        run: |
-          git add -A
-          if git diff --cached --quiet; then echo "Archivio pronostici invariato"; exit 0; fi
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-            commit --quiet -m "Archivio pronostici $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push --quiet origin HEAD:archivio-pronostici
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATI_TOKEN: ${{ secrets.DATI_TOKEN }}
+        run: scripts/archive-branch.sh save
 
       - name: Save to the data branch
         if: github.ref == 'refs/heads/main'
