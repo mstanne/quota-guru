@@ -87,6 +87,19 @@ export function Header() {
               </nav>
             </div>
             <div className="flex items-center gap-4">
+              {/* desktop: pill link to the Telegram channel (the mobile menu has it among the shortcuts) */}
+              {isFilled(site.social.telegram) && (
+                <a
+                  href={site.social.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Canale Telegram di QuotaGuru"
+                  className="hidden lg:inline-flex items-center gap-2 h-9 px-4 rounded-full border-2 border-[#229ED9] text-white text-sm font-semibold hover:bg-[#229ED9]/15 transition-colors cursor-pointer"
+                >
+                  <Send className="w-4 h-4 text-[#229ED9]" aria-hidden="true" />
+                  Telegram
+                </a>
+              )}
               <Button
                 variant="ghost"
                 size="icon"
