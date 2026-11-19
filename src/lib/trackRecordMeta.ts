@@ -45,7 +45,7 @@ export function trackRecordMeta() {
         url: TRACK_RECORD_PATH,
         inLanguage: "it-IT",
         isAccessibleForFree: true,
-        // the predictions only: the match data inside come from API-Football and may not be reproduced
+        // the predictions only: date, teams and final score are public facts, outside the licence
         license: PREDICTIONS_LICENSE.url,
         creditText: "QuotaGuru (www.quotaguru.it)",
         keywords: ["pronostici calcio", "pronostici NBA", "track record", "probabilità", "modello statistico"],

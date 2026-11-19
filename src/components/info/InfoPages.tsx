@@ -508,8 +508,8 @@ export function MetodologiaPage() {
         <a href={PREDICTIONS_LICENSE.url} rel="license noopener" target="_blank">
           {PREDICTIONS_LICENSE.name}
         </a>{" "}
-        (riuso non commerciale citando QuotaGuru); i dati delle partite contenuti negli stessi file provengono da
-        API-Football e non possono essere riprodotti. Il riepilogo è nel{" "}
+        (riuso non commerciale citando QuotaGuru); data, squadre e risultato finale delle partite sono fatti pubblici e
+        non sono coperti dalla licenza. Il riepilogo è nel{" "}
         <Link to="/bilancio-pronostici">bilancio dei pronostici</Link>.
       </p>
       <CalibrationSection />

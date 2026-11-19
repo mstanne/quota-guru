@@ -40,5 +40,6 @@ riparte da lì: l'archivio non si perde.
 - **I commit vecchi del branch pubblico contengono ancora gli id** (fino al passaggio). Non vengono cancellati di
   proposito: riscrivere la cronologia eliminerebbe la prova pubblica delle date di pubblicazione di ottobre e novembre
   2026. Da un id da solo non si ricavano i dati delle API.
-- Data, squadre e risultato finale restano nella copia pubblica: sono i fatti che rendono verificabile il bilancio.
-  Le condizioni di uso in `src/lib/archiveLicense.mjs` dicono che quei dati non sono coperti dalla licenza CC BY-NC.
+- Data, squadre e risultato finale restano nella copia pubblica, come semplici nomi e numeri: sono fatti pubblici che
+  rendono verificabile il bilancio, e le condizioni in `src/lib/archiveLicense.mjs` dicono che non sono coperti dalla
+  licenza CC BY-NC. Lo stesso vale per il dataset esterno (`docs/dataset-pronostici.md`).

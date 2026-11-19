@@ -1,0 +1,144 @@
+# Monthly external dataset of the published predictions (docs/dataset-pronostici.md, scripts/export-dataset.mjs).
+# Built from the PUBLIC copy of the archive (`archivio-pronostici` branch of this repository: no API ids), with the
+# months already closed. Each destination is optional and skipped while its secret is missing:
+#   GitHub   repository mstanne/quota-guru-pronostici (secret DATASET_TOKEN, or DATI_TOKEN if it covers that
+#            repository): files committed and a release per month, which Zenodo archives with a DOI
+#   Kaggle   secrets KAGGLE_USERNAME and KAGGLE_KEY
+#   Hugging Face  secret HF_TOKEN and variable HF_DATASET (e.g. quotaguru/quota-guru-pronostici)
+# The files are also attached to the run (artifact "dataset"), so a manual "prova" run only builds them.
+name: Dataset pronostici
+
+on:
+  schedule:
+    # the 2nd of the month, 07:23 Rome: the last NBA games of the month before are graded by then
+    - cron: "23 6 2 * *"
+  workflow_dispatch:
+    inputs:
+      until:
+        description: "Ultimo mese incluso (AAAA-MM); vuoto = il mese scorso"
+        required: false
+        default: ""
+      prova:
+        description: "Solo prova: crea i file senza pubblicarli"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dataset
+  cancel-in-progress: false
+
+jobs:
+  dataset:
+    runs-on: ubuntu-26.04
+    env:
+      DATASET_REPO: mstanne/quota-guru-pronostici
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Build the dataset
+        id: build
+        env:
+          UNTIL: ${{ inputs.until }}
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+        run: |
+          git clone --quiet --depth 1 --branch archivio-pronostici "https://github.com/${GITHUB_REPOSITORY}.git" .cache/archivio
+          node scripts/export-dataset.mjs --archive .cache/archivio --out .cache/dataset ${UNTIL:+--until "$UNTIL"} | tee -a "$GITHUB_STEP_SUMMARY"
+          version=$(node -p "require('./.cache/dataset/.zenodo.json').version")
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dataset
+          path: .cache/dataset
+          include-hidden-files: true
+
+      - name: GitHub (and Zenodo through the release)
+        if: inputs.prova != true
+        env:
+          TOKEN: ${{ secrets.DATASET_TOKEN || secrets.DATI_TOKEN }}
+          VERSION: ${{ steps.build.outputs.version }}
+        run: |
+          if [ -z "$TOKEN" ]; then echo "::notice::Nessun token per $DATASET_REPO: GitHub saltato"; exit 0; fi
+          url="https://x-access-token:${TOKEN}@github.com/${DATASET_REPO}.git"
+          # the workflow's own token is sent to github.com by actions/checkout: reset it for the other repository
+          gitp() { git -c "http.https://github.com/.extraheader=" "$@"; }
+          set +e
+          gitp ls-remote "$url" >/dev/null 2>&1
+          reach=$?
+          set -e
+          if [ "$reach" -ne 0 ]; then
+            echo "::error::Repository $DATASET_REPO non raggiungibile: esiste? Il token ha 'Contents: Read and write' su di esso? (docs/dataset-pronostici.md)"
+            exit 1
+          fi
+          if gitp ls-remote --exit-code --heads "$url" main >/dev/null 2>&1; then
+            gitp clone --quiet --depth 1 --branch main "$url" repo
+          else
+            mkdir repo && git -C repo init --quiet -b main && git -C repo remote add origin "$url"
+          fi
+          find repo -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -R .cache/dataset/. repo/
+          rm -f repo/dataset-metadata.json
+          git -C repo add -A
+          if git -C repo diff --cached --quiet; then
+            echo "Repository del dataset invariato"
+          else
+            git -C repo -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit --quiet -m "Dati fino a ${VERSION/./-}"
+            gitp -C repo push --quiet origin HEAD:refs/heads/main
+            echo "Dati salvati in $DATASET_REPO" | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+          # one release per version: Zenodo (when enabled for the repository) archives it and gives it a DOI
+          tag="v$VERSION"
+          if GH_TOKEN="$TOKEN" gh api "repos/$DATASET_REPO/releases/tags/$tag" >/dev/null 2>&1; then
+            echo "Release $tag già presente"
+          else
+            GH_TOKEN="$TOKEN" gh api "repos/$DATASET_REPO/releases" -f tag_name="$tag" -f target_commitish=main \
+              -f name="Pronostici fino a ${VERSION/./-}" \
+              -f body="Ogni pronostico pubblicato su www.quotaguru.it fino a ${VERSION/./-}, con risultato. Licenza CC BY-NC 4.0 (vedi README)." \
+              --jq .html_url | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Kaggle
+        if: inputs.prova != true
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          VERSION: ${{ steps.build.outputs.version }}
+        run: |
+          if [ -z "$KAGGLE_USERNAME" ] || [ -z "$KAGGLE_KEY" ]; then echo "::notice::Segreti Kaggle mancanti: saltato"; exit 0; fi
+          pip install --quiet kaggle
+          mkdir -p kaggle && cp .cache/dataset/data/*.csv .cache/dataset/README.md .cache/dataset/dataset-metadata.json kaggle/
+          if kaggle datasets status "$KAGGLE_USERNAME/quota-guru-pronostici" >/dev/null 2>&1; then
+            kaggle datasets version -p kaggle -m "Pronostici fino a ${VERSION/./-}"
+          else
+            kaggle datasets create -p kaggle --public
+          fi
+          echo "Kaggle: https://www.kaggle.com/datasets/$KAGGLE_USERNAME/quota-guru-pronostici" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Hugging Face
+        if: inputs.prova != true
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_DATASET: ${{ vars.HF_DATASET }}
+          VERSION: ${{ steps.build.outputs.version }}
+        run: |
+          if [ -z "$HF_TOKEN" ] || [ -z "$HF_DATASET" ]; then echo "::notice::HF_TOKEN o HF_DATASET mancanti: saltato"; exit 0; fi
+          pip install --quiet huggingface_hub
+          rm -f .cache/dataset/dataset-metadata.json .cache/dataset/.zenodo.json
+          python3 - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          repo = os.environ["HF_DATASET"]
+          api.create_repo(repo, repo_type="dataset", exist_ok=True)
+          api.upload_folder(folder_path=".cache/dataset", repo_id=repo, repo_type="dataset",
+                            commit_message="Pronostici fino a " + os.environ["VERSION"].replace(".", "-"))
+          print(f"Hugging Face: https://huggingface.co/datasets/{repo}")
+          PY
