@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, ListChecks, Check, X as XIcon, CalendarDays 
 import { Link } from "../../lib/links";
 import { PageHeader } from "../layout/PageHeader";
 import { DataUpdatedNote } from "./DataUpdatedNote";
+import { TelegramBanner } from "../TelegramBanner";
 import { TeamBadge } from "./MatchRow";
 import { ProbabilityBar, ReasonList, ConfidenceBadge } from "../predictions/PredictionUi";
 import { ArchivedOrNotFound } from "../../lib/archive";
@@ -161,6 +162,8 @@ function MatchCard({ c, m, data }: { c: Competition; m: Match; data: Competition
 }
 
 /** `slug`: the round segment of the URL ("giornata-12"); a slug of the wrong form for the competition is a 404. */
+const ANTEPRIMA = new Set(["serie-a", "premier-league", "liga", "ligue-1"]);
+
 export function MatchdayPage({ slug }: { slug: string }) {
   const { competizione } = useParams();
   const data = useCompetitionData(competizione);
@@ -240,6 +243,9 @@ export function MatchdayPage({ slug }: { slug: string }) {
             <MatchCard key={m.id} c={c} m={m} data={data} />
           ))}
         </div>
+
+        {/* leagues with an "anteprima" rubric on the channel (scripts/telegram/README.md) */}
+        <TelegramBanner topic={ANTEPRIMA.has(c.slug) ? "anteprima" : "pronostici"} className="mt-8" />
 
         <p className="text-slate-400 text-xs mt-8">
           Probabilità stimate da un modello statistico (Poisson con correzione Dixon-Coles) sui gol fatti e subiti:
