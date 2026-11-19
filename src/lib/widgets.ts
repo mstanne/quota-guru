@@ -23,23 +23,20 @@ export const nbaWidget = () => widgets().find((w) => w.kind === "nba");
 
 export const widgetTitle = (w: WidgetDef) =>
   w.kind === "nba" ? "Classifica NBA e proiezione" : w.kind === "cup" ? `${w.name}: classifica e chi vince` : `Classifica ${w.name} e probabilità`;
-/** Page of the site the widget links to (and the link of the embed code). */
-export const widgetTarget = (w: WidgetDef) => (w.kind === "nba" ? "/basket/nba/classifica/" : `/calcio/${w.slug}/classifica/`);
-const anchorText = (w: WidgetDef) =>
-  w.kind === "nba"
-    ? "classifica NBA con le probabilità di playoff"
-    : w.kind === "cup"
-      ? `probabilità ${w.name}`
-      : w.slug === "serie-a"
-        ? "probabilità scudetto e retrocessione in Serie A"
-        : `classifica ${w.name} con le probabilità`;
+/**
+ * Page of the site the widget and its embed code link to: /widget itself, which has no welcome offers (SiteOffers)
+ * and lets whoever arrives get the widget too. No offers, odds or bookmakers on the way from the host page
+ * (Decreto Dignità: the host must not end up showing gambling advertising, not even indirectly).
+ */
+export const widgetTarget = (w: WidgetDef) => `${WIDGET_PAGE}/#${w.id}`;
 
 export const embedSrc = (w: WidgetDef, light = false) => `${SITE}/embed/${w.id}/${light ? "?tema=chiaro" : ""}`;
 /** HTML to paste: the iframe and, in the host page, the link to the site. */
 export function embedCode(w: WidgetDef, light = false) {
   return [
     `<iframe src="${embedSrc(w, light)}" title="${widgetTitle(w)} – Quota Guru" width="100%" height="${w.height}" style="border:0;max-width:640px" loading="lazy"></iframe>`,
-    `<p style="font-size:12px;margin:4px 0 0">Dati: <a href="${SITE}${widgetTarget(w)}">${anchorText(w)}</a> di Quota Guru</p>`,
+    // brand anchor only: keyword anchors in widget links are link spam for Google
+    `<p style="font-size:12px;margin:4px 0 0">Dati: <a href="${SITE}${widgetTarget(w)}">Quota Guru</a></p>`,
   ].join("\n");
 }
 
