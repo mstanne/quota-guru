@@ -1,6 +1,7 @@
 # Genera i video e li carica nel bucket R2 dei video (https://video.quotaguru.it), docs/video.md.
-#   push su main  rigenera le guide il cui storyboard è cambiato (scripts/guide-videos/storyboards/<slug>.json) e
-#                 carica quei video più i file di public/video aggiunti o cambiati dal push
+#   push su main  rigenera le guide il cui storyboard è cambiato (scripts/guide-videos/storyboards/<slug>.json), tutte
+#                 se cambiano player.html o render.py, e carica quei video più i file di public/video aggiunti o
+#                 cambiati dal push
 #   a mano        Actions → "Video" → Run workflow: "rendi" = slug separati da spazi o "tutte" (una guida ≈ 2-3 minuti),
 #                 "carica_tutto" = carica tutti i file di public/video (il primo passaggio al bucket)
 # Configurazione (una volta sola), come per live-worker.yml:
@@ -82,6 +83,10 @@ jobs:
               --jq '.files[] | select(.status != "removed") | .filename' > /tmp/changed.txt
             grep -E '^public/video/.*\.(mp4|jpg)$' /tmp/changed.txt > /tmp/upload.txt || true
             slugs=$(grep -E '^scripts/guide-videos/storyboards/[^/]+\.json$' /tmp/changed.txt | xargs -rn1 basename | sed 's/\.json$//')
+            # the player or the renderer changed (e.g. the final screen): every guide is rendered again
+            if grep -qE '^scripts/guide-videos/(player\.html|render\.py)$' /tmp/changed.txt; then
+              slugs=$(ls scripts/guide-videos/storyboards/*.json | xargs -n1 basename | sed 's/\.json$//')
+            fi
           fi
           slugs=$(echo $slugs)
           echo "slugs=$slugs" >> "$GITHUB_OUTPUT"

@@ -148,6 +148,19 @@
   .pill { display: inline-block; border: 1px solid #2A3D59; border-radius: 999px; padding: calc(var(--u)*1.2) calc(var(--u)*2.8);
     font-size: calc(var(--u)*2.2); color: #BECED8; }
   .portrait .pill { font-size: calc(var(--u)*2.8); }
+  /* schermata finale: invito al canale Telegram (board.telegram, impostato da render.py) */
+  .tg { display: flex; align-items: center; gap: calc(var(--u)*2.4); margin-top: calc(var(--u)*1.4);
+    border: 2px solid #229ED9; border-radius: calc(var(--u)*2.2); padding: calc(var(--u)*2) calc(var(--u)*3.6) calc(var(--u)*2) calc(var(--u)*2.4);
+    background: rgba(34,158,217,.10); text-align: left; }
+  .tg .ic { flex: none; width: calc(var(--u)*7.6); height: calc(var(--u)*7.6); border-radius: 50%; background: #229ED9;
+    display: flex; align-items: center; justify-content: center; }
+  .tg .ic svg { width: 52%; height: 52%; margin-left: -6%; margin-top: 4%; }
+  .tg .k { font-size: calc(var(--u)*2.4); color: #BECED8; font-weight: 600; }
+  .tg .u { font-size: calc(var(--u)*4.6); font-weight: 700; letter-spacing: -.01em; line-height: 1.1; }
+  .portrait .tg { margin-top: calc(var(--u)*3); padding: calc(var(--u)*2.6) calc(var(--u)*4.4) calc(var(--u)*2.6) calc(var(--u)*3); }
+  .portrait .tg .ic { width: calc(var(--u)*10); height: calc(var(--u)*10); }
+  .portrait .tg .k { font-size: calc(var(--u)*3.2); }
+  .portrait .tg .u { font-size: calc(var(--u)*6); }
 
   /* --- partite --- */
   .vs { display: flex; align-items: center; justify-content: center; gap: calc(var(--u)*6); }
@@ -300,7 +313,11 @@
       ${s.note ? `<div class="note" data-in="1.4">${esc(s.note)}</div>` : ""}`,
     outro: (s, P, B) => `<img class="logo" src="${B.logo}" alt="" data-in="0.2"/>
       <div class="sub" data-in="0.7">${esc(s.text)}</div>
-      <div class="pill" data-in="1.3">${esc(s.cta)}</div>`,
+      <div class="pill" data-in="1.3">${esc(s.cta)}</div>
+      ${B.telegram ? `<div class="tg" data-in="1.9">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg></div>
+        <div><div class="k">${esc(B.telegramText || "Segui il canale Telegram")}</div><div class="u">${esc(B.telegram)}</div></div>
+      </div>` : ""}`,
   };
 
   // Animazioni che dipendono da t oltre all'entrata degli elementi.
