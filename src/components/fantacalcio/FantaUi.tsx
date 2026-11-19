@@ -1,7 +1,7 @@
 // Shared pieces of the fantasy football pages (src/lib/fantacalcio.ts).
 import { Link } from "../../lib/links";
 import { TeamName } from "../teams/TeamLink";
-import type { FantaPlayer } from "../../lib/fantacalcio";
+import { mantraOf, type FantaPlayer } from "../../lib/fantacalcio";
 
 export const pc = (p: number) => {
   const v = Math.round(p * 100);
@@ -46,6 +46,21 @@ export function Fixture({ p }: { p: FantaPlayer }) {
     <span className="whitespace-nowrap text-slate-300">
       <TeamName id={p.team.id} name={p.team.name} /> <span className="text-slate-500">{p.home ? "vs" : "@"}</span>{" "}
       {p.opp.name}
+    </span>
+  );
+}
+
+/** Mantra roles of the official list ("E/W"), with their names on hover and for screen readers. */
+export function MantraRole({ p, className = "" }: { p: FantaPlayer; className?: string }) {
+  const m = mantraOf(p);
+  if (!m) return null;
+  return (
+    <span
+      className={`inline-block whitespace-nowrap rounded border border-slate-700 px-1.5 py-px text-[11px] leading-4 text-slate-400 ${className}`}
+      title={`Ruolo Mantra: ${m.long}`}
+    >
+      <span aria-hidden="true">{m.short}</span>
+      <span className="sr-only">Ruolo Mantra: {m.long}</span>
     </span>
   );
 }

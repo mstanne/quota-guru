@@ -22,7 +22,7 @@ import {
   roleName,
   type FantaPlayer,
 } from "../../lib/fantacalcio";
-import { Band, Fixture, PlayerName, pc } from "./FantaUi";
+import { Band, Fixture, MantraRole, PlayerName, pc } from "./FantaUi";
 
 const MAX = 3;
 const label = (p: FantaPlayer) => `${p.name} (${p.team.name})`;
@@ -66,7 +66,7 @@ function Card({ p, onRemove }: { p: FantaPlayer; onRemove: () => void }) {
             <PlayerName p={p} />
           </p>
           <p className="text-sm text-slate-400">
-            {roleName(p.role)} · <Fixture p={p} />
+            {roleName(p.role)} <MantraRole p={p} className="mx-1 align-middle" /> · <Fixture p={p} />
           </p>
         </div>
         <button type="button" onClick={onRemove} className="text-slate-400 hover:text-white" aria-label={`Togli ${p.name}`}>
