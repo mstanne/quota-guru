@@ -100,9 +100,20 @@ def load_board(slug):
     return with_logo(json.loads(src.read_text("utf-8")))
 
 
+# Schermata finale di ogni video (guide e partite): invito al canale Telegram, tenuta a schermo almeno OUTRO_MIN s
+# per lasciare il tempo di leggere l'indirizzo. Stesso canale di site.social.telegram (src/data/site.ts).
+TELEGRAM = "t.me/quotaguru"
+OUTRO_MIN = 6.5
+
+
 def with_logo(board):
     svg = (ROOT / "src" / "assets" / "brand" / "quotaguru-logo-white.svg").read_bytes()
     board["logo"] = "data:image/svg+xml;base64," + base64.b64encode(svg).decode()
+    board.setdefault("telegram", TELEGRAM)
+    if board["telegram"]:
+        for sc in board["scenes"]:
+            if sc["type"] == "outro":
+                sc["dur"] = max(sc["dur"], OUTRO_MIN)
     return board
 
 

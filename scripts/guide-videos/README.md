@@ -4,6 +4,10 @@ Video brevi, senza voce e con musica di sottofondo originale (`music.py`), diseg
 con Playwright e ffmpeg (`render.py`). Requisiti: Python con `playwright`, `numpy` e `scipy`, Chromium
 (`python -m playwright install chromium`), ffmpeg e il font Inter (`fonts-inter` su Ubuntu).
 
+Ogni video (guide e partite) finisce con la stessa schermata: logo, testo della scena `outro`, e il riquadro "Segui il
+canale Telegram · t.me/quotaguru" (`TELEGRAM` in `render.py`), tenuta a schermo almeno 6,5 secondi. Uno storyboard può
+toglierlo con `"telegram": ""`.
+
 ## Video delle guide
 
 Uno storyboard per guida in `storyboards/<slug>.json`. Il render produce `public/video/guide/<slug>-16x9.mp4`,
@@ -14,7 +18,8 @@ python3 scripts/guide-videos/render.py come-leggere-le-quote             # entra
 python3 scripts/guide-videos/render.py come-leggere-le-quote --stills 3,12   # solo alcuni fotogrammi, per controllo
 ```
 
-Poi la guida va aggiunta in `src/data/guideVideos.ts`. Questi video stanno nel repository.
+Poi la guida va aggiunta in `src/data/guideVideos.ts`. Questi video stanno nel repository. Quando cambiano
+`player.html` o `render.py`, il workflow "Video" rigenera tutte le guide al push su main.
 
 ## Video dei pronostici delle partite
 
