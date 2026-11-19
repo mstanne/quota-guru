@@ -1,13 +1,18 @@
 # Archivio dei pronostici di QuotaGuru
 
-Ogni pronostico pubblicato su www.quotaguru.it, salvato a ogni aggiornamento del sito (scripts/archive-predictions.mjs).
+Ogni pronostico pubblicato su www.quotaguru.it, salvato a ogni aggiornamento del sito. La cronologia dei
+commit di questo branch mostra quando ogni pronostico è stato pubblicato; il bilancio è su https://www.quotaguru.it/bilancio-pronostici.
 
-- `calcio/AAAA-MM.json`, `nba/AAAA-MM.json`: una partita per riga, raggruppate per mese di inizio.
+- `calcio/AAAA-MM.json`, `nba/AAAA-MM.json`: elenco delle partite del mese, in ordine di inizio.
+- `kickoff`, `where`, `label`: inizio (UTC), competizione e partita; `national`: partita tra nazionali;
+  `url`: pagina della partita sul sito (`path` è lo stesso indirizzo senza dominio).
 - `firstPublished`: prima pubblicazione; `published`: ultima versione pubblicata prima dell'inizio
   (`versions` = quante volte è cambiata). Dall'inizio della partita il pronostico non viene più modificato.
-- `pick`: esito indicato come più probabile; `result` e `hit`: risultato finale e se il pronostico era giusto.
+- `pick`: esito indicato come più probabile; `prediction`: probabilità e numeri del modello.
+- `result` e `hit`: risultato finale e se il pronostico era giusto (`graded`: quando è stato registrato).
 
-La cronologia dei commit di questo branch mostra quando ogni pronostico è stato pubblicato.
+Fino al 19 novembre 2026 i file erano indicizzati con l'identificativo della partita del fornitore dei dati: le
+versioni da allora in poi non lo contengono.
 
 ## Licenza
 
