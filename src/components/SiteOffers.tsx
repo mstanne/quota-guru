@@ -1,12 +1,14 @@
 // Welcome offers on every page, right under the page's main section (as on the home, where they follow the opening
 // block): rendered by PageHeader and by the headers of the match pages. Not on the home (its own block), on the
-// offers pages themselves, nor on the guides about problem gambling and self-exclusion, where an offer is out of place.
+// offers pages themselves, nor on the guides about problem gambling and self-exclusion, where an offer is out of place,
+// nor on /widget, where the embedded widgets link (other sites must not lead to gambling offers).
 import { useLocation, useNavigate } from "react-router";
 import { paths } from "../routes";
 import { BonusSection } from "./BonusSection";
 
 const NO_SITE_OFFERS = [
   paths.bonus,
+  "/widget", // WIDGET_PAGE in src/lib/widgets.ts (not imported: it would pull the season data into every page)
   `${paths.guide}/gioco-problematico-dove-chiedere-aiuto`,
   `${paths.guide}/autoesclusione-e-limiti-di-gioco`,
 ];

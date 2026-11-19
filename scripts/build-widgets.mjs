@@ -3,10 +3,11 @@
 //   dist/embed/<id>/index.html     no app, no age gate, no offers: only the table, inline styles, "Dati: Quota Guru"
 // The list is src/data/widgets.json (also read by the /widget page, which shows each one with its embed code).
 // The embed code puts the iframe and a link to the site in the host page: the link is what counts for search engines.
+// Every link goes to /widget, which shows no welcome offers (Decreto Dignità: see src/lib/widgets.ts widgetTarget).
 // Light theme with ?tema=chiaro. The pages are not indexed (public/_headers: X-Robots-Tag on /embed/*).
 //
 // Sources: src/data/football.json (standings), src/data/football-season-sim.json (season chances, European cups:
-// scripts/predict-football.mjs), src/data/nba-season.json (scripts/predict-basket.mjs), src/data/teams/index.json.
+// scripts/predict-football.mjs), src/data/nba-season.json (scripts/predict-basket.mjs).
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -25,9 +26,6 @@ const { widgets } = read("src/data/widgets.json", { widgets: [] });
 const football = read("src/data/football.json", { competitions: [] });
 const sim = read("src/data/football-season-sim.json", { competitions: {} });
 const nba = read("src/data/nba-season.json", { teams: {} });
-const teams = read("src/data/teams/index.json", { football: [], nba: [] });
-const footballSlug = new Map((teams.football ?? []).map((t) => [t.id, t.slug]));
-const nbaSlug = new Map((teams.nba ?? []).map((t) => [t.id, t.slug]));
 
 const esc = (s) =>
   String(s ?? "")
@@ -45,9 +43,10 @@ const when = (iso) =>
   iso
     ? new Date(iso).toLocaleString("it-IT", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Rome" })
     : null;
-const out = (href) => `${SITE}${href}${href.endsWith("/") ? "" : "/"}?utm_source=widget&amp;utm_medium=embed`;
-const teamLink = (name, slug, base) =>
-  slug ? `<a href="${out(`${base}/${slug}`)}" target="_blank" rel="noopener">${esc(name)}</a>` : esc(name);
+// The only link of a widget goes to /widget (no welcome offers there, see src/components/SiteOffers.tsx): a widget
+// on another site must not lead to gambling offers. Team names are plain text for the same reason.
+const out = (id) => `${SITE}/widget/?utm_source=widget&amp;utm_medium=embed#${id}`;
+const teamLink = (name) => esc(name);
 /** Background tint of a chance (0 → none, 1 → full). */
 const tint = (p, kind) => (p >= 0.005 ? ` style="--p:${Math.min(1, p).toFixed(2)}" class="c ${kind}"` : ` class="c"`);
 
@@ -84,7 +83,7 @@ if(/[?&]tema=chiaro/.test(location.search))document.documentElement.classList.ad
 document.querySelectorAll(".tabs button").forEach(function(b){b.addEventListener("click",function(){document.querySelectorAll(".tabs button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});document.querySelectorAll("[data-tab]").forEach(function(t){t.hidden=t.getAttribute("data-tab")!==b.getAttribute("data-for")})})});
 </script>`;
 
-function page({ title, subtitle, body, link, updated }) {
+function page({ id, title, subtitle, body, link, updated }) {
   return `<!doctype html>
 <html lang="it">
 <head>
@@ -100,7 +99,7 @@ function page({ title, subtitle, body, link, updated }) {
 <h1>${esc(title)}</h1>
 <p class="s">${esc(subtitle)}</p>
 ${body}
-<div class="f"><span>${updated ? `Aggiornato al ${esc(updated)} · ` : ""}stime statistiche, non certezze</span><span>Dati e probabilità: <a href="${out(link.href)}" target="_blank" rel="noopener">Quota Guru</a></span></div>
+<div class="f"><span>${updated ? `Aggiornato al ${esc(updated)} · ` : ""}stime statistiche, non certezze</span><span>Dati e probabilità: <a href="${out(id)}" target="_blank" rel="noopener">Quota Guru</a></span></div>
 </div>
 ${SCRIPT}
 </body>
@@ -118,11 +117,12 @@ function leagueWidget(w) {
     .map((r) => {
       const pos = s?.teams?.[r.team.id]?.pos;
       const cells = zones.map((z) => (pos ? `<td${tint(zoneP(pos, z), z[3])}>${pct(zoneP(pos, z))}</td>` : `<td>–</td>`)).join("");
-      return `<tr><td class="n">${r.position}</td><td class="l">${teamLink(r.team.shortName, footballSlug.get(r.team.id), "/calcio/squadre")}</td><td>${r.playedGames}</td><td><b>${r.points}</b></td>${cells}</tr>`;
+      return `<tr><td class="n">${r.position}</td><td class="l">${teamLink(r.team.shortName)}</td><td>${r.playedGames}</td><td><b>${r.points}</b></td>${cells}</tr>`;
     })
     .join("\n");
   const head = `<tr><th>#</th><th class="l">Squadra</th><th title="Partite giocate">G</th><th>Pt</th>${zones.map((z) => `<th>${z[0]}</th>`).join("")}</tr>`;
   return page({
+    id: w.id,
     title: `Classifica ${c.name} e probabilità`,
     subtitle: s ? `Le probabilità di fine stagione secondo il modello di Quota Guru (${(sim.runs ?? 10000).toLocaleString("it-IT")} stagioni simulate)` : "Classifica aggiornata",
     body: `<table><thead>${head}</thead><tbody>${rows}</tbody></table>`,
@@ -140,10 +140,11 @@ function cupWidget(w) {
     .map((r) => {
       const t = s.teams[r.team.id];
       const cell = (p, k) => (t ? `<td${tint(p, k)}>${pct(p)}</td>` : "<td>–</td>");
-      return `<tr><td class="n">${r.position}</td><td class="l">${teamLink(r.team.shortName, footballSlug.get(r.team.id), "/calcio/squadre")}</td><td><b>${r.points}</b></td>${cell(t?.stage?.[0] ?? 0, "b")}${cell(t?.stage?.[2] ?? 0, "b")}${cell(t?.stage?.[6] ?? 0, "g")}</tr>`;
+      return `<tr><td class="n">${r.position}</td><td class="l">${teamLink(r.team.shortName)}</td><td><b>${r.points}</b></td>${cell(t?.stage?.[0] ?? 0, "b")}${cell(t?.stage?.[2] ?? 0, "b")}${cell(t?.stage?.[6] ?? 0, "g")}</tr>`;
     })
     .join("\n");
   return page({
+    id: w.id,
     title: `${c.name}: classifica e chi vince`,
     subtitle: "Fase campionato e probabilità del modello di Quota Guru: prime 8, ottavi e vittoria finale",
     body: `<table><thead><tr><th>#</th><th class="l">Squadra</th><th>Pt</th><th>Prime 8</th><th>Ottavi</th><th>Vince</th></tr></thead><tbody>${rows}</tbody></table>`,
@@ -162,12 +163,13 @@ function nbaWidget() {
       .map((t, i) => {
         const s = t.sim;
         const cell = (p, k) => (s ? `<td${tint(p, k)}>${pct(p)}</td>` : "<td>–</td>");
-        return `<tr><td class="n">${i + 1}</td><td class="l">${teamLink(t.shortName, nbaSlug.get(t.id), "/basket/nba/squadre")}</td><td><b>${t.w}-${t.l}</b></td><td>${s ? dec(s.xw) : "–"}</td>${cell(s?.stage?.[1] ?? 0, "b")}${cell(s?.stage?.[5] ?? 0, "g")}</tr>`;
+        return `<tr><td class="n">${i + 1}</td><td class="l">${teamLink(t.shortName)}</td><td><b>${t.w}-${t.l}</b></td><td>${s ? dec(s.xw) : "–"}</td>${cell(s?.stage?.[1] ?? 0, "b")}${cell(s?.stage?.[5] ?? 0, "g")}</tr>`;
       })
       .join("\n");
     return `<table data-tab="${conf}"${conf === "ovest" ? " hidden" : ""}><thead><tr><th>#</th><th class="l">Squadra</th><th>Record</th><th title="Vittorie attese a fine stagione regolare">V. attese</th><th>Playoff</th><th>Titolo</th></tr></thead><tbody>${rows}</tbody></table>`;
   };
   return page({
+    id: "nba",
     title: "Classifica NBA e proiezione",
     subtitle: "Vittorie attese e probabilità di playoff e titolo secondo il modello di Quota Guru",
     body: `<div class="tabs"><button type="button" data-for="est" aria-pressed="true">Est</button><button type="button" data-for="ovest" aria-pressed="false">Ovest</button></div>${confTable("est")}${confTable("ovest")}`,
