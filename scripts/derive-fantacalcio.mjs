@@ -11,6 +11,9 @@
 // conceded −1, penalty saved +3. It counts the chance that the player plays little or not at all, so it compares
 // players directly ("chi schierare"); the base mark (voto) is not estimated.
 //
+// Roles: the official list of the game (data/fantacalcio-ruoli.json, scripts/lib/fanta-roles.mjs), classic role and
+// Mantra roles, not the API positions; players who are not in the list are left out (they cannot be fielded).
+//
 // Writes:
 //   src/data/fantacalcio.json        the round, its matches and every player (pages of the site)
 //   <archive>/fantacalcio.json       the same file in the predictions archive (`archivio-pronostici` branch): the
@@ -21,6 +24,7 @@ import { fileURLToPath } from "node:url";
 import { BUILD_TIME_FILE } from "../src/lib/eventTiming.mjs";
 import { scorerModel } from "./lib/scorers.mjs";
 import { absenceIt } from "./lib/italian.mjs";
+import { fantaRoles } from "./lib/fanta-roles.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "data", "fantacalcio.json");
@@ -50,8 +54,6 @@ const api = read("data/team-seasons-api.json", { football: {} }).football ?? {};
 const unavailable = read("data/giocatori-extra.json", { unavailable: {} }).unavailable ?? {};
 const teamById = new Map(teams.map((t) => [t.id, t]));
 
-/** Fantasy roles from the API positions (they can differ from the official list of the game). */
-const ROLE = { Goalkeeper: "P", Defender: "D", Midfielder: "C", Attacker: "A", Forward: "A" };
 const r2 = (x) => Math.round(x * 100) / 100;
 const r3 = (x) => Math.round(x * 1000) / 1000;
 
@@ -73,6 +75,8 @@ const startersOf = (lineup) => {
   return ids.length >= 10 ? new Set(ids) : null;
 };
 
+const stats = { roles: 0, notInSquads: 0, left: [] };
+
 function build() {
   const sa = football.competitions.find((c) => c.code === "SA");
   const model = scorerModel(root, nowMs);
@@ -84,6 +88,19 @@ function build() {
   const n = Math.min(...pending.map((m) => m.matchday));
   const matches = regular.filter((m) => m.matchday === n).sort((a, b) => a.utcDate.localeCompare(b.utcDate));
   const season = Number(sa.season?.startDate?.slice(0, 4)) || null;
+  // roles of the official list of the game, matched to the squads of the league
+  const clubs = new Map(regular.flatMap((m) => [m.homeTeam, m.awayTeam]).map((t) => [t.id, t.shortName]));
+  const fr = fantaRoles(
+    root,
+    [...clubs].map(([id, club]) => ({ club, players: api[`${id}-${season}`] ?? [] })),
+  );
+  if (!fr.loaded) {
+    console.log("fantacalcio.json: manca data/fantacalcio-ruoli.json (listone con i ruoli)");
+    return null;
+  }
+  const roleOf = (id) => fr.byId.get(id) ?? null;
+  stats.roles = fr.byId.size;
+  stats.notInSquads = fr.unmatched.length;
 
   const players = [];
   const outList = [];
@@ -119,8 +136,12 @@ function build() {
         lineup: official ? lineups[side] : null,
       });
       for (const x of list ?? []) {
-        const role = ROLE[x.pos];
-        if (!role) continue;
+        const fanta = roleOf(x.id);
+        if (!fanta) {
+          if (x.start >= 0.3) stats.left.push(`${x.name} (${club.shortName})`);
+          continue;
+        }
+        const role = fanta.role;
         // only who may play: expected in the match (or in the official line-up / on the bench)
         if (!official && x.minutes < 10 && x.start < 0.1) continue;
         // goalkeepers: only the one expected to start (the others would rank above him with a bonus of 0)
@@ -131,6 +152,7 @@ function build() {
           name: x.name,
           ...(slug ? { url: `/calcio/giocatori/${slug}-${x.id}` } : {}),
           role,
+          mantra: fanta.mantra,
           team: { id: club.id, name: club.shortName, slug: teamById.get(club.id)?.slug ?? null },
           opp: { id: opp.id, name: opp.shortName },
           home: side === "h",
@@ -149,8 +171,9 @@ function build() {
       const squad = api[`${club.id}-${season}`] ?? [];
       for (const p of squad) {
         const u = unavailable[String(p.id)];
-        if (!u || !ROLE[p.pos]) continue;
-        outList.push({ name: p.name, role: ROLE[p.pos], team: club.shortName, reason: absenceIt(u.reason) ?? null });
+        const fanta = roleOf(p.id);
+        if (!u || !fanta) continue;
+        outList.push({ name: p.name, role: fanta.role, team: club.shortName, reason: absenceIt(u.reason) ?? null });
       }
     }
   }
@@ -189,3 +212,8 @@ console.log(
       }`
     : "fantacalcio.json: nessuna giornata di Serie A con pronostici e dati dei giocatori",
 );
+if (doc) {
+  console.log(`  ruoli dal listone: ${stats.roles} giocatori abbinati, ${stats.notInSquads} del listone non trovati nelle rose`);
+  // players likely to play who are not in the list: a new signing or a name to check in data/fantacalcio-ruoli.json
+  if (stats.left.length) console.log(`  esclusi perché non nel listone (titolarità ≥ 30%): ${stats.left.join(", ")}`);
+}

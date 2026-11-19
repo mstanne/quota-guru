@@ -8,7 +8,10 @@ export interface FantaPlayer {
   id: number;
   name: string;
   url?: string;
+  /** classic role of the official list of the game (listone) */
   role: Role;
+  /** Mantra roles of the official list (Por, Dc, Dd, Ds, B, E, M, C, T, W, A, Pc) */
+  mantra?: string[];
   team: { id: number; name: string; slug: string | null };
   opp: { id: number; name: string };
   home: boolean;
@@ -62,6 +65,24 @@ export const ROLES: { key: Role; name: string; plural: string; anchor: string }[
   { key: "A", name: "Attaccante", plural: "Attaccanti", anchor: "attaccanti" },
 ];
 export const roleName = (r: Role) => ROLES.find((x) => x.key === r)!.name;
+/** Mantra roles in words (scripts/lib/fanta-roles.mjs). */
+export const MANTRA_NAMES: Record<string, string> = {
+  Por: "Portiere",
+  Dc: "Difensore centrale",
+  Dd: "Difensore destro",
+  Ds: "Difensore sinistro",
+  B: "Braccetto",
+  E: "Esterno",
+  M: "Mediano",
+  C: "Centrocampista",
+  T: "Trequartista",
+  W: "Ala",
+  A: "Attaccante",
+  Pc: "Punta centrale",
+};
+/** "E/W" and "Esterno, Ala" of the Mantra roles (null without them, and for goalkeepers: always "Por"). */
+export const mantraOf = (p: FantaPlayer) =>
+  p.mantra?.length && p.role !== "P" ? { short: p.mantra.join("/"), long: p.mantra.map((r) => MANTRA_NAMES[r] ?? r).join(", ") } : null;
 export const playersOf = (r: Role) => doc.players.filter((p) => p.role === r);
 export const playerById = (id: number) => doc.players.find((p) => p.id === id);
 export const matchOf = (p: FantaPlayer) => doc.matches.find((m) => m.id === p.match);

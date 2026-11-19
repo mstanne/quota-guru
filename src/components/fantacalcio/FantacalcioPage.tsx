@@ -22,7 +22,7 @@ import {
   playsLikely,
   type Role,
 } from "../../lib/fantacalcio";
-import { Band, Fixture, PlayerName, pc } from "./FantaUi";
+import { Band, Fixture, MantraRole, PlayerName, pc } from "./FantaUi";
 
 const SHOWN = 20;
 const th = "text-right font-normal px-2 py-3 whitespace-nowrap";
@@ -46,7 +46,9 @@ function RoleTable({ role, onlyLikely }: { role: (typeof ROLES)[number]; onlyLik
           <thead>
             <tr className="text-slate-400 border-b border-slate-800">
               <th scope="col" className="text-left font-normal px-4 py-3 w-10">#</th>
-              <th scope="col" className="text-left font-normal py-3">Giocatore</th>
+              <th scope="col" className="text-left font-normal py-3" title="Tra i riquadri il ruolo Mantra del listone">
+                Giocatore
+              </th>
               <th scope="col" className="text-left font-normal px-2 py-3">Partita</th>
               <th scope="col" className="text-left font-normal px-2 py-3">Titolare</th>
               {gk ? (
@@ -71,6 +73,7 @@ function RoleTable({ role, onlyLikely }: { role: (typeof ROLES)[number]; onlyLik
                 <td className="px-4 py-2.5 text-slate-400 tabular-nums">{i + 1}</td>
                 <th scope="row" className="py-2.5 text-left font-normal">
                   <PlayerName p={p} />
+                  <MantraRole p={p} className="ml-2 align-middle" />
                 </th>
                 <td className="px-2">
                   <Fixture p={p} />
@@ -239,7 +242,8 @@ export function FantacalcioPage() {
             peso alle recenti) e dagli indisponibili; con le formazioni ufficiali diventa certa. Gol, assist e
             ammonizioni vengono dai numeri del giocatore in stagione, rapportati ai gol e ai cartellini attesi della sua
             squadra nel pronostico della partita; la porta inviolata è la probabilità che l'avversario non segni. I ruoli
-            seguono la posizione in campo dei dati ufficiali e possono differire dal listone del gioco.
+            sono quelli del listone ufficiale del Fantacalcio: il ruolo classico divide le tabelle, accanto al nome c'è
+            il ruolo Mantra. Chi non è nel listone non compare.
           </p>
           <p>
             Stime statistiche, non certezze: il modello non conosce le scelte degli allenatori prima delle formazioni
