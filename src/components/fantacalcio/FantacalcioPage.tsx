@@ -1,7 +1,7 @@
 // /fantacalcio — fantasy football advice for the next round of Serie A: every player by role, ordered by expected
 // bonus, with start chance, goal, assist, clean sheet and booking chances (src/lib/fantacalcio.ts).
 import { useState } from "react";
-import { Shirt, Scale } from "lucide-react";
+import { Shirt, Scale, Search, X } from "lucide-react";
 import { Link } from "../../lib/links";
 import { PageHeader } from "../layout/PageHeader";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";
@@ -20,6 +20,7 @@ import {
   hasFanta,
   playersOf,
   playsLikely,
+  type FantaPlayer,
   type Role,
 } from "../../lib/fantacalcio";
 import { Band, Fixture, MantraRole, PlayerName, pc } from "./FantaUi";
@@ -28,10 +29,33 @@ const SHOWN = 20;
 const th = "text-right font-normal px-2 py-3 whitespace-nowrap";
 const td = "text-right px-2 tabular-nums";
 
-function RoleTable({ role, onlyLikely }: { role: (typeof ROLES)[number]; onlyLikely: boolean }) {
+/** Lower case without accents: "Kone" finds "Koné", "jimenez" finds "Álex Jiménez". */
+const fold = (s: string) =>
+  s
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[øØ]/g, "o")
+    .replace(/[đð]/g, "d")
+    .replace(/[’']/g, "")
+    .trim();
+/** Every word of the search in the player's name or club ("lautaro", "inter thuram", "dimarco"). */
+const matchesQuery = (p: FantaPlayer, q: string) => {
+  const hay = fold(`${p.name} ${p.team.name}`);
+  return fold(q)
+    .split(/\s+/)
+    .every((w) => hay.includes(w));
+};
+
+function RoleTable({ role, onlyLikely, query }: { role: (typeof ROLES)[number]; onlyLikely: boolean; query: string }) {
   const [all, setAll] = useState(false);
-  const list = playersOf(role.key as Role).filter((p) => !onlyLikely || playsLikely(p));
-  const shown = all ? list : list.slice(0, SHOWN);
+  const ranked = playersOf(role.key as Role).filter((p) => !onlyLikely || playsLikely(p));
+  // searching: every player of the role who matches, also the unlikely starters, with his place in the ranking
+  const searching = query.trim().length > 0;
+  const list = searching ? playersOf(role.key as Role).filter((p) => matchesQuery(p, query)) : ranked;
+  if (searching && !list.length) return null;
+  const shown = all || searching ? list : list.slice(0, SHOWN);
+  const rank = (p: FantaPlayer) => playersOf(role.key as Role).indexOf(p) + 1;
   const gk = role.key === "P";
   return (
     <section id={role.anchor} aria-labelledby={`${role.anchor}-titolo`} className="scroll-mt-24">
@@ -70,7 +94,7 @@ function RoleTable({ role, onlyLikely }: { role: (typeof ROLES)[number]; onlyLik
           <tbody>
             {shown.map((p, i) => (
               <tr key={p.id} className="border-b border-slate-800 last:border-0">
-                <td className="px-4 py-2.5 text-slate-400 tabular-nums">{i + 1}</td>
+                <td className="px-4 py-2.5 text-slate-400 tabular-nums">{searching ? rank(p) : i + 1}</td>
                 <th scope="row" className="py-2.5 text-left font-normal">
                   <PlayerName p={p} />
                   <MantraRole p={p} className="ml-2 align-middle" />
@@ -102,7 +126,7 @@ function RoleTable({ role, onlyLikely }: { role: (typeof ROLES)[number]; onlyLik
           </tbody>
         </table>
       </div>
-      {list.length > SHOWN && (
+      {!searching && list.length > SHOWN && (
         <button
           type="button"
           onClick={() => setAll((v) => !v)}
@@ -162,7 +186,10 @@ export function FantacalcioPage() {
   const ok = hasFanta();
   usePageMeta(ok ? fantaMeta() : null);
   const [onlyLikely, setOnlyLikely] = useState(true);
+  const [query, setQuery] = useState("");
   if (!ok) return <NotFoundPage />;
+  const searching = query.trim().length > 0;
+  const found = searching ? fanta.players.filter((p) => matchesQuery(p, query)).length : 0;
   const deadline = deadlineText();
   return (
     <div className="min-h-screen bg-slate-950">
@@ -210,13 +237,55 @@ export function FantacalcioPage() {
             Chi schierare? Confronta i giocatori
           </Link>
           <label className="ml-auto inline-flex items-center gap-2 text-sm text-slate-300">
-            <input type="checkbox" checked={onlyLikely} onChange={(e) => setOnlyLikely(e.target.checked)} />
+            <input
+              type="checkbox"
+              checked={onlyLikely}
+              onChange={(e) => setOnlyLikely(e.target.checked)}
+              disabled={searching}
+            />
             Solo titolari probabili
           </label>
         </nav>
 
+        <div role="search" className="max-w-xl">
+          <label htmlFor="cerca-giocatore" className="sr-only">
+            Cerca un giocatore
+          </label>
+          <div className="relative">
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" aria-hidden="true" />
+            <input
+              id="cerca-giocatore"
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={(e) => e.key === "Escape" && setQuery("")}
+              placeholder="Cerca un giocatore o una squadra (es. Lautaro, Dimarco, Napoli)"
+              autoComplete="off"
+              spellCheck={false}
+              className="w-full rounded-lg border border-slate-700 bg-slate-900 py-2.5 pl-9 pr-9 text-sm text-white placeholder:text-slate-500 focus:border-slate-500 focus:outline-none [&::-webkit-search-cancel-button]:hidden"
+            />
+            {searching && (
+              <button
+                type="button"
+                onClick={() => setQuery("")}
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-1 text-slate-400 hover:text-white"
+                aria-label="Cancella la ricerca"
+              >
+                <X className="h-4 w-4" aria-hidden="true" />
+              </button>
+            )}
+          </div>
+          <p className="mt-2 text-sm text-slate-400" aria-live="polite">
+            {searching
+              ? found
+                ? `${found} ${found === 1 ? "giocatore trovato" : "giocatori trovati"} (anche chi difficilmente sarà titolare; # è la posizione nella classifica del ruolo)`
+                : "Nessun giocatore trovato tra quelli della giornata: chi non è nel listone o non gioca questa giornata non compare."
+              : ""}
+          </p>
+        </div>
+
         {ROLES.map((r) => (
-          <RoleTable key={r.key} role={r} onlyLikely={onlyLikely} />
+          <RoleTable key={r.key} role={r} onlyLikely={onlyLikely} query={query} />
         ))}
 
         <Matches />
