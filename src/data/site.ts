@@ -12,8 +12,8 @@ export const site = {
   company: "Francesco Torcè",
   vatNumber: "",
   address: "",
-  email: "francescotorce@gmail.com",
-  privacyEmail: "francescotorce@gmail.com",
+  email: "info.quotaguru@gmail.com",
+  privacyEmail: "info.quotaguru@gmail.com",
   pec: "",
   /** Date of the last review of the legal pages, e.g. "13 ottobre 2026". */
   legalUpdatedAt: "25 ottobre 2026",
