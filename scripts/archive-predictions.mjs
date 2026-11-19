@@ -6,16 +6,20 @@
 // time is kept), from kick-off on the entry is locked and is never changed again, except to add the final result.
 // Entries are never deleted.
 //
-// Where the archive lives: PREDICTION_ARCHIVE_DIR (default .cache/predictions-archive). On GitHub the workflow
-// keeps that folder in the `archivio-pronostici` branch of the repository and commits it after every build: the
-// commit history is the public, timestamped proof of when each prediction was published.
+// Where the archive lives: PREDICTION_ARCHIVE_DIR (default .cache/predictions-archive). The working archive is keyed
+// by the API-Football / API-NBA match ids, which may not be passed on: on GitHub scripts/archive-branch.sh keeps it in
+// the `archivio-pronostici` branch of the PRIVATE repository quota-guru-dati. The public copy (PUBLIC_ARCHIVE_DIR,
+// default .cache/archivio-pubblico) has only the predictions, without those ids: archive-branch.sh commits it to
+// the `archivio-pronostici` branch of this public repository after every build, so its commit history stays the
+// public, timestamped proof of when each prediction was published (docs/archivio-pronostici.md).
 //
 // Writes:
 //   <archive>/calcio/<YYYY-MM>.json, <archive>/nba/<YYYY-MM>.json   { [matchId]: Entry }  (month of kick-off)
+//   <public>/calcio/<YYYY-MM>.json, <public>/nba/<YYYY-MM>.json, <public>/README.md   public copy: [PublicEntry]
 //   src/data/track-record.json     summary for the site: totals, last 30 days, last 10
 //   src/data/archived-predictions-<sport>.json   archived prediction of the matches in the current data that have
 //                                   started (shown on their match pages instead of a recalculation)
-//   public/dati/archivio-pronostici-<sport>.json   full archive, downloadable from the site
+//   public/dati/archivio-pronostici-<sport>.json   full archive (public entries), downloadable from the site
 import { ARCHIVE_TERMS, PREDICTIONS_LICENSE } from "../src/lib/archiveLicense.mjs";
 import fs from "node:fs";
 import path from "node:path";
@@ -24,6 +28,8 @@ import { BUILD_TIME_FILE } from "../src/lib/eventTiming.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const archiveDir = path.resolve(root, process.env.PREDICTION_ARCHIVE_DIR ?? ".cache/predictions-archive");
+const publicDir = path.resolve(root, process.env.PUBLIC_ARCHIVE_DIR ?? ".cache/archivio-pubblico");
+const siteUrl = (process.env.SITE_URL || "https://www.quotaguru.it").replace(/\/$/, "");
 const readJson = (f, fallback = null) => {
   try {
     return JSON.parse(fs.readFileSync(f, "utf8"));
@@ -320,18 +326,70 @@ for (const [sport, log] of [
   writeJson(path.join(root, `src/data/archived-predictions-${sport}.json`), byId);
 }
 
-// full archive, downloadable from the site
+// ---------------------------------------------------------------------------------------- public copy
+// What leaves the private archive: an explicit list of fields, so a field added to the entries later stays private
+// until it is added here. Never the API-Football / API-NBA match id; date, teams and final result stay (they make the
+// track record verifiable). The prediction is the model's own output.
+const PUBLIC_FIELDS = [
+  "kickoff", "where", "label", "national", "path", "firstPublished", "published", "versions",
+  "pick", "prediction", "result", "hit", "graded",
+];
+const publicEntry = (e) => {
+  const out = {};
+  for (const k of PUBLIC_FIELDS) if (e[k] !== undefined) out[k] = e[k];
+  if (e.path) out.url = siteUrl + e.path;
+  return out;
+};
+const publicList = (log) =>
+  Object.values(log)
+    .sort((a, b) => a.kickoff.localeCompare(b.kickoff) || (a.path ?? "").localeCompare(b.path ?? ""))
+    .map(publicEntry);
+const PUBLIC_README = `# Archivio dei pronostici di QuotaGuru
+
+Ogni pronostico pubblicato su ${siteUrl.replace(/^https?:\/\//, "")}, salvato a ogni aggiornamento del sito. La cronologia dei
+commit di questo branch mostra quando ogni pronostico è stato pubblicato; il bilancio è su ${siteUrl}/bilancio-pronostici.
+
+- \`calcio/AAAA-MM.json\`, \`nba/AAAA-MM.json\`: elenco delle partite del mese, in ordine di inizio.
+- \`kickoff\`, \`where\`, \`label\`: inizio (UTC), competizione e partita; \`national\`: partita tra nazionali;
+  \`url\`: pagina della partita sul sito (\`path\` è lo stesso indirizzo senza dominio).
+- \`firstPublished\`: prima pubblicazione; \`published\`: ultima versione pubblicata prima dell'inizio
+  (\`versions\` = quante volte è cambiata). Dall'inizio della partita il pronostico non viene più modificato.
+- \`pick\`: esito indicato come più probabile; \`prediction\`: probabilità e numeri del modello.
+- \`result\` e \`hit\`: risultato finale e se il pronostico era giusto (\`graded\`: quando è stato registrato).
+
+Fino al 19 novembre 2026 i file erano indicizzati con l'identificativo della partita del fornitore dei dati: le
+versioni da allora in poi non lo contengono.
+
+## Licenza
+
+${ARCHIVE_TERMS}
+
+Testo della licenza: ${PREDICTIONS_LICENSE.url}
+`;
+fs.rmSync(publicDir, { recursive: true, force: true });
 for (const [sport, log] of [
   ["calcio", fLog],
   ["nba", bLog],
 ]) {
-  const list = Object.values(log).sort((a, b) => a.kickoff.localeCompare(b.kickoff));
+  const list = publicList(log);
+  // the same months as the private archive
+  const byMonth = {};
+  for (const e of list) (byMonth[e.kickoff.slice(0, 7)] ??= []).push(e);
+  for (const [month, entries] of Object.entries(byMonth)) {
+    const f = path.join(publicDir, sport, `${month}.json`);
+    fs.mkdirSync(path.dirname(f), { recursive: true });
+    // one match per line, as in the private archive: readable diffs in the commit history
+    fs.writeFileSync(f, "[\n" + entries.map((e) => JSON.stringify(e)).join(",\n") + "\n]\n");
+  }
+  // full archive, downloadable from the site
   writeJson(path.join(root, "public/dati", `archivio-pronostici-${sport}.json`), {
     generatedAt: nowIso,
     licenza: { pronostici: PREDICTIONS_LICENSE.name, url: PREDICTIONS_LICENSE.url, condizioni: ARCHIVE_TERMS },
     entries: list,
   });
 }
+fs.mkdirSync(publicDir, { recursive: true });
+fs.writeFileSync(path.join(publicDir, "README.md"), PUBLIC_README);
 
 const line = (s, st, log) =>
   `${s}: ${Object.keys(log).length} pronostici in archivio (+${st.added} nuovi, ${st.updated} aggiornati prima del via, ${st.graded} con il risultato)`;

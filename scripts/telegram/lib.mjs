@@ -1,5 +1,5 @@
 // Shared helpers of the Telegram channel publisher (scripts/telegram/publish.mjs): Rome time, formatting, data
-// loading (from the `dati` and `archivio-pronostici` branches through the GitHub API, or from local folders),
+// loading (from the `dati` and `archivio-pronostici` branches of quota-guru-dati through the GitHub API, or from local folders),
 // the compliance filter, the register of sent posts and the call to the Telegram Bot API.
 import fs from "node:fs";
 import path from "node:path";
@@ -137,7 +137,8 @@ export async function loadVideoFile(file) {
  *                      secret DATI_TOKEN: src/data/football.json, basket.json)
  *   lineups            official line-ups already out (live worker), only when asked
  *   archive.calcio/nba every prediction the site published, with result and hit once graded
- *                      (`archivio-pronostici` branch, files of the previous, current and next month)
+ *                      (`archivio-pronostici` branch of the private repository quota-guru-dati, secret DATI_TOKEN:
+ *                      files of the previous, current and next month)
  *   tris               the threes locked by the site build (same branch, tris.json; scripts/lib/tris.mjs)
  *   multiple           the multiples of the day locked by the site build (same branch, multiple.json; scripts/lib/multiple.mjs)
  *   fantacalcio        fantasy football advice for the next Serie A round (same branch, fantacalcio.json;
@@ -161,7 +162,8 @@ export async function loadData(nowMs, { live = false } = {}) {
       ? readJsonFile(path.join(dataDir, f))
       : branchJson("dati", f, { repository: dataRepo(), token: process.env.DATI_TOKEN });
   const arch = async (f) => {
-    if (!archDir) return branchJson("archivio-pronostici", f);
+    // working archive (with the match ids): private repository quota-guru-dati (scripts/archive-branch.sh)
+    if (!archDir) return branchJson("archivio-pronostici", f, { repository: dataRepo(), token: process.env.DATI_TOKEN });
     const p = path.join(archDir, f);
     return fs.existsSync(p) ? readJsonFile(p) : null;
   };

@@ -8,8 +8,9 @@ coda delle guide Academy (`academy.json`).
 - `.github/workflows/telegram.yml` gira ogni 20 minuti tra le 7 e mezzanotte (ora di Roma).
 - `publish.mjs` invia le rubriche il cui orario è arrivato negli ultimi 100 minuti e che non risultano già inviate.
   Un ritardo di GitHub o un'esecuzione ripetuta non producono doppioni; il cambio dell'ora legale non richiede modifiche.
-- I dati vengono letti dal branch `dati` (calendario, classifiche, marcatori) e dal branch `archivio-pronostici`
-  (ogni pronostico pubblicato con esito, tris e multiple del giorno): i numeri sul canale sono gli stessi del sito.
+- I dati vengono letti dai branch `dati` (calendario, classifiche, marcatori) e `archivio-pronostici` (ogni
+  pronostico pubblicato con esito, tris e multiple del giorno) del repository privato `quota-guru-dati`, con il
+  segreto `DATI_TOKEN`: i numeri sul canale sono gli stessi del sito.
   I video della rubrica `video-pronostico`: indice dal branch `video-partite`, file dal bucket R2 (`VIDEO_BASE`; prove in
   locale: `TG_VIDEO_DIR`).
 - Il registro dei post inviati e la posizione nella coda Academy stanno nel branch `telegram-registro`, file `registro.json`.

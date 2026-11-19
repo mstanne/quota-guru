@@ -58,7 +58,8 @@ jobs:
           mkdir -p .cache
           GH_TOKEN="$DATI_TOKEN" gh api -H "Accept: application/vnd.github.raw+json" \
             "repos/mstanne/quota-guru-dati/contents/src/data/football.json?ref=dati" > .cache/football.json
-          git clone --quiet --depth 1 --branch archivio-pronostici "$url" .cache/archivio
+          # published predictions: private repository quota-guru-dati (scripts/archive-branch.sh)
+          PREDICTION_ARCHIVE_DIR=.cache/archivio scripts/archive-branch.sh restore
           if git ls-remote --exit-code --heads "$url" video-partite >/dev/null; then
             git clone --quiet --depth 1 --branch video-partite "$url" .cache/store
           else

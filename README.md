@@ -225,7 +225,7 @@ Al posto delle quote (che arriveranno con i feed degli operatori) home, liste pa
 - `node scripts/backtest-slip.mjs` controlla la probabilità della schedina: sullo storico (walk-forward) crea schedine
   casuali di 1–8 esiti di partite diverse e confronta la probabilità stimata (prodotto delle probabilità) con quante
   sono uscite davvero, per fasce di probabilità e per numero di esiti. Con `PUBLISHED_DIR=<cartella calcio del branch
-  archivio-pronostici>` aggiunge i pronostici realmente pubblicati. Le impostazioni del modello sono in
+  archivio-pronostici di quota-guru-dati>` aggiunge i pronostici realmente pubblicati. Le impostazioni del modello sono in
   `scripts/lib/football-fit.mjs`, comuni a `predict-football.mjs`.
 - **Schedina con probabilità**: in tutte le liste delle partite (calcio e NBA: calendari, pronostici, pagine del
   giorno, home) le probabilità delle partite in programma sono pulsanti che aggiungono l'esito alla schedina, con il
