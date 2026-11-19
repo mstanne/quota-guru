@@ -24,6 +24,7 @@ import {
   type Role,
 } from "../../lib/fantacalcio";
 import { Band, Fixture, MantraRole, PlayerName, pc } from "./FantaUi";
+import { TelegramBanner } from "../TelegramBanner";
 
 const SHOWN = 20;
 const th = "text-right font-normal px-2 py-3 whitespace-nowrap";
@@ -218,6 +219,8 @@ export function FantacalcioPage() {
             giochi, quindi si può usare per scegliere tra due giocatori. Il voto in pagella non è stimato.
           </p>
         </div>
+
+        <TelegramBanner topic="fantacalcio" className="max-w-3xl" />
 
         <nav aria-label="Ruoli" className="flex flex-wrap items-center gap-2">
           {ROLES.map((r) => (

@@ -5,6 +5,7 @@ import { BetSlipProvider } from "./context/BetSlipContext";
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
 import { HowPredictionsWork } from "./components/HowPredictionsWork";
+import { TelegramBanner } from "./components/TelegramBanner";
 import { BonusSection } from "./components/BonusSection";
 import { Footer } from "./components/Footer";
 import { BetSlip } from "./components/BetSlip";
@@ -261,6 +262,9 @@ function HomePage() {
       <HeroSection />
       <BonusSection onViewAllClick={() => navigate(paths.bonus)} />
       <UpcomingMatches />
+      <div className="container mx-auto px-4">
+        <TelegramBanner topic="home" />
+      </div>
       <HowPredictionsWork />
     </>
   );

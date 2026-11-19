@@ -31,6 +31,18 @@ const TEXTS = {
     title: "I pronostici del giorno su Telegram",
     text: "Sul canale ogni giorno le partite con le probabilità del modello, il tris, le multiple e i risultati contro il modello.",
   },
+  fantacalcio: {
+    title: "Consigli Fantacalcio su Telegram",
+    text: "La sera prima di ogni giornata di Serie A sul canale i giocatori con più bonus atteso ruolo per ruolo; poi le formazioni ufficiali, con i titolari attesi rimasti fuori.",
+  },
+  anteprima: {
+    title: "L'anteprima della giornata su Telegram",
+    text: "Prima di ogni giornata sul canale la partita più probabile, la più incerta e quella con più gol attesi; poi le formazioni ufficiali e i risultati contro il modello.",
+  },
+  home: {
+    title: "QuotaGuru su Telegram",
+    text: "Ogni giorno sul canale le partite con le probabilità del modello, il tris, le multiple, le formazioni ufficiali appena escono e i consigli Fantacalcio.",
+  },
   tv: {
     title: "Dove vederla, ogni venerdì su Telegram",
     text: "Il venerdì sul canale i canali TV di tutta la giornata di Serie A, poi le formazioni ufficiali partita per partita.",
@@ -55,6 +67,7 @@ export function TelegramBanner({
   return (
     <aside
       aria-label="Canale Telegram di QuotaGuru"
+      data-telegram={topic}
       className={`rounded-xl border border-slate-800 bg-slate-900 p-5 flex flex-col gap-4 ${stacked ? "" : "sm:flex-row sm:items-center"} ${className}`}
     >
       <span

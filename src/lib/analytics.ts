@@ -18,6 +18,9 @@
 //   archive_download   { sport, page }                 – download of the archive of published predictions
 //   matchday_nav       { competition, to, page }       – move to another round from a matchday page
 //   day_switch         { to, page }                    – switch between "pronostici di oggi" and "di domani"
+//   telegram_click     { placement, page }             – click on any link to the Telegram channel (t.me); placement
+//                                                         from the nearest data-telegram="…" (header, footer, banner
+//                                                         topic…), "testo" for links inside text
 //
 // Own visits: opening any page with ?interno=1 marks this browser as internal (saved in localStorage, ?interno=0
 // undoes it). GA4 then receives traffic_type=internal, excluded by the "Internal Traffic" data filter of the
@@ -152,7 +155,7 @@ function loadProvider() {
 }
 
 let listening = false;
-/** One document-level listener for declarative events (data-track) and helpline (tel:) links. */
+/** One document-level listener for declarative events (data-track), helpline (tel:) and Telegram (t.me) links. */
 function listenForClicks() {
   if (listening || typeof document === "undefined") return;
   listening = true;
@@ -172,6 +175,11 @@ function listenForClicks() {
         return;
       }
       if (target.closest('a[href^="tel:"]')) track("helpline_click", { page: currentPage() });
+      const telegram = target.closest<HTMLAnchorElement>('a[href*="t.me/"]');
+      if (telegram) {
+        const placement = telegram.closest<HTMLElement>("[data-telegram]")?.dataset.telegram || "testo";
+        track("telegram_click", { placement, page: currentPage() });
+      }
     },
     { capture: true },
   );

@@ -94,6 +94,7 @@ export function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Canale Telegram di QuotaGuru"
+                  data-telegram="header"
                   className="hidden lg:inline-flex items-center gap-2 h-9 px-4 rounded-full border-2 border-[#229ED9] text-white text-sm font-semibold hover:bg-[#229ED9]/15 transition-colors cursor-pointer"
                 >
                   <Send className="w-4 h-4 text-[#229ED9]" aria-hidden="true" />
@@ -160,6 +161,7 @@ export function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={closeMenu}
+                    data-telegram="menu-mobile"
                     className="col-span-2 inline-flex items-center gap-2 px-3 py-2.5 rounded-md bg-slate-800 border border-slate-700 text-white text-sm hover:border-slate-500"
                   >
                     <Send className="w-4 h-4 text-slate-300" aria-hidden="true" />

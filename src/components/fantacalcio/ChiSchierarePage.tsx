@@ -23,6 +23,7 @@ import {
   type FantaPlayer,
 } from "../../lib/fantacalcio";
 import { Band, Fixture, MantraRole, PlayerName, pc } from "./FantaUi";
+import { TelegramBanner } from "../TelegramBanner";
 
 const MAX = 3;
 const label = (p: FantaPlayer) => `${p.name} (${p.team.name})`;
@@ -164,6 +165,8 @@ export function ChiSchierarePage() {
         ) : (
           <p className="text-slate-400">Scegli almeno due giocatori da confrontare.</p>
         )}
+
+        <TelegramBanner topic="fantacalcio" className="max-w-3xl" />
 
         <div className="text-slate-400 text-xs max-w-3xl space-y-2">
           <p>

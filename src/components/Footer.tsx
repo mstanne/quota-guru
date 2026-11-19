@@ -162,7 +162,7 @@ export function Footer() {
               <p className="text-slate-400 text-sm">Dati sportivi: API-Sports (API-Football, API-NBA)</p>
             </div>
             {socialLinks.length > 0 && (
-              <ul className="flex items-center gap-2" aria-label="Profili social e contatti">
+              <ul className="flex items-center gap-2" aria-label="Profili social e contatti" data-telegram="footer">
                 {socialLinks.map(({ href, label, Icon }) => (
                   <li key={label}>
                     <a

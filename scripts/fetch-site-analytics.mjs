@@ -14,6 +14,7 @@
 // Output (OUT_DIR, default .cache/statistiche):
 //   ga4.json   last 28 days: totals (also last 7 days), by day, pages, landing pages, channels, sources, devices, countries, events,
 //              clicks to the bookmakers (outbound_click by operator, CTA position and page; also last 7 days)
+//              clicks to the Telegram channel (telegram_click by position and page)
 //   gsc.json   last 28 days (Search Console data arrive with ~3 days of delay): totals (also last 7 days), by day, queries, pages,
 //              query+page pairs, devices, countries, sitemaps
 //   riepilogo.md  short readable summary
@@ -106,6 +107,7 @@ async function ga4(token) {
     paesi: await report(["country"], ["sessions", "activeUsers"], { limit: 30 }),
     eventi: await report(["eventName"], ["eventCount", "totalUsers"], { limit: 60 }),
     clicBookmaker: await outboundClicks(report),
+    clicTelegram: await telegramClicks(report),
   };
 }
 
@@ -126,6 +128,21 @@ async function outboundClicks(report) {
     out.nota =
       "Dimensioni personalizzate operator/placement/page non registrate in GA4 (Amministrazione → Definizioni personalizzate): " +
       e.message.split("\n")[0];
+  }
+  return out;
+}
+
+// Clicks on the links to the Telegram channel (event telegram_click, see src/lib/analytics.ts): where on the site
+// they start (placement: header, footer, banner topic…) and from which pages. Same custom dimensions as above.
+async function telegramClicks(report) {
+  const opts = { event: "telegram_click", limit: 1000 };
+  const [tot] = await report([], ["eventCount", "totalUsers"], { ...opts, limit: 1 });
+  const [tot7] = await report([], ["eventCount", "totalUsers"], { ...opts, limit: 1, days: WEEK });
+  const out = { evento: "telegram_click", totali: tot ?? { eventCount: 0, totalUsers: 0 }, totali7giorni: tot7 ?? { eventCount: 0, totalUsers: 0 } };
+  try {
+    out.dettaglio = await report(["customEvent:placement", "customEvent:page"], ["eventCount", "totalUsers"], opts);
+  } catch (e) {
+    out.nota = "Dimensioni personalizzate placement/page non registrate in GA4: " + e.message.split("\n")[0];
   }
   return out;
 }
@@ -209,6 +226,28 @@ function clickSummary(c) {
   return out;
 }
 
+/** "Clic verso Telegram" section of riepilogo.md. */
+function telegramSummary(c) {
+  if (!c) return [];
+  const out = [
+    "## Clic verso il canale Telegram",
+    "",
+    `Ultimi ${DAYS} giorni: ${n(c.totali.eventCount)} clic da ${n(c.totali.totalUsers)} utenti · ultimi ${WEEK} giorni: ${n(c.totali7giorni.eventCount)} clic da ${n(c.totali7giorni.totalUsers)} utenti`,
+    "",
+  ];
+  if (c.nota) return [...out, `Dettaglio non disponibile. ${c.nota}`, ""];
+  if (!c.dettaglio.length) return [...out, "Nessun clic nel periodo.", ""];
+  out.push(
+    "**Per posizione** (header, footer, menu-mobile, banner per argomento, testo):",
+    ...sumBy(c.dettaglio, "customEvent:placement").map(([p, v]) => `- ${p} — ${n(v)}`),
+    "",
+    "**Pagine da cui partono più clic:**",
+    ...sumBy(c.dettaglio, "customEvent:page").slice(0, 10).map(([p, v]) => `- ${p} — ${n(v)}`),
+    "",
+  );
+  return out;
+}
+
 /** "Ultimi 7 giorni" line under the main totals; nothing when the main period is already that short. */
 function weekLine(src, format) {
   if (DAYS <= WEEK) return [];
@@ -232,6 +271,7 @@ function summary(g, s, errors) {
       ...g.pagine.slice(0, 10).map((p) => `- ${p.pagePath} — ${n(p.screenPageViews)}`),
       "",
       ...clickSummary(g.clicBookmaker),
+      ...telegramSummary(g.clicTelegram),
     );
   }
   if (s) {
