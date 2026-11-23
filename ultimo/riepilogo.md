@@ -1,24 +1,24 @@
-# Statistiche Quota Guru — 2026-11-16
+# Statistiche Quota Guru — 2026-11-23
 
-## Visitatori (GA4, 2026-10-19 → 2026-11-15)
+## Visitatori (GA4, 2026-10-26 → 2026-11-22)
 
-Ultimi 28 giorni: utenti 30 (nuovi 30) · sessioni 73 · pagine viste 483 · coinvolgimento 72.6% · durata media 434 s
+Ultimi 28 giorni: utenti 35 (nuovi 33) · sessioni 79 · pagine viste 517 · coinvolgimento 72.2% · durata media 374 s
 
-Ultimi 7 giorni (2026-11-09 → 2026-11-15): utenti 7 (nuovi 7) · sessioni 9 · pagine viste 119 · coinvolgimento 77.8% · durata media 806 s
+Ultimi 7 giorni (2026-11-16 → 2026-11-22): utenti 8 (nuovi 7) · sessioni 13 · pagine viste 47 · coinvolgimento 61.5% · durata media 72 s
 
-**Canali:** Direct 36 · Organic Search 20 · AI Assistant 16 · Unassigned 1
+**Canali:** Direct 32 · Organic Search 23 · AI Assistant 22 · Unassigned 2
 
 **Pagine più viste:**
-- /calcio/ — 81
-- / — 68
-- /pronostici/oggi/ — 26
-- /pronostici/ — 22
+- /calcio/ — 85
+- / — 65
+- /pronostici/oggi/ — 30
+- /pronostici/ — 27
 - /basket/ — 15
 - /pronostici/domani/ — 15
+- /pronostici/serie-a/ — 11
 - /pronostici/serie-a/juventus-napoli/ — 9
 - /siti-scommesse/ — 9
 - /pronostici/serie-a/sassuolo-fiorentina/ — 8
-- /tennis/ — 8
 
 ## Clic verso i bookmaker (pulsanti "Vai al sito")
 
@@ -35,11 +35,17 @@ Ultimi 28 giorni: 1 clic da 1 utenti · ultimi 7 giorni: 0 clic da 0 utenti
 
 "(not set)": clic registrati prima che le dimensioni personalizzate fossero create in GA4.
 
-## Ricerche Google (Search Console, 2026-10-17 → 2026-11-13)
+## Clic verso il canale Telegram
 
-Ultimi 28 giorni: clic 121 · impressioni 13.928 · CTR 0.9% · posizione media 18.7
+Ultimi 28 giorni: 0 clic da 0 utenti · ultimi 7 giorni: 0 clic da 0 utenti
 
-Ultimi 7 giorni (2026-11-07 → 2026-11-13): clic 9 · impressioni 1610 · CTR 0.6% · posizione media 28.4
+Nessun clic nel periodo.
+
+## Ricerche Google (Search Console, 2026-10-24 → 2026-11-20)
+
+Ultimi 28 giorni: clic 125 · impressioni 13.944 · CTR 0.9% · posizione media 18.7
+
+Ultimi 7 giorni (2026-11-14 → 2026-11-20): clic 4 · impressioni 16 · CTR 25.0% · posizione media 32.8
 
 **Ricerche con più impressioni:**
 - classifica serie a — 2515 impr., 0 clic, pos. 11.6

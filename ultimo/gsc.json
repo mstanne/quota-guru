@@ -1,24 +1,24 @@
 {
  "proprieta": "sc-domain:quotaguru.it",
  "periodo": {
-  "da": "2026-10-17",
-  "a": "2026-11-13"
+  "da": "2026-10-24",
+  "a": "2026-11-20"
  },
  "totali": {
-  "clic": 121,
-  "impressioni": 13928,
-  "ctr": 0.0087,
+  "clic": 125,
+  "impressioni": 13944,
+  "ctr": 0.009,
   "posizione": 18.7
  },
  "periodo7giorni": {
-  "da": "2026-11-07",
-  "a": "2026-11-13"
+  "da": "2026-11-14",
+  "a": "2026-11-20"
  },
  "totali7giorni": {
-  "clic": 9,
-  "impressioni": 1610,
-  "ctr": 0.0056,
-  "posizione": 28.4
+  "clic": 4,
+  "impressioni": 16,
+  "ctr": 0.25,
+  "posizione": 32.8
  },
  "perGiorno": [
   {
@@ -167,6 +167,55 @@
    "impressioni": 5,
    "ctr": 0.4,
    "posizione": 48
+  },
+  {
+   "date": "2026-11-14",
+   "clic": 1,
+   "impressioni": 7,
+   "ctr": 0.1429,
+   "posizione": 48.4
+  },
+  {
+   "date": "2026-11-15",
+   "clic": 1,
+   "impressioni": 2,
+   "ctr": 0.5,
+   "posizione": 19
+  },
+  {
+   "date": "2026-11-16",
+   "clic": 1,
+   "impressioni": 4,
+   "ctr": 0.25,
+   "posizione": 17.5
+  },
+  {
+   "date": "2026-11-17",
+   "clic": 0,
+   "impressioni": 2,
+   "ctr": 0,
+   "posizione": 38
+  },
+  {
+   "date": "2026-11-18",
+   "clic": 1,
+   "impressioni": 1,
+   "ctr": 1,
+   "posizione": 1
+  },
+  {
+   "date": "2026-11-19",
+   "clic": 0,
+   "impressioni": 0,
+   "ctr": 0,
+   "posizione": 0
+  },
+  {
+   "date": "2026-11-20",
+   "clic": 0,
+   "impressioni": 0,
+   "ctr": 0,
+   "posizione": 0
   }
  ],
  "ricerche": [
@@ -533,6 +582,13 @@
    "impressioni": 1,
    "ctr": 0,
    "posizione": 66
+  },
+  {
+   "query": "alexander nba",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 96
   },
   {
    "query": "alexander schlager",
@@ -4378,6 +4434,13 @@
    "posizione": 12
   },
   {
+   "query": "di pardo",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 72
+  },
+  {
    "query": "diatta",
    "clic": 0,
    "impressioni": 1,
@@ -7003,6 +7066,13 @@
    "posizione": 12
   },
   {
+   "query": "klay thompson",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 78
+  },
+  {
    "query": "knicks - magic",
    "clic": 0,
    "impressioni": 1,
@@ -7148,43 +7218,22 @@
    "impressioni": 1,
    "ctr": 0,
    "posizione": 86
-  },
-  {
-   "query": "la lakers vs la clippers",
-   "clic": 0,
-   "impressioni": 1,
-   "ctr": 0,
-   "posizione": 42
-  },
-  {
-   "query": "la mesta",
-   "clic": 0,
-   "impressioni": 1,
-   "ctr": 0,
-   "posizione": 98
-  },
-  {
-   "query": "la rosa del barcellona",
-   "clic": 0,
-   "impressioni": 2,
-   "ctr": 0,
-   "posizione": 47.5
   }
  ],
  "pagine": [
+  {
+   "page": "https://www.quotaguru.it/",
+   "clic": 8,
+   "impressioni": 16,
+   "ctr": 0.5,
+   "posizione": 2.1
+  },
   {
    "page": "http://www.quotaguru.it/",
    "clic": 5,
    "impressioni": 7,
    "ctr": 0.7143,
    "posizione": 1.9
-  },
-  {
-   "page": "https://www.quotaguru.it/",
-   "clic": 4,
-   "impressioni": 9,
-   "ctr": 0.4444,
-   "posizione": 2.9
   },
   {
    "page": "https://www.quotaguru.it/calcio/serie-a/giornata/11/",
@@ -7973,9 +8022,9 @@
   {
    "page": "https://www.quotaguru.it/basket/nba/giocatori/alex-caruso-631/",
    "clic": 0,
-   "impressioni": 3,
+   "impressioni": 4,
    "ctr": 0,
-   "posizione": 4.3
+   "posizione": 4
   },
   {
    "page": "https://www.quotaguru.it/basket/nba/giocatori/alex-morales-3924/",
@@ -8183,9 +8232,9 @@
   {
    "page": "https://www.quotaguru.it/basket/nba/giocatori/klay-thompson-514/",
    "clic": 0,
-   "impressioni": 1,
+   "impressioni": 2,
    "ctr": 0,
-   "posizione": 44
+   "posizione": 61
   },
   {
    "page": "https://www.quotaguru.it/basket/nba/giocatori/kyle-kuzma-820/",
@@ -8281,9 +8330,9 @@
   {
    "page": "https://www.quotaguru.it/basket/nba/giocatori/norman-powell-434/",
    "clic": 0,
-   "impressioni": 1,
+   "impressioni": 3,
    "ctr": 0,
-   "posizione": 42
+   "posizione": 54.7
   },
   {
    "page": "https://www.quotaguru.it/basket/nba/giocatori/o-g-anunoby-732/",
@@ -8314,6 +8363,13 @@
    "posizione": 11
   },
   {
+   "page": "https://www.quotaguru.it/basket/nba/giocatori/r-fleming-4270/",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 67
+  },
+  {
    "page": "https://www.quotaguru.it/basket/nba/giocatori/ron-ii-holland-4111/",
    "clic": 0,
    "impressioni": 1,
@@ -8326,6 +8382,13 @@
    "impressioni": 3,
    "ctr": 0,
    "posizione": 22
+  },
+  {
+   "page": "https://www.quotaguru.it/basket/nba/giocatori/shai-gilgeous-alexander-972/",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 96
   },
   {
    "page": "https://www.quotaguru.it/basket/nba/giocatori/stephon-castle-4169/",
@@ -8344,9 +8407,9 @@
   {
    "page": "https://www.quotaguru.it/basket/nba/giocatori/ty-jerome-1870/",
    "clic": 0,
-   "impressioni": 2,
+   "impressioni": 3,
    "ctr": 0,
-   "posizione": 5
+   "posizione": 4.7
   },
   {
    "page": "https://www.quotaguru.it/basket/nba/giocatori/tyrese-haliburton-2595/",
@@ -9231,6 +9294,13 @@
    "posizione": 20.8
   },
   {
+   "page": "https://www.quotaguru.it/calcio-in-tv-oggi/",
+   "clic": 0,
+   "impressioni": 2,
+   "ctr": 0,
+   "posizione": 6
+  },
+  {
    "page": "https://www.quotaguru.it/calcio/brasileirao/atletico-mg-cruzeiro-2026-10-29/",
    "clic": 0,
    "impressioni": 1,
@@ -9380,9 +9450,9 @@
   {
    "page": "https://www.quotaguru.it/calcio/bundesliga/giornata/8/",
    "clic": 0,
-   "impressioni": 1,
+   "impressioni": 3,
    "ctr": 0,
-   "posizione": 6
+   "posizione": 8
   },
   {
    "page": "https://www.quotaguru.it/calcio/bundesliga/leverkusen-freiburg-2026-10-18/",
@@ -9821,9 +9891,9 @@
   {
    "page": "https://www.quotaguru.it/calcio/eredivisie/den-haag-heerenveen-2026-10-24/",
    "clic": 0,
-   "impressioni": 1,
+   "impressioni": 2,
    "ctr": 0,
-   "posizione": 7
+   "posizione": 6
   },
   {
    "page": "https://www.quotaguru.it/calcio/eredivisie/excelsior-twente-2026-11-01/",
@@ -9863,9 +9933,9 @@
   {
    "page": "https://www.quotaguru.it/calcio/eredivisie/marcatori/",
    "clic": 0,
-   "impressioni": 9,
+   "impressioni": 11,
    "ctr": 0,
-   "posizione": 9.7
+   "posizione": 8.5
   },
   {
    "page": "https://www.quotaguru.it/calcio/eredivisie/nec-groningen-2026-10-25/",
@@ -9992,6 +10062,13 @@
    "impressioni": 4,
    "ctr": 0,
    "posizione": 11.5
+  },
+  {
+   "page": "https://www.quotaguru.it/calcio/giocatori/adam-daghim-362564/",
+   "clic": 0,
+   "impressioni": 3,
+   "ctr": 0,
+   "posizione": 8
   },
   {
    "page": "https://www.quotaguru.it/calcio/giocatori/adam-hlozek-66019/",
@@ -10129,9 +10206,9 @@
   {
    "page": "https://www.quotaguru.it/calcio/giocatori/alessandro-di-pardo-56287/",
    "clic": 0,
-   "impressioni": 1,
+   "impressioni": 3,
    "ctr": 0,
-   "posizione": 80
+   "posizione": 51.7
   },
   {
    "page": "https://www.quotaguru.it/calcio/giocatori/alessandro-nunziante-418940/",
@@ -10451,9 +10528,9 @@
   {
    "page": "https://www.quotaguru.it/calcio/giocatori/anis-hadj-moussa-326067/",
    "clic": 0,
-   "impressioni": 2,
+   "impressioni": 3,
    "ctr": 0,
-   "posizione": 37.5
+   "posizione": 27.7
   },
   {
    "page": "https://www.quotaguru.it/calcio/giocatori/ante-crnac-310700/",
@@ -10888,6 +10965,13 @@
    "impressioni": 1,
    "ctr": 0,
    "posizione": 10
+  },
+  {
+   "page": "https://www.quotaguru.it/calcio/giocatori/carlos-quomah-baleba-356041/",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 6
   },
   {
    "page": "https://www.quotaguru.it/calcio/giocatori/cas-odenthal-127802/",
@@ -11891,6 +11975,13 @@
    "posizione": 76
   },
   {
+   "page": "https://www.quotaguru.it/calcio/giocatori/filip-ugrinic-48465/",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 3
+  },
+  {
    "page": "https://www.quotaguru.it/calcio/giocatori/filippo-costa-30854/",
    "clic": 0,
    "impressioni": 5,
@@ -12374,6 +12465,13 @@
    "posizione": 43.8
   },
   {
+   "page": "https://www.quotaguru.it/calcio/giocatori/guela-doue-161747/",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 10
+  },
+  {
    "page": "https://www.quotaguru.it/calcio/giocatori/guevara-47309/",
    "clic": 0,
    "impressioni": 1,
@@ -12766,6 +12864,13 @@
    "posizione": 9
   },
   {
+   "page": "https://www.quotaguru.it/calcio/giocatori/janis-blaswich-37246/",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 1
+  },
+  {
    "page": "https://www.quotaguru.it/calcio/giocatori/jari-vandeputte-31211/",
    "clic": 0,
    "impressioni": 1,
@@ -12950,9 +13055,9 @@
   {
    "page": "https://www.quotaguru.it/calcio/giocatori/joao-pedro-415085/",
    "clic": 0,
-   "impressioni": 3,
+   "impressioni": 4,
    "ctr": 0,
-   "posizione": 38.7
+   "posizione": 48.3
   },
   {
    "page": "https://www.quotaguru.it/calcio/giocatori/joao-simoes-400509/",
@@ -13454,9 +13559,9 @@
   {
    "page": "https://www.quotaguru.it/calcio/giocatori/koke-50/",
    "clic": 0,
-   "impressioni": 2,
+   "impressioni": 3,
    "ctr": 0,
-   "posizione": 45.5
+   "posizione": 31.3
   },
   {
    "page": "https://www.quotaguru.it/calcio/giocatori/konrad-laimer-1157/",
@@ -13471,6 +13576,13 @@
    "impressioni": 2,
    "ctr": 0,
    "posizione": 12
+  },
+  {
+   "page": "https://www.quotaguru.it/calcio/giocatori/konstantinos-tsimikas-1600/",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 5
   },
   {
    "page": "https://www.quotaguru.it/calcio/giocatori/konstantinos-tzolakis-1591/",
@@ -13534,6 +13646,13 @@
    "impressioni": 1,
    "ctr": 0,
    "posizione": 11
+  },
+  {
+   "page": "https://www.quotaguru.it/calcio/giocatori/lasse-gunther-162079/",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 9
   },
   {
    "page": "https://www.quotaguru.it/calcio/giocatori/lautaro-diaz-64172/",
@@ -14101,76 +14220,6 @@
    "impressioni": 2,
    "ctr": 0,
    "posizione": 49
-  },
-  {
-   "page": "https://www.quotaguru.it/calcio/giocatori/marc-pubill-295793/",
-   "clic": 0,
-   "impressioni": 1,
-   "ctr": 0,
-   "posizione": 100
-  },
-  {
-   "page": "https://www.quotaguru.it/calcio/giocatori/marco-friedl-25314/",
-   "clic": 0,
-   "impressioni": 2,
-   "ctr": 0,
-   "posizione": 25
-  },
-  {
-   "page": "https://www.quotaguru.it/calcio/giocatori/marco-grull-7073/",
-   "clic": 0,
-   "impressioni": 1,
-   "ctr": 0,
-   "posizione": 10
-  },
-  {
-   "page": "https://www.quotaguru.it/calcio/giocatori/marco-moreno-162138/",
-   "clic": 0,
-   "impressioni": 5,
-   "ctr": 0,
-   "posizione": 13.4
-  },
-  {
-   "page": "https://www.quotaguru.it/calcio/giocatori/marco-nasti-345467/",
-   "clic": 0,
-   "impressioni": 1,
-   "ctr": 0,
-   "posizione": 54
-  },
-  {
-   "page": "https://www.quotaguru.it/calcio/giocatori/marco-rente-90957/",
-   "clic": 0,
-   "impressioni": 1,
-   "ctr": 0,
-   "posizione": 13
-  },
-  {
-   "page": "https://www.quotaguru.it/calcio/giocatori/marcos-alonso-2278/",
-   "clic": 0,
-   "impressioni": 1,
-   "ctr": 0,
-   "posizione": 47
-  },
-  {
-   "page": "https://www.quotaguru.it/calcio/giocatori/marcos-leonardo-267771/",
-   "clic": 0,
-   "impressioni": 1,
-   "ctr": 0,
-   "posizione": 41
-  },
-  {
-   "page": "https://www.quotaguru.it/calcio/giocatori/marcus-holmgren-pedersen-39362/",
-   "clic": 0,
-   "impressioni": 1,
-   "ctr": 0,
-   "posizione": 75
-  },
-  {
-   "page": "https://www.quotaguru.it/calcio/giocatori/marcus-linday-310037/",
-   "clic": 0,
-   "impressioni": 1,
-   "ctr": 0,
-   "posizione": 14
   }
  ],
  "ricerchePerPagina": [
@@ -14589,6 +14638,14 @@
    "impressioni": 1,
    "ctr": 0,
    "posizione": 66
+  },
+  {
+   "query": "alexander nba",
+   "page": "https://www.quotaguru.it/basket/nba/giocatori/shai-gilgeous-alexander-972/",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 96
   },
   {
    "query": "alexander schlager",
@@ -19119,6 +19176,14 @@
    "posizione": 12
   },
   {
+   "query": "di pardo",
+   "page": "https://www.quotaguru.it/calcio/giocatori/alessandro-di-pardo-56287/",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 72
+  },
+  {
    "query": "diatta",
    "page": "https://www.quotaguru.it/calcio/giocatori/krepin-diatta-81/",
    "clic": 0,
@@ -22141,6 +22206,14 @@
    "impressioni": 1,
    "ctr": 0,
    "posizione": 12
+  },
+  {
+   "query": "klay thompson",
+   "page": "https://www.quotaguru.it/basket/nba/giocatori/klay-thompson-514/",
+   "clic": 0,
+   "impressioni": 1,
+   "ctr": 0,
+   "posizione": 78
   },
   {
    "query": "knicks - magic",
@@ -31194,16 +31267,16 @@
  "dispositivi": [
   {
    "device": "MOBILE",
-   "clic": 105,
-   "impressioni": 6906,
-   "ctr": 0.0152,
-   "posizione": 14.3
+   "clic": 106,
+   "impressioni": 6908,
+   "ctr": 0.0153,
+   "posizione": 14.2
   },
   {
    "device": "DESKTOP",
-   "clic": 15,
-   "impressioni": 6928,
-   "ctr": 0.0022,
+   "clic": 18,
+   "impressioni": 6942,
+   "ctr": 0.0026,
    "posizione": 23.2
   },
   {
@@ -31217,10 +31290,10 @@
  "paesi": [
   {
    "country": "ita",
-   "clic": 119,
-   "impressioni": 9094,
-   "ctr": 0.0131,
-   "posizione": 21.2
+   "clic": 123,
+   "impressioni": 9103,
+   "ctr": 0.0135,
+   "posizione": 21.3
   },
   {
    "country": "are",
@@ -31253,9 +31326,9 @@
   {
    "country": "arg",
    "clic": 0,
-   "impressioni": 115,
+   "impressioni": 116,
    "ctr": 0,
-   "posizione": 14.8
+   "posizione": 15.3
   },
   {
    "country": "aus",
@@ -31316,9 +31389,9 @@
   {
    "country": "bra",
    "clic": 0,
-   "impressioni": 535,
+   "impressioni": 536,
    "ctr": 0,
-   "posizione": 18.3
+   "posizione": 18.2
   },
   {
    "country": "brn",
@@ -31330,7 +31403,7 @@
   {
    "country": "can",
    "clic": 0,
-   "impressioni": 343,
+   "impressioni": 344,
    "ctr": 0,
    "posizione": 11.5
   },
@@ -31428,11 +31501,45 @@
  ],
  "sitemap": [
   {
+   "path": "https://www.quotaguru.it/sitemap-partite.xml",
+   "lastSubmitted": "2026-11-19T11:46:19.623Z",
+   "isPending": false,
+   "isSitemapsIndex": false,
+   "type": "sitemap",
+   "lastDownloaded": "2026-11-19T11:46:20.397Z",
+   "warnings": "0",
+   "errors": "0",
+   "contents": [
+    {
+     "type": "web",
+     "submitted": "357",
+     "indexed": "0"
+    }
+   ]
+  },
+  {
+   "path": "https://www.quotaguru.it/sitemap-pagine.xml",
+   "lastSubmitted": "2026-11-19T11:45:53.339Z",
+   "isPending": false,
+   "isSitemapsIndex": false,
+   "type": "sitemap",
+   "lastDownloaded": "2026-11-21T12:32:13.556Z",
+   "warnings": "0",
+   "errors": "0",
+   "contents": [
+    {
+     "type": "web",
+     "submitted": "792",
+     "indexed": "0"
+    }
+   ]
+  },
+  {
    "path": "https://www.quotaguru.it/sitemap.xml",
-   "lastSubmitted": "2026-11-13T21:17:26.183Z",
+   "lastSubmitted": "2026-11-16T18:36:07.728Z",
    "isPending": false,
    "isSitemapsIndex": true,
-   "lastDownloaded": "2026-11-13T21:17:26.902Z",
+   "lastDownloaded": "2026-11-16T18:36:09.468Z",
    "warnings": "0",
    "errors": "0"
   }
