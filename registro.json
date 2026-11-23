@@ -315,11 +315,15 @@
   "live:studio-pronostico:1001550203": {
    "at": "2026-11-23T15:47:43.281Z",
    "messageId": 56
+  },
+  "live:academy:2026-11-23": {
+   "at": "2026-11-23T17:07:46.032Z",
+   "messageId": 57
   }
  },
  "academy": {
   "test": 2,
-  "live": 2
+  "live": 3
  },
  "tris": {
   "test": {
