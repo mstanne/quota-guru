@@ -25,9 +25,10 @@ Poi la guida va aggiunta in `src/data/guideVideos.ts`. Questi video stanno nel r
 
 Automatici, generati da `.github/workflows/video-partite.yml` ogni 3 ore con `match_videos.py`.
 
-- **Partite scelte**: al massimo 3 per giornata o turno.
+- **Partite scelte**: al massimo 3 per giornata o turno, tranne le italiane nelle coppe europee (sempre tutte).
   - Serie A: le coppie meglio piazzate in classifica.
-  - Champions, Europa e Conference League: prima le squadre italiane, poi le altre.
+  - Champions, Europa e Conference League: tutte le partite delle squadre italiane, anche più di 3; se sono meno di
+    3, si completa con le altre.
   - Coppa Italia e Supercoppa Italiana: le squadre meglio piazzate in Serie A.
   - Nazionali (Mondiali, Europei, qualificazioni europee e mondiali, spareggi, Nations League, amichevoli): un gruppo
     unico per giorno. Prima l'Italia, poi le fasi finali dei tornei, la Lega A di Nations League e le sfide tra

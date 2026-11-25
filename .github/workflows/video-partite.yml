@@ -1,6 +1,6 @@
 # Videos of the predictions of the top football matches (scripts/guide-videos/match_videos.py, README in
 # scripts/guide-videos/README.md): Serie A, Champions / Europa / Conference League, Coppa Italia and Supercoppa,
-# national teams (Italy first), at most 3 matches per round. Every 3 hours it makes the videos of the chosen matches
+# national teams (Italy first), at most 3 matches per round (all of the Italian clubs in the European cups). Every 3 hours it makes the videos of the chosen matches
 # that kick off in the next 36 hours and uploads them to the R2 video bucket (analisi/calcio/<date>/<match>,
 # docs/video.md); their index goes to the `video-partite` branch (one commit, index.json). The site build copies the
 # index (deploy.yml: the match page shows the video) and the Telegram rubric `video-pronostico` posts the vertical one.
@@ -30,6 +30,11 @@ jobs:
   videos:
     runs-on: ubuntu-26.04
     timeout-minutes: 90
+    defaults:
+      run:
+        # con "shell: bash" esplicito GitHub aggiunge -o pipefail: un errore prima di "| tee" fa fallire il passo
+        # (senza, il crash della prova a secco finiva nascosto e il workflow risultava riuscito senza fare video)
+        shell: bash
     steps:
       - name: Check the Cloudflare secrets
         id: check

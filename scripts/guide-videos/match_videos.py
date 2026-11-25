@@ -4,10 +4,10 @@ Video di pronostico delle partite di punta: sceglie le partite, genera i video e
 
 Gira nel workflow .github/workflows/video-partite.yml (README in scripts/guide-videos/README.md).
 
-Partite scelte, al massimo PER_ROUND per giornata o turno:
+Partite scelte, al massimo PER_ROUND per giornata o turno (nelle coppe europee tutte quelle delle italiane, anche oltre):
   - Serie A: le coppie meglio piazzate in classifica (posizione media più bassa, come lo "studio del pronostico");
-  - Champions, Europa e Conference League: prima le partite delle squadre italiane, poi le altre (posizione media
-    nella classifica della fase a campionato, se c'è);
+  - Champions, Europa e Conference League: tutte le partite delle squadre italiane, anche più di PER_ROUND; se sono
+    meno di PER_ROUND, si completa con le altre (posizione media nella classifica della fase a campionato, se c'è);
   - Coppa Italia e Supercoppa Italiana: le coppie meglio piazzate in Serie A;
   - nazionali (Mondiali, Europei, qualificazioni europee e mondiali, spareggi, Nations League, amichevoli): prima
     l'Italia, poi le fasi finali dei tornei, la Lega A di Nations League e le sfide tra nazionali di primo piano
@@ -143,6 +143,14 @@ def score(e, football, sa_pos):
     return 60 + tier + 15 * big + balance - (20 if kind == "friendly" else 0)
 
 
+def has_italian(e, football, sa_pos):
+    """Coppe europee: la partita ha una squadra di Serie A (queste vanno tutte, anche oltre PER_ROUND)."""
+    if COMPS[e["where"]] != "europe":
+        return False
+    _, m = find_match(football, e["id"])
+    return bool(m) and any(m[s]["id"] in sa_pos for s in ("homeTeam", "awayTeam"))
+
+
 def postponed(e, football):
     _, m = find_match(football, e["id"])
     return bool(m and m.get("status") in ("POSTPONED", "CANCELLED", "SUSPENDED"))
@@ -167,7 +175,10 @@ def plan(football, archive, index, now):
         key = round_key(e, football)
         if key not in rounds:
             ranked = sorted(by_round[key], key=lambda x: (-score(x, football, sa_pos), x["kickoff"], x["id"]))
-            rounds[key] = {"chosen": [x["id"] for x in ranked[:PER_ROUND]], "decided": iso(now)}
+            ita = [x for x in ranked if has_italian(x, football, sa_pos)]
+            rest = [x for x in ranked if x not in ita]
+            chosen = ita + rest[: max(0, PER_ROUND - len(ita))]
+            rounds[key] = {"chosen": [x["id"] for x in chosen], "decided": iso(now)}
         if e["id"] not in rounds[key]["chosen"]:
             continue
         old = index["videos"].get(str(e["id"]))
@@ -219,6 +230,8 @@ def main():
         print(f"{e['kickoff']}  {e['where']}: {e['label']} ({why}) → {video_key(e)}", flush=True)
     if a.dry_run:
         return
+    # playwright serve solo per generare: la prova a secco gira con il python di sistema, senza playwright
+    from render import render_board  # noqa: E402
     prune(index, now)
     out_root = Path(a.out)
     for e, _ in todo:
@@ -241,5 +254,4 @@ def main():
 
 
 if __name__ == "__main__":
-    from render import render_board  # noqa: E402  (playwright serve solo qui)
     main()
