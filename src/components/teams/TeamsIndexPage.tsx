@@ -6,6 +6,7 @@ import { TeamBadge } from "../calcio/MatchRow";
 import { footballTeamRefs, nbaTeamRefs, teamPaths, type TeamRef } from "../../lib/teams";
 import { competitions } from "../../lib/football";
 import { confedLabel } from "../../lib/teamMeta";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const CONFEDS = ["UEFA", "CONMEBOL", "CONCACAF", "CAF", "AFC", "OFC"];
 
@@ -21,7 +22,7 @@ function Grid({ teams, base }: { teams: TeamRef[]; base: string }) {
               className="flex items-center gap-3 rounded-lg border border-slate-800 bg-slate-900 px-3 py-2.5 text-white hover:border-slate-600"
             >
               <TeamBadge team={{ tla: t.shortName.slice(0, 3).toUpperCase(), shortName: t.shortName, crest: t.crest ?? null }} />
-              {t.shortName}
+              {teamName(t)}
             </Link>
           </li>
         ))}

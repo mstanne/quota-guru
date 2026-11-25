@@ -8,6 +8,7 @@ import { Link } from "../../lib/links";
 import { fairOdds, pct } from "../../lib/predictionsCore";
 import { formatTime, romeDay, type Match } from "../../lib/footballCore";
 import type { Lam } from "../../lib/footballMarkets";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 /** The match a pick belongs to. `slipId`: "football-<id>" / "nba-<id>", the same ids as the odds blocks. */
 export interface SlipMatch {
@@ -23,8 +24,8 @@ export interface SlipMatch {
 export const footballSlip = (competition: string, m: Match): SlipMatch => ({
   slipId: `football-${m.id}`,
   competition,
-  home: m.homeTeam.shortName,
-  away: m.awayTeam.shortName,
+  home: teamName(m.homeTeam),
+  away: teamName(m.awayTeam),
   date: romeDay(m.utcDate),
   time: formatTime(m.utcDate),
 });

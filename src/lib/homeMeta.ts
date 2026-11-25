@@ -2,6 +2,7 @@
 // pages), so search engines see what the page is a hub of. Server only (src/entry-server.tsx).
 import home from "../data/football-home.json";
 import { matchHref, type CompetitionRef, type Match } from "./footballCore";
+import { teamName } from "./teamDisplay.mjs";
 
 const data = home as unknown as { matches: { competition: CompetitionRef; match: Match }[] };
 
@@ -19,7 +20,7 @@ export function homeItemList(limit = 12) {
         "@type": "ListItem",
         position: i + 1,
         url: matchHref(competition, match),
-        name: `Pronostico ${match.homeTeam.shortName} – ${match.awayTeam.shortName} (${competition.name})`,
+        name: `Pronostico ${teamName(match.homeTeam)} – ${teamName(match.awayTeam)} (${competition.name})`,
       })),
     },
   ];

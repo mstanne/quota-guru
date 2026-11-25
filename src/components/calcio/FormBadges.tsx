@@ -1,4 +1,5 @@
 import { recentForm, type Competition } from "../../lib/footballCore";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const FORM_STYLE = {
   V: "bg-best text-best-foreground",
@@ -27,7 +28,7 @@ export function FormBadges({
       {form.map(({ result, match }) => (
         <li key={match.id}>
           <span
-            title={`${FORM_TITLE[result]}: ${match.homeTeam.shortName} ${match.score.fullTime.home}-${match.score.fullTime.away} ${match.awayTeam.shortName}`}
+            title={`${FORM_TITLE[result]}: ${teamName(match.homeTeam)} ${match.score.fullTime.home}-${match.score.fullTime.away} ${teamName(match.awayTeam)}`}
             className={`${box} rounded inline-flex items-center justify-center font-semibold ${FORM_STYLE[result]}`}
           >
             {result}

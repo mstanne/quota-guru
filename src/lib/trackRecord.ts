@@ -8,6 +8,7 @@
 // page loads only its own sport's snapshot.
 import { referenceTime } from "./footballCore";
 import archive from "../data/track-record.json";
+import { withFullNames } from "./teamDisplay.mjs";
 
 /** Graded archived predictions needed before the archive replaces the recalculation. */
 export const MIN_ARCHIVED = 10;
@@ -79,7 +80,7 @@ export interface CalibrationBin {
   obs: number;
 }
 type ArchiveSummary = Omit<TrackRecord, "source"> & { calibration?: CalibrationBin[] };
-const archived = archive as unknown as Partial<Record<"calcio" | "nba" | "nazionali", ArchiveSummary>>;
+const archived = withFullNames(archive) as unknown as Partial<Record<"calcio" | "nba" | "nazionali", ArchiveSummary>>;
 
 /** Graded archived predictions needed before the calibration chart is shown. */
 export const MIN_CALIBRATION = { calcio: 200, nba: 150 } as const;

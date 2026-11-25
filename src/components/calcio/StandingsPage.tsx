@@ -29,6 +29,7 @@ import { PageHeader } from "../layout/PageHeader";
 import { TeamName } from "../teams/TeamLink";
 import { CompetitionTrack, SeasonOutlook, XgPointsTable } from "./SeasonOutlook";
 import { outlookSentence } from "../../lib/seasonOutlook";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 /** /calcio/:competizione/classifica */
 export function StandingsPage() {
@@ -107,7 +108,7 @@ export function StandingsPage() {
                       <th scope="row" className="py-2.5 text-left font-normal">
                         <span className="flex items-center gap-2.5">
                           <TeamBadge team={r.team} />
-                          <TeamName id={r.team.id} name={r.team.shortName} />
+                          <TeamName id={r.team.id} name={teamName(r.team)} />
                         </span>
                       </th>
                       <td className="text-right px-2 text-white font-semibold tabular-nums">{r.points}</td>
@@ -186,8 +187,8 @@ function Summary({ competition }: { competition: Competition }) {
   const last = t[t.length - 1];
   return (
     <p className="text-slate-300 max-w-3xl">
-      {sum.text}. Miglior attacco: {attack.team.shortName} ({attack.goalsFor} gol fatti); miglior difesa:{" "}
-      {defence.team.shortName} ({defence.goalsAgainst} gol subiti). Ultimo posto: {last.team.shortName} con {last.points}{" "}
+      {sum.text}. Miglior attacco: {teamName(attack.team)} ({attack.goalsFor} gol fatti); miglior difesa:{" "}
+      {teamName(defence.team)} ({defence.goalsAgainst} gol subiti). Ultimo posto: {teamName(last.team)} con {last.points}{" "}
       {last.points === 1 ? "punto" : "punti"}.
     </p>
   );

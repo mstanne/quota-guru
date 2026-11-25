@@ -30,6 +30,7 @@ import { pct, pickLabel, type Prediction } from "../../lib/predictionsCore";
 import { matchdayDates, matchdayLabel, matchdayMeta, matchdaysOf, type Matchday } from "../../lib/matchdaysCore";
 import { useCompetitionData, type CompetitionData } from "../../lib/footballData";
 import { footballReasons } from "../../lib/predictionReasons";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900";
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -41,10 +42,10 @@ function roundSummary(d: Matchday, data: CompetitionData) {
     .map((m) => ({ m, p: data.prediction(m.id) }))
     .filter((x): x is { m: Match; p: Prediction } => !!x.p);
   if (open.length < 2) return [];
-  const name = (m: Match) => `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
+  const name = (m: Match) => `${teamName(m.homeTeam)} – ${teamName(m.awayTeam)}`;
   const top = (p: Prediction) => p.p.indexOf(Math.max(...p.p));
   const outcomeText = (m: Match, i: number) =>
-    i === 1 ? "pareggio" : `vittoria ${i === 0 ? m.homeTeam.shortName : m.awayTeam.shortName}`;
+    i === 1 ? "pareggio" : `vittoria ${i === 0 ? teamName(m.homeTeam) : teamName(m.awayTeam)}`;
   const home = open.filter(({ p }) => top(p) === 0).length;
   const away = open.filter(({ p }) => top(p) === 2).length;
   const surest = [...open].sort((a, b) => Math.max(...b.p.p) - Math.max(...a.p.p))[0];
@@ -73,8 +74,8 @@ function MatchCard({ c, m, data }: { c: Competition; m: Match; data: Competition
       ? p.p.indexOf(Math.max(...p.p)) === (ft.home > ft.away ? 0 : ft.home === ft.away ? 1 : 2)
       : null;
   const reason = open && p ? footballReasons(p, c, m)[0] : undefined;
-  const home = m.homeTeam.shortName;
-  const away = m.awayTeam.shortName;
+  const home = teamName(m.homeTeam);
+  const away = teamName(m.awayTeam);
 
   return (
     <article className={`${card} p-4 sm:p-5`} aria-labelledby={`m-${m.id}`}>

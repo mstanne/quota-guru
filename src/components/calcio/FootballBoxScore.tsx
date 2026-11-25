@@ -5,6 +5,7 @@ import { ClipboardList } from "lucide-react";
 import type { Match, MatchCard, MatchGoal, Score, Team } from "../../lib/footballCore";
 import { goalsWithScore, type FootballDetails } from "../../lib/matchDetails";
 import { FootballPlayerLink } from "../players/FootballPlayerLink";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 
@@ -29,8 +30,8 @@ interface Row {
 }
 
 export function footballReportRows(m: Match): Row[] {
-  const home = m.homeTeam.shortName;
-  const away = m.awayTeam.shortName;
+  const home = teamName(m.homeTeam);
+  const away = teamName(m.awayTeam);
   const played = playedScore(m);
   const ht = m.score.halfTime;
   if (!has(played)) return [];
@@ -86,7 +87,7 @@ const CARD_LABEL = { YELLOW: "Ammonizione", YELLOW_RED: "Doppia ammonizione", RE
 function TeamEvents({ team, goals, cards }: { team: Team; goals: MatchGoal[]; cards: MatchCard[] }) {
   return (
     <div>
-      <p className="text-slate-300 mb-2">{team.shortName}</p>
+      <p className="text-slate-300 mb-2">{teamName(team)}</p>
       {goals.length > 0 ? (
         <ul className="space-y-1 text-sm">
           {goals.map((g, i) => (
@@ -163,7 +164,7 @@ export function FootballBoxScore({ match, details }: { match: Match; details?: F
   const cards = match.cards ?? fromDetails?.cards ?? [];
   if (details?.top) {
     const t = details.top;
-    const who = t.side === "home" ? match.homeTeam.shortName : match.awayTeam.shortName;
+    const who = t.side === "home" ? teamName(match.homeTeam) : teamName(match.awayTeam);
     const extra = [t.goals ? `${t.goals} gol` : "", t.assists ? `${t.assists} assist` : ""]
       .filter(Boolean)
       .join(", ");

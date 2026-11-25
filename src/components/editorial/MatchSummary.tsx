@@ -4,6 +4,7 @@
 import { formatDay, formatTime, roundLabel, type Match } from "../../lib/footballCore";
 import { pct, pickHit, pickLabel, pickProbability, type Prediction } from "../../lib/predictionsCore";
 import type { BasketPrediction } from "../../lib/basketPredict";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const fmtProb = (x: number) => pct(x);
 
@@ -21,8 +22,8 @@ export function footballSummary(
   prediction: Prediction | undefined,
   state: { finished: boolean; live: boolean },
 ): string | null {
-  const home = match.homeTeam.shortName;
-  const away = match.awayTeam.shortName;
+  const home = teamName(match.homeTeam);
+  const away = teamName(match.awayTeam);
   const round = roundLabel(match);
   const where = round ? `${competitionName}, ${round}` : competitionName;
   const ft = match.score.fullTime;

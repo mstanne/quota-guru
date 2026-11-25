@@ -27,6 +27,7 @@ const EURO_CUPS = [
 ];
 import { Card, Facts, SectionTitle, age, formatDate, num } from "./TeamUi";
 import { numberFormat } from "../../lib/intl";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const GROUPS: [string, RegExp][] = [
   ["Portieri", /keeper/i],
@@ -215,8 +216,8 @@ function ClubTeamPage() {
         .map((m) => ({
           id: m.id,
           href: matchHref(league.competition, m),
-          home: m.homeTeam.shortName,
-          away: m.awayTeam.shortName,
+          home: teamName(m.homeTeam),
+          away: teamName(m.awayTeam),
           utcDate: m.utcDate,
           live: isLive(m),
         }))
@@ -253,14 +254,14 @@ function ClubTeamPage() {
         title={
           <span className="flex items-center gap-3">
             <TeamBadge team={{ tla: t.tla, shortName: t.shortName, crest: t.crest }} size="lg" />
-            {t.shortName}
+            {teamName(t)}
           </span>
         }
-        subtitle={`Società, rosa e statistiche stagione per stagione${t.name !== t.shortName ? ` di ${t.name}` : ""}.`}
+        subtitle={`Società, rosa e statistiche stagione per stagione${t.name !== teamName(t) ? ` di ${t.name}` : ""}.`}
         breadcrumb={[
           { label: "Calcio", to: "/calcio" },
           { label: "Squadre", to: "/calcio/squadre" },
-          { label: t.shortName },
+          { label: teamName(t) },
         ]}
         meta={cur?.record ? <span>{cur.label}: {cur.record.position}ª in {t.competition.name} con {cur.record.points} punti</span> : undefined}
       />
@@ -272,7 +273,7 @@ function ClubTeamPage() {
           <Facts rows={facts} />
         </Card>
         <NextMatches
-          team={t.shortName}
+          team={teamName(t)}
           matches={next}
           label={`${t.competition.name}: probabilità 1X2, Under/Over e Goal calcolate dal modello statistico.`}
         />
@@ -329,7 +330,7 @@ function TeamGoals({ team }: { team: FootballTeam }) {
           <h3 className="text-slate-300 text-sm mb-1">
             {cur.competition} {cur.label}
           </h3>
-          <TeamGoalTable stats={cur.goals} caption={`Under/Over e Goal di ${team.shortName}, ${cur.competition} ${cur.label}`} />
+          <TeamGoalTable stats={cur.goals} caption={`Under/Over e Goal di ${teamName(team)}, ${cur.competition} ${cur.label}`} />
         </>
       )}
       {past.length > 0 && (

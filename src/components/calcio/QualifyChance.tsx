@@ -3,6 +3,7 @@
 import { Swords } from "lucide-react";
 import type { Match } from "../../lib/footballCore";
 import { fairOdds, pct, type Prediction } from "../../lib/predictionsCore";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 /** `firstLeg`: score of the first leg already played, e.g. "Inter – Milan 2-1", on second-leg pages. */
 export function QualifyChance({ match, prediction, firstLeg }: { match: Match; prediction: Prediction; firstLeg?: string }) {
@@ -11,8 +12,8 @@ export function QualifyChance({ match, prediction, firstLeg }: { match: Match; p
   const final = match.stage === "FINAL";
   const title = final ? "Chi alza il trofeo" : "Passaggio del turno";
   const rows: [string, number][] = [
-    [match.homeTeam.shortName, q[0]],
-    [match.awayTeam.shortName, q[1]],
+    [teamName(match.homeTeam), q[0]],
+    [teamName(match.awayTeam), q[1]],
   ];
   return (
     <section className="rounded-xl border border-slate-800 bg-slate-900 p-5" aria-labelledby="passaggio-turno">

@@ -241,7 +241,7 @@ function matchList(card) {
       const nameX = M + 124;
       const nameMax = right - chipsWidth(3, 96) - 22 - nameX;
       if (m.note) {
-        out += text(nameX, y + 35, m.label, { size: 28, max: nameMax });
+        out += text(nameX, y + 35, m.label, { size: fitSize(m.label, 28, 700, nameMax, 21), max: nameMax });
         out += text(nameX, y + 63, m.note, { size: 20, weight: 400, fill: C.muted, max: nameMax });
       } else
         out += text(nameX, y + rowH / 2 + 10, m.label, { size: fitSize(m.label, 29, 700, nameMax, 24), max: nameMax });
@@ -282,7 +282,7 @@ function results(card) {
       out += m.hit ? check(M + 44, y + rowH / 2) : cross(M + 44, y + rowH / 2);
       const scoreW = 112;
       const scoreX = W - M - 18 - scoreW;
-      out += text(M + 86, y + 33, m.label, { size: 27, max: scoreX - M - 106 });
+      out += text(M + 86, y + 33, m.label, { size: fitSize(m.label, 27, 700, scoreX - M - 106, 21), max: scoreX - M - 106 });
       out += text(M + 86, y + 60, `modello: ${m.pick}`, {
         size: 20,
         weight: 400,
@@ -497,7 +497,7 @@ function tv(card) {
       pills.push(svg);
       x -= w + 8;
     }
-    out += text(M + 190, y + 45, m.label, { size: 26, max: x - M - 200 });
+    out += text(M + 190, y + 45, m.label, { size: fitSize(m.label, 26, 700, x - M - 200, 21), max: x - M - 200 });
     out += pills.join("");
     y += rowH + 8;
   }

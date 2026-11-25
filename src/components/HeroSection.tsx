@@ -7,6 +7,7 @@ import { TeamBadge } from "./calcio/MatchRow";
 import { PickCells, SlipHint, footballSlip } from "./predictions/SlipPicks";
 import { paths } from "../routes";
 import { dateFormat } from "../lib/intl";
+import { teamName } from "../lib/teamDisplay.mjs";
 
 // Featured matches with the model's prediction, pre-computed by scripts/derive-football-home.mjs
 // (Serie A first, then Champions League, Premier League, LaLiga).
@@ -78,8 +79,8 @@ const shortDay = (iso: string) =>
  * probability buttons sit above it).
  */
 function FeaturedCard({ competition, match, prediction }: FeaturedMatch) {
-  const home = match.homeTeam.shortName;
-  const away = match.awayTeam.shortName;
+  const home = teamName(match.homeTeam);
+  const away = teamName(match.awayTeam);
   const dots = prediction.confidence === "alta" ? 3 : prediction.confidence === "media" ? 2 : 1;
   const slip = isUpcoming(match) && !prediction.pre ? footballSlip(competition.name, match) : undefined;
   return (
@@ -114,7 +115,7 @@ function FeaturedCard({ competition, match, prediction }: FeaturedMatch) {
           {[match.homeTeam, match.awayTeam].map((t) => (
             <span key={t.id} className="flex items-center gap-2">
               <TeamBadge team={t} />
-              <span className="text-white truncate text-[15px] sm:text-base">{t.shortName}</span>
+              <span className="text-white truncate text-[15px] sm:text-base">{teamName(t)}</span>
             </span>
           ))}
         </Link>

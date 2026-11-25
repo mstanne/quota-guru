@@ -22,6 +22,7 @@ import { DataUpdatedNote } from "../calcio/DataUpdatedNote";
 import { TeamBadge } from "../calcio/MatchRow";
 import { TeamName } from "../teams/TeamLink";
 import { GOAL_COLUMNS, GoalStatsNote, PctCell, avg, pct } from "./GoalStats";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const VIEWS = ["totale", "casa", "trasferta", "ultime5"] as const;
 type View = (typeof VIEWS)[number];
@@ -180,7 +181,7 @@ export function GoalStatsPage() {
                     <th scope="row" className="py-2.5 px-2 text-left font-normal">
                       <span className="flex items-center gap-2.5">
                         <TeamBadge team={r.team} />
-                        <TeamName id={r.team.id} name={r.team.shortName} />
+                        <TeamName id={r.team.id} name={teamName(r.team)} />
                       </span>
                     </th>
                     <td className="text-right px-2 tabular-nums text-slate-300">{s.n}</td>

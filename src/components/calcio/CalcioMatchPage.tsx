@@ -63,6 +63,7 @@ import { TelegramBanner } from "../TelegramBanner";
 import { SummaryVideo } from "../media/SummaryVideo";
 import { matchVideo } from "../../data/matchVideos";
 import { track } from "../../lib/analytics";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 
@@ -111,7 +112,7 @@ function firstLegOf(c: Competition, m: Match) {
   );
   if (!leg) return undefined;
   const s = leg.score.regularTime?.home != null ? leg.score.regularTime : leg.score.fullTime;
-  return `${leg.homeTeam.shortName} – ${leg.awayTeam.shortName} ${s.home}-${s.away}`;
+  return `${teamName(leg.homeTeam)} – ${teamName(leg.awayTeam)} ${s.home}-${s.away}`;
 }
 
 function FormRow({ competition, teamId }: { competition: Competition; teamId: number }) {
@@ -145,13 +146,13 @@ function StatsComparison({ home, away }: { home?: StandingRow; away?: StandingRo
       <thead>
         <tr className="text-slate-400 border-b border-slate-800">
           <th scope="col" className="text-left font-normal py-2">
-            {home.team.shortName}
+            {teamName(home.team)}
           </th>
           <th scope="col" className="font-normal py-2">
             <span className="sr-only">Statistica</span>
           </th>
           <th scope="col" className="text-right font-normal py-2">
-            {away.team.shortName}
+            {teamName(away.team)}
           </th>
         </tr>
       </thead>
@@ -220,7 +221,7 @@ function MiniStandings({ competition, match }: { competition: Competition; match
                 <tr className={`border-b border-slate-800 last:border-0 ${highlight ? "bg-slate-700/50" : ""}`}>
                   <td className={`py-2 tabular-nums ${highlight ? "text-white" : "text-slate-400"}`}>{r.position}</td>
                   <td className={`py-2 ${highlight ? "text-white font-medium" : "text-slate-300"}`}>
-                    {r.team.shortName}
+                    {teamName(r.team)}
                   </td>
                   <td className="py-2 text-right text-slate-300 tabular-nums">{r.playedGames}</td>
                   <td className="py-2 text-right text-slate-300 tabular-nums">
@@ -272,7 +273,7 @@ export function CalcioMatchPage() {
 export function MatchView({ data, match, event }: { data: CompetitionData; match: Match; event?: { previous: Match[] } }) {
   const competition = data.competition;
   const generatedAt = data.generatedAt;
-  const teams = `${match.homeTeam.shortName} – ${match.awayTeam.shortName}`;
+  const teams = `${teamName(match.homeTeam)} – ${teamName(match.awayTeam)}`;
   const pairPrevious = event ? event.previous : pairMatches(competition, pairSlug(match)).filter((m) => m.id !== match.id);
   const nextMeeting = !event && isFinished(match) ? nextOfPair(pairMatches(competition, pairSlug(match))) : undefined;
 
@@ -360,7 +361,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 max-w-3xl mx-auto">
             <div className="flex flex-col items-center text-center gap-3">
               <TeamBadge team={match.homeTeam} size="lg" />
-              <TeamName id={match.homeTeam.id} name={match.homeTeam.shortName} className="text-white text-lg sm:text-2xl" />
+              <TeamName id={match.homeTeam.id} name={teamName(match.homeTeam)} className="text-white text-lg sm:text-2xl" />
             </div>
             <div className="text-center">
               {finished || live || onAir ? (
@@ -390,14 +391,14 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
             </div>
             <div className="flex flex-col items-center text-center gap-3">
               <TeamBadge team={match.awayTeam} size="lg" />
-              <TeamName id={match.awayTeam.id} name={match.awayTeam.shortName} className="text-white text-lg sm:text-2xl" />
+              <TeamName id={match.awayTeam.id} name={teamName(match.awayTeam)} className="text-white text-lg sm:text-2xl" />
             </div>
           </div>
           {prediction && (!finished || prediction.pre) && !live && !onAir && (
             <FootballQuickSummary
               prediction={prediction}
-              home={match.homeTeam.shortName}
-              away={match.awayTeam.shortName}
+              home={teamName(match.homeTeam)}
+              away={teamName(match.awayTeam)}
               result={finished && ft.home !== null && ft.away !== null ? { home: ft.home, away: ft.away } : null}
               slip={isUpcoming(match) && !prediction.pre ? footballSlip(competition.name, match) : undefined}
             />
@@ -453,8 +454,8 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
           {prediction && (!finished || prediction.pre) && (
             <PredictionPanel
               prediction={prediction}
-              home={match.homeTeam.shortName}
-              away={match.awayTeam.shortName}
+              home={teamName(match.homeTeam)}
+              away={teamName(match.awayTeam)}
               result={finished && ft.home !== null && ft.away !== null ? { home: ft.home, away: ft.away } : null}
               reasons={isUpcoming(match) ? footballReasons(prediction, competition, match) : []}
               publishedAt={archived?.published}
@@ -464,14 +465,14 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
           {prediction?.qualify && (!finished || prediction.pre) && (
             <QualifyChance match={match} prediction={prediction} firstLeg={firstLegOf(competition, match)} />
           )}
-          {isUpcoming(match) && <MatchPredictionVideo id={match.id} label={`${match.homeTeam.shortName} – ${match.awayTeam.shortName}`} />}
+          {isUpcoming(match) && <MatchPredictionVideo id={match.id} label={`${teamName(match.homeTeam)} – ${teamName(match.awayTeam)}`} />}
           {!finished && match.injuries && <MatchUnavailable match={match} />}
           {isUpcoming(match) && (
             <MatchOddsSlot
               sport="football"
               id={match.id}
-              home={match.homeTeam.shortName}
-              away={match.awayTeam.shortName}
+              home={teamName(match.homeTeam)}
+              away={teamName(match.awayTeam)}
               competition={competition.name}
               time={formatTime(match.utcDate)}
             />
@@ -500,8 +501,8 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
               <MatchGoalComparison
                 home={data.goalStats(match.homeTeam.id, match.utcDate)}
                 away={data.goalStats(match.awayTeam.id, match.utcDate)}
-                homeName={match.homeTeam.shortName}
-                awayName={match.awayTeam.shortName}
+                homeName={teamName(match.homeTeam)}
+                awayName={teamName(match.awayTeam)}
               />
               <GoalStatsNote complete={data.season.complete}>
                 Partite di {competition.name} giocate prima di questa.{" "}
@@ -519,7 +520,7 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
             <div className="grid sm:grid-cols-2 gap-5">
               {[match.homeTeam, match.awayTeam].map((t) => (
                 <div key={t.id}>
-                  <p className="text-slate-300 mb-2">{t.shortName}</p>
+                  <p className="text-slate-300 mb-2">{teamName(t)}</p>
                   <FormRow competition={competition} teamId={t.id} />
                 </div>
               ))}
@@ -539,11 +540,11 @@ export function MatchView({ data, match, event }: { data: CompetitionData; match
                   <li key={p.id} className="flex items-center gap-3 py-2.5 text-sm">
                     <span className="w-24 text-slate-400 tabular-nums">{formatShortDate(p.utcDate)}</span>
                     <span className="flex-1 text-white">
-                      {p.homeTeam.shortName}{" "}
+                      {teamName(p.homeTeam)}{" "}
                       <span className="tabular-nums text-white mx-1">
                         {p.score.fullTime.home}–{p.score.fullTime.away}
                       </span>{" "}
-                      {p.awayTeam.shortName}
+                      {teamName(p.awayTeam)}
                     </span>
                     <span className="hidden sm:block text-slate-400">{p.competition}</span>
                   </li>
@@ -657,7 +658,7 @@ function PairHistory({
   event: boolean;
 }) {
   const reverse = pairMatches(competition, pairSlug({ homeTeam: match.awayTeam, awayTeam: match.homeTeam }));
-  const teams = `${match.homeTeam.shortName} – ${match.awayTeam.shortName}`;
+  const teams = `${teamName(match.homeTeam)} – ${teamName(match.awayTeam)}`;
   if (!previous.length && !next && !reverse.length && event) return null;
   return (
     <section className={`${card} lg:col-span-3`} aria-labelledby="sfida">
@@ -680,8 +681,8 @@ function PairHistory({
           .map((m) => (
             <li key={m.id}>
               <Link to={matchPath(competition, m)} className="text-action-text hover:text-action-text-hover">
-                {formatShortDate(m.utcDate)}: {m.homeTeam.shortName} {m.score.fullTime.home}-{m.score.fullTime.away}{" "}
-                {m.awayTeam.shortName}
+                {formatShortDate(m.utcDate)}: {teamName(m.homeTeam)} {m.score.fullTime.home}-{m.score.fullTime.away}{" "}
+                {teamName(m.awayTeam)}
               </Link>{" "}
               <span className="text-slate-400">· risultato e pronostico pubblicato</span>
             </li>
@@ -689,7 +690,7 @@ function PairHistory({
         {reverse.length > 0 && (
           <li>
             <Link to={eventPath(competition, reverse[0])} className="text-action-text hover:text-action-text-hover">
-              Pronostico {reverse[0].homeTeam.shortName} – {reverse[0].awayTeam.shortName}
+              Pronostico {teamName(reverse[0].homeTeam)} – {teamName(reverse[0].awayTeam)}
             </Link>{" "}
             <span className="text-slate-400">· la sfida a campi invertiti</span>
           </li>

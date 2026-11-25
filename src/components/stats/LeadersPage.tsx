@@ -13,6 +13,7 @@ import { PageHeader } from "../layout/PageHeader";
 import { TeamBadge } from "../calcio/MatchRow";
 import { TeamName } from "../teams/TeamLink";
 import { dateFormat } from "../../lib/intl";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 const th = "font-normal py-2.5 px-2 text-right whitespace-nowrap";
@@ -67,7 +68,7 @@ function Board({ id, title, rows, cols }: { id: string; title: string; rows: Lea
                     {r.team && (
                       <span className="flex items-center gap-2 whitespace-nowrap">
                         <TeamBadge team={{ shortName: r.team.shortName, crest: r.team.crest, tla: "" }} />
-                        <TeamName id={r.team.id} name={r.team.shortName} />
+                        <TeamName id={r.team.id} name={teamName(r.team)} />
                       </span>
                     )}
                   </td>

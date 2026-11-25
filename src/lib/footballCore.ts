@@ -9,6 +9,7 @@ import type { FootballDetails } from "./matchDetails";
 import { playerName } from "./playerNames.mjs";
 import { isCalendarSeason, isInfoLeague } from "./competitionKinds";
 import { dateFormat } from "./intl";
+import { teamName } from "./teamDisplay.mjs";
 
 export interface Team {
   id: number;
@@ -490,7 +491,7 @@ export function leadersMeta(c: Competition) {
     title: `Classifica marcatori ${c.name}${season ? ` ${season}` : ""}: gol, assist e cartellini`,
     description:
       `Classifica marcatori di ${c.name}${season ? ` ${season}` : ""} aggiornata ogni giorno` +
-      (top && topName ? `: in testa ${topName} (${top.team?.shortName ?? ""}) con ${top.goals} gol.` : ".") +
+      (top && topName ? `: in testa ${topName} (${top.team ? teamName(top.team) : ""}) con ${top.goals} gol.` : ".") +
       " Classifiche assist, ammonizioni ed espulsioni, con presenze e minuti giocati.",
   };
 }
@@ -517,8 +518,8 @@ export function standingsSummary(c: Competition) {
   const gap = a.points - b.points;
   const lead =
     gap === 0
-      ? `${a.team.shortName} e ${b.team.shortName} sono in testa a pari punti (${a.points})`
-      : `${a.team.shortName} è prima con ${a.points} punti, ${gap} in più di ${b.team.shortName}`;
+      ? `${teamName(a.team)} e ${teamName(b.team)} sono in testa a pari punti (${a.points})`
+      : `${teamName(a.team)} è prima con ${a.points} punti, ${gap} in più di ${teamName(b.team)}`;
   return { played, leader: a, second: b, text: `Dopo ${played} ${played === 1 ? "giornata" : "giornate"}, ${lead}` };
 }
 
@@ -541,8 +542,8 @@ export function standingsMeta(c: Competition, outlook: string | null = null) {
 /** Social image of a match page (src/routes.ts OgCard); null without a prediction to show. */
 export function footballCard(c: CompetitionRef, m: Match, p: Prediction | undefined): OgCard | null {
   if (!p) return null;
-  const home = m.homeTeam.shortName;
-  const away = m.awayTeam.shortName;
+  const home = teamName(m.homeTeam);
+  const away = teamName(m.awayTeam);
   const ft = m.score.fullTime;
   const done = isFinished(m) && ft.home !== null && ft.away !== null;
   const round = roundLabel(m);
@@ -565,7 +566,7 @@ export function footballCard(c: CompetitionRef, m: Match, p: Prediction | undefi
 /** Visible H1 of a match page: "Pronostico Juventus – Inter (22 novembre 2026)" / "Juventus – Inter 2-1: …". */
 /** `predictions`: false for the lower divisions shown only for information (no prediction on their pages). */
 export function matchHeadline(m: Match, predictions = true) {
-  const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
+  const teams = `${teamName(m.homeTeam)} – ${teamName(m.awayTeam)}`;
   const date = formatLongDate(m.utcDate);
   if (!predictions)
     return isFinished(m)
@@ -601,7 +602,7 @@ export function matchMeta(
   venue?: EventVenue | null,
   details?: FootballDetails | null,
 ) {
-  const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
+  const teams = `${teamName(m.homeTeam)} – ${teamName(m.awayTeam)}`;
   const when = `${formatDay(m.utcDate)} ore ${formatTime(m.utcDate)}`;
   const path = matchPath(c, m);
   // while the evergreen page shows this match, it is the canonical URL (the dated page is its future archive)
@@ -648,7 +649,7 @@ function footballEventLd(
   video?: { video: string; title: string; published: string },
   venue?: EventVenue | null,
 ) {
-  const teams = `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`;
+  const teams = `${teamName(m.homeTeam)} – ${teamName(m.awayTeam)}`;
   return [
     sportsEvent({
       path,
@@ -682,7 +683,7 @@ export function eventMeta(
   const last = list[list.length - 1];
   if (!last) return null;
   const next = nextOfPair(list);
-  const teams = `${last.homeTeam.shortName} – ${last.awayTeam.shortName}`;
+  const teams = `${teamName(last.homeTeam)} – ${teamName(last.awayTeam)}`;
   const path = eventPath(c, last);
   const key = `pronostici:${c.slug}:${last.homeTeam.id}-${last.awayTeam.id}`;
   if (next) {

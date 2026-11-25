@@ -6,6 +6,7 @@ import type { Match } from "../../lib/footballCore";
 import { FOOTBALL_STATS, goalsWithScore, isGoal, type FootballDetails, type Lineup, type TimelineEvent } from "../../lib/matchDetails";
 import { playedScore } from "./FootballBoxScore";
 import { FootballPlayerLink } from "../players/FootballPlayerLink";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 const minute = (e: Pick<TimelineEvent, "minute" | "extra">) => (e.extra ? `${e.minute}+${e.extra}'` : `${e.minute}'`);
@@ -74,13 +75,13 @@ function Stats({ match, d }: { match: Match; d: Pick<FootballDetails, "stats"> }
         <thead>
           <tr className="text-slate-400 border-b border-slate-800">
             <th scope="col" className="text-left font-normal py-2">
-              {match.homeTeam.shortName}
+              {teamName(match.homeTeam)}
             </th>
             <th scope="col" className="font-normal py-2">
               <span className="sr-only">Statistica</span>
             </th>
             <th scope="col" className="text-right font-normal py-2">
-              {match.awayTeam.shortName}
+              {teamName(match.awayTeam)}
             </th>
           </tr>
         </thead>
@@ -167,7 +168,7 @@ function Timeline({ match, d, follow }: { match: Match; d: Pick<FootballDetails,
   }, [count, follow]);
   if (!count) return null;
   const scores = new Map(goalsWithScore(d, playedScore(match)).map((g) => [g.event, g]));
-  const name = (side: "home" | "away") => (side === "home" ? match.homeTeam.shortName : match.awayTeam.shortName);
+  const name = (side: "home" | "away") => (side === "home" ? teamName(match.homeTeam) : teamName(match.awayTeam));
   return (
     <section className={card} aria-labelledby="cronaca">
       <Title id="cronaca" icon={ListOrdered}>
@@ -221,8 +222,8 @@ export function FootballMatchDetails({
           {lineupTitle}
         </Title>
         <div className="grid sm:grid-cols-2 gap-6">
-          {home && <TeamLineup name={match.homeTeam.shortName} lineup={home} />}
-          {away && <TeamLineup name={match.awayTeam.shortName} lineup={away} />}
+          {home && <TeamLineup name={teamName(match.homeTeam)} lineup={home} />}
+          {away && <TeamLineup name={teamName(match.awayTeam)} lineup={away} />}
         </div>
       </section>
     ),

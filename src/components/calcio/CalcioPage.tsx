@@ -44,6 +44,7 @@ import { FEATURED_COMPETITIONS, isFeaturedMatch } from "../../lib/calcioFeatured
 import { TextSections } from "../editorial/TextSections";
 import { goalStatsPath, leadersPath, matchdayPath, PRONOSTICI } from "../../lib/footballCore";
 import { dateFormat } from "../../lib/intl";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const MARKET_IDS = FOOTBALL_MARKETS.map((m) => m.id);
 
@@ -100,7 +101,7 @@ export function CalcioPage() {
   const rows = words.length
     ? periodRows.filter(({ match: m }) => {
         const names = searchKey(
-          [m.homeTeam.name, m.homeTeam.shortName, m.awayTeam.name, m.awayTeam.shortName].join(" "),
+          [m.homeTeam.name, m.homeTeam.shortName, teamName(m.homeTeam), m.awayTeam.name, m.awayTeam.shortName, teamName(m.awayTeam)].join(" "),
         );
         return words.every((w) => names.includes(w));
       })

@@ -6,6 +6,7 @@ import { allMatches, formatDay, formatTime, isFinished, isUpcoming, matchHref, r
 import { predictionFor } from "./predictions";
 import { goalDistributions, LIST_MULTIGOAL, multigoal, type Prediction } from "./predictionsCore";
 import type { RouteMeta } from "../routes";
+import { teamName } from "./teamDisplay.mjs";
 
 export type MarketKey = "under-over" | "goal-no-goal" | "multigol";
 export const MARKET_KEYS: MarketKey[] = ["under-over", "goal-no-goal", "multigol"];
@@ -140,7 +141,7 @@ export function marketLists(k: MarketKey) {
         c,
         m,
         path: matchHref(c, m),
-        label: `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`,
+        label: `${teamName(m.homeTeam)} – ${teamName(m.awayTeam)}`,
         when: `${formatDay(m.utcDate)}, ${formatTime(m.utcDate)}`,
         p: side.prob(p),
         detail: `Gol attesi ${comma(total(p))}`,

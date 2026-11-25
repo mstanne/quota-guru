@@ -3,6 +3,7 @@
 // Data: src/data/tris.json (scripts/derive-tris.mjs; rules in scripts/lib/tris.mjs, shared with the Telegram channel).
 import raw from "../data/tris.json";
 import type { RouteMeta } from "../routes";
+import { withFullNames } from "./teamDisplay.mjs";
 
 export const TRIS_PATH = "/pronostici/tris";
 
@@ -41,7 +42,7 @@ export interface TrisData {
   tris: Tris[];
   stats: { n: number; allThree: number; expected: number; picks: number; pickHits: number };
 }
-export const trisData = raw as unknown as TrisData;
+export const trisData = withFullNames(raw as unknown as TrisData);
 
 /** The kinds, in page order (= scripts/lib/tris.mjs). */
 export const TRIS_KINDS = [

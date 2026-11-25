@@ -6,6 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { teamGoalStats } from "../../src/lib/goalStats.mjs";
 import { footballBroadcast } from "../../src/lib/broadcast.ts";
+import { teamName } from "../../src/lib/teamDisplay.mjs";
 import { TRIS, chooseTris, lockKey } from "../lib/tris.mjs";
 import { MULTIPLE, MULTIPLE_IDS, chooseMultiples, lockKey as multipleKey, pickTest } from "../lib/multiple.mjs";
 import {
@@ -132,7 +133,8 @@ function nextRound(data, code, nowMs) {
   return { comp, sa: comp, n, matches, open: matches.filter((m) => Date.parse(m.utcDate) > nowMs) };
 }
 const nextSerieARound = (data, nowMs) => nextRound(data, "SA", nowMs);
-const shortName = (t) => t.shortName.replace(/ FC$/, "");
+// full names of the clubs ("Atleti" → "Atlético Madrid"), src/lib/teamDisplay.mjs
+const clubName = (t) => teamName(t).replace(/ FC$/, "");
 const capital = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
 // ---------------------------------------------------------------------------------------------- captions
@@ -423,7 +425,7 @@ export const RUBRICHE = [
           ag: m.score.fullTime.away,
         }));
       const teams = new Map();
-      for (const m of sa.matches) for (const t of [m.homeTeam, m.awayTeam]) teams.set(t.id, shortName(t));
+      for (const m of sa.matches) for (const t of [m.homeTeam, m.awayTeam]) teams.set(t.id, clubName(t));
       const stats = [...teams]
         .map(([id, name]) => ({ name, last: teamGoalStats(results, id, 5).last }))
         .filter((s) => s.last.n >= 5);
@@ -594,7 +596,7 @@ export const RUBRICHE = [
       });
       const lines = tvRows.map(
         ({ m, channels }) =>
-          `${esc(shortDayTime(m.utcDate))} ${esc(shortName(m.homeTeam))} – ${esc(shortName(m.awayTeam))}: ${esc(channels)}`,
+          `${esc(shortDayTime(m.utcDate))} ${esc(clubName(m.homeTeam))} – ${esc(clubName(m.awayTeam))}: ${esc(channels)}`,
       );
       const caption = post(
         `📺 <b>Serie A, ${round.n}ª giornata: dove vederla in TV</b>`,
@@ -606,7 +608,7 @@ export const RUBRICHE = [
       const byChannel = new Map();
       for (const { m, channels } of tvRows)
         for (const ch of channels.split(/\s*(?:,|\be\b|\+)\s*/).filter(Boolean))
-          byChannel.set(ch, [...(byChannel.get(ch) ?? []), `${shortName(m.homeTeam)} – ${shortName(m.awayTeam)}`]);
+          byChannel.set(ch, [...(byChannel.get(ch) ?? []), `${clubName(m.homeTeam)} – ${clubName(m.awayTeam)}`]);
       const channelLines = [...byChannel]
         .sort((a, b) => b[1].length - a[1].length)
         .map(([ch, ms]) =>
@@ -630,7 +632,7 @@ export const RUBRICHE = [
           subtitle: "Serie A · secondo gli accordi sui diritti 2026/27",
           matches: tvRows.map(({ m, channels }) => ({
             when: shortDayTime(m.utcDate),
-            label: `${shortName(m.homeTeam)} – ${shortName(m.awayTeam)}`,
+            label: `${clubName(m.homeTeam)} – ${clubName(m.awayTeam)}`,
             channels: channels.split(/\s*(?:,|\be\b|\+)\s*/).filter(Boolean),
           })),
           note: [note, "Controlla sempre il palinsesto ufficiale."].filter(Boolean).join(" "),
@@ -683,10 +685,10 @@ export const RUBRICHE = [
       const table =
         sa?.standings?.find((s) => s.stage === "REGULAR_SEASON" && !s.group)?.table ?? sa?.standings?.[0]?.table;
       if (!table?.length) return null;
-      const rows = table.map((r) => `${r.position}. ${esc(shortName(r.team))} ${r.points}`);
+      const rows = table.map((r) => `${r.position}. ${esc(clubName(r.team))} ${r.points}`);
       const scorers = (sa.leaders?.scorers ?? [])
         .slice(0, 5)
-        .map((p, i) => `${i + 1}. ${esc(p.name)} (${esc(p.team.shortName)}) ${p.goals}`);
+        .map((p, i) => `${i + 1}. ${esc(p.name)} (${esc(teamName(p.team))}) ${p.goals}`);
       const caption = post(
         `📋 <b>Serie A, la classifica</b> dopo ${Math.max(...table.map((r) => r.playedGames))} giornate`,
         rows.join("\n"),
@@ -695,22 +697,22 @@ export const RUBRICHE = [
       );
       const [first, second] = table;
       const gap = first.points - second.points;
-      const last3 = table.slice(-3).map((r) => esc(shortName(r.team)));
+      const last3 = table.slice(-3).map((r) => esc(clubName(r.team)));
       const top = sa.leaders?.scorers?.[0];
       return {
         caption: post(
           `📋 <b>Serie A, la classifica</b> dopo ${Math.max(...table.map((r) => r.playedGames))} giornate`,
           [
             gap > 0
-              ? `In testa <b>${esc(shortName(first.team))}</b> con ${first.points} punti, poi ${esc(shortName(second.team))} a ${second.points} (${plural(gap, "punto", "punti")} di distacco).`
-              : `In testa <b>${esc(shortName(first.team))}</b> e <b>${esc(shortName(second.team))}</b> a ${first.points} punti.`,
+              ? `In testa <b>${esc(clubName(first.team))}</b> con ${first.points} punti, poi ${esc(clubName(second.team))} a ${second.points} (${plural(gap, "punto", "punti")} di distacco).`
+              : `In testa <b>${esc(clubName(first.team))}</b> e <b>${esc(clubName(second.team))}</b> a ${first.points} punti.`,
             `Nei primi quattro posti: ${table
               .slice(0, 4)
-              .map((r) => esc(shortName(r.team)))
+              .map((r) => esc(clubName(r.team)))
               .join(", ")}.`,
             `In fondo: ${last3.join(", ")}.`,
             top
-              ? `Capocannoniere: <b>${esc(top.name)}</b> (${esc(top.team.shortName)}) con ${plural(top.goals, "gol", "gol")}.`
+              ? `Capocannoniere: <b>${esc(top.name)}</b> (${esc(teamName(top.team))}) con ${plural(top.goals, "gol", "gol")}.`
               : null,
           ]
             .filter(Boolean)
@@ -726,14 +728,14 @@ export const RUBRICHE = [
           zones: { top: 4, bottom: 3 },
           rows: table.map((r) => ({
             pos: r.position,
-            team: shortName(r.team),
+            team: clubName(r.team),
             played: r.playedGames,
             gd: r.goalDifference,
             points: r.points,
           })),
           scorers: (sa.leaders?.scorers ?? [])
             .slice(0, 3)
-            .map((p) => ({ name: p.name, team: p.team.shortName, goals: p.goals })),
+            .map((p) => ({ name: p.name, team: teamName(p.team), goals: p.goals })),
         },
       };
     },
@@ -761,7 +763,7 @@ function roundPreview({ id, code, flag, days, time, dayBefore = false }) {
       const list = round.open.map((m) => ({ m, e: byId.get(m.id) })).filter((x) => x.e);
       if (list.length < 5) return null;
       const league = round.comp.name;
-      const name = ({ m }) => `${shortName(m.homeTeam)} – ${shortName(m.awayTeam)}`;
+      const name = ({ m }) => `${clubName(m.homeTeam)} – ${clubName(m.awayTeam)}`;
       const top = ({ e }) => Math.max(...e.prediction.p);
       const sign = ({ e }) => ["1", "X", "2"][e.prediction.p.indexOf(Math.max(...e.prediction.p))];
       const goals = ({ e }) => (e.prediction.xg ? e.prediction.xg[0] + e.prediction.xg[1] : 0);
@@ -943,8 +945,8 @@ function lineupPosts({ data, nowMs }) {
     if (!LINEUP_LEAGUES.has(x.league) && !italy) continue;
     if (!italy && x.league !== "serie-a" && !italian.has(site.m.homeTeam.id) && !italian.has(site.m.awayTeam.id))
       continue;
-    const home = shortName(site.m.homeTeam);
-    const away = shortName(site.m.awayTeam);
+    const home = clubName(site.m.homeTeam);
+    const away = clubName(site.m.awayTeam);
     const e = archived.get(site.m.id);
     const team = (name, l) =>
       [
@@ -1272,8 +1274,8 @@ function studyPosts({ data, today, nowMs }) {
   for (const { c, m, e } of studyMatches(data, today)) {
     const ko = Date.parse(m.utcDate);
     if (nowMs < ko - 4 * 3600000 || nowMs > ko - 90 * 60000) continue;
-    const home = shortName(m.homeTeam);
-    const away = shortName(m.awayTeam);
+    const home = clubName(m.homeTeam);
+    const away = clubName(m.awayTeam);
     const pr = e.prediction;
     const best = bestMarket(e);
     const i = topOf(pr.p);

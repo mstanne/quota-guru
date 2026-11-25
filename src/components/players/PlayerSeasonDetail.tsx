@@ -7,6 +7,7 @@ import type { FootballPlayer, PlayerCurrent, PlayerDetail, PlayerSide } from "..
 import { teamPaths } from "../../lib/teams";
 import { Card, SectionTitle, num } from "../teams/TeamUi";
 import { dateFormat } from "../../lib/intl";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const th = "text-right font-normal py-2 px-2 whitespace-nowrap";
 const td = "text-right px-2 py-2 tabular-nums";
@@ -69,7 +70,7 @@ function SeasonSummary({ c }: { c: PlayerCurrent }) {
         ))}
       </dl>
       <p className="text-slate-400 text-xs mt-3">
-        Tutte le competizioni con il {c.team.shortName}. I valori ogni 90 minuti compaiono dopo almeno 90 minuti giocati.
+        Tutte le competizioni con il {teamName(c.team)}. I valori ogni 90 minuti compaiono dopo almeno 90 minuti giocati.
       </p>
 
       {c.byComp && c.byComp.length > 1 && (

@@ -9,6 +9,7 @@ import type { Competition } from "../../lib/footballCore";
 import { TeamBadge } from "./MatchRow";
 import { TeamName } from "../teams/TeamLink";
 import { numberFormat } from "../../lib/intl";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const fmt = (n: number) => n.toFixed(1).replace(".", ",");
 const TONE: Record<Zone["tone"], string> = { top: "text-predict", europe: "text-sky-300", bottom: "text-rose-300" };
@@ -90,7 +91,7 @@ export function SeasonOutlook({ competition }: { competition: Competition }) {
                 <th scope="row" className="text-left font-normal px-4 py-2.5">
                   <span className="flex items-center gap-2.5">
                     <TeamBadge team={r.team} />
-                    <TeamName id={r.team.id} name={r.team.shortName} />
+                    <TeamName id={r.team.id} name={teamName(r.team)} />
                   </span>
                 </th>
                 <td className="text-right px-2 text-slate-400 tabular-nums">
@@ -256,7 +257,7 @@ export function XgPointsTable({ competition }: { competition: Competition }) {
                   <th scope="row" className="text-left font-normal px-4 py-2.5">
                     <span className="flex items-center gap-2.5">
                       <TeamBadge team={r.team} />
-                      <TeamName id={r.team.id} name={r.team.shortName} />
+                      <TeamName id={r.team.id} name={teamName(r.team)} />
                     </span>
                   </th>
                   <td className="text-right px-2 text-slate-300 tabular-nums">{pts}</td>
