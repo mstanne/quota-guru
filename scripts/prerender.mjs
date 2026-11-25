@@ -172,7 +172,7 @@ const website = () => ({
 });
 
 /** Site paths in the structured data ("/calcio/...", "/og/x.png", "/#id") become absolute URLs. */
-const URL_KEYS = new Set(["@id", "url", "item", "image", "logo", "mainEntityOfPage", "contentUrl"]);
+const URL_KEYS = new Set(["@id", "url", "item", "image", "logo", "mainEntityOfPage", "contentUrl", "thumbnailUrl", "embedUrl"]);
 function absolute(value) {
   if (!siteUrl || typeof value !== "string" || !value.startsWith("/")) return value;
   const [p, hash] = value.split("#");
