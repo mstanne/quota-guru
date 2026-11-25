@@ -385,6 +385,7 @@ export function githubJob(d) {
   const h = d.getUTCHours();
   if (m === 37 && h === 5 && d.getUTCDay() === 1) return "analytics.yml"; // weekly statistics, Monday
   if (m === 17 && h % 3 === 0) return "deploy.yml"; // full refresh every 3 hours (it also updates the scores)
+  if (m === 50 && h % 3 === 0) return "video-partite.yml"; // prediction videos of the top matches, after the build
   if (m % 15 === 0) return "live-scores.yml"; // quick scores and standings
   if (m % 20 === 7 && h >= 6 && h <= 22) return "telegram.yml"; // Telegram channel rubrics (scripts/telegram)
   return null;

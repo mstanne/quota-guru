@@ -10,7 +10,9 @@ name: Video partite
 
 on:
   schedule:
-    - cron: "50 */3 * * *" # half an hour after each site build (deploy.yml runs at minute 17)
+    # half an hour after each site build (deploy.yml runs at minute 17). Started by the live worker at these times
+    # (githubJob in workers/live/src/index.mjs): GitHub's own cron skips most runs and stays only as a fallback
+    - cron: "50 */3 * * *"
   workflow_dispatch:
     inputs:
       prova:
