@@ -219,6 +219,8 @@ def main():
         print(f"{e['kickoff']}  {e['where']}: {e['label']} ({why}) → {video_key(e)}", flush=True)
     if a.dry_run:
         return
+    # playwright serve solo per generare: la prova a secco gira con il python di sistema, senza playwright
+    from render import render_board  # noqa: E402
     prune(index, now)
     out_root = Path(a.out)
     for e, _ in todo:
@@ -241,5 +243,4 @@ def main():
 
 
 if __name__ == "__main__":
-    from render import render_board  # noqa: E402  (playwright serve solo qui)
     main()

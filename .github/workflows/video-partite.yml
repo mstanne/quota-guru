@@ -30,6 +30,11 @@ jobs:
   videos:
     runs-on: ubuntu-26.04
     timeout-minutes: 90
+    defaults:
+      run:
+        # con "shell: bash" esplicito GitHub aggiunge -o pipefail: un errore prima di "| tee" fa fallire il passo
+        # (senza, il crash della prova a secco finiva nascosto e il workflow risultava riuscito senza fare video)
+        shell: bash
     steps:
       - name: Check the Cloudflare secrets
         id: check
