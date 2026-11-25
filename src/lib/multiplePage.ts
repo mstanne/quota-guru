@@ -3,6 +3,7 @@
 // one went. Data: src/data/multiple.json (scripts/derive-multiple.mjs; rules in scripts/lib/multiple.mjs).
 import raw from "../data/multiple.json";
 import type { RouteMeta } from "../routes";
+import { withFullNames } from "./teamDisplay.mjs";
 
 export const MULTIPLE_PATH = "/pronostici/multiple";
 
@@ -44,7 +45,7 @@ export interface MultipleData {
   multiple: Multipla[];
   stats: Record<string, { n: number; won: number; expected: number }>;
 }
-export const multipleData = raw as unknown as MultipleData;
+export const multipleData = withFullNames(raw as unknown as MultipleData);
 
 /** The kinds, in page order (= scripts/lib/multiple.mjs). */
 export const MULTIPLE_KINDS = [

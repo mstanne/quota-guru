@@ -13,6 +13,7 @@ import { channelCounts, channelTokens, tvDay, tvGuideMeta, type TvRow } from "..
 import { dayPath } from "../../lib/dayPages";
 import { paths } from "../../routes";
 import { TelegramBanner } from "../TelegramBanner";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const list = (xs: string[]) => (xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} e ${xs[xs.length - 1]}`);
@@ -29,7 +30,7 @@ function Row({ r }: { r: TvRow }) {
       </time>
       <div className="flex-1 min-w-0">
         <Link to={matchHref(c, m)} className="text-white hover:underline">
-          {m.homeTeam.shortName} – {m.awayTeam.shortName}
+          {teamName(m.homeTeam)} – {teamName(m.awayTeam)}
         </Link>
         {done && m.score.fullTime.home != null && (
           <span className="ml-2 text-slate-400 tabular-nums">
@@ -128,7 +129,7 @@ export function TvGuidePage() {
               ? `Oggi, ${today.label}, ci sono ${today.onTv.length} partite di calcio visibili in Italia: ${list(todayCounts.map(([c, n]) => `${n} su ${c}`))}.`
               : `Oggi, ${today.label}, non ci sono partite delle competizioni che seguiamo con diritti TV noti in Italia.`}
             {big &&
-              ` La partita con più gol attesi secondo il modello è ${big.r.match.homeTeam.shortName} – ${big.r.match.awayTeam.shortName} (${big.r.competition.name}, ore ${formatTime(big.r.match.utcDate)}, ${big.r.broadcast!.channels}).`}{" "}
+              ` La partita con più gol attesi secondo il modello è ${teamName(big.r.match.homeTeam)} – ${teamName(big.r.match.awayTeam)} (${big.r.competition.name}, ore ${formatTime(big.r.match.utcDate)}, ${big.r.broadcast!.channels}).`}{" "}
             {checked
               ? "I canali con il segno di spunta vengono dal palinsesto delle emittenti, controllato ogni mattina; gli altri dagli accordi sui diritti TV della stagione."
               : "I canali vengono dagli accordi sui diritti TV della stagione: il palinsesto definitivo è quello delle emittenti."}

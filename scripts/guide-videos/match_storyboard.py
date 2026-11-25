@@ -34,8 +34,16 @@ def num(x, d=2):
     return f"{x:.{d}f}".replace(".", ",")
 
 
+# nomi completi delle squadre ("Atleti" → "Atlético Madrid"), gli stessi del sito: src/lib/team-full-names.json
+FULL_NAMES = json.loads((Path(__file__).resolve().parents[2] / "src" / "lib" / "team-full-names.json").read_text("utf-8"))
+
+
+def full_name(s):
+    return FULL_NAMES.get(s, s)
+
+
 def short(t):
-    return t.get("shortName") or t.get("name")
+    return full_name(t.get("shortName") or t.get("name"))
 
 
 def find_match(football, match_id):
@@ -80,7 +88,7 @@ def build(entry, football, now=None):
         H, A = m["homeTeam"], m["awayTeam"]
         hn, an = short(H), short(A)
     else:
-        hn, an = entry["label"].split(" – ", 1)
+        hn, an = (full_name(x) for x in entry["label"].split(" – ", 1))
     where = entry["where"]
     kicker = f"Pronostico · {where}"
     if comp and comp.get("code") == "SA" and m.get("matchday"):

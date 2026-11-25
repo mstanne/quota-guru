@@ -4,6 +4,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { withFullNames } from "../../src/lib/teamDisplay.mjs";
 
 export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 export const SITE = "https://www.quotaguru.it";
@@ -181,14 +182,15 @@ export async function loadData(nowMs, { live = false } = {}) {
   ]);
   const archive = { calcio: [], nba: [] };
   files.forEach((f, i) => archive[i % 2 ? "nba" : "calcio"].push(...Object.values(f ?? {})));
+  archive.calcio = archive.calcio.map(withFullNames);
   return {
     football,
     basket,
     archive,
-    tris: tris ?? {},
-    multiple: multiple ?? {},
+    tris: withFullNames(tris ?? {}),
+    multiple: withFullNames(multiple ?? {}),
     fantacalcio: fantacalcio ?? null,
-    videos: videos.videos ?? {},
+    videos: withFullNames(videos.videos ?? {}),
     lineups: live ? await loadLineups() : [],
   };
 }

@@ -2,6 +2,7 @@
 // for every team the expected final points and the share of simulated seasons ending in each position.
 // Shown on the standings pages (src/components/calcio/SeasonOutlook.tsx) and on the club pages.
 import data from "../data/football-season-sim.json";
+import { teamName } from "./teamDisplay.mjs";
 
 interface TeamSim {
   xpts: number;
@@ -242,14 +243,14 @@ export function outlookSentence(slug: string, table: { team: { id: number; short
   if (!o) return null;
   if (o.cup) {
     const win = table
-      .map((r) => ({ name: r.team.shortName, p: o.team(r.team.id)?.stage?.[6] ?? 0 }))
+      .map((r) => ({ name: teamName(r.team), p: o.team(r.team.id)?.stage?.[6] ?? 0 }))
       .sort((a, b) => b.p - a.p)
       .slice(0, 2)
       .filter((x) => x.p > 0);
     return win.length ? `Chi vince la coppa secondo il modello: ${win.map((x) => `${x.name} ${pct(x.p)}`).join(", ")}` : null;
   }
   const best = table
-    .map((r) => ({ name: r.team.shortName, p: o.team(r.team.id)?.zones[0]?.p ?? 0 }))
+    .map((r) => ({ name: teamName(r.team), p: o.team(r.team.id)?.zones[0]?.p ?? 0 }))
     .sort((a, b) => b.p - a.p)
     .filter((x, i) => x.p > 0 && (i === 0 || x.p >= 0.05))
     .slice(0, 2);

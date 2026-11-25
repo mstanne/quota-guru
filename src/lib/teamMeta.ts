@@ -3,6 +3,7 @@ import type { FootballTeam, NationalTeam, NbaTeam } from "./teams";
 import { teamPaths } from "./teams";
 import { leagueOutlook, pct } from "./seasonOutlook";
 import { confName, nbaTeamStanding } from "./nbaSeason";
+import { teamName } from "./teamDisplay.mjs";
 
 export function footballTeamMeta(t: FootballTeam) {
   const path = `${teamPaths.football}/${t.slug}`;
@@ -30,7 +31,7 @@ export function footballTeamMeta(t: FootballTeam) {
   ).replace(/\s+/g, " ");
   return {
     path,
-    title: `${t.shortName}: rosa, statistiche e stagioni`,
+    title: `${teamName(t)}: rosa, statistiche e stagioni`,
     description,
     image: undefined,
     jsonLd: [

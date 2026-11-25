@@ -13,6 +13,7 @@ import { PageHeader } from "../layout/PageHeader";
 import { DataUpdatedNote } from "../calcio/DataUpdatedNote";
 import { TeamBadge } from "../calcio/MatchRow";
 import { TeamName } from "../teams/TeamLink";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 const dec = (v: number) => v.toFixed(1).replace(".", ",");
@@ -117,7 +118,7 @@ export function CornersCardsPage() {
                       <th scope="row" className="py-2.5 pr-2 text-left font-normal">
                         <span className="flex items-center gap-2.5 whitespace-nowrap">
                           <TeamBadge team={team} />
-                          <TeamName id={team.id} name={team.shortName} />
+                          <TeamName id={team.id} name={teamName(team)} />
                         </span>
                       </th>
                       <td className="text-right px-2 tabular-nums text-slate-300">{s.n}</td>

@@ -2,6 +2,7 @@
 // /il-punto lists them, /il-punto/<YYYY-MM-DD> shows one. The list is bundled (src/data/punto/index.json); an
 // edition's data are loaded on demand (one file each), all of them at build time (entry-server).
 import index from "../data/punto/index.json";
+import { fullName } from "./teamDisplay.mjs";
 
 export interface Delta {
   title?: number;
@@ -39,7 +40,18 @@ export interface PuntoSummary {
 }
 
 export const PUNTO_BASE = "/il-punto";
-export const puntoEditions = (index as unknown as { editions: PuntoSummary[] }).editions;
+/** Football clubs with their full names ("Atleti" → "Atlético Madrid"): the editions keep the data's short names. */
+const full = <T extends { name: string }>(t: T): T => ({ ...t, name: fullName(t.name) });
+export const puntoEditions = (index as unknown as { editions: PuntoSummary[] }).editions.map((e) => ({
+  ...e,
+  scudetto: e.scudetto.map(full),
+  champions: e.champions && full(e.champions),
+}));
+function withFullNames(e: PuntoEdition): PuntoEdition {
+  const leagues = Object.fromEntries(Object.entries(e.leagues).map(([k, l]) => [k, { ...l, teams: l.teams.map(full) }]));
+  const cups = Object.fromEntries(Object.entries(e.cups).map(([k, c]) => [k, { ...c, teams: c.teams.map(full) }]));
+  return { ...e, leagues, cups, ranking: e.ranking.map(full) };
+}
 export const puntoPath = (date: string) => `${PUNTO_BASE}/${date}`;
 export const hasPunto = () => puntoEditions.length > 0;
 
@@ -48,7 +60,7 @@ const cache = new Map<string, PuntoEdition>();
 function load(date: string): Promise<unknown> {
   if (cache.has(date)) return Promise.resolve();
   const l = loaders[`../data/punto/${date}.json`];
-  return l ? l().then((m) => void cache.set(date, m.default)) : Promise.resolve();
+  return l ? l().then((m) => void cache.set(date, withFullNames(m.default))) : Promise.resolve();
 }
 /** Build time: every edition before rendering (entry-server). */
 export const loadAllPuntoData = () => Promise.all(puntoEditions.map((e) => load(e.date)));

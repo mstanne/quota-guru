@@ -1,4 +1,5 @@
-// Shorter team names for the narrow rows of the match lists on phones ("Red Bull Salzburg" → "Salisburgo").
+// Shorter team names for the narrow rows of the match lists on phones, only for names too long to fit
+// ("Borussia Mönchengladbach" → "Gladbach"). Names that fit are shown in full (src/lib/teamDisplay.mjs).
 // Only the display changes: links, pages and the slip keep the names of the data.
 
 /** Common Italian or short names of clubs whose data name is long. Keys are compared case- and accent-free. */
@@ -29,6 +30,12 @@ const KNOWN: Record<string, string> = {
   "borussia m'gladbach": "Gladbach",
   "bayer leverkusen": "Leverkusen",
   "eintracht frankfurt": "Francoforte",
+  "eintracht francoforte": "Francoforte",
+  "deportivo la coruna": "Deportivo",
+  "estrela da amadora": "Estrela",
+  "heart of midlothian": "Hearts",
+  "athletico paranaense": "Athletico",
+  "academico de viseu": "Académico",
   "atletico madrid": "Atlético",
   "manchester united": "Man United",
   "manchester city": "Man City",
@@ -86,8 +93,8 @@ const SUFFIX = new Set(
 
 const key = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
 
-/** Display name for a phone-width row: at most ~11 characters (what fits next to three cells) when a short form exists. */
-export function compactTeamName(name: string, max = 11): string {
+/** Display name for a phone-width row: the full name up to 17 characters ("Manchester United"), a short form beyond. */
+export function compactTeamName(name: string, max = 17): string {
   if (name.length <= max) return name;
   const known = KNOWN[key(name)];
   if (known) return known;

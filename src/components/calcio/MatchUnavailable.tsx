@@ -2,6 +2,7 @@
 import { UserX } from "lucide-react";
 import type { Match, Unavailable } from "../../lib/footballCore";
 import { FootballPlayerLink } from "../players/FootballPlayerLink";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 
@@ -50,8 +51,8 @@ export function MatchUnavailable({ match }: { match: Match }) {
         Indisponibili
       </h2>
       <div className="grid sm:grid-cols-2 gap-6">
-        <TeamList name={match.homeTeam.shortName} list={inj.home} />
-        <TeamList name={match.awayTeam.shortName} list={inj.away} />
+        <TeamList name={teamName(match.homeTeam)} list={inj.home} />
+        <TeamList name={teamName(match.awayTeam)} list={inj.away} />
       </div>
       <p className="text-slate-400 text-xs mt-4">
         Infortunati e squalificati segnalati prima della partita (dati API-Football); «in dubbio» indica una presenza

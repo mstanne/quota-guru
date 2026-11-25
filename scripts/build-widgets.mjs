@@ -11,6 +11,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { teamName } from "../src/lib/teamDisplay.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dist = path.join(root, "dist");
@@ -117,7 +118,7 @@ function leagueWidget(w) {
     .map((r) => {
       const pos = s?.teams?.[r.team.id]?.pos;
       const cells = zones.map((z) => (pos ? `<td${tint(zoneP(pos, z), z[3])}>${pct(zoneP(pos, z))}</td>` : `<td>–</td>`)).join("");
-      return `<tr><td class="n">${r.position}</td><td class="l">${teamLink(r.team.shortName)}</td><td>${r.playedGames}</td><td><b>${r.points}</b></td>${cells}</tr>`;
+      return `<tr><td class="n">${r.position}</td><td class="l">${teamLink(teamName(r.team))}</td><td>${r.playedGames}</td><td><b>${r.points}</b></td>${cells}</tr>`;
     })
     .join("\n");
   const head = `<tr><th>#</th><th class="l">Squadra</th><th title="Partite giocate">G</th><th>Pt</th>${zones.map((z) => `<th>${z[0]}</th>`).join("")}</tr>`;
@@ -140,7 +141,7 @@ function cupWidget(w) {
     .map((r) => {
       const t = s.teams[r.team.id];
       const cell = (p, k) => (t ? `<td${tint(p, k)}>${pct(p)}</td>` : "<td>–</td>");
-      return `<tr><td class="n">${r.position}</td><td class="l">${teamLink(r.team.shortName)}</td><td><b>${r.points}</b></td>${cell(t?.stage?.[0] ?? 0, "b")}${cell(t?.stage?.[2] ?? 0, "b")}${cell(t?.stage?.[6] ?? 0, "g")}</tr>`;
+      return `<tr><td class="n">${r.position}</td><td class="l">${teamLink(teamName(r.team))}</td><td><b>${r.points}</b></td>${cell(t?.stage?.[0] ?? 0, "b")}${cell(t?.stage?.[2] ?? 0, "b")}${cell(t?.stage?.[6] ?? 0, "g")}</tr>`;
     })
     .join("\n");
   return page({

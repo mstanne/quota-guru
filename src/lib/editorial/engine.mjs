@@ -9,6 +9,8 @@
 //     faq: [{ q, a }], note, fingerprint, source: "template" }
 // Text fields may contain internal links written as [testo](/percorso).
 
+import { teamName } from "../teamDisplay.mjs";
+
 const TZ = "Europe/Rome";
 const DAY_MS = 86400000;
 /** Previews are shown only for matches within this many days of the data snapshot. */
@@ -51,28 +53,14 @@ const recapNote = (generatedAt) => `Testi aggiornati al ${fmtDate(generatedAt)}.
 
 // ------------------------------------------------------------------------------------ Italian articles
 
-/** Names as they are written in Italian texts (the data uses English short names). */
-const DISPLAY = {
-  "Como 1907": "Como",
-  "Venezia FC": "Venezia",
-  "Man City": "Manchester City",
-  "Man United": "Manchester United",
-  Atleti: "Atlético Madrid",
-  "Barça": "Barcellona",
-  Bayern: "Bayern Monaco",
-  PSG: "Paris Saint-Germain",
-  Shaktar: "Shakhtar",
-  "Sl. Bratislava": "Slovan Bratislava",
-  "PAE AEK": "AEK Atene",
-  "Brighton Hove": "Brighton",
-  Nottingham: "Nottingham Forest",
-};
+/** Clubs that take "la" in Italian texts. */
 const FEMININE = new Set([
   "Juventus", "Roma", "Lazio", "Fiorentina", "Atalanta", "Udinese", "Inter", "Sampdoria",
   "Cremonese", "Salernitana", "Reggiana", "Ternana", "Triestina", "Spal",
 ]);
 
-export const teamName = (t) => DISPLAY[t.shortName] ?? t.shortName ?? t.name;
+// full names of the clubs ("Atleti" → "Atlético Madrid"): src/lib/teamDisplay.mjs
+export { teamName };
 
 /** Definite article of a club: la Juventus, l'Inter, lo Sporting, il Milan. */
 function article(n) {

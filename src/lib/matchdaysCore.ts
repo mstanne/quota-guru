@@ -2,6 +2,7 @@
 // and by the route list (src/lib/matchdays.ts, which has the whole snapshot).
 import { formatDay, isFinished, isMatchdayStage, matchdayPath, matchHref, type Competition, type Match } from "./footballCore";
 import type { RouteMeta } from "../routes";
+import { teamName } from "./teamDisplay.mjs";
 
 export interface Matchday {
   n: number;
@@ -73,7 +74,7 @@ export function matchdayMeta(c: Competition, d: Matchday, isPredicted: (id: numb
         itemListElement: d.matches.map((m, i) => ({
           "@type": "ListItem",
           position: i + 1,
-          name: `${m.homeTeam.shortName} – ${m.awayTeam.shortName}`,
+          name: `${teamName(m.homeTeam)} – ${teamName(m.awayTeam)}`,
           url: matchHref(c, m),
         })),
       },

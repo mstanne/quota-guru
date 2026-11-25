@@ -14,6 +14,7 @@ import { PlayerHistory } from "./PlayerHistory";
 import { PageHeader } from "../layout/PageHeader";
 import { TeamBadge } from "../calcio/MatchRow";
 import { Card, Facts, SectionTitle, age, formatDate, num } from "../teams/TeamUi";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const th = "text-right font-normal py-2 px-2 whitespace-nowrap";
 const td = "text-right px-2 py-2 tabular-nums";
@@ -48,7 +49,7 @@ export function PlayerPage() {
     [
       "Squadra",
       <Link key="t" to={teamHref} className="text-action-text hover:text-action-text-hover">
-        {p.team.shortName}
+        {teamName(p.team)}
       </Link>,
     ],
   ];
@@ -68,10 +69,10 @@ export function PlayerPage() {
       <PageHeader
         icon={User}
         title={p.name}
-        subtitle={[p.position, p.team.shortName, p.competition?.name].filter(Boolean).join(" · ")}
+        subtitle={[p.position, teamName(p.team), p.competition?.name].filter(Boolean).join(" · ")}
         breadcrumb={[
           { label: "Squadre", to: teamPaths.football },
-          { label: p.team.shortName, to: teamHref },
+          { label: teamName(p.team), to: teamHref },
           { label: p.name },
         ]}
       />
@@ -125,7 +126,7 @@ export function PlayerPage() {
                     <td className="px-2 py-2 whitespace-nowrap">
                       <Link to={`${teamPaths.football}/${s.team.slug}`} className="flex items-center gap-2 text-slate-200 hover:text-white">
                         <TeamBadge team={{ shortName: s.team.shortName, crest: s.team.crest, tla: "" }} />
-                        {s.team.shortName}
+                        {teamName(s.team)}
                       </Link>
                     </td>
                     <td className={`${td} text-slate-300`}>{s.apps}</td>
@@ -168,7 +169,7 @@ function Chance({ label, p, hint }: { label: string; p: number; hint: string }) 
 function NextMatchCard({ player: p }: { player: FootballPlayer }) {
   const n = p.nextMatch;
   if (!n) return null;
-  const opponent = n.side === "h" ? n.away.shortName : n.home.shortName;
+  const opponent = n.side === "h" ? teamName(n.away) : teamName(n.home);
   const chances: { label: string; p: number | undefined; hint: string }[] = [
     { label: "Segna almeno un gol", p: n.goal, hint: "Gol nei 90 minuti, rigori compresi" },
     { label: "Porta inviolata", p: n.cleanSheet, hint: `${opponent} non segna e lui gioca` },
@@ -184,7 +185,7 @@ function NextMatchCard({ player: p }: { player: FootballPlayer }) {
         Probabilità nella prossima partita
       </SectionTitle>
       <p className="text-slate-300">
-        {n.home.shortName} – {n.away.shortName} · {n.competition.name}{" "}
+        {teamName(n.home)} – {teamName(n.away)} · {n.competition.name}{" "}
         <span className="text-slate-400 text-sm">
           ({formatDay(n.date)} ore {formatTime(n.date)})
         </span>
@@ -207,7 +208,7 @@ function NextMatchCard({ player: p }: { player: FootballPlayer }) {
         to={eventPath(n.competition, { homeTeam: n.home, awayTeam: n.away } as unknown as Parameters<typeof eventPath>[1])}
         className="inline-block mt-3 text-action-text hover:text-action-text-hover"
       >
-        Pronostico {n.home.shortName} – {n.away.shortName} e probabili marcatori →
+        Pronostico {teamName(n.home)} – {teamName(n.away)} e probabili marcatori →
       </Link>
     </Card>
   );

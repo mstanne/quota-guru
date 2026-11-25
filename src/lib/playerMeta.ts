@@ -1,6 +1,7 @@
 // Title, description and structured data of the player pages (used by the page and by the pre-render).
 import type { FootballPlayer } from "./players";
 import { teamPaths } from "./teams";
+import { teamName } from "./teamDisplay.mjs";
 
 export function playerMeta(p: FootballPlayer) {
   const cur = p.seasons.find((s) => s.team.id === p.team.id) ?? p.seasons[0];
@@ -13,7 +14,7 @@ export function playerMeta(p: FootballPlayer) {
     // few minutes this season: the page stays for visitors, out of the index and the sitemap
     index: p.index !== false,
     title: `${p.name}: statistiche ${cur?.label ?? ""} e carriera`.replace(/\s+/g, " "),
-    description: `${p.name}, ${role}del ${p.team.shortName}${p.nationality ? ` (${p.nationality})` : ""}: ${stats}, ${
+    description: `${p.name}, ${role}del ${teamName(p.team)}${p.nationality ? ` (${p.nationality})` : ""}: ${stats}, ${
       p.current?.detail ? "tiri, passaggi chiave, duelli, " : ""
     }voto medio, ${p.current?.last.length ? "ultime partite " : ""}e statistiche stagione per stagione.${nextScorerText(p)}`,
     jsonLd: [
@@ -37,7 +38,7 @@ export function playerMeta(p: FootballPlayer) {
 function nextScorerText(p: FootballPlayer) {
   const n = p.nextMatch;
   if (!n) return "";
-  const opponent = n.side === "h" ? n.away.shortName : n.home.shortName;
+  const opponent = n.side === "h" ? teamName(n.away) : teamName(n.home);
   const v = (x: number) => `${Math.max(1, Math.round(x * 100))}%`;
   const what =
     n.cleanSheet != null

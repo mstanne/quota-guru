@@ -26,6 +26,7 @@ import { PageHeader } from "../layout/PageHeader";
 import { TeamBadge } from "./MatchRow";
 import { MatchView } from "./CalcioMatchPage";
 import { DataUpdatedNote } from "./DataUpdatedNote";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 const card = "rounded-xl border border-slate-800 bg-slate-900 p-5";
 
@@ -44,7 +45,7 @@ export function CalcioEventPage({ slug }: { slug: string }) {
 function RestingEvent({ data, list }: { data: CompetitionData; list: Match[] }) {
   const c = data.competition;
   const last = list[list.length - 1];
-  const teams = `${last.homeTeam.shortName} – ${last.awayTeam.shortName}`;
+  const teams = `${teamName(last.homeTeam)} – ${teamName(last.awayTeam)}`;
   const ft = last.score.fullTime;
   const reverse = pairMatches(c, pairSlug({ homeTeam: last.awayTeam, awayTeam: last.homeTeam }));
   const reverseNext = nextOfPair(reverse);
@@ -71,7 +72,7 @@ function RestingEvent({ data, list }: { data: CompetitionData; list: Match[] }) 
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4">
             <div className="flex flex-col items-center text-center gap-2">
               <TeamBadge team={last.homeTeam} size="lg" />
-              <span className="text-white">{last.homeTeam.shortName}</span>
+              <span className="text-white">{teamName(last.homeTeam)}</span>
             </div>
             <div className="text-center">
               <div className="text-white text-4xl tabular-nums">
@@ -81,7 +82,7 @@ function RestingEvent({ data, list }: { data: CompetitionData; list: Match[] }) 
             </div>
             <div className="flex flex-col items-center text-center gap-2">
               <TeamBadge team={last.awayTeam} size="lg" />
-              <span className="text-white">{last.awayTeam.shortName}</span>
+              <span className="text-white">{teamName(last.awayTeam)}</span>
             </div>
           </div>
           <p className="mt-5 text-sm">
@@ -99,8 +100,8 @@ function RestingEvent({ data, list }: { data: CompetitionData; list: Match[] }) 
             {reverse.length > 0 && (
               <li>
                 <Link to={eventPath(c, reverse[0])} className="text-action-text hover:text-action-text-hover">
-                  {reverseNext ? "Pronostico" : "Sfida"} {reverse[0].homeTeam.shortName} –{" "}
-                  {reverse[0].awayTeam.shortName}
+                  {reverseNext ? "Pronostico" : "Sfida"} {teamName(reverse[0].homeTeam)} –{" "}
+                  {teamName(reverse[0].awayTeam)}
                 </Link>
                 {reverseNext && <span className="text-slate-400"> · {formatShortDate(reverseNext.utcDate)}</span>}
               </li>
@@ -147,11 +148,11 @@ function RestingEvent({ data, list }: { data: CompetitionData; list: Match[] }) 
                 <li key={p.id} className="flex items-center gap-3 py-2.5 text-sm">
                   <span className="w-24 text-slate-400 tabular-nums">{formatShortDate(p.utcDate)}</span>
                   <span className="flex-1 text-white">
-                    {p.homeTeam.shortName}{" "}
+                    {teamName(p.homeTeam)}{" "}
                     <span className="tabular-nums mx-1">
                       {p.score.fullTime.home}–{p.score.fullTime.away}
                     </span>{" "}
-                    {p.awayTeam.shortName}
+                    {teamName(p.awayTeam)}
                   </span>
                   <span className="hidden sm:block text-slate-400">{p.competition}</span>
                 </li>

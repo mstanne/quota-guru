@@ -19,6 +19,7 @@ import { pct, type FootballMarket, type Prediction } from "../../lib/predictions
 import { MarketMini, marketColumns } from "../predictions/PredictionUi";
 import { footballSlip } from "../predictions/SlipPicks";
 import { useLiveMatch } from "../../lib/liveScores";
+import { teamName } from "../../lib/teamDisplay.mjs";
 
 /**
  * Team crest (API-Football CDN). Falls back to the three-letter code if the crest is missing
@@ -92,7 +93,7 @@ export function MatchRow({
   const live = isLive(match);
   const pending = isResultPending(match);
   const ft = match.score.fullTime;
-  const label = `${match.homeTeam.shortName} – ${match.awayTeam.shortName}, ${finished ? `risultato ${ft.home}-${ft.away}` : live ? `in corso, ${ft.home ?? 0}-${ft.away ?? 0}` : pending ? "risultato in arrivo" : `ore ${formatTime(match.utcDate)}`}`;
+  const label = `${teamName(match.homeTeam)} – ${teamName(match.awayTeam)}, ${finished ? `risultato ${ft.home}-${ft.away}` : live ? `in corso, ${ft.home ?? 0}-${ft.away ?? 0}` : pending ? "risultato in arrivo" : `ore ${formatTime(match.utcDate)}`}`;
 
   const quickPick = !!prediction && !prediction.pre && !finished && !live && !pending;
 
@@ -121,7 +122,7 @@ export function MatchRow({
           ].map(({ team, goals, win }) => (
             <div key={team.id} className="flex items-center gap-2">
               <TeamBadge team={team} size="xs" />
-              <TeamName name={team.shortName} className={finished && !win ? "text-slate-400" : "text-white"} />
+              <TeamName name={teamName(team)} className={finished && !win ? "text-slate-400" : "text-white"} />
               {(finished || live) && (
                 <span
                   className={`ml-auto tabular-nums ${live ? "text-white text-lg font-semibold" : `text-lg ${win ? "text-best" : "text-slate-300"}`}`}
@@ -139,8 +140,8 @@ export function MatchRow({
           <MarketMini
             prediction={prediction}
             market={market}
-            home={match.homeTeam.shortName}
-            away={match.awayTeam.shortName}
+            home={teamName(match.homeTeam)}
+            away={teamName(match.awayTeam)}
             slip={quickPick ? footballSlip(competition.name, match) : undefined}
             columns={columns}
           />
@@ -160,11 +161,11 @@ export function MatchRow({
   );
 }
 
-/** Team name of a list row: a shorter form on phones ("Salisburgo"), the data's name from `sm` up. */
+/** Team name of a list row: the full name, a shorter form on phones only when it is too long ("Gladbach"). */
 export function TeamName({ name, short: given, className = "" }: { name: string; short?: string; className?: string }) {
   const short = given || compactTeamName(name);
-  // a bit smaller on phones: the short names then fit next to the probability cells
-  const cls = `team-name ${className}`;
+  // long full names ("Atlético Madrid") a bit smaller on phones, so they fit next to the probability cells
+  const cls = `team-name ${short.length > 13 ? "max-sm:text-[13px] " : ""}${className}`;
   if (short === name) return <span className={cls}>{name}</span>;
   // the full name once in the HTML; phones show data-short instead (CSS .team-name, src/styles/globals.css)
   return (
@@ -240,7 +241,7 @@ export function footballOutcome(
   // cup ties decided in extra time or on penalties: the 90-minute score, where the source has it
   const rt = match.score.regularTime ?? ft;
   const res = (rt.home ?? 0) > (rt.away ?? 0) ? 0 : rt.home === rt.away ? 1 : 2;
-  const names = [`vittoria ${match.homeTeam.shortName}`, "pareggio", `vittoria ${match.awayTeam.shortName}`];
+  const names = [`vittoria ${teamName(match.homeTeam)}`, "pareggio", `vittoria ${teamName(match.awayTeam)}`];
   return { pick: ["1", "X", "2"][i], spoken: names[i], prob: prediction.p[i], hit: i === res, published };
 }
 

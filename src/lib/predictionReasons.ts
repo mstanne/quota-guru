@@ -4,6 +4,7 @@
 // model does not know, and never tell the reader to bet.
 import { recentForm, standingOf, type Competition, type Match } from "./footballCore";
 import type { Prediction } from "./predictionsCore";
+import { teamName } from "./teamDisplay.mjs";
 
 const n1 = (x: number) => x.toFixed(1).replace(".", ",");
 const n2 = (x: number) => x.toFixed(2).replace(".", ",");
@@ -20,8 +21,8 @@ function formText(c: Competition, teamId: number) {
 }
 
 export function footballReasons(p: Prediction, c: Competition, m: Match): string[] {
-  const home = m.homeTeam.shortName;
-  const away = m.awayTeam.shortName;
+  const home = teamName(m.homeTeam);
+  const away = teamName(m.awayTeam);
   const out: string[] = [];
 
   // 1. expected goals: the core of the Poisson model
@@ -46,7 +47,7 @@ export function footballReasons(p: Prediction, c: Competition, m: Match): string
       );
     } else {
       out.push(
-        `${fav.team.shortName} (${fav.position}ª) segna ${pg(fav.goalsFor, fav.playedGames)} gol a partita in ${c.name}; ${other.team.shortName} (${other.position}ª) ne subisce ${pg(other.goalsAgainst, other.playedGames)}.`,
+        `${teamName(fav.team)} (${fav.position}ª) segna ${pg(fav.goalsFor, fav.playedGames)} gol a partita in ${c.name}; ${teamName(other.team)} (${other.position}ª) ne subisce ${pg(other.goalsAgainst, other.playedGames)}.`,
       );
     }
   } else {
