@@ -395,11 +395,15 @@
   "live:video-pronostico:1001635703": {
    "at": "2026-11-25T17:04:07.707Z",
    "messageId": 76
+  },
+  "live:academy:2026-11-25": {
+   "at": "2026-11-25T17:07:49.057Z",
+   "messageId": 77
   }
  },
  "academy": {
   "test": 2,
-  "live": 3
+  "live": 4
  },
  "tris": {
   "test": {
