@@ -415,6 +415,10 @@
   "live:tris-europa-league:2026-11-26": {
    "at": "2026-11-26T09:47:43.610Z",
    "messageId": 81
+  },
+  "live:tris-conference:2026-11-26": {
+   "at": "2026-11-26T10:07:44.337Z",
+   "messageId": 82
   }
  },
  "academy": {
@@ -490,6 +494,23 @@
      {
       "id": 1001636294,
       "index": 0
+     }
+    ]
+   },
+   "tris-conference": {
+    "day": "2026-11-26",
+    "picks": [
+     {
+      "id": 1001636381,
+      "index": 0
+     },
+     {
+      "id": 1001636395,
+      "index": 0
+     },
+     {
+      "id": 1001636421,
+      "index": 2
      }
     ]
    }
