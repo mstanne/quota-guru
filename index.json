@@ -1,0 +1,175 @@
+{
+ "videos": {
+  "1001636255": {
+   "id": 1001636255,
+   "label": "Dinamo Zagreb – Leverkusen",
+   "where": "Europa League",
+   "kickoff": "2026-11-26T17:45:00Z",
+   "path": "/calcio/europa-league/dinamo-zagreb-leverkusen-2026-11-26",
+   "generated": "2026-11-25T16:32:53Z",
+   "seconds": 51,
+   "p": [
+    0.158,
+    0.175,
+    0.667
+   ],
+   "key": "analisi/calcio/2026-11-26/dinamo-zagreb-leverkusen-2026-11-26"
+  },
+  "1001636307": {
+   "id": 1001636307,
+   "label": "Olympiakos Piraeus – Milan",
+   "where": "Europa League",
+   "kickoff": "2026-11-26T17:45:00Z",
+   "path": "/calcio/europa-league/olympiakos-piraeus-milan-2026-11-26",
+   "generated": "2026-11-25T16:32:53Z",
+   "seconds": 51,
+   "p": [
+    0.267,
+    0.304,
+    0.429
+   ],
+   "key": "analisi/calcio/2026-11-26/olympiakos-piraeus-milan-2026-11-26"
+  },
+  "1001636395": {
+   "id": 1001636395,
+   "label": "Brighton Hove – Universitatea Craiova",
+   "where": "Conference League",
+   "kickoff": "2026-11-26T17:45:00Z",
+   "path": "/calcio/conference-league/brighton-hove-universitatea-craiova-2026-11-26",
+   "generated": "2026-11-25T16:32:53Z",
+   "seconds": 51,
+   "p": [
+    0.855,
+    0.096,
+    0.049
+   ],
+   "key": "analisi/calcio/2026-11-26/brighton-hove-universitatea-craiova-2026-11-26"
+  },
+  "1001636277": {
+   "id": 1001636277,
+   "label": "Juventus – Omonia Nicosia",
+   "where": "Europa League",
+   "kickoff": "2026-11-26T20:00:00Z",
+   "path": "/calcio/europa-league/juventus-omonia-nicosia-2026-11-26",
+   "generated": "2026-11-25T16:32:53Z",
+   "seconds": 51,
+   "p": [
+    0.702,
+    0.183,
+    0.115
+   ],
+   "key": "analisi/calcio/2026-11-26/juventus-omonia-nicosia-2026-11-26"
+  },
+  "1001636386": {
+   "id": 1001636386,
+   "label": "Borac Banja Luka – Atalanta",
+   "where": "Conference League",
+   "kickoff": "2026-11-26T20:00:00Z",
+   "path": "/calcio/conference-league/borac-banja-luka-atalanta-2026-11-26",
+   "generated": "2026-11-25T16:32:53Z",
+   "seconds": 51,
+   "p": [
+    0.177,
+    0.202,
+    0.621
+   ],
+   "key": "analisi/calcio/2026-11-26/borac-banja-luka-atalanta-2026-11-26"
+  },
+  "1001636410": {
+   "id": 1001636410,
+   "label": "Freiburg – Twente",
+   "where": "Conference League",
+   "kickoff": "2026-11-26T20:00:00Z",
+   "path": "/calcio/conference-league/freiburg-twente-2026-11-26",
+   "generated": "2026-11-25T16:32:53Z",
+   "seconds": 51,
+   "p": [
+    0.522,
+    0.22,
+    0.258
+   ],
+   "key": "analisi/calcio/2026-11-26/freiburg-twente-2026-11-26"
+  },
+  "1001550214": {
+   "id": 1001550214,
+   "label": "Torino – Lazio",
+   "where": "Serie A",
+   "kickoff": "2026-11-28T17:00:00Z",
+   "path": "/calcio/serie-a/torino-lazio-2026-11-28",
+   "generated": "2026-11-27T06:51:37Z",
+   "seconds": 51,
+   "p": [
+    0.256,
+    0.233,
+    0.511
+   ],
+   "key": "analisi/calcio/2026-11-28/torino-lazio-2026-11-28"
+  },
+  "1001550211": {
+   "id": 1001550211,
+   "label": "Inter – Genoa",
+   "where": "Serie A",
+   "kickoff": "2026-11-28T19:45:00Z",
+   "path": "/calcio/serie-a/inter-genoa-2026-11-28",
+   "generated": "2026-11-27T09:10:10Z",
+   "seconds": 51,
+   "p": [
+    0.704,
+    0.17,
+    0.126
+   ],
+   "key": "analisi/calcio/2026-11-28/inter-genoa-2026-11-28"
+  },
+  "1001550209": {
+   "id": 1001550209,
+   "label": "Como 1907 – Juventus",
+   "where": "Serie A",
+   "kickoff": "2026-11-29T19:45:00Z",
+   "path": "/calcio/serie-a/como-1907-juventus-2026-11-29",
+   "generated": "2026-11-28T09:51:16Z",
+   "seconds": 51,
+   "p": [
+    0.464,
+    0.24,
+    0.295
+   ],
+   "key": "analisi/calcio/2026-11-29/como-1907-juventus-2026-11-29"
+  }
+ },
+ "rounds": {
+  "Champions League|g5": {
+   "chosen": [
+    1001635703,
+    1001635673,
+    1001635649,
+    1001635692
+   ],
+   "decided": "2026-11-25T16:32:53Z"
+  },
+  "Conference League|g4": {
+   "chosen": [
+    1001636386,
+    1001636395,
+    1001636410
+   ],
+   "decided": "2026-11-25T16:32:53Z"
+  },
+  "Europa League|g5": {
+   "chosen": [
+    1001636307,
+    1001636277,
+    1001636255
+   ],
+   "decided": "2026-11-25T16:32:53Z"
+  },
+  "Serie A|g13": {
+   "chosen": [
+    1001550209,
+    1001550211,
+    1001550214
+   ],
+   "decided": "2026-11-27T06:51:37Z"
+  }
+ },
+ "updated": "2026-11-28T09:51:16Z"
+}
